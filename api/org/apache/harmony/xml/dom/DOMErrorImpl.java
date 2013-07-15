@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.dom;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,75 +20,69 @@ public final class DOMErrorImpl implements DOMError {
     public  DOMErrorImpl(short severity, String type) {
         this.severity = severity;
         this.type = type;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.severity = severity;
+        //this.type = type;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "486D9FD618449ECBCAAA947A01B6396E", hash_generated_method = "C3CF86D18EC14C2706C74F9B09D49C85")
     public short getSeverity() {
         short varF6CDD8562435F8DC36B4C5A221A11D7C_345817214 = (severity);
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1056259825 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1056259825;
-        
-        
+        // ---------- Original Method ----------
+        //return severity;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "736EB773CAD78737D003DEF14371364B", hash_generated_method = "6E4F7F54F48A6439882FB3B42FC56A62")
     public String getMessage() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_824864219 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_824864219.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_824864219;
-        
-        
+        // ---------- Original Method ----------
+        //return type;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "70E1005ABDD735DBE54B2765A7342EA6")
     public String getType() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_1373784448 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_1373784448.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_1373784448;
-        
-        
+        // ---------- Original Method ----------
+        //return type;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "69DC7C3C45CF145B81BFA491DBEA3D67", hash_generated_method = "06ACC1AAE184B349FD3DACA79062E853")
     public Object getRelatedException() {
 Object var540C13E9E156B687226421B24F2DF178_1990908078 =         null;
         var540C13E9E156B687226421B24F2DF178_1990908078.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1990908078;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "2E051F1CC67E124CEB94F15E64801D89", hash_generated_method = "860EA47A416C88C58CA9018EC9020B40")
     public Object getRelatedData() {
 Object var540C13E9E156B687226421B24F2DF178_829572861 =         null;
         var540C13E9E156B687226421B24F2DF178_829572861.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_829572861;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.581 -0400", hash_original_method = "5FDC1F3E63CCD7CD3042D9A19CD94FF4", hash_generated_method = "3057E43224F6F0F3529AE1FEB7EF498A")
     public DOMLocator getLocation() {
 DOMLocator varBCEE7747FFD5EB1F93193F1E8D2EBF97_1364555230 =         NULL_DOM_LOCATOR;
         varBCEE7747FFD5EB1F93193F1E8D2EBF97_1364555230.addTaint(taint);
         return varBCEE7747FFD5EB1F93193F1E8D2EBF97_1364555230;
-        
-        
+        // ---------- Original Method ----------
+        //return NULL_DOM_LOCATOR;
     }
 
     

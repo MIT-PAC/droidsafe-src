@@ -1,6 +1,6 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,27 +16,26 @@ public class CursorWrapper implements Cursor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.203 -0400", hash_original_method = "978CECAE21C2C2AADE050CB638E188D1", hash_generated_method = "5D389837C2CC65DEC4287272473DF588")
     public  CursorWrapper(Cursor cursor) {
         mCursor = cursor;
-        
-        
+        // ---------- Original Method ----------
+        //mCursor = cursor;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.204 -0400", hash_original_method = "316180AD618802065A1D51DA27AEB312", hash_generated_method = "09C2A21C64721C509146B0BDFDABD4C6")
     public Cursor getWrappedCursor() {
 Cursor var2D697C95C6440211C70889796F0139B0_1179096072 =         mCursor;
         var2D697C95C6440211C70889796F0139B0_1179096072.addTaint(taint);
         return var2D697C95C6440211C70889796F0139B0_1179096072;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.204 -0400", hash_original_method = "A32297B2451395D36A70F03B3EF856B3", hash_generated_method = "B1AD05790457C8898701464AAE0F0B72")
     public void close() {
         mCursor.close();
-        
-        
+        // ---------- Original Method ----------
+        //mCursor.close();
     }
 
     
@@ -45,8 +44,8 @@ Cursor var2D697C95C6440211C70889796F0139B0_1179096072 =         mCursor;
         boolean var5BB654069CEE2CCE2484330B0B21C697_665234273 = (mCursor.isClosed());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1314710912 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1314710912;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.isClosed();
     }
 
     
@@ -55,16 +54,16 @@ Cursor var2D697C95C6440211C70889796F0139B0_1179096072 =         mCursor;
         int var75D1A080281180206349E970682A62F2_1834185271 = (mCursor.getCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1615890261 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1615890261;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getCount();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.205 -0400", hash_original_method = "93C3C298C44E28085902C4719EB89C5C", hash_generated_method = "0BCE346B7C70E5CAD483677FDAD72A36")
     public void deactivate() {
         mCursor.deactivate();
-        
-        
+        // ---------- Original Method ----------
+        //mCursor.deactivate();
     }
 
     
@@ -73,8 +72,8 @@ Cursor var2D697C95C6440211C70889796F0139B0_1179096072 =         mCursor;
         boolean varAE1A32886B21AC13493DC172F2CDC33E_1335720539 = (mCursor.moveToFirst());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1817981198 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1817981198;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.moveToFirst();
     }
 
     
@@ -83,8 +82,8 @@ Cursor var2D697C95C6440211C70889796F0139B0_1179096072 =         mCursor;
         int varF5FB34995ED03DB5B47BF8A4518BF861_375423493 = (mCursor.getColumnCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1605958015 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1605958015;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getColumnCount();
     }
 
     
@@ -94,8 +93,8 @@ Cursor var2D697C95C6440211C70889796F0139B0_1179096072 =         mCursor;
         int var0EE1B7284018D043DA2194D462757B8C_37077023 = (mCursor.getColumnIndex(columnName));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1556810813 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1556810813;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getColumnIndex(columnName);
     }
 
     
@@ -105,8 +104,8 @@ Cursor var2D697C95C6440211C70889796F0139B0_1179096072 =         mCursor;
         int varFA7FFC9E67A4555D07D43820EBA103A0_1999087902 = (mCursor.getColumnIndexOrThrow(columnName));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967450088 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967450088;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getColumnIndexOrThrow(columnName);
     }
 
     
@@ -116,8 +115,8 @@ Cursor var2D697C95C6440211C70889796F0139B0_1179096072 =         mCursor;
 String varAC3D7F17C6AC4A9FA44C31336E8C2A2E_671579330 =         mCursor.getColumnName(columnIndex);
         varAC3D7F17C6AC4A9FA44C31336E8C2A2E_671579330.addTaint(taint);
         return varAC3D7F17C6AC4A9FA44C31336E8C2A2E_671579330;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getColumnName(columnIndex);
     }
 
     
@@ -126,8 +125,8 @@ String varAC3D7F17C6AC4A9FA44C31336E8C2A2E_671579330 =         mCursor.getColumn
 String[] varF8FF07705E74C2344D2EF0339BC7BE26_675002138 =         mCursor.getColumnNames();
         varF8FF07705E74C2344D2EF0339BC7BE26_675002138.addTaint(taint);
         return varF8FF07705E74C2344D2EF0339BC7BE26_675002138;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getColumnNames();
     }
 
     
@@ -137,8 +136,8 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_675002138 =         mCursor.getColu
         double var93617EE2B7BAC1B4E85437E1206E9737_895385046 = (mCursor.getDouble(columnIndex));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_36224638 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_36224638;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getDouble(columnIndex);
     }
 
     
@@ -147,8 +146,8 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_675002138 =         mCursor.getColu
 Bundle var9F26218347A1E5FAB3EDA37346898AB0_856457704 =         mCursor.getExtras();
         var9F26218347A1E5FAB3EDA37346898AB0_856457704.addTaint(taint);
         return var9F26218347A1E5FAB3EDA37346898AB0_856457704;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getExtras();
     }
 
     
@@ -158,8 +157,8 @@ Bundle var9F26218347A1E5FAB3EDA37346898AB0_856457704 =         mCursor.getExtras
         float var205D9C4E4E526658E9749D3AACCD4D9B_255754435 = (mCursor.getFloat(columnIndex));
                 float var546ADE640B6EDFBC8A086EF31347E768_1538770647 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1538770647;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getFloat(columnIndex);
     }
 
     
@@ -169,8 +168,8 @@ Bundle var9F26218347A1E5FAB3EDA37346898AB0_856457704 =         mCursor.getExtras
         int var16C53861B904EEB353EFEC5F890B946D_727923710 = (mCursor.getInt(columnIndex));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836698065 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836698065;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getInt(columnIndex);
     }
 
     
@@ -180,8 +179,8 @@ Bundle var9F26218347A1E5FAB3EDA37346898AB0_856457704 =         mCursor.getExtras
         long varFC16BF54740B28C3D7A16DDD1DAA646C_263392281 = (mCursor.getLong(columnIndex));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_566641699 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_566641699;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getLong(columnIndex);
     }
 
     
@@ -191,8 +190,8 @@ Bundle var9F26218347A1E5FAB3EDA37346898AB0_856457704 =         mCursor.getExtras
         short varB1DC8F1EAFEEF486EBC3A4CFA89C1D03_174436978 = (mCursor.getShort(columnIndex));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_708590091 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_708590091;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getShort(columnIndex);
     }
 
     
@@ -202,8 +201,8 @@ Bundle var9F26218347A1E5FAB3EDA37346898AB0_856457704 =         mCursor.getExtras
 String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getString(columnIndex);
         varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508.addTaint(taint);
         return varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getString(columnIndex);
     }
 
     
@@ -212,8 +211,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         addTaint(buffer.getTaint());
         addTaint(columnIndex);
         mCursor.copyStringToBuffer(columnIndex, buffer);
-        
-        
+        // ---------- Original Method ----------
+        //mCursor.copyStringToBuffer(columnIndex, buffer);
     }
 
     
@@ -223,8 +222,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         byte[] varE224B09D2B43EC45D5EA198E5BC0DDE1_579396609 = (mCursor.getBlob(columnIndex));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1514225857 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1514225857;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getBlob(columnIndex);
     }
 
     
@@ -233,8 +232,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean varF2AEC4C640284983322BCF08D912C7EE_1095774936 = (mCursor.getWantsAllOnMoveCalls());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_456025127 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_456025127;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getWantsAllOnMoveCalls();
     }
 
     
@@ -243,8 +242,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var16B3F8AEBA565D044DBA89FD0C2439F4_1555963974 = (mCursor.isAfterLast());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1440954055 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1440954055;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.isAfterLast();
     }
 
     
@@ -253,8 +252,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var13861B88C26287BDE8FCB1F8332147C7_1621817343 = (mCursor.isBeforeFirst());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_895579539 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_895579539;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.isBeforeFirst();
     }
 
     
@@ -263,8 +262,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var68FCBD8CD4A87CA22669DFCC9C29594B_278224867 = (mCursor.isFirst());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1877259144 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1877259144;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.isFirst();
     }
 
     
@@ -273,8 +272,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var74F7DE1E8C77377342FFF3D15C5D0D4A_140369871 = (mCursor.isLast());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_924032896 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_924032896;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.isLast();
     }
 
     
@@ -284,8 +283,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         int varBC220ED4E3F6FEE984B8F6B03D57E447_1840296528 = (mCursor.getType(columnIndex));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1138931624 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1138931624;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getType(columnIndex);
     }
 
     
@@ -295,8 +294,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean varA096D85C19C415B3D598571DA8FF125F_591157781 = (mCursor.isNull(columnIndex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_996922235 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_996922235;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.isNull(columnIndex);
     }
 
     
@@ -305,8 +304,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var53240D8A9128AE11629EF42882A451D2_2037292877 = (mCursor.moveToLast());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1400368850 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1400368850;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.moveToLast();
     }
 
     
@@ -316,8 +315,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var90504068A4D0A28937A99BAA90A3AF75_1392398720 = (mCursor.move(offset));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_383375620 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_383375620;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.move(offset);
     }
 
     
@@ -327,8 +326,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var738747ABADBB9ECC72707A1206126BEB_1568635689 = (mCursor.moveToPosition(position));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1721784585 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1721784585;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.moveToPosition(position);
     }
 
     
@@ -337,8 +336,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean varA3ACD2537D4B243F02FC5094F8394E0B_944161976 = (mCursor.moveToNext());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_265498450 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_265498450;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.moveToNext();
     }
 
     
@@ -347,8 +346,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         int var2AB512E1448AAD95C03AA319C16E6A62_566573888 = (mCursor.getPosition());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090963683 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090963683;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getPosition();
     }
 
     
@@ -357,28 +356,28 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var58AECBF713497924206D60D17589D1D2_1910952504 = (mCursor.moveToPrevious());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_481931342 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_481931342;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.moveToPrevious();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.217 -0400", hash_original_method = "5A8FF5438803408ADF8327CD33517673", hash_generated_method = "58A8A641027A7FAB0CBC2E35639DDB12")
     public void registerContentObserver(ContentObserver observer) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(observer.getTaint());
         mCursor.registerContentObserver(observer);
-        
-        
+        // ---------- Original Method ----------
+        //mCursor.registerContentObserver(observer);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.217 -0400", hash_original_method = "1A519BACFE68557E172B555F0410D9EB", hash_generated_method = "01999277C8BE3B05C18263010C044DFF")
     public void registerDataSetObserver(DataSetObserver observer) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(observer.getTaint());
         mCursor.registerDataSetObserver(observer);
-        
-        
+        // ---------- Original Method ----------
+        //mCursor.registerDataSetObserver(observer);
     }
 
     
@@ -387,8 +386,8 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
         boolean var336CC4CF5DA9DC6B1F9493F4DC3B6094_155349308 = (mCursor.requery());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_739753960 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_739753960;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.requery();
     }
 
     
@@ -398,19 +397,18 @@ String varEF1ACDA367BEBCC92D54F674D542FDC0_1828710508 =         mCursor.getStrin
 Bundle varB44D2A19DAE9C7C11B872C4BE3A24267_1560513007 =         mCursor.respond(extras);
         varB44D2A19DAE9C7C11B872C4BE3A24267_1560513007.addTaint(taint);
         return varB44D2A19DAE9C7C11B872C4BE3A24267_1560513007;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.respond(extras);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.219 -0400", hash_original_method = "EE868502A4046B2104E93564DA0F8447", hash_generated_method = "D2ACF28A4B5BC1969EEE34D1BAC1A949")
     public void setNotificationUri(ContentResolver cr, Uri uri) {
         addTaint(uri.getTaint());
         addTaint(cr.getTaint());
         mCursor.setNotificationUri(cr, uri);
-        
-        
+        // ---------- Original Method ----------
+        //mCursor.setNotificationUri(cr, uri);
     }
 
     
@@ -418,8 +416,8 @@ Bundle varB44D2A19DAE9C7C11B872C4BE3A24267_1560513007 =         mCursor.respond(
     public void unregisterContentObserver(ContentObserver observer) {
         addTaint(observer.getTaint());
         mCursor.unregisterContentObserver(observer);
-        
-        
+        // ---------- Original Method ----------
+        //mCursor.unregisterContentObserver(observer);
     }
 
     
@@ -427,8 +425,8 @@ Bundle varB44D2A19DAE9C7C11B872C4BE3A24267_1560513007 =         mCursor.respond(
     public void unregisterDataSetObserver(DataSetObserver observer) {
         addTaint(observer.getTaint());
         mCursor.unregisterDataSetObserver(observer);
-        
-        
+        // ---------- Original Method ----------
+        //mCursor.unregisterDataSetObserver(observer);
     }
 
     

@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public abstract class SQLiteOpenHelper {
         addTaint(factory.getTaint());
         addTaint(name.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -58,33 +58,32 @@ public abstract class SQLiteOpenHelper {
             IllegalArgumentException varB774D6236B7D9EA6C1589D8682A4E28C_1054327532 = new IllegalArgumentException("DatabaseErrorHandler param value can't be null.");
             varB774D6236B7D9EA6C1589D8682A4E28C_1054327532.addTaint(taint);
             throw varB774D6236B7D9EA6C1589D8682A4E28C_1054327532;
-        } 
+        } //End block
         mContext = context;
         mName = name;
         mFactory = factory;
         mNewVersion = version;
         mErrorHandler = errorHandler;
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (version < 1) throw new IllegalArgumentException("Version must be >= 1, was " + version);
+        //if (errorHandler == null) {
+            //throw new IllegalArgumentException("DatabaseErrorHandler param value can't be null.");
+        //}
+        //mContext = context;
+        //mName = name;
+        //mFactory = factory;
+        //mNewVersion = version;
+        //mErrorHandler = errorHandler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.031 -0400", hash_original_method = "68E7432F62212BC238811FF4144A34FC", hash_generated_method = "B172A09411344261D05E35DCE6DB109A")
     public String getDatabaseName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_631282529 =         mName;
         varDBF15A5FB8102A5C28D5046A0E92E443_631282529.addTaint(taint);
         return varDBF15A5FB8102A5C28D5046A0E92E443_631282529;
-        
-        
+        // ---------- Original Method ----------
+        //return mName;
     }
 
     
@@ -95,21 +94,21 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_631282529 =         mName;
     if(!mDatabase.isOpen())            
             {
                 mDatabase = null;
-            } 
+            } //End block
             else
     if(!mDatabase.isReadOnly())            
             {
 SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_1364856472 =                 mDatabase;
                 var8D37BF836D5C80F645159E6565338BF6_1364856472.addTaint(taint);
                 return var8D37BF836D5C80F645159E6565338BF6_1364856472;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mIsInitializing)        
         {
             IllegalStateException var5BDCB2F09A02E904389D36E0E970279A_828583276 = new IllegalStateException("getWritableDatabase called recursively");
             var5BDCB2F09A02E904389D36E0E970279A_828583276.addTaint(taint);
             throw var5BDCB2F09A02E904389D36E0E970279A_828583276;
-        } 
+        } //End block
         boolean success = false;
         SQLiteDatabase db = null;
     if(mDatabase != null)        
@@ -120,11 +119,11 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_1364856472 =                 
     if(mName == null)            
             {
                 db = SQLiteDatabase.create(null);
-            } 
+            } //End block
             else
             {
                 db = mContext.openOrCreateDatabase(mName, 0, mFactory, mErrorHandler);
-            } 
+            } //End block
             int version = db.getVersion();
     if(version != mNewVersion)            
             {
@@ -134,32 +133,32 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_1364856472 =                 
     if(version == 0)                    
                     {
                         onCreate(db);
-                    } 
+                    } //End block
                     else
                     {
     if(version > mNewVersion)                        
                         {
                             onDowngrade(db, version, mNewVersion);
-                        } 
+                        } //End block
                         else
                         {
                             onUpgrade(db, version, mNewVersion);
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     db.setVersion(mNewVersion);
                     db.setTransactionSuccessful();
-                } 
+                } //End block
                 finally 
                 {
                     db.endTransaction();
-                } 
-            } 
+                } //End block
+            } //End block
             onOpen(db);
             success = true;
 SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_836722767 =             db;
             var2F732BA7E0C8A6B94C1D7B25B6A078BE_836722767.addTaint(taint);
             return var2F732BA7E0C8A6B94C1D7B25B6A078BE_836722767;
-        } 
+        } //End block
         finally 
         {
             mIsInitializing = false;
@@ -170,24 +169,24 @@ SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_836722767 =             db;
                     try 
                     {
                         mDatabase.close();
-                    } 
+                    } //End block
                     catch (Exception e)
                     {
-                    } 
+                    } //End block
                     mDatabase.unlock();
-                } 
+                } //End block
                 mDatabase = db;
-            } 
+            } //End block
             else
             {
     if(mDatabase != null)                
                 mDatabase.unlock();
     if(db != null)                
                 db.close();
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -198,26 +197,26 @@ SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_836722767 =             db;
     if(!mDatabase.isOpen())            
             {
                 mDatabase = null;
-            } 
+            } //End block
             else
             {
 SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_1256442190 =                 mDatabase;
                 var8D37BF836D5C80F645159E6565338BF6_1256442190.addTaint(taint);
                 return var8D37BF836D5C80F645159E6565338BF6_1256442190;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mIsInitializing)        
         {
             IllegalStateException var81C383DC12357F6067B70D235C098465_769422358 = new IllegalStateException("getReadableDatabase called recursively");
             var81C383DC12357F6067B70D235C098465_769422358.addTaint(taint);
             throw var81C383DC12357F6067B70D235C098465_769422358;
-        } 
+        } //End block
         try 
         {
 SQLiteDatabase var6D7AF3F8AFE93CFCBA25598C00DC4F29_1496805790 =             getWritableDatabase();
             var6D7AF3F8AFE93CFCBA25598C00DC4F29_1496805790.addTaint(taint);
             return var6D7AF3F8AFE93CFCBA25598C00DC4F29_1496805790;
-        } 
+        } //End block
         catch (SQLiteException e)
         {
     if(mName == null)            
@@ -225,7 +224,7 @@ SQLiteDatabase var6D7AF3F8AFE93CFCBA25598C00DC4F29_1496805790 =             getW
             e.addTaint(taint);
             throw e;
             }
-        } 
+        } //End block
         SQLiteDatabase db = null;
         try 
         {
@@ -239,21 +238,21 @@ SQLiteDatabase var6D7AF3F8AFE93CFCBA25598C00DC4F29_1496805790 =             getW
                         db.getVersion() + " to " + mNewVersion + ": " + path);
                 varB54DB2FDCAA22EBF19303729E283DA36_1373405192.addTaint(taint);
                 throw varB54DB2FDCAA22EBF19303729E283DA36_1373405192;
-            } 
+            } //End block
             onOpen(db);
             mDatabase = db;
 SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_901109843 =             mDatabase;
             var8D37BF836D5C80F645159E6565338BF6_901109843.addTaint(taint);
             return var8D37BF836D5C80F645159E6565338BF6_901109843;
-        } 
+        } //End block
         finally 
         {
             mIsInitializing = false;
     if(db != null && db != mDatabase)            
             db.close();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -269,13 +268,13 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_901109843 =             mData
         {
             mDatabase.close();
             mDatabase = null;
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mIsInitializing) throw new IllegalStateException("Closed during initialization");
+        //if (mDatabase != null && mDatabase.isOpen()) {
+            //mDatabase.close();
+            //mDatabase = null;
+        //}
     }
 
     
@@ -287,7 +286,7 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_901109843 =             mData
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.037 -0400", hash_original_method = "E809F845DA52B26B37A0B95640D58A46", hash_generated_method = "8B1633F267D7684087002AC537E81205")
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newVersion);
         addTaint(oldVersion);
         addTaint(db.getTaint());
@@ -295,18 +294,17 @@ SQLiteDatabase var8D37BF836D5C80F645159E6565338BF6_901109843 =             mData
                 oldVersion + " to " + newVersion);
         var71B9DCF5C39ED2A7C48292107EBCC0F0_2145392268.addTaint(taint);
         throw var71B9DCF5C39ED2A7C48292107EBCC0F0_2145392268;
-        
-        
-                
+        // ---------- Original Method ----------
+        //throw new SQLiteException("Can't downgrade database from version " +
+                //oldVersion + " to " + newVersion);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.038 -0400", hash_original_method = "4811C8ED58A3ECFEDC0621F514E7FFAC", hash_generated_method = "114D8028AAA729F2C8D5D48D03E2C088")
     public void onOpen(SQLiteDatabase db) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(db.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

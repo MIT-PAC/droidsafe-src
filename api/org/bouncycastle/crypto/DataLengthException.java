@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class DataLengthException extends RuntimeCryptoException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.782 -0400", hash_original_method = "FC0834C19CF17037D683010F152D90BB", hash_generated_method = "A3B22023B871FEE196A5F978F598E189")
     public  DataLengthException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -18,7 +18,7 @@ public class DataLengthException extends RuntimeCryptoException {
         String  message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

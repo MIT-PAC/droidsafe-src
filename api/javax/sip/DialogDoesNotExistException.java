@@ -1,6 +1,6 @@
 package javax.sip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class DialogDoesNotExistException extends SipException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.193 -0400", hash_original_method = "9202A0FE59991A3B0A837B4E7082EB36", hash_generated_method = "1B44DD3DAF591CD5FC0BE6F2586414D3")
     public  DialogDoesNotExistException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class DialogDoesNotExistException extends SipException {
     public  DialogDoesNotExistException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,7 +26,7 @@ public class DialogDoesNotExistException extends SipException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

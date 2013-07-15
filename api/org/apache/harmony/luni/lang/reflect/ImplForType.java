@@ -1,6 +1,6 @@
 package org.apache.harmony.luni.lang.reflect;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,11 +34,11 @@ public final class ImplForType implements ParameterizedType {
         this.rawTypeName = rawTypeName;
         this.args = args;
         this.loader = loader;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.ownerType0 = ownerType;
+        //this.rawTypeName = rawTypeName;
+        //this.args = args;
+        //this.loader = loader;
     }
 
     
@@ -47,8 +47,8 @@ public final class ImplForType implements ParameterizedType {
 Type[] var9FC3950091FC8332FF1BE9E5D6665212_861170897 =         args.getResolvedTypes().clone();
         var9FC3950091FC8332FF1BE9E5D6665212_861170897.addTaint(taint);
         return var9FC3950091FC8332FF1BE9E5D6665212_861170897;
-        
-        
+        // ---------- Original Method ----------
+        //return args.getResolvedTypes().clone();
     }
 
     
@@ -59,24 +59,24 @@ Type[] var9FC3950091FC8332FF1BE9E5D6665212_861170897 =         args.getResolvedT
     if(ownerType0 != null)            
             {
                 ownerTypeRes = ownerType0.getResolvedType();
-            } 
+            } //End block
             else
             {
                 ownerTypeRes = getRawType().getDeclaringClass();
-            } 
-        } 
+            } //End block
+        } //End block
 Type var2E759B0D704D63E52781F7C5ADA34E62_926041259 =         ownerTypeRes;
         var2E759B0D704D63E52781F7C5ADA34E62_926041259.addTaint(taint);
         return var2E759B0D704D63E52781F7C5ADA34E62_926041259;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (ownerTypeRes == null) {
+            //if (ownerType0 != null) {
+                //ownerTypeRes = ownerType0.getResolvedType();
+            //} else {
+                //ownerTypeRes = getRawType().getDeclaringClass();
+            //}
+        //}
+        //return ownerTypeRes;
     }
 
     
@@ -87,26 +87,26 @@ Type var2E759B0D704D63E52781F7C5ADA34E62_926041259 =         ownerTypeRes;
             try 
             {
                 rawType = Class.forName(rawTypeName, false, loader);
-            } 
+            } //End block
             catch (ClassNotFoundException e)
             {
                 TypeNotPresentException var18BFD5723B1BAEA7E9D2A84B6D99D61D_1125168709 = new TypeNotPresentException(rawTypeName, e);
                 var18BFD5723B1BAEA7E9D2A84B6D99D61D_1125168709.addTaint(taint);
                 throw var18BFD5723B1BAEA7E9D2A84B6D99D61D_1125168709;
-            } 
-        } 
+            } //End block
+        } //End block
 Class var8EA1D50767FFA9660A4E248B29D3B6ED_1035820156 =         rawType;
         var8EA1D50767FFA9660A4E248B29D3B6ED_1035820156.addTaint(taint);
         return var8EA1D50767FFA9660A4E248B29D3B6ED_1035820156;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (rawType == null) {
+            //try {
+                //rawType = Class.forName(rawTypeName, false, loader);
+            //} catch (ClassNotFoundException e) {
+                //throw new TypeNotPresentException(rawTypeName, e);
+            //}
+        //}
+        //return rawType;
     }
 
     
@@ -117,19 +117,19 @@ Class var8EA1D50767FFA9660A4E248B29D3B6ED_1035820156 =         rawType;
 Type var6043A7A211C85485D101BDD222E9392C_624195214 =             getRawType();
             var6043A7A211C85485D101BDD222E9392C_624195214.addTaint(taint);
             return var6043A7A211C85485D101BDD222E9392C_624195214;
-        } 
+        } //End block
         else
         {
 Type var72A74007B2BE62B849F475C7BDA4658B_820715527 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_820715527.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_820715527;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (args.getResolvedTypes().length == 0) {
+            //return getRawType();
+        //} else {
+            //return this;
+        //}
     }
 
     
@@ -141,17 +141,17 @@ Type var72A74007B2BE62B849F475C7BDA4658B_820715527 =             this;
     if(args.length() > 0)        
         {
             sb.append("<").append(args).append(">");
-        } 
+        } //End block
 String var2460B846747F8B22185AD8BE722266A5_1845843437 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1845843437.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1845843437;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder();
+        //sb.append(rawTypeName);
+        //if (args.length() > 0) {
+            //sb.append("<").append(args).append(">");
+        //}
+        //return sb.toString();
     }
 
     

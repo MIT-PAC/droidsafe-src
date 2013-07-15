@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ abstract class AbstractHttpOutputStream extends OutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.042 -0400", hash_original_method = "2835FA09B3F183CC926451AC7D6D78D7", hash_generated_method = "2835FA09B3F183CC926451AC7D6D78D7")
     public AbstractHttpOutputStream ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -24,8 +24,8 @@ abstract class AbstractHttpOutputStream extends OutputStream {
     public final void write(int data) throws IOException {
         addTaint(data);
         write(new byte[] { (byte) data });
-        
-        
+        // ---------- Original Method ----------
+        //write(new byte[] { (byte) data });
     }
 
     
@@ -36,11 +36,11 @@ abstract class AbstractHttpOutputStream extends OutputStream {
             IOException var8D1E5C4B5F667C4541A761B82D8E7D19_518319702 = new IOException("stream closed");
             var8D1E5C4B5F667C4541A761B82D8E7D19_518319702.addTaint(taint);
             throw var8D1E5C4B5F667C4541A761B82D8E7D19_518319702;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (closed) {
+            //throw new IOException("stream closed");
+        //}
     }
 
     

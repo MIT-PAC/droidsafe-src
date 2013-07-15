@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class Gravity {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.207 -0400", hash_original_method = "C8FD8F8974FEA261C49D0525477D6D45", hash_generated_method = "C8FD8F8974FEA261C49D0525477D6D45")
     public Gravity ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -27,8 +27,7 @@ public class Gravity {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void apply(int gravity, int w, int h, Rect container,
+        public static void apply(int gravity, int w, int h, Rect container,
             int xAdj, int yAdj, Rect outRect) {
         switch (gravity&((AXIS_PULL_BEFORE|AXIS_PULL_AFTER)<<AXIS_X_SHIFT)) {
             case 0:
@@ -151,20 +150,17 @@ public class Gravity {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isVertical(int gravity) {
+        public static boolean isVertical(int gravity) {
         return gravity > 0 && (gravity & VERTICAL_GRAVITY_MASK) != 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isHorizontal(int gravity) {
+        public static boolean isHorizontal(int gravity) {
         return gravity > 0 && (gravity & RELATIVE_HORIZONTAL_GRAVITY_MASK) != 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getAbsoluteGravity(int gravity, int layoutDirection) {
+        public static int getAbsoluteGravity(int gravity, int layoutDirection) {
         int result = gravity;
         if ((result & RELATIVE_LAYOUT_DIRECTION) > 0) {
             if ((result & Gravity.START) == Gravity.START) {

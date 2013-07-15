@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,7 +30,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.468 -0400", hash_original_method = "2DD669B5624C7C7440898F877B0DEDA7", hash_generated_method = "AF7D1DF7149AE5425855C691382FBA51")
     public  DefaultRedirectHandler() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -45,7 +45,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
             IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_124382015 = new IllegalArgumentException("HTTP response may not be null");
             var81F7C558D1B895656E1A076743F59C7C_124382015.addTaint(taint);
             throw var81F7C558D1B895656E1A076743F59C7C_124382015;
-        } 
+        } //End block
         int statusCode = response.getStatusLine().getStatusCode();
 switch(statusCode){
         case HttpStatus.SC_MOVED_TEMPORARILY:
@@ -60,20 +60,20 @@ switch(statusCode){
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_633003928 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_633003928;
 }
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (response == null) {
+            //throw new IllegalArgumentException("HTTP response may not be null");
+        //}
+        //int statusCode = response.getStatusLine().getStatusCode();
+        //switch (statusCode) {
+        //case HttpStatus.SC_MOVED_TEMPORARILY:
+        //case HttpStatus.SC_MOVED_PERMANENTLY:
+        //case HttpStatus.SC_SEE_OTHER:
+        //case HttpStatus.SC_TEMPORARY_REDIRECT:
+            //return true;
+        //default:
+            //return false;
+        //}
     }
 
     
@@ -88,7 +88,7 @@ switch(statusCode){
             IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_631873870 = new IllegalArgumentException("HTTP response may not be null");
             var81F7C558D1B895656E1A076743F59C7C_631873870.addTaint(taint);
             throw var81F7C558D1B895656E1A076743F59C7C_631873870;
-        } 
+        } //End block
         Header locationHeader = response.getFirstHeader("location");
     if(locationHeader == null)        
         {
@@ -97,23 +97,23 @@ switch(statusCode){
                     + " but no location header");
             varA29CE366834988ED7E32EF8A9BD88635_1269497501.addTaint(taint);
             throw varA29CE366834988ED7E32EF8A9BD88635_1269497501;
-        } 
+        } //End block
         String location = locationHeader.getValue();
     if(this.log.isDebugEnabled())        
         {
             this.log.debug("Redirect requested to location '" + location + "'");
-        } 
+        } //End block
         URI uri;
         try 
         {
             uri = new URI(location);
-        } 
+        } //End block
         catch (URISyntaxException ex)
         {
             ProtocolException var72DAF5DC676ECD76CE1D70F27EB6B68F_213859880 = new ProtocolException("Invalid redirect URI: " + location, ex);
             var72DAF5DC676ECD76CE1D70F27EB6B68F_213859880.addTaint(taint);
             throw var72DAF5DC676ECD76CE1D70F27EB6B68F_213859880;
-        } 
+        } //End block
         HttpParams params = response.getParams();
     if(!uri.isAbsolute())        
         {
@@ -123,7 +123,7 @@ switch(statusCode){
                         + uri + "' not allowed");
                 varF2AF951263D0E8DF4E3DFDCAC5023741_875991697.addTaint(taint);
                 throw varF2AF951263D0E8DF4E3DFDCAC5023741_875991697;
-            } 
+            } //End block
             HttpHost target = (HttpHost) context.getAttribute(
                     ExecutionContext.HTTP_TARGET_HOST);
     if(target == null)            
@@ -132,7 +132,7 @@ switch(statusCode){
                         "in the HTTP context");
                 var836BD5955075A20D6BF6B9A3EF141972_1590230879.addTaint(taint);
                 throw var836BD5955075A20D6BF6B9A3EF141972_1590230879;
-            } 
+            } //End block
             HttpRequest request = (HttpRequest) context.getAttribute(
                     ExecutionContext.HTTP_REQUEST);
             try 
@@ -140,14 +140,14 @@ switch(statusCode){
                 URI requestURI = new URI(request.getRequestLine().getUri());
                 URI absoluteRequestURI = URIUtils.rewriteURI(requestURI, target, true);
                 uri = URIUtils.resolve(absoluteRequestURI, uri);
-            } 
+            } //End block
             catch (URISyntaxException ex)
             {
                 ProtocolException var160B5365F5E5F597D57076D8A0C02C6A_1120875597 = new ProtocolException(ex.getMessage(), ex);
                 var160B5365F5E5F597D57076D8A0C02C6A_1120875597.addTaint(taint);
                 throw var160B5365F5E5F597D57076D8A0C02C6A_1120875597;
-            } 
-        } 
+            } //End block
+        } //End block
     if(params.isParameterFalse(ClientPNames.ALLOW_CIRCULAR_REDIRECTS))        
         {
             RedirectLocations redirectLocations = (RedirectLocations) context.getAttribute(
@@ -156,7 +156,7 @@ switch(statusCode){
             {
                 redirectLocations = new RedirectLocations();
                 context.setAttribute(REDIRECT_LOCATIONS, redirectLocations);
-            } 
+            } //End block
             URI redirectURI;
     if(uri.getFragment() != null)            
             {
@@ -167,35 +167,35 @@ switch(statusCode){
                             uri.getPort(),
                             uri.getScheme());
                     redirectURI = URIUtils.rewriteURI(uri, target, true);
-                } 
+                } //End block
                 catch (URISyntaxException ex)
                 {
                     ProtocolException var160B5365F5E5F597D57076D8A0C02C6A_1426144064 = new ProtocolException(ex.getMessage(), ex);
                     var160B5365F5E5F597D57076D8A0C02C6A_1426144064.addTaint(taint);
                     throw var160B5365F5E5F597D57076D8A0C02C6A_1426144064;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 redirectURI = uri;
-            } 
+            } //End block
     if(redirectLocations.contains(redirectURI))            
             {
                 CircularRedirectException var2608332DF4B6741AA03D9F0EBCDDB1B4_1203956149 = new CircularRedirectException("Circular redirect to '" +
                         redirectURI + "'");
                 var2608332DF4B6741AA03D9F0EBCDDB1B4_1203956149.addTaint(taint);
                 throw var2608332DF4B6741AA03D9F0EBCDDB1B4_1203956149;
-            } 
+            } //End block
             else
             {
                 redirectLocations.add(redirectURI);
-            } 
-        } 
+            } //End block
+        } //End block
 URI varD12B663A5EB2F9B068EED08B4C05ECCC_495300692 =         uri;
         varD12B663A5EB2F9B068EED08B4C05ECCC_495300692.addTaint(taint);
         return varD12B663A5EB2F9B068EED08B4C05ECCC_495300692;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

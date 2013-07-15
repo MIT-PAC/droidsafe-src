@@ -1,6 +1,6 @@
 package android.view.textservice;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public final class TextInfo implements Parcelable {
     public  TextInfo(String text) {
         this(text, 0, 0);
         addTaint(text.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,17 +34,17 @@ public final class TextInfo implements Parcelable {
             IllegalArgumentException var0271D06DC6AE8621CCAE6E69366FDBA4_1923583341 = new IllegalArgumentException(text);
             var0271D06DC6AE8621CCAE6E69366FDBA4_1923583341.addTaint(taint);
             throw var0271D06DC6AE8621CCAE6E69366FDBA4_1923583341;
-        } 
+        } //End block
         mText = text;
         mCookie = cookie;
         mSequence = sequence;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (TextUtils.isEmpty(text)) {
+            //throw new IllegalArgumentException(text);
+        //}
+        //mText = text;
+        //mCookie = cookie;
+        //mSequence = sequence;
     }
 
     
@@ -53,10 +53,10 @@ public final class TextInfo implements Parcelable {
         mText = source.readString();
         mCookie = source.readInt();
         mSequence = source.readInt();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mText = source.readString();
+        //mCookie = source.readInt();
+        //mSequence = source.readInt();
     }
 
     
@@ -68,55 +68,51 @@ public final class TextInfo implements Parcelable {
         dest.writeString(mText);
         dest.writeInt(mCookie);
         dest.writeInt(mSequence);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeString(mText);
+        //dest.writeInt(mCookie);
+        //dest.writeInt(mSequence);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.728 -0400", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "B1B6208D7EB8042B5F9EFB950269430E")
     public String getText() {
 String var7F7ECB4B14362FFBA020956966B29A66_1126417318 =         mText;
         var7F7ECB4B14362FFBA020956966B29A66_1126417318.addTaint(taint);
         return var7F7ECB4B14362FFBA020956966B29A66_1126417318;
-        
-        
+        // ---------- Original Method ----------
+        //return mText;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.728 -0400", hash_original_method = "AC1EDA43FC7023F4D4E1DFBFEFAF3924", hash_generated_method = "370C04EB7BD1A7313D624F6D2B492469")
     public int getCookie() {
         int var6E854C680205E153D6A9DE7BA337DEAC_1915980746 = (mCookie);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803069212 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803069212;
-        
-        
+        // ---------- Original Method ----------
+        //return mCookie;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.728 -0400", hash_original_method = "FE2AB8ECE26FD7A4F1B7769F13B3F465", hash_generated_method = "175FA13C764A94B7658801CF7EB9E4C7")
     public int getSequence() {
         int varDFA2A9B34C4EF6A435AC62654D16526E_48620116 = (mSequence);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218026318 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218026318;
-        
-        
+        // ---------- Original Method ----------
+        //return mSequence;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.728 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "39FC27C2156DBE10E21169150C9A74C5")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1587696245 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799553428 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799553428;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     

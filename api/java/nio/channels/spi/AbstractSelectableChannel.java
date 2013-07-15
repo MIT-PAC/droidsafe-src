@@ -1,6 +1,6 @@
 package java.nio.channels.spi;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,8 +32,8 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.695 -0400", hash_original_method = "C1ED2F1D0A9F053BD27B8788D8E263F6", hash_generated_method = "CDC2687EFBB1875408EB822640372289")
     protected  AbstractSelectableChannel(SelectorProvider selectorProvider) {
         provider = selectorProvider;
-        
-        
+        // ---------- Original Method ----------
+        //provider = selectorProvider;
     }
 
     
@@ -43,8 +43,8 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
 SelectorProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_391910708 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_391910708.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_391910708;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
@@ -54,8 +54,8 @@ SelectorProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_391910708 =         provide
         boolean varB374C57CC5C93FDCD7C83C0F8B703F45_1468813688 = (!keyList.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1666910776 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1666910776;
-        
-        
+        // ---------- Original Method ----------
+        //return !keyList.isEmpty();
     }
 
     
@@ -70,18 +70,18 @@ for(SelectionKey key : keyList)
 SelectionKey var6A95247616A3A8B93CFF7783DABD08D4_374377409 =                 key;
                 var6A95247616A3A8B93CFF7783DABD08D4_374377409.addTaint(taint);
                 return var6A95247616A3A8B93CFF7783DABD08D4_374377409;
-            } 
-        } 
+            } //End block
+        } //End block
 SelectionKey var540C13E9E156B687226421B24F2DF178_1343860324 =         null;
         var540C13E9E156B687226421B24F2DF178_1343860324.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1343860324;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (SelectionKey key : keyList) {
+            //if (key != null && key.selector() == selector) {
+                //return key;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -97,13 +97,13 @@ SelectionKey var540C13E9E156B687226421B24F2DF178_1343860324 =         null;
             ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_1554049330 = new ClosedChannelException();
             var553E3C0ED28F94CE76A7A8061DFFDCF3_1554049330.addTaint(taint);
             throw var553E3C0ED28F94CE76A7A8061DFFDCF3_1554049330;
-        } 
+        } //End block
     if(!((interestSet & ~validOps()) == 0))        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_144404576 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_144404576.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_144404576;
-        } 
+        } //End block
         synchronized
 (blockingLock)        {
     if(isBlocking)            
@@ -111,7 +111,7 @@ SelectionKey var540C13E9E156B687226421B24F2DF178_1343860324 =         null;
                 IllegalBlockingModeException var18B57A4F8FA8BFBB84FC533EE882297F_8559436 = new IllegalBlockingModeException();
                 var18B57A4F8FA8BFBB84FC533EE882297F_8559436.addTaint(taint);
                 throw var18B57A4F8FA8BFBB84FC533EE882297F_8559436;
-            } 
+            } //End block
     if(!selector.isOpen())            
             {
     if(interestSet == 0)                
@@ -119,17 +119,17 @@ SelectionKey var540C13E9E156B687226421B24F2DF178_1343860324 =         null;
                     IllegalSelectorException varA988BB20ADD0DC658BE68F9A5362E806_1324017280 = new IllegalSelectorException();
                     varA988BB20ADD0DC658BE68F9A5362E806_1324017280.addTaint(taint);
                     throw varA988BB20ADD0DC658BE68F9A5362E806_1324017280;
-                } 
+                } //End block
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_421307477 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_421307477.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_421307477;
-            } 
+            } //End block
             SelectionKey key = keyFor(selector);
     if(key == null)            
             {
                 key = ((AbstractSelector) selector).register(this, interestSet, attachment);
                 keyList.add(key);
-            } 
+            } //End block
             else
             {
     if(!key.isValid())                
@@ -137,16 +137,16 @@ SelectionKey var540C13E9E156B687226421B24F2DF178_1343860324 =         null;
                     CancelledKeyException var553A2CCCDE6F10D534FECE0C24924D0C_1340541763 = new CancelledKeyException();
                     var553A2CCCDE6F10D534FECE0C24924D0C_1340541763.addTaint(taint);
                     throw var553A2CCCDE6F10D534FECE0C24924D0C_1340541763;
-                } 
+                } //End block
                 key.interestOps(interestSet);
                 key.attach(attachment);
-            } 
+            } //End block
 SelectionKey var6A95247616A3A8B93CFF7783DABD08D4_631002894 =             key;
             var6A95247616A3A8B93CFF7783DABD08D4_631002894.addTaint(taint);
             return var6A95247616A3A8B93CFF7783DABD08D4_631002894;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -159,15 +159,15 @@ for(SelectionKey key : keyList)
     if(key != null)            
             {
                 key.cancel();
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //implCloseSelectableChannel();
+        //for (SelectionKey key : keyList) {
+            //if (key != null) {
+                //key.cancel();
+            //}
+        //}
     }
 
     
@@ -182,11 +182,11 @@ for(SelectionKey key : keyList)
             boolean varA7062875ADCCB2443088E00053F868E8_1191749633 = (isBlocking);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663047696 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1663047696;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (blockingLock) {
+            //return isBlocking;
+        //}
     }
 
     
@@ -196,8 +196,8 @@ for(SelectionKey key : keyList)
 Object var55ED10741B3646C9474CE7499E01CE99_24435609 =         blockingLock;
         var55ED10741B3646C9474CE7499E01CE99_24435609.addTaint(taint);
         return var55ED10741B3646C9474CE7499E01CE99_24435609;
-        
-        
+        // ---------- Original Method ----------
+        //return blockingLock;
     }
 
     
@@ -209,7 +209,7 @@ Object var55ED10741B3646C9474CE7499E01CE99_24435609 =         blockingLock;
             ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_1276726560 = new ClosedChannelException();
             var553E3C0ED28F94CE76A7A8061DFFDCF3_1276726560.addTaint(taint);
             throw var553E3C0ED28F94CE76A7A8061DFFDCF3_1276726560;
-        } 
+        } //End block
         synchronized
 (blockingLock)        {
     if(isBlocking == blockingMode)            
@@ -217,34 +217,34 @@ Object var55ED10741B3646C9474CE7499E01CE99_24435609 =         blockingLock;
 SelectableChannel var72A74007B2BE62B849F475C7BDA4658B_1727692215 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1727692215.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1727692215;
-            } 
+            } //End block
     if(blockingMode && containsValidKeys())            
             {
                 IllegalBlockingModeException var18B57A4F8FA8BFBB84FC533EE882297F_1502731484 = new IllegalBlockingModeException();
                 var18B57A4F8FA8BFBB84FC533EE882297F_1502731484.addTaint(taint);
                 throw var18B57A4F8FA8BFBB84FC533EE882297F_1502731484;
-            } 
+            } //End block
             implConfigureBlocking(blockingMode);
             isBlocking = blockingMode;
-        } 
+        } //End block
 SelectableChannel var72A74007B2BE62B849F475C7BDA4658B_912805683 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_912805683.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_912805683;
-        
-        
-            
-        
-        
-            
-                
-            
-            
-                
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isOpen()) {
+            //throw new ClosedChannelException();
+        //}
+        //synchronized (blockingLock) {
+            //if (isBlocking == blockingMode) {
+                //return this;
+            //}
+            //if (blockingMode && containsValidKeys()) {
+                //throw new IllegalBlockingModeException();
+            //}
+            //implConfigureBlocking(blockingMode);
+            //isBlocking = blockingMode;
+        //}
+        //return this;
     }
 
     
@@ -257,11 +257,11 @@ SelectableChannel var72A74007B2BE62B849F475C7BDA4658B_912805683 =         this;
     if(keyList != null)        
         {
             keyList.remove(k);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (keyList != null) {
+            //keyList.remove(k);
+        //}
     }
 
     
@@ -274,18 +274,18 @@ for(SelectionKey key : keyList)
                 boolean varB326B5062B2F0E69046810717534CB09_224108011 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_876144900 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_876144900;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_395595891 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_608270704 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_608270704;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (SelectionKey key : keyList) {
+            //if (key != null && key.isValid()) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     

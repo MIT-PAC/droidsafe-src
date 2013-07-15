@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,9 +17,9 @@ class EmulatedFieldsForLoading extends ObjectInputStream.GetField {
       EmulatedFieldsForLoading(ObjectStreamClass streamClass) {
         this.streamClass = streamClass;
         emulatedFields = new EmulatedFields(streamClass.getLoadFields(), streamClass.fields());
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.streamClass = streamClass;
+        //emulatedFields = new EmulatedFields(streamClass.getLoadFields(), streamClass.fields());
     }
 
     
@@ -31,19 +31,18 @@ class EmulatedFieldsForLoading extends ObjectInputStream.GetField {
         boolean varCCC9452EBC351CBBB20CE431921323C4_228914415 = (emulatedFields.defaulted(name));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_969775229 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_969775229;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.defaulted(name);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.967 -0400", hash_original_method = "F09D38B717E770EDAB76B08B81548137", hash_generated_method = "2B626B4A29FA0B7B3BE1B2A7B774FB44")
      EmulatedFields emulatedFields() {
 EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulatedFields;
         var18247BC109AF7C66D9FA0EEEECBE3638_1795574153.addTaint(taint);
         return var18247BC109AF7C66D9FA0EEEECBE3638_1795574153;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields;
     }
 
     
@@ -56,8 +55,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulated
         byte var167B1DF425E67AA0E63022B3EA69C87B_1597408289 = (emulatedFields.get(name, defaultValue));
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_416655728 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_416655728;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
@@ -70,8 +69,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulated
         char var167B1DF425E67AA0E63022B3EA69C87B_578232964 = (emulatedFields.get(name, defaultValue));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_897757415 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_897757415;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
@@ -84,8 +83,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulated
         double var167B1DF425E67AA0E63022B3EA69C87B_1889233393 = (emulatedFields.get(name, defaultValue));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1667707558 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1667707558;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
@@ -98,8 +97,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulated
         float var167B1DF425E67AA0E63022B3EA69C87B_860989014 = (emulatedFields.get(name, defaultValue));
                 float var546ADE640B6EDFBC8A086EF31347E768_2004113153 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2004113153;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
@@ -112,8 +111,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulated
         int var167B1DF425E67AA0E63022B3EA69C87B_236120011 = (emulatedFields.get(name, defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200280268 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200280268;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
@@ -126,8 +125,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulated
         long var167B1DF425E67AA0E63022B3EA69C87B_1889449991 = (emulatedFields.get(name, defaultValue));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_548678329 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_548678329;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
@@ -140,8 +139,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_1795574153 =         emulated
 Object varDA6D5552B979C6493B8792E91CCA076D_1425877305 =         emulatedFields.get(name, defaultValue);
         varDA6D5552B979C6493B8792E91CCA076D_1425877305.addTaint(taint);
         return varDA6D5552B979C6493B8792E91CCA076D_1425877305;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
@@ -154,8 +153,8 @@ Object varDA6D5552B979C6493B8792E91CCA076D_1425877305 =         emulatedFields.g
         short var167B1DF425E67AA0E63022B3EA69C87B_248073252 = (emulatedFields.get(name, defaultValue));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_2101571529 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_2101571529;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
@@ -168,20 +167,19 @@ Object varDA6D5552B979C6493B8792E91CCA076D_1425877305 =         emulatedFields.g
         boolean var167B1DF425E67AA0E63022B3EA69C87B_952561920 = (emulatedFields.get(name, defaultValue));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_26647015 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_26647015;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields.get(name, defaultValue);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.995 -0400", hash_original_method = "C05B1B5B49C9CD804F2B010781383CF8", hash_generated_method = "DFF795B584BFB440EBFCF467D507067D")
     @Override
     public ObjectStreamClass getObjectStreamClass() {
 ObjectStreamClass varB15C7012F89088D5E62C8E84F0D75364_1401674660 =         streamClass;
         varB15C7012F89088D5E62C8E84F0D75364_1401674660.addTaint(taint);
         return varB15C7012F89088D5E62C8E84F0D75364_1401674660;
-        
-        
+        // ---------- Original Method ----------
+        //return streamClass;
     }
 
     

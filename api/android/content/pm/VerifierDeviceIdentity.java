@@ -1,6 +1,6 @@
 package android.content.pm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,9 +22,9 @@ public class VerifierDeviceIdentity implements Parcelable {
     public  VerifierDeviceIdentity(long identity) {
         mIdentity = identity;
         mIdentityString = encodeBase32(identity);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mIdentity = identity;
+        //mIdentityString = encodeBase32(identity);
     }
 
     
@@ -34,10 +34,10 @@ public class VerifierDeviceIdentity implements Parcelable {
         final long identity = source.readLong();
         mIdentity = identity;
         mIdentityString = encodeBase32(identity);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final long identity = source.readLong();
+        //mIdentity = identity;
+        //mIdentityString = encodeBase32(identity);
     }
 
     
@@ -108,19 +108,17 @@ public class VerifierDeviceIdentity implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.514 -0400", hash_original_method = "A24AB6F6393E3B1D0D15482B7A9B6B3D", hash_generated_method = "AD09DF76378F08BA466691042E2B38A4")
     @Override
     public int hashCode() {
         int var79C5FA9051D508BFCD08A85A1A16733E_1490385880 = ((int) mIdentity);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157678414 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157678414;
-        
-        
+        // ---------- Original Method ----------
+        //return (int) mIdentity;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.515 -0400", hash_original_method = "C98AD9093350C34D0EE60C856A2859EF", hash_generated_method = "99287DFBC43ACF065E5344067A917F64")
     @Override
     public boolean equals(Object other) {
@@ -130,29 +128,28 @@ public class VerifierDeviceIdentity implements Parcelable {
             boolean var68934A3E9455FA72420237EB05902327_1789807480 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_279458420 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_279458420;
-        } 
+        } //End block
         final VerifierDeviceIdentity o = (VerifierDeviceIdentity) other;
         boolean var3ED808479E599241B8207A449ECF3DA0_394017421 = (mIdentity == o.mIdentity);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1729097403 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1729097403;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!(other instanceof VerifierDeviceIdentity)) {
+            //return false;
+        //}
+        //final VerifierDeviceIdentity o = (VerifierDeviceIdentity) other;
+        //return mIdentity == o.mIdentity;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.515 -0400", hash_original_method = "515E509B017A25F880CBE7C878F2607B", hash_generated_method = "76A51732C62923A6F2860A10CA05C26C")
     @Override
     public String toString() {
 String var07D462A050FE03B4C86B74A2A5E47504_20623184 =         mIdentityString;
         var07D462A050FE03B4C86B74A2A5E47504_20623184.addTaint(taint);
         return var07D462A050FE03B4C86B74A2A5E47504_20623184;
-        
-        
+        // ---------- Original Method ----------
+        //return mIdentityString;
     }
 
     
@@ -167,15 +164,14 @@ String var07D462A050FE03B4C86B74A2A5E47504_20623184 =         mIdentityString;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.516 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6078F331CE4CA9D57FB9960E6D01EF36")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_389492078 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200589857 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200589857;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -185,8 +181,8 @@ String var07D462A050FE03B4C86B74A2A5E47504_20623184 =         mIdentityString;
         addTaint(flags);
         addTaint(dest.getTaint());
         dest.writeLong(mIdentity);
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeLong(mIdentity);
     }
 
     
@@ -219,12 +215,12 @@ String var07D462A050FE03B4C86B74A2A5E47504_20623184 =         mIdentityString;
             return new VerifierDeviceIdentity[size];
         }
     };
-    
+    // orphaned legacy method
     public VerifierDeviceIdentity createFromParcel(Parcel source) {
             return new VerifierDeviceIdentity(source);
         }
     
-    
+    // orphaned legacy method
     public VerifierDeviceIdentity[] newArray(int size) {
             return new VerifierDeviceIdentity[size];
         }

@@ -1,6 +1,6 @@
 package org.bouncycastle.util.io.pem;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,21 +26,21 @@ public class PemWriter extends BufferedWriter {
     if(nl != null)        
         {
             nlLength = nl.length();
-        } 
+        } //End block
         else
         {
             nlLength = 2;
-        } 
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String nl = System.getProperty("line.separator");
+        //if (nl != null)
+        //{
+            //nlLength = nl.length();
+        //}
+        //else
+        //{
+            //nlLength = 2;
+        //}
     }
 
     
@@ -54,32 +54,31 @@ for(Iterator it = obj.getHeaders().iterator();it.hasNext();)
             {
                 PemHeader hdr = (PemHeader)it.next();
                 size += hdr.getName().length() + ": ".length() + hdr.getValue().length() + nlLength;
-            } 
+            } //End block
             size += nlLength;
-        } 
+        } //End block
         int dataLen = ((obj.getContent().length + 2) / 3) * 4;
         size += dataLen + (((dataLen + LINE_LENGTH - 1) / LINE_LENGTH) * nlLength);
         int varF7BD60B75B29D79B660A2859395C1A24_1482663541 = (size);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1111434510 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1111434510;
-        
-        
-        
-        
-            
-            
-                
-                
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int size = (2 * (obj.getType().length() + 10 + nlLength)) + 6 + 4;
+        //if (!obj.getHeaders().isEmpty())
+        //{
+            //for (Iterator it = obj.getHeaders().iterator(); it.hasNext();)
+            //{
+                //PemHeader hdr = (PemHeader)it.next();
+                //size += hdr.getName().length() + ": ".length() + hdr.getValue().length() + nlLength;
+            //}
+            //size += nlLength;
+        //}
+        //int dataLen = ((obj.getContent().length + 2) / 3) * 4;
+        //size += dataLen + (((dataLen + LINE_LENGTH - 1) / LINE_LENGTH) * nlLength);
+        //return size;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.662 -0400", hash_original_method = "7DC9EFDB066BC03515C2F692EE0CAAF1", hash_generated_method = "3E45C2F3E6847EA5C286FC9BB64ECF40")
     public void writeObject(PemObjectGenerator objGen) throws IOException {
         addTaint(objGen.getTaint());
@@ -94,28 +93,28 @@ for(Iterator it = obj.getHeaders().iterator();it.hasNext();)
                 this.write(": ");
                 this.write(hdr.getValue());
                 this.newLine();
-            } 
+            } //End block
             this.newLine();
-        } 
+        } //End block
         writeEncoded(obj.getContent());
         writePostEncapsulationBoundary(obj.getType());
-        
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                
-                
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //PemObject obj = objGen.generate();
+        //writePreEncapsulationBoundary(obj.getType());
+        //if (!obj.getHeaders().isEmpty())
+        //{
+            //for (Iterator it = obj.getHeaders().iterator(); it.hasNext();)
+            //{
+                //PemHeader hdr = (PemHeader)it.next();
+                //this.write(hdr.getName());
+                //this.write(": ");
+                //this.write(hdr.getValue());
+                //this.newLine();
+            //}
+            //this.newLine();
+        //}
+        //writeEncoded(obj.getContent());
+        //writePostEncapsulationBoundary(obj.getType());
     }
 
     
@@ -131,30 +130,30 @@ for(int i = 0;i < bytes.length;i += buf.length)
     if((i + index) >= bytes.length)                
                 {
                     break;
-                } 
+                } //End block
                 buf[index] = (char)bytes[i + index];
                 index++;
-            } 
+            } //End block
             this.write(buf, 0, index);
             this.newLine();
-        } 
-        
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-                
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //bytes = Base64.encode(bytes);
+        //for (int i = 0; i < bytes.length; i += buf.length)
+        //{
+            //int index = 0;
+            //while (index != buf.length)
+            //{
+                //if ((i + index) >= bytes.length)
+                //{
+                    //break;
+                //}
+                //buf[index] = (char)bytes[i + index];
+                //index++;
+            //}
+            //this.write(buf, 0, index);
+            //this.newLine();
+        //}
     }
 
     
@@ -164,9 +163,9 @@ for(int i = 0;i < bytes.length;i += buf.length)
         addTaint(type.getTaint());
         this.write("-----BEGIN " + type + "-----");
         this.newLine();
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.write("-----BEGIN " + type + "-----");
+        //this.newLine();
     }
 
     
@@ -176,9 +175,9 @@ for(int i = 0;i < bytes.length;i += buf.length)
         addTaint(type.getTaint());
         this.write("-----END " + type + "-----");
         this.newLine();
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.write("-----END " + type + "-----");
+        //this.newLine();
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.protocol;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,12 +9,11 @@ public final class HTTP {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.923 -0400", hash_original_method = "3A6FCD823D5B25065B735A0BBABE71E6", hash_generated_method = "A1337A31689D4A05956686C0F56DC7FB")
     private  HTTP() {
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isWhitespace(char ch) {
+        public static boolean isWhitespace(char ch) {
         return ch == SP || ch == HT || ch == CR || ch == LF;
     }
 

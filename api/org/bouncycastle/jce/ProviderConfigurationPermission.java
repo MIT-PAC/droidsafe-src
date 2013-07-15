@@ -1,6 +1,6 @@
 package org.bouncycastle.jce;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,9 +23,9 @@ public class ProviderConfigurationPermission extends BasicPermission {
         addTaint(name.getTaint());
         this.actions = "all";
         this.permissionMask = ALL;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.actions = "all";
+        //this.permissionMask = ALL;
     }
 
     
@@ -35,9 +35,9 @@ public class ProviderConfigurationPermission extends BasicPermission {
         addTaint(name.getTaint());
         this.actions = actions;
         this.permissionMask = calculateMask(actions);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.actions = actions;
+        //this.permissionMask = calculateMask(actions);
     }
 
     
@@ -54,62 +54,61 @@ public class ProviderConfigurationPermission extends BasicPermission {
     if(s.equals(THREAD_LOCAL_EC_IMPLICITLY_CA_STR))            
             {
                 mask |= THREAD_LOCAL_EC_IMPLICITLY_CA;
-            } 
+            } //End block
             else
     if(s.equals(EC_IMPLICITLY_CA_STR))            
             {
                 mask |= EC_IMPLICITLY_CA;
-            } 
+            } //End block
             else
     if(s.equals(ALL_STR))            
             {
                 mask |= ALL;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mask == 0)        
         {
             IllegalArgumentException var0E6114EAF994A9A12FFA6113719F0C01_523762307 = new IllegalArgumentException("unknown permissions passed to mask");
             var0E6114EAF994A9A12FFA6113719F0C01_523762307.addTaint(taint);
             throw var0E6114EAF994A9A12FFA6113719F0C01_523762307;
-        } 
+        } //End block
         int varF2CE11EBF110993621BEDD8E747D7B1B_1446566366 = (mask);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496186865 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496186865;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-            
-                
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringTokenizer tok = new StringTokenizer(Strings.toLowerCase(actions), " ,");
+        //int             mask = 0;
+        //while (tok.hasMoreTokens())
+        //{
+            //String s = tok.nextToken();
+            //if (s.equals(THREAD_LOCAL_EC_IMPLICITLY_CA_STR))
+            //{
+                //mask |= THREAD_LOCAL_EC_IMPLICITLY_CA;
+            //}
+            //else if (s.equals(EC_IMPLICITLY_CA_STR))
+            //{
+                //mask |= EC_IMPLICITLY_CA;
+            //}
+            //else if (s.equals(ALL_STR))
+            //{
+                //mask |= ALL;
+            //}
+        //}
+        //if (mask == 0)
+        //{
+            //throw new IllegalArgumentException("unknown permissions passed to mask");
+        //}
+        //return mask;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.572 -0400", hash_original_method = "737F906A6DB979CE36581422EA476EF8", hash_generated_method = "30DA9F8383A33B1F052E41F6EE9AE2B2")
     public String getActions() {
 String var1D92EB8012A9AFD0473D135A86226554_1613626180 =         actions;
         var1D92EB8012A9AFD0473D135A86226554_1613626180.addTaint(taint);
         return var1D92EB8012A9AFD0473D135A86226554_1613626180;
-        
-        
+        // ---------- Original Method ----------
+        //return actions;
     }
 
     
@@ -122,28 +121,28 @@ String var1D92EB8012A9AFD0473D135A86226554_1613626180 =         actions;
             boolean var68934A3E9455FA72420237EB05902327_683785851 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_769470467 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_769470467;
-        } 
+        } //End block
     if(!this.getName().equals(permission.getName()))        
         {
             boolean var68934A3E9455FA72420237EB05902327_920762825 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1161067132 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1161067132;
-        } 
+        } //End block
         ProviderConfigurationPermission other = (ProviderConfigurationPermission)permission;
         boolean varBCB419270106332CA45ABC1986C39F5A_1796958234 = ((this.permissionMask & other.permissionMask) == other.permissionMask);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_684122089 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_684122089;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!(permission instanceof ProviderConfigurationPermission))
+        //{
+            //return false;
+        //}
+        //if (!this.getName().equals(permission.getName()))
+        //{
+            //return false;
+        //}
+        //ProviderConfigurationPermission other = (ProviderConfigurationPermission)permission;
+        //return (this.permissionMask & other.permissionMask) == other.permissionMask;
     }
 
     
@@ -156,28 +155,28 @@ String var1D92EB8012A9AFD0473D135A86226554_1613626180 =         actions;
             boolean varB326B5062B2F0E69046810717534CB09_1900435854 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1364576756 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1364576756;
-        } 
+        } //End block
     if(obj instanceof ProviderConfigurationPermission)        
         {
             ProviderConfigurationPermission other = (ProviderConfigurationPermission)obj;
             boolean varDE88C9705A284255BA1D5BE633629A83_237454196 = (this.permissionMask == other.permissionMask && this.getName().equals(other.getName()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_744387349 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_744387349;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_357634725 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_373461528 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_373461528;
-        
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (obj == this)
+        //{
+            //return true;
+        //}
+        //if (obj instanceof ProviderConfigurationPermission)
+        //{
+            //ProviderConfigurationPermission other = (ProviderConfigurationPermission)obj;
+            //return this.permissionMask == other.permissionMask && this.getName().equals(other.getName());
+        //}
+        //return false;
     }
 
     
@@ -186,8 +185,8 @@ String var1D92EB8012A9AFD0473D135A86226554_1613626180 =         actions;
         int var67BC157D7EEE983D7151E66AB672C5A0_1929468853 = (this.getName().hashCode() + this.permissionMask);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1637208802 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1637208802;
-        
-        
+        // ---------- Original Method ----------
+        //return this.getName().hashCode() + this.permissionMask;
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -52,11 +52,11 @@ public abstract class AbstractConnPool implements RefQueueHandler {
         idleConnHandler = new IdleConnectionHandler();
         boolean fair = false;
         poolLock = new ReentrantLock(fair);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //issuedConnections = new HashSet<BasicPoolEntryRef>();
+        //idleConnHandler = new IdleConnectionHandler();
+        //boolean fair = false;
+        //poolLock = new ReentrantLock(fair);
     }
 
     
@@ -67,7 +67,7 @@ public abstract class AbstractConnPool implements RefQueueHandler {
             IllegalStateException var74A550C9AE115FA1532625DFD833582A_855273808 = new IllegalStateException("Connection GC already enabled.");
             var74A550C9AE115FA1532625DFD833582A_855273808.addTaint(taint);
             throw var74A550C9AE115FA1532625DFD833582A_855273808;
-        } 
+        } //End block
         poolLock.lock();
         try 
         {
@@ -76,36 +76,36 @@ public abstract class AbstractConnPool implements RefQueueHandler {
                 IllegalStateException varFE4EF1FD0E298DF11EAAD56523CEB196_348622370 = new IllegalStateException("Pool already in use.");
                 varFE4EF1FD0E298DF11EAAD56523CEB196_348622370.addTaint(taint);
                 throw varFE4EF1FD0E298DF11EAAD56523CEB196_348622370;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             poolLock.unlock();
-        } 
+        } //End block
         refQueue  = new ReferenceQueue<Object>();
         refWorker = new RefQueueWorker(refQueue, this);
         Thread t = new Thread(refWorker);
         t.setDaemon(true);
         t.setName("RefQueueWorker@" + this);
         t.start();
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (refQueue != null) {
+            //throw new IllegalStateException("Connection GC already enabled.");
+        //}
+        //poolLock.lock();
+        //try {
+            //if (numConnections > 0) { 
+                //throw new IllegalStateException("Pool already in use.");
+            //}
+        //} finally {
+            //poolLock.unlock();
+        //}
+        //refQueue  = new ReferenceQueue<Object>();
+        //refWorker = new RefQueueWorker(refQueue, this);
+        //Thread t = new Thread(refWorker);
+        //t.setDaemon(true);
+        //t.setName("RefQueueWorker@" + this);
+        //t.start();
     }
 
     
@@ -122,8 +122,8 @@ public abstract class AbstractConnPool implements RefQueueHandler {
 BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPoolEntry(route, state).getPoolEntry(timeout, tunit);
         var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387.addTaint(taint);
         return var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387;
-        
-        
+        // ---------- Original Method ----------
+        //return requestPoolEntry(route, state).getPoolEntry(timeout, tunit);
     }
 
     
@@ -149,32 +149,32 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
     if(log.isDebugEnabled())                    
                     {
                         log.debug("Connection garbage collected. " + route);
-                    } 
+                    } //End block
                     handleLostEntry(route);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
             poolLock.unlock();
-        } 
-        
-        
-        
-            
-                
-                
-                    
-                        
-                    
-                        
-                    
-                    
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //poolLock.lock();
+        //try {
+            //if (ref instanceof BasicPoolEntryRef) {
+                //final boolean lost = issuedConnections.remove(ref);
+                //if (lost) {
+                    //final HttpRoute route =
+                        //((BasicPoolEntryRef)ref).getRoute();
+                    //if (log.isDebugEnabled()) {
+                        //log.debug("Connection garbage collected. " + route);
+                    //}
+                    //handleLostEntry(route);
+                //}
+            //}
+        //} finally {
+            //poolLock.unlock();
+        //}
     }
 
     
@@ -191,26 +191,26 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
             IllegalArgumentException var1E3A26647533CD72883EC80C4F4E6594_320068211 = new IllegalArgumentException("Time unit must not be null.");
             var1E3A26647533CD72883EC80C4F4E6594_320068211.addTaint(taint);
             throw var1E3A26647533CD72883EC80C4F4E6594_320068211;
-        } 
+        } //End block
         poolLock.lock();
         try 
         {
             idleConnHandler.closeIdleConnections(tunit.toMillis(idletime));
-        } 
+        } //End block
         finally 
         {
             poolLock.unlock();
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (tunit == null) {
+            //throw new IllegalArgumentException("Time unit must not be null.");
+        //}
+        //poolLock.lock();
+        //try {
+            //idleConnHandler.closeIdleConnections(tunit.toMillis(idletime));
+        //} finally {
+            //poolLock.unlock();
+        //}
     }
 
     
@@ -220,18 +220,18 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
         try 
         {
             idleConnHandler.closeExpiredConnections();
-        } 
+        } //End block
         finally 
         {
             poolLock.unlock();
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //poolLock.lock();
+        //try {
+            //idleConnHandler.closeExpiredConnections();
+        //} finally {
+            //poolLock.unlock();
+        //}
     }
 
     
@@ -258,36 +258,36 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
     if(entry != null)                
                 {
                     closeConnection(entry.getConnection());
-                } 
-            } 
+                } //End block
+            } //End block
             idleConnHandler.removeAll();
             isShutDown = true;
-        } 
+        } //End block
         finally 
         {
             poolLock.unlock();
-        } 
-        
-        
-        
-            
-                
-            
-                
-            
-            
-                
-                
-                
-                
-                    
-                
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //poolLock.lock();
+        //try {
+            //if (isShutDown)
+                //return;
+            //if (refWorker != null)
+                //refWorker.shutdown();
+            //Iterator<BasicPoolEntryRef> iter = issuedConnections.iterator();
+            //while (iter.hasNext()) {
+                //BasicPoolEntryRef per = iter.next();
+                //iter.remove();
+                //BasicPoolEntry entry = per.get();
+                //if (entry != null) {
+                    //closeConnection(entry.getConnection());
+                //}
+            //}
+            //idleConnHandler.removeAll();
+            //isShutDown = true;
+        //} finally {
+            //poolLock.unlock();
+        //}
     }
 
     
@@ -299,20 +299,20 @@ BasicPoolEntry var3A1E30D37A22B88BA6A543ACA5D0FAD4_412864387 =         requestPo
             try 
             {
                 conn.close();
-            } 
+            } //End block
             catch (IOException ex)
             {
                 log.debug("I/O error closing connection", ex);
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (conn != null) {
+            //try {
+                //conn.close();
+            //} catch (IOException ex) {
+                //log.debug("I/O error closing connection", ex);
+            //}
+        //}
     }
 
     

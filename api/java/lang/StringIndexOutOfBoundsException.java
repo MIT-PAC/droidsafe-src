@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.277 -0400", hash_original_method = "BFD818381E149072D6480C59814A950B", hash_generated_method = "77DAF02289D0EDFB843688C7F448C11C")
     public  StringIndexOutOfBoundsException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     public  StringIndexOutOfBoundsException(int index) {
         super("String index out of range: " + index);
         addTaint(index);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,7 +25,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
     public  StringIndexOutOfBoundsException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,7 +34,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
         this(s.length(), index);
         addTaint(index);
         addTaint(s.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -43,7 +43,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
         super("length=" + sourceLength + "; index=" + index);
         addTaint(index);
         addTaint(sourceLength);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -53,7 +53,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
         addTaint(count);
         addTaint(offset);
         addTaint(s.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -65,7 +65,7 @@ public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
         addTaint(count);
         addTaint(offset);
         addTaint(sourceLength);
-        
+        // ---------- Original Method ----------
     }
 
     

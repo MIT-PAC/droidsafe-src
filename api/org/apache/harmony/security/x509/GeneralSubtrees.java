@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,37 +22,35 @@ public final class GeneralSubtrees {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.100 -0400", hash_original_method = "2635B7CAB7F4197126741D8B5E9A6725", hash_generated_method = "C3A2A15D403107D1B4897DD6AE5129D3")
     public  GeneralSubtrees(List<GeneralSubtree> generalSubtrees) {
         this.generalSubtrees = generalSubtrees;
-        
-        
+        // ---------- Original Method ----------
+        //this.generalSubtrees = generalSubtrees;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.100 -0400", hash_original_method = "B39087273D015207EFED9684375F7A9C", hash_generated_method = "9DD4144B92B63854EDC55D2603262FD2")
     public List<GeneralSubtree> getSubtrees() {
 List<GeneralSubtree> var3E5BAD48CE158B3B7A2AD7B7425D5701_745449470 =         generalSubtrees;
         var3E5BAD48CE158B3B7A2AD7B7425D5701_745449470.addTaint(taint);
         return var3E5BAD48CE158B3B7A2AD7B7425D5701_745449470;
-        
-        
+        // ---------- Original Method ----------
+        //return generalSubtrees;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.101 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "673448FA17B4D4E8A610109CE34A3628")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1373740754 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1334255587 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1334255587;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = ASN1.encode(this);
+        //}
+        //return encoding;
     }
 
     

@@ -1,6 +1,6 @@
 package android.provider;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public final class Telephony {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.880 -0400", hash_original_method = "2CAFC6EF3CCF11FE20893B46D3EAF4A2", hash_generated_method = "A6723A410EBE39DDFE0725B9413E935E")
     public  Telephony() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -36,7 +36,7 @@ public final class Telephony {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.880 -0400", hash_original_method = "6F79CFAC0C9D88274D278FEEB27D8B11", hash_generated_method = "6F79CFAC0C9D88274D278FEEB27D8B11")
         public Sms ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -52,8 +52,7 @@ public final class Telephony {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static Uri addMessageToUri(ContentResolver resolver,
+                public static Uri addMessageToUri(ContentResolver resolver,
                 Uri uri, String address, String body, String subject,
                 Long date, boolean read, boolean deliveryReport) {
             return addMessageToUri(resolver, uri, address, body, subject,
@@ -61,8 +60,7 @@ public final class Telephony {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static Uri addMessageToUri(ContentResolver resolver,
+                public static Uri addMessageToUri(ContentResolver resolver,
                 Uri uri, String address, String body, String subject,
                 Long date, boolean read, boolean deliveryReport, long threadId) {
             ContentValues values = new ContentValues(7);
@@ -83,8 +81,7 @@ public final class Telephony {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static boolean moveMessageToFolder(Context context,
+                public static boolean moveMessageToFolder(Context context,
                 Uri uri, int folder, int error) {
             if (uri == null) {
                 return false;
@@ -119,8 +116,7 @@ public final class Telephony {
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static boolean isOutgoingFolder(int messageType) {
+                public static boolean isOutgoingFolder(int messageType) {
             return  (messageType == MESSAGE_TYPE_FAILED)
                     || (messageType == MESSAGE_TYPE_OUTBOX)
                     || (messageType == MESSAGE_TYPE_SENT)
@@ -133,12 +129,11 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.882 -0400", hash_original_method = "141F91EDC6AE2D7033D3DA3E508699AC", hash_generated_method = "141F91EDC6AE2D7033D3DA3E508699AC")
             public Inbox ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri addMessage(ContentResolver resolver,
+                        public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date,
                     boolean read) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
@@ -162,12 +157,11 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.883 -0400", hash_original_method = "01BACB9453826DDA962919BC9AB080EE", hash_generated_method = "01BACB9453826DDA962919BC9AB080EE")
             public Sent ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri addMessage(ContentResolver resolver,
+                        public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
                         subject, date, true, false);
@@ -190,20 +184,18 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.883 -0400", hash_original_method = "30DD07C39D661987683E6A54087310F0", hash_generated_method = "30DD07C39D661987683E6A54087310F0")
             public Draft ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri addMessage(ContentResolver resolver,
+                        public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
                         subject, date, true, false);
             }
 
             
-                        @DSModeled(DSC.SPEC)
-            public static boolean saveMessage(ContentResolver resolver,
+                        public static boolean saveMessage(ContentResolver resolver,
                     Uri uri, String body) {
                 ContentValues values = new ContentValues(2);
                 values.put(BODY, body);
@@ -228,12 +220,11 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.884 -0400", hash_original_method = "06FAB0A617CEB33215E397D9BFE9D152", hash_generated_method = "06FAB0A617CEB33215E397D9BFE9D152")
             public Outbox ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri addMessage(ContentResolver resolver,
+                        public static Uri addMessage(ContentResolver resolver,
                     String address, String body, String subject, Long date,
                     boolean deliveryReport, long threadId) {
                 return addMessageToUri(resolver, CONTENT_URI, address, body,
@@ -257,7 +248,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.885 -0400", hash_original_method = "6984BA613DF71E17158BEA5BF9053437", hash_generated_method = "6984BA613DF71E17158BEA5BF9053437")
             public Conversations ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -283,12 +274,11 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.886 -0400", hash_original_method = "1E952476DD941AF572EDA8AC50686906", hash_generated_method = "1E952476DD941AF572EDA8AC50686906")
             public Intents ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static SmsMessage[] getMessagesFromIntent(
+                        public static SmsMessage[] getMessagesFromIntent(
                     Intent intent) {
                 Object[] messages = (Object[]) intent.getSerializableExtra("pdus");
                 String format = intent.getStringExtra("format");
@@ -373,7 +363,7 @@ public final class Telephony {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.887 -0400", hash_original_method = "45D6965ABD617E611598473C57FD4F7C", hash_generated_method = "082B4F6FF5F0018201C341C776361FB0")
         private  Threads() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -445,7 +435,7 @@ public final class Telephony {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.889 -0400", hash_original_method = "59489CF231D229E8B793F6BB93F87558", hash_generated_method = "59489CF231D229E8B793F6BB93F87558")
         public Mms ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -514,7 +504,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.891 -0400", hash_original_method = "141F91EDC6AE2D7033D3DA3E508699AC", hash_generated_method = "141F91EDC6AE2D7033D3DA3E508699AC")
             public Inbox ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -534,7 +524,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.891 -0400", hash_original_method = "01BACB9453826DDA962919BC9AB080EE", hash_generated_method = "01BACB9453826DDA962919BC9AB080EE")
             public Sent ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -554,7 +544,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.892 -0400", hash_original_method = "30DD07C39D661987683E6A54087310F0", hash_generated_method = "30DD07C39D661987683E6A54087310F0")
             public Draft ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -574,7 +564,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.892 -0400", hash_original_method = "06FAB0A617CEB33215E397D9BFE9D152", hash_generated_method = "06FAB0A617CEB33215E397D9BFE9D152")
             public Outbox ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -594,7 +584,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.893 -0400", hash_original_method = "240C49CE2280315AC94999B4C3BDDDB9", hash_generated_method = "240C49CE2280315AC94999B4C3BDDDB9")
             public Addr ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -622,7 +612,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.894 -0400", hash_original_method = "9A3D51732327B3711C976CCE6283B7F6", hash_generated_method = "9A3D51732327B3711C976CCE6283B7F6")
             public Part ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -674,7 +664,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.896 -0400", hash_original_method = "8DE7FBCF11006E383291B1DA82AD2709", hash_generated_method = "8DE7FBCF11006E383291B1DA82AD2709")
             public Rate ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -693,7 +683,7 @@ public final class Telephony {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.897 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
             private  Intents() {
-                
+                // ---------- Original Method ----------
             }
 
             
@@ -754,7 +744,7 @@ public final class Telephony {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.900 -0400", hash_original_method = "9BF54BA5F2455087717E5B05EBB691D5", hash_generated_method = "9BF54BA5F2455087717E5B05EBB691D5")
         public MmsSms ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -763,7 +753,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.900 -0400", hash_original_method = "170CA936DAF3534DFB0A0B79794E3A00", hash_generated_method = "170CA936DAF3534DFB0A0B79794E3A00")
             public PendingMessages ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -804,7 +794,7 @@ public final class Telephony {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.901 -0400", hash_original_method = "480A168A1C6BA9EBC664C3157DB5A59D", hash_generated_method = "480A168A1C6BA9EBC664C3157DB5A59D")
             public WordsTable ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -894,7 +884,7 @@ public final class Telephony {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.905 -0400", hash_original_method = "6476EDBFB29271C848491911726650D3", hash_generated_method = "6476EDBFB29271C848491911726650D3")
         public Carriers ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -982,7 +972,7 @@ public final class Telephony {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.910 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
         private  Intents() {
-            
+            // ---------- Original Method ----------
         }
 
         

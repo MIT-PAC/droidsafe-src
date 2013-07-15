@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class ParserFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.371 -0400", hash_original_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC", hash_generated_method = "402FA7B6FCFC84B93C7F2F3C6D2A34EC")
     public ParserFactory ()
     {
-        
+        //Synthesized constructor
     }
 
 

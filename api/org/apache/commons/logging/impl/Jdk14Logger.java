@@ -1,6 +1,6 @@
 package org.apache.commons.logging.impl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,9 +21,9 @@ public class Jdk14Logger implements Log, Serializable {
     public  Jdk14Logger(String name) {
         this.name = name;
         logger = getLogger();
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
+        //logger = getLogger();
     }
 
     
@@ -44,34 +44,34 @@ public class Jdk14Logger implements Log, Serializable {
                 StackTraceElement caller = locations[2];
                 cname=caller.getClassName();
                 method=caller.getMethodName();
-            } 
+            } //End block
     if(ex==null)            
             {
                 logger.logp( level, cname, method, msg );
-            } 
+            } //End block
             else
             {
                 logger.logp( level, cname, method, msg, ex );
-            } 
-        } 
-        
-        
-        
-            
-            
-            
-            
-            
-                
-                
-                
-            
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //Logger logger = getLogger();
+        //if (logger.isLoggable(level)) {
+            //Throwable dummyException=new Throwable();
+            //StackTraceElement locations[]=dummyException.getStackTrace();
+            //String cname="unknown";
+            //String method="unknown";
+            //if( locations!=null && locations.length >2 ) {
+                //StackTraceElement caller=locations[2];
+                //cname=caller.getClassName();
+                //method=caller.getMethodName();
+            //}
+            //if( ex==null ) {
+                //logger.logp( level, cname, method, msg );
+            //} else {
+                //logger.logp( level, cname, method, msg, ex );
+            //}
+        //}
     }
 
     
@@ -79,8 +79,8 @@ public class Jdk14Logger implements Log, Serializable {
     public void debug(Object message) {
         addTaint(message.getTaint());
         log(Level.FINE, String.valueOf(message), null);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.FINE, String.valueOf(message), null);
     }
 
     
@@ -89,8 +89,8 @@ public class Jdk14Logger implements Log, Serializable {
         addTaint(exception.getTaint());
         addTaint(message.getTaint());
         log(Level.FINE, String.valueOf(message), exception);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.FINE, String.valueOf(message), exception);
     }
 
     
@@ -98,8 +98,8 @@ public class Jdk14Logger implements Log, Serializable {
     public void error(Object message) {
         addTaint(message.getTaint());
         log(Level.SEVERE, String.valueOf(message), null);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.SEVERE, String.valueOf(message), null);
     }
 
     
@@ -108,8 +108,8 @@ public class Jdk14Logger implements Log, Serializable {
         addTaint(exception.getTaint());
         addTaint(message.getTaint());
         log(Level.SEVERE, String.valueOf(message), exception);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.SEVERE, String.valueOf(message), exception);
     }
 
     
@@ -117,8 +117,8 @@ public class Jdk14Logger implements Log, Serializable {
     public void fatal(Object message) {
         addTaint(message.getTaint());
         log(Level.SEVERE, String.valueOf(message), null);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.SEVERE, String.valueOf(message), null);
     }
 
     
@@ -127,8 +127,8 @@ public class Jdk14Logger implements Log, Serializable {
         addTaint(exception.getTaint());
         addTaint(message.getTaint());
         log(Level.SEVERE, String.valueOf(message), exception);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.SEVERE, String.valueOf(message), exception);
     }
 
     
@@ -137,15 +137,15 @@ public class Jdk14Logger implements Log, Serializable {
     if(logger == null)        
         {
             logger = Logger.getLogger(name);
-        } 
+        } //End block
 Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         varE333E6411FB9531C7E180672E74CC8C8_803495923.addTaint(taint);
         return varE333E6411FB9531C7E180672E74CC8C8_803495923;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (logger == null) {
+            //logger = Logger.getLogger(name);
+        //}
+        //return (logger);
     }
 
     
@@ -153,8 +153,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
     public void info(Object message) {
         addTaint(message.getTaint());
         log(Level.INFO, String.valueOf(message), null);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.INFO, String.valueOf(message), null);
     }
 
     
@@ -163,8 +163,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         addTaint(exception.getTaint());
         addTaint(message.getTaint());
         log(Level.INFO, String.valueOf(message), exception);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.INFO, String.valueOf(message), exception);
     }
 
     
@@ -173,8 +173,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         boolean varDD73793EF97DF51FAAD856438D6F1EFE_1953492612 = ((getLogger().isLoggable(Level.FINE)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1466442485 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1466442485;
-        
-        
+        // ---------- Original Method ----------
+        //return (getLogger().isLoggable(Level.FINE));
     }
 
     
@@ -183,8 +183,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         boolean var946003032585D8CB4DB2D0701CA899DA_460657393 = ((getLogger().isLoggable(Level.SEVERE)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_286108961 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_286108961;
-        
-        
+        // ---------- Original Method ----------
+        //return (getLogger().isLoggable(Level.SEVERE));
     }
 
     
@@ -193,8 +193,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         boolean var946003032585D8CB4DB2D0701CA899DA_630491357 = ((getLogger().isLoggable(Level.SEVERE)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_929970550 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_929970550;
-        
-        
+        // ---------- Original Method ----------
+        //return (getLogger().isLoggable(Level.SEVERE));
     }
 
     
@@ -203,8 +203,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         boolean varB4612D10E53F2B348D25A50348D93CC8_982360180 = ((getLogger().isLoggable(Level.INFO)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_731961225 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_731961225;
-        
-        
+        // ---------- Original Method ----------
+        //return (getLogger().isLoggable(Level.INFO));
     }
 
     
@@ -213,8 +213,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         boolean var6F2486D95809F038754E9F532584C843_148582363 = ((getLogger().isLoggable(Level.FINEST)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1705689029 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1705689029;
-        
-        
+        // ---------- Original Method ----------
+        //return (getLogger().isLoggable(Level.FINEST));
     }
 
     
@@ -223,8 +223,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         boolean var10D184CB0838B22D18453625D87A2ABF_1429925548 = ((getLogger().isLoggable(Level.WARNING)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_385281740 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_385281740;
-        
-        
+        // ---------- Original Method ----------
+        //return (getLogger().isLoggable(Level.WARNING));
     }
 
     
@@ -232,8 +232,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
     public void trace(Object message) {
         addTaint(message.getTaint());
         log(Level.FINEST, String.valueOf(message), null);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.FINEST, String.valueOf(message), null);
     }
 
     
@@ -242,8 +242,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         addTaint(exception.getTaint());
         addTaint(message.getTaint());
         log(Level.FINEST, String.valueOf(message), exception);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.FINEST, String.valueOf(message), exception);
     }
 
     
@@ -251,8 +251,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
     public void warn(Object message) {
         addTaint(message.getTaint());
         log(Level.WARNING, String.valueOf(message), null);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.WARNING, String.valueOf(message), null);
     }
 
     
@@ -261,8 +261,8 @@ Logger varE333E6411FB9531C7E180672E74CC8C8_803495923 =         (logger);
         addTaint(exception.getTaint());
         addTaint(message.getTaint());
         log(Level.WARNING, String.valueOf(message), exception);
-        
-        
+        // ---------- Original Method ----------
+        //log(Level.WARNING, String.valueOf(message), exception);
     }
 
     

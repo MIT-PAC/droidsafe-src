@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ class ConstructedOctetStream extends InputStream {
       ConstructedOctetStream(
         ASN1StreamParser parser) {
         _parser = parser;
-        
-        
+        // ---------- Original Method ----------
+        //_parser = parser;
     }
 
     
@@ -39,17 +39,17 @@ class ConstructedOctetStream extends InputStream {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_246274248 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1914517262 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1914517262;
-            } 
+            } //End block
             ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
     if(s == null)            
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1685296622 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117181114 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117181114;
-            } 
+            } //End block
             _first = false;
             _currentStream = s.getOctetStream();
-        } 
+        } //End block
         int totalRead = 0;
 for(;;)
         {
@@ -62,8 +62,8 @@ for(;;)
                     int varC97168D982F3E80961E0DAF3924044A2_880916851 = (totalRead);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709924364 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709924364;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 ASN1OctetStringParser aos = (ASN1OctetStringParser)_parser.readObject();
@@ -73,12 +73,12 @@ for(;;)
                     int var492C6F602F33DC064055C460F704F726_1815586509 = (totalRead < 1 ? -1 : totalRead);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1335905611 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1335905611;
-                } 
+                } //End block
                 _currentStream = aos.getOctetStream();
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -91,17 +91,17 @@ for(;;)
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1810747102 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_774488736 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_774488736;
-            } 
+            } //End block
             ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
     if(s == null)            
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1312487074 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_604113528 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_604113528;
-            } 
+            } //End block
             _first = false;
             _currentStream = s.getOctetStream();
-        } 
+        } //End block
 for(;;)
         {
             int b = _currentStream.read();
@@ -110,7 +110,7 @@ for(;;)
                 int var92EB5FFEE6AE2FEC3AD71C777531578F_1613297249 = (b);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720311087 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720311087;
-            } 
+            } //End block
             ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
     if(s == null)            
             {
@@ -118,39 +118,39 @@ for(;;)
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1701136987 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_530089051 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_530089051;
-            } 
+            } //End block
             _currentStream = s.getOctetStream();
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-            
-            
-                
-            
-            
-            
-        
-        
-        
-            
-            
-            
-                
-            
-            
-            
-            
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (_currentStream == null)
+        //{
+            //if (!_first)
+            //{
+                //return -1;
+            //}
+            //ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
+            //if (s == null)
+            //{
+                //return -1;
+            //}
+            //_first = false;
+            //_currentStream = s.getOctetStream();
+        //}
+        //for (;;)
+        //{
+            //int b = _currentStream.read();
+            //if (b >= 0)
+            //{
+                //return b;
+            //}
+            //ASN1OctetStringParser s = (ASN1OctetStringParser)_parser.readObject();
+            //if (s == null)
+            //{
+                //_currentStream = null;
+                //return -1;
+            //}
+            //_currentStream = s.getOctetStream();
+        //}
     }
 
     

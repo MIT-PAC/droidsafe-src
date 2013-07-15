@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public final class CacheManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.234 -0400", hash_original_method = "A0B4DD756EBE924AE07FCEE8B62EE3BB", hash_generated_method = "A0B4DD756EBE924AE07FCEE8B62EE3BB")
     public CacheManager ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -67,8 +67,7 @@ public final class CacheManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static File getCacheFileBaseDir() {
         return mBaseDir;
     }
@@ -86,8 +85,7 @@ public final class CacheManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static boolean cacheDisabled() {
         return mDisabled;
     }
@@ -130,15 +128,13 @@ public final class CacheManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static boolean startCacheTransaction() {
         return false;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static boolean endCacheTransaction() {
         return false;
     }
@@ -377,8 +373,7 @@ public final class CacheManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean isCachableRedirect(int statusCode) {
+        private static boolean isCachableRedirect(int statusCode) {
         if (statusCode == 301 || statusCode == 302 || statusCode == 307) {
             return true;
         } else {
@@ -639,177 +634,161 @@ public final class CacheManager {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.237 -0400", hash_original_method = "9AF27DA4AF1967F12C09CBC55DFAD3DC", hash_generated_method = "9AF27DA4AF1967F12C09CBC55DFAD3DC")
         public CacheResult ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.237 -0400", hash_original_method = "DD5A2376D1CE8800456745E0EBB16914", hash_generated_method = "B7692436C032B29AA7A3DB85E469B415")
         public int getHttpStatusCode() {
             int var31BE39A7EEBA2250BD0701D4F35DD278_86815112 = (httpStatusCode);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_57615399 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_57615399;
-            
-            
+            // ---------- Original Method ----------
+            //return httpStatusCode;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.237 -0400", hash_original_method = "043A311B0C55CC2C0E7ED635C15C25FD", hash_generated_method = "84F5B0D8EEC231FBA0432CF772D99F26")
         public long getContentLength() {
             long varC22384F3ABFE57BC648B6E1701C98123_1788185090 = (contentLength);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_741912663 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_741912663;
-            
-            
+            // ---------- Original Method ----------
+            //return contentLength;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "AD502AEBBD528088B1D12F9CAC38CB54", hash_generated_method = "20CEF394BBFA0FAF9B76D406FDE1DFD4")
         public String getLocalPath() {
 String var42F44E42C4ADE0B7BBA6346ECBD9F0DB_1985958318 =             localPath;
             var42F44E42C4ADE0B7BBA6346ECBD9F0DB_1985958318.addTaint(taint);
             return var42F44E42C4ADE0B7BBA6346ECBD9F0DB_1985958318;
-            
-            
+            // ---------- Original Method ----------
+            //return localPath;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "4C886ADD26DB3A9818AA89FF03B8C3FC", hash_generated_method = "4EDAFA7BD5883A0D8FDC65C7590BED53")
         public long getExpires() {
             long var09BCB72D61C0D6D1EFF5336DA6881557_1326405101 = (expires);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1612628694 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1612628694;
-            
-            
+            // ---------- Original Method ----------
+            //return expires;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "EF25E8FEFAF784FE84A0290E2AAD114E", hash_generated_method = "E7A183DB447A780AFD07F7EF6E01533C")
         public String getExpiresString() {
 String varFFAE9AD52B61206B9686FD5ACACDF68E_808999724 =             expiresString;
             varFFAE9AD52B61206B9686FD5ACACDF68E_808999724.addTaint(taint);
             return varFFAE9AD52B61206B9686FD5ACACDF68E_808999724;
-            
-            
+            // ---------- Original Method ----------
+            //return expiresString;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "9BE76A44786245A5C82A387C274361E4", hash_generated_method = "D05D00C578552E9E0444A1A912BA9F3E")
         public String getLastModified() {
 String var516C2A6FCD26E1D0D88121A19963AD63_536867967 =             lastModified;
             var516C2A6FCD26E1D0D88121A19963AD63_536867967.addTaint(taint);
             return var516C2A6FCD26E1D0D88121A19963AD63_536867967;
-            
-            
+            // ---------- Original Method ----------
+            //return lastModified;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "C916AEC2FCF91BC5DCA69D0B98CD1013", hash_generated_method = "7A90A3C487F0DD80B64ADC00046DB6B2")
         public String getETag() {
 String var5EC213F5B8A0028786E3BB0C8E4ED840_639631263 =             etag;
             var5EC213F5B8A0028786E3BB0C8E4ED840_639631263.addTaint(taint);
             return var5EC213F5B8A0028786E3BB0C8E4ED840_639631263;
-            
-            
+            // ---------- Original Method ----------
+            //return etag;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "6CD12CC12FD0AC9D51B06E8F6D96C76B", hash_generated_method = "C61B749D656A5B66D6EB2E95AEFDE155")
         public String getMimeType() {
 String var31E26FAFE73C53DECDB0A7F1CF57D932_1729950725 =             mimeType;
             var31E26FAFE73C53DECDB0A7F1CF57D932_1729950725.addTaint(taint);
             return var31E26FAFE73C53DECDB0A7F1CF57D932_1729950725;
-            
-            
+            // ---------- Original Method ----------
+            //return mimeType;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "958E0B7EB30F5353747022B831D2FD74", hash_generated_method = "87C62058CF4B7DEE04D42DD1006C638A")
         public String getLocation() {
 String var96C70FF298E5697493B0D776E54760A4_828279321 =             location;
             var96C70FF298E5697493B0D776E54760A4_828279321.addTaint(taint);
             return var96C70FF298E5697493B0D776E54760A4_828279321;
-            
-            
+            // ---------- Original Method ----------
+            //return location;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "40AE8B95A3F285DFC683C1AF7F320ACF")
         public String getEncoding() {
 String varE424DD5E6E58EB63E1272B71B5A81966_1182353945 =             encoding;
             varE424DD5E6E58EB63E1272B71B5A81966_1182353945.addTaint(taint);
             return varE424DD5E6E58EB63E1272B71B5A81966_1182353945;
-            
-            
+            // ---------- Original Method ----------
+            //return encoding;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "C0D4D7C4AE17A99630CF9DD48649B988", hash_generated_method = "DF8602FD3516B16A478CC737D85EE0E8")
         public String getContentDisposition() {
 String var9EB1A3307B3562ED31E222746F3AB26A_1159308433 =             contentdisposition;
             var9EB1A3307B3562ED31E222746F3AB26A_1159308433.addTaint(taint);
             return var9EB1A3307B3562ED31E222746F3AB26A_1159308433;
-            
-            
+            // ---------- Original Method ----------
+            //return contentdisposition;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "3D92385EA50556C1C84606BD9B5473E5", hash_generated_method = "1DA168DBE0C3C79F773211333AB90915")
         public InputStream getInputStream() {
 InputStream varDBF027E1BB3550352743CD41C783F39D_2069003957 =             inStream;
             varDBF027E1BB3550352743CD41C783F39D_2069003957.addTaint(taint);
             return varDBF027E1BB3550352743CD41C783F39D_2069003957;
-            
-            
+            // ---------- Original Method ----------
+            //return inStream;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "B77E86F2D56E5DBE0D55411B47D89551", hash_generated_method = "A9DC3C8E43B245F6F04243749AA628B5")
         public OutputStream getOutputStream() {
 OutputStream var586556CF1CDD9DA081CC8DC911E7A6E6_1937314547 =             outStream;
             var586556CF1CDD9DA081CC8DC911E7A6E6_1937314547.addTaint(taint);
             return var586556CF1CDD9DA081CC8DC911E7A6E6_1937314547;
-            
-            
+            // ---------- Original Method ----------
+            //return outStream;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.238 -0400", hash_original_method = "B7D827E5771A9B377DDBAC601F400FD6", hash_generated_method = "D50427B4C8F38D7752B90DF293596A71")
         public void setInputStream(InputStream stream) {
             this.inStream = stream;
-            
-            
+            // ---------- Original Method ----------
+            //this.inStream = stream;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.239 -0400", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "7E8E9F5581B45D04B721857DE5AE6090")
         public void setEncoding(String encoding) {
             this.encoding = encoding;
-            
-            
+            // ---------- Original Method ----------
+            //this.encoding = encoding;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.239 -0400", hash_original_method = "24FE4CA1135DA21E8B00A4A2D819D5D2", hash_generated_method = "3969089D2E06A5D5A418BB6CA59DBC16")
         public void setContentLength(long contentLength) {
             this.contentLength = contentLength;
-            
-            
+            // ---------- Original Method ----------
+            //this.contentLength = contentLength;
         }
 
         

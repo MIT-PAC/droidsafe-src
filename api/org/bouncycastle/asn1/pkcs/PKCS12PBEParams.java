@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,9 +28,9 @@ public class PKCS12PBEParams extends ASN1Encodable {
         int         iterations) {
         this.iv = new DEROctetString(salt);
         this.iterations = new DERInteger(iterations);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.iv = new DEROctetString(salt);
+        //this.iterations = new DERInteger(iterations);
     }
 
     
@@ -39,9 +39,9 @@ public class PKCS12PBEParams extends ASN1Encodable {
         ASN1Sequence  seq) {
         iv = (ASN1OctetString)seq.getObjectAt(0);
         iterations = (DERInteger)seq.getObjectAt(1);
-        
-        
-        
+        // ---------- Original Method ----------
+        //iv = (ASN1OctetString)seq.getObjectAt(0);
+        //iterations = (DERInteger)seq.getObjectAt(1);
     }
 
     
@@ -64,8 +64,8 @@ public class PKCS12PBEParams extends ASN1Encodable {
 BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_1949727658 =         iterations.getValue();
         var8563E23A7E89A15DC1621E7AA8EF0C9E_1949727658.addTaint(taint);
         return var8563E23A7E89A15DC1621E7AA8EF0C9E_1949727658;
-        
-        
+        // ---------- Original Method ----------
+        //return iterations.getValue();
     }
 
     
@@ -74,8 +74,8 @@ BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_1949727658 =         iterations.g
         byte[] var88FF68BFEDD92B2F4319637028DD4A35_89481037 = (iv.getOctets());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_95221355 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_95221355;
-        
-        
+        // ---------- Original Method ----------
+        //return iv.getOctets();
     }
 
     
@@ -87,11 +87,11 @@ BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_1949727658 =         iterations.g
 DERObject var0B338F106E3279986C87B595B0F4A439_173114027 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_173114027.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_173114027;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector  v = new ASN1EncodableVector();
+        //v.add(iv);
+        //v.add(iterations);
+        //return new DERSequence(v);
     }
 
     

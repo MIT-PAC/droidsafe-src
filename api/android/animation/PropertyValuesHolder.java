@@ -1,6 +1,6 @@
 package android.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,8 +48,8 @@ public class PropertyValuesHolder implements Cloneable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.135 -0400", hash_original_method = "73C53AD6C55F8F35D3899F0ADDC03638", hash_generated_method = "173B3BF84BCAAD759EC1E53526977EB5")
     private  PropertyValuesHolder(String propertyName) {
         mPropertyName = propertyName;
-        
-        
+        // ---------- Original Method ----------
+        //mPropertyName = propertyName;
     }
 
     
@@ -59,12 +59,12 @@ public class PropertyValuesHolder implements Cloneable {
     if(property != null)        
         {
             mPropertyName = property.getName();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mProperty = property;
+        //if (property != null) {
+            //mPropertyName = property.getName();
+        //}
     }
 
     
@@ -142,9 +142,9 @@ public class PropertyValuesHolder implements Cloneable {
     public void setIntValues(int... values) {
         mValueType = int.class;
         mKeyframeSet = KeyframeSet.ofInt(values);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mValueType = int.class;
+        //mKeyframeSet = KeyframeSet.ofInt(values);
     }
 
     
@@ -152,9 +152,9 @@ public class PropertyValuesHolder implements Cloneable {
     public void setFloatValues(float... values) {
         mValueType = float.class;
         mKeyframeSet = KeyframeSet.ofFloat(values);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mValueType = float.class;
+        //mKeyframeSet = KeyframeSet.ofFloat(values);
     }
 
     
@@ -166,16 +166,16 @@ public class PropertyValuesHolder implements Cloneable {
 for(int i = 0;i < numKeyframes;++i)
         {
             keyframes[i] = (Keyframe)values[i];
-        } 
+        } //End block
         mKeyframeSet = new KeyframeSet(keyframes);
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numKeyframes = values.length;
+        //Keyframe keyframes[] = new Keyframe[Math.max(numKeyframes,2)];
+        //mValueType = ((Keyframe)values[0]).getType();
+        //for (int i = 0; i < numKeyframes; ++i) {
+            //keyframes[i] = (Keyframe)values[i];
+        //}
+        //mKeyframeSet = new KeyframeSet(keyframes);
     }
 
     
@@ -183,9 +183,9 @@ for(int i = 0;i < numKeyframes;++i)
     public void setObjectValues(Object... values) {
         mValueType = values[0].getClass();
         mKeyframeSet = KeyframeSet.ofObject(values);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mValueType = values[0].getClass();
+        //mKeyframeSet = KeyframeSet.ofObject(values);
     }
 
     
@@ -202,11 +202,11 @@ for(int i = 0;i < numKeyframes;++i)
             try 
             {
                 returnVal = targetClass.getMethod(methodName, args);
-            } 
+            } //End block
             catch (NoSuchMethodException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             args = new Class[1];
@@ -214,22 +214,22 @@ for(int i = 0;i < numKeyframes;++i)
     if(mValueType.equals(Float.class))            
             {
                 typeVariants = FLOAT_VARIANTS;
-            } 
+            } //End block
             else
     if(mValueType.equals(Integer.class))            
             {
                 typeVariants = INTEGER_VARIANTS;
-            } 
+            } //End block
             else
     if(mValueType.equals(Double.class))            
             {
                 typeVariants = DOUBLE_VARIANTS;
-            } 
+            } //End block
             else
             {
                 typeVariants = new Class[1];
                 typeVariants[0] = mValueType;
-            } 
+            } //End block
 for(Class typeVariant : typeVariants)
             {
                 args[0] = typeVariant;
@@ -240,17 +240,17 @@ for(Class typeVariant : typeVariants)
 Method var74D8482D05AF02514EABC315066E6806_1566437176 =                     returnVal;
                     var74D8482D05AF02514EABC315066E6806_1566437176.addTaint(taint);
                     return var74D8482D05AF02514EABC315066E6806_1566437176;
-                } 
+                } //End block
                 catch (NoSuchMethodException e)
                 {
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Method var74D8482D05AF02514EABC315066E6806_87141303 =         returnVal;
         var74D8482D05AF02514EABC315066E6806_87141303.addTaint(taint);
         return var74D8482D05AF02514EABC315066E6806_87141303;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -270,7 +270,7 @@ Method var74D8482D05AF02514EABC315066E6806_87141303 =         returnVal;
     if(propertyMap != null)            
             {
                 setterOrGetter = propertyMap.get(mPropertyName);
-            } 
+            } //End block
     if(setterOrGetter == null)            
             {
                 setterOrGetter = getPropertyFunction(targetClass, prefix, valueType);
@@ -278,35 +278,35 @@ Method var74D8482D05AF02514EABC315066E6806_87141303 =         returnVal;
                 {
                     propertyMap = new HashMap<String, Method>();
                     propertyMapMap.put(targetClass, propertyMap);
-                } 
+                } //End block
                 propertyMap.put(mPropertyName, setterOrGetter);
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             mPropertyMapLock.writeLock().unlock();
-        } 
+        } //End block
 Method var72DEA74FB2F1F2EAE5BFBBD9D6D5878A_1000477689 =         setterOrGetter;
         var72DEA74FB2F1F2EAE5BFBBD9D6D5878A_1000477689.addTaint(taint);
         return var72DEA74FB2F1F2EAE5BFBBD9D6D5878A_1000477689;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.171 -0400", hash_original_method = "1E4C95A3F0C35809E96A1D77677A320B", hash_generated_method = "57274BDEAD6F4EE1BDEDD294D61925B1")
      void setupSetter(Class targetClass) {
         mSetter = setupSetterOrGetter(targetClass, sSetterPropertyMap, "set", mValueType);
-        
-        
+        // ---------- Original Method ----------
+        //mSetter = setupSetterOrGetter(targetClass, sSetterPropertyMap, "set", mValueType);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.173 -0400", hash_original_method = "8511F8F7AD8858B7DCF32F8ED21ED093", hash_generated_method = "AD073233B0C810F579053BFA42B447EA")
     private void setupGetter(Class targetClass) {
         mGetter = setupSetterOrGetter(targetClass, sGetterPropertyMap, "get", null);
-        
-        
+        // ---------- Original Method ----------
+        //mGetter = setupSetterOrGetter(targetClass, sGetterPropertyMap, "get", null);
     }
 
     
@@ -323,20 +323,20 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
     if(!kf.hasValue())                    
                     {
                         kf.setValue(mProperty.get(target));
-                    } 
-                } 
+                    } //End block
+                } //End block
                 return;
-            } 
+            } //End block
             catch (ClassCastException e)
             {
                 mProperty = null;
-            } 
-        } 
+            } //End block
+        } //End block
         Class targetClass = target.getClass();
     if(mSetter == null)        
         {
             setupSetter(targetClass);
-        } 
+        } //End block
 for(Keyframe kf : mKeyframeSet.mKeyframes)
         {
     if(!kf.hasValue())            
@@ -344,21 +344,21 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
     if(mGetter == null)                
                 {
                     setupGetter(targetClass);
-                } 
+                } //End block
                 try 
                 {
                     kf.setValue(mGetter.invoke(target));
-                } 
+                } //End block
                 catch (InvocationTargetException e)
                 {
-                } 
+                } //End block
                 catch (IllegalAccessException e)
                 {
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -369,37 +369,37 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
     if(mProperty != null)        
         {
             kf.setValue(mProperty.get(target));
-        } 
+        } //End block
         try 
         {
     if(mGetter == null)            
             {
                 Class targetClass = target.getClass();
                 setupGetter(targetClass);
-            } 
+            } //End block
             kf.setValue(mGetter.invoke(target));
-        } 
+        } //End block
         catch (InvocationTargetException e)
         {
-        } 
+        } //End block
         catch (IllegalAccessException e)
         {
-        } 
-        
-        
-            
-        
-        
-            
-                
-                
-            
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mProperty != null) {
+            //kf.setValue(mProperty.get(target));
+        //}
+        //try {
+            //if (mGetter == null) {
+                //Class targetClass = target.getClass();
+                //setupGetter(targetClass);
+            //}
+            //kf.setValue(mGetter.invoke(target));
+        //} catch (InvocationTargetException e) {
+            //Log.e("PropertyValuesHolder", e.toString());
+        //} catch (IllegalAccessException e) {
+            //Log.e("PropertyValuesHolder", e.toString());
+        //}
     }
 
     
@@ -407,8 +407,8 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
      void setupStartValue(Object target) {
         addTaint(target.getTaint());
         setupValue(target, mKeyframeSet.mKeyframes.get(0));
-        
-        
+        // ---------- Original Method ----------
+        //setupValue(target, mKeyframeSet.mKeyframes.get(0));
     }
 
     
@@ -416,8 +416,8 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
      void setupEndValue(Object target) {
         addTaint(target.getTaint());
         setupValue(target, mKeyframeSet.mKeyframes.get(mKeyframeSet.mKeyframes.size() - 1));
-        
-        
+        // ---------- Original Method ----------
+        //setupValue(target, mKeyframeSet.mKeyframes.get(mKeyframeSet.mKeyframes.size() - 1));
     }
 
     
@@ -434,24 +434,24 @@ for(Keyframe kf : mKeyframeSet.mKeyframes)
 PropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1134031670 =             newPVH;
             var0228D1B95935619353E03C912CA40EEA_1134031670.addTaint(taint);
             return var0228D1B95935619353E03C912CA40EEA_1134031670;
-        } 
+        } //End block
         catch (CloneNotSupportedException e)
         {
 PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_843498742 =             null;
             var540C13E9E156B687226421B24F2DF178_843498742.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_843498742;
-        } 
-        
-        
-            
-            
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //PropertyValuesHolder newPVH = (PropertyValuesHolder) super.clone();
+            //newPVH.mPropertyName = mPropertyName;
+            //newPVH.mProperty = mProperty;
+            //newPVH.mKeyframeSet = mKeyframeSet.clone();
+            //newPVH.mEvaluator = mEvaluator;
+            //return newPVH;
+        //} catch (CloneNotSupportedException e) {
+            //return null;
+        //}
     }
 
     
@@ -461,35 +461,35 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_843498742 =            
     if(mProperty != null)        
         {
             mProperty.set(target, getAnimatedValue());
-        } 
+        } //End block
     if(mSetter != null)        
         {
             try 
             {
                 mTmpValueArray[0] = getAnimatedValue();
                 mSetter.invoke(target, mTmpValueArray);
-            } 
+            } //End block
             catch (InvocationTargetException e)
             {
-            } 
+            } //End block
             catch (IllegalAccessException e)
             {
-            } 
-        } 
-        
-        
-            
-        
-        
-            
-                
-                
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mProperty != null) {
+            //mProperty.set(target, getAnimatedValue());
+        //}
+        //if (mSetter != null) {
+            //try {
+                //mTmpValueArray[0] = getAnimatedValue();
+                //mSetter.invoke(target, mTmpValueArray);
+            //} catch (InvocationTargetException e) {
+                //Log.e("PropertyValuesHolder", e.toString());
+            //} catch (IllegalAccessException e) {
+                //Log.e("PropertyValuesHolder", e.toString());
+            //}
+        //}
     }
 
     
@@ -500,20 +500,20 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_843498742 =            
             mEvaluator = (mValueType == Integer.class) ? sIntEvaluator :
                     (mValueType == Float.class) ? sFloatEvaluator :
                     null;
-        } 
+        } //End block
     if(mEvaluator != null)        
         {
             mKeyframeSet.setEvaluator(mEvaluator);
-        } 
-        
-        
-            
-                    
-                    
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mEvaluator == null) {
+            //mEvaluator = (mValueType == Integer.class) ? sIntEvaluator :
+                    //(mValueType == Float.class) ? sFloatEvaluator :
+                    //null;
+        //}
+        //if (mEvaluator != null) {
+            //mKeyframeSet.setEvaluator(mEvaluator);
+        //}
     }
 
     
@@ -521,57 +521,53 @@ PropertyValuesHolder var540C13E9E156B687226421B24F2DF178_843498742 =            
     public void setEvaluator(TypeEvaluator evaluator) {
         mEvaluator = evaluator;
         mKeyframeSet.setEvaluator(evaluator);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mEvaluator = evaluator;
+        //mKeyframeSet.setEvaluator(evaluator);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.200 -0400", hash_original_method = "3D77B6F49E03B0770D03717F27BECD0E", hash_generated_method = "988B14A5F356427273DDE8DEE23C1F6E")
      void calculateValue(float fraction) {
         mAnimatedValue = mKeyframeSet.getValue(fraction);
-        
-        
+        // ---------- Original Method ----------
+        //mAnimatedValue = mKeyframeSet.getValue(fraction);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.201 -0400", hash_original_method = "748680E3CF42F5BF312929F3A98BA3E4", hash_generated_method = "FF84DEB99D9BF13141DD024987B0DB4E")
     public void setPropertyName(String propertyName) {
         mPropertyName = propertyName;
-        
-        
+        // ---------- Original Method ----------
+        //mPropertyName = propertyName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.203 -0400", hash_original_method = "8FEFD1E6365C919A12E22D83DCF12A7D", hash_generated_method = "C7C8013F4ECEE98331FB456D99BFC828")
     public void setProperty(Property property) {
         mProperty = property;
-        
-        
+        // ---------- Original Method ----------
+        //mProperty = property;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.204 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "FD0F51BE8BDD7F02349B9FA2FF2BDD08")
     public String getPropertyName() {
 String varA94EBE08267F8B14AA5B485C2D24900F_712709125 =         mPropertyName;
         varA94EBE08267F8B14AA5B485C2D24900F_712709125.addTaint(taint);
         return varA94EBE08267F8B14AA5B485C2D24900F_712709125;
-        
-        
+        // ---------- Original Method ----------
+        //return mPropertyName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.206 -0400", hash_original_method = "7EED53883B814F7F8B112CE8FF982C26", hash_generated_method = "EAC0F08A2AFB9A9B2A6D4B33F05BCAFE")
      Object getAnimatedValue() {
 Object var75C3F7261811C89DF5C27F09ADF01F70_577607631 =         mAnimatedValue;
         var75C3F7261811C89DF5C27F09ADF01F70_577607631.addTaint(taint);
         return var75C3F7261811C89DF5C27F09ADF01F70_577607631;
-        
-        
+        // ---------- Original Method ----------
+        //return mAnimatedValue;
     }
 
     
@@ -581,8 +577,8 @@ Object var75C3F7261811C89DF5C27F09ADF01F70_577607631 =         mAnimatedValue;
 String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400 =         mPropertyName + ": " + mKeyframeSet.toString();
         varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400.addTaint(taint);
         return varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400;
-        
-        
+        // ---------- Original Method ----------
+        //return mPropertyName + ": " + mKeyframeSet.toString();
     }
 
     
@@ -640,10 +636,10 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400 =         mPropertyName + "
             mValueType = int.class;
             mKeyframeSet = keyframeSet;
             mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mValueType = int.class;
+            //mKeyframeSet = keyframeSet;
+            //mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
         }
 
         
@@ -658,14 +654,14 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400 =         mPropertyName + "
     if(property instanceof  IntProperty)            
             {
                 mIntProperty = (IntProperty) mProperty;
-            } 
-            
-            
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mValueType = int.class;
+            //mKeyframeSet = keyframeSet;
+            //mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
+            //if (property instanceof  IntProperty) {
+                //mIntProperty = (IntProperty) mProperty;
+            //}
         }
 
         
@@ -675,8 +671,8 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400 =         mPropertyName + "
             addTaint(values[0]);
             addTaint(propertyName.getTaint());
             setIntValues(values);
-            
-            
+            // ---------- Original Method ----------
+            //setIntValues(values);
         }
 
         
@@ -689,12 +685,12 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400 =         mPropertyName + "
     if(property instanceof  IntProperty)            
             {
                 mIntProperty = (IntProperty) mProperty;
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //setIntValues(values);
+            //if (property instanceof  IntProperty) {
+                //mIntProperty = (IntProperty) mProperty;
+            //}
         }
 
         
@@ -704,9 +700,9 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400 =         mPropertyName + "
             addTaint(values[0]);
             super.setIntValues(values);
             mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setIntValues(values);
+            //mIntKeyframeSet = (IntKeyframeSet) mKeyframeSet;
         }
 
         
@@ -714,8 +710,8 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400 =         mPropertyName + "
         @Override
          void calculateValue(float fraction) {
             mIntAnimatedValue = mIntKeyframeSet.getIntValue(fraction);
-            
-            
+            // ---------- Original Method ----------
+            //mIntAnimatedValue = mIntKeyframeSet.getIntValue(fraction);
         }
 
         
@@ -725,8 +721,8 @@ String varBC0B2EC6369EA6D22FDCE3D1CEE1384D_237214400 =         mPropertyName + "
 Object var4277311C62C8711609EF6BC38BDC5F88_743667089 =             mIntAnimatedValue;
             var4277311C62C8711609EF6BC38BDC5F88_743667089.addTaint(taint);
             return var4277311C62C8711609EF6BC38BDC5F88_743667089;
-            
-            
+            // ---------- Original Method ----------
+            //return mIntAnimatedValue;
         }
 
         
@@ -738,10 +734,10 @@ Object var4277311C62C8711609EF6BC38BDC5F88_743667089 =             mIntAnimatedV
 IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =             newPVH;
             var0228D1B95935619353E03C912CA40EEA_1682747108.addTaint(taint);
             return var0228D1B95935619353E03C912CA40EEA_1682747108;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //IntPropertyValuesHolder newPVH = (IntPropertyValuesHolder) super.clone();
+            //newPVH.mIntKeyframeSet = (IntKeyframeSet) newPVH.mKeyframeSet;
+            //return newPVH;
         }
 
         
@@ -753,33 +749,33 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
             {
                 mIntProperty.setValue(target, mIntAnimatedValue);
                 return;
-            } 
+            } //End block
     if(mProperty != null)            
             {
                 mProperty.set(target, mIntAnimatedValue);
                 return;
-            } 
+            } //End block
     if(mJniSetter != 0)            
             {
                 nCallIntMethod(target, mJniSetter, mIntAnimatedValue);
                 return;
-            } 
+            } //End block
     if(mSetter != null)            
             {
                 try 
                 {
                     mTmpValueArray[0] = mIntAnimatedValue;
                     mSetter.invoke(target, mTmpValueArray);
-                } 
+                } //End block
                 catch (InvocationTargetException e)
                 {
-                } 
+                } //End block
                 catch (IllegalAccessException e)
                 {
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -789,7 +785,7 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
     if(mProperty != null)            
             {
                 return;
-            } 
+            } //End block
             try 
             {
                 mPropertyMapLock.writeLock().lock();
@@ -800,8 +796,8 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
     if(mJniSetterInteger != null)                    
                     {
                         mJniSetter = mJniSetterInteger;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(mJniSetter == 0)                
                 {
                     String methodName = getMethodName("set", mPropertyName);
@@ -812,26 +808,26 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
                         {
                             propertyMap = new HashMap<String, Integer>();
                             sJNISetterPropertyMap.put(targetClass, propertyMap);
-                        } 
+                        } //End block
                         propertyMap.put(mPropertyName, mJniSetter);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             catch (NoSuchMethodError e)
             {
                 Log.d("PropertyValuesHolder",
                         "Can't find native method using JNI, use reflection" + e);
-            } 
+            } //End block
             finally 
             {
                 mPropertyMapLock.writeLock().unlock();
-            } 
+            } //End block
     if(mJniSetter == 0)            
             {
                 super.setupSetter(targetClass);
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -864,10 +860,10 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
             mValueType = float.class;
             mKeyframeSet = keyframeSet;
             mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mValueType = float.class;
+            //mKeyframeSet = keyframeSet;
+            //mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
         }
 
         
@@ -882,14 +878,14 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
     if(property instanceof FloatProperty)            
             {
                 mFloatProperty = (FloatProperty) mProperty;
-            } 
-            
-            
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mValueType = float.class;
+            //mKeyframeSet = keyframeSet;
+            //mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
+            //if (property instanceof FloatProperty) {
+                //mFloatProperty = (FloatProperty) mProperty;
+            //}
         }
 
         
@@ -899,8 +895,8 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
             addTaint(values[0]);
             addTaint(propertyName.getTaint());
             setFloatValues(values);
-            
-            
+            // ---------- Original Method ----------
+            //setFloatValues(values);
         }
 
         
@@ -913,12 +909,12 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
     if(property instanceof  FloatProperty)            
             {
                 mFloatProperty = (FloatProperty) mProperty;
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //setFloatValues(values);
+            //if (property instanceof  FloatProperty) {
+                //mFloatProperty = (FloatProperty) mProperty;
+            //}
         }
 
         
@@ -928,9 +924,9 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
             addTaint(values[0]);
             super.setFloatValues(values);
             mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setFloatValues(values);
+            //mFloatKeyframeSet = (FloatKeyframeSet) mKeyframeSet;
         }
 
         
@@ -938,8 +934,8 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
         @Override
          void calculateValue(float fraction) {
             mFloatAnimatedValue = mFloatKeyframeSet.getFloatValue(fraction);
-            
-            
+            // ---------- Original Method ----------
+            //mFloatAnimatedValue = mFloatKeyframeSet.getFloatValue(fraction);
         }
 
         
@@ -949,8 +945,8 @@ IntPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_1682747108 =        
 Object varB8B4E2E7B85FC6B8760DC96DCB9D7522_902918195 =             mFloatAnimatedValue;
             varB8B4E2E7B85FC6B8760DC96DCB9D7522_902918195.addTaint(taint);
             return varB8B4E2E7B85FC6B8760DC96DCB9D7522_902918195;
-            
-            
+            // ---------- Original Method ----------
+            //return mFloatAnimatedValue;
         }
 
         
@@ -962,10 +958,10 @@ Object varB8B4E2E7B85FC6B8760DC96DCB9D7522_902918195 =             mFloatAnimate
 FloatPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_256238234 =             newPVH;
             var0228D1B95935619353E03C912CA40EEA_256238234.addTaint(taint);
             return var0228D1B95935619353E03C912CA40EEA_256238234;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //FloatPropertyValuesHolder newPVH = (FloatPropertyValuesHolder) super.clone();
+            //newPVH.mFloatKeyframeSet = (FloatKeyframeSet) newPVH.mKeyframeSet;
+            //return newPVH;
         }
 
         
@@ -977,33 +973,33 @@ FloatPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_256238234 =       
             {
                 mFloatProperty.setValue(target, mFloatAnimatedValue);
                 return;
-            } 
+            } //End block
     if(mProperty != null)            
             {
                 mProperty.set(target, mFloatAnimatedValue);
                 return;
-            } 
+            } //End block
     if(mJniSetter != 0)            
             {
                 nCallFloatMethod(target, mJniSetter, mFloatAnimatedValue);
                 return;
-            } 
+            } //End block
     if(mSetter != null)            
             {
                 try 
                 {
                     mTmpValueArray[0] = mFloatAnimatedValue;
                     mSetter.invoke(target, mTmpValueArray);
-                } 
+                } //End block
                 catch (InvocationTargetException e)
                 {
-                } 
+                } //End block
                 catch (IllegalAccessException e)
                 {
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1013,7 +1009,7 @@ FloatPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_256238234 =       
     if(mProperty != null)            
             {
                 return;
-            } 
+            } //End block
             try 
             {
                 mPropertyMapLock.writeLock().lock();
@@ -1024,8 +1020,8 @@ FloatPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_256238234 =       
     if(mJniSetterInteger != null)                    
                     {
                         mJniSetter = mJniSetterInteger;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(mJniSetter == 0)                
                 {
                     String methodName = getMethodName("set", mPropertyName);
@@ -1036,26 +1032,26 @@ FloatPropertyValuesHolder var0228D1B95935619353E03C912CA40EEA_256238234 =       
                         {
                             propertyMap = new HashMap<String, Integer>();
                             sJNISetterPropertyMap.put(targetClass, propertyMap);
-                        } 
+                        } //End block
                         propertyMap.put(mPropertyName, mJniSetter);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             catch (NoSuchMethodError e)
             {
                 Log.d("PropertyValuesHolder",
                         "Can't find native method using JNI, use reflection" + e);
-            } 
+            } //End block
             finally 
             {
                 mPropertyMapLock.writeLock().unlock();
-            } 
+            } //End block
     if(mJniSetter == 0)            
             {
                 super.setupSetter(targetClass);
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

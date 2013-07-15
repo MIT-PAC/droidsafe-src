@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,24 +20,24 @@ public final class BitString {
             IllegalArgumentException var08120D9B6ADD6481A4C536E6FEC143C4_37241664 = new IllegalArgumentException("Number of unused bits MUST be in range 0-7");
             var08120D9B6ADD6481A4C536E6FEC143C4_37241664.addTaint(taint);
             throw var08120D9B6ADD6481A4C536E6FEC143C4_37241664;
-        } 
+        } //End block
     if(bytes.length == 0 && unusedBits != 0)        
         {
             IllegalArgumentException var91B82456DE87D1E4499172BB4FAE44C7_1106829158 = new IllegalArgumentException("For empty bit string unused bits MUST be 0");
             var91B82456DE87D1E4499172BB4FAE44C7_1106829158.addTaint(taint);
             throw var91B82456DE87D1E4499172BB4FAE44C7_1106829158;
-        } 
+        } //End block
         this.bytes = bytes;
         this.unusedBits = unusedBits;
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (unusedBits < 0 || unusedBits > 7) {
+            //throw new IllegalArgumentException("Number of unused bits MUST be in range 0-7");
+        //}
+        //if (bytes.length == 0 && unusedBits != 0) {
+            //throw new IllegalArgumentException("For empty bit string unused bits MUST be 0");
+        //}
+        //this.bytes = bytes;
+        //this.unusedBits = unusedBits;
     }
 
     
@@ -48,26 +48,25 @@ public final class BitString {
     if(unusedBits != 0)        
         {
             size++;
-        } 
+        } //End block
         bytes = new byte[size];
 for(int i = 0;i < values.length;i++)
         {
             setBit(i, values[i]);
-        } 
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //unusedBits = values.length % 8;
+        //int size = values.length / 8;
+        //if (unusedBits != 0) {
+            //size++;
+        //}
+        //bytes = new byte[size];
+        //for (int i = 0; i < values.length; i++) {
+            //setBit(i, values[i]);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.976 -0400", hash_original_method = "286435896BFB2C2EB12779836BDE2B3F", hash_generated_method = "1BEEACF60339FC3E0C38A049DAE54033")
     public boolean getBit(int bit) {
         addTaint(bit);
@@ -76,14 +75,13 @@ for(int i = 0;i < values.length;i++)
         boolean var920ACE372C3491BDE0ED7B5D71D8B806_1357891665 = ((bytes[index] & SET_MASK[offset]) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2122093045 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2122093045;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int offset = bit % 8;
+        //int index = bit / 8;
+        //return (bytes[index] & SET_MASK[offset]) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.977 -0400", hash_original_method = "64B37589A76FCD4AF41D04B8A51CCBFB", hash_generated_method = "A9CE8AE95D58FDCF2BD1F021CC72529C")
     public void setBit(int bit, boolean value) {
         addTaint(value);
@@ -93,19 +91,19 @@ for(int i = 0;i < values.length;i++)
     if(value)        
         {
             bytes[index] |= SET_MASK[offset];
-        } 
+        } //End block
         else
         {
             bytes[index] &= RESET_MASK[offset];
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int offset = bit % 8;
+        //int index = bit / 8;
+        //if (value) {
+            //bytes[index] |= SET_MASK[offset];
+        //} else {
+            //bytes[index] &= RESET_MASK[offset];
+        //}
     }
 
     
@@ -115,16 +113,16 @@ for(int i = 0;i < values.length;i++)
 for(int i = 0;i < result.length;i++)
         {
             result[i] = getBit(i);
-        } 
+        } //End block
         boolean[] varB4A88417B3D0170D754C647C30B7216A_765597627 = (result);
                 boolean[] var503EB2F420079C4024483971CE5EDEA8_702121224 = {getTaintBoolean()};
         return var503EB2F420079C4024483971CE5EDEA8_702121224;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean[] result = new boolean[bytes.length * 8 - unusedBits];
+        //for (int i = 0; i < result.length; i++) {
+            //result[i] = getBit(i);
+        //}
+        //return result;
     }
 
     

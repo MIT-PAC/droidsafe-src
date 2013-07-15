@@ -1,6 +1,6 @@
 package org.xmlpull.v1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public class XmlPullParserFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.642 -0400", hash_original_method = "59320E09A9AFF113592C1ECE87FC559F", hash_generated_method = "68325C6D2BA66CB5DC2172316E778C58")
     protected  XmlPullParserFactory() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,8 +34,8 @@ public class XmlPullParserFactory {
         addTaint(state);
         addTaint(name.getTaint());
         features.put(name, state);
-        
-        
+        // ---------- Original Method ----------
+        //features.put(name, state);
     }
 
     
@@ -46,9 +46,9 @@ public class XmlPullParserFactory {
         boolean varDC48A27EDADE465507184A31325067DD_1442606607 = (value != null ? value.booleanValue() : false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_260779688 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_260779688;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Boolean value = (Boolean) features.get(name);
+        //return value != null ? value.booleanValue() : false;
     }
 
     
@@ -56,8 +56,8 @@ public class XmlPullParserFactory {
     public void setNamespaceAware(boolean awareness) {
         addTaint(awareness);
         features.put (XmlPullParser.FEATURE_PROCESS_NAMESPACES, awareness);
-        
-        
+        // ---------- Original Method ----------
+        //features.put (XmlPullParser.FEATURE_PROCESS_NAMESPACES, awareness);
     }
 
     
@@ -66,8 +66,8 @@ public class XmlPullParserFactory {
         boolean var6315A68DCC9052F6A43C9B5B41FEF245_688010425 = (getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_796586533 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_796586533;
-        
-        
+        // ---------- Original Method ----------
+        //return getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES);
     }
 
     
@@ -75,8 +75,8 @@ public class XmlPullParserFactory {
     public void setValidating(boolean validating) {
         addTaint(validating);
         features.put (XmlPullParser.FEATURE_VALIDATION, validating);
-        
-        
+        // ---------- Original Method ----------
+        //features.put (XmlPullParser.FEATURE_VALIDATION, validating);
     }
 
     
@@ -85,8 +85,8 @@ public class XmlPullParserFactory {
         boolean var7071369F79CC67F9563C3D976C3FB483_1684637412 = (getFeature (XmlPullParser.FEATURE_VALIDATION));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1402881375 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1402881375;
-        
-        
+        // ---------- Original Method ----------
+        //return getFeature (XmlPullParser.FEATURE_VALIDATION);
     }
 
     
@@ -120,22 +120,22 @@ for(Iterator iter = features.keySet().iterator();iter.hasNext();)
     if(value != null && value.booleanValue())                    
                     {
                         pp.setFeature(key, true);
-                    } 
-                } 
+                    } //End block
+                } //End block
 XmlPullParser var6B083770A9017854BE96B8873F66785B_1004891980 =                 pp;
                 var6B083770A9017854BE96B8873F66785B_1004891980.addTaint(taint);
                 return var6B083770A9017854BE96B8873F66785B_1004891980;
-            } 
+            } //End block
             catch (Exception ex)
             {
                 issues.append (ppClass.getName () + ": "+ ex.toString ()+"; ");
-            } 
-        } 
+            } //End block
+        } //End block
         XmlPullParserException var70853AEE3D8A231D2863B4DB9E5A409A_586926440 = new XmlPullParserException ("could not create parser: "+issues);
         var70853AEE3D8A231D2863B4DB9E5A409A_586926440.addTaint(taint);
         throw var70853AEE3D8A231D2863B4DB9E5A409A_586926440;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -147,14 +147,14 @@ XmlPullParser var6B083770A9017854BE96B8873F66785B_1004891980 =                 p
                 ("Factory initialization incomplete - has not tried "+classNamesLocation);
             var827A074F8D267967AE8E445BC221BB7E_1935544734.addTaint(taint);
             throw var827A074F8D267967AE8E445BC221BB7E_1935544734;
-        } 
+        } //End block
     if(serializerClasses.size() == 0)        
         {
             XmlPullParserException varDFF88D1B04C06EF39538B1EBDDC41291_1717282461 = new XmlPullParserException
                 ("No valid serializer classes found in "+classNamesLocation);
             varDFF88D1B04C06EF39538B1EBDDC41291_1717282461.addTaint(taint);
             throw varDFF88D1B04C06EF39538B1EBDDC41291_1717282461;
-        } 
+        } //End block
         final StringBuilder issues = new StringBuilder ();
 for(int i = 0;i < serializerClasses.size ();i++)
         {
@@ -165,17 +165,17 @@ for(int i = 0;i < serializerClasses.size ();i++)
 XmlSerializer var0BEA34000EE709D03EB4BC9DC3C2B533_765608132 =                 ser;
                 var0BEA34000EE709D03EB4BC9DC3C2B533_765608132.addTaint(taint);
                 return var0BEA34000EE709D03EB4BC9DC3C2B533_765608132;
-            } 
+            } //End block
             catch (Exception ex)
             {
                 issues.append (ppClass.getName () + ": "+ ex.toString ()+"; ");
-            } 
-        } 
+            } //End block
+        } //End block
         XmlPullParserException varEDB43EB3E2ECB9AA2EEF51B749857ADB_486163145 = new XmlPullParserException ("could not create serializer: "+issues);
         varEDB43EB3E2ECB9AA2EEF51B749857ADB_486163145.addTaint(taint);
         throw varEDB43EB3E2ECB9AA2EEF51B749857ADB_486163145;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

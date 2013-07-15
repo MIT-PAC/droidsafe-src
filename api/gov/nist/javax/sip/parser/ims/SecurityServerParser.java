@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class SecurityServerParser extends SecurityAgreeParser {
     public  SecurityServerParser(String security) {
         super(security);
         addTaint(security.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,7 +25,7 @@ public class SecurityServerParser extends SecurityAgreeParser {
     protected  SecurityServerParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -40,22 +40,22 @@ public class SecurityServerParser extends SecurityAgreeParser {
 SIPHeader varDB403FA0ABA7A17094DA8787E6D0FF7C_137009923 =             secServerList;
             varDB403FA0ABA7A17094DA8787E6D0FF7C_137009923.addTaint(taint);
             return varDB403FA0ABA7A17094DA8787E6D0FF7C_137009923;
-        } 
+        } //End block
         finally 
         {
             dbg_leave("SecuriryServer parse");
-        } 
-        
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //dbg_enter("SecuriryServer parse");
+        //try {
+            //headerName(TokenTypes.SECURITY_SERVER);
+            //SecurityServer secServer = new SecurityServer();
+            //SecurityServerList secServerList =
+                //(SecurityServerList) super.parse(secServer);
+            //return secServerList;
+        //} finally {
+            //dbg_leave("SecuriryServer parse");
+        //}
     }
 
     

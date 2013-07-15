@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class SSLServerSocket extends ServerSocket {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.760 -0400", hash_original_method = "0C32E268EE0846B0058E51DE9119BB88", hash_generated_method = "B37F190B43A3AAD81F61BB2FEBA35EB3")
     protected  SSLServerSocket() throws IOException {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -20,7 +20,7 @@ public abstract class SSLServerSocket extends ServerSocket {
     protected  SSLServerSocket(int port) throws IOException {
         super(port);
         addTaint(port);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,7 +29,7 @@ public abstract class SSLServerSocket extends ServerSocket {
         super(port, backlog);
         addTaint(backlog);
         addTaint(port);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,7 +39,7 @@ public abstract class SSLServerSocket extends ServerSocket {
         addTaint(address.getTaint());
         addTaint(backlog);
         addTaint(port);
-        
+        // ---------- Original Method ----------
     }
 
     

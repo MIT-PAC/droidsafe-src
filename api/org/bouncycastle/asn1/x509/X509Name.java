@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,7 +51,7 @@ public class X509Name extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.541 -0400", hash_original_method = "E0A402814C87C5337199B2B0EDD62792", hash_generated_method = "057550D58678CB656F886F7D19F48820")
     protected  X509Name() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -72,7 +72,7 @@ for(int i = 0;i < set.size();i++)
                     IllegalArgumentException var8225E7D760902CE5C3E99FCCFDE6CA09_773004755 = new IllegalArgumentException("badly sized pair");
                     var8225E7D760902CE5C3E99FCCFDE6CA09_773004755.addTaint(taint);
                     throw var8225E7D760902CE5C3E99FCCFDE6CA09_773004755;
-                } 
+                } //End block
                 ordering.addElement(DERObjectIdentifier.getInstance(s.getObjectAt(0)));
                 DEREncodable value = s.getObjectAt(1);
     if(value instanceof DERString && !(value instanceof DERUniversalString))                
@@ -81,21 +81,21 @@ for(int i = 0;i < set.size();i++)
     if(v.length() > 0 && v.charAt(0) == '#')                    
                     {
                         values.addElement("\\" + v);
-                    } 
+                    } //End block
                     else
                     {
                         values.addElement(v);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     values.addElement("#" + bytesToString(Hex.encode(value.getDERObject().getDEREncoded())));
-                } 
+                } //End block
                 added.addElement(Boolean.valueOf(i != 0));
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -104,7 +104,7 @@ for(int i = 0;i < set.size();i++)
         Hashtable  attributes) {
         this(null, attributes);
         addTaint(attributes.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -115,7 +115,7 @@ for(int i = 0;i < set.size();i++)
         this(ordering, attributes, new X509DefaultEntryConverter());
         addTaint(attributes.getTaint());
         addTaint(ordering.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -133,8 +133,8 @@ for(int i = 0;i != ordering.size();i++)
             {
                 this.ordering.addElement(ordering.elementAt(i));
                 this.added.addElement(FALSE);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             Enumeration e = attributes.keys();
@@ -143,8 +143,8 @@ for(int i = 0;i != ordering.size();i++)
             {
                 this.ordering.addElement(e.nextElement());
                 this.added.addElement(FALSE);
-            } 
-        } 
+            } //End block
+        } //End block
 for(int i = 0;i != this.ordering.size();i++)
         {
             DERObjectIdentifier oid = (DERObjectIdentifier)this.ordering.elementAt(i);
@@ -153,11 +153,11 @@ for(int i = 0;i != this.ordering.size();i++)
                 IllegalArgumentException var395EF524058B951BA48FFDB657C8D23C_634208704 = new IllegalArgumentException("No attribute for object id - " + oid.getId() + " - passed to distinguished name");
                 var395EF524058B951BA48FFDB657C8D23C_634208704.addTaint(taint);
                 throw var395EF524058B951BA48FFDB657C8D23C_634208704;
-            } 
+            } //End block
             this.values.addElement(attributes.get(oid));
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -168,7 +168,7 @@ for(int i = 0;i != this.ordering.size();i++)
         this(oids, values, new X509DefaultEntryConverter());
         addTaint(values.getTaint());
         addTaint(oids.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -185,25 +185,25 @@ for(int i = 0;i != this.ordering.size();i++)
             IllegalArgumentException var8B9F22F4CB47AB28A0E3D6B76D1B1D06_548635471 = new IllegalArgumentException("oids vector must be same length as values.");
             var8B9F22F4CB47AB28A0E3D6B76D1B1D06_548635471.addTaint(taint);
             throw var8B9F22F4CB47AB28A0E3D6B76D1B1D06_548635471;
-        } 
+        } //End block
 for(int i = 0;i < oids.size();i++)
         {
             this.ordering.addElement(oids.elementAt(i));
             this.values.addElement(values.elementAt(i));
             this.added.addElement(FALSE);
-        } 
-        
-        
-        
-        
-            
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.converter = converter;
+        //if (oids.size() != values.size())
+        //{
+            //throw new IllegalArgumentException("oids vector must be same length as values.");
+        //}
+        //for (int i = 0; i < oids.size(); i++)
+        //{
+            //this.ordering.addElement(oids.elementAt(i));
+            //this.values.addElement(values.elementAt(i));
+            //this.added.addElement(FALSE);
+        //}
     }
 
     
@@ -212,7 +212,7 @@ for(int i = 0;i < oids.size();i++)
         String  dirName) {
         this(DefaultReverse, DefaultLookUp, dirName);
         addTaint(dirName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -223,7 +223,7 @@ for(int i = 0;i < oids.size();i++)
         this(DefaultReverse, DefaultLookUp, dirName, converter);
         addTaint(converter.getTaint());
         addTaint(dirName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -234,7 +234,7 @@ for(int i = 0;i < oids.size();i++)
         this(reverse, DefaultLookUp, dirName);
         addTaint(dirName.getTaint());
         addTaint(reverse);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -247,7 +247,7 @@ for(int i = 0;i < oids.size();i++)
         addTaint(converter.getTaint());
         addTaint(dirName.getTaint());
         addTaint(reverse);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -260,7 +260,7 @@ for(int i = 0;i < oids.size();i++)
         addTaint(dirName.getTaint());
         addTaint(lookUp.getTaint());
         addTaint(reverse);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -285,7 +285,7 @@ for(int i = 0;i < oids.size();i++)
                 IllegalArgumentException var0F4662F40FB0E6B066ACA52697955804_728798144 = new IllegalArgumentException("badly formatted directory string");
                 var0F4662F40FB0E6B066ACA52697955804_728798144.addTaint(taint);
                 throw var0F4662F40FB0E6B066ACA52697955804_728798144;
-            } 
+            } //End block
             String name = token.substring(0, index);
             String value = token.substring(index + 1);
             DERObjectIdentifier oid = decodeOID(name, lookUp);
@@ -306,15 +306,15 @@ for(int i = 0;i < oids.size();i++)
                     this.ordering.addElement(decodeOID(nm, lookUp));
                     this.values.addElement(vl);
                     this.added.addElement(TRUE);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 this.ordering.addElement(oid);
                 this.values.addElement(value);
                 this.added.addElement(FALSE);
-            } 
-        } 
+            } //End block
+        } //End block
     if(reverse)        
         {
             Vector o = new Vector();
@@ -329,21 +329,21 @@ for(int i = 0;i < this.ordering.size();i++)
                     v.insertElementAt(this.values.elementAt(i), count);
                     a.insertElementAt(this.added.elementAt(i), count);
                     count++;
-                } 
+                } //End block
                 else
                 {
                     o.insertElementAt(this.ordering.elementAt(i), 0);
                     v.insertElementAt(this.values.elementAt(i), 0);
                     a.insertElementAt(this.added.elementAt(i), 0);
                     count = 1;
-                } 
-            } 
+                } //End block
+            } //End block
             this.ordering = o;
             this.values = v;
             this.added = a;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -383,39 +383,39 @@ for(int i = 0;i < this.ordering.size();i++)
 DERObjectIdentifier varD445AEFB1A26516FDA5584BF11DCB649_2042788301 =             new DERObjectIdentifier(name.substring(4));
             varD445AEFB1A26516FDA5584BF11DCB649_2042788301.addTaint(taint);
             return varD445AEFB1A26516FDA5584BF11DCB649_2042788301;
-        } 
+        } //End block
         else
     if(name.charAt(0) >= '0' && name.charAt(0) <= '9')        
         {
 DERObjectIdentifier varDB076E8F3C9AA5817E9BAB61D656C690_92891868 =             new DERObjectIdentifier(name);
             varDB076E8F3C9AA5817E9BAB61D656C690_92891868.addTaint(taint);
             return varDB076E8F3C9AA5817E9BAB61D656C690_92891868;
-        } 
+        } //End block
         DERObjectIdentifier oid = (DERObjectIdentifier)lookUp.get(Strings.toLowerCase(name));
     if(oid == null)        
         {
             IllegalArgumentException varA0F19C560D30A8661B2D4483C63CCEC3_1988848752 = new IllegalArgumentException("Unknown object id - " + name + " - passed to distinguished name");
             varA0F19C560D30A8661B2D4483C63CCEC3_1988848752.addTaint(taint);
             throw varA0F19C560D30A8661B2D4483C63CCEC3_1988848752;
-        } 
+        } //End block
 DERObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_1659859947 =         oid;
         var6EE0E520E830DF58CC7591C0A7BECFB6_1659859947.addTaint(taint);
         return var6EE0E520E830DF58CC7591C0A7BECFB6_1659859947;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (Strings.toUpperCase(name).startsWith("OID."))
+        //{
+            //return new DERObjectIdentifier(name.substring(4));
+        //}
+        //else if (name.charAt(0) >= '0' && name.charAt(0) <= '9')
+        //{
+            //return new DERObjectIdentifier(name);
+        //}
+        //DERObjectIdentifier oid = (DERObjectIdentifier)lookUp.get(Strings.toLowerCase(name));
+        //if (oid == null)
+        //{
+            //throw new IllegalArgumentException("Unknown object id - " + name + " - passed to distinguished name");
+        //}
+        //return oid;
     }
 
     
@@ -425,17 +425,17 @@ DERObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_1659859947 =         oid
 for(int i = 0;i != ordering.size();i++)
         {
             v.addElement(ordering.elementAt(i));
-        } 
+        } //End block
 Vector var6DC76BC51820DD65E8396280E884AA78_2032605580 =         v;
         var6DC76BC51820DD65E8396280E884AA78_2032605580.addTaint(taint);
         return var6DC76BC51820DD65E8396280E884AA78_2032605580;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Vector  v = new Vector();
+        //for (int i = 0; i != ordering.size(); i++)
+        //{
+            //v.addElement(ordering.elementAt(i));
+        //}
+        //return v;
     }
 
     
@@ -445,17 +445,17 @@ Vector var6DC76BC51820DD65E8396280E884AA78_2032605580 =         v;
 for(int i = 0;i != values.size();i++)
         {
             v.addElement(values.elementAt(i));
-        } 
+        } //End block
 Vector var6DC76BC51820DD65E8396280E884AA78_1835844584 =         v;
         var6DC76BC51820DD65E8396280E884AA78_1835844584.addTaint(taint);
         return var6DC76BC51820DD65E8396280E884AA78_1835844584;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Vector  v = new Vector();
+        //for (int i = 0; i != values.size(); i++)
+        //{
+            //v.addElement(values.elementAt(i));
+        //}
+        //return v;
     }
 
     
@@ -472,34 +472,34 @@ for(int i = 0;i != values.size();i++)
     if(val.length() > 2 && val.charAt(0) == '\\' && val.charAt(1) == '#')                
                 {
                     v.addElement(val.substring(1));
-                } 
+                } //End block
                 else
                 {
                     v.addElement(val);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Vector var6DC76BC51820DD65E8396280E884AA78_1016318996 =         v;
         var6DC76BC51820DD65E8396280E884AA78_1016318996.addTaint(taint);
         return var6DC76BC51820DD65E8396280E884AA78_1016318996;
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                    
-                
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Vector  v = new Vector();
+        //for (int i = 0; i != values.size(); i++)
+        //{
+            //if (ordering.elementAt(i).equals(oid))
+            //{
+                //String val = (String)values.elementAt(i);
+                //if (val.length() > 2 && val.charAt(0) == '\\' && val.charAt(1) == '#')
+                //{
+                    //v.addElement(val.substring(1));
+                //}
+                //else
+                //{
+                    //v.addElement(val);
+                //}
+            //}
+        //}
+        //return v;
     }
 
     
@@ -521,23 +521,23 @@ for(int i = 0;i != ordering.size();i++)
                     || ((Boolean)this.added.elementAt(i)).booleanValue())                
                 {
                     sVec.add(new DERSequence(v));
-                } 
+                } //End block
                 else
                 {
                     vec.add(new DERSet(sVec));
                     sVec = new ASN1EncodableVector();
                     sVec.add(new DERSequence(v));
-                } 
+                } //End block
                 lstOid = oid;
-            } 
+            } //End block
             vec.add(new DERSet(sVec));
             seq = new DERSequence(vec);
-        } 
+        } //End block
 DERObject var42A78C062640017A329FA085150BC1B8_68209434 =         seq;
         var42A78C062640017A329FA085150BC1B8_68209434.addTaint(taint);
         return var42A78C062640017A329FA085150BC1B8_68209434;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -550,44 +550,44 @@ DERObject var42A78C062640017A329FA085150BC1B8_68209434 =         seq;
             boolean var6B45452ACCD7D93A4F0BF18AB7DE1D52_585740524 = (this.equals(obj));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1610657310 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1610657310;
-        } 
+        } //End block
     if(obj == this)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1192321487 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1914051954 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1914051954;
-        } 
+        } //End block
     if(!(obj instanceof X509Name || obj instanceof ASN1Sequence))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1520553430 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_398909898 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_398909898;
-        } 
+        } //End block
         DERObject derO = ((DEREncodable)obj).getDERObject();
     if(this.getDERObject().equals(derO))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_914240726 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1525049158 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1525049158;
-        } 
+        } //End block
         X509Name other;
         try 
         {
             other = X509Name.getInstance(obj);
-        } 
+        } //End block
         catch (IllegalArgumentException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_644760002 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1513826260 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1513826260;
-        } 
+        } //End block
         int orderingSize = ordering.size();
     if(orderingSize != other.ordering.size())        
         {
             boolean var68934A3E9455FA72420237EB05902327_378611377 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_487584994 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_487584994;
-        } 
+        } //End block
 for(int i = 0;i < orderingSize;i++)
         {
             DERObjectIdentifier oid = (DERObjectIdentifier)ordering.elementAt(i);
@@ -601,20 +601,20 @@ for(int i = 0;i < orderingSize;i++)
                     boolean var68934A3E9455FA72420237EB05902327_268357589 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1401414397 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1401414397;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 boolean var68934A3E9455FA72420237EB05902327_1608549074 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1636147556 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1636147556;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1397242372 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1612933480 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1612933480;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -625,7 +625,7 @@ for(int i = 0;i < orderingSize;i++)
             int var4D002D69417019F289C8061B82207DD2_1832425368 = (hashCodeValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093863364 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093863364;
-        } 
+        } //End block
         isHashCodeCalculated = true;
 for(int i = 0;i != ordering.size();i += 1)
         {
@@ -634,25 +634,25 @@ for(int i = 0;i != ordering.size();i += 1)
             value = stripInternalSpaces(value);
             hashCodeValue ^= ordering.elementAt(i).hashCode();
             hashCodeValue ^= value.hashCode();
-        } 
+        } //End block
         int var4D002D69417019F289C8061B82207DD2_707233725 = (hashCodeValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1825901988 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1825901988;
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isHashCodeCalculated)
+        //{
+            //return hashCodeValue;
+        //}
+        //isHashCodeCalculated = true;
+        //for (int i = 0; i != ordering.size(); i += 1)
+        //{
+            //String value = (String)values.elementAt(i);
+            //value = canonicalize(value);
+            //value = stripInternalSpaces(value);
+            //hashCodeValue ^= ordering.elementAt(i).hashCode();
+            //hashCodeValue ^= value.hashCode();
+        //}
+        //return hashCodeValue;
     }
 
     
@@ -664,38 +664,38 @@ for(int i = 0;i != ordering.size();i += 1)
             boolean varB326B5062B2F0E69046810717534CB09_137052969 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1350025720 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1350025720;
-        } 
+        } //End block
     if(!(obj instanceof X509Name || obj instanceof ASN1Sequence))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1092711850 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1515723848 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1515723848;
-        } 
+        } //End block
         DERObject derO = ((DEREncodable)obj).getDERObject();
     if(this.getDERObject().equals(derO))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1428644540 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1886221594 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1886221594;
-        } 
+        } //End block
         X509Name other;
         try 
         {
             other = X509Name.getInstance(obj);
-        } 
+        } //End block
         catch (IllegalArgumentException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_856203833 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1656377094 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1656377094;
-        } 
+        } //End block
         int orderingSize = ordering.size();
     if(orderingSize != other.ordering.size())        
         {
             boolean var68934A3E9455FA72420237EB05902327_304471494 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_219733873 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_219733873;
-        } 
+        } //End block
         boolean[] indexes = new boolean[orderingSize];
         int start;
         int end;
@@ -705,13 +705,13 @@ for(int i = 0;i != ordering.size();i += 1)
             start = 0;
             end = orderingSize;
             delta = 1;
-        } 
+        } //End block
         else
         {
             start = orderingSize - 1;
             end = -1;
             delta = -1;
-        } 
+        } //End block
 for(int i = start;i != end;i += delta)
         {
             boolean found = false;
@@ -722,7 +722,7 @@ for(int j = 0;j < orderingSize;j++)
     if(indexes[j])                
                 {
                     continue;
-                } 
+                } //End block
                 DERObjectIdentifier oOid = (DERObjectIdentifier)other.ordering.elementAt(j);
     if(oid.equals(oOid))                
                 {
@@ -732,21 +732,21 @@ for(int j = 0;j < orderingSize;j++)
                         indexes[j] = true;
                         found      = true;
                         break;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(!found)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_259578190 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_338525796 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_338525796;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_454292857 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1825813002 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1825813002;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -765,24 +765,24 @@ for(int j = 0;j < orderingSize;j++)
                 boolean var68934A3E9455FA72420237EB05902327_1486673825 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1591996193 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1591996193;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_90241157 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2039591321 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2039591321;
-        
-        
-        
-        
-        
-            
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //String value = canonicalize(s1);
+        //String oValue = canonicalize(s2);
+        //if (!value.equals(oValue))
+        //{
+            //value = stripInternalSpaces(value);
+            //oValue = stripInternalSpaces(oValue);
+            //if (!value.equals(oValue))
+            //{
+                //return false;
+            //}
+        //}
+        //return true;
     }
 
     
@@ -796,22 +796,22 @@ for(int j = 0;j < orderingSize;j++)
     if(obj instanceof DERString)            
             {
                 value = Strings.toLowerCase(((DERString)obj).getString().trim());
-            } 
-        } 
+            } //End block
+        } //End block
 String varAF280DA2BC37D8BE783D8499160168DE_1041148621 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_1041148621.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_1041148621;
-        
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //String value = Strings.toLowerCase(s.trim());
+        //if (value.length() > 0 && value.charAt(0) == '#')
+        //{
+            //DERObject obj = decodeObject(value);
+            //if (obj instanceof DERString)
+            //{
+                //value = Strings.toLowerCase(((DERString)obj).getString().trim());
+            //}
+        //}
+        //return value;
     }
 
     
@@ -823,22 +823,22 @@ String varAF280DA2BC37D8BE783D8499160168DE_1041148621 =         value;
 ASN1Object varDC836AD1738524F460698D3D090F44A0_860754255 =             ASN1Object.fromByteArray(Hex.decode(oValue.substring(1)));
             varDC836AD1738524F460698D3D090F44A0_860754255.addTaint(taint);
             return varDC836AD1738524F460698D3D090F44A0_860754255;
-        } 
+        } //End block
         catch (IOException e)
         {
             IllegalStateException var6000C227E791C30DAB9C9FD41D40B372_1699825641 = new IllegalStateException("unknown encoding in name: " + e);
             var6000C227E791C30DAB9C9FD41D40B372_1699825641.addTaint(taint);
             throw var6000C227E791C30DAB9C9FD41D40B372_1699825641;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return ASN1Object.fromByteArray(Hex.decode(oValue.substring(1)));
+        //}
+        //catch (IOException e)
+        //{
+            //throw new IllegalStateException("unknown encoding in name: " + e);
+        //}
     }
 
     
@@ -857,30 +857,30 @@ for(int k = 1;k < str.length();k++)
     if(!(c1 == ' ' && c2 == ' '))                
                 {
                     res.append(c2);
-                } 
+                } //End block
                 c1 = c2;
-            } 
-        } 
+            } //End block
+        } //End block
 String varEC7EB75EF3C7FA633C54FC66A0358174_720957858 =         res.toString();
         varEC7EB75EF3C7FA633C54FC66A0358174_720957858.addTaint(taint);
         return varEC7EB75EF3C7FA633C54FC66A0358174_720957858;
-        
-        
-        
-        
-            
-            
-            
-            
-                
-                
-                
-                    
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuffer res = new StringBuffer();
+        //if (str.length() != 0)
+        //{
+            //char    c1 = str.charAt(0);
+            //res.append(c1);
+            //for (int k = 1; k < str.length(); k++)
+            //{
+                //char    c2 = str.charAt(k);
+                //if (!(c1 == ' ' && c2 == ' '))
+                //{
+                    //res.append(c2);
+                //}
+                //c1 = c2;
+            //}
+        //}
+        //return res.toString();
     }
 
     
@@ -898,11 +898,11 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_720957858 =         res.toString();
     if(sym != null)        
         {
             buf.append(sym);
-        } 
+        } //End block
         else
         {
             buf.append(oid.getId());
-        } 
+        } //End block
         buf.append('=');
         int index = buf.length();
         buf.append(value);
@@ -910,7 +910,7 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_720957858 =         res.toString();
     if(value.length() >= 2 && value.charAt(0) == '\\' && value.charAt(1) == '#')        
         {
             index += 2;
-        } 
+        } //End block
         while
 (index != end)        
         {
@@ -926,11 +926,11 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_720957858 =         res.toString();
                 buf.insert(index, "\\");
                 index++;
                 end++;
-            } 
+            } //End block
             index++;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -952,7 +952,7 @@ for(int i = 0;i < ordering.size();i++)
                 appendValue(ava, oidSymbols,
                     (DERObjectIdentifier)ordering.elementAt(i),
                     (String)values.elementAt(i));
-            } 
+            } //End block
             else
             {
                 ava = new StringBuffer();
@@ -960,8 +960,8 @@ for(int i = 0;i < ordering.size();i++)
                     (DERObjectIdentifier)ordering.elementAt(i),
                     (String)values.elementAt(i));
                 components.addElement(ava);
-            } 
-        } 
+            } //End block
+        } //End block
     if(reverse)        
         {
 for(int i = components.size() - 1;i >= 0;i--)
@@ -969,14 +969,14 @@ for(int i = components.size() - 1;i >= 0;i--)
     if(first)                
                 {
                     first = false;
-                } 
+                } //End block
                 else
                 {
                     buf.append(',');
-                } 
+                } //End block
                 buf.append(components.elementAt(i).toString());
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
 for(int i = 0;i < components.size();i++)
@@ -984,19 +984,19 @@ for(int i = 0;i < components.size();i++)
     if(first)                
                 {
                     first = false;
-                } 
+                } //End block
                 else
                 {
                     buf.append(',');
-                } 
+                } //End block
                 buf.append(components.elementAt(i).toString());
-            } 
-        } 
+            } //End block
+        } //End block
 String var4FC680801218E6372BC708D6FA44AE60_1456740391 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_1456740391.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_1456740391;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1008,17 +1008,17 @@ String var4FC680801218E6372BC708D6FA44AE60_1456740391 =         buf.toString();
 for(int i = 0;i != cs.length;i++)
         {
             cs[i] = (char)(data[i] & 0xff);
-        } 
+        } //End block
 String varEE3C15FF17401E8EE402ABCA933B75C8_2005073165 =         new String(cs);
         varEE3C15FF17401E8EE402ABCA933B75C8_2005073165.addTaint(taint);
         return varEE3C15FF17401E8EE402ABCA933B75C8_2005073165;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //char[]  cs = new char[data.length];
+        //for (int i = 0; i != cs.length; i++)
+        //{
+            //cs[i] = (char)(data[i] & 0xff);
+        //}
+        //return new String(cs);
     }
 
     
@@ -1027,8 +1027,8 @@ String varEE3C15FF17401E8EE402ABCA933B75C8_2005073165 =         new String(cs);
 String varD00BB2E4A865BC001F6C25F341B09FCC_925325489 =         toString(DefaultReverse, DefaultSymbols);
         varD00BB2E4A865BC001F6C25F341B09FCC_925325489.addTaint(taint);
         return varD00BB2E4A865BC001F6C25F341B09FCC_925325489;
-        
-        
+        // ---------- Original Method ----------
+        //return toString(DefaultReverse, DefaultSymbols);
     }
 
     

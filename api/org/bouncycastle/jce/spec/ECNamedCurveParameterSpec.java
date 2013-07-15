@@ -1,6 +1,6 @@
 package org.bouncycastle.jce.spec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,8 +24,8 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
         addTaint(G.getTaint());
         addTaint(curve.getTaint());
         this.name = name;
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
     }
 
     
@@ -42,8 +42,8 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
         addTaint(G.getTaint());
         addTaint(curve.getTaint());
         this.name = name;
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
     }
 
     
@@ -62,19 +62,18 @@ public class ECNamedCurveParameterSpec extends ECParameterSpec {
         addTaint(G.getTaint());
         addTaint(curve.getTaint());
         this.name = name;
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.706 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "B7A1173BAA83D10F2549183AB3761869")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_317730432 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_317730432.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_317730432;
-        
-        
+        // ---------- Original Method ----------
+        //return name;
     }
 
     

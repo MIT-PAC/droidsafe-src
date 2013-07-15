@@ -1,6 +1,6 @@
 package org.apache.harmony.security.fortress;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,12 +17,11 @@ public class Services {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.090 -0400", hash_original_method = "719D73AD00F3F6FC30282996B569C5B0", hash_generated_method = "719D73AD00F3F6FC30282996B569C5B0")
     public Services ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
-    private static void loadProviders() {
+        private static void loadProviders() {
         String providerClassName = null;
         int i = 1;
         ClassLoader cl = ClassLoader.getSystemClassLoader();
@@ -45,8 +44,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Provider[] getProviders() {
+        public static Provider[] getProviders() {
         return providers.toArray(new Provider[providers.size()]);
     }
 
@@ -56,8 +54,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Provider getProvider(String name) {
+        public static Provider getProvider(String name) {
         if (name == null) {
             return null;
         }
@@ -65,8 +62,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int insertProviderAt(Provider provider, int position) {
+        public static int insertProviderAt(Provider provider, int position) {
         int size = providers.size();
         if ((position < 1) || (position > size)) {
             position = size + 1;
@@ -78,16 +74,14 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void removeProvider(int providerNumber) {
+        public static void removeProvider(int providerNumber) {
         Provider p = providers.remove(providerNumber - 1);
         providersNames.remove(p.getName());
         setNeedRefresh();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void initServiceInfo(Provider p) {
+        public static void initServiceInfo(Provider p) {
         for (Provider.Service serv : p.getServices()) {
             String type = serv.getType();
             if (secureRandom == null && type.equals("SecureRandom")) {
@@ -107,8 +101,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void updateServiceInfo() {
+        public static void updateServiceInfo() {
         services.clear();
         secureRandom = null;
         for (Provider p : providers) {
@@ -118,8 +111,7 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isEmpty() {
+        public static boolean isEmpty() {
         return services.isEmpty();
     }
 
@@ -129,20 +121,17 @@ public class Services {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Provider.Service getSecureRandomService() {
+        public static Provider.Service getSecureRandomService() {
         return secureRandom;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setNeedRefresh() {
+        public static void setNeedRefresh() {
         needRefresh = true;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void refresh() {
+        public static void refresh() {
         if (needRefresh) {
             refreshNumber++;
             updateServiceInfo();

@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,11 +15,10 @@ public final class CdmaLteUiccFileHandler extends IccFileHandler {
       CdmaLteUiccFileHandler(CDMALTEPhone phone) {
         super(phone);
         addTaint(phone.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.524 -0400", hash_original_method = "B50B51C72253EA7CE2666FA23DED632D", hash_generated_method = "B0695D359CFB29871933330C4ED2D70C")
     protected String getEFPath(int efid) {
         addTaint(efid);
@@ -46,23 +45,23 @@ String varF4D283B5C0D01F03F5830893B3B42A1A_2048981299 =         MF_SIM + DF_ADFI
 }String var1CB5B6A61B4429889211CCB6597A0DD8_1450918817 =         getCommonIccEFPath(efid);
         var1CB5B6A61B4429889211CCB6597A0DD8_1450918817.addTaint(taint);
         return var1CB5B6A61B4429889211CCB6597A0DD8_1450918817;
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //switch(efid) {
+        //case EF_CSIM_SPN:
+        //case EF_CSIM_LI:
+        //case EF_CSIM_MDN:
+        //case EF_CSIM_IMSIM:
+        //case EF_CSIM_CDMAHOME:
+        //case EF_CSIM_EPRL:
+            //return MF_SIM + DF_CDMA;
+        //case EF_AD:
+            //return MF_SIM + DF_GSM;
+        //case EF_IMPI:
+        //case EF_DOMAIN:
+        //case EF_IMPU:
+            //return MF_SIM + DF_ADFISIM;
+        //}
+        //return getCommonIccEFPath(efid);
     }
 
     
@@ -77,20 +76,20 @@ String varF4D283B5C0D01F03F5830893B3B42A1A_2048981299 =         MF_SIM + DF_ADFI
                             0, 0, 4, null, null,
                             obtainMessage(EVENT_READ_BINARY_DONE,
                                           fileid, 0, onLoaded));
-        } 
+        } //End block
         else
         {
             super.loadEFTransparent(fileid, onLoaded);
-        } 
-        
-        
-            
-                            
-                            
-                                          
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (fileid == EF_CSIM_EPRL) {
+            //phone.mCM.iccIO(COMMAND_READ_BINARY, fileid, getEFPath(fileid),
+                            //0, 0, 4, null, null,
+                            //obtainMessage(EVENT_READ_BINARY_DONE,
+                                          //fileid, 0, onLoaded));
+        //} else {
+            //super.loadEFTransparent(fileid, onLoaded);
+        //}
     }
 
     
@@ -98,16 +97,16 @@ String varF4D283B5C0D01F03F5830893B3B42A1A_2048981299 =         MF_SIM + DF_ADFI
     protected void logd(String msg) {
         addTaint(msg.getTaint());
         Log.d(LOG_TAG, "[CdmaLteUiccFileHandler] " + msg);
-        
-        
+        // ---------- Original Method ----------
+        //Log.d(LOG_TAG, "[CdmaLteUiccFileHandler] " + msg);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.525 -0400", hash_original_method = "420CE2D43D58036FFB967B46A860B403", hash_generated_method = "716A6202FD80821EFA4FCD5E3A01AB59")
     protected void loge(String msg) {
         addTaint(msg.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        //Log.e(LOG_TAG, "[CdmaLteUiccFileHandler] " + msg);
     }
 
     

@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,13 +41,13 @@ public class SoundPool {
             RuntimeException var4A485DDC959A4F0F078E177957328AFF_1947069675 = new RuntimeException("Native setup failed");
             var4A485DDC959A4F0F078E177957328AFF_1947069675.addTaint(taint);
             throw var4A485DDC959A4F0F078E177957328AFF_1947069675;
-        } 
+        } //End block
         mLock = new Object();
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (native_setup(new WeakReference(this), maxStreams, streamType, srcQuality) != 0) {
+            //throw new RuntimeException("Native setup failed");
+        //}
+        //mLock = new Object();
     }
 
     
@@ -72,32 +72,32 @@ public class SoundPool {
                 {
                     id = _load(fd.getFileDescriptor(), 0, f.length(), priority);
                     fd.close();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (java.io.IOException e)
         {
-        } 
+        } //End block
         int varB80BB7740288FDA1F201890375A60C8F_845317232 = (id);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_231716024 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_231716024;
-        
-        
-            
-        
-        
-            
-            
-                
-                
-                    
-                    
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (path.startsWith("http:"))
+            //return _load(path, priority);
+        //int id = 0;
+        //try {
+            //File f = new File(path);
+            //if (f != null) {
+                //ParcelFileDescriptor fd = ParcelFileDescriptor.open(f, ParcelFileDescriptor.MODE_READ_ONLY);
+                //if (fd != null) {
+                    //id = _load(fd.getFileDescriptor(), 0, f.length(), priority);
+                    //fd.close();
+                //}
+            //}
+        //} catch (java.io.IOException e) {
+            //Log.e(TAG, "error loading " + path);
+        //}
+        //return id;
     }
 
     
@@ -114,25 +114,25 @@ public class SoundPool {
             try 
             {
                 afd.close();
-            } 
+            } //End block
             catch (java.io.IOException ex)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varB80BB7740288FDA1F201890375A60C8F_418256997 = (id);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1678000350 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1678000350;
-        
-        
-        
-        
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //AssetFileDescriptor afd = context.getResources().openRawResourceFd(resId);
+        //int id = 0;
+        //if (afd != null) {
+            //id = _load(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength(), priority);
+            //try {
+                //afd.close();
+            //} catch (java.io.IOException ex) {
+            //}
+        //}
+        //return id;
     }
 
     
@@ -148,27 +148,27 @@ public class SoundPool {
                 AndroidRuntimeException var393CC3146A2EA1FFFA6DAEB6C124FFCB_1228942007 = new AndroidRuntimeException("no length for fd");
                 var393CC3146A2EA1FFFA6DAEB6C124FFCB_1228942007.addTaint(taint);
                 throw var393CC3146A2EA1FFFA6DAEB6C124FFCB_1228942007;
-            } 
+            } //End block
             int var6234090674970EC1429B8E622C997865_2009045827 = (_load(afd.getFileDescriptor(), afd.getStartOffset(), len, priority));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_787225574 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_787225574;
-        } 
+        } //End block
         else
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_923635473 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_48211742 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_48211742;
-        } 
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (afd != null) {
+            //long len = afd.getLength();
+            //if (len < 0) {
+                //throw new AndroidRuntimeException("no length for fd");
+            //}
+            //return _load(afd.getFileDescriptor(), afd.getStartOffset(), len, priority);
+        //} else {
+            //return 0;
+        //}
     }
 
     
@@ -181,8 +181,8 @@ public class SoundPool {
         int varC8F5004B9A29EB17EA072643AB2B7EB5_57340828 = (_load(fd, offset, length, priority));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567974713 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567974713;
-        
-        
+        // ---------- Original Method ----------
+        //return _load(fd, offset, length, priority);
     }
 
     
@@ -271,39 +271,39 @@ public class SoundPool {
     if((looper = Looper.myLooper()) != null)                
                 {
                     mEventHandler = new EventHandler(this, looper);
-                } 
+                } //End block
                 else
     if((looper = Looper.getMainLooper()) != null)                
                 {
                     mEventHandler = new EventHandler(this, looper);
-                } 
+                } //End block
                 else
                 {
                     mEventHandler = null;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 mEventHandler = null;
-            } 
+            } //End block
             mOnLoadCompleteListener = listener;
-        } 
-        
-        
-            
-                
-                
-                    
-                
-                    
-                
-                    
-                
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mLock) {
+            //if (listener != null) {
+                //Looper looper;
+                //if ((looper = Looper.myLooper()) != null) {
+                    //mEventHandler = new EventHandler(this, looper);
+                //} else if ((looper = Looper.getMainLooper()) != null) {
+                    //mEventHandler = new EventHandler(this, looper);
+                //} else {
+                    //mEventHandler = null;
+                //}
+            //} else {
+                //mEventHandler = null;
+            //}
+            //mOnLoadCompleteListener = listener;
+        //}
     }
 
     
@@ -333,8 +333,8 @@ public class SoundPool {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.678 -0400", hash_original_method = "52F53B59AD091F99DC7C4D49031A27E5", hash_generated_method = "8FAC9FF85A1EF0848C18BB309D51EC09")
     protected void finalize() {
         release();
-        
-        
+        // ---------- Original Method ----------
+        //release();
     }
 
     
@@ -348,8 +348,8 @@ public class SoundPool {
             super(looper);
             addTaint(looper.getTaint());
             mSoundPool = soundPool;
-            
-            
+            // ---------- Original Method ----------
+            //mSoundPool = soundPool;
         }
 
         
@@ -366,26 +366,26 @@ switch(msg.what){
     if(mOnLoadCompleteListener != null)                
                 {
                     mOnLoadCompleteListener.onLoadComplete(mSoundPool, msg.arg1, msg.arg2);
-                } 
-            } 
+                } //End block
+            } //End block
             break;
             default:
             return;
 }
-            
-            
-            
-                
-                
-                    
-                        
-                    
-                
-                
-            
-                
-                
-            
+            // ---------- Original Method ----------
+            //switch(msg.what) {
+            //case SAMPLE_LOADED:
+                //if (DEBUG) Log.d(TAG, "Sample " + msg.arg1 + " loaded");
+                //synchronized(mLock) {
+                    //if (mOnLoadCompleteListener != null) {
+                        //mOnLoadCompleteListener.onLoadComplete(mSoundPool, msg.arg1, msg.arg2);
+                    //}
+                //}
+                //break;
+            //default:
+                //Log.e(TAG, "Unknown message type " + msg.what);
+                //return;
+            //}
         }
 
         

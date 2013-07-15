@@ -1,6 +1,6 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ class Primality {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.385 -0400", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "BF7E1FB696DD619FEE28860391904779")
     private  Primality() {
-        
+        // ---------- Original Method ----------
     }
 
     

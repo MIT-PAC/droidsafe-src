@@ -1,6 +1,6 @@
 package com.android.internal.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,9 +35,9 @@ public final class DNParser {
     public  DNParser(X500Principal principal) {
         this.dn = principal.getName(X500Principal.RFC2253);
         this.length = dn.length();
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.dn = principal.getName(X500Principal.RFC2253);
+        //this.length = dn.length();
     }
 
     
@@ -45,53 +45,53 @@ public final class DNParser {
     private String nextAT() throws IOException {
 for(;pos < length && chars[pos] == ' ';pos++)
         {
-        } 
+        } //End block
     if(pos == length)        
         {
 String var540C13E9E156B687226421B24F2DF178_2107710261 =             null;
             var540C13E9E156B687226421B24F2DF178_2107710261.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2107710261;
-        } 
+        } //End block
         beg = pos;
         pos++;
 for(;pos < length && chars[pos] != '=' && chars[pos] != ' ';pos++)
         {
-        } 
+        } //End block
     if(pos >= length)        
         {
             IOException var3C5391EA77D4408E3684E0C5A2602AD4_1852009751 = new IOException(ERROR_PARSE_ERROR);
             var3C5391EA77D4408E3684E0C5A2602AD4_1852009751.addTaint(taint);
             throw var3C5391EA77D4408E3684E0C5A2602AD4_1852009751;
-        } 
+        } //End block
         end = pos;
     if(chars[pos] == ' ')        
         {
 for(;pos < length && chars[pos] != '=' && chars[pos] == ' ';pos++)
             {
-            } 
+            } //End block
     if(chars[pos] != '=' || pos == length)            
             {
                 IOException var3C5391EA77D4408E3684E0C5A2602AD4_700998881 = new IOException(ERROR_PARSE_ERROR);
                 var3C5391EA77D4408E3684E0C5A2602AD4_700998881.addTaint(taint);
                 throw var3C5391EA77D4408E3684E0C5A2602AD4_700998881;
-            } 
-        } 
+            } //End block
+        } //End block
         pos++;
 for(;pos < length && chars[pos] == ' ';pos++)
         {
-        } 
+        } //End block
     if((end - beg > 4) && (chars[beg + 3] == '.')
                 && (chars[beg] == 'O' || chars[beg] == 'o')
                 && (chars[beg + 1] == 'I' || chars[beg + 1] == 'i')
                 && (chars[beg + 2] == 'D' || chars[beg + 2] == 'd'))        
         {
             beg += 4;
-        } 
+        } //End block
 String varA88CD4E826BB74E12B252BCF2CEC4945_671010177 =         new String(chars, beg, end - beg);
         varA88CD4E826BB74E12B252BCF2CEC4945_671010177.addTaint(taint);
         return varA88CD4E826BB74E12B252BCF2CEC4945_671010177;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -108,52 +108,52 @@ String varA88CD4E826BB74E12B252BCF2CEC4945_671010177 =         new String(chars,
                 IOException var3C5391EA77D4408E3684E0C5A2602AD4_880055429 = new IOException(ERROR_PARSE_ERROR);
                 var3C5391EA77D4408E3684E0C5A2602AD4_880055429.addTaint(taint);
                 throw var3C5391EA77D4408E3684E0C5A2602AD4_880055429;
-            } 
+            } //End block
     if(chars[pos] == '"')            
             {
                 pos++;
                 break;
-            } 
+            } //End block
             else
     if(chars[pos] == '\\')            
             {
                 chars[end] = getEscaped();
-            } 
+            } //End block
             else
             {
                 chars[end] = chars[pos];
-            } 
+            } //End block
             pos++;
             end++;
-        } 
+        } //End block
 for(;pos < length && chars[pos] == ' ';pos++)
         {
-        } 
+        } //End block
 String varA88CD4E826BB74E12B252BCF2CEC4945_193440843 =         new String(chars, beg, end - beg);
         varA88CD4E826BB74E12B252BCF2CEC4945_193440843.addTaint(taint);
         return varA88CD4E826BB74E12B252BCF2CEC4945_193440843;
-        
-        
-        
-        
-        
-            
-                
-            
-            
-                
-                
-            
-                
-            
-                
-            
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //pos++;
+        //beg = pos;
+        //end = beg;
+        //while (true) {
+            //if (pos == length) {
+                //throw new IOException(ERROR_PARSE_ERROR);
+            //}
+            //if (chars[pos] == '"') {
+                //pos++;
+                //break;
+            //} else if (chars[pos] == '\\') {
+                //chars[end] = getEscaped();
+            //} else {
+                //chars[end] = chars[pos];
+            //}
+            //pos++;
+            //end++;
+        //}
+        //for (; pos < length && chars[pos] == ' '; pos++) {
+        //}
+        //return new String(chars, beg, end - beg);
     }
 
     
@@ -164,7 +164,7 @@ String varA88CD4E826BB74E12B252BCF2CEC4945_193440843 =         new String(chars,
             IOException var3C5391EA77D4408E3684E0C5A2602AD4_1431395129 = new IOException(ERROR_PARSE_ERROR);
             var3C5391EA77D4408E3684E0C5A2602AD4_1431395129.addTaint(taint);
             throw var3C5391EA77D4408E3684E0C5A2602AD4_1431395129;
-        } 
+        } //End block
         beg = pos;
         pos++;
         while
@@ -175,40 +175,40 @@ String varA88CD4E826BB74E12B252BCF2CEC4945_193440843 =         new String(chars,
             {
                 end = pos;
                 break;
-            } 
+            } //End block
     if(chars[pos] == ' ')            
             {
                 end = pos;
                 pos++;
 for(;pos < length && chars[pos] == ' ';pos++)
                 {
-                } 
+                } //End block
                 break;
-            } 
+            } //End block
             else
     if(chars[pos] >= 'A' && chars[pos] <= 'F')            
             {
                 chars[pos] += 32;
-            } 
+            } //End block
             pos++;
-        } 
+        } //End block
         int hexLen = end - beg;
     if(hexLen < 5 || (hexLen & 1) == 0)        
         {
             IOException var3C5391EA77D4408E3684E0C5A2602AD4_1565140039 = new IOException(ERROR_PARSE_ERROR);
             var3C5391EA77D4408E3684E0C5A2602AD4_1565140039.addTaint(taint);
             throw var3C5391EA77D4408E3684E0C5A2602AD4_1565140039;
-        } 
+        } //End block
         byte[] encoded = new byte[hexLen / 2];
 for(int i = 0, p = beg + 1;i < encoded.length;p += 2,i++)
         {
             encoded[i] = (byte) getByte(p);
-        } 
+        } //End block
 String varCC1247AAA5590D16A647B2E2A6BA7DE8_681435456 =         new String(chars, beg, hexLen);
         varCC1247AAA5590D16A647B2E2A6BA7DE8_681435456.addTaint(taint);
         return varCC1247AAA5590D16A647B2E2A6BA7DE8_681435456;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -224,7 +224,7 @@ String varCC1247AAA5590D16A647B2E2A6BA7DE8_681435456 =         new String(chars,
 String varA88CD4E826BB74E12B252BCF2CEC4945_105445929 =                 new String(chars, beg, end - beg);
                 varA88CD4E826BB74E12B252BCF2CEC4945_105445929.addTaint(taint);
                 return varA88CD4E826BB74E12B252BCF2CEC4945_105445929;
-            } 
+            } //End block
 switch(chars[pos]){
             case '+':
             case ',':
@@ -243,22 +243,22 @@ String varA88CD4E826BB74E12B252BCF2CEC4945_11347893 =             new String(cha
 for(;pos < length && chars[pos] == ' ';pos++)
             {
                 chars[end++] = ' ';
-            } 
+            } //End block
     if(pos == length || chars[pos] == ',' || chars[pos] == '+'
                         || chars[pos] == ';')            
             {
 String varF4AE4525652FA624971421628D52D24A_346774616 =                 new String(chars, beg, cur - beg);
                 varF4AE4525652FA624971421628D52D24A_346774616.addTaint(taint);
                 return varF4AE4525652FA624971421628D52D24A_346774616;
-            } 
+            } //End block
             break;
             default:
             chars[end++] = chars[pos];
             pos++;
 }
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -270,7 +270,7 @@ String varF4AE4525652FA624971421628D52D24A_346774616 =                 new Strin
             IOException var3C5391EA77D4408E3684E0C5A2602AD4_2106790444 = new IOException(ERROR_PARSE_ERROR);
             var3C5391EA77D4408E3684E0C5A2602AD4_2106790444.addTaint(taint);
             throw var3C5391EA77D4408E3684E0C5A2602AD4_2106790444;
-        } 
+        } //End block
 switch(chars[pos]){
         case '"':
         case '\\':
@@ -293,29 +293,29 @@ switch(chars[pos]){
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1785671499 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1785671499;
 }
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //pos++;
+        //if (pos == length) {
+            //throw new IOException(ERROR_PARSE_ERROR);
+        //}
+        //switch (chars[pos]) {
+        //case '"':
+        //case '\\':
+        //case ',':
+        //case '=':
+        //case '+':
+        //case '<':
+        //case '>':
+        //case '#':
+        //case ';':
+        //case ' ':
+        //case '*':
+        //case '%':
+        //case '_':
+            //return chars[pos];
+        //default:
+            //return getUTF8();
+        //}
     }
 
     
@@ -328,7 +328,7 @@ switch(chars[pos]){
             char var7C6A3B9F9EDA80A67C698BA55955EB3A_243813234 = ((char) res);
                         char varA87DEB01C5F539E6BDA34829C8EF2368_742688963 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_742688963;
-        } 
+        } //End block
         else
     if(res >= 192 && res <= 247)        
         {
@@ -337,18 +337,18 @@ switch(chars[pos]){
             {
                 count = 1;
                 res = res & 0x1F;
-            } 
+            } //End block
             else
     if(res <= 239)            
             {
                 count = 2;
                 res = res & 0x0F;
-            } 
+            } //End block
             else
             {
                 count = 3;
                 res = res & 0x07;
-            } 
+            } //End block
             int b;
 for(int i = 0;i < count;i++)
             {
@@ -358,7 +358,7 @@ for(int i = 0;i < count;i++)
                     char var422322C3A3E199EB41D9E4FF6219421D_1708926504 = (0x3F);
                                         char varA87DEB01C5F539E6BDA34829C8EF2368_1425823960 = getTaintChar();
                     return varA87DEB01C5F539E6BDA34829C8EF2368_1425823960;
-                } 
+                } //End block
                 pos++;
                 b = getByte(pos);
                 pos++;
@@ -367,21 +367,21 @@ for(int i = 0;i < count;i++)
                     char var422322C3A3E199EB41D9E4FF6219421D_1228848024 = (0x3F);
                                         char varA87DEB01C5F539E6BDA34829C8EF2368_1075583290 = getTaintChar();
                     return varA87DEB01C5F539E6BDA34829C8EF2368_1075583290;
-                } 
+                } //End block
                 res = (res << 6) + (b & 0x3F);
-            } 
+            } //End block
             char var7C6A3B9F9EDA80A67C698BA55955EB3A_835585295 = ((char) res);
                         char varA87DEB01C5F539E6BDA34829C8EF2368_213453189 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_213453189;
-        } 
+        } //End block
         else
         {
             char var422322C3A3E199EB41D9E4FF6219421D_1594990985 = (0x3F);
                         char varA87DEB01C5F539E6BDA34829C8EF2368_562003947 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_562003947;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -393,80 +393,80 @@ for(int i = 0;i < count;i++)
             IOException var3C5391EA77D4408E3684E0C5A2602AD4_179427105 = new IOException(ERROR_PARSE_ERROR);
             var3C5391EA77D4408E3684E0C5A2602AD4_179427105.addTaint(taint);
             throw var3C5391EA77D4408E3684E0C5A2602AD4_179427105;
-        } 
+        } //End block
         int b1;
         int b2;
         b1 = chars[position];
     if(b1 >= '0' && b1 <= '9')        
         {
             b1 = b1 - '0';
-        } 
+        } //End block
         else
     if(b1 >= 'a' && b1 <= 'f')        
         {
             b1 = b1 - 87;
-        } 
+        } //End block
         else
     if(b1 >= 'A' && b1 <= 'F')        
         {
             b1 = b1 - 55;
-        } 
+        } //End block
         else
         {
             IOException var3C5391EA77D4408E3684E0C5A2602AD4_1109256794 = new IOException(ERROR_PARSE_ERROR);
             var3C5391EA77D4408E3684E0C5A2602AD4_1109256794.addTaint(taint);
             throw var3C5391EA77D4408E3684E0C5A2602AD4_1109256794;
-        } 
+        } //End block
         b2 = chars[position + 1];
     if(b2 >= '0' && b2 <= '9')        
         {
             b2 = b2 - '0';
-        } 
+        } //End block
         else
     if(b2 >= 'a' && b2 <= 'f')        
         {
             b2 = b2 - 87;
-        } 
+        } //End block
         else
     if(b2 >= 'A' && b2 <= 'F')        
         {
             b2 = b2 - 55;
-        } 
+        } //End block
         else
         {
             IOException var3C5391EA77D4408E3684E0C5A2602AD4_536413256 = new IOException(ERROR_PARSE_ERROR);
             var3C5391EA77D4408E3684E0C5A2602AD4_536413256.addTaint(taint);
             throw var3C5391EA77D4408E3684E0C5A2602AD4_536413256;
-        } 
+        } //End block
         int var91352548C1A77C8ADCB3277772A6897D_1919381202 = ((b1 << 4) + b2);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_342647381 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_342647381;
-        
-        
-            
-        
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((position + 1) >= length) {
+            //throw new IOException(ERROR_PARSE_ERROR);
+        //}
+        //int b1, b2;
+        //b1 = chars[position];
+        //if (b1 >= '0' && b1 <= '9') {
+            //b1 = b1 - '0';
+        //} else if (b1 >= 'a' && b1 <= 'f') {
+            //b1 = b1 - 87; 
+        //} else if (b1 >= 'A' && b1 <= 'F') {
+            //b1 = b1 - 55; 
+        //} else {
+            //throw new IOException(ERROR_PARSE_ERROR);
+        //}
+        //b2 = chars[position + 1];
+        //if (b2 >= '0' && b2 <= '9') {
+            //b2 = b2 - '0';
+        //} else if (b2 >= 'a' && b2 <= 'f') {
+            //b2 = b2 - 87; 
+        //} else if (b2 >= 'A' && b2 <= 'F') {
+            //b2 = b2 - 55; 
+        //} else {
+            //throw new IOException(ERROR_PARSE_ERROR);
+        //}
+        //return (b1 << 4) + b2;
     }
 
     
@@ -486,7 +486,7 @@ for(int i = 0;i < count;i++)
 String var540C13E9E156B687226421B24F2DF178_972473108 =                 null;
                 var540C13E9E156B687226421B24F2DF178_972473108.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_972473108;
-            } 
+            } //End block
             while
 (true)            
             {
@@ -496,7 +496,7 @@ String var540C13E9E156B687226421B24F2DF178_972473108 =                 null;
 String var540C13E9E156B687226421B24F2DF178_1718321488 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1718321488.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1718321488;
-                } 
+                } //End block
 switch(chars[pos]){
                 case '"':
                 attValue = quotedAV();
@@ -515,23 +515,23 @@ switch(chars[pos]){
 String var808198ACDCDD83074E5A5E92A96CF11C_1215409860 =                     attValue;
                     var808198ACDCDD83074E5A5E92A96CF11C_1215409860.addTaint(taint);
                     return var808198ACDCDD83074E5A5E92A96CF11C_1215409860;
-                } 
+                } //End block
     if(pos >= length)                
                 {
 String var540C13E9E156B687226421B24F2DF178_956387399 =                     null;
                     var540C13E9E156B687226421B24F2DF178_956387399.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_956387399;
-                } 
+                } //End block
     if(chars[pos] == ',' || chars[pos] == ';')                
                 {
-                } 
+                } //End block
                 else
     if(chars[pos] != '+')                
                 {
                     IOException var3C5391EA77D4408E3684E0C5A2602AD4_1891977662 = new IOException(ERROR_PARSE_ERROR);
                     var3C5391EA77D4408E3684E0C5A2602AD4_1891977662.addTaint(taint);
                     throw var3C5391EA77D4408E3684E0C5A2602AD4_1891977662;
-                } 
+                } //End block
                 pos++;
                 attType = nextAT();
     if(attType == null)                
@@ -539,17 +539,17 @@ String var540C13E9E156B687226421B24F2DF178_956387399 =                     null;
                     IOException var3C5391EA77D4408E3684E0C5A2602AD4_1998493815 = new IOException(ERROR_PARSE_ERROR);
                     var3C5391EA77D4408E3684E0C5A2602AD4_1998493815.addTaint(taint);
                     throw var3C5391EA77D4408E3684E0C5A2602AD4_1998493815;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (IOException e)
         {
 String var540C13E9E156B687226421B24F2DF178_1523091897 =             null;
             var540C13E9E156B687226421B24F2DF178_1523091897.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1523091897;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ class ViewStateSerializer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.376 -0400", hash_original_method = "49BFAAEC63FD743661F2FA5579ECB6BF", hash_generated_method = "118ABB2718261FF45C39549C1EF9F141")
     private  ViewStateSerializer() {
-        
+        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,6 @@
 package android.support.v4.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -166,8 +166,8 @@ public class ViewPager extends ViewGroup {
         super(context);
         addTaint(context.getTaint());
         initViewPager();
-        
-        
+        // ---------- Original Method ----------
+        //initViewPager();
     }
 
     
@@ -177,8 +177,8 @@ public class ViewPager extends ViewGroup {
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
         initViewPager();
-        
-        
+        // ---------- Original Method ----------
+        //initViewPager();
     }
 
     
@@ -197,20 +197,20 @@ public class ViewPager extends ViewGroup {
         mRightEdge = new EdgeEffectCompat(context);
         final float density = context.getResources().getDisplayMetrics().density;
         mFlingDistance = (int) (MIN_DISTANCE_FOR_FLING * density);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //setWillNotDraw(false);
+        //setDescendantFocusability(FOCUS_AFTER_DESCENDANTS);
+        //setFocusable(true);
+        //final Context context = getContext();
+        //mScroller = new Scroller(context, sInterpolator);
+        //final ViewConfiguration configuration = ViewConfiguration.get(context);
+        //mTouchSlop = ViewConfigurationCompat.getScaledPagingTouchSlop(configuration);
+        //mMinimumVelocity = configuration.getScaledMinimumFlingVelocity();
+        //mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
+        //mLeftEdge = new EdgeEffectCompat(context);
+        //mRightEdge = new EdgeEffectCompat(context);
+        //final float density = context.getResources().getDisplayMetrics().density;
+        //mFlingDistance = (int) (MIN_DISTANCE_FOR_FLING * density);
     }
 
     
@@ -219,20 +219,20 @@ public class ViewPager extends ViewGroup {
     if(mScrollState == newState)        
         {
             return;
-        } 
+        } //End block
         mScrollState = newState;
     if(mOnPageChangeListener != null)        
         {
             mOnPageChangeListener.onPageScrollStateChanged(newState);
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mScrollState == newState) {
+            //return;
+        //}
+        //mScrollState = newState;
+        //if (mOnPageChangeListener != null) {
+            //mOnPageChangeListener.onPageScrollStateChanged(newState);
+        //}
     }
 
     
@@ -246,13 +246,13 @@ for(int i = 0;i < mItems.size();i++)
             {
                 final ItemInfo ii = mItems.get(i);
                 mAdapter.destroyItem(this, ii.position, ii.object);
-            } 
+            } //End block
             mAdapter.finishUpdate(this);
             mItems.clear();
             removeNonDecorViews();
             mCurItem = 0;
             scrollTo(0, 0);
-        } 
+        } //End block
         final PagerAdapter oldAdapter = mAdapter;
         mAdapter = adapter;
     if(mAdapter != null)        
@@ -260,7 +260,7 @@ for(int i = 0;i < mItems.size();i++)
     if(mObserver == null)            
             {
                 mObserver = new PagerObserver();
-            } 
+            } //End block
             mAdapter.registerDataSetObserver(mObserver);
             mPopulatePending = false;
     if(mRestoredCurItem >= 0)            
@@ -270,18 +270,18 @@ for(int i = 0;i < mItems.size();i++)
                 mRestoredCurItem = -1;
                 mRestoredAdapterState = null;
                 mRestoredClassLoader = null;
-            } 
+            } //End block
             else
             {
                 populate();
-            } 
-        } 
+            } //End block
+        } //End block
     if(mAdapterChangeListener != null && oldAdapter != adapter)        
         {
             mAdapterChangeListener.onAdapterChanged(oldAdapter, adapter);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -295,37 +295,35 @@ for(int i = 0;i < getChildCount();i++)
             {
                 removeViewAt(i);
                 i--;
-            } 
-        } 
-        
-        
-            
-            
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = 0; i < getChildCount(); i++) {
+            //final View child = getChildAt(i);
+            //final LayoutParams lp = (LayoutParams) child.getLayoutParams();
+            //if (!lp.isDecor) {
+                //removeViewAt(i);
+                //i--;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.289 -0400", hash_original_method = "F7E052C477B11777DA7EBFEE8452F40F", hash_generated_method = "F0E085C97CA8439D85BCF0B579BD6526")
     public PagerAdapter getAdapter() {
 PagerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1434793180 =         mAdapter;
         varD72668EDE5E63ADF9340F3D8A19FD205_1434793180.addTaint(taint);
         return varD72668EDE5E63ADF9340F3D8A19FD205_1434793180;
-        
-        
+        // ---------- Original Method ----------
+        //return mAdapter;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.290 -0400", hash_original_method = "36FAA41620F55873E46894195D62C0FE", hash_generated_method = "64B5029EE6627AF5DA8D33AFBF5EB153")
      void setOnAdapterChangeListener(OnAdapterChangeListener listener) {
         mAdapterChangeListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mAdapterChangeListener = listener;
     }
 
     
@@ -334,9 +332,9 @@ PagerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1434793180 =         mAdapter;
         addTaint(item);
         mPopulatePending = false;
         setCurrentItemInternal(item, !mFirstLayout, false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPopulatePending = false;
+        //setCurrentItemInternal(item, !mFirstLayout, false);
     }
 
     
@@ -346,20 +344,19 @@ PagerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1434793180 =         mAdapter;
         addTaint(item);
         mPopulatePending = false;
         setCurrentItemInternal(item, smoothScroll, false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPopulatePending = false;
+        //setCurrentItemInternal(item, smoothScroll, false);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.291 -0400", hash_original_method = "A82ABDE9609B8643904FAA59A05D3729", hash_generated_method = "5DF3FF8B55023763334418D944EAF5D6")
     public int getCurrentItem() {
         int var1B622A649B9CF8B641EACDE420DF730F_1008128766 = (mCurItem);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_679084444 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_679084444;
-        
-        
+        // ---------- Original Method ----------
+        //return mCurItem;
     }
 
     
@@ -369,8 +366,8 @@ PagerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1434793180 =         mAdapter;
         addTaint(smoothScroll);
         addTaint(item);
         setCurrentItemInternal(item, smoothScroll, always, 0);
-        
-        
+        // ---------- Original Method ----------
+        //setCurrentItemInternal(item, smoothScroll, always, 0);
     }
 
     
@@ -383,29 +380,29 @@ PagerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1434793180 =         mAdapter;
         {
             setScrollingCacheEnabled(false);
             return;
-        } 
+        } //End block
     if(!always && mCurItem == item && mItems.size() != 0)        
         {
             setScrollingCacheEnabled(false);
             return;
-        } 
+        } //End block
     if(item < 0)        
         {
             item = 0;
-        } 
+        } //End block
         else
     if(item >= mAdapter.getCount())        
         {
             item = mAdapter.getCount() - 1;
-        } 
+        } //End block
         final int pageLimit = mOffscreenPageLimit;
     if(item > (mCurItem + pageLimit) || item < (mCurItem - pageLimit))        
         {
 for(int i=0;i<mItems.size();i++)
             {
                 mItems.get(i).scrolling = true;
-            } 
-        } 
+            } //End block
+        } //End block
         final boolean dispatchSelected = mCurItem != item;
         mCurItem = item;
         populate();
@@ -416,40 +413,38 @@ for(int i=0;i<mItems.size();i++)
     if(dispatchSelected && mOnPageChangeListener != null)            
             {
                 mOnPageChangeListener.onPageSelected(item);
-            } 
+            } //End block
     if(dispatchSelected && mInternalPageChangeListener != null)            
             {
                 mInternalPageChangeListener.onPageSelected(item);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(dispatchSelected && mOnPageChangeListener != null)            
             {
                 mOnPageChangeListener.onPageSelected(item);
-            } 
+            } //End block
     if(dispatchSelected && mInternalPageChangeListener != null)            
             {
                 mInternalPageChangeListener.onPageSelected(item);
-            } 
+            } //End block
             completeScroll();
             scrollTo(destX, 0);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.293 -0400", hash_original_method = "FA06973225A603572F4FD6150255295F", hash_generated_method = "8762A57EBF81138B887037B32512FF60")
     public void setOnPageChangeListener(OnPageChangeListener listener) {
         mOnPageChangeListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnPageChangeListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.293 -0400", hash_original_method = "BEC1D9D7EF0862149EE21D17618B274F", hash_generated_method = "731783E58441F09450AEBA329AA47B08")
      OnPageChangeListener setInternalPageChangeListener(OnPageChangeListener listener) {
         OnPageChangeListener oldListener = mInternalPageChangeListener;
@@ -457,21 +452,20 @@ for(int i=0;i<mItems.size();i++)
 OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         oldListener;
         varC2E9C4C13673ECB49BE969362809B4E4_1722858028.addTaint(taint);
         return varC2E9C4C13673ECB49BE969362809B4E4_1722858028;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OnPageChangeListener oldListener = mInternalPageChangeListener;
+        //mInternalPageChangeListener = listener;
+        //return oldListener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.293 -0400", hash_original_method = "3F35BC951292D9FB1DF42BFA6208CE75", hash_generated_method = "BBC31B5380E496A828A597E08D6A1CDC")
     public int getOffscreenPageLimit() {
         int var0860C10CA075BCA0392AC95179F36503_831539908 = (mOffscreenPageLimit);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258958009 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258958009;
-        
-        
+        // ---------- Original Method ----------
+        //return mOffscreenPageLimit;
     }
 
     
@@ -480,22 +474,22 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
     if(limit < DEFAULT_OFFSCREEN_PAGES)        
         {
             limit = DEFAULT_OFFSCREEN_PAGES;
-        } 
+        } //End block
     if(limit != mOffscreenPageLimit)        
         {
             mOffscreenPageLimit = limit;
             populate();
-        } 
-        
-        
-            
-                    
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (limit < DEFAULT_OFFSCREEN_PAGES) {
+            //Log.w(TAG, "Requested offscreen page limit " + limit + " too small; defaulting to " +
+                    //DEFAULT_OFFSCREEN_PAGES);
+            //limit = DEFAULT_OFFSCREEN_PAGES;
+        //}
+        //if (limit != mOffscreenPageLimit) {
+            //mOffscreenPageLimit = limit;
+            //populate();
+        //}
     }
 
     
@@ -506,23 +500,22 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
         final int width = getWidth();
         recomputeScrollPosition(width, width, marginPixels, oldMargin);
         requestLayout();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final int oldMargin = mPageMargin;
+        //mPageMargin = marginPixels;
+        //final int width = getWidth();
+        //recomputeScrollPosition(width, width, marginPixels, oldMargin);
+        //requestLayout();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.295 -0400", hash_original_method = "C374880A4C36BA236EE3B5602129BC09", hash_generated_method = "EB8DD7B97389700C869008686857904B")
     public int getPageMargin() {
         int varDDBEB3CB51E072971AA69C4D4A8D6589_12726390 = (mPageMargin);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1389794467 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1389794467;
-        
-        
+        // ---------- Original Method ----------
+        //return mPageMargin;
     }
 
     
@@ -533,11 +526,11 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
         refreshDrawableState();
         setWillNotDraw(d == null);
         invalidate();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMarginDrawable = d;
+        //if (d != null) refreshDrawableState();
+        //setWillNotDraw(d == null);
+        //invalidate();
     }
 
     
@@ -545,8 +538,8 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
     public void setPageMarginDrawable(int resId) {
         addTaint(resId);
         setPageMarginDrawable(getContext().getResources().getDrawable(resId));
-        
-        
+        // ---------- Original Method ----------
+        //setPageMarginDrawable(getContext().getResources().getDrawable(resId));
     }
 
     
@@ -557,8 +550,8 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
         boolean varB6C4A9F139D171DC8645479431980265_1749517620 = (super.verifyDrawable(who) || who == mMarginDrawable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_386908280 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_386908280;
-        
-        
+        // ---------- Original Method ----------
+        //return super.verifyDrawable(who) || who == mMarginDrawable;
     }
 
     
@@ -570,13 +563,13 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
     if(d != null && d.isStateful())        
         {
             d.setState(getDrawableState());
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.drawableStateChanged();
+        //final Drawable d = mMarginDrawable;
+        //if (d != null && d.isStateful()) {
+            //d.setState(getDrawableState());
+        //}
     }
 
     
@@ -588,10 +581,10 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
         float varF2441E69DB56AF2E5B59E076A9D20041_1407896194 = ((float) Math.sin(f));
                 float var546ADE640B6EDFBC8A086EF31347E768_125232980 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_125232980;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //f -= 0.5f;
+        //f *= 0.3f * Math.PI / 2.0f;
+        //return (float) Math.sin(f);
     }
 
     
@@ -600,8 +593,8 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
         addTaint(y);
         addTaint(x);
         smoothScrollTo(x, y, 0);
-        
-        
+        // ---------- Original Method ----------
+        //smoothScrollTo(x, y, 0);
     }
 
     
@@ -614,7 +607,7 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
         {
             setScrollingCacheEnabled(false);
             return;
-        } 
+        } //End block
         int sx = getScrollX();
         int sy = getScrollY();
         int dx = x - sx;
@@ -624,7 +617,7 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
             completeScroll();
             setScrollState(SCROLL_STATE_IDLE);
             return;
-        } 
+        } //End block
         setScrollingCacheEnabled(true);
         mScrolling = true;
         setScrollState(SCROLL_STATE_SETTLING);
@@ -638,17 +631,17 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
     if(velocity > 0)        
         {
             duration = 4 * Math.round(1000 * Math.abs(distance / velocity));
-        } 
+        } //End block
         else
         {
             final float pageDelta = (float) Math.abs(dx) / (width + mPageMargin);
             duration = (int) ((pageDelta + 1) * 100);
-        } 
+        } //End block
         duration = Math.min(duration, MAX_SETTLE_DURATION);
         mScroller.startScroll(sx, sy, dx, dy, duration);
         invalidate();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -662,20 +655,20 @@ OnPageChangeListener varC2E9C4C13673ECB49BE969362809B4E4_1722858028 =         ol
     if(index < 0)        
         {
             mItems.add(ii);
-        } 
+        } //End block
         else
         {
             mItems.add(index, ii);
-        } 
-        
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ItemInfo ii = new ItemInfo();
+        //ii.position = position;
+        //ii.object = mAdapter.instantiateItem(this, position);
+        //if (index < 0) {
+            //mItems.add(ii);
+        //} else {
+            //mItems.add(index, ii);
+        //}
     }
 
     
@@ -691,7 +684,7 @@ for(int i = 0;i < mItems.size();i++)
     if(newPos == PagerAdapter.POSITION_UNCHANGED)            
             {
                 continue;
-            } 
+            } //End block
     if(newPos == PagerAdapter.POSITION_NONE)            
             {
                 mItems.remove(i);
@@ -700,42 +693,42 @@ for(int i = 0;i < mItems.size();i++)
                 {
                     mAdapter.startUpdate(this);
                     isUpdating = true;
-                } 
+                } //End block
                 mAdapter.destroyItem(this, ii.position, ii.object);
                 needPopulate = true;
     if(mCurItem == ii.position)                
                 {
                     newCurrItem = Math.max(0, Math.min(mCurItem, mAdapter.getCount() - 1));
-                } 
+                } //End block
                 continue;
-            } 
+            } //End block
     if(ii.position != newPos)            
             {
     if(ii.position == mCurItem)                
                 {
                     newCurrItem = newPos;
-                } 
+                } //End block
                 ii.position = newPos;
                 needPopulate = true;
-            } 
-        } 
+            } //End block
+        } //End block
     if(isUpdating)        
         {
             mAdapter.finishUpdate(this);
-        } 
+        } //End block
         Collections.sort(mItems, COMPARATOR);
     if(newCurrItem >= 0)        
         {
             setCurrentItemInternal(newCurrItem, false, true);
             needPopulate = true;
-        } 
+        } //End block
     if(needPopulate)        
         {
             populate();
             requestLayout();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -744,15 +737,15 @@ for(int i = 0;i < mItems.size();i++)
     if(mAdapter == null)        
         {
             return;
-        } 
+        } //End block
     if(mPopulatePending)        
         {
     if(DEBUG){ }            return;
-        } 
+        } //End block
     if(getWindowToken() == null)        
         {
             return;
-        } 
+        } //End block
         mAdapter.startUpdate(this);
         final int pageLimit = mOffscreenPageLimit;
         final int startPos = Math.max(0, mCurItem - pageLimit);
@@ -767,7 +760,7 @@ for(int i=0;i<mItems.size();i++)
     if(DEBUG){ }                mItems.remove(i);
                 i--;
                 mAdapter.destroyItem(this, ii.position, ii.object);
-            } 
+            } //End block
             else
     if(lastPos < endPos && ii.position > startPos)            
             {
@@ -775,17 +768,17 @@ for(int i=0;i<mItems.size();i++)
     if(lastPos < startPos)                
                 {
                     lastPos = startPos;
-                } 
+                } //End block
                 while
 (lastPos <= endPos && lastPos < ii.position)                
                 {
     if(DEBUG){ }                    addNewItem(lastPos, i);
                     lastPos++;
                     i++;
-                } 
-            } 
+                } //End block
+            } //End block
             lastPos = ii.position;
-        } 
+        } //End block
         lastPos = mItems.size() > 0 ? mItems.get(mItems.size()-1).position : -1;
     if(lastPos < endPos)        
         {
@@ -796,14 +789,14 @@ for(int i=0;i<mItems.size();i++)
             {
     if(DEBUG){ }                addNewItem(lastPos, -1);
                 lastPos++;
-            } 
-        } 
+            } //End block
+        } //End block
     if(DEBUG)        
         {
 for(int i=0;i<mItems.size();i++)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         ItemInfo curItem = null;
 for(int i=0;i<mItems.size();i++)
         {
@@ -811,8 +804,8 @@ for(int i=0;i<mItems.size();i++)
             {
                 curItem = mItems.get(i);
                 break;
-            } 
-        } 
+            } //End block
+        } //End block
         mAdapter.setPrimaryItem(this, mCurItem, curItem != null ? curItem.object : null);
         mAdapter.finishUpdate(this);
     if(hasFocus())        
@@ -830,79 +823,79 @@ for(int i=0;i<getChildCount();i++)
     if(child.requestFocus(FOCUS_FORWARD))                        
                         {
                             break;
-                        } 
-                    } 
-                } 
-            } 
-        } 
-        
-        
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.304 -0400", hash_original_method = "14189B7A9DD30FC59304078756C5DA79", hash_generated_method = "647A8DAD1762893E43C48F3CEDBB4F20")
     @Override
     public Parcelable onSaveInstanceState() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
         ss.position = mCurItem;
     if(mAdapter != null)        
         {
             ss.adapterState = mAdapter.saveState();
-        } 
+        } //End block
 Parcelable var182E37827114C3F455816E0E29D81D76_858758266 =         ss;
         var182E37827114C3F455816E0E29D81D76_858758266.addTaint(taint);
         return var182E37827114C3F455816E0E29D81D76_858758266;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Parcelable superState = super.onSaveInstanceState();
+        //SavedState ss = new SavedState(superState);
+        //ss.position = mCurItem;
+        //if (mAdapter != null) {
+            //ss.adapterState = mAdapter.saveState();
+        //}
+        //return ss;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.305 -0400", hash_original_method = "D24913A88F27B9FFD16DBB95EA1FF14B", hash_generated_method = "E10FBB944EBBAA47E1C5DFEA5CF5E3DF")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(state.getTaint());
     if(!(state instanceof SavedState))        
         {
             super.onRestoreInstanceState(state);
             return;
-        } 
+        } //End block
         SavedState ss = (SavedState)state;
         super.onRestoreInstanceState(ss.getSuperState());
     if(mAdapter != null)        
         {
             mAdapter.restoreState(ss.adapterState, ss.loader);
             setCurrentItemInternal(ss.position, false, true);
-        } 
+        } //End block
         else
         {
             mRestoredCurItem = ss.position;
             mRestoredAdapterState = ss.adapterState;
             mRestoredClassLoader = ss.loader;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-            
-            
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!(state instanceof SavedState)) {
+            //super.onRestoreInstanceState(state);
+            //return;
+        //}
+        //SavedState ss = (SavedState)state;
+        //super.onRestoreInstanceState(ss.getSuperState());
+        //if (mAdapter != null) {
+            //mAdapter.restoreState(ss.adapterState, ss.loader);
+            //setCurrentItemInternal(ss.position, false, true);
+        //} else {
+            //mRestoredCurItem = ss.position;
+            //mRestoredAdapterState = ss.adapterState;
+            //mRestoredClassLoader = ss.loader;
+        //}
     }
 
     
@@ -915,7 +908,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_858758266 =         ss;
     if(!checkLayoutParams(params))        
         {
             params = generateLayoutParams(params);
-        } 
+        } //End block
         final LayoutParams lp = (LayoutParams) params;
         lp.isDecor |= child instanceof Decor;
     if(mInLayout)        
@@ -925,27 +918,27 @@ Parcelable var182E37827114C3F455816E0E29D81D76_858758266 =         ss;
                 IllegalStateException var7F73BD8DA61A3CEA9CD86CE713B8D2AB_103091910 = new IllegalStateException("Cannot add pager decor view during layout");
                 var7F73BD8DA61A3CEA9CD86CE713B8D2AB_103091910.addTaint(taint);
                 throw var7F73BD8DA61A3CEA9CD86CE713B8D2AB_103091910;
-            } 
+            } //End block
             addViewInLayout(child, index, params);
             child.measure(mChildWidthMeasureSpec, mChildHeightMeasureSpec);
-        } 
+        } //End block
         else
         {
             super.addView(child, index, params);
-        } 
+        } //End block
     if(USE_CACHE)        
         {
     if(child.getVisibility() != GONE)            
             {
                 child.setDrawingCacheEnabled(mScrollingCacheEnabled);
-            } 
+            } //End block
             else
             {
                 child.setDrawingCacheEnabled(false);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -960,19 +953,19 @@ for(int i=0;i<mItems.size();i++)
 ItemInfo var271C06C7ED7711E7D563AD4C67B1449E_103613571 =                 ii;
                 var271C06C7ED7711E7D563AD4C67B1449E_103613571.addTaint(taint);
                 return var271C06C7ED7711E7D563AD4C67B1449E_103613571;
-            } 
-        } 
+            } //End block
+        } //End block
 ItemInfo var540C13E9E156B687226421B24F2DF178_551016882 =         null;
         var540C13E9E156B687226421B24F2DF178_551016882.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_551016882;
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (int i=0; i<mItems.size(); i++) {
+            //ItemInfo ii = mItems.get(i);
+            //if (mAdapter.isViewFromObject(child, ii.object)) {
+                //return ii;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -988,40 +981,40 @@ ItemInfo var540C13E9E156B687226421B24F2DF178_551016882 =         null;
 ItemInfo var540C13E9E156B687226421B24F2DF178_870724485 =                 null;
                 var540C13E9E156B687226421B24F2DF178_870724485.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_870724485;
-            } 
+            } //End block
             child = (View)parent;
-        } 
+        } //End block
 ItemInfo varCA66F906D6AD4B5FB568D7FA2EA5A868_918855841 =         infoForChild(child);
         varCA66F906D6AD4B5FB568D7FA2EA5A868_918855841.addTaint(taint);
         return varCA66F906D6AD4B5FB568D7FA2EA5A868_918855841;
-        
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //ViewParent parent;
+        //while ((parent=child.getParent()) != this) {
+            //if (parent == null || !(parent instanceof View)) {
+                //return null;
+            //}
+            //child = (View)parent;
+        //}
+        //return infoForChild(child);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.307 -0400", hash_original_method = "55E78F1E2A11C365755D77C284D387A2", hash_generated_method = "F620B046D3F9AED0D5778C8B88C50DA3")
     @Override
     protected void onAttachedToWindow() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onAttachedToWindow();
         mFirstLayout = true;
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onAttachedToWindow();
+        //mFirstLayout = true;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.309 -0400", hash_original_method = "52B64CDCDB17F6464B1AA9D44D4C5C01", hash_generated_method = "23CC89B5212E4F5B9470A611AB4FF2CB")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         setMeasuredDimension(getDefaultSize(0, widthMeasureSpec),
@@ -1047,27 +1040,27 @@ for(int i = 0;i < size;++i)
     if(consumeVertical)                    
                     {
                         widthMode = MeasureSpec.EXACTLY;
-                    } 
+                    } //End block
                     else
     if(consumeHorizontal)                    
                     {
                         heightMode = MeasureSpec.EXACTLY;
-                    } 
+                    } //End block
                     final int widthSpec = MeasureSpec.makeMeasureSpec(childWidthSize, widthMode);
                     final int heightSpec = MeasureSpec.makeMeasureSpec(childHeightSize, heightMode);
                     child.measure(widthSpec, heightSpec);
     if(consumeVertical)                    
                     {
                         childHeightSize -= child.getMeasuredHeight();
-                    } 
+                    } //End block
                     else
     if(consumeHorizontal)                    
                     {
                         childWidthSize -= child.getMeasuredWidth();
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         mChildWidthMeasureSpec = MeasureSpec.makeMeasureSpec(childWidthSize, MeasureSpec.EXACTLY);
         mChildHeightMeasureSpec = MeasureSpec.makeMeasureSpec(childHeightSize, MeasureSpec.EXACTLY);
         mInLayout = true;
@@ -1083,18 +1076,18 @@ for(int i = 0;i < size;++i)
     if(lp == null || !lp.isDecor)                
                 {
                     child.measure(mChildWidthMeasureSpec, mChildHeightMeasureSpec);
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.310 -0400", hash_original_method = "D136D70D1C0AC62B68634CD89991503C", hash_generated_method = "8802688E243DF83EABC478EFA140F96E")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(oldh);
         addTaint(oldw);
         addTaint(h);
@@ -1103,12 +1096,12 @@ for(int i = 0;i < size;++i)
     if(w != oldw)        
         {
             recomputeScrollPosition(w, oldw, mPageMargin, mPageMargin);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onSizeChanged(w, h, oldw, oldh);
+        //if (w != oldw) {
+            //recomputeScrollPosition(w, oldw, mPageMargin, mPageMargin);
+        //}
     }
 
     
@@ -1131,8 +1124,8 @@ for(int i = 0;i < size;++i)
             {
                 final int newDuration = mScroller.getDuration() - mScroller.timePassed();
                 mScroller.startScroll(scrollPos, 0, mCurItem * widthWithMargin, 0, newDuration);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             int scrollPos = mCurItem * widthWithMargin;
@@ -1140,17 +1133,17 @@ for(int i = 0;i < size;++i)
             {
                 completeScroll();
                 scrollTo(scrollPos, getScrollY());
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.315 -0400", hash_original_method = "91DBAE2CED1324F5F1E91DEC22CE5EE7", hash_generated_method = "17E4410CC119E2805B48194FA65FF562")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(b);
         addTaint(r);
         addTaint(t);
@@ -1218,7 +1211,7 @@ switch(hgrav){
                     child.layout(childLeft, childTop,
                             childLeft + child.getMeasuredWidth(),
                             childTop + child.getMeasuredHeight());
-                } 
+                } //End block
                 else
     if((ii = infoForChild(child)) != null)                
                 {
@@ -1228,15 +1221,15 @@ switch(hgrav){
     if(DEBUG){ }                    child.layout(childLeft, childTop,
                             childLeft + child.getMeasuredWidth(),
                             childTop + child.getMeasuredHeight());
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         mTopPageBounds = paddingTop;
         mBottomPageBounds = height - paddingBottom;
         mDecorChildCount = decorCount;
         mFirstLayout = false;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1255,30 +1248,30 @@ switch(hgrav){
                 {
                     scrollTo(x, y);
                     pageScrolled(x);
-                } 
+                } //End block
                 invalidate();
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
         completeScroll();
-        
-        
-        
-            
-                
-                
-                
-                
-                
-                
-                    
-                    
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.i(TAG, "computeScroll: finished=" + mScroller.isFinished());
+        //if (!mScroller.isFinished()) {
+            //if (mScroller.computeScrollOffset()) {
+                //if (DEBUG) Log.i(TAG, "computeScroll: still scrolling");
+                //int oldX = getScrollX();
+                //int oldY = getScrollY();
+                //int x = mScroller.getCurrX();
+                //int y = mScroller.getCurrY();
+                //if (oldX != x || oldY != y) {
+                    //scrollTo(x, y);
+                    //pageScrolled(x);
+                //}
+                //invalidate();
+                //return;
+            //}
+        //}
+        //completeScroll();
     }
 
     
@@ -1297,24 +1290,24 @@ switch(hgrav){
                     "onPageScrolled did not call superclass implementation");
             var6429E79ED0893C129425181790225A79_1338932309.addTaint(taint);
             throw var6429E79ED0893C129425181790225A79_1338932309;
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int widthWithMargin = getWidth() + mPageMargin;
+        //final int position = xpos / widthWithMargin;
+        //final int offsetPixels = xpos % widthWithMargin;
+        //final float offset = (float) offsetPixels / widthWithMargin;
+        //mCalledSuper = false;
+        //onPageScrolled(position, offset, offsetPixels);
+        //if (!mCalledSuper) {
+            //throw new IllegalStateException(
+                    //"onPageScrolled did not call superclass implementation");
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.316 -0400", hash_original_method = "D3205253D12342035E86376912330E75", hash_generated_method = "CDE80C75083910853F006AF200982541")
     protected void onPageScrolled(int position, float offset, int offsetPixels) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(offsetPixels);
         addTaint(offset);
         addTaint(position);
@@ -1354,20 +1347,20 @@ switch(hgrav){
     if(childOffset != 0)                
                 {
                     child.offsetLeftAndRight(childOffset);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(mOnPageChangeListener != null)        
         {
             mOnPageChangeListener.onPageScrolled(position, offset, offsetPixels);
-        } 
+        } //End block
     if(mInternalPageChangeListener != null)        
         {
             mInternalPageChangeListener.onPageScrolled(position, offset, offsetPixels);
-        } 
+        } //End block
         mCalledSuper = true;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1385,9 +1378,9 @@ switch(hgrav){
     if(oldX != x || oldY != y)            
             {
                 scrollTo(x, y);
-            } 
+            } //End block
             setScrollState(SCROLL_STATE_IDLE);
-        } 
+        } //End block
         mPopulatePending = false;
         mScrolling = false;
 for(int i=0;i<mItems.size();i++)
@@ -1397,45 +1390,45 @@ for(int i=0;i<mItems.size();i++)
             {
                 needPopulate = true;
                 ii.scrolling = false;
-            } 
-        } 
+            } //End block
+        } //End block
     if(needPopulate)        
         {
             populate();
-        } 
-        
-        
-        
-            
-            
-            
-            
-            
-            
-            
-                
-            
-            
-        
-        
-        
-        
-            
-            
-                
-                
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //boolean needPopulate = mScrolling;
+        //if (needPopulate) {
+            //setScrollingCacheEnabled(false);
+            //mScroller.abortAnimation();
+            //int oldX = getScrollX();
+            //int oldY = getScrollY();
+            //int x = mScroller.getCurrX();
+            //int y = mScroller.getCurrY();
+            //if (oldX != x || oldY != y) {
+                //scrollTo(x, y);
+            //}
+            //setScrollState(SCROLL_STATE_IDLE);
+        //}
+        //mPopulatePending = false;
+        //mScrolling = false;
+        //for (int i=0; i<mItems.size(); i++) {
+            //ItemInfo ii = mItems.get(i);
+            //if (ii.scrolling) {
+                //needPopulate = true;
+                //ii.scrolling = false;
+            //}
+        //}
+        //if (needPopulate) {
+            //populate();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.317 -0400", hash_original_method = "965C57B2E8FC3C570BE548067A40E31E", hash_generated_method = "4AD7834506EEAA653D1C84C128E8529C")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         final int action = ev.getAction() & MotionEventCompat.ACTION_MASK;
     if(action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP)        
         {
@@ -1446,11 +1439,11 @@ for(int i=0;i<mItems.size();i++)
             {
                 mVelocityTracker.recycle();
                 mVelocityTracker = null;
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_1368541481 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1884679907 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1884679907;
-        } 
+        } //End block
     if(action != MotionEvent.ACTION_DOWN)        
         {
     if(mIsBeingDragged)            
@@ -1458,14 +1451,14 @@ for(int i=0;i<mItems.size();i++)
     if(DEBUG){ }                boolean varB326B5062B2F0E69046810717534CB09_1772549729 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_806480146 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_806480146;
-            } 
+            } //End block
     if(mIsUnableToDrag)            
             {
     if(DEBUG){ }                boolean var68934A3E9455FA72420237EB05902327_1569430150 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_898629126 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_898629126;
-            } 
-        } 
+            } //End block
+        } //End block
 switch(action){
         case MotionEvent.ACTION_MOVE:
         {
@@ -1473,7 +1466,7 @@ switch(action){
     if(activePointerId == INVALID_POINTER)            
             {
                 break;
-            } 
+            } //End block
             final int pointerIndex = MotionEventCompat.findPointerIndex(ev, activePointerId);
             final float x = MotionEventCompat.getX(ev, pointerIndex);
             final float dx = x - mLastMotionX;
@@ -1487,23 +1480,23 @@ switch(action){
                 boolean var68934A3E9455FA72420237EB05902327_88037292 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500122134 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_500122134;
-            } 
+            } //End block
     if(xDiff > mTouchSlop && xDiff > yDiff)            
             {
     if(DEBUG){ }                mIsBeingDragged = true;
                 setScrollState(SCROLL_STATE_DRAGGING);
                 mLastMotionX = x;
                 setScrollingCacheEnabled(true);
-            } 
+            } //End block
             else
             {
     if(yDiff > mTouchSlop)                
                 {
     if(DEBUG){ }                    mIsUnableToDrag = true;
-                } 
-            } 
+                } //End block
+            } //End block
             break;
-        } 
+        } //End block
         case MotionEvent.ACTION_DOWN:
         {
             mLastMotionX = mInitialMotionX = ev.getX();
@@ -1514,15 +1507,15 @@ switch(action){
                 mIsBeingDragged = true;
                 mIsUnableToDrag = false;
                 setScrollState(SCROLL_STATE_DRAGGING);
-            } 
+            } //End block
             else
             {
                 completeScroll();
                 mIsBeingDragged = false;
                 mIsUnableToDrag = false;
-            } 
+            } //End block
     if(DEBUG){ }            break;
-        } 
+        } //End block
         case MotionEventCompat.ACTION_POINTER_UP:
         onSecondaryPointerUp(ev);
         break;
@@ -1531,43 +1524,43 @@ switch(action){
     if(mVelocityTracker == null)            
             {
                 mVelocityTracker = VelocityTracker.obtain();
-            } 
+            } //End block
             mVelocityTracker.addMovement(ev);
-        } 
+        } //End block
         boolean varCD7F83DE880FD2A584529B26609B9552_312914692 = (mIsBeingDragged);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1741662062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1741662062;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.319 -0400", hash_original_method = "88D861E2913027BDD6B43DC3209AC688", hash_generated_method = "6F7DCBEEB4E2DFB98FB091D6E443AA48")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
     if(mFakeDragging)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_984879004 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_210638310 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_210638310;
-        } 
+        } //End block
     if(ev.getAction() == MotionEvent.ACTION_DOWN && ev.getEdgeFlags() != 0)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1915551951 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_135026025 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_135026025;
-        } 
+        } //End block
     if(mAdapter == null || mAdapter.getCount() == 0)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1078948868 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1741853186 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1741853186;
-        } 
+        } //End block
     if(mVelocityTracker == null)        
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } 
+        } //End block
         mVelocityTracker.addMovement(ev);
         final int action = ev.getAction();
         boolean needsInvalidate = false;
@@ -1578,7 +1571,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
             mLastMotionX = mInitialMotionX = ev.getX();
             mActivePointerId = MotionEventCompat.getPointerId(ev, 0);
             break;
-        } 
+        } //End block
         case MotionEvent.ACTION_MOVE:
     if(!mIsBeingDragged)        
         {
@@ -1593,8 +1586,8 @@ switch(action & MotionEventCompat.ACTION_MASK){
                 mLastMotionX = x;
                 setScrollState(SCROLL_STATE_DRAGGING);
                 setScrollingCacheEnabled(true);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mIsBeingDragged)        
         {
             final int activePointerIndex = MotionEventCompat.findPointerIndex(
@@ -1615,9 +1608,9 @@ switch(action & MotionEventCompat.ACTION_MASK){
                 {
                     float over = -scrollX;
                     needsInvalidate = mLeftEdge.onPull(over / width);
-                } 
+                } //End block
                 scrollX = leftBound;
-            } 
+            } //End block
             else
     if(scrollX > rightBound)            
             {
@@ -1625,13 +1618,13 @@ switch(action & MotionEventCompat.ACTION_MASK){
                 {
                     float over = scrollX - rightBound;
                     needsInvalidate = mRightEdge.onPull(over / width);
-                } 
+                } //End block
                 scrollX = rightBound;
-            } 
+            } //End block
             mLastMotionX += scrollX - (int) scrollX;
             scrollTo((int) scrollX, getScrollY());
             pageScrolled((int) scrollX);
-        } 
+        } //End block
         break;
         case MotionEvent.ACTION_UP:
     if(mIsBeingDragged)        
@@ -1654,7 +1647,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
             mActivePointerId = INVALID_POINTER;
             endDrag();
             needsInvalidate = mLeftEdge.onRelease() | mRightEdge.onRelease();
-        } 
+        } //End block
         break;
         case MotionEvent.ACTION_CANCEL:
     if(mIsBeingDragged)        
@@ -1663,7 +1656,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
             mActivePointerId = INVALID_POINTER;
             endDrag();
             needsInvalidate = mLeftEdge.onRelease() | mRightEdge.onRelease();
-        } 
+        } //End block
         break;
         case MotionEventCompat.ACTION_POINTER_DOWN:
         {
@@ -1672,7 +1665,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
             mLastMotionX = x;
             mActivePointerId = MotionEventCompat.getPointerId(ev, index);
             break;
-        } 
+        } //End block
         case MotionEventCompat.ACTION_POINTER_UP:
         onSecondaryPointerUp(ev);
         mLastMotionX = MotionEventCompat.getX(ev,
@@ -1681,12 +1674,12 @@ switch(action & MotionEventCompat.ACTION_MASK){
 }    if(needsInvalidate)        
         {
             invalidate();
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1837511406 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1959704896 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1959704896;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1700,22 +1693,22 @@ switch(action & MotionEventCompat.ACTION_MASK){
     if(Math.abs(deltaX) > mFlingDistance && Math.abs(velocity) > mMinimumVelocity)        
         {
             targetPage = velocity > 0 ? currentPage : currentPage + 1;
-        } 
+        } //End block
         else
         {
             targetPage = (int) (currentPage + pageOffset + 0.5f);
-        } 
+        } //End block
         int var61859375BF4E7601AEC6CD96DD1F9E47_259934307 = (targetPage);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1774252693 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1774252693;
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int targetPage;
+        //if (Math.abs(deltaX) > mFlingDistance && Math.abs(velocity) > mMinimumVelocity) {
+            //targetPage = velocity > 0 ? currentPage : currentPage + 1;
+        //} else {
+            //targetPage = (int) (currentPage + pageOffset + 0.5f);
+        //}
+        //return targetPage;
     }
 
     
@@ -1739,7 +1732,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
                 mLeftEdge.setSize(height, getWidth());
                 needsInvalidate |= mLeftEdge.draw(canvas);
                 canvas.restoreToCount(restoreCount);
-            } 
+            } //End block
     if(!mRightEdge.isFinished())            
             {
                 final int restoreCount = canvas.save();
@@ -1752,26 +1745,26 @@ switch(action & MotionEventCompat.ACTION_MASK){
                 mRightEdge.setSize(height, width);
                 needsInvalidate |= mRightEdge.draw(canvas);
                 canvas.restoreToCount(restoreCount);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             mLeftEdge.finish();
             mRightEdge.finish();
-        } 
+        } //End block
     if(needsInvalidate)        
         {
             invalidate();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.320 -0400", hash_original_method = "C696E5F5E436E83A9E43E2B41DDB422F", hash_generated_method = "BA89ABD73D0C8663E36897A789B1D8D4")
     @Override
     protected void onDraw(Canvas canvas) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(canvas.getTaint());
         super.onDraw(canvas);
     if(mPageMargin > 0 && mMarginDrawable != null)        
@@ -1785,21 +1778,21 @@ switch(action & MotionEventCompat.ACTION_MASK){
                 mMarginDrawable.setBounds(left, mTopPageBounds, left + mPageMargin,
                         mBottomPageBounds);
                 mMarginDrawable.draw(canvas);
-            } 
-        } 
-        
-        
-        
-            
-            
-            
-            
-                
-                
-                        
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.onDraw(canvas);
+        //if (mPageMargin > 0 && mMarginDrawable != null) {
+            //final int scrollX = getScrollX();
+            //final int width = getWidth();
+            //final int offset = scrollX % (width + mPageMargin);
+            //if (offset != 0) {
+                //final int left = scrollX - offset + width;
+                //mMarginDrawable.setBounds(left, mTopPageBounds, left + mPageMargin,
+                        //mBottomPageBounds);
+                //mMarginDrawable.draw(canvas);
+            //}
+        //}
     }
 
     
@@ -1810,18 +1803,18 @@ switch(action & MotionEventCompat.ACTION_MASK){
             boolean var68934A3E9455FA72420237EB05902327_1694784343 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_526150137 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_526150137;
-        } 
+        } //End block
         mFakeDragging = true;
         setScrollState(SCROLL_STATE_DRAGGING);
         mInitialMotionX = mLastMotionX = 0;
     if(mVelocityTracker == null)        
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } 
+        } //End block
         else
         {
             mVelocityTracker.clear();
-        } 
+        } //End block
         final long time = SystemClock.uptimeMillis();
         final MotionEvent ev = MotionEvent.obtain(time, time, MotionEvent.ACTION_DOWN, 0, 0, 0);
         mVelocityTracker.addMovement(ev);
@@ -1830,24 +1823,24 @@ switch(action & MotionEventCompat.ACTION_MASK){
         boolean varB326B5062B2F0E69046810717534CB09_576113463 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2127091985 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2127091985;
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mIsBeingDragged) {
+            //return false;
+        //}
+        //mFakeDragging = true;
+        //setScrollState(SCROLL_STATE_DRAGGING);
+        //mInitialMotionX = mLastMotionX = 0;
+        //if (mVelocityTracker == null) {
+            //mVelocityTracker = VelocityTracker.obtain();
+        //} else {
+            //mVelocityTracker.clear();
+        //}
+        //final long time = SystemClock.uptimeMillis();
+        //final MotionEvent ev = MotionEvent.obtain(time, time, MotionEvent.ACTION_DOWN, 0, 0, 0);
+        //mVelocityTracker.addMovement(ev);
+        //ev.recycle();
+        //mFakeDragBeginTime = time;
+        //return true;
     }
 
     
@@ -1858,7 +1851,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
             IllegalStateException var2AFCE91F76EC75632E8513C46867D9E2_1323886565 = new IllegalStateException("No fake drag in progress. Call beginFakeDrag first.");
             var2AFCE91F76EC75632E8513C46867D9E2_1323886565.addTaint(taint);
             throw var2AFCE91F76EC75632E8513C46867D9E2_1323886565;
-        } 
+        } //End block
         final VelocityTracker velocityTracker = mVelocityTracker;
         velocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
         int initialVelocity = (int)VelocityTrackerCompat.getYVelocity(
@@ -1873,8 +1866,8 @@ switch(action & MotionEventCompat.ACTION_MASK){
         setCurrentItemInternal(nextPage, true, true, initialVelocity);
         endDrag();
         mFakeDragging = false;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1885,7 +1878,7 @@ switch(action & MotionEventCompat.ACTION_MASK){
             IllegalStateException var2AFCE91F76EC75632E8513C46867D9E2_2011397056 = new IllegalStateException("No fake drag in progress. Call beginFakeDrag first.");
             var2AFCE91F76EC75632E8513C46867D9E2_2011397056.addTaint(taint);
             throw var2AFCE91F76EC75632E8513C46867D9E2_2011397056;
-        } 
+        } //End block
         mLastMotionX += xOffset;
         float scrollX = getScrollX() - xOffset;
         final int width = getWidth();
@@ -1895,12 +1888,12 @@ switch(action & MotionEventCompat.ACTION_MASK){
     if(scrollX < leftBound)        
         {
             scrollX = leftBound;
-        } 
+        } //End block
         else
     if(scrollX > rightBound)        
         {
             scrollX = rightBound;
-        } 
+        } //End block
         mLastMotionX += scrollX - (int) scrollX;
         scrollTo((int) scrollX, getScrollY());
         pageScrolled((int) scrollX);
@@ -1909,19 +1902,18 @@ switch(action & MotionEventCompat.ACTION_MASK){
                 mLastMotionX, 0, 0);
         mVelocityTracker.addMovement(ev);
         ev.recycle();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.321 -0400", hash_original_method = "A453849F99C417376DDBB8B219E48B12", hash_generated_method = "FCB4475A7F4953B5E3F1DD53409C6C95")
     public boolean isFakeDragging() {
         boolean varA433486E64E1D58A4CCC7C7414F54C8F_1686025922 = (mFakeDragging);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1965767517 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1965767517;
-        
-        
+        // ---------- Original Method ----------
+        //return mFakeDragging;
     }
 
     
@@ -1937,19 +1929,19 @@ switch(action & MotionEventCompat.ACTION_MASK){
     if(mVelocityTracker != null)            
             {
                 mVelocityTracker.clear();
-            } 
-        } 
-        
-        
-        
-        
-            
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //final int pointerIndex = MotionEventCompat.getActionIndex(ev);
+        //final int pointerId = MotionEventCompat.getPointerId(ev, pointerIndex);
+        //if (pointerId == mActivePointerId) {
+            //final int newPointerIndex = pointerIndex == 0 ? 1 : 0;
+            //mLastMotionX = MotionEventCompat.getX(ev, newPointerIndex);
+            //mActivePointerId = MotionEventCompat.getPointerId(ev, newPointerIndex);
+            //if (mVelocityTracker != null) {
+                //mVelocityTracker.clear();
+            //}
+        //}
     }
 
     
@@ -1961,18 +1953,17 @@ switch(action & MotionEventCompat.ACTION_MASK){
         {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
-        } 
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mIsBeingDragged = false;
+        //mIsUnableToDrag = false;
+        //if (mVelocityTracker != null) {
+            //mVelocityTracker.recycle();
+            //mVelocityTracker = null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.322 -0400", hash_original_method = "2B073E6A9B3015E7E6D245BDA0374ADD", hash_generated_method = "595C47E523309F0CF1633FFA5A230E6D")
     private void setScrollingCacheEnabled(boolean enabled) {
     if(mScrollingCacheEnabled != enabled)        
@@ -1987,23 +1978,23 @@ for(int i = 0;i < size;++i)
     if(child.getVisibility() != GONE)                    
                     {
                         child.setDrawingCacheEnabled(enabled);
-                    } 
-                } 
-            } 
-        } 
-        
-        
-            
-            
-                
-                
-                    
-                    
-                        
-                    
-                
-            
-        
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mScrollingCacheEnabled != enabled) {
+            //mScrollingCacheEnabled = enabled;
+            //if (USE_CACHE) {
+                //final int size = getChildCount();
+                //for (int i = 0; i < size; ++i) {
+                    //final View child = getChildAt(i);
+                    //if (child.getVisibility() != GONE) {
+                        //child.setDrawingCacheEnabled(enabled);
+                    //}
+                //}
+            //}
+        //}
     }
 
     
@@ -2031,14 +2022,14 @@ for(int i = count - 1;i >= 0;i--)
                     boolean varB326B5062B2F0E69046810717534CB09_1113654983 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1215794201 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1215794201;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean var7D2815C2251A7A7D3674AA30E75CBE47_193763776 = (checkV && ViewCompat.canScrollHorizontally(v, -dx));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2021070457 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2021070457;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2049,8 +2040,8 @@ for(int i = count - 1;i >= 0;i--)
         boolean var4D7C358C8BD535F7098378506DB34C5F_1386878628 = (super.dispatchKeyEvent(event) || executeKeyEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_579296642 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_579296642;
-        
-        
+        // ---------- Original Method ----------
+        //return super.dispatchKeyEvent(event) || executeKeyEvent(event);
     }
 
     
@@ -2073,21 +2064,21 @@ switch(event.getKeyCode()){
     if(KeyEventCompat.hasNoModifiers(event))                
                 {
                     handled = arrowScroll(FOCUS_FORWARD);
-                } 
+                } //End block
                 else
     if(KeyEventCompat.hasModifiers(event, KeyEvent.META_SHIFT_ON))                
                 {
                     handled = arrowScroll(FOCUS_BACKWARD);
-                } 
-            } 
+                } //End block
+            } //End block
             break;
 }
-        } 
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_1516280244 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_231316915 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_231316915;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2107,44 +2098,44 @@ switch(event.getKeyCode()){
     if(currentFocused != null && nextFocused.getLeft() >= currentFocused.getLeft())                
                 {
                     handled = pageLeft();
-                } 
+                } //End block
                 else
                 {
                     handled = nextFocused.requestFocus();
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(direction == View.FOCUS_RIGHT)            
             {
     if(currentFocused != null && nextFocused.getLeft() <= currentFocused.getLeft())                
                 {
                     handled = pageRight();
-                } 
+                } //End block
                 else
                 {
                     handled = nextFocused.requestFocus();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
     if(direction == FOCUS_LEFT || direction == FOCUS_BACKWARD)        
         {
             handled = pageLeft();
-        } 
+        } //End block
         else
     if(direction == FOCUS_RIGHT || direction == FOCUS_FORWARD)        
         {
             handled = pageRight();
-        } 
+        } //End block
     if(handled)        
         {
             playSoundEffect(SoundEffectConstants.getContantForFocusDirection(direction));
-        } 
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_840355726 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1042543678 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1042543678;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2156,16 +2147,16 @@ switch(event.getKeyCode()){
             boolean varB326B5062B2F0E69046810717534CB09_1355101367 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_931686186 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_931686186;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1477182726 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1407100434 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1407100434;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mCurItem > 0) {
+            //setCurrentItem(mCurItem-1, true);
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -2177,16 +2168,16 @@ switch(event.getKeyCode()){
             boolean varB326B5062B2F0E69046810717534CB09_236192323 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_289426659 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_289426659;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_824667751 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2004310515 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2004310515;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mAdapter != null && mCurItem < (mAdapter.getCount()-1)) {
+            //setCurrentItem(mCurItem+1, true);
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -2209,29 +2200,29 @@ for(int i = 0;i < getChildCount();i++)
     if(ii != null && ii.position == mCurItem)                    
                     {
                         child.addFocusables(views, direction, focusableMode);
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
     if(descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
                 (focusableCount == views.size()))        
         {
     if(!isFocusable())            
             {
                 return;
-            } 
+            } //End block
     if((focusableMode & FOCUSABLES_TOUCH_MODE) == FOCUSABLES_TOUCH_MODE &&
                     isInTouchMode() && !isFocusableInTouchMode())            
             {
                 return;
-            } 
+            } //End block
     if(views != null)            
             {
                 views.add(this);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2248,19 +2239,19 @@ for(int i = 0;i < getChildCount();i++)
     if(ii != null && ii.position == mCurItem)                
                 {
                     child.addTouchables(views);
-                } 
-            } 
-        } 
-        
-        
-            
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = 0; i < getChildCount(); i++) {
+            //final View child = getChildAt(i);
+            //if (child.getVisibility() == VISIBLE) {
+                //ItemInfo ii = infoForChild(child);
+                //if (ii != null && ii.position == mCurItem) {
+                    //child.addTouchables(views);
+                //}
+            //}
+        //}
     }
 
     
@@ -2268,7 +2259,7 @@ for(int i = 0;i < getChildCount();i++)
     @Override
     protected boolean onRequestFocusInDescendants(int direction,
             Rect previouslyFocusedRect) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(previouslyFocusedRect.getTaint());
         addTaint(direction);
         int index;
@@ -2280,13 +2271,13 @@ for(int i = 0;i < getChildCount();i++)
             index = 0;
             increment = 1;
             end = count;
-        } 
+        } //End block
         else
         {
             index = count - 1;
             increment = -1;
             end = -1;
-        } 
+        } //End block
 for(int i = index;i != end;i += increment)
         {
             View child = getChildAt(i);
@@ -2300,39 +2291,39 @@ for(int i = index;i != end;i += increment)
                         boolean varB326B5062B2F0E69046810717534CB09_1237568474 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_83198289 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_83198289;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_267843396 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1889677673 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1889677673;
-        
-        
-        
-        
-        
-        
-            
-            
-            
-        
-            
-            
-            
-        
-        
-            
-            
-                
-                
-                    
-                        
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int index;
+        //int increment;
+        //int end;
+        //int count = getChildCount();
+        //if ((direction & FOCUS_FORWARD) != 0) {
+            //index = 0;
+            //increment = 1;
+            //end = count;
+        //} else {
+            //index = count - 1;
+            //increment = -1;
+            //end = -1;
+        //}
+        //for (int i = index; i != end; i += increment) {
+            //View child = getChildAt(i);
+            //if (child.getVisibility() == VISIBLE) {
+                //ItemInfo ii = infoForChild(child);
+                //if (ii != null && ii.position == mCurItem) {
+                    //if (child.requestFocus(direction, previouslyFocusedRect)) {
+                        //return true;
+                    //}
+                //}
+            //}
+        //}
+        //return false;
     }
 
     
@@ -2353,25 +2344,25 @@ for(int i = 0;i < childCount;i++)
                     boolean varB326B5062B2F0E69046810717534CB09_1039345240 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060578226 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060578226;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_828679113 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_939084224 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_939084224;
-        
-        
-        
-            
-            
-                
-                
-                        
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int childCount = getChildCount();
+        //for (int i = 0; i < childCount; i++) {
+            //final View child = getChildAt(i);
+            //if (child.getVisibility() == VISIBLE) {
+                //final ItemInfo ii = infoForChild(child);
+                //if (ii != null && ii.position == mCurItem &&
+                        //child.dispatchPopulateAccessibilityEvent(event)) {
+                    //return true;
+                //}
+            //}
+        //}
+        //return false;
     }
 
     
@@ -2381,8 +2372,8 @@ for(int i = 0;i < childCount;i++)
 ViewGroup.LayoutParams varD2F9AF19F351B83E6231407281521B68_428311849 =         new LayoutParams();
         varD2F9AF19F351B83E6231407281521B68_428311849.addTaint(taint);
         return varD2F9AF19F351B83E6231407281521B68_428311849;
-        
-        
+        // ---------- Original Method ----------
+        //return new LayoutParams();
     }
 
     
@@ -2393,8 +2384,8 @@ ViewGroup.LayoutParams varD2F9AF19F351B83E6231407281521B68_428311849 =         n
 ViewGroup.LayoutParams var0E81305CCB52037DAA521CD210230A11_175104041 =         generateDefaultLayoutParams();
         var0E81305CCB52037DAA521CD210230A11_175104041.addTaint(taint);
         return var0E81305CCB52037DAA521CD210230A11_175104041;
-        
-        
+        // ---------- Original Method ----------
+        //return generateDefaultLayoutParams();
     }
 
     
@@ -2405,8 +2396,8 @@ ViewGroup.LayoutParams var0E81305CCB52037DAA521CD210230A11_175104041 =         g
         boolean var1707AE27818A71629332993BC5C6F3DC_1994086887 = (p instanceof LayoutParams && super.checkLayoutParams(p));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1697356119 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1697356119;
-        
-        
+        // ---------- Original Method ----------
+        //return p instanceof LayoutParams && super.checkLayoutParams(p);
     }
 
     
@@ -2417,8 +2408,8 @@ ViewGroup.LayoutParams var0E81305CCB52037DAA521CD210230A11_175104041 =         g
 ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         new LayoutParams(getContext(), attrs);
         var023B3FAAA9940C6DE114BF4C9FED2D73_64531958.addTaint(taint);
         return var023B3FAAA9940C6DE114BF4C9FED2D73_64531958;
-        
-        
+        // ---------- Original Method ----------
+        //return new LayoutParams(getContext(), attrs);
     }
 
     
@@ -2436,7 +2427,7 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.326 -0400", hash_original_method = "0E65939D2C485463E4F8D82E04659E59", hash_generated_method = "0E65939D2C485463E4F8D82E04659E59")
         public ItemInfo ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -2449,39 +2440,36 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.326 -0400", hash_original_method = "11664B5E2C5AD85381CB52FAE0F3E160", hash_generated_method = "11664B5E2C5AD85381CB52FAE0F3E160")
         public SimpleOnPageChangeListener ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.326 -0400", hash_original_method = "FDA1A61FADE7F0C7FCCDCC2DC76C3CF3", hash_generated_method = "56ED9EE580D60BE05B53133A76E9A070")
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(positionOffsetPixels);
             addTaint(positionOffset);
             addTaint(position);
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.327 -0400", hash_original_method = "53640E8AF66EBB8ED10DFFE2A0D2E8B4", hash_generated_method = "E14EBD5798939F6D36F12C55A8B6805A")
         @Override
         public void onPageSelected(int position) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(position);
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.327 -0400", hash_original_method = "257CCDCF3F3C71EC13191438C1C85826", hash_generated_method = "7D1A18F60472A016F9CCDF171AEF93EC")
         @Override
         public void onPageScrollStateChanged(int state) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(state);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -2504,7 +2492,7 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
         public  SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -2514,17 +2502,17 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
     if(loader == null)            
             {
                 loader = getClass().getClassLoader();
-            } 
+            } //End block
             position = in.readInt();
             adapterState = in.readParcelable(loader);
             this.loader = loader;
-            
-            
-                
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (loader == null) {
+                //loader = getClass().getClassLoader();
+            //}
+            //position = in.readInt();
+            //adapterState = in.readParcelable(loader);
+            //this.loader = loader;
         }
 
         
@@ -2536,10 +2524,10 @@ ViewGroup.LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_64531958 =         ne
             super.writeToParcel(out, flags);
             out.writeInt(position);
             out.writeParcelable(adapterState, flags);
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.writeToParcel(out, flags);
+            //out.writeInt(position);
+            //out.writeParcelable(adapterState, flags);
         }
 
         
@@ -2551,10 +2539,10 @@ String var8ED90389504921227F61E87718C80D36_1610399093 =             "FragmentPag
                     + " position=" + position + "}";
             var8ED90389504921227F61E87718C80D36_1610399093.addTaint(taint);
             return var8ED90389504921227F61E87718C80D36_1610399093;
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //return "FragmentPager.SavedState{"
+                    //+ Integer.toHexString(System.identityHashCode(this))
+                    //+ " position=" + position + "}";
         }
 
         
@@ -2580,27 +2568,27 @@ String var8ED90389504921227F61E87718C80D36_1610399093 =             "FragmentPag
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.328 -0400", hash_original_method = "9650588F08E5195A8869DD8AFCD0755C", hash_generated_method = "9650588F08E5195A8869DD8AFCD0755C")
         public PagerObserver ()
         {
-            
+            //Synthesized constructor
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.328 -0400", hash_original_method = "11C315FA7B2CA5C79402AC3B9B3CC875", hash_generated_method = "B9090479FFF1FB0FF809A60780229444")
         @Override
         public void onChanged() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             dataSetChanged();
-            
-            
+            // ---------- Original Method ----------
+            //dataSetChanged();
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.328 -0400", hash_original_method = "75A3C506698EAB8F326C44C7FA27D020", hash_generated_method = "0BA8DD5F6D5DD6AD703761FCA7405F9D")
         @Override
         public void onInvalidated() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             dataSetChanged();
-            
-            
+            // ---------- Original Method ----------
+            //dataSetChanged();
         }
 
         
@@ -2619,7 +2607,7 @@ String var8ED90389504921227F61E87718C80D36_1610399093 =             "FragmentPag
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.328 -0400", hash_original_method = "22352D37EA586BAB2B06261A9354918D", hash_generated_method = "92FA6B303DD2F574323DBD754522A067")
         public  LayoutParams() {
             super(FILL_PARENT, FILL_PARENT);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -2631,10 +2619,10 @@ String var8ED90389504921227F61E87718C80D36_1610399093 =             "FragmentPag
             final TypedArray a = context.obtainStyledAttributes(attrs, LAYOUT_ATTRS);
             gravity = a.getInteger(0, Gravity.NO_GRAVITY);
             a.recycle();
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //final TypedArray a = context.obtainStyledAttributes(attrs, LAYOUT_ATTRS);
+            //gravity = a.getInteger(0, Gravity.NO_GRAVITY);
+            //a.recycle();
         }
 
         

@@ -1,6 +1,6 @@
 package android.view.inputmethod;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public class InputConnectionWrapper implements InputConnection {
     public  InputConnectionWrapper(InputConnection target, boolean mutable) {
         mMutable = mutable;
         mTarget = target;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMutable = mutable;
+        //mTarget = target;
     }
 
     
@@ -32,13 +32,13 @@ public class InputConnectionWrapper implements InputConnection {
             SecurityException varB2C8147036581E1A424B6B9EF3D268CB_1527418161 = new SecurityException("not mutable");
             varB2C8147036581E1A424B6B9EF3D268CB_1527418161.addTaint(taint);
             throw varB2C8147036581E1A424B6B9EF3D268CB_1527418161;
-        } 
+        } //End block
         mTarget = target;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mTarget != null && !mMutable) {
+            //throw new SecurityException("not mutable");
+        //}
+        //mTarget = target;
     }
 
     
@@ -49,8 +49,8 @@ public class InputConnectionWrapper implements InputConnection {
 CharSequence var96B87C2CE40782AE737B1AF549A6BA9D_1645849741 =         mTarget.getTextBeforeCursor(n, flags);
         var96B87C2CE40782AE737B1AF549A6BA9D_1645849741.addTaint(taint);
         return var96B87C2CE40782AE737B1AF549A6BA9D_1645849741;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.getTextBeforeCursor(n, flags);
     }
 
     
@@ -61,8 +61,8 @@ CharSequence var96B87C2CE40782AE737B1AF549A6BA9D_1645849741 =         mTarget.ge
 CharSequence var7A97152EE43E119363DC59EFC76018BA_172832869 =         mTarget.getTextAfterCursor(n, flags);
         var7A97152EE43E119363DC59EFC76018BA_172832869.addTaint(taint);
         return var7A97152EE43E119363DC59EFC76018BA_172832869;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.getTextAfterCursor(n, flags);
     }
 
     
@@ -72,8 +72,8 @@ CharSequence var7A97152EE43E119363DC59EFC76018BA_172832869 =         mTarget.get
 CharSequence varE0648B9B32C1F2D9DBB0613161A39A4A_1960119115 =         mTarget.getSelectedText(flags);
         varE0648B9B32C1F2D9DBB0613161A39A4A_1960119115.addTaint(taint);
         return varE0648B9B32C1F2D9DBB0613161A39A4A_1960119115;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.getSelectedText(flags);
     }
 
     
@@ -83,8 +83,8 @@ CharSequence varE0648B9B32C1F2D9DBB0613161A39A4A_1960119115 =         mTarget.ge
         int var9FC17838F3A08458EE9EBBDE9C77C654_2129889871 = (mTarget.getCursorCapsMode(reqModes));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989715016 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989715016;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.getCursorCapsMode(reqModes);
     }
 
     
@@ -95,8 +95,8 @@ CharSequence varE0648B9B32C1F2D9DBB0613161A39A4A_1960119115 =         mTarget.ge
 ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.getExtractedText(request, flags);
         varD300E0D19816F64B3B9005199AC77447_759769017.addTaint(taint);
         return varD300E0D19816F64B3B9005199AC77447_759769017;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.getExtractedText(request, flags);
     }
 
     
@@ -107,8 +107,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varF47FB3D8A95F64764639FE6403CDEE53_460926686 = (mTarget.deleteSurroundingText(leftLength, rightLength));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1046469949 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1046469949;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.deleteSurroundingText(leftLength, rightLength);
     }
 
     
@@ -119,8 +119,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean var0E7405AA93395821257795AFA168FF5B_1171983341 = (mTarget.setComposingText(text, newCursorPosition));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1564698320 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1564698320;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.setComposingText(text, newCursorPosition);
     }
 
     
@@ -131,8 +131,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean var450BC7861BD331BA21ED44FE42909224_98000039 = (mTarget.setComposingRegion(start, end));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_466399056 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_466399056;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.setComposingRegion(start, end);
     }
 
     
@@ -141,8 +141,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean var3628555D46E319C05B2FC5775B8E8078_712140774 = (mTarget.finishComposingText());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_219064039 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_219064039;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.finishComposingText();
     }
 
     
@@ -153,8 +153,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varE2CACB4255A2EBC54DEA2A6DC6E5D7E0_1820777961 = (mTarget.commitText(text, newCursorPosition));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_890149470 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_890149470;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.commitText(text, newCursorPosition);
     }
 
     
@@ -164,8 +164,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varA7EC751CE9B2CE7301CF32B879120ACF_1132684147 = (mTarget.commitCompletion(text));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_215628325 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_215628325;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.commitCompletion(text);
     }
 
     
@@ -175,8 +175,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean var4ABE7C185CD113281F40511555A2F59E_1168011994 = (mTarget.commitCorrection(correctionInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901763187 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_901763187;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.commitCorrection(correctionInfo);
     }
 
     
@@ -187,8 +187,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean var66A8181D4D3FC1B4B272459A34EDDD71_1397130129 = (mTarget.setSelection(start, end));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_709203502 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_709203502;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.setSelection(start, end);
     }
 
     
@@ -198,8 +198,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varCBEA2A48C1E14537F48B1F936A5C5707_2107706032 = (mTarget.performEditorAction(editorAction));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2129739213 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2129739213;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.performEditorAction(editorAction);
     }
 
     
@@ -209,8 +209,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varB90D6D4C8292A7A77C8B0488103A6AED_2115471047 = (mTarget.performContextMenuAction(id));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1809154939 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1809154939;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.performContextMenuAction(id);
     }
 
     
@@ -219,8 +219,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean var6A5D8292BB8C6D7DF5614EEA02F1A27E_1217155485 = (mTarget.beginBatchEdit());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_107692820 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_107692820;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.beginBatchEdit();
     }
 
     
@@ -229,8 +229,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varB2F6CEB6E86467F58E548706DFC70F44_627896272 = (mTarget.endBatchEdit());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_37108948 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_37108948;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.endBatchEdit();
     }
 
     
@@ -240,8 +240,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean var0455F970ECE51DCD1EE9789520002940_1203022129 = (mTarget.sendKeyEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_17558696 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_17558696;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.sendKeyEvent(event);
     }
 
     
@@ -251,8 +251,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varCCCED7002BB65D362378C1146DA9063A_203653106 = (mTarget.clearMetaKeyStates(states));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1865193419 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1865193419;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.clearMetaKeyStates(states);
     }
 
     
@@ -262,8 +262,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varEC6DD1C6D15280F19E17449AF7B11B11_1943486196 = (mTarget.reportFullscreenMode(enabled));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432908978 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432908978;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.reportFullscreenMode(enabled);
     }
 
     
@@ -274,8 +274,8 @@ ExtractedText varD300E0D19816F64B3B9005199AC77447_759769017 =         mTarget.ge
         boolean varC6F8D70C4945426EDD03B973F9B74A63_347367922 = (mTarget.performPrivateCommand(action, data));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_450047192 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_450047192;
-        
-        
+        // ---------- Original Method ----------
+        //return mTarget.performPrivateCommand(action, data);
     }
 
     

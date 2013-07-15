@@ -1,6 +1,6 @@
 package org.bouncycastle.jce;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -52,7 +52,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         byte[]  bytes) {
         super(toDERSequence(bytes));
         addTaint(bytes[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -61,7 +61,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         ASN1Sequence  sequence) {
         super(sequence);
         addTaint(sequence.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -79,7 +79,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         addTaint(key.getTaint());
         addTaint(subject.getTaint());
         addTaint(signatureAlgorithm.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -97,7 +97,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         addTaint(key.getTaint());
         addTaint(subject.getTaint());
         addTaint(signatureAlgorithm.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -117,7 +117,7 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         addTaint(key.getTaint());
         addTaint(subject.getTaint());
         addTaint(signatureAlgorithm.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -143,73 +143,73 @@ public class PKCS10CertificationRequest extends CertificationRequest {
             try 
             {
                 sigOID = new DERObjectIdentifier(algorithmName);
-            } 
+            } //End block
             catch (Exception e)
             {
                 IllegalArgumentException varB18074A21B8B08497C53127CA4DD90CB_90475335 = new IllegalArgumentException("Unknown signature type requested");
                 varB18074A21B8B08497C53127CA4DD90CB_90475335.addTaint(taint);
                 throw varB18074A21B8B08497C53127CA4DD90CB_90475335;
-            } 
-        } 
+            } //End block
+        } //End block
     if(subject == null)        
         {
             IllegalArgumentException varF7E6557D5CD0EEE16A97877333591AF9_2025393035 = new IllegalArgumentException("subject must not be null");
             varF7E6557D5CD0EEE16A97877333591AF9_2025393035.addTaint(taint);
             throw varF7E6557D5CD0EEE16A97877333591AF9_2025393035;
-        } 
+        } //End block
     if(key == null)        
         {
             IllegalArgumentException var7FA406A36111F20A2D59C5557337A99E_1767120896 = new IllegalArgumentException("public key must not be null");
             var7FA406A36111F20A2D59C5557337A99E_1767120896.addTaint(taint);
             throw var7FA406A36111F20A2D59C5557337A99E_1767120896;
-        } 
+        } //End block
     if(noParams.contains(sigOID))        
         {
             this.sigAlgId = new AlgorithmIdentifier(sigOID);
-        } 
+        } //End block
         else
     if(params.containsKey(algorithmName))        
         {
             this.sigAlgId = new AlgorithmIdentifier(sigOID, (DEREncodable)params.get(algorithmName));
-        } 
+        } //End block
         else
         {
             this.sigAlgId = new AlgorithmIdentifier(sigOID, DERNull.INSTANCE);
-        } 
+        } //End block
         try 
         {
             ASN1Sequence seq = (ASN1Sequence)ASN1Object.fromByteArray(key.getEncoded());
             this.reqInfo = new CertificationRequestInfo(subject, new SubjectPublicKeyInfo(seq), attributes);
-        } 
+        } //End block
         catch (IOException e)
         {
             IllegalArgumentException var19AFF07EBF0D285E6200B15847475545_1784027255 = new IllegalArgumentException("can't encode public key");
             var19AFF07EBF0D285E6200B15847475545_1784027255.addTaint(taint);
             throw var19AFF07EBF0D285E6200B15847475545_1784027255;
-        } 
+        } //End block
         Signature sig;
     if(provider == null)        
         {
             sig = Signature.getInstance(signatureAlgorithm);
-        } 
+        } //End block
         else
         {
             sig = Signature.getInstance(signatureAlgorithm, provider);
-        } 
+        } //End block
         sig.initSign(signingKey);
         try 
         {
             sig.update(reqInfo.getEncoded(ASN1Encodable.DER));
-        } 
+        } //End block
         catch (Exception e)
         {
             IllegalArgumentException var28DBE1BCED21F9B7B371B30A4EA3167D_591765047 = new IllegalArgumentException("exception encoding TBS cert request - " + e);
             var28DBE1BCED21F9B7B371B30A4EA3167D_591765047.addTaint(taint);
             throw var28DBE1BCED21F9B7B371B30A4EA3167D_591765047;
-        } 
+        } //End block
         this.sigBits = new DERBitString(sig.sign());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -254,8 +254,8 @@ public class PKCS10CertificationRequest extends CertificationRequest {
 PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175 =         getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
         varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175.addTaint(taint);
         return varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175;
-        
-        
+        // ---------- Original Method ----------
+        //return getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
     }
 
     
@@ -276,14 +276,14 @@ PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_1985376175 =         getPublicKey(
 PublicKey var41DC99F01DD21ADDF0ABED61A14977D8_41528255 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId()).generatePublic(xspec);
                     var41DC99F01DD21ADDF0ABED61A14977D8_41528255.addTaint(taint);
                     return var41DC99F01DD21ADDF0ABED61A14977D8_41528255;
-                } 
+                } //End block
                 else
                 {
 PublicKey varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId(), provider).generatePublic(xspec);
                     varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700.addTaint(taint);
                     return varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (NoSuchAlgorithmException e)
             {
     if(keyAlgorithms.get(keyAlg.getObjectId()) != null)                
@@ -294,26 +294,26 @@ PublicKey varEBB5C620BE73D7C58524D5E2E4FDA5D2_1242368700 =                     K
 PublicKey var819053A5996B66C1588BC8CB811D91A6_1776736558 =                         KeyFactory.getInstance(keyAlgorithm).generatePublic(xspec);
                         var819053A5996B66C1588BC8CB811D91A6_1776736558.addTaint(taint);
                         return var819053A5996B66C1588BC8CB811D91A6_1776736558;
-                    } 
+                    } //End block
                     else
                     {
 PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                         KeyFactory.getInstance(keyAlgorithm, provider).generatePublic(xspec);
                         var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142.addTaint(taint);
                         return var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 e.addTaint(taint);
                 throw e;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (InvalidKeySpecException e)
         {
             InvalidKeyException varB47E630CF91EC6A257E24F063B634927_408904224 = new InvalidKeyException("error decoding public key");
             varB47E630CF91EC6A257E24F063B634927_408904224.addTaint(taint);
             throw varB47E630CF91EC6A257E24F063B634927_408904224;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -323,8 +323,8 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
         boolean varDFDA2B739D43284084054634F274B202_468467013 = (verify(BouncyCastleProvider.PROVIDER_NAME));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_925372450 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_925372450;
-        
-        
+        // ---------- Original Method ----------
+        //return verify(BouncyCastleProvider.PROVIDER_NAME);
     }
 
     
@@ -336,8 +336,8 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
         boolean var870A8DDE759B8F2968C7A4D4A7FE5FFC_536726346 = (verify(this.getPublicKey(provider), provider));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1266718583 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1266718583;
-        
-        
+        // ---------- Original Method ----------
+        //return verify(this.getPublicKey(provider), provider);
     }
 
     
@@ -354,12 +354,12 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     if(provider == null)            
             {
                 sig = Signature.getInstance(getSignatureName(sigAlgId));
-            } 
+            } //End block
             else
             {
                 sig = Signature.getInstance(getSignatureName(sigAlgId), provider);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (NoSuchAlgorithmException e)
         {
     if(oids.get(sigAlgId.getObjectId()) != null)            
@@ -368,35 +368,35 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
     if(provider == null)                
                 {
                     sig = Signature.getInstance(signatureAlgorithm);
-                } 
+                } //End block
                 else
                 {
                     sig = Signature.getInstance(signatureAlgorithm, provider);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 e.addTaint(taint);
                 throw e;
-            } 
-        } 
+            } //End block
+        } //End block
         setSignatureParameters(sig, sigAlgId.getParameters());
         sig.initVerify(pubKey);
         try 
         {
             sig.update(reqInfo.getEncoded(ASN1Encodable.DER));
-        } 
+        } //End block
         catch (Exception e)
         {
             SignatureException var50132ED7A0D04A650E1E6822352B6B4F_1642859339 = new SignatureException("exception encoding TBS cert request - " + e);
             var50132ED7A0D04A650E1E6822352B6B4F_1642859339.addTaint(taint);
             throw var50132ED7A0D04A650E1E6822352B6B4F_1642859339;
-        } 
+        } //End block
         boolean var55FC8C227B44C450556E137AA201B486_69676156 = (sig.verify(sigBits.getBytes()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2031655124 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2031655124;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -407,22 +407,22 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
             byte[] var75679B9D6E0C3BD65FFE938E240A5B3B_886470249 = (this.getEncoded(ASN1Encodable.DER));
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_765545549 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_765545549;
-        } 
+        } //End block
         catch (IOException e)
         {
             RuntimeException var7731B7FAF9DB516E410EE38D728795B2_744515759 = new RuntimeException(e.toString());
             var7731B7FAF9DB516E410EE38D728795B2_744515759.addTaint(taint);
             throw var7731B7FAF9DB516E410EE38D728795B2_744515759;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return this.getEncoded(ASN1Encodable.DER);
+        //}
+        //catch (IOException e)
+        //{
+            //throw new RuntimeException(e.toString());
+        //}
     }
 
     
@@ -438,29 +438,29 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_434701142 =                       
             try 
             {
                 sigParams.init(params.getDERObject().getDEREncoded());
-            } 
+            } //End block
             catch (IOException e)
             {
                 SignatureException var4C6E34B998119F08550B28F7354D74CB_565667272 = new SignatureException("IOException decoding parameters: " + e.getMessage());
                 var4C6E34B998119F08550B28F7354D74CB_565667272.addTaint(taint);
                 throw var4C6E34B998119F08550B28F7354D74CB_565667272;
-            } 
+            } //End block
     if(signature.getAlgorithm().endsWith("MGF1"))            
             {
                 try 
                 {
                     signature.setParameter(sigParams.getParameterSpec(PSSParameterSpec.class));
-                } 
+                } //End block
                 catch (GeneralSecurityException e)
                 {
                     SignatureException var1A8C4267253B70F3D11993580B705F98_2107686842 = new SignatureException("Exception extracting parameters: " + e.getMessage());
                     var1A8C4267253B70F3D11993580B705F98_2107686842.addTaint(taint);
                     throw var1A8C4267253B70F3D11993580B705F98_2107686842;
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

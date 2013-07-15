@@ -1,6 +1,6 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -77,9 +77,9 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     public  AndroidHttpClientConnection() {
         this.entityserializer =  new EntitySerializer(
                 new StrictContentLengthStrategy());
-        
-        
-                
+        // ---------- Original Method ----------
+        //this.entityserializer =  new EntitySerializer(
+                //new StrictContentLengthStrategy());
     }
 
     
@@ -92,13 +92,13 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
             IllegalArgumentException varCBABC6A96FAFFF53CCBEEA230A20A836_1453709143 = new IllegalArgumentException("Socket may not be null");
             varCBABC6A96FAFFF53CCBEEA230A20A836_1453709143.addTaint(taint);
             throw varCBABC6A96FAFFF53CCBEEA230A20A836_1453709143;
-        } 
+        } //End block
     if(params == null)        
         {
             IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1311410884 = new IllegalArgumentException("HTTP parameters may not be null");
             var497CCC27A43EDD6EE25BEEC5507E2BE2_1311410884.addTaint(taint);
             throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1311410884;
-        } 
+        } //End block
         assertNotOpen();
         socket.setTcpNoDelay(HttpConnectionParams.getTcpNoDelay(params));
         socket.setSoTimeout(HttpConnectionParams.getSoTimeout(params));
@@ -106,7 +106,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     if(linger >= 0)        
         {
             socket.setSoLinger(linger > 0, linger);
-        } 
+        } //End block
         this.socket = socket;
         int buffersize = HttpConnectionParams.getSocketBufferSize(params);
         this.inbuffer = new SocketInputBuffer(socket, buffersize, params);
@@ -120,8 +120,8 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
                 inbuffer.getMetrics(),
                 outbuffer.getMetrics());
         this.open = true;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -133,25 +133,25 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     if(isOpen())        
         {
             buffer.append(getRemotePort());
-        } 
+        } //End block
         else
         {
             buffer.append("closed");
-        } 
+        } //End block
         buffer.append("]");
 String varD03843288D33B9E1D3062E25339ECF6D_572995336 =         buffer.toString();
         varD03843288D33B9E1D3062E25339ECF6D_572995336.addTaint(taint);
         return varD03843288D33B9E1D3062E25339ECF6D_572995336;
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buffer = new StringBuilder();
+        //buffer.append(getClass().getSimpleName()).append("[");
+        //if (isOpen()) {
+            //buffer.append(getRemotePort());
+        //} else {
+            //buffer.append("closed");
+        //}
+        //buffer.append("]");
+        //return buffer.toString();
     }
 
     
@@ -162,11 +162,11 @@ String varD03843288D33B9E1D3062E25339ECF6D_572995336 =         buffer.toString()
             IllegalStateException var84A3AD519B18408EB344ACE934F6C410_927654829 = new IllegalStateException("Connection is already open");
             var84A3AD519B18408EB344ACE934F6C410_927654829.addTaint(taint);
             throw var84A3AD519B18408EB344ACE934F6C410_927654829;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.open) {
+            //throw new IllegalStateException("Connection is already open");
+        //}
     }
 
     
@@ -177,11 +177,11 @@ String varD03843288D33B9E1D3062E25339ECF6D_572995336 =         buffer.toString()
             IllegalStateException var9ADD238E8FA39BC97A70F042343A30CA_1889132349 = new IllegalStateException("Connection is not open");
             var9ADD238E8FA39BC97A70F042343A30CA_1889132349.addTaint(taint);
             throw var9ADD238E8FA39BC97A70F042343A30CA_1889132349;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!this.open) {
+            //throw new IllegalStateException("Connection is not open");
+        //}
     }
 
     
@@ -190,8 +190,8 @@ String varD03843288D33B9E1D3062E25339ECF6D_572995336 =         buffer.toString()
         boolean varE850F00B58D108E3C63F93C8F17C0010_1933146265 = ((this.open && this.socket != null && this.socket.isConnected()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_361414337 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_361414337;
-        
-        
+        // ---------- Original Method ----------
+        //return (this.open && this.socket != null && this.socket.isConnected());
     }
 
     
@@ -202,19 +202,19 @@ String varD03843288D33B9E1D3062E25339ECF6D_572995336 =         buffer.toString()
 InetAddress var55250CAC8E472010A9C3BCFFCA885EF9_24593384 =             this.socket.getLocalAddress();
             var55250CAC8E472010A9C3BCFFCA885EF9_24593384.addTaint(taint);
             return var55250CAC8E472010A9C3BCFFCA885EF9_24593384;
-        } 
+        } //End block
         else
         {
 InetAddress var540C13E9E156B687226421B24F2DF178_242540250 =             null;
             var540C13E9E156B687226421B24F2DF178_242540250.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_242540250;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.socket != null) {
+            //return this.socket.getLocalAddress();
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -225,19 +225,19 @@ InetAddress var540C13E9E156B687226421B24F2DF178_242540250 =             null;
             int varA1A37855EF64705F2D43A30D558084D5_1032539196 = (this.socket.getLocalPort());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1763334053 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1763334053;
-        } 
+        } //End block
         else
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_924680919 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_312265169 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_312265169;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.socket != null) {
+            //return this.socket.getLocalPort();
+        //} else {
+            //return -1;
+        //}
     }
 
     
@@ -248,19 +248,19 @@ InetAddress var540C13E9E156B687226421B24F2DF178_242540250 =             null;
 InetAddress var601DF1EB7A81FFA1EAA0DD611F88A9A1_1907864489 =             this.socket.getInetAddress();
             var601DF1EB7A81FFA1EAA0DD611F88A9A1_1907864489.addTaint(taint);
             return var601DF1EB7A81FFA1EAA0DD611F88A9A1_1907864489;
-        } 
+        } //End block
         else
         {
 InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
             var540C13E9E156B687226421B24F2DF178_2016197199.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2016197199;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.socket != null) {
+            //return this.socket.getInetAddress();
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -271,19 +271,19 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
             int var502403C994AC2D85DCA0890A45B626BE_2016278057 = (this.socket.getPort());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769211940 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769211940;
-        } 
+        } //End block
         else
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_890610437 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1524594154 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1524594154;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.socket != null) {
+            //return this.socket.getPort();
+        //} else {
+            //return -1;
+        //}
     }
 
     
@@ -296,19 +296,19 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
             try 
             {
                 this.socket.setSoTimeout(timeout);
-            } 
+            } //End block
             catch (SocketException ignore)
             {
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //assertOpen();
+        //if (this.socket != null) {
+            //try {
+                //this.socket.setSoTimeout(timeout);
+            //} catch (SocketException ignore) {
+            //}
+        //}
     }
 
     
@@ -321,30 +321,30 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
                 int var1F56CB3CA7DD779FD088C15B14EF2D6D_236215309 = (this.socket.getSoTimeout());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1069940013 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1069940013;
-            } 
+            } //End block
             catch (SocketException ignore)
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_332492885 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809852379 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809852379;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_757458020 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_177347597 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_177347597;
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.socket != null) {
+            //try {
+                //return this.socket.getSoTimeout();
+            //} catch (SocketException ignore) {
+                //return -1;
+            //}
+        //} else {
+            //return -1;
+        //}
     }
 
     
@@ -355,13 +355,13 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
     if(tmpsocket != null)        
         {
             tmpsocket.close();
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.open = false;
+        //Socket tmpsocket = this.socket;
+        //if (tmpsocket != null) {
+            //tmpsocket.close();
+        //}
     }
 
     
@@ -370,7 +370,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
     if(!this.open)        
         {
             return;
-        } 
+        } //End block
         this.open = false;
         doFlush();
         try 
@@ -378,40 +378,40 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
             try 
             {
                 this.socket.shutdownOutput();
-            } 
+            } //End block
             catch (IOException ignore)
             {
-            } 
+            } //End block
             try 
             {
                 this.socket.shutdownInput();
-            } 
+            } //End block
             catch (IOException ignore)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         catch (UnsupportedOperationException ignore)
         {
-        } 
+        } //End block
         this.socket.close();
-        
-        
-            
-        
-        
-        
-        
-            
-                
-            
-            
-            
-                
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!this.open) {
+            //return;
+        //}
+        //this.open = false;
+        //doFlush();
+        //try {
+            //try {
+                //this.socket.shutdownOutput();
+            //} catch (IOException ignore) {
+            //}
+            //try {
+                //this.socket.shutdownInput();
+            //} catch (IOException ignore) {
+            //}
+        //} catch (UnsupportedOperationException ignore) {
+        //}
+        //this.socket.close();
     }
 
     
@@ -423,17 +423,17 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_454708053 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_454708053.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_454708053;
-        } 
+        } //End block
         assertOpen();
         this.requestWriter.write(request);
         this.metrics.incrementRequestCount();
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (request == null) {
+            //throw new IllegalArgumentException("HTTP request may not be null");
+        //}
+        //assertOpen();
+        //this.requestWriter.write(request);
+        //this.metrics.incrementRequestCount();
     }
 
     
@@ -445,36 +445,36 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_112763459 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_112763459.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_112763459;
-        } 
+        } //End block
         assertOpen();
     if(request.getEntity() == null)        
         {
             return;
-        } 
+        } //End block
         this.entityserializer.serialize(
                 this.outbuffer,
                 request,
                 request.getEntity());
-        
-        
-            
-        
-        
-        
-            
-        
-        
-                
-                
-                
+        // ---------- Original Method ----------
+        //if (request == null) {
+            //throw new IllegalArgumentException("HTTP request may not be null");
+        //}
+        //assertOpen();
+        //if (request.getEntity() == null) {
+            //return;
+        //}
+        //this.entityserializer.serialize(
+                //this.outbuffer,
+                //request,
+                //request.getEntity());
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.908 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
     protected void doFlush() throws IOException {
         this.outbuffer.flush();
-        
-        
+        // ---------- Original Method ----------
+        //this.outbuffer.flush();
     }
 
     
@@ -482,9 +482,9 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
     public void flush() throws IOException {
         assertOpen();
         doFlush();
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertOpen();
+        //doFlush();
     }
 
     
@@ -498,7 +498,7 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
             NoHttpResponseException var8E6E6A11E770AF132B510E2C0E1EA88C_2023290701 = new NoHttpResponseException("The target server failed to respond");
             var8E6E6A11E770AF132B510E2C0E1EA88C_2023290701.addTaint(taint);
             throw var8E6E6A11E770AF132B510E2C0E1EA88C_2023290701;
-        } 
+        } //End block
         StatusLine statusline = BasicLineParser.DEFAULT.parseStatusLine(
                 current, new ParserCursor(0, current.length()));
     if(HttpLog.LOGV)        
@@ -512,16 +512,16 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
     if(current == null)            
             {
                 current = new CharArrayBuffer(64);
-            } 
+            } //End block
             else
             {
                 current.clear();
-            } 
+            } //End block
             int l = inbuffer.readLine(current);
     if(l == -1 || current.length() < 1)            
             {
                 break;
-            } 
+            } //End block
             char first = current.charAt(0);
     if((first == ' ' || first == '\t') && previous != null)            
             {
@@ -534,9 +534,9 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
     if(ch != ' ' && ch != '\t')                    
                     {
                         break;
-                    } 
+                    } //End block
                     start++;
-                } 
+                } //End block
     if(maxLineLength > 0 &&
                         previous.length() + 1 + current.length() - start >
                             maxLineLength)                
@@ -544,40 +544,40 @@ InetAddress var540C13E9E156B687226421B24F2DF178_2016197199 =             null;
                     IOException var12ACD845FE59D4DF91577F545067D44A_304185804 = new IOException("Maximum line length limit exceeded");
                     var12ACD845FE59D4DF91577F545067D44A_304185804.addTaint(taint);
                     throw var12ACD845FE59D4DF91577F545067D44A_304185804;
-                } 
+                } //End block
                 previous.append(' ');
                 previous.append(current, start, current.length() - start);
-            } 
+            } //End block
             else
             {
     if(previous != null)                
                 {
                     headers.parseHeader(previous);
-                } 
+                } //End block
                 headerNumber++;
                 previous = current;
                 current = null;
-            } 
+            } //End block
     if(maxHeaderCount > 0 && headerNumber >= maxHeaderCount)            
             {
                 IOException var715D62412F40E87C48B3054F65A13D4F_88267242 = new IOException("Maximum header count exceeded");
                 var715D62412F40E87C48B3054F65A13D4F_88267242.addTaint(taint);
                 throw var715D62412F40E87C48B3054F65A13D4F_88267242;
-            } 
-        } 
+            } //End block
+        } //End block
     if(previous != null)        
         {
             headers.parseHeader(previous);
-        } 
+        } //End block
     if(statusCode >= 200)        
         {
             this.metrics.incrementResponseCount();
-        } 
+        } //End block
 StatusLine varECE1183D548EEF2334B847FDE0390490_1894070303 =         statusline;
         varECE1183D548EEF2334B847FDE0390490_1894070303.addTaint(taint);
         return varECE1183D548EEF2334B847FDE0390490_1894070303;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -592,35 +592,35 @@ StatusLine varECE1183D548EEF2334B847FDE0390490_1894070303 =         statusline;
             entity.setChunked(true);
             entity.setContentLength(-1);
             entity.setContent(new ChunkedInputStream(inbuffer));
-        } 
+        } //End block
         else
     if(len == ContentLengthStrategy.IDENTITY)        
         {
             entity.setChunked(false);
             entity.setContentLength(-1);
             entity.setContent(new IdentityInputStream(inbuffer));
-        } 
+        } //End block
         else
         {
             entity.setChunked(false);
             entity.setContentLength(len);
             entity.setContent(new ContentLengthInputStream(inbuffer, len));
-        } 
+        } //End block
         String contentTypeHeader = headers.getContentType();
     if(contentTypeHeader != null)        
         {
             entity.setContentType(contentTypeHeader);
-        } 
+        } //End block
         String contentEncodingHeader = headers.getContentEncoding();
     if(contentEncodingHeader != null)        
         {
             entity.setContentEncoding(contentEncodingHeader);
-        } 
+        } //End block
 HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_1998109228 =         entity;
         var5E2D610DE63DCFFE14343DA0A43AB041_1998109228.addTaint(taint);
         return var5E2D610DE63DCFFE14343DA0A43AB041_1998109228;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -633,7 +633,7 @@ HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_1998109228 =         entity;
             long varBF0487A5497D96D26C24936A4DAD1B2F_797136626 = (transferEncoding);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_343998467 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_343998467;
-        } 
+        } //End block
         else
         {
             long contentlen = headers.getContentLength();
@@ -642,26 +642,26 @@ HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_1998109228 =         entity;
                 long varCB93A9937843A987DEAF858742557F95_657769443 = (contentlen);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2056446029 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_2056446029;
-            } 
+            } //End block
             else
             {
                 long var85A74CC368A28A3EE8374941BD402BFD_79268758 = (ContentLengthStrategy.IDENTITY);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_630502827 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_630502827;
-            } 
-        } 
-        
-        
-        
-            
-        
-            
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //long transferEncoding = headers.getTransferEncoding();
+        //if (transferEncoding < Headers.NO_TRANSFER_ENCODING) {
+            //return transferEncoding;
+        //} else {
+            //long contentlen = headers.getContentLength();
+            //if (contentlen > Headers.NO_CONTENT_LENGTH) {
+                //return contentlen;
+            //} else {
+                //return ContentLengthStrategy.IDENTITY;
+            //}
+        //}
     }
 
     
@@ -674,32 +674,31 @@ HttpEntity var5E2D610DE63DCFFE14343DA0A43AB041_1998109228 =         entity;
             boolean var68934A3E9455FA72420237EB05902327_1516325074 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_823167642 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_823167642;
-        } 
+        } //End block
         catch (IOException ex)
         {
             boolean varB326B5062B2F0E69046810717534CB09_1603349017 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_611025254 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_611025254;
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //assertOpen();
+        //try {
+            //this.inbuffer.isDataAvailable(1);
+            //return false;
+        //} catch (IOException ex) {
+            //return true;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.912 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "D0087111A16A2BBB53ED3D5FB7D0338E")
     public HttpConnectionMetrics getMetrics() {
 HttpConnectionMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1641017354 =         this.metrics;
         varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1641017354.addTaint(taint);
         return varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1641017354;
-        
-        
+        // ---------- Original Method ----------
+        //return this.metrics;
     }
 
     

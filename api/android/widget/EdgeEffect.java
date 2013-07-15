@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -92,58 +92,55 @@ public class EdgeEffect {
         mGlow = res.getDrawable(R.drawable.overscroll_glow);
         mMinWidth = (int) (res.getDisplayMetrics().density * MIN_WIDTH + 0.5f);
         mInterpolator = new DecelerateInterpolator();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final Resources res = context.getResources();
+        //mEdge = res.getDrawable(R.drawable.overscroll_edge);
+        //mGlow = res.getDrawable(R.drawable.overscroll_glow);
+        //mMinWidth = (int) (res.getDisplayMetrics().density * MIN_WIDTH + 0.5f);
+        //mInterpolator = new DecelerateInterpolator();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.126 -0400", hash_original_method = "2560E21D822EB58266D32B5FBCFCA888", hash_generated_method = "937C2CF909C70F6CCE7A1CB2903577B5")
     public void setSize(int width, int height) {
         mWidth = width;
         mHeight = height;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWidth = width;
+        //mHeight = height;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.128 -0400", hash_original_method = "C5415C2330467D0B97062A48ADF90DEB", hash_generated_method = "73C3555B4FBBDA968E91359AD813BBD6")
     public boolean isFinished() {
         boolean var116E16B3C77234A36C6DE3CC8043EE7D_302440833 = (mState == STATE_IDLE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_340356255 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_340356255;
-        
-        
+        // ---------- Original Method ----------
+        //return mState == STATE_IDLE;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.128 -0400", hash_original_method = "27AC7ECC3801AAB2943059507B28FB49", hash_generated_method = "4A51E2781D945A7EDF99F072DEC552D1")
     public void finish() {
         mState = STATE_IDLE;
-        
-        
+        // ---------- Original Method ----------
+        //mState = STATE_IDLE;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.147 -0400", hash_original_method = "0B34B4327835671A51286147399AA2A4", hash_generated_method = "90121324B78DEE1D033ADA3736043444")
     public void onPull(float deltaDistance) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         final long now = AnimationUtils.currentAnimationTimeMillis();
     if(mState == STATE_PULL_DECAY && now - mStartTime < mDuration)        
         {
             return;
-        } 
+        } //End block
     if(mState != STATE_PULL)        
         {
             mGlowScaleY = PULL_GLOW_BEGIN;
-        } 
+        } //End block
         mState = STATE_PULL;
         mStartTime = now;
         mDuration = PULL_TIME;
@@ -159,30 +156,30 @@ public class EdgeEffect {
     if(deltaDistance > 0 && mPullDistance < 0)        
         {
             glowChange = -glowChange;
-        } 
+        } //End block
     if(mPullDistance == 0)        
         {
             mGlowScaleY = 0;
-        } 
+        } //End block
         mGlowScaleY = mGlowScaleYStart = Math.min(MAX_GLOW_HEIGHT, Math.max(
                 0, mGlowScaleY + glowChange * PULL_DISTANCE_GLOW_FACTOR));
         mEdgeAlphaFinish = mEdgeAlpha;
         mEdgeScaleYFinish = mEdgeScaleY;
         mGlowAlphaFinish = mGlowAlpha;
         mGlowScaleYFinish = mGlowScaleY;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.148 -0400", hash_original_method = "130A4176B67F340D0300F29A870A39F7", hash_generated_method = "BC446EBD548533819C8C7DD4A224442A")
     public void onRelease() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         mPullDistance = 0;
     if(mState != STATE_PULL && mState != STATE_PULL_DECAY)        
         {
             return;
-        } 
+        } //End block
         mState = STATE_RECEDE;
         mEdgeAlphaStart = mEdgeAlpha;
         mEdgeScaleYStart = mEdgeScaleY;
@@ -194,28 +191,28 @@ public class EdgeEffect {
         mGlowScaleYFinish = 0.f;
         mStartTime = AnimationUtils.currentAnimationTimeMillis();
         mDuration = RECEDE_TIME;
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPullDistance = 0;
+        //if (mState != STATE_PULL && mState != STATE_PULL_DECAY) {
+            //return;
+        //}
+        //mState = STATE_RECEDE;
+        //mEdgeAlphaStart = mEdgeAlpha;
+        //mEdgeScaleYStart = mEdgeScaleY;
+        //mGlowAlphaStart = mGlowAlpha;
+        //mGlowScaleYStart = mGlowScaleY;
+        //mEdgeAlphaFinish = 0.f;
+        //mEdgeScaleYFinish = 0.f;
+        //mGlowAlphaFinish = 0.f;
+        //mGlowScaleYFinish = 0.f;
+        //mStartTime = AnimationUtils.currentAnimationTimeMillis();
+        //mDuration = RECEDE_TIME;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.148 -0400", hash_original_method = "1D958DC13C828E6D4B8059ABA730E95F", hash_generated_method = "BA825A4857DBCA7D9EF40A9CF75A8279")
     public void onAbsorb(int velocity) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         mState = STATE_ABSORB;
         velocity = Math.max(MIN_VELOCITY, Math.abs(velocity));
         mStartTime = AnimationUtils.currentAnimationTimeMillis();
@@ -230,21 +227,21 @@ public class EdgeEffect {
         mGlowScaleYFinish = Math.min(0.025f + (velocity * (velocity / 100) * 0.00015f), 1.75f);
         mGlowAlphaFinish = Math.max(
                 mGlowAlphaStart, Math.min(velocity * VELOCITY_GLOW_FACTOR * .00001f, MAX_ALPHA));
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //mState = STATE_ABSORB;
+        //velocity = Math.max(MIN_VELOCITY, Math.abs(velocity));
+        //mStartTime = AnimationUtils.currentAnimationTimeMillis();
+        //mDuration = 0.1f + (velocity * 0.03f);
+        //mEdgeAlphaStart = 0.f;
+        //mEdgeScaleY = mEdgeScaleYStart = 0.f;
+        //mGlowAlphaStart = 0.5f;
+        //mGlowScaleYStart = 0.f;
+        //mEdgeAlphaFinish = Math.max(0, Math.min(velocity * VELOCITY_EDGE_FACTOR, 1));
+        //mEdgeScaleYFinish = Math.max(
+                //HELD_EDGE_SCALE_Y, Math.min(velocity * VELOCITY_EDGE_FACTOR, 1.f));
+        //mGlowScaleYFinish = Math.min(0.025f + (velocity * (velocity / 100) * 0.00015f), 1.75f);
+        //mGlowAlphaFinish = Math.max(
+                //mGlowAlphaStart, Math.min(velocity * VELOCITY_GLOW_FACTOR * .00001f, MAX_ALPHA));
     }
 
     
@@ -264,11 +261,11 @@ public class EdgeEffect {
         {
             int glowLeft = (mWidth - mMinWidth)/2;
             mGlow.setBounds(glowLeft, 0, mWidth - glowLeft, glowBottom);
-        } 
+        } //End block
         else
         {
             mGlow.setBounds(0, 0, mWidth, glowBottom);
-        } 
+        } //End block
         mGlow.draw(canvas);
         mEdge.setAlpha((int) (Math.max(0, Math.min(mEdgeAlpha, 1)) * 255));
         int edgeBottom = (int) (edgeHeight * mEdgeScaleY);
@@ -276,17 +273,17 @@ public class EdgeEffect {
         {
             int edgeLeft = (mWidth - mMinWidth)/2;
             mEdge.setBounds(edgeLeft, 0, mWidth - edgeLeft, edgeBottom);
-        } 
+        } //End block
         else
         {
             mEdge.setBounds(0, 0, mWidth, edgeBottom);
-        } 
+        } //End block
         mEdge.draw(canvas);
         boolean var1C7D2C3CA7DF9FA8CE1943EC2A7FD9C3_801459402 = (mState != STATE_IDLE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_833985145 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_833985145;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -341,9 +338,9 @@ switch(mState){
             mState = STATE_IDLE;
             break;
 }
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

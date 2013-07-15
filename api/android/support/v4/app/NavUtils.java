@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,12 +16,11 @@ public class NavUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.198 -0400", hash_original_method = "E75D43BE6A1853BDB1330AA34521ED0F", hash_generated_method = "40223732185F53587003CD833DE7D091")
     private  NavUtils() {
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean shouldUpRecreateTask(Activity sourceActivity, Intent targetIntent) {
+        public static boolean shouldUpRecreateTask(Activity sourceActivity, Intent targetIntent) {
         String action = sourceActivity.getIntent().getAction();
         return action != null && !action.equals(Intent.ACTION_MAIN);
     }
@@ -40,16 +39,14 @@ public class NavUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void navigateUpTo(Activity sourceActivity, Intent upIntent) {
+        public static void navigateUpTo(Activity sourceActivity, Intent upIntent) {
         upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         sourceActivity.startActivity(upIntent);
         sourceActivity.finish();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Intent getParentActivityIntent(Activity sourceActivity) {
+        public static Intent getParentActivityIntent(Activity sourceActivity) {
         String parentActivity = getParentActivityName(sourceActivity);
         if (parentActivity == null) return null;
         return new Intent(Intent.ACTION_MAIN).setClassName(sourceActivity, parentActivity);
@@ -64,8 +61,7 @@ public class NavUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Intent getParentActivityIntent(Context context, ComponentName componentName) throws NameNotFoundException {
+        public static Intent getParentActivityIntent(Context context, ComponentName componentName) throws NameNotFoundException {
         String parentActivity = getParentActivityName(context, componentName);
         if (parentActivity == null) return null;
         if (parentActivity.charAt(0) == '.') {
@@ -75,8 +71,7 @@ public class NavUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String getParentActivityName(Activity sourceActivity) {
+        public static String getParentActivityName(Activity sourceActivity) {
         try {
             return getParentActivityName(sourceActivity, sourceActivity.getComponentName());
         } catch (NameNotFoundException e) {

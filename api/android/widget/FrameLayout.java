@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -60,7 +60,7 @@ public class FrameLayout extends ViewGroup {
     public  FrameLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -69,7 +69,7 @@ public class FrameLayout extends ViewGroup {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -87,29 +87,29 @@ public class FrameLayout extends ViewGroup {
     if(d != null)        
         {
             setForeground(d);
-        } 
+        } //End block
     if(a.getBoolean(com.android.internal.R.styleable.FrameLayout_measureAllChildren, false))        
         {
             setMeasureAllChildren(true);
-        } 
+        } //End block
         mForegroundInPadding = a.getBoolean(
                 com.android.internal.R.styleable.FrameLayout_foregroundInsidePadding, true);
         a.recycle();
-        
-        
-                    
-        
-                
-        
-        
-            
-        
-        
-            
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.FrameLayout,
+                    //defStyle, 0);
+        //mForegroundGravity = a.getInt(
+                //com.android.internal.R.styleable.FrameLayout_foregroundGravity, mForegroundGravity);
+        //final Drawable d = a.getDrawable(com.android.internal.R.styleable.FrameLayout_foreground);
+        //if (d != null) {
+            //setForeground(d);
+        //}
+        //if (a.getBoolean(com.android.internal.R.styleable.FrameLayout_measureAllChildren, false)) {
+            //setMeasureAllChildren(true);
+        //}
+        //mForegroundInPadding = a.getBoolean(
+                //com.android.internal.R.styleable.FrameLayout_foregroundInsidePadding, true);
+        //a.recycle();
     }
 
     
@@ -121,11 +121,11 @@ public class FrameLayout extends ViewGroup {
     if((foregroundGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0)            
             {
                 foregroundGravity |= Gravity.START;
-            } 
+            } //End block
     if((foregroundGravity & Gravity.VERTICAL_GRAVITY_MASK) == 0)            
             {
                 foregroundGravity |= Gravity.TOP;
-            } 
+            } //End block
             mForegroundGravity = foregroundGravity;
     if(mForegroundGravity == Gravity.FILL && mForeground != null)            
             {
@@ -136,19 +136,19 @@ public class FrameLayout extends ViewGroup {
                     mForegroundPaddingTop = padding.top;
                     mForegroundPaddingRight = padding.right;
                     mForegroundPaddingBottom = padding.bottom;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 mForegroundPaddingLeft = 0;
                 mForegroundPaddingTop = 0;
                 mForegroundPaddingRight = 0;
                 mForegroundPaddingBottom = 0;
-            } 
+            } //End block
             requestLayout();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -159,8 +159,8 @@ public class FrameLayout extends ViewGroup {
         boolean var951A779500AA67DD129C75FC4AA4D220_253691835 = (super.verifyDrawable(who) || (who == mForeground));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_297484229 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_297484229;
-        
-        
+        // ---------- Original Method ----------
+        //return super.verifyDrawable(who) || (who == mForeground);
     }
 
     
@@ -170,9 +170,9 @@ public class FrameLayout extends ViewGroup {
         super.jumpDrawablesToCurrentState();
     if(mForeground != null)        
         mForeground.jumpToCurrentState();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.jumpDrawablesToCurrentState();
+        //if (mForeground != null) mForeground.jumpToCurrentState();
     }
 
     
@@ -183,12 +183,12 @@ public class FrameLayout extends ViewGroup {
     if(mForeground != null && mForeground.isStateful())        
         {
             mForeground.setState(getDrawableState());
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.drawableStateChanged();
+        //if (mForeground != null && mForeground.isStateful()) {
+            //mForeground.setState(getDrawableState());
+        //}
     }
 
     
@@ -198,8 +198,8 @@ public class FrameLayout extends ViewGroup {
 LayoutParams var8649ACA5E03771F827BFE666D5C03EC1_813585684 =         new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         var8649ACA5E03771F827BFE666D5C03EC1_813585684.addTaint(taint);
         return var8649ACA5E03771F827BFE666D5C03EC1_813585684;
-        
-        
+        // ---------- Original Method ----------
+        //return new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
     }
 
     
@@ -211,7 +211,7 @@ LayoutParams var8649ACA5E03771F827BFE666D5C03EC1_813585684 =         new LayoutP
             {
                 mForeground.setCallback(null);
                 unscheduleDrawable(mForeground);
-            } 
+            } //End block
             mForeground = drawable;
             mForegroundPaddingLeft = 0;
             mForegroundPaddingTop = 0;
@@ -224,7 +224,7 @@ LayoutParams var8649ACA5E03771F827BFE666D5C03EC1_813585684 =         new LayoutP
     if(drawable.isStateful())                
                 {
                     drawable.setState(getDrawableState());
-                } 
+                } //End block
     if(mForegroundGravity == Gravity.FILL)                
                 {
                     Rect padding = new Rect();
@@ -234,29 +234,28 @@ LayoutParams var8649ACA5E03771F827BFE666D5C03EC1_813585684 =         new LayoutP
                         mForegroundPaddingTop = padding.top;
                         mForegroundPaddingRight = padding.right;
                         mForegroundPaddingBottom = padding.bottom;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             else
             {
                 setWillNotDraw(true);
-            } 
+            } //End block
             requestLayout();
             invalidate();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.744 -0400", hash_original_method = "8DDBBCB9F2E6942D000521EEF66C0D86", hash_generated_method = "530199D41CC84CFC4332A898338462D8")
     public Drawable getForeground() {
 Drawable varE68730EA53E360629A53778795B047BD_2014992516 =         mForeground;
         varE68730EA53E360629A53778795B047BD_2014992516.addTaint(taint);
         return varE68730EA53E360629A53778795B047BD_2014992516;
-        
-        
+        // ---------- Original Method ----------
+        //return mForeground;
     }
 
     
@@ -266,9 +265,9 @@ Drawable varE68730EA53E360629A53778795B047BD_2014992516 =         mForeground;
             mPaddingLeft + mForegroundPaddingLeft);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2122601773 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2122601773;
-        
-        
-            
+        // ---------- Original Method ----------
+        //return mForegroundInPadding ? Math.max(mPaddingLeft, mForegroundPaddingLeft) :
+            //mPaddingLeft + mForegroundPaddingLeft;
     }
 
     
@@ -278,9 +277,9 @@ Drawable varE68730EA53E360629A53778795B047BD_2014992516 =         mForeground;
             mPaddingRight + mForegroundPaddingRight);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009459148 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009459148;
-        
-        
-            
+        // ---------- Original Method ----------
+        //return mForegroundInPadding ? Math.max(mPaddingRight, mForegroundPaddingRight) :
+            //mPaddingRight + mForegroundPaddingRight;
     }
 
     
@@ -290,9 +289,9 @@ Drawable varE68730EA53E360629A53778795B047BD_2014992516 =         mForeground;
             mPaddingTop + mForegroundPaddingTop);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1993249856 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1993249856;
-        
-        
-            
+        // ---------- Original Method ----------
+        //return mForegroundInPadding ? Math.max(mPaddingTop, mForegroundPaddingTop) :
+            //mPaddingTop + mForegroundPaddingTop;
     }
 
     
@@ -302,16 +301,16 @@ Drawable varE68730EA53E360629A53778795B047BD_2014992516 =         mForeground;
             mPaddingBottom + mForegroundPaddingBottom);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319479351 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319479351;
-        
-        
-            
+        // ---------- Original Method ----------
+        //return mForegroundInPadding ? Math.max(mPaddingBottom, mForegroundPaddingBottom) :
+            //mPaddingBottom + mForegroundPaddingBottom;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.747 -0400", hash_original_method = "5535255FB97D5EBC35FC058E1C30F774", hash_generated_method = "A86B6B14E1E8108AF8E5DAC749487390")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         int count = getChildCount();
@@ -339,10 +338,10 @@ for(int i = 0;i < count;i++)
                             lp.height == LayoutParams.MATCH_PARENT)                    
                     {
                         mMatchParentChildren.add(child);
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         maxWidth += getPaddingLeftWithForeground() + getPaddingRightWithForeground();
         maxHeight += getPaddingTopWithForeground() + getPaddingBottomWithForeground();
         maxHeight = Math.max(maxHeight, getSuggestedMinimumHeight());
@@ -352,7 +351,7 @@ for(int i = 0;i < count;i++)
         {
             maxHeight = Math.max(maxHeight, drawable.getMinimumHeight());
             maxWidth = Math.max(maxWidth, drawable.getMinimumWidth());
-        } 
+        } //End block
         setMeasuredDimension(resolveSizeAndState(maxWidth, widthMeasureSpec, childState),
                 resolveSizeAndState(maxHeight, heightMeasureSpec,
                         childState << MEASURED_HEIGHT_STATE_SHIFT));
@@ -371,40 +370,40 @@ for(int i = 0;i < count;i++)
                             getPaddingLeftWithForeground() - getPaddingRightWithForeground() -
                             lp.leftMargin - lp.rightMargin,
                             MeasureSpec.EXACTLY);
-                } 
+                } //End block
                 else
                 {
                     childWidthMeasureSpec = getChildMeasureSpec(widthMeasureSpec,
                             getPaddingLeftWithForeground() + getPaddingRightWithForeground() +
                             lp.leftMargin + lp.rightMargin,
                             lp.width);
-                } 
+                } //End block
     if(lp.height == LayoutParams.MATCH_PARENT)                
                 {
                     childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight() -
                             getPaddingTopWithForeground() - getPaddingBottomWithForeground() -
                             lp.topMargin - lp.bottomMargin,
                             MeasureSpec.EXACTLY);
-                } 
+                } //End block
                 else
                 {
                     childHeightMeasureSpec = getChildMeasureSpec(heightMeasureSpec,
                             getPaddingTopWithForeground() + getPaddingBottomWithForeground() +
                             lp.topMargin + lp.bottomMargin,
                             lp.height);
-                } 
+                } //End block
                 child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.751 -0400", hash_original_method = "E7FA69BF1895927226A22DFF32FA5B4F", hash_generated_method = "241241E8EDCC6472190CE814AECC67A7")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(bottom);
         addTaint(right);
         addTaint(top);
@@ -430,7 +429,7 @@ for(int i = 0;i < count;i++)
     if(gravity == -1)                
                 {
                     gravity = DEFAULT_CHILD_GRAVITY;
-                } 
+                } //End block
                 final int layoutDirection = getResolvedLayoutDirection();
                 final int absoluteGravity = Gravity.getAbsoluteGravity(gravity, layoutDirection);
                 final int verticalGravity = gravity & Gravity.VERTICAL_GRAVITY_MASK;
@@ -461,26 +460,26 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
                 default:
                 childTop = parentTop + lp.topMargin;
 }                child.layout(childLeft, childTop, childLeft + width, childTop + height);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.752 -0400", hash_original_method = "4AC6B20E904606B8A51AEBBB15006C72", hash_generated_method = "7767E99AE4CB590B0320CE4B1FF51910")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(oldh);
         addTaint(oldw);
         addTaint(h);
         addTaint(w);
         super.onSizeChanged(w, h, oldw, oldh);
         mForegroundBoundsChanged = true;
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onSizeChanged(w, h, oldw, oldh);
+        //mForegroundBoundsChanged = true;
     }
 
     
@@ -502,21 +501,21 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     if(mForegroundInPadding)                
                 {
                     selfBounds.set(0, 0, w, h);
-                } 
+                } //End block
                 else
                 {
                     selfBounds.set(mPaddingLeft, mPaddingTop, w - mPaddingRight, h - mPaddingBottom);
-                } 
+                } //End block
                 final int layoutDirection = getResolvedLayoutDirection();
                 Gravity.apply(mForegroundGravity, foreground.getIntrinsicWidth(),
                         foreground.getIntrinsicHeight(), selfBounds, overlayBounds,
                         layoutDirection);
                 foreground.setBounds(overlayBounds);
-            } 
+            } //End block
             foreground.draw(canvas);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -528,26 +527,25 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
     if(region != null && mForeground != null)        
         {
             applyDrawableToTransparentRegion(mForeground, region);
-        } 
+        } //End block
         boolean var94619F8A70068B2591C2EED622525B0E_962453162 = (opaque);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1673288010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1673288010;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean opaque = super.gatherTransparentRegion(region);
+        //if (region != null && mForeground != null) {
+            //applyDrawableToTransparentRegion(mForeground, region);
+        //}
+        //return opaque;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.753 -0400", hash_original_method = "F157652BCC07DCD3C1A1E63F95BA7504", hash_generated_method = "35F4313BD098BAEC40FB26B8C2BFA441")
     @android.view.RemotableViewMethod
     public void setMeasureAllChildren(boolean measureAll) {
         mMeasureAllChildren = measureAll;
-        
-        
+        // ---------- Original Method ----------
+        //mMeasureAllChildren = measureAll;
     }
 
     
@@ -557,19 +555,18 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
         boolean var5D2755653F906AF2663AB1F6F8D9A244_366434065 = (getMeasureAllChildren());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1062110245 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1062110245;
-        
-        
+        // ---------- Original Method ----------
+        //return getMeasureAllChildren();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.754 -0400", hash_original_method = "52ECFF8459DAA24A15017A3D3C6FE0BF", hash_generated_method = "4511A35003B889BCDDD7BA09CA378474")
     public boolean getMeasureAllChildren() {
         boolean varBDF5B8EA1A766C674F3C6D79DF6608FD_258058295 = (mMeasureAllChildren);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1252549802 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1252549802;
-        
-        
+        // ---------- Original Method ----------
+        //return mMeasureAllChildren;
     }
 
     
@@ -580,24 +577,22 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
 LayoutParams varDE90F821DBD0395E0EC46F138F4E3BF6_1754697852 =         new FrameLayout.LayoutParams(getContext(), attrs);
         varDE90F821DBD0395E0EC46F138F4E3BF6_1754697852.addTaint(taint);
         return varDE90F821DBD0395E0EC46F138F4E3BF6_1754697852;
-        
-        
+        // ---------- Original Method ----------
+        //return new FrameLayout.LayoutParams(getContext(), attrs);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.755 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "EBD614467AA7AE23EE31E3C0673F2DCC")
     @Override
     public boolean shouldDelayChildPressedState() {
         boolean var68934A3E9455FA72420237EB05902327_1081375648 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1078554866 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1078554866;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.755 -0400", hash_original_method = "E5E3FCBA546B7CFE2F525BEFE910A396", hash_generated_method = "C92E54238D22A326C556ED22B2636D19")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -605,8 +600,8 @@ LayoutParams varDE90F821DBD0395E0EC46F138F4E3BF6_1754697852 =         new FrameL
         boolean var440AF75A2CDC0C5127161CA01BB77E89_715331304 = (p instanceof LayoutParams);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562769206 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1562769206;
-        
-        
+        // ---------- Original Method ----------
+        //return p instanceof LayoutParams;
     }
 
     
@@ -617,8 +612,8 @@ LayoutParams varDE90F821DBD0395E0EC46F138F4E3BF6_1754697852 =         new FrameL
 ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1106918591 =         new LayoutParams(p);
         varB945D213E5036F8DDF9B40811234DF64_1106918591.addTaint(taint);
         return varB945D213E5036F8DDF9B40811234DF64_1106918591;
-        
-        
+        // ---------- Original Method ----------
+        //return new LayoutParams(p);
     }
 
     
@@ -635,10 +630,10 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1106918591 =         
             TypedArray a = c.obtainStyledAttributes(attrs, com.android.internal.R.styleable.FrameLayout_Layout);
             gravity = a.getInt(com.android.internal.R.styleable.FrameLayout_Layout_layout_gravity, -1);
             a.recycle();
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //TypedArray a = c.obtainStyledAttributes(attrs, com.android.internal.R.styleable.FrameLayout_Layout);
+            //gravity = a.getInt(com.android.internal.R.styleable.FrameLayout_Layout_layout_gravity, -1);
+            //a.recycle();
         }
 
         
@@ -647,7 +642,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1106918591 =         
             super(width, height);
             addTaint(height);
             addTaint(width);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -657,8 +652,8 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1106918591 =         
             addTaint(height);
             addTaint(width);
             this.gravity = gravity;
-            
-            
+            // ---------- Original Method ----------
+            //this.gravity = gravity;
         }
 
         
@@ -666,7 +661,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1106918591 =         
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -674,7 +669,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1106918591 =         
         public  LayoutParams(ViewGroup.MarginLayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         

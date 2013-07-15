@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.976 -0400", hash_original_method = "F24963EF187BB1F8C634FCD3043DEC7F", hash_generated_method = "6095E38714E723CF4021E2B80F418044")
     public  PChargingVector() {
         super(P_CHARGING_VECTOR);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -36,8 +36,8 @@ public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader 
 String varD48A745DC29A29C7851286E6A426D0D0_1233430373 =         encoding.toString();
         varD48A745DC29A29C7851286E6A426D0D0_1233430373.addTaint(taint);
         return varD48A745DC29A29C7851286E6A426D0D0_1233430373;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -46,8 +46,8 @@ String varD48A745DC29A29C7851286E6A426D0D0_1233430373 =         encoding.toStrin
 String var8FB09FE306E053C5C94430AED16B3C8A_45278033 =         getParameter(ParameterNamesIms.ICID_VALUE);
         var8FB09FE306E053C5C94430AED16B3C8A_45278033.addTaint(taint);
         return var8FB09FE306E053C5C94430AED16B3C8A_45278033;
-        
-        
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.ICID_VALUE);
     }
 
     
@@ -63,12 +63,12 @@ String var8FB09FE306E053C5C94430AED16B3C8A_45278033 =         getParameter(Param
         throw varC038EACC8ADF43E3C09C81C2FB3E2F67_939820773;
         }
         setParameter(ParameterNamesIms.ICID_VALUE, icid);
-        
-        
-            
-                    
-                            
-        
+        // ---------- Original Method ----------
+        //if (icid == null)
+            //throw new NullPointerException(
+                    //"JAIN-SIP Exception, "
+                            //+ "P-Charging-Vector, setICID(), the icid parameter is null.");
+        //setParameter(ParameterNamesIms.ICID_VALUE, icid);
     }
 
     
@@ -77,8 +77,8 @@ String var8FB09FE306E053C5C94430AED16B3C8A_45278033 =         getParameter(Param
 String var353DF2B3886110E512F672D72362E9FC_41430775 =         getParameter(ParameterNamesIms.ICID_GENERATED_AT);
         var353DF2B3886110E512F672D72362E9FC_41430775.addTaint(taint);
         return var353DF2B3886110E512F672D72362E9FC_41430775;
-        
-        
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.ICID_GENERATED_AT);
     }
 
     
@@ -94,12 +94,12 @@ String var353DF2B3886110E512F672D72362E9FC_41430775 =         getParameter(Param
         throw var10D8D05B15ADAF8EEC93FD1D24D10A89_1394961045;
         }
         setParameter(ParameterNamesIms.ICID_GENERATED_AT, host);
-        
-        
-            
-                    
-                            
-        
+        // ---------- Original Method ----------
+        //if (host == null)
+            //throw new NullPointerException(
+                    //"JAIN-SIP Exception, "
+                            //+ "P-Charging-Vector, setICIDGeneratedAt(), the host parameter is null.");
+        //setParameter(ParameterNamesIms.ICID_GENERATED_AT, host);
     }
 
     
@@ -108,8 +108,8 @@ String var353DF2B3886110E512F672D72362E9FC_41430775 =         getParameter(Param
 String var386819077BFE19DEBD440E43A3862CF1_807840737 =         getParameter(ParameterNamesIms.ORIG_IOI);
         var386819077BFE19DEBD440E43A3862CF1_807840737.addTaint(taint);
         return var386819077BFE19DEBD440E43A3862CF1_807840737;
-        
-        
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.ORIG_IOI);
     }
 
     
@@ -119,14 +119,14 @@ String var386819077BFE19DEBD440E43A3862CF1_807840737 =         getParameter(Para
     if(origIOI == null || origIOI.length() == 0)        
         {
             removeParameter(ParameterNamesIms.ORIG_IOI);
-        } 
+        } //End block
         else
         setParameter(ParameterNamesIms.ORIG_IOI, origIOI);
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (origIOI == null || origIOI.length() == 0) {
+            //removeParameter(ParameterNamesIms.ORIG_IOI);
+        //} else
+            //setParameter(ParameterNamesIms.ORIG_IOI, origIOI);
     }
 
     
@@ -135,8 +135,8 @@ String var386819077BFE19DEBD440E43A3862CF1_807840737 =         getParameter(Para
 String var3BC0DA6BB104C1B12A39DBD2AA7F3225_1232195654 =         getParameter(ParameterNamesIms.TERM_IOI);
         var3BC0DA6BB104C1B12A39DBD2AA7F3225_1232195654.addTaint(taint);
         return var3BC0DA6BB104C1B12A39DBD2AA7F3225_1232195654;
-        
-        
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.TERM_IOI);
     }
 
     
@@ -146,14 +146,14 @@ String var3BC0DA6BB104C1B12A39DBD2AA7F3225_1232195654 =         getParameter(Par
     if(termIOI == null || termIOI.length() == 0)        
         {
             removeParameter(ParameterNamesIms.TERM_IOI);
-        } 
+        } //End block
         else
         setParameter(ParameterNamesIms.TERM_IOI, termIOI);
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (termIOI == null || termIOI.length() == 0) {
+            //removeParameter(ParameterNamesIms.TERM_IOI);
+        //} else
+            //setParameter(ParameterNamesIms.TERM_IOI, termIOI);
     }
 
     
@@ -163,8 +163,8 @@ String var3BC0DA6BB104C1B12A39DBD2AA7F3225_1232195654 =         getParameter(Par
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_707398641 = new ParseException(value, 0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_707398641.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_707398641;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ParseException(value, 0);
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class BERConstructedOctetString extends DEROctetString {
         byte[]  string) {
         super(string);
         addTaint(string[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -28,8 +28,8 @@ public class BERConstructedOctetString extends DEROctetString {
         Vector  octs) {
         super(toBytes(octs));
         this.octs = octs;
-        
-        
+        // ---------- Original Method ----------
+        //this.octs = octs;
     }
 
     
@@ -38,7 +38,7 @@ public class BERConstructedOctetString extends DEROctetString {
         DERObject  obj) {
         super(obj);
         addTaint(obj.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -47,12 +47,11 @@ public class BERConstructedOctetString extends DEROctetString {
         DEREncodable  obj) {
         super(obj.getDERObject());
         addTaint(obj.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static private byte[] toBytes(
+        static private byte[] toBytes(
         Vector  octs) {
         ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
         for (int i = 0; i != octs.size(); i++)
@@ -75,14 +74,13 @@ public class BERConstructedOctetString extends DEROctetString {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.794 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "B8E98218F33A31E8FF93F5AB4F63D52C")
     public byte[] getOctets() {
         byte[] varB45CFFE084DD3D20D928BEE85E7B0F21_1218440339 = (string);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1872839468 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1872839468;
-        
-        
+        // ---------- Original Method ----------
+        //return string;
     }
 
     
@@ -93,16 +91,16 @@ public class BERConstructedOctetString extends DEROctetString {
 Enumeration varD907AA51D3F166881E0645B04A1A14D5_112204214 =             generateOcts().elements();
             varD907AA51D3F166881E0645B04A1A14D5_112204214.addTaint(taint);
             return varD907AA51D3F166881E0645B04A1A14D5_112204214;
-        } 
+        } //End block
 Enumeration var1B9859BDE61F66EA282C2AFE1BCE9641_1901768494 =         octs.elements();
         var1B9859BDE61F66EA282C2AFE1BCE9641_1901768494.addTaint(taint);
         return var1B9859BDE61F66EA282C2AFE1BCE9641_1901768494;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (octs == null)
+        //{
+            //return generateOcts().elements();
+        //}
+        //return octs.elements();
     }
 
     
@@ -115,36 +113,36 @@ for(int i = 0;i < string.length;i += MAX_LENGTH)
     if(i + MAX_LENGTH > string.length)            
             {
                 end = string.length;
-            } 
+            } //End block
             else
             {
                 end = i + MAX_LENGTH;
-            } 
+            } //End block
             byte[] nStr = new byte[end - i];
             System.arraycopy(string, i, nStr, 0, nStr.length);
             vec.addElement(new DEROctetString(nStr));
-        } 
+        } //End block
 Vector var9D8DE77A4073B06987457FB88C5516C3_1367949729 =         vec;
         var9D8DE77A4073B06987457FB88C5516C3_1367949729.addTaint(taint);
         return var9D8DE77A4073B06987457FB88C5516C3_1367949729;
-        
-        
-        
-        
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-            
-            
-         
-        
+        // ---------- Original Method ----------
+        //Vector vec = new Vector();
+        //for (int i = 0; i < string.length; i += MAX_LENGTH) 
+        //{ 
+            //int end; 
+            //if (i + MAX_LENGTH > string.length) 
+            //{ 
+                //end = string.length; 
+            //} 
+            //else 
+            //{ 
+                //end = i + MAX_LENGTH; 
+            //} 
+            //byte[] nStr = new byte[end - i]; 
+            //System.arraycopy(string, i, nStr, 0, nStr.length); 
+            //vec.addElement(new DEROctetString(nStr)); 
+         //}
+        //return vec;
     }
 
     
@@ -161,31 +159,31 @@ Vector var9D8DE77A4073B06987457FB88C5516C3_1367949729 =         vec;
 (e.hasMoreElements())            
             {
                 out.writeObject(e.nextElement());
-            } 
+            } //End block
             out.write(0x00);
             out.write(0x00);
-        } 
+        } //End block
         else
         {
             super.encode(out);
-        } 
-        
-        
-        
-            
-            
-            
-            
-            
-                
-            
-            
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (out instanceof ASN1OutputStream || out instanceof BEROutputStream)
+        //{
+            //out.write(CONSTRUCTED | OCTET_STRING);
+            //out.write(0x80);
+            //Enumeration e = getObjects();
+            //while (e.hasMoreElements())
+            //{
+                //out.writeObject(e.nextElement());
+            //}
+            //out.write(0x00);
+            //out.write(0x00);
+        //}
+        //else
+        //{
+            //super.encode(out);
+        //}
     }
 
     

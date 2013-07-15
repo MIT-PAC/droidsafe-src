@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,9 +35,9 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
         addTaint(expandableListAdapter.getTaint());
         mExpGroupMetadataList = new ArrayList<GroupMetadata>();
         setExpandableListAdapter(expandableListAdapter);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mExpGroupMetadataList = new ArrayList<GroupMetadata>();
+        //setExpandableListAdapter(expandableListAdapter);
     }
 
     
@@ -46,15 +46,15 @@ class ExpandableListConnector extends BaseAdapter implements Filterable {
     if(mExpandableListAdapter != null)        
         {
             mExpandableListAdapter.unregisterDataSetObserver(mDataSetObserver);
-        } 
+        } //End block
         mExpandableListAdapter = expandableListAdapter;
         expandableListAdapter.registerDataSetObserver(mDataSetObserver);
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mExpandableListAdapter != null) {
+            //mExpandableListAdapter.unregisterDataSetObserver(mDataSetObserver);
+        //}
+        //mExpandableListAdapter = expandableListAdapter;
+        //expandableListAdapter.registerDataSetObserver(mDataSetObserver);
     }
 
     
@@ -73,7 +73,7 @@ PositionMetadata var532E6308BF3219705761E3B9AAFBE41A_2142587352 =             Po
                     -1, null, 0);
             var532E6308BF3219705761E3B9AAFBE41A_2142587352.addTaint(taint);
             return var532E6308BF3219705761E3B9AAFBE41A_2142587352;
-        } 
+        } //End block
         while
 (leftExpGroupIndex <= rightExpGroupIndex)        
         {
@@ -84,12 +84,12 @@ PositionMetadata var532E6308BF3219705761E3B9AAFBE41A_2142587352 =             Po
     if(flPos > midExpGm.lastChildFlPos)            
             {
                 leftExpGroupIndex = midExpGroupIndex + 1;
-            } 
+            } //End block
             else
     if(flPos < midExpGm.flPos)            
             {
                 rightExpGroupIndex = midExpGroupIndex - 1;
-            } 
+            } //End block
             else
     if(flPos == midExpGm.flPos)            
             {
@@ -97,7 +97,7 @@ PositionMetadata var2ABF34BE903AA6A07F9DF5EE9EF3B347_946982191 =                
                         midExpGm.gPos, -1, midExpGm, midExpGroupIndex);
                 var2ABF34BE903AA6A07F9DF5EE9EF3B347_946982191.addTaint(taint);
                 return var2ABF34BE903AA6A07F9DF5EE9EF3B347_946982191;
-            } 
+            } //End block
             else
     if(flPos <= midExpGm.lastChildFlPos)            
             {
@@ -106,8 +106,8 @@ PositionMetadata var35A4CB6C50CFB7D5E02E786043C78817_579624857 =                
                         midExpGm.gPos, childPos, midExpGm, midExpGroupIndex);
                 var35A4CB6C50CFB7D5E02E786043C78817_579624857.addTaint(taint);
                 return var35A4CB6C50CFB7D5E02E786043C78817_579624857;
-            } 
-        } 
+            } //End block
+        } //End block
         int insertPosition = 0;
         int groupPos = 0;
     if(leftExpGroupIndex > midExpGroupIndex)        
@@ -116,26 +116,26 @@ PositionMetadata var35A4CB6C50CFB7D5E02E786043C78817_579624857 =                
             insertPosition = leftExpGroupIndex;
             groupPos =
                 (flPos - leftExpGm.lastChildFlPos) + leftExpGm.gPos;
-        } 
+        } //End block
         else
     if(rightExpGroupIndex < midExpGroupIndex)        
         {
             final GroupMetadata rightExpGm = egml.get(++rightExpGroupIndex);
             insertPosition = rightExpGroupIndex;
             groupPos = rightExpGm.gPos - (rightExpGm.flPos - flPos);
-        } 
+        } //End block
         else
         {
             RuntimeException var024072320E15906553CB4573ABED2BB0_1010596878 = new RuntimeException("Unknown state");
             var024072320E15906553CB4573ABED2BB0_1010596878.addTaint(taint);
             throw var024072320E15906553CB4573ABED2BB0_1010596878;
-        } 
+        } //End block
 PositionMetadata var0286E2BBC69197A9CBE39684ACEAAC4E_1250494288 =         PositionMetadata.obtain(flPos, ExpandableListPosition.GROUP, groupPos, -1,
                 null, insertPosition);
         var0286E2BBC69197A9CBE39684ACEAAC4E_1250494288.addTaint(taint);
         return var0286E2BBC69197A9CBE39684ACEAAC4E_1250494288;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -154,7 +154,7 @@ PositionMetadata varF44E378D6A51AC16B8883E3F3489CD90_1455636024 =             Po
                     pos.groupPos, pos.childPos, null, 0);
             varF44E378D6A51AC16B8883E3F3489CD90_1455636024.addTaint(taint);
             return varF44E378D6A51AC16B8883E3F3489CD90_1455636024;
-        } 
+        } //End block
         while
 (leftExpGroupIndex <= rightExpGroupIndex)        
         {
@@ -163,12 +163,12 @@ PositionMetadata varF44E378D6A51AC16B8883E3F3489CD90_1455636024 =             Po
     if(pos.groupPos > midExpGm.gPos)            
             {
                 leftExpGroupIndex = midExpGroupIndex + 1;
-            } 
+            } //End block
             else
     if(pos.groupPos < midExpGm.gPos)            
             {
                 rightExpGroupIndex = midExpGroupIndex - 1;
-            } 
+            } //End block
             else
     if(pos.groupPos == midExpGm.gPos)            
             {
@@ -178,7 +178,7 @@ PositionMetadata var0600C4725D4E05F6C5AD18A84C5ECC43_301264680 =                
                             pos.groupPos, pos.childPos, midExpGm, midExpGroupIndex);
                     var0600C4725D4E05F6C5AD18A84C5ECC43_301264680.addTaint(taint);
                     return var0600C4725D4E05F6C5AD18A84C5ECC43_301264680;
-                } 
+                } //End block
                 else
     if(pos.type == ExpandableListPosition.CHILD)                
                 {
@@ -187,21 +187,21 @@ PositionMetadata var48A8CE9F60B09B63FA9D3AAEDEEA84C1_1553310407 =               
                             midExpGm, midExpGroupIndex);
                     var48A8CE9F60B09B63FA9D3AAEDEEA84C1_1553310407.addTaint(taint);
                     return var48A8CE9F60B09B63FA9D3AAEDEEA84C1_1553310407;
-                } 
+                } //End block
                 else
                 {
 PositionMetadata var540C13E9E156B687226421B24F2DF178_873901551 =                     null;
                     var540C13E9E156B687226421B24F2DF178_873901551.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_873901551;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(pos.type != ExpandableListPosition.GROUP)        
         {
 PositionMetadata var540C13E9E156B687226421B24F2DF178_1278481873 =             null;
             var540C13E9E156B687226421B24F2DF178_1278481873.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1278481873;
-        } 
+        } //End block
     if(leftExpGroupIndex > midExpGroupIndex)        
         {
             final GroupMetadata leftExpGm = egml.get(leftExpGroupIndex-1);
@@ -211,7 +211,7 @@ PositionMetadata var83B55BE62D2C770516658BB428BD44D4_677070914 =             Pos
                     pos.childPos, null, leftExpGroupIndex);
             var83B55BE62D2C770516658BB428BD44D4_677070914.addTaint(taint);
             return var83B55BE62D2C770516658BB428BD44D4_677070914;
-        } 
+        } //End block
         else
     if(rightExpGroupIndex < midExpGroupIndex)        
         {
@@ -222,15 +222,15 @@ PositionMetadata var4EFF1590177417D60FCAC97875E32CE2_311850771 =             Pos
                     pos.childPos, null, rightExpGroupIndex);
             var4EFF1590177417D60FCAC97875E32CE2_311850771.addTaint(taint);
             return var4EFF1590177417D60FCAC97875E32CE2_311850771;
-        } 
+        } //End block
         else
         {
 PositionMetadata var540C13E9E156B687226421B24F2DF178_2029898029 =             null;
             var540C13E9E156B687226421B24F2DF178_2029898029.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2029898029;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -240,8 +240,8 @@ PositionMetadata var540C13E9E156B687226421B24F2DF178_2029898029 =             nu
         boolean var853445806DC6B04E750BF5DA59E523E4_1198177435 = (mExpandableListAdapter.areAllItemsEnabled());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_496288749 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_496288749;
-        
-        
+        // ---------- Original Method ----------
+        //return mExpandableListAdapter.areAllItemsEnabled();
     }
 
     
@@ -254,25 +254,25 @@ PositionMetadata var540C13E9E156B687226421B24F2DF178_2029898029 =             nu
     if(pos.type == ExpandableListPosition.CHILD)        
         {
             retValue = mExpandableListAdapter.isChildSelectable(pos.groupPos, pos.childPos);
-        } 
+        } //End block
         else
         {
             retValue = true;
-        } 
+        } //End block
         pos.recycle();
         boolean var9C7BD17E8EB1C3D0F843684A79A18570_1292692756 = (retValue);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1182991150 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1182991150;
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //final ExpandableListPosition pos = getUnflattenedPos(flatListPos).position;
+        //boolean retValue;
+        //if (pos.type == ExpandableListPosition.CHILD) {
+            //retValue = mExpandableListAdapter.isChildSelectable(pos.groupPos, pos.childPos);
+        //} else {
+            //retValue = true;
+        //}
+        //pos.recycle();
+        //return retValue;
     }
 
     
@@ -281,8 +281,8 @@ PositionMetadata var540C13E9E156B687226421B24F2DF178_2029898029 =             nu
         int var7877BF70B64A37ED869F37D69C3A78CA_1576756357 = (mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674505116 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1674505116;
-        
-        
+        // ---------- Original Method ----------
+        //return mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount;
     }
 
     
@@ -295,37 +295,37 @@ PositionMetadata var540C13E9E156B687226421B24F2DF178_2029898029 =             nu
         {
             retValue = mExpandableListAdapter
                     .getGroup(posMetadata.position.groupPos);
-        } 
+        } //End block
         else
     if(posMetadata.position.type == ExpandableListPosition.CHILD)        
         {
             retValue = mExpandableListAdapter.getChild(posMetadata.position.groupPos,
                     posMetadata.position.childPos);
-        } 
+        } //End block
         else
         {
             RuntimeException var256588F33C8C0818D5119AF562663C89_1922899168 = new RuntimeException("Flat list position is of unknown type");
             var256588F33C8C0818D5119AF562663C89_1922899168.addTaint(taint);
             throw var256588F33C8C0818D5119AF562663C89_1922899168;
-        } 
+        } //End block
         posMetadata.recycle();
 Object var8A3AE42CF4D96FEAF203C6E7E2606E2D_1977867479 =         retValue;
         var8A3AE42CF4D96FEAF203C6E7E2606E2D_1977867479.addTaint(taint);
         return var8A3AE42CF4D96FEAF203C6E7E2606E2D_1977867479;
-        
-        
-        
-        
-            
-                    
-        
-            
-                    
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //final PositionMetadata posMetadata = getUnflattenedPos(flatListPos);
+        //Object retValue;
+        //if (posMetadata.position.type == ExpandableListPosition.GROUP) {
+            //retValue = mExpandableListAdapter
+                    //.getGroup(posMetadata.position.groupPos);
+        //} else if (posMetadata.position.type == ExpandableListPosition.CHILD) {
+            //retValue = mExpandableListAdapter.getChild(posMetadata.position.groupPos,
+                    //posMetadata.position.childPos);
+        //} else {
+            //throw new RuntimeException("Flat list position is of unknown type");
+        //}
+        //posMetadata.recycle();
+        //return retValue;
     }
 
     
@@ -338,26 +338,26 @@ Object var8A3AE42CF4D96FEAF203C6E7E2606E2D_1977867479 =         retValue;
     if(posMetadata.position.type == ExpandableListPosition.GROUP)        
         {
             retValue = mExpandableListAdapter.getCombinedGroupId(groupId);
-        } 
+        } //End block
         else
     if(posMetadata.position.type == ExpandableListPosition.CHILD)        
         {
             final long childId = mExpandableListAdapter.getChildId(posMetadata.position.groupPos,
                     posMetadata.position.childPos);
             retValue = mExpandableListAdapter.getCombinedChildId(groupId, childId);
-        } 
+        } //End block
         else
         {
             RuntimeException var256588F33C8C0818D5119AF562663C89_1420965437 = new RuntimeException("Flat list position is of unknown type");
             var256588F33C8C0818D5119AF562663C89_1420965437.addTaint(taint);
             throw var256588F33C8C0818D5119AF562663C89_1420965437;
-        } 
+        } //End block
         posMetadata.recycle();
         long var9C7BD17E8EB1C3D0F843684A79A18570_1166510692 = (retValue);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1722579572 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1722579572;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -372,26 +372,26 @@ Object var8A3AE42CF4D96FEAF203C6E7E2606E2D_1977867479 =         retValue;
         {
             retValue = mExpandableListAdapter.getGroupView(posMetadata.position.groupPos,
                     posMetadata.isExpanded(), convertView, parent);
-        } 
+        } //End block
         else
     if(posMetadata.position.type == ExpandableListPosition.CHILD)        
         {
             final boolean isLastChild = posMetadata.groupMetadata.lastChildFlPos == flatListPos;
             retValue = mExpandableListAdapter.getChildView(posMetadata.position.groupPos,
                     posMetadata.position.childPos, isLastChild, convertView, parent);
-        } 
+        } //End block
         else
         {
             RuntimeException var256588F33C8C0818D5119AF562663C89_576169732 = new RuntimeException("Flat list position is of unknown type");
             var256588F33C8C0818D5119AF562663C89_576169732.addTaint(taint);
             throw var256588F33C8C0818D5119AF562663C89_576169732;
-        } 
+        } //End block
         posMetadata.recycle();
 View var8A3AE42CF4D96FEAF203C6E7E2606E2D_284652758 =         retValue;
         var8A3AE42CF4D96FEAF203C6E7E2606E2D_284652758.addTaint(taint);
         return var8A3AE42CF4D96FEAF203C6E7E2606E2D_284652758;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -407,30 +407,30 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_284652758 =         retValue;
     if(pos.type == ExpandableListPosition.GROUP)            
             {
                 retValue = adapter.getGroupType(pos.groupPos);
-            } 
+            } //End block
             else
             {
                 final int childType = adapter.getChildType(pos.groupPos, pos.childPos);
                 retValue = adapter.getGroupTypeCount() + childType;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(pos.type == ExpandableListPosition.GROUP)            
             {
                 retValue = 0;
-            } 
+            } //End block
             else
             {
                 retValue = 1;
-            } 
-        } 
+            } //End block
+        } //End block
         pos.recycle();
         int var9C7BD17E8EB1C3D0F843684A79A18570_305620322 = (retValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609212228 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609212228;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -443,21 +443,21 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_284652758 =         retValue;
             int var587FB58AF43E1FCB6CEB29BFE33E040A_1165795711 = (adapter.getGroupTypeCount() + adapter.getChildTypeCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1210784641 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1210784641;
-        } 
+        } //End block
         else
         {
             int varC81E728D9D4C2F636F067F89CC14862C_113470350 = (2);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1274882463 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1274882463;
-        } 
-        
-        
-            
-                    
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mExpandableListAdapter instanceof HeterogeneousExpandableList) {
+            //HeterogeneousExpandableList adapter =
+                    //(HeterogeneousExpandableList) mExpandableListAdapter;
+            //return adapter.getGroupTypeCount() + adapter.getChildTypeCount();
+        //} else {
+            //return 2;
+        //}
     }
 
     
@@ -467,8 +467,8 @@ View var8A3AE42CF4D96FEAF203C6E7E2606E2D_284652758 =         retValue;
         boolean var6AC663F78C04CA8D4834C87FA8609598_2106611070 = (mExpandableListAdapter.hasStableIds());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1104291991 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1104291991;
-        
-        
+        // ---------- Original Method ----------
+        //return mExpandableListAdapter.hasStableIds();
     }
 
     
@@ -495,17 +495,17 @@ for(int i = egmlSize - 1;i >= 0;i--)
                     {
                         egml.remove(i);
                         egmlSize--;
-                    } 
+                    } //End block
                     curGm.gPos = newGPos;
     if(!positionsChanged)                    
                     positionsChanged = true;
-                } 
-            } 
+                } //End block
+            } //End block
     if(positionsChanged)            
             {
                 Collections.sort(egml);
-            } 
-        } 
+            } //End block
+        } //End block
         int gChildrenCount;
         int lastGPos = 0;
 for(int i = 0;i < egmlSize;i++)
@@ -514,20 +514,20 @@ for(int i = 0;i < egmlSize;i++)
     if((curGm.lastChildFlPos == GroupMetadata.REFRESH) || forceChildrenCountRefresh)            
             {
                 gChildrenCount = mExpandableListAdapter.getChildrenCount(curGm.gPos);
-            } 
+            } //End block
             else
             {
                 gChildrenCount = curGm.lastChildFlPos - curGm.flPos;
-            } 
+            } //End block
             mTotalExpChildrenCount += gChildrenCount;
             curFlPos += (curGm.gPos - lastGPos);
             lastGPos = curGm.gPos;
             curGm.flPos = curFlPos;
             curFlPos += gChildrenCount;
             curGm.lastChildFlPos = curFlPos;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -547,13 +547,13 @@ for(int i = 0;i < egmlSize;i++)
         boolean var9C7BD17E8EB1C3D0F843684A79A18570_2011740943 = (retValue);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1306405344 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1306405344;
-        
-        
-                
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //PositionMetadata pm = getFlattenedPos(ExpandableListPosition.obtain(
+                //ExpandableListPosition.GROUP, groupPos, -1, -1));
+        //if (pm == null) return false;
+        //boolean retValue = collapseGroup(pm);
+        //pm.recycle();
+        //return retValue;
     }
 
     
@@ -573,13 +573,13 @@ for(int i = 0;i < egmlSize;i++)
         boolean varB326B5062B2F0E69046810717534CB09_1176576735 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2095491222 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2095491222;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (posMetadata.groupMetadata == null) return false;
+        //mExpGroupMetadataList.remove(posMetadata.groupMetadata);
+        //refreshExpGroupMetadataList(false, false);
+        //notifyDataSetChanged();
+        //mExpandableListAdapter.onGroupCollapsed(posMetadata.groupMetadata.gPos);
+        //return true;
     }
 
     
@@ -593,12 +593,12 @@ for(int i = 0;i < egmlSize;i++)
         boolean var9C7BD17E8EB1C3D0F843684A79A18570_57975919 = (retValue);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1307117078 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1307117078;
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //PositionMetadata pm = getFlattenedPos(ExpandableListPosition.obtain(
+                //ExpandableListPosition.GROUP, groupPos, -1, -1));
+        //boolean retValue = expandGroup(pm);
+        //pm.recycle();
+        //return retValue;
     }
 
     
@@ -610,7 +610,7 @@ for(int i = 0;i < egmlSize;i++)
             RuntimeException var5B16C044ACAF0493BB1FD037C38DCD2F_409217809 = new RuntimeException("Need group");
             var5B16C044ACAF0493BB1FD037C38DCD2F_409217809.addTaint(taint);
             throw var5B16C044ACAF0493BB1FD037C38DCD2F_409217809;
-        } 
+        } //End block
     if(mMaxExpGroupCount == 0)        
         {
         boolean var68934A3E9455FA72420237EB05902327_1254450315 = (false);
@@ -631,8 +631,8 @@ for(int i = 0;i < egmlSize;i++)
     if(posMetadata.groupInsertIndex > collapsedIndex)            
             {
                 posMetadata.groupInsertIndex--;
-            } 
-        } 
+            } //End block
+        } //End block
         GroupMetadata expandedGm = GroupMetadata.obtain(
                 GroupMetadata.REFRESH,
                 GroupMetadata.REFRESH,
@@ -645,8 +645,8 @@ for(int i = 0;i < egmlSize;i++)
         boolean varB326B5062B2F0E69046810717534CB09_702951566 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475920468 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1475920468;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -662,40 +662,38 @@ for(int i = mExpGroupMetadataList.size() - 1;i >= 0;i--)
                 boolean varB326B5062B2F0E69046810717534CB09_1318383104 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2070013991 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2070013991;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1742917818 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_750894251 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_750894251;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //GroupMetadata groupMetadata;
+        //for (int i = mExpGroupMetadataList.size() - 1; i >= 0; i--) {
+            //groupMetadata = mExpGroupMetadataList.get(i);
+            //if (groupMetadata.gPos == groupPosition) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.299 -0400", hash_original_method = "5DCA730791D083145030F1469300702C", hash_generated_method = "ADF6079EFB27B709D59795A65482C88A")
     public void setMaxExpGroupCount(int maxExpGroupCount) {
         mMaxExpGroupCount = maxExpGroupCount;
-        
-        
+        // ---------- Original Method ----------
+        //mMaxExpGroupCount = maxExpGroupCount;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.299 -0400", hash_original_method = "473155659E1950E1738B6CCA8650B997", hash_generated_method = "21F98BA18E535E774EB837EB0F9F09AD")
      ExpandableListAdapter getAdapter() {
 ExpandableListAdapter var6138734355307F47AFFDB0E0F3A9A71E_1827774421 =         mExpandableListAdapter;
         var6138734355307F47AFFDB0E0F3A9A71E_1827774421.addTaint(taint);
         return var6138734355307F47AFFDB0E0F3A9A71E_1827774421;
-        
-        
+        // ---------- Original Method ----------
+        //return mExpandableListAdapter;
     }
 
     
@@ -707,20 +705,20 @@ ExpandableListAdapter var6138734355307F47AFFDB0E0F3A9A71E_1827774421 =         m
 Filter varF6CB8B0E6848549E20D5699BD1919234_1371844289 =             ((Filterable) adapter).getFilter();
             varF6CB8B0E6848549E20D5699BD1919234_1371844289.addTaint(taint);
             return varF6CB8B0E6848549E20D5699BD1919234_1371844289;
-        } 
+        } //End block
         else
         {
 Filter var540C13E9E156B687226421B24F2DF178_1087959010 =             null;
             var540C13E9E156B687226421B24F2DF178_1087959010.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1087959010;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ExpandableListAdapter adapter = getAdapter();
+        //if (adapter instanceof Filterable) {
+            //return ((Filterable) adapter).getFilter();
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -729,8 +727,8 @@ Filter var540C13E9E156B687226421B24F2DF178_1087959010 =             null;
 ArrayList<GroupMetadata> var16CF2BAF0A5F7FECA6491A4F87231A85_54817855 =         mExpGroupMetadataList;
         var16CF2BAF0A5F7FECA6491A4F87231A85_54817855.addTaint(taint);
         return var16CF2BAF0A5F7FECA6491A4F87231A85_54817855;
-        
-        
+        // ---------- Original Method ----------
+        //return mExpGroupMetadataList;
     }
 
     
@@ -739,29 +737,29 @@ ArrayList<GroupMetadata> var16CF2BAF0A5F7FECA6491A4F87231A85_54817855 =         
     if((expandedGroupMetadataList == null) || (mExpandableListAdapter == null))        
         {
             return;
-        } 
+        } //End block
         int numGroups = mExpandableListAdapter.getGroupCount();
 for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         {
     if(expandedGroupMetadataList.get(i).gPos >= numGroups)            
             {
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
         mExpGroupMetadataList = expandedGroupMetadataList;
         refreshExpGroupMetadataList(true, false);
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if ((expandedGroupMetadataList == null) || (mExpandableListAdapter == null)) {
+            //return;
+        //}
+        //int numGroups = mExpandableListAdapter.getGroupCount();
+        //for (int i = expandedGroupMetadataList.size() - 1; i >= 0; i--) {
+            //if (expandedGroupMetadataList.get(i).gPos >= numGroups) {
+                //return;
+            //}
+        //}
+        //mExpGroupMetadataList = expandedGroupMetadataList;
+        //refreshExpGroupMetadataList(true, false);
     }
 
     
@@ -772,9 +770,9 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         boolean var6AB8D04C6AF71AC2BFB44509786E6C4E_1871558742 = (adapter != null ? adapter.isEmpty() : true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1488119185 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1488119185;
-        
-        
-        
+        // ---------- Original Method ----------
+        //ExpandableListAdapter adapter = getAdapter();
+        //return adapter != null ? adapter.isEmpty() : true;
     }
 
     
@@ -788,13 +786,13 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
             int var73991B5AC8F55F7B73B83AE3AB0CCA16_131376443 = (AdapterView.INVALID_POSITION);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1180760844 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1180760844;
-        } 
+        } //End block
     if(groupIdToMatch == AdapterView.INVALID_ROW_ID)        
         {
             int var73991B5AC8F55F7B73B83AE3AB0CCA16_2107287685 = (AdapterView.INVALID_POSITION);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1141093862 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1141093862;
-        } 
+        } //End block
         seedGroupPosition = Math.max(0, seedGroupPosition);
         seedGroupPosition = Math.min(count - 1, seedGroupPosition);
         long endTime = SystemClock.uptimeMillis() + AdapterView.SYNC_MAX_DURATION_MILLIS;
@@ -810,7 +808,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
             int var73991B5AC8F55F7B73B83AE3AB0CCA16_993242210 = (AdapterView.INVALID_POSITION);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090462965 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090462965;
-        } 
+        } //End block
         while
 (SystemClock.uptimeMillis() <= endTime)        
         {
@@ -820,32 +818,32 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
                 int varAA9C4C7546C7043F9FEB20B62EBCB74A_1317453880 = (seedGroupPosition);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_38368596 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_38368596;
-            } 
+            } //End block
             hitLast = last == count - 1;
             hitFirst = first == 0;
     if(hitLast && hitFirst)            
             {
                 break;
-            } 
+            } //End block
     if(hitFirst || (next && !hitLast))            
             {
                 last++;
                 seedGroupPosition = last;
                 next = false;
-            } 
+            } //End block
             else
     if(hitLast || (!next && !hitFirst))            
             {
                 first--;
                 seedGroupPosition = first;
                 next = true;
-            } 
-        } 
+            } //End block
+        } //End block
         int var73991B5AC8F55F7B73B83AE3AB0CCA16_757912751 = (AdapterView.INVALID_POSITION);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14116540 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14116540;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -854,31 +852,31 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.304 -0400", hash_original_method = "B8855E81B638DE0F5C9202168EAE6D42", hash_generated_method = "B8855E81B638DE0F5C9202168EAE6D42")
         public MyDataSetObserver ()
         {
-            
+            //Synthesized constructor
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.304 -0400", hash_original_method = "6638C55358D7A5972C632ED02BA3E5C3", hash_generated_method = "423E58DDE1ED590711D4AB94EA334FA7")
         @Override
         public void onChanged() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             refreshExpGroupMetadataList(true, true);
             notifyDataSetChanged();
-            
-            
-            
+            // ---------- Original Method ----------
+            //refreshExpGroupMetadataList(true, true);
+            //notifyDataSetChanged();
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.305 -0400", hash_original_method = "097361F82E1EAFBA4D6D3BF1780C0DD3", hash_generated_method = "A5B595EB134C6A10414CBA53942E11E4")
         @Override
         public void onInvalidated() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             refreshExpGroupMetadataList(true, true);
             notifyDataSetInvalidated();
-            
-            
-            
+            // ---------- Original Method ----------
+            //refreshExpGroupMetadataList(true, true);
+            //notifyDataSetInvalidated();
         }
 
         
@@ -902,7 +900,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.306 -0400", hash_original_method = "D22B32F032ACC40BC7080CC4DC6C0D5E", hash_generated_method = "DE6C626044B8E9CC58838E683EF276B1")
         private  GroupMetadata() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -924,26 +922,25 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
                 IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_399532116 = new IllegalArgumentException();
                 var5783EF97022AA508B74A1E3EA38534AF_399532116.addTaint(taint);
                 throw var5783EF97022AA508B74A1E3EA38534AF_399532116;
-            } 
+            } //End block
             int varD40B4EC49DB6DC78A23707773E67A373_1870288341 = (gPos - another.gPos);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411529562 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411529562;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (another == null) {
+                //throw new IllegalArgumentException();
+            //}
+            //return gPos - another.gPos;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.307 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3ED30D0290D3AAE32E722E3278ECEA99")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_112269970 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1292449851 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1292449851;
-            
-            
+            // ---------- Original Method ----------
+            //return 0;
         }
 
         
@@ -955,11 +952,11 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
             dest.writeInt(lastChildFlPos);
             dest.writeInt(gPos);
             dest.writeLong(gId);
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //dest.writeInt(flPos);
+            //dest.writeInt(lastChildFlPos);
+            //dest.writeInt(gPos);
+            //dest.writeLong(gId);
         }
 
         
@@ -984,7 +981,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
                 return new GroupMetadata[size];
             }
         };
-        
+        // orphaned legacy method
         public GroupMetadata createFromParcel(Parcel in) {
                 GroupMetadata gm = GroupMetadata.obtain(
                         in.readInt(),
@@ -994,7 +991,7 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
                 return gm;
             }
         
-        
+        // orphaned legacy method
         public GroupMetadata[] newArray(int size) {
                 return new GroupMetadata[size];
             }
@@ -1016,20 +1013,19 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.308 -0400", hash_original_method = "D695D4EB809D075329F88CC11AC9F37B", hash_generated_method = "72FA864FA9C855DE015B0EDB93BB6462")
         private  PositionMetadata() {
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.308 -0400", hash_original_method = "5AD4B913B9726C3345D273778B3773BA", hash_generated_method = "C2D78B097428DD4DBD267482388DC1E9")
         private void resetState() {
             position = null;
             groupMetadata = null;
             groupInsertIndex = 0;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //position = null;
+            //groupMetadata = null;
+            //groupInsertIndex = 0;
         }
 
         
@@ -1064,25 +1060,24 @@ for(int i = expandedGroupMetadataList.size() - 1;i >= 0;i--)
     if(sPool.size() < MAX_POOL_SIZE)                
                 {
                     sPool.add(this);
-                } 
-            } 
-            
-            
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (sPool) {
+                //if (sPool.size() < MAX_POOL_SIZE) {
+                    //sPool.add(this);
+                //}
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.308 -0400", hash_original_method = "3DA77438EDE7E493B793AF2E840B43CD", hash_generated_method = "4B29D4BE6115A9372F4CE42CCA5B1F29")
         public boolean isExpanded() {
             boolean varB3BC9AD7B79E12A165E034A47E593F8B_1521313168 = (groupMetadata != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1177167948 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1177167948;
-            
-            
+            // ---------- Original Method ----------
+            //return groupMetadata != null;
         }
 
         

@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,9 +36,9 @@ abstract class StreamLoader implements Handler.Callback {
       StreamLoader(LoadListener loadlistener) {
         mLoadListener = loadlistener;
         mContext = loadlistener.getContext();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLoadListener = loadlistener;
+        //mContext = loadlistener.getContext();
     }
 
     
@@ -55,12 +55,12 @@ abstract class StreamLoader implements Handler.Callback {
     if(mHandler == null)            
             {
                 mHandler = new Handler(this);
-            } 
-        } 
+            } //End block
+        } //End block
     if(!mLoadListener.isSynchronous())        
         {
             mHandler.sendEmptyMessage(MSG_STATUS);
-        } 
+        } //End block
         else
         {
     if(setupStreamAndSendStatus())            
@@ -72,25 +72,25 @@ abstract class StreamLoader implements Handler.Callback {
                 ;
                 closeStreamAndSendEndData();
                 mLoadListener.loadSynchronousMessages();
-            } 
-        } 
-        
-        
-            
-                
-            
-        
-        
-            
-        
-            
-                
-                
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (mHandler == null) {
+                //mHandler = new Handler(this);
+            //}
+        //}
+        //if (!mLoadListener.isSynchronous()) {
+            //mHandler.sendEmptyMessage(MSG_STATUS);
+        //} else {
+            //if (setupStreamAndSendStatus()) {
+                //mData = new byte[8192];
+                //sendHeaders();
+                //while (!sendData() && !mLoadListener.cancelled());
+                //closeStreamAndSendEndData();
+                //mLoadListener.loadSynchronousMessages();
+            //}
+        //}
     }
 
     
@@ -102,21 +102,21 @@ abstract class StreamLoader implements Handler.Callback {
             AssertionError varA81442E36297E737EB908877E58260E8_1488693432 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_1488693432.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_1488693432;
-        } 
+        } //End block
     if(mLoadListener.cancelled())        
         {
             closeStreamAndSendEndData();
             boolean varB326B5062B2F0E69046810717534CB09_10406571 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_135581520 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_135581520;
-        } 
+        } //End block
 switch(msg.what){
         case MSG_STATUS:
     if(setupStreamAndSendStatus())        
         {
             mData = new byte[8192];
             mHandler.sendEmptyMessage(MSG_HEADERS);
-        } 
+        } //End block
         break;
         case MSG_HEADERS:
         sendHeaders();
@@ -126,11 +126,11 @@ switch(msg.what){
     if(sendData())        
         {
             mHandler.sendEmptyMessage(MSG_END);
-        } 
+        } //End block
         else
         {
             mHandler.sendEmptyMessage(MSG_DATA);
-        } 
+        } //End block
         break;
         case MSG_END:
         closeStreamAndSendEndData();
@@ -142,8 +142,8 @@ switch(msg.what){
 }        boolean varB326B5062B2F0E69046810717534CB09_259823343 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_136106617 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_136106617;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -153,16 +153,16 @@ switch(msg.what){
     if(mContentLength > 0)        
         {
             headers.setContentLength(mContentLength);
-        } 
+        } //End block
         buildHeaders(headers);
         mLoadListener.headers(headers);
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Headers headers = new Headers();
+        //if (mContentLength > 0) {
+            //headers.setContentLength(mContentLength);
+        //}
+        //buildHeaders(headers);
+        //mLoadListener.headers(headers);
     }
 
     
@@ -179,29 +179,29 @@ switch(msg.what){
                     boolean var68934A3E9455FA72420237EB05902327_1525664698 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2070088053 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2070088053;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (IOException ex)
             {
                 mLoadListener.error(EventHandler.FILE_ERROR, ex.getMessage());
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1743668612 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_861646612 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_861646612;
-        
-        
-            
-                
-                
-                    
-                    
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mDataStream != null) {
+            //try {
+                //int amount = mDataStream.read(mData);
+                //if (amount > 0) {
+                    //mLoadListener.data(mData, amount);
+                    //return false;
+                //}
+            //} catch (IOException ex) {
+                //mLoadListener.error(EventHandler.FILE_ERROR, ex.getMessage());
+            //}
+        //}
+        //return true;
     }
 
     
@@ -212,20 +212,20 @@ switch(msg.what){
             try 
             {
                 mDataStream.close();
-            } 
+            } //End block
             catch (IOException ex)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         mLoadListener.endData();
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mDataStream != null) {
+            //try {
+                //mDataStream.close();
+            //} catch (IOException ex) {
+            //}
+        //}
+        //mLoadListener.endData();
     }
 
     

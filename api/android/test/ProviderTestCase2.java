@@ -1,6 +1,6 @@
 package android.test;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,9 +34,9 @@ public abstract class ProviderTestCase2<T extends ContentProvider> extends Andro
     public  ProviderTestCase2(Class<T> providerClass, String providerAuthority) {
         mProviderClass = providerClass;
         mProviderAuthority = providerAuthority;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mProviderClass = providerClass;
+        //mProviderAuthority = providerAuthority;
     }
 
     
@@ -45,8 +45,8 @@ public abstract class ProviderTestCase2<T extends ContentProvider> extends Andro
 T var0FBB50B5F14310A28A298A4AC9FE2015_1769435306 =         mProvider;
         var0FBB50B5F14310A28A298A4AC9FE2015_1769435306.addTaint(taint);
         return var0FBB50B5F14310A28A298A4AC9FE2015_1769435306;
-        
-        
+        // ---------- Original Method ----------
+        //return mProvider;
     }
 
     
@@ -66,20 +66,20 @@ T var0FBB50B5F14310A28A298A4AC9FE2015_1769435306 =         mProvider;
         mProvider.attachInfo(mProviderContext, null);
         assertNotNull(mProvider);
         mResolver.addProvider(mProviderAuthority, getProvider());
-        
-        
-        
-        
-        
-                
-                
-                
-                
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.setUp();
+        //mResolver = new MockContentResolver();
+        //final String filenamePrefix = "test.";
+        //RenamingDelegatingContext targetContextWrapper = new
+                //RenamingDelegatingContext(
+                //new MockContext2(), 
+                //getContext(), 
+                //filenamePrefix);
+        //mProviderContext = new IsolatedContext(mResolver, targetContextWrapper);
+        //mProvider = mProviderClass.newInstance();
+        //mProvider.attachInfo(mProviderContext, null);
+        //assertNotNull(mProvider);
+        //mResolver.addProvider(mProviderAuthority, getProvider());
     }
 
     
@@ -88,31 +88,29 @@ T var0FBB50B5F14310A28A298A4AC9FE2015_1769435306 =         mProvider;
     protected void tearDown() throws Exception {
         mProvider.shutdown();
         super.tearDown();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mProvider.shutdown();
+        //super.tearDown();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.138 -0400", hash_original_method = "47989BC91A04FCD58E7A9B18A55F8AED", hash_generated_method = "C2615A828EC9AB35BDE527A468CF6A1E")
     public MockContentResolver getMockContentResolver() {
 MockContentResolver varAB109E9A06CD2C0031B0F4CF098EA9E9_1560767362 =         mResolver;
         varAB109E9A06CD2C0031B0F4CF098EA9E9_1560767362.addTaint(taint);
         return varAB109E9A06CD2C0031B0F4CF098EA9E9_1560767362;
-        
-        
+        // ---------- Original Method ----------
+        //return mResolver;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.138 -0400", hash_original_method = "27594498B405F878C6750971BD241F38", hash_generated_method = "D72D41D3676141E75D72180F783FD592")
     public IsolatedContext getMockContext() {
 IsolatedContext var8DD4DD47675B38CCCB1F8751874E6C34_784508158 =         mProviderContext;
         var8DD4DD47675B38CCCB1F8751874E6C34_784508158.addTaint(taint);
         return var8DD4DD47675B38CCCB1F8751874E6C34_784508158;
-        
-        
+        // ---------- Original Method ----------
+        //return mProviderContext;
     }
 
     
@@ -138,7 +136,7 @@ IsolatedContext var8DD4DD47675B38CCCB1F8751874E6C34_784508158 =         mProvide
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.139 -0400", hash_original_method = "33EBD7CE59AA6ED3E2D4F55708ACFF20", hash_generated_method = "33EBD7CE59AA6ED3E2D4F55708ACFF20")
         public MockContext2 ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -148,8 +146,8 @@ IsolatedContext var8DD4DD47675B38CCCB1F8751874E6C34_784508158 =         mProvide
 Resources var300F559A990327567ADA6B2B7540B3AC_1663761733 =             getContext().getResources();
             var300F559A990327567ADA6B2B7540B3AC_1663761733.addTaint(taint);
             return var300F559A990327567ADA6B2B7540B3AC_1663761733;
-            
-            
+            // ---------- Original Method ----------
+            //return getContext().getResources();
         }
 
         
@@ -161,20 +159,19 @@ Resources var300F559A990327567ADA6B2B7540B3AC_1663761733 =             getContex
 File varF0EE242A1A7DD6772B5AB1383F0A7B57_1988587450 =             getContext().getDir("mockcontext2_" + name, mode);
             varF0EE242A1A7DD6772B5AB1383F0A7B57_1988587450.addTaint(taint);
             return varF0EE242A1A7DD6772B5AB1383F0A7B57_1988587450;
-            
-            
+            // ---------- Original Method ----------
+            //return getContext().getDir("mockcontext2_" + name, mode);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.140 -0400", hash_original_method = "5BEB3FA867778B3A9B9AEA4D4C069E55", hash_generated_method = "94819F0C201EF0E3E8421AED5E1F8F25")
         @Override
         public Context getApplicationContext() {
 Context var72A74007B2BE62B849F475C7BDA4658B_1055802819 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1055802819.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1055802819;
-            
-            
+            // ---------- Original Method ----------
+            //return this;
         }
 
         

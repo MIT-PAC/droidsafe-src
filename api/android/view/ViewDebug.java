@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -54,7 +54,7 @@ public class ViewDebug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.975 -0400", hash_original_method = "F785FDC015B150C7B28C32B4894B3E15", hash_generated_method = "F785FDC015B150C7B28C32B4894B3E15")
     public ViewDebug ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -104,8 +104,7 @@ public class ViewDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void startRecyclerTracing(String prefix, View view) {
+        public static void startRecyclerTracing(String prefix, View view) {
         if (!TRACE_RECYCLER) {
             return;
         }
@@ -120,8 +119,7 @@ public class ViewDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void stopRecyclerTracing() {
+        public static void stopRecyclerTracing() {
         if (!TRACE_RECYCLER) {
             return;
         }
@@ -189,8 +187,7 @@ public class ViewDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void startHierarchyTracing(String prefix, View view) {
+        public static void startHierarchyTracing(String prefix, View view) {
         if (!TRACE_HIERARCHY) {
             return;
         }
@@ -212,8 +209,7 @@ public class ViewDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void stopHierarchyTracing() {
+        public static void stopHierarchyTracing() {
         if (!TRACE_HIERARCHY) {
             return;
         }
@@ -1143,7 +1139,7 @@ public class ViewDebug {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.985 -0400", hash_original_method = "ED320AF13EB079D56E1BB2CD418F0F12", hash_generated_method = "ED320AF13EB079D56E1BB2CD418F0F12")
         public RecyclerTrace ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1180,34 +1176,33 @@ public class ViewDebug {
             try 
             {
                 mFileDescriptor = ParcelFileDescriptor.dup(fileDescriptor);
-            } 
+            } //End block
             catch (IOException e)
             {
                 RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1830133339 = new RuntimeException(e);
                 varC76ADF009CE2FEDD948F7A54F409BA37_1830133339.addTaint(taint);
                 throw varC76ADF009CE2FEDD948F7A54F409BA37_1830133339;
-            } 
+            } //End block
             mTraceWallStart = SystemClock.currentTimeMicro();
             mTraceThreadStart = SystemClock.currentThreadTimeMicro();
-            
-            
-            
-                
-            
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //mPath = path;
+            //try {
+                //mFileDescriptor = ParcelFileDescriptor.dup(fileDescriptor);
+            //} catch (IOException e) {
+                //Log.e(LOG_TAG, "Could not write trace file " + mPath, e);
+                //throw new RuntimeException(e);
+            //}
+            //mTraceWallStart = SystemClock.currentTimeMicro();
+            //mTraceThreadStart = SystemClock.currentThreadTimeMicro();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.987 -0400", hash_original_method = "154FC169BABA0D9841DA90FB18C972FB", hash_generated_method = "4D5EEED3A4E0DDBF058576EAC9A4A5DC")
         @Override
         public void println(String x) {
             addTaint(x.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -1227,14 +1222,14 @@ public class ViewDebug {
             entry.threadStart = threadStart;
             entry.threadTime = threadTime;
             mTraces.add(entry);
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //Entry entry = new Entry();
+            //entry.traceId = getTraceId(message);
+            //entry.wallStart = wallStart;
+            //entry.wallTime = wallTime;
+            //entry.threadStart = threadStart;
+            //entry.threadTime = threadTime;
+            //mTraces.add(entry);
         }
 
         
@@ -1247,18 +1242,18 @@ public class ViewDebug {
             {
                 traceId = mTraceId++ << 4;
                 mTraceNames.put(name, traceId);
-            } 
+            } //End block
             int var9449EF8F36BCEDA75FD8F2DB4F9EA5AE_2023696395 = (traceId);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_975416807 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_975416807;
-            
-            
-            
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //String name = message.getTarget().getMessageName(message);
+            //Integer traceId = mTraceNames.get(name);
+            //if (traceId == null) {
+                //traceId = mTraceId++ << 4;
+                //mTraceNames.put(name, traceId);
+            //}
+            //return traceId;
         }
 
         
@@ -1269,17 +1264,17 @@ public class ViewDebug {
             @Override
             public void run() {
                 saveTraces();
-                
-                
+                // ---------- Original Method ----------
+                //saveTraces();
             }
 }, "LooperProfiler[" + mPath + "]").start();
-            
-            
-                
-                
-                    
-                
-            
+            // ---------- Original Method ----------
+            //new Thread(new Runnable() {
+                //@Override
+                //public void run() {
+                    //saveTraces();
+                //}
+            //}, "LooperProfiler[" + mPath + "]").start();
         }
 
         
@@ -1293,29 +1288,29 @@ public class ViewDebug {
                 out.flush();
                 writeTraces(fos, out.size(), mTraceWallStart, mTraceThreadStart, mTraces);
                 Log.d(LOG_TAG, "Looper traces ready: " + mPath);
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
+            } //End block
             finally 
             {
                 try 
                 {
                     out.close();
-                } 
+                } //End block
                 catch (IOException e)
                 {
-                } 
+                } //End block
                 try 
                 {
                     mFileDescriptor.close();
-                } 
+                } //End block
                 catch (IOException e)
                 {
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1355,8 +1350,7 @@ public class ViewDebug {
         }
 
         
-                @DSModeled(DSC.SAFE)
-        private static void writeHeader(DataOutputStream out, long start,
+                private static void writeHeader(DataOutputStream out, long start,
                 HashMap<String, Integer> names, ArrayList<Entry> entries) throws IOException {
             Entry last = entries.get(entries.size() - 1);
             long wallTotal = (last.wallStart + last.wallTime) - start;
@@ -1376,8 +1370,7 @@ public class ViewDebug {
         }
 
         
-                @DSModeled(DSC.SAFE)
-        private static void addMethods(HashMap<String, Integer> names, DataOutputStream out) throws IOException {
+                private static void addMethods(HashMap<String, Integer> names, DataOutputStream out) throws IOException {
             for (Map.Entry<String, Integer> name : names.entrySet()) {
                 out.writeBytes(String.format("0x%08x\tEventQueue\t%s\t()V\tLooper\t-2\n",
                         name.getValue(), name.getKey()));
@@ -1423,7 +1416,7 @@ public class ViewDebug {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.992 -0400", hash_original_method = "629F4A8E90A91F8ECA92C26A9EB219B2", hash_generated_method = "629F4A8E90A91F8ECA92C26A9EB219B2")
             public Entry ()
             {
-                
+                //Synthesized constructor
             }
 
 

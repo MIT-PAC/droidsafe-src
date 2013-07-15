@@ -1,6 +1,6 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,27 +28,27 @@ public final class ServiceLoader<S> implements Iterable<S> {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_865722208 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_865722208.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_865722208;
-        } 
+        } //End block
         this.service = service;
         this.classLoader = classLoader;
         this.services = new HashSet<URL>();
         reload();
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (service == null) {
+            //throw new NullPointerException();
+        //}
+        //this.service = service;
+        //this.classLoader = classLoader;
+        //this.services = new HashSet<URL>();
+        //reload();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.453 -0400", hash_original_method = "5DE3F3B80408315525994C211C4640EC", hash_generated_method = "B60E62D5BFE2284818EAB4DA920ACD3A")
     public void reload() {
         internalLoad();
-        
-        
+        // ---------- Original Method ----------
+        //internalLoad();
     }
 
     
@@ -57,8 +57,8 @@ public final class ServiceLoader<S> implements Iterable<S> {
 Iterator<S> var5595D01585350877366F9800888A00F9_1010428472 =         new ServiceIterator(this);
         var5595D01585350877366F9800888A00F9_1010428472.addTaint(taint);
         return var5595D01585350877366F9800888A00F9_1010428472;
-        
-        
+        // ---------- Original Method ----------
+        //return new ServiceIterator(this);
     }
 
     
@@ -77,19 +77,19 @@ Iterator<S> var5595D01585350877366F9800888A00F9_1010428472 =         new Service
         {
             String name = "META-INF/services/" + service.getName();
             services.addAll(Collections.list(classLoader.getResources(name)));
-        } 
+        } //End block
         catch (IOException e)
         {
             return;
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //services.clear();
+        //try {
+            //String name = "META-INF/services/" + service.getName();
+            //services.addAll(Collections.list(classLoader.getResources(name)));
+        //} catch (IOException e) {
+            //return;
+        //}
     }
 
     
@@ -129,8 +129,8 @@ Iterator<S> var5595D01585350877366F9800888A00F9_1010428472 =         new Service
 String varD6505E9E90B35E4D23556B6DAC1CF0D7_1247277605 =         "ServiceLoader for " + service.getName();
         varD6505E9E90B35E4D23556B6DAC1CF0D7_1247277605.addTaint(taint);
         return varD6505E9E90B35E4D23556B6DAC1CF0D7_1247277605;
-        
-        
+        // ---------- Original Method ----------
+        //return "ServiceLoader for " + service.getName();
     }
 
     
@@ -156,10 +156,10 @@ String varD6505E9E90B35E4D23556B6DAC1CF0D7_1247277605 =         "ServiceLoader f
             this.classLoader = sl.classLoader;
             this.service = sl.service;
             this.services = sl.services;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.classLoader = sl.classLoader;
+            //this.service = sl.service;
+            //this.services = sl.services;
         }
 
         
@@ -168,15 +168,15 @@ String varD6505E9E90B35E4D23556B6DAC1CF0D7_1247277605 =         "ServiceLoader f
     if(!isRead)            
             {
                 readClass();
-            } 
+            } //End block
             boolean var4134D5BD73BFA615ADC48C269CC99415_541614473 = ((queue != null && !queue.isEmpty()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_252355414 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_252355414;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (!isRead) {
+                //readClass();
+            //}
+            //return (queue != null && !queue.isEmpty());
         }
 
         
@@ -188,30 +188,30 @@ String varD6505E9E90B35E4D23556B6DAC1CF0D7_1247277605 =         "ServiceLoader f
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_202026988 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_202026988.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_202026988;
-            } 
+            } //End block
             String className = queue.remove();
             try 
             {
 S var4CE3DC2994840DD0E53401858CD7B335_526073860 =                 service.cast(classLoader.loadClass(className).newInstance());
                 var4CE3DC2994840DD0E53401858CD7B335_526073860.addTaint(taint);
                 return var4CE3DC2994840DD0E53401858CD7B335_526073860;
-            } 
+            } //End block
             catch (Exception e)
             {
                 ServiceConfigurationError var4884B463F3943E5BC6F034CB08178A11_1128955024 = new ServiceConfigurationError("Couldn't instantiate class " + className, e);
                 var4884B463F3943E5BC6F034CB08178A11_1128955024.addTaint(taint);
                 throw var4884B463F3943E5BC6F034CB08178A11_1128955024;
-            } 
-            
-            
-                
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (!hasNext()) {
+                //throw new NoSuchElementException();
+            //}
+            //String className = queue.remove();
+            //try {
+                //return service.cast(classLoader.loadClass(className).newInstance());
+            //} catch (Exception e) {
+                //throw new ServiceConfigurationError("Couldn't instantiate class " + className, e);
+            //}
         }
 
         
@@ -231,34 +231,34 @@ for(URL url : services)
     if(commentStart != -1)                        
                         {
                             line = line.substring(0, commentStart);
-                        } 
+                        } //End block
                         line = line.trim();
     if(line.isEmpty())                        
                         {
                             continue;
-                        } 
+                        } //End block
                         String className = line;
                         checkValidJavaClassName(className);
     if(!queue.contains(className))                        
                         {
                             queue.add(className);
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     isRead = true;
-                } 
+                } //End block
                 catch (Exception e)
                 {
                     ServiceConfigurationError var1F7EA0C9D1D6DB8F57385C8CA6A576DA_214066341 = new ServiceConfigurationError("Couldn't read " + url, e);
                     var1F7EA0C9D1D6DB8F57385C8CA6A576DA_214066341.addTaint(taint);
                     throw var1F7EA0C9D1D6DB8F57385C8CA6A576DA_214066341;
-                } 
+                } //End block
                 finally 
                 {
                     IoUtils.closeQuietly(reader);
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -267,8 +267,8 @@ for(URL url : services)
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1796061456 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_1796061456.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_1796061456;
-            
-            
+            // ---------- Original Method ----------
+            //throw new UnsupportedOperationException();
         }
 
         
@@ -283,15 +283,15 @@ for(int i = 0;i < className.length();++i)
                     ServiceConfigurationError varF7F08B66C360D56E37E7510D7FABB6E3_339063969 = new ServiceConfigurationError("Bad character '" + ch + "' in class name");
                     varF7F08B66C360D56E37E7510D7FABB6E3_339063969.addTaint(taint);
                     throw varF7F08B66C360D56E37E7510D7FABB6E3_339063969;
-                } 
-            } 
-            
-            
-                
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //for (int i = 0; i < className.length(); ++i) {
+                //char ch = className.charAt(i);
+                //if (!Character.isJavaIdentifierPart(ch) && ch != '.') {
+                    //throw new ServiceConfigurationError("Bad character '" + ch + "' in class name");
+                //}
+            //}
         }
 
         

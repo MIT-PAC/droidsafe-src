@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
       SyncAdaptersCache(Context context) {
         super(context, SERVICE_INTERFACE, SERVICE_META_DATA, ATTRIBUTES_NAME, sSerializer);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -41,7 +41,7 @@ class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
 SyncAdapterType var540C13E9E156B687226421B24F2DF178_2115641537 =                 null;
                 var540C13E9E156B687226421B24F2DF178_2115641537.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_2115641537;
-            } 
+            } //End block
             final boolean userVisible = sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_userVisible, true);
             final boolean supportsUploading = sa.getBoolean(com.android.internal.R.styleable.SyncAdapter_supportsUploading,
                             true);
@@ -55,13 +55,13 @@ SyncAdapterType var83A47835765964A5D6630B135A8ED556_1920975933 =             new
                     isAlwaysSyncable, allowParallelSyncs, settingsActivity);
             var83A47835765964A5D6630B135A8ED556_1920975933.addTaint(taint);
             return var83A47835765964A5D6630B135A8ED556_1920975933;
-        } 
+        } //End block
         finally 
         {
             sa.recycle();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -70,7 +70,7 @@ SyncAdapterType var83A47835765964A5D6630B135A8ED556_1920975933 =             new
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.421 -0400", hash_original_method = "6E1FAE6E6E9693B60CA712A8476AA1E6", hash_generated_method = "6E1FAE6E6E9693B60CA712A8476AA1E6")
         public MySerializer ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -80,9 +80,9 @@ SyncAdapterType var83A47835765964A5D6630B135A8ED556_1920975933 =             new
             addTaint(item.getTaint());
             out.attribute(null, "authority", item.authority);
             out.attribute(null, "accountType", item.accountType);
-            
-            
-            
+            // ---------- Original Method ----------
+            //out.attribute(null, "authority", item.authority);
+            //out.attribute(null, "accountType", item.accountType);
         }
 
         
@@ -94,10 +94,10 @@ SyncAdapterType var83A47835765964A5D6630B135A8ED556_1920975933 =             new
 SyncAdapterType var7379561ADA3221C7A5D93CDE0C5DF244_481523341 =             SyncAdapterType.newKey(authority, accountType);
             var7379561ADA3221C7A5D93CDE0C5DF244_481523341.addTaint(taint);
             return var7379561ADA3221C7A5D93CDE0C5DF244_481523341;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //final String authority = parser.getAttributeValue(null, "authority");
+            //final String accountType = parser.getAttributeValue(null, "accountType");
+            //return SyncAdapterType.newKey(authority, accountType);
         }
 
         

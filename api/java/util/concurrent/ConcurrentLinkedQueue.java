@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.616 -0400", hash_original_method = "6A57FB745E5D860E38239AF0DB1591EF", hash_generated_method = "38B3499791573BCF992A48C491B8F223")
     public  ConcurrentLinkedQueue() {
         head = tail = new Node<E>(null);
-        
-        
+        // ---------- Original Method ----------
+        //head = tail = new Node<E>(null);
     }
 
     
@@ -42,28 +42,28 @@ for(E e : c)
             {
                 t.lazySetNext(newNode);
                 t = newNode;
-            } 
-        } 
+            } //End block
+        } //End block
     if(h == null)        
         h = t = new Node<E>(null);
         head = h;
         tail = t;
-        
-        
-        
-            
-            
-            
-                
-            
-                
-                
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Node<E> h = null, t = null;
+        //for (E e : c) {
+            //checkNotNull(e);
+            //Node<E> newNode = new Node<E>(e);
+            //if (h == null)
+                //h = t = newNode;
+            //else {
+                //t.lazySetNext(newNode);
+                //t = newNode;
+            //}
+        //}
+        //if (h == null)
+            //h = t = new Node<E>(null);
+        //head = h;
+        //tail = t;
     }
 
     
@@ -73,8 +73,8 @@ for(E e : c)
         boolean var753C0332450253282F40FDC9097055BE_1842559179 = (offer(e));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181244718 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_181244718;
-        
-        
+        // ---------- Original Method ----------
+        //return offer(e);
     }
 
     
@@ -84,9 +84,9 @@ for(E e : c)
         addTaint(h.getTaint());
     if(h != p && casHead(h, p))        
         h.lazySetNext(h);
-        
-        
-            
+        // ---------- Original Method ----------
+        //if (h != p && casHead(h, p))
+            //h.lazySetNext(h);
     }
 
     
@@ -97,9 +97,9 @@ for(E e : c)
 Node<E> var38526534D800D5249E337269E6B24E55_979391048 =         (p == next) ? head : next;
         var38526534D800D5249E337269E6B24E55_979391048.addTaint(taint);
         return var38526534D800D5249E337269E6B24E55_979391048;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Node<E> next = p.next;
+        //return (p == next) ? head : next;
     }
 
     
@@ -120,31 +120,31 @@ for(Node<E> t = tail, p = t;;)
                     boolean varB326B5062B2F0E69046810717534CB09_801218061 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_323601211 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_323601211;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(p == q)            
             p = (t != (t = tail)) ? t : head;
             else
             p = (p != t && t != (t = tail)) ? t : q;
-        } 
-        
-        
-        
-        
-            
-            
-                
-                    
-                        
-                    
-                
-            
-            
-                
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //checkNotNull(e);
+        //final Node<E> newNode = new Node<E>(e);
+        //for (Node<E> t = tail, p = t;;) {
+            //Node<E> q = p.next;
+            //if (q == null) {
+                //if (p.casNext(null, newNode)) {
+                    //if (p != t) 
+                        //casTail(t, newNode);  
+                    //return true;
+                //}
+            //}
+            //else if (p == q)
+                //p = (t != (t = tail)) ? t : head;
+            //else
+                //p = (p != t && t != (t = tail)) ? t : q;
+        //}
     }
 
     
@@ -163,7 +163,7 @@ for(Node<E> h = head, p = h, q;;)
 E var393CF4FD24220F0ED4B080A1E7108CD3_1865927953 =                     item;
                     var393CF4FD24220F0ED4B080A1E7108CD3_1865927953.addTaint(taint);
                     return var393CF4FD24220F0ED4B080A1E7108CD3_1865927953;
-                } 
+                } //End block
                 else
     if((q = p.next) == null)                
                 {
@@ -171,34 +171,34 @@ E var393CF4FD24220F0ED4B080A1E7108CD3_1865927953 =                     item;
 E var540C13E9E156B687226421B24F2DF178_1030503427 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1030503427.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1030503427;
-                } 
+                } //End block
                 else
     if(p == q)                
                 continue restartFromHead;
                 else
                 p = q;
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-                    
-                        
-                    
-                
-                
-                    
-                    
-                
-                
-                    
-                
-                    
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //restartFromHead:
+        //for (;;) {
+            //for (Node<E> h = head, p = h, q;;) {
+                //E item = p.item;
+                //if (item != null && p.casItem(item, null)) {
+                    //if (p != h) 
+                        //updateHead(h, ((q = p.next) != null) ? q : p);
+                    //return item;
+                //}
+                //else if ((q = p.next) == null) {
+                    //updateHead(h, p);
+                    //return null;
+                //}
+                //else if (p == q)
+                    //continue restartFromHead;
+                //else
+                    //p = q;
+            //}
+        //}
     }
 
     
@@ -216,29 +216,29 @@ for(Node<E> h = head, p = h, q;;)
 E var393CF4FD24220F0ED4B080A1E7108CD3_1177207009 =                     item;
                     var393CF4FD24220F0ED4B080A1E7108CD3_1177207009.addTaint(taint);
                     return var393CF4FD24220F0ED4B080A1E7108CD3_1177207009;
-                } 
+                } //End block
                 else
     if(p == q)                
                 continue restartFromHead;
                 else
                 p = q;
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-                    
-                    
-                
-                
-                    
-                
-                    
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //restartFromHead:
+        //for (;;) {
+            //for (Node<E> h = head, p = h, q;;) {
+                //E item = p.item;
+                //if (item != null || (q = p.next) == null) {
+                    //updateHead(h, p);
+                    //return item;
+                //}
+                //else if (p == q)
+                    //continue restartFromHead;
+                //else
+                    //p = q;
+            //}
+        //}
     }
 
     
@@ -256,44 +256,42 @@ for(Node<E> h = head, p = h, q;;)
 Node<E> var96AB332339E0E5CFEEDCBAEFBC25BC0C_1943616109 =                     hasItem ? p : null;
                     var96AB332339E0E5CFEEDCBAEFBC25BC0C_1943616109.addTaint(taint);
                     return var96AB332339E0E5CFEEDCBAEFBC25BC0C_1943616109;
-                } 
+                } //End block
                 else
     if(p == q)                
                 continue restartFromHead;
                 else
                 p = q;
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-                    
-                    
-                
-                
-                    
-                
-                    
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //restartFromHead:
+        //for (;;) {
+            //for (Node<E> h = head, p = h, q;;) {
+                //boolean hasItem = (p.item != null);
+                //if (hasItem || (q = p.next) == null) {
+                    //updateHead(h, p);
+                    //return hasItem ? p : null;
+                //}
+                //else if (p == q)
+                    //continue restartFromHead;
+                //else
+                    //p = q;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.624 -0400", hash_original_method = "5BBCBCAD5CC8F01475F9C33B1A8BDA76", hash_generated_method = "5B6EE25C85C936DDB8CC3C4512F780A0")
     public boolean isEmpty() {
         boolean var85FADA70E940F9843AC6C44F04024FA4_1585976066 = (first() == null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_403642107 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_403642107;
-        
-        
+        // ---------- Original Method ----------
+        //return first() == null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.625 -0400", hash_original_method = "8378A4BA724609F4EE8D701FE95A4146", hash_generated_method = "3977F64D429AEAF5050EBAC825C213EA")
     public int size() {
         int count = 0;
@@ -304,17 +302,16 @@ for(Node<E> p = first();p != null;p = succ(p))
         int varE2942A04780E223B215EB8B663CF5353_858268126 = (count);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971691667 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971691667;
-        
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //int count = 0;
+        //for (Node<E> p = first(); p != null; p = succ(p))
+            //if (p.item != null)
+                //if (++count == Integer.MAX_VALUE)
+                    //break;
+        //return count;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.625 -0400", hash_original_method = "D3CFD955C2206E78AC2D6D0AA96542FF", hash_generated_method = "CF65781E2F3D49A04DE1772C519B2876")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -333,22 +330,21 @@ for(Node<E> p = first();p != null;p = succ(p))
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068507205 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068507205;
             }
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_608405522 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008754773 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2008754773;
-        
-        
-        
-            
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (o == null) return false;
+        //for (Node<E> p = first(); p != null; p = succ(p)) {
+            //E item = p.item;
+            //if (item != null && o.equals(item))
+                //return true;
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.626 -0400", hash_original_method = "47B1B9EE8A66BF6628AC85F9580DDA03", hash_generated_method = "7EB2D0BAEAD8E3508DDFF8E3CA1B218B")
     public boolean remove(Object o) {
         addTaint(o.getTaint());
@@ -372,28 +368,28 @@ for(Node<E> p = first();p != null;p = succ(p))
                 boolean varB326B5062B2F0E69046810717534CB09_1442557725 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_945814257 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_945814257;
-            } 
+            } //End block
             pred = p;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_220947827 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_100578164 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_100578164;
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                
-                    
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (o == null) return false;
+        //Node<E> pred = null;
+        //for (Node<E> p = first(); p != null; p = succ(p)) {
+            //E item = p.item;
+            //if (item != null &&
+                //o.equals(item) &&
+                //p.casItem(item, null)) {
+                //Node<E> next = succ(p);
+                //if (pred != null && next != null)
+                    //pred.casNext(p, next);
+                //return true;
+            //}
+            //pred = p;
+        //}
+        //return false;
     }
 
     
@@ -418,8 +414,8 @@ for(E e : c)
             {
                 last.lazySetNext(newNode);
                 last = newNode;
-            } 
-        } 
+            } //End block
+        } //End block
     if(beginningOfTheEnd == null)        
         {
         boolean var68934A3E9455FA72420237EB05902327_567725920 = (false);
@@ -438,24 +434,23 @@ for(Node<E> t = tail, p = t;;)
                         t = tail;
     if(last.next == null)                        
                         casTail(t, last);
-                    } 
+                    } //End block
                     boolean varB326B5062B2F0E69046810717534CB09_363598575 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_979056564 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_979056564;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(p == q)            
             p = (t != (t = tail)) ? t : head;
             else
             p = (p != t && t != (t = tail)) ? t : q;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.628 -0400", hash_original_method = "9AE75EDD15A5D634A14FDDC5ABF53B75", hash_generated_method = "2877605C76E375A09D2A319EC9AE8AAB")
     public Object[] toArray() {
         ArrayList<E> al = new ArrayList<E>();
@@ -464,18 +459,18 @@ for(Node<E> p = first();p != null;p = succ(p))
             E item = p.item;
     if(item != null)            
             al.add(item);
-        } 
+        } //End block
 Object[] varEE356BC8028D35EDB407C2CD6F5C7F86_1559507938 =         al.toArray();
         varEE356BC8028D35EDB407C2CD6F5C7F86_1559507938.addTaint(taint);
         return varEE356BC8028D35EDB407C2CD6F5C7F86_1559507938;
-        
-        
-        
-            
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<E> al = new ArrayList<E>();
+        //for (Node<E> p = first(); p != null; p = succ(p)) {
+            //E item = p.item;
+            //if (item != null)
+                //al.add(item);
+        //}
+        //return al.toArray();
     }
 
     
@@ -490,7 +485,7 @@ for(p = first();p != null && k < a.length;p = succ(p))
             E item = p.item;
     if(item != null)            
             a[k++] = (T)item;
-        } 
+        } //End block
     if(p == null)        
         {
     if(k < a.length)            
@@ -498,37 +493,37 @@ for(p = first();p != null && k < a.length;p = succ(p))
 T[] var3F5343BF1D849954A73F0BB303805FFD_124254659 =             a;
             var3F5343BF1D849954A73F0BB303805FFD_124254659.addTaint(taint);
             return var3F5343BF1D849954A73F0BB303805FFD_124254659;
-        } 
+        } //End block
         ArrayList<E> al = new ArrayList<E>();
 for(Node<E> q = first();q != null;q = succ(q))
         {
             E item = q.item;
     if(item != null)            
             al.add(item);
-        } 
+        } //End block
 T[] varAA44379FEF6B0261A49B4F9151CB856C_759521527 =         al.toArray(a);
         varAA44379FEF6B0261A49B4F9151CB856C_759521527.addTaint(taint);
         return varAA44379FEF6B0261A49B4F9151CB856C_759521527;
-        
-        
-        
-        
-            
-            
-                
-        
-        
-            
-                
-            
-        
-        
-        
-            
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //int k = 0;
+        //Node<E> p;
+        //for (p = first(); p != null && k < a.length; p = succ(p)) {
+            //E item = p.item;
+            //if (item != null)
+                //a[k++] = (T)item;
+        //}
+        //if (p == null) {
+            //if (k < a.length)
+                //a[k] = null;
+            //return a;
+        //}
+        //ArrayList<E> al = new ArrayList<E>();
+        //for (Node<E> q = first(); q != null; q = succ(q)) {
+            //E item = q.item;
+            //if (item != null)
+                //al.add(item);
+        //}
+        //return al.toArray(a);
     }
 
     
@@ -537,12 +532,11 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_759521527 =         al.toArray(a);
 Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1168628771 =         new Itr();
         varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1168628771.addTaint(taint);
         return varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1168628771;
-        
-        
+        // ---------- Original Method ----------
+        //return new Itr();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.630 -0400", hash_original_method = "2DB3995911F14A1266042DB21211C241", hash_generated_method = "9A9EEB9CFF7C391D2CFCCB2B2CD0E570")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         addTaint(s.getTaint());
@@ -552,20 +546,19 @@ for(Node<E> p = first();p != null;p = succ(p))
             Object item = p.item;
     if(item != null)            
             s.writeObject(item);
-        } 
+        } //End block
         s.writeObject(null);
-        
-        
-        
-            
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //s.defaultWriteObject();
+        //for (Node<E> p = first(); p != null; p = succ(p)) {
+            //Object item = p.item;
+            //if (item != null)
+                //s.writeObject(item);
+        //}
+        //s.writeObject(null);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.631 -0400", hash_original_method = "4C4E4F1C2555347B7DA11DAA134BF488", hash_generated_method = "A35953104F72E0350AB56B538DA6704A")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         addTaint(s.getTaint());
@@ -583,35 +576,34 @@ for(Node<E> p = first();p != null;p = succ(p))
             {
                 t.lazySetNext(newNode);
                 t = newNode;
-            } 
-        } 
+            } //End block
+        } //End block
     if(h == null)        
         h = t = new Node<E>(null);
         head = h;
         tail = t;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-                
-                
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //s.defaultReadObject();
+        //Node<E> h = null, t = null;
+        //Object item;
+        //while ((item = s.readObject()) != null) {
+            //@SuppressWarnings("unchecked")
+            //Node<E> newNode = new Node<E>((E) item);
+            //if (h == null)
+                //h = t = newNode;
+            //else {
+                //t.lazySetNext(newNode);
+                //t = newNode;
+            //}
+        //}
+        //if (h == null)
+            //h = t = new Node<E>(null);
+        //head = h;
+        //tail = t;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void checkNotNull(Object v) {
+        private static void checkNotNull(Object v) {
         if (v == null)
             throw new NullPointerException();
     }
@@ -624,8 +616,8 @@ for(Node<E> p = first();p != null;p = succ(p))
         boolean var7E8AA0CE41D7E99D8A58CC79419B8677_942575488 = (UNSAFE.compareAndSwapObject(this, tailOffset, cmp, val));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1134462251 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1134462251;
-        
-        
+        // ---------- Original Method ----------
+        //return UNSAFE.compareAndSwapObject(this, tailOffset, cmp, val);
     }
 
     
@@ -636,8 +628,8 @@ for(Node<E> p = first();p != null;p = succ(p))
         boolean varF75C9E8D581D74DDAFA53D9D3A5118DF_1900448144 = (UNSAFE.compareAndSwapObject(this, headOffset, cmp, val));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_314476307 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_314476307;
-        
-        
+        // ---------- Original Method ----------
+        //return UNSAFE.compareAndSwapObject(this, headOffset, cmp, val);
     }
 
     
@@ -665,8 +657,8 @@ for(Node<E> p = first();p != null;p = succ(p))
           Node(E item) {
             addTaint(item.getTaint());
             UNSAFE.putObject(this, itemOffset, item);
-            
-            
+            // ---------- Original Method ----------
+            //UNSAFE.putObject(this, itemOffset, item);
         }
 
         
@@ -677,8 +669,8 @@ for(Node<E> p = first();p != null;p = succ(p))
             boolean var74F63A1693D321748DC62AE0D1A13C35_1970338744 = (UNSAFE.compareAndSwapObject(this, itemOffset, cmp, val));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030418389 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030418389;
-            
-            
+            // ---------- Original Method ----------
+            //return UNSAFE.compareAndSwapObject(this, itemOffset, cmp, val);
         }
 
         
@@ -686,8 +678,8 @@ for(Node<E> p = first();p != null;p = succ(p))
          void lazySetNext(Node<E> val) {
             addTaint(val.getTaint());
             UNSAFE.putOrderedObject(this, nextOffset, val);
-            
-            
+            // ---------- Original Method ----------
+            //UNSAFE.putOrderedObject(this, nextOffset, val);
         }
 
         
@@ -698,8 +690,8 @@ for(Node<E> p = first();p != null;p = succ(p))
             boolean varBE28632200F09419D5ABEBABBCCD9D55_1252416129 = (UNSAFE.compareAndSwapObject(this, nextOffset, cmp, val));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1630588497 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1630588497;
-            
-            
+            // ---------- Original Method ----------
+            //return UNSAFE.compareAndSwapObject(this, nextOffset, cmp, val);
         }
 
         
@@ -730,8 +722,8 @@ for(Node<E> p = first();p != null;p = succ(p))
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.635 -0400", hash_original_method = "A56873641F7861FCF92703A510E041DF", hash_generated_method = "9DA9D44375E67CD77614346D5F2A644C")
           Itr() {
             advance();
-            
-            
+            // ---------- Original Method ----------
+            //advance();
         }
 
         
@@ -745,12 +737,12 @@ for(Node<E> p = first();p != null;p = succ(p))
             {
                 p = first();
                 pred = null;
-            } 
+            } //End block
             else
             {
                 pred = nextNode;
                 p = succ(nextNode);
-            } 
+            } //End block
 for(;;)
             {
     if(p == null)                
@@ -760,7 +752,7 @@ for(;;)
 E varEA5659DA512DECF23E6D37EE8060D074_526607385 =                     x;
                     varEA5659DA512DECF23E6D37EE8060D074_526607385.addTaint(taint);
                     return varEA5659DA512DECF23E6D37EE8060D074_526607385;
-                } 
+                } //End block
                 E item = p.item;
     if(item != null)                
                 {
@@ -769,28 +761,27 @@ E varEA5659DA512DECF23E6D37EE8060D074_526607385 =                     x;
 E varEA5659DA512DECF23E6D37EE8060D074_78716230 =                     x;
                     varEA5659DA512DECF23E6D37EE8060D074_78716230.addTaint(taint);
                     return varEA5659DA512DECF23E6D37EE8060D074_78716230;
-                } 
+                } //End block
                 else
                 {
                     Node<E> next = succ(p);
     if(pred != null && next != null)                    
                     pred.casNext(p, next);
                     p = next;
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.636 -0400", hash_original_method = "F3203522041DB53AA10973946A26B4E6", hash_generated_method = "9E3DC0B4E42301D3FBDBD2FA61BC1C5D")
         public boolean hasNext() {
             boolean var055287C88A3BCA17E817C22C28D72D59_1527372399 = (nextNode != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_408504475 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_408504475;
-            
-            
+            // ---------- Original Method ----------
+            //return nextNode != null;
         }
 
         
@@ -805,9 +796,9 @@ E varEA5659DA512DECF23E6D37EE8060D074_78716230 =                     x;
 E var0AF7A6725AB70DB809AACAEE1668A258_344250919 =             advance();
             var0AF7A6725AB70DB809AACAEE1668A258_344250919.addTaint(taint);
             return var0AF7A6725AB70DB809AACAEE1668A258_344250919;
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (nextNode == null) throw new NoSuchElementException();
+            //return advance();
         }
 
         
@@ -822,11 +813,11 @@ E var0AF7A6725AB70DB809AACAEE1668A258_344250919 =             advance();
             }
             l.item = null;
             lastRet = null;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //Node<E> l = lastRet;
+            //if (l == null) throw new IllegalStateException();
+            //l.item = null;
+            //lastRet = null;
         }
 
         

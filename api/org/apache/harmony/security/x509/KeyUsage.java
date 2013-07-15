@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,42 +17,39 @@ public final class KeyUsage extends ExtensionValue {
     public  KeyUsage(byte[] encoding) throws IOException {
         super(encoding);
         this.keyUsage = (boolean[]) ASN1.decode(encoding);
-        
-        
+        // ---------- Original Method ----------
+        //this.keyUsage = (boolean[]) ASN1.decode(encoding);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.151 -0400", hash_original_method = "14A58386ABBA8977CF43289C95A15404", hash_generated_method = "BA78D7F300F0B8B2AD2A67BA4509CF34")
     public boolean[] getKeyUsage() {
         boolean[] varD5EDBDDB1AE6E3CE3EE0E039107E39E4_22999851 = (keyUsage);
                 boolean[] var503EB2F420079C4024483971CE5EDEA8_1950767875 = {getTaintBoolean()};
         return var503EB2F420079C4024483971CE5EDEA8_1950767875;
-        
-        
+        // ---------- Original Method ----------
+        //return keyUsage;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.152 -0400", hash_original_method = "F00F1E8212387BCE78D166E85787DB94", hash_generated_method = "E937094768920BD10A632C702DE0E6F8")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(keyUsage);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_129612866 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_612010894 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_612010894;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = ASN1.encode(keyUsage);
+        //}
+        //return encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.152 -0400", hash_original_method = "C3D25371DA677875302E0FC1058C6A6C", hash_generated_method = "79CB06BD6AFE962EE7B5801D047545FB")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -64,17 +61,17 @@ for(int i = 0;i < keyUsage.length;i++)
     if(keyUsage[i])            
             {
                 sb.append(prefix).append("  ").append(USAGES[i]).append('\n');
-            } 
-        } 
+            } //End block
+        } //End block
         sb.append(prefix).append("]\n");
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //sb.append(prefix).append("KeyUsage [\n");
+        //for (int i = 0; i < keyUsage.length; i++) {
+            //if (keyUsage[i]) {
+                //sb.append(prefix).append("  ").append(USAGES[i]).append('\n');
+            //}
+        //}
+        //sb.append(prefix).append("]\n");
     }
 
     

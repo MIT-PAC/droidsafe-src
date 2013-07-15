@@ -1,6 +1,6 @@
 package android.location;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,7 +38,7 @@ public class Criteria implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.701 -0400", hash_original_method = "56D25A23ADD1F3C93CB7F827DA5DFB02", hash_generated_method = "3EFEE149D939DD3A0C00E9F5B56EE461")
     public  Criteria() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -53,16 +53,16 @@ public class Criteria implements Parcelable {
         mBearingRequired = criteria.mBearingRequired;
         mSpeedRequired = criteria.mSpeedRequired;
         mCostAllowed = criteria.mCostAllowed;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mHorizontalAccuracy = criteria.mHorizontalAccuracy;
+        //mVerticalAccuracy = criteria.mVerticalAccuracy;
+        //mSpeedAccuracy = criteria.mSpeedAccuracy;
+        //mBearingAccuracy = criteria.mBearingAccuracy;
+        //mPowerRequirement = criteria.mPowerRequirement;
+        //mAltitudeRequired = criteria.mAltitudeRequired;
+        //mBearingRequired = criteria.mBearingRequired;
+        //mSpeedRequired = criteria.mSpeedRequired;
+        //mCostAllowed = criteria.mCostAllowed;
     }
 
     
@@ -73,24 +73,23 @@ public class Criteria implements Parcelable {
             IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_1839720055 = new IllegalArgumentException("accuracy=" + accuracy);
             varF790EF5E2E4FE72E5D1C0EA8A5531656_1839720055.addTaint(taint);
             throw varF790EF5E2E4FE72E5D1C0EA8A5531656_1839720055;
-        } 
+        } //End block
         mHorizontalAccuracy = accuracy;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
+            //throw new IllegalArgumentException("accuracy=" + accuracy);
+        //}
+        //mHorizontalAccuracy = accuracy;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.704 -0400", hash_original_method = "2F566A20A5A9A3E4947DCE83AA9DF67E", hash_generated_method = "44692864814C27962D3B7E2E0C99987F")
     public int getHorizontalAccuracy() {
         int var657284437DEB9E5B0F822222073D019D_899656974 = (mHorizontalAccuracy);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_551077369 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_551077369;
-        
-        
+        // ---------- Original Method ----------
+        //return mHorizontalAccuracy;
     }
 
     
@@ -101,24 +100,23 @@ public class Criteria implements Parcelable {
             IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_1475625332 = new IllegalArgumentException("accuracy=" + accuracy);
             varF790EF5E2E4FE72E5D1C0EA8A5531656_1475625332.addTaint(taint);
             throw varF790EF5E2E4FE72E5D1C0EA8A5531656_1475625332;
-        } 
+        } //End block
         mVerticalAccuracy = accuracy;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
+            //throw new IllegalArgumentException("accuracy=" + accuracy);
+        //}
+        //mVerticalAccuracy = accuracy;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.705 -0400", hash_original_method = "E46E133CF34270F0210C8D2BD309B3F5", hash_generated_method = "4B366E4BF22A8746A71BE73A118A8A04")
     public int getVerticalAccuracy() {
         int var9DC0DEEA417C8E8EBF9F521967A757AB_402858983 = (mVerticalAccuracy);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162347947 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162347947;
-        
-        
+        // ---------- Original Method ----------
+        //return mVerticalAccuracy;
     }
 
     
@@ -129,24 +127,23 @@ public class Criteria implements Parcelable {
             IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_958003763 = new IllegalArgumentException("accuracy=" + accuracy);
             varF790EF5E2E4FE72E5D1C0EA8A5531656_958003763.addTaint(taint);
             throw varF790EF5E2E4FE72E5D1C0EA8A5531656_958003763;
-        } 
+        } //End block
         mSpeedAccuracy = accuracy;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
+            //throw new IllegalArgumentException("accuracy=" + accuracy);
+        //}
+        //mSpeedAccuracy = accuracy;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.705 -0400", hash_original_method = "87339E07174611DFFFF3AC3EA0F5BF3F", hash_generated_method = "70215499B1664B42E729C745A8C9E0F9")
     public int getSpeedAccuracy() {
         int varDD6DE31C3EA53337E8393DB1A3DDB208_1946253360 = (mSpeedAccuracy);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318159348 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318159348;
-        
-        
+        // ---------- Original Method ----------
+        //return mSpeedAccuracy;
     }
 
     
@@ -157,24 +154,23 @@ public class Criteria implements Parcelable {
             IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_408410820 = new IllegalArgumentException("accuracy=" + accuracy);
             varF790EF5E2E4FE72E5D1C0EA8A5531656_408410820.addTaint(taint);
             throw varF790EF5E2E4FE72E5D1C0EA8A5531656_408410820;
-        } 
+        } //End block
         mBearingAccuracy = accuracy;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_HIGH) {
+            //throw new IllegalArgumentException("accuracy=" + accuracy);
+        //}
+        //mBearingAccuracy = accuracy;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.706 -0400", hash_original_method = "0A4814C8F779184929A4F3680AE62C8F", hash_generated_method = "ABC64246B307DB4511CA096E880FCE35")
     public int getBearingAccuracy() {
         int var0E53E998E66FEE913D5E92D4E04CA177_1426020016 = (mBearingAccuracy);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689020445 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1689020445;
-        
-        
+        // ---------- Original Method ----------
+        //return mBearingAccuracy;
     }
 
     
@@ -186,28 +182,27 @@ public class Criteria implements Parcelable {
             IllegalArgumentException varF790EF5E2E4FE72E5D1C0EA8A5531656_17059642 = new IllegalArgumentException("accuracy=" + accuracy);
             varF790EF5E2E4FE72E5D1C0EA8A5531656_17059642.addTaint(taint);
             throw varF790EF5E2E4FE72E5D1C0EA8A5531656_17059642;
-        } 
+        } //End block
     if(accuracy == ACCURACY_FINE)        
         {
             mHorizontalAccuracy = ACCURACY_HIGH;
-        } 
+        } //End block
         else
         {
             mHorizontalAccuracy = ACCURACY_LOW;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (accuracy < NO_REQUIREMENT || accuracy > ACCURACY_COARSE) {
+            //throw new IllegalArgumentException("accuracy=" + accuracy);
+        //}
+        //if (accuracy == ACCURACY_FINE) {
+            //mHorizontalAccuracy = ACCURACY_HIGH;
+        //} else {
+            //mHorizontalAccuracy = ACCURACY_LOW;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.708 -0400", hash_original_method = "738CC4C555122D617CAE26F950A7954B", hash_generated_method = "D511E9A87DA49EB136FD0DB6EB066E89")
     public int getAccuracy() {
     if(mHorizontalAccuracy >= ACCURACY_HIGH)        
@@ -215,19 +210,19 @@ public class Criteria implements Parcelable {
             int var245CB7E1095C6AE263632D8AC9A78D9D_1716368910 = (ACCURACY_FINE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_486171086 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_486171086;
-        } 
+        } //End block
         else
         {
             int var071AA21F3F4833EA1DFC453B75CCC2E7_1532335277 = (ACCURACY_COARSE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2072332156 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2072332156;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mHorizontalAccuracy >= ACCURACY_HIGH) {
+            //return ACCURACY_FINE;
+        //} else {
+            //return ACCURACY_COARSE;
+        //}
     }
 
     
@@ -238,119 +233,108 @@ public class Criteria implements Parcelable {
             IllegalArgumentException var7FCAD3A78732A0E9BE9F94A31FA7836A_138036546 = new IllegalArgumentException("level=" + level);
             var7FCAD3A78732A0E9BE9F94A31FA7836A_138036546.addTaint(taint);
             throw var7FCAD3A78732A0E9BE9F94A31FA7836A_138036546;
-        } 
+        } //End block
         mPowerRequirement = level;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (level < NO_REQUIREMENT || level > POWER_HIGH) {
+            //throw new IllegalArgumentException("level=" + level);
+        //}
+        //mPowerRequirement = level;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.709 -0400", hash_original_method = "50AB5D6061392E8FAC8A81CA41B14FB2", hash_generated_method = "CB21FB5575934CD38B74147A514A746F")
     public int getPowerRequirement() {
         int var8CE6AA00EE3C11F8598CD0D337F6CAE9_1239612334 = (mPowerRequirement);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1968512113 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1968512113;
-        
-        
+        // ---------- Original Method ----------
+        //return mPowerRequirement;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.709 -0400", hash_original_method = "F89CAE570739AB3028DA707B2893B5C5", hash_generated_method = "443B9DB636371A2B7B02DF32D76227F5")
     public void setCostAllowed(boolean costAllowed) {
         mCostAllowed = costAllowed;
-        
-        
+        // ---------- Original Method ----------
+        //mCostAllowed = costAllowed;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.709 -0400", hash_original_method = "A41D9C3F2D62A3EB42A9C94631C7A3C6", hash_generated_method = "1083E4302B5434B4A49C843AEB690B58")
     public boolean isCostAllowed() {
         boolean var693DBFD3D8595E83FEC37E42A7E10FC5_1846409280 = (mCostAllowed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_955414028 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_955414028;
-        
-        
+        // ---------- Original Method ----------
+        //return mCostAllowed;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.710 -0400", hash_original_method = "22D4EC779FEBEFBD7A04B35673FD6242", hash_generated_method = "524AA438AB1E72E536604C84A2FEE4DD")
     public void setAltitudeRequired(boolean altitudeRequired) {
         mAltitudeRequired = altitudeRequired;
-        
-        
+        // ---------- Original Method ----------
+        //mAltitudeRequired = altitudeRequired;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.710 -0400", hash_original_method = "B960582E2C1A3651AC20223DA8436091", hash_generated_method = "B9085E1226C6E65D1B6A8A2ED5CF3538")
     public boolean isAltitudeRequired() {
         boolean var68A3FE577355C936A23E450FE3D7DBC9_1086885916 = (mAltitudeRequired);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_612963157 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_612963157;
-        
-        
+        // ---------- Original Method ----------
+        //return mAltitudeRequired;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.711 -0400", hash_original_method = "6A27513D0E2583F73F00042D0FDBD9E3", hash_generated_method = "8525723E1D70E6CFA504642A945EA5E3")
     public void setSpeedRequired(boolean speedRequired) {
         mSpeedRequired = speedRequired;
-        
-        
+        // ---------- Original Method ----------
+        //mSpeedRequired = speedRequired;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.711 -0400", hash_original_method = "F6BA7163C74D6BF39003C6333C2CFD6D", hash_generated_method = "1BC2FE6F817A4EE8B70AB4C3B4052574")
     public boolean isSpeedRequired() {
         boolean varCCB4571254AD4731D960379818749D41_1054008647 = (mSpeedRequired);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856617357 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856617357;
-        
-        
+        // ---------- Original Method ----------
+        //return mSpeedRequired;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.711 -0400", hash_original_method = "B68158C6EC7F405A349EABCD21ABA300", hash_generated_method = "9B323C768409D641E011EE1EA543FD58")
     public void setBearingRequired(boolean bearingRequired) {
         mBearingRequired = bearingRequired;
-        
-        
+        // ---------- Original Method ----------
+        //mBearingRequired = bearingRequired;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.712 -0400", hash_original_method = "17013BC273E96D7EA584C9522A6EEB48", hash_generated_method = "C7084FDF160FDD5F5E631E4711C5E531")
     public boolean isBearingRequired() {
         boolean var2AF7CBE0467BF9F76706A2F707AE0899_923731927 = (mBearingRequired);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1067201060 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1067201060;
-        
-        
+        // ---------- Original Method ----------
+        //return mBearingRequired;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.712 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6821E6BDA06EA8293774D82A5764390C")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2009242010 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005398703 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005398703;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.712 -0400", hash_original_method = "F656AD17D4B37BFDE841686B6FE00CD9", hash_generated_method = "FC69A3A3CCA44B5D59BAF7FA25866C5E")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);
@@ -364,16 +348,16 @@ public class Criteria implements Parcelable {
         parcel.writeInt(mBearingRequired ? 1 : 0);
         parcel.writeInt(mSpeedRequired ? 1 : 0);
         parcel.writeInt(mCostAllowed ? 1 : 0);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //parcel.writeInt(mHorizontalAccuracy);
+        //parcel.writeInt(mVerticalAccuracy);
+        //parcel.writeInt(mSpeedAccuracy);
+        //parcel.writeInt(mBearingAccuracy);
+        //parcel.writeInt(mPowerRequirement);
+        //parcel.writeInt(mAltitudeRequired ? 1 : 0);
+        //parcel.writeInt(mBearingRequired ? 1 : 0);
+        //parcel.writeInt(mSpeedRequired ? 1 : 0);
+        //parcel.writeInt(mCostAllowed ? 1 : 0);
     }
 
     
@@ -426,7 +410,7 @@ public class Criteria implements Parcelable {
             return new Criteria[size];
         }
     };
-    
+    // orphaned legacy method
     public Criteria createFromParcel(Parcel in) {
             Criteria c = new Criteria();
             c.mHorizontalAccuracy = in.readInt();
@@ -441,7 +425,7 @@ public class Criteria implements Parcelable {
             return c;
         }
     
-    
+    // orphaned legacy method
     public Criteria[] newArray(int size) {
             return new Criteria[size];
         }

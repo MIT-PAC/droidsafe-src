@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.394 -0400", hash_original_method = "88ED703AD5842214D5052F930ED18AF6", hash_generated_method = "88ED703AD5842214D5052F930ED18AF6")
     public BasicHeaderValueFormatter ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -39,45 +39,45 @@ public class BasicHeaderValueFormatter implements HeaderValueFormatter {
                 ("Header element array must not be null.");
             var6D707BD8515CDA6B9DA15274F01073DE_958281942.addTaint(taint);
             throw var6D707BD8515CDA6B9DA15274F01073DE_958281942;
-        } 
+        } //End block
         int len = estimateElementsLen(elems);
     if(buffer == null)        
         {
             buffer = new CharArrayBuffer(len);
-        } 
+        } //End block
         else
         {
             buffer.ensureCapacity(len);
-        } 
+        } //End block
 for(int i=0;i<elems.length;i++)
         {
     if(i > 0)            
             {
                 buffer.append(", ");
-            } 
+            } //End block
             formatHeaderElement(buffer, elems[i], quote);
-        } 
+        } //End block
 CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1169590738 =         buffer;
         varE75BCB56CC6A0BCEED51BE38E1BB3F38_1169590738.addTaint(taint);
         return varE75BCB56CC6A0BCEED51BE38E1BB3F38_1169590738;
-        
-        
-            
-                
-        
-        
-        
-            
-        
-            
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (elems == null) {
+            //throw new IllegalArgumentException
+                //("Header element array must not be null.");
+        //}
+        //int len = estimateElementsLen(elems);
+        //if (buffer == null) {
+            //buffer = new CharArrayBuffer(len);
+        //} else {
+            //buffer.ensureCapacity(len);
+        //}
+        //for (int i=0; i<elems.length; i++) {
+            //if (i > 0) {
+                //buffer.append(", ");
+            //}
+            //formatHeaderElement(buffer, elems[i], quote);
+        //}
+        //return buffer;
     }
 
     
@@ -94,18 +94,18 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1169590738 =         buffer;
 for(int i=0;i<elems.length;i++)
         {
             result += estimateHeaderElementLen(elems[i]);
-        } 
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_492057875 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_919533048 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_919533048;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((elems == null) || (elems.length < 1))
+            //return 0;
+        //int result = (elems.length-1) * 2;
+        //for (int i=0; i<elems.length; i++) {
+            //result += estimateHeaderElementLen(elems[i]);
+        //}
+        //return result;
     }
 
     
@@ -131,23 +131,23 @@ for(int i=0;i<elems.length;i++)
                 ("Header element must not be null.");
             varBA949992CEE23490EC32B9C602A0BD6E_1081638887.addTaint(taint);
             throw varBA949992CEE23490EC32B9C602A0BD6E_1081638887;
-        } 
+        } //End block
         int len = estimateHeaderElementLen(elem);
     if(buffer == null)        
         {
             buffer = new CharArrayBuffer(len);
-        } 
+        } //End block
         else
         {
             buffer.ensureCapacity(len);
-        } 
+        } //End block
         buffer.append(elem.getName());
         final String value = elem.getValue();
     if(value != null)        
         {
             buffer.append('=');
             doFormatValue(buffer, value, quote);
-        } 
+        } //End block
         final int parcnt = elem.getParameterCount();
     if(parcnt > 0)        
         {
@@ -155,36 +155,36 @@ for(int i=0;i<parcnt;i++)
             {
                 buffer.append("; ");
                 formatNameValuePair(buffer, elem.getParameter(i), quote);
-            } 
-        } 
+            } //End block
+        } //End block
 CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_214870945 =         buffer;
         varE75BCB56CC6A0BCEED51BE38E1BB3F38_214870945.addTaint(taint);
         return varE75BCB56CC6A0BCEED51BE38E1BB3F38_214870945;
-        
-        
-            
-                
-        
-        
-        
-            
-        
-            
-        
-        
-        
-        
-            
-            
-        
-        
-        
-            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (elem == null) {
+            //throw new IllegalArgumentException
+                //("Header element must not be null.");
+        //}
+        //int len = estimateHeaderElementLen(elem);
+        //if (buffer == null) {
+            //buffer = new CharArrayBuffer(len);
+        //} else {
+            //buffer.ensureCapacity(len);
+        //}
+        //buffer.append(elem.getName());
+        //final String value = elem.getValue();
+        //if (value != null) {
+            //buffer.append('=');
+            //doFormatValue(buffer, value, quote);
+        //}
+        //final int parcnt = elem.getParameterCount();
+        //if (parcnt > 0) {
+            //for (int i=0; i<parcnt; i++) {
+                //buffer.append("; ");
+                //formatNameValuePair(buffer, elem.getParameter(i), quote);
+            //}
+        //}
+        //return buffer;
     }
 
     
@@ -202,7 +202,7 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_214870945 =         buffer;
     if(value != null)        
         {
             result += 3 + value.length();
-        } 
+        } //End block
         final int parcnt = elem.getParameterCount();
     if(parcnt > 0)        
         {
@@ -210,27 +210,27 @@ for(int i=0;i<parcnt;i++)
             {
                 result += 2 +                   
                     estimateNameValuePairLen(elem.getParameter(i));
-            } 
-        } 
+            } //End block
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_1960646829 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408384588 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408384588;
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-                
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (elem == null)
+            //return 0;
+        //int result = elem.getName().length();
+        //final String value = elem.getValue();
+        //if (value != null) {
+            //result += 3 + value.length(); 
+        //}
+        //final int parcnt = elem.getParameterCount();
+        //if (parcnt > 0) {
+            //for (int i=0; i<parcnt; i++) {
+                //result += 2 +                   
+                    //estimateNameValuePairLen(elem.getParameter(i));
+            //}
+        //}
+        //return result;
     }
 
     
@@ -256,45 +256,45 @@ for(int i=0;i<parcnt;i++)
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_106241579.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_106241579;
-        } 
+        } //End block
         int len = estimateParametersLen(nvps);
     if(buffer == null)        
         {
             buffer = new CharArrayBuffer(len);
-        } 
+        } //End block
         else
         {
             buffer.ensureCapacity(len);
-        } 
+        } //End block
 for(int i = 0;i < nvps.length;i++)
         {
     if(i > 0)            
             {
                 buffer.append("; ");
-            } 
+            } //End block
             formatNameValuePair(buffer, nvps[i], quote);
-        } 
+        } //End block
 CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_2100508571 =         buffer;
         varE75BCB56CC6A0BCEED51BE38E1BB3F38_2100508571.addTaint(taint);
         return varE75BCB56CC6A0BCEED51BE38E1BB3F38_2100508571;
-        
-        
-            
-                
-        
-        
-        
-            
-        
-            
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (nvps == null) {
+            //throw new IllegalArgumentException
+                //("Parameters must not be null.");
+        //}
+        //int len = estimateParametersLen(nvps);
+        //if (buffer == null) {
+            //buffer = new CharArrayBuffer(len);
+        //} else {
+            //buffer.ensureCapacity(len);
+        //}
+        //for (int i = 0; i < nvps.length; i++) {
+            //if (i > 0) {
+                //buffer.append("; ");
+            //}
+            //formatNameValuePair(buffer, nvps[i], quote);
+        //}
+        //return buffer;
     }
 
     
@@ -311,18 +311,18 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_2100508571 =         buffer;
 for(int i=0;i<nvps.length;i++)
         {
             result += estimateNameValuePairLen(nvps[i]);
-        } 
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_1005115624 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1011888564 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1011888564;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((nvps == null) || (nvps.length < 1))
+            //return 0;
+        //int result = (nvps.length-1) * 2;
+        //for (int i=0; i<nvps.length; i++) {
+            //result += estimateNameValuePairLen(nvps[i]);
+        //}
+        //return result;
     }
 
     
@@ -348,44 +348,44 @@ for(int i=0;i<nvps.length;i++)
                 ("NameValuePair must not be null.");
             varA1F8A6CE6808E68C9B992D6FC903119E_2102473921.addTaint(taint);
             throw varA1F8A6CE6808E68C9B992D6FC903119E_2102473921;
-        } 
+        } //End block
         int len = estimateNameValuePairLen(nvp);
     if(buffer == null)        
         {
             buffer = new CharArrayBuffer(len);
-        } 
+        } //End block
         else
         {
             buffer.ensureCapacity(len);
-        } 
+        } //End block
         buffer.append(nvp.getName());
         final String value = nvp.getValue();
     if(value != null)        
         {
             buffer.append('=');
             doFormatValue(buffer, value, quote);
-        } 
+        } //End block
 CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1100984869 =         buffer;
         varE75BCB56CC6A0BCEED51BE38E1BB3F38_1100984869.addTaint(taint);
         return varE75BCB56CC6A0BCEED51BE38E1BB3F38_1100984869;
-        
-        
-            
-                
-        
-        
-        
-            
-        
-            
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (nvp == null) {
+            //throw new IllegalArgumentException
+                //("NameValuePair must not be null.");
+        //}
+        //int len = estimateNameValuePairLen(nvp);
+        //if (buffer == null) {
+            //buffer = new CharArrayBuffer(len);
+        //} else {
+            //buffer.ensureCapacity(len);
+        //}
+        //buffer.append(nvp.getName());
+        //final String value = nvp.getValue();
+        //if (value != null) {
+            //buffer.append('=');
+            //doFormatValue(buffer, value, quote);
+        //}
+        //return buffer;
     }
 
     
@@ -403,19 +403,19 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1100984869 =         buffer;
     if(value != null)        
         {
             result += 3 + value.length();
-        } 
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_1097233836 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1403206214 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1403206214;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (nvp == null)
+            //return 0;
+        //int result = nvp.getName().length();
+        //final String value = nvp.getValue();
+        //if (value != null) {
+            //result += 3 + value.length(); 
+        //}
+        //return result;
     }
 
     
@@ -431,44 +431,44 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1100984869 =         buffer;
 for(int i = 0;(i < value.length()) && !quote;i++)
             {
                 quote = isSeparator(value.charAt(i));
-            } 
-        } 
+            } //End block
+        } //End block
     if(quote)        
         {
             buffer.append('"');
-        } 
+        } //End block
 for(int i = 0;i < value.length();i++)
         {
             char ch = value.charAt(i);
     if(isUnsafe(ch))            
             {
                 buffer.append('\\');
-            } 
+            } //End block
             buffer.append(ch);
-        } 
+        } //End block
     if(quote)        
         {
             buffer.append('"');
-        } 
-        
-        
-            
-                
-            
-        
-        
-            
-        
-        
-            
-            
-                
-            
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!quote) {
+            //for (int i = 0; (i < value.length()) && !quote; i++) {
+                //quote = isSeparator(value.charAt(i));
+            //}
+        //}
+        //if (quote) {
+            //buffer.append('"');
+        //}
+        //for (int i = 0; i < value.length(); i++) {
+            //char ch = value.charAt(i);
+            //if (isUnsafe(ch)) {
+                //buffer.append('\\');
+            //}
+            //buffer.append(ch);
+        //}
+        //if (quote) {
+            //buffer.append('"');
+        //}
     }
 
     
@@ -478,8 +478,8 @@ for(int i = 0;i < value.length();i++)
         boolean varAC113434AC91E6DC6AC175EDA7A204A2_1139209236 = (SEPARATORS.indexOf(ch) >= 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1395039352 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1395039352;
-        
-        
+        // ---------- Original Method ----------
+        //return SEPARATORS.indexOf(ch) >= 0;
     }
 
     
@@ -489,8 +489,8 @@ for(int i = 0;i < value.length();i++)
         boolean varF124CB936D13034F60493ECEBAF12FB1_1946513062 = (UNSAFE_CHARS.indexOf(ch) >= 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_393915393 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_393915393;
-        
-        
+        // ---------- Original Method ----------
+        //return UNSAFE_CHARS.indexOf(ch) >= 0;
     }
 
     

@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
       DoubleArrayBuffer(double[] array) {
         this(array.length, array, 0);
         addTaint(array[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,7 +25,7 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
       DoubleArrayBuffer(int capacity) {
         this(capacity, new double[capacity], 0);
         addTaint(capacity);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -35,9 +35,9 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
         addTaint(capacity);
         this.backingArray = backingArray;
         this.offset = offset;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.backingArray = backingArray;
+        //this.offset = offset;
     }
 
     
@@ -49,15 +49,15 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1697101791 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_1697101791.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1697101791;
-        } 
+        } //End block
         double varD1A88672373807059A15983DE4C2AC9F_1067539881 = (backingArray[offset + position++]);
                 double varE8CD7DA078A86726031AD64F35F5A6C0_458908285 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_458908285;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (position == limit) {
+            //throw new BufferUnderflowException();
+        //}
+        //return backingArray[offset + position++];
     }
 
     
@@ -69,9 +69,9 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
         double varF4617D5762E2F642102CBB5F4FA87F0A_1876974619 = (backingArray[offset + index]);
                 double varE8CD7DA078A86726031AD64F35F5A6C0_416478697 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_416478697;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkIndex(index);
+        //return backingArray[offset + index];
     }
 
     
@@ -86,19 +86,19 @@ abstract class DoubleArrayBuffer extends DoubleBuffer {
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1966784761 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_1966784761.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1966784761;
-        } 
+        } //End block
         System.arraycopy(backingArray, offset + position, dst, dstOffset, doubleCount);
         position += doubleCount;
 DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_404760712 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_404760712.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_404760712;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (doubleCount > remaining()) {
+            //throw new BufferUnderflowException();
+        //}
+        //System.arraycopy(backingArray, offset + position, dst, dstOffset, doubleCount);
+        //position += doubleCount;
+        //return this;
     }
 
     
@@ -108,8 +108,8 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_404760712 =         this;
         boolean var68934A3E9455FA72420237EB05902327_931809489 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1869255806 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1869255806;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -119,8 +119,8 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_404760712 =         this;
 ByteOrder var1B533639214E0AD13A9C318946B77D59_917331522 =         ByteOrder.nativeOrder();
         var1B533639214E0AD13A9C318946B77D59_917331522.addTaint(taint);
         return var1B533639214E0AD13A9C318946B77D59_917331522;
-        
-        
+        // ---------- Original Method ----------
+        //return ByteOrder.nativeOrder();
     }
 
     

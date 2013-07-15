@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,53 +31,48 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.014 -0400", hash_original_method = "812619B49F53F101F754768C67C6D06B", hash_generated_method = "DB948983801BF86D0D9F511447C56561")
     private  GLES20RecordingCanvas() {
         super(true , true );
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static GLES20RecordingCanvas obtain(GLES20DisplayList displayList) {
+        static GLES20RecordingCanvas obtain(GLES20DisplayList displayList) {
         GLES20RecordingCanvas canvas = sPool.acquire();
         canvas.mDisplayList = displayList;
         return canvas;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.015 -0400", hash_original_method = "4BF651B582CB590909780C1869866D8B", hash_generated_method = "3D0617C1B82933B36561C4CD058E7E05")
      void recycle() {
         mDisplayList = null;
         resetDisplayListRenderer();
         sPool.release(this);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDisplayList = null;
+        //resetDisplayListRenderer();
+        //sPool.release(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.015 -0400", hash_original_method = "A71C73121DC15CD39FF9E0C285832C08", hash_generated_method = "7CD0CD2A12EBBD10623EBB86CFA6DF96")
      void start() {
         mDisplayList.mBitmaps.clear();
-        
-        
+        // ---------- Original Method ----------
+        //mDisplayList.mBitmaps.clear();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.016 -0400", hash_original_method = "71CBB11C79B7A62506CED8B00E21C814", hash_generated_method = "F4A0BF2DE7193AB2B5ADF240985F5CC5")
      int end(int nativeDisplayList) {
         addTaint(nativeDisplayList);
         int var350DF305047301C566992C4E00BEDCB4_191167139 = (getDisplayList(nativeDisplayList));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_421128306 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_421128306;
-        
-        
+        // ---------- Original Method ----------
+        //return getDisplayList(nativeDisplayList);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.016 -0400", hash_original_method = "FB81CD87D0D9397EB08E4403B91E1B9C", hash_generated_method = "84A19FE355FA90A053D69892410B2F03")
     private void recordShaderBitmap(Paint paint) {
         addTaint(paint.getTaint());
@@ -87,15 +82,15 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
     if(shader instanceof BitmapShader)            
             {
                 mDisplayList.mBitmaps.add(((BitmapShader) shader).mBitmap);
-            } 
-        } 
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (paint != null) {
+            //final Shader shader = paint.getShader();
+            //if (shader instanceof BitmapShader) {
+                //mDisplayList.mBitmaps.add(((BitmapShader) shader).mBitmap);
+            //}
+        //}
     }
 
     
@@ -108,9 +103,9 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(bitmap.getTaint());
         super.drawPatch(bitmap, chunks, dst, paint);
         mDisplayList.mBitmaps.add(bitmap);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawPatch(bitmap, chunks, dst, paint);
+        //mDisplayList.mBitmaps.add(bitmap);
     }
 
     
@@ -123,9 +118,9 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(bitmap.getTaint());
         super.drawBitmap(bitmap, left, top, paint);
         mDisplayList.mBitmaps.add(bitmap);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawBitmap(bitmap, left, top, paint);
+        //mDisplayList.mBitmaps.add(bitmap);
     }
 
     
@@ -137,9 +132,9 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(bitmap.getTaint());
         super.drawBitmap(bitmap, matrix, paint);
         mDisplayList.mBitmaps.add(bitmap);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawBitmap(bitmap, matrix, paint);
+        //mDisplayList.mBitmaps.add(bitmap);
     }
 
     
@@ -152,9 +147,9 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(bitmap.getTaint());
         super.drawBitmap(bitmap, src, dst, paint);
         mDisplayList.mBitmaps.add(bitmap);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawBitmap(bitmap, src, dst, paint);
+        //mDisplayList.mBitmaps.add(bitmap);
     }
 
     
@@ -167,9 +162,9 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(bitmap.getTaint());
         super.drawBitmap(bitmap, src, dst, paint);
         mDisplayList.mBitmaps.add(bitmap);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawBitmap(bitmap, src, dst, paint);
+        //mDisplayList.mBitmaps.add(bitmap);
     }
 
     
@@ -187,8 +182,8 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(offset);
         addTaint(colors[0]);
         super.drawBitmap(colors, offset, stride, x, y, width, height, hasAlpha, paint);
-        
-        
+        // ---------- Original Method ----------
+        //super.drawBitmap(colors, offset, stride, x, y, width, height, hasAlpha, paint);
     }
 
     
@@ -206,8 +201,8 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(offset);
         addTaint(colors[0]);
         super.drawBitmap(colors, offset, stride, x, y, width, height, hasAlpha, paint);
-        
-        
+        // ---------- Original Method ----------
+        //super.drawBitmap(colors, offset, stride, x, y, width, height, hasAlpha, paint);
     }
 
     
@@ -226,14 +221,13 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         super.drawBitmapMesh(bitmap, meshWidth, meshHeight, verts, vertOffset, colors, colorOffset,
                 paint);
         mDisplayList.mBitmaps.add(bitmap);
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //super.drawBitmapMesh(bitmap, meshWidth, meshHeight, verts, vertOffset, colors, colorOffset,
+                //paint);
+        //mDisplayList.mBitmaps.add(bitmap);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.020 -0400", hash_original_method = "4DF4209CA819AE22A2A14AA60ACB3697", hash_generated_method = "7FA98BE31BBFD397EDA6ED68FF58B4CD")
     @Override
     public void drawCircle(float cx, float cy, float radius, Paint paint) {
@@ -243,13 +237,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(cx);
         super.drawCircle(cx, cy, radius, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawCircle(cx, cy, radius, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.021 -0400", hash_original_method = "30C4D3613633A9FCB7ECF231471F3979", hash_generated_method = "E078C640E182C457607A37862602BF3C")
     @Override
     public void drawLine(float startX, float startY, float stopX, float stopY, Paint paint) {
@@ -260,13 +253,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(startX);
         super.drawLine(startX, startY, stopX, stopY, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawLine(startX, startY, stopX, stopY, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.021 -0400", hash_original_method = "C038B0F4E07BC63D9CC15294AD02864F", hash_generated_method = "FDE943AF1CA4E9DBD6DFE2980290C713")
     @Override
     public void drawLines(float[] pts, int offset, int count, Paint paint) {
@@ -276,13 +268,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(pts[0]);
         super.drawLines(pts, offset, count, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawLines(pts, offset, count, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.021 -0400", hash_original_method = "AA7BADDFA2C89121B41A7D51CA556ABA", hash_generated_method = "C630CD9D40A1AD6BF6FA849384E37755")
     @Override
     public void drawLines(float[] pts, Paint paint) {
@@ -290,13 +281,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(pts[0]);
         super.drawLines(pts, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawLines(pts, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.022 -0400", hash_original_method = "A2B91942D85687989A62C3285DF43905", hash_generated_method = "CC8C05D43D385F288AABCBBD43E06A32")
     @Override
     public void drawOval(RectF oval, Paint paint) {
@@ -304,26 +294,24 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(oval.getTaint());
         super.drawOval(oval, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawOval(oval, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.022 -0400", hash_original_method = "7748C9BE2561EA173914AC3CFE087B19", hash_generated_method = "6567D55157454EF215213156E298CD48")
     @Override
     public void drawPaint(Paint paint) {
         addTaint(paint.getTaint());
         super.drawPaint(paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawPaint(paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.022 -0400", hash_original_method = "3120F956E0FE224EB056D8CDF132CF1F", hash_generated_method = "D233308565F5D12EDA0144A02425044E")
     @Override
     public void drawPath(Path path, Paint paint) {
@@ -331,13 +319,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(path.getTaint());
         super.drawPath(path, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawPath(path, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.023 -0400", hash_original_method = "412A4CCC07E20298CEA55E5ECEB83C32", hash_generated_method = "5475AB463B1D63D3A9E799ABFF4F6897")
     @Override
     public void drawPoint(float x, float y, Paint paint) {
@@ -346,13 +333,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(x);
         super.drawPoint(x, y, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawPoint(x, y, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.023 -0400", hash_original_method = "51E132A0609F9B860C87F98C31B83F8B", hash_generated_method = "0FEB7362827B8B9AB55B69B3809C11C7")
     @Override
     public void drawPoints(float[] pts, int offset, int count, Paint paint) {
@@ -362,13 +348,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(pts[0]);
         super.drawPoints(pts, offset, count, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawPoints(pts, offset, count, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.023 -0400", hash_original_method = "3DB950A55A272851AB93E72BAA2C6BF0", hash_generated_method = "A9CA094AA2756DBF0F494F344EAAE78B")
     @Override
     public void drawPoints(float[] pts, Paint paint) {
@@ -376,13 +361,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(pts[0]);
         super.drawPoints(pts, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawPoints(pts, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.024 -0400", hash_original_method = "5812B7883E39E96F67ED930BCE1DE4A7", hash_generated_method = "7A2DE19F4BFEB33B1CC907A5AB9A8DCD")
     @Override
     public void drawPosText(char[] text, int index, int count, float[] pos, Paint paint) {
@@ -393,13 +377,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text[0]);
         super.drawPosText(text, index, count, pos, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawPosText(text, index, count, pos, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.024 -0400", hash_original_method = "CA8025B27EF9941F6DFBC1DE361D5F43", hash_generated_method = "E8D57A0273F93C0DCA46A13CED98F93F")
     @Override
     public void drawPosText(String text, float[] pos, Paint paint) {
@@ -408,13 +391,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text.getTaint());
         super.drawPosText(text, pos, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawPosText(text, pos, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.024 -0400", hash_original_method = "D641E5ABFD7437F3EDFED3D71E56C934", hash_generated_method = "D2BFAC4BC7A6C6A00008FE31B70C005F")
     @Override
     public void drawRect(float left, float top, float right, float bottom, Paint paint) {
@@ -425,13 +407,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(left);
         super.drawRect(left, top, right, bottom, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawRect(left, top, right, bottom, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.025 -0400", hash_original_method = "F96FFCB74ADCDDC7497B805FFF815A67", hash_generated_method = "F8E27C370A6EED654C0C70DA551AA8F1")
     @Override
     public void drawRect(Rect r, Paint paint) {
@@ -439,13 +420,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(r.getTaint());
         super.drawRect(r, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawRect(r, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.025 -0400", hash_original_method = "F0BA570E177EFC714FE45C2E3865CC67", hash_generated_method = "86BA5B783EF078F61582D13AE63D443F")
     @Override
     public void drawRect(RectF r, Paint paint) {
@@ -453,13 +433,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(r.getTaint());
         super.drawRect(r, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawRect(r, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.025 -0400", hash_original_method = "E275D35476CEA326D993C73B901ED23A", hash_generated_method = "42D44236AAC21880E7653CB2A3EDE4F4")
     @Override
     public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
@@ -469,13 +448,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(rect.getTaint());
         super.drawRoundRect(rect, rx, ry, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawRoundRect(rect, rx, ry, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.026 -0400", hash_original_method = "60E63B8EF17911ACF468A6FDA91C5D63", hash_generated_method = "58D1C58438D8D62A0CE18DB2645A41EA")
     @Override
     public void drawText(char[] text, int index, int count, float x, float y, Paint paint) {
@@ -487,13 +465,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text[0]);
         super.drawText(text, index, count, x, y, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawText(text, index, count, x, y, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.026 -0400", hash_original_method = "585212AEA550FACE039047645BC98BED", hash_generated_method = "77F0C43229D3AA5D9274C1E4AB3E8444")
     @Override
     public void drawText(CharSequence text, int start, int end, float x, float y, Paint paint) {
@@ -505,13 +482,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text.getTaint());
         super.drawText(text, start, end, x, y, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawText(text, start, end, x, y, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.026 -0400", hash_original_method = "63DF32BDCE465690FDE2F1D69ECEEFE0", hash_generated_method = "3AEEF3A858BAA5C3334E8D47E0D70FB8")
     @Override
     public void drawText(String text, int start, int end, float x, float y, Paint paint) {
@@ -523,13 +499,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text.getTaint());
         super.drawText(text, start, end, x, y, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawText(text, start, end, x, y, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.027 -0400", hash_original_method = "0944F1DD1D16CFB38C8E528DA520FB54", hash_generated_method = "EA827CCB07CF15CD1DE9D47E7FEEC760")
     @Override
     public void drawText(String text, float x, float y, Paint paint) {
@@ -539,13 +514,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text.getTaint());
         super.drawText(text, x, y, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawText(text, x, y, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.027 -0400", hash_original_method = "17C6301AC506947D36623830CCD53DA2", hash_generated_method = "EE75CC41F305E7597C59EF5B0DB87F87")
     @Override
     public void drawTextOnPath(char[] text, int index, int count, Path path, float hOffset,
@@ -559,13 +533,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text[0]);
         super.drawTextOnPath(text, index, count, path, hOffset, vOffset, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawTextOnPath(text, index, count, path, hOffset, vOffset, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.028 -0400", hash_original_method = "2FD74C6C408C83B9960286A926052773", hash_generated_method = "92B0B8CBADD886B5BB726708055CF927")
     @Override
     public void drawTextOnPath(String text, Path path, float hOffset, float vOffset, Paint paint) {
@@ -576,13 +549,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text.getTaint());
         super.drawTextOnPath(text, path, hOffset, vOffset, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawTextOnPath(text, path, hOffset, vOffset, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.028 -0400", hash_original_method = "05CE94B81669916A196F6078E75D04C9", hash_generated_method = "14E75404EB3C1C6E8B0352E16F8D8B81")
     @Override
     public void drawTextRun(char[] text, int index, int count, int contextIndex, int contextCount,
@@ -598,13 +570,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text[0]);
         super.drawTextRun(text, index, count, contextIndex, contextCount, x, y, dir, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawTextRun(text, index, count, contextIndex, contextCount, x, y, dir, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.029 -0400", hash_original_method = "E7125E7BBA30897AB93AB262D69717F5", hash_generated_method = "84D6BEFD691E0FAF922B4E46D1C8BF9B")
     @Override
     public void drawTextRun(CharSequence text, int start, int end, int contextStart,
@@ -620,13 +591,12 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         addTaint(text.getTaint());
         super.drawTextRun(text, start, end, contextStart, contextEnd, x, y, dir, paint);
         recordShaderBitmap(paint);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.drawTextRun(text, start, end, contextStart, contextEnd, x, y, dir, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.029 -0400", hash_original_method = "83D483EF2452A3F57A0616F8CAF895D5", hash_generated_method = "93B66F2676B62541F40B3E7B62592CE5")
     @Override
     public void drawVertices(VertexMode mode, int vertexCount, float[] verts, int vertOffset,
@@ -647,54 +617,50 @@ class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20Recor
         super.drawVertices(mode, vertexCount, verts, vertOffset, texs, texOffset, colors,
                 colorOffset, indices, indexOffset, indexCount, paint);
         recordShaderBitmap(paint);
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //super.drawVertices(mode, vertexCount, verts, vertOffset, texs, texOffset, colors,
+                //colorOffset, indices, indexOffset, indexCount, paint);
+        //recordShaderBitmap(paint);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.030 -0400", hash_original_method = "9CAF97A102D33FFCF9C056A4D55F3569", hash_generated_method = "DF82B101FEBF96C771DE65BF68D21792")
     @Override
     public GLES20RecordingCanvas getNextPoolable() {
 GLES20RecordingCanvas var5612CC1D0E3746BA465EFD9B27DD0183_1293848331 =         mNextPoolable;
         var5612CC1D0E3746BA465EFD9B27DD0183_1293848331.addTaint(taint);
         return var5612CC1D0E3746BA465EFD9B27DD0183_1293848331;
-        
-        
+        // ---------- Original Method ----------
+        //return mNextPoolable;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.030 -0400", hash_original_method = "7B44EE8A9B50CDC1F4718A77AC31B644", hash_generated_method = "2EC27BE1EC2F279F97DC352220AC5CA9")
     @Override
     public void setNextPoolable(GLES20RecordingCanvas element) {
         mNextPoolable = element;
-        
-        
+        // ---------- Original Method ----------
+        //mNextPoolable = element;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.030 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "BD159D7634D766C510F5B333B216B00F")
     @Override
     public boolean isPooled() {
         boolean var224D05F4261498DA1D9DF38424832532_2101457011 = (mIsPooled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_965376105 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_965376105;
-        
-        
+        // ---------- Original Method ----------
+        //return mIsPooled;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.031 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "340F14801E8F39C4D5683CC10C769565")
     @Override
     public void setPooled(boolean isPooled) {
         mIsPooled = isPooled;
-        
-        
+        // ---------- Original Method ----------
+        //mIsPooled = isPooled;
     }
 
     

@@ -1,6 +1,6 @@
 package android.inputmethodservice;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,7 +32,7 @@ public class ExtractEditLayout extends LinearLayout {
     public  ExtractEditLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -41,7 +41,7 @@ public class ExtractEditLayout extends LinearLayout {
         super(context, attrs);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -61,32 +61,31 @@ public class ExtractEditLayout extends LinearLayout {
 ActionMode var39C6EC747783AFD94A86A7BFC763D859_896962650 =             mode;
             var39C6EC747783AFD94A86A7BFC763D859_896962650.addTaint(taint);
             return var39C6EC747783AFD94A86A7BFC763D859_896962650;
-        } 
+        } //End block
 ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
         var540C13E9E156B687226421B24F2DF178_1805606483.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1805606483;
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //final ExtractActionMode mode = new ExtractActionMode(cb);
+        //if (mode.dispatchOnCreate()) {
+            //mode.invalidate();
+            //mExtractActionButton.setVisibility(INVISIBLE);
+            //mEditButton.setVisibility(VISIBLE);
+            //mActionMode = mode;
+            //sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+            //return mode;
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.060 -0400", hash_original_method = "587B198236267AC63B96064EC21D7789", hash_generated_method = "B633690EE10B06BF4C97A68CC4DE8064")
     public boolean isActionModeStarted() {
         boolean varDA8565957A542E3140746B0CEB2A49C1_1729682286 = (mActionMode != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1726237491 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1726237491;
-        
-        
+        // ---------- Original Method ----------
+        //return mActionMode != null;
     }
 
     
@@ -95,47 +94,47 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
     if(mActionMode != null)        
         {
             mActionMode.finish();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mActionMode != null) {
+            //mActionMode.finish();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.061 -0400", hash_original_method = "F4E3F3E884E506D9FE93C33AFB725466", hash_generated_method = "44EBAD2437B0DF22373A7E76EA21D40D")
     @Override
     public void onFinishInflate() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onFinishInflate();
         mExtractActionButton = (Button) findViewById(com.android.internal.R.id.inputExtractAction);
         mEditButton = (Button) findViewById(com.android.internal.R.id.inputExtractEditButton);
         mEditButton.setOnClickListener(new OnClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.061 -0400", hash_original_method = "80ABF702BB778CBFC3E3D00BD35B5A63", hash_generated_method = "0CCA4BBBFC7BF284DEC747CFAA41AAA5")
         public void onClick(View clicked) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(clicked.getTaint());
     if(mActionMode != null)            
             {
                 new MenuPopupHelper(getContext(), mActionMode.mMenu, clicked).show();
-            } 
-            
-            
-                    
-                
+            } //End block
+            // ---------- Original Method ----------
+            //if (mActionMode != null) {
+                    //new MenuPopupHelper(getContext(), mActionMode.mMenu, clicked).show();
+                //}
         }
 });
-        
-        
-        
-        
-        
-            
-                
-                    
-                
-            
-        
+        // ---------- Original Method ----------
+        //super.onFinishInflate();
+        //mExtractActionButton = (Button) findViewById(com.android.internal.R.id.inputExtractAction);
+        //mEditButton = (Button) findViewById(com.android.internal.R.id.inputExtractEditButton);
+        //mEditButton.setOnClickListener(new OnClickListener() {
+            //public void onClick(View clicked) {
+                //if (mActionMode != null) {
+                    //new MenuPopupHelper(getContext(), mActionMode.mMenu, clicked).show();
+                //}
+            //}
+        //});
     }
 
     
@@ -152,55 +151,50 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
             mMenu = new MenuBuilder(getContext());
             mMenu.setCallback(this);
             mCallback = cb;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mMenu = new MenuBuilder(getContext());
+            //mMenu.setCallback(this);
+            //mCallback = cb;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.063 -0400", hash_original_method = "F1AD782B0CD2259E0BE9FDDD0EC2ADD5", hash_generated_method = "EA5142F85218179C74E31C4344F7840C")
         @Override
         public void setTitle(CharSequence title) {
             addTaint(title.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.063 -0400", hash_original_method = "B30C6763E9E5F305FC4AC0CFECBEE869", hash_generated_method = "C6BC91ECFE1C379B9775192FE76B7EE1")
         @Override
         public void setTitle(int resId) {
             addTaint(resId);
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.064 -0400", hash_original_method = "EB006AC48BB7A6AA8B2958DC91304E5C", hash_generated_method = "9DFEDFD3C97DB086294C2841AEBA9335")
         @Override
         public void setSubtitle(CharSequence subtitle) {
             addTaint(subtitle.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.065 -0400", hash_original_method = "1F86E8EB25240C47EC24308D126D97B9", hash_generated_method = "D51D417B20F4E43280CDC3BCD8EA2931")
         @Override
         public void setSubtitle(int resId) {
             addTaint(resId);
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.065 -0400", hash_original_method = "3E94F533B6F67EA66D83CADA4353AF33", hash_generated_method = "A18B374E9FE9E6972BDC43896DF58822")
         @Override
         public void setCustomView(View view) {
             addTaint(view.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -211,18 +205,18 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
             try 
             {
                 mCallback.onPrepareActionMode(this, mMenu);
-            } 
+            } //End block
             finally 
             {
                 mMenu.startDispatchingItemsChanged();
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mMenu.stopDispatchingItemsChanged();
+            //try {
+                //mCallback.onPrepareActionMode(this, mMenu);
+            //} finally {
+                //mMenu.startDispatchingItemsChanged();
+            //}
         }
 
         
@@ -234,18 +228,18 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
                 boolean varF1C88BDD71CAE111F59B32DE7A3CE40A_762207039 = (mCallback.onCreateActionMode(this, mMenu));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980033803 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1980033803;
-            } 
+            } //End block
             finally 
             {
                 mMenu.startDispatchingItemsChanged();
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mMenu.stopDispatchingItemsChanged();
+            //try {
+                //return mCallback.onCreateActionMode(this, mMenu);
+            //} finally {
+                //mMenu.startDispatchingItemsChanged();
+            //}
         }
 
         
@@ -255,71 +249,67 @@ ActionMode var540C13E9E156B687226421B24F2DF178_1805606483 =         null;
     if(mActionMode != this)            
             {
                 return;
-            } 
+            } //End block
             mCallback.onDestroyActionMode(this);
             mCallback = null;
             mExtractActionButton.setVisibility(VISIBLE);
             mEditButton.setVisibility(INVISIBLE);
             sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
             mActionMode = null;
-            
-            
-                
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mActionMode != this) {
+                //return;
+            //}
+            //mCallback.onDestroyActionMode(this);
+            //mCallback = null;
+            //mExtractActionButton.setVisibility(VISIBLE);
+            //mEditButton.setVisibility(INVISIBLE);
+            //sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+            //mActionMode = null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.067 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "8BD1B838593F29C003CFF1481CBA437A")
         @Override
         public Menu getMenu() {
 Menu var10D851031FD6BA7C53B0186C7F1D9213_292018835 =             mMenu;
             var10D851031FD6BA7C53B0186C7F1D9213_292018835.addTaint(taint);
             return var10D851031FD6BA7C53B0186C7F1D9213_292018835;
-            
-            
+            // ---------- Original Method ----------
+            //return mMenu;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.068 -0400", hash_original_method = "CD9B990298CF856E49A643E530553914", hash_generated_method = "C5584AA4941E9CFA103793172CB08342")
         @Override
         public CharSequence getTitle() {
 CharSequence var540C13E9E156B687226421B24F2DF178_130141734 =             null;
             var540C13E9E156B687226421B24F2DF178_130141734.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_130141734;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.068 -0400", hash_original_method = "F475DA391A1931FE20FFD2579FFFF5AF", hash_generated_method = "5B3DD6543AE7F43D712D6AFEA702AC70")
         @Override
         public CharSequence getSubtitle() {
 CharSequence var540C13E9E156B687226421B24F2DF178_213167180 =             null;
             var540C13E9E156B687226421B24F2DF178_213167180.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_213167180;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.069 -0400", hash_original_method = "7A49E6A1A0BF55D8D926541A71E4907E", hash_generated_method = "84B7E26A8AFD55DADBC0E410BA90C2D7")
         @Override
         public View getCustomView() {
 View var540C13E9E156B687226421B24F2DF178_518559354 =             null;
             var540C13E9E156B687226421B24F2DF178_518559354.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_518559354;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
@@ -329,15 +319,15 @@ View var540C13E9E156B687226421B24F2DF178_518559354 =             null;
 MenuInflater varF9281FDCAD705FC65F86153FDD312F6B_1365730470 =             new MenuInflater(getContext());
             varF9281FDCAD705FC65F86153FDD312F6B_1365730470.addTaint(taint);
             return varF9281FDCAD705FC65F86153FDD312F6B_1365730470;
-            
-            
+            // ---------- Original Method ----------
+            //return new MenuInflater(getContext());
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.070 -0400", hash_original_method = "51BD8FD51955B080CEEB769553E9A9F7", hash_generated_method = "3297D41E3ADF9C24DD47FCA7EFABCEFC")
         @Override
         public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(item.getTaint());
             addTaint(menu.getTaint());
     if(mCallback != null)            
@@ -345,25 +335,24 @@ MenuInflater varF9281FDCAD705FC65F86153FDD312F6B_1365730470 =             new Me
                 boolean var3FFB98B393CA4BB1089E3B773EEE7A13_2104220291 = (mCallback.onActionItemClicked(this, item));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_564992498 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_564992498;
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_1825385690 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1385729013 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1385729013;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mCallback != null) {
+                //return mCallback.onActionItemClicked(this, item);
+            //}
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.071 -0400", hash_original_method = "BD3281B75359F57929C0B7D8E3BC0065", hash_generated_method = "4DC0BAA3678E3B1F051D28FC48B7B7DA")
         @Override
         public void onMenuModeChange(MenuBuilder menu) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(menu.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         

@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class WaitingThreadAborter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.190 -0400", hash_original_method = "41E9B73CB6D6B9988302B233DF5A4C64", hash_generated_method = "41E9B73CB6D6B9988302B233DF5A4C64")
     public WaitingThreadAborter ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -25,10 +25,10 @@ public class WaitingThreadAborter {
         aborted = true;
     if(waitingThread != null)        
         waitingThread.interrupt();
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //aborted = true;
+        //if (waitingThread != null)
+            //waitingThread.interrupt();
     }
 
     
@@ -37,10 +37,10 @@ public class WaitingThreadAborter {
         this.waitingThread = waitingThread;
     if(aborted)        
         waitingThread.interrupt();
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //this.waitingThread = waitingThread;
+        //if (aborted)
+            //waitingThread.interrupt();
     }
 
     

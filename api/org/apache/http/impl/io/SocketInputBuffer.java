@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,15 +29,15 @@ public class SocketInputBuffer extends AbstractSessionInputBuffer {
             IllegalArgumentException varCBABC6A96FAFFF53CCBEEA230A20A836_1450681802 = new IllegalArgumentException("Socket may not be null");
             varCBABC6A96FAFFF53CCBEEA230A20A836_1450681802.addTaint(taint);
             throw varCBABC6A96FAFFF53CCBEEA230A20A836_1450681802;
-        } 
+        } //End block
         this.socket = socket;
         init(socket.getInputStream(), 8192, params);
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (socket == null) {
+            //throw new IllegalArgumentException("Socket may not be null");
+        //}
+        //this.socket = socket;
+        //init(socket.getInputStream(), 8192, params);
     }
 
     
@@ -53,40 +53,40 @@ public class SocketInputBuffer extends AbstractSessionInputBuffer {
                 this.socket.setSoTimeout(timeout);
                 fillBuffer();
                 result = hasBufferedData();
-            } 
+            } //End block
             catch (InterruptedIOException e)
             {
     if(!(e instanceof SocketTimeoutException))                
                 {
                     e.addTaint(taint);
                     throw e;
-                } 
-            } 
+                } //End block
+            } //End block
             finally 
             {
                 socket.setSoTimeout(oldtimeout);
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB4A88417B3D0170D754C647C30B7216A_2048113791 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1377777816 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1377777816;
-        
-        
-        
-            
-            
-                
-                
-                
-            
-                
-                    
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean result = hasBufferedData();
+        //if (!result) {
+            //int oldtimeout = this.socket.getSoTimeout();
+            //try {
+                //this.socket.setSoTimeout(timeout);
+                //fillBuffer();
+                //result = hasBufferedData();
+            //} catch (InterruptedIOException e) {
+                //if (!(e instanceof SocketTimeoutException)) {
+                    //throw e;
+                //}
+            //} finally {
+                //socket.setSoTimeout(oldtimeout);
+            //}
+        //}
+        //return result;
     }
 
     
@@ -97,7 +97,7 @@ public class SocketInputBuffer extends AbstractSessionInputBuffer {
             boolean var68934A3E9455FA72420237EB05902327_674743309 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1624260660 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1624260660;
-        } 
+        } //End block
         int oldTimeout = this.socket.getSoTimeout();
         try 
         {
@@ -105,38 +105,38 @@ public class SocketInputBuffer extends AbstractSessionInputBuffer {
             boolean varA211DC4BE010635677D918CB42B101A9_551360419 = (fillBuffer() == -1);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_715941096 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_715941096;
-        } 
+        } //End block
         catch (SocketTimeoutException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_72762242 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_46316952 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_46316952;
-        } 
+        } //End block
         catch (IOException e)
         {
             boolean varB326B5062B2F0E69046810717534CB09_741789170 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_454229365 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_454229365;
-        } 
+        } //End block
         finally 
         {
             this.socket.setSoTimeout(oldTimeout);
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (hasBufferedData()) {
+            //return false;
+        //}
+        //int oldTimeout = this.socket.getSoTimeout();
+        //try {
+            //this.socket.setSoTimeout(1);
+            //return fillBuffer() == -1;
+        //} catch (SocketTimeoutException e) {
+            //return false; 
+        //} catch (IOException e) {
+            //return true; 
+        //} finally {
+            //this.socket.setSoTimeout(oldTimeout);
+        //}
     }
 
     

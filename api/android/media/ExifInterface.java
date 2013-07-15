@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,9 +27,9 @@ public class ExifInterface {
     public  ExifInterface(String filename) throws IOException {
         mFilename = filename;
         loadAttributes();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFilename = filename;
+        //loadAttributes();
     }
 
     
@@ -39,8 +39,8 @@ public class ExifInterface {
 String var984FA96876C228843C10ABE1B24ED2DB_1899988224 =         mAttributes.get(tag);
         var984FA96876C228843C10ABE1B24ED2DB_1899988224.addTaint(taint);
         return var984FA96876C228843C10ABE1B24ED2DB_1899988224;
-        
-        
+        // ---------- Original Method ----------
+        //return mAttributes.get(tag);
     }
 
     
@@ -60,21 +60,21 @@ String var984FA96876C228843C10ABE1B24ED2DB_1899988224 =         mAttributes.get(
             int varB5BB1A07405F9872F5E52B2551538444_2119903791 = (Integer.valueOf(value));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1849615759 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1849615759;
-        } 
+        } //End block
         catch (NumberFormatException ex)
         {
             int var16830A58E1E33A4163524366BA7B701B_760601148 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396869961 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396869961;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String value = mAttributes.get(tag);
+        //if (value == null) return defaultValue;
+        //try {
+            //return Integer.valueOf(value);
+        //} catch (NumberFormatException ex) {
+            //return defaultValue;
+        //}
     }
 
     
@@ -109,26 +109,26 @@ String var984FA96876C228843C10ABE1B24ED2DB_1899988224 =         mAttributes.get(
             double var4A7BF976D754F111D9B21C5063257BAC_1728506472 = (num / denom);
                         double varE8CD7DA078A86726031AD64F35F5A6C0_1997606864 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1997606864;
-        } 
+        } //End block
         catch (NumberFormatException ex)
         {
             double var16830A58E1E33A4163524366BA7B701B_964522786 = (defaultValue);
                         double varE8CD7DA078A86726031AD64F35F5A6C0_845009089 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_845009089;
-        } 
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String value = mAttributes.get(tag);
+        //if (value == null) return defaultValue;
+        //try {
+            //int index = value.indexOf("/");
+            //if (index == -1) return defaultValue;
+            //double denom = Double.parseDouble(value.substring(index + 1));
+            //if (denom == 0) return defaultValue;
+            //double num = Double.parseDouble(value.substring(0, index));
+            //return num / denom;
+        //} catch (NumberFormatException ex) {
+            //return defaultValue;
+        //}
     }
 
     
@@ -137,8 +137,8 @@ String var984FA96876C228843C10ABE1B24ED2DB_1899988224 =         mAttributes.get(
         addTaint(value.getTaint());
         addTaint(tag.getTaint());
         mAttributes.put(tag, value);
-        
-        
+        // ---------- Original Method ----------
+        //mAttributes.put(tag, value);
     }
 
     
@@ -149,7 +149,7 @@ String var984FA96876C228843C10ABE1B24ED2DB_1899988224 =         mAttributes.get(
         synchronized
 (sLock)        {
             attrStr = getAttributesNative(mFilename);
-        } 
+        } //End block
         int ptr = attrStr.indexOf(' ');
         int count = Integer.parseInt(attrStr.substring(0, ptr));
         ++ptr;
@@ -166,14 +166,14 @@ for(int i = 0;i < count;i++)
     if(attrName.equals("hasThumbnail"))            
             {
                 mHasThumbnail = attrValue.equalsIgnoreCase("true");
-            } 
+            } //End block
             else
             {
                 mAttributes.put(attrName, attrValue);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -184,7 +184,7 @@ for(int i = 0;i < count;i++)
     if(mAttributes.containsKey("hasThumbnail"))        
         {
             --size;
-        } 
+        } //End block
         sb.append(size + " ");
 for(Map.Entry<String, String> iter : mAttributes.entrySet())
         {
@@ -192,51 +192,50 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     if(key.equals("hasThumbnail"))            
             {
                 continue;
-            } 
+            } //End block
             String val = iter.getValue();
             sb.append(key + "=");
             sb.append(val.length() + " ");
             sb.append(val);
-        } 
+        } //End block
         String s = sb.toString();
         synchronized
 (sLock)        {
             saveAttributesNative(mFilename, s);
             commitChangesNative(mFilename);
-        } 
-        
-        
-        
-        
-            
-        
-        
-        
-            
-            
-                
-            
-            
-            
-            
-            
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder();
+        //int size = mAttributes.size();
+        //if (mAttributes.containsKey("hasThumbnail")) {
+            //--size;
+        //}
+        //sb.append(size + " ");
+        //for (Map.Entry<String, String> iter : mAttributes.entrySet()) {
+            //String key = iter.getKey();
+            //if (key.equals("hasThumbnail")) {
+                //continue;
+            //}
+            //String val = iter.getValue();
+            //sb.append(key + "=");
+            //sb.append(val.length() + " ");
+            //sb.append(val);
+        //}
+        //String s = sb.toString();
+        //synchronized (sLock) {
+            //saveAttributesNative(mFilename, s);
+            //commitChangesNative(mFilename);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.800 -0400", hash_original_method = "8ADD93432A1FBC3F2D5AE95E2101E8B1", hash_generated_method = "88A05E518BD99AA92AC9A4304F0A1D1F")
     public boolean hasThumbnail() {
         boolean varE3FE02CCD86450EB1D96C4963640A0F3_758976742 = (mHasThumbnail);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1100291255 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1100291255;
-        
-        
+        // ---------- Original Method ----------
+        //return mHasThumbnail;
     }
 
     
@@ -247,11 +246,11 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
             byte[] var634856D0121AA336180E58F896EAF747_2055267736 = (getThumbnailNative(mFilename));
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1003939832 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1003939832;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (sLock) {
+            //return getThumbnailNative(mFilename);
+        //}
     }
 
     
@@ -271,28 +270,28 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
                 boolean varB326B5062B2F0E69046810717534CB09_1677711369 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1969900186 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1969900186;
-            } 
+            } //End block
             catch (IllegalArgumentException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_2005555080 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1336479955 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1336479955;
-        
-        
-        
-        
-        
-        
-            
-                
-                
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //String latValue = mAttributes.get(ExifInterface.TAG_GPS_LATITUDE);
+        //String latRef = mAttributes.get(ExifInterface.TAG_GPS_LATITUDE_REF);
+        //String lngValue = mAttributes.get(ExifInterface.TAG_GPS_LONGITUDE);
+        //String lngRef = mAttributes.get(ExifInterface.TAG_GPS_LONGITUDE_REF);
+        //if (latValue != null && latRef != null && lngValue != null && lngRef != null) {
+            //try {
+                //output[0] = convertRationalLatLonToFloat(latValue, latRef);
+                //output[1] = convertRationalLatLonToFloat(lngValue, lngRef);
+                //return true;
+            //} catch (IllegalArgumentException e) {
+            //}
+        //}
+        //return false;
     }
 
     
@@ -306,21 +305,21 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
             double varAE0AD3FB90EBF29EBD2EBA0F40F64759_941551628 = ((double) (altitude * ((ref == 1) ? -1 : 1)));
                         double varE8CD7DA078A86726031AD64F35F5A6C0_1322959591 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1322959591;
-        } 
+        } //End block
         else
         {
             double var16830A58E1E33A4163524366BA7B701B_1349857060 = (defaultValue);
                         double varE8CD7DA078A86726031AD64F35F5A6C0_1385846979 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1385846979;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //double altitude = getAttributeDouble(TAG_GPS_ALTITUDE, -1);
+        //int ref = getAttributeInt(TAG_GPS_ALTITUDE_REF, -1);
+        //if (altitude >= 0 && ref >= 0) {
+            //return (double) (altitude * ((ref == 1) ? -1 : 1));
+        //} else {
+            //return defaultValue;
+        //}
     }
 
     
@@ -346,24 +345,24 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
             long varFEBB55B716E8C0C81F51A658C798AC40_2099842176 = (datetime.getTime());
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_218814362 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_218814362;
-        } 
+        } //End block
         catch (IllegalArgumentException ex)
         {
             long var6BB61E3B7BCE0931DA574D19D1D82C88_2012154947 = (-1);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1106823041 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1106823041;
-        } 
-        
-        
-        
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String dateTimeString = mAttributes.get(TAG_DATETIME);
+        //if (dateTimeString == null) return -1;
+        //ParsePosition pos = new ParsePosition(0);
+        //try {
+            //Date datetime = sFormatter.parse(dateTimeString, pos);
+            //if (datetime == null) return -1;
+            //return datetime.getTime();
+        //} catch (IllegalArgumentException ex) {
+            //return -1;
+        //}
     }
 
     
@@ -397,27 +396,27 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
             long varFEBB55B716E8C0C81F51A658C798AC40_1101535818 = (datetime.getTime());
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1825850144 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1825850144;
-        } 
+        } //End block
         catch (IllegalArgumentException ex)
         {
             long var6BB61E3B7BCE0931DA574D19D1D82C88_1495476682 = (-1);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1702980336 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1702980336;
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String date = mAttributes.get(TAG_GPS_DATESTAMP);
+        //String time = mAttributes.get(TAG_GPS_TIMESTAMP);
+        //if (date == null || time == null) return -1;
+        //String dateTimeString = date + ' ' + time;
+        //if (dateTimeString == null) return -1;
+        //ParsePosition pos = new ParsePosition(0);
+        //try {
+            //Date datetime = sFormatter.parse(dateTimeString, pos);
+            //if (datetime == null) return -1;
+            //return datetime.getTime();
+        //} catch (IllegalArgumentException ex) {
+            //return -1;
+        //}
     }
 
     
@@ -448,7 +447,6 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.809 -0400", hash_original_method = "10F8297A0D98F2707B10E874747B53C0", hash_generated_method = "955E44BFB896163D3FA60A3BB9C8DC5C")
     private boolean appendThumbnailNative(String fileName,
             String thumbnailFileName) {
@@ -457,14 +455,12 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.809 -0400", hash_original_method = "1943C005EEA560A6DA7650C63E13B4C3", hash_generated_method = "0C52AA2329BBA64696E1E6FC4874D678")
     private void saveAttributesNative(String fileName,
             String compressedAttributes) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.810 -0400", hash_original_method = "21C44A8FDEA142EAF44ED7CEC6DABF8E", hash_generated_method = "43A16705CA15F45B5C6A3BDE225AF57D")
     private String getAttributesNative(String fileName) {
     	addTaint(fileName.taint);
@@ -474,13 +470,11 @@ for(Map.Entry<String, String> iter : mAttributes.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.811 -0400", hash_original_method = "97BA6F84691FEC7044D96C3EF30411A0", hash_generated_method = "00C8985DB1983BF703BB7E7AFEB6EC82")
     private void commitChangesNative(String fileName) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.811 -0400", hash_original_method = "EE2CC310FEF6D1380D04E187818EEB60", hash_generated_method = "00F95BA98511A26DE6C39C9E32619FE6")
     private byte[] getThumbnailNative(String fileName) {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_864092249 = {getTaintByte()};

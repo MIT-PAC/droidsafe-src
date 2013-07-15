@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,13 +29,13 @@ public class NetworkPolicyManager {
             IllegalArgumentException varDD4E4A1C469E87CD701596C87D20B2A2_1592561102 = new IllegalArgumentException("missing INetworkPolicyManager");
             varDD4E4A1C469E87CD701596C87D20B2A2_1592561102.addTaint(taint);
             throw varDD4E4A1C469E87CD701596C87D20B2A2_1592561102;
-        } 
+        } //End block
         mService = service;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (service == null) {
+            //throw new IllegalArgumentException("missing INetworkPolicyManager");
+        //}
+        //mService = service;
     }
 
     
@@ -50,15 +50,15 @@ public class NetworkPolicyManager {
         try 
         {
             mService.setNetworkPolicies(policies);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setNetworkPolicies(policies);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -69,19 +69,19 @@ public class NetworkPolicyManager {
 NetworkPolicy[] var4F047D404EBF980DA3870796EB824A12_413020622 =             mService.getNetworkPolicies();
             var4F047D404EBF980DA3870796EB824A12_413020622.addTaint(taint);
             return var4F047D404EBF980DA3870796EB824A12_413020622;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_268267859 =             null;
             var540C13E9E156B687226421B24F2DF178_268267859.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_268267859;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getNetworkPolicies();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -92,15 +92,15 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_268267859 =             null
         try 
         {
             mService.setUidPolicy(uid, policy);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setUidPolicy(uid, policy);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -112,38 +112,38 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_268267859 =             null
             int var9C634B2AB7B4EA717CAA76618B318108_999172944 = (mService.getUidPolicy(uid));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_541213874 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_541213874;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int var951D17BFE6AE91F8E390B7432D760639_1868292410 = (POLICY_NONE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_332657022 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_332657022;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getUidPolicy(uid);
+        //} catch (RemoteException e) {
+            //return POLICY_NONE;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.824 -0400", hash_original_method = "14080C9EBE421CBAA0CC7A85DC8AF1A5", hash_generated_method = "C24CEFF6E15A1744700711AE690AB1B2")
     public void registerListener(INetworkPolicyListener listener) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(listener.getTaint());
         try 
         {
             mService.registerListener(listener);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.registerListener(listener);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -153,15 +153,15 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_268267859 =             null
         try 
         {
             mService.unregisterListener(listener);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.unregisterListener(listener);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -215,8 +215,7 @@ NetworkPolicy[] var540C13E9E156B687226421B24F2DF178_268267859 =             null
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isUidValidForPolicy(Context context, int uid) {
+        public static boolean isUidValidForPolicy(Context context, int uid) {
         if (uid < android.os.Process.FIRST_APPLICATION_UID
                 || uid > android.os.Process.LAST_APPLICATION_UID) {
             return false;

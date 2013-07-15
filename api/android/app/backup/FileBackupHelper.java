@@ -1,6 +1,6 @@
 package android.app.backup;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,10 +26,10 @@ public class FileBackupHelper extends FileBackupHelperBase implements BackupHelp
         mContext = context;
         mFilesDir = context.getFilesDir();
         mFiles = files;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mFilesDir = context.getFilesDir();
+        //mFiles = files;
     }
 
     
@@ -46,17 +46,17 @@ public class FileBackupHelper extends FileBackupHelperBase implements BackupHelp
 for(int i=0;i<N;i++)
         {
             fullPaths[i] = (new File(base, files[i])).getAbsolutePath();
-        } 
+        } //End block
         performBackup_checked(oldState, data, newState, fullPaths, files);
-        
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String[] files = mFiles;
+        //File base = mContext.getFilesDir();
+        //final int N = files.length;
+        //String[] fullPaths = new String[N];
+        //for (int i=0; i<N; i++) {
+            //fullPaths[i] = (new File(base, files[i])).getAbsolutePath();
+        //}
+        //performBackup_checked(oldState, data, newState, fullPaths, files);
     }
 
     
@@ -70,14 +70,14 @@ for(int i=0;i<N;i++)
         {
             File f = new File(mFilesDir, key);
             writeFile(f, data);
-        } 
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.d(TAG, "got entity '" + data.getKey() + "' size=" + data.size());
+        //String key = data.getKey();
+        //if (isKeyInList(key, mFiles)) {
+            //File f = new File(mFilesDir, key);
+            //writeFile(f, data);
+        //}
     }
 
     

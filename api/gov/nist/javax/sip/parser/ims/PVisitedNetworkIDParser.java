@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
     public  PVisitedNetworkIDParser(String networkID) {
         super(networkID);
         addTaint(networkID.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,7 +27,7 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
     protected  PVisitedNetworkIDParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -57,7 +57,7 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
-                } 
+                } //End block
                 else
     if(la == '\n')                
                 break;
@@ -67,18 +67,18 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
                 varEDAD4F165A77947E764D959330B42690_406314853.addTaint(taint);
                 throw varEDAD4F165A77947E764D959330B42690_406314853;
                 }
-            } 
+            } //End block
 SIPHeader varBC7EEB21C758F2C49F34FDE84F1EE5BB_67858408 =             visitedNetworkIDList;
             varBC7EEB21C758F2C49F34FDE84F1EE5BB_67858408.addTaint(taint);
             return varBC7EEB21C758F2C49F34FDE84F1EE5BB_67858408;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("VisitedNetworkIDParser.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -104,36 +104,36 @@ SIPHeader varBC7EEB21C758F2C49F34FDE84F1EE5BB_67858408 =             visitedNetw
     if(next == '\"')                
                 {
                     break;
-                } 
+                } //End block
                 else
     if(next == '\0')                
                 {
                     ParseException var27CA867AF3062F3C529DF2355F291430_28470915 = new ParseException("unexpected EOL", 1);
                     var27CA867AF3062F3C529DF2355F291430_28470915.addTaint(taint);
                     throw var27CA867AF3062F3C529DF2355F291430_28470915;
-                } 
+                } //End block
                 else
     if(next == '\\')                
                 {
                     retval.append(next);
                     next = this.lexer.getNextChar();
                     retval.append(next);
-                } 
+                } //End block
                 else
                 {
                     retval.append(next);
-                } 
-            } 
+                } //End block
+            } //End block
             visitedNetworkID.setVisitedNetworkID(retval.toString());
             super.parse(visitedNetworkID);
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("parseQuotedString.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -144,11 +144,11 @@ SIPHeader varBC7EEB21C758F2C49F34FDE84F1EE5BB_67858408 =             visitedNetw
         Token token = lexer.getNextToken();
         visitedNetworkID.setVisitedNetworkID(token);
         super.parse(visitedNetworkID);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //lexer.match(TokenTypes.ID);
+        //Token token = lexer.getNextToken();
+        //visitedNetworkID.setVisitedNetworkID(token);
+        //super.parse(visitedNetworkID);
     }
 
     

@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,7 +48,7 @@ public class SmsCbHeader implements SmsCbConstants {
             IllegalArgumentException var55E009F14C28B40B22A8325E6C5D49EB_328486608 = new IllegalArgumentException("Illegal PDU");
             var55E009F14C28B40B22A8325E6C5D49EB_328486608.addTaint(taint);
             throw var55E009F14C28B40B22A8325E6C5D49EB_328486608;
-        } 
+        } //End block
     if(pdu.length <= PDU_LENGTH_ETWS)        
         {
             format = FORMAT_ETWS_PRIMARY;
@@ -62,7 +62,7 @@ public class SmsCbHeader implements SmsCbConstants {
             etwsEmergencyUserAlert = (pdu[4] & 0x1) != 0;
             etwsPopup = (pdu[5] & 0x80) != 0;
             etwsWarningType = (pdu[4] & 0xfe) >> 1;
-        } 
+        } //End block
         else
     if(pdu.length <= PDU_LENGTH_GSM)        
         {
@@ -78,13 +78,13 @@ public class SmsCbHeader implements SmsCbConstants {
             {
                 pageIndex = 1;
                 nrOfPages = 1;
-            } 
+            } //End block
             this.pageIndex = pageIndex;
             this.nrOfPages = nrOfPages;
             etwsEmergencyUserAlert = false;
             etwsPopup = false;
             etwsWarningType = -1;
-        } 
+        } //End block
         else
         {
             format = FORMAT_UMTS;
@@ -94,7 +94,7 @@ public class SmsCbHeader implements SmsCbConstants {
                 IllegalArgumentException var2E22A44E8F929646BC5D5E1A3B03E5C4_351741741 = new IllegalArgumentException("Unsupported message type " + messageType);
                 var2E22A44E8F929646BC5D5E1A3B03E5C4_351741741.addTaint(taint);
                 throw var2E22A44E8F929646BC5D5E1A3B03E5C4_351741741;
-            } 
+            } //End block
             messageIdentifier = ((pdu[1] & 0xff) << 8) | pdu[2] & 0xff;
             geographicalScope = (pdu[3] & 0xc0) >> 6;
             messageCode = ((pdu[3] & 0x3f) << 4) | ((pdu[4] & 0xf0) >> 4);
@@ -105,38 +105,33 @@ public class SmsCbHeader implements SmsCbConstants {
             etwsEmergencyUserAlert = false;
             etwsPopup = false;
             etwsWarningType = -1;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isEmergencyMessage(int id) {
+        public static boolean isEmergencyMessage(int id) {
         return id >= MESSAGE_ID_PWS_FIRST_IDENTIFIER && id <= MESSAGE_ID_PWS_LAST_IDENTIFIER;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isEtwsMessage(int id) {
+        public static boolean isEtwsMessage(int id) {
         return (id & MESSAGE_ID_ETWS_TYPE_MASK) == MESSAGE_ID_ETWS_TYPE;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isCmasMessage(int id) {
+        public static boolean isCmasMessage(int id) {
         return id >= MESSAGE_ID_CMAS_FIRST_IDENTIFIER && id <= MESSAGE_ID_CMAS_LAST_IDENTIFIER;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isEtwsPopupAlert(int messageCode) {
+        public static boolean isEtwsPopupAlert(int messageCode) {
         return (messageCode & MESSAGE_CODE_ETWS_ACTIVATE_POPUP) != 0;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isEtwsEmergencyUserAlert(int messageCode) {
+        public static boolean isEtwsEmergencyUserAlert(int messageCode) {
         return (messageCode & MESSAGE_CODE_ETWS_EMERGENCY_USER_ALERT) != 0;
     }
 
@@ -151,12 +146,12 @@ String varA312391745A05796CC1AA3A94F083DD0_125658770 =         "SmsCbHeader{GS="
                 ", page " + pageIndex + " of " + nrOfPages + '}';
         varA312391745A05796CC1AA3A94F083DD0_125658770.addTaint(taint);
         return varA312391745A05796CC1AA3A94F083DD0_125658770;
-        
-        
-                
-                
-                
-                
+        // ---------- Original Method ----------
+        //return "SmsCbHeader{GS=" + geographicalScope + ", messageCode=0x" +
+                //Integer.toHexString(messageCode) + ", updateNumber=" + updateNumber +
+                //", messageIdentifier=0x" + Integer.toHexString(messageIdentifier) +
+                //", DCS=0x" + Integer.toHexString(dataCodingScheme) +
+                //", page " + pageIndex + " of " + nrOfPages + '}';
     }
 
     

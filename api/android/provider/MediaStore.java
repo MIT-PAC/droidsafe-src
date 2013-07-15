@@ -1,6 +1,6 @@
 package android.provider;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,12 +33,11 @@ public final class MediaStore {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.412 -0400", hash_original_method = "463B9D094169FDB0633EE291129364D2", hash_generated_method = "463B9D094169FDB0633EE291129364D2")
     public MediaStore ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static Uri getMediaScannerUri() {
+        public static Uri getMediaScannerUri() {
         return Uri.parse(CONTENT_AUTHORITY_SLASH + "none/media_scanner");
     }
 
@@ -65,12 +64,11 @@ public final class MediaStore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.413 -0400", hash_original_method = "92603C48FC2D95D83FC45AFBA8CE46C5", hash_generated_method = "92603C48FC2D95D83FC45AFBA8CE46C5")
         public Files ()
         {
-            
+            //Synthesized constructor
         }
 
 
-                @DSModeled(DSC.SPEC)
-        public static Uri getContentUri(String volumeName) {
+                public static Uri getContentUri(String volumeName) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                     "/file");
         }
@@ -83,8 +81,7 @@ public final class MediaStore {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static Uri getMtpObjectsUri(String volumeName) {
+                public static Uri getMtpObjectsUri(String volumeName) {
             return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                     "/object");
         }
@@ -148,12 +145,11 @@ public final class MediaStore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.413 -0400", hash_original_method = "B538DEE370A2D5B0ED2152EA1CB2C251", hash_generated_method = "B538DEE370A2D5B0ED2152EA1CB2C251")
         public InternalThumbnails ()
         {
-            
+            //Synthesized constructor
         }
 
 
-                @DSModeled(DSC.SPEC)
-        private static Bitmap getMiniThumbFromFile(Cursor c, Uri baseUri, ContentResolver cr, BitmapFactory.Options options) {
+                private static Bitmap getMiniThumbFromFile(Cursor c, Uri baseUri, ContentResolver cr, BitmapFactory.Options options) {
             Bitmap bitmap = null;
             Uri thumbUri = null;
             try {
@@ -176,8 +172,7 @@ public final class MediaStore {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        static void cancelThumbnailRequest(ContentResolver cr, long origId, Uri baseUri,
+                static void cancelThumbnailRequest(ContentResolver cr, long origId, Uri baseUri,
                 long groupId) {
             Uri cancelUri = baseUri.buildUpon().appendQueryParameter("cancel", "1")
                     .appendQueryParameter("orig_id", String.valueOf(origId))
@@ -192,8 +187,7 @@ public final class MediaStore {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int kind,
+                static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int kind,
                 BitmapFactory.Options options, Uri baseUri, boolean isVideo) {
             Bitmap bitmap = null;
             String filePath = null;
@@ -313,7 +307,7 @@ public final class MediaStore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.414 -0400", hash_original_method = "A3CD75F6AB055CA56651293CB087C6D5", hash_generated_method = "A3CD75F6AB055CA56651293CB087C6D5")
         public Images ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -322,7 +316,7 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.414 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
             public Media ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -446,8 +440,7 @@ public final class MediaStore {
             }
 
             
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/images/media");
             }
@@ -476,7 +469,7 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.416 -0400", hash_original_method = "CEC4957051438E94FE667AB7B98C828F", hash_generated_method = "CEC4957051438E94FE667AB7B98C828F")
             public Thumbnails ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -525,8 +518,7 @@ public final class MediaStore {
             }
 
             
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/images/thumbnails");
             }
@@ -615,7 +607,7 @@ public final class MediaStore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.417 -0400", hash_original_method = "553D011F7A7937C6B31A2ECF0083B637", hash_generated_method = "553D011F7A7937C6B31A2ECF0083B637")
         public Audio ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -671,19 +663,17 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.417 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
             public Media ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/media");
             }
 
             
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUriForPath(String path) {
+                        public static Uri getContentUriForPath(String path) {
                 return (path.startsWith(Environment.getExternalStorageDirectory().getPath()) ?
                         EXTERNAL_CONTENT_URI : INTERNAL_CONTENT_URI);
             }
@@ -720,19 +710,17 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.418 -0400", hash_original_method = "5A301F51AFE295226C0A121512898093", hash_generated_method = "5A301F51AFE295226C0A121512898093")
             public Genres ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/genres");
             }
 
             
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUriForAudioId(String volumeName, int audioId) {
+                        public static Uri getContentUriForAudioId(String volumeName, int audioId) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/media/" + audioId + "/genres");
             }
@@ -743,7 +731,7 @@ public final class MediaStore {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.418 -0400", hash_original_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF", hash_generated_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF")
                 public Members ()
                 {
-                    
+                    //Synthesized constructor
                 }
 
 
@@ -796,12 +784,11 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.418 -0400", hash_original_method = "74E3D69F5F937E9AFBC239AC6178742A", hash_generated_method = "74E3D69F5F937E9AFBC239AC6178742A")
             public Playlists ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/playlists");
             }
@@ -812,7 +799,7 @@ public final class MediaStore {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.419 -0400", hash_original_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF", hash_generated_method = "A4C48D9C87FE7EE1DA0DC145BA44FFAF")
                 public Members ()
                 {
-                    
+                    //Synthesized constructor
                 }
 
 
@@ -885,12 +872,11 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.419 -0400", hash_original_method = "5A569BA5E9300E73D18EF84988BF2B4D", hash_generated_method = "5A569BA5E9300E73D18EF84988BF2B4D")
             public Artists ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/artists");
             }
@@ -901,7 +887,7 @@ public final class MediaStore {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.420 -0400", hash_original_method = "7EBF89799AE4644EBE85B32B12FD367D", hash_generated_method = "7EBF89799AE4644EBE85B32B12FD367D")
                 public Albums ()
                 {
-                    
+                    //Synthesized constructor
                 }
 
 
@@ -942,12 +928,11 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.420 -0400", hash_original_method = "7EBF89799AE4644EBE85B32B12FD367D", hash_generated_method = "7EBF89799AE4644EBE85B32B12FD367D")
             public Albums ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/audio/albums");
             }
@@ -1109,7 +1094,7 @@ public final class MediaStore {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.420 -0400", hash_original_method = "8FC1394ED845BB72BFE890B41D7CAD7E", hash_generated_method = "8FC1394ED845BB72BFE890B41D7CAD7E")
         public Video ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1123,12 +1108,11 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.421 -0400", hash_original_method = "AABF7D5402BFD519F4DA876621C956DE", hash_generated_method = "AABF7D5402BFD519F4DA876621C956DE")
             public Media ()
             {
-                
+                //Synthesized constructor
             }
 
 
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/video/media");
             }
@@ -1157,7 +1141,7 @@ public final class MediaStore {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.421 -0400", hash_original_method = "CEC4957051438E94FE667AB7B98C828F", hash_generated_method = "CEC4957051438E94FE667AB7B98C828F")
             public Thumbnails ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -1187,8 +1171,7 @@ public final class MediaStore {
             }
 
             
-                        @DSModeled(DSC.SPEC)
-            public static Uri getContentUri(String volumeName) {
+                        public static Uri getContentUri(String volumeName) {
                 return Uri.parse(CONTENT_AUTHORITY_SLASH + volumeName +
                         "/video/thumbnails");
             }

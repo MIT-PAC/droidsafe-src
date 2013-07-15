@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,20 +19,19 @@ class LazyDERConstructionEnumeration implements Enumeration {
     public  LazyDERConstructionEnumeration(byte[] encoded) {
         aIn = new ASN1InputStream(encoded, true);
         nextObj = readObject();
-        
-        
-        
+        // ---------- Original Method ----------
+        //aIn = new ASN1InputStream(encoded, true);
+        //nextObj = readObject();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.311 -0400", hash_original_method = "DE6A082C3D4BE08EE722248DFA2ED752", hash_generated_method = "9A4F420A0DE1511A150A399B133ED1A5")
     public boolean hasMoreElements() {
         boolean varD33774CA35F5B6F9427B64BA73FFD039_16652869 = (nextObj != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1496010176 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1496010176;
-        
-        
+        // ---------- Original Method ----------
+        //return nextObj != null;
     }
 
     
@@ -43,10 +42,10 @@ class LazyDERConstructionEnumeration implements Enumeration {
 Object varBB0FDDC5CC83552BCB5FF7675B18007A_1285497834 =         o;
         varBB0FDDC5CC83552BCB5FF7675B18007A_1285497834.addTaint(taint);
         return varBB0FDDC5CC83552BCB5FF7675B18007A_1285497834;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object o = nextObj;
+        //nextObj = readObject();
+        //return o;
     }
 
     
@@ -57,22 +56,22 @@ Object varBB0FDDC5CC83552BCB5FF7675B18007A_1285497834 =         o;
 Object var744C7B728C1BF7AC9370DA8D8B9598D6_1669410739 =             aIn.readObject();
             var744C7B728C1BF7AC9370DA8D8B9598D6_1669410739.addTaint(taint);
             return var744C7B728C1BF7AC9370DA8D8B9598D6_1669410739;
-        } 
+        } //End block
         catch (IOException e)
         {
             ASN1ParsingException var57076C08DD969A64C4DD184B63F478EC_560010959 = new ASN1ParsingException("malformed DER construction: " + e, e);
             var57076C08DD969A64C4DD184B63F478EC_560010959.addTaint(taint);
             throw var57076C08DD969A64C4DD184B63F478EC_560010959;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return aIn.readObject();
+        //}
+        //catch (IOException e)
+        //{
+            //throw new ASN1ParsingException("malformed DER construction: " + e, e);
+        //}
     }
 
     

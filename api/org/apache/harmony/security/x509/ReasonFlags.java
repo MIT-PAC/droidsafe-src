@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,12 +17,11 @@ public final class ReasonFlags {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.261 -0400", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "ACE7EB18781E115780B1426F26EFDD8E")
     public  ReasonFlags(boolean[] flags) {
         this.flags = flags;
-        
-        
+        // ---------- Original Method ----------
+        //this.flags = flags;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.261 -0400", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "A270A8CE89307BF26CB2AB5C17A62AAE")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());
@@ -34,20 +33,20 @@ for(int i=0;i<flags.length;i++)
     if(flags[i])            
             {
                 sb.append(prefix).append("  ").append(REASONS[i]).append('\n');
-            } 
-        } 
+            } //End block
+        } //End block
         sb.append(prefix);
         sb.append("]\n");
-        
-        
-        
-        
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //sb.append(prefix);
+        //sb.append("ReasonFlags [\n");
+        //for (int i=0; i<flags.length; i++) {
+            //if (flags[i]) {
+                //sb.append(prefix).append("  ").append(REASONS[i]).append('\n');
+            //}
+        //}
+        //sb.append(prefix);
+        //sb.append("]\n");
     }
 
     

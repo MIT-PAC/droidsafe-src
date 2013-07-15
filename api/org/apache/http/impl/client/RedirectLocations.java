@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,8 +17,8 @@ public class RedirectLocations {
     public  RedirectLocations() {
         super();
         this.uris = new HashSet<URI>();
-        
-        
+        // ---------- Original Method ----------
+        //this.uris = new HashSet<URI>();
     }
 
     
@@ -28,8 +28,8 @@ public class RedirectLocations {
         boolean var58A5D13FE9BF7EDB6A3C36EF0D314D3F_302790103 = (this.uris.contains(uri));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2033825956 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2033825956;
-        
-        
+        // ---------- Original Method ----------
+        //return this.uris.contains(uri);
     }
 
     
@@ -37,8 +37,8 @@ public class RedirectLocations {
     public void add(final URI uri) {
         addTaint(uri.getTaint());
         this.uris.add(uri);
-        
-        
+        // ---------- Original Method ----------
+        //this.uris.add(uri);
     }
 
     
@@ -48,8 +48,8 @@ public class RedirectLocations {
         boolean varE3D13A5C93D62DC571A6963161403EC6_1754061158 = (this.uris.remove(uri));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_898133259 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_898133259;
-        
-        
+        // ---------- Original Method ----------
+        //return this.uris.remove(uri);
     }
 
     

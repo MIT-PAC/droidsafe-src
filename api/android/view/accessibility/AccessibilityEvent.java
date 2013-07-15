@@ -1,6 +1,6 @@
 package android.view.accessibility;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,7 +32,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.068 -0400", hash_original_method = "851763ED22FDC1F823C000B96565E393", hash_generated_method = "6EADCF7C93B43CCEF55BB13CB1733BA7")
     private  AccessibilityEvent() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,11 +42,11 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
         mEventType = event.mEventType;
         mEventTime = event.mEventTime;
         mPackageName = event.mPackageName;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.init(event);
+        //mEventType = event.mEventType;
+        //mEventTime = event.mEventTime;
+        //mPackageName = event.mPackageName;
     }
 
     
@@ -61,15 +61,15 @@ for(int i = 0;i < recordCount;i++)
         {
             AccessibilityRecord record = records.get(i);
             record.setSealed(sealed);
-        } 
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.setSealed(sealed);
+        //List<AccessibilityRecord> records = mRecords;
+        //final int recordCount = records.size();
+        //for (int i = 0; i < recordCount; i++) {
+            //AccessibilityRecord record = records.get(i);
+            //record.setSealed(sealed);
+        //}
     }
 
     
@@ -78,8 +78,8 @@ for(int i = 0;i < recordCount;i++)
         int var6F1ACB3C402DD9AF817BC0F181111854_1289107264 = (mRecords.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1938442415 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1938442415;
-        
-        
+        // ---------- Original Method ----------
+        //return mRecords.size();
     }
 
     
@@ -88,9 +88,9 @@ for(int i = 0;i < recordCount;i++)
         addTaint(record.getTaint());
         enforceNotSealed();
         mRecords.add(record);
-        
-        
-        
+        // ---------- Original Method ----------
+        //enforceNotSealed();
+        //mRecords.add(record);
     }
 
     
@@ -100,19 +100,18 @@ for(int i = 0;i < recordCount;i++)
 AccessibilityRecord varF2CCF4BECB798DCE5AB2CCAE72D5A45C_520867159 =         mRecords.get(index);
         varF2CCF4BECB798DCE5AB2CCAE72D5A45C_520867159.addTaint(taint);
         return varF2CCF4BECB798DCE5AB2CCAE72D5A45C_520867159;
-        
-        
+        // ---------- Original Method ----------
+        //return mRecords.get(index);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.070 -0400", hash_original_method = "4F017DE4F3DB5F93E271E04CA9550DB1", hash_generated_method = "365AE3A56876DFDA601F8B6FBF38887A")
     public int getEventType() {
         int varC7C43C278E8643FF27A9474560193A6F_2000829625 = (mEventType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_861182511 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_861182511;
-        
-        
+        // ---------- Original Method ----------
+        //return mEventType;
     }
 
     
@@ -120,20 +119,19 @@ AccessibilityRecord varF2CCF4BECB798DCE5AB2CCAE72D5A45C_520867159 =         mRec
     public void setEventType(int eventType) {
         enforceNotSealed();
         mEventType = eventType;
-        
-        
-        
+        // ---------- Original Method ----------
+        //enforceNotSealed();
+        //mEventType = eventType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.071 -0400", hash_original_method = "9909149D86C7172035BFD4D31C880F99", hash_generated_method = "0B05B2139DA1F3D45724DFBB2D6614C3")
     public long getEventTime() {
         long var3EE1D0D0A7FA96B4DEE335E6458397C2_63800565 = (mEventTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_718593591 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_718593591;
-        
-        
+        // ---------- Original Method ----------
+        //return mEventTime;
     }
 
     
@@ -141,20 +139,19 @@ AccessibilityRecord varF2CCF4BECB798DCE5AB2CCAE72D5A45C_520867159 =         mRec
     public void setEventTime(long eventTime) {
         enforceNotSealed();
         mEventTime = eventTime;
-        
-        
-        
+        // ---------- Original Method ----------
+        //enforceNotSealed();
+        //mEventTime = eventTime;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.071 -0400", hash_original_method = "6D18CADAD3BE855C953B6A82043EA347", hash_generated_method = "08EF72062545E8504C9FDFC068DAF9B3")
     public CharSequence getPackageName() {
 CharSequence var5601F77C1E784C31FA233AB799182FA6_2101765723 =         mPackageName;
         var5601F77C1E784C31FA233AB799182FA6_2101765723.addTaint(taint);
         return var5601F77C1E784C31FA233AB799182FA6_2101765723;
-        
-        
+        // ---------- Original Method ----------
+        //return mPackageName;
     }
 
     
@@ -162,9 +159,9 @@ CharSequence var5601F77C1E784C31FA233AB799182FA6_2101765723 =         mPackageNa
     public void setPackageName(CharSequence packageName) {
         enforceNotSealed();
         mPackageName = packageName;
-        
-        
-        
+        // ---------- Original Method ----------
+        //enforceNotSealed();
+        //mPackageName = packageName;
     }
 
     
@@ -211,7 +208,7 @@ CharSequence var5601F77C1E784C31FA233AB799182FA6_2101765723 =         mPackageNa
             IllegalStateException var0954EF719477094CA5A991E142A8B5D5_904235254 = new IllegalStateException("Event already recycled!");
             var0954EF719477094CA5A991E142A8B5D5_904235254.addTaint(taint);
             throw var0954EF719477094CA5A991E142A8B5D5_904235254;
-        } 
+        } //End block
         clear();
         synchronized
 (sPoolLock)        {
@@ -221,21 +218,21 @@ CharSequence var5601F77C1E784C31FA233AB799182FA6_2101765723 =         mPackageNa
                 sPool = this;
                 mIsInPool = true;
                 sPoolSize++;
-            } 
-        } 
-        
-        
-            
-        
-        
-        
-            
-                
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mIsInPool) {
+            //throw new IllegalStateException("Event already recycled!");
+        //}
+        //clear();
+        //synchronized (sPoolLock) {
+            //if (sPoolSize <= MAX_POOL_SIZE) {
+                //mNext = sPool;
+                //sPool = this;
+                //mIsInPool = true;
+                //sPoolSize++;
+            //}
+        //}
     }
 
     
@@ -251,16 +248,16 @@ CharSequence var5601F77C1E784C31FA233AB799182FA6_2101765723 =         mPackageNa
         {
             AccessibilityRecord record = mRecords.remove(0);
             record.recycle();
-        } 
-        
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.clear();
+        //mEventType = 0;
+        //mPackageName = null;
+        //mEventTime = 0;
+        //while (!mRecords.isEmpty()) {
+            //AccessibilityRecord record = mRecords.remove(0);
+            //record.recycle();
+        //}
     }
 
     
@@ -279,21 +276,21 @@ for(int i = 0;i < recordCount;i++)
             readAccessibilityRecordFromParcel(record, parcel);
             record.mConnectionId = mConnectionId;
             mRecords.add(record);
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mSealed = (parcel.readInt() == 1);
+        //mEventType = parcel.readInt();
+        //mPackageName = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        //mEventTime = parcel.readLong();
+        //mConnectionId = parcel.readInt();
+        //readAccessibilityRecordFromParcel(this, parcel);
+        //final int recordCount = parcel.readInt();
+        //for (int i = 0; i < recordCount; i++) {
+            //AccessibilityRecord record = AccessibilityRecord.obtain();
+            //readAccessibilityRecordFromParcel(record, parcel);
+            //record.mConnectionId = mConnectionId;
+            //mRecords.add(record);
+        //}
     }
 
     
@@ -321,8 +318,8 @@ for(int i = 0;i < recordCount;i++)
         record.mSourceWindowId = parcel.readInt();
         record.mSourceViewId = parcel.readInt();
         record.mSealed = (parcel.readInt() == 1);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -342,20 +339,20 @@ for(int i = 0;i < recordCount;i++)
         {
             AccessibilityRecord record = mRecords.get(i);
             writeAccessibilityRecordToParcel(record, parcel, flags);
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //parcel.writeInt(isSealed() ? 1 : 0);
+        //parcel.writeInt(mEventType);
+        //TextUtils.writeToParcel(mPackageName, parcel, 0);
+        //parcel.writeLong(mEventTime);
+        //parcel.writeInt(mConnectionId);
+        //writeAccessibilityRecordToParcel(this, parcel, flags);
+        //final int recordCount = getRecordCount();
+        //parcel.writeInt(recordCount);
+        //for (int i = 0; i < recordCount; i++) {
+            //AccessibilityRecord record = mRecords.get(i);
+            //writeAccessibilityRecordToParcel(record, parcel, flags);
+        //}
     }
 
     
@@ -384,19 +381,18 @@ for(int i = 0;i < recordCount;i++)
         parcel.writeInt(record.mSourceWindowId);
         parcel.writeInt(record.mSourceViewId);
         parcel.writeInt(record.mSealed ? 1 : 0);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.079 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1934E7F7A194628A1164BB5FCEDEF902")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1804550498 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799964677 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799964677;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -439,22 +435,21 @@ for(int i = 0;i < mRecords.size();i++)
                 builder.append("; ParcelableData: " + record.mParcelableData);
                 builder.append(" ]");
                 builder.append("\n");
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             builder.append("; recordCount: ").append(getRecordCount());
-        } 
+        } //End block
 String varF4CF030572656354ACFDF83FEE21D7A6_267983362 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_267983362.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_267983362;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String eventTypeToString(int eventType) {
+        public static String eventTypeToString(int eventType) {
         switch (eventType) {
             case TYPE_VIEW_CLICKED:
                 return "TYPE_VIEW_CLICKED";
@@ -571,14 +566,14 @@ String varF4CF030572656354ACFDF83FEE21D7A6_267983362 =         builder.toString(
             return new AccessibilityEvent[size];
         }
     };
-    
+    // orphaned legacy method
     public AccessibilityEvent createFromParcel(Parcel parcel) {
             AccessibilityEvent event = AccessibilityEvent.obtain();
             event.initFromParcel(parcel);
             return event;
         }
     
-    
+    // orphaned legacy method
     public AccessibilityEvent[] newArray(int size) {
             return new AccessibilityEvent[size];
         }

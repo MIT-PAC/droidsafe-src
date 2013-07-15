@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,7 +26,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.539 -0400", hash_original_method = "B1B69F583261D8BEEC921FF43580AA66", hash_generated_method = "40B8D4E791D456515D6D7EBB1643CE79")
     private  MotionEvent() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -265,7 +265,6 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.541 -0400", hash_original_method = "3F0B5C050D986DD9F1F0F2A742C616C8", hash_generated_method = "385D2C3489242CAC5323F682E351928B")
     @Override
     protected void finalize() throws Throwable {
@@ -275,26 +274,25 @@ public final class MotionEvent extends InputEvent implements Parcelable {
             {
                 nativeDispose(mNativePtr);
                 mNativePtr = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (mNativePtr != 0) {
+                //nativeDispose(mNativePtr);
+                //mNativePtr = 0;
+            //}
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static private MotionEvent obtain() {
+        static private MotionEvent obtain() {
         final MotionEvent ev;
         synchronized (gRecyclerLock) {
             ev = gRecyclerTop;
@@ -311,8 +309,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtain(long downTime, long eventTime,
+        static public MotionEvent obtain(long downTime, long eventTime,
             int action, int pointerCount, PointerProperties[] pointerProperties,
             PointerCoords[] pointerCoords, int metaState, int buttonState,
             float xPrecision, float yPrecision, int deviceId,
@@ -327,8 +324,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     static public MotionEvent obtain(long downTime, long eventTime,
             int action, int pointerCount, int[] pointerIds, PointerCoords[] pointerCoords,
             int metaState, float xPrecision, float yPrecision, int deviceId,
@@ -347,8 +343,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtain(long downTime, long eventTime, int action,
+        static public MotionEvent obtain(long downTime, long eventTime, int action,
             float x, float y, float pressure, float size, int metaState,
             float xPrecision, float yPrecision, int deviceId, int edgeFlags) {
         MotionEvent ev = obtain();
@@ -373,8 +368,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     static public MotionEvent obtain(long downTime, long eventTime, int action,
             int pointerCount, float x, float y, float pressure, float size, int metaState,
             float xPrecision, float yPrecision, int deviceId, int edgeFlags) {
@@ -383,16 +377,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtain(long downTime, long eventTime, int action,
+        static public MotionEvent obtain(long downTime, long eventTime, int action,
             float x, float y, int metaState) {
         return obtain(downTime, eventTime, action, x, y, 1.0f, 1.0f,
                 metaState, 1.0f, 1.0f, 0, 0);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtain(MotionEvent other) {
+        static public MotionEvent obtain(MotionEvent other) {
         if (other == null) {
             throw new IllegalArgumentException("other motion event must not be null");
         }
@@ -402,8 +394,7 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public MotionEvent obtainNoHistory(MotionEvent other) {
+        static public MotionEvent obtainNoHistory(MotionEvent other) {
         if (other == null) {
             throw new IllegalArgumentException("other motion event must not be null");
         }
@@ -413,15 +404,14 @@ public final class MotionEvent extends InputEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.542 -0400", hash_original_method = "78DE11FBBF58608981D1F74EEB443B54", hash_generated_method = "74DD44E334932FCFCDB270A995A4BE5D")
     @Override
     public MotionEvent copy() {
 MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this);
         var3E50018916F9DBFE0D39D9282EBAD97D_1788282765.addTaint(taint);
         return var3E50018916F9DBFE0D39D9282EBAD97D_1788282765;
-        
-        
+        // ---------- Original Method ----------
+        //return obtain(this);
     }
 
     
@@ -434,9 +424,9 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
                 RuntimeException var560DEC13FEE3B93EDBE65D649F29206C_395622628 = new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
                 var560DEC13FEE3B93EDBE65D649F29206C_395622628.addTaint(taint);
                 throw var560DEC13FEE3B93EDBE65D649F29206C_395622628;
-            } 
+            } //End block
             mRecycledLocation = new RuntimeException("Last recycled here");
-        } 
+        } //End block
         else
         {
     if(mRecycled)            
@@ -444,9 +434,9 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
                 RuntimeException var4B7E168C1631949DA6BD5DCA24D52129_1372245177 = new RuntimeException(toString() + " recycled twice!");
                 var4B7E168C1631949DA6BD5DCA24D52129_1372245177.addTaint(taint);
                 throw var4B7E168C1631949DA6BD5DCA24D52129_1372245177;
-            } 
+            } //End block
             mRecycled = true;
-        } 
+        } //End block
         synchronized
 (gRecyclerLock)        {
     if(gRecyclerUsed < MAX_RECYCLED)            
@@ -454,27 +444,27 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
                 gRecyclerUsed++;
                 mNext = gRecyclerTop;
                 gRecyclerTop = this;
-            } 
-        } 
-        
-        
-            
-                
-            
-            
-        
-            
-                
-            
-            
-        
-        
-            
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (TRACK_RECYCLED_LOCATION) {
+            //if (mRecycledLocation != null) {
+                //throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
+            //}
+            //mRecycledLocation = new RuntimeException("Last recycled here");
+        //} else {
+            //if (mRecycled) {
+                //throw new RuntimeException(toString() + " recycled twice!");
+            //}
+            //mRecycled = true;
+        //}
+        //synchronized (gRecyclerLock) {
+            //if (gRecyclerUsed < MAX_RECYCLED) {
+                //gRecyclerUsed++;
+                //mNext = gRecyclerTop;
+                //gRecyclerTop = this;
+            //}
+        //}
     }
 
     
@@ -482,8 +472,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
     public final void scale(float scale) {
         addTaint(scale);
         nativeScale(mNativePtr, scale);
-        
-        
+        // ---------- Original Method ----------
+        //nativeScale(mNativePtr, scale);
     }
 
     
@@ -493,8 +483,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int varD5036D44BBD58011C7C3053FEF587C41_1016687158 = (nativeGetDeviceId(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012625669 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012625669;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetDeviceId(mNativePtr);
     }
 
     
@@ -504,8 +494,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int varD7C59EEED2658A02199C3A3437633508_1213597577 = (nativeGetSource(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691601768 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691601768;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetSource(mNativePtr);
     }
 
     
@@ -514,8 +504,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
     public final void setSource(int source) {
         addTaint(source);
         nativeSetSource(mNativePtr, source);
-        
-        
+        // ---------- Original Method ----------
+        //nativeSetSource(mNativePtr, source);
     }
 
     
@@ -524,8 +514,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int var80A98A7BBE69E4DF94992B8C4CCEB9C8_2008316375 = (nativeGetAction(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_104041371 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_104041371;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAction(mNativePtr);
     }
 
     
@@ -534,8 +524,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int varACC094C520CCDFB8E868FFF09CB65B46_1331207271 = (nativeGetAction(mNativePtr) & ACTION_MASK);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1446718385 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1446718385;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAction(mNativePtr) & ACTION_MASK;
     }
 
     
@@ -545,9 +535,9 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
                 >> ACTION_POINTER_INDEX_SHIFT);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215346125 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215346125;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return (nativeGetAction(mNativePtr) & ACTION_POINTER_INDEX_MASK)
+                //>> ACTION_POINTER_INDEX_SHIFT;
     }
 
     
@@ -556,8 +546,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         boolean varDFE61C24DD01208F966A163BDD38A4CD_2074422938 = (nativeIsTouchEvent(mNativePtr));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1012227304 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1012227304;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeIsTouchEvent(mNativePtr);
     }
 
     
@@ -566,8 +556,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int varA526BA649589E0CDCE94D6C8B3100B23_603956284 = (nativeGetFlags(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1700625679 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1700625679;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetFlags(mNativePtr);
     }
 
     
@@ -578,9 +568,9 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         boolean varF9FF507AC72E6282571250C24C98B15B_1358648073 = ((flags & FLAG_TAINTED) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1524276067 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1524276067;
-        
-        
-        
+        // ---------- Original Method ----------
+        //final int flags = getFlags();
+        //return (flags & FLAG_TAINTED) != 0;
     }
 
     
@@ -590,9 +580,9 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         addTaint(tainted);
         final int flags = getFlags();
         nativeSetFlags(mNativePtr, tainted ? flags | FLAG_TAINTED : flags & ~FLAG_TAINTED);
-        
-        
-        
+        // ---------- Original Method ----------
+        //final int flags = getFlags();
+        //nativeSetFlags(mNativePtr, tainted ? flags | FLAG_TAINTED : flags & ~FLAG_TAINTED);
     }
 
     
@@ -601,8 +591,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         long var11BA13D60255B6CD28CC817BD12A69DC_1728612884 = (nativeGetDownTimeNanos(mNativePtr) / NS_PER_MS);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1125249744 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1125249744;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetDownTimeNanos(mNativePtr) / NS_PER_MS;
     }
 
     
@@ -610,8 +600,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
     public final void setDownTime(long downTime) {
         addTaint(downTime);
         nativeSetDownTimeNanos(mNativePtr, downTime * NS_PER_MS);
-        
-        
+        // ---------- Original Method ----------
+        //nativeSetDownTimeNanos(mNativePtr, downTime * NS_PER_MS);
     }
 
     
@@ -620,8 +610,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         long var2B7CDB1B7E0B9584D608D19D659E6265_261685018 = (nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT) / NS_PER_MS);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_911494273 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_911494273;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT) / NS_PER_MS;
     }
 
     
@@ -630,8 +620,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         long varB79ED88242A7E101FD2975DEAA6D4999_2040502051 = (nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1653064604 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1653064604;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetEventTimeNanos(mNativePtr, HISTORY_CURRENT);
     }
 
     
@@ -640,8 +630,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var3EF7A7583F95AE482084502D0DB5A8CD_805849790 = (nativeGetAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_1798130210 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1798130210;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT);
     }
 
     
@@ -650,8 +640,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var7709F8DC42991A9E1DFD10831DB35973_260583332 = (nativeGetAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_822090529 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_822090529;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT);
     }
 
     
@@ -660,8 +650,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varC8B9B3D4B8B60D775828193450E8BE3F_1621079882 = (nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_2023828923 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2023828923;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, 0, HISTORY_CURRENT);
     }
 
     
@@ -670,8 +660,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var6E061C316CD065948A93F098D1140243_1977200912 = (nativeGetAxisValue(mNativePtr, AXIS_SIZE, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_528823099 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_528823099;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_SIZE, 0, HISTORY_CURRENT);
     }
 
     
@@ -680,8 +670,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varBDD96393822720D4B1BFA1D54C6BD258_1730316310 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_1363701567 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1363701567;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, 0, HISTORY_CURRENT);
     }
 
     
@@ -690,8 +680,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var1F412634D4A047597000DDD05740D35E_778602457 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_337558649 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_337558649;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, 0, HISTORY_CURRENT);
     }
 
     
@@ -700,8 +690,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var1F91C2975A484921DAC7E89073521880_1545111767 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_1564471315 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1564471315;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, 0, HISTORY_CURRENT);
     }
 
     
@@ -710,8 +700,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varF9BF461A999AEC47E41774F9DA67773D_384063515 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_870788515 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_870788515;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, 0, HISTORY_CURRENT);
     }
 
     
@@ -720,8 +710,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var6737447A3971B8877C8DF74C50D93D2F_168713661 = (nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_548120855 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_548120855;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, 0, HISTORY_CURRENT);
     }
 
     
@@ -731,8 +721,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var822AAE1DFCB4316BA34CD1785FDDF097_2144988852 = (nativeGetAxisValue(mNativePtr, axis, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_193241341 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_193241341;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, axis, 0, HISTORY_CURRENT);
     }
 
     
@@ -741,8 +731,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int var7A4B6F285807138C0798AE2E9C4D751D_412796596 = (nativeGetPointerCount(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83719548 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83719548;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetPointerCount(mNativePtr);
     }
 
     
@@ -752,8 +742,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int var8E8F6655A8D22D3BAB9DC7FA287A80A7_869550679 = (nativeGetPointerId(mNativePtr, pointerIndex));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_584997113 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_584997113;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetPointerId(mNativePtr, pointerIndex);
     }
 
     
@@ -763,8 +753,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int varB87A49BC30F5D03ED839617274948661_1198167035 = (nativeGetToolType(mNativePtr, pointerIndex));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_720243083 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_720243083;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetToolType(mNativePtr, pointerIndex);
     }
 
     
@@ -774,8 +764,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int varC2DCDDA09AB188B9E320373B4ECD5290_297174916 = (nativeFindPointerIndex(mNativePtr, pointerId));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_622907696 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_622907696;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeFindPointerIndex(mNativePtr, pointerId);
     }
 
     
@@ -785,8 +775,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var0A588BA531FA804F2F27535A22C357F5_2094940558 = (nativeGetAxisValue(mNativePtr, AXIS_X, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_810434326 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_810434326;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_X, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -796,8 +786,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var10D450FE3C08AF57C6CA49990B2D3955_1178571930 = (nativeGetAxisValue(mNativePtr, AXIS_Y, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_1507363021 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1507363021;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_Y, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -807,8 +797,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var30AC2BB8D820520FA3A5E2CB9658F590_1452736564 = (nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_238516693 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_238516693;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -818,8 +808,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varE9D3E0C74CCF4ADE9064F8432DFA8E19_986034000 = (nativeGetAxisValue(mNativePtr, AXIS_SIZE, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_1605583612 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1605583612;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_SIZE, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -829,8 +819,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var312F092DC7738998C91B1C650C9208C5_341532000 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_810029650 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_810029650;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -840,8 +830,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var1D2ADBCE62DF15318D292A2184D5A6F8_2132844961 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_1206866763 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1206866763;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -851,8 +841,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var661E79BA458A3CC6D15AED49C15A7B30_1073312665 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_2000417987 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2000417987;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -862,8 +852,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var5BC97869170DDF7295F74C5E4FB9C67A_415325898 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_62764272 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_62764272;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -873,8 +863,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varF92B55DACDDA8C7C897B27D94BC39D00_728664798 = (nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_276630332 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_276630332;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -885,8 +875,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var66245FED39B2BDF31F7C19DE02F912F2_1559563369 = (nativeGetAxisValue(mNativePtr, axis, pointerIndex, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_942076082 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_942076082;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, axis, pointerIndex, HISTORY_CURRENT);
     }
 
     
@@ -895,8 +885,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         addTaint(outPointerCoords.getTaint());
         addTaint(pointerIndex);
         nativeGetPointerCoords(mNativePtr, pointerIndex, HISTORY_CURRENT, outPointerCoords);
-        
-        
+        // ---------- Original Method ----------
+        //nativeGetPointerCoords(mNativePtr, pointerIndex, HISTORY_CURRENT, outPointerCoords);
     }
 
     
@@ -906,8 +896,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         addTaint(outPointerProperties.getTaint());
         addTaint(pointerIndex);
         nativeGetPointerProperties(mNativePtr, pointerIndex, outPointerProperties);
-        
-        
+        // ---------- Original Method ----------
+        //nativeGetPointerProperties(mNativePtr, pointerIndex, outPointerProperties);
     }
 
     
@@ -916,8 +906,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int var8B31B809A1E02B825F144CA38A97CC53_939175601 = (nativeGetMetaState(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1745659191 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1745659191;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetMetaState(mNativePtr);
     }
 
     
@@ -926,8 +916,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int var9B60F673C42B84E229E1898D796679E0_219422240 = (nativeGetButtonState(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1993663005 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1993663005;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetButtonState(mNativePtr);
     }
 
     
@@ -936,8 +926,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var0D854522731FBDAB87403300A649F3D3_416318973 = (nativeGetRawAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_1349026916 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1349026916;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetRawAxisValue(mNativePtr, AXIS_X, 0, HISTORY_CURRENT);
     }
 
     
@@ -946,8 +936,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var52B0E43324F1F3642461105A906C8523_217179319 = (nativeGetRawAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_1070541765 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1070541765;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetRawAxisValue(mNativePtr, AXIS_Y, 0, HISTORY_CURRENT);
     }
 
     
@@ -956,8 +946,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var2A7917A86613FB742B65FF142C135D3E_90591433 = (nativeGetXPrecision(mNativePtr));
                 float var546ADE640B6EDFBC8A086EF31347E768_595481765 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_595481765;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetXPrecision(mNativePtr);
     }
 
     
@@ -966,8 +956,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varE236F74B3ABE497BD8C08E81B74F9DD0_1661667202 = (nativeGetYPrecision(mNativePtr));
                 float var546ADE640B6EDFBC8A086EF31347E768_163953578 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_163953578;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetYPrecision(mNativePtr);
     }
 
     
@@ -976,8 +966,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int var066A735E1D7E1073E9C19404D62C6B62_1731554341 = (nativeGetHistorySize(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83963401 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83963401;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetHistorySize(mNativePtr);
     }
 
     
@@ -987,8 +977,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         long var02012D1A8B849D7B9F09E733FF57B5ED_808713327 = (nativeGetEventTimeNanos(mNativePtr, pos) / NS_PER_MS);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_933540688 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_933540688;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetEventTimeNanos(mNativePtr, pos) / NS_PER_MS;
     }
 
     
@@ -998,8 +988,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var026B183B319CDB0CC5DB3209786BAC2A_678832004 = (nativeGetAxisValue(mNativePtr, AXIS_X, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_1669387880 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1669387880;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_X, 0, pos);
     }
 
     
@@ -1009,8 +999,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var7BBA8D16B64D4DA25994BEC47B24F1B6_1656643467 = (nativeGetAxisValue(mNativePtr, AXIS_Y, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_564132245 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_564132245;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_Y, 0, pos);
     }
 
     
@@ -1020,8 +1010,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var0FE43FE23EC2880FC993C9BC19B652EE_1998422902 = (nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_354079345 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_354079345;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, 0, pos);
     }
 
     
@@ -1031,8 +1021,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var661F53AD036895262E5A525987FAB1AB_445018051 = (nativeGetAxisValue(mNativePtr, AXIS_SIZE, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_468959924 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_468959924;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_SIZE, 0, pos);
     }
 
     
@@ -1042,8 +1032,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varA35EDC0ABAA1029D85F4BD3C2711FDEC_637303376 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_435533357 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_435533357;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, 0, pos);
     }
 
     
@@ -1053,8 +1043,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var9019E6BDE5FF77EB81396A1FFAEAE74D_2098331927 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_1434003258 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1434003258;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, 0, pos);
     }
 
     
@@ -1064,8 +1054,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varB2AA9900B676244450FE7A01259BC28F_642022781 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_1766042757 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1766042757;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, 0, pos);
     }
 
     
@@ -1075,8 +1065,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var45C6454A6618661C0DF4FDBFD9DAC0FA_133747292 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_626280383 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_626280383;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, 0, pos);
     }
 
     
@@ -1086,8 +1076,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var9A2C8140AF67A1D4D386DE4259B1787C_2034345285 = (nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_2030261909 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2030261909;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, 0, pos);
     }
 
     
@@ -1098,8 +1088,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var8B571BE607B83E206E56C84370B33DA8_1225031753 = (nativeGetAxisValue(mNativePtr, axis, 0, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_442567852 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_442567852;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, axis, 0, pos);
     }
 
     
@@ -1110,8 +1100,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var4AF32255F4A4F1264762696ED715D5C4_1859320759 = (nativeGetAxisValue(mNativePtr, AXIS_X, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_1517401240 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1517401240;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_X, pointerIndex, pos);
     }
 
     
@@ -1122,8 +1112,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varF2AC8D1DA84755F35269C73FC6495FD0_738198738 = (nativeGetAxisValue(mNativePtr, AXIS_Y, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_665360076 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_665360076;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_Y, pointerIndex, pos);
     }
 
     
@@ -1134,8 +1124,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var20169B30E644D54B9D66666865A50453_1151317013 = (nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_415489944 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_415489944;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_PRESSURE, pointerIndex, pos);
     }
 
     
@@ -1146,8 +1136,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varEB7E60A947D456C834868D628B623593_671859696 = (nativeGetAxisValue(mNativePtr, AXIS_SIZE, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_1727943526 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1727943526;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_SIZE, pointerIndex, pos);
     }
 
     
@@ -1158,8 +1148,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float varDF2819CE064A1865E5C3505BF5B5D067_1912008919 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_1298842298 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1298842298;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MAJOR, pointerIndex, pos);
     }
 
     
@@ -1170,8 +1160,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var4582A20AC28A85EA5725F71AE41C85C6_2054523567 = (nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_145280956 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_145280956;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOUCH_MINOR, pointerIndex, pos);
     }
 
     
@@ -1182,8 +1172,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var6108293C3F62F2149B6B7EB334942C59_795892261 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_65314061 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_65314061;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MAJOR, pointerIndex, pos);
     }
 
     
@@ -1194,8 +1184,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var258F12248C69A4F414E1524429C431A2_494280052 = (nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_892627586 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_892627586;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_TOOL_MINOR, pointerIndex, pos);
     }
 
     
@@ -1206,8 +1196,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var76B6D2D13D0E715410E04459FA7F94D1_116253317 = (nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_1994550684 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1994550684;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, AXIS_ORIENTATION, pointerIndex, pos);
     }
 
     
@@ -1219,8 +1209,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float var0EB5AC306AF9423D2AD5DFC87B794696_1594676320 = (nativeGetAxisValue(mNativePtr, axis, pointerIndex, pos));
                 float var546ADE640B6EDFBC8A086EF31347E768_1659352602 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1659352602;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetAxisValue(mNativePtr, axis, pointerIndex, pos);
     }
 
     
@@ -1231,8 +1221,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         addTaint(pos);
         addTaint(pointerIndex);
         nativeGetPointerCoords(mNativePtr, pointerIndex, pos, outPointerCoords);
-        
-        
+        // ---------- Original Method ----------
+        //nativeGetPointerCoords(mNativePtr, pointerIndex, pos, outPointerCoords);
     }
 
     
@@ -1241,8 +1231,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         int var1F1A88DFEB524E5410CE9FDD29B55811_406085048 = (nativeGetEdgeFlags(mNativePtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1571594339 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1571594339;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetEdgeFlags(mNativePtr);
     }
 
     
@@ -1250,8 +1240,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
     public final void setEdgeFlags(int flags) {
         addTaint(flags);
         nativeSetEdgeFlags(mNativePtr, flags);
-        
-        
+        // ---------- Original Method ----------
+        //nativeSetEdgeFlags(mNativePtr, flags);
     }
 
     
@@ -1259,8 +1249,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
     public final void setAction(int action) {
         addTaint(action);
         nativeSetAction(mNativePtr, action);
-        
-        
+        // ---------- Original Method ----------
+        //nativeSetAction(mNativePtr, action);
     }
 
     
@@ -1269,8 +1259,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         addTaint(deltaY);
         addTaint(deltaX);
         nativeOffsetLocation(mNativePtr, deltaX, deltaY);
-        
-        
+        // ---------- Original Method ----------
+        //nativeOffsetLocation(mNativePtr, deltaX, deltaY);
     }
 
     
@@ -1281,10 +1271,10 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         float oldX = getX();
         float oldY = getY();
         nativeOffsetLocation(mNativePtr, x - oldX, y - oldY);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //float oldX = getX();
+        //float oldY = getY();
+        //nativeOffsetLocation(mNativePtr, x - oldX, y - oldY);
     }
 
     
@@ -1296,13 +1286,13 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
             IllegalArgumentException var881CB0E00A863276B1D2E4F1FD5A1042_1241380419 = new IllegalArgumentException("matrix must not be null");
             var881CB0E00A863276B1D2E4F1FD5A1042_1241380419.addTaint(taint);
             throw var881CB0E00A863276B1D2E4F1FD5A1042_1241380419;
-        } 
+        } //End block
         nativeTransform(mNativePtr, matrix);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (matrix == null) {
+            //throw new IllegalArgumentException("matrix must not be null");
+        //}
+        //nativeTransform(mNativePtr, matrix);
     }
 
     
@@ -1325,18 +1315,18 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
             pc[0].pressure = pressure;
             pc[0].size = size;
             nativeAddBatch(mNativePtr, eventTime * NS_PER_MS, pc, metaState);
-        } 
-        
-        
-            
-            
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (gSharedTempLock) {
+            //ensureSharedTempPointerCapacity(1);
+            //final PointerCoords[] pc = gSharedTempPointerCoords;
+            //pc[0].clear();
+            //pc[0].x = x;
+            //pc[0].y = y;
+            //pc[0].pressure = pressure;
+            //pc[0].size = size;
+            //nativeAddBatch(mNativePtr, eventTime * NS_PER_MS, pc, metaState);
+        //}
     }
 
     
@@ -1346,8 +1336,8 @@ MotionEvent var3E50018916F9DBFE0D39D9282EBAD97D_1788282765 =         obtain(this
         addTaint(pointerCoords[0].getTaint());
         addTaint(eventTime);
         nativeAddBatch(mNativePtr, eventTime * NS_PER_MS, pointerCoords, metaState);
-        
-        
+        // ---------- Original Method ----------
+        //nativeAddBatch(mNativePtr, eventTime * NS_PER_MS, pointerCoords, metaState);
     }
 
     
@@ -1368,21 +1358,21 @@ for(int i = 0;i < pointerCount;i++)
                 boolean var68934A3E9455FA72420237EB05902327_310958127 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901271487 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_901271487;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1769081497 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1201922758 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1201922758;
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int pointerCount = nativeGetPointerCount(mNativePtr);
+        //for (int i = 0; i < pointerCount; i++) {
+            //final float x = nativeGetAxisValue(mNativePtr, AXIS_X, i, HISTORY_CURRENT);
+            //final float y = nativeGetAxisValue(mNativePtr, AXIS_Y, i, HISTORY_CURRENT);
+            //if (x < left || x > right || y < top || y > bottom) {
+                //return false;
+            //}
+        //}
+        //return true;
     }
 
     
@@ -1415,7 +1405,7 @@ for(int i = 0;i < pointerCount;i++)
                 nativeGetPointerCoords(mNativePtr, i, HISTORY_CURRENT, pc[i]);
                 pc[i].x = clamp(pc[i].x, left, right);
                 pc[i].y = clamp(pc[i].y, top, bottom);
-            } 
+            } //End block
             ev.mNativePtr = nativeInitialize(ev.mNativePtr,
                     nativeGetDeviceId(mNativePtr), nativeGetSource(mNativePtr),
                     nativeGetAction(mNativePtr), nativeGetFlags(mNativePtr),
@@ -1429,9 +1419,9 @@ for(int i = 0;i < pointerCount;i++)
 MotionEvent var589F943EB1E905D6F47E9BDE80F73551_667348660 =             ev;
             var589F943EB1E905D6F47E9BDE80F73551_667348660.addTaint(taint);
             return var589F943EB1E905D6F47E9BDE80F73551_667348660;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1442,17 +1432,17 @@ MotionEvent var589F943EB1E905D6F47E9BDE80F73551_667348660 =             ev;
 for(int i = 0;i < pointerCount;i++)
         {
             idBits |= 1 << nativeGetPointerId(mNativePtr, i);
-        } 
+        } //End block
         int var23FF2890029E50A8E723EA8D41956EF0_308103505 = (idBits);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1901092636 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1901092636;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int idBits = 0;
+        //final int pointerCount = nativeGetPointerCount(mNativePtr);
+        //for (int i = 0; i < pointerCount; i++) {
+            //idBits |= 1 << nativeGetPointerId(mNativePtr, i);
+        //}
+        //return idBits;
     }
 
     
@@ -1483,41 +1473,41 @@ for(int i = 0;i < oldPointerCount;i++)
     if(i == oldActionPointerIndex)                    
                     {
                         newActionPointerIndex = newPointerCount;
-                    } 
+                    } //End block
                     map[newPointerCount] = i;
                     newPointerCount += 1;
                     newIdBits |= idBit;
-                } 
-            } 
+                } //End block
+            } //End block
     if(newPointerCount == 0)            
             {
                 IllegalArgumentException varFB983EDAA1F0122ADE5F02B00A9FBB6B_1328853937 = new IllegalArgumentException("idBits did not match any ids in the event");
                 varFB983EDAA1F0122ADE5F02B00A9FBB6B_1328853937.addTaint(taint);
                 throw varFB983EDAA1F0122ADE5F02B00A9FBB6B_1328853937;
-            } 
+            } //End block
             int newAction;
     if(oldActionMasked == ACTION_POINTER_DOWN || oldActionMasked == ACTION_POINTER_UP)            
             {
     if(newActionPointerIndex < 0)                
                 {
                     newAction = ACTION_MOVE;
-                } 
+                } //End block
                 else
     if(newPointerCount == 1)                
                 {
                     newAction = oldActionMasked == ACTION_POINTER_DOWN
                             ? ACTION_DOWN : ACTION_UP;
-                } 
+                } //End block
                 else
                 {
                     newAction = oldActionMasked
                             | (newActionPointerIndex << ACTION_POINTER_INDEX_SHIFT);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 newAction = oldAction;
-            } 
+            } //End block
             final int historySize = nativeGetHistorySize(mNativePtr);
 for(int h = 0;h <= historySize;h++)
             {
@@ -1525,7 +1515,7 @@ for(int h = 0;h <= historySize;h++)
 for(int i = 0;i < newPointerCount;i++)
                 {
                     nativeGetPointerCoords(mNativePtr, map[i], historyPos, pc[i]);
-                } 
+                } //End block
                 final long eventTimeNanos = nativeGetEventTimeNanos(mNativePtr, historyPos);
     if(h == 0)                
                 {
@@ -1538,22 +1528,21 @@ for(int i = 0;i < newPointerCount;i++)
                             nativeGetXPrecision(mNativePtr), nativeGetYPrecision(mNativePtr),
                             nativeGetDownTimeNanos(mNativePtr), eventTimeNanos,
                             newPointerCount, pp, pc);
-                } 
+                } //End block
                 else
                 {
                     nativeAddBatch(ev.mNativePtr, eventTimeNanos, pc, 0);
-                } 
-            } 
+                } //End block
+            } //End block
 MotionEvent var589F943EB1E905D6F47E9BDE80F73551_382186292 =             ev;
             var589F943EB1E905D6F47E9BDE80F73551_382186292.addTaint(taint);
             return var589F943EB1E905D6F47E9BDE80F73551_382186292;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.567 -0400", hash_original_method = "69A985781D7A79E036178DEB42E5F1F0", hash_generated_method = "484ABDD4C8E51F8B7595BA42A96316C5")
     @Override
     public String toString() {
@@ -1567,7 +1556,7 @@ for(int i = 0;i < pointerCount;i++)
             msg.append(", y[").append(i).append("]=").append(getY(i));
             msg.append(", toolType[").append(i).append("]=").append(
                     toolTypeToString(getToolType(i)));
-        } 
+        } //End block
         msg.append(", buttonState=").append(MotionEvent.buttonStateToString(getButtonState()));
         msg.append(", metaState=").append(KeyEvent.metaStateToString(getMetaState()));
         msg.append(", flags=0x").append(Integer.toHexString(getFlags()));
@@ -1582,13 +1571,12 @@ for(int i = 0;i < pointerCount;i++)
 String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
         var684DADA25689ED258BFAD9F9C4AD23D2_1578607967.addTaint(taint);
         return var684DADA25689ED258BFAD9F9C4AD23D2_1578607967;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String actionToString(int action) {
+        public static String actionToString(int action) {
         switch (action) {
             case ACTION_DOWN:
                 return "ACTION_DOWN";
@@ -1621,15 +1609,13 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String axisToString(int axis) {
+        public static String axisToString(int axis) {
         String symbolicName = AXIS_SYMBOLIC_NAMES.get(axis);
         return symbolicName != null ? symbolicName : Integer.toString(axis);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int axisFromString(String symbolicName) {
+        public static int axisFromString(String symbolicName) {
         if (symbolicName == null) {
             throw new IllegalArgumentException("symbolicName must not be null");
         }
@@ -1647,8 +1633,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String buttonStateToString(int buttonState) {
+        public static String buttonStateToString(int buttonState) {
         if (buttonState == 0) {
             return "0";
         }
@@ -1675,31 +1660,28 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String toolTypeToString(int toolType) {
+        public static String toolTypeToString(int toolType) {
         String symbolicName = TOOL_TYPE_SYMBOLIC_NAMES.get(toolType);
         return symbolicName != null ? symbolicName : Integer.toString(toolType);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static MotionEvent createFromParcelBody(Parcel in) {
+        public static MotionEvent createFromParcelBody(Parcel in) {
         MotionEvent ev = obtain();
         ev.mNativePtr = nativeReadFromParcel(ev.mNativePtr, in);
         return ev;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.568 -0400", hash_original_method = "D732CA58C71ED959C0E1A12C336FC80D", hash_generated_method = "3F40403E65BDFBE08917BC35DE7F1C38")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
         addTaint(out.getTaint());
         out.writeInt(PARCEL_TOKEN_MOTION_EVENT);
         nativeWriteToParcel(mNativePtr, out);
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeInt(PARCEL_TOKEN_MOTION_EVENT);
+        //nativeWriteToParcel(mNativePtr, out);
     }
 
     
@@ -1740,7 +1722,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.570 -0400", hash_original_method = "30C014872AED120D5788F672204C6D56", hash_generated_method = "02D472FB06CC6A49D31A045DF0321860")
         public  PointerCoords() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -1748,13 +1730,12 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
         public  PointerCoords(PointerCoords other) {
             addTaint(other.getTaint());
             copyFrom(other);
-            
-            
+            // ---------- Original Method ----------
+            //copyFrom(other);
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static PointerCoords[] createArray(int size) {
+                public static PointerCoords[] createArray(int size) {
             PointerCoords[] array = new PointerCoords[size];
             for (int i = 0; i < size; i++) {
                 array[i] = new PointerCoords();
@@ -1763,7 +1744,6 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.570 -0400", hash_original_method = "5B10C041062144B27347C9202A1953B2", hash_generated_method = "85A3A31EE556A4BEA00BDAAD4B198A1A")
         public void clear() {
             mPackedAxisBits = 0;
@@ -1776,21 +1756,20 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
             toolMajor = 0;
             toolMinor = 0;
             orientation = 0;
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mPackedAxisBits = 0;
+            //x = 0;
+            //y = 0;
+            //pressure = 0;
+            //size = 0;
+            //touchMajor = 0;
+            //touchMinor = 0;
+            //toolMajor = 0;
+            //toolMinor = 0;
+            //orientation = 0;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.572 -0400", hash_original_method = "A2C68F8615572C95C5947791A8CC8026", hash_generated_method = "5DCA61032438B6B62952CB867DFFA53B")
         public void copyFrom(PointerCoords other) {
             final long bits = other.mPackedAxisBits;
@@ -1804,9 +1783,9 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
                 {
                     values = new float[otherValues.length];
                     mPackedAxisValues = values;
-                } 
+                } //End block
                 System.arraycopy(otherValues, 0, values, 0, count);
-            } 
+            } //End block
             x = other.x;
             y = other.y;
             pressure = other.pressure;
@@ -1816,12 +1795,11 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_1578607967 =         msg.toString();
             toolMajor = other.toolMajor;
             toolMinor = other.toolMinor;
             orientation = other.orientation;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.572 -0400", hash_original_method = "566631CFDB34A411EF93513211D62594", hash_generated_method = "4AF261353C0DB7C5300B99A8F07AC792")
         public float getAxisValue(int axis) {
             addTaint(axis);
@@ -1869,7 +1847,7 @@ switch(axis){
                     IllegalArgumentException var1E87AAB4E5870C79215018F1CF48E911_351356353 = new IllegalArgumentException("Axis out of range.");
                     var1E87AAB4E5870C79215018F1CF48E911_351356353.addTaint(taint);
                     throw var1E87AAB4E5870C79215018F1CF48E911_351356353;
-                } 
+                } //End block
                 final long bits = mPackedAxisBits;
                 final long axisBit = 1L << axis;
     if((bits & axisBit) == 0)                
@@ -1877,19 +1855,18 @@ switch(axis){
                     float varCFCD208495D565EF66E7DFF9F98764DA_2034561224 = (0);
                                         float var546ADE640B6EDFBC8A086EF31347E768_794309711 = getTaintFloat();
                     return var546ADE640B6EDFBC8A086EF31347E768_794309711;
-                } 
+                } //End block
                 final int index = Long.bitCount(bits & (axisBit - 1L));
                 float var8A9471727EC5AB63F646A708829DFF04_1760242814 = (mPackedAxisValues[index]);
                                 float var546ADE640B6EDFBC8A086EF31347E768_413149019 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_413149019;
-            } 
+            } //End block
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.576 -0400", hash_original_method = "55E9DEFA01615304E1434A1FAB8328FA", hash_generated_method = "550B72F2333A2EF1605AA1160A00E8E8")
         public void setAxisValue(int axis, float value) {
             addTaint(axis);
@@ -1928,7 +1905,7 @@ switch(axis){
                     IllegalArgumentException var1E87AAB4E5870C79215018F1CF48E911_458936695 = new IllegalArgumentException("Axis out of range.");
                     var1E87AAB4E5870C79215018F1CF48E911_458936695.addTaint(taint);
                     throw var1E87AAB4E5870C79215018F1CF48E911_458936695;
-                } 
+                } //End block
                 final long bits = mPackedAxisBits;
                 final long axisBit = 1L << axis;
                 final int index = Long.bitCount(bits & (axisBit - 1L));
@@ -1939,7 +1916,7 @@ switch(axis){
                     {
                         values = new float[INITIAL_PACKED_AXIS_VALUES];
                         mPackedAxisValues = values;
-                    } 
+                    } //End block
                     else
                     {
                         final int count = Long.bitCount(bits);
@@ -1949,8 +1926,8 @@ switch(axis){
                             {
                                 System.arraycopy(values, index, values, index + 1,
                                             count - index);
-                            } 
-                        } 
+                            } //End block
+                        } //End block
                         else
                         {
                             float[] newValues = new float[count * 2];
@@ -1959,15 +1936,15 @@ switch(axis){
                                         count - index);
                             values = newValues;
                             mPackedAxisValues = values;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     mPackedAxisBits = bits | axisBit;
-                } 
+                } //End block
                 values[index] = value;
-            } 
+            } //End block
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1989,8 +1966,8 @@ switch(axis){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.576 -0400", hash_original_method = "D6AAE40F539D7383E827DA395512E95B", hash_generated_method = "207B464AAB7566FD25D2646B7EE6C19D")
         public  PointerProperties() {
             clear();
-            
-            
+            // ---------- Original Method ----------
+            //clear();
         }
 
         
@@ -1998,13 +1975,12 @@ switch(axis){
         public  PointerProperties(PointerProperties other) {
             addTaint(other.getTaint());
             copyFrom(other);
-            
-            
+            // ---------- Original Method ----------
+            //copyFrom(other);
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static PointerProperties[] createArray(int size) {
+                public static PointerProperties[] createArray(int size) {
             PointerProperties[] array = new PointerProperties[size];
             for (int i = 0; i < size; i++) {
                 array[i] = new PointerProperties();
@@ -2013,25 +1989,23 @@ switch(axis){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.577 -0400", hash_original_method = "ADC6A83F955A9ED0C1C75B5F08682583", hash_generated_method = "DFC90B75E706F2F74BBF473BA904F663")
         public void clear() {
             id = INVALID_POINTER_ID;
             toolType = TOOL_TYPE_UNKNOWN;
-            
-            
-            
+            // ---------- Original Method ----------
+            //id = INVALID_POINTER_ID;
+            //toolType = TOOL_TYPE_UNKNOWN;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.578 -0400", hash_original_method = "1E34ECE529256025A33CF5DCBE029131", hash_generated_method = "83EE2C55C6A446D371F6C2FC0D637123")
         public void copyFrom(PointerProperties other) {
             id = other.id;
             toolType = other.toolType;
-            
-            
-            
+            // ---------- Original Method ----------
+            //id = other.id;
+            //toolType = other.toolType;
         }
 
         
@@ -2433,12 +2407,12 @@ switch(axis){
             return new MotionEvent[size];
         }
     };
-    
+    // orphaned legacy method
     public MotionEvent[] newArray(int size) {
             return new MotionEvent[size];
         }
     
-    
+    // orphaned legacy method
     public MotionEvent createFromParcel(Parcel in) {
             in.readInt(); 
             return MotionEvent.createFromParcelBody(in);

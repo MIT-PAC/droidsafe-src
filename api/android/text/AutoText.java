@@ -1,6 +1,6 @@
 package android.text;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,14 +34,13 @@ public class AutoText {
     private  AutoText(Resources resources) {
         mLocale = resources.getConfiguration().locale;
         init(resources);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLocale = resources.getConfiguration().locale;
+        //init(resources);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static AutoText getInstance(View view) {
+        private static AutoText getInstance(View view) {
         Resources res = view.getContext().getResources();
         Locale locale = res.getConfiguration().locale;
         AutoText instance;
@@ -62,20 +61,18 @@ public class AutoText {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getSize(View view) {
+        public static int getSize(View view) {
         return getInstance(view).getSize();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.738 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "C0F27518FF1638119E035D4110C0A569")
     private int getSize() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_1705298627 = (mSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328783317 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328783317;
-        
-        
+        // ---------- Original Method ----------
+        //return mSize;
     }
 
     
@@ -100,46 +97,45 @@ for(;here != TRIE_NULL;here = mTrie[here + TRIE_NEXT])
 String varC4791C14A47CB79F698D052F2B83D1C7_474405655 =                         mText.substring(off + 1, off + 1 + len);
                         varC4791C14A47CB79F698D052F2B83D1C7_474405655.addTaint(taint);
                         return varC4791C14A47CB79F698D052F2B83D1C7_474405655;
-                    } 
+                    } //End block
                     here = mTrie[here + TRIE_CHILD];
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(here == TRIE_NULL)            
             {
 String var540C13E9E156B687226421B24F2DF178_1153554822 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1153554822.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1153554822;
-            } 
-        } 
+            } //End block
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_447434378 =         null;
         var540C13E9E156B687226421B24F2DF178_447434378.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_447434378;
-        
-        
-        
-            
-            
-                
-                    
-                            
-                        
-                        
-                        
-                    
-                    
-                    
-                
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int here = mTrie[TRIE_ROOT];
+        //for (int i = start; i < end; i++) {
+            //char c = src.charAt(i);
+            //for (; here != TRIE_NULL; here = mTrie[here + TRIE_NEXT]) {
+                //if (c == mTrie[here + TRIE_C]) {
+                    //if ((i == end - 1) 
+                            //&& (mTrie[here + TRIE_OFF] != TRIE_NULL)) {
+                        //int off = mTrie[here + TRIE_OFF];
+                        //int len = mText.charAt(off);
+                        //return mText.substring(off + 1, off + 1 + len);
+                    //}
+                    //here = mTrie[here + TRIE_CHILD];
+                    //break;
+                //}
+            //}
+            //if (here == TRIE_NULL) {
+                //return null;
+            //}
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.741 -0400", hash_original_method = "E19B6C2A17EB3626AF05ED9F48AE64FD", hash_generated_method = "D29B5C694201C7518617035F18F5C814")
     private void init(Resources r) {
         addTaint(r.getTaint());
@@ -161,7 +157,7 @@ String var540C13E9E156B687226421B24F2DF178_447434378 =         null;
     if(element == null || !(element.equals("word")))                
                 {
                     break;
-                } 
+                } //End block
                 String src = parser.getAttributeValue(null, "src");
     if(parser.next() == XmlPullParser.TEXT)                
                 {
@@ -170,41 +166,40 @@ String var540C13E9E156B687226421B24F2DF178_447434378 =         null;
     if(dest.equals(odest))                    
                     {
                         off = ooff;
-                    } 
+                    } //End block
                     else
                     {
                         off = (char) right.length();
                         right.append((char) dest.length());
                         right.append(dest);
-                    } 
+                    } //End block
                     add(src, off);
-                } 
-            } 
+                } //End block
+            } //End block
             r.flushLayoutCache();
-        } 
+        } //End block
         catch (XmlPullParserException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1913193631 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1913193631.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1913193631;
-        } 
+        } //End block
         catch (IOException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_466125169 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_466125169.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_466125169;
-        } 
+        } //End block
         finally 
         {
             parser.close();
-        } 
+        } //End block
         mText = right.toString();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.743 -0400", hash_original_method = "0D3B451571572F26E1C81E0825865666", hash_generated_method = "AB2F9F3CDA283B47A8F2E1BB5630ACF5")
     private void add(String src, char off) {
         addTaint(src.getTaint());
@@ -223,12 +218,12 @@ for(;mTrie[herep] != TRIE_NULL;herep = mTrie[herep] + TRIE_NEXT)
                     {
                         mTrie[mTrie[herep] + TRIE_OFF] = off;
                         return;
-                    } 
+                    } //End block
                     herep = mTrie[herep] + TRIE_CHILD;
                     found = true;
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(!found)            
             {
                 char node = newTrieNode();
@@ -241,16 +236,15 @@ for(;mTrie[herep] != TRIE_NULL;herep = mTrie[herep] + TRIE_NEXT)
                 {
                     mTrie[mTrie[herep] + TRIE_OFF] = off;
                     return;
-                } 
+                } //End block
                 herep = mTrie[herep] + TRIE_CHILD;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.744 -0400", hash_original_method = "6974F5A5A1101E98F9450C35EFEECA6C", hash_generated_method = "2170E0117BDDACCC3B22BE4300308E11")
     private char newTrieNode() {
     if(mTrieUsed + TRIE_SIZEOF > mTrie.length)        
@@ -258,21 +252,21 @@ for(;mTrie[herep] != TRIE_NULL;herep = mTrie[herep] + TRIE_NEXT)
             char[] copy = new char[mTrie.length + INCREMENT];
             System.arraycopy(mTrie, 0, copy, 0, mTrie.length);
             mTrie = copy;
-        } 
+        } //End block
         char ret = mTrieUsed;
         mTrieUsed += TRIE_SIZEOF;
         char var2CB9DF9898E55FD0AD829DC202DDBD1C_1042075454 = (ret);
                 char varA87DEB01C5F539E6BDA34829C8EF2368_229560023 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_229560023;
-        
-        
-            
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mTrieUsed + TRIE_SIZEOF > mTrie.length) {
+            //char[] copy = new char[mTrie.length + INCREMENT];
+            //System.arraycopy(mTrie, 0, copy, 0, mTrie.length);
+            //mTrie = copy;
+        //}
+        //char ret = mTrieUsed;
+        //mTrieUsed += TRIE_SIZEOF;
+        //return ret;
     }
 
     

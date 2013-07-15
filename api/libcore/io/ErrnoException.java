@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public final class ErrnoException extends Exception {
     public  ErrnoException(String functionName, int errno) {
         this.functionName = functionName;
         this.errno = errno;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.functionName = functionName;
+        //this.errno = errno;
     }
 
     
@@ -31,9 +31,9 @@ public final class ErrnoException extends Exception {
         addTaint(cause.getTaint());
         this.functionName = functionName;
         this.errno = errno;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.functionName = functionName;
+        //this.errno = errno;
     }
 
     
@@ -44,18 +44,18 @@ public final class ErrnoException extends Exception {
     if(errnoName == null)        
         {
             errnoName = "errno " + errno;
-        } 
+        } //End block
         String description = Libcore.os.strerror(errno);
 String var369F48B7B1F222C81180E74744106A24_1103990961 =         functionName + " failed: " + errnoName + " (" + description + ")";
         var369F48B7B1F222C81180E74744106A24_1103990961.addTaint(taint);
         return var369F48B7B1F222C81180E74744106A24_1103990961;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //String errnoName = OsConstants.errnoName(errno);
+        //if (errnoName == null) {
+            //errnoName = "errno " + errno;
+        //}
+        //String description = Libcore.os.strerror(errno);
+        //return functionName + " failed: " + errnoName + " (" + description + ")";
     }
 
     
@@ -65,10 +65,10 @@ String var369F48B7B1F222C81180E74744106A24_1103990961 =         functionName + "
         newException.initCause(this);
         newException.addTaint(taint);
         throw newException;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //IOException newException = new IOException(getMessage());
+        //newException.initCause(this);
+        //throw newException;
     }
 
     
@@ -77,8 +77,8 @@ String var369F48B7B1F222C81180E74744106A24_1103990961 =         functionName + "
         SocketException var8159138B8EC3EF5E2E6E61C739DFD5D9_963796440 = new SocketException(getMessage(), this);
         var8159138B8EC3EF5E2E6E61C739DFD5D9_963796440.addTaint(taint);
         throw var8159138B8EC3EF5E2E6E61C739DFD5D9_963796440;
-        
-        
+        // ---------- Original Method ----------
+        //throw new SocketException(getMessage(), this);
     }
 
     

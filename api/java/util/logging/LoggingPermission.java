@@ -1,6 +1,6 @@
 package java.util.logging;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,23 +16,21 @@ public final class LoggingPermission extends BasicPermission implements Guard, S
         super("", "");
         addTaint(actions.getTaint());
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.343 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "47F66278D074DBCDA97820628869F924")
     @Override
     public String getActions() {
 String var540C13E9E156B687226421B24F2DF178_130709236 =         null;
         var540C13E9E156B687226421B24F2DF178_130709236.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_130709236;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.343 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "E92CA2F1A6B9260B9CA6359F9E48464A")
     @Override
     public boolean implies(Permission permission) {
@@ -40,8 +38,8 @@ String var540C13E9E156B687226421B24F2DF178_130709236 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_2146244708 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1632149836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1632149836;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     

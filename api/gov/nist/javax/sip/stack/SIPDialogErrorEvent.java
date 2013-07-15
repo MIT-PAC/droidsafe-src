@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,19 +18,18 @@ public class SIPDialogErrorEvent extends EventObject {
         super(sourceDialog);
         addTaint(sourceDialog.getTaint());
         errorID = dialogErrorID;
-        
-        
+        // ---------- Original Method ----------
+        //errorID = dialogErrorID;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.799 -0400", hash_original_method = "0519EBFB6DA70B425C38921D23DA7A64", hash_generated_method = "AA2396535C59E67F31EDF15B6813F532")
     public int getErrorID() {
         int var90EF706EA3C5F1087D72CE0C7E7231EE_480291102 = (errorID);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_535376406 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_535376406;
-        
-        
+        // ---------- Original Method ----------
+        //return errorID;
     }
 
     

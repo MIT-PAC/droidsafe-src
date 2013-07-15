@@ -1,6 +1,6 @@
 package org.apache.commons.logging;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class LogConfigurationException extends RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:27.906 -0400", hash_original_method = "5BD29D5C4388EC618AF76FB6968F33B3", hash_generated_method = "7063A356E6027EED37F9AC630853EE07")
     public  LogConfigurationException() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,7 +21,7 @@ public class LogConfigurationException extends RuntimeException {
     public  LogConfigurationException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,7 +29,7 @@ public class LogConfigurationException extends RuntimeException {
     public  LogConfigurationException(Throwable cause) {
         this((cause == null) ? null : cause.toString(), cause);
         addTaint(cause.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -38,19 +38,18 @@ public class LogConfigurationException extends RuntimeException {
         super(message + " (Caused by " + cause + ")");
         addTaint(message.getTaint());
         this.cause = cause;
-        
-        
+        // ---------- Original Method ----------
+        //this.cause = cause;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:27.908 -0400", hash_original_method = "9EB82C3F9FB6AE0D2962237AF0B1061E", hash_generated_method = "F68B799BEB9A652B14BFC3DA2C1E479C")
     public Throwable getCause() {
 Throwable var2ABCC090853C179FD2BC09D1D39B19A8_1858326144 =         (this.cause);
         var2ABCC090853C179FD2BC09D1D39B19A8_1858326144.addTaint(taint);
         return var2ABCC090853C179FD2BC09D1D39B19A8_1858326144;
-        
-        
+        // ---------- Original Method ----------
+        //return (this.cause);
     }
 
     

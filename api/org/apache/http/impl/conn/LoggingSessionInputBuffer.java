@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,9 +22,9 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
         super();
         this.in = in;
         this.wire = wire;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.in = in;
+        //this.wire = wire;
     }
 
     
@@ -34,8 +34,8 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
         boolean varBE1B82656804E94E74B9419C8500EFC7_1439323317 = (this.in.isDataAvailable(timeout));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1127466911 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1127466911;
-        
-        
+        // ---------- Original Method ----------
+        //return this.in.isDataAvailable(timeout);
     }
 
     
@@ -48,16 +48,16 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     if(this.wire.enabled() && l > 0)        
         {
             this.wire.input(b, off, l);
-        } 
+        } //End block
         int var2DB95E8E1A9267B7A1188556B2013B33_376205781 = (l);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1233135731 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1233135731;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int l = this.in.read(b,  off,  len);
+        //if (this.wire.enabled() && l > 0) {
+            //this.wire.input(b, off, l);
+        //}
+        //return l;
     }
 
     
@@ -67,16 +67,16 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     if(this.wire.enabled() && l > 0)        
         {
             this.wire.input(l);
-        } 
+        } //End block
         int var2DB95E8E1A9267B7A1188556B2013B33_2130747863 = (l);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050898185 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050898185;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int l = this.in.read();
+        //if (this.wire.enabled() && l > 0) { 
+            //this.wire.input(l);
+        //}
+        //return l;
     }
 
     
@@ -87,16 +87,16 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     if(this.wire.enabled() && l > 0)        
         {
             this.wire.input(b, 0, l);
-        } 
+        } //End block
         int var2DB95E8E1A9267B7A1188556B2013B33_587772380 = (l);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227688448 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227688448;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int l = this.in.read(b);
+        //if (this.wire.enabled() && l > 0) {
+            //this.wire.input(b, 0, l);
+        //}
+        //return l;
     }
 
     
@@ -106,16 +106,16 @@ public class LoggingSessionInputBuffer implements SessionInputBuffer {
     if(this.wire.enabled() && s != null)        
         {
             this.wire.input(s + "[EOL]");
-        } 
+        } //End block
 String var0478718F0636FB61899C13801CE9FE09_879318989 =         s;
         var0478718F0636FB61899C13801CE9FE09_879318989.addTaint(taint);
         return var0478718F0636FB61899C13801CE9FE09_879318989;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String s = this.in.readLine();
+        //if (this.wire.enabled() && s != null) {
+            //this.wire.input(s + "[EOL]");
+        //}
+        //return s;
     }
 
     
@@ -128,18 +128,18 @@ String var0478718F0636FB61899C13801CE9FE09_879318989 =         s;
             int pos = buffer.length() - l;
             String s = new String(buffer.buffer(), pos, l);
             this.wire.input(s + "[EOL]");
-        } 
+        } //End block
         int var2DB95E8E1A9267B7A1188556B2013B33_529181740 = (l);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_228677795 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_228677795;
-        
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int l = this.in.readLine(buffer);
+        //if (this.wire.enabled() && l > 0) {
+            //int pos = buffer.length() - l;
+            //String s = new String(buffer.buffer(), pos, l);
+            //this.wire.input(s + "[EOL]");
+        //}
+        //return l;
     }
 
     
@@ -148,8 +148,8 @@ String var0478718F0636FB61899C13801CE9FE09_879318989 =         s;
 HttpTransportMetrics var9067750D6C9B0996803EF7528D8C8DC3_1814798855 =         this.in.getMetrics();
         var9067750D6C9B0996803EF7528D8C8DC3_1814798855.addTaint(taint);
         return var9067750D6C9B0996803EF7528D8C8DC3_1814798855;
-        
-        
+        // ---------- Original Method ----------
+        //return this.in.getMetrics();
     }
 
     

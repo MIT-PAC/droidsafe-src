@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class DEREncodableVector {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.948 -0400", hash_original_method = "4B1458BF3C50FB4227938042BB3B78D8", hash_generated_method = "1DD20547FCD1109D010042A3252F39EC")
     public  DEREncodableVector() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,8 +22,8 @@ public class DEREncodableVector {
         DEREncodable   obj) {
         addTaint(obj.getTaint());
         v.addElement(obj);
-        
-        
+        // ---------- Original Method ----------
+        //v.addElement(obj);
     }
 
     
@@ -34,8 +34,8 @@ public class DEREncodableVector {
 DEREncodable var8191964E2FCEE7188EFAEBD767F0FDB4_743275781 =         (DEREncodable)v.elementAt(i);
         var8191964E2FCEE7188EFAEBD767F0FDB4_743275781.addTaint(taint);
         return var8191964E2FCEE7188EFAEBD767F0FDB4_743275781;
-        
-        
+        // ---------- Original Method ----------
+        //return (DEREncodable)v.elementAt(i);
     }
 
     
@@ -44,8 +44,8 @@ DEREncodable var8191964E2FCEE7188EFAEBD767F0FDB4_743275781 =         (DEREncodab
         int var51AE616C0259F34AABC75BA09943E804_1660783274 = (v.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664303414 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664303414;
-        
-        
+        // ---------- Original Method ----------
+        //return v.size();
     }
 
     

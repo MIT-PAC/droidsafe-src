@@ -1,6 +1,6 @@
 package org.apache.http.impl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public class DefaultConnectionReuseStrategy implements ConnectionReuseStrategy {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.008 -0400", hash_original_method = "34BE1FD46571091C81AAB19A83E6EA86", hash_generated_method = "9D0BE0C2898A2879319237A6A59EF44E")
     public  DefaultConnectionReuseStrategy() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -38,14 +38,14 @@ public class DefaultConnectionReuseStrategy implements ConnectionReuseStrategy {
                 ("HTTP response may not be null.");
             varB7989C0E76C3AA33A02D57EF4B84FB41_975971597.addTaint(taint);
             throw varB7989C0E76C3AA33A02D57EF4B84FB41_975971597;
-        } 
+        } //End block
     if(context == null)        
         {
             IllegalArgumentException var40B06E88E14F43D9710E858AC173D5D2_1560121743 = new IllegalArgumentException
                 ("HTTP context may not be null.");
             var40B06E88E14F43D9710E858AC173D5D2_1560121743.addTaint(taint);
             throw var40B06E88E14F43D9710E858AC173D5D2_1560121743;
-        } 
+        } //End block
         HttpConnection conn = (HttpConnection)
             context.getAttribute(ExecutionContext.HTTP_CONNECTION);
     if(conn != null && !conn.isOpen())        
@@ -66,9 +66,9 @@ public class DefaultConnectionReuseStrategy implements ConnectionReuseStrategy {
                     boolean var68934A3E9455FA72420237EB05902327_1210073840 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1679964028 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1679964028;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         HeaderIterator hit = response.headerIterator(HTTP.CONN_DIRECTIVE);
     if(!hit.hasNext())        
         hit = response.headerIterator("Proxy-Connection");
@@ -87,32 +87,32 @@ public class DefaultConnectionReuseStrategy implements ConnectionReuseStrategy {
                         boolean var68934A3E9455FA72420237EB05902327_272608301 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1386033420 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1386033420;
-                    } 
+                    } //End block
                     else
     if(HTTP.CONN_KEEP_ALIVE.equalsIgnoreCase(token))                    
                     {
                         keepalive = true;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(keepalive)                
                 {
                 boolean varB326B5062B2F0E69046810717534CB09_1726727081 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1849889347 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1849889347;
                 }
-            } 
+            } //End block
             catch (ParseException px)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1294514757 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_369529052 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_369529052;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varD7433EC039027871EB92428F9FFCA1CC_1610740725 = (!ver.lessEquals(HttpVersion.HTTP_1_0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_448296309 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_448296309;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -122,8 +122,8 @@ public class DefaultConnectionReuseStrategy implements ConnectionReuseStrategy {
 TokenIterator varDCCA97667C2D3AEA0FD9A2C43074DB8C_1020553826 =         new BasicTokenIterator(hit);
         varDCCA97667C2D3AEA0FD9A2C43074DB8C_1020553826.addTaint(taint);
         return varDCCA97667C2D3AEA0FD9A2C43074DB8C_1020553826;
-        
-        
+        // ---------- Original Method ----------
+        //return new BasicTokenIterator(hit);
     }
 
     

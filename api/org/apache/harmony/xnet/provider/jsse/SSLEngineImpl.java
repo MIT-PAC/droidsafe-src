@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -76,8 +76,8 @@ public class SSLEngineImpl extends SSLEngine {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.982 -0400", hash_original_method = "1C2B310D768BCE8FE406784210BB6A4F", hash_generated_method = "449421F84A60DA11810D2E6AE603064A")
     protected  SSLEngineImpl(SSLParametersImpl sslParameters) {
         this.sslParameters = sslParameters;
-        
-        
+        // ---------- Original Method ----------
+        //this.sslParameters = sslParameters;
     }
 
     
@@ -87,8 +87,8 @@ public class SSLEngineImpl extends SSLEngine {
         addTaint(port);
         addTaint(host.getTaint());
         this.sslParameters = sslParameters;
-        
-        
+        // ---------- Original Method ----------
+        //this.sslParameters = sslParameters;
     }
 
     
@@ -100,33 +100,33 @@ public class SSLEngineImpl extends SSLEngine {
             SSLException varC9291568544388BA373BDE3ED2B766B0_2078669288 = new SSLException("Engine has already been closed.");
             varC9291568544388BA373BDE3ED2B766B0_2078669288.addTaint(taint);
             throw varC9291568544388BA373BDE3ED2B766B0_2078669288;
-        } 
+        } //End block
     if(!peer_mode_was_set)        
         {
             IllegalStateException varC1B3F221097BAD7684C98F247BB7C183_1118489692 = new IllegalStateException("Client/Server mode was not set");
             varC1B3F221097BAD7684C98F247BB7C183_1118489692.addTaint(taint);
             throw varC1B3F221097BAD7684C98F247BB7C183_1118489692;
-        } 
+        } //End block
     if(!handshake_started)        
         {
             handshake_started = true;
     if(getUseClientMode())            
             {
                 handshakeProtocol = new ClientHandshakeImpl(this);
-            } 
+            } //End block
             else
             {
                 handshakeProtocol = new ServerHandshakeImpl(this);
-            } 
+            } //End block
             appData = new SSLEngineAppData();
             alertProtocol = new AlertProtocol();
             recProtIS = new SSLBufferedInput();
             recordProtocol = new SSLRecordProtocol(handshakeProtocol,
                     alertProtocol, recProtIS, appData);
-        } 
+        } //End block
         handshakeProtocol.start();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -136,11 +136,11 @@ public class SSLEngineImpl extends SSLEngine {
     if(logger != null)        
         {
             logger.println("closeInbound() "+isInboundDone);
-        } 
+        } //End block
     if(isInboundDone)        
         {
             return;
-        } 
+        } //End block
         isInboundDone = true;
         engine_was_closed = true;
     if(handshake_started)        
@@ -150,41 +150,41 @@ public class SSLEngineImpl extends SSLEngine {
     if(session != null)                
                 {
                     session.invalidate();
-                } 
+                } //End block
                 alertProtocol.alert(AlertProtocol.FATAL,
                         AlertProtocol.INTERNAL_ERROR);
                 SSLException var5F21B431B8BB4187FA00A1C78D0CD95F_217711181 = new SSLException("Inbound is closed before close_notify "
                         + "alert has been received.");
                 var5F21B431B8BB4187FA00A1C78D0CD95F_217711181.addTaint(taint);
                 throw var5F21B431B8BB4187FA00A1C78D0CD95F_217711181;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             shutdown();
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-                
-                    
-                
-                
-                        
-                
-                        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (logger != null) {
+            //logger.println("closeInbound() "+isInboundDone);
+        //}
+        //if (isInboundDone) {
+            //return;
+        //}
+        //isInboundDone = true;
+        //engine_was_closed = true;
+        //if (handshake_started) {
+            //if (!close_notify_was_received) {
+                //if (session != null) {
+                    //session.invalidate();
+                //}
+                //alertProtocol.alert(AlertProtocol.FATAL,
+                        //AlertProtocol.INTERNAL_ERROR);
+                //throw new SSLException("Inbound is closed before close_notify "
+                        //+ "alert has been received.");
+            //}
+        //} else {
+            //shutdown();
+        //}
     }
 
     
@@ -194,39 +194,39 @@ public class SSLEngineImpl extends SSLEngine {
     if(logger != null)        
         {
             logger.println("closeOutbound() "+isOutboundDone);
-        } 
+        } //End block
     if(isOutboundDone)        
         {
             return;
-        } 
+        } //End block
         isOutboundDone = true;
     if(handshake_started)        
         {
             alertProtocol.alert(AlertProtocol.WARNING,
                     AlertProtocol.CLOSE_NOTIFY);
             close_notify_was_sent = true;
-        } 
+        } //End block
         else
         {
             shutdown();
-        } 
+        } //End block
         engine_was_closed = true;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-                    
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (logger != null) {
+            //logger.println("closeOutbound() "+isOutboundDone);
+        //}
+        //if (isOutboundDone) {
+            //return;
+        //}
+        //isOutboundDone = true;
+        //if (handshake_started) {
+            //alertProtocol.alert(AlertProtocol.WARNING,
+                    //AlertProtocol.CLOSE_NOTIFY);
+            //close_notify_was_sent = true;
+        //} else {
+            //shutdown();
+        //}
+        //engine_was_closed = true;
     }
 
     
@@ -236,8 +236,8 @@ public class SSLEngineImpl extends SSLEngine {
 Runnable varB6B057671593B61EA10FF2253040D421_1213097279 =         handshakeProtocol.getTask();
         varB6B057671593B61EA10FF2253040D421_1213097279.addTaint(taint);
         return varB6B057671593B61EA10FF2253040D421_1213097279;
-        
-        
+        // ---------- Original Method ----------
+        //return handshakeProtocol.getTask();
     }
 
     
@@ -247,8 +247,8 @@ Runnable varB6B057671593B61EA10FF2253040D421_1213097279 =         handshakeProto
 String[] varF6F3ABBB205DDE294417F777EFDFB1AB_2108248309 =         CipherSuite.getSupportedCipherSuiteNames();
         varF6F3ABBB205DDE294417F777EFDFB1AB_2108248309.addTaint(taint);
         return varF6F3ABBB205DDE294417F777EFDFB1AB_2108248309;
-        
-        
+        // ---------- Original Method ----------
+        //return CipherSuite.getSupportedCipherSuiteNames();
     }
 
     
@@ -258,8 +258,8 @@ String[] varF6F3ABBB205DDE294417F777EFDFB1AB_2108248309 =         CipherSuite.ge
 String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_1771930863 =         sslParameters.getEnabledCipherSuites();
         varE73CF5FBDF510EEFDF00C7E4AF85C310_1771930863.addTaint(taint);
         return varE73CF5FBDF510EEFDF00C7E4AF85C310_1771930863;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getEnabledCipherSuites();
     }
 
     
@@ -268,8 +268,8 @@ String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_1771930863 =         sslParameters.
     public void setEnabledCipherSuites(String[] suites) {
         addTaint(suites[0].getTaint());
         sslParameters.setEnabledCipherSuites(suites);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setEnabledCipherSuites(suites);
     }
 
     
@@ -279,8 +279,8 @@ String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_1771930863 =         sslParameters.
 String[] varCE68CF4030A908DFE590B8EDFA039BDD_880193119 =         ProtocolVersion.supportedProtocols.clone();
         varCE68CF4030A908DFE590B8EDFA039BDD_880193119.addTaint(taint);
         return varCE68CF4030A908DFE590B8EDFA039BDD_880193119;
-        
-        
+        // ---------- Original Method ----------
+        //return ProtocolVersion.supportedProtocols.clone();
     }
 
     
@@ -290,8 +290,8 @@ String[] varCE68CF4030A908DFE590B8EDFA039BDD_880193119 =         ProtocolVersion
 String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.getEnabledProtocols();
         var845A46B817F78B5E0728F82AD0FF52E6_565331422.addTaint(taint);
         return var845A46B817F78B5E0728F82AD0FF52E6_565331422;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getEnabledProtocols();
     }
 
     
@@ -300,8 +300,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
     public void setEnabledProtocols(String[] protocols) {
         addTaint(protocols[0].getTaint());
         sslParameters.setEnabledProtocols(protocols);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setEnabledProtocols(protocols);
     }
 
     
@@ -315,16 +315,16 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
             "Could not change the mode after the initial handshake has begun.");
             var090A9C2074D1C9D942FE5C4CFD7155B6_2094441182.addTaint(taint);
             throw var090A9C2074D1C9D942FE5C4CFD7155B6_2094441182;
-        } 
+        } //End block
         sslParameters.setUseClientMode(mode);
         peer_mode_was_set = true;
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (handshake_started) {
+            //throw new IllegalArgumentException(
+            //"Could not change the mode after the initial handshake has begun.");
+        //}
+        //sslParameters.setUseClientMode(mode);
+        //peer_mode_was_set = true;
     }
 
     
@@ -334,8 +334,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
         boolean var264C485BBAEC609C8CEC6E380F554AB0_1755439100 = (sslParameters.getUseClientMode());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1411909793 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1411909793;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getUseClientMode();
     }
 
     
@@ -344,8 +344,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
     public void setNeedClientAuth(boolean need) {
         addTaint(need);
         sslParameters.setNeedClientAuth(need);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setNeedClientAuth(need);
     }
 
     
@@ -355,8 +355,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
         boolean var8775D3F02F22101BF43E8B27516BBE95_1464018801 = (sslParameters.getNeedClientAuth());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_544423507 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_544423507;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getNeedClientAuth();
     }
 
     
@@ -365,8 +365,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
     public void setWantClientAuth(boolean want) {
         addTaint(want);
         sslParameters.setWantClientAuth(want);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setWantClientAuth(want);
     }
 
     
@@ -376,8 +376,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
         boolean var49776A2797A76D9AE0E32B9F61634A24_612551663 = (sslParameters.getWantClientAuth());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1843047224 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1843047224;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getWantClientAuth();
     }
 
     
@@ -386,8 +386,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
     public void setEnableSessionCreation(boolean flag) {
         addTaint(flag);
         sslParameters.setEnableSessionCreation(flag);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setEnableSessionCreation(flag);
     }
 
     
@@ -397,8 +397,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
         boolean var6A496EF2CB1B11366741370C45064742_2079216937 = (sslParameters.getEnableSessionCreation());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1130432859 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1130432859;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getEnableSessionCreation();
     }
 
     
@@ -410,37 +410,36 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_565331422 =         sslParameters.g
 SSLEngineResult.HandshakeStatus var68E71D62754FEACD6A50A6182D14BA78_1934193251 =             SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING;
             var68E71D62754FEACD6A50A6182D14BA78_1934193251.addTaint(taint);
             return var68E71D62754FEACD6A50A6182D14BA78_1934193251;
-        } 
+        } //End block
     if(alertProtocol.hasAlert())        
         {
 SSLEngineResult.HandshakeStatus varD93BC47E4428FB80139BCF884A7D0255_2124422952 =             SSLEngineResult.HandshakeStatus.NEED_WRAP;
             varD93BC47E4428FB80139BCF884A7D0255_2124422952.addTaint(taint);
             return varD93BC47E4428FB80139BCF884A7D0255_2124422952;
-        } 
+        } //End block
     if(close_notify_was_sent && !close_notify_was_received)        
         {
 SSLEngineResult.HandshakeStatus var410FAE431F4BF2BADF6C4EA25EB0AEE4_1298338191 =             SSLEngineResult.HandshakeStatus.NEED_UNWRAP;
             var410FAE431F4BF2BADF6C4EA25EB0AEE4_1298338191.addTaint(taint);
             return var410FAE431F4BF2BADF6C4EA25EB0AEE4_1298338191;
-        } 
+        } //End block
 SSLEngineResult.HandshakeStatus varF38C42C93424F1FD62AE648E094A376F_1663606764 =         handshakeProtocol.getStatus();
         varF38C42C93424F1FD62AE648E094A376F_1663606764.addTaint(taint);
         return varF38C42C93424F1FD62AE648E094A376F_1663606764;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!handshake_started || engine_was_shutteddown) {
+            //return SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING;
+        //}
+        //if (alertProtocol.hasAlert()) {
+            //return SSLEngineResult.HandshakeStatus.NEED_WRAP;
+        //}
+        //if (close_notify_was_sent && !close_notify_was_received) {
+            //return SSLEngineResult.HandshakeStatus.NEED_UNWRAP;
+        //}
+        //return handshakeProtocol.getStatus();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.990 -0400", hash_original_method = "FEA3CA8E78DB1766A0752130C49C073D", hash_generated_method = "072951ECC69CE4EA60932EE5DC66E4A4")
     @Override
     public SSLSession getSession() {
@@ -449,39 +448,37 @@ SSLEngineResult.HandshakeStatus varF38C42C93424F1FD62AE648E094A376F_1663606764 =
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1511016690 =             session;
             varD555E544A66E0F97DA6BCDE940E3E79C_1511016690.addTaint(taint);
             return varD555E544A66E0F97DA6BCDE940E3E79C_1511016690;
-        } 
+        } //End block
 SSLSession var33266EACB2455415ED08B160E2815F03_844412908 =         SSLSessionImpl.NULL_SESSION;
         var33266EACB2455415ED08B160E2815F03_844412908.addTaint(taint);
         return var33266EACB2455415ED08B160E2815F03_844412908;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (session != null) {
+            //return session;
+        //}
+        //return SSLSessionImpl.NULL_SESSION;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.991 -0400", hash_original_method = "93B7BEFDB685497BB8E88252AEDDD652", hash_generated_method = "0C0D8734043B3C34686D9A4AD1D205A1")
     @Override
     public boolean isInboundDone() {
         boolean var6D68D16BCF179B07C3299B10E6B5F71F_1277191990 = (isInboundDone || engine_was_closed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1723765480 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1723765480;
-        
-        
+        // ---------- Original Method ----------
+        //return isInboundDone || engine_was_closed;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.991 -0400", hash_original_method = "120A166126F4C5B7FB727570FC11E1A2", hash_generated_method = "81FCD03A51DF41D06EECBB48441D5B3E")
     @Override
     public boolean isOutboundDone() {
         boolean var59E72EB7F048BC58F04803B57A425B19_184831308 = (isOutboundDone);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_598959009 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_598959009;
-        
-        
+        // ---------- Original Method ----------
+        //return isOutboundDone;
     }
 
     
@@ -499,18 +496,18 @@ SSLEngineResult var155DFB8E78EC17A1A9AE2D5AAAEE9884_1155140761 =             new
                     SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING, 0, 0);
             var155DFB8E78EC17A1A9AE2D5AAAEE9884_1155140761.addTaint(taint);
             return var155DFB8E78EC17A1A9AE2D5AAAEE9884_1155140761;
-        } 
+        } //End block
     if((src == null) || (dsts == null))        
         {
             IllegalStateException var205149AF7ED940A9AB9D4D1787309CCB_1751059711 = new IllegalStateException(
                     "Some of the input parameters are null");
             var205149AF7ED940A9AB9D4D1787309CCB_1751059711.addTaint(taint);
             throw var205149AF7ED940A9AB9D4D1787309CCB_1751059711;
-        } 
+        } //End block
     if(!handshake_started)        
         {
             beginHandshake();
-        } 
+        } //End block
         SSLEngineResult.HandshakeStatus handshakeStatus = getHandshakeStatus();
     if((session == null || engine_was_closed) && (
                     handshakeStatus.equals(
@@ -522,7 +519,7 @@ SSLEngineResult varD0FB369D5F22F48EBC24E2509C60D37F_8042903 =             new SS
                     getEngineStatus(), handshakeStatus, 0, 0);
             varD0FB369D5F22F48EBC24E2509C60D37F_8042903.addTaint(taint);
             return varD0FB369D5F22F48EBC24E2509C60D37F_8042903;
-        } 
+        } //End block
     if(src.remaining() < recordProtocol.getMinRecordSize())        
         {
 SSLEngineResult var3ABD5BF379F67729A0D0FC3A24A9D2C8_61900926 =             new SSLEngineResult(
@@ -530,7 +527,7 @@ SSLEngineResult var3ABD5BF379F67729A0D0FC3A24A9D2C8_61900926 =             new S
                     getHandshakeStatus(), 0, 0);
             var3ABD5BF379F67729A0D0FC3A24A9D2C8_61900926.addTaint(taint);
             return var3ABD5BF379F67729A0D0FC3A24A9D2C8_61900926;
-        } 
+        } //End block
         try 
         {
             src.mark();
@@ -543,15 +540,15 @@ for(int i=offset;i<offset+length;i++)
                             "Some of the input parameters are null");
                     var205149AF7ED940A9AB9D4D1787309CCB_1042557064.addTaint(taint);
                     throw var205149AF7ED940A9AB9D4D1787309CCB_1042557064;
-                } 
+                } //End block
     if(dsts[i].isReadOnly())                
                 {
                     ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_2137497527 = new ReadOnlyBufferException();
                     varA14F16C43B102D90B34008C8FF8087F8_2137497527.addTaint(taint);
                     throw varA14F16C43B102D90B34008C8FF8087F8_2137497527;
-                } 
+                } //End block
                 capacity += dsts[i].remaining();
-            } 
+            } //End block
     if(capacity < recordProtocol.getDataSize(src.remaining()))            
             {
 SSLEngineResult varFE220BCF95A2154805491D9C5E83BD35_1360344533 =                 new SSLEngineResult(
@@ -559,7 +556,7 @@ SSLEngineResult varFE220BCF95A2154805491D9C5E83BD35_1360344533 =                
                         getHandshakeStatus(), 0, 0);
                 varFE220BCF95A2154805491D9C5E83BD35_1360344533.addTaint(taint);
                 return varFE220BCF95A2154805491D9C5E83BD35_1360344533;
-            } 
+            } //End block
             recProtIS.setSourceBuffer(src);
             int type = recordProtocol.unwrap();
 switch(type){
@@ -569,7 +566,7 @@ switch(type){
                             SSLEngineResult.HandshakeStatus.FINISHED))            
             {
                 session = recordProtocol.getSession();
-            } 
+            } //End block
             break;
             case ContentType.APPLICATION_DATA:
             break;
@@ -580,21 +577,21 @@ switch(type){
     if(session != null)                
                 {
                     session.invalidate();
-                } 
+                } //End block
                 String description = "Fatal alert received "
                             + alertProtocol.getAlertDescription();
                 shutdown();
                 SSLException var30A4E97391385D7A4E772B8C367E9DCB_982064011 = new SSLException(description);
                 var30A4E97391385D7A4E772B8C367E9DCB_982064011.addTaint(taint);
                 throw var30A4E97391385D7A4E772B8C367E9DCB_982064011;
-            } 
+            } //End block
             else
             {
     if(logger != null)                
                 {
                     logger.println("Warning allert has been received: "
                                 + alertProtocol.getAlertDescription());
-                } 
+                } //End block
 switch(alertProtocol.getDescriptionCode()){
                 case AlertProtocol.CLOSE_NOTIFY:
                 alertProtocol.setProcessed();
@@ -603,12 +600,12 @@ switch(alertProtocol.getDescriptionCode()){
                 {
                     closeOutbound();
                     closeInbound();
-                } 
+                } //End block
                 else
                 {
                     closeInbound();
                     shutdown();
-                } 
+                } //End block
                 break;
                 case AlertProtocol.NO_RENEGOTIATION:
                 alertProtocol.setProcessed();
@@ -621,23 +618,23 @@ switch(alertProtocol.getDescriptionCode()){
                                             + "during the initial handshake"));
                     var84A264ED7FCD9F31B3114CFB53292D37_1957513066.addTaint(taint);
                     throw var84A264ED7FCD9F31B3114CFB53292D37_1957513066;
-                } 
+                } //End block
                 else
                 {
                     handshakeProtocol.stop();
-                } 
+                } //End block
                 break;
                 default:
                 alertProtocol.setProcessed();
 }
-            } 
+            } //End block
             break;
 }SSLEngineResult var2C5CB397E79B7C0C2BCAA114FDEFB14C_1066619629 =             new SSLEngineResult(getEngineStatus(), getHandshakeStatus(),
                     recProtIS.consumed(),
                     appData.placeTo(dsts, offset, length));
             var2C5CB397E79B7C0C2BCAA114FDEFB14C_1066619629.addTaint(taint);
             return var2C5CB397E79B7C0C2BCAA114FDEFB14C_1066619629;
-        } 
+        } //End block
         catch (BufferUnderflowException e)
         {
             src.reset();
@@ -645,7 +642,7 @@ SSLEngineResult var3ABD5BF379F67729A0D0FC3A24A9D2C8_722964119 =             new 
                     getHandshakeStatus(), 0, 0);
             var3ABD5BF379F67729A0D0FC3A24A9D2C8_722964119.addTaint(taint);
             return var3ABD5BF379F67729A0D0FC3A24A9D2C8_722964119;
-        } 
+        } //End block
         catch (AlertException e)
         {
             alertProtocol.alert(AlertProtocol.FATAL, e.getDescriptionCode());
@@ -654,16 +651,16 @@ SSLEngineResult var3ABD5BF379F67729A0D0FC3A24A9D2C8_722964119 =             new 
     if(session != null)            
             {
                 session.invalidate();
-            } 
+            } //End block
             javax.net.ssl.SSLException var6595BE9A223029F6497D8D8537E199F6_559650810 = e.getReason();
             var6595BE9A223029F6497D8D8537E199F6_559650810.addTaint(taint);
             throw var6595BE9A223029F6497D8D8537E199F6_559650810;
-        } 
+        } //End block
         catch (SSLException e)
         {
             e.addTaint(taint);
             throw e;
-        } 
+        } //End block
         catch (IOException e)
         {
             alertProtocol.alert(AlertProtocol.FATAL,
@@ -672,9 +669,9 @@ SSLEngineResult var3ABD5BF379F67729A0D0FC3A24A9D2C8_722964119 =             new 
             SSLException var3E723685209F41E8F42A97C21BFF864F_991345750 = new SSLException(e.getMessage());
             var3E723685209F41E8F42A97C21BFF864F_991345750.addTaint(taint);
             throw var3E723685209F41E8F42A97C21BFF864F_991345750;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -692,24 +689,24 @@ SSLEngineResult var155DFB8E78EC17A1A9AE2D5AAAEE9884_1363914533 =             new
                     SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING, 0, 0);
             var155DFB8E78EC17A1A9AE2D5AAAEE9884_1363914533.addTaint(taint);
             return var155DFB8E78EC17A1A9AE2D5AAAEE9884_1363914533;
-        } 
+        } //End block
     if((srcs == null) || (dst == null))        
         {
             IllegalStateException var205149AF7ED940A9AB9D4D1787309CCB_2044423786 = new IllegalStateException(
                     "Some of the input parameters are null");
             var205149AF7ED940A9AB9D4D1787309CCB_2044423786.addTaint(taint);
             throw var205149AF7ED940A9AB9D4D1787309CCB_2044423786;
-        } 
+        } //End block
     if(dst.isReadOnly())        
         {
             ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_453013281 = new ReadOnlyBufferException();
             varA14F16C43B102D90B34008C8FF8087F8_453013281.addTaint(taint);
             throw varA14F16C43B102D90B34008C8FF8087F8_453013281;
-        } 
+        } //End block
     if(!handshake_started)        
         {
             beginHandshake();
-        } 
+        } //End block
         SSLEngineResult.HandshakeStatus handshakeStatus = getHandshakeStatus();
     if((session == null || engine_was_closed) && (
                 handshakeStatus.equals(
@@ -721,7 +718,7 @@ SSLEngineResult varD0FB369D5F22F48EBC24E2509C60D37F_1165146805 =             new
                     getEngineStatus(), handshakeStatus, 0, 0);
             varD0FB369D5F22F48EBC24E2509C60D37F_1165146805.addTaint(taint);
             return varD0FB369D5F22F48EBC24E2509C60D37F_1165146805;
-        } 
+        } //End block
         int capacity = dst.remaining();
         int produced = 0;
     if(alertProtocol.hasAlert())        
@@ -733,7 +730,7 @@ SSLEngineResult varC99A53ED80EC3AF6115535C0533EB387_994751447 =                 
                         handshakeStatus, 0, 0);
                 varC99A53ED80EC3AF6115535C0533EB387_994751447.addTaint(taint);
                 return varC99A53ED80EC3AF6115535C0533EB387_994751447;
-            } 
+            } //End block
             byte[] alert_data = alertProtocol.wrap();
             dst.put(alert_data);
     if(alertProtocol.isFatalAlert())            
@@ -742,7 +739,7 @@ SSLEngineResult varC99A53ED80EC3AF6115535C0533EB387_994751447 =                 
     if(session != null)                
                 {
                     session.invalidate();
-                } 
+                } //End block
                 shutdown();
 SSLEngineResult var38CDF9E371E69CC58975ADB5ADF17A73_793860566 =                 new SSLEngineResult(
                         SSLEngineResult.Status.CLOSED,
@@ -750,7 +747,7 @@ SSLEngineResult var38CDF9E371E69CC58975ADB5ADF17A73_793860566 =                 
                         0, alert_data.length);
                 var38CDF9E371E69CC58975ADB5ADF17A73_793860566.addTaint(taint);
                 return var38CDF9E371E69CC58975ADB5ADF17A73_793860566;
-            } 
+            } //End block
             else
             {
                 alertProtocol.setProcessed();
@@ -762,15 +759,15 @@ SSLEngineResult var38CDF9E371E69CC58975ADB5ADF17A73_2009119429 =                
                             0, alert_data.length);
                     var38CDF9E371E69CC58975ADB5ADF17A73_2009119429.addTaint(taint);
                     return var38CDF9E371E69CC58975ADB5ADF17A73_2009119429;
-                } 
+                } //End block
 SSLEngineResult var1C6903D47C06D12F818E8BE274D7425E_1617312667 =                 new SSLEngineResult(
                         getEngineStatus(),
                         getHandshakeStatus(),
                         0, alert_data.length);
                 var1C6903D47C06D12F818E8BE274D7425E_1617312667.addTaint(taint);
                 return var1C6903D47C06D12F818E8BE274D7425E_1617312667;
-            } 
-        } 
+            } //End block
+        } //End block
     if(capacity < recordProtocol.getMinRecordSize())        
         {
     if(logger != null)            
@@ -778,12 +775,12 @@ SSLEngineResult var1C6903D47C06D12F818E8BE274D7425E_1617312667 =                
                 logger.println("Capacity of the destination("
                         +capacity+") < MIN_PACKET_SIZE("
                         +recordProtocol.getMinRecordSize()+")");
-            } 
+            } //End block
 SSLEngineResult varC99A53ED80EC3AF6115535C0533EB387_7465093 =             new SSLEngineResult(SSLEngineResult.Status.BUFFER_OVERFLOW,
                         handshakeStatus, 0, 0);
             varC99A53ED80EC3AF6115535C0533EB387_7465093.addTaint(taint);
             return varC99A53ED80EC3AF6115535C0533EB387_7465093;
-        } 
+        } //End block
         try 
         {
     if(!handshakeStatus.equals(
@@ -800,19 +797,19 @@ SSLEngineResult varC99A53ED80EC3AF6115535C0533EB387_7465093 =             new SS
                                 +capacity+") can not take the resulting packet("
                                 + recordProtocol.getRecordSize(
                                     dataStream.available())+")");
-                    } 
+                    } //End block
 SSLEngineResult varC99A53ED80EC3AF6115535C0533EB387_1576443388 =                     new SSLEngineResult(
                             SSLEngineResult.Status.BUFFER_OVERFLOW,
                             handshakeStatus, 0, 0);
                     varC99A53ED80EC3AF6115535C0533EB387_1576443388.addTaint(taint);
                     return varC99A53ED80EC3AF6115535C0533EB387_1576443388;
-                } 
+                } //End block
     if(remaining_wrapped_data == null)                
                 {
                     remaining_wrapped_data =
                         recordProtocol.wrap(ContentType.APPLICATION_DATA,
                                 dataStream);
-                } 
+                } //End block
     if(capacity < remaining_wrapped_data.length)                
                 {
 SSLEngineResult varE59D8F9B21A30D6A85DDF53467EDC310_1551395010 =                     new SSLEngineResult(
@@ -820,7 +817,7 @@ SSLEngineResult varE59D8F9B21A30D6A85DDF53467EDC310_1551395010 =                
                             handshakeStatus, dataStream.consumed(), 0);
                     varE59D8F9B21A30D6A85DDF53467EDC310_1551395010.addTaint(taint);
                     return varE59D8F9B21A30D6A85DDF53467EDC310_1551395010;
-                } 
+                } //End block
                 else
                 {
                     dst.put(remaining_wrapped_data);
@@ -830,14 +827,14 @@ SSLEngineResult var94C8E30648DF5E315A644E7D34BB8872_321807460 =                 
                             handshakeStatus, dataStream.consumed(), produced);
                     var94C8E30648DF5E315A644E7D34BB8872_321807460.addTaint(taint);
                     return var94C8E30648DF5E315A644E7D34BB8872_321807460;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(remaining_hsh_data == null)                
                 {
                     remaining_hsh_data = handshakeProtocol.wrap();
-                } 
+                } //End block
     if(capacity < remaining_hsh_data.length)                
                 {
 SSLEngineResult varC99A53ED80EC3AF6115535C0533EB387_1950456018 =                     new SSLEngineResult(
@@ -845,7 +842,7 @@ SSLEngineResult varC99A53ED80EC3AF6115535C0533EB387_1950456018 =                
                             handshakeStatus, 0, 0);
                     varC99A53ED80EC3AF6115535C0533EB387_1950456018.addTaint(taint);
                     return varC99A53ED80EC3AF6115535C0533EB387_1950456018;
-                } 
+                } //End block
                 else
                 {
                     dst.put(remaining_hsh_data);
@@ -856,14 +853,14 @@ SSLEngineResult varC99A53ED80EC3AF6115535C0533EB387_1950456018 =                
                             SSLEngineResult.HandshakeStatus.FINISHED))                    
                     {
                         session = recordProtocol.getSession();
-                    } 
-                } 
+                    } //End block
+                } //End block
 SSLEngineResult varBEA709060994944EF40F7489BDF50675_336372061 =                 new SSLEngineResult(
                         getEngineStatus(), getHandshakeStatus(), 0, produced);
                 varBEA709060994944EF40F7489BDF50675_336372061.addTaint(taint);
                 return varBEA709060994944EF40F7489BDF50675_336372061;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (AlertException e)
         {
             alertProtocol.alert(AlertProtocol.FATAL, e.getDescriptionCode());
@@ -871,13 +868,13 @@ SSLEngineResult varBEA709060994944EF40F7489BDF50675_336372061 =                 
     if(session != null)            
             {
                 session.invalidate();
-            } 
+            } //End block
             javax.net.ssl.SSLException var6595BE9A223029F6497D8D8537E199F6_1836209656 = e.getReason();
             var6595BE9A223029F6497D8D8537E199F6_1836209656.addTaint(taint);
             throw var6595BE9A223029F6497D8D8537E199F6_1836209656;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -895,24 +892,23 @@ SSLEngineResult varBEA709060994944EF40F7489BDF50675_336372061 =                 
             handshakeProtocol = null;
             recordProtocol.shutdown();
             recordProtocol = null;
-        } 
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //engine_was_closed = true;
+        //engine_was_shutteddown = true;
+        //isOutboundDone = true;
+        //isInboundDone = true;
+        //if (handshake_started) {
+            //alertProtocol.shutdown();
+            //alertProtocol = null;
+            //handshakeProtocol.shutdown();
+            //handshakeProtocol = null;
+            //recordProtocol.shutdown();
+            //recordProtocol = null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.081 -0400", hash_original_method = "C6B39897E63E44773E5CEE8467983722", hash_generated_method = "07C3BB5DF95A246569D3BF9F98FD5154")
     private SSLEngineResult.Status getEngineStatus() {
 SSLEngineResult.Status var925E923E0431B37FC45FA5E1D17248C1_652666755 =         (engine_was_closed)
@@ -920,10 +916,10 @@ SSLEngineResult.Status var925E923E0431B37FC45FA5E1D17248C1_652666755 =         (
             : SSLEngineResult.Status.OK;
         var925E923E0431B37FC45FA5E1D17248C1_652666755.addTaint(taint);
         return var925E923E0431B37FC45FA5E1D17248C1_652666755;
-        
-        
-            
-            
+        // ---------- Original Method ----------
+        //return (engine_was_closed)
+            //? SSLEngineResult.Status.CLOSED
+            //: SSLEngineResult.Status.OK;
     }
 
     

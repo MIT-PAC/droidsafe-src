@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class EncryptionScheme extends AlgorithmIdentifier {
         super(objectId, parameters);
         addTaint(parameters.getTaint());
         addTaint(objectId.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -30,7 +30,7 @@ public class EncryptionScheme extends AlgorithmIdentifier {
         ASN1Sequence  seq) {
         this((DERObjectIdentifier)seq.getObjectAt(0), seq.getObjectAt(1));
         addTaint(seq.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -52,8 +52,8 @@ public class EncryptionScheme extends AlgorithmIdentifier {
 DERObject var8EAAA76A40D56861CC2E6AC09D91BF62_524478215 =         (DERObject)getParameters();
         var8EAAA76A40D56861CC2E6AC09D91BF62_524478215.addTaint(taint);
         return var8EAAA76A40D56861CC2E6AC09D91BF62_524478215;
-        
-        
+        // ---------- Original Method ----------
+        //return (DERObject)getParameters();
     }
 
     
@@ -65,11 +65,11 @@ DERObject var8EAAA76A40D56861CC2E6AC09D91BF62_524478215 =         (DERObject)get
 DERObject var0B338F106E3279986C87B595B0F4A439_2143381029 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_2143381029.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_2143381029;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector  v = new ASN1EncodableVector();
+        //v.add(getObjectId());
+        //v.add(getParameters());
+        //return new DERSequence(v);
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class SSLInputStream extends InputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.090 -0400", hash_original_method = "B3907DD288EBA16F858ADC5177372075", hash_generated_method = "B3907DD288EBA16F858ADC5177372075")
     public SSLInputStream ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -29,8 +29,8 @@ public abstract int read() throws IOException;
         int varDE564EBA10F50982773C535F5DD0C71C_1971840102 = (read() & 0x00FF);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66934454 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66934454;
-        
-        
+        // ---------- Original Method ----------
+        //return read() & 0x00FF;
     }
 
     
@@ -39,8 +39,8 @@ public abstract int read() throws IOException;
         int varE92D816B59C876C1E075FB7408EC5632_101509558 = ((read() << 8) | (read() & 0x00FF));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795762699 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795762699;
-        
-        
+        // ---------- Original Method ----------
+        //return (read() << 8) | (read() & 0x00FF);
     }
 
     
@@ -49,8 +49,8 @@ public abstract int read() throws IOException;
         int var3B1BC9CE46E8D9ABE7F7ADDE655F6975_2080938317 = ((read() << 16) | (read() << 8) | (read() & 0x00FF));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_344881594 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_344881594;
-        
-        
+        // ---------- Original Method ----------
+        //return (read() << 16) | (read() << 8) | (read() & 0x00FF);
     }
 
     
@@ -60,9 +60,9 @@ public abstract int read() throws IOException;
               | (read() << 8) | (read() & 0x00FF));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_527708637 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_527708637;
-        
-        
-              
+        // ---------- Original Method ----------
+        //return (read() << 24) | (read() << 16)
+              //| (read() << 8) | (read() & 0x00FF);
     }
 
     
@@ -73,10 +73,10 @@ public abstract int read() throws IOException;
         long varD915340A788ED0901BEE0629617EE84E_1028250719 = ((hi << 32) | lo);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_314532608 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_314532608;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //long hi = readUint32();
+        //long lo = readUint32();
+        //return (hi << 32) | lo;
     }
 
     
@@ -87,16 +87,16 @@ public abstract int read() throws IOException;
 for(int i=0;i<length;i++)
         {
             res[i] = (byte) read();
-        } 
+        } //End block
         byte[] var9B207167E5381C47682C6B4F58A623FB_1095016521 = (res);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1722510719 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1722510719;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //byte[] res = new byte[length];
+        //for (int i=0; i<length; i++) {
+            //res[i] = (byte) read();
+        //}
+        //return res;
     }
 
     
@@ -115,25 +115,25 @@ for(int i=0;i<length;i++)
                     int var9094914C036467CD32E9F7E210E518F4_2135413821 = ((i == 0) ? -1 : i);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1390696642 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1390696642;
-                } 
+                } //End block
                 b[off+i] = (byte) read_b;
                 i++;
-            } 
+            } //End block
 } while ((available() != 0) && (i<len));
         int var865C0C0B4AB0E063E5CAA3387C1A8741_1022558488 = (i);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1452680499 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1452680499;
-        
-        
-        
-        
-            
-                
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int read_b;
+        //int i = 0;
+        //do {
+            //if ((read_b = read()) == -1) {
+                //return (i == 0) ? -1 : i;
+            //}
+            //b[off+i] = (byte) read_b;
+            //i++;
+        //} while ((available() != 0) && (i<len));
+        //return i;
     }
 
     

@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ class CommandParams {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.930 -0400", hash_original_method = "2B3FA66352959F95E07A360EAE45E831", hash_generated_method = "677B05FD0D442BB524C5F5A6AA3633B9")
       CommandParams(CommandDetails cmdDet) {
         this.cmdDet = cmdDet;
-        
-        
+        // ---------- Original Method ----------
+        //this.cmdDet = cmdDet;
     }
 
     
@@ -24,20 +24,19 @@ class CommandParams {
 AppInterface.CommandType var8A824FAC5ED556766C4037BB3498C325_134690838 =         AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
         var8A824FAC5ED556766C4037BB3498C325_134690838.addTaint(taint);
         return var8A824FAC5ED556766C4037BB3498C325_134690838;
-        
-        
+        // ---------- Original Method ----------
+        //return AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.930 -0400", hash_original_method = "A8568713BEFC46F9EECE865CBC0E3B85", hash_generated_method = "7E2474DD83CC63C3F6EA5221A5BD0366")
      boolean setIcon(Bitmap icon) {
         addTaint(icon.getTaint());
         boolean varB326B5062B2F0E69046810717534CB09_2110540989 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_918796292 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_918796292;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -53,12 +52,11 @@ class DisplayTextParams extends CommandParams {
         super(cmdDet);
         addTaint(cmdDet.getTaint());
         this.textMsg = textMsg;
-        
-        
+        // ---------- Original Method ----------
+        //this.textMsg = textMsg;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.931 -0400", hash_original_method = "21525D99FCC45F45CD5434385C40E277", hash_generated_method = "FD5BD7FE43C7BC1B1CC45DC68D65C95D")
      boolean setIcon(Bitmap icon) {
     if(icon != null && textMsg != null)        
@@ -67,16 +65,16 @@ class DisplayTextParams extends CommandParams {
             boolean varB326B5062B2F0E69046810717534CB09_1898048361 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_486322637 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_486322637;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1040155657 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1991629558 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1991629558;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (icon != null && textMsg != null) {
+            //textMsg.icon = icon;
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -101,14 +99,13 @@ class LaunchBrowserParams extends CommandParams {
         this.confirmMsg = confirmMsg;
         this.mode = mode;
         this.url = url;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.confirmMsg = confirmMsg;
+        //this.mode = mode;
+        //this.url = url;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.933 -0400", hash_original_method = "14C8B1CAE4AF3E3922E99E945859BFE8", hash_generated_method = "35D950D8EA741EB28F2A9C300140F3F2")
      boolean setIcon(Bitmap icon) {
     if(icon != null && confirmMsg != null)        
@@ -117,16 +114,16 @@ class LaunchBrowserParams extends CommandParams {
             boolean varB326B5062B2F0E69046810717534CB09_1531988871 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2073189541 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2073189541;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1636687083 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879793753 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879793753;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (icon != null && confirmMsg != null) {
+            //confirmMsg.icon = icon;
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -147,13 +144,12 @@ class PlayToneParams extends CommandParams {
         addTaint(cmdDet.getTaint());
         this.textMsg = textMsg;
         this.settings = new ToneSettings(duration, tone, vibrate);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.textMsg = textMsg;
+        //this.settings = new ToneSettings(duration, tone, vibrate);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.934 -0400", hash_original_method = "21525D99FCC45F45CD5434385C40E277", hash_generated_method = "B21E04E6D87662017AF515CE423EFE99")
      boolean setIcon(Bitmap icon) {
     if(icon != null && textMsg != null)        
@@ -162,16 +158,16 @@ class PlayToneParams extends CommandParams {
             boolean varB326B5062B2F0E69046810717534CB09_1311851895 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2063122136 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2063122136;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_924216968 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_344501293 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_344501293;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (icon != null && textMsg != null) {
+            //textMsg.icon = icon;
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -192,13 +188,12 @@ class CallSetupParams extends CommandParams {
         addTaint(cmdDet.getTaint());
         this.confirmMsg = confirmMsg;
         this.callMsg = callMsg;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.confirmMsg = confirmMsg;
+        //this.callMsg = callMsg;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.936 -0400", hash_original_method = "7CBBFD719CD54FED6A95014430B0D13E", hash_generated_method = "06AD227C7402673962462E61EC5A7C98")
      boolean setIcon(Bitmap icon) {
     if(icon == null)        
@@ -206,14 +201,14 @@ class CallSetupParams extends CommandParams {
             boolean var68934A3E9455FA72420237EB05902327_954433922 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_25300575 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_25300575;
-        } 
+        } //End block
     if(confirmMsg != null && confirmMsg.icon == null)        
         {
             confirmMsg.icon = icon;
             boolean varB326B5062B2F0E69046810717534CB09_190824855 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_109219813 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_109219813;
-        } 
+        } //End block
         else
     if(callMsg != null && callMsg.icon == null)        
         {
@@ -221,22 +216,22 @@ class CallSetupParams extends CommandParams {
             boolean varB326B5062B2F0E69046810717534CB09_1469556227 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65611636 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_65611636;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1046407091 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_170902063 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_170902063;
-        
-        
-            
-        
-        
-            
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (icon == null) {
+            //return false;
+        //}
+        //if (confirmMsg != null && confirmMsg.icon == null) {
+            //confirmMsg.icon = icon;
+            //return true;
+        //} else if (callMsg != null && callMsg.icon == null) {
+            //callMsg.icon = icon;
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -256,9 +251,9 @@ class SelectItemParams extends CommandParams {
         addTaint(cmdDet.getTaint());
         this.menu = menu;
         this.loadTitleIcon = loadTitleIcon;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.menu = menu;
+        //this.loadTitleIcon = loadTitleIcon;
     }
 
     
@@ -269,7 +264,7 @@ class SelectItemParams extends CommandParams {
     if(loadTitleIcon && menu.titleIcon == null)            
             {
                 menu.titleIcon = icon;
-            } 
+            } //End block
             else
             {
 for(Item item : menu.items)
@@ -277,34 +272,34 @@ for(Item item : menu.items)
     if(item.icon != null)                    
                     {
                         continue;
-                    } 
+                    } //End block
                     item.icon = icon;
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1804725542 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1171664714 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1171664714;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_679613207 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_140719122 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_140719122;
-        
-        
-            
-                
-            
-                
-                    
-                        
-                    
-                    
-                    
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (icon != null && menu != null) {
+            //if (loadTitleIcon && menu.titleIcon == null) {
+                //menu.titleIcon = icon;
+            //} else {
+                //for (Item item : menu.items) {
+                    //if (item.icon != null) {
+                        //continue;
+                    //}
+                    //item.icon = icon;
+                    //break;
+                //}
+            //}
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -320,26 +315,25 @@ class GetInputParams extends CommandParams {
         super(cmdDet);
         addTaint(cmdDet.getTaint());
         this.input = input;
-        
-        
+        // ---------- Original Method ----------
+        //this.input = input;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.940 -0400", hash_original_method = "0D1B780F5B7D1ED973494BE2C3910B90", hash_generated_method = "D87E75ADCEA5AAC6CB43B328C94AF510")
      boolean setIcon(Bitmap icon) {
     if(icon != null && input != null)        
         {
             input.icon = icon;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_51419830 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2033676563 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2033676563;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (icon != null && input != null) {
+            //input.icon = icon;
+        //}
+        //return true;
     }
 
     

@@ -1,6 +1,6 @@
 package android.support.v4.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class DebugUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.516 -0400", hash_original_method = "09D0F8538A2479079AB46637D5733AC2", hash_generated_method = "09D0F8538A2479079AB46637D5733AC2")
     public DebugUtils ()
     {
-        
+        //Synthesized constructor
     }
 
 

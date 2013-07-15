@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x500;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ public class X500NameBuilder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.745 -0400", hash_original_method = "D0728342E4979FB5B75C971FD31579AF", hash_generated_method = "C5F092BBA326550A9DB00A2B96B75883")
     public  X500NameBuilder(X500NameStyle template) {
         this.template = template;
-        
-        
+        // ---------- Original Method ----------
+        //this.template = template;
     }
 
     
@@ -32,9 +32,9 @@ public class X500NameBuilder {
 X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_128951762 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_128951762.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_128951762;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.addRDN(oid, template.stringToValue(oid, value));
+        //return this;
     }
 
     
@@ -46,9 +46,9 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_128951762 =         this;
 X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_529135937 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_529135937.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_529135937;
-        
-        
-        
+        // ---------- Original Method ----------
+        //rdns.addElement(new RDN(oid, value));
+        //return this;
     }
 
     
@@ -59,9 +59,9 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_529135937 =         this;
 X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_1031688153 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1031688153.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1031688153;
-        
-        
-        
+        // ---------- Original Method ----------
+        //rdns.addElement(new RDN(attrTAndV));
+        //return this;
     }
 
     
@@ -73,17 +73,17 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_1031688153 =         this;
 for(int i = 0;i != vals.length;i++)
         {
             vals[i] = template.stringToValue(oids[i], values[i]);
-        } 
+        } //End block
 X500NameBuilder varD7F2C29827E72CD1BB5CBC1E148ADA09_1508163441 =         addMultiValuedRDN(oids, vals);
         varD7F2C29827E72CD1BB5CBC1E148ADA09_1508163441.addTaint(taint);
         return varD7F2C29827E72CD1BB5CBC1E148ADA09_1508163441;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ASN1Encodable[] vals = new ASN1Encodable[values.length];
+        //for (int i = 0; i != vals.length; i++)
+        //{
+            //vals[i] = template.stringToValue(oids[i], values[i]);
+        //}
+        //return addMultiValuedRDN(oids, vals);
     }
 
     
@@ -95,17 +95,17 @@ X500NameBuilder varD7F2C29827E72CD1BB5CBC1E148ADA09_1508163441 =         addMult
 for(int i = 0;i != oids.length;i++)
         {
             avs[i] = new AttributeTypeAndValue(oids[i], values[i]);
-        } 
+        } //End block
 X500NameBuilder var9D2F985167BE7E1703BB252DA3E09BD5_640486827 =         addMultiValuedRDN(avs);
         var9D2F985167BE7E1703BB252DA3E09BD5_640486827.addTaint(taint);
         return var9D2F985167BE7E1703BB252DA3E09BD5_640486827;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //AttributeTypeAndValue[] avs = new AttributeTypeAndValue[oids.length];
+        //for (int i = 0; i != oids.length; i++)
+        //{
+            //avs[i] = new AttributeTypeAndValue(oids[i], values[i]);
+        //}
+        //return addMultiValuedRDN(avs);
     }
 
     
@@ -116,9 +116,9 @@ X500NameBuilder var9D2F985167BE7E1703BB252DA3E09BD5_640486827 =         addMulti
 X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_2082907630 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2082907630.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2082907630;
-        
-        
-        
+        // ---------- Original Method ----------
+        //rdns.addElement(new RDN(attrTAndVs));
+        //return this;
     }
 
     
@@ -128,17 +128,17 @@ X500NameBuilder var72A74007B2BE62B849F475C7BDA4658B_2082907630 =         this;
 for(int i = 0;i != vals.length;i++)
         {
             vals[i] = (RDN)rdns.elementAt(i);
-        } 
+        } //End block
 X500Name var25250835424566A0FA42053F485F38F1_704518468 =         new X500Name(template, vals);
         var25250835424566A0FA42053F485F38F1_704518468.addTaint(taint);
         return var25250835424566A0FA42053F485F38F1_704518468;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //RDN[] vals = new RDN[rdns.size()];
+        //for (int i = 0; i != vals.length; i++)
+        //{
+            //vals[i] = (RDN)rdns.elementAt(i);
+        //}
+        //return new X500Name(template, vals);
     }
 
     

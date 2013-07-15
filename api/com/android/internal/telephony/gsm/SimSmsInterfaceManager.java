@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -95,15 +95,14 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
         addTaint(dispatcher.getTaint());
         addTaint(phone.getTaint());
         mDispatcher = dispatcher;
-        
-        
+        // ---------- Original Method ----------
+        //mDispatcher = dispatcher;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.624 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -113,19 +112,19 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
         try 
         {
             super.finalize();
-        } 
+        } //End block
         catch (Throwable throwable)
         {
-        } 
+        } //End block
     if(DBG)        
         Log.d(LOG_TAG, "SimSmsInterfaceManager finalized");
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //super.finalize();
+        //} catch (Throwable throwable) {
+            //Log.e(LOG_TAG, "Error while finalizing:", throwable);
+        //}
+        //if(DBG) Log.d(LOG_TAG, "SimSmsInterfaceManager finalized");
     }
 
     
@@ -146,28 +145,28 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     if(status == STATUS_ON_ICC_FREE)            
             {
                 mPhone.mCM.deleteSmsOnSim(index, response);
-            } 
+            } //End block
             else
             {
                 byte[] record = makeSmsRecordData(status, pdu);
                 mPhone.getIccFileHandler().updateEFLinearFixed(
                         IccConstants.EF_SMS,
                         index, record, null, response);
-            } 
+            } //End block
             try 
             {
                 mLock.wait();
-            } 
+            } //End block
             catch (InterruptedException e)
             {
                 log("interrupted while trying to update by index");
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var51D04CAF6B674687BDD02BD17453D38D_62457624 = (mSuccess);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1512093757 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1512093757;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -190,32 +189,32 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
             try 
             {
                 mLock.wait();
-            } 
+            } //End block
             catch (InterruptedException e)
             {
                 log("interrupted while trying to update by index");
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var51D04CAF6B674687BDD02BD17453D38D_1145917640 = (mSuccess);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_315661155 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_315661155;
-        
-        
-                
-                
-        
-        
-            
-            
-            
-                    
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("copyMessageToIccEf: status=" + status + " ==> " +
+                //"pdu=("+ Arrays.toString(pdu) +
+                //"), smsm=(" + Arrays.toString(smsc) +")");
+        //enforceReceiveAndSend("Copying message to SIM");
+        //synchronized(mLock) {
+            //mSuccess = false;
+            //Message response = mHandler.obtainMessage(EVENT_UPDATE_DONE);
+            //mPhone.mCM.writeSmsToSim(status, IccUtils.bytesToHexString(smsc),
+                    //IccUtils.bytesToHexString(pdu), response);
+            //try {
+                //mLock.wait();
+            //} catch (InterruptedException e) {
+                //log("interrupted while trying to update by index");
+            //}
+        //}
+        //return mSuccess;
     }
 
     
@@ -234,31 +233,31 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
             try 
             {
                 mLock.wait();
-            } 
+            } //End block
             catch (InterruptedException e)
             {
                 log("interrupted while trying to load from the SIM");
-            } 
-        } 
+            } //End block
+        } //End block
 List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
         var7BF1E9CBCC2022F70728CF07D46D244B_1861802318.addTaint(taint);
         return var7BF1E9CBCC2022F70728CF07D46D244B_1861802318;
-        
-        
-        
-        
-                
-                
-        
-            
-            
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("getAllMessagesFromEF");
+        //Context context = mPhone.getContext();
+        //context.enforceCallingPermission(
+                //"android.permission.RECEIVE_SMS",
+                //"Reading messages from SIM");
+        //synchronized(mLock) {
+            //Message response = mHandler.obtainMessage(EVENT_LOAD_DONE);
+            //mPhone.getIccFileHandler().loadEFLinearFixedAll(IccConstants.EF_SMS, response);
+            //try {
+                //mLock.wait();
+            //} catch (InterruptedException e) {
+                //log("interrupted while trying to load from the SIM");
+            //}
+        //}
+        //return mSms;
     }
 
     
@@ -268,8 +267,8 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
         boolean varB663BD362DA24B90405F73C93B1CBFE0_748079414 = (enableCellBroadcastRange(messageIdentifier, messageIdentifier));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_654884922 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_654884922;
-        
-        
+        // ---------- Original Method ----------
+        //return enableCellBroadcastRange(messageIdentifier, messageIdentifier);
     }
 
     
@@ -279,8 +278,8 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
         boolean var0B64F7335613749B5A30C4F567F9D4B5_127700556 = (disableCellBroadcastRange(messageIdentifier, messageIdentifier));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1742484280 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1742484280;
-        
-        
+        // ---------- Original Method ----------
+        //return disableCellBroadcastRange(messageIdentifier, messageIdentifier);
     }
 
     
@@ -303,7 +302,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
             boolean var68934A3E9455FA72420237EB05902327_408173285 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_115199153 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_115199153;
-        } 
+        } //End block
     if(DBG)        
         log("Added cell broadcast subscription for MID range " + startMessageId
                     + " to " + endMessageId + " from client " + client);
@@ -311,8 +310,8 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
         boolean varB326B5062B2F0E69046810717534CB09_667270329 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2058627806 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2058627806;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -335,7 +334,7 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
             boolean var68934A3E9455FA72420237EB05902327_158383548 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_438819719 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_438819719;
-        } 
+        } //End block
     if(DBG)        
         log("Removed cell broadcast subscription for MID range " + startMessageId
                     + " to " + endMessageId + " from client " + client);
@@ -343,8 +342,8 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
         boolean varB326B5062B2F0E69046810717534CB09_1826440681 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44202689 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_44202689;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -361,29 +360,29 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
             try 
             {
                 mLock.wait();
-            } 
+            } //End block
             catch (InterruptedException e)
             {
                 log("interrupted while trying to set cell broadcast config");
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var51D04CAF6B674687BDD02BD17453D38D_117208993 = (mSuccess);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949525346 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_949525346;
-        
-        
-            
-        
-            
-            
-            
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG)
+            //log("Calling setGsmBroadcastConfig with " + configs.length + " configurations");
+        //synchronized (mLock) {
+            //Message response = mHandler.obtainMessage(EVENT_SET_BROADCAST_CONFIG_DONE);
+            //mSuccess = false;
+            //mPhone.mCM.setGsmBroadcastConfig(configs, response);
+            //try {
+                //mLock.wait();
+            //} catch (InterruptedException e) {
+                //log("interrupted while trying to set cell broadcast config");
+            //}
+        //}
+        //return mSuccess;
     }
 
     
@@ -400,29 +399,29 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
             try 
             {
                 mLock.wait();
-            } 
+            } //End block
             catch (InterruptedException e)
             {
                 log("interrupted while trying to set cell broadcast activation");
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var51D04CAF6B674687BDD02BD17453D38D_2109536868 = (mSuccess);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030304391 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030304391;
-        
-        
-            
-        
-            
-            
-            
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG)
+            //log("Calling setCellBroadcastActivation(" + activate + ')');
+        //synchronized (mLock) {
+            //Message response = mHandler.obtainMessage(EVENT_SET_BROADCAST_ACTIVATION_DONE);
+            //mSuccess = false;
+            //mPhone.mCM.setGsmBroadcastActivation(activate, response);
+            //try {
+                //mLock.wait();
+            //} catch (InterruptedException e) {
+                //log("interrupted while trying to set cell broadcast activation");
+            //}
+        //}
+        //return mSuccess;
     }
 
     
@@ -431,8 +430,8 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
     protected void log(String msg) {
         addTaint(msg.getTaint());
         Log.d(LOG_TAG, "[SimSmsInterfaceManager] " + msg);
-        
-        
+        // ---------- Original Method ----------
+        //Log.d(LOG_TAG, "[SimSmsInterfaceManager] " + msg);
     }
 
     
@@ -444,15 +443,15 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.629 -0400", hash_original_method = "C394C8BFADF1F863BE74B5C008CAC491", hash_generated_method = "C394C8BFADF1F863BE74B5C008CAC491")
         public CellBroadcastRangeManager ()
         {
-            
+            //Synthesized constructor
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.630 -0400", hash_original_method = "9715F7B64D6F5D9B1FC00DACD193B4CE", hash_generated_method = "9FFE737D65BF3BA4E83567038136FE56")
         protected void startUpdate() {
             mConfigList.clear();
-            
-            
+            // ---------- Original Method ----------
+            //mConfigList.clear();
         }
 
         
@@ -463,9 +462,9 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
             addTaint(startId);
             mConfigList.add(new SmsBroadcastConfigInfo(startId, endId,
                         SMS_CB_CODE_SCHEME_MIN, SMS_CB_CODE_SCHEME_MAX, selected));
-            
-            
-                        
+            // ---------- Original Method ----------
+            //mConfigList.add(new SmsBroadcastConfigInfo(startId, endId,
+                        //SMS_CB_CODE_SCHEME_MIN, SMS_CB_CODE_SCHEME_MAX, selected));
         }
 
         
@@ -476,22 +475,22 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_1861802318 =         mSms;
                 boolean varB326B5062B2F0E69046810717534CB09_1429886105 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1778099744 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1778099744;
-            } 
+            } //End block
             else
             {
                 SmsBroadcastConfigInfo[] configs = mConfigList.toArray(new SmsBroadcastConfigInfo[mConfigList.size()]);
                 boolean varD9AB8FFD46481F76D7D67117F9EC3B04_11979929 = (setCellBroadcastConfig(configs));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394980359 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394980359;
-            } 
-            
-            
-                
-            
-                
-                        
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mConfigList.isEmpty()) {
+                //return true;
+            //} else {
+                //SmsBroadcastConfigInfo[] configs =
+                        //mConfigList.toArray(new SmsBroadcastConfigInfo[mConfigList.size()]);
+                //return setCellBroadcastConfig(configs);
+            //}
         }
 
         

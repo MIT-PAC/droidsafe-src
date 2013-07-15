@@ -1,6 +1,6 @@
 package org.apache.harmony.security.provider.crypto;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,12 +15,11 @@ public class RandomBitsSupplier implements SHA1_Data {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.233 -0400", hash_original_method = "C2EAC1E8FB299AA5C7A70ED055C01714", hash_generated_method = "C2EAC1E8FB299AA5C7A70ED055C01714")
     public RandomBitsSupplier ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    static boolean isServiceAvailable() {
+        static boolean isServiceAvailable() {
         return serviceAvailable;
     }
 

@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ abstract class BaseByteBuffer extends ByteBuffer {
         super(capacity, block);
         addTaint(block.getTaint());
         addTaint(capacity);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,8 +22,8 @@ abstract class BaseByteBuffer extends ByteBuffer {
 CharBuffer var8836A77A7336DD27455DAB59231CE481_190768117 =         CharToByteBufferAdapter.asCharBuffer(this);
         var8836A77A7336DD27455DAB59231CE481_190768117.addTaint(taint);
         return var8836A77A7336DD27455DAB59231CE481_190768117;
-        
-        
+        // ---------- Original Method ----------
+        //return CharToByteBufferAdapter.asCharBuffer(this);
     }
 
     
@@ -33,8 +33,8 @@ CharBuffer var8836A77A7336DD27455DAB59231CE481_190768117 =         CharToByteBuf
 DoubleBuffer varD58C0872CB52590D14B11DAC2BE6F18B_1919488493 =         DoubleToByteBufferAdapter.asDoubleBuffer(this);
         varD58C0872CB52590D14B11DAC2BE6F18B_1919488493.addTaint(taint);
         return varD58C0872CB52590D14B11DAC2BE6F18B_1919488493;
-        
-        
+        // ---------- Original Method ----------
+        //return DoubleToByteBufferAdapter.asDoubleBuffer(this);
     }
 
     
@@ -44,8 +44,8 @@ DoubleBuffer varD58C0872CB52590D14B11DAC2BE6F18B_1919488493 =         DoubleToBy
 FloatBuffer var6FE30EC196CEEF16DE99C41319A74BF2_1538342715 =         FloatToByteBufferAdapter.asFloatBuffer(this);
         var6FE30EC196CEEF16DE99C41319A74BF2_1538342715.addTaint(taint);
         return var6FE30EC196CEEF16DE99C41319A74BF2_1538342715;
-        
-        
+        // ---------- Original Method ----------
+        //return FloatToByteBufferAdapter.asFloatBuffer(this);
     }
 
     
@@ -55,8 +55,8 @@ FloatBuffer var6FE30EC196CEEF16DE99C41319A74BF2_1538342715 =         FloatToByte
 IntBuffer varAAED8CC346FF3890C81EAB9F2D4AD468_698466179 =         IntToByteBufferAdapter.asIntBuffer(this);
         varAAED8CC346FF3890C81EAB9F2D4AD468_698466179.addTaint(taint);
         return varAAED8CC346FF3890C81EAB9F2D4AD468_698466179;
-        
-        
+        // ---------- Original Method ----------
+        //return IntToByteBufferAdapter.asIntBuffer(this);
     }
 
     
@@ -66,8 +66,8 @@ IntBuffer varAAED8CC346FF3890C81EAB9F2D4AD468_698466179 =         IntToByteBuffe
 LongBuffer var88E8C1C9830041B480F23CB027EC9464_1684984134 =         LongToByteBufferAdapter.asLongBuffer(this);
         var88E8C1C9830041B480F23CB027EC9464_1684984134.addTaint(taint);
         return var88E8C1C9830041B480F23CB027EC9464_1684984134;
-        
-        
+        // ---------- Original Method ----------
+        //return LongToByteBufferAdapter.asLongBuffer(this);
     }
 
     
@@ -77,8 +77,8 @@ LongBuffer var88E8C1C9830041B480F23CB027EC9464_1684984134 =         LongToByteBu
 ShortBuffer var918B7E64FE8B7D24C3B986BF52E35CF9_729633176 =         ShortToByteBufferAdapter.asShortBuffer(this);
         var918B7E64FE8B7D24C3B986BF52E35CF9_729633176.addTaint(taint);
         return var918B7E64FE8B7D24C3B986BF52E35CF9_729633176;
-        
-        
+        // ---------- Original Method ----------
+        //return ShortToByteBufferAdapter.asShortBuffer(this);
     }
 
     
@@ -88,8 +88,8 @@ ShortBuffer var918B7E64FE8B7D24C3B986BF52E35CF9_729633176 =         ShortToByteB
         char var817CCDD1C7A82FB42EF4611B7F81A17C_1889061416 = ((char) getShort());
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1068419093 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1068419093;
-        
-        
+        // ---------- Original Method ----------
+        //return (char) getShort();
     }
 
     
@@ -100,8 +100,8 @@ ShortBuffer var918B7E64FE8B7D24C3B986BF52E35CF9_729633176 =         ShortToByteB
         char varADB0B12E8C8BA86A0519ED194585CC64_1616081724 = ((char) getShort(index));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_536042400 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_536042400;
-        
-        
+        // ---------- Original Method ----------
+        //return (char) getShort(index);
     }
 
     
@@ -112,8 +112,8 @@ ShortBuffer var918B7E64FE8B7D24C3B986BF52E35CF9_729633176 =         ShortToByteB
 ByteBuffer var3CE57628C879294E83EF38D6A4813D5E_856274243 =         putShort((short) value);
         var3CE57628C879294E83EF38D6A4813D5E_856274243.addTaint(taint);
         return var3CE57628C879294E83EF38D6A4813D5E_856274243;
-        
-        
+        // ---------- Original Method ----------
+        //return putShort((short) value);
     }
 
     
@@ -125,8 +125,8 @@ ByteBuffer var3CE57628C879294E83EF38D6A4813D5E_856274243 =         putShort((sho
 ByteBuffer varA2347224BC969B6D5818F398107E8ADD_1553210869 =         putShort(index, (short) value);
         varA2347224BC969B6D5818F398107E8ADD_1553210869.addTaint(taint);
         return varA2347224BC969B6D5818F398107E8ADD_1553210869;
-        
-        
+        // ---------- Original Method ----------
+        //return putShort(index, (short) value);
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class BERApplicationSpecific extends DERApplicationSpecific {
         super(tagNo, vec);
         addTaint(vec.getTaint());
         addTaint(tagNo);
-        
+        // ---------- Original Method ----------
     }
 
     

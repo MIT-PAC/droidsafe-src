@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,7 +39,7 @@ class FileLoader extends StreamLoader {
                     url.substring(URLUtil.ASSET_BASE.length(), index)) :
                     URLUtil.stripAnchor(url.substring(
                             URLUtil.ASSET_BASE.length()));
-        } 
+        } //End block
         else
     if(mType == TYPE_RES)        
         {
@@ -47,16 +47,16 @@ class FileLoader extends StreamLoader {
                     url.substring(URLUtil.RESOURCE_BASE.length(), index)) :
                     URLUtil.stripAnchor(url.substring(
                             URLUtil.RESOURCE_BASE.length()));
-        } 
+        } //End block
         else
         {
             mPath = index > 0 ? URLUtil.stripAnchor(
                     url.substring(URLUtil.FILE_BASE.length(), index)) :
                     URLUtil.stripAnchor(url.substring(
                             URLUtil.FILE_BASE.length()));
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -68,21 +68,20 @@ class FileLoader extends StreamLoader {
     if(exMessage != null)        
         {
             errString += " " + exMessage;
-        } 
+        } //End block
 String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
         varF917352FB1129841F1BC9CC901BB1B99_1457152689.addTaint(taint);
         return varF917352FB1129841F1BC9CC901BB1B99_1457152689;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String exMessage = ex.getMessage();
+        //String errString = mContext.getString(R.string.httpErrorFileNotFound);
+        //if (exMessage != null) {
+            //errString += " " + exMessage;
+        //}
+        //return errString;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.999 -0400", hash_original_method = "97D1B11BE7CB4BE78107ED00EAAEAEA4", hash_generated_method = "BE3C957A696E0FC2866B531A57748BB0")
     @Override
     protected boolean setupStreamAndSendStatus() {
@@ -93,12 +92,12 @@ String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
                 try 
                 {
                     mDataStream = mContext.getAssets().open(mPath);
-                } 
+                } //End block
                 catch (java.io.FileNotFoundException ex)
                 {
                     mDataStream = mContext.getAssets().openNonAsset(mPath);
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(mType == TYPE_RES)            
             {
@@ -109,7 +108,7 @@ String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
                     boolean var68934A3E9455FA72420237EB05902327_1331882583 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682563251 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_682563251;
-                } 
+                } //End block
                 int slash = mPath.indexOf('/');
                 int dot = mPath.indexOf('.', slash);
     if(slash == -1 || dot == -1)                
@@ -119,7 +118,7 @@ String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
                     boolean var68934A3E9455FA72420237EB05902327_1381566154 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_606617860 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_606617860;
-                } 
+                } //End block
                 String subClassName = mPath.substring(0, slash);
                 String fieldName = mPath.substring(slash + 1, dot);
                 String errorMsg = null;
@@ -138,34 +137,34 @@ String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
                         mDataStream = mContext.getAssets().openNonAsset(
                                 value.assetCookie, value.string.toString(),
                                 AssetManager.ACCESS_STREAMING);
-                    } 
+                    } //End block
                     else
                     {
                         errorMsg = "Only support TYPE_STRING for the res files";
-                    } 
-                } 
+                    } //End block
+                } //End block
                 catch (ClassNotFoundException e)
                 {
                     errorMsg = "Can't find class:  "
                             + mContext.getPackageName() + ".R$" + subClassName;
-                } 
+                } //End block
                 catch (SecurityException e)
                 {
                     errorMsg = "Caught SecurityException: " + e;
-                } 
+                } //End block
                 catch (NoSuchFieldException e)
                 {
                     errorMsg = "Can't find field:  " + fieldName + " in "
                             + mContext.getPackageName() + ".R$" + subClassName;
-                } 
+                } //End block
                 catch (IllegalArgumentException e)
                 {
                     errorMsg = "Caught IllegalArgumentException: " + e;
-                } 
+                } //End block
                 catch (IllegalAccessException e)
                 {
                     errorMsg = "Caught IllegalAccessException: " + e;
-                } 
+                } //End block
     if(errorMsg != null)                
                 {
                     mLoadListener.error(EventHandler.FILE_ERROR, mContext
@@ -173,8 +172,8 @@ String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
                     boolean var68934A3E9455FA72420237EB05902327_2116893516 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_171228582 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_171228582;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(!mAllowFileAccess)                
@@ -184,40 +183,39 @@ String varF917352FB1129841F1BC9CC901BB1B99_1457152689 =         errString;
                     boolean var68934A3E9455FA72420237EB05902327_419963864 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_856366574 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_856366574;
-                } 
+                } //End block
                 mDataStream = new FileInputStream(mPath);
                 mContentLength = (new File(mPath)).length();
-            } 
+            } //End block
             mLoadListener.status(1, 1, 200, "OK");
-        } 
+        } //End block
         catch (java.io.FileNotFoundException ex)
         {
             mLoadListener.error(EventHandler.FILE_NOT_FOUND_ERROR, errString(ex));
             boolean var68934A3E9455FA72420237EB05902327_1977325501 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_335436195 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_335436195;
-        } 
+        } //End block
         catch (java.io.IOException ex)
         {
             mLoadListener.error(EventHandler.FILE_ERROR, errString(ex));
             boolean var68934A3E9455FA72420237EB05902327_2005136102 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1643948155 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1643948155;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_445471249 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115185587 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115185587;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.000 -0400", hash_original_method = "EECFC31B2787C18B03F2C6B112B9990D", hash_generated_method = "E46259D9AABAC67CD274455544731825")
     @Override
     protected void buildHeaders(Headers headers) {
         addTaint(headers.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

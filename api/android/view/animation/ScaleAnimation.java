@@ -1,6 +1,6 @@
 package android.view.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -84,13 +84,13 @@ public class ScaleAnimation extends Animation {
     if(tv.type == TypedValue.TYPE_FLOAT)            
             {
                 mFromX = tv.getFloat();
-            } 
+            } //End block
             else
             {
                 mFromXType = tv.type;
                 mFromXData = tv.data;
-            } 
-        } 
+            } //End block
+        } //End block
         tv = a.peekValue(
                 com.android.internal.R.styleable.ScaleAnimation_toXScale);
         mToX = 0.0f;
@@ -99,13 +99,13 @@ public class ScaleAnimation extends Animation {
     if(tv.type == TypedValue.TYPE_FLOAT)            
             {
                 mToX = tv.getFloat();
-            } 
+            } //End block
             else
             {
                 mToXType = tv.type;
                 mToXData = tv.data;
-            } 
-        } 
+            } //End block
+        } //End block
         tv = a.peekValue(
                 com.android.internal.R.styleable.ScaleAnimation_fromYScale);
         mFromY = 0.0f;
@@ -114,13 +114,13 @@ public class ScaleAnimation extends Animation {
     if(tv.type == TypedValue.TYPE_FLOAT)            
             {
                 mFromY = tv.getFloat();
-            } 
+            } //End block
             else
             {
                 mFromYType = tv.type;
                 mFromYData = tv.data;
-            } 
-        } 
+            } //End block
+        } //End block
         tv = a.peekValue(
                 com.android.internal.R.styleable.ScaleAnimation_toYScale);
         mToY = 0.0f;
@@ -129,13 +129,13 @@ public class ScaleAnimation extends Animation {
     if(tv.type == TypedValue.TYPE_FLOAT)            
             {
                 mToY = tv.getFloat();
-            } 
+            } //End block
             else
             {
                 mToYType = tv.type;
                 mToYData = tv.data;
-            } 
-        } 
+            } //End block
+        } //End block
         Description d = Description.parseValue(a.peekValue(
                 com.android.internal.R.styleable.ScaleAnimation_pivotX));
         mPivotXType = d.type;
@@ -145,8 +145,8 @@ public class ScaleAnimation extends Animation {
         mPivotYType = d.type;
         mPivotYValue = d.value;
         a.recycle();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -159,14 +159,14 @@ public class ScaleAnimation extends Animation {
         mToY = toY;
         mPivotX = 0;
         mPivotY = 0;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mResources = null;
+        //mFromX = fromX;
+        //mToX = toX;
+        //mFromY = fromY;
+        //mToY = toY;
+        //mPivotX = 0;
+        //mPivotY = 0;
     }
 
     
@@ -182,16 +182,16 @@ public class ScaleAnimation extends Animation {
         mPivotYType = ABSOLUTE;
         mPivotXValue = pivotX;
         mPivotYValue = pivotY;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mResources = null;
+        //mFromX = fromX;
+        //mToX = toX;
+        //mFromY = fromY;
+        //mToY = toY;
+        //mPivotXType = ABSOLUTE;
+        //mPivotYType = ABSOLUTE;
+        //mPivotXValue = pivotX;
+        //mPivotYValue = pivotY;
     }
 
     
@@ -207,16 +207,16 @@ public class ScaleAnimation extends Animation {
         mPivotXType = pivotXType;
         mPivotYValue = pivotYValue;
         mPivotYType = pivotYType;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mResources = null;
+        //mFromX = fromX;
+        //mToX = toX;
+        //mFromY = fromY;
+        //mToY = toY;
+        //mPivotXValue = pivotXValue;
+        //mPivotXType = pivotXType;
+        //mPivotYValue = pivotYValue;
+        //mPivotYType = pivotYType;
     }
 
     
@@ -231,34 +231,34 @@ public class ScaleAnimation extends Animation {
     if(mFromX != 1.0f || mToX != 1.0f)        
         {
             sx = mFromX + ((mToX - mFromX) * interpolatedTime);
-        } 
+        } //End block
     if(mFromY != 1.0f || mToY != 1.0f)        
         {
             sy = mFromY + ((mToY - mFromY) * interpolatedTime);
-        } 
+        } //End block
     if(mPivotX == 0 && mPivotY == 0)        
         {
             t.getMatrix().setScale(sx, sy);
-        } 
+        } //End block
         else
         {
             t.getMatrix().setScale(sx, sy, scale * mPivotX, scale * mPivotY);
-        } 
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //float sx = 1.0f;
+        //float sy = 1.0f;
+        //float scale = getScaleFactor();
+        //if (mFromX != 1.0f || mToX != 1.0f) {
+            //sx = mFromX + ((mToX - mFromX) * interpolatedTime);
+        //}
+        //if (mFromY != 1.0f || mToY != 1.0f) {
+            //sy = mFromY + ((mToY - mFromY) * interpolatedTime);
+        //}
+        //if (mPivotX == 0 && mPivotY == 0) {
+            //t.getMatrix().setScale(sx, sy);
+        //} else {
+            //t.getMatrix().setScale(sx, sy, scale * mPivotX, scale * mPivotY);
+        //}
     }
 
     
@@ -273,40 +273,40 @@ public class ScaleAnimation extends Animation {
     if(type == TypedValue.TYPE_FRACTION)        
         {
             targetSize = TypedValue.complexToFraction(data, size, psize);
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_DIMENSION)        
         {
             targetSize = TypedValue.complexToDimension(data, mResources.getDisplayMetrics());
-        } 
+        } //End block
         else
         {
             float var0CB47AEB6E5F9323F0969E628C4E59F5_1638011507 = (scale);
                         float var546ADE640B6EDFBC8A086EF31347E768_457700385 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_457700385;
-        } 
+        } //End block
     if(size == 0)        
         {
             float varC4CA4238A0B923820DCC509A6F75849B_741333862 = (1);
                         float var546ADE640B6EDFBC8A086EF31347E768_1467102760 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1467102760;
-        } 
+        } //End block
         float varB7A55A890AEA197BD829FD4660EE4EF4_1000609461 = (targetSize/(float)size);
                 float var546ADE640B6EDFBC8A086EF31347E768_1422615225 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1422615225;
-        
-        
-        
-            
-        
-            
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //float targetSize;
+        //if (type == TypedValue.TYPE_FRACTION) {
+            //targetSize = TypedValue.complexToFraction(data, size, psize);
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //targetSize = TypedValue.complexToDimension(data, mResources.getDisplayMetrics());
+        //} else {
+            //return scale;
+        //}
+        //if (size == 0) {
+            //return 1;
+        //}
+        //return targetSize/(float)size;
     }
 
     
@@ -320,14 +320,14 @@ public class ScaleAnimation extends Animation {
         mToY = resolveScale(mToY, mToYType, mToYData, height, parentHeight);
         mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
         mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.initialize(width, height, parentWidth, parentHeight);
+        //mFromX = resolveScale(mFromX, mFromXType, mFromXData, width, parentWidth);
+        //mToX = resolveScale(mToX, mToXType, mToXData, width, parentWidth);
+        //mFromY = resolveScale(mFromY, mFromYType, mFromYData, height, parentHeight);
+        //mToY = resolveScale(mToY, mToYType, mToYData, height, parentHeight);
+        //mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
+        //mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
     }
 
     

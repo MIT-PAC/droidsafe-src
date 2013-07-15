@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public final class DateUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.535 -0400", hash_original_method = "48D34D966FD8EAADA4B9042FB2D410CB", hash_generated_method = "F2D2192E1AB0D80DE38C401BF608C353")
     private  DateUtils() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -82,7 +82,7 @@ public final class DateUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.536 -0400", hash_original_method = "6FB3E28AC91977E78E839268C5DC660F", hash_generated_method = "6FB3E28AC91977E78E839268C5DC660F")
         public DateFormatHolder ()
         {
-            
+            //Synthesized constructor
         }
 
 

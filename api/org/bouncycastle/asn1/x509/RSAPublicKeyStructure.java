@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,9 +28,9 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
         BigInteger  publicExponent) {
         this.modulus = modulus;
         this.publicExponent = publicExponent;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.modulus = modulus;
+        //this.publicExponent = publicExponent;
     }
 
     
@@ -44,19 +44,19 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
                     + seq.size());
             varA2072CF614C7B8C7696DD5A02DBCCE9C_2036386849.addTaint(taint);
             throw varA2072CF614C7B8C7696DD5A02DBCCE9C_2036386849;
-        } 
+        } //End block
         Enumeration e = seq.getObjects();
         modulus = DERInteger.getInstance(e.nextElement()).getPositiveValue();
         publicExponent = DERInteger.getInstance(e.nextElement()).getPositiveValue();
-        
-        
-        
-            
-                    
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (seq.size() != 2)
+        //{
+            //throw new IllegalArgumentException("Bad sequence size: "
+                    //+ seq.size());
+        //}
+        //Enumeration e = seq.getObjects();
+        //modulus = DERInteger.getInstance(e.nextElement()).getPositiveValue();
+        //publicExponent = DERInteger.getInstance(e.nextElement()).getPositiveValue();
     }
 
     
@@ -81,25 +81,23 @@ public class RSAPublicKeyStructure extends ASN1Encodable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.181 -0400", hash_original_method = "A6C1BE2632CACEB59AFFE6BB866E7B69", hash_generated_method = "7810B0F321E67C8DBBDE639191D2EBDB")
     public BigInteger getModulus() {
 BigInteger varCC3CF2CBE0D806C40D550889F76A52A1_1414098726 =         modulus;
         varCC3CF2CBE0D806C40D550889F76A52A1_1414098726.addTaint(taint);
         return varCC3CF2CBE0D806C40D550889F76A52A1_1414098726;
-        
-        
+        // ---------- Original Method ----------
+        //return modulus;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.181 -0400", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "7D573F776CD631F9DEAB27B3A7374720")
     public BigInteger getPublicExponent() {
 BigInteger varB360105573401CCC465D10C242BA5623_2035082422 =         publicExponent;
         varB360105573401CCC465D10C242BA5623_2035082422.addTaint(taint);
         return varB360105573401CCC465D10C242BA5623_2035082422;
-        
-        
+        // ---------- Original Method ----------
+        //return publicExponent;
     }
 
     
@@ -111,11 +109,11 @@ BigInteger varB360105573401CCC465D10C242BA5623_2035082422 =         publicExpone
 DERObject var0B338F106E3279986C87B595B0F4A439_1358389652 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_1358389652.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_1358389652;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector  v = new ASN1EncodableVector();
+        //v.add(new DERInteger(getModulus()));
+        //v.add(new DERInteger(getPublicExponent()));
+        //return new DERSequence(v);
     }
 
     

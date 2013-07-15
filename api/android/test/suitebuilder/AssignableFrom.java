@@ -1,6 +1,6 @@
 package android.test.suitebuilder;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ class AssignableFrom implements Predicate<TestMethod> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.463 -0400", hash_original_method = "E9FCE922FC144032ABCB05F1667FA15F", hash_generated_method = "BF789729FAAADD598702C6C33A287AF6")
       AssignableFrom(Class root) {
         this.root = root;
-        
-        
+        // ---------- Original Method ----------
+        //this.root = root;
     }
 
     
@@ -25,8 +25,8 @@ class AssignableFrom implements Predicate<TestMethod> {
         boolean varF4DAC48EC26CA4A7ED9751DEBC02BE71_168708700 = (root.isAssignableFrom(testMethod.getEnclosingClass()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1734632914 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1734632914;
-        
-        
+        // ---------- Original Method ----------
+        //return root.isAssignableFrom(testMethod.getEnclosingClass());
     }
 
     

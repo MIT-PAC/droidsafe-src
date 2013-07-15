@@ -1,6 +1,6 @@
 package org.json;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ public class JSONArray {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.420 -0400", hash_original_method = "1427CA478AAC933787CA982EEEA58E55", hash_generated_method = "C0E1FE19CFD6C8C417EA7BEBD218CAB1")
     public  JSONArray() {
         values = new ArrayList<Object>();
-        
-        
+        // ---------- Original Method ----------
+        //values = new ArrayList<Object>();
     }
 
     
@@ -27,9 +27,9 @@ public class JSONArray {
         addTaint(copyFrom.getTaint());
         Collection<?> copyFromTyped = (Collection<?>) copyFrom;
         values.addAll(copyFromTyped);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Collection<?> copyFromTyped = (Collection<?>) copyFrom;
+        //values.addAll(copyFromTyped);
     }
 
     
@@ -40,20 +40,20 @@ public class JSONArray {
     if(object instanceof JSONArray)        
         {
             values = ((JSONArray) object).values;
-        } 
+        } //End block
         else
         {
             org.json.JSONException varD9CAFF6E5F5E847FEF76BC01289F6D9D_131094125 = JSON.typeMismatch(object, "JSONArray");
             varD9CAFF6E5F5E847FEF76BC01289F6D9D_131094125.addTaint(taint);
             throw varD9CAFF6E5F5E847FEF76BC01289F6D9D_131094125;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Object object = readFrom.nextValue();
+        //if (object instanceof JSONArray) {
+            //values = ((JSONArray) object).values;
+        //} else {
+            //throw JSON.typeMismatch(object, "JSONArray");
+        //}
     }
 
     
@@ -61,7 +61,7 @@ public class JSONArray {
     public  JSONArray(String json) throws JSONException {
         this(new JSONTokener(json));
         addTaint(json.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -70,8 +70,8 @@ public class JSONArray {
         int var45ED98251535301233938FEAC38EF89B_563589056 = (values.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799833111 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799833111;
-        
-        
+        // ---------- Original Method ----------
+        //return values.size();
     }
 
     
@@ -82,9 +82,9 @@ public class JSONArray {
 JSONArray var72A74007B2BE62B849F475C7BDA4658B_1668094881 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1668094881.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1668094881;
-        
-        
-        
+        // ---------- Original Method ----------
+        //values.add(value);
+        //return this;
     }
 
     
@@ -95,9 +95,9 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_1668094881 =         this;
 JSONArray var72A74007B2BE62B849F475C7BDA4658B_1565035765 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1565035765.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1565035765;
-        
-        
-        
+        // ---------- Original Method ----------
+        //values.add(JSON.checkDouble(value));
+        //return this;
     }
 
     
@@ -108,9 +108,9 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_1565035765 =         this;
 JSONArray var72A74007B2BE62B849F475C7BDA4658B_1265583274 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1265583274.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1265583274;
-        
-        
-        
+        // ---------- Original Method ----------
+        //values.add(value);
+        //return this;
     }
 
     
@@ -121,9 +121,9 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_1265583274 =         this;
 JSONArray var72A74007B2BE62B849F475C7BDA4658B_1446328862 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1446328862.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1446328862;
-        
-        
-        
+        // ---------- Original Method ----------
+        //values.add(value);
+        //return this;
     }
 
     
@@ -134,9 +134,9 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_1446328862 =         this;
 JSONArray var72A74007B2BE62B849F475C7BDA4658B_156033697 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_156033697.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_156033697;
-        
-        
-        
+        // ---------- Original Method ----------
+        //values.add(value);
+        //return this;
     }
 
     
@@ -147,8 +147,8 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_156033697 =         this;
 JSONArray var61C7A82145F58415AC9751EC1E113EA9_1573810566 =         put(index, (Boolean) value);
         var61C7A82145F58415AC9751EC1E113EA9_1573810566.addTaint(taint);
         return var61C7A82145F58415AC9751EC1E113EA9_1573810566;
-        
-        
+        // ---------- Original Method ----------
+        //return put(index, (Boolean) value);
     }
 
     
@@ -159,8 +159,8 @@ JSONArray var61C7A82145F58415AC9751EC1E113EA9_1573810566 =         put(index, (B
 JSONArray varD2648A584BB78028772896479DD96F21_1807086377 =         put(index, (Double) value);
         varD2648A584BB78028772896479DD96F21_1807086377.addTaint(taint);
         return varD2648A584BB78028772896479DD96F21_1807086377;
-        
-        
+        // ---------- Original Method ----------
+        //return put(index, (Double) value);
     }
 
     
@@ -171,8 +171,8 @@ JSONArray varD2648A584BB78028772896479DD96F21_1807086377 =         put(index, (D
 JSONArray varF18272C2716313036EEA794AD07A8D95_1134694871 =         put(index, (Integer) value);
         varF18272C2716313036EEA794AD07A8D95_1134694871.addTaint(taint);
         return varF18272C2716313036EEA794AD07A8D95_1134694871;
-        
-        
+        // ---------- Original Method ----------
+        //return put(index, (Integer) value);
     }
 
     
@@ -183,8 +183,8 @@ JSONArray varF18272C2716313036EEA794AD07A8D95_1134694871 =         put(index, (I
 JSONArray varF9E382633A80BF41E4480AA88C638D2C_1016575008 =         put(index, (Long) value);
         varF9E382633A80BF41E4480AA88C638D2C_1016575008.addTaint(taint);
         return varF9E382633A80BF41E4480AA88C638D2C_1016575008;
-        
-        
+        // ---------- Original Method ----------
+        //return put(index, (Long) value);
     }
 
     
@@ -195,25 +195,25 @@ JSONArray varF9E382633A80BF41E4480AA88C638D2C_1016575008 =         put(index, (L
     if(value instanceof Number)        
         {
             JSON.checkDouble(((Number) value).doubleValue());
-        } 
+        } //End block
         while
 (values.size() <= index)        
         {
             values.add(null);
-        } 
+        } //End block
         values.set(index, value);
 JSONArray var72A74007B2BE62B849F475C7BDA4658B_1634368254 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1634368254.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1634368254;
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (value instanceof Number) {
+            //JSON.checkDouble(((Number) value).doubleValue());
+        //}
+        //while (values.size() <= index) {
+            //values.add(null);
+        //}
+        //values.set(index, value);
+        //return this;
     }
 
     
@@ -224,9 +224,9 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_1634368254 =         this;
         boolean varF3F7EF11D8A95BF17F84F4328D5CEC8D_510769810 = (value == null || value == JSONObject.NULL);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305068801 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_305068801;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object value = opt(index);
+        //return value == null || value == JSONObject.NULL;
     }
 
     
@@ -241,27 +241,27 @@ JSONArray var72A74007B2BE62B849F475C7BDA4658B_1634368254 =         this;
                 JSONException var61C1F28B1022BBEB26A222F940677CBE_783893995 = new JSONException("Value at " + index + " is null.");
                 var61C1F28B1022BBEB26A222F940677CBE_783893995.addTaint(taint);
                 throw var61C1F28B1022BBEB26A222F940677CBE_783893995;
-            } 
+            } //End block
 Object varAF280DA2BC37D8BE783D8499160168DE_7012773 =             value;
             varAF280DA2BC37D8BE783D8499160168DE_7012773.addTaint(taint);
             return varAF280DA2BC37D8BE783D8499160168DE_7012773;
-        } 
+        } //End block
         catch (IndexOutOfBoundsException e)
         {
             JSONException varAFF4E3EB559CFFC23FDFFED9030230B2_968730186 = new JSONException("Index " + index + " out of range [0.." + values.size() + ")");
             varAFF4E3EB559CFFC23FDFFED9030230B2_968730186.addTaint(taint);
             throw varAFF4E3EB559CFFC23FDFFED9030230B2_968730186;
-        } 
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Object value = values.get(index);
+            //if (value == null) {
+                //throw new JSONException("Value at " + index + " is null.");
+            //}
+            //return value;
+        //} catch (IndexOutOfBoundsException e) {
+            //throw new JSONException("Index " + index + " out of range [0.." + values.size() + ")");
+        //}
     }
 
     
@@ -273,15 +273,15 @@ Object varAF280DA2BC37D8BE783D8499160168DE_7012773 =             value;
 Object var540C13E9E156B687226421B24F2DF178_1815051359 =             null;
             var540C13E9E156B687226421B24F2DF178_1815051359.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1815051359;
-        } 
+        } //End block
 Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index);
         var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963.addTaint(taint);
         return var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (index < 0 || index >= values.size()) {
+            //return null;
+        //}
+        //return values.get(index);
     }
 
     
@@ -295,17 +295,17 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
             org.json.JSONException varC3BFCD2CB6FB5EDA1A44F3A1C59E2B7C_1842086530 = JSON.typeMismatch(index, object, "boolean");
             varC3BFCD2CB6FB5EDA1A44F3A1C59E2B7C_1842086530.addTaint(taint);
             throw varC3BFCD2CB6FB5EDA1A44F3A1C59E2B7C_1842086530;
-        } 
+        } //End block
         boolean varB4A88417B3D0170D754C647C30B7216A_267245562 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_447494266 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_447494266;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object object = get(index);
+        //Boolean result = JSON.toBoolean(object);
+        //if (result == null) {
+            //throw JSON.typeMismatch(index, object, "boolean");
+        //}
+        //return result;
     }
 
     
@@ -315,8 +315,8 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
         boolean var5056EE15CE30E7DC2B586E1B4B41FAB7_1923793804 = (optBoolean(index, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588758088 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588758088;
-        
-        
+        // ---------- Original Method ----------
+        //return optBoolean(index, false);
     }
 
     
@@ -329,10 +329,10 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
         boolean varD432CC74B2878A4B571046B2CA3AAD1D_865444281 = (result != null ? result : fallback);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1364721569 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1364721569;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object object = opt(index);
+        //Boolean result = JSON.toBoolean(object);
+        //return result != null ? result : fallback;
     }
 
     
@@ -346,17 +346,17 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
             org.json.JSONException var530E815ACC0A4F0CEF9AD0962B4489F1_638785794 = JSON.typeMismatch(index, object, "double");
             var530E815ACC0A4F0CEF9AD0962B4489F1_638785794.addTaint(taint);
             throw var530E815ACC0A4F0CEF9AD0962B4489F1_638785794;
-        } 
+        } //End block
         double varB4A88417B3D0170D754C647C30B7216A_45134719 = (result);
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1138739232 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1138739232;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object object = get(index);
+        //Double result = JSON.toDouble(object);
+        //if (result == null) {
+            //throw JSON.typeMismatch(index, object, "double");
+        //}
+        //return result;
     }
 
     
@@ -366,8 +366,8 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
         double varB2E7B85686D192BCF9FAD6B3AA5DB29C_1555475160 = (optDouble(index, Double.NaN));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_391757156 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_391757156;
-        
-        
+        // ---------- Original Method ----------
+        //return optDouble(index, Double.NaN);
     }
 
     
@@ -380,10 +380,10 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
         double varD432CC74B2878A4B571046B2CA3AAD1D_1640444254 = (result != null ? result : fallback);
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1264538719 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1264538719;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object object = opt(index);
+        //Double result = JSON.toDouble(object);
+        //return result != null ? result : fallback;
     }
 
     
@@ -397,17 +397,17 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
             org.json.JSONException varEFC8D92C523694DA451C34A8DC9FE224_788205542 = JSON.typeMismatch(index, object, "int");
             varEFC8D92C523694DA451C34A8DC9FE224_788205542.addTaint(taint);
             throw varEFC8D92C523694DA451C34A8DC9FE224_788205542;
-        } 
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_1179224323 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1945813549 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1945813549;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object object = get(index);
+        //Integer result = JSON.toInteger(object);
+        //if (result == null) {
+            //throw JSON.typeMismatch(index, object, "int");
+        //}
+        //return result;
     }
 
     
@@ -417,8 +417,8 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
         int var3FB5AE27BA7BE5FCA90324057F944DC9_1430918114 = (optInt(index, 0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1711239757 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1711239757;
-        
-        
+        // ---------- Original Method ----------
+        //return optInt(index, 0);
     }
 
     
@@ -431,10 +431,10 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
         int varD432CC74B2878A4B571046B2CA3AAD1D_1526003247 = (result != null ? result : fallback);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_616763774 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_616763774;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object object = opt(index);
+        //Integer result = JSON.toInteger(object);
+        //return result != null ? result : fallback;
     }
 
     
@@ -448,17 +448,17 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
             org.json.JSONException var4CB0CCACCD7D523A422A3398B869157B_972403947 = JSON.typeMismatch(index, object, "long");
             var4CB0CCACCD7D523A422A3398B869157B_972403947.addTaint(taint);
             throw var4CB0CCACCD7D523A422A3398B869157B_972403947;
-        } 
+        } //End block
         long varB4A88417B3D0170D754C647C30B7216A_353102304 = (result);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_595208878 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_595208878;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object object = get(index);
+        //Long result = JSON.toLong(object);
+        //if (result == null) {
+            //throw JSON.typeMismatch(index, object, "long");
+        //}
+        //return result;
     }
 
     
@@ -468,8 +468,8 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
         long varE9BC627F2E3C0E875E849669EBF00293_535851673 = (optLong(index, 0L));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_338216342 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_338216342;
-        
-        
+        // ---------- Original Method ----------
+        //return optLong(index, 0L);
     }
 
     
@@ -482,10 +482,10 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
         long varD432CC74B2878A4B571046B2CA3AAD1D_134355110 = (result != null ? result : fallback);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_407788009 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_407788009;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object object = opt(index);
+        //Long result = JSON.toLong(object);
+        //return result != null ? result : fallback;
     }
 
     
@@ -499,17 +499,17 @@ Object var5DE7A94CAEDFFCB90D8B52A8BC544B32_1206404963 =         values.get(index
             org.json.JSONException var65EEA5FCFA3AB0253C68896E8D325672_909471820 = JSON.typeMismatch(index, object, "String");
             var65EEA5FCFA3AB0253C68896E8D325672_909471820.addTaint(taint);
             throw var65EEA5FCFA3AB0253C68896E8D325672_909471820;
-        } 
+        } //End block
 String varDC838461EE2FA0CA4C9BBB70A15456B0_1102765619 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1102765619.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1102765619;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object object = get(index);
+        //String result = JSON.toString(object);
+        //if (result == null) {
+            //throw JSON.typeMismatch(index, object, "String");
+        //}
+        //return result;
     }
 
     
@@ -519,8 +519,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1102765619 =         result;
 String var2A75D9FFD03F8140445734C02AD94794_1071966943 =         optString(index, "");
         var2A75D9FFD03F8140445734C02AD94794_1071966943.addTaint(taint);
         return var2A75D9FFD03F8140445734C02AD94794_1071966943;
-        
-        
+        // ---------- Original Method ----------
+        //return optString(index, "");
     }
 
     
@@ -533,10 +533,10 @@ String var2A75D9FFD03F8140445734C02AD94794_1071966943 =         optString(index,
 String varB29C31EA7BA163F0F2187995ADA1E48E_807305258 =         result != null ? result : fallback;
         varB29C31EA7BA163F0F2187995ADA1E48E_807305258.addTaint(taint);
         return varB29C31EA7BA163F0F2187995ADA1E48E_807305258;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object object = opt(index);
+        //String result = JSON.toString(object);
+        //return result != null ? result : fallback;
     }
 
     
@@ -549,20 +549,20 @@ String varB29C31EA7BA163F0F2187995ADA1E48E_807305258 =         result != null ? 
 JSONArray varA31A6C9B348464F1BAAA1B1373E54400_1775412673 =             (JSONArray) object;
             varA31A6C9B348464F1BAAA1B1373E54400_1775412673.addTaint(taint);
             return varA31A6C9B348464F1BAAA1B1373E54400_1775412673;
-        } 
+        } //End block
         else
         {
             org.json.JSONException var9EC0179E95815E740963BC2B5DE2DDD8_1673924181 = JSON.typeMismatch(index, object, "JSONArray");
             var9EC0179E95815E740963BC2B5DE2DDD8_1673924181.addTaint(taint);
             throw var9EC0179E95815E740963BC2B5DE2DDD8_1673924181;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Object object = get(index);
+        //if (object instanceof JSONArray) {
+            //return (JSONArray) object;
+        //} else {
+            //throw JSON.typeMismatch(index, object, "JSONArray");
+        //}
     }
 
     
@@ -573,9 +573,9 @@ JSONArray varA31A6C9B348464F1BAAA1B1373E54400_1775412673 =             (JSONArra
 JSONArray var37D15C802F10CA15BA7D983DBF1DB879_1787536748 =         object instanceof JSONArray ? (JSONArray) object : null;
         var37D15C802F10CA15BA7D983DBF1DB879_1787536748.addTaint(taint);
         return var37D15C802F10CA15BA7D983DBF1DB879_1787536748;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object object = opt(index);
+        //return object instanceof JSONArray ? (JSONArray) object : null;
     }
 
     
@@ -588,20 +588,20 @@ JSONArray var37D15C802F10CA15BA7D983DBF1DB879_1787536748 =         object instan
 JSONObject varA963CC0194E284A145B65210ED1E5C63_1247827204 =             (JSONObject) object;
             varA963CC0194E284A145B65210ED1E5C63_1247827204.addTaint(taint);
             return varA963CC0194E284A145B65210ED1E5C63_1247827204;
-        } 
+        } //End block
         else
         {
             org.json.JSONException var007AB7E12D365874FDEC14AB90BDC16C_956872281 = JSON.typeMismatch(index, object, "JSONObject");
             var007AB7E12D365874FDEC14AB90BDC16C_956872281.addTaint(taint);
             throw var007AB7E12D365874FDEC14AB90BDC16C_956872281;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Object object = get(index);
+        //if (object instanceof JSONObject) {
+            //return (JSONObject) object;
+        //} else {
+            //throw JSON.typeMismatch(index, object, "JSONObject");
+        //}
     }
 
     
@@ -612,9 +612,9 @@ JSONObject varA963CC0194E284A145B65210ED1E5C63_1247827204 =             (JSONObj
 JSONObject varE8B2189D470FA34838D00114FC8343E3_432917273 =         object instanceof JSONObject ? (JSONObject) object : null;
         varE8B2189D470FA34838D00114FC8343E3_432917273.addTaint(taint);
         return varE8B2189D470FA34838D00114FC8343E3_432917273;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object object = opt(index);
+        //return object instanceof JSONObject ? (JSONObject) object : null;
     }
 
     
@@ -628,26 +628,26 @@ JSONObject varE8B2189D470FA34838D00114FC8343E3_432917273 =         object instan
 JSONObject var540C13E9E156B687226421B24F2DF178_383772818 =             null;
             var540C13E9E156B687226421B24F2DF178_383772818.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_383772818;
-        } 
+        } //End block
 for(int i = 0;i < length;i++)
         {
             String name = JSON.toString(names.opt(i));
             result.put(name, opt(i));
-        } 
+        } //End block
 JSONObject varDC838461EE2FA0CA4C9BBB70A15456B0_2067623367 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_2067623367.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_2067623367;
-        
-        
-        
-        
-            
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //JSONObject result = new JSONObject();
+        //int length = Math.min(names.length(), values.size());
+        //if (length == 0) {
+            //return null;
+        //}
+        //for (int i = 0; i < length; i++) {
+            //String name = JSON.toString(names.opt(i));
+            //result.put(name, opt(i));
+        //}
+        //return result;
     }
 
     
@@ -661,24 +661,24 @@ for(int i = 0, size = values.size();i < size;i++)
     if(i > 0)            
             {
                 stringer.out.append(separator);
-            } 
+            } //End block
             stringer.value(values.get(i));
-        } 
+        } //End block
         stringer.close(JSONStringer.Scope.NULL, JSONStringer.Scope.NULL, "");
 String var2127C9CDB37C196CD892BED0F39DA194_122863995 =         stringer.out.toString();
         var2127C9CDB37C196CD892BED0F39DA194_122863995.addTaint(taint);
         return var2127C9CDB37C196CD892BED0F39DA194_122863995;
-        
-        
-        
-        
-            
-                
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //JSONStringer stringer = new JSONStringer();
+        //stringer.open(JSONStringer.Scope.NULL, "");
+        //for (int i = 0, size = values.size(); i < size; i++) {
+            //if (i > 0) {
+                //stringer.out.append(separator);
+            //}
+            //stringer.value(values.get(i));
+        //}
+        //stringer.close(JSONStringer.Scope.NULL, JSONStringer.Scope.NULL, "");
+        //return stringer.out.toString();
     }
 
     
@@ -692,21 +692,21 @@ String var2127C9CDB37C196CD892BED0F39DA194_122863995 =         stringer.out.toSt
 String varC93F6F7CA20C01E1D5F7833A2EB9AB40_50161550 =             stringer.toString();
             varC93F6F7CA20C01E1D5F7833A2EB9AB40_50161550.addTaint(taint);
             return varC93F6F7CA20C01E1D5F7833A2EB9AB40_50161550;
-        } 
+        } //End block
         catch (JSONException e)
         {
 String var540C13E9E156B687226421B24F2DF178_2142748471 =             null;
             var540C13E9E156B687226421B24F2DF178_2142748471.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2142748471;
-        } 
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //JSONStringer stringer = new JSONStringer();
+            //writeTo(stringer);
+            //return stringer.toString();
+        //} catch (JSONException e) {
+            //return null;
+        //}
     }
 
     
@@ -718,10 +718,10 @@ String var540C13E9E156B687226421B24F2DF178_2142748471 =             null;
 String varC93F6F7CA20C01E1D5F7833A2EB9AB40_832265168 =         stringer.toString();
         varC93F6F7CA20C01E1D5F7833A2EB9AB40_832265168.addTaint(taint);
         return varC93F6F7CA20C01E1D5F7833A2EB9AB40_832265168;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //JSONStringer stringer = new JSONStringer(indentSpaces);
+        //writeTo(stringer);
+        //return stringer.toString();
     }
 
     
@@ -732,14 +732,14 @@ String varC93F6F7CA20C01E1D5F7833A2EB9AB40_832265168 =         stringer.toString
 for(Object value : values)
         {
             stringer.value(value);
-        } 
+        } //End block
         stringer.endArray();
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //stringer.array();
+        //for (Object value : values) {
+            //stringer.value(value);
+        //}
+        //stringer.endArray();
     }
 
     
@@ -750,8 +750,8 @@ for(Object value : values)
         boolean var7207C24CA990068A1C31A05FBBC074BD_1439963962 = (o instanceof JSONArray && ((JSONArray) o).values.equals(values));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625784924 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_625784924;
-        
-        
+        // ---------- Original Method ----------
+        //return o instanceof JSONArray && ((JSONArray) o).values.equals(values);
     }
 
     
@@ -761,8 +761,8 @@ for(Object value : values)
         int varDF30FCF4BDECEBA23083ED6215F392A3_877440652 = (values.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_901816555 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_901816555;
-        
-        
+        // ---------- Original Method ----------
+        //return values.hashCode();
     }
 
     

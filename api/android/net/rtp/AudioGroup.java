@@ -1,6 +1,6 @@
 package android.net.rtp;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ public class AudioGroup {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.844 -0400", hash_original_method = "9E113DACC3DCFC949CC90EBD557A2ACA", hash_generated_method = "0A80C29DBACA16C4F76FC1A830D63EA7")
     public  AudioGroup() {
         mStreams = new HashMap<AudioStream, Integer>();
-        
-        
+        // ---------- Original Method ----------
+        //mStreams = new HashMap<AudioStream, Integer>();
     }
 
     
@@ -34,22 +34,21 @@ public class AudioGroup {
 AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStreams.keySet().toArray(new AudioStream[mStreams.size()]);
             varE7B6A514283364169051E32B606A4A2B_213561784.addTaint(taint);
             return varE7B6A514283364169051E32B606A4A2B_213561784;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //return mStreams.keySet().toArray(new AudioStream[mStreams.size()]);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.845 -0400", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "244E0BC75CFF5850A8C23113EBC345ED")
     public int getMode() {
         int varC5AB706852158521E9D44BF62A49B1C9_1823317999 = (mMode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117206190 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117206190;
-        
-        
+        // ---------- Original Method ----------
+        //return mMode;
     }
 
     
@@ -60,24 +59,23 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
             IllegalArgumentException varAED0A43B1A76B4B03E1EFA392603C665_2133177070 = new IllegalArgumentException("Invalid mode");
             varAED0A43B1A76B4B03E1EFA392603C665_2133177070.addTaint(taint);
             throw varAED0A43B1A76B4B03E1EFA392603C665_2133177070;
-        } 
+        } //End block
         synchronized
 (this)        {
             nativeSetMode(mode);
             mMode = mode;
-        } 
-        
-        
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mode < 0 || mode > MODE_LAST) {
+            //throw new IllegalArgumentException("Invalid mode");
+        //}
+        //synchronized (this) {
+            //nativeSetMode(mode);
+            //mMode = mode;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.846 -0400", hash_original_method = "49E777EBA85E577A92F07DB5E1A4FF69", hash_generated_method = "506A37E6792F21E53D3F6FDBE4ED0F16")
     private void nativeSetMode(int mode) {
     }
@@ -99,32 +97,31 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
                         stream.getRemoteAddress().getHostAddress(),
                         stream.getRemotePort(), codecSpec, dtmfType);
                 mStreams.put(stream, socket);
-            } 
+            } //End block
             catch (NullPointerException e)
             {
                 IllegalStateException var9CE996783689A44496E32DC249802075_1259563562 = new IllegalStateException(e);
                 var9CE996783689A44496E32DC249802075_1259563562.addTaint(taint);
                 throw var9CE996783689A44496E32DC249802075_1259563562;
-            } 
-        } 
-        
-        
-            
-                
-                
-                        
-                
-                        
-                        
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (!mStreams.containsKey(stream)) {
+            //try {
+                //int socket = stream.dup();
+                //String codecSpec = String.format("%d %s %s", codec.type,
+                        //codec.rtpmap, codec.fmtp);
+                //nativeAdd(stream.getMode(), socket,
+                        //stream.getRemoteAddress().getHostAddress(),
+                        //stream.getRemotePort(), codecSpec, dtmfType);
+                //mStreams.put(stream, socket);
+            //} catch (NullPointerException e) {
+                //throw new IllegalStateException(e);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.849 -0400", hash_original_method = "779FC85A590DA71DFFB7AE3A48802754", hash_generated_method = "649CA0A7A04D96E68294E9EEAD7DE3F3")
     private void nativeAdd(int mode, int socket, String remoteAddress,
             int remotePort, String codecSpec, int dtmfType) {
@@ -138,16 +135,15 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
     if(socket != null)        
         {
             nativeRemove(socket);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Integer socket = mStreams.remove(stream);
+        //if (socket != null) {
+            //nativeRemove(socket);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.851 -0400", hash_original_method = "B9A11772A106AE9307E1900F5171D964", hash_generated_method = "FB353169F1C9BF8BEE1773EEEE62E147")
     private void nativeRemove(int socket) {
     }
@@ -161,22 +157,21 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
             IllegalArgumentException varD7A395C13AE3769DC0B7E68D62E846C2_1765501901 = new IllegalArgumentException("Invalid event");
             varD7A395C13AE3769DC0B7E68D62E846C2_1765501901.addTaint(taint);
             throw varD7A395C13AE3769DC0B7E68D62E846C2_1765501901;
-        } 
+        } //End block
         synchronized
 (this)        {
             nativeSendDtmf(event);
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (event < 0 || event > 15) {
+            //throw new IllegalArgumentException("Invalid event");
+        //}
+        //synchronized (this) {
+            //nativeSendDtmf(event);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.852 -0400", hash_original_method = "679235D0DC30313046A01D4FDDB17DEF", hash_generated_method = "941DDD9A7FDB872AD700C070C8E036BF")
     private void nativeSendDtmf(int event) {
     }
@@ -188,12 +183,12 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
 (this)        {
             mStreams.clear();
             nativeRemove(-1);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //mStreams.clear();
+            //nativeRemove(-1);
+        //}
     }
 
     
@@ -202,9 +197,9 @@ AudioStream[] varE7B6A514283364169051E32B606A4A2B_213561784 =             mStrea
     protected void finalize() throws Throwable {
         clear();
         super.finalize();
-        
-        
-        
+        // ---------- Original Method ----------
+        //clear();
+        //super.finalize();
     }
 
     

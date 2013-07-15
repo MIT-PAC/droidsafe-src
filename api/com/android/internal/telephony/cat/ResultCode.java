@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,7 +47,6 @@ public enum ResultCode {
     ResultCode(int code) {
         mCode = code;
     }
-    @DSModeled(DSC.SAFE)
     public int value() {
         return mCode;
     }

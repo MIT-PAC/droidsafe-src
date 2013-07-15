@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,38 +35,38 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     if(headerViewInfos == null)        
         {
             mHeaderViewInfos = EMPTY_INFO_LIST;
-        } 
+        } //End block
         else
         {
             mHeaderViewInfos = headerViewInfos;
-        } 
+        } //End block
     if(footerViewInfos == null)        
         {
             mFooterViewInfos = EMPTY_INFO_LIST;
-        } 
+        } //End block
         else
         {
             mFooterViewInfos = footerViewInfos;
-        } 
+        } //End block
         mAreAllFixedViewsSelectable =
                 areAllListInfosSelectable(mHeaderViewInfos)
                 && areAllListInfosSelectable(mFooterViewInfos);
-        
-        
-        
-        
-            
-        
-            
-        
-        
-            
-        
-            
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //mAdapter = adapter;
+        //mIsFilterable = adapter instanceof Filterable;
+        //if (headerViewInfos == null) {
+            //mHeaderViewInfos = EMPTY_INFO_LIST;
+        //} else {
+            //mHeaderViewInfos = headerViewInfos;
+        //}
+        //if (footerViewInfos == null) {
+            //mFooterViewInfos = EMPTY_INFO_LIST;
+        //} else {
+            //mFooterViewInfos = footerViewInfos;
+        //}
+        //mAreAllFixedViewsSelectable =
+                //areAllListInfosSelectable(mHeaderViewInfos)
+                //&& areAllListInfosSelectable(mFooterViewInfos);
     }
 
     
@@ -75,8 +75,8 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
         int varEC0BB00903232C4A08E22EDBBBDDB3B9_210762317 = (mHeaderViewInfos.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2018778269 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2018778269;
-        
-        
+        // ---------- Original Method ----------
+        //return mHeaderViewInfos.size();
     }
 
     
@@ -85,8 +85,8 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
         int var290018E65E5025ADA8657290793A446E_439758566 = (mFooterViewInfos.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_457052370 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_457052370;
-        
-        
+        // ---------- Original Method ----------
+        //return mFooterViewInfos.size();
     }
 
     
@@ -95,8 +95,8 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
         boolean varD9E32D821C4CD0FE1F9CC72AC30ED7E9_945701244 = (mAdapter == null || mAdapter.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1791274986 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1791274986;
-        
-        
+        // ---------- Original Method ----------
+        //return mAdapter == null || mAdapter.isEmpty();
     }
 
     
@@ -112,21 +112,21 @@ for(ListView.FixedViewInfo info : infos)
                     boolean var68934A3E9455FA72420237EB05902327_523225297 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_514761868 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_514761868;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_959021443 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_664424903 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_664424903;
-        
-        
-            
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (infos != null) {
+            //for (ListView.FixedViewInfo info : infos) {
+                //if (!info.isSelectable) {
+                    //return false;
+                //}
+            //}
+        //}
+        //return true;
     }
 
     
@@ -145,23 +145,23 @@ for(int i = 0;i < mHeaderViewInfos.size();i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1676906176 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1556297587 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1556297587;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_295381197 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2124675641 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2124675641;
-        
-        
-            
-            
-                
-                
-                        
-                        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (int i = 0; i < mHeaderViewInfos.size(); i++) {
+            //ListView.FixedViewInfo info = mHeaderViewInfos.get(i);
+            //if (info.view == v) {
+                //mHeaderViewInfos.remove(i);
+                //mAreAllFixedViewsSelectable =
+                        //areAllListInfosSelectable(mHeaderViewInfos)
+                        //&& areAllListInfosSelectable(mFooterViewInfos);
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
@@ -180,23 +180,23 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1461816404 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1785347619 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1785347619;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_855504779 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1638374816 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1638374816;
-        
-        
-            
-            
-                
-                
-                        
-                        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (int i = 0; i < mFooterViewInfos.size(); i++) {
+            //ListView.FixedViewInfo info = mFooterViewInfos.get(i);
+            //if (info.view == v) {
+                //mFooterViewInfos.remove(i);
+                //mAreAllFixedViewsSelectable =
+                        //areAllListInfosSelectable(mHeaderViewInfos)
+                        //&& areAllListInfosSelectable(mFooterViewInfos);
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
@@ -207,19 +207,19 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
             int var3241752E7D8661E02B6EEA2ED17B8E7A_343038706 = (getFootersCount() + getHeadersCount() + mAdapter.getCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581872724 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581872724;
-        } 
+        } //End block
         else
         {
             int var28944B93C096C960DC1688A54560CBE2_2063332301 = (getFootersCount() + getHeadersCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_341811557 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_341811557;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAdapter != null) {
+            //return getFootersCount() + getHeadersCount() + mAdapter.getCount();
+        //} else {
+            //return getFootersCount() + getHeadersCount();
+        //}
     }
 
     
@@ -230,19 +230,19 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
             boolean varA6101A64396D6403047EC68F69AE5128_1830286434 = (mAreAllFixedViewsSelectable && mAdapter.areAllItemsEnabled());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_110273330 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_110273330;
-        } 
+        } //End block
         else
         {
             boolean varB326B5062B2F0E69046810717534CB09_1847839949 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_675286234 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_675286234;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAdapter != null) {
+            //return mAreAllFixedViewsSelectable && mAdapter.areAllItemsEnabled();
+        //} else {
+            //return true;
+        //}
     }
 
     
@@ -255,7 +255,7 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
             boolean var30157183DF2787D18A871909F0327DCA_392690013 = (mHeaderViewInfos.get(position).isSelectable);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1535108921 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1535108921;
-        } 
+        } //End block
         final int adjPosition = position - numHeaders;
         int adapterCount = 0;
     if(mAdapter != null)        
@@ -266,25 +266,25 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
                 boolean var4C43D253CDA0B0BC1F497A7D7543BDDB_752870979 = (mAdapter.isEnabled(adjPosition));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1720085504 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1720085504;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var4097CC8FC94B53C875A7B9B7DB70D2F5_609087491 = (mFooterViewInfos.get(adjPosition - adapterCount).isSelectable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461991680 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1461991680;
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numHeaders = getHeadersCount();
+        //if (position < numHeaders) {
+            //return mHeaderViewInfos.get(position).isSelectable;
+        //}
+        //final int adjPosition = position - numHeaders;
+        //int adapterCount = 0;
+        //if (mAdapter != null) {
+            //adapterCount = mAdapter.getCount();
+            //if (adjPosition < adapterCount) {
+                //return mAdapter.isEnabled(adjPosition);
+            //}
+        //}
+        //return mFooterViewInfos.get(adjPosition - adapterCount).isSelectable;
     }
 
     
@@ -297,7 +297,7 @@ for(int i = 0;i < mFooterViewInfos.size();i++)
 Object var290869F2955AE7DED08C5E8EA47554D5_1687325918 =             mHeaderViewInfos.get(position).data;
             var290869F2955AE7DED08C5E8EA47554D5_1687325918.addTaint(taint);
             return var290869F2955AE7DED08C5E8EA47554D5_1687325918;
-        } 
+        } //End block
         final int adjPosition = position - numHeaders;
         int adapterCount = 0;
     if(mAdapter != null)        
@@ -308,25 +308,25 @@ Object var290869F2955AE7DED08C5E8EA47554D5_1687325918 =             mHeaderViewI
 Object var3B505FBB918E8ACD45D7F7D683201487_2069341200 =                 mAdapter.getItem(adjPosition);
                 var3B505FBB918E8ACD45D7F7D683201487_2069341200.addTaint(taint);
                 return var3B505FBB918E8ACD45D7F7D683201487_2069341200;
-            } 
-        } 
+            } //End block
+        } //End block
 Object var85102CE5F5A2765360D9B519031AA68E_1967778577 =         mFooterViewInfos.get(adjPosition - adapterCount).data;
         var85102CE5F5A2765360D9B519031AA68E_1967778577.addTaint(taint);
         return var85102CE5F5A2765360D9B519031AA68E_1967778577;
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numHeaders = getHeadersCount();
+        //if (position < numHeaders) {
+            //return mHeaderViewInfos.get(position).data;
+        //}
+        //final int adjPosition = position - numHeaders;
+        //int adapterCount = 0;
+        //if (mAdapter != null) {
+            //adapterCount = mAdapter.getCount();
+            //if (adjPosition < adapterCount) {
+                //return mAdapter.getItem(adjPosition);
+            //}
+        //}
+        //return mFooterViewInfos.get(adjPosition - adapterCount).data;
     }
 
     
@@ -343,21 +343,21 @@ Object var85102CE5F5A2765360D9B519031AA68E_1967778577 =         mFooterViewInfos
                 long var87281ABAD68856DB82E24EAC34178CF8_2120531102 = (mAdapter.getItemId(adjPosition));
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1617291824 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1617291824;
-            } 
-        } 
+            } //End block
+        } //End block
         long var6BB61E3B7BCE0931DA574D19D1D82C88_567736885 = (-1);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_78253998 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_78253998;
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numHeaders = getHeadersCount();
+        //if (mAdapter != null && position >= numHeaders) {
+            //int adjPosition = position - numHeaders;
+            //int adapterCount = mAdapter.getCount();
+            //if (adjPosition < adapterCount) {
+                //return mAdapter.getItemId(adjPosition);
+            //}
+        //}
+        //return -1;
     }
 
     
@@ -368,15 +368,15 @@ Object var85102CE5F5A2765360D9B519031AA68E_1967778577 =         mFooterViewInfos
             boolean var119BF31D74B3F724AAFCA804527305FD_730762807 = (mAdapter.hasStableIds());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_656898165 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_656898165;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1976620059 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1927884202 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1927884202;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mAdapter != null) {
+            //return mAdapter.hasStableIds();
+        //}
+        //return false;
     }
 
     
@@ -391,7 +391,7 @@ Object var85102CE5F5A2765360D9B519031AA68E_1967778577 =         mFooterViewInfos
 View varCB63BA7FA759F1F9DC52E0CAAEB8BBE9_2142598138 =             mHeaderViewInfos.get(position).view;
             varCB63BA7FA759F1F9DC52E0CAAEB8BBE9_2142598138.addTaint(taint);
             return varCB63BA7FA759F1F9DC52E0CAAEB8BBE9_2142598138;
-        } 
+        } //End block
         final int adjPosition = position - numHeaders;
         int adapterCount = 0;
     if(mAdapter != null)        
@@ -402,25 +402,25 @@ View varCB63BA7FA759F1F9DC52E0CAAEB8BBE9_2142598138 =             mHeaderViewInf
 View varC1514BA58B8E68706140CE4F92AE3424_1446334881 =                 mAdapter.getView(adjPosition, convertView, parent);
                 varC1514BA58B8E68706140CE4F92AE3424_1446334881.addTaint(taint);
                 return varC1514BA58B8E68706140CE4F92AE3424_1446334881;
-            } 
-        } 
+            } //End block
+        } //End block
 View var887F5CA95EB2A1066712B07A6B2AD732_545629579 =         mFooterViewInfos.get(adjPosition - adapterCount).view;
         var887F5CA95EB2A1066712B07A6B2AD732_545629579.addTaint(taint);
         return var887F5CA95EB2A1066712B07A6B2AD732_545629579;
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numHeaders = getHeadersCount();
+        //if (position < numHeaders) {
+            //return mHeaderViewInfos.get(position).view;
+        //}
+        //final int adjPosition = position - numHeaders;
+        //int adapterCount = 0;
+        //if (mAdapter != null) {
+            //adapterCount = mAdapter.getCount();
+            //if (adjPosition < adapterCount) {
+                //return mAdapter.getView(adjPosition, convertView, parent);
+            //}
+        //}
+        //return mFooterViewInfos.get(adjPosition - adapterCount).view;
     }
 
     
@@ -437,21 +437,21 @@ View var887F5CA95EB2A1066712B07A6B2AD732_545629579 =         mFooterViewInfos.ge
                 int var25444017BD2D75DF8CC5AE07065DD7D3_1473540449 = (mAdapter.getItemViewType(adjPosition));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025964628 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025964628;
-            } 
-        } 
+            } //End block
+        } //End block
         int varD2DF48644AF99B2F15893F1C2BFF94E4_1119464523 = (AdapterView.ITEM_VIEW_TYPE_HEADER_OR_FOOTER);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304808055 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304808055;
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numHeaders = getHeadersCount();
+        //if (mAdapter != null && position >= numHeaders) {
+            //int adjPosition = position - numHeaders;
+            //int adapterCount = mAdapter.getCount();
+            //if (adjPosition < adapterCount) {
+                //return mAdapter.getItemViewType(adjPosition);
+            //}
+        //}
+        //return AdapterView.ITEM_VIEW_TYPE_HEADER_OR_FOOTER;
     }
 
     
@@ -462,30 +462,30 @@ View var887F5CA95EB2A1066712B07A6B2AD732_545629579 =         mFooterViewInfos.ge
             int var6CFD29AF0C4A694E53F64930AB480CDF_369137574 = (mAdapter.getViewTypeCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_189259529 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_189259529;
-        } 
+        } //End block
         int varC4CA4238A0B923820DCC509A6F75849B_1945825726 = (1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123597327 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123597327;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mAdapter != null) {
+            //return mAdapter.getViewTypeCount();
+        //}
+        //return 1;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.629 -0400", hash_original_method = "809D44C02719E33F590103DE7F6576A1", hash_generated_method = "32335E466B0703D3E78FB752261F1D23")
     public void registerDataSetObserver(DataSetObserver observer) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(observer.getTaint());
     if(mAdapter != null)        
         {
             mAdapter.registerDataSetObserver(observer);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAdapter != null) {
+            //mAdapter.registerDataSetObserver(observer);
+        //}
     }
 
     
@@ -495,11 +495,11 @@ View var887F5CA95EB2A1066712B07A6B2AD732_545629579 =         mFooterViewInfos.ge
     if(mAdapter != null)        
         {
             mAdapter.unregisterDataSetObserver(observer);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAdapter != null) {
+            //mAdapter.unregisterDataSetObserver(observer);
+        //}
     }
 
     
@@ -510,26 +510,25 @@ View var887F5CA95EB2A1066712B07A6B2AD732_545629579 =         mFooterViewInfos.ge
 Filter varBA677C0C4F060B90F0F3696B5ADE4CC1_1093475147 =             ((Filterable) mAdapter).getFilter();
             varBA677C0C4F060B90F0F3696B5ADE4CC1_1093475147.addTaint(taint);
             return varBA677C0C4F060B90F0F3696B5ADE4CC1_1093475147;
-        } 
+        } //End block
 Filter var540C13E9E156B687226421B24F2DF178_1510945643 =         null;
         var540C13E9E156B687226421B24F2DF178_1510945643.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1510945643;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mIsFilterable) {
+            //return ((Filterable) mAdapter).getFilter();
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.630 -0400", hash_original_method = "16C6428A588CE1C0BF49AB22D8718A60", hash_generated_method = "47798F05C051E43F9519B0E222A6317D")
     public ListAdapter getWrappedAdapter() {
 ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1673574595 =         mAdapter;
         varD72668EDE5E63ADF9340F3D8A19FD205_1673574595.addTaint(taint);
         return varD72668EDE5E63ADF9340F3D8A19FD205_1673574595;
-        
-        
+        // ---------- Original Method ----------
+        //return mAdapter;
     }
 
     

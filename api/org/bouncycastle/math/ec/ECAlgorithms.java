@@ -1,6 +1,6 @@
 package org.bouncycastle.math.ec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class ECAlgorithms {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.623 -0400", hash_original_method = "70F9F0F5BEFD5512C9E75259E8F999A7", hash_generated_method = "70F9F0F5BEFD5512C9E75259E8F999A7")
     public ECAlgorithms ()
     {
-        
+        //Synthesized constructor
     }
 
 

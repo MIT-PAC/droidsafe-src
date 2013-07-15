@@ -1,6 +1,6 @@
 package org.apache.http.conn.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class AllowAllHostnameVerifier extends AbstractVerifier {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.712 -0400", hash_original_method = "0CAE1F760C1CA01C015DCB961B7341AF", hash_generated_method = "0CAE1F760C1CA01C015DCB961B7341AF")
     public AllowAllHostnameVerifier ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -22,7 +22,7 @@ public class AllowAllHostnameVerifier extends AbstractVerifier {
         addTaint(subjectAlts[0].getTaint());
         addTaint(cns[0].getTaint());
         addTaint(host.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -32,8 +32,8 @@ public class AllowAllHostnameVerifier extends AbstractVerifier {
 String varEF8F724A1408FE08EB256BB6C5F7C6EA_833994923 =         "ALLOW_ALL";
         varEF8F724A1408FE08EB256BB6C5F7C6EA_833994923.addTaint(taint);
         return varEF8F724A1408FE08EB256BB6C5F7C6EA_833994923;
-        
-        
+        // ---------- Original Method ----------
+        //return "ALLOW_ALL";
     }
 
     

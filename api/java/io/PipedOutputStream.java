@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class PipedOutputStream extends OutputStream {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:48.673 -0400", hash_original_method = "E4156F592468799387F97AC767717CEE", hash_generated_method = "BD1FEBE339408C69819D3D0783F7B91C")
     public  PipedOutputStream() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -20,8 +20,8 @@ public class PipedOutputStream extends OutputStream {
     public  PipedOutputStream(PipedInputStream target) throws IOException {
         addTaint(target.getTaint());
         connect(target);
-        
-        
+        // ---------- Original Method ----------
+        //connect(target);
     }
 
     
@@ -33,13 +33,13 @@ public class PipedOutputStream extends OutputStream {
         {
             stream.done();
             target = null;
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //PipedInputStream stream = target;
+        //if (stream != null) {
+            //stream.done();
+            //target = null;
+        //}
     }
 
     
@@ -50,7 +50,7 @@ public class PipedOutputStream extends OutputStream {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_333469742 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_333469742.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_333469742;
-        } 
+        } //End block
         synchronized
 (stream)        {
     if(this.target != null)            
@@ -58,30 +58,30 @@ public class PipedOutputStream extends OutputStream {
                 IOException varADD8C8BE54C6A77AF4145D2157468E07_2049308427 = new IOException("Already connected");
                 varADD8C8BE54C6A77AF4145D2157468E07_2049308427.addTaint(taint);
                 throw varADD8C8BE54C6A77AF4145D2157468E07_2049308427;
-            } 
+            } //End block
     if(stream.isConnected)            
             {
                 IOException var59E3110525112AD12A0795267BCC8DC7_2059648073 = new IOException("Pipe already connected");
                 var59E3110525112AD12A0795267BCC8DC7_2059648073.addTaint(taint);
                 throw var59E3110525112AD12A0795267BCC8DC7_2059648073;
-            } 
+            } //End block
             stream.establishConnection();
             this.target = stream;
-        } 
-        
-        
-            
-        
-        
-            
-                
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (stream == null) {
+            //throw new NullPointerException();
+        //}
+        //synchronized (stream) {
+            //if (this.target != null) {
+                //throw new IOException("Already connected");
+            //}
+            //if (stream.isConnected) {
+                //throw new IOException("Pipe already connected");
+            //}
+            //stream.establishConnection();
+            //this.target = stream;
+        //}
     }
 
     
@@ -92,19 +92,19 @@ public class PipedOutputStream extends OutputStream {
     if(stream == null)        
         {
             return;
-        } 
+        } //End block
         synchronized
 (stream)        {
             stream.notifyAll();
-        } 
-        
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //PipedInputStream stream = target;
+        //if (stream == null) {
+            //return;
+        //}
+        //synchronized (stream) {
+            //stream.notifyAll();
+        //}
     }
 
     
@@ -115,8 +115,8 @@ public class PipedOutputStream extends OutputStream {
         addTaint(offset);
         addTaint(buffer[0]);
         super.write(buffer, offset, count);
-        
-        
+        // ---------- Original Method ----------
+        //super.write(buffer, offset, count);
     }
 
     
@@ -130,14 +130,14 @@ public class PipedOutputStream extends OutputStream {
             IOException varCCA92B31BAC776950A6EA30CF1B3AEE9_2043632956 = new IOException("Pipe not connected");
             varCCA92B31BAC776950A6EA30CF1B3AEE9_2043632956.addTaint(taint);
             throw varCCA92B31BAC776950A6EA30CF1B3AEE9_2043632956;
-        } 
+        } //End block
         stream.receive(oneByte);
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //PipedInputStream stream = target;
+        //if (stream == null) {
+            //throw new IOException("Pipe not connected");
+        //}
+        //stream.receive(oneByte);
     }
 
     

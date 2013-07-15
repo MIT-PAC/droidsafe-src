@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ class BerTlv {
     private  BerTlv(int tag, List<ComprehensionTlv> ctlvs) {
         mTag = tag;
         mCompTlvs = ctlvs;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mTag = tag;
+        //mCompTlvs = ctlvs;
     }
 
     
@@ -29,19 +29,18 @@ class BerTlv {
 List<ComprehensionTlv> varEED3324DF316BCB609D1536A9D775114_429141878 =         mCompTlvs;
         varEED3324DF316BCB609D1536A9D775114_429141878.addTaint(taint);
         return varEED3324DF316BCB609D1536A9D775114_429141878;
-        
-        
+        // ---------- Original Method ----------
+        //return mCompTlvs;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.683 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "C949633633E8504B81F7E86821BB39FC")
     public int getTag() {
         int var07496860B5C53FDD66588727158D5F73_1727397498 = (mTag);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_437290665 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_437290665;
-        
-        
+        // ---------- Original Method ----------
+        //return mTag;
     }
 
     

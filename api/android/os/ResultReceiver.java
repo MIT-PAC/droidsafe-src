@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,9 +21,9 @@ public class ResultReceiver implements Parcelable {
     public  ResultReceiver(Handler handler) {
         mLocal = true;
         mHandler = handler;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLocal = true;
+        //mHandler = handler;
     }
 
     
@@ -32,10 +32,10 @@ public class ResultReceiver implements Parcelable {
         mLocal = false;
         mHandler = null;
         mReceiver = IResultReceiver.Stub.asInterface(in.readStrongBinder());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLocal = false;
+        //mHandler = null;
+        //mReceiver = IResultReceiver.Stub.asInterface(in.readStrongBinder());
     }
 
     
@@ -48,59 +48,57 @@ public class ResultReceiver implements Parcelable {
     if(mHandler != null)            
             {
                 mHandler.post(new MyRunnable(resultCode, resultData));
-            } 
+            } //End block
             else
             {
                 onReceiveResult(resultCode, resultData);
-            } 
+            } //End block
             return;
-        } 
+        } //End block
     if(mReceiver != null)        
         {
             try 
             {
                 mReceiver.send(resultCode, resultData);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-            
-        
-        
-            
-                
-            
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mLocal) {
+            //if (mHandler != null) {
+                //mHandler.post(new MyRunnable(resultCode, resultData));
+            //} else {
+                //onReceiveResult(resultCode, resultData);
+            //}
+            //return;
+        //}
+        //if (mReceiver != null) {
+            //try {
+                //mReceiver.send(resultCode, resultData);
+            //} catch (RemoteException e) {
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.545 -0400", hash_original_method = "BDE6DE984C100A6F17C2FEFAD669078A", hash_generated_method = "D0C901DD2478013571E63246BE50F411")
     protected void onReceiveResult(int resultCode, Bundle resultData) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(resultData.getTaint());
         addTaint(resultCode);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.546 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4BE18E19DB9062D11920AB8B8A4B6CEF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_516726065 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426443972 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426443972;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -113,16 +111,16 @@ public class ResultReceiver implements Parcelable {
     if(mReceiver == null)            
             {
                 mReceiver = new MyResultReceiver();
-            } 
+            } //End block
             out.writeStrongBinder(mReceiver.asBinder());
-        } 
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (mReceiver == null) {
+                //mReceiver = new MyResultReceiver();
+            //}
+            //out.writeStrongBinder(mReceiver.asBinder());
+        //}
     }
 
     
@@ -138,17 +136,17 @@ public class ResultReceiver implements Parcelable {
           MyRunnable(int resultCode, Bundle resultData) {
             mResultCode = resultCode;
             mResultData = resultData;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mResultCode = resultCode;
+            //mResultData = resultData;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.548 -0400", hash_original_method = "B2EEF2B3DE60D5C6AF2898B6D426B2C7", hash_generated_method = "CE9FA5919F14757E6813C53A6BF42E89")
         public void run() {
             onReceiveResult(mResultCode, mResultData);
-            
-            
+            // ---------- Original Method ----------
+            //onReceiveResult(mResultCode, mResultData);
         }
 
         
@@ -161,7 +159,7 @@ public class ResultReceiver implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.548 -0400", hash_original_method = "00E32356C88F444E6F526AF010826911", hash_generated_method = "00E32356C88F444E6F526AF010826911")
         public MyResultReceiver ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -172,17 +170,17 @@ public class ResultReceiver implements Parcelable {
     if(mHandler != null)            
             {
                 mHandler.post(new MyRunnable(resultCode, resultData));
-            } 
+            } //End block
             else
             {
                 onReceiveResult(resultCode, resultData);
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mHandler != null) {
+                //mHandler.post(new MyRunnable(resultCode, resultData));
+            //} else {
+                //onReceiveResult(resultCode, resultData);
+            //}
         }
 
         
@@ -201,12 +199,12 @@ public class ResultReceiver implements Parcelable {
             return new ResultReceiver[size];
         }
     };
-    
+    // orphaned legacy method
     public ResultReceiver createFromParcel(Parcel in) {
             return new ResultReceiver(in);
         }
     
-    
+    // orphaned legacy method
     public ResultReceiver[] newArray(int size) {
             return new ResultReceiver[size];
         }

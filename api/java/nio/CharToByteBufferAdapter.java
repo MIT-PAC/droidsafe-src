@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,10 +17,10 @@ final class CharToByteBufferAdapter extends CharBuffer {
         this.byteBuffer = byteBuffer;
         this.byteBuffer.clear();
         this.effectiveDirectAddress = byteBuffer.effectiveDirectAddress;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.byteBuffer = byteBuffer;
+        //this.byteBuffer.clear();
+        //this.effectiveDirectAddress = byteBuffer.effectiveDirectAddress;
     }
 
     
@@ -42,13 +42,13 @@ final class CharToByteBufferAdapter extends CharBuffer {
 CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1417820403 =         buf;
         var0D8E466677B8F245666E1A4B1E0924E6_1417820403.addTaint(taint);
         return var0D8E466677B8F245666E1A4B1E0924E6_1417820403;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //CharToByteBufferAdapter buf = new CharToByteBufferAdapter(byteBuffer.asReadOnlyBuffer());
+        //buf.limit = limit;
+        //buf.position = position;
+        //buf.mark = mark;
+        //buf.byteBuffer.order = byteBuffer.order;
+        //return buf;
     }
 
     
@@ -60,7 +60,7 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1417820403 =         buf;
             ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_2147420728 = new ReadOnlyBufferException();
             varA14F16C43B102D90B34008C8FF8087F8_2147420728.addTaint(taint);
             throw varA14F16C43B102D90B34008C8FF8087F8_2147420728;
-        } 
+        } //End block
         byteBuffer.limit(limit * SizeOf.CHAR);
         byteBuffer.position(position * SizeOf.CHAR);
         byteBuffer.compact();
@@ -71,18 +71,18 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1417820403 =         buf;
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_732640618 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_732640618.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_732640618;
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (byteBuffer.isReadOnly()) {
+            //throw new ReadOnlyBufferException();
+        //}
+        //byteBuffer.limit(limit * SizeOf.CHAR);
+        //byteBuffer.position(position * SizeOf.CHAR);
+        //byteBuffer.compact();
+        //byteBuffer.clear();
+        //position = limit - position;
+        //limit = capacity;
+        //mark = UNSET_MARK;
+        //return this;
     }
 
     
@@ -97,13 +97,13 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_732640618 =         this;
 CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1424161695 =         buf;
         var0D8E466677B8F245666E1A4B1E0924E6_1424161695.addTaint(taint);
         return var0D8E466677B8F245666E1A4B1E0924E6_1424161695;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ByteBuffer bb = byteBuffer.duplicate().order(byteBuffer.order());
+        //CharToByteBufferAdapter buf = new CharToByteBufferAdapter(bb);
+        //buf.limit = limit;
+        //buf.position = position;
+        //buf.mark = mark;
+        //return buf;
     }
 
     
@@ -115,15 +115,15 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1424161695 =         buf;
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_796001014 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_796001014.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_796001014;
-        } 
+        } //End block
         char var0C7531E888F788E7ED252F876B176246_1182533981 = (byteBuffer.getChar(position++ * SizeOf.CHAR));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_741515452 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_741515452;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (position == limit) {
+            //throw new BufferUnderflowException();
+        //}
+        //return byteBuffer.getChar(position++ * SizeOf.CHAR);
     }
 
     
@@ -135,9 +135,9 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1424161695 =         buf;
         char varDB86469F4E5E54A3CC257A3876C8E811_1503310195 = (byteBuffer.getChar(index * SizeOf.CHAR));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_692300547 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_692300547;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkIndex(index);
+        //return byteBuffer.getChar(index * SizeOf.CHAR);
     }
 
     
@@ -152,25 +152,25 @@ CharBuffer var0D8E466677B8F245666E1A4B1E0924E6_1424161695 =         buf;
     if(byteBuffer instanceof DirectByteBuffer)        
         {
             ((DirectByteBuffer) byteBuffer).get(dst, dstOffset, charCount);
-        } 
+        } //End block
         else
         {
             ((HeapByteBuffer) byteBuffer).get(dst, dstOffset, charCount);
-        } 
+        } //End block
         this.position += charCount;
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1915339561 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1915339561.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1915339561;
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //byteBuffer.limit(limit * SizeOf.CHAR);
+        //byteBuffer.position(position * SizeOf.CHAR);
+        //if (byteBuffer instanceof DirectByteBuffer) {
+            //((DirectByteBuffer) byteBuffer).get(dst, dstOffset, charCount);
+        //} else {
+            //((HeapByteBuffer) byteBuffer).get(dst, dstOffset, charCount);
+        //}
+        //this.position += charCount;
+        //return this;
     }
 
     
@@ -180,8 +180,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1915339561 =         this;
         boolean var418C9026FB66B06011A0A6A75660D0BA_892620462 = (byteBuffer.isDirect());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_509021661 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_509021661;
-        
-        
+        // ---------- Original Method ----------
+        //return byteBuffer.isDirect();
     }
 
     
@@ -191,8 +191,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1915339561 =         this;
         boolean varD09365DD25410F8B7D3D50C2BC7CE0DE_1042159448 = (byteBuffer.isReadOnly());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_610943410 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_610943410;
-        
-        
+        // ---------- Original Method ----------
+        //return byteBuffer.isReadOnly();
     }
 
     
@@ -202,8 +202,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1915339561 =         this;
 ByteOrder var8FE5BB77B415046634F1C7025935FA68_1913012187 =         byteBuffer.order();
         var8FE5BB77B415046634F1C7025935FA68_1913012187.addTaint(taint);
         return var8FE5BB77B415046634F1C7025935FA68_1913012187;
-        
-        
+        // ---------- Original Method ----------
+        //return byteBuffer.order();
     }
 
     
@@ -213,8 +213,8 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1913012187 =         byteBuffer.or
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1525180702 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1525180702.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1525180702;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -224,20 +224,19 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1913012187 =         byteBuffer.or
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_720742838 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_720742838.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_720742838;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.092 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "1F1B58DB59182B72D05C836C600C31D0")
     @Override
     protected boolean protectedHasArray() {
         boolean var68934A3E9455FA72420237EB05902327_2046013960 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1788576470 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1788576470;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -250,17 +249,17 @@ ByteOrder var8FE5BB77B415046634F1C7025935FA68_1913012187 =         byteBuffer.or
             BufferOverflowException var773478A23217201B18B531915D367F31_1094727210 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_1094727210.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_1094727210;
-        } 
+        } //End block
         byteBuffer.putChar(position++ * SizeOf.CHAR, c);
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1791350628 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1791350628.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1791350628;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (position == limit) {
+            //throw new BufferOverflowException();
+        //}
+        //byteBuffer.putChar(position++ * SizeOf.CHAR, c);
+        //return this;
     }
 
     
@@ -274,10 +273,10 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1791350628 =         this;
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1683983158 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1683983158.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1683983158;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkIndex(index);
+        //byteBuffer.putChar(index * SizeOf.CHAR, c);
+        //return this;
     }
 
     
@@ -292,25 +291,25 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1683983158 =         this;
     if(byteBuffer instanceof ReadWriteDirectByteBuffer)        
         {
             ((ReadWriteDirectByteBuffer) byteBuffer).put(src, srcOffset, charCount);
-        } 
+        } //End block
         else
         {
             ((ReadWriteHeapByteBuffer) byteBuffer).put(src, srcOffset, charCount);
-        } 
+        } //End block
         this.position += charCount;
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1727507953 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1727507953.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1727507953;
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //byteBuffer.limit(limit * SizeOf.CHAR);
+        //byteBuffer.position(position * SizeOf.CHAR);
+        //if (byteBuffer instanceof ReadWriteDirectByteBuffer) {
+            //((ReadWriteDirectByteBuffer) byteBuffer).put(src, srcOffset, charCount);
+        //} else {
+            //((ReadWriteHeapByteBuffer) byteBuffer).put(src, srcOffset, charCount);
+        //}
+        //this.position += charCount;
+        //return this;
     }
 
     
@@ -325,13 +324,13 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1727507953 =         this;
 CharBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1277356735 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1277356735.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1277356735;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //byteBuffer.limit(limit * SizeOf.CHAR);
+        //byteBuffer.position(position * SizeOf.CHAR);
+        //ByteBuffer bb = byteBuffer.slice().order(byteBuffer.order());
+        //CharBuffer result = new CharToByteBufferAdapter(bb);
+        //byteBuffer.clear();
+        //return result;
     }
 
     
@@ -347,12 +346,12 @@ CharBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1277356735 =         result;
 CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_2011006904 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_2011006904.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_2011006904;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkStartEndRemaining(start, end);
+        //CharBuffer result = duplicate();
+        //result.limit(position + end);
+        //result.position(position + start);
+        //return result;
     }
 
     

@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,16 +13,16 @@ public final class Float extends Number implements Comparable<Float> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.748 -0400", hash_original_method = "5ED6E2A1D35592501FD060BC19F5CA5B", hash_generated_method = "7E03C0D6F54F14B3903353406441D080")
     public  Float(float value) {
         this.value = value;
-        
-        
+        // ---------- Original Method ----------
+        //this.value = value;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.748 -0400", hash_original_method = "F67C36B21D5AC7A6288ABF8CC3CCE46F", hash_generated_method = "88E8B31744D75DE12514BFC71619AEB7")
     public  Float(double value) {
         this.value = (float) value;
-        
-        
+        // ---------- Original Method ----------
+        //this.value = (float) value;
     }
 
     
@@ -30,47 +30,43 @@ public final class Float extends Number implements Comparable<Float> {
     public  Float(String string) throws NumberFormatException {
         this(parseFloat(string));
         addTaint(string.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.749 -0400", hash_original_method = "C4AC6F26EC342AC8CCBAB08E832A244F", hash_generated_method = "FD4B74DBFBC4F0558CACCC7CC5D138FC")
     public int compareTo(Float object) {
         addTaint(object.getTaint());
         int var054767143750F894747E80D9A9324D76_1679730696 = (compare(value, object.value));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316201049 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316201049;
-        
-        
+        // ---------- Original Method ----------
+        //return compare(value, object.value);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.750 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "EB6B50133C83539DA5DE667F9D0FBE6C")
     @Override
     public byte byteValue() {
         byte varF3F1FD62E8C4F529180D718EF4A7CECE_647972672 = ((byte) value);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_978285874 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_978285874;
-        
-        
+        // ---------- Original Method ----------
+        //return (byte) value;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.750 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "C8964B47B2FE5066A88F6703D9EB47D1")
     @Override
     public double doubleValue() {
         double var2063C1608D6E0BAF80249C42E2BE5804_856217197 = (value);
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1238626255 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1238626255;
-        
-        
+        // ---------- Original Method ----------
+        //return value;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.751 -0400", hash_original_method = "D5A6527E8F740E6B81FAC1E35F94CBE1", hash_generated_method = "48390EBD51AD619EB9D7D8A22F6E871B")
     @Override
     public boolean equals(Object object) {
@@ -79,9 +75,9 @@ public final class Float extends Number implements Comparable<Float> {
                 (floatToIntBits(this.value) == floatToIntBits(((Float) object).value)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_454854462 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_454854462;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return (object instanceof Float) &&
+                //(floatToIntBits(this.value) == floatToIntBits(((Float) object).value));
     }
 
     
@@ -97,27 +93,25 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.752 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "1EE88EF8C7381A2E66E134C2E520CC1D")
     @Override
     public float floatValue() {
         float var2063C1608D6E0BAF80249C42E2BE5804_1228763478 = (value);
                 float var546ADE640B6EDFBC8A086EF31347E768_907050794 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_907050794;
-        
-        
+        // ---------- Original Method ----------
+        //return value;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.752 -0400", hash_original_method = "08993E3A95048E3B463477EA75421A52", hash_generated_method = "3FEA80CFB0F774DCBAFE93778190BFEE")
     @Override
     public int hashCode() {
         int var56724E152D84F94EE82A2A2AC8591848_1773758682 = (floatToIntBits(value));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1204209282 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1204209282;
-        
-        
+        // ---------- Original Method ----------
+        //return floatToIntBits(value);
     }
 
     
@@ -127,108 +121,96 @@ public final class Float extends Number implements Comparable<Float> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.753 -0400", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "3C52F67F3BFD6A8BFB979E9BC33D745D")
     @Override
     public int intValue() {
         int varA873F4A71211BFDACBAEFBA0F9FCF91B_1410158650 = ((int) value);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052973528 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052973528;
-        
-        
+        // ---------- Original Method ----------
+        //return (int) value;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.754 -0400", hash_original_method = "82C3193F23F6D7770C948A8F860700C8", hash_generated_method = "51F508D6F6925C78F60EA11FA7970C79")
     public boolean isInfinite() {
         boolean varED07AD9C4CE3E6B7E975E781387699CA_2116751725 = (isInfinite(value));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1364381045 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1364381045;
-        
-        
+        // ---------- Original Method ----------
+        //return isInfinite(value);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isInfinite(float f) {
+        public static boolean isInfinite(float f) {
         return (f == POSITIVE_INFINITY) || (f == NEGATIVE_INFINITY);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.754 -0400", hash_original_method = "9E74C322CF79FFEBE378AFAB98D56D96", hash_generated_method = "160DFE23B1348DE610874BC47CF295AE")
     public boolean isNaN() {
         boolean varA99476A90E68FD60B10540ABE2E1DC0D_1044811095 = (isNaN(value));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_238184632 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_238184632;
-        
-        
+        // ---------- Original Method ----------
+        //return isNaN(value);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isNaN(float f) {
+        public static boolean isNaN(float f) {
         return f != f;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.755 -0400", hash_original_method = "C9BB01BEFAD51CB3D65FBCA00F38E36E", hash_generated_method = "CB60CC5D635E73F1CE3C9FB2D21792BD")
     @Override
     public long longValue() {
         long varFB2F999141A9BFF686902BF4F0A9690D_1509270584 = ((long) value);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2134800479 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2134800479;
-        
-        
+        // ---------- Original Method ----------
+        //return (long) value;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float parseFloat(String string) throws NumberFormatException {
+        public static float parseFloat(String string) throws NumberFormatException {
         return StringToReal.parseFloat(string);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.756 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "8F7C79E93EB3D7A1CDC611877641C2CB")
     @Override
     public short shortValue() {
         short var6C672D319E59CBACFBF678626FD3727E_96845486 = ((short) value);
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1573285557 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1573285557;
-        
-        
+        // ---------- Original Method ----------
+        //return (short) value;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.756 -0400", hash_original_method = "A363CDE834C704519FC1C85052C83F92", hash_generated_method = "089AD7E031E6B6E786DC68D38CC9D94D")
     @Override
     public String toString() {
 String var1670CC6E6AAA264EB645B58AB0074081_1887096770 =         Float.toString(value);
         var1670CC6E6AAA264EB645B58AB0074081_1887096770.addTaint(taint);
         return var1670CC6E6AAA264EB645B58AB0074081_1887096770;
-        
-        
+        // ---------- Original Method ----------
+        //return Float.toString(value);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String toString(float f) {
+        public static String toString(float f) {
         return RealToString.getInstance().floatToString(f);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Float valueOf(String string) throws NumberFormatException {
+        public static Float valueOf(String string) throws NumberFormatException {
         return parseFloat(string);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int compare(float float1, float float2) {
+        public static int compare(float float1, float float2) {
         if (float1 > float2) {
             return 1;
         }
@@ -252,14 +234,12 @@ String var1670CC6E6AAA264EB645B58AB0074081_1887096770 =         Float.toString(v
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Float valueOf(float f) {
+        public static Float valueOf(float f) {
         return new Float(f);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String toHexString(float f) {
+        public static String toHexString(float f) {
         if (f != f) {
             return "NaN";
         }

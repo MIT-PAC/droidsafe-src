@@ -1,6 +1,6 @@
 package gov.nist.javax.sip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ class NistSipMessageFactoryImpl implements StackMessageFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.531 -0400", hash_original_method = "B4A348E139EC58BD28DD0F3A69B45AAD", hash_generated_method = "9205204DA58BEC015C262841C10BC546")
     public  NistSipMessageFactoryImpl(SipStackImpl sipStackImpl) {
         this.sipStack = sipStackImpl;
-        
-        
+        // ---------- Original Method ----------
+        //this.sipStack = sipStackImpl;
     }
 
     
@@ -31,14 +31,14 @@ class NistSipMessageFactoryImpl implements StackMessageFactory {
             IllegalArgumentException var98C918EACA170B9EBA9AB97F4457C25B_1412901593 = new IllegalArgumentException("Null Arg!");
             var98C918EACA170B9EBA9AB97F4457C25B_1412901593.addTaint(taint);
             throw var98C918EACA170B9EBA9AB97F4457C25B_1412901593;
-        } 
+        } //End block
         SipStackImpl theStack = (SipStackImpl) messageChannel.getSIPStack();
         DialogFilter retval = new DialogFilter(
                 theStack);
     if(messageChannel instanceof SIPTransaction)        
         {
             retval.transactionChannel = (SIPTransaction) messageChannel;
-        } 
+        } //End block
         retval.listeningPoint = messageChannel.getMessageProcessor()
                 .getListeningPoint();
     if(retval.listeningPoint == null)        
@@ -55,8 +55,8 @@ ServerRequestInterface var540C13E9E156B687226421B24F2DF178_1959596788 =         
 ServerRequestInterface varF9E19AD6135C970F387F77C6F3DE4477_1208490545 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1208490545.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1208490545;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -82,7 +82,7 @@ ServerRequestInterface varF9E19AD6135C970F387F77C6F3DE4477_1208490545 =         
 ServerResponseInterface var540C13E9E156B687226421B24F2DF178_803248909 =                 null;
                 var540C13E9E156B687226421B24F2DF178_803248909.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_803248909;
-            } 
+            } //End block
             else
     if(TransactionState.COMPLETED == tr.getState()
                     && sipResponse.getStatusCode() / 100 == 1)            
@@ -94,8 +94,8 @@ ServerResponseInterface var540C13E9E156B687226421B24F2DF178_803248909 =         
 ServerResponseInterface var540C13E9E156B687226421B24F2DF178_43177941 =                 null;
                 var540C13E9E156B687226421B24F2DF178_43177941.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_43177941;
-            } 
-        } 
+            } //End block
+        } //End block
         DialogFilter retval = new DialogFilter(
                 sipStack);
         retval.transactionChannel = tr;
@@ -104,8 +104,8 @@ ServerResponseInterface var540C13E9E156B687226421B24F2DF178_43177941 =          
 ServerResponseInterface varF9E19AD6135C970F387F77C6F3DE4477_1530036713 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1530036713.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1530036713;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

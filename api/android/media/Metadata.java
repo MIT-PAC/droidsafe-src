@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class Metadata {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.445 -0400", hash_original_method = "42EB03B7CCF72771EC09BC7329CF6561", hash_generated_method = "DA29DB50537B7681661C6C11E0C14FF9")
     public  Metadata() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -44,44 +44,44 @@ public class Metadata {
             {
                 error = true;
                 break;
-            } 
+            } //End block
             final int metadataId = parcel.readInt();
     if(!checkMetadataId(metadataId))            
             {
                 error = true;
                 break;
-            } 
+            } //End block
     if(mKeyToPosMap.containsKey(metadataId))            
             {
                 error = true;
                 break;
-            } 
+            } //End block
             mKeyToPosMap.put(metadataId, parcel.dataPosition());
             final int metadataType = parcel.readInt();
     if(metadataType <= 0 || metadataType > LAST_TYPE)            
             {
                 error = true;
                 break;
-            } 
+            } //End block
             parcel.setDataPosition(start + size);
             bytesLeft -= size;
             ++recCount;
-        } 
+        } //End block
     if(0 != bytesLeft || error)        
         {
             mKeyToPosMap.clear();
             boolean var68934A3E9455FA72420237EB05902327_1624918800 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1188086629 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1188086629;
-        } 
+        } //End block
         else
         {
             boolean varB326B5062B2F0E69046810717534CB09_43165208 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1796783014 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1796783014;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -92,7 +92,7 @@ public class Metadata {
             boolean var68934A3E9455FA72420237EB05902327_1813434528 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_793602581 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_793602581;
-        } 
+        } //End block
         final int pin = parcel.dataPosition();
         final int size = parcel.readInt();
     if(parcel.dataAvail() + kInt32Size < size || size < kMetaHeaderSize)        
@@ -101,7 +101,7 @@ public class Metadata {
             boolean var68934A3E9455FA72420237EB05902327_1024836247 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_925654219 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_925654219;
-        } 
+        } //End block
         final int kShouldBeMetaMarker = parcel.readInt();
     if(kShouldBeMetaMarker != kMetaMarker)        
         {
@@ -109,20 +109,20 @@ public class Metadata {
             boolean var68934A3E9455FA72420237EB05902327_1892481579 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1654356059 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1654356059;
-        } 
+        } //End block
     if(!scanAllRecords(parcel, size - kMetaHeaderSize))        
         {
             parcel.setDataPosition(pin);
             boolean var68934A3E9455FA72420237EB05902327_730228999 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_580870927 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_580870927;
-        } 
+        } //End block
         mParcel = parcel;
         boolean varB326B5062B2F0E69046810717534CB09_90280423 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2117656726 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2117656726;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -131,8 +131,8 @@ public class Metadata {
 Set<Integer> var19BD1B7180A2FD56EA0AAC27E469272A_1239317072 =         mKeyToPosMap.keySet();
         var19BD1B7180A2FD56EA0AAC27E469272A_1239317072.addTaint(taint);
         return var19BD1B7180A2FD56EA0AAC27E469272A_1239317072;
-        
-        
+        // ---------- Original Method ----------
+        //return mKeyToPosMap.keySet();
     }
 
     
@@ -144,15 +144,15 @@ Set<Integer> var19BD1B7180A2FD56EA0AAC27E469272A_1239317072 =         mKeyToPosM
             IllegalArgumentException var4268ED9EEE53F5A4B3E33D0277ED3540_178182072 = new IllegalArgumentException("Invalid key: " + metadataId);
             var4268ED9EEE53F5A4B3E33D0277ED3540_178182072.addTaint(taint);
             throw var4268ED9EEE53F5A4B3E33D0277ED3540_178182072;
-        } 
+        } //End block
         boolean varFA6C1A9BC3CC5AA941D303B9190E5D65_266351548 = (mKeyToPosMap.containsKey(metadataId));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_152015813 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_152015813;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!checkMetadataId(metadataId)) {
+            //throw new IllegalArgumentException("Invalid key: " + metadataId);
+        //}
+        //return mKeyToPosMap.containsKey(metadataId);
     }
 
     
@@ -163,9 +163,9 @@ Set<Integer> var19BD1B7180A2FD56EA0AAC27E469272A_1239317072 =         mKeyToPosM
 String var1B25834954A649773DFCF4733E0DFAF6_394641459 =         mParcel.readString();
         var1B25834954A649773DFCF4733E0DFAF6_394641459.addTaint(taint);
         return var1B25834954A649773DFCF4733E0DFAF6_394641459;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkType(key, STRING_VAL);
+        //return mParcel.readString();
     }
 
     
@@ -176,9 +176,9 @@ String var1B25834954A649773DFCF4733E0DFAF6_394641459 =         mParcel.readStrin
         int varE64C5C7FD09A93118A088CDB1D3718AE_1691580835 = (mParcel.readInt());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730087621 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730087621;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkType(key, INTEGER_VAL);
+        //return mParcel.readInt();
     }
 
     
@@ -189,9 +189,9 @@ String var1B25834954A649773DFCF4733E0DFAF6_394641459 =         mParcel.readStrin
         boolean var824FF84DB064E92912046EA27D6E2BCD_2139405977 = (mParcel.readInt() == 1);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543977646 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_543977646;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkType(key, BOOLEAN_VAL);
+        //return mParcel.readInt() == 1;
     }
 
     
@@ -202,9 +202,9 @@ String var1B25834954A649773DFCF4733E0DFAF6_394641459 =         mParcel.readStrin
         long varC139587F1A6C2A13A8331800842B50D8_1604709267 = (mParcel.readLong());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1869923105 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1869923105;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkType(key, LONG_VAL);
+        //return mParcel.readLong();
     }
 
     
@@ -215,9 +215,9 @@ String var1B25834954A649773DFCF4733E0DFAF6_394641459 =         mParcel.readStrin
         double varAB36E54B83B0CD4D3A5139D0288CA08B_338802492 = (mParcel.readDouble());
                 double varE8CD7DA078A86726031AD64F35F5A6C0_820370863 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_820370863;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkType(key, DOUBLE_VAL);
+        //return mParcel.readDouble();
     }
 
     
@@ -228,9 +228,9 @@ String var1B25834954A649773DFCF4733E0DFAF6_394641459 =         mParcel.readStrin
         byte[] var834140174B64337217F08BE735F61381_1858221533 = (mParcel.createByteArray());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_647641690 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_647641690;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkType(key, BYTE_ARRAY_VAL);
+        //return mParcel.createByteArray();
     }
 
     
@@ -245,7 +245,7 @@ String var1B25834954A649773DFCF4733E0DFAF6_394641459 =         mParcel.readStrin
 Date var083F5268185148E79542B76638F0FD04_1968804664 =             new Date(timeSinceEpoch);
             var083F5268185148E79542B76638F0FD04_1968804664.addTaint(taint);
             return var083F5268185148E79542B76638F0FD04_1968804664;
-        } 
+        } //End block
         else
         {
             TimeZone tz = TimeZone.getTimeZone(timeZone);
@@ -254,36 +254,33 @@ Date var083F5268185148E79542B76638F0FD04_1968804664 =             new Date(timeS
 Date varBD9B55B530F60709CCFA9E4F3BCA3194_1539058481 =             cal.getTime();
             varBD9B55B530F60709CCFA9E4F3BCA3194_1539058481.addTaint(taint);
             return varBD9B55B530F60709CCFA9E4F3BCA3194_1539058481;
-        } 
-        
-        
-        
-        
-        
-            
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //checkType(key, DATE_VAL);
+        //final long timeSinceEpoch = mParcel.readLong();
+        //final String timeZone = mParcel.readString();
+        //if (timeZone.length() == 0) {
+            //return new Date(timeSinceEpoch);
+        //} else {
+            //TimeZone tz = TimeZone.getTimeZone(timeZone);
+            //Calendar cal = Calendar.getInstance(tz);
+            //cal.setTimeInMillis(timeSinceEpoch);
+            //return cal.getTime();
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int lastSytemId() {
+        public static int lastSytemId() {
         return LAST_SYSTEM;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int firstCustomId() {
+        public static int firstCustomId() {
         return FIRST_CUSTOM;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int lastType() {
+        public static int lastType() {
         return LAST_TYPE;
     }
 
@@ -296,16 +293,16 @@ Date varBD9B55B530F60709CCFA9E4F3BCA3194_1539058481 =             cal.getTime();
             boolean var68934A3E9455FA72420237EB05902327_1705242468 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1507072219 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1507072219;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1354961818 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1785163099 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1785163099;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (val <= ANY || (LAST_SYSTEM < val && val < FIRST_CUSTOM)) {
+            //Log.e(TAG, "Invalid metadata ID " + val);
+            //return false;
+        //}
+        //return true;
     }
 
     
@@ -321,14 +318,14 @@ Date varBD9B55B530F60709CCFA9E4F3BCA3194_1539058481 =             cal.getTime();
             IllegalStateException var67B542E62848F6BD5D8396962162229E_2066198860 = new IllegalStateException("Wrong type " + expectedType + " but got " + type);
             var67B542E62848F6BD5D8396962162229E_2066198860.addTaint(taint);
             throw var67B542E62848F6BD5D8396962162229E_2066198860;
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int pos = mKeyToPosMap.get(key);
+        //mParcel.setDataPosition(pos);
+        //final int type = mParcel.readInt();
+        //if (type != expectedType) {
+            //throw new IllegalStateException("Wrong type " + expectedType + " but got " + type);
+        //}
     }
 
     

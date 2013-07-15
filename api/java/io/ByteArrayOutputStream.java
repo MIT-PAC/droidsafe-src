@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,8 +17,8 @@ public class ByteArrayOutputStream extends OutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.469 -0400", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "269B013234340EC0E9870BCC0641CB1F")
     public  ByteArrayOutputStream() {
         buf = new byte[32];
-        
-        
+        // ---------- Original Method ----------
+        //buf = new byte[32];
     }
 
     
@@ -27,19 +27,19 @@ public class ByteArrayOutputStream extends OutputStream {
     if(size >= 0)        
         {
             buf = new byte[size];
-        } 
+        } //End block
         else
         {
             IllegalArgumentException var2382BBC2482763F398967EC587DEA9AE_501225833 = new IllegalArgumentException("size < 0");
             var2382BBC2482763F398967EC587DEA9AE_501225833.addTaint(taint);
             throw var2382BBC2482763F398967EC587DEA9AE_501225833;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (size >= 0) {
+            //buf = new byte[size];
+        //} else {
+            //throw new IllegalArgumentException("size < 0");
+        //}
     }
 
     
@@ -47,8 +47,8 @@ public class ByteArrayOutputStream extends OutputStream {
     @Override
     public void close() throws IOException {
         super.close();
-        
-        
+        // ---------- Original Method ----------
+        //super.close();
     }
 
     
@@ -58,37 +58,35 @@ public class ByteArrayOutputStream extends OutputStream {
     if(count + i <= buf.length)        
         {
             return;
-        } 
+        } //End block
         byte[] newbuf = new byte[(count + i) * 2];
         System.arraycopy(buf, 0, newbuf, 0, count);
         buf = newbuf;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (count + i <= buf.length) {
+            //return;
+        //}
+        //byte[] newbuf = new byte[(count + i) * 2];
+        //System.arraycopy(buf, 0, newbuf, 0, count);
+        //buf = newbuf;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.480 -0400", hash_original_method = "D84F167B372983A8A32E17B936FA6E9B", hash_generated_method = "400ADB088DB2A9073490DD652F495E0B")
     public synchronized void reset() {
         count = 0;
-        
-        
+        // ---------- Original Method ----------
+        //count = 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.481 -0400", hash_original_method = "F417CE3385B772AADA134FBE4FF63C9E", hash_generated_method = "ADF18B0EE1152182510A6F46A4F05881")
     public int size() {
         int varE2942A04780E223B215EB8B663CF5353_356863739 = (count);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418274729 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418274729;
-        
-        
+        // ---------- Original Method ----------
+        //return count;
     }
 
     
@@ -99,10 +97,10 @@ public class ByteArrayOutputStream extends OutputStream {
         byte[] var59B359CCE81DCBF6F03CEDFA21E9B7A3_24769609 = (newArray);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1499478557 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1499478557;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] newArray = new byte[count];
+        //System.arraycopy(buf, 0, newArray, 0, count);
+        //return newArray;
     }
 
     
@@ -112,8 +110,8 @@ public class ByteArrayOutputStream extends OutputStream {
 String var284A4624AC5D82C1992013009E0FB870_1032958483 =         new String(buf, 0, count);
         var284A4624AC5D82C1992013009E0FB870_1032958483.addTaint(taint);
         return var284A4624AC5D82C1992013009E0FB870_1032958483;
-        
-        
+        // ---------- Original Method ----------
+        //return new String(buf, 0, count);
     }
 
     
@@ -125,16 +123,16 @@ String var284A4624AC5D82C1992013009E0FB870_1032958483 =         new String(buf, 
 for(int i = 0;i < newBuf.length;i++)
         {
             newBuf[i] = (char) (((hibyte & 0xff) << 8) | (buf[i] & 0xff));
-        } 
+        } //End block
 String varB2A77A3F22A466F171E40117F4960755_1227198224 =         new String(newBuf);
         varB2A77A3F22A466F171E40117F4960755_1227198224.addTaint(taint);
         return varB2A77A3F22A466F171E40117F4960755_1227198224;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //char[] newBuf = new char[size()];
+        //for (int i = 0; i < newBuf.length; i++) {
+            //newBuf[i] = (char) (((hibyte & 0xff) << 8) | (buf[i] & 0xff));
+        //}
+        //return new String(newBuf);
     }
 
     
@@ -144,8 +142,8 @@ String varB2A77A3F22A466F171E40117F4960755_1227198224 =         new String(newBu
 String var5E21685371F07E75C95D47BDF9CF6168_697785732 =         new String(buf, 0, count, enc);
         var5E21685371F07E75C95D47BDF9CF6168_697785732.addTaint(taint);
         return var5E21685371F07E75C95D47BDF9CF6168_697785732;
-        
-        
+        // ---------- Original Method ----------
+        //return new String(buf, 0, count, enc);
     }
 
     
@@ -158,18 +156,18 @@ String var5E21685371F07E75C95D47BDF9CF6168_697785732 =         new String(buf, 0
     if(len == 0)        
         {
             return;
-        } 
+        } //End block
         expand(len);
         System.arraycopy(buffer, offset, buf, this.count, len);
         this.count += len;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(buffer.length, offset, len);
+        //if (len == 0) {
+            //return;
+        //}
+        //expand(len);
+        //System.arraycopy(buffer, offset, buf, this.count, len);
+        //this.count += len;
     }
 
     
@@ -179,13 +177,13 @@ String var5E21685371F07E75C95D47BDF9CF6168_697785732 =         new String(buf, 0
     if(count == buf.length)        
         {
             expand(1);
-        } 
+        } //End block
         buf[count++] = (byte) oneByte;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (count == buf.length) {
+            //expand(1);
+        //}
+        //buf[count++] = (byte) oneByte;
     }
 
     
@@ -193,8 +191,8 @@ String var5E21685371F07E75C95D47BDF9CF6168_697785732 =         new String(buf, 0
     public synchronized void writeTo(OutputStream out) throws IOException {
         addTaint(out.getTaint());
         out.write(buf, 0, count);
-        
-        
+        // ---------- Original Method ----------
+        //out.write(buf, 0, count);
     }
 
     

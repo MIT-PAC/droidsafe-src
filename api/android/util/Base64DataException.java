@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class Base64DataException extends IOException {
     public  Base64DataException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

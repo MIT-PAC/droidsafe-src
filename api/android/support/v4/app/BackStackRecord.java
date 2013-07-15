@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,14 +53,14 @@ final class BackStackState implements Parcelable {
     if(op.removed != null)            
             numRemoved += op.removed.size();
             op = op.next;
-        } 
+        } //End block
         mOps = new int[bse.mNumOp*7 + numRemoved];
     if(!bse.mAddToBackStack)        
         {
             IllegalStateException var314CBE014D5D2C8AD5652051EFBCF4AC_330648529 = new IllegalStateException("Not on back stack");
             var314CBE014D5D2C8AD5652051EFBCF4AC_330648529.addTaint(taint);
             throw var314CBE014D5D2C8AD5652051EFBCF4AC_330648529;
-        } 
+        } //End block
         op = bse.mHead;
         int pos = 0;
         while
@@ -79,14 +79,14 @@ final class BackStackState implements Parcelable {
 for(int i=0;i<N;i++)
                 {
                     mOps[pos++] = op.removed.get(i).mIndex;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 mOps[pos++] = 0;
-            } 
+            } //End block
             op = op.next;
-        } 
+        } //End block
         mTransition = bse.mTransition;
         mTransitionStyle = bse.mTransitionStyle;
         mName = bse.mName;
@@ -95,8 +95,8 @@ for(int i=0;i<N;i++)
         mBreadCrumbTitleText = bse.mBreadCrumbTitleText;
         mBreadCrumbShortTitleRes = bse.mBreadCrumbShortTitleRes;
         mBreadCrumbShortTitleText = bse.mBreadCrumbShortTitleText;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -111,16 +111,16 @@ for(int i=0;i<N;i++)
         mBreadCrumbTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
         mBreadCrumbShortTitleRes = in.readInt();
         mBreadCrumbShortTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mOps = in.createIntArray();
+        //mTransition = in.readInt();
+        //mTransitionStyle = in.readInt();
+        //mName = in.readString();
+        //mIndex = in.readInt();
+        //mBreadCrumbTitleRes = in.readInt();
+        //mBreadCrumbTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
+        //mBreadCrumbShortTitleRes = in.readInt();
+        //mBreadCrumbShortTitleText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
     }
 
     
@@ -140,11 +140,11 @@ for(int i=0;i<N;i++)
             {
                 Fragment f = fm.mActive.get(findex);
                 op.fragment = f;
-            } 
+            } //End block
             else
             {
                 op.fragment = null;
-            } 
+            } //End block
             op.enterAnim = mOps[pos++];
             op.exitAnim = mOps[pos++];
             op.popEnterAnim = mOps[pos++];
@@ -157,11 +157,11 @@ for(int i=0;i<N;i++)
                 {
     if(FragmentManagerImpl.DEBUG){ }                    Fragment r = fm.mActive.get(mOps[pos++]);
                     op.removed.add(r);
-                } 
-            } 
+                } //End block
+            } //End block
             bse.addOp(op);
             num++;
-        } 
+        } //End block
         bse.mTransition = mTransition;
         bse.mTransitionStyle = mTransitionStyle;
         bse.mName = mName;
@@ -175,19 +175,18 @@ for(int i=0;i<N;i++)
 BackStackRecord varF02DDB74F3AB452E2C7DEEBC20BFE154_1016471008 =         bse;
         varF02DDB74F3AB452E2C7DEEBC20BFE154_1016471008.addTaint(taint);
         return varF02DDB74F3AB452E2C7DEEBC20BFE154_1016471008;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.942 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "636324A776B9EE436377F6B7CD268D2F")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_951597221 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313237302 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313237302;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -204,16 +203,16 @@ BackStackRecord varF02DDB74F3AB452E2C7DEEBC20BFE154_1016471008 =         bse;
         TextUtils.writeToParcel(mBreadCrumbTitleText, dest, 0);
         dest.writeInt(mBreadCrumbShortTitleRes);
         TextUtils.writeToParcel(mBreadCrumbShortTitleText, dest, 0);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeIntArray(mOps);
+        //dest.writeInt(mTransition);
+        //dest.writeInt(mTransitionStyle);
+        //dest.writeString(mName);
+        //dest.writeInt(mIndex);
+        //dest.writeInt(mBreadCrumbTitleRes);
+        //TextUtils.writeToParcel(mBreadCrumbTitleText, dest, 0);
+        //dest.writeInt(mBreadCrumbShortTitleRes);
+        //TextUtils.writeToParcel(mBreadCrumbShortTitleText, dest, 0);
     }
 
     
@@ -293,8 +292,8 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.944 -0400", hash_original_method = "8E110563CDFB79724FBA0799BF0D3C19", hash_generated_method = "222018A87C5C0AD32DB56B9265BCFEC3")
     public  BackStackRecord(FragmentManagerImpl manager) {
         mManager = manager;
-        
-        
+        // ---------- Original Method ----------
+        //mManager = manager;
     }
 
     
@@ -308,34 +307,33 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
         {
             sb.append(" #");
             sb.append(mIndex);
-        } 
+        } //End block
     if(mName != null)        
         {
             sb.append(" ");
             sb.append(mName);
-        } 
+        } //End block
         sb.append("}");
 String var2460B846747F8B22185AD8BE722266A5_53185224 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_53185224.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_53185224;
-        
-        
-        
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(128);
+        //sb.append("BackStackEntry{");
+        //sb.append(Integer.toHexString(System.identityHashCode(this)));
+        //if (mIndex >= 0) {
+            //sb.append(" #");
+            //sb.append(mIndex);
+        //}
+        //if (mName != null) {
+            //sb.append(" ");
+            //sb.append(mName);
+        //}
+        //sb.append("}");
+        //return sb.toString();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.945 -0400", hash_original_method = "A173D988738B1BED0F12DBDA60D665B4", hash_generated_method = "E867740458FE22CD0B4018E39E5B5283")
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
         addTaint(args[0].getTaint());
@@ -343,8 +341,8 @@ String var2460B846747F8B22185AD8BE722266A5_53185224 =         sb.toString();
         addTaint(fd.getTaint());
         addTaint(prefix.getTaint());
         dump(prefix, writer, true);
-        
-        
+        // ---------- Original Method ----------
+        //dump(prefix, writer, true);
     }
 
     
@@ -369,7 +367,7 @@ String var2460B846747F8B22185AD8BE722266A5_53185224 =         sb.toString();
                 writer.print(Integer.toHexString(mTransition));
                 writer.print(" mTransitionStyle=#");
                 writer.println(Integer.toHexString(mTransitionStyle));
-            } 
+            } //End block
     if(mEnterAnim != 0 || mExitAnim !=0)            
             {
                 writer.print(prefix);
@@ -377,7 +375,7 @@ String var2460B846747F8B22185AD8BE722266A5_53185224 =         sb.toString();
                 writer.print(Integer.toHexString(mEnterAnim));
                 writer.print(" mExitAnim=#");
                 writer.println(Integer.toHexString(mExitAnim));
-            } 
+            } //End block
     if(mPopEnterAnim != 0 || mPopExitAnim !=0)            
             {
                 writer.print(prefix);
@@ -385,7 +383,7 @@ String var2460B846747F8B22185AD8BE722266A5_53185224 =         sb.toString();
                 writer.print(Integer.toHexString(mPopEnterAnim));
                 writer.print(" mPopExitAnim=#");
                 writer.println(Integer.toHexString(mPopExitAnim));
-            } 
+            } //End block
     if(mBreadCrumbTitleRes != 0 || mBreadCrumbTitleText != null)            
             {
                 writer.print(prefix);
@@ -393,7 +391,7 @@ String var2460B846747F8B22185AD8BE722266A5_53185224 =         sb.toString();
                 writer.print(Integer.toHexString(mBreadCrumbTitleRes));
                 writer.print(" mBreadCrumbTitleText=");
                 writer.println(mBreadCrumbTitleText);
-            } 
+            } //End block
     if(mBreadCrumbShortTitleRes != 0 || mBreadCrumbShortTitleText != null)            
             {
                 writer.print(prefix);
@@ -401,8 +399,8 @@ String var2460B846747F8B22185AD8BE722266A5_53185224 =         sb.toString();
                 writer.print(Integer.toHexString(mBreadCrumbShortTitleRes));
                 writer.print(" mBreadCrumbShortTitleText=");
                 writer.println(mBreadCrumbShortTitleText);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mHead != null)        
         {
             writer.print(prefix);
@@ -458,7 +456,7 @@ switch(op.cmd){
                         writer.print(Integer.toHexString(op.enterAnim));
                         writer.print(" exitAnim=#");
                         writer.println(Integer.toHexString(op.exitAnim));
-                    } 
+                    } //End block
     if(op.popEnterAnim != 0 || op.popExitAnim != 0)                    
                     {
                         writer.print(prefix);
@@ -466,8 +464,8 @@ switch(op.cmd){
                         writer.print(Integer.toHexString(op.popEnterAnim));
                         writer.print(" popExitAnim=#");
                         writer.println(Integer.toHexString(op.popExitAnim));
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(op.removed != null && op.removed.size() > 0)                
                 {
 for(int i=0;i<op.removed.size();i++)
@@ -476,64 +474,60 @@ for(int i=0;i<op.removed.size();i++)
     if(op.removed.size() == 1)                        
                         {
                             writer.print("Removed: ");
-                        } 
+                        } //End block
                         else
                         {
     if(i == 0)                            
                             {
                                 writer.println("Removed:");
-                            } 
+                            } //End block
                             writer.print(innerPrefix);
                             writer.print("  #");
                             writer.print(i);
                             writer.print(": ");
-                        } 
+                        } //End block
                         writer.println(op.removed.get(i));
-                    } 
-                } 
+                    } //End block
+                } //End block
                 op = op.next;
                 num++;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.948 -0400", hash_original_method = "15A4A4C5F4518D2E82F335984591D8BA", hash_generated_method = "424A6C7F9568680DB2454B07D38F92AC")
     public int getId() {
         int varDEC4E8A5D764B68C732DE242B685EABE_869489828 = (mIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200137827 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200137827;
-        
-        
+        // ---------- Original Method ----------
+        //return mIndex;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.948 -0400", hash_original_method = "9339385C292A3B9874BA3EB436AA9056", hash_generated_method = "CCD5F3A4D2F5181E1D41F789CDDD2849")
     public int getBreadCrumbTitleRes() {
         int varF67D340EAA6DF8751E708FC7CBC0D7AD_6465065 = (mBreadCrumbTitleRes);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1611788852 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1611788852;
-        
-        
+        // ---------- Original Method ----------
+        //return mBreadCrumbTitleRes;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.948 -0400", hash_original_method = "D139A03B61A4B83382000704FB0C1F23", hash_generated_method = "9EED72D1A0F9A01993D7BAEC381EC901")
     public int getBreadCrumbShortTitleRes() {
         int var0E5DA3EF1C7A293E3DB09F58D5D4153F_1998724547 = (mBreadCrumbShortTitleRes);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1086109211 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1086109211;
-        
-        
+        // ---------- Original Method ----------
+        //return mBreadCrumbShortTitleRes;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.949 -0400", hash_original_method = "C2C5B49D77ECFC3F06C4280D5C67187D", hash_generated_method = "03CEE1298BE752F697AA032FD201D6F9")
     public CharSequence getBreadCrumbTitle() {
     if(mBreadCrumbTitleRes != 0)        
@@ -541,19 +535,18 @@ for(int i=0;i<op.removed.size();i++)
 CharSequence var4A1C3DAD192928EDAC731D5DB2E937F1_1617789098 =             mManager.mActivity.getText(mBreadCrumbTitleRes);
             var4A1C3DAD192928EDAC731D5DB2E937F1_1617789098.addTaint(taint);
             return var4A1C3DAD192928EDAC731D5DB2E937F1_1617789098;
-        } 
+        } //End block
 CharSequence var0594016917A53D2F634E7C8A7EEB3D1D_491895297 =         mBreadCrumbTitleText;
         var0594016917A53D2F634E7C8A7EEB3D1D_491895297.addTaint(taint);
         return var0594016917A53D2F634E7C8A7EEB3D1D_491895297;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mBreadCrumbTitleRes != 0) {
+            //return mManager.mActivity.getText(mBreadCrumbTitleRes);
+        //}
+        //return mBreadCrumbTitleText;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.949 -0400", hash_original_method = "CEC326312BE69049B0B2FA6420FE6494", hash_generated_method = "C35CF47AB995078860DB9A7086DB4425")
     public CharSequence getBreadCrumbShortTitle() {
     if(mBreadCrumbShortTitleRes != 0)        
@@ -561,53 +554,51 @@ CharSequence var0594016917A53D2F634E7C8A7EEB3D1D_491895297 =         mBreadCrumb
 CharSequence var8EC4BD440B9C16E072E99758ED25CDE1_1862826307 =             mManager.mActivity.getText(mBreadCrumbShortTitleRes);
             var8EC4BD440B9C16E072E99758ED25CDE1_1862826307.addTaint(taint);
             return var8EC4BD440B9C16E072E99758ED25CDE1_1862826307;
-        } 
+        } //End block
 CharSequence var0FC310A778C3127194022F0B54CE2F12_1821994930 =         mBreadCrumbShortTitleText;
         var0FC310A778C3127194022F0B54CE2F12_1821994930.addTaint(taint);
         return var0FC310A778C3127194022F0B54CE2F12_1821994930;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mBreadCrumbShortTitleRes != 0) {
+            //return mManager.mActivity.getText(mBreadCrumbShortTitleRes);
+        //}
+        //return mBreadCrumbShortTitleText;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.949 -0400", hash_original_method = "32D26C73BB31A0FE5D5A21F02980CDDD", hash_generated_method = "B48706F168CC3A42AD2FC068AEFE89BA")
      void addOp(Op op) {
     if(mHead == null)        
         {
             mHead = mTail = op;
-        } 
+        } //End block
         else
         {
             op.prev = mTail;
             mTail.next = op;
             mTail = op;
-        } 
+        } //End block
         op.enterAnim = mEnterAnim;
         op.exitAnim = mExitAnim;
         op.popEnterAnim = mPopEnterAnim;
         op.popExitAnim = mPopExitAnim;
         mNumOp++;
-        
-        
-            
-        
-            
-            
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mHead == null) {
+            //mHead = mTail = op;
+        //} else {
+            //op.prev = mTail;
+            //mTail.next = op;
+            //mTail = op;
+        //}
+        //op.enterAnim = mEnterAnim;
+        //op.exitAnim = mExitAnim;
+        //op.popEnterAnim = mPopEnterAnim;
+        //op.popExitAnim = mPopExitAnim;
+        //mNumOp++;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.949 -0400", hash_original_method = "C1E47B5485B0B08AA827320F8BD79938", hash_generated_method = "EF153874D7435EB3C03184BBC0F085B8")
     public FragmentTransaction add(Fragment fragment, String tag) {
         addTaint(tag.getTaint());
@@ -616,13 +607,12 @@ CharSequence var0FC310A778C3127194022F0B54CE2F12_1821994930 =         mBreadCrum
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1077854964 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1077854964.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1077854964;
-        
-        
-        
+        // ---------- Original Method ----------
+        //doAddOp(0, fragment, tag, OP_ADD);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.949 -0400", hash_original_method = "F34A7243D750E416C8B46711401682C6", hash_generated_method = "5F5A435F6DC796326193A3937D2A6BBC")
     public FragmentTransaction add(int containerViewId, Fragment fragment) {
         addTaint(fragment.getTaint());
@@ -631,13 +621,12 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1077854964 =         thi
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1614309306 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1614309306.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1614309306;
-        
-        
-        
+        // ---------- Original Method ----------
+        //doAddOp(containerViewId, fragment, null, OP_ADD);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.950 -0400", hash_original_method = "DCEB5E0B408763C7F0E9A3376CBD91C3", hash_generated_method = "62F04D9A6EB65BC321D2E0916996638A")
     public FragmentTransaction add(int containerViewId, Fragment fragment, String tag) {
         addTaint(tag.getTaint());
@@ -647,9 +636,9 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1614309306 =         thi
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1612715407 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1612715407.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1612715407;
-        
-        
-        
+        // ---------- Original Method ----------
+        //doAddOp(containerViewId, fragment, tag, OP_ADD);
+        //return this;
     }
 
     
@@ -669,9 +658,9 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1612715407 =         thi
                         + " now " + tag);
                 var3C42909973F8EA27FCEDA16CD46609CC_1158204659.addTaint(taint);
                 throw var3C42909973F8EA27FCEDA16CD46609CC_1158204659;
-            } 
+            } //End block
             fragment.mTag = tag;
-        } 
+        } //End block
     if(containerViewId != 0)        
         {
     if(fragment.mFragmentId != 0 && fragment.mFragmentId != containerViewId)            
@@ -681,19 +670,18 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1612715407 =         thi
                         + " now " + containerViewId);
                 var66C463ECB48D6156C1348CF83035908A_1361668494.addTaint(taint);
                 throw var66C463ECB48D6156C1348CF83035908A_1361668494;
-            } 
+            } //End block
             fragment.mContainerId = fragment.mFragmentId = containerViewId;
-        } 
+        } //End block
         Op op = new Op();
         op.cmd = opcmd;
         op.fragment = fragment;
         addOp(op);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.950 -0400", hash_original_method = "095D291C1CAFD923EC9CB9BF06EF4676", hash_generated_method = "B312E749B239ADA4DDF7EFD5ED8C7ED6")
     public FragmentTransaction replace(int containerViewId, Fragment fragment) {
         addTaint(fragment.getTaint());
@@ -701,12 +689,11 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1612715407 =         thi
 FragmentTransaction varD621F10B281EF053F3161244DE0AA321_654463312 =         replace(containerViewId, fragment, null);
         varD621F10B281EF053F3161244DE0AA321_654463312.addTaint(taint);
         return varD621F10B281EF053F3161244DE0AA321_654463312;
-        
-        
+        // ---------- Original Method ----------
+        //return replace(containerViewId, fragment, null);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.951 -0400", hash_original_method = "1C07811E78071E2352BF0C170F6491CA", hash_generated_method = "EEC52570C06C29DA2DCC8ECC9C766CF5")
     public FragmentTransaction replace(int containerViewId, Fragment fragment, String tag) {
         addTaint(tag.getTaint());
@@ -717,21 +704,20 @@ FragmentTransaction varD621F10B281EF053F3161244DE0AA321_654463312 =         repl
             IllegalArgumentException varB2BCE3EA28A3A91FB62DBF3A83B1ECC5_899033137 = new IllegalArgumentException("Must use non-zero containerViewId");
             varB2BCE3EA28A3A91FB62DBF3A83B1ECC5_899033137.addTaint(taint);
             throw varB2BCE3EA28A3A91FB62DBF3A83B1ECC5_899033137;
-        } 
+        } //End block
         doAddOp(containerViewId, fragment, tag, OP_REPLACE);
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_973209178 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_973209178.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_973209178;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (containerViewId == 0) {
+            //throw new IllegalArgumentException("Must use non-zero containerViewId");
+        //}
+        //doAddOp(containerViewId, fragment, tag, OP_REPLACE);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.951 -0400", hash_original_method = "33682B1B727BD924F48FE7F483A5C004", hash_generated_method = "1447D12B249327AAB0632352DC8C6C4D")
     public FragmentTransaction remove(Fragment fragment) {
         addTaint(fragment.getTaint());
@@ -742,16 +728,15 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_973209178 =         this
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_356761267 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_356761267.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_356761267;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Op op = new Op();
+        //op.cmd = OP_REMOVE;
+        //op.fragment = fragment;
+        //addOp(op);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.951 -0400", hash_original_method = "AB9058E54F9496DA8E33E643603CB0C7", hash_generated_method = "FAB79DB503EB34D3ED576413D5FE2F03")
     public FragmentTransaction hide(Fragment fragment) {
         addTaint(fragment.getTaint());
@@ -762,16 +747,15 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_356761267 =         this
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_803020797 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_803020797.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_803020797;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Op op = new Op();
+        //op.cmd = OP_HIDE;
+        //op.fragment = fragment;
+        //addOp(op);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.951 -0400", hash_original_method = "2B6B1F1BD336D20AECF3763EE9DD5949", hash_generated_method = "1E5EB3031087D41086161E828D905FAE")
     public FragmentTransaction show(Fragment fragment) {
         addTaint(fragment.getTaint());
@@ -782,16 +766,15 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_803020797 =         this
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1080381473 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1080381473.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1080381473;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Op op = new Op();
+        //op.cmd = OP_SHOW;
+        //op.fragment = fragment;
+        //addOp(op);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.953 -0400", hash_original_method = "60B4979E5A31C92DF6F58D0AB0599A51", hash_generated_method = "4FC8DB99125B52F1257464217921B092")
     public FragmentTransaction detach(Fragment fragment) {
         addTaint(fragment.getTaint());
@@ -802,16 +785,15 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1080381473 =         thi
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1010562250 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1010562250.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1010562250;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Op op = new Op();
+        //op.cmd = OP_DETACH;
+        //op.fragment = fragment;
+        //addOp(op);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.953 -0400", hash_original_method = "71B1C0469F9D1680729415A070BB9988", hash_generated_method = "1C31DC3B8EF79B46259B7AFF1BFA9866")
     public FragmentTransaction attach(Fragment fragment) {
         addTaint(fragment.getTaint());
@@ -822,16 +804,15 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1010562250 =         thi
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_68331845 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_68331845.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_68331845;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Op op = new Op();
+        //op.cmd = OP_ATTACH;
+        //op.fragment = fragment;
+        //addOp(op);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.953 -0400", hash_original_method = "E8FBC41447C7F5B20E8F08F3A2F7FD58", hash_generated_method = "EF1607095B8A6101FF22A5D9FE7F29B2")
     public FragmentTransaction setCustomAnimations(int enter, int exit) {
         addTaint(exit);
@@ -839,12 +820,11 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_68331845 =         this;
 FragmentTransaction var9753E888852B084401D6F0CF07AF7002_389261626 =         setCustomAnimations(enter, exit, 0, 0);
         var9753E888852B084401D6F0CF07AF7002_389261626.addTaint(taint);
         return var9753E888852B084401D6F0CF07AF7002_389261626;
-        
-        
+        // ---------- Original Method ----------
+        //return setCustomAnimations(enter, exit, 0, 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.954 -0400", hash_original_method = "A0614C8D91A2CFFC3B2827B585934661", hash_generated_method = "32596DA1EF7371E46308C18FF2BF2278")
     public FragmentTransaction setCustomAnimations(int enter, int exit,
             int popEnter, int popExit) {
@@ -855,42 +835,39 @@ FragmentTransaction var9753E888852B084401D6F0CF07AF7002_389261626 =         setC
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_2106136944 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2106136944.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2106136944;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mEnterAnim = enter;
+        //mExitAnim = exit;
+        //mPopEnterAnim = popEnter;
+        //mPopExitAnim = popExit;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.959 -0400", hash_original_method = "A455FB052D79EC1710E986C50AD0D972", hash_generated_method = "CCBCABF38F95724334888A54E63E273E")
     public FragmentTransaction setTransition(int transition) {
         mTransition = transition;
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_672104301 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_672104301.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_672104301;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mTransition = transition;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.960 -0400", hash_original_method = "A33CAFCA32BB4FD1A454655E75F4B6CB", hash_generated_method = "493A0516413A7EC56F9A3CB6CF2E1FBA")
     public FragmentTransaction setTransitionStyle(int styleRes) {
         mTransitionStyle = styleRes;
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1156689859 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1156689859.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1156689859;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mTransitionStyle = styleRes;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.960 -0400", hash_original_method = "438624ACF19A9F6511A0E99CD6264659", hash_generated_method = "E2AFA62E0A9237FD914E6A78B27059EF")
     public FragmentTransaction addToBackStack(String name) {
     if(!mAllowAddToBackStack)        
@@ -899,35 +876,33 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1156689859 =         thi
                     "This FragmentTransaction is not allowed to be added to the back stack.");
             var8EA98245B44A0AE85FE7511121F226AB_1420895423.addTaint(taint);
             throw var8EA98245B44A0AE85FE7511121F226AB_1420895423;
-        } 
+        } //End block
         mAddToBackStack = true;
         mName = name;
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1170482395 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1170482395.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1170482395;
-        
-        
-            
-                    
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!mAllowAddToBackStack) {
+            //throw new IllegalStateException(
+                    //"This FragmentTransaction is not allowed to be added to the back stack.");
+        //}
+        //mAddToBackStack = true;
+        //mName = name;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.960 -0400", hash_original_method = "6063A0768FB0FF8A9BC1A0D5BDF7E352", hash_generated_method = "9A1940A23BD3453DC6450181F5C23F01")
     public boolean isAddToBackStackAllowed() {
         boolean var425B6F2F7277405F45A086064CEDDBEB_270992295 = (mAllowAddToBackStack);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1743829807 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1743829807;
-        
-        
+        // ---------- Original Method ----------
+        //return mAllowAddToBackStack;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.961 -0400", hash_original_method = "FA98892FC811CB8446B86919ACA0FBBA", hash_generated_method = "AA44D0A2901D84424B7098DCC714FCC2")
     public FragmentTransaction disallowAddToBackStack() {
     if(mAddToBackStack)        
@@ -936,22 +911,21 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1170482395 =         thi
                     "This transaction is already being added to the back stack");
             varD80B6A9011270545F9808727D8AC499A_1288731917.addTaint(taint);
             throw varD80B6A9011270545F9808727D8AC499A_1288731917;
-        } 
+        } //End block
         mAllowAddToBackStack = false;
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1301148448 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1301148448.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1301148448;
-        
-        
-            
-                    
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mAddToBackStack) {
+            //throw new IllegalStateException(
+                    //"This transaction is already being added to the back stack");
+        //}
+        //mAllowAddToBackStack = false;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.961 -0400", hash_original_method = "3ED721B4C54764795D085FCDFAF2CFED", hash_generated_method = "2AFAF52B38963C69C09E1DEE08B23DE3")
     public FragmentTransaction setBreadCrumbTitle(int res) {
         mBreadCrumbTitleRes = res;
@@ -959,14 +933,13 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1301148448 =         thi
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1324516657 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1324516657.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1324516657;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mBreadCrumbTitleRes = res;
+        //mBreadCrumbTitleText = null;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.962 -0400", hash_original_method = "27CB0DA08C946E1C367250B9E9010CF2", hash_generated_method = "16E68B799BA7125012CCE329E47C435E")
     public FragmentTransaction setBreadCrumbTitle(CharSequence text) {
         mBreadCrumbTitleRes = 0;
@@ -974,14 +947,13 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1324516657 =         thi
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1186988415 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1186988415.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1186988415;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mBreadCrumbTitleRes = 0;
+        //mBreadCrumbTitleText = text;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.962 -0400", hash_original_method = "F0E82E7069B2F6B7E25A71F53DDE4690", hash_generated_method = "9D17992D2D6488A58F82CE284870081D")
     public FragmentTransaction setBreadCrumbShortTitle(int res) {
         mBreadCrumbShortTitleRes = res;
@@ -989,14 +961,13 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1186988415 =         thi
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1532971717 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1532971717.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1532971717;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mBreadCrumbShortTitleRes = res;
+        //mBreadCrumbShortTitleText = null;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.962 -0400", hash_original_method = "0432E2D3026F58B259B18084E0B71CFD", hash_generated_method = "BF2CD43AEFD18F597C11BE6F7D3CA208")
     public FragmentTransaction setBreadCrumbShortTitle(CharSequence text) {
         mBreadCrumbShortTitleRes = 0;
@@ -1004,21 +975,20 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1532971717 =         thi
 FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1734527506 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1734527506.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1734527506;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mBreadCrumbShortTitleRes = 0;
+        //mBreadCrumbShortTitleText = text;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.962 -0400", hash_original_method = "F09A90C496A148F600E3D02A9731BC19", hash_generated_method = "80133B4B0E8027C66205B36EC4C52373")
      void bumpBackStackNesting(int amt) {
         addTaint(amt);
     if(!mAddToBackStack)        
         {
             return;
-        } 
+        } //End block
     if(FragmentManagerImpl.DEBUG){ }        Op op = mHead;
         while
 (op != null)        
@@ -1027,7 +997,7 @@ FragmentTransaction var72A74007B2BE62B849F475C7BDA4658B_1734527506 =         thi
             {
                 op.fragment.mBackStackNesting += amt;
     if(FragmentManagerImpl.DEBUG){ }
-            } 
+            } //End block
     if(op.removed != null)            
             {
 for(int i=op.removed.size()-1;i>=0;i--)
@@ -1035,38 +1005,35 @@ for(int i=op.removed.size()-1;i>=0;i--)
                     Fragment r = op.removed.get(i);
                     r.mBackStackNesting += amt;
     if(FragmentManagerImpl.DEBUG){ }
-                } 
-            } 
+                } //End block
+            } //End block
             op = op.next;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.972 -0400", hash_original_method = "FD69B9F14C4FF1755ADA5F3EFF5DDDFB", hash_generated_method = "3612A68AF0E8F49DAABB554348399BCA")
     public int commit() {
         int var5C53E18959EF289C7CD82E409982218F_1944807305 = (commitInternal(false));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_227317744 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_227317744;
-        
-        
+        // ---------- Original Method ----------
+        //return commitInternal(false);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.972 -0400", hash_original_method = "034B152615D8FC6D1FD7AD2899313AE6", hash_generated_method = "162B529E053BCC164BB54F5D065786C2")
     public int commitAllowingStateLoss() {
         int var20AD2F985E422E348891CFAB3CFA7DFA_2009728207 = (commitInternal(true));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1762412056 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1762412056;
-        
-        
+        // ---------- Original Method ----------
+        //return commitInternal(true);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.972 -0400", hash_original_method = "01D779364E83C28A30DD99CF6E54EB38", hash_generated_method = "53AADEC902150010CE01914446D35F68")
      int commitInternal(boolean allowStateLoss) {
         addTaint(allowStateLoss);
@@ -1081,40 +1048,39 @@ for(int i=op.removed.size()-1;i>=0;i--)
             LogWriter logw = new LogWriter(TAG);
             PrintWriter pw = new PrintWriter(logw);
             dump("  ", null, pw, null);
-        } 
+        } //End block
         mCommitted = true;
     if(mAddToBackStack)        
         {
             mIndex = mManager.allocBackStackIndex(this);
-        } 
+        } //End block
         else
         {
             mIndex = -1;
-        } 
+        } //End block
         mManager.enqueueAction(this, allowStateLoss);
         int varDEC4E8A5D764B68C732DE242B685EABE_502992056 = (mIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1351545257 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1351545257;
-        
-        
-        
-            
-            
-            
-            
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mCommitted) throw new IllegalStateException("commit already called");
+        //if (FragmentManagerImpl.DEBUG) {
+            //Log.v(TAG, "Commit: " + this);
+            //LogWriter logw = new LogWriter(TAG);
+            //PrintWriter pw = new PrintWriter(logw);
+            //dump("  ", null, pw, null);
+        //}
+        //mCommitted = true;
+        //if (mAddToBackStack) {
+            //mIndex = mManager.allocBackStackIndex(this);
+        //} else {
+            //mIndex = -1;
+        //}
+        //mManager.enqueueAction(this, allowStateLoss);
+        //return mIndex;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.981 -0400", hash_original_method = "F2F4246724AFA2458C4148B16BF6293A", hash_generated_method = "9E15284CD5EC827597FECB2AF5FC09B1")
     public void run() {
     if(FragmentManagerImpl.DEBUG){ }    if(mAddToBackStack)        
@@ -1124,8 +1090,8 @@ for(int i=op.removed.size()-1;i>=0;i--)
                 IllegalStateException varAEB8987B401F394D3AE651995E3E6222_1284728185 = new IllegalStateException("addToBackStack() called after commit()");
                 varAEB8987B401F394D3AE651995E3E6222_1284728185.addTaint(taint);
                 throw varAEB8987B401F394D3AE651995E3E6222_1284728185;
-            } 
-        } 
+            } //End block
+        } //End block
         bumpBackStackNesting(1);
         Op op = mHead;
         while
@@ -1137,7 +1103,7 @@ switch(op.cmd){
                 Fragment f = op.fragment;
                 f.mNextAnim = op.enterAnim;
                 mManager.addFragment(f, false);
-            } 
+            } //End block
             break;
             case OP_REPLACE:
             {
@@ -1152,87 +1118,86 @@ for(int i=0;i<mManager.mAdded.size();i++)
     if(old == f)                            
                             {
                                 op.fragment = f = null;
-                            } 
+                            } //End block
                             else
                             {
     if(op.removed == null)                                
                                 {
                                     op.removed = new ArrayList<Fragment>();
-                                } 
+                                } //End block
                                 op.removed.add(old);
                                 old.mNextAnim = op.exitAnim;
     if(mAddToBackStack)                                
                                 {
                                     old.mBackStackNesting += 1;
     if(FragmentManagerImpl.DEBUG){ }
-                                } 
+                                } //End block
                                 mManager.removeFragment(old, mTransition, mTransitionStyle);
-                            } 
-                        } 
-                    } 
-                } 
+                            } //End block
+                        } //End block
+                    } //End block
+                } //End block
     if(f != null)                
                 {
                     f.mNextAnim = op.enterAnim;
                     mManager.addFragment(f, false);
-                } 
-            } 
+                } //End block
+            } //End block
             break;
             case OP_REMOVE:
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.exitAnim;
                 mManager.removeFragment(f, mTransition, mTransitionStyle);
-            } 
+            } //End block
             break;
             case OP_HIDE:
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.exitAnim;
                 mManager.hideFragment(f, mTransition, mTransitionStyle);
-            } 
+            } //End block
             break;
             case OP_SHOW:
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.enterAnim;
                 mManager.showFragment(f, mTransition, mTransitionStyle);
-            } 
+            } //End block
             break;
             case OP_DETACH:
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.exitAnim;
                 mManager.detachFragment(f, mTransition, mTransitionStyle);
-            } 
+            } //End block
             break;
             case OP_ATTACH:
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.enterAnim;
                 mManager.attachFragment(f, mTransition, mTransitionStyle);
-            } 
+            } //End block
             break;
             default:
             {
                 IllegalArgumentException var2EA9A223A99C618C8A7E8033CAE12D5F_413250766 = new IllegalArgumentException("Unknown cmd: " + op.cmd);
                 var2EA9A223A99C618C8A7E8033CAE12D5F_413250766.addTaint(taint);
                 throw var2EA9A223A99C618C8A7E8033CAE12D5F_413250766;
-            } 
+            } //End block
 }            op = op.next;
-        } 
+        } //End block
         mManager.moveToState(mManager.mCurState, mTransition,
                 mTransitionStyle, true);
     if(mAddToBackStack)        
         {
             mManager.addBackStackState(this);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.982 -0400", hash_original_method = "137917E20FC9A3B18E2DEEE98195320E", hash_generated_method = "E13B5D72D86184821543FD7F39541C01")
     public void popFromBackStack(boolean doStateMove) {
         addTaint(doStateMove);
@@ -1241,7 +1206,7 @@ for(int i=0;i<mManager.mAdded.size();i++)
             LogWriter logw = new LogWriter(TAG);
             PrintWriter pw = new PrintWriter(logw);
             dump("  ", null, pw, null);
-        } 
+        } //End block
         bumpBackStackNesting(-1);
         Op op = mTail;
         while
@@ -1255,7 +1220,7 @@ switch(op.cmd){
                 mManager.removeFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition),
                             mTransitionStyle);
-            } 
+            } //End block
             break;
             case OP_REPLACE:
             {
@@ -1266,7 +1231,7 @@ switch(op.cmd){
                     mManager.removeFragment(f,
                                 FragmentManagerImpl.reverseTransit(mTransition),
                                 mTransitionStyle);
-                } 
+                } //End block
     if(op.removed != null)                
                 {
 for(int i=0;i<op.removed.size();i++)
@@ -1274,16 +1239,16 @@ for(int i=0;i<op.removed.size();i++)
                         Fragment old = op.removed.get(i);
                         old.mNextAnim = op.popEnterAnim;
                         mManager.addFragment(old, false);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             break;
             case OP_REMOVE:
             {
                 Fragment f = op.fragment;
                 f.mNextAnim = op.popEnterAnim;
                 mManager.addFragment(f, false);
-            } 
+            } //End block
             break;
             case OP_HIDE:
             {
@@ -1291,7 +1256,7 @@ for(int i=0;i<op.removed.size();i++)
                 f.mNextAnim = op.popEnterAnim;
                 mManager.showFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle);
-            } 
+            } //End block
             break;
             case OP_SHOW:
             {
@@ -1299,7 +1264,7 @@ for(int i=0;i<op.removed.size();i++)
                 f.mNextAnim = op.popExitAnim;
                 mManager.hideFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle);
-            } 
+            } //End block
             break;
             case OP_DETACH:
             {
@@ -1307,7 +1272,7 @@ for(int i=0;i<op.removed.size();i++)
                 f.mNextAnim = op.popEnterAnim;
                 mManager.attachFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle);
-            } 
+            } //End block
             break;
             case OP_ATTACH:
             {
@@ -1315,72 +1280,68 @@ for(int i=0;i<op.removed.size();i++)
                 f.mNextAnim = op.popEnterAnim;
                 mManager.detachFragment(f,
                             FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle);
-            } 
+            } //End block
             break;
             default:
             {
                 IllegalArgumentException var2EA9A223A99C618C8A7E8033CAE12D5F_965555173 = new IllegalArgumentException("Unknown cmd: " + op.cmd);
                 var2EA9A223A99C618C8A7E8033CAE12D5F_965555173.addTaint(taint);
                 throw var2EA9A223A99C618C8A7E8033CAE12D5F_965555173;
-            } 
+            } //End block
 }            op = op.prev;
-        } 
+        } //End block
     if(doStateMove)        
         {
             mManager.moveToState(mManager.mCurState,
                     FragmentManagerImpl.reverseTransit(mTransition), mTransitionStyle, true);
-        } 
+        } //End block
     if(mIndex >= 0)        
         {
             mManager.freeBackStackIndex(mIndex);
             mIndex = -1;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.983 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "5D0EAF6E358D4CD33136695C968D1010")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_1267835706 =         mName;
         varDBF15A5FB8102A5C28D5046A0E92E443_1267835706.addTaint(taint);
         return varDBF15A5FB8102A5C28D5046A0E92E443_1267835706;
-        
-        
+        // ---------- Original Method ----------
+        //return mName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.983 -0400", hash_original_method = "78EE7FB9A966094E1E15EEF50B50E3C9", hash_generated_method = "506363DA957C44779407D8EF92BC9BC4")
     public int getTransition() {
         int varEE0B0D4CFF6B126A7F47DE6CAD24BDC6_1105143718 = (mTransition);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_919591254 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_919591254;
-        
-        
+        // ---------- Original Method ----------
+        //return mTransition;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.983 -0400", hash_original_method = "0B18827E69C997D5383C8EBB7663D372", hash_generated_method = "FFD42E05A8C709CFA4464E9A961A9FCA")
     public int getTransitionStyle() {
         int varDE4B0089B15FB88D71DC24794426071D_95639870 = (mTransitionStyle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213745724 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213745724;
-        
-        
+        // ---------- Original Method ----------
+        //return mTransitionStyle;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.983 -0400", hash_original_method = "98C448D4C76D2FE85810E0C03648865C", hash_generated_method = "5E33B9F39909F6C33F9FBC1540898EF9")
     public boolean isEmpty() {
         boolean var48E5BF95F43DB41550E9635C3B539918_16054244 = (mNumOp == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_491914304 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_491914304;
-        
-        
+        // ---------- Original Method ----------
+        //return mNumOp == 0;
     }
 
     
@@ -1416,7 +1377,7 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1267835706 =         mName;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.984 -0400", hash_original_method = "D7B482A7C55CFA7077AB6D8147480F87", hash_generated_method = "D7B482A7C55CFA7077AB6D8147480F87")
         public Op ()
         {
-            
+            //Synthesized constructor
         }
 
 

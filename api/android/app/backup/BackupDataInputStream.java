@@ -1,6 +1,6 @@
 package android.app.backup;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,8 +24,8 @@ public class BackupDataInputStream extends InputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.038 -0400", hash_original_method = "C2C10C1477F29698CE48A2404B00FC26", hash_generated_method = "1A1C8E636B0AAC290AD1FB4EF8D4012F")
       BackupDataInputStream(BackupDataInput data) {
         mData = data;
-        
-        
+        // ---------- Original Method ----------
+        //mData = data;
     }
 
     
@@ -35,18 +35,18 @@ public class BackupDataInputStream extends InputStream {
     if(mOneByte == null)        
         {
             one = mOneByte = new byte[1];
-        } 
+        } //End block
         mData.readEntityData(one, 0, 1);
         int var1335A6A147E72748A94A562241E2B830_18498472 = (one[0]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279797055 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279797055;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] one = mOneByte;
+        //if (mOneByte == null) {
+            //one = mOneByte = new byte[1];
+        //}
+        //mData.readEntityData(one, 0, 1);
+        //return one[0];
     }
 
     
@@ -58,8 +58,8 @@ public class BackupDataInputStream extends InputStream {
         int varCFA6060A76803DC123ADE59BD476DC18_1231697731 = (mData.readEntityData(b, offset, size));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1798785511 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1798785511;
-        
-        
+        // ---------- Original Method ----------
+        //return mData.readEntityData(b, offset, size);
     }
 
     
@@ -69,30 +69,28 @@ public class BackupDataInputStream extends InputStream {
         int var3312356BCC0ECCE1EF01D9DB2F5A3AF2_6227155 = (mData.readEntityData(b, 0, b.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501444499 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501444499;
-        
-        
+        // ---------- Original Method ----------
+        //return mData.readEntityData(b, 0, b.length);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.040 -0400", hash_original_method = "EC81A9ECDA808FF062BB2254D312B94E", hash_generated_method = "74217C922407E513BB1AEA98FECECFF6")
     public String getKey() {
 String var28438ADFC1608AABD649C75D36B519BF_1862158378 =         this.key;
         var28438ADFC1608AABD649C75D36B519BF_1862158378.addTaint(taint);
         return var28438ADFC1608AABD649C75D36B519BF_1862158378;
-        
-        
+        // ---------- Original Method ----------
+        //return this.key;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.041 -0400", hash_original_method = "EB0F38C5E31652AF776348A02A47056B", hash_generated_method = "0518D50AF76EE14CB722EA2574E7528B")
     public int size() {
         int var67E937702FA3D6D983419880FAA287DA_52557341 = (this.dataSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_530312220 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_530312220;
-        
-        
+        // ---------- Original Method ----------
+        //return this.dataSize;
     }
 
     

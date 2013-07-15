@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public final class DerInputStream extends BerInputStream {
     public  DerInputStream(byte[] encoded) throws IOException {
         super(encoded, 0, encoded.length);
         addTaint(encoded[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,7 +23,7 @@ public final class DerInputStream extends BerInputStream {
         addTaint(encodingLen);
         addTaint(offset);
         addTaint(encoded[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -31,7 +31,7 @@ public final class DerInputStream extends BerInputStream {
     public  DerInputStream(InputStream in) throws IOException {
         super(in);
         addTaint(in.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -43,16 +43,16 @@ public final class DerInputStream extends BerInputStream {
             ASN1Exception var79FB8FE365E5415E87FEBC66DA46AA51_2114031268 = new ASN1Exception("DER: only definite length encoding MUST be used");
             var79FB8FE365E5415E87FEBC66DA46AA51_2114031268.addTaint(taint);
             throw var79FB8FE365E5415E87FEBC66DA46AA51_2114031268;
-        } 
+        } //End block
         int varE4D23E841D8E8804190027BCE3180FA5_1096844564 = (tag);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971596202 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1971596202;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int tag = super.next();
+        //if (length == INDEFINIT_LENGTH) {
+            //throw new ASN1Exception("DER: only definite length encoding MUST be used");
+        //}
+        //return tag;
     }
 
     
@@ -64,7 +64,7 @@ public final class DerInputStream extends BerInputStream {
                     + "]. Not valid for DER.");
             var6CD6A9EA5E0C8948411E1E925C2D51F9_1936201672.addTaint(taint);
             throw var6CD6A9EA5E0C8948411E1E925C2D51F9_1936201672;
-        } 
+        } //End block
         super.readBitString();
     if(length > 1
                 && buffer[contentOffset] != 0
@@ -74,19 +74,19 @@ public final class DerInputStream extends BerInputStream {
                     + "]. DER requires zero unused bits in final octet.");
             varEBFFE941DAAEA9E661A60F1B3386799A_1417583344.addTaint(taint);
             throw varEBFFE941DAAEA9E661A60F1B3386799A_1417583344;
-        } 
-        
-        
-            
-                    
-        
-        
-        
-                
-                
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (tag == ASN1Constants.TAG_C_BITSTRING) {
+            //throw new ASN1Exception("ASN.1 bitstring: constructed identifier at [" + tagOffset
+                    //+ "]. Not valid for DER.");
+        //}
+        //super.readBitString();
+        //if (length > 1
+                //&& buffer[contentOffset] != 0
+                //&& (buffer[offset - 1] & UNUSED_BITS_MASK[buffer[contentOffset] - 1]) != 0) {
+            //throw new ASN1Exception("ASN.1 bitstring: wrong content at [" + contentOffset
+                    //+ "]. DER requires zero unused bits in final octet.");
+        //}
     }
 
     
@@ -99,17 +99,16 @@ public final class DerInputStream extends BerInputStream {
                     + "]. DER allows only 0x00 or 0xFF values");
             varB125633AA5460073F05A56E3593082A3_1335486514.addTaint(taint);
             throw varB125633AA5460073F05A56E3593082A3_1335486514;
-        } 
-        
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.readBoolean();
+        //if (buffer[contentOffset] != 0 && buffer[contentOffset] != (byte) 0xFF) {
+            //throw new ASN1Exception("ASN.1 boolean: wrong content at [" + contentOffset
+                    //+ "]. DER allows only 0x00 or 0xFF values");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.994 -0400", hash_original_method = "71C8318A9CAF457AECB9A25AEA0B0620", hash_generated_method = "3F3ED9FFF8F74F763E0366FDA53B92C1")
     public void readOctetString() throws IOException {
     if(tag == ASN1Constants.TAG_C_OCTETSTRING)        
@@ -118,14 +117,14 @@ public final class DerInputStream extends BerInputStream {
                     + "]. Not valid for DER.");
             var1F9F782176D2FDD117D43B5E6751BBBF_2119677361.addTaint(taint);
             throw var1F9F782176D2FDD117D43B5E6751BBBF_2119677361;
-        } 
+        } //End block
         super.readOctetString();
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (tag == ASN1Constants.TAG_C_OCTETSTRING) {
+            //throw new ASN1Exception("ASN.1 octetstring: constructed identifier at [" + tagOffset
+                    //+ "]. Not valid for DER.");
+        //}
+        //super.readOctetString();
     }
 
     
@@ -133,8 +132,8 @@ public final class DerInputStream extends BerInputStream {
     public void readSequence(ASN1Sequence sequence) throws IOException {
         addTaint(sequence.getTaint());
         super.readSequence(sequence);
-        
-        
+        // ---------- Original Method ----------
+        //super.readSequence(sequence);
     }
 
     
@@ -142,12 +141,11 @@ public final class DerInputStream extends BerInputStream {
     public void readSetOf(ASN1SetOf setOf) throws IOException {
         addTaint(setOf.getTaint());
         super.readSetOf(setOf);
-        
-        
+        // ---------- Original Method ----------
+        //super.readSetOf(setOf);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.995 -0400", hash_original_method = "E88A2C471E1F01453D6E283D611B31B1", hash_generated_method = "D7FD8EF9B0CA0450813AF87E5F76A564")
     public void readString(ASN1StringType type) throws IOException {
         addTaint(type.getTaint());
@@ -157,14 +155,14 @@ public final class DerInputStream extends BerInputStream {
                     + "]. Not valid for DER.");
             var76D39CA87E04FEC450D76EC3ABE22F69_1390859148.addTaint(taint);
             throw var76D39CA87E04FEC450D76EC3ABE22F69_1390859148;
-        } 
+        } //End block
         super.readString(type);
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (tag == type.constrId) {
+            //throw new ASN1Exception("ASN.1 string: constructed identifier at [" + tagOffset
+                    //+ "]. Not valid for DER.");
+        //}
+        //super.readString(type);
     }
 
     
@@ -176,25 +174,25 @@ public final class DerInputStream extends BerInputStream {
                     + "]. Not valid for DER.");
             var9A64E9F3EA8159E550967BD985B9752C_130800046.addTaint(taint);
             throw var9A64E9F3EA8159E550967BD985B9752C_130800046;
-        } 
+        } //End block
     if(length != ASN1UTCTime.UTC_HMS)        
         {
             ASN1Exception var14034AAB8EBDC0C614D4A1C14A104C70_1705579427 = new ASN1Exception("ASN.1 UTCTime: wrong format for DER, identifier at ["
                     + tagOffset + "]");
             var14034AAB8EBDC0C614D4A1C14A104C70_1705579427.addTaint(taint);
             throw var14034AAB8EBDC0C614D4A1C14A104C70_1705579427;
-        } 
+        } //End block
         super.readUTCTime();
-        
-        
-            
-                    
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (tag == ASN1Constants.TAG_C_UTCTIME) {
+            //throw new ASN1Exception("ASN.1 UTCTime: constructed identifier at [" + tagOffset
+                    //+ "]. Not valid for DER.");
+        //}
+        //if (length != ASN1UTCTime.UTC_HMS) {
+            //throw new ASN1Exception("ASN.1 UTCTime: wrong format for DER, identifier at ["
+                    //+ tagOffset + "]");
+        //}
+        //super.readUTCTime();
     }
 
     
@@ -206,14 +204,14 @@ public final class DerInputStream extends BerInputStream {
                     + tagOffset + "]. Not valid for DER.");
             var7CF4C5D60863B65C33DC7DC92560200E_1214103438.addTaint(taint);
             throw var7CF4C5D60863B65C33DC7DC92560200E_1214103438;
-        } 
+        } //End block
         super.readGeneralizedTime();
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (tag == ASN1Constants.TAG_C_GENERALIZEDTIME) {
+            //throw new ASN1Exception("ASN.1 GeneralizedTime: constructed identifier at ["
+                    //+ tagOffset + "]. Not valid for DER.");
+        //}
+        //super.readGeneralizedTime();
     }
 
     

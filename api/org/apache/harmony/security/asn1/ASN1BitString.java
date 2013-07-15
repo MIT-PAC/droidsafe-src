@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,12 +12,11 @@ public class ASN1BitString extends ASN1StringType {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.517 -0400", hash_original_method = "AD601F3532730C1588B10C0B2F4700C0", hash_generated_method = "2D61DE183F5D6ABAA7F4E57F92D94159")
     public  ASN1BitString() {
         super(TAG_BITSTRING);
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static ASN1BitString getInstance() {
+        public static ASN1BitString getInstance() {
         return ASN1;
     }
 
@@ -32,16 +31,16 @@ public class ASN1BitString extends ASN1StringType {
 Object var540C13E9E156B687226421B24F2DF178_298788651 =             null;
             var540C13E9E156B687226421B24F2DF178_298788651.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_298788651;
-        } 
+        } //End block
 Object var6AD043AF0280111F31D0D60A6CD70863_1188146828 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_1188146828.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_1188146828;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //in.readBitString();
+        //if (in.isVerify) {
+            //return null;
+        //}
+        //return getDecodedObject(in);
     }
 
     
@@ -55,11 +54,11 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1188146828 =         getDecodedObject
 Object var319298E0BC136FD97EF3662F4EA645DF_1368795185 =         new BitString(bytes, in.buffer[in.contentOffset]);
         var319298E0BC136FD97EF3662F4EA645DF_1368795185.addTaint(taint);
         return var319298E0BC136FD97EF3662F4EA645DF_1368795185;
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //byte[] bytes = new byte[in.length - 1];
+        //System.arraycopy(in.buffer, in.contentOffset + 1, bytes, 0,
+                //in.length - 1);
+        //return new BitString(bytes, in.buffer[in.contentOffset]);
     }
 
     
@@ -68,19 +67,18 @@ Object var319298E0BC136FD97EF3662F4EA645DF_1368795185 =         new BitString(by
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.encodeBitString();
-        
-        
+        // ---------- Original Method ----------
+        //out.encodeBitString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.519 -0400", hash_original_method = "FF34851DE63579E10DEA6E02E8081017", hash_generated_method = "994CBA66B49762BED89C8A1F0B242D76")
     @Override
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.length = ((BitString) out.content).bytes.length + 1;
-        
-        
+        // ---------- Original Method ----------
+        //out.length = ((BitString) out.content).bytes.length + 1;
     }
 
     
@@ -96,9 +94,9 @@ Object var319298E0BC136FD97EF3662F4EA645DF_1368795185 =         new BitString(by
         public  ASN1NamedBitList(int minBits) {
             this.minBits = minBits;
             this.maxBits = INDEFINITE_SIZE;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.minBits = minBits;
+            //this.maxBits = INDEFINITE_SIZE;
         }
 
         
@@ -114,19 +112,19 @@ Object var319298E0BC136FD97EF3662F4EA645DF_1368795185 =         new BitString(by
     if(minBits == INDEFINITE_SIZE)                
                 {
                     value = new boolean[bitsNumber];
-                } 
+                } //End block
                 else
                 {
     if(bitsNumber > minBits)                    
                     {
                         value = new boolean[bitsNumber];
-                    } 
+                    } //End block
                     else
                     {
                         value = new boolean[minBits];
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             else
             {
     if(bitsNumber > maxBits)                
@@ -134,15 +132,15 @@ Object var319298E0BC136FD97EF3662F4EA645DF_1368795185 =         new BitString(by
                     ASN1Exception varA6917ABFFDD74F8348C9C8DBD0112C64_229549227 = new ASN1Exception("ASN.1 Named Bitstring: size constraints");
                     varA6917ABFFDD74F8348C9C8DBD0112C64_229549227.addTaint(taint);
                     throw varA6917ABFFDD74F8348C9C8DBD0112C64_229549227;
-                } 
+                } //End block
                 value = new boolean[maxBits];
-            } 
+            } //End block
     if(bitsNumber == 0)            
             {
 Object varAF280DA2BC37D8BE783D8499160168DE_679652009 =                 value;
                 varAF280DA2BC37D8BE783D8499160168DE_679652009.addTaint(taint);
                 return varAF280DA2BC37D8BE783D8499160168DE_679652009;
-            } 
+            } //End block
             int i = 1;
             int j = 0;
             byte octet = in.buffer[in.contentOffset + i];
@@ -151,19 +149,19 @@ for(int size = in.length - 1;i < size;i++)
 for(int k = 0;k < 8;k++,j++)
                 {
                     value[j] = (SET_MASK[k] & octet) != 0;
-                } 
+                } //End block
                 i++;
                 octet = in.buffer[in.contentOffset + i];
-            } 
+            } //End block
 for(int k = 0;k < (8 - unusedBits);k++,j++)
             {
                 value[j] = (SET_MASK[k] & octet) != 0;
-            } 
+            } //End block
 Object varAF280DA2BC37D8BE783D8499160168DE_784101056 =             value;
             varAF280DA2BC37D8BE783D8499160168DE_784101056.addTaint(taint);
             return varAF280DA2BC37D8BE783D8499160168DE_784101056;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -177,12 +175,12 @@ Object varAF280DA2BC37D8BE783D8499160168DE_784101056 =             value;
 (index > -1 && !toEncode[index])            
             {
                 index--;
-            } 
+            } //End block
     if(index == -1)            
             {
                 out.content = emptyString;
                 out.length = 1;
-            } 
+            } //End block
             else
             {
                 int unusedBits = 7 - index % 8;
@@ -196,21 +194,21 @@ for(int k = 0;k < 8;k++,j++)
     if(toEncode[j])                        
                         {
                             bytes[i] = (byte) (bytes[i] | SET_MASK[k]);
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
 for(int k = 0;k < (8 - unusedBits);k++,j++)
                 {
     if(toEncode[j])                    
                     {
                         bytes[index] = (byte) (bytes[index] | SET_MASK[k]);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 out.content = new BitString(bytes, unusedBits);
                 out.length = bytes.length + 1;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

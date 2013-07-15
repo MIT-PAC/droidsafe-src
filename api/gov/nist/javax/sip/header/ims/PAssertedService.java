@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,14 +20,14 @@ public class PAssertedService extends SIPHeader implements PAssertedServiceHeade
     protected  PAssertedService(String name) {
         super(NAME);
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.880 -0400", hash_original_method = "AA5E567A5261831D339C7F3E134619EA", hash_generated_method = "320063B2C7D78E77D8E4F4C11712E1EC")
     public  PAssertedService() {
         super(P_ASSERTED_SERVICE);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -40,30 +40,30 @@ public class PAssertedService extends SIPHeader implements PAssertedServiceHeade
         {
             retval.append(ParameterNamesIms.SERVICE_ID_LABEL).append(".");
             retval.append(this.getSubserviceIdentifiers());
-        } 
+        } //End block
         else
     if(this.subAppIds!=null)        
         {
             retval.append(ParameterNamesIms.APPLICATION_ID_LABEL).append(".");
             retval.append(this.getApplicationIdentifiers());
-        } 
+        } //End block
 String var1B324365A764C077A55854483509F4AB_1380885051 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_1380885051.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_1380885051;
-        
-        
-        
-        
-            
-                
-            
-            
-            
-            
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //retval.append(ParameterNamesIms.SERVICE_ID);
+        //if(this.subServiceIds!=null)
+            //{
+                //retval.append(ParameterNamesIms.SERVICE_ID_LABEL).append(".");
+            //retval.append(this.getSubserviceIdentifiers());
+            //}
+            //else if(this.subAppIds!=null)
+            //{
+                //retval.append(ParameterNamesIms.APPLICATION_ID_LABEL).append(".");
+                //retval.append(this.getApplicationIdentifiers());
+            //}
+        //return retval.toString();
     }
 
     
@@ -73,8 +73,8 @@ String var1B324365A764C077A55854483509F4AB_1380885051 =         retval.toString(
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_810705195 = new ParseException(value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_810705195.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_810705195;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ParseException(value,0);
     }
 
     
@@ -85,16 +85,16 @@ String var1B324365A764C077A55854483509F4AB_1380885051 =         retval.toString(
 String var7916812A23918EC204F845FC7221250B_1589838255 =             this.subAppIds.substring(1);
             var7916812A23918EC204F845FC7221250B_1589838255.addTaint(taint);
             return var7916812A23918EC204F845FC7221250B_1589838255;
-        } 
+        } //End block
 String var0F006A3A2B361F089D6C99C0B6CF0955_117643129 =         this.subAppIds;
         var0F006A3A2B361F089D6C99C0B6CF0955_117643129.addTaint(taint);
         return var0F006A3A2B361F089D6C99C0B6CF0955_117643129;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if(this.subAppIds.charAt(0)=='.')
+        //{
+            //return this.subAppIds.substring(1);
+        //}
+        //return this.subAppIds;
     }
 
     
@@ -105,34 +105,32 @@ String var0F006A3A2B361F089D6C99C0B6CF0955_117643129 =         this.subAppIds;
 String var90B5AED4D7D55758FDA74DDFBC627E72_624595144 =             this.subServiceIds.substring(1);
             var90B5AED4D7D55758FDA74DDFBC627E72_624595144.addTaint(taint);
             return var90B5AED4D7D55758FDA74DDFBC627E72_624595144;
-        } 
+        } //End block
 String varF0B426A6ADCB9A3BEC397536D0A15B1C_1149991489 =         this.subServiceIds;
         varF0B426A6ADCB9A3BEC397536D0A15B1C_1149991489.addTaint(taint);
         return varF0B426A6ADCB9A3BEC397536D0A15B1C_1149991489;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if(this.subServiceIds.charAt(0)=='.')
+        //{
+            //return this.subServiceIds.substring(1);
+        //}
+        //return this.subServiceIds;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.884 -0400", hash_original_method = "0A65ED1D7958A8DC93D54B9D5172FB86", hash_generated_method = "813392CF39A94B938B1B3C7E12E815AD")
     public void setApplicationIdentifiers(String appids) {
         this.subAppIds = appids;
-        
-        
+        // ---------- Original Method ----------
+        //this.subAppIds = appids;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.884 -0400", hash_original_method = "D85C3DD3D271FDFF4F350559A8282CAD", hash_generated_method = "408F5C6315DFA9E24D9CFBD7DDC9F713")
     public void setSubserviceIdentifiers(String subservices) {
         this.subServiceIds = subservices;
-        
-        
+        // ---------- Original Method ----------
+        //this.subServiceIds = subservices;
     }
 
     
@@ -142,8 +140,8 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1149991489 =         this.subServiceI
         boolean varAC54CD6C0082524B853E30EB0E381537_1520513974 = ((other instanceof PAssertedServiceHeader) && super.equals(other));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_882228588 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_882228588;
-        
-        
+        // ---------- Original Method ----------
+        //return (other instanceof PAssertedServiceHeader) && super.equals(other);
     }
 
     
@@ -153,9 +151,9 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_1149991489 =         this.subServiceI
 Object varF9E19AD6135C970F387F77C6F3DE4477_1521048309 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1521048309.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1521048309;
-        
-        
-        
+        // ---------- Original Method ----------
+        //PAssertedService retval = (PAssertedService) super.clone();
+        //return retval;
     }
 
     

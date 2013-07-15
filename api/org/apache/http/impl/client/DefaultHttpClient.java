@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -65,7 +65,7 @@ public class DefaultHttpClient extends AbstractHttpClient {
         super(conman, params);
         addTaint(params.getTaint());
         addTaint(conman.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -73,14 +73,14 @@ public class DefaultHttpClient extends AbstractHttpClient {
     public  DefaultHttpClient(final HttpParams params) {
         super(null, params);
         addTaint(params.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.421 -0400", hash_original_method = "750193D90CA0949C0C735B3486D9889C", hash_generated_method = "85C57FF144AEFA1152101B8C3A7B1643")
     public  DefaultHttpClient() {
         super(null, null);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -103,21 +103,21 @@ public class DefaultHttpClient extends AbstractHttpClient {
 HttpParams varD15CEB6F45B18F7EB233792D020C6115_847388363 =         params;
         varD15CEB6F45B18F7EB233792D020C6115_847388363.addTaint(taint);
         return varD15CEB6F45B18F7EB233792D020C6115_847388363;
-        
-        
-        
-                
-        
-                
-        
-                
-        
-            
-        
-            
-        
-                
-        
+        // ---------- Original Method ----------
+        //HttpParams params = new BasicHttpParams();
+        //HttpProtocolParams.setVersion(params, 
+                //HttpVersion.HTTP_1_1);
+        //HttpProtocolParams.setContentCharset(params, 
+                //HTTP.DEFAULT_CONTENT_CHARSET);
+        //HttpProtocolParams.setUseExpectContinue(params, 
+                //false);
+        //final VersionInfo vi = VersionInfo.loadVersionInfo
+            //("org.apache.http.client", getClass().getClassLoader());
+        //final String release = (vi != null) ?
+            //vi.getRelease() : VersionInfo.UNAVAILABLE;
+        //HttpProtocolParams.setUserAgent(params, 
+                //"Apache-HttpClient/" + release + " (java 1.4)");
+        //return params;
     }
 
     
@@ -127,8 +127,8 @@ HttpParams varD15CEB6F45B18F7EB233792D020C6115_847388363 =         params;
 HttpRequestExecutor var77057CFCC113A990DCE28ADA4BDF2E52_1934734216 =         new HttpRequestExecutor();
         var77057CFCC113A990DCE28ADA4BDF2E52_1934734216.addTaint(taint);
         return var77057CFCC113A990DCE28ADA4BDF2E52_1934734216;
-        
-        
+        // ---------- Original Method ----------
+        //return new HttpRequestExecutor();
     }
 
     
@@ -155,40 +155,40 @@ HttpRequestExecutor var77057CFCC113A990DCE28ADA4BDF2E52_1934734216 =         new
                 {
                     Class<?> clazz = Class.forName(className);
                     factory = (ClientConnectionManagerFactory) clazz.newInstance();
-                } 
+                } //End block
                 catch (ClassNotFoundException ex)
                 {
                     IllegalStateException var73F8483FF0FE551371BF0CE6A67E0CCB_1542998034 = new IllegalStateException("Invalid class name: " + className);
                     var73F8483FF0FE551371BF0CE6A67E0CCB_1542998034.addTaint(taint);
                     throw var73F8483FF0FE551371BF0CE6A67E0CCB_1542998034;
-                } 
+                } //End block
                 catch (IllegalAccessException ex)
                 {
                     IllegalAccessError var25D752797FF6CA15F46C06779D404CBB_1136503894 = new IllegalAccessError(ex.getMessage());
                     var25D752797FF6CA15F46C06779D404CBB_1136503894.addTaint(taint);
                     throw var25D752797FF6CA15F46C06779D404CBB_1136503894;
-                } 
+                } //End block
                 catch (InstantiationException ex)
                 {
                     InstantiationError varFE3241543B0575DE3CA4A692D24A1BE2_299435409 = new InstantiationError(ex.getMessage());
                     varFE3241543B0575DE3CA4A692D24A1BE2_299435409.addTaint(taint);
                     throw varFE3241543B0575DE3CA4A692D24A1BE2_299435409;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(factory != null)        
         {
             connManager = factory.newInstance(params, registry);
-        } 
+        } //End block
         else
         {
             connManager = new SingleClientConnManager(getParams(), registry);
-        } 
+        } //End block
 ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1022508968 =         connManager;
         varA3F19198A23DEA30D08223E00C8A3A82_1022508968.addTaint(taint);
         return varA3F19198A23DEA30D08223E00C8A3A82_1022508968;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -211,21 +211,21 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1022508968 =        
 HttpContext var4C2DD4015CB4BB3F876A587F79816595_2000388682 =         context;
         var4C2DD4015CB4BB3F876A587F79816595_2000388682.addTaint(taint);
         return var4C2DD4015CB4BB3F876A587F79816595_2000388682;
-        
-        
-        
-                
-                
-        
-                
-                
-        
-                
-                
-        
-                
-                
-        
+        // ---------- Original Method ----------
+        //HttpContext context = new BasicHttpContext();
+        //context.setAttribute(
+                //ClientContext.AUTHSCHEME_REGISTRY, 
+                //getAuthSchemes());
+        //context.setAttribute(
+                //ClientContext.COOKIESPEC_REGISTRY, 
+                //getCookieSpecs());
+        //context.setAttribute(
+                //ClientContext.COOKIE_STORE, 
+                //getCookieStore());
+        //context.setAttribute(
+                //ClientContext.CREDS_PROVIDER, 
+                //getCredentialsProvider());
+        //return context;
     }
 
     
@@ -235,8 +235,8 @@ HttpContext var4C2DD4015CB4BB3F876A587F79816595_2000388682 =         context;
 ConnectionReuseStrategy varE9614091F2187FE4D3A838719839C82D_1379758353 =         new DefaultConnectionReuseStrategy();
         varE9614091F2187FE4D3A838719839C82D_1379758353.addTaint(taint);
         return varE9614091F2187FE4D3A838719839C82D_1379758353;
-        
-        
+        // ---------- Original Method ----------
+        //return new DefaultConnectionReuseStrategy();
     }
 
     
@@ -246,8 +246,8 @@ ConnectionReuseStrategy varE9614091F2187FE4D3A838719839C82D_1379758353 =        
 ConnectionKeepAliveStrategy varB1B09AA60E36505913439B04233EB63B_810266198 =         new DefaultConnectionKeepAliveStrategy();
         varB1B09AA60E36505913439B04233EB63B_810266198.addTaint(taint);
         return varB1B09AA60E36505913439B04233EB63B_810266198;
-        
-        
+        // ---------- Original Method ----------
+        //return new DefaultConnectionKeepAliveStrategy();
     }
 
     
@@ -264,15 +264,15 @@ ConnectionKeepAliveStrategy varB1B09AA60E36505913439B04233EB63B_810266198 =     
 AuthSchemeRegistry var80BE65E57DEC31A391449487F60A8EC2_2115342290 =         registry;
         var80BE65E57DEC31A391449487F60A8EC2_2115342290.addTaint(taint);
         return var80BE65E57DEC31A391449487F60A8EC2_2115342290;
-        
-        
-        
-                
-                
-        
-                
-                
-        
+        // ---------- Original Method ----------
+        //AuthSchemeRegistry registry = new AuthSchemeRegistry();
+        //registry.register(
+                //AuthPolicy.BASIC, 
+                //new BasicSchemeFactory());
+        //registry.register(
+                //AuthPolicy.DIGEST, 
+                //new DigestSchemeFactory());
+        //return registry;
     }
 
     
@@ -298,24 +298,24 @@ AuthSchemeRegistry var80BE65E57DEC31A391449487F60A8EC2_2115342290 =         regi
 CookieSpecRegistry var80BE65E57DEC31A391449487F60A8EC2_354787479 =         registry;
         var80BE65E57DEC31A391449487F60A8EC2_354787479.addTaint(taint);
         return var80BE65E57DEC31A391449487F60A8EC2_354787479;
-        
-        
-        
-                
-                
-        
-                
-                
-        
-                
-                
-        
-                
-                
-        
-                
-                
-        
+        // ---------- Original Method ----------
+        //CookieSpecRegistry registry = new CookieSpecRegistry();
+        //registry.register(
+                //CookiePolicy.BEST_MATCH, 
+                //new BestMatchSpecFactory());
+        //registry.register(
+                //CookiePolicy.BROWSER_COMPATIBILITY, 
+                //new BrowserCompatSpecFactory());
+        //registry.register(
+                //CookiePolicy.NETSCAPE, 
+                //new NetscapeDraftSpecFactory());
+        //registry.register(
+                //CookiePolicy.RFC_2109, 
+                //new RFC2109SpecFactory());
+        //registry.register(
+                //CookiePolicy.RFC_2965, 
+                //new RFC2965SpecFactory());
+        //return registry;
     }
 
     
@@ -336,19 +336,19 @@ CookieSpecRegistry var80BE65E57DEC31A391449487F60A8EC2_354787479 =         regis
 BasicHttpProcessor var469B662EBDAC4AFE0D9BAB3D14417878_643112585 =         httpproc;
         var469B662EBDAC4AFE0D9BAB3D14417878_643112585.addTaint(taint);
         return var469B662EBDAC4AFE0D9BAB3D14417878_643112585;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //BasicHttpProcessor httpproc = new BasicHttpProcessor();
+        //httpproc.addInterceptor(new RequestDefaultHeaders());
+        //httpproc.addInterceptor(new RequestContent());
+        //httpproc.addInterceptor(new RequestTargetHost());
+        //httpproc.addInterceptor(new RequestConnControl());
+        //httpproc.addInterceptor(new RequestUserAgent());
+        //httpproc.addInterceptor(new RequestExpectContinue());
+        //httpproc.addInterceptor(new RequestAddCookies());
+        //httpproc.addInterceptor(new ResponseProcessCookies());
+        //httpproc.addInterceptor(new RequestTargetAuthentication());
+        //httpproc.addInterceptor(new RequestProxyAuthentication());
+        //return httpproc;
     }
 
     
@@ -358,8 +358,8 @@ BasicHttpProcessor var469B662EBDAC4AFE0D9BAB3D14417878_643112585 =         httpp
 HttpRequestRetryHandler varF009522154DB5FDBD3705EA6977C3184_485082996 =         new DefaultHttpRequestRetryHandler();
         varF009522154DB5FDBD3705EA6977C3184_485082996.addTaint(taint);
         return varF009522154DB5FDBD3705EA6977C3184_485082996;
-        
-        
+        // ---------- Original Method ----------
+        //return new DefaultHttpRequestRetryHandler();
     }
 
     
@@ -369,8 +369,8 @@ HttpRequestRetryHandler varF009522154DB5FDBD3705EA6977C3184_485082996 =         
 RedirectHandler var47CC789AA5B62D2A2EBD610A236C23FF_1016355126 =         new DefaultRedirectHandler();
         var47CC789AA5B62D2A2EBD610A236C23FF_1016355126.addTaint(taint);
         return var47CC789AA5B62D2A2EBD610A236C23FF_1016355126;
-        
-        
+        // ---------- Original Method ----------
+        //return new DefaultRedirectHandler();
     }
 
     
@@ -380,8 +380,8 @@ RedirectHandler var47CC789AA5B62D2A2EBD610A236C23FF_1016355126 =         new Def
 AuthenticationHandler var2194A4635854AFE57F91D31B277D1AAB_2110170040 =         new DefaultTargetAuthenticationHandler();
         var2194A4635854AFE57F91D31B277D1AAB_2110170040.addTaint(taint);
         return var2194A4635854AFE57F91D31B277D1AAB_2110170040;
-        
-        
+        // ---------- Original Method ----------
+        //return new DefaultTargetAuthenticationHandler();
     }
 
     
@@ -391,8 +391,8 @@ AuthenticationHandler var2194A4635854AFE57F91D31B277D1AAB_2110170040 =         n
 AuthenticationHandler varAFB13A519EB778DEB4F297B86FCEA1A7_483741348 =         new DefaultProxyAuthenticationHandler();
         varAFB13A519EB778DEB4F297B86FCEA1A7_483741348.addTaint(taint);
         return varAFB13A519EB778DEB4F297B86FCEA1A7_483741348;
-        
-        
+        // ---------- Original Method ----------
+        //return new DefaultProxyAuthenticationHandler();
     }
 
     
@@ -402,8 +402,8 @@ AuthenticationHandler varAFB13A519EB778DEB4F297B86FCEA1A7_483741348 =         ne
 CookieStore varBD17152B433B2B4B8E0F5024503423FA_156900461 =         new BasicCookieStore();
         varBD17152B433B2B4B8E0F5024503423FA_156900461.addTaint(taint);
         return varBD17152B433B2B4B8E0F5024503423FA_156900461;
-        
-        
+        // ---------- Original Method ----------
+        //return new BasicCookieStore();
     }
 
     
@@ -413,8 +413,8 @@ CookieStore varBD17152B433B2B4B8E0F5024503423FA_156900461 =         new BasicCoo
 CredentialsProvider varE9F1E29528E36748834AE02D7FF6FC73_870456549 =         new BasicCredentialsProvider();
         varE9F1E29528E36748834AE02D7FF6FC73_870456549.addTaint(taint);
         return varE9F1E29528E36748834AE02D7FF6FC73_870456549;
-        
-        
+        // ---------- Original Method ----------
+        //return new BasicCredentialsProvider();
     }
 
     
@@ -424,8 +424,8 @@ CredentialsProvider varE9F1E29528E36748834AE02D7FF6FC73_870456549 =         new 
 HttpRoutePlanner varEB83F82775DEAF4B7F183B848435FE34_1929799828 =         new ProxySelectorRoutePlanner(getConnectionManager().getSchemeRegistry(), null);
         varEB83F82775DEAF4B7F183B848435FE34_1929799828.addTaint(taint);
         return varEB83F82775DEAF4B7F183B848435FE34_1929799828;
-        
-        
+        // ---------- Original Method ----------
+        //return new ProxySelectorRoutePlanner(getConnectionManager().getSchemeRegistry(), null);
     }
 
     
@@ -435,8 +435,8 @@ HttpRoutePlanner varEB83F82775DEAF4B7F183B848435FE34_1929799828 =         new Pr
 UserTokenHandler var68797C7622985AE4F640C2C2E6C38197_1703137798 =         new DefaultUserTokenHandler();
         var68797C7622985AE4F640C2C2E6C38197_1703137798.addTaint(taint);
         return var68797C7622985AE4F640C2C2E6C38197_1703137798;
-        
-        
+        // ---------- Original Method ----------
+        //return new DefaultUserTokenHandler();
     }
 
     

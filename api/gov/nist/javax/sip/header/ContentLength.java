@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class ContentLength extends SIPHeader implements javax.sip.header.Content
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.288 -0400", hash_original_method = "6E8A391CB1CB04739D58E661944CCFB0", hash_generated_method = "BEA878E6A814B0FF9D7761D669FAB007")
     public  ContentLength() {
         super(NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,8 +23,8 @@ public class ContentLength extends SIPHeader implements javax.sip.header.Content
     public  ContentLength(int length) {
         super(NAME);
         this.contentLength = Integer.valueOf(length);
-        
-        
+        // ---------- Original Method ----------
+        //this.contentLength = Integer.valueOf(length);
     }
 
     
@@ -33,8 +33,8 @@ public class ContentLength extends SIPHeader implements javax.sip.header.Content
         int varF49B5C25837FC0D6E55799E76F51E4AC_990637881 = (contentLength.intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1454653475 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1454653475;
-        
-        
+        // ---------- Original Method ----------
+        //return contentLength.intValue();
     }
 
     
@@ -49,12 +49,12 @@ public class ContentLength extends SIPHeader implements javax.sip.header.Content
         throw var7BEA9B099681F4B52A513D65C998EB27_216062383;
         }
         this.contentLength = Integer.valueOf(contentLength);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (contentLength < 0)
+            //throw new InvalidArgumentException(
+                //"JAIN-SIP Exception"
+                    //+ ", ContentLength, setContentLength(), the contentLength parameter is <0");
+        //this.contentLength = Integer.valueOf(contentLength);
     }
 
     
@@ -63,8 +63,8 @@ public class ContentLength extends SIPHeader implements javax.sip.header.Content
 String varB9AAF3B320DC07C68A40DABE06BFAFD1_999184745 =         encodeBody(new StringBuffer()).toString();
         varB9AAF3B320DC07C68A40DABE06BFAFD1_999184745.addTaint(taint);
         return varB9AAF3B320DC07C68A40DABE06BFAFD1_999184745;
-        
-        
+        // ---------- Original Method ----------
+        //return encodeBody(new StringBuffer()).toString();
     }
 
     
@@ -78,16 +78,15 @@ String varB9AAF3B320DC07C68A40DABE06BFAFD1_999184745 =         encodeBody(new St
 StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_875511075 =         buffer;
         varE75BCB56CC6A0BCEED51BE38E1BB3F38_875511075.addTaint(taint);
         return varE75BCB56CC6A0BCEED51BE38E1BB3F38_875511075;
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (contentLength == null)
+            //buffer.append("0");
+        //else
+            //buffer.append(contentLength.toString());
+        //return buffer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.290 -0400", hash_original_method = "9921BFF09FACC23B6D23BD0D026EB023", hash_generated_method = "A3B0572A072BB6030D67CA40FED2302A")
     public boolean match(Object other) {
         addTaint(other.getTaint());
@@ -103,11 +102,11 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_875511075 =         buffer;
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1832880497 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1832880497;
         }
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (other instanceof ContentLength)
+            //return true;
+        //else
+            //return false;
     }
 
     
@@ -120,16 +119,16 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_875511075 =         buffer;
             boolean var5CDEA77036187634C36DF20CD1326BCC_2117988726 = (this.getContentLength() == o.getContentLength());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1017264750 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1017264750;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_604761481 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107757449 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107757449;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (other instanceof ContentLengthHeader) {
+            //final ContentLengthHeader o = (ContentLengthHeader) other;
+            //return this.getContentLength() == o.getContentLength();
+        //}
+        //return false;
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class DEROctetString extends ASN1OctetString {
         byte[]  string) {
         super(string);
         addTaint(string[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class DEROctetString extends ASN1OctetString {
         DEREncodable  obj) {
         super(obj);
         addTaint(obj.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -31,8 +31,8 @@ public class DEROctetString extends ASN1OctetString {
         DEROutputStream out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(OCTET_STRING, string);
-        
-        
+        // ---------- Original Method ----------
+        //out.writeEncoded(OCTET_STRING, string);
     }
 
     

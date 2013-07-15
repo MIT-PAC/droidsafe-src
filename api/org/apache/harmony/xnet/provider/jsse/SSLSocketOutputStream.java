@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ public class SSLSocketOutputStream extends OutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.415 -0400", hash_original_method = "A41E4766E55868182E82056D4801E8D9", hash_generated_method = "CB52A3C219C1E690A6A134F779FCC9DD")
     protected  SSLSocketOutputStream(SSLSocketImpl owner) {
         this.owner = owner;
-        
-        
+        // ---------- Original Method ----------
+        //this.owner = owner;
     }
 
     
@@ -26,8 +26,8 @@ public class SSLSocketOutputStream extends OutputStream {
     public void write(int b) throws IOException {
         addTaint(b);
         Streams.writeSingleByte(this, b);
-        
-        
+        // ---------- Original Method ----------
+        //Streams.writeSingleByte(this, b);
     }
 
     
@@ -38,8 +38,8 @@ public class SSLSocketOutputStream extends OutputStream {
         addTaint(off);
         addTaint(b[0]);
         owner.writeAppData(b, off, len);
-        
-        
+        // ---------- Original Method ----------
+        //owner.writeAppData(b, off, len);
     }
 
     

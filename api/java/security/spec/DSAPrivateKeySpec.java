@@ -1,6 +1,6 @@
 package java.security.spec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,55 +27,51 @@ public class DSAPrivateKeySpec implements KeySpec {
         this.p = p;
         this.q = q;
         this.g = g;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.x = x;
+        //this.p = p;
+        //this.q = q;
+        //this.g = g;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.933 -0400", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "8573E56BEEE5F595FD31E45B70840ED0")
     public BigInteger getG() {
 BigInteger var96B5EDC7D356FCBAF3C926D8A70305DA_1919180870 =         g;
         var96B5EDC7D356FCBAF3C926D8A70305DA_1919180870.addTaint(taint);
         return var96B5EDC7D356FCBAF3C926D8A70305DA_1919180870;
-        
-        
+        // ---------- Original Method ----------
+        //return g;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.933 -0400", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "00D2E4FA87868E6830EFE684DB125943")
     public BigInteger getP() {
 BigInteger var74E4690D9F2A026504928C017944E149_1820549421 =         p;
         var74E4690D9F2A026504928C017944E149_1820549421.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_1820549421;
-        
-        
+        // ---------- Original Method ----------
+        //return p;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.934 -0400", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "F2EE3FDF0561B77533E549D72CC565F0")
     public BigInteger getQ() {
 BigInteger varBEF1B7662E10AF6D5747729987514CB6_1575375371 =         q;
         varBEF1B7662E10AF6D5747729987514CB6_1575375371.addTaint(taint);
         return varBEF1B7662E10AF6D5747729987514CB6_1575375371;
-        
-        
+        // ---------- Original Method ----------
+        //return q;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.934 -0400", hash_original_method = "67A367EC1A42595A125F9EA99F2EC9F5", hash_generated_method = "F9AF32D2B32AD2625AF65F795A5CB8A9")
     public BigInteger getX() {
 BigInteger varEA5659DA512DECF23E6D37EE8060D074_1053038612 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_1053038612.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_1053038612;
-        
-        
+        // ---------- Original Method ----------
+        //return x;
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class ASN1ObjectIdentifier extends DERObjectIdentifier {
     public  ASN1ObjectIdentifier(String identifier) {
         super(identifier);
         addTaint(identifier.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -19,7 +19,7 @@ public class ASN1ObjectIdentifier extends DERObjectIdentifier {
       ASN1ObjectIdentifier(byte[] bytes) {
         super(bytes);
         addTaint(bytes[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,8 +29,8 @@ public class ASN1ObjectIdentifier extends DERObjectIdentifier {
 ASN1ObjectIdentifier varC7F61766DA32F36DBFEE874FD403E015_1395532900 =         new ASN1ObjectIdentifier(getId() + "." + branchID);
         varC7F61766DA32F36DBFEE874FD403E015_1395532900.addTaint(taint);
         return varC7F61766DA32F36DBFEE874FD403E015_1395532900;
-        
-        
+        // ---------- Original Method ----------
+        //return new ASN1ObjectIdentifier(getId() + "." + branchID);
     }
 
     

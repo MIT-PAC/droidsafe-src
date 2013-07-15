@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,9 +21,9 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     public  RetryableOutputStream(int limit) {
         this.limit = limit;
         this.content = new ByteArrayOutputStream(limit);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.limit = limit;
+        //this.content = new ByteArrayOutputStream(limit);
     }
 
     
@@ -31,9 +31,9 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     public  RetryableOutputStream() {
         this.limit = -1;
         this.content = new ByteArrayOutputStream();
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.limit = -1;
+        //this.content = new ByteArrayOutputStream();
     }
 
     
@@ -43,7 +43,7 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     if(closed)        
         {
             return;
-        } 
+        } //End block
         closed = true;
     if(content.size() < limit)        
         {
@@ -51,16 +51,16 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
                     + limit + " bytes, but received " + content.size());
             var1DD03DF22ED4590BAB4F1A82055BB925_1165407268.addTaint(taint);
             throw var1DD03DF22ED4590BAB4F1A82055BB925_1165407268;
-        } 
-        
-        
-            
-        
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (closed) {
+            //return;
+        //}
+        //closed = true;
+        //if (content.size() < limit) {
+            //throw new IOException("content-length promised "
+                    //+ limit + " bytes, but received " + content.size());
+        //}
     }
 
     
@@ -77,15 +77,15 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
             IOException varC980F46BCED66653895B5BC599061556_362656126 = new IOException("exceeded content-length limit of " + limit + " bytes");
             varC980F46BCED66653895B5BC599061556_362656126.addTaint(taint);
             throw varC980F46BCED66653895B5BC599061556_362656126;
-        } 
+        } //End block
         content.write(buffer, offset, count);
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //checkNotClosed();
+        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
+        //if (limit != -1 && content.size() > limit - count) {
+            //throw new IOException("exceeded content-length limit of " + limit + " bytes");
+        //}
+        //content.write(buffer, offset, count);
     }
 
     
@@ -95,9 +95,9 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
         int var072C841044B1A97A268EBCE85E0EDA06_570758158 = (content.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158678455 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158678455;
-        
-        
-        
+        // ---------- Original Method ----------
+        //close();
+        //return content.size();
     }
 
     
@@ -105,8 +105,8 @@ final class RetryableOutputStream extends AbstractHttpOutputStream {
     public void writeToSocket(OutputStream socketOut) throws IOException {
         addTaint(socketOut.getTaint());
         content.writeTo(socketOut);
-        
-        
+        // ---------- Original Method ----------
+        //content.writeTo(socketOut);
     }
 
     

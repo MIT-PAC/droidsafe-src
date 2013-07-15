@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class MimeTypeMap {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.770 -0400", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "3813AC6B5CB9CE0F32CF63BF21EAB5DA")
     private  MimeTypeMap() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -48,8 +48,8 @@ public class MimeTypeMap {
         boolean var1882FF8BA738477F3D843ED303B8BB1D_777049440 = (MimeUtils.hasMimeType(mimeType));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647406589 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_647406589;
-        
-        
+        // ---------- Original Method ----------
+        //return MimeUtils.hasMimeType(mimeType);
     }
 
     
@@ -59,8 +59,8 @@ public class MimeTypeMap {
 String var4DAE02CC55ADD03932C065B04B888027_1374297065 =         MimeUtils.guessMimeTypeFromExtension(extension);
         var4DAE02CC55ADD03932C065B04B888027_1374297065.addTaint(taint);
         return var4DAE02CC55ADD03932C065B04B888027_1374297065;
-        
-        
+        // ---------- Original Method ----------
+        //return MimeUtils.guessMimeTypeFromExtension(extension);
     }
 
     
@@ -75,8 +75,8 @@ String var4DAE02CC55ADD03932C065B04B888027_1374297065 =         MimeUtils.guessM
         boolean var3EDB18A82F44C3851921E4DF87DD5C3E_1225408912 = (MimeUtils.hasExtension(extension));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_52066905 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_52066905;
-        
-        
+        // ---------- Original Method ----------
+        //return MimeUtils.hasExtension(extension);
     }
 
     
@@ -86,8 +86,8 @@ String var4DAE02CC55ADD03932C065B04B888027_1374297065 =         MimeUtils.guessM
 String varB4A30242D1D4E5BAA090B65DC871EF20_1451489457 =         MimeUtils.guessExtensionFromMimeType(mimeType);
         varB4A30242D1D4E5BAA090B65DC871EF20_1451489457.addTaint(taint);
         return varB4A30242D1D4E5BAA090B65DC871EF20_1451489457;
-        
-        
+        // ---------- Original Method ----------
+        //return MimeUtils.guessExtensionFromMimeType(mimeType);
     }
 
     
@@ -104,40 +104,39 @@ String varB4A30242D1D4E5BAA090B65DC871EF20_1451489457 =         MimeUtils.guessE
     if(contentDisposition != null)            
             {
                 filename = URLUtil.parseContentDisposition(contentDisposition);
-            } 
+            } //End block
     if(filename != null)            
             {
                 url = filename;
-            } 
+            } //End block
             String extension = getFileExtensionFromUrl(url);
             String newMimeType = getMimeTypeFromExtension(extension);
     if(newMimeType != null)            
             {
                 mimeType = newMimeType;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if("text/vnd.wap.wml".equals(mimeType))        
         {
             mimeType = "text/plain";
-        } 
+        } //End block
         else
         {
     if("application/vnd.wap.xhtml+xml".equals(mimeType))            
             {
                 mimeType = "application/xhtml+xml";
-            } 
-        } 
+            } //End block
+        } //End block
 String var31E26FAFE73C53DECDB0A7F1CF57D932_1530623850 =         mimeType;
         var31E26FAFE73C53DECDB0A7F1CF57D932_1530623850.addTaint(taint);
         return var31E26FAFE73C53DECDB0A7F1CF57D932_1530623850;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static MimeTypeMap getSingleton() {
+        public static MimeTypeMap getSingleton() {
         return sMimeTypeMap;
     }
 

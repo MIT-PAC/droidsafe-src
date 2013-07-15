@@ -1,6 +1,6 @@
 package android.location;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class GeocoderParams implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.759 -0400", hash_original_method = "6AA13481A09E5725F329ED6947D74643", hash_generated_method = "4E4A64F08F1F24D9E300D4DF6C20E04E")
     private  GeocoderParams() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,42 +27,39 @@ public class GeocoderParams implements Parcelable {
     public  GeocoderParams(Context context, Locale locale) {
         mLocale = locale;
         mPackageName = context.getPackageName();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLocale = locale;
+        //mPackageName = context.getPackageName();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.760 -0400", hash_original_method = "95F8746C49CE2A7FBF7EA83DF206E003", hash_generated_method = "D16630745F56D3897D15FB03F1556555")
     public Locale getLocale() {
 Locale varD4470AF088C85BDC4D13A941A003DD34_691717524 =         mLocale;
         varD4470AF088C85BDC4D13A941A003DD34_691717524.addTaint(taint);
         return varD4470AF088C85BDC4D13A941A003DD34_691717524;
-        
-        
+        // ---------- Original Method ----------
+        //return mLocale;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.760 -0400", hash_original_method = "1D100AD0503AB463478DA14DEA58A5D8", hash_generated_method = "8FD2E8BF372A581A725B9CEE088D40FD")
     public String getClientPackage() {
 String var5601F77C1E784C31FA233AB799182FA6_1670795435 =         mPackageName;
         var5601F77C1E784C31FA233AB799182FA6_1670795435.addTaint(taint);
         return var5601F77C1E784C31FA233AB799182FA6_1670795435;
-        
-        
+        // ---------- Original Method ----------
+        //return mPackageName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.760 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "51D7941D284946725D0A4E6CA26FC687")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_909308720 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_71652878 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_71652878;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -74,11 +71,11 @@ String var5601F77C1E784C31FA233AB799182FA6_1670795435 =         mPackageName;
         parcel.writeString(mLocale.getCountry());
         parcel.writeString(mLocale.getVariant());
         parcel.writeString(mPackageName);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //parcel.writeString(mLocale.getLanguage());
+        //parcel.writeString(mLocale.getCountry());
+        //parcel.writeString(mLocale.getVariant());
+        //parcel.writeString(mPackageName);
     }
 
     
@@ -100,7 +97,7 @@ String var5601F77C1E784C31FA233AB799182FA6_1670795435 =         mPackageName;
             return new GeocoderParams[size];
         }
     };
-    
+    // orphaned legacy method
     public GeocoderParams createFromParcel(Parcel in) {
             GeocoderParams gp = new GeocoderParams();
             String language = in.readString();
@@ -111,7 +108,7 @@ String var5601F77C1E784C31FA233AB799182FA6_1670795435 =         mPackageName;
             return gp;
         }
     
-    
+    // orphaned legacy method
     public GeocoderParams[] newArray(int size) {
             return new GeocoderParams[size];
         }

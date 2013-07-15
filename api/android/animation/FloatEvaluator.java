@@ -1,6 +1,6 @@
 package android.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class FloatEvaluator implements TypeEvaluator<Number> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.224 -0400", hash_original_method = "C987E70D238EF2ACA67A1E1BCA95D64E", hash_generated_method = "C987E70D238EF2ACA67A1E1BCA95D64E")
     public FloatEvaluator ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -23,9 +23,9 @@ public class FloatEvaluator implements TypeEvaluator<Number> {
 Float var656FC13B6262E391C84EE64663CF350D_465937602 =         startFloat + fraction * (endValue.floatValue() - startFloat);
         var656FC13B6262E391C84EE64663CF350D_465937602.addTaint(taint);
         return var656FC13B6262E391C84EE64663CF350D_465937602;
-        
-        
-        
+        // ---------- Original Method ----------
+        //float startFloat = startValue.floatValue();
+        //return startFloat + fraction * (endValue.floatValue() - startFloat);
     }
 
     

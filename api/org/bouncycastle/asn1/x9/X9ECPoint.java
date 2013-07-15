@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x9;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,8 +20,8 @@ public class X9ECPoint extends ASN1Encodable {
     public  X9ECPoint(
         ECPoint p) {
         this.p = p;
-        
-        
+        // ---------- Original Method ----------
+        //this.p = p;
     }
 
     
@@ -30,19 +30,18 @@ public class X9ECPoint extends ASN1Encodable {
         ECCurve          c,
         ASN1OctetString  s) {
         this.p = c.decodePoint(s.getOctets());
-        
-        
+        // ---------- Original Method ----------
+        //this.p = c.decodePoint(s.getOctets());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.509 -0400", hash_original_method = "D52AE13C55E681838944F7D6A70D7ED5", hash_generated_method = "814E53367321ACA0E0D1E16DA8B27DAB")
     public ECPoint getPoint() {
 ECPoint var74E4690D9F2A026504928C017944E149_972929217 =         p;
         var74E4690D9F2A026504928C017944E149_972929217.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_972929217;
-        
-        
+        // ---------- Original Method ----------
+        //return p;
     }
 
     
@@ -51,8 +50,8 @@ ECPoint var74E4690D9F2A026504928C017944E149_972929217 =         p;
 DERObject var7350EF93798DCB7AA7CB91F6A5DC0F71_81592231 =         new DEROctetString(p.getEncoded());
         var7350EF93798DCB7AA7CB91F6A5DC0F71_81592231.addTaint(taint);
         return var7350EF93798DCB7AA7CB91F6A5DC0F71_81592231;
-        
-        
+        // ---------- Original Method ----------
+        //return new DEROctetString(p.getEncoded());
     }
 
     

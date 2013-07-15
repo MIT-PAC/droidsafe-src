@@ -1,6 +1,6 @@
 package java.security.spec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,23 +18,22 @@ public class MGF1ParameterSpec implements AlgorithmParameterSpec {
             NullPointerException var308CD45B1CDBB975772ACEB44A32BD45_1182527040 = new NullPointerException("mdName == null");
             var308CD45B1CDBB975772ACEB44A32BD45_1182527040.addTaint(taint);
             throw var308CD45B1CDBB975772ACEB44A32BD45_1182527040;
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.mdName = mdName;
+        //if (this.mdName == null) {
+            //throw new NullPointerException("mdName == null");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.974 -0400", hash_original_method = "F76E00B788282743E863E8A91477E027", hash_generated_method = "9FE9D64349DAA8611C2E8109A8D15B7E")
     public String getDigestAlgorithm() {
 String var2F6B2979B47F1FF73F1CD44382C3AAC7_1550836444 =         mdName;
         var2F6B2979B47F1FF73F1CD44382C3AAC7_1550836444.addTaint(taint);
         return var2F6B2979B47F1FF73F1CD44382C3AAC7_1550836444;
-        
-        
+        // ---------- Original Method ----------
+        //return mdName;
     }
 
     

@@ -1,6 +1,6 @@
 package android.ddm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class DdmHandleExit extends ChunkHandler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.305 -0400", hash_original_method = "4CE2D1F4C1C2D74BBC9BDD8F112E8266", hash_generated_method = "E1D802991165E9F58003EAF806F78F0E")
     private  DdmHandleExit() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,17 +23,15 @@ public class DdmHandleExit extends ChunkHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.306 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
     public void connected() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.306 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
     public void disconnected() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -46,13 +44,13 @@ public class DdmHandleExit extends ChunkHandler {
 Chunk var540C13E9E156B687226421B24F2DF178_357985134 =         null;
         var540C13E9E156B687226421B24F2DF178_357985134.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_357985134;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (false)
+            //Log.v("ddm-exit", "Handling " + name(request.type) + " chunk");
+        //ByteBuffer in = wrapChunk(request);
+        //int statusCode = in.getInt();
+        //Runtime.getRuntime().halt(statusCode);
+        //return null;
     }
 
     

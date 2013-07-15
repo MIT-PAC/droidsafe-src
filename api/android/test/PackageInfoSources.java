@@ -1,6 +1,6 @@
 package android.test;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,12 +9,11 @@ public class PackageInfoSources {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.124 -0400", hash_original_method = "20BC19A093C9C1A7F81C885B5938F700", hash_generated_method = "846EA8EA3F675CB9A6FF18093CBD0222")
     private  PackageInfoSources() {
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static ClassPathPackageInfoSource forClassPath(ClassLoader classLoader) {
+        public static ClassPathPackageInfoSource forClassPath(ClassLoader classLoader) {
         if (classPathSource == null) {
             classPathSource = new ClassPathPackageInfoSource();
             classPathSource.setClassLoader(classLoader);

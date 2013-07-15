@@ -1,6 +1,6 @@
 package org.apache.http.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,8 +20,8 @@ public final class CookieSpecRegistry {
     public  CookieSpecRegistry() {
         super();
         this.registeredSpecs = new LinkedHashMap<String,CookieSpecFactory>();
-        
-        
+        // ---------- Original Method ----------
+        //this.registeredSpecs = new LinkedHashMap<String,CookieSpecFactory>();
     }
 
     
@@ -34,22 +34,22 @@ public final class CookieSpecRegistry {
             IllegalArgumentException var3C43595648C24A9FD2A1B7AF0D642045_1526138361 = new IllegalArgumentException("Name may not be null");
             var3C43595648C24A9FD2A1B7AF0D642045_1526138361.addTaint(taint);
             throw var3C43595648C24A9FD2A1B7AF0D642045_1526138361;
-        } 
+        } //End block
     if(factory == null)        
         {
             IllegalArgumentException var757A45DB017EFA1F7F001BBD18D801AA_1125369819 = new IllegalArgumentException("Cookie spec factory may not be null");
             var757A45DB017EFA1F7F001BBD18D801AA_1125369819.addTaint(taint);
             throw var757A45DB017EFA1F7F001BBD18D801AA_1125369819;
-        } 
+        } //End block
         registeredSpecs.put(name.toLowerCase(Locale.ENGLISH), factory);
-        
-        
-             
-         
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+             //throw new IllegalArgumentException("Name may not be null");
+         //}
+        //if (factory == null) {
+            //throw new IllegalArgumentException("Cookie spec factory may not be null");
+        //}
+        //registeredSpecs.put(name.toLowerCase(Locale.ENGLISH), factory);
     }
 
     
@@ -61,13 +61,13 @@ public final class CookieSpecRegistry {
             IllegalArgumentException var13FBCB15CD042AA2AF7E715F4F86FACE_1050696711 = new IllegalArgumentException("Id may not be null");
             var13FBCB15CD042AA2AF7E715F4F86FACE_1050696711.addTaint(taint);
             throw var13FBCB15CD042AA2AF7E715F4F86FACE_1050696711;
-        } 
+        } //End block
         registeredSpecs.remove(id.toLowerCase(Locale.ENGLISH));
-        
-        
-             
-         
-        
+        // ---------- Original Method ----------
+        //if (id == null) {
+             //throw new IllegalArgumentException("Id may not be null");
+         //}
+        //registeredSpecs.remove(id.toLowerCase(Locale.ENGLISH));
     }
 
     
@@ -80,30 +80,30 @@ public final class CookieSpecRegistry {
             IllegalArgumentException var3C43595648C24A9FD2A1B7AF0D642045_1008174989 = new IllegalArgumentException("Name may not be null");
             var3C43595648C24A9FD2A1B7AF0D642045_1008174989.addTaint(taint);
             throw var3C43595648C24A9FD2A1B7AF0D642045_1008174989;
-        } 
+        } //End block
         CookieSpecFactory factory = registeredSpecs.get(name.toLowerCase(Locale.ENGLISH));
     if(factory != null)        
         {
 CookieSpec varB5D01F4327DBBC343676B65A86A05A58_1985582208 =             factory.newInstance(params);
             varB5D01F4327DBBC343676B65A86A05A58_1985582208.addTaint(taint);
             return varB5D01F4327DBBC343676B65A86A05A58_1985582208;
-        } 
+        } //End block
         else
         {
             IllegalStateException varA64FA39877616F5248C64E719D43B26D_1047738880 = new IllegalStateException("Unsupported cookie spec: " + name);
             varA64FA39877616F5248C64E719D43B26D_1047738880.addTaint(taint);
             throw varA64FA39877616F5248C64E719D43B26D_1047738880;
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new IllegalArgumentException("Name may not be null");
+        //}
+        //CookieSpecFactory factory = registeredSpecs.get(name.toLowerCase(Locale.ENGLISH));
+        //if (factory != null) {
+            //return factory.newInstance(params);
+        //} else {
+            //throw new IllegalStateException("Unsupported cookie spec: " + name);
+        //}
     }
 
     
@@ -113,8 +113,8 @@ CookieSpec varB5D01F4327DBBC343676B65A86A05A58_1985582208 =             factory.
 CookieSpec varE7B6E3066EF70D61671A1A34D909B5FA_1568037100 =         getCookieSpec(name, null);
         varE7B6E3066EF70D61671A1A34D909B5FA_1568037100.addTaint(taint);
         return varE7B6E3066EF70D61671A1A34D909B5FA_1568037100;
-        
-        
+        // ---------- Original Method ----------
+        //return getCookieSpec(name, null);
     }
 
     
@@ -123,8 +123,8 @@ CookieSpec varE7B6E3066EF70D61671A1A34D909B5FA_1568037100 =         getCookieSpe
 List<String> var0D64B20114CD92049F17A2CA0ADED285_1341563496 =         new ArrayList<String>(registeredSpecs.keySet());
         var0D64B20114CD92049F17A2CA0ADED285_1341563496.addTaint(taint);
         return var0D64B20114CD92049F17A2CA0ADED285_1341563496;
-        
-        
+        // ---------- Original Method ----------
+        //return new ArrayList<String>(registeredSpecs.keySet());
     }
 
     
@@ -134,15 +134,15 @@ List<String> var0D64B20114CD92049F17A2CA0ADED285_1341563496 =         new ArrayL
     if(map == null)        
         {
             return;
-        } 
+        } //End block
         registeredSpecs.clear();
         registeredSpecs.putAll(map);
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (map == null) {
+            //return;
+        //}
+        //registeredSpecs.clear();
+        //registeredSpecs.putAll(map);
     }
 
     

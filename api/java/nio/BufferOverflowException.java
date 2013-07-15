@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class BufferOverflowException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.925 -0400", hash_original_method = "FC00B6DA3A307D6DD36FC874315AD6A8", hash_generated_method = "89CC708E3E197893AB1589ADB7508841")
     public  BufferOverflowException() {
-        
+        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class IPAddress {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.412 -0400", hash_original_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC", hash_generated_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC")
     public IPAddress ()
     {
-        
+        //Synthesized constructor
     }
 
 

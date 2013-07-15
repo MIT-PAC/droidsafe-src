@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,7 +34,7 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.111 -0400", hash_original_method = "83EACBB816713C51C4560064650A6E91", hash_generated_method = "83EACBB816713C51C4560064650A6E91")
     public AbstractSessionOutputBuffer ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -45,41 +45,41 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
             IllegalArgumentException var6634DF518EA4C41A5618DC0E4E5C5981_402695117 = new IllegalArgumentException("Input stream may not be null");
             var6634DF518EA4C41A5618DC0E4E5C5981_402695117.addTaint(taint);
             throw var6634DF518EA4C41A5618DC0E4E5C5981_402695117;
-        } 
+        } //End block
     if(buffersize <= 0)        
         {
             IllegalArgumentException varCD9999C5706CD4D5205C93CCF978BDB6_1621883910 = new IllegalArgumentException("Buffer size may not be negative or zero");
             varCD9999C5706CD4D5205C93CCF978BDB6_1621883910.addTaint(taint);
             throw varCD9999C5706CD4D5205C93CCF978BDB6_1621883910;
-        } 
+        } //End block
     if(params == null)        
         {
             IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_264950793 = new IllegalArgumentException("HTTP parameters may not be null");
             var497CCC27A43EDD6EE25BEEC5507E2BE2_264950793.addTaint(taint);
             throw var497CCC27A43EDD6EE25BEEC5507E2BE2_264950793;
-        } 
+        } //End block
         this.outstream = outstream;
         this.buffer = new ByteArrayBuffer(buffersize);
         this.charset = HttpProtocolParams.getHttpElementCharset(params);
         this.ascii = this.charset.equalsIgnoreCase(HTTP.US_ASCII)
                      || this.charset.equalsIgnoreCase(HTTP.ASCII);
         this.metrics = new HttpTransportMetricsImpl();
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
-                     
-        
+        // ---------- Original Method ----------
+        //if (outstream == null) {
+            //throw new IllegalArgumentException("Input stream may not be null");
+        //}
+        //if (buffersize <= 0) {
+            //throw new IllegalArgumentException("Buffer size may not be negative or zero");
+        //}
+        //if (params == null) {
+            //throw new IllegalArgumentException("HTTP parameters may not be null");
+        //}
+        //this.outstream = outstream;
+        //this.buffer = new ByteArrayBuffer(buffersize);
+        //this.charset = HttpProtocolParams.getHttpElementCharset(params);
+        //this.ascii = this.charset.equalsIgnoreCase(HTTP.US_ASCII)
+                     //|| this.charset.equalsIgnoreCase(HTTP.ASCII);
+        //this.metrics = new HttpTransportMetricsImpl();
     }
 
     
@@ -91,14 +91,14 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
             this.outstream.write(this.buffer.buffer(), 0, len);
             this.buffer.clear();
             this.metrics.incrementBytesTransferred(len);
-        } 
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int len = this.buffer.length();
+        //if (len > 0) {
+            //this.outstream.write(this.buffer.buffer(), 0, len);
+            //this.buffer.clear();
+            //this.metrics.incrementBytesTransferred(len);
+        //}
     }
 
     
@@ -106,9 +106,9 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     public void flush() throws IOException {
         flushBuffer();
         this.outstream.flush();
-        
-        
-        
+        // ---------- Original Method ----------
+        //flushBuffer();
+        //this.outstream.flush();
     }
 
     
@@ -120,37 +120,37 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     if(b == null)        
         {
             return;
-        } 
+        } //End block
     if(len > MAX_CHUNK || len > this.buffer.capacity())        
         {
             flushBuffer();
             this.outstream.write(b, off, len);
             this.metrics.incrementBytesTransferred(len);
-        } 
+        } //End block
         else
         {
             int freecapacity = this.buffer.capacity() - this.buffer.length();
     if(len > freecapacity)            
             {
                 flushBuffer();
-            } 
+            } //End block
             this.buffer.append(b, off, len);
-        } 
-        
-        
-            
-        
-        
-            
-            
-            
-        
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (b == null) {
+            //return;
+        //}
+        //if (len > MAX_CHUNK || len > this.buffer.capacity()) {
+            //flushBuffer();
+            //this.outstream.write(b, off, len);
+            //this.metrics.incrementBytesTransferred(len);
+        //} else {
+            //int freecapacity = this.buffer.capacity() - this.buffer.length();
+            //if (len > freecapacity) {
+                //flushBuffer();
+            //}
+            //this.buffer.append(b, off, len);
+        //}
     }
 
     
@@ -160,13 +160,13 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     if(b == null)        
         {
             return;
-        } 
+        } //End block
         write(b, 0, b.length);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (b == null) {
+            //return;
+        //}
+        //write(b, 0, b.length);
     }
 
     
@@ -176,13 +176,13 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     if(this.buffer.isFull())        
         {
             flushBuffer();
-        } 
+        } //End block
         this.buffer.append(b);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.buffer.isFull()) {
+            //flushBuffer();
+        //}
+        //this.buffer.append(b);
     }
 
     
@@ -192,20 +192,20 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     if(s == null)        
         {
             return;
-        } 
+        } //End block
     if(s.length() > 0)        
         {
             write(s.getBytes(this.charset));
-        } 
+        } //End block
         write(CRLF);
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (s == null) {
+            //return;
+        //}
+        //if (s.length() > 0) {
+            //write(s.getBytes(this.charset));
+        //}
+        //write(CRLF);
     }
 
     
@@ -215,7 +215,7 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     if(s == null)        
         {
             return;
-        } 
+        } //End block
     if(this.ascii)        
         {
             int off = 0;
@@ -228,56 +228,55 @@ public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer
     if(chunk > 0)                
                 {
                     this.buffer.append(s, off, chunk);
-                } 
+                } //End block
     if(this.buffer.isFull())                
                 {
                     flushBuffer();
-                } 
+                } //End block
                 off += chunk;
                 remaining -= chunk;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             byte[] tmp = s.toString().getBytes(this.charset);
             write(tmp);
-        } 
+        } //End block
         write(CRLF);
-        
-        
-            
-        
-        
-            
-            
-            
-                
-                
-                
-                    
-                
-                
-                    
-                
-                
-                
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (s == null) {
+            //return;
+        //}
+        //if (this.ascii) {
+            //int off = 0;
+            //int remaining = s.length();
+            //while (remaining > 0) {
+                //int chunk = this.buffer.capacity() - this.buffer.length();
+                //chunk = Math.min(chunk, remaining);
+                //if (chunk > 0) {
+                    //this.buffer.append(s, off, chunk);
+                //}
+                //if (this.buffer.isFull()) {
+                    //flushBuffer();
+                //}
+                //off += chunk;
+                //remaining -= chunk;
+            //}
+        //} else {
+            //byte[] tmp = s.toString().getBytes(this.charset);
+            //write(tmp);
+        //}
+        //write(CRLF);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.117 -0400", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "B4FF40B19C05D385E8EFE9135C9D4D90")
     public HttpTransportMetrics getMetrics() {
 HttpTransportMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1399378501 =         this.metrics;
         varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1399378501.addTaint(taint);
         return varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1399378501;
-        
-        
+        // ---------- Original Method ----------
+        //return this.metrics;
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public class BERSetParser implements ASN1SetParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.824 -0400", hash_original_method = "EF8530238239035799CD0A162B856113", hash_generated_method = "3CBB13114A6B7C956C1CC85AC277075B")
       BERSetParser(ASN1StreamParser parser) {
         this._parser = parser;
-        
-        
+        // ---------- Original Method ----------
+        //this._parser = parser;
     }
 
     
@@ -24,8 +24,8 @@ public class BERSetParser implements ASN1SetParser {
 DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_423995082 =         _parser.readObject();
         var7FA56CC8A68C244D303C7C9A462CBFE7_423995082.addTaint(taint);
         return var7FA56CC8A68C244D303C7C9A462CBFE7_423995082;
-        
-        
+        // ---------- Original Method ----------
+        //return _parser.readObject();
     }
 
     
@@ -34,8 +34,8 @@ DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_423995082 =         _parser.rea
 DERObject varCD53C84A7035F718828F2CEE10D8CCE5_110107696 =         new BERSet(_parser.readVector(), false);
         varCD53C84A7035F718828F2CEE10D8CCE5_110107696.addTaint(taint);
         return varCD53C84A7035F718828F2CEE10D8CCE5_110107696;
-        
-        
+        // ---------- Original Method ----------
+        //return new BERSet(_parser.readVector(), false);
     }
 
     
@@ -46,22 +46,22 @@ DERObject varCD53C84A7035F718828F2CEE10D8CCE5_110107696 =         new BERSet(_pa
 DERObject var7CA8C38BF885E63AD9395CA9CA98D912_437400865 =             getLoadedObject();
             var7CA8C38BF885E63AD9395CA9CA98D912_437400865.addTaint(taint);
             return var7CA8C38BF885E63AD9395CA9CA98D912_437400865;
-        } 
+        } //End block
         catch (IOException e)
         {
             ASN1ParsingException var2B5ADF01A3F8BD267A883C161A3838C1_171027164 = new ASN1ParsingException(e.getMessage(), e);
             var2B5ADF01A3F8BD267A883C161A3838C1_171027164.addTaint(taint);
             throw var2B5ADF01A3F8BD267A883C161A3838C1_171027164;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return getLoadedObject();
+        //}
+        //catch (IOException e)
+        //{
+            //throw new ASN1ParsingException(e.getMessage(), e);
+        //}
     }
 
     

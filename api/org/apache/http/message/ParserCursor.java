@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,59 +25,56 @@ public class ParserCursor {
             IndexOutOfBoundsException var36A97E85AC88615597D0236B61117FA7_1796985088 = new IndexOutOfBoundsException("Lower bound cannot be negative");
             var36A97E85AC88615597D0236B61117FA7_1796985088.addTaint(taint);
             throw var36A97E85AC88615597D0236B61117FA7_1796985088;
-        } 
+        } //End block
     if(lowerBound > upperBound)        
         {
             IndexOutOfBoundsException var1CEF45EC8164657800C75AAC60FAE6FD_797625192 = new IndexOutOfBoundsException("Lower bound cannot be greater then upper bound");
             var1CEF45EC8164657800C75AAC60FAE6FD_797625192.addTaint(taint);
             throw var1CEF45EC8164657800C75AAC60FAE6FD_797625192;
-        } 
+        } //End block
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
         this.pos = lowerBound;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (lowerBound < 0) {
+            //throw new IndexOutOfBoundsException("Lower bound cannot be negative");
+        //}
+        //if (lowerBound > upperBound) {
+            //throw new IndexOutOfBoundsException("Lower bound cannot be greater then upper bound");
+        //}
+        //this.lowerBound = lowerBound;
+        //this.upperBound = upperBound;
+        //this.pos = lowerBound;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.766 -0400", hash_original_method = "B6CD36FF17D4C577E642B4E01F194082", hash_generated_method = "6FC562265C271EA1F2C03FA82975DD99")
     public int getLowerBound() {
         int var39781BB417E90C2CDB1675D8E436D2D9_37831805 = (this.lowerBound);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_628410867 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_628410867;
-        
-        
+        // ---------- Original Method ----------
+        //return this.lowerBound;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.766 -0400", hash_original_method = "66602FD2E118973F9E6D21C36C521447", hash_generated_method = "17AC6BAAF877FCC3A677ABF071DC8273")
     public int getUpperBound() {
         int var8277DB68548C3DFE081D0E64D66046A8_70024438 = (this.upperBound);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889390296 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889390296;
-        
-        
+        // ---------- Original Method ----------
+        //return this.upperBound;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.767 -0400", hash_original_method = "1216C5DA6D96C0F767DB071179C12F61", hash_generated_method = "7068CE503D88752927546680ABD63470")
     public int getPos() {
         int varC6E42501CCE6A1FF7C3704EF034A434D_1655248425 = (this.pos);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1410610978 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1410610978;
-        
-        
+        // ---------- Original Method ----------
+        //return this.pos;
     }
 
     
@@ -88,33 +85,32 @@ public class ParserCursor {
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1506597322 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_1506597322.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1506597322;
-        } 
+        } //End block
     if(pos > this.upperBound)        
         {
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_537997003 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_537997003.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_537997003;
-        } 
+        } //End block
         this.pos = pos;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (pos < this.lowerBound) {
+            //throw new IndexOutOfBoundsException();
+        //}
+        //if (pos > this.upperBound) {
+            //throw new IndexOutOfBoundsException();
+        //}
+        //this.pos = pos;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.767 -0400", hash_original_method = "159D31ECA8D03F41976CF671BF1C3B8F", hash_generated_method = "DF26FF396F16E8FB6D40C59B782DEBAC")
     public boolean atEnd() {
         boolean var0115475EE8D6B4ABAB8E5F11F0957FB9_567109707 = (this.pos >= this.upperBound);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_359857640 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_359857640;
-        
-        
+        // ---------- Original Method ----------
+        //return this.pos >= this.upperBound;
     }
 
     
@@ -131,16 +127,16 @@ public class ParserCursor {
 String varD03843288D33B9E1D3062E25339ECF6D_1371268693 =         buffer.toString();
         varD03843288D33B9E1D3062E25339ECF6D_1371268693.addTaint(taint);
         return varD03843288D33B9E1D3062E25339ECF6D_1371268693;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //CharArrayBuffer buffer = new CharArrayBuffer(16);
+        //buffer.append('[');
+        //buffer.append(Integer.toString(this.lowerBound));
+        //buffer.append('>');
+        //buffer.append(Integer.toString(this.pos));
+        //buffer.append('>');
+        //buffer.append(Integer.toString(this.upperBound));
+        //buffer.append(']');
+        //return buffer.toString();
     }
 
     

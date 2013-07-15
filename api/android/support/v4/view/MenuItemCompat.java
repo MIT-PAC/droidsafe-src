@@ -1,6 +1,6 @@
 package android.support.v4.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class MenuItemCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.728 -0400", hash_original_method = "70825ED8217B35997B960B05005B76A3", hash_generated_method = "70825ED8217B35997B960B05005B76A3")
     public MenuItemCompat ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -31,11 +31,10 @@ public class MenuItemCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.729 -0400", hash_original_method = "BFDC30535AAA3E19A04AFADFFD50E16A", hash_generated_method = "BFDC30535AAA3E19A04AFADFFD50E16A")
         public BaseMenuVersionImpl ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.730 -0400", hash_original_method = "7F014EF22317C05910A706092D499BCA", hash_generated_method = "BD5D599AC8A459C21B9E9416BB025E33")
         @Override
         public boolean setShowAsAction(MenuItem item, int actionEnum) {
@@ -44,12 +43,11 @@ public class MenuItemCompat {
             boolean var68934A3E9455FA72420237EB05902327_1077508783 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1810626545 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1810626545;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.731 -0400", hash_original_method = "971C4B8F174AEBF876692B29A12DA5CF", hash_generated_method = "0AFEE15F299405BF670A4455126E8CA8")
         @Override
         public MenuItem setActionView(MenuItem item, View view) {
@@ -58,8 +56,8 @@ public class MenuItemCompat {
 MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_1162965838 =             item;
             var393CF4FD24220F0ED4B080A1E7108CD3_1162965838.addTaint(taint);
             return var393CF4FD24220F0ED4B080A1E7108CD3_1162965838;
-            
-            
+            // ---------- Original Method ----------
+            //return item;
         }
 
         
@@ -72,7 +70,7 @@ MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_1162965838 =             item;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.732 -0400", hash_original_method = "1A0F236AE805B2AE3CB14132D083E8D6", hash_generated_method = "1A0F236AE805B2AE3CB14132D083E8D6")
         public HoneycombMenuVersionImpl ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -85,9 +83,9 @@ MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_1162965838 =             item;
             boolean varB326B5062B2F0E69046810717534CB09_658516988 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1931998241 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1931998241;
-            
-            
-            
+            // ---------- Original Method ----------
+            //MenuItemCompatHoneycomb.setShowAsAction(item, actionEnum);
+            //return true;
         }
 
         
@@ -99,8 +97,8 @@ MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_1162965838 =             item;
 MenuItem var104E6C0FB77127EB4F48475DCACA9E7E_2083872021 =             MenuItemCompatHoneycomb.setActionView(item, view);
             var104E6C0FB77127EB4F48475DCACA9E7E_2083872021.addTaint(taint);
             return var104E6C0FB77127EB4F48475DCACA9E7E_2083872021;
-            
-            
+            // ---------- Original Method ----------
+            //return MenuItemCompatHoneycomb.setActionView(item, view);
         }
 
         

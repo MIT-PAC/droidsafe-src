@@ -1,6 +1,6 @@
 package android.app.backup;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,9 +24,9 @@ public class SharedPreferencesBackupHelper extends FileBackupHelperBase implemen
         super(context);
         mContext = context;
         mPrefGroups = prefGroups;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mPrefGroups = prefGroups;
     }
 
     
@@ -44,18 +44,18 @@ public class SharedPreferencesBackupHelper extends FileBackupHelperBase implemen
 for(int i=0;i<N;i++)
         {
             files[i] = context.getSharedPrefsFile(prefGroups[i]).getAbsolutePath();
-        } 
+        } //End block
         performBackup_checked(oldState, data, newState, files, prefGroups);
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Context context = mContext;
+        //QueuedWork.waitToFinish();
+        //String[] prefGroups = mPrefGroups;
+        //final int N = prefGroups.length;
+        //String[] files = new String[N];
+        //for (int i=0; i<N; i++) {
+            //files[i] = context.getSharedPrefsFile(prefGroups[i]).getAbsolutePath();
+        //}
+        //performBackup_checked(oldState, data, newState, files, prefGroups);
     }
 
     
@@ -70,15 +70,15 @@ for(int i=0;i<N;i++)
         {
             File f = context.getSharedPrefsFile(key).getAbsoluteFile();
             writeFile(f, data);
-        } 
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Context context = mContext;
+        //String key = data.getKey();
+        //if (DEBUG) Log.d(TAG, "got entity '" + key + "' size=" + data.size());
+        //if (isKeyInList(key, mPrefGroups)) {
+            //File f = context.getSharedPrefsFile(key).getAbsoluteFile();
+            //writeFile(f, data);
+        //}
     }
 
     

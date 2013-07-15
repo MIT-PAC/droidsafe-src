@@ -1,6 +1,6 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,26 +33,26 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
     if(cursor instanceof CrossProcessCursor)        
         {
             mCursor = (CrossProcessCursor)cursor;
-        } 
+        } //End block
         else
         {
             mCursor = new CrossProcessCursorWrapper(cursor);
-        } 
+        } //End block
         mProviderName = providerName;
         synchronized
 (mLock)        {
             createAndRegisterObserverProxyLocked(observer);
-        } 
-        
-        
-            
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (cursor instanceof CrossProcessCursor) {
+            //mCursor = (CrossProcessCursor)cursor;
+        //} else {
+            //mCursor = new CrossProcessCursorWrapper(cursor);
+        //}
+        //mProviderName = providerName;
+        //synchronized (mLock) {
+            //createAndRegisterObserverProxyLocked(observer);
+        //}
     }
 
     
@@ -62,12 +62,12 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
         {
             mFilledWindow.close();
             mFilledWindow = null;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mFilledWindow != null) {
+            //mFilledWindow.close();
+            //mFilledWindow = null;
+        //}
     }
 
     
@@ -78,15 +78,15 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
             unregisterObserverProxyLocked();
             mCursor.close();
             mCursor = null;
-        } 
+        } //End block
         closeFilledWindowLocked();
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mCursor != null) {
+            //unregisterObserverProxyLocked();
+            //mCursor.close();
+            //mCursor = null;
+        //}
+        //closeFilledWindowLocked();
     }
 
     
@@ -97,11 +97,11 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
             StaleDataException var241EC54C1C02F408EBF48FDE17C24E97_2084541947 = new StaleDataException("Attempted to access a cursor after it has been closed.");
             var241EC54C1C02F408EBF48FDE17C24E97_2084541947.addTaint(taint);
             throw var241EC54C1C02F408EBF48FDE17C24E97_2084541947;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mCursor == null) {
+            //throw new StaleDataException("Attempted to access a cursor after it has been closed.");
+        //}
     }
 
     
@@ -111,15 +111,14 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
         synchronized
 (mLock)        {
             disposeLocked();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //disposeLocked();
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.097 -0400", hash_original_method = "4ECB0E8EDFF03AFDCED1B443F780B12E", hash_generated_method = "521ECE19EBBDE4B1240EE3F708DD5A64")
     @Override
     public CursorWindow getWindow(int startPos) {
@@ -133,12 +132,12 @@ public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements
 CursorWindow var540C13E9E156B687226421B24F2DF178_710724339 =                 null;
                 var540C13E9E156B687226421B24F2DF178_710724339.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_710724339;
-            } 
+            } //End block
             CursorWindow window = mCursor.getWindow();
     if(window != null)            
             {
                 closeFilledWindowLocked();
-            } 
+            } //End block
             else
             {
                 window = mFilledWindow;
@@ -147,43 +146,43 @@ CursorWindow var540C13E9E156B687226421B24F2DF178_710724339 =                 nul
                     mFilledWindow = new CursorWindow(mProviderName);
                     window = mFilledWindow;
                     mCursor.fillWindow(startPos, window);
-                } 
+                } //End block
                 else
     if(startPos < window.getStartPosition()
                         || startPos >= window.getStartPosition() + window.getNumRows())                
                 {
                     window.clear();
                     mCursor.fillWindow(startPos, window);
-                } 
-            } 
+                } //End block
+            } //End block
     if(window != null)            
             {
                 window.acquireReference();
-            } 
+            } //End block
 CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_1954555286 =             window;
             var414B2CEBDF7E679ADF378DBBAB956EC0_1954555286.addTaint(taint);
             return var414B2CEBDF7E679ADF378DBBAB956EC0_1954555286;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.098 -0400", hash_original_method = "4E23514B564E80A833367A4C9E43D15C", hash_generated_method = "6DCA5230DCF2AE94C135FA2F6891D417")
     @Override
     public void onMove(int position) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(position);
         synchronized
 (mLock)        {
             throwIfCursorIsClosed();
             mCursor.onMove(mCursor.getPosition(), position);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //throwIfCursorIsClosed();
+            //mCursor.onMove(mCursor.getPosition(), position);
+        //}
     }
 
     
@@ -196,12 +195,12 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_1954555286 =             window
             int var75D1A080281180206349E970682A62F2_1653540609 = (mCursor.getCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259720218 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259720218;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //throwIfCursorIsClosed();
+            //return mCursor.getCount();
+        //}
     }
 
     
@@ -214,12 +213,12 @@ CursorWindow var414B2CEBDF7E679ADF378DBBAB956EC0_1954555286 =             window
 String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.getColumnNames();
             varF8FF07705E74C2344D2EF0339BC7BE26_465712313.addTaint(taint);
             return varF8FF07705E74C2344D2EF0339BC7BE26_465712313;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //throwIfCursorIsClosed();
+            //return mCursor.getColumnNames();
+        //}
     }
 
     
@@ -232,17 +231,17 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.get
             {
                 unregisterObserverProxyLocked();
                 mCursor.deactivate();
-            } 
+            } //End block
             closeFilledWindowLocked();
-        } 
-        
-        
-            
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (mCursor != null) {
+                //unregisterObserverProxyLocked();
+                //mCursor.deactivate();
+            //}
+            //closeFilledWindowLocked();
+        //}
     }
 
     
@@ -252,11 +251,11 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.get
         synchronized
 (mLock)        {
             disposeLocked();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //disposeLocked();
+        //}
     }
 
     
@@ -275,8 +274,8 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.get
                     int var6BB61E3B7BCE0931DA574D19D1D82C88_2048825779 = (-1);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_544565175 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_544565175;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (IllegalStateException e)
             {
                 IllegalStateException leakProgram = new IllegalStateException(
@@ -284,31 +283,31 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.get
                         mCursor.isClosed(), e);
                 leakProgram.addTaint(taint);
                 throw leakProgram;
-            } 
+            } //End block
             unregisterObserverProxyLocked();
             createAndRegisterObserverProxyLocked(observer);
             int var75D1A080281180206349E970682A62F2_1483721694 = (mCursor.getCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2109308031 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2109308031;
-        } 
-        
-        
-            
-            
-            
-                
-                    
-                
-            
-                
-                        
-                        
-                
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //throwIfCursorIsClosed();
+            //closeFilledWindowLocked();
+            //try {
+                //if (!mCursor.requery()) {
+                    //return -1;
+                //}
+            //} catch (IllegalStateException e) {
+                //IllegalStateException leakProgram = new IllegalStateException(
+                        //mProviderName + " Requery misuse db, mCursor isClosed:" +
+                        //mCursor.isClosed(), e);
+                //throw leakProgram;
+            //}
+            //unregisterObserverProxyLocked();
+            //createAndRegisterObserverProxyLocked(observer);
+            //return mCursor.getCount();
+        //}
     }
 
     
@@ -321,12 +320,12 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.get
             boolean varF2AEC4C640284983322BCF08D912C7EE_1485281217 = (mCursor.getWantsAllOnMoveCalls());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1766368232 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1766368232;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //throwIfCursorIsClosed();
+            //return mCursor.getWantsAllOnMoveCalls();
+        //}
     }
 
     
@@ -337,15 +336,15 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.get
             IllegalStateException var1B8FE5B98B04EEB3A1D884281849CE50_53214702 = new IllegalStateException("an observer is already registered");
             var1B8FE5B98B04EEB3A1D884281849CE50_53214702.addTaint(taint);
             throw var1B8FE5B98B04EEB3A1D884281849CE50_53214702;
-        } 
+        } //End block
         mObserver = new ContentObserverProxy(observer, this);
         mCursor.registerContentObserver(mObserver);
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mObserver != null) {
+            //throw new IllegalStateException("an observer is already registered");
+        //}
+        //mObserver = new ContentObserverProxy(observer, this);
+        //mCursor.registerContentObserver(mObserver);
     }
 
     
@@ -356,13 +355,13 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.get
             mCursor.unregisterContentObserver(mObserver);
             mObserver.unlinkToDeath(this);
             mObserver = null;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mObserver != null) {
+            //mCursor.unregisterContentObserver(mObserver);
+            //mObserver.unlinkToDeath(this);
+            //mObserver = null;
+        //}
     }
 
     
@@ -375,12 +374,12 @@ String[] varF8FF07705E74C2344D2EF0339BC7BE26_465712313 =             mCursor.get
 Bundle var9F26218347A1E5FAB3EDA37346898AB0_18022931 =             mCursor.getExtras();
             var9F26218347A1E5FAB3EDA37346898AB0_18022931.addTaint(taint);
             return var9F26218347A1E5FAB3EDA37346898AB0_18022931;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //throwIfCursorIsClosed();
+            //return mCursor.getExtras();
+        //}
     }
 
     
@@ -394,12 +393,12 @@ Bundle var9F26218347A1E5FAB3EDA37346898AB0_18022931 =             mCursor.getExt
 Bundle varB44D2A19DAE9C7C11B872C4BE3A24267_971310098 =             mCursor.respond(extras);
             varB44D2A19DAE9C7C11B872C4BE3A24267_971310098.addTaint(taint);
             return varB44D2A19DAE9C7C11B872C4BE3A24267_971310098;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //throwIfCursorIsClosed();
+            //return mCursor.respond(extras);
+        //}
     }
 
     
@@ -416,16 +415,16 @@ Bundle varB44D2A19DAE9C7C11B872C4BE3A24267_971310098 =             mCursor.respo
             try 
             {
                 remoteObserver.asBinder().linkToDeath(recipient, 0);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-            
-            
-            
-                
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mRemote = remoteObserver;
+            //try {
+                //remoteObserver.asBinder().linkToDeath(recipient, 0);
+            //} catch (RemoteException e) {
+            //}
         }
 
         
@@ -435,40 +434,39 @@ Bundle varB44D2A19DAE9C7C11B872C4BE3A24267_971310098 =             mCursor.respo
             boolean var515E8CDA644F1FC6BE876B635F36354F_1173446209 = (mRemote.asBinder().unlinkToDeath(recipient, 0));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625397100 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1625397100;
-            
-            
+            // ---------- Original Method ----------
+            //return mRemote.asBinder().unlinkToDeath(recipient, 0);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.105 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "DF3C064C47AC49393F42D4E71739C248")
         @Override
         public boolean deliverSelfNotifications() {
             boolean var68934A3E9455FA72420237EB05902327_1118943695 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_970249488 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_970249488;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.105 -0400", hash_original_method = "288C053C9E4DFF84CBC0887DEC7513A2", hash_generated_method = "FB26B6C9695A6219183C4A64D40993F5")
         @Override
         public void onChange(boolean selfChange) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(selfChange);
             try 
             {
                 mRemote.onChange(selfChange);
-            } 
+            } //End block
             catch (RemoteException ex)
             {
-            } 
-            
-            
-                
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //mRemote.onChange(selfChange);
+            //} catch (RemoteException ex) {
+            //}
         }
 
         

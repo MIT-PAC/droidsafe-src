@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,11 +30,11 @@ public class NetworkIdentity {
         this.mSubType = subType;
         this.mSubscriberId = subscriberId;
         this.mRoaming = roaming;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.mType = type;
+        //this.mSubType = subType;
+        //this.mSubscriberId = subscriberId;
+        //this.mRoaming = roaming;
     }
 
     
@@ -44,8 +44,8 @@ public class NetworkIdentity {
         int varB41F65015920D960CDE3EE03D0FF5496_2048553352 = (Objects.hashCode(mType, mSubType, mSubscriberId));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_401255253 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_401255253;
-        
-        
+        // ---------- Original Method ----------
+        //return Objects.hashCode(mType, mSubType, mSubscriberId);
     }
 
     
@@ -61,18 +61,18 @@ public class NetworkIdentity {
                     && mRoaming == ident.mRoaming);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1598814392 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1598814392;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_452523029 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1825760507 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1825760507;
-        
-        
-            
-            
-                    
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (obj instanceof NetworkIdentity) {
+            //final NetworkIdentity ident = (NetworkIdentity) obj;
+            //return mType == ident.mType && mSubType == ident.mSubType
+                    //&& Objects.equal(mSubscriberId, ident.mSubscriberId)
+                    //&& mRoaming == ident.mRoaming;
+        //}
+        //return false;
     }
 
     
@@ -84,73 +84,69 @@ public class NetworkIdentity {
     if(ConnectivityManager.isNetworkTypeMobile(mType))        
         {
             subTypeName = TelephonyManager.getNetworkTypeName(mSubType);
-        } 
+        } //End block
         else
         {
             subTypeName = Integer.toString(mSubType);
-        } 
+        } //End block
         final String scrubSubscriberId = scrubSubscriberId(mSubscriberId);
         final String roaming = mRoaming ? ", ROAMING" : "";
 String varC04A558420C11F186DEAB34E29860899_995045713 =         "[type=" + typeName + ", subType=" + subTypeName + ", subscriberId="
                 + scrubSubscriberId + roaming + "]";
         varC04A558420C11F186DEAB34E29860899_995045713.addTaint(taint);
         return varC04A558420C11F186DEAB34E29860899_995045713;
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //final String typeName = ConnectivityManager.getNetworkTypeName(mType);
+        //final String subTypeName;
+        //if (ConnectivityManager.isNetworkTypeMobile(mType)) {
+            //subTypeName = TelephonyManager.getNetworkTypeName(mSubType);
+        //} else {
+            //subTypeName = Integer.toString(mSubType);
+        //}
+        //final String scrubSubscriberId = scrubSubscriberId(mSubscriberId);
+        //final String roaming = mRoaming ? ", ROAMING" : "";
+        //return "[type=" + typeName + ", subType=" + subTypeName + ", subscriberId="
+                //+ scrubSubscriberId + roaming + "]";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.660 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "DA8730D76A1A758BB4F57A9CD5C2BBB6")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_1450963976 = (mType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1618192417 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1618192417;
-        
-        
+        // ---------- Original Method ----------
+        //return mType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.661 -0400", hash_original_method = "A4DDC328E17941CDB6FA9336B74814D9", hash_generated_method = "6B67AD1A631A48137AEC2C6D96C3CA78")
     public int getSubType() {
         int var9626C0B267A1B4C2C31F3FFD0E237EB6_1771885959 = (mSubType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_308015712 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_308015712;
-        
-        
+        // ---------- Original Method ----------
+        //return mSubType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.661 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "0F1459C8F075726F20CB8688EBAC21C3")
     public String getSubscriberId() {
 String varD221C4376DC09E8E422076D12DB9853B_1612038187 =         mSubscriberId;
         varD221C4376DC09E8E422076D12DB9853B_1612038187.addTaint(taint);
         return varD221C4376DC09E8E422076D12DB9853B_1612038187;
-        
-        
+        // ---------- Original Method ----------
+        //return mSubscriberId;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.662 -0400", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "AAB51D164379572B9A82734802CFF5B8")
     public boolean getRoaming() {
         boolean var53676CF9ACC69A311F8B40D8878A560F_1612845011 = (mRoaming);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1666958031 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1666958031;
-        
-        
+        // ---------- Original Method ----------
+        //return mRoaming;
     }
 
     

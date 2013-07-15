@@ -1,6 +1,6 @@
 package java.text;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,11 +23,10 @@ public abstract class DateFormat extends Format {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.060 -0400", hash_original_method = "B3EF4E3485D0789C83BAEC35E9E3BAD6", hash_generated_method = "4CEB3B1E67F52104B0EDECB49E396168")
     protected  DateFormat() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.060 -0400", hash_original_method = "6214BE37793C3124BC718667B7E0632D", hash_generated_method = "EE01CABFC49B75FA901BAF6AEBF191AA")
     @Override
     public Object clone() {
@@ -37,15 +36,14 @@ public abstract class DateFormat extends Format {
 Object var3DE52045BFD3C1BF3742F994ED6139AD_1323188572 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_1323188572.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_1323188572;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //DateFormat clone = (DateFormat) super.clone();
+        //clone.calendar = (Calendar) calendar.clone();
+        //clone.numberFormat = (NumberFormat) numberFormat.clone();
+        //return clone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.061 -0400", hash_original_method = "ACA6119BE57A696CA271FA419EAF8A87", hash_generated_method = "2A61E0AA0AABB7BF702B433861FE9C76")
     @Override
     public boolean equals(Object object) {
@@ -55,13 +53,13 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1323188572 =         clone;
             boolean varB326B5062B2F0E69046810717534CB09_1339932827 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1466942024 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1466942024;
-        } 
+        } //End block
     if(!(object instanceof DateFormat))        
         {
             boolean var68934A3E9455FA72420237EB05902327_806608420 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_178179209 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_178179209;
-        } 
+        } //End block
         DateFormat dateFormat = (DateFormat) object;
         boolean var631A1325D4ED8C267C17A1748F833D0F_1066862289 = (numberFormat.equals(dateFormat.numberFormat)
                 && calendar.getTimeZone().equals(
@@ -73,22 +71,22 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1323188572 =         clone;
                 && calendar.isLenient() == dateFormat.calendar.isLenient());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2010786049 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2010786049;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-                
-                        
-                
-                        
-                
-                        
-                
+        // ---------- Original Method ----------
+        //if (this == object) {
+            //return true;
+        //}
+        //if (!(object instanceof DateFormat)) {
+            //return false;
+        //}
+        //DateFormat dateFormat = (DateFormat) object;
+        //return numberFormat.equals(dateFormat.numberFormat)
+                //&& calendar.getTimeZone().equals(
+                        //dateFormat.calendar.getTimeZone())
+                //&& calendar.getFirstDayOfWeek() == dateFormat.calendar
+                        //.getFirstDayOfWeek()
+                //&& calendar.getMinimalDaysInFirstWeek() == dateFormat.calendar
+                        //.getMinimalDaysInFirstWeek()
+                //&& calendar.isLenient() == dateFormat.calendar.isLenient();
     }
 
     
@@ -104,26 +102,26 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1323188572 =         clone;
 StringBuffer var44BDD7BF96615FC0788B0FD09BD4289B_98979305 =             format((Date) object, buffer, field);
             var44BDD7BF96615FC0788B0FD09BD4289B_98979305.addTaint(taint);
             return var44BDD7BF96615FC0788B0FD09BD4289B_98979305;
-        } 
+        } //End block
     if(object instanceof Number)        
         {
 StringBuffer varE683C2A0E09A6B28B6A59B35D2A5FCAB_2140106707 =             format(new Date(((Number) object).longValue()), buffer,
                     field);
             varE683C2A0E09A6B28B6A59B35D2A5FCAB_2140106707.addTaint(taint);
             return varE683C2A0E09A6B28B6A59B35D2A5FCAB_2140106707;
-        } 
+        } //End block
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_643388912 = new IllegalArgumentException();
         var5783EF97022AA508B74A1E3EA38534AF_643388912.addTaint(taint);
         throw var5783EF97022AA508B74A1E3EA38534AF_643388912;
-        
-        
-            
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (object instanceof Date) {
+            //return format((Date) object, buffer, field);
+        //}
+        //if (object instanceof Number) {
+            //return format(new Date(((Number) object).longValue()), buffer,
+                    //field);
+        //}
+        //throw new IllegalArgumentException();
     }
 
     
@@ -134,9 +132,9 @@ String var58FA57FCEEB7AFA761438FFF4258DC5B_391635732 =         format(date, new 
                 .toString();
         var58FA57FCEEB7AFA761438FFF4258DC5B_391635732.addTaint(taint);
         return var58FA57FCEEB7AFA761438FFF4258DC5B_391635732;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return format(date, new StringBuffer(), new FieldPosition(0))
+                //.toString();
     }
 
     
@@ -144,20 +142,18 @@ String var58FA57FCEEB7AFA761438FFF4258DC5B_391635732 =         format(date, new 
             FieldPosition field);
 
     
-        @DSModeled(DSC.SAFE)
-    public static Locale[] getAvailableLocales() {
+        public static Locale[] getAvailableLocales() {
         return ICU.getAvailableDateFormatLocales();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.066 -0400", hash_original_method = "AC2D491D0E9EF49D1E9DF4E35BBACC3B", hash_generated_method = "F4EE08E0F5CCD51A047E71083F446F49")
     public Calendar getCalendar() {
 Calendar varD3A494C39F9AC7C8E0BC83D14CC2B0CC_182220526 =         calendar;
         varD3A494C39F9AC7C8E0BC83D14CC2B0CC_182220526.addTaint(taint);
         return varD3A494C39F9AC7C8E0BC83D14CC2B0CC_182220526;
-        
-        
+        // ---------- Original Method ----------
+        //return calendar;
     }
 
     
@@ -204,14 +200,13 @@ Calendar varD3A494C39F9AC7C8E0BC83D14CC2B0CC_182220526 =         calendar;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.068 -0400", hash_original_method = "303CF4BDA8F6551FE38CF841A2AE86A7", hash_generated_method = "50642D08BA754842497BFBAD32C2C8E1")
     public NumberFormat getNumberFormat() {
 NumberFormat var6F2A87451C4FA6A598B56017E6FBE4DD_1540928161 =         numberFormat;
         var6F2A87451C4FA6A598B56017E6FBE4DD_1540928161.addTaint(taint);
         return var6F2A87451C4FA6A598B56017E6FBE4DD_1540928161;
-        
-        
+        // ---------- Original Method ----------
+        //return numberFormat;
     }
 
     
@@ -232,18 +227,16 @@ NumberFormat var6F2A87451C4FA6A598B56017E6FBE4DD_1540928161 =         numberForm
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.069 -0400", hash_original_method = "028D1A898568609D223BE7B30E97723B", hash_generated_method = "C80674CAD8E9C7C3C314585AB0F38C67")
     public TimeZone getTimeZone() {
 TimeZone var9EC29A0EB67C60699678B51409154E52_359331844 =         calendar.getTimeZone();
         var9EC29A0EB67C60699678B51409154E52_359331844.addTaint(taint);
         return var9EC29A0EB67C60699678B51409154E52_359331844;
-        
-        
+        // ---------- Original Method ----------
+        //return calendar.getTimeZone();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.069 -0400", hash_original_method = "3F46A6ECEE37AE5ECC5364DC5B9940AE", hash_generated_method = "3F6D4924309EC2A26D369620CD54B508")
     @Override
     public int hashCode() {
@@ -254,27 +247,25 @@ TimeZone var9EC29A0EB67C60699678B51409154E52_359331844 =         calendar.getTim
                 + numberFormat.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038802212 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038802212;
-        
-        
-                
-                
-                
-                
+        // ---------- Original Method ----------
+        //return calendar.getFirstDayOfWeek()
+                //+ calendar.getMinimalDaysInFirstWeek()
+                //+ calendar.getTimeZone().hashCode()
+                //+ (calendar.isLenient() ? 1231 : 1237)
+                //+ numberFormat.hashCode();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.070 -0400", hash_original_method = "C4BF8639B942350BBBDBCDAD05669E72", hash_generated_method = "F1D8D746920A4456DF352BC75F1B73B0")
     public boolean isLenient() {
         boolean varA11F7D66C7E40DF6B79B112493B114C9_1355205428 = (calendar.isLenient());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_398270847 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_398270847;
-        
-        
+        // ---------- Original Method ----------
+        //return calendar.isLenient();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.070 -0400", hash_original_method = "CB060FB8FCF7D6D5A12D02C797F79FD4", hash_generated_method = "4EA3C7F2EA550B6BEBEE34F7133519E7")
     public Date parse(String string) throws ParseException {
         addTaint(string.getTaint());
@@ -286,25 +277,24 @@ TimeZone var9EC29A0EB67C60699678B51409154E52_359331844 =         calendar.getTim
                     position.getErrorIndex());
             varBD08E9B8794A017E84C70646604F9897_555103155.addTaint(taint);
             throw varBD08E9B8794A017E84C70646604F9897_555103155;
-        } 
+        } //End block
 Date var1F31043EE3B8C862CA53EA8B99691F13_998993274 =         date;
         var1F31043EE3B8C862CA53EA8B99691F13_998993274.addTaint(taint);
         return var1F31043EE3B8C862CA53EA8B99691F13_998993274;
-        
-        
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //ParsePosition position = new ParsePosition(0);
+        //Date date = parse(string, position);
+        //if (position.getIndex() == 0) {
+            //throw new ParseException("Unparseable date: \"" + string + "\"",
+                    //position.getErrorIndex());
+        //}
+        //return date;
     }
 
     
     public abstract Date parse(String string, ParsePosition position);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.071 -0400", hash_original_method = "C9AA8969DE1792F4979FB5B1F65B9849", hash_generated_method = "86F070DAD86213E6DB10B6506922F480")
     @Override
     public Object parseObject(String string, ParsePosition position) {
@@ -313,51 +303,46 @@ Date var1F31043EE3B8C862CA53EA8B99691F13_998993274 =         date;
 Object var0D84F404ADD0A115F77E7D80294D92BC_1559282355 =         parse(string, position);
         var0D84F404ADD0A115F77E7D80294D92BC_1559282355.addTaint(taint);
         return var0D84F404ADD0A115F77E7D80294D92BC_1559282355;
-        
-        
+        // ---------- Original Method ----------
+        //return parse(string, position);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.071 -0400", hash_original_method = "6C57FEC8F5EF28EFDF88DCA370317E90", hash_generated_method = "E802D086EAB4F0F67AA7535AB9302E52")
     public void setCalendar(Calendar cal) {
         calendar = cal;
-        
-        
+        // ---------- Original Method ----------
+        //calendar = cal;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.072 -0400", hash_original_method = "C0CD4ED6DB9107DF0F000BE04B2DBCDB", hash_generated_method = "B9921745AD58F5760EDDAFCEAA72F210")
     public void setLenient(boolean value) {
         addTaint(value);
         calendar.setLenient(value);
-        
-        
+        // ---------- Original Method ----------
+        //calendar.setLenient(value);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.072 -0400", hash_original_method = "DB316F58F9072942395CFF97FB7F9BCE", hash_generated_method = "16CBA8285F39434CB2D8444A821C6283")
     public void setNumberFormat(NumberFormat format) {
         numberFormat = format;
-        
-        
+        // ---------- Original Method ----------
+        //numberFormat = format;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.072 -0400", hash_original_method = "21956223404148B0DA41DA5118D6AFF3", hash_generated_method = "BF6C5AC52E3A5DDD0B2426333CD70394")
     public void setTimeZone(TimeZone timezone) {
         addTaint(timezone.getTaint());
         calendar.setTimeZone(timezone);
-        
-        
+        // ---------- Original Method ----------
+        //calendar.setTimeZone(timezone);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void checkDateStyle(int style) {
+        private static void checkDateStyle(int style) {
         if (!(style == SHORT || style == MEDIUM || style == LONG
                 || style == FULL || style == DEFAULT)) {
             throw new IllegalArgumentException("Illegal date style " + style);
@@ -365,8 +350,7 @@ Object var0D84F404ADD0A115F77E7D80294D92BC_1559282355 =         parse(string, po
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void checkTimeStyle(int style) {
+        private static void checkTimeStyle(int style) {
         if (!(style == SHORT || style == MEDIUM || style == LONG
                 || style == FULL || style == DEFAULT)) {
             throw new IllegalArgumentException("Illegal time style " + style);
@@ -387,23 +371,22 @@ Object var0D84F404ADD0A115F77E7D80294D92BC_1559282355 =         parse(string, po
     if(calendarField != -1 && table.get(Integer.valueOf(calendarField)) == null)            
             {
                 table.put(Integer.valueOf(calendarField), this);
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //this.calendarField = calendarField;
+            //if (calendarField != -1 && table.get(Integer.valueOf(calendarField)) == null) {
+                //table.put(Integer.valueOf(calendarField), this);
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.075 -0400", hash_original_method = "E3ED29195795ED22C0785EABF4B5C0B6", hash_generated_method = "C44CB43ED82DC052CBC4E71C9A77C915")
         public int getCalendarField() {
             int var6087BFC8609B24C5C5642A34E8E2ABAC_67579777 = (calendarField);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_197699261 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_197699261;
-            
-            
+            // ---------- Original Method ----------
+            //return calendarField;
         }
 
         

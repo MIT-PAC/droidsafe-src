@@ -1,6 +1,6 @@
 package android.nfc.tech;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,23 +41,23 @@ public final class Ndef extends BasicTagTechnology {
             mCardState = extras.getInt(EXTRA_NDEF_CARDSTATE);
             mNdefMsg = extras.getParcelable(EXTRA_NDEF_MSG);
             mNdefType = extras.getInt(EXTRA_NDEF_TYPE);
-        } 
+        } //End block
         else
         {
             NullPointerException var73A7D11C3D4A751D875ACA3C3BD4F0F7_264780696 = new NullPointerException("NDEF tech extras are null.");
             var73A7D11C3D4A751D875ACA3C3BD4F0F7_264780696.addTaint(taint);
             throw var73A7D11C3D4A751D875ACA3C3BD4F0F7_264780696;
-        } 
-        
-        
-        
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Bundle extras = tag.getTechExtras(TagTechnology.NDEF);
+        //if (extras != null) {
+            //mMaxNdefSize = extras.getInt(EXTRA_NDEF_MAXLENGTH);
+            //mCardState = extras.getInt(EXTRA_NDEF_CARDSTATE);
+            //mNdefMsg = extras.getParcelable(EXTRA_NDEF_MSG);
+            //mNdefType = extras.getInt(EXTRA_NDEF_TYPE);
+        //} else {
+            //throw new NullPointerException("NDEF tech extras are null.");
+        //}
     }
 
     
@@ -71,18 +71,16 @@ public final class Ndef extends BasicTagTechnology {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.977 -0400", hash_original_method = "522E1BD05C0F58597909DF2D37B1E51E", hash_generated_method = "399F10DAB861BA0EAA69165285BF24AE")
     public NdefMessage getCachedNdefMessage() {
 NdefMessage var50637A8CAA6C154F069E6CB5B77579E1_338314332 =         mNdefMsg;
         var50637A8CAA6C154F069E6CB5B77579E1_338314332.addTaint(taint);
         return var50637A8CAA6C154F069E6CB5B77579E1_338314332;
-        
-        
+        // ---------- Original Method ----------
+        //return mNdefMsg;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.977 -0400", hash_original_method = "A8A4A8CA63E3E206537FB1A4A1A58DE6", hash_generated_method = "10204BDF40E4ECD7D8B8642ECB041EA1")
     public String getType() {
 switch(mNdefType){
@@ -115,45 +113,43 @@ String var49B0340B189DF21DA2EA3B0C615D6956_1816627683 =         UNKNOWN;
         var49B0340B189DF21DA2EA3B0C615D6956_1816627683.addTaint(taint);
         return var49B0340B189DF21DA2EA3B0C615D6956_1816627683;
 }
-        
-        
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-        
+        // ---------- Original Method ----------
+        //switch (mNdefType) {
+            //case TYPE_1:
+                //return NFC_FORUM_TYPE_1;
+            //case TYPE_2:
+                //return NFC_FORUM_TYPE_2;
+            //case TYPE_3:
+                //return NFC_FORUM_TYPE_3;
+            //case TYPE_4:
+                //return NFC_FORUM_TYPE_4;
+            //case TYPE_MIFARE_CLASSIC:
+                //return MIFARE_CLASSIC;
+            //case TYPE_ICODE_SLI:
+                //return ICODE_SLI;
+            //default:
+                //return UNKNOWN;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.977 -0400", hash_original_method = "4EADEE4A8AA14EA957D69BF1EB117D34", hash_generated_method = "4F634272A829D01691C8A2A70F40F197")
     public int getMaxSize() {
         int var86DEF057D6C153F9465C3DFD099AF5F7_1683567870 = (mMaxNdefSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1217286854 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1217286854;
-        
-        
+        // ---------- Original Method ----------
+        //return mMaxNdefSize;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.978 -0400", hash_original_method = "9C15355B29C0704385FAC8BA222CAFE7", hash_generated_method = "43EF999DCA08CB0F0CCBFDB8DDBBDB52")
     public boolean isWritable() {
         boolean varA0046E7AEC22D68949B4767022B18C54_2031903712 = ((mCardState == NDEF_MODE_READ_WRITE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_730721510 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_730721510;
-        
-        
+        // ---------- Original Method ----------
+        //return (mCardState == NDEF_MODE_READ_WRITE);
     }
 
     
@@ -184,26 +180,26 @@ switch(errorCode){
                     var1508E3FDF27FD56D4E1051DB16DE1816_2121804544.addTaint(taint);
                     throw var1508E3FDF27FD56D4E1051DB16DE1816_2121804544;
 }
-                } 
+                } //End block
 NdefMessage varEDC5B72465A7F0BEE288689BCB1DD141_1288265556 =                 msg;
                 varEDC5B72465A7F0BEE288689BCB1DD141_1288265556.addTaint(taint);
                 return varEDC5B72465A7F0BEE288689BCB1DD141_1288265556;
-            } 
+            } //End block
             else
             {
 NdefMessage var540C13E9E156B687226421B24F2DF178_1305101126 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1305101126.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1305101126;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
 NdefMessage var540C13E9E156B687226421B24F2DF178_1436782481 =             null;
             var540C13E9E156B687226421B24F2DF178_1436782481.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1436782481;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -234,19 +230,19 @@ switch(errorCode){
                 var1508E3FDF27FD56D4E1051DB16DE1816_18182765.addTaint(taint);
                 throw var1508E3FDF27FD56D4E1051DB16DE1816_18182765;
 }
-            } 
+            } //End block
             else
             {
                 IOException var3B3079A43865D115F17252AB7ABEB56D_1773553994 = new IOException("Tag is not ndef");
                 var3B3079A43865D115F17252AB7ABEB56D_1773553994.addTaint(taint);
                 throw var3B3079A43865D115F17252AB7ABEB56D_1773553994;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -258,21 +254,21 @@ switch(errorCode){
             boolean var0CFB1C74CC366EEA4AD8A9AEB49DD113_109157594 = (tagService.canMakeReadOnly(mNdefType));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2098893292 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2098893292;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_267700404 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_141611067 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_141611067;
-        } 
-        
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //INfcTag tagService = mTag.getTagService();
+        //try {
+            //return tagService.canMakeReadOnly(mNdefType);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "NFC service dead", e);
+            //return false;
+        //}
     }
 
     
@@ -303,22 +299,22 @@ switch(errorCode){
                 var1508E3FDF27FD56D4E1051DB16DE1816_1787141784.addTaint(taint);
                 throw var1508E3FDF27FD56D4E1051DB16DE1816_1787141784;
 }
-            } 
+            } //End block
             else
             {
                 IOException var3B3079A43865D115F17252AB7ABEB56D_763345968 = new IOException("Tag is not ndef");
                 var3B3079A43865D115F17252AB7ABEB56D_763345968.addTaint(taint);
                 throw var3B3079A43865D115F17252AB7ABEB56D_763345968;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1172547998 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1329982902 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1329982902;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

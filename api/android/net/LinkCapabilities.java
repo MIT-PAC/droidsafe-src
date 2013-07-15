@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,8 +21,8 @@ public class LinkCapabilities implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.372 -0400", hash_original_method = "8AC97A1FCCB5728EBAB2151990B61507", hash_generated_method = "5CABA04E7070710949FB09D336670A02")
     public  LinkCapabilities() {
         mCapabilities = new HashMap<Integer, String>();
-        
-        
+        // ---------- Original Method ----------
+        //mCapabilities = new HashMap<Integer, String>();
     }
 
     
@@ -31,17 +31,17 @@ public class LinkCapabilities implements Parcelable {
     if(source != null)        
         {
             mCapabilities = new HashMap<Integer, String>(source.mCapabilities);
-        } 
+        } //End block
         else
         {
             mCapabilities = new HashMap<Integer, String>();
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (source != null) {
+            //mCapabilities = new HashMap<Integer, String>(source.mCapabilities);
+        //} else {
+            //mCapabilities = new HashMap<Integer, String>();
+        //}
     }
 
     
@@ -54,8 +54,8 @@ public class LinkCapabilities implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.372 -0400", hash_original_method = "65569EBD49455AAF0883C4D69A42B604", hash_generated_method = "4F70271EFC86EA6CB157AC698C1F121C")
     public void clear() {
         mCapabilities.clear();
-        
-        
+        // ---------- Original Method ----------
+        //mCapabilities.clear();
     }
 
     
@@ -64,8 +64,8 @@ public class LinkCapabilities implements Parcelable {
         boolean var651A9CCC76FF7B6A32F11DFBA25B6C83_1335089207 = (mCapabilities.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_477471255 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_477471255;
-        
-        
+        // ---------- Original Method ----------
+        //return mCapabilities.isEmpty();
     }
 
     
@@ -74,8 +74,8 @@ public class LinkCapabilities implements Parcelable {
         int var4F37A19B41DACFAB8B445BF9526CFCB2_1758832898 = (mCapabilities.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_12243832 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_12243832;
-        
-        
+        // ---------- Original Method ----------
+        //return mCapabilities.size();
     }
 
     
@@ -85,8 +85,8 @@ public class LinkCapabilities implements Parcelable {
 String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264 =         mCapabilities.get(key);
         var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264.addTaint(taint);
         return var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264;
-        
-        
+        // ---------- Original Method ----------
+        //return mCapabilities.get(key);
     }
 
     
@@ -95,8 +95,8 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264 =         mCapabilities.ge
         addTaint(value.getTaint());
         addTaint(key);
         mCapabilities.put(key, value);
-        
-        
+        // ---------- Original Method ----------
+        //mCapabilities.put(key, value);
     }
 
     
@@ -106,8 +106,8 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264 =         mCapabilities.ge
         boolean varEB30470E087192562821ACDD04ECE7EB_276561650 = (mCapabilities.containsKey(key));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_76778955 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_76778955;
-        
-        
+        // ---------- Original Method ----------
+        //return mCapabilities.containsKey(key);
     }
 
     
@@ -117,8 +117,8 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264 =         mCapabilities.ge
         boolean varFA8DFDCCE589D8E5B37908244E199570_27587369 = (mCapabilities.containsValue(value));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_633976668 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_633976668;
-        
-        
+        // ---------- Original Method ----------
+        //return mCapabilities.containsValue(value);
     }
 
     
@@ -127,8 +127,8 @@ String var0CDFD3D1516B36DBEF2AEE1E4B24910F_1803758264 =         mCapabilities.ge
 Set<Entry<Integer, String>> varB74657035CAC30102BE4F1FDE7200E78_1308847032 =         mCapabilities.entrySet();
         varB74657035CAC30102BE4F1FDE7200E78_1308847032.addTaint(taint);
         return varB74657035CAC30102BE4F1FDE7200E78_1308847032;
-        
-        
+        // ---------- Original Method ----------
+        //return mCapabilities.entrySet();
     }
 
     
@@ -137,8 +137,8 @@ Set<Entry<Integer, String>> varB74657035CAC30102BE4F1FDE7200E78_1308847032 =    
 Set<Integer> varEA618452F40CB38732BAA6482DBBF012_1302251042 =         mCapabilities.keySet();
         varEA618452F40CB38732BAA6482DBBF012_1302251042.addTaint(taint);
         return varEA618452F40CB38732BAA6482DBBF012_1302251042;
-        
-        
+        // ---------- Original Method ----------
+        //return mCapabilities.keySet();
     }
 
     
@@ -147,19 +147,18 @@ Set<Integer> varEA618452F40CB38732BAA6482DBBF012_1302251042 =         mCapabilit
 Collection<String> varA9D5CC32CED998FAD23DBA7A946F0A52_795047133 =         mCapabilities.values();
         varA9D5CC32CED998FAD23DBA7A946F0A52_795047133.addTaint(taint);
         return varA9D5CC32CED998FAD23DBA7A946F0A52_795047133;
-        
-        
+        // ---------- Original Method ----------
+        //return mCapabilities.values();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.373 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DF75504A69C43EACE3F9B6883CDF726A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2075414398 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1805456214 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1805456214;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -174,11 +173,11 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
     if(firstTime)            
             {
                 firstTime = false;
-            } 
+            } //End block
             else
             {
                 sb.append(",");
-            } 
+            } //End block
             sb.append(entry.getKey());
             sb.append(":\"");
             sb.append(entry.getValue());
@@ -186,27 +185,27 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
 String varB81791AD4C0CC7315217B28EB62F0F84_2030175665 =             mCapabilities.toString();
             varB81791AD4C0CC7315217B28EB62F0F84_2030175665.addTaint(taint);
             return varB81791AD4C0CC7315217B28EB62F0F84_2030175665;
-        } 
+        } //End block
 String var2460B846747F8B22185AD8BE722266A5_1960884614 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1960884614.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1960884614;
-        
-        
-        
-        
-        
-            
-                
-            
-                
-            
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder();
+        //sb.append("{");
+        //boolean firstTime = true;
+        //for (Entry<Integer, String> entry : mCapabilities.entrySet()) {
+            //if (firstTime) {
+                //firstTime = false;
+            //} else {
+                //sb.append(",");
+            //}
+            //sb.append(entry.getKey());
+            //sb.append(":\"");
+            //sb.append(entry.getValue());
+            //sb.append("\"");
+            //return mCapabilities.toString();
+        //}
+        //return sb.toString();
     }
 
     
@@ -219,13 +218,13 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
         {
             dest.writeInt(entry.getKey().intValue());
             dest.writeString(entry.getValue());
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //dest.writeInt(mCapabilities.size());
+        //for (Entry<Integer, String> entry : mCapabilities.entrySet()) {
+            //dest.writeInt(entry.getKey().intValue());
+            //dest.writeString(entry.getValue());
+        //}
     }
 
     
@@ -238,7 +237,7 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.374 -0400", hash_original_method = "63943B74C3B7537BF21BF313857C8294", hash_generated_method = "9111A328D08351EAFE3972B5E48A468B")
         private  Key() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -280,7 +279,7 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.374 -0400", hash_original_method = "B6871343D9E854D112856D815CFF5530", hash_generated_method = "78F599F7713B91E62A6511F5FC9496CD")
         private  Role() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -340,7 +339,7 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
                 return new LinkCapabilities[size];
             }
         };
-    
+    // orphaned legacy method
     public LinkCapabilities createFromParcel(Parcel in) {
                 LinkCapabilities capabilities = new LinkCapabilities();
                 int size = in.readInt();
@@ -352,7 +351,7 @@ for(Entry<Integer, String> entry : mCapabilities.entrySet())
                 return capabilities;
             }
     
-    
+    // orphaned legacy method
     public LinkCapabilities[] newArray(int size) {
                 return new LinkCapabilities[size];
             }

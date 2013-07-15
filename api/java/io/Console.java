@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,14 +21,13 @@ public final class Console implements Flushable {
     private  Console(InputStream in, OutputStream out) throws IOException {
         this.reader = new ConsoleReader(in);
         this.writer = new ConsoleWriter(out);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.reader = new ConsoleReader(in);
+        //this.writer = new ConsoleWriter(out);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Console getConsole() {
+        public static Console getConsole() {
         return console;
     }
 
@@ -48,8 +47,8 @@ public final class Console implements Flushable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.540 -0400", hash_original_method = "F7724246D188F0DD4BA6BF2BF289AD37", hash_generated_method = "4D7B28978F39C8925B3234F446DAAC01")
     public void flush() {
         writer.flush();
-        
-        
+        // ---------- Original Method ----------
+        //writer.flush();
     }
 
     
@@ -63,11 +62,11 @@ public final class Console implements Flushable {
 Console var72A74007B2BE62B849F475C7BDA4658B_1100513535 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1100513535.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1100513535;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Formatter f = new Formatter(writer);
+        //f.format(format, args);
+        //f.flush();
+        //return this;
     }
 
     
@@ -78,19 +77,18 @@ Console var72A74007B2BE62B849F475C7BDA4658B_1100513535 =         this;
 Console var1C1A7E0ECC814A41656D8DF055D1B8DD_886357240 =         format(format, args);
         var1C1A7E0ECC814A41656D8DF055D1B8DD_886357240.addTaint(taint);
         return var1C1A7E0ECC814A41656D8DF055D1B8DD_886357240;
-        
-        
+        // ---------- Original Method ----------
+        //return format(format, args);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.548 -0400", hash_original_method = "6872D36E6DE03121BD2812355740CF6B", hash_generated_method = "A50DD4307435F0BE977FA5F1C72CB682")
     public Reader reader() {
 Reader var681AFDDDB48FD166DFCBFA04C65E6269_1130052687 =         reader;
         var681AFDDDB48FD166DFCBFA04C65E6269_1130052687.addTaint(taint);
         return var681AFDDDB48FD166DFCBFA04C65E6269_1130052687;
-        
-        
+        // ---------- Original Method ----------
+        //return reader;
     }
 
     
@@ -101,19 +99,19 @@ Reader var681AFDDDB48FD166DFCBFA04C65E6269_1130052687 =         reader;
 String varA0A0B75A2C3B28E2BCA3874A2AF6FB2A_1500387907 =             reader.readLine();
             varA0A0B75A2C3B28E2BCA3874A2AF6FB2A_1500387907.addTaint(taint);
             return varA0A0B75A2C3B28E2BCA3874A2AF6FB2A_1500387907;
-        } 
+        } //End block
         catch (IOException e)
         {
             IOError varDAD4EC9CD68EF997C9389EB7A1B7124F_2073496195 = new IOError(e);
             varDAD4EC9CD68EF997C9389EB7A1B7124F_2073496195.addTaint(taint);
             throw varDAD4EC9CD68EF997C9389EB7A1B7124F_2073496195;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return reader.readLine();
+        //} catch (IOException e) {
+            //throw new IOError(e);
+        //}
     }
 
     
@@ -127,12 +125,12 @@ String varA0A0B75A2C3B28E2BCA3874A2AF6FB2A_1500387907 =             reader.readL
 String var54932DCBE9604DD8D26100A2DD0CC65C_936727811 =             readLine();
             var54932DCBE9604DD8D26100A2DD0CC65C_936727811.addTaint(taint);
             return var54932DCBE9604DD8D26100A2DD0CC65C_936727811;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (CONSOLE_LOCK) {
+            //format(format, args);
+            //return readLine();
+        //}
     }
 
     
@@ -148,23 +146,23 @@ String var54932DCBE9604DD8D26100A2DD0CC65C_936727811 =             readLine();
                 char[] var9E7AB2C8A043C13D3A2102426F756EC2_376118746 = ((password == null) ? null : password.toCharArray());
                                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_332699672 = {getTaintChar()};
                 return var50607924ABD4C17119BAF3A1CE41C0EC_332699672;
-            } 
+            } //End block
             finally 
             {
                 setEcho(true, previousState);
-            } 
-        } 
-        
-        
-            
-            
-                
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (CONSOLE_LOCK) {
+            //int previousState = setEcho(false, 0);
+            //try {
+                //String password = readLine();
+                //writer.println(); 
+                //return (password == null) ? null : password.toCharArray();
+            //} finally {
+                //setEcho(true, previousState);
+            //}
+        //}
     }
 
     
@@ -193,23 +191,22 @@ String var54932DCBE9604DD8D26100A2DD0CC65C_936727811 =             readLine();
             char[] var4FA87729348AEF40F0E50B593E75DA06_1204359589 = (readPassword());
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1632825214 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_1632825214;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (CONSOLE_LOCK) {
+            //format(format, args);
+            //return readPassword();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.558 -0400", hash_original_method = "EF4D37EF542F65995124A506A5A02FEA", hash_generated_method = "67D32852FAF251E8F8CB0D264CEA2126")
     public PrintWriter writer() {
 PrintWriter varF684C05FE6F21143B285791952B93F74_1156836729 =         writer;
         varF684C05FE6F21143B285791952B93F74_1156836729.addTaint(taint);
         return varF684C05FE6F21143B285791952B93F74_1156836729;
-        
-        
+        // ---------- Original Method ----------
+        //return writer;
     }
 
     
@@ -220,16 +217,15 @@ PrintWriter varF684C05FE6F21143B285791952B93F74_1156836729 =         writer;
             super(new InputStreamReader(in, System.getProperty("file.encoding")), 256);
             addTaint(in.getTaint());
             lock = CONSOLE_LOCK;
-            
-            
+            // ---------- Original Method ----------
+            //lock = CONSOLE_LOCK;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.563 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
         @Override
         public void close() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -244,8 +240,8 @@ PrintWriter varF684C05FE6F21143B285791952B93F74_1156836729 =         writer;
             super(out, true);
             addTaint(out.getTaint());
             lock = CONSOLE_LOCK;
-            
-            
+            // ---------- Original Method ----------
+            //lock = CONSOLE_LOCK;
         }
 
         
@@ -253,8 +249,8 @@ PrintWriter varF684C05FE6F21143B285791952B93F74_1156836729 =         writer;
         @Override
         public void close() {
             flush();
-            
-            
+            // ---------- Original Method ----------
+            //flush();
         }
 
         

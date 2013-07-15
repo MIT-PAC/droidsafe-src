@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,7 +41,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     public  CompoundButton(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -50,7 +50,7 @@ public abstract class CompoundButton extends Button implements Checkable {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -66,31 +66,31 @@ public abstract class CompoundButton extends Button implements Checkable {
     if(d != null)        
         {
             setButtonDrawable(d);
-        } 
+        } //End block
         boolean checked = a
                 .getBoolean(com.android.internal.R.styleable.CompoundButton_checked, false);
         setChecked(checked);
         a.recycle();
-        
-        
-                
-                        
-        
-        
-            
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //TypedArray a =
+                //context.obtainStyledAttributes(
+                        //attrs, com.android.internal.R.styleable.CompoundButton, defStyle, 0);
+        //Drawable d = a.getDrawable(com.android.internal.R.styleable.CompoundButton_button);
+        //if (d != null) {
+            //setButtonDrawable(d);
+        //}
+        //boolean checked = a
+                //.getBoolean(com.android.internal.R.styleable.CompoundButton_checked, false);
+        //setChecked(checked);
+        //a.recycle();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.865 -0400", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "3679ED1F891BEC88079198707411C40A")
     public void toggle() {
         setChecked(!mChecked);
-        
-        
+        // ---------- Original Method ----------
+        //setChecked(!mChecked);
     }
 
     
@@ -101,21 +101,20 @@ public abstract class CompoundButton extends Button implements Checkable {
         boolean varBAE6DB88A1184B017FD0C595C5A7DECE_214853629 = (super.performClick());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1510093621 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1510093621;
-        
-        
-        
+        // ---------- Original Method ----------
+        //toggle();
+        //return super.performClick();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.866 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "FC76992CFA5FDB5D3A624E65A0D198FC")
     @ViewDebug.ExportedProperty
     public boolean isChecked() {
         boolean varB7985199D35C1155A55567C458443B15_1203040732 = (mChecked);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689923481 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689923481;
-        
-        
+        // ---------- Original Method ----------
+        //return mChecked;
     }
 
     
@@ -128,52 +127,50 @@ public abstract class CompoundButton extends Button implements Checkable {
     if(mBroadcasting)            
             {
                 return;
-            } 
+            } //End block
             mBroadcasting = true;
     if(mOnCheckedChangeListener != null)            
             {
                 mOnCheckedChangeListener.onCheckedChanged(this, mChecked);
-            } 
+            } //End block
     if(mOnCheckedChangeWidgetListener != null)            
             {
                 mOnCheckedChangeWidgetListener.onCheckedChanged(this, mChecked);
-            } 
+            } //End block
             mBroadcasting = false;
-        } 
-        
-        
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mChecked != checked) {
+            //mChecked = checked;
+            //refreshDrawableState();
+            //if (mBroadcasting) {
+                //return;
+            //}
+            //mBroadcasting = true;
+            //if (mOnCheckedChangeListener != null) {
+                //mOnCheckedChangeListener.onCheckedChanged(this, mChecked);
+            //}
+            //if (mOnCheckedChangeWidgetListener != null) {
+                //mOnCheckedChangeWidgetListener.onCheckedChanged(this, mChecked);
+            //}
+            //mBroadcasting = false;            
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.867 -0400", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "E7A52B8D01F324B4A1B6AA133FD3E1C1")
     public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnCheckedChangeListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.868 -0400", hash_original_method = "CC17A77F98E8CA70C4846D647AA35249", hash_generated_method = "A56A31C0300B93A41C104B6DF066BB90")
      void setOnCheckedChangeWidgetListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeWidgetListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnCheckedChangeWidgetListener = listener;
     }
 
     
@@ -182,24 +179,24 @@ public abstract class CompoundButton extends Button implements Checkable {
     if(resid != 0 && resid == mButtonResource)        
         {
             return;
-        } 
+        } //End block
         mButtonResource = resid;
         Drawable d = null;
     if(mButtonResource != 0)        
         {
             d = getResources().getDrawable(mButtonResource);
-        } 
+        } //End block
         setButtonDrawable(d);
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (resid != 0 && resid == mButtonResource) {
+            //return;
+        //}
+        //mButtonResource = resid;
+        //Drawable d = null;
+        //if (mButtonResource != 0) {
+            //d = getResources().getDrawable(mButtonResource);
+        //}
+        //setButtonDrawable(d);
     }
 
     
@@ -211,64 +208,64 @@ public abstract class CompoundButton extends Button implements Checkable {
             {
                 mButtonDrawable.setCallback(null);
                 unscheduleDrawable(mButtonDrawable);
-            } 
+            } //End block
             d.setCallback(this);
             d.setState(getDrawableState());
             d.setVisible(getVisibility() == VISIBLE, false);
             mButtonDrawable = d;
             mButtonDrawable.setState(null);
             setMinHeight(mButtonDrawable.getIntrinsicHeight());
-        } 
+        } //End block
         refreshDrawableState();
-        
-        
-            
-                
-                
-            
-            
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (d != null) {
+            //if (mButtonDrawable != null) {
+                //mButtonDrawable.setCallback(null);
+                //unscheduleDrawable(mButtonDrawable);
+            //}
+            //d.setCallback(this);
+            //d.setState(getDrawableState());
+            //d.setVisible(getVisibility() == VISIBLE, false);
+            //mButtonDrawable = d;
+            //mButtonDrawable.setState(null);
+            //setMinHeight(mButtonDrawable.getIntrinsicHeight());
+        //}
+        //refreshDrawableState();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.869 -0400", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "76E27B80562C985CD49B030FF046F855")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         super.onInitializeAccessibilityEvent(event);
         event.setChecked(mChecked);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onInitializeAccessibilityEvent(event);
+        //event.setChecked(mChecked);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.869 -0400", hash_original_method = "9295691F1B4364B400425405F52CF8A7", hash_generated_method = "F5460BFFB79998D9BC1B4FE82C0244AD")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(info.getTaint());
         super.onInitializeAccessibilityNodeInfo(info);
         info.setCheckable(true);
         info.setChecked(mChecked);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onInitializeAccessibilityNodeInfo(info);
+        //info.setCheckable(true);
+        //info.setChecked(mChecked);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.870 -0400", hash_original_method = "B5E74BEF46452CACB638287F10D23674", hash_generated_method = "17C79038C25E0BCBF4CE5F11890B2316")
     @Override
     protected void onDraw(Canvas canvas) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(canvas.getTaint());
         super.onDraw(canvas);
         final Drawable buttonDrawable = mButtonDrawable;
@@ -286,47 +283,47 @@ switch(verticalGravity){
             break;
 }            buttonDrawable.setBounds(0, y, buttonDrawable.getIntrinsicWidth(), y + height);
             buttonDrawable.draw(canvas);
-        } 
-        
-        
-        
-        
-            
-            
-            
-            
-                
-                    
-                    
-                
-                    
-                    
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onDraw(canvas);
+        //final Drawable buttonDrawable = mButtonDrawable;
+        //if (buttonDrawable != null) {
+            //final int verticalGravity = getGravity() & Gravity.VERTICAL_GRAVITY_MASK;
+            //final int height = buttonDrawable.getIntrinsicHeight();
+            //int y = 0;
+            //switch (verticalGravity) {
+                //case Gravity.BOTTOM:
+                    //y = getHeight() - height;
+                    //break;
+                //case Gravity.CENTER_VERTICAL:
+                    //y = (getHeight() - height) / 2;
+                    //break;
+            //}
+            //buttonDrawable.setBounds(0, y, buttonDrawable.getIntrinsicWidth(), y + height);
+            //buttonDrawable.draw(canvas);
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.871 -0400", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "20AFB1AE0131C3F248E546A03206FB6F")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(extraSpace);
         final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
     if(isChecked())        
         {
             mergeDrawableStates(drawableState, CHECKED_STATE_SET);
-        } 
+        } //End block
         int[] var7A12E87773589D809FD51F1A26B9BDA9_1220293359 = (drawableState);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1758397997 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1758397997;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
+        //if (isChecked()) {
+            //mergeDrawableStates(drawableState, CHECKED_STATE_SET);
+        //}
+        //return drawableState;
     }
 
     
@@ -339,14 +336,14 @@ switch(verticalGravity){
             int[] myDrawableState = getDrawableState();
             mButtonDrawable.setState(myDrawableState);
             invalidate();
-        } 
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.drawableStateChanged();
+        //if (mButtonDrawable != null) {
+            //int[] myDrawableState = getDrawableState();
+            //mButtonDrawable.setState(myDrawableState);
+            //invalidate();
+        //}
     }
 
     
@@ -357,8 +354,8 @@ switch(verticalGravity){
         boolean var0A5CAA2536AE615FDE8DCB73439B116D_112983160 = (super.verifyDrawable(who) || who == mButtonDrawable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1783822983 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1783822983;
-        
-        
+        // ---------- Original Method ----------
+        //return super.verifyDrawable(who) || who == mButtonDrawable;
     }
 
     
@@ -368,16 +365,16 @@ switch(verticalGravity){
         super.jumpDrawablesToCurrentState();
     if(mButtonDrawable != null)        
         mButtonDrawable.jumpToCurrentState();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.jumpDrawablesToCurrentState();
+        //if (mButtonDrawable != null) mButtonDrawable.jumpToCurrentState();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.872 -0400", hash_original_method = "C906A6F68E532E790B1685DD63ECE7DE", hash_generated_method = "468A6E68ACDE5466B3FAAAE309751CF1")
     @Override
     public Parcelable onSaveInstanceState() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         setFreezesText(true);
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
@@ -385,29 +382,29 @@ switch(verticalGravity){
 Parcelable var182E37827114C3F455816E0E29D81D76_1451018171 =         ss;
         var182E37827114C3F455816E0E29D81D76_1451018171.addTaint(taint);
         return var182E37827114C3F455816E0E29D81D76_1451018171;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //setFreezesText(true);
+        //Parcelable superState = super.onSaveInstanceState();
+        //SavedState ss = new SavedState(superState);
+        //ss.checked = isChecked();
+        //return ss;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.872 -0400", hash_original_method = "82857D3CD54F7EB52721411B0B0DD538", hash_generated_method = "32CC6D8B526C9BA090BE711C8896619C")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(state.getTaint());
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         setChecked(ss.checked);
         requestLayout();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //SavedState ss = (SavedState) state;
+        //super.onRestoreInstanceState(ss.getSuperState());
+        //setChecked(ss.checked);
+        //requestLayout();
     }
 
     
@@ -420,7 +417,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1451018171 =         ss;
           SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -428,8 +425,8 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1451018171 =         ss;
         private  SavedState(Parcel in) {
             super(in);
             checked = (Boolean)in.readValue(null);
-            
-            
+            // ---------- Original Method ----------
+            //checked = (Boolean)in.readValue(null);
         }
 
         
@@ -440,9 +437,9 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1451018171 =         ss;
             addTaint(out.getTaint());
             super.writeToParcel(out, flags);
             out.writeValue(checked);
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.writeToParcel(out, flags);
+            //out.writeValue(checked);
         }
 
         
@@ -454,10 +451,10 @@ String var75C72613A101136F5AE898E5495772E0_1355822926 =             "CompoundBut
                     + " checked=" + checked + "}";
             var75C72613A101136F5AE898E5495772E0_1355822926.addTaint(taint);
             return var75C72613A101136F5AE898E5495772E0_1355822926;
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //return "CompoundButton.SavedState{"
+                    //+ Integer.toHexString(System.identityHashCode(this))
+                    //+ " checked=" + checked + "}";
         }
 
         
@@ -473,12 +470,12 @@ String var75C72613A101136F5AE898E5495772E0_1355822926 =             "CompoundBut
                 return new SavedState[size];
             }
         };
-        
+        // orphaned legacy method
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
         
-        
+        // orphaned legacy method
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

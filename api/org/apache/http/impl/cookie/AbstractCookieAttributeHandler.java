@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public abstract class AbstractCookieAttributeHandler implements CookieAttributeH
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.196 -0400", hash_original_method = "ACDC61E94AD035B91D0DD3AC627F0897", hash_generated_method = "ACDC61E94AD035B91D0DD3AC627F0897")
     public AbstractCookieAttributeHandler ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -22,7 +22,7 @@ public abstract class AbstractCookieAttributeHandler implements CookieAttributeH
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
         addTaint(origin.getTaint());
         addTaint(cookie.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -33,8 +33,8 @@ public abstract class AbstractCookieAttributeHandler implements CookieAttributeH
         boolean varB326B5062B2F0E69046810717534CB09_2145534966 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1999392541 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1999392541;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     

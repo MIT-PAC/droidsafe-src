@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -74,12 +74,12 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
             IllegalArgumentException varCD200ACC7550FC872CE82265047D75E7_1664282611 = new IllegalArgumentException("Non-null Intent must be specified.");
             varCD200ACC7550FC872CE82265047D75E7_1664282611.addTaint(taint);
             throw varCD200ACC7550FC872CE82265047D75E7_1664282611;
-        } 
+        } //End block
         mRequestedViews = new RemoteViewsFrameLayoutRefSet();
     if(intent.hasExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID))        
         {
             intent.removeExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID);
-        } 
+        } //End block
         mWorkerThread = new HandlerThread("RemoteViewsCache-loader");
         mWorkerThread.start();
         mWorkerQueue = new Handler(mWorkerThread.getLooper());
@@ -88,8 +88,8 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         mCallback = new WeakReference<RemoteAdapterConnectionCallback>(callback);
         mServiceConnection = new RemoteViewsAdapterServiceConnection(this);
         requestBindService();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -101,20 +101,20 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     if(mWorkerThread != null)            
             {
                 mWorkerThread.quit();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (mWorkerThread != null) {
+                //mWorkerThread.quit();
+            //}
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
@@ -133,37 +133,37 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                     int[] res = mCache.getNextIndexToLoad();
                     position = res[0];
                     isRequested = res[1] > 0;
-                } 
+                } //End block
     if(position > -1)                
                 {
                     updateRemoteViews(position, isRequested);
                     loadNextIndexInBackground();
-                } 
+                } //End block
                 else
                 {
                     enqueueDeferredUnbindServiceMessage();
-                } 
-            } 
-            
-            
-                    
-                    
-                    
-                        
-                        
-                        
-                    
-                    
-                        
-                        
-                    
-                        
-                    
-                
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //if (mServiceConnection.isConnected()) {
+                    //int position = -1;
+                    //boolean isRequested = false;
+                    //synchronized (mCache) {
+                        //int[] res = mCache.getNextIndexToLoad();
+                        //position = res[0];
+                        //isRequested = res[1] > 0;
+                    //}
+                    //if (position > -1) {
+                        //updateRemoteViews(position, isRequested);
+                        //loadNextIndexInBackground();
+                    //} else {
+                        //enqueueDeferredUnbindServiceMessage();
+                    //}
+                //}
         }
 });
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -175,35 +175,35 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         synchronized
 (metaData)        {
             metaData.reset();
-        } 
+        } //End block
         synchronized
 (mCache)        {
             mCache.reset();
-        } 
+        } //End block
         mMainQueue.post(new Runnable() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.814 -0400", hash_original_method = "20780F1316FA6B5AAEF80ABB110F8A58", hash_generated_method = "9658C6127F239982755926B1BF541104")
         @Override
         public void run() {
             superNotifyDataSetChanged();
-            
-            
+            // ---------- Original Method ----------
+            //superNotifyDataSetChanged();
         }
 });
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //Log.e("RemoteViewsAdapter", "Error in " + method + ": " + e.getMessage());
+        //final RemoteViewsMetaData metaData = mCache.getMetaData();
+        //synchronized (metaData) {
+            //metaData.reset();
+        //}
+        //synchronized (mCache) {
+            //mCache.reset();
+        //}
+        //mMainQueue.post(new Runnable() {
+            //@Override
+            //public void run() {
+                //superNotifyDataSetChanged();
+            //}
+        //});
     }
 
     
@@ -220,7 +220,7 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     if((count > 0) && (loadingView == null))            
             {
                 firstView = factory.getViewAt(0);
-            } 
+            } //End block
             final RemoteViewsMetaData tmpMetaData = mCache.getTemporaryMetaData();
             synchronized
 (tmpMetaData)            {
@@ -228,18 +228,18 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
                 tmpMetaData.viewTypeCount = viewTypeCount + 1;
                 tmpMetaData.count = count;
                 tmpMetaData.setLoadingViewTemplates(loadingView, firstView);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             processException("updateMetaData", e);
-        } 
+        } //End block
         catch (RuntimeException e)
         {
             processException("updateMetaData", e);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -256,19 +256,19 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         {
             remoteViews = factory.getViewAt(position);
             itemId = factory.getItemId(position);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             return;
-        } 
+        } //End block
         catch (RuntimeException e)
         {
             return;
-        } 
+        } //End block
     if(remoteViews == null)        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mCache)        {
             mCache.insert(position, remoteViews, itemId, isRequested);
@@ -279,24 +279,23 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
         @Override
         public void run() {
             mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
-            
-            
+            // ---------- Original Method ----------
+            //mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
         }
 });
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.816 -0400", hash_original_method = "F998EBA4725E32A416A597964901E5AB", hash_generated_method = "632FCEC4D3CC012521B771C3F84724A5")
     public Intent getRemoteViewsServiceIntent() {
 Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_434137577 =         mIntent;
         var4DCF8E3D75AE0B94CDA94656DCE16BCE_434137577.addTaint(taint);
         return var4DCF8E3D75AE0B94CDA94656DCE16BCE_434137577;
-        
-        
+        // ---------- Original Method ----------
+        //return mIntent;
     }
 
     
@@ -308,24 +307,23 @@ Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_434137577 =         mIntent;
             int varADF0D97DEFDF3C282CCD2E376CFB1815_1397581358 = (metaData.count);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720342835 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720342835;
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final RemoteViewsMetaData metaData = mCache.getMetaData();
+        //synchronized (metaData) {
+            //return metaData.count;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.817 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "CEC4C93E90A6537493188A76073A4F4C")
     public Object getItem(int position) {
         addTaint(position);
 Object var540C13E9E156B687226421B24F2DF178_1088898032 =         null;
         var540C13E9E156B687226421B24F2DF178_1088898032.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1088898032;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
@@ -339,18 +337,18 @@ Object var540C13E9E156B687226421B24F2DF178_1088898032 =         null;
                 long varAD3999B8114F8EBC087307F2920D831F_860866351 = (mCache.getMetaDataAt(position).itemId);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_300639914 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_300639914;
-            } 
+            } //End block
             long varCFCD208495D565EF66E7DFF9F98764DA_405244968 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_601930416 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_601930416;
-        } 
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCache) {
+            //if (mCache.containsMetaDataAt(position)) {
+                //return mCache.getMetaDataAt(position).itemId;
+            //}
+            //return 0;
+        //}
     }
 
     
@@ -363,34 +361,34 @@ Object var540C13E9E156B687226421B24F2DF178_1088898032 =         null;
     if(mCache.containsMetaDataAt(position))            
             {
                 typeId = mCache.getMetaDataAt(position).typeId;
-            } 
+            } //End block
             else
             {
                 int varCFCD208495D565EF66E7DFF9F98764DA_301090784 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896464992 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896464992;
-            } 
-        } 
+            } //End block
+        } //End block
         final RemoteViewsMetaData metaData = mCache.getMetaData();
         synchronized
 (metaData)        {
             int var9B4BF38F0C072312E913D5E5340E1514_80308710 = (metaData.getMappedViewType(typeId));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2067165180 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2067165180;
-        } 
-        
-        
-        
-            
-                
-            
-                
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int typeId = 0;
+        //synchronized (mCache) {
+            //if (mCache.containsMetaDataAt(position)) {
+                //typeId = mCache.getMetaDataAt(position).typeId;
+            //} else {
+                //return 0;
+            //}
+        //}
+        //final RemoteViewsMetaData metaData = mCache.getMetaData();
+        //synchronized (metaData) {
+            //return metaData.getMappedViewType(typeId);
+        //}
     }
 
     
@@ -404,20 +402,20 @@ Object var540C13E9E156B687226421B24F2DF178_1088898032 =         null;
     if(tag != null)            
             {
                 typeId = (Integer) tag;
-            } 
-        } 
+            } //End block
+        } //End block
         int var5F694956811487225D15E973CA38FBAB_19129732 = (typeId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316158778 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316158778;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int typeId = -1;
+        //if (convertView != null) {
+            //Object tag = convertView.getTag(com.android.internal.R.id.rowTypeId);
+            //if (tag != null) {
+                //typeId = (Integer) tag;
+            //}
+        //}
+        //return typeId;
     }
 
     
@@ -434,11 +432,11 @@ Object var540C13E9E156B687226421B24F2DF178_1088898032 =         null;
     if(!isInCache && !isConnected)            
             {
                 requestBindService();
-            } 
+            } //End block
             else
             {
                 hasNewItems = mCache.queuePositionsToBePreloadedFromRequestedPosition(position);
-            } 
+            } //End block
     if(isInCache)            
             {
                 View convertViewChild = null;
@@ -449,7 +447,7 @@ Object var540C13E9E156B687226421B24F2DF178_1088898032 =         null;
                     layout = (RemoteViewsFrameLayout) convertView;
                     convertViewChild = layout.getChildAt(0);
                     convertViewTypeId = getConvertViewTypeId(convertViewChild);
-                } 
+                } //End block
                 Context context = parent.getContext();
                 RemoteViews rv = mCache.getRemoteViewsAt(position);
                 RemoteViewsIndexMetaData indexMetaData = mCache.getMetaDataAt(position);
@@ -465,13 +463,13 @@ Object var540C13E9E156B687226421B24F2DF178_1088898032 =         null;
 View var6BB281F92ECF603ABC908502047A266C_2074764173 =                             layout;
                             var6BB281F92ECF603ABC908502047A266C_2074764173.addTaint(taint);
                             return var6BB281F92ECF603ABC908502047A266C_2074764173;
-                        } 
+                        } //End block
                         layout.removeAllViews();
-                    } 
+                    } //End block
                     else
                     {
                         layout = new RemoteViewsFrameLayout(context);
-                    } 
+                    } //End block
                     View newView = rv.apply(context, parent);
                     newView.setTagInternal(com.android.internal.R.id.rowTypeId,
                             new Integer(typeId));
@@ -479,7 +477,7 @@ View var6BB281F92ECF603ABC908502047A266C_2074764173 =                           
 View var6BB281F92ECF603ABC908502047A266C_1088673947 =                     layout;
                     var6BB281F92ECF603ABC908502047A266C_1088673947.addTaint(taint);
                     return var6BB281F92ECF603ABC908502047A266C_1088673947;
-                } 
+                } //End block
                 catch (Exception e)
                 {
                     RemoteViewsFrameLayout loadingView = null;
@@ -487,17 +485,17 @@ View var6BB281F92ECF603ABC908502047A266C_1088673947 =                     layout
                     synchronized
 (metaData)                    {
                         loadingView = metaData.createLoadingView(position, convertView, parent);
-                    } 
+                    } //End block
 View var1E24B731A35B9B8D5F7D3DE335D90A52_522887549 =                     loadingView;
                     var1E24B731A35B9B8D5F7D3DE335D90A52_522887549.addTaint(taint);
                     return var1E24B731A35B9B8D5F7D3DE335D90A52_522887549;
-                } 
+                } //End block
                 finally 
                 {
     if(hasNewItems)                    
                     loadNextIndexInBackground();
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 RemoteViewsFrameLayout loadingView = null;
@@ -505,17 +503,17 @@ View var1E24B731A35B9B8D5F7D3DE335D90A52_522887549 =                     loading
                 synchronized
 (metaData)                {
                     loadingView = metaData.createLoadingView(position, convertView, parent);
-                } 
+                } //End block
                 mRequestedViews.add(position, loadingView);
                 mCache.queueRequestedPositionToLoad(position);
                 loadNextIndexInBackground();
 View var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201 =                 loadingView;
                 var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201.addTaint(taint);
                 return var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -527,12 +525,12 @@ View var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201 =                 loadingVie
             int varC8132AF0C5C1B198CD092E9E07E18117_2124452284 = (metaData.viewTypeCount);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_71589064 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_71589064;
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final RemoteViewsMetaData metaData = mCache.getMetaData();
+        //synchronized (metaData) {
+            //return metaData.viewTypeCount;
+        //}
     }
 
     
@@ -544,12 +542,12 @@ View var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201 =                 loadingVie
             boolean var009BB28B0DB682E659144E38ACC269E1_990702476 = (metaData.hasStableIds);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_147812251 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_147812251;
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final RemoteViewsMetaData metaData = mCache.getMetaData();
+        //synchronized (metaData) {
+            //return metaData.hasStableIds;
+        //}
     }
 
     
@@ -558,8 +556,8 @@ View var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201 =                 loadingVie
         boolean varA16589CB230D710779025FE5755999D8_1554860390 = (getCount() <= 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_202884623 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_202884623;
-        
-        
+        // ---------- Original Method ----------
+        //return getCount() <= 0;
     }
 
     
@@ -569,19 +567,19 @@ View var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201 =                 loadingVie
         try 
         {
             factory.onDataSetChanged();
-        } 
+        } //End block
         catch (RemoteException e)
         {
             return;
-        } 
+        } //End block
         catch (RuntimeException e)
         {
             return;
-        } 
+        } //End block
         synchronized
 (mCache)        {
             mCache.reset();
-        } 
+        } //End block
         updateTemporaryMetaData();
         mMainQueue.post(new Runnable() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.821 -0400", hash_original_method = "599F6D416D0C87E072E14AB486244C9F", hash_generated_method = "E6817A54A3D5239EFDEB5489BD481077")
@@ -590,20 +588,20 @@ View var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201 =                 loadingVie
             synchronized
 (mCache)            {
                 mCache.commitTemporaryMetaData();
-            } 
+            } //End block
             superNotifyDataSetChanged();
             enqueueDeferredUnbindServiceMessage();
-            
-            
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //synchronized (mCache) {
+                    //mCache.commitTemporaryMetaData();
+                //}
+            //superNotifyDataSetChanged();
+            //enqueueDeferredUnbindServiceMessage();
         }
 });
         mNotifyDataSetChangedAfterOnServiceConnected = false;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -615,44 +613,44 @@ View var1E24B731A35B9B8D5F7D3DE335D90A52_1832670201 =                 loadingVie
     if(mNotifyDataSetChangedAfterOnServiceConnected)            
             {
                 return;
-            } 
+            } //End block
             mNotifyDataSetChangedAfterOnServiceConnected = true;
             requestBindService();
             return;
-        } 
+        } //End block
         mWorkerQueue.post(new Runnable() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.822 -0400", hash_original_method = "041C495048132FF173BFCDF38ABB5707", hash_generated_method = "A0E7FB80DBA0806D596A5B67FD46EBEA")
         @Override
         public void run() {
             onNotifyDataSetChanged();
-            
-            
+            // ---------- Original Method ----------
+            //onNotifyDataSetChanged();
         }
 });
-        
-        
-        
-            
-                
-            
-            
-            
-            
-        
-        
-            
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //mMainQueue.removeMessages(sUnbindServiceMessageType);
+        //if (!mServiceConnection.isConnected()) {
+            //if (mNotifyDataSetChangedAfterOnServiceConnected) {
+                //return;
+            //}
+            //mNotifyDataSetChangedAfterOnServiceConnected = true;
+            //requestBindService();
+            //return;
+        //}
+        //mWorkerQueue.post(new Runnable() {
+            //@Override
+            //public void run() {
+                //onNotifyDataSetChanged();
+            //}
+        //});
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.823 -0400", hash_original_method = "A1EDDF3811A1F9D28CCD28C93269FAD1", hash_generated_method = "13135540CF0C096F7922371AE0301E89")
      void superNotifyDataSetChanged() {
         super.notifyDataSetChanged();
-        
-        
+        // ---------- Original Method ----------
+        //super.notifyDataSetChanged();
     }
 
     
@@ -666,7 +664,7 @@ switch(msg.what){
     if(mServiceConnection.isConnected())        
         {
             mServiceConnection.unbind(mContext, mAppWidgetId, mIntent);
-        } 
+        } //End block
         result = true;
         break;
         default:
@@ -674,19 +672,19 @@ switch(msg.what){
 }        boolean varB4A88417B3D0170D754C647C30B7216A_887648399 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_300360902 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_300360902;
-        
-        
-        
-        
-            
-                
-            
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean result = false;
+        //switch (msg.what) {
+        //case sUnbindServiceMessageType:
+            //if (mServiceConnection.isConnected()) {
+                //mServiceConnection.unbind(mContext, mAppWidgetId, mIntent);
+            //}
+            //result = true;
+            //break;
+        //default:
+            //break;
+        //}
+        //return result;
     }
 
     
@@ -694,9 +692,9 @@ switch(msg.what){
     private void enqueueDeferredUnbindServiceMessage() {
         mMainQueue.removeMessages(sUnbindServiceMessageType);
         mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMainQueue.removeMessages(sUnbindServiceMessageType);
+        //mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
     }
 
     
@@ -705,17 +703,17 @@ switch(msg.what){
     if(!mServiceConnection.isConnected())        
         {
             mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
-        } 
+        } //End block
         mMainQueue.removeMessages(sUnbindServiceMessageType);
         boolean varFA613BFDB2C7CD590F74314A66212A91_164619054 = (mServiceConnection.isConnected());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1214820194 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1214820194;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!mServiceConnection.isConnected()) {
+            //mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
+        //}
+        //mMainQueue.removeMessages(sUnbindServiceMessageType);
+        //return mServiceConnection.isConnected();
     }
 
     
@@ -736,12 +734,11 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.826 -0400", hash_original_method = "7E10295116D6DF0B2080F7EEB3B8FF2F", hash_generated_method = "2CBC4DD0E19B00EEE4BD2962CC59C85E")
         public  RemoteViewsAdapterServiceConnection(RemoteViewsAdapter adapter) {
             mAdapter = new WeakReference<RemoteViewsAdapter>(adapter);
-            
-            
+            // ---------- Original Method ----------
+            //mAdapter = new WeakReference<RemoteViewsAdapter>(adapter);
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.827 -0400", hash_original_method = "8522D247C3B96C2C6A0E0A6DFCD61958", hash_generated_method = "8B3BBB5F44E6978ADC93DD4F467AD41B")
         public synchronized void bind(Context context, int appWidgetId, Intent intent) {
             addTaint(intent.getTaint());
@@ -754,29 +751,28 @@ switch(msg.what){
                     final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
                     mgr.bindRemoteViewsService(appWidgetId, intent, asBinder());
                     mIsConnecting = true;
-                } 
+                } //End block
                 catch (Exception e)
                 {
                     mIsConnecting = false;
                     mIsConnected = false;
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                    
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //if (!mIsConnecting) {
+                //try {
+                    //final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
+                    //mgr.bindRemoteViewsService(appWidgetId, intent, asBinder());
+                    //mIsConnecting = true;
+                //} catch (Exception e) {
+                    //Log.e("RemoteViewsAdapterServiceConnection", "bind(): " + e.getMessage());
+                    //mIsConnecting = false;
+                    //mIsConnected = false;
+                //}
+            //}
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.828 -0400", hash_original_method = "21A72C8FC580D8D0E809A3FEE2FDD93D", hash_generated_method = "A29871953EEC9D3275E7EF1E571F5459")
         public synchronized void unbind(Context context, int appWidgetId, Intent intent) {
             addTaint(intent.getTaint());
@@ -787,28 +783,28 @@ switch(msg.what){
                 final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
                 mgr.unbindRemoteViewsService(appWidgetId, intent);
                 mIsConnecting = false;
-            } 
+            } //End block
             catch (Exception e)
             {
                 mIsConnecting = false;
                 mIsConnected = false;
-            } 
-            
-            
-                
-                
-                
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
+                //mgr.unbindRemoteViewsService(appWidgetId, intent);
+                //mIsConnecting = false;
+            //} catch (Exception e) {
+                //Log.e("RemoteViewsAdapterServiceConnection", "unbind(): " + e.getMessage());
+                //mIsConnecting = false;
+                //mIsConnected = false;
+            //}
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.830 -0400", hash_original_method = "08CA49D02360F6C2A6BB2EFEF11F092E", hash_generated_method = "B99300D1DB97D1E7C5B006F848170611")
         public synchronized void onServiceConnected(IBinder service) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             mRemoteViewsFactory = IRemoteViewsFactory.Stub.asInterface(service);
             final RemoteViewsAdapter adapter = mAdapter.get();
     if(adapter == null)            
@@ -820,7 +816,7 @@ switch(msg.what){
     if(adapter.mNotifyDataSetChangedAfterOnServiceConnected)                
                 {
                     adapter.onNotifyDataSetChanged();
-                } 
+                } //End block
                 else
                 {
                     IRemoteViewsFactory factory = adapter.mServiceConnection.getRemoteViewsFactory();
@@ -829,15 +825,15 @@ switch(msg.what){
     if(!factory.isCreated())                        
                         {
                             factory.onDataSetChanged();
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (RemoteException e)
                     {
                         return;
-                    } 
+                    } //End block
                     catch (RuntimeException e)
                     {
-                    } 
+                    } //End block
                     adapter.updateTemporaryMetaData();
                     adapter.mMainQueue.post(new Runnable() {                
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.829 -0400", hash_original_method = "15183F885AD888FE838F648B256AD495", hash_generated_method = "013EE7FDC19C4B344416CEA2C0C5B1A0")
@@ -846,39 +842,39 @@ switch(msg.what){
                     synchronized
 (adapter.mCache)                    {
                         adapter.mCache.commitTemporaryMetaData();
-                    } 
+                    } //End block
                     final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
     if(callback != null)                    
                     {
                         callback.onRemoteAdapterConnected();
-                    } 
-                    
-                    
-                                    
-                                
-                    
-                                    
-                    
-                                    
-                                
+                    } //End block
+                    // ---------- Original Method ----------
+                    //synchronized (adapter.mCache) {
+                                    //adapter.mCache.commitTemporaryMetaData();
+                                //}
+                    //final RemoteAdapterConnectionCallback callback =
+                                    //adapter.mCallback.get();
+                    //if (callback != null) {
+                                    //callback.onRemoteAdapterConnected();
+                                //}
                 }
 });
-                } 
+                } //End block
                 adapter.enqueueDeferredUnbindServiceMessage();
                 mIsConnected = true;
                 mIsConnecting = false;
-                
-                
+                // ---------- Original Method ----------
+                // Original Method Too Long, Refer to Original Implementation
             }
 });
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.830 -0400", hash_original_method = "6AD1D56D3A677AEA97BA981AA56DEDEB", hash_generated_method = "CB8DA390D47991A6EF25111352A9359D")
         public synchronized void onServiceDisconnected() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             mIsConnected = false;
             mIsConnecting = false;
             mRemoteViewsFactory = null;
@@ -894,53 +890,51 @@ switch(msg.what){
     if(callback != null)                
                 {
                     callback.onRemoteAdapterDisconnected();
-                } 
-                
-                
-                
-                
-                        
-                    
+                } //End block
+                // ---------- Original Method ----------
+                //adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
+                //final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
+                //if (callback != null) {
+                        //callback.onRemoteAdapterDisconnected();
+                    //}
             }
 });
-            
-            
-            
-            
-            
-            
-            
-                
-                
-                    
-                    
-                    
-                        
-                    
-                
-            
+            // ---------- Original Method ----------
+            //mIsConnected = false;
+            //mIsConnecting = false;
+            //mRemoteViewsFactory = null;
+            //final RemoteViewsAdapter adapter = mAdapter.get();
+            //if (adapter == null) return;
+            //adapter.mMainQueue.post(new Runnable() {
+                //@Override
+                //public void run() {
+                    //adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
+                    //final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
+                    //if (callback != null) {
+                        //callback.onRemoteAdapterDisconnected();
+                    //}
+                //}
+            //});
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.831 -0400", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "D3BC84D5A13E1FF819F4F7E9B7F92139")
         public synchronized IRemoteViewsFactory getRemoteViewsFactory() {
 IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_531417945 =             mRemoteViewsFactory;
             varAF67D4556746D546103D77FCAD8F9B06_531417945.addTaint(taint);
             return varAF67D4556746D546103D77FCAD8F9B06_531417945;
-            
-            
+            // ---------- Original Method ----------
+            //return mRemoteViewsFactory;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.831 -0400", hash_original_method = "EB76BB3DACEAD8AEFFF382088AE69C8F", hash_generated_method = "0C16019A17EC0C7B2D3B4AF8B5F7005A")
         public synchronized boolean isConnected() {
             boolean varCC8BFB84898B22492B7F55096CBDF6CC_648476046 = (mIsConnected);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1657047761 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1657047761;
-            
-            
+            // ---------- Original Method ----------
+            //return mIsConnected;
         }
 
         
@@ -954,29 +948,29 @@ IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_531417945 =             
         public  RemoteViewsFrameLayout(Context context) {
             super(context);
             addTaint(context.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.832 -0400", hash_original_method = "376943697B2A7028E475228F1F5698F0", hash_generated_method = "965322F5E61FD90578F02C19D3641151")
         public void onRemoteViewsLoaded(RemoteViews view) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(view.getTaint());
             try 
             {
                 removeAllViews();
                 addView(view.apply(getContext(), this));
-            } 
+            } //End block
             catch (Exception e)
             {
-            } 
-            
-            
-                
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //removeAllViews();
+                //addView(view.apply(getContext(), this));
+            //} catch (Exception e) {
+                //Log.e(TAG, "Failed to apply RemoteViews.");
+            //}
         }
 
         
@@ -992,8 +986,8 @@ IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_531417945 =             
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.832 -0400", hash_original_method = "6FF139149B49AE6D730172FAFB07DD3B", hash_generated_method = "04F49291A2A41B3FE0D9405505C49E32")
         public  RemoteViewsFrameLayoutRefSet() {
             mReferences = new HashMap<Integer, LinkedList<RemoteViewsFrameLayout>>();
-            
-            
+            // ---------- Original Method ----------
+            //mReferences = new HashMap<Integer, LinkedList<RemoteViewsFrameLayout>>();
         }
 
         
@@ -1006,23 +1000,23 @@ IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_531417945 =             
     if(mReferences.containsKey(pos))            
             {
                 refs = mReferences.get(pos);
-            } 
+            } //End block
             else
             {
                 refs = new LinkedList<RemoteViewsFrameLayout>();
                 mReferences.put(pos, refs);
-            } 
+            } //End block
             refs.add(layout);
-            
-            
-            
-            
-                
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //final Integer pos = position;
+            //LinkedList<RemoteViewsFrameLayout> refs;
+            //if (mReferences.containsKey(pos)) {
+                //refs = mReferences.get(pos);
+            //} else {
+                //refs = new LinkedList<RemoteViewsFrameLayout>();
+                //mReferences.put(pos, refs);
+            //}
+            //refs.add(layout);
         }
 
         
@@ -1040,29 +1034,29 @@ IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_531417945 =             
 for(RemoteViewsFrameLayout ref : refs)
                 {
                     ref.onRemoteViewsLoaded(view);
-                } 
+                } //End block
                 refs.clear();
                 mReferences.remove(pos);
-            } 
-            
-            
-            
-            
-                
-                
-                    
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (view == null) return;
+            //final Integer pos = position;
+            //if (mReferences.containsKey(pos)) {
+                //final LinkedList<RemoteViewsFrameLayout> refs = mReferences.get(pos);
+                //for (final RemoteViewsFrameLayout ref : refs) {
+                    //ref.onRemoteViewsLoaded(view);
+                //}
+                //refs.clear();
+                //mReferences.remove(pos);
+            //}
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.833 -0400", hash_original_method = "A232CA036EBBA3D167286637450EBE5D", hash_generated_method = "24EBFCA05188B87B49D1A34189D809C7")
         public void clear() {
             mReferences.clear();
-            
-            
+            // ---------- Original Method ----------
+            //mReferences.clear();
         }
 
         
@@ -1096,8 +1090,8 @@ for(RemoteViewsFrameLayout ref : refs)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.834 -0400", hash_original_method = "A4C124A869EBADBA9AE6D60BBB8A7C9F", hash_generated_method = "3DCD91096CB130F5938CD8D146151676")
         public  RemoteViewsMetaData() {
             reset();
-            
-            
+            // ---------- Original Method ----------
+            //reset();
         }
 
         
@@ -1109,14 +1103,14 @@ for(RemoteViewsFrameLayout ref : refs)
                 viewTypeCount = d.viewTypeCount;
                 hasStableIds = d.hasStableIds;
                 setLoadingViewTemplates(d.mUserLoadingView, d.mFirstView);
-            } 
-            
-            
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (d) {
+                //count = d.count;
+                //viewTypeCount = d.viewTypeCount;
+                //hasStableIds = d.hasStableIds;
+                //setLoadingViewTemplates(d.mUserLoadingView, d.mFirstView);
+            //}
         }
 
         
@@ -1129,18 +1123,17 @@ for(RemoteViewsFrameLayout ref : refs)
             mFirstView = null;
             mFirstViewHeight = 0;
             mTypeIdIndexMap.clear();
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //count = 0;
+            //viewTypeCount = 1;
+            //hasStableIds = true;
+            //mUserLoadingView = null;
+            //mFirstView = null;
+            //mFirstViewHeight = 0;
+            //mTypeIdIndexMap.clear();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.836 -0400", hash_original_method = "E784F858D155FE6C94A91B290D47017F", hash_generated_method = "996C18A8F0BEBB2D319EAD8B9E9DDAB6")
         public void setLoadingViewTemplates(RemoteViews loadingView, RemoteViews firstView) {
             mUserLoadingView = loadingView;
@@ -1148,13 +1141,13 @@ for(RemoteViewsFrameLayout ref : refs)
             {
                 mFirstView = firstView;
                 mFirstViewHeight = -1;
-            } 
-            
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mUserLoadingView = loadingView;
+            //if (firstView != null) {
+                //mFirstView = firstView;
+                //mFirstViewHeight = -1;
+            //}
         }
 
         
@@ -1166,7 +1159,7 @@ for(RemoteViewsFrameLayout ref : refs)
                 int var2C51CE7380EBD7940D26243A0F0E9133_1564249057 = (mTypeIdIndexMap.get(typeId));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129254480 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129254480;
-            } 
+            } //End block
             else
             {
                 int incrementalTypeId = mTypeIdIndexMap.size() + 1;
@@ -1174,15 +1167,15 @@ for(RemoteViewsFrameLayout ref : refs)
                 int varCC0537845765F58F5A8E0E117616BC13_2014561710 = (incrementalTypeId);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1030390567 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1030390567;
-            } 
-            
-            
-                
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mTypeIdIndexMap.containsKey(typeId)) {
+                //return mTypeIdIndexMap.get(typeId);
+            //} else {
+                //int incrementalTypeId = mTypeIdIndexMap.size() + 1;
+                //mTypeIdIndexMap.put(typeId, incrementalTypeId);
+                //return incrementalTypeId;
+            //}
         }
 
         
@@ -1206,11 +1199,11 @@ for(RemoteViewsFrameLayout ref : refs)
                                 new Integer(0));
                         layout.addView(loadingView);
                         customLoadingViewAvailable = true;
-                    } 
+                    } //End block
                     catch (Exception e)
                     {
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(!customLoadingViewAvailable)                
                 {
     if(mFirstViewHeight < 0)                    
@@ -1223,28 +1216,28 @@ for(RemoteViewsFrameLayout ref : refs)
                                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
                             mFirstViewHeight = firstView.getMeasuredHeight();
                             mFirstView = null;
-                        } 
+                        } //End block
                         catch (Exception e)
                         {
                             float density = mContext.getResources().getDisplayMetrics().density;
                             mFirstViewHeight = (int)
                                     Math.round(sDefaultLoadingViewHeight * density);
                             mFirstView = null;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     TextView loadingTextView = (TextView) mLayoutInflater.inflate(
                             com.android.internal.R.layout.remote_views_adapter_default_loading_view,
                             layout, false);
                     loadingTextView.setHeight(mFirstViewHeight);
                     loadingTextView.setTag(new Integer(0));
                     layout.addView(loadingTextView);
-                } 
-            } 
+                } //End block
+            } //End block
 RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_267645710 =             layout;
             var6BB281F92ECF603ABC908502047A266C_267645710.addTaint(taint);
             return var6BB281F92ECF603ABC908502047A266C_267645710;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1269,8 +1262,8 @@ RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_267645710 =          
             addTaint(itemId);
             addTaint(v.getTaint());
             set(v, itemId, requested);
-            
-            
+            // ---------- Original Method ----------
+            //set(v, itemId, requested);
         }
 
         
@@ -1282,13 +1275,13 @@ RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_267645710 =          
             else
             typeId = 0;
             isRequested = requested;
-            
-            
-            
-                
-            
-                
-            
+            // ---------- Original Method ----------
+            //itemId = id;
+            //if (v != null)
+                //typeId = v.getLayoutId();
+            //else
+                //typeId = 0;
+            //isRequested = requested;
         }
 
         
@@ -1344,18 +1337,18 @@ RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_267645710 =          
             mRequestedIndices = new HashSet<Integer>();
             mLastRequestedIndex = -1;
             mLoadIndices = new HashSet<Integer>();
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mMaxCount = maxCacheSize;
+            //mMaxCountSlack = Math.round(sMaxCountSlackPercent * (mMaxCount / 2));
+            //mPreloadLowerBound = 0;
+            //mPreloadUpperBound = -1;
+            //mMetaData = new RemoteViewsMetaData();
+            //mTemporaryMetaData = new RemoteViewsMetaData();
+            //mIndexMetaData = new HashMap<Integer, RemoteViewsIndexMetaData>();
+            //mIndexRemoteViews = new HashMap<Integer, RemoteViews>();
+            //mRequestedIndices = new HashSet<Integer>();
+            //mLastRequestedIndex = -1;
+            //mLoadIndices = new HashSet<Integer>();
         }
 
         
@@ -1368,47 +1361,45 @@ RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_267645710 =          
     if(mIndexRemoteViews.size() >= mMaxCount)            
             {
                 mIndexRemoteViews.remove(getFarthestPositionFrom(position));
-            } 
+            } //End block
             int pruneFromPosition = (mLastRequestedIndex > -1) ? mLastRequestedIndex : position;
             while
 (getRemoteViewsBitmapMemoryUsage() >= sMaxMemoryLimitInBytes)            
             {
                 mIndexRemoteViews.remove(getFarthestPositionFrom(pruneFromPosition));
-            } 
+            } //End block
     if(mIndexMetaData.containsKey(position))            
             {
                 final RemoteViewsIndexMetaData metaData = mIndexMetaData.get(position);
                 metaData.set(v, itemId, isRequested);
-            } 
+            } //End block
             else
             {
                 mIndexMetaData.put(position, new RemoteViewsIndexMetaData(v, itemId, isRequested));
-            } 
+            } //End block
             mIndexRemoteViews.put(position, v);
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.841 -0400", hash_original_method = "CE79B98C6EC29820DC37D3CBF74EA749", hash_generated_method = "5AB91FDF4489229438094A0DF8A71C39")
         public RemoteViewsMetaData getMetaData() {
 RemoteViewsMetaData var9D2A3B5F7701188602630E4A3AA72144_2033889586 =             mMetaData;
             var9D2A3B5F7701188602630E4A3AA72144_2033889586.addTaint(taint);
             return var9D2A3B5F7701188602630E4A3AA72144_2033889586;
-            
-            
+            // ---------- Original Method ----------
+            //return mMetaData;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.842 -0400", hash_original_method = "1D24E06D74C40EECF68D58BAFBBECA77", hash_generated_method = "9334AAA63976210AB4248B3BDE734113")
         public RemoteViewsMetaData getTemporaryMetaData() {
 RemoteViewsMetaData var72BECA95754275A213FC731900C43798_798158070 =             mTemporaryMetaData;
             var72BECA95754275A213FC731900C43798_798158070.addTaint(taint);
             return var72BECA95754275A213FC731900C43798_798158070;
-            
-            
+            // ---------- Original Method ----------
+            //return mTemporaryMetaData;
         }
 
         
@@ -1420,15 +1411,15 @@ RemoteViewsMetaData var72BECA95754275A213FC731900C43798_798158070 =             
 RemoteViews var41F06D658A14D25FF31D2714734A3B7B_1009479106 =                 mIndexRemoteViews.get(position);
                 var41F06D658A14D25FF31D2714734A3B7B_1009479106.addTaint(taint);
                 return var41F06D658A14D25FF31D2714734A3B7B_1009479106;
-            } 
+            } //End block
 RemoteViews var540C13E9E156B687226421B24F2DF178_116494809 =             null;
             var540C13E9E156B687226421B24F2DF178_116494809.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_116494809;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mIndexRemoteViews.containsKey(position)) {
+                //return mIndexRemoteViews.get(position);
+            //}
+            //return null;
         }
 
         
@@ -1440,15 +1431,15 @@ RemoteViews var540C13E9E156B687226421B24F2DF178_116494809 =             null;
 RemoteViewsIndexMetaData var575E413A51040B3C942670D75B4767CB_1511318802 =                 mIndexMetaData.get(position);
                 var575E413A51040B3C942670D75B4767CB_1511318802.addTaint(taint);
                 return var575E413A51040B3C942670D75B4767CB_1511318802;
-            } 
+            } //End block
 RemoteViewsIndexMetaData var540C13E9E156B687226421B24F2DF178_1754380580 =             null;
             var540C13E9E156B687226421B24F2DF178_1754380580.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1754380580;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mIndexMetaData.containsKey(position)) {
+                //return mIndexMetaData.get(position);
+            //}
+            //return null;
         }
 
         
@@ -1459,14 +1450,14 @@ RemoteViewsIndexMetaData var540C13E9E156B687226421B24F2DF178_1754380580 =       
                 synchronized
 (mMetaData)                {
                     mMetaData.set(mTemporaryMetaData);
-                } 
-            } 
-            
-            
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mTemporaryMetaData) {
+                //synchronized (mMetaData) {
+                    //mMetaData.set(mTemporaryMetaData);
+                //}
+            //}
         }
 
         
@@ -1479,20 +1470,20 @@ for(Integer i : mIndexRemoteViews.keySet())
     if(v != null)                
                 {
                     mem += v.estimateBitmapMemoryUsage();
-                } 
-            } 
+                } //End block
+            } //End block
             int varAFC4FC7E48A0710A1DC94EF3E8BC5764_1576080969 = (mem);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143519674 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143519674;
-            
-            
-            
-                
-                
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //int mem = 0;
+            //for (Integer i : mIndexRemoteViews.keySet()) {
+                //final RemoteViews v = mIndexRemoteViews.get(i);
+                //if (v != null) {
+                    //mem += v.estimateBitmapMemoryUsage();
+                //}
+            //}
+            //return mem;
         }
 
         
@@ -1510,24 +1501,24 @@ for(int i : mIndexRemoteViews.keySet())
                 {
                     maxDistIndexNonRequested = i;
                     maxDistNonRequested = dist;
-                } 
+                } //End block
     if(dist > maxDist)                
                 {
                     maxDistIndex = i;
                     maxDist = dist;
-                } 
-            } 
+                } //End block
+            } //End block
     if(maxDistIndexNonRequested > -1)            
             {
                 int varC12DB98CAA427D99B604C7BDEE26CBD2_433941313 = (maxDistIndexNonRequested);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194408317 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194408317;
-            } 
+            } //End block
             int var9E43A0CF6731D9E1442BFF36E775B65E_1702166527 = (maxDistIndex);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1775650678 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1775650678;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1538,13 +1529,13 @@ for(int i : mIndexRemoteViews.keySet())
 (mLoadIndices)            {
                 mRequestedIndices.add(position);
                 mLoadIndices.add(position);
-            } 
-            
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mLastRequestedIndex = position;
+            //synchronized (mLoadIndices) {
+                //mRequestedIndices.add(position);
+                //mLoadIndices.add(position);
+            //}
         }
 
         
@@ -1558,13 +1549,13 @@ for(int i : mIndexRemoteViews.keySet())
                     boolean var68934A3E9455FA72420237EB05902327_528158316 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18068643 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_18068643;
-                } 
-            } 
+                } //End block
+            } //End block
             int count = 0;
             synchronized
 (mMetaData)            {
                 count = mMetaData.count;
-            } 
+            } //End block
             synchronized
 (mLoadIndices)            {
                 mLoadIndices.clear();
@@ -1577,14 +1568,14 @@ for(int i : mIndexRemoteViews.keySet())
 for(int i = effectiveLowerBound;i <= effectiveUpperBound;++i)
                 {
                     mLoadIndices.add(i);
-                } 
+                } //End block
                 mLoadIndices.removeAll(mIndexRemoteViews.keySet());
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_186336760 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1398182025 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1398182025;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1600,7 +1591,7 @@ for(int i = effectiveLowerBound;i <= effectiveUpperBound;++i)
                     int[] var0F0B96631A55AFEDE575F00BE8B35E64_1304901503 = (new int[]{i.intValue(), 1});
                                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_701248080 = {getTaintInt()};
                     return varB4CCCA26F9DB9189C32F33E82D425CFB_701248080;
-                } 
+                } //End block
     if(!mLoadIndices.isEmpty())                
                 {
                     Integer i = mLoadIndices.iterator().next();
@@ -1608,26 +1599,26 @@ for(int i = effectiveLowerBound;i <= effectiveUpperBound;++i)
                     int[] varAF6664BF1B3E7952D5EE406AE7467346_627452818 = (new int[]{i.intValue(), 0});
                                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_2085285982 = {getTaintInt()};
                     return varB4CCCA26F9DB9189C32F33E82D425CFB_2085285982;
-                } 
+                } //End block
                 int[] var9010B87C7D73BB6FE9F7388D0B0798DF_1713750763 = (new int[]{-1, 0});
                                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_649214153 = {getTaintInt()};
                 return varB4CCCA26F9DB9189C32F33E82D425CFB_649214153;
-            } 
-            
-            
-                
-                    
-                    
-                    
-                    
-                
-                
-                    
-                    
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mLoadIndices) {
+                //if (!mRequestedIndices.isEmpty()) {
+                    //Integer i = mRequestedIndices.iterator().next();
+                    //mRequestedIndices.remove(i);
+                    //mLoadIndices.remove(i);
+                    //return new int[]{i.intValue(), 1};
+                //}
+                //if (!mLoadIndices.isEmpty()) {
+                    //Integer i = mLoadIndices.iterator().next();
+                    //mLoadIndices.remove(i);
+                    //return new int[]{i.intValue(), 0};
+                //}
+                //return new int[]{-1, 0};
+            //}
         }
 
         
@@ -1637,8 +1628,8 @@ for(int i = effectiveLowerBound;i <= effectiveUpperBound;++i)
             boolean var50C03CE0AAA9B0A0CAB1DDE734019B8F_1242526045 = (mIndexRemoteViews.containsKey(position));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_96063057 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_96063057;
-            
-            
+            // ---------- Original Method ----------
+            //return mIndexRemoteViews.containsKey(position);
         }
 
         
@@ -1648,8 +1639,8 @@ for(int i = effectiveLowerBound;i <= effectiveUpperBound;++i)
             boolean var301052880A22C4797E996A7194F5223F_436205910 = (mIndexMetaData.containsKey(position));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_550995641 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_550995641;
-            
-            
+            // ---------- Original Method ----------
+            //return mIndexMetaData.containsKey(position);
         }
 
         
@@ -1664,17 +1655,17 @@ for(int i = effectiveLowerBound;i <= effectiveUpperBound;++i)
 (mLoadIndices)            {
                 mRequestedIndices.clear();
                 mLoadIndices.clear();
-            } 
-            
-            
-            
-            
-            
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mPreloadLowerBound = 0;
+            //mPreloadUpperBound = -1;
+            //mLastRequestedIndex = -1;
+            //mIndexRemoteViews.clear();
+            //mIndexMetaData.clear();
+            //synchronized (mLoadIndices) {
+                //mRequestedIndices.clear();
+                //mLoadIndices.clear();
+            //}
         }
 
         

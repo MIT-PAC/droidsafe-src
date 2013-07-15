@@ -1,6 +1,6 @@
 package android.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public final class SmsManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.474 -0400", hash_original_method = "20095975633950A922641E0460F74587", hash_generated_method = "EA8DBC7FD3892C316F9DA405480D8C8E")
     private  SmsManager() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -37,38 +37,38 @@ public final class SmsManager {
             IllegalArgumentException varB42BCA9F84EFE865520615EB774F2C73_952329134 = new IllegalArgumentException("Invalid destinationAddress");
             varB42BCA9F84EFE865520615EB774F2C73_952329134.addTaint(taint);
             throw varB42BCA9F84EFE865520615EB774F2C73_952329134;
-        } 
+        } //End block
     if(TextUtils.isEmpty(text))        
         {
             IllegalArgumentException var76F1D777251ACBD5299883F4E21EA031_1475084043 = new IllegalArgumentException("Invalid message body");
             var76F1D777251ACBD5299883F4E21EA031_1475084043.addTaint(taint);
             throw var76F1D777251ACBD5299883F4E21EA031_1475084043;
-        } 
+        } //End block
         try 
         {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
     if(iccISms != null)            
             {
                 iccISms.sendText(destinationAddress, scAddress, text, sentIntent, deliveryIntent);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (TextUtils.isEmpty(destinationAddress)) {
+            //throw new IllegalArgumentException("Invalid destinationAddress");
+        //}
+        //if (TextUtils.isEmpty(text)) {
+            //throw new IllegalArgumentException("Invalid message body");
+        //}
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //iccISms.sendText(destinationAddress, scAddress, text, sentIntent, deliveryIntent);
+            //}
+        //} catch (RemoteException ex) {
+        //}
     }
 
     
@@ -78,8 +78,8 @@ public final class SmsManager {
 ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMessage.fragmentText(text);
         var385443288FCC3765E7177723CA8956F8_67906355.addTaint(taint);
         return var385443288FCC3765E7177723CA8956F8_67906355;
-        
-        
+        // ---------- Original Method ----------
+        //return SmsMessage.fragmentText(text);
     }
 
     
@@ -97,13 +97,13 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
             IllegalArgumentException varB42BCA9F84EFE865520615EB774F2C73_1083870194 = new IllegalArgumentException("Invalid destinationAddress");
             varB42BCA9F84EFE865520615EB774F2C73_1083870194.addTaint(taint);
             throw varB42BCA9F84EFE865520615EB774F2C73_1083870194;
-        } 
+        } //End block
     if(parts == null || parts.size() < 1)        
         {
             IllegalArgumentException var76F1D777251ACBD5299883F4E21EA031_503762929 = new IllegalArgumentException("Invalid message body");
             var76F1D777251ACBD5299883F4E21EA031_503762929.addTaint(taint);
             throw var76F1D777251ACBD5299883F4E21EA031_503762929;
-        } 
+        } //End block
     if(parts.size() > 1)        
         {
             try 
@@ -113,12 +113,12 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
                 {
                     iccISms.sendMultipartText(destinationAddress, scAddress, parts,
                             sentIntents, deliveryIntents);
-                } 
-            } 
+                } //End block
+            } //End block
             catch (RemoteException ex)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             PendingIntent sentIntent = null;
@@ -126,16 +126,16 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     if(sentIntents != null && sentIntents.size() > 0)            
             {
                 sentIntent = sentIntents.get(0);
-            } 
+            } //End block
     if(deliveryIntents != null && deliveryIntents.size() > 0)            
             {
                 deliveryIntent = deliveryIntents.get(0);
-            } 
+            } //End block
             sendTextMessage(destinationAddress, scAddress, parts.get(0),
                     sentIntent, deliveryIntent);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -154,13 +154,13 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
             IllegalArgumentException varB42BCA9F84EFE865520615EB774F2C73_567653370 = new IllegalArgumentException("Invalid destinationAddress");
             varB42BCA9F84EFE865520615EB774F2C73_567653370.addTaint(taint);
             throw varB42BCA9F84EFE865520615EB774F2C73_567653370;
-        } 
+        } //End block
     if(data == null || data.length == 0)        
         {
             IllegalArgumentException var289B04CD7DC8DEB1C167AAE9F10470FD_1810711423 = new IllegalArgumentException("Invalid message data");
             var289B04CD7DC8DEB1C167AAE9F10470FD_1810711423.addTaint(taint);
             throw var289B04CD7DC8DEB1C167AAE9F10470FD_1810711423;
-        } 
+        } //End block
         try 
         {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
@@ -168,31 +168,30 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
             {
                 iccISms.sendData(destinationAddress, scAddress, destinationPort & 0xFFFF,
                         data, sentIntent, deliveryIntent);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-            
-            
-                
-                        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (TextUtils.isEmpty(destinationAddress)) {
+            //throw new IllegalArgumentException("Invalid destinationAddress");
+        //}
+        //if (data == null || data.length == 0) {
+            //throw new IllegalArgumentException("Invalid message data");
+        //}
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //iccISms.sendData(destinationAddress, scAddress, destinationPort & 0xFFFF,
+                        //data, sentIntent, deliveryIntent);
+            //}
+        //} catch (RemoteException ex) {
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static SmsManager getDefault() {
+        public static SmsManager getDefault() {
         return sInstance;
     }
 
@@ -209,24 +208,24 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     if(iccISms != null)            
             {
                 success = iccISms.copyMessageToIccEf(status, pdu, smsc);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_437576262 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1130195240 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1130195240;
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean success = false;
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //success = iccISms.copyMessageToIccEf(status, pdu, smsc);
+            //}
+        //} catch (RemoteException ex) {
+        //}
+        //return success;
     }
 
     
@@ -242,26 +241,26 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     if(iccISms != null)            
             {
                 success = iccISms.updateMessageOnIccEf(messageIndex, STATUS_ON_ICC_FREE, pdu);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_1935479353 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1001705026 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1001705026;
-        
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean success = false;
+        //byte[] pdu = new byte[IccConstants.SMS_RECORD_LENGTH-1];
+        //Arrays.fill(pdu, (byte)0xff);
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //success = iccISms.updateMessageOnIccEf(messageIndex, STATUS_ON_ICC_FREE, pdu);
+            //}
+        //} catch (RemoteException ex) {
+        //}
+        //return success;
     }
 
     
@@ -277,24 +276,24 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     if(iccISms != null)            
             {
                 success = iccISms.updateMessageOnIccEf(messageIndex, newStatus, pdu);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_1874285331 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1050526755 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1050526755;
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean success = false;
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //success = iccISms.updateMessageOnIccEf(messageIndex, newStatus, pdu);
+            //}
+        //} catch (RemoteException ex) {
+        //}
+        //return success;
     }
 
     
@@ -321,24 +320,24 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     if(iccISms != null)            
             {
                 success = iccISms.enableCellBroadcast(messageIdentifier);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_1436565752 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_702304396 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_702304396;
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean success = false;
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //success = iccISms.enableCellBroadcast(messageIdentifier);
+            //}
+        //} catch (RemoteException ex) {
+        //}
+        //return success;
     }
 
     
@@ -352,24 +351,24 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     if(iccISms != null)            
             {
                 success = iccISms.disableCellBroadcast(messageIdentifier);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_1456859811 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_832718011 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_832718011;
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean success = false;
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //success = iccISms.disableCellBroadcast(messageIdentifier);
+            //}
+        //} catch (RemoteException ex) {
+        //}
+        //return success;
     }
 
     
@@ -384,24 +383,24 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     if(iccISms != null)            
             {
                 success = iccISms.enableCellBroadcastRange(startMessageId, endMessageId);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_580471993 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_862273498 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_862273498;
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean success = false;
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //success = iccISms.enableCellBroadcastRange(startMessageId, endMessageId);
+            //}
+        //} catch (RemoteException ex) {
+        //}
+        //return success;
     }
 
     
@@ -416,24 +415,24 @@ ArrayList<String> var385443288FCC3765E7177723CA8956F8_67906355 =         SmsMess
     if(iccISms != null)            
             {
                 success = iccISms.disableCellBroadcastRange(startMessageId, endMessageId);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_555099476 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1485711505 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1485711505;
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean success = false;
+        //try {
+            //ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
+            //if (iccISms != null) {
+                //success = iccISms.disableCellBroadcastRange(startMessageId, endMessageId);
+            //}
+        //} catch (RemoteException ex) {
+        //}
+        //return success;
     }
 
     

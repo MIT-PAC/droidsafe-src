@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,12 +10,11 @@ public class StateSet {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.358 -0400", hash_original_method = "79AB7B9503F54BBEB1788CC595AD92D4", hash_generated_method = "8101277388431BDA9DE6F2CA5C72C0FA")
     public  StateSet() {
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isWildCard(int[] stateSetOrSpec) {
+        public static boolean isWildCard(int[] stateSetOrSpec) {
         return stateSetOrSpec.length == 0 || stateSetOrSpec[0] == 0;
     }
 
@@ -65,8 +64,7 @@ public class StateSet {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean stateSetMatches(int[] stateSpec, int state) {
+        public static boolean stateSetMatches(int[] stateSpec, int state) {
         int stateSpecSize = stateSpec.length;
         for (int i = 0; i < stateSpecSize; i++) {
             int stateSpecState = stateSpec[i];

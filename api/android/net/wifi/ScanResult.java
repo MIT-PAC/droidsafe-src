@@ -1,6 +1,6 @@
 package android.net.wifi;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,12 +31,12 @@ public class ScanResult implements Parcelable {
         this.capabilities = caps;
         this.level = level;
         this.frequency = frequency;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.SSID = SSID;
+        //this.BSSID = BSSID;
+        //this.capabilities = caps;
+        //this.level = level;
+        //this.frequency = frequency;
     }
 
     
@@ -58,31 +58,30 @@ public class ScanResult implements Parcelable {
 String var2460B846747F8B22185AD8BE722266A5_756986641 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_756986641.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_756986641;
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
+        // ---------- Original Method ----------
+        //StringBuffer sb = new StringBuffer();
+        //String none = "<none>";
+        //sb.append("SSID: ").
+            //append(SSID == null ? none : SSID).
+            //append(", BSSID: ").
+            //append(BSSID == null ? none : BSSID).
+            //append(", capabilities: ").
+            //append(capabilities == null ? none : capabilities).
+            //append(", level: ").
+            //append(level).
+            //append(", frequency: ").
+            //append(frequency);
+        //return sb.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.686 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "473A45A5561B1BE45BC594A9FB195DCF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1692969078 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576218325 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576218325;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -95,12 +94,12 @@ String var2460B846747F8B22185AD8BE722266A5_756986641 =         sb.toString();
         dest.writeString(capabilities);
         dest.writeInt(level);
         dest.writeInt(frequency);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeString(SSID);
+        //dest.writeString(BSSID);
+        //dest.writeString(capabilities);
+        //dest.writeInt(level);
+        //dest.writeInt(frequency);
     }
 
     
@@ -122,7 +121,7 @@ String var2460B846747F8B22185AD8BE722266A5_756986641 =         sb.toString();
                 return new ScanResult[size];
             }
         };
-    
+    // orphaned legacy method
     public ScanResult createFromParcel(Parcel in) {
                 return new ScanResult(
                     in.readString(),
@@ -133,7 +132,7 @@ String var2460B846747F8B22185AD8BE722266A5_756986641 =         sb.toString();
                 );
             }
     
-    
+    // orphaned legacy method
     public ScanResult[] newArray(int size) {
                 return new ScanResult[size];
             }

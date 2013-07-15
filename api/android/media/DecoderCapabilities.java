@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class DecoderCapabilities {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.751 -0400", hash_original_method = "599AF8A39C7326727CA1A71C57B2EC2D", hash_generated_method = "CD6D75BD19893A81BF93FAF6BD81BA03")
     private  DecoderCapabilities() {
-        
+        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class RedirectException extends ProtocolException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.148 -0400", hash_original_method = "8993A7EF0CD7BC2114A435E71DE5C46D", hash_generated_method = "BDFE7BE5C52476C470E3F4CFC35AC311")
     public  RedirectException() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -19,7 +19,7 @@ public class RedirectException extends ProtocolException {
     public  RedirectException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -28,7 +28,7 @@ public class RedirectException extends ProtocolException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

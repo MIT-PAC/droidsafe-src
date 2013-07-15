@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.dom;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,31 +14,29 @@ public final class CDATASectionImpl extends TextImpl implements CDATASection {
         super(document, data);
         addTaint(data.getTaint());
         addTaint(document.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.510 -0400", hash_original_method = "C06D7633E1EEC458B6238549761E1C34", hash_generated_method = "6ECC0879E49582070FD688E0593245A8")
     @Override
     public String getNodeName() {
 String varDC702726E92C9EDAE6B41AC7258DBE79_526653206 =         "#cdata-section";
         varDC702726E92C9EDAE6B41AC7258DBE79_526653206.addTaint(taint);
         return varDC702726E92C9EDAE6B41AC7258DBE79_526653206;
-        
-        
+        // ---------- Original Method ----------
+        //return "#cdata-section";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.510 -0400", hash_original_method = "0AC4013C7F1EC92B6047139E15C869E6", hash_generated_method = "D21A7E977A319879C3D173BA902AF83B")
     @Override
     public short getNodeType() {
         short var7A791F8C11E21A5866817DB050CCE9AA_335377968 = (Node.CDATA_SECTION_NODE);
                 short var4F09DAA9D95BCB166A302407A0E0BABE_503209228 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_503209228;
-        
-        
+        // ---------- Original Method ----------
+        //return Node.CDATA_SECTION_NODE;
     }
 
     
@@ -47,26 +45,26 @@ String varDC702726E92C9EDAE6B41AC7258DBE79_526653206 =         "#cdata-section";
     if(!needsSplitting())        
         {
             return;
-        } 
+        } //End block
         Node parent = getParentNode();
         String[] parts = getData().split("\\]\\]>");
         parent.insertBefore(new CDATASectionImpl(document, parts[0] + "]]"), this);
 for(int p = 1;p < parts.length - 1;p++)
         {
             parent.insertBefore(new CDATASectionImpl(document, ">" + parts[p] + "]]"), this);
-        } 
+        } //End block
         setData(">" + parts[parts.length - 1]);
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!needsSplitting()) {
+            //return;
+        //}
+        //Node parent = getParentNode();
+        //String[] parts = getData().split("\\]\\]>");
+        //parent.insertBefore(new CDATASectionImpl(document, parts[0] + "]]"), this);
+        //for (int p = 1; p < parts.length - 1; p++) {
+            //parent.insertBefore(new CDATASectionImpl(document, ">" + parts[p] + "]]"), this);
+        //}
+        //setData(">" + parts[parts.length - 1]);
     }
 
     
@@ -75,8 +73,8 @@ for(int p = 1;p < parts.length - 1;p++)
         boolean var1B1BFDAA00334AAAA6EC7386E974A758_2080206934 = (buffer.indexOf("]]>") != -1);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1423444641 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1423444641;
-        
-        
+        // ---------- Original Method ----------
+        //return buffer.indexOf("]]>") != -1;
     }
 
     
@@ -88,11 +86,11 @@ for(int p = 1;p < parts.length - 1;p++)
 TextImpl varFD20299C8CAE1E4FF1821C470444358C_1532300139 =         replacement;
         varFD20299C8CAE1E4FF1821C470444358C_1532300139.addTaint(taint);
         return varFD20299C8CAE1E4FF1821C470444358C_1532300139;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //TextImpl replacement = new TextImpl(document, getData());
+        //parent.insertBefore(replacement, this);
+        //parent.removeChild(this);
+        //return replacement;
     }
 
     

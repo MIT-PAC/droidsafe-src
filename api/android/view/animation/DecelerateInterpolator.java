@@ -1,6 +1,6 @@
 package android.view.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,15 +15,15 @@ public class DecelerateInterpolator implements Interpolator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.770 -0400", hash_original_method = "E95CC471518E4ACA9BF79FBE17893E65", hash_generated_method = "5083D8CB9C8622A55E9438CFA2C111F7")
     public  DecelerateInterpolator() {
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.770 -0400", hash_original_method = "FDF29E6FEED3439F4AD5C9E93301F45A", hash_generated_method = "0F557EA38EE80DBBE69721BB20DCF311")
     public  DecelerateInterpolator(float factor) {
         mFactor = factor;
-        
-        
+        // ---------- Original Method ----------
+        //mFactor = factor;
     }
 
     
@@ -34,11 +34,11 @@ public class DecelerateInterpolator implements Interpolator {
         TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.DecelerateInterpolator);
         mFactor = a.getFloat(com.android.internal.R.styleable.DecelerateInterpolator_factor, 1.0f);
         a.recycle();
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //TypedArray a =
+            //context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.DecelerateInterpolator);
+        //mFactor = a.getFloat(com.android.internal.R.styleable.DecelerateInterpolator_factor, 1.0f);
+        //a.recycle();
     }
 
     
@@ -49,22 +49,22 @@ public class DecelerateInterpolator implements Interpolator {
     if(mFactor == 1.0f)        
         {
             result = (float)(1.0f - (1.0f - input) * (1.0f - input));
-        } 
+        } //End block
         else
         {
             result = (float)(1.0f - Math.pow((1.0f - input), 2 * mFactor));
-        } 
+        } //End block
         float varB4A88417B3D0170D754C647C30B7216A_1672227780 = (result);
                 float var546ADE640B6EDFBC8A086EF31347E768_1641131526 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1641131526;
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //float result;
+        //if (mFactor == 1.0f) {
+            //result = (float)(1.0f - (1.0f - input) * (1.0f - input));
+        //} else {
+            //result = (float)(1.0f - Math.pow((1.0f - input), 2 * mFactor));
+        //}
+        //return result;
     }
 
     

@@ -1,6 +1,6 @@
 package java.util.concurrent.atomic;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,14 +14,14 @@ public class AtomicLong extends Number implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.684 -0400", hash_original_method = "6ECA774993D880ABD38A420DC693E35F", hash_generated_method = "E46494BE6F9671647D71141C197C734C")
     public  AtomicLong(long initialValue) {
         value = initialValue;
-        
-        
+        // ---------- Original Method ----------
+        //value = initialValue;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.684 -0400", hash_original_method = "E5BCC7DD3ADE986582FDD04FB62FAAFA", hash_generated_method = "F7B97E703BF9873CEAC0A4C7BFF9C409")
     public  AtomicLong() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -36,16 +36,16 @@ public class AtomicLong extends Number implements java.io.Serializable {
         long var2063C1608D6E0BAF80249C42E2BE5804_1936044815 = (value);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_972876117 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_972876117;
-        
-        
+        // ---------- Original Method ----------
+        //return value;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.685 -0400", hash_original_method = "CA4706358CD81A962EB6E91A1521FBCA", hash_generated_method = "759FAB5F7283596918C96BEC499CB5B0")
     public final void set(long newValue) {
         value = newValue;
-        
-        
+        // ---------- Original Method ----------
+        //value = newValue;
     }
 
     
@@ -53,8 +53,8 @@ public class AtomicLong extends Number implements java.io.Serializable {
     public final void lazySet(long newValue) {
         addTaint(newValue);
         unsafe.putOrderedLong(this, valueOffset, newValue);
-        
-        
+        // ---------- Original Method ----------
+        //unsafe.putOrderedLong(this, valueOffset, newValue);
     }
 
     
@@ -71,13 +71,13 @@ public class AtomicLong extends Number implements java.io.Serializable {
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1769490194 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1769490194;
             }
-        } 
-        
-        
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (true) {
+            //long current = get();
+            //if (compareAndSet(current, newValue))
+                //return current;
+        //}
     }
 
     
@@ -88,8 +88,8 @@ public class AtomicLong extends Number implements java.io.Serializable {
         boolean var92B53B847C742576E01DDEDEB9AF27B7_1173986037 = (unsafe.compareAndSwapLong(this, valueOffset, expect, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_299424697 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_299424697;
-        
-        
+        // ---------- Original Method ----------
+        //return unsafe.compareAndSwapLong(this, valueOffset, expect, update);
     }
 
     
@@ -100,8 +100,8 @@ public class AtomicLong extends Number implements java.io.Serializable {
         boolean var92B53B847C742576E01DDEDEB9AF27B7_386116245 = (unsafe.compareAndSwapLong(this, valueOffset, expect, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1368430913 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1368430913;
-        
-        
+        // ---------- Original Method ----------
+        //return unsafe.compareAndSwapLong(this, valueOffset, expect, update);
     }
 
     
@@ -118,14 +118,14 @@ public class AtomicLong extends Number implements java.io.Serializable {
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1293777924 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1293777924;
             }
-        } 
-        
-        
-            
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (true) {
+            //long current = get();
+            //long next = current + 1;
+            //if (compareAndSet(current, next))
+                //return current;
+        //}
     }
 
     
@@ -142,14 +142,14 @@ public class AtomicLong extends Number implements java.io.Serializable {
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_548020760 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_548020760;
             }
-        } 
-        
-        
-            
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (true) {
+            //long current = get();
+            //long next = current - 1;
+            //if (compareAndSet(current, next))
+                //return current;
+        //}
     }
 
     
@@ -167,14 +167,14 @@ public class AtomicLong extends Number implements java.io.Serializable {
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1741993675 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1741993675;
             }
-        } 
-        
-        
-            
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (true) {
+            //long current = get();
+            //long next = current + delta;
+            //if (compareAndSet(current, next))
+                //return current;
+        //}
     }
 
     
@@ -190,14 +190,14 @@ for(;;)
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1062765478 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1062765478;
             }
-        } 
-        
-        
-            
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (;;) {
+            //long current = get();
+            //long next = current + 1;
+            //if (compareAndSet(current, next))
+                //return next;
+        //}
     }
 
     
@@ -213,14 +213,14 @@ for(;;)
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1699335373 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1699335373;
             }
-        } 
-        
-        
-            
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (;;) {
+            //long current = get();
+            //long next = current - 1;
+            //if (compareAndSet(current, next))
+                //return next;
+        //}
     }
 
     
@@ -237,69 +237,64 @@ for(;;)
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1647470650 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1647470650;
             }
-        } 
-        
-        
-            
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (;;) {
+            //long current = get();
+            //long next = current + delta;
+            //if (compareAndSet(current, next))
+                //return next;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.690 -0400", hash_original_method = "87FB115D4E2C883D105781A1EF69130B", hash_generated_method = "93668B91E7AF51544E8B367D91C20850")
     public String toString() {
 String var8D83B147215B7C98D629429D69E90CAA_1045639196 =         Long.toString(get());
         var8D83B147215B7C98D629429D69E90CAA_1045639196.addTaint(taint);
         return var8D83B147215B7C98D629429D69E90CAA_1045639196;
-        
-        
+        // ---------- Original Method ----------
+        //return Long.toString(get());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.690 -0400", hash_original_method = "84EB409D8DAC6A9532DB1B14F662CA95", hash_generated_method = "24066D2585752BE8991C47A485C31E61")
     public int intValue() {
         int var83C554532A3C780DBF6F4ED851BD9F1F_1030793758 = ((int)get());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041730430 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041730430;
-        
-        
+        // ---------- Original Method ----------
+        //return (int)get();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.690 -0400", hash_original_method = "8D0E58021498DD6F55D0437545A61BE8", hash_generated_method = "2D90254742DE074A9A9DEA7DD40ED3C1")
     public long longValue() {
         long var712109514C51D8578A1A5952B71603F1_441463605 = (get());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2062529244 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2062529244;
-        
-        
+        // ---------- Original Method ----------
+        //return get();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.690 -0400", hash_original_method = "F8181329F165428C51D2197BB97797EF", hash_generated_method = "523F0D7BA35BBDB964A11D957FCF0DF2")
     public float floatValue() {
         float varD2E2C7D4AF1D6700F4955F8F274EC437_1245436266 = ((float)get());
                 float var546ADE640B6EDFBC8A086EF31347E768_231269125 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_231269125;
-        
-        
+        // ---------- Original Method ----------
+        //return (float)get();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.691 -0400", hash_original_method = "486C42E34E3619D90E05BCBEDA3844AE", hash_generated_method = "E0B92F4F12785F26CC3458453DE58A32")
     public double doubleValue() {
         double varCE9198F98D4461AFF8CDC2D1ABAB9B8A_1556503670 = ((double)get());
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1915954785 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1915954785;
-        
-        
+        // ---------- Original Method ----------
+        //return (double)get();
     }
 
     

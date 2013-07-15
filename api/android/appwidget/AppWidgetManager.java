@@ -1,6 +1,6 @@
 package android.appwidget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,9 +30,9 @@ public class AppWidgetManager {
     private  AppWidgetManager(Context context) {
         mContext = context;
         mDisplayMetrics = context.getResources().getDisplayMetrics();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mDisplayMetrics = context.getResources().getDisplayMetrics();
     }
 
     
@@ -63,20 +63,20 @@ public class AppWidgetManager {
         try 
         {
             sService.updateAppWidgetIds(appWidgetIds, views);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_633417877 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_633417877.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_633417877;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.updateAppWidgetIds(appWidgetIds, views);
+        //}
+        //catch (RemoteException e) {
+            //throw new RuntimeException("system server dead?", e);
+        //}
     }
 
     
@@ -85,8 +85,8 @@ public class AppWidgetManager {
         addTaint(views.getTaint());
         addTaint(appWidgetId);
         updateAppWidget(new int[] { appWidgetId }, views);
-        
-        
+        // ---------- Original Method ----------
+        //updateAppWidget(new int[] { appWidgetId }, views);
     }
 
     
@@ -97,19 +97,19 @@ public class AppWidgetManager {
         try 
         {
             sService.partiallyUpdateAppWidgetIds(appWidgetIds, views);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_2035418157 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_2035418157.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_2035418157;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.partiallyUpdateAppWidgetIds(appWidgetIds, views);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("system server dead?", e);
+        //}
     }
 
     
@@ -118,8 +118,8 @@ public class AppWidgetManager {
         addTaint(views.getTaint());
         addTaint(appWidgetId);
         partiallyUpdateAppWidget(new int[] { appWidgetId }, views);
-        
-        
+        // ---------- Original Method ----------
+        //partiallyUpdateAppWidget(new int[] { appWidgetId }, views);
     }
 
     
@@ -130,20 +130,20 @@ public class AppWidgetManager {
         try 
         {
             sService.updateAppWidgetProvider(provider, views);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_594559172 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_594559172.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_594559172;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.updateAppWidgetProvider(provider, views);
+        //}
+        //catch (RemoteException e) {
+            //throw new RuntimeException("system server dead?", e);
+        //}
     }
 
     
@@ -154,20 +154,20 @@ public class AppWidgetManager {
         try 
         {
             sService.notifyAppWidgetViewDataChanged(appWidgetIds, viewId);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1563005453 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1563005453.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1563005453;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.notifyAppWidgetViewDataChanged(appWidgetIds, viewId);
+        //}
+        //catch (RemoteException e) {
+            //throw new RuntimeException("system server dead?", e);
+        //}
     }
 
     
@@ -176,8 +176,8 @@ public class AppWidgetManager {
         addTaint(viewId);
         addTaint(appWidgetId);
         notifyAppWidgetViewDataChanged(new int[] { appWidgetId }, viewId);
-        
-        
+        // ---------- Original Method ----------
+        //notifyAppWidgetViewDataChanged(new int[] { appWidgetId }, viewId);
     }
 
     
@@ -196,19 +196,19 @@ for(AppWidgetProviderInfo info : providers)
                     TypedValue.complexToDimensionPixelSize(info.minResizeWidth, mDisplayMetrics);
                 info.minResizeHeight =
                     TypedValue.complexToDimensionPixelSize(info.minResizeHeight, mDisplayMetrics);
-            } 
+            } //End block
 List<AppWidgetProviderInfo> var3B775FE7F2FF95C6330A1E6EB6B9F5B9_943780120 =             providers;
             var3B775FE7F2FF95C6330A1E6EB6B9F5B9_943780120.addTaint(taint);
             return var3B775FE7F2FF95C6330A1E6EB6B9F5B9_943780120;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1579662804 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1579662804.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1579662804;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -228,23 +228,22 @@ List<AppWidgetProviderInfo> var3B775FE7F2FF95C6330A1E6EB6B9F5B9_943780120 =     
                     TypedValue.complexToDimensionPixelSize(info.minResizeWidth, mDisplayMetrics);
                 info.minResizeHeight =
                     TypedValue.complexToDimensionPixelSize(info.minResizeHeight, mDisplayMetrics);
-            } 
+            } //End block
 AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_898835708 =             info;
             var43CF3338FDBA93597A9562D3166E9DC4_898835708.addTaint(taint);
             return var43CF3338FDBA93597A9562D3166E9DC4_898835708;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_392832337 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_392832337.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_392832337;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.598 -0400", hash_original_method = "1B2C655DAB3EC9AC1A1945226B92611F", hash_generated_method = "FA4740B259A3C863ABDF0AB843C0BB75")
     public void bindAppWidgetId(int appWidgetId, ComponentName provider) {
         addTaint(provider.getTaint());
@@ -252,24 +251,23 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_898835708 =           
         try 
         {
             sService.bindAppWidgetId(appWidgetId, provider);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_504941757 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_504941757.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_504941757;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.bindAppWidgetId(appWidgetId, provider);
+        //}
+        //catch (RemoteException e) {
+            //throw new RuntimeException("system server dead?", e);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.598 -0400", hash_original_method = "9635C6DE1FB30445E1097958A10AD035", hash_generated_method = "E9EF2767187386DC3B3F2F081F9E479E")
     public void bindRemoteViewsService(int appWidgetId, Intent intent, IBinder connection) {
         addTaint(connection.getTaint());
@@ -278,24 +276,23 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_898835708 =           
         try 
         {
             sService.bindRemoteViewsService(appWidgetId, intent, connection);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_835985464 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_835985464.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_835985464;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.bindRemoteViewsService(appWidgetId, intent, connection);
+        //}
+        //catch (RemoteException e) {
+            //throw new RuntimeException("system server dead?", e);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.599 -0400", hash_original_method = "2B1B0C7D3E264A2CA6F28D675EB000CD", hash_generated_method = "BACC0304AFAC3A12204CEB6A8FE0CA6F")
     public void unbindRemoteViewsService(int appWidgetId, Intent intent) {
         addTaint(intent.getTaint());
@@ -303,20 +300,20 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_898835708 =           
         try 
         {
             sService.unbindRemoteViewsService(appWidgetId, intent);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1159219904 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1159219904.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1159219904;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.unbindRemoteViewsService(appWidgetId, intent);
+        //}
+        //catch (RemoteException e) {
+            //throw new RuntimeException("system server dead?", e);
+        //}
     }
 
     
@@ -328,20 +325,20 @@ AppWidgetProviderInfo var43CF3338FDBA93597A9562D3166E9DC4_898835708 =           
             int[] var7A304031DD3CDC39433CA437344F1C53_115777924 = (sService.getAppWidgetIds(provider));
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_256955011 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_256955011;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1003184538 = new RuntimeException("system server dead?", e);
             varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1003184538.addTaint(taint);
             throw varABEC9A7B26F3E87DC5BFEE65B55DFEA5_1003184538;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.getAppWidgetIds(provider);
+        //}
+        //catch (RemoteException e) {
+            //throw new RuntimeException("system server dead?", e);
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class ContactParser extends AddressParametersParser {
     public  ContactParser(String contact) {
         super(contact);
         addTaint(contact.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,8 +29,8 @@ public class ContactParser extends AddressParametersParser {
         super(lexer);
         addTaint(lexer.getTaint());
         this.lexer = lexer;
-        
-        
+        // ---------- Original Method ----------
+        //this.lexer = lexer;
     }
 
     
@@ -49,16 +49,16 @@ public class ContactParser extends AddressParametersParser {
                 {
                     this.lexer.match('*');
                     contact.setWildCardFlag(true);
-                } 
+                } //End block
                 else
                 {
                     super.parse(contact);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 super.parse(contact);
-            } 
+            } //End block
             retval.add(contact);
             this.lexer.SPorHT();
             char la = lexer.lookAhead(0);
@@ -66,7 +66,7 @@ public class ContactParser extends AddressParametersParser {
             {
                 this.lexer.match(',');
                 this.lexer.SPorHT();
-            } 
+            } //End block
             else
     if(la == '\n' || la == '\0')            
             break;
@@ -76,12 +76,12 @@ public class ContactParser extends AddressParametersParser {
             var7805DD1445672D84C07E56FCC19D9765_438708580.addTaint(taint);
             throw var7805DD1445672D84C07E56FCC19D9765_438708580;
             }
-        } 
+        } //End block
 SIPHeader varF9E19AD6135C970F387F77C6F3DE4477_818844199 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_818844199.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_818844199;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

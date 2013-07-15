@@ -1,6 +1,6 @@
 package android.content.pm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,7 +26,7 @@ public abstract class PackageManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.992 -0400", hash_original_method = "5D24F7B229838E6C5BA06DA6570E4474", hash_generated_method = "5D24F7B229838E6C5BA06DA6570E4474")
     public PackageManager ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -238,28 +238,28 @@ public abstract class PackageManager {
 PackageInfo var540C13E9E156B687226421B24F2DF178_5707858 =             null;
             var540C13E9E156B687226421B24F2DF178_5707858.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_5707858;
-        } 
+        } //End block
     if((flags & GET_SIGNATURES) != 0)        
         {
             packageParser.collectCertificates(pkg, 0);
-        } 
+        } //End block
 PackageInfo var5AE978B2B8E8AB8649F1BCEEB6A3CE29_318189940 =         PackageParser.generatePackageInfo(pkg, null, flags, 0, 0);
         var5AE978B2B8E8AB8649F1BCEEB6A3CE29_318189940.addTaint(taint);
         return var5AE978B2B8E8AB8649F1BCEEB6A3CE29_318189940;
-        
-        
-        
-        
-        
-        
-                
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //PackageParser packageParser = new PackageParser(archiveFilePath);
+        //DisplayMetrics metrics = new DisplayMetrics();
+        //metrics.setToDefaults();
+        //final File sourceFile = new File(archiveFilePath);
+        //PackageParser.Package pkg = packageParser.parsePackage(
+                //sourceFile, archiveFilePath, metrics, 0);
+        //if (pkg == null) {
+            //return null;
+        //}
+        //if ((flags & GET_SIGNATURES) != 0) {
+            //packageParser.collectCertificates(pkg, 0);
+        //}
+        //return PackageParser.generatePackageInfo(pkg, null, flags, 0, 0);
     }
 
     
@@ -369,26 +369,22 @@ public abstract void replacePreferredActivity(IntentFilter filter, int match,
     public abstract void updateUserFlags(int id, int flags);
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isSameUser(int uid1, int uid2) {
+        public static boolean isSameUser(int uid1, int uid2) {
         return getUserId(uid1) == getUserId(uid2);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getUserId(int uid) {
+        public static int getUserId(int uid) {
         return uid / PER_USER_RANGE;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getUid(int userId, int appId) {
+        public static int getUid(int userId, int appId) {
         return userId * PER_USER_RANGE + (appId % PER_USER_RANGE);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getAppId(int uid) {
+        public static int getAppId(int uid) {
         return uid % PER_USER_RANGE;
     }
 
@@ -400,7 +396,7 @@ public abstract void replacePreferredActivity(IntentFilter filter, int match,
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.006 -0400", hash_original_method = "4C893FF4D2386A2E528254CA81C36065", hash_generated_method = "7DF33A3FC9B55E42DF52448A730F9D8D")
         public  NameNotFoundException() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -408,7 +404,7 @@ public abstract void replacePreferredActivity(IntentFilter filter, int match,
         public  NameNotFoundException(String name) {
             super(name);
             addTaint(name.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         

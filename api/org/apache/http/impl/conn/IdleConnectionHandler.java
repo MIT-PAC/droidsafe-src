@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,8 +25,8 @@ public class IdleConnectionHandler {
     public  IdleConnectionHandler() {
         super();
         connectionToTimes = new HashMap<HttpConnection,TimeValues>();
-        
-        
+        // ---------- Original Method ----------
+        //connectionToTimes = new HashMap<HttpConnection,TimeValues>();
     }
 
     
@@ -39,14 +39,14 @@ public class IdleConnectionHandler {
     if(log.isDebugEnabled())        
         {
             log.debug("Adding connection at: " + timeAdded);
-        } 
+        } //End block
         connectionToTimes.put(connection, new TimeValues(timeAdded, validDuration, unit));
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Long timeAdded = Long.valueOf(System.currentTimeMillis());
+        //if (log.isDebugEnabled()) {
+            //log.debug("Adding connection at: " + timeAdded);
+        //}
+        //connectionToTimes.put(connection, new TimeValues(timeAdded, validDuration, unit));
     }
 
     
@@ -60,29 +60,29 @@ public class IdleConnectionHandler {
             boolean varB326B5062B2F0E69046810717534CB09_781616793 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2139411598 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2139411598;
-        } 
+        } //End block
         else
         {
             boolean var5975939083C962F496F7E1A3835149AE_1178581654 = (System.currentTimeMillis() <= times.timeExpires);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1192438700 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1192438700;
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //TimeValues times = connectionToTimes.remove(connection);
+        //if(times == null) {
+            //log.warn("Removing a connection that never existed!");
+            //return true;
+        //} else {
+            //return System.currentTimeMillis() <= times.timeExpires;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.843 -0400", hash_original_method = "7AF66332DEC016DA2AA9D0945D3022F8", hash_generated_method = "A48EFFE9E0FDB5EF17F54AE30B159084")
     public void removeAll() {
         this.connectionToTimes.clear();
-        
-        
+        // ---------- Original Method ----------
+        //this.connectionToTimes.clear();
     }
 
     
@@ -93,7 +93,7 @@ public class IdleConnectionHandler {
     if(log.isDebugEnabled())        
         {
             log.debug("Checking for connections, idleTimeout: "  + idleTimeout);
-        } 
+        } //End block
         Iterator<HttpConnection> connectionIter = connectionToTimes.keySet().iterator();
         while
 (connectionIter.hasNext())        
@@ -106,20 +106,20 @@ public class IdleConnectionHandler {
     if(log.isDebugEnabled())                
                 {
                     log.debug("Closing connection, connection time: "  + connectionTime);
-                } 
+                } //End block
                 connectionIter.remove();
                 try 
                 {
                     conn.close();
-                } 
+                } //End block
                 catch (IOException ex)
                 {
                     log.debug("I/O error closing connection", ex);
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -129,7 +129,7 @@ public class IdleConnectionHandler {
     if(log.isDebugEnabled())        
         {
             log.debug("Checking for expired connections, now: "  + now);
-        } 
+        } //End block
         Iterator<HttpConnection> connectionIter = connectionToTimes.keySet().iterator();
         while
 (connectionIter.hasNext())        
@@ -141,20 +141,20 @@ public class IdleConnectionHandler {
     if(log.isDebugEnabled())                
                 {
                     log.debug("Closing connection, expired @: "  + times.timeExpires);
-                } 
+                } //End block
                 connectionIter.remove();
                 try 
                 {
                     conn.close();
-                } 
+                } //End block
                 catch (IOException ex)
                 {
                     log.debug("I/O error closing connection", ex);
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -172,18 +172,18 @@ public class IdleConnectionHandler {
     if(validDuration > 0)            
             {
                 this.timeExpires = now + validUnit.toMillis(validDuration);
-            } 
+            } //End block
             else
             {
                 this.timeExpires = Long.MAX_VALUE;
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //this.timeAdded = now;
+            //if(validDuration > 0) {
+                //this.timeExpires = now + validUnit.toMillis(validDuration);
+            //} else {
+                //this.timeExpires = Long.MAX_VALUE;
+            //}
         }
 
         

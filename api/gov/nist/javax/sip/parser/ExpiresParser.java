@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ExpiresParser extends HeaderParser {
     public  ExpiresParser(String text) {
         super(text);
         addTaint(text.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,11 +22,10 @@ public class ExpiresParser extends HeaderParser {
     protected  ExpiresParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.503 -0400", hash_original_method = "BF637AC6A5CBD4DC0512611361485C35", hash_generated_method = "24CE0BB2D2600B0C0AF5118FBB49845C")
     public SIPHeader parse() throws ParseException {
         Expires expires = new Expires();
@@ -47,49 +46,49 @@ public class ExpiresParser extends HeaderParser {
 SIPHeader var1F40635C1A2E405B8C2A4BA335625EE0_1239197400 =                 expires;
                 var1F40635C1A2E405B8C2A4BA335625EE0_1239197400.addTaint(taint);
                 return var1F40635C1A2E405B8C2A4BA335625EE0_1239197400;
-            } 
+            } //End block
             catch (NumberFormatException ex)
             {
                 java.text.ParseException var5FB99FE9B64E519E79EC6426B25925EC_1548211920 = createParseException("bad integer format");
                 var5FB99FE9B64E519E79EC6426B25925EC_1548211920.addTaint(taint);
                 throw var5FB99FE9B64E519E79EC6426B25925EC_1548211920;
-            } 
+            } //End block
             catch (InvalidArgumentException ex)
             {
                 java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1927037478 = createParseException(ex.getMessage());
                 varB8C80F72F95BF6A850D07F4EC5726C09_1927037478.addTaint(taint);
                 throw varB8C80F72F95BF6A850D07F4EC5726C09_1927037478;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("parse");
-        } 
-        
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-                
-                
-                
-            
-                
-            
-                
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Expires expires = new Expires();
+        //if (debug)
+            //dbg_enter("parse");
+        //try {
+            //lexer.match(TokenTypes.EXPIRES);
+            //lexer.SPorHT();
+            //lexer.match(':');
+            //lexer.SPorHT();
+            //String nextId = lexer.getNextId();
+            //lexer.match('\n');
+            //try {
+                //int delta = Integer.parseInt(nextId);
+                //expires.setExpires(delta);
+                //return expires;
+            //} catch (NumberFormatException ex) {
+                //throw createParseException("bad integer format");
+            //} catch (InvalidArgumentException ex) {
+                //throw createParseException(ex.getMessage());
+            //}
+        //} finally {
+            //if (debug)
+                //dbg_leave("parse");
+        //}
     }
 
     

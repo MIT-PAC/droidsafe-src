@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class DERSet extends ASN1Set {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.187 -0400", hash_original_method = "80B25DE2FCBFBCCF6E0A2A88A3316812", hash_generated_method = "E2F348A362CEF042606CF762BF3B5EB7")
     public  DERSet() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,8 +21,8 @@ public class DERSet extends ASN1Set {
         DEREncodable   obj) {
         addTaint(obj.getTaint());
         this.addObject(obj);
-        
-        
+        // ---------- Original Method ----------
+        //this.addObject(obj);
     }
 
     
@@ -31,7 +31,7 @@ public class DERSet extends ASN1Set {
         ASN1EncodableVector   v) {
         this(v, true);
         addTaint(v.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,14 +42,14 @@ public class DERSet extends ASN1Set {
 for(int i = 0;i != a.length;i++)
         {
             this.addObject(a[i]);
-        } 
+        } //End block
         this.sort();
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (int i = 0; i != a.length; i++)
+        //{
+            //this.addObject(a[i]);
+        //}
+        //this.sort();
     }
 
     
@@ -62,20 +62,20 @@ for(int i = 0;i != a.length;i++)
 for(int i = 0;i != v.size();i++)
         {
             this.addObject(v.get(i));
-        } 
+        } //End block
     if(needsSorting)        
         {
             this.sort();
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = 0; i != v.size(); i++)
+        //{
+            //this.addObject(v.get(i));
+        //}
+        //if (needsSorting)
+        //{
+            //this.sort();
+        //}
     }
 
     
@@ -91,22 +91,22 @@ for(int i = 0;i != v.size();i++)
         {
             Object obj = e.nextElement();
             dOut.writeObject(obj);
-        } 
+        } //End block
         dOut.close();
         byte[] bytes = bOut.toByteArray();
         out.writeEncoded(SET | CONSTRUCTED, bytes);
-        
-        
-        
-        
-        
-        
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
+        //DEROutputStream         dOut = new DEROutputStream(bOut);
+        //Enumeration             e = this.getObjects();
+        //while (e.hasMoreElements())
+        //{
+            //Object    obj = e.nextElement();
+            //dOut.writeObject(obj);
+        //}
+        //dOut.close();
+        //byte[]  bytes = bOut.toByteArray();
+        //out.writeEncoded(SET | CONSTRUCTED, bytes);
     }
 
     

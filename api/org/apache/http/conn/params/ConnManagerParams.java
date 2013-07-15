@@ -1,6 +1,6 @@
 package org.apache.http.conn.params;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public final class ConnManagerParams implements ConnManagerPNames {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.418 -0400", hash_original_method = "8D73F0F63C95FBB6C86DB2075286A73B", hash_generated_method = "8D73F0F63C95FBB6C86DB2075286A73B")
     public ConnManagerParams ()
     {
-        
+        //Synthesized constructor
     }
 
 

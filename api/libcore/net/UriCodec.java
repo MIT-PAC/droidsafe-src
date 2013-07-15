@@ -1,6 +1,6 @@
 package libcore.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public abstract class UriCodec {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.025 -0400", hash_original_method = "4BF02B8F3FC732245257150462C2453A", hash_generated_method = "4BF02B8F3FC732245257150462C2453A")
     public UriCodec ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -36,7 +36,7 @@ for(int i = start;i < end;)
                     || isRetained(ch))            
             {
                 i++;
-            } 
+            } //End block
             else
     if(ch == '%')            
             {
@@ -45,7 +45,7 @@ for(int i = start;i < end;)
                     URISyntaxException var2051C8B4935F2FD625B8599DFE00E440_696286503 = new URISyntaxException(uri, "Incomplete % sequence in " + name, i);
                     var2051C8B4935F2FD625B8599DFE00E440_696286503.addTaint(taint);
                     throw var2051C8B4935F2FD625B8599DFE00E440_696286503;
-                } 
+                } //End block
                 int d1 = hexToInt(uri.charAt(i + 1));
                 int d2 = hexToInt(uri.charAt(i + 2));
     if(d1 == -1 || d2 == -1)                
@@ -54,21 +54,21 @@ for(int i = start;i < end;)
                             + uri.substring(i, i + 3) + " in " + name, i);
                     varFE39BA79E51C59BE2596FD64022B6F4E_1772336622.addTaint(taint);
                     throw varFE39BA79E51C59BE2596FD64022B6F4E_1772336622;
-                } 
+                } //End block
                 i += 3;
-            } 
+            } //End block
             else
             {
                 URISyntaxException var7BBBBB6DDBB5BADEE4A4A0A58340C037_647431964 = new URISyntaxException(uri, "Illegal character in " + name, i);
                 var7BBBBB6DDBB5BADEE4A4A0A58340C037_647431964.addTaint(taint);
                 throw var7BBBBB6DDBB5BADEE4A4A0A58340C037_647431964;
-            } 
-        } 
+            } //End block
+        } //End block
 String var83F838AFDFF49EDFAA9A2F840A0E32DF_1245407574 =         uri.substring(start, end);
         var83F838AFDFF49EDFAA9A2F840A0E32DF_1245407574.addTaint(taint);
         return var83F838AFDFF49EDFAA9A2F840A0E32DF_1245407574;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -97,7 +97,7 @@ String var83F838AFDFF49EDFAA9A2F840A0E32DF_1245407574 =         uri.substring(st
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_2021882153 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_2021882153.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_2021882153;
-        } 
+        } //End block
         int escapeStart = -1;
 for(int i = 0;i < s.length();i++)
         {
@@ -112,34 +112,34 @@ for(int i = 0;i < s.length();i++)
                 {
                     appendHex(builder, s.substring(escapeStart, i), charset);
                     escapeStart = -1;
-                } 
+                } //End block
     if(c == '%' && isPartiallyEncoded)                
                 {
                     builder.append(s, i, i + 3);
                     i += 2;
-                } 
+                } //End block
                 else
     if(c == ' ')                
                 {
                     builder.append('+');
-                } 
+                } //End block
                 else
                 {
                     builder.append(c);
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(escapeStart == -1)            
             {
                 escapeStart = i;
-            } 
-        } 
+            } //End block
+        } //End block
     if(escapeStart != -1)        
         {
             appendHex(builder, s.substring(escapeStart, s.length()), charset);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -152,10 +152,10 @@ for(int i = 0;i < s.length();i++)
 String varF4CF030572656354ACFDF83FEE21D7A6_800660205 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_800660205.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_800660205;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder builder = new StringBuilder(s.length() + 16);
+        //appendEncoded(builder, s, charset, false);
+        //return builder.toString();
     }
 
     
@@ -164,8 +164,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_800660205 =         builder.toString(
         addTaint(s.getTaint());
         addTaint(builder.getTaint());
         appendEncoded(builder, s, Charsets.UTF_8, false);
-        
-        
+        // ---------- Original Method ----------
+        //appendEncoded(builder, s, Charsets.UTF_8, false);
     }
 
     
@@ -174,8 +174,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_800660205 =         builder.toString(
         addTaint(s.getTaint());
         addTaint(builder.getTaint());
         appendEncoded(builder, s, Charsets.UTF_8, true);
-        
-        
+        // ---------- Original Method ----------
+        //appendEncoded(builder, s, Charsets.UTF_8, true);
     }
 
     
@@ -215,8 +215,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_800660205 =         builder.toString(
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int hexToInt(char c) {
+        private static int hexToInt(char c) {
         if ('0' <= c && c <= '9') {
             return c - '0';
         } else if ('a' <= c && c <= 'f') {

@@ -1,6 +1,6 @@
 package org.apache.http.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,20 +18,19 @@ public class HttpHostConnectException extends ConnectException {
         addTaint(cause.getTaint());
         this.host = host;
         initCause(cause);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.host = host;
+        //initCause(cause);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.400 -0400", hash_original_method = "6529E0B2BF5C95A4487D992F02B2AAA6", hash_generated_method = "9D82FD91DC97334E10ABBD8ACC56D095")
     public HttpHost getHost() {
 HttpHost var66CBD60FD8EB006652E02A446703F8AC_973926238 =         this.host;
         var66CBD60FD8EB006652E02A446703F8AC_973926238.addTaint(taint);
         return var66CBD60FD8EB006652E02A446703F8AC_973926238;
-        
-        
+        // ---------- Original Method ----------
+        //return this.host;
     }
 
     

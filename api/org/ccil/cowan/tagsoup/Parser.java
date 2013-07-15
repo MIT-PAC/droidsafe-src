@@ -1,6 +1,6 @@
 package org.ccil.cowan.tagsoup;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -138,12 +138,11 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.320 -0400", hash_original_method = "42CBDDB53A445ABDFB908116E235FAA0", hash_generated_method = "42CBDDB53A445ABDFB908116E235FAA0")
     public Parser ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    private static Boolean truthValue(boolean b) {
+        private static Boolean truthValue(boolean b) {
         return b ? Boolean.TRUE : Boolean.FALSE;
     }
 
@@ -157,16 +156,16 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
             SAXNotRecognizedException var6EBAA7E3A3D2D808547E798D5F69D94F_1940682742 = new SAXNotRecognizedException("Unknown feature " + name);
             var6EBAA7E3A3D2D808547E798D5F69D94F_1940682742.addTaint(taint);
             throw var6EBAA7E3A3D2D808547E798D5F69D94F_1940682742;
-        } 
+        } //End block
         boolean varF4FFBE63F5E4C35F6F0DDAF736B6497E_923301044 = (b.booleanValue());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1043935321 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1043935321;
-        
-        
-        
-			
-			
-        
+        // ---------- Original Method ----------
+        //Boolean b = (Boolean)theFeatures.get(name);
+        //if (b == null) {
+			//throw new SAXNotRecognizedException("Unknown feature " + name);
+			//}
+        //return b.booleanValue();
     }
 
     
@@ -179,7 +178,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
             SAXNotRecognizedException var6EBAA7E3A3D2D808547E798D5F69D94F_71035713 = new SAXNotRecognizedException("Unknown feature " + name);
             var6EBAA7E3A3D2D808547E798D5F69D94F_71035713.addTaint(taint);
             throw var6EBAA7E3A3D2D808547E798D5F69D94F_71035713;
-        } 
+        } //End block
     if(value)        
         theFeatures.put(name, Boolean.TRUE);
         else
@@ -210,8 +209,8 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
         else
     if(name.equals(CDATAElementsFeature))        
         CDATAElements = value;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -223,50 +222,50 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
 Object var331F1C3E763B7295E167363A73999C53_1538943712 =             theLexicalHandler == this ? null : theLexicalHandler;
             var331F1C3E763B7295E167363A73999C53_1538943712.addTaint(taint);
             return var331F1C3E763B7295E167363A73999C53_1538943712;
-        } 
+        } //End block
         else
     if(name.equals(scannerProperty))        
         {
 Object var3239B8F0F7F40412BBD926FC0D39D94F_648450403 =             theScanner;
             var3239B8F0F7F40412BBD926FC0D39D94F_648450403.addTaint(taint);
             return var3239B8F0F7F40412BBD926FC0D39D94F_648450403;
-        } 
+        } //End block
         else
     if(name.equals(schemaProperty))        
         {
 Object varF1B5508E6B3CF9213428E6D6136C1D0E_85310847 =             theSchema;
             varF1B5508E6B3CF9213428E6D6136C1D0E_85310847.addTaint(taint);
             return varF1B5508E6B3CF9213428E6D6136C1D0E_85310847;
-        } 
+        } //End block
         else
     if(name.equals(autoDetectorProperty))        
         {
 Object varD4054F34FCEDCED3102672B633AE76D0_189718781 =             theAutoDetector;
             varD4054F34FCEDCED3102672B633AE76D0_189718781.addTaint(taint);
             return varD4054F34FCEDCED3102672B633AE76D0_189718781;
-        } 
+        } //End block
         else
         {
             SAXNotRecognizedException var3F84AAC3A4C6C6F40D35C717D02A61A6_913574043 = new SAXNotRecognizedException("Unknown property " + name);
             var3F84AAC3A4C6C6F40D35C717D02A61A6_913574043.addTaint(taint);
             throw var3F84AAC3A4C6C6F40D35C717D02A61A6_913574043;
-        } 
-        
-        
-			
-			
-		
-			
-			
-		
-			
-			
-		
-			
-			
-		
-			
-			
+        } //End block
+        // ---------- Original Method ----------
+        //if (name.equals(lexicalHandlerProperty)) {
+			//return theLexicalHandler == this ? null : theLexicalHandler;
+			//}
+		//else if (name.equals(scannerProperty)) {
+			//return theScanner;
+			//}
+		//else if (name.equals(schemaProperty)) {
+			//return theSchema;
+			//}
+		//else if (name.equals(autoDetectorProperty)) {
+			//return theAutoDetector;
+			//}
+		//else {
+			//throw new SAXNotRecognizedException("Unknown property " + name);
+			//}
     }
 
     
@@ -278,149 +277,141 @@ Object varD4054F34FCEDCED3102672B633AE76D0_189718781 =             theAutoDetect
     if(value == null)            
             {
                 theLexicalHandler = this;
-            } 
+            } //End block
             else
     if(value instanceof LexicalHandler)            
             {
                 theLexicalHandler = (LexicalHandler)value;
-            } 
+            } //End block
             else
             {
                 SAXNotSupportedException var773F0C932D998A5EAE4EF456DB656E73_561388948 = new SAXNotSupportedException("Your lexical handler is not a LexicalHandler");
                 var773F0C932D998A5EAE4EF456DB656E73_561388948.addTaint(taint);
                 throw var773F0C932D998A5EAE4EF456DB656E73_561388948;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(name.equals(scannerProperty))        
         {
     if(value instanceof Scanner)            
             {
                 theScanner = (Scanner)value;
-            } 
+            } //End block
             else
             {
                 SAXNotSupportedException var7FFA431932179A1CF96DF7EC76E97C59_116355191 = new SAXNotSupportedException("Your scanner is not a Scanner");
                 var7FFA431932179A1CF96DF7EC76E97C59_116355191.addTaint(taint);
                 throw var7FFA431932179A1CF96DF7EC76E97C59_116355191;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(name.equals(schemaProperty))        
         {
     if(value instanceof Schema)            
             {
                 theSchema = (Schema)value;
-            } 
+            } //End block
             else
             {
                 SAXNotSupportedException varB42580954B833013B5D43EA6B937C9E3_1847859248 = new SAXNotSupportedException("Your schema is not a Schema");
                 varB42580954B833013B5D43EA6B937C9E3_1847859248.addTaint(taint);
                 throw varB42580954B833013B5D43EA6B937C9E3_1847859248;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(name.equals(autoDetectorProperty))        
         {
     if(value instanceof AutoDetector)            
             {
                 theAutoDetector = (AutoDetector)value;
-            } 
+            } //End block
             else
             {
                 SAXNotSupportedException varA6C494E69E017E1711E412AF3C1788FC_1555791267 = new SAXNotSupportedException("Your auto-detector is not an AutoDetector");
                 varA6C494E69E017E1711E412AF3C1788FC_1555791267.addTaint(taint);
                 throw varA6C494E69E017E1711E412AF3C1788FC_1555791267;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             SAXNotRecognizedException var3F84AAC3A4C6C6F40D35C717D02A61A6_1000228463 = new SAXNotRecognizedException("Unknown property " + name);
             var3F84AAC3A4C6C6F40D35C717D02A61A6_1000228463.addTaint(taint);
             throw var3F84AAC3A4C6C6F40D35C717D02A61A6_1000228463;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.325 -0400", hash_original_method = "A546AE41DB77A7324A8896ECCFDC28F7", hash_generated_method = "A8E69E6385944504A37F5388E7A83FAB")
     public void setEntityResolver(EntityResolver resolver) {
         theEntityResolver = (resolver == null) ? this : resolver;
-        
-        
+        // ---------- Original Method ----------
+        //theEntityResolver = (resolver == null) ? this : resolver;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.325 -0400", hash_original_method = "4B11F09BEC63C73E852BF6819D5E17A6", hash_generated_method = "0FB2331BEFA27096F1FC4D554F3036E7")
     public EntityResolver getEntityResolver() {
 EntityResolver varBD53ACB74004475A0777DD230301F12B_974886532 =         (theEntityResolver == this) ? null : theEntityResolver;
         varBD53ACB74004475A0777DD230301F12B_974886532.addTaint(taint);
         return varBD53ACB74004475A0777DD230301F12B_974886532;
-        
-        
+        // ---------- Original Method ----------
+        //return (theEntityResolver == this) ? null : theEntityResolver;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.325 -0400", hash_original_method = "2A1D8AFABC32A2E0B1A4A173104FD709", hash_generated_method = "3683677B0F46E370F6EB575FDBECDF36")
     public void setDTDHandler(DTDHandler handler) {
         theDTDHandler = (handler == null) ? this : handler;
-        
-        
+        // ---------- Original Method ----------
+        //theDTDHandler = (handler == null) ? this : handler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.326 -0400", hash_original_method = "338D21F6A8224B73088A08444EBB70F8", hash_generated_method = "4A42B74E82CDD5BD4E935037816525E7")
     public DTDHandler getDTDHandler() {
 DTDHandler var80673DDBC08143F3A720028FA39E4C2A_61135582 =         (theDTDHandler == this) ? null : theDTDHandler;
         var80673DDBC08143F3A720028FA39E4C2A_61135582.addTaint(taint);
         return var80673DDBC08143F3A720028FA39E4C2A_61135582;
-        
-        
+        // ---------- Original Method ----------
+        //return (theDTDHandler == this) ? null : theDTDHandler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.326 -0400", hash_original_method = "F2917252F8D6F02CF50CD455848B7CDD", hash_generated_method = "ACB9649AEA4D4CF5ABBC38AFBB15C07D")
     public void setContentHandler(ContentHandler handler) {
         theContentHandler = (handler == null) ? this : handler;
-        
-        
+        // ---------- Original Method ----------
+        //theContentHandler = (handler == null) ? this : handler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.326 -0400", hash_original_method = "E2D49645B9897F446183B1EC842A5B8C", hash_generated_method = "CA592A4E53A5C1EF588EE83EB8F902A6")
     public ContentHandler getContentHandler() {
 ContentHandler var7F70CD60B5ABB72552769F33F070C12F_1416241983 =         (theContentHandler == this) ? null : theContentHandler;
         var7F70CD60B5ABB72552769F33F070C12F_1416241983.addTaint(taint);
         return var7F70CD60B5ABB72552769F33F070C12F_1416241983;
-        
-        
+        // ---------- Original Method ----------
+        //return (theContentHandler == this) ? null : theContentHandler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.327 -0400", hash_original_method = "4FC35E4E9BBEBB25DC834EFC47A653D4", hash_generated_method = "8B0B4CCC460D0E90458738C6876CF2B6")
     public void setErrorHandler(ErrorHandler handler) {
         theErrorHandler = (handler == null) ? this : handler;
-        
-        
+        // ---------- Original Method ----------
+        //theErrorHandler = (handler == null) ? this : handler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.327 -0400", hash_original_method = "662542919C9F3C78B54F5CA00EE88FD5", hash_generated_method = "88D9B28262D3D0127CBA67F98F245EBA")
     public ErrorHandler getErrorHandler() {
 ErrorHandler varF30FCC774C37D18FDA65D270F88B540B_1579925329 =         (theErrorHandler == this) ? null : theErrorHandler;
         varF30FCC774C37D18FDA65D270F88B540B_1579925329.addTaint(taint);
         return varF30FCC774C37D18FDA65D270F88B540B_1579925329;
-        
-        
+        // ---------- Original Method ----------
+        //return (theErrorHandler == this) ? null : theErrorHandler;
     }
 
     
@@ -434,23 +425,23 @@ ErrorHandler varF30FCC774C37D18FDA65D270F88B540B_1579925329 =         (theErrorH
     if(theScanner instanceof Locator)        
         {
             theContentHandler.setDocumentLocator((Locator)theScanner);
-        } 
+        } //End block
     if(!(theSchema.getURI().equals("")))        
         theContentHandler.startPrefixMapping(theSchema.getPrefix(),
 				theSchema.getURI());
         theScanner.scan(r, this);
-        
-        
-        
-        
-        
-        
-			
-			
-        
-			
-				
-        
+        // ---------- Original Method ----------
+        //setup();
+        //Reader r = getReader(input);
+        //theContentHandler.startDocument();
+        //theScanner.resetDocumentLocator(input.getPublicId(), input.getSystemId());
+        //if (theScanner instanceof Locator) {
+			//theContentHandler.setDocumentLocator((Locator)theScanner);
+			//}
+        //if (!(theSchema.getURI().equals("")))
+			//theContentHandler.startPrefixMapping(theSchema.getPrefix(),
+				//theSchema.getURI());
+        //theScanner.scan(r, this);
     }
 
     
@@ -458,8 +449,8 @@ ErrorHandler varF30FCC774C37D18FDA65D270F88B540B_1579925329 =         (theErrorH
     public void parse(String systemid) throws IOException, SAXException {
         addTaint(systemid.getTaint());
         parse(new InputSource(systemid));
-        
-        
+        // ---------- Original Method ----------
+        //parse(new InputSource(systemid));
     }
 
     
@@ -478,11 +469,11 @@ ErrorHandler varF30FCC774C37D18FDA65D270F88B540B_1579925329 =         (theErrorH
 Reader varF54C85E2A8BED917566CC9AA4C9DA4E1_1570583928 =             new InputStreamReader(i);
             varF54C85E2A8BED917566CC9AA4C9DA4E1_1570583928.addTaint(taint);
             return varF54C85E2A8BED917566CC9AA4C9DA4E1_1570583928;
-            
-            
+            // ---------- Original Method ----------
+            //return new InputStreamReader(i);
         }
 };
-        } 
+        } //End block
         theStack = new Element(theSchema.getElementType("<root>"), defaultAttributes);
         thePCDATA = new Element(theSchema.getElementType("<pcdata>"), defaultAttributes);
         theNewElement = null;
@@ -492,25 +483,25 @@ Reader varF54C85E2A8BED917566CC9AA4C9DA4E1_1570583928 =             new InputStr
         theEntity = 0;
         virginStack = true;
         theDoctypeName = theDoctypePublicId = theDoctypeSystemId = null;
-        
-        
-        
-        
-			
-				
-					
-					
-				
-			
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (theSchema == null) theSchema = new HTMLSchema();
+        //if (theScanner == null) theScanner = new HTMLScanner();
+        //if (theAutoDetector == null) {
+			//theAutoDetector = new AutoDetector() {
+				//public Reader autoDetectingReader(InputStream i) {
+					//return new InputStreamReader(i);
+					//}
+				//};
+			//}
+        //theStack = new Element(theSchema.getElementType("<root>"), defaultAttributes);
+        //thePCDATA = new Element(theSchema.getElementType("<pcdata>"), defaultAttributes);
+        //theNewElement = null;
+        //theAttributeName = null;
+        //thePITarget = null;
+        //theSaved = null;
+        //theEntity = 0;
+        //virginStack = true;
+        //theDoctypeName = theDoctypePublicId = theDoctypeSystemId = null;
     }
 
     
@@ -529,43 +520,43 @@ Reader varF54C85E2A8BED917566CC9AA4C9DA4E1_1570583928 =             new InputStr
     if(encoding == null)            
             {
                 r = theAutoDetector.autoDetectingReader(i);
-            } 
+            } //End block
             else
             {
                 try 
                 {
                     r = new InputStreamReader(i, encoding);
-                } 
+                } //End block
                 catch (UnsupportedEncodingException e)
                 {
                     r = new InputStreamReader(i);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Reader var4C1F3C86A0E56B6E375080F5F710547E_2041328104 =         r;
         var4C1F3C86A0E56B6E375080F5F710547E_2041328104.addTaint(taint);
         return var4C1F3C86A0E56B6E375080F5F710547E_2041328104;
-        
-        
-        
-        
-        
-        
-        
-			
-			
-				
-				
-			
-				
-					
-					
-				
-					
-					
-				
-			
-        
+        // ---------- Original Method ----------
+        //Reader r = s.getCharacterStream();
+        //InputStream i = s.getByteStream();
+        //String encoding = s.getEncoding();
+        //String publicid = s.getPublicId();
+        //String systemid = s.getSystemId();
+        //if (r == null) {
+			//if (i == null) i = getInputStream(publicid, systemid);
+			//if (encoding == null) {
+				//r = theAutoDetector.autoDetectingReader(i);
+				//}
+			//else {
+				//try {
+					//r = new InputStreamReader(i, encoding);
+					//}
+				//catch (UnsupportedEncodingException e) {
+					//r = new InputStreamReader(i);
+					//}
+				//}
+			//}
+        //return r;
     }
 
     
@@ -579,11 +570,11 @@ Reader var4C1F3C86A0E56B6E375080F5F710547E_2041328104 =         r;
 InputStream var7664B8C02B25A9FAFA87FEC0231321BC_1978791562 =         c.getInputStream();
         var7664B8C02B25A9FAFA87FEC0231321BC_1978791562.addTaint(taint);
         return var7664B8C02B25A9FAFA87FEC0231321BC_1978791562;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //URL basis = new URL("file", "", System.getProperty("user.dir") + "/.");
+        //URL url = new URL(basis, systemid);
+        //URLConnection c = url.openConnection();
+        //return c.getInputStream();
     }
 
     
@@ -596,10 +587,10 @@ InputStream var7664B8C02B25A9FAFA87FEC0231321BC_1978791562 =         c.getInputS
         return;
         theNewElement.setAttribute(theAttributeName, null, theAttributeName);
         theAttributeName = null;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (theNewElement == null || theAttributeName == null) return;
+        //theNewElement.setAttribute(theAttributeName, null, theAttributeName);
+        //theAttributeName = null;
     }
 
     
@@ -608,9 +599,9 @@ InputStream var7664B8C02B25A9FAFA87FEC0231321BC_1978791562 =         c.getInputS
     if(theNewElement == null)        
         return;
         theAttributeName = makeName(buff, offset, length).toLowerCase();
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (theNewElement == null) return;
+        //theAttributeName = makeName(buff, offset, length).toLowerCase();
     }
 
     
@@ -625,12 +616,12 @@ InputStream var7664B8C02B25A9FAFA87FEC0231321BC_1978791562 =         c.getInputS
         value = expandEntities(value);
         theNewElement.setAttribute(theAttributeName, null, value);
         theAttributeName = null;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (theNewElement == null || theAttributeName == null) return;
+        //String value = new String(buff, offset, length);
+        //value = expandEntities(value);
+        //theNewElement.setAttribute(theAttributeName, null, value);
+        //theAttributeName = null;
     }
 
     
@@ -648,17 +639,17 @@ for(int i = 0;i < len;i++)
     if(ch == '&' && refStart == -1)            
             {
                 refStart = dstlen;
-            } 
+            } //End block
             else
     if(refStart == -1)            
             {
-            } 
+            } //End block
             else
     if(Character.isLetter(ch) ||
 					Character.isDigit(ch) ||
 					ch == '#')            
             {
-            } 
+            } //End block
             else
     if(ch == ';')            
             {
@@ -669,37 +660,36 @@ for(int i = 0;i < len;i++)
                     dst[refStart - 1] = (char)((ent>>10) + 0xD800);
                     dst[refStart] = (char)((ent&0x3FF) + 0xDC00);
                     dstlen = refStart + 1;
-                } 
+                } //End block
                 else
     if(ent != 0)                
                 {
                     dst[refStart - 1] = (char)ent;
                     dstlen = refStart;
-                } 
+                } //End block
                 refStart = -1;
-            } 
+            } //End block
             else
             {
                 refStart = -1;
-            } 
-        } 
+            } //End block
+        } //End block
 String var066172BAF3274369BB7672D02BD9C593_674155256 =         new String(dst, 0, dstlen);
         var066172BAF3274369BB7672D02BD9C593_674155256.addTaint(taint);
         return var066172BAF3274369BB7672D02BD9C593_674155256;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.333 -0400", hash_original_method = "38A8EAE3BE9C6B2369CA0ABEFF20DED1", hash_generated_method = "46345302BE4543B332C8C9596818D864")
     public void entity(char[] buff, int offset, int length) throws SAXException {
         theEntity = lookupEntity(buff, offset, length);
-        
-        
+        // ---------- Original Method ----------
+        //theEntity = lookupEntity(buff, offset, length);
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.334 -0400", hash_original_method = "9575B162D435E8F9BEA7F0ECC81D324A", hash_generated_method = "CE2EA42D42CE287C7EF27A8B3B644AC0")
     private int lookupEntity(char[] buff, int offset, int length) {
         addTaint(length);
@@ -722,32 +712,32 @@ String var066172BAF3274369BB7672D02BD9C593_674155256 =         new String(dst, 0
                     int var7D90ED498BB46987BD83CED80000FBEC_1468770599 = (Integer.parseInt(new String(buff, offset + 2, length - 2), 16));
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137961663 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_137961663;
-                } 
+                } //End block
                 catch (NumberFormatException e)
                 {
                     int varCFCD208495D565EF66E7DFF9F98764DA_1371134001 = (0);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1330736283 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1330736283;
-                } 
-            } 
+                } //End block
+            } //End block
             try 
             {
                 int var052B65AF507E4786A255B3B035904D47_1529831224 = (Integer.parseInt(new String(buff, offset + 1, length - 1), 10));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1236424568 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1236424568;
-            } 
+            } //End block
             catch (NumberFormatException e)
             {
                 int varCFCD208495D565EF66E7DFF9F98764DA_615501898 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807969213 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807969213;
-            } 
-        } 
+            } //End block
+        } //End block
         int varE1F60BE4A5378C4697DE9CC0D9BBDF73_1178071215 = (theSchema.getEntity(new String(buff, offset, length)));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_802107049 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_802107049;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -762,18 +752,18 @@ String var066172BAF3274369BB7672D02BD9C593_674155256 =         new String(dst, 0
 (theStack.next() != null)        
         {
             pop();
-        } 
+        } //End block
     if(!(theSchema.getURI().equals("")))        
         theContentHandler.endPrefixMapping(theSchema.getPrefix());
         theContentHandler.endDocument();
-        
-        
-        
-			
-			
-        
-			
-        
+        // ---------- Original Method ----------
+        //if (virginStack) rectify(thePCDATA);
+        //while (theStack.next() != null) {
+			//pop();
+			//}
+        //if (!(theSchema.getURI().equals("")))
+			//theContentHandler.endPrefixMapping(theSchema.getPrefix());
+        //theContentHandler.endDocument();
     }
 
     
@@ -785,9 +775,9 @@ String var066172BAF3274369BB7672D02BD9C593_674155256 =         new String(dst, 0
     if(etag_cdata(buff, offset, length))        
         return;
         etag_basic(buff, offset, length);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (etag_cdata(buff, offset, length)) return;
+        //etag_basic(buff, offset, length);
     }
 
     
@@ -808,9 +798,9 @@ for(int i = 0;i < length;i++)
                     {
                         realTag = false;
                         break;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(!realTag)            
             {
                 theContentHandler.characters(etagchars, 0, 2);
@@ -820,32 +810,32 @@ for(int i = 0;i < length;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1728841862 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_963589648 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_963589648;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1777508093 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1769460576 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1769460576;
-        
-        
-        
-			
-			
-				
-					
-						
-						
-						
-					
-				
-			
-				
-				
-				
-				
-				
-				
-			
-        
+        // ---------- Original Method ----------
+        //String currentName = theStack.name();
+        //if (CDATAElements && (theStack.flags() & Schema.F_CDATA) != 0) {
+			//boolean realTag = (length == currentName.length());
+			//if (realTag) {
+				//for (int i = 0; i < length; i++) {
+					//if (Character.toLowerCase(buff[offset + i]) != Character.toLowerCase(currentName.charAt(i))) {
+						//realTag = false;
+						//break;
+						//}
+					//}
+				//}
+			//if (!realTag) {
+				//theContentHandler.characters(etagchars, 0, 2);
+				//theContentHandler.characters(buff, offset, length);
+				//theContentHandler.characters(etagchars, 2, 1);
+				//theScanner.startCDATA();
+				//return true;
+				//}
+			//}
+        //return false;
     }
 
     
@@ -863,11 +853,11 @@ for(int i = 0;i < length;i++)
     if(type == null)            
             return;
             name = type.name();
-        } 
+        } //End block
         else
         {
             name = theStack.name();
-        } 
+        } //End block
         Element sp;
         boolean inNoforce = false;
 for(sp = theStack;sp != null;sp = sp.next())
@@ -876,7 +866,7 @@ for(sp = theStack;sp != null;sp = sp.next())
             break;
     if((sp.flags() & Schema.F_NOFORCE) != 0)            
             inNoforce = true;
-        } 
+        } //End block
     if(sp == null)        
         return;
     if(sp.next() == null || sp.next().next() == null)        
@@ -884,55 +874,55 @@ for(sp = theStack;sp != null;sp = sp.next())
     if(inNoforce)        
         {
             sp.preclose();
-        } 
+        } //End block
         else
         {
             while
 (theStack != sp)            
             {
                 restartablyPop();
-            } 
+            } //End block
             pop();
-        } 
+        } //End block
         while
 (theStack.isPreclosed())        
         {
             pop();
-        } 
+        } //End block
         restart(null);
-        
-        
-        
-        
-			
-			
-			
-			
-			
-		
-			
-			
-        
-        
-        
-			
-			
-			
-        
-        
-        
-			
-			
-		
-			
-				
-				
-			
-			
-        
-			
-			
-        
+        // ---------- Original Method ----------
+        //theNewElement = null;
+        //String name;
+        //if (length != 0) {
+			//name = makeName(buff, offset, length);
+			//ElementType type = theSchema.getElementType(name);
+			//if (type == null) return;	
+			//name = type.name();
+			//}
+		//else {
+			//name = theStack.name();
+			//}
+        //Element sp;
+        //boolean inNoforce = false;
+        //for (sp = theStack; sp != null; sp = sp.next()) {
+			//if (sp.name().equals(name)) break;
+			//if ((sp.flags() & Schema.F_NOFORCE) != 0) inNoforce = true;
+			//}
+        //if (sp == null) return;
+        //if (sp.next() == null || sp.next().next() == null) return;
+        //if (inNoforce) {		
+			//sp.preclose();		
+			//}
+		//else {			
+			//while (theStack != sp) {
+				//restartablyPop();
+				//}
+			//pop();
+			//}
+        //while (theStack.isPreclosed()) {
+			//pop();
+			//}
+        //restart(null);
     }
 
     
@@ -946,14 +936,14 @@ for(sp = theStack;sp != null;sp = sp.next())
             Element next = theSaved.next();
             push(theSaved);
             theSaved = next;
-        } 
-        
-        
-				
-			
-			
-			
-			
+        } //End block
+        // ---------- Original Method ----------
+        //while (theSaved != null && theStack.canContain(theSaved) &&
+				//(e == null || theSaved.canContain(e))) {
+			//Element next = theSaved.next();
+			//push(theSaved);
+			//theSaved = next;
+			//}
     }
 
     
@@ -971,7 +961,7 @@ for(sp = theStack;sp != null;sp = sp.next())
     if(foreign(prefix, namespace))        
         {
             theContentHandler.endPrefixMapping(prefix);
-        } 
+        } //End block
         Attributes atts = theStack.atts();
 for(int i = atts.getLength() - 1;i >= 0;i--)
         {
@@ -980,29 +970,29 @@ for(int i = atts.getLength() - 1;i >= 0;i--)
     if(foreign(attPrefix, attNamespace))            
             {
                 theContentHandler.endPrefixMapping(attPrefix);
-            } 
-        } 
+            } //End block
+        } //End block
         theStack = theStack.next();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-			
-			
-        
-        
-			
-			
-			
-				
-				
-			
-        
+        // ---------- Original Method ----------
+        //if (theStack == null) return;
+        //String name = theStack.name();
+        //String localName = theStack.localName();
+        //String namespace = theStack.namespace();
+        //String prefix = prefixOf(name);
+        //if (!namespaces) namespace = localName = "";
+        //theContentHandler.endElement(namespace, localName, name);
+        //if (foreign(prefix, namespace)) {
+			//theContentHandler.endPrefixMapping(prefix);
+			//}
+        //Attributes atts = theStack.atts();
+        //for (int i = atts.getLength() - 1; i >= 0; i--) {
+			//String attNamespace = atts.getURI(i);
+			//String attPrefix = prefixOf(atts.getQName(i));
+			//if (foreign(attPrefix, attNamespace)) {
+				//theContentHandler.endPrefixMapping(attPrefix);
+				//}
+			//}
+        //theStack = theStack.next();
     }
 
     
@@ -1015,15 +1005,15 @@ for(int i = atts.getLength() - 1;i >= 0;i--)
             popped.anonymize();
             popped.setNext(theSaved);
             theSaved = popped;
-        } 
-        
-        
-        
-        
-			
-			
-			
-			
+        } //End block
+        // ---------- Original Method ----------
+        //Element popped = theStack;
+        //pop();
+        //if (restartElements && (popped.flags() & Schema.F_RESTART) != 0) {
+			//popped.anonymize();
+			//popped.setNext(theSaved);
+			//theSaved = popped;
+			//}
     }
 
     
@@ -1041,15 +1031,15 @@ for(int i = atts.getLength() - 1;i >= 0;i--)
             try 
             {
                 theEntityResolver.resolveEntity(theDoctypePublicId, theDoctypeSystemId);
-            } 
+            } //End block
             catch (IOException ew)
             {
-            } 
-        } 
+            } //End block
+        } //End block
     if(foreign(prefix, namespace))        
         {
             theContentHandler.startPrefixMapping(prefix, namespace);
-        } 
+        } //End block
         Attributes atts = e.atts();
         int len = atts.getLength();
 for(int i = 0;i < len;i++)
@@ -1059,8 +1049,8 @@ for(int i = 0;i < len;i++)
     if(foreign(attPrefix, attNamespace))            
             {
                 theContentHandler.startPrefixMapping(attPrefix, attNamespace);
-            } 
-        } 
+            } //End block
+        } //End block
         theContentHandler.startElement(namespace, localName, name, e.atts());
         e.setNext(theStack);
         theStack = e;
@@ -1068,9 +1058,9 @@ for(int i = 0;i < len;i++)
     if(CDATAElements && (theStack.flags() & Schema.F_CDATA) != 0)        
         {
             theScanner.startCDATA();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1084,11 +1074,11 @@ for(int i = 0;i < len;i++)
 String varA4C254BE9F2C23429A8ED0933F20FF43_649572844 =         prefix;
         varA4C254BE9F2C23429A8ED0933F20FF43_649572844.addTaint(taint);
         return varA4C254BE9F2C23429A8ED0933F20FF43_649572844;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int i = name.indexOf(':');
+        //String prefix = "";
+        //if (i != -1) prefix = name.substring(0, i);
+        //return prefix;
     }
 
     
@@ -1101,10 +1091,10 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_649572844 =         prefix;
         boolean var684A72E08F24F55B1138EDD5A7C2B53E_1168346179 = (foreign);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_993391108 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_993391108;
-        
-        
-			
-        
+        // ---------- Original Method ----------
+        //boolean foreign = !(prefix.equals("") || namespace.equals("") ||
+			//namespace.equals(theSchema.getURI()));
+        //return foreign;
     }
 
     
@@ -1129,7 +1119,7 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_649572844 =         prefix;
     if(v.length>3 && "SYSTEM".equals(v[2]))                
                 {
                     systemid = v[3];
-                } 
+                } //End block
                 else
     if(v.length > 3 && "PUBLIC".equals(v[2]))                
                 {
@@ -1137,14 +1127,14 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_649572844 =         prefix;
     if(v.length > 4)                    
                     {
                         systemid = v[4];
-                    } 
+                    } //End block
                     else
                     {
                         systemid = "";
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         publicid = trimquotes(publicid);
         systemid = trimquotes(systemid);
     if(name != null)        
@@ -1160,14 +1150,14 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_649572844 =         prefix;
                 try 
                 {
                     theDoctypeSystemId = new URL(new URL(theDoctypeSystemId), systemid).toString();
-                } 
+                } //End block
                 catch (Exception e)
                 {
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1243,41 +1233,41 @@ for(int i = 0;i < len;i++)
             {
                 dst.append(ch);
                 suppressSpace = false;
-            } 
+            } //End block
             else
     if(suppressSpace)            
             {
                 ;
-            } 
+            } //End block
             else
             {
                 dst.append(' ');
                 suppressSpace = true;
-            } 
-        } 
+            } //End block
+        } //End block
 String var17F296EBBF7F1F875B1A9BB868D8F4B3_1167068337 =         dst.toString().trim();
         var17F296EBBF7F1F875B1A9BB868D8F4B3_1167068337.addTaint(taint);
         return var17F296EBBF7F1F875B1A9BB868D8F4B3_1167068337;
-        
-        
-        
-        
-        
-        
-			
-			
-				
-				
-				
-			
-				
-				
-			
-				
-				
-				
-			
-        
+        // ---------- Original Method ----------
+        //if (src == null) return null;
+        //int len = src.length();
+        //StringBuffer dst = new StringBuffer(len);
+        //boolean suppressSpace = true;
+        //for (int i = 0; i < len; i++) {
+			//char ch = src.charAt(i);
+			//if (legal.indexOf(ch) != -1) { 	
+				//dst.append(ch);
+				//suppressSpace = false;
+				//}
+			//else if (suppressSpace) {	
+				//;
+				//}
+			//else {
+				//dst.append(' ');
+				//suppressSpace = true;
+				//}
+			//}
+        //return dst.toString().trim();
     }
 
     
@@ -1302,22 +1292,22 @@ String var17F296EBBF7F1F875B1A9BB868D8F4B3_1167068337 =         dst.toString().t
     if(!rootBogons)            
             theSchema.parent(name, theSchema.rootElementType().name());
             type = theSchema.getElementType(name);
-        } 
+        } //End block
         theNewElement = new Element(type, defaultAttributes);
-        
-        
-        
-        
-        
-        
-			
-			
-			
-			
-			
-			
-			
-        
+        // ---------- Original Method ----------
+        //if (theNewElement != null) return;
+        //String name = makeName(buff, offset, length);
+        //if (name == null) return;
+        //ElementType type = theSchema.getElementType(name);
+        //if (type == null) {
+			//if (ignoreBogons) return;
+			//int bogonModel = bogonsEmpty ? Schema.M_EMPTY : Schema.M_ANY;
+			//int bogonMemberOf = rootBogons ? Schema.M_ANY : (Schema.M_ANY & ~ Schema.M_ROOT);
+			//theSchema.elementType(name, bogonModel, bogonMemberOf, 0);
+			//if (!rootBogons) theSchema.parent(name, theSchema.rootElementType().name());
+			//type = theSchema.getElementType(name);
+			//}
+        //theNewElement = new Element(type, defaultAttributes);
     }
 
     
@@ -1329,10 +1319,10 @@ String var17F296EBBF7F1F875B1A9BB868D8F4B3_1167068337 =         dst.toString().t
         theLexicalHandler.startCDATA();
         pcdata(buff, offset, length);
         theLexicalHandler.endCDATA();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //theLexicalHandler.startCDATA();
+        //pcdata(buff, offset, length);
+        //theLexicalHandler.endCDATA();
     }
 
     
@@ -1349,37 +1339,37 @@ for(int i = 0;i < length;i++)
     if(!Character.isWhitespace(buff[offset+i]))            
             {
                 allWhite = false;
-            } 
-        } 
+            } //End block
+        } //End block
     if(allWhite && !theStack.canContain(thePCDATA))        
         {
     if(ignorableWhitespace)            
             {
                 theContentHandler.ignorableWhitespace(buff, offset, length);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             rectify(thePCDATA);
             theContentHandler.characters(buff, offset, length);
-        } 
-        
-        
-        
-        
-			
-				
-				
-			
-        
-			
-				
-				
-			
-		
-			
-			
-			
+        } //End block
+        // ---------- Original Method ----------
+        //if (length == 0) return;
+        //boolean allWhite = true;
+        //for (int i = 0; i < length; i++) {
+			//if (!Character.isWhitespace(buff[offset+i])) {
+				//allWhite = false;
+				//}
+			//}
+        //if (allWhite && !theStack.canContain(thePCDATA)) {
+			//if (ignorableWhitespace) {
+				//theContentHandler.ignorableWhitespace(buff, offset, length);
+				//}
+			//}
+		//else {
+			//rectify(thePCDATA);
+			//theContentHandler.characters(buff, offset, length);
+			//}
     }
 
     
@@ -1388,13 +1378,12 @@ for(int i = 0;i < length;i++)
     if(theNewElement != null)        
         return;
         thePITarget = makeName(buff, offset, length).replace(':', '_');
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (theNewElement != null) return;
+        //thePITarget = makeName(buff, offset, length).replace(':', '_');
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.346 -0400", hash_original_method = "373E8AB8CB624AD49A96496DDC7BD596", hash_generated_method = "FB3633235A53377577D848C8A9FBA0CD")
     public void pi(char[] buff, int offset, int length) throws SAXException {
         addTaint(length);
@@ -1409,13 +1398,13 @@ for(int i = 0;i < length;i++)
         theContentHandler.processingInstruction(thePITarget,
 			new String(buff, offset, length));
         thePITarget = null;
-        
-        
-        
-        
-        
-			
-        
+        // ---------- Original Method ----------
+        //if (theNewElement != null || thePITarget == null) return;
+        //if ("xml".equalsIgnoreCase(thePITarget)) return;
+        //if (length > 0 && buff[length - 1] == '?') length--;
+        //theContentHandler.processingInstruction(thePITarget,
+			//new String(buff, offset, length));
+        //thePITarget = null;
     }
 
     
@@ -1430,13 +1419,13 @@ for(int i = 0;i < length;i++)
     if(theStack.model() == Schema.M_EMPTY)        
         {
             etag_basic(buff, offset, length);
-        } 
-        
-        
-        
-        
-			
-			
+        } //End block
+        // ---------- Original Method ----------
+        //if (theNewElement == null) return;
+        //rectify(theNewElement);
+        //if (theStack.model() == Schema.M_EMPTY) {
+			//etag_basic(buff, offset, length);
+			//}
     }
 
     
@@ -1449,10 +1438,10 @@ for(int i = 0;i < length;i++)
         return;
         rectify(theNewElement);
         etag_basic(buff, offset, length);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (theNewElement == null) return;
+        //rectify(theNewElement);
+        //etag_basic(buff, offset, length);
     }
 
     
@@ -1462,8 +1451,8 @@ for(int i = 0;i < length;i++)
         addTaint(offset);
         addTaint(buff[0]);
         theLexicalHandler.comment(buff, offset, length);
-        
-        
+        // ---------- Original Method ----------
+        //theLexicalHandler.comment(buff, offset, length);
     }
 
     
@@ -1478,7 +1467,7 @@ for(sp = theStack;sp != null;sp = sp.next())
             {
     if(sp.canContain(e))                
                 break;
-            } 
+            } //End block
     if(sp != null)            
             break;
             ElementType parentType = e.parent();
@@ -1487,7 +1476,7 @@ for(sp = theStack;sp != null;sp = sp.next())
             Element parent = new Element(parentType, defaultAttributes);
             parent.setNext(e);
             e = parent;
-        } 
+        } //End block
     if(sp == null)        
         return;
         while
@@ -1497,7 +1486,7 @@ for(sp = theStack;sp != null;sp = sp.next())
 				theStack.next().next() == null)            
             break;
             restartablyPop();
-        } 
+        } //End block
         while
 (e != null)        
         {
@@ -1506,45 +1495,44 @@ for(sp = theStack;sp != null;sp = sp.next())
             push(e);
             e = nexte;
             restart(e);
-        } 
+        } //End block
         theNewElement = null;
-        
-        
-        
-			
-				
-				
-			
-			
-			
-			
-			
-			
-			
-        
-        
-			
-				
-			
-			
-        
-			
-			
-			
-			
-			
-        
+        // ---------- Original Method ----------
+        //Element sp;
+        //while (true) {
+			//for (sp = theStack; sp != null; sp = sp.next()) {
+				//if (sp.canContain(e)) break;
+				//}
+			//if (sp != null) break;
+			//ElementType parentType = e.parent();
+			//if (parentType == null) break;
+			//Element parent = new Element(parentType, defaultAttributes);
+			//parent.setNext(e);
+			//e = parent;
+			//}
+        //if (sp == null) return;
+        //while (theStack != sp) {
+			//if (theStack == null || theStack.next() == null ||
+				//theStack.next().next() == null) break;
+			//restartablyPop();
+			//}
+        //while (e != null) {
+			//Element nexte = e.next();
+			//if (!e.name().equals("<pcdata>")) push(e);
+			//e = nexte;
+			//restart(e);
+			//}
+        //theNewElement = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.348 -0400", hash_original_method = "7F354BAD0D4521AB4E9BA9D90015CEBE", hash_generated_method = "520582FDB89E4EFFF34C0D4983CA504B")
     public int getEntity() {
         int varFB6B2EC6D1990574C8030142DDD5ACD0_835980961 = (theEntity);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1374279184 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1374279184;
-        
-        
+        // ---------- Original Method ----------
+        //return theEntity;
     }
 
     
@@ -1563,7 +1551,7 @@ for(;length-- > 0;offset++)
             {
                 start = false;
                 dst.append(ch);
-            } 
+            } //End block
             else
     if(Character.isDigit(ch) || ch == '-' || ch == '.')            
             {
@@ -1571,7 +1559,7 @@ for(;length-- > 0;offset++)
                 dst.append('_');
                 start = false;
                 dst.append(ch);
-            } 
+            } //End block
             else
     if(ch == ':' && !seenColon)            
             {
@@ -1580,96 +1568,89 @@ for(;length-- > 0;offset++)
                 dst.append('_');
                 start = true;
                 dst.append(translateColons ? '_' : ch);
-            } 
-        } 
+            } //End block
+        } //End block
         int dstLength = dst.length();
     if(dstLength == 0 || dst.charAt(dstLength - 1) == ':')        
         dst.append('_');
 String var88E982745ADCD76FA64A8EF43E020057_48811248 =         dst.toString().intern();
         var88E982745ADCD76FA64A8EF43E020057_48811248.addTaint(taint);
         return var88E982745ADCD76FA64A8EF43E020057_48811248;
-        
-        
-        
-        
-        
-			
-			
-				
-				
-				
-			
-				
-				
-				
-				
-			
-				
-				
-				
-				
-				
-			
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuffer dst = new StringBuffer(length + 2);
+        //boolean seenColon = false;
+        //boolean start = true;
+        //for (; length-- > 0; offset++) {
+			//char ch = buff[offset];
+			//if (Character.isLetter(ch) || ch == '_') {
+				//start = false;
+				//dst.append(ch);
+				//}
+			//else if (Character.isDigit(ch) || ch == '-' || ch == '.') {
+				//if (start) dst.append('_');
+				//start = false;
+				//dst.append(ch);
+				//}
+			//else if (ch == ':' && !seenColon) {
+				//seenColon = true;
+				//if (start) dst.append('_');
+				//start = true;
+				//dst.append(translateColons ? '_' : ch);
+				//}
+			//}
+        //int dstLength = dst.length();
+        //if (dstLength == 0 || dst.charAt(dstLength - 1) == ':') dst.append('_');
+        //return dst.toString().intern();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.350 -0400", hash_original_method = "213183511FA9CBC21D458599F3954E65", hash_generated_method = "A571046559E9FE76248D4925C76926B1")
     public void comment(char[] ch, int start, int length) throws SAXException {
         addTaint(length);
         addTaint(start);
         addTaint(ch[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.350 -0400", hash_original_method = "B026A18FCF4D46E60EDFCDEA2654D91E", hash_generated_method = "B842EEA0DE9052ECF61866BD9EB9FFB0")
     public void endCDATA() throws SAXException {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.350 -0400", hash_original_method = "3D36862B53F533617A1DD5C66B985713", hash_generated_method = "84D215898BE9C8AA399821A662E8380F")
     public void endDTD() throws SAXException {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.350 -0400", hash_original_method = "A799CD2136F4389F2AB6AC2E97C1C7E3", hash_generated_method = "2EAC67D67612A09592B6D4AE3BE5EB34")
     public void endEntity(String name) throws SAXException {
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.351 -0400", hash_original_method = "E4BBD9A45ED517D6BA1A0F40E8CDD7AD", hash_generated_method = "1EFEFFE32283B3B2E0EFBC09815C5A15")
     public void startCDATA() throws SAXException {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.351 -0400", hash_original_method = "6BDC1CD16BCB1071C2A9E7A68AA16026", hash_generated_method = "1695C65D06956AC82C1CCC632491C06C")
     public void startDTD(String name, String publicid, String systemid) throws SAXException {
         addTaint(systemid.getTaint());
         addTaint(publicid.getTaint());
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.351 -0400", hash_original_method = "DCC3E349AFEA1A7195E89C47AA33A3E4", hash_generated_method = "CD87BEA40ED554D51CC2691C961E2B5E")
     public void startEntity(String name) throws SAXException {
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

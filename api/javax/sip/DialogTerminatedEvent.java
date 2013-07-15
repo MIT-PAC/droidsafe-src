@@ -1,6 +1,6 @@
 package javax.sip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,19 +16,18 @@ public class DialogTerminatedEvent extends EventObject {
         super(source);
         addTaint(source.getTaint());
         mDialog = dialog;
-        
-        
+        // ---------- Original Method ----------
+        //mDialog = dialog;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.199 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "3E7629A778445664CD3B9C8386F0FE8A")
     public Dialog getDialog() {
 Dialog var91E8306796CF70F787962B1CE02ED969_1302475889 =         mDialog;
         var91E8306796CF70F787962B1CE02ED969_1302475889.addTaint(taint);
         return var91E8306796CF70F787962B1CE02ED969_1302475889;
-        
-        
+        // ---------- Original Method ----------
+        //return mDialog;
     }
 
     

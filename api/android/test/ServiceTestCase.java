@@ -1,6 +1,6 @@
 package android.test;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,8 +50,8 @@ public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.186 -0400", hash_original_method = "1F3B37EA8E1B8B1054B69DFECCE45A51", hash_generated_method = "85D06AB636C51DA0CBB69DAD45C7DC56")
     public  ServiceTestCase(Class<T> serviceClass) {
         mServiceClass = serviceClass;
-        
-        
+        // ---------- Original Method ----------
+        //mServiceClass = serviceClass;
     }
 
     
@@ -60,8 +60,8 @@ public abstract class ServiceTestCase<T extends Service> extends AndroidTestCase
 T var72B03849F9527CD4AC8A54AA9B97A48C_62614018 =         mService;
         var72B03849F9527CD4AC8A54AA9B97A48C_62614018.addTaint(taint);
         return var72B03849F9527CD4AC8A54AA9B97A48C_62614018;
-        
-        
+        // ---------- Original Method ----------
+        //return mService;
     }
 
     
@@ -70,9 +70,9 @@ T var72B03849F9527CD4AC8A54AA9B97A48C_62614018 =         mService;
     protected void setUp() throws Exception {
         super.setUp();
         mSystemContext = getContext();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.setUp();
+        //mSystemContext = getContext();
     }
 
     
@@ -82,15 +82,15 @@ T var72B03849F9527CD4AC8A54AA9B97A48C_62614018 =         mService;
         try 
         {
             mService = mServiceClass.newInstance();
-        } 
+        } //End block
         catch (Exception e)
         {
             assertNotNull(mService);
-        } 
+        } //End block
     if(getApplication() == null)        
         {
             setApplication(new MockApplication());
-        } 
+        } //End block
         mService.attach(
                 getContext(),
                 null,               
@@ -102,92 +102,90 @@ T var72B03849F9527CD4AC8A54AA9B97A48C_62614018 =         mService;
         assertNotNull(mService);
         mServiceId = new Random().nextInt();
         mServiceAttached = true;
-        
-        
-        
-            
-        
-            
-        
-        
-            
-        
-        
-                
-                
-                
-                
-                
-                
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //mService = null;
+        //try {
+            //mService = mServiceClass.newInstance();
+        //} catch (Exception e) {
+            //assertNotNull(mService);
+        //}
+        //if (getApplication() == null) {
+            //setApplication(new MockApplication());
+        //}
+        //mService.attach(
+                //getContext(),
+                //null,               
+                //mServiceClass.getName(),
+                //null,               
+                //getApplication(),
+                //null                
+                //);
+        //assertNotNull(mService);
+        //mServiceId = new Random().nextInt();
+        //mServiceAttached = true;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.188 -0400", hash_original_method = "21E4CB4FCD74533F799D23D47E90F5B7", hash_generated_method = "5A760F06291C41012D1BBC881FFEC8B6")
     protected void startService(Intent intent) {
         addTaint(intent.getTaint());
     if(!mServiceAttached)        
         {
             setupService();
-        } 
+        } //End block
         assertNotNull(mService);
     if(!mServiceCreated)        
         {
             mService.onCreate();
             mServiceCreated = true;
-        } 
+        } //End block
         mService.onStartCommand(intent, 0, mServiceId);
         mServiceStarted = true;
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!mServiceAttached) {
+            //setupService();
+        //}
+        //assertNotNull(mService);
+        //if (!mServiceCreated) {
+            //mService.onCreate();
+            //mServiceCreated = true;
+        //}
+        //mService.onStartCommand(intent, 0, mServiceId);
+        //mServiceStarted = true;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.189 -0400", hash_original_method = "9243E940E5DBFB4305A53445C0DB5EAA", hash_generated_method = "9B7E711ACBFCFF19ACB5E38E6A546EA8")
     protected IBinder bindService(Intent intent) {
     if(!mServiceAttached)        
         {
             setupService();
-        } 
+        } //End block
         assertNotNull(mService);
     if(!mServiceCreated)        
         {
             mService.onCreate();
             mServiceCreated = true;
-        } 
+        } //End block
         mServiceIntent = intent.cloneFilter();
         IBinder result = mService.onBind(intent);
         mServiceBound = true;
 IBinder varDC838461EE2FA0CA4C9BBB70A15456B0_1498803600 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1498803600.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1498803600;
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!mServiceAttached) {
+            //setupService();
+        //}
+        //assertNotNull(mService);
+        //if (!mServiceCreated) {
+            //mService.onCreate();
+            //mServiceCreated = true;
+        //}
+        //mServiceIntent = intent.cloneFilter();
+        //IBinder result = mService.onBind(intent);
+        //mServiceBound = true;
+        //return result;
     }
 
     
@@ -197,28 +195,28 @@ IBinder varDC838461EE2FA0CA4C9BBB70A15456B0_1498803600 =         result;
         {
             mService.stopSelf();
             mServiceStarted = false;
-        } 
+        } //End block
         else
     if(mServiceBound)        
         {
             mService.onUnbind(mServiceIntent);
             mServiceBound = false;
-        } 
+        } //End block
     if(mServiceCreated)        
         {
             mService.onDestroy();
-        } 
-        
-        
-            
-            
-        
-            
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mServiceStarted) {
+            //mService.stopSelf();
+            //mServiceStarted = false;
+        //} else if (mServiceBound) {
+            //mService.onUnbind(mServiceIntent);
+            //mServiceBound = false;
+        //}
+        //if (mServiceCreated) {
+            //mService.onDestroy();
+        //}
     }
 
     
@@ -229,42 +227,39 @@ IBinder varDC838461EE2FA0CA4C9BBB70A15456B0_1498803600 =         result;
         mService = null;
         scrubClass(ServiceTestCase.class);
         super.tearDown();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //shutdownService();
+        //mService = null;
+        //scrubClass(ServiceTestCase.class);
+        //super.tearDown();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.190 -0400", hash_original_method = "3567B69292EF80C03794348A9036011F", hash_generated_method = "4107DD9EC38CBD3CCF4928F6835C3F78")
     public void setApplication(Application application) {
         mApplication = application;
-        
-        
+        // ---------- Original Method ----------
+        //mApplication = application;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.191 -0400", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "78547C6E1E536CEF3581957E99767FAC")
     public Application getApplication() {
 Application varF254F0ADF054F0318B65674CA3670A5E_1156666010 =         mApplication;
         varF254F0ADF054F0318B65674CA3670A5E_1156666010.addTaint(taint);
         return varF254F0ADF054F0318B65674CA3670A5E_1156666010;
-        
-        
+        // ---------- Original Method ----------
+        //return mApplication;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.191 -0400", hash_original_method = "20F2DC85F18376CDF1A7B2B9DA0C85A8", hash_generated_method = "20EABC9CCD510673D89CC90A7880DF3E")
     public Context getSystemContext() {
 Context var8C7F00BBFA5D714A8F742FB231BABCE9_1028013276 =         mSystemContext;
         var8C7F00BBFA5D714A8F742FB231BABCE9_1028013276.addTaint(taint);
         return var8C7F00BBFA5D714A8F742FB231BABCE9_1028013276;
-        
-        
+        // ---------- Original Method ----------
+        //return mSystemContext;
     }
 
     
@@ -272,9 +267,9 @@ Context var8C7F00BBFA5D714A8F742FB231BABCE9_1028013276 =         mSystemContext;
     public void testServiceTestCaseSetUpProperly() throws Exception {
         setupService();
         assertNotNull("service should be launched successfully", mService);
-        
-        
-        
+        // ---------- Original Method ----------
+        //setupService();
+        //assertNotNull("service should be launched successfully", mService);
     }
 
     

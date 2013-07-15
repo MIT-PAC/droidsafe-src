@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -63,18 +63,18 @@ public final class BluetoothSocket implements Closeable {
                 IOException varCE675CAF7DE9635BFA2C625A8BD4C1DD_1016359902 = new IOException("Invalid RFCOMM channel: " + port);
                 varCE675CAF7DE9635BFA2C625A8BD4C1DD_1016359902.addTaint(taint);
                 throw varCE675CAF7DE9635BFA2C625A8BD4C1DD_1016359902;
-            } 
-        } 
+            } //End block
+        } //End block
     if(uuid == null)        
         {
             mPort = port;
             mSdp = null;
-        } 
+        } //End block
         else
         {
             mSdp = new SdpHelper(device, uuid);
             mPort = -1;
-        } 
+        } //End block
         mType = type;
         mAuth = auth;
         mEncrypt = encrypt;
@@ -82,25 +82,25 @@ public final class BluetoothSocket implements Closeable {
     if(device == null)        
         {
             mAddress = null;
-        } 
+        } //End block
         else
         {
             mAddress = device.getAddress();
-        } 
+        } //End block
     if(fd == -1)        
         {
             initSocketNative();
-        } 
+        } //End block
         else
         {
             initSocketFromFdNative(fd);
-        } 
+        } //End block
         mInputStream = new BluetoothInputStream(this);
         mOutputStream = new BluetoothOutputStream(this);
         mSocketState = SocketState.INIT;
         mLock = new ReentrantReadWriteLock();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -114,7 +114,7 @@ public final class BluetoothSocket implements Closeable {
         addTaint(auth);
         addTaint(fd);
         addTaint(type);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -124,17 +124,17 @@ public final class BluetoothSocket implements Closeable {
         try 
         {
             close();
-        } 
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //close();
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
@@ -152,26 +152,26 @@ public final class BluetoothSocket implements Closeable {
     if(mSdp != null)            
             {
                 mPort = mSdp.doSdp();
-            } 
+            } //End block
             connectNative();
             mSocketState = SocketState.CONNECTED;
-        } 
+        } //End block
         finally 
         {
             mLock.readLock().unlock();
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLock.readLock().lock();
+        //try {
+            //if (mSocketState == SocketState.CLOSED) throw new IOException("socket closed");
+            //if (mSdp != null) {
+                //mPort = mSdp.doSdp();  
+            //}
+            //connectNative();  
+            //mSocketState = SocketState.CONNECTED;
+        //} finally {
+            //mLock.readLock().unlock();
+        //}
     }
 
     
@@ -185,85 +185,81 @@ public final class BluetoothSocket implements Closeable {
     if(mSdp != null)            
             {
                 mSdp.cancel();
-            } 
+            } //End block
             abortNative();
-        } 
+        } //End block
         finally 
         {
             mLock.readLock().unlock();
-        } 
+        } //End block
         mLock.writeLock().lock();
         try 
         {
             mSocketState = SocketState.CLOSED;
             destroyNative();
-        } 
+        } //End block
         finally 
         {
             mLock.writeLock().unlock();
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLock.readLock().lock();
+        //try {
+            //if (mSocketState == SocketState.CLOSED) return;
+            //if (mSdp != null) {
+                //mSdp.cancel();
+            //}
+            //abortNative();
+        //} finally {
+            //mLock.readLock().unlock();
+        //}
+        //mLock.writeLock().lock();
+        //try {
+            //mSocketState = SocketState.CLOSED;
+            //destroyNative();
+        //} finally {
+            //mLock.writeLock().unlock();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.386 -0400", hash_original_method = "B5CADD9AEDAFC7D30E54D77C9BCE6C15", hash_generated_method = "ACC30C4AF254B7EA87762B388B97B905")
     public BluetoothDevice getRemoteDevice() {
 BluetoothDevice var7230C8D7620F29F2A427B4C63F6F2324_2136406366 =         mDevice;
         var7230C8D7620F29F2A427B4C63F6F2324_2136406366.addTaint(taint);
         return var7230C8D7620F29F2A427B4C63F6F2324_2136406366;
-        
-        
+        // ---------- Original Method ----------
+        //return mDevice;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.386 -0400", hash_original_method = "3F2C344C79BB6AAED73F7DEF9A9B7E79", hash_generated_method = "5871AD75F4E87DC2296E3F9014A83D76")
     public InputStream getInputStream() throws IOException {
 InputStream var2E675DC7F4D82075BA9D940E3D1423A3_1871249442 =         mInputStream;
         var2E675DC7F4D82075BA9D940E3D1423A3_1871249442.addTaint(taint);
         return var2E675DC7F4D82075BA9D940E3D1423A3_1871249442;
-        
-        
+        // ---------- Original Method ----------
+        //return mInputStream;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.386 -0400", hash_original_method = "650B33031816EC89B8DA91268C4339E3", hash_generated_method = "8F2AFC145B44817B9F65F7D128C7FF8E")
     public OutputStream getOutputStream() throws IOException {
 OutputStream var0F13CE399ED1997A5DFE53E1C74E6AED_69062262 =         mOutputStream;
         var0F13CE399ED1997A5DFE53E1C74E6AED_69062262.addTaint(taint);
         return var0F13CE399ED1997A5DFE53E1C74E6AED_69062262;
-        
-        
+        // ---------- Original Method ----------
+        //return mOutputStream;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.387 -0400", hash_original_method = "1C0993C098E9F3E04F29E582E3A28E0E", hash_generated_method = "9CBD043237F74A841AA5CDD96C4BC3F8")
     public boolean isConnected() {
         boolean var46C0E0AD40483C5E79A4855A7310A2DB_2071130150 = ((mSocketState == SocketState.CONNECTED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_875005537 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_875005537;
-        
-        
+        // ---------- Original Method ----------
+        //return (mSocketState == SocketState.CONNECTED);
     }
 
     
@@ -281,23 +277,22 @@ OutputStream var0F13CE399ED1997A5DFE53E1C74E6AED_69062262 =         mOutputStrea
             int varFB770D3941E3020DDC64D67CFD72AD4B_75345623 = (bindListenNative());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345910488 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345910488;
-        } 
+        } //End block
         finally 
         {
             mLock.readLock().unlock();
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLock.readLock().lock();
+        //try {
+            //if (mSocketState == SocketState.CLOSED) return EBADFD;
+            //return bindListenNative();
+        //} finally {
+            //mLock.readLock().unlock();
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.388 -0400", hash_original_method = "7D6884496E175BC1959E5AD456C9EDAE", hash_generated_method = "64664A2F6CF593339F3CAA613C6CBDBD")
      BluetoothSocket accept(int timeout) throws IOException {
         addTaint(timeout);
@@ -315,21 +310,21 @@ OutputStream var0F13CE399ED1997A5DFE53E1C74E6AED_69062262 =         mOutputStrea
 BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acceptedSocket;
             var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003.addTaint(taint);
             return var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003;
-        } 
+        } //End block
         finally 
         {
             mLock.readLock().unlock();
-        } 
-        
-        
-        
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLock.readLock().lock();
+        //try {
+            //if (mSocketState == SocketState.CLOSED) throw new IOException("socket closed");
+            //BluetoothSocket acceptedSocket = acceptNative(timeout);
+            //mSocketState = SocketState.CONNECTED;
+            //return acceptedSocket;
+        //} finally {
+            //mLock.readLock().unlock();
+        //}
     }
 
     
@@ -347,19 +342,19 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
             int var6C0761548C872FF7B51791564A7FE752_1295728590 = (availableNative());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2013851455 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2013851455;
-        } 
+        } //End block
         finally 
         {
             mLock.readLock().unlock();
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLock.readLock().lock();
+        //try {
+            //if (mSocketState == SocketState.CLOSED) throw new IOException("socket closed");
+            //return availableNative();
+        //} finally {
+            //mLock.readLock().unlock();
+        //}
     }
 
     
@@ -380,19 +375,19 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
             int varC18D89DD41C9D536263C311965FCD12E_1717959484 = (readNative(b, offset, length));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_573608846 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_573608846;
-        } 
+        } //End block
         finally 
         {
             mLock.readLock().unlock();
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLock.readLock().lock();
+        //try {
+            //if (mSocketState == SocketState.CLOSED) throw new IOException("socket closed");
+            //return readNative(b, offset, length);
+        //} finally {
+            //mLock.readLock().unlock();
+        //}
     }
 
     
@@ -413,41 +408,37 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
             int varFBABBA8EFF1901408DA0123BD6C1FFAC_1439729716 = (writeNative(b, offset, length));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1584458567 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1584458567;
-        } 
+        } //End block
         finally 
         {
             mLock.readLock().unlock();
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLock.readLock().lock();
+        //try {
+            //if (mSocketState == SocketState.CLOSED) throw new IOException("socket closed");
+            //return writeNative(b, offset, length);
+        //} finally {
+            //mLock.readLock().unlock();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.391 -0400", hash_original_method = "6BAFDED46378133C3A0BF44C4CFE6B9F", hash_generated_method = "5A9B472869C707AA51680B96D15C2E28")
     private void initSocketNative() throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.391 -0400", hash_original_method = "BF4307AC129B0F742AF14FA776C3AE92", hash_generated_method = "9B36C39229FAC424E672E8A35FE6956B")
     private void initSocketFromFdNative(int fd) throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.392 -0400", hash_original_method = "A190E917AF0426307B588F8F262C0530", hash_generated_method = "8F1DCF1C336367E66E46DF6AC76828BB")
     private void connectNative() throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.392 -0400", hash_original_method = "FBE8044CF5F70E438EC9FC22860EE6EE", hash_generated_method = "F21A27188FBFB26171FC1A5486A6D58E")
     private int bindListenNative() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1938161575 = getTaintInt();
@@ -455,7 +446,6 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.393 -0400", hash_original_method = "CC0EA693249E8BA7FE7333002DBC9497", hash_generated_method = "8710BA099487CF3CAC9E26508C1C065E")
     private BluetoothSocket acceptNative(int timeout) throws IOException {
     	BluetoothSocket other = new BluetoothSocket(getTaintInt(), getTaintInt(), mAuth, mEncrypt, mDevice, getTaintInt(), null);
@@ -463,7 +453,6 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.393 -0400", hash_original_method = "C51A35C76C1A11634A799600122FA541", hash_generated_method = "FA349C21A3C5F83BD2F1C2F1B83285FF")
     private int availableNative() throws IOException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2071106016 = getTaintInt();
@@ -471,7 +460,6 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.394 -0400", hash_original_method = "E48C37FA2C3BB9EE05DC3ABFEA76998A", hash_generated_method = "99627AB1DD53760827EB168934A397EA")
     private int readNative(byte[] b, int offset, int length) throws IOException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691624180 = getTaintInt();
@@ -479,7 +467,6 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.394 -0400", hash_original_method = "9C6D3B57E023222AFF04F9EC86966DB6", hash_generated_method = "B4268C1221B6ECA02E4E3EF570668212")
     private int writeNative(byte[] b, int offset, int length) throws IOException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1671713724 = getTaintInt();
@@ -487,19 +474,16 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.395 -0400", hash_original_method = "C1A11630BFE880D237827EBCB744C990", hash_generated_method = "38759B59BA1DBCA41689D75A5FC492B1")
     private void abortNative() throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.395 -0400", hash_original_method = "43A11E63B187B9E286C0B07FFFF02B2D", hash_generated_method = "6F954C75FD63E481CA955CA14599A369")
     private void destroyNative() throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.395 -0400", hash_original_method = "9145588604B9732E698BF5C8CCFBB561", hash_generated_method = "8B9BBFB3A2534E92E169969ECF6CAAFD")
      void throwErrnoNative(int errno) throws IOException {
     }
@@ -535,11 +519,11 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
             this.device = device;
             this.uuid = uuid;
             canceled = false;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //service = BluetoothDevice.getService();
+            //this.device = device;
+            //this.uuid = uuid;
+            //canceled = false;
         }
 
         
@@ -556,10 +540,10 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
             try 
             {
                 inProgress = service.fetchRemoteUuids(device.getAddress(), uuid, this);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
+            } //End block
     if(!inProgress)            
             {
             IOException var565D8297581F7CA3C2C462D823AF65DF_691630808 = new IOException("Unable to start Service Discovery");
@@ -569,10 +553,10 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
             try 
             {
                 wait(12000);
-            } 
+            } //End block
             catch (InterruptedException e)
             {
-            } 
+            } //End block
     if(canceled)            
             {
             IOException var95EFEBCE13E175CD6CC876DC80AC1A40_2136541538 = new IOException("Service discovery canceled");
@@ -588,20 +572,20 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
             int varC485D2ED5CC4CE64FCCCCA710C7A0BB7_531533253 = (channel);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1245398108 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1245398108;
-            
-            
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (canceled) throw new IOException("Service discovery canceled");
+            //channel = -1;
+            //boolean inProgress = false;
+            //try {
+                //inProgress = service.fetchRemoteUuids(device.getAddress(), uuid, this);
+            //} catch (RemoteException e) {Log.e(TAG, "", e);}
+            //if (!inProgress) throw new IOException("Unable to start Service Discovery");
+            //try {
+                //wait(12000);   
+            //} catch (InterruptedException e) {}
+            //if (canceled) throw new IOException("Service discovery canceled");
+            //if (channel < 1) throw new IOException("Service discovery failed");
+            //return channel;
         }
 
         
@@ -612,29 +596,29 @@ BluetoothSocket var211C1FCD7297DDAEC6DAF11FD440B9FF_1789648003 =             acc
                 canceled = true;
                 channel = -1;
                 notifyAll();
-            } 
-            
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (!canceled) {
+                //canceled = true;
+                //channel = -1;
+                //notifyAll();  
+            //}
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.400 -0400", hash_original_method = "45AB23969E32C0B63DE906F14FED1852", hash_generated_method = "3AAC7AEA596AE02E5D787D2877934B42")
         public synchronized void onRfcommChannelFound(int channel) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
     if(!canceled)            
             {
                 this.channel = channel;
                 notifyAll();
-            } 
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (!canceled) {
+                //this.channel = channel;
+                //notifyAll();  
+            //}
         }
 
         

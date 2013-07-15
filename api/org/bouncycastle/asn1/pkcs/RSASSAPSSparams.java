@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,11 +36,11 @@ public class RSASSAPSSparams extends ASN1Encodable {
         maskGenAlgorithm = DEFAULT_MASK_GEN_FUNCTION;
         saltLength = DEFAULT_SALT_LENGTH;
         trailerField = DEFAULT_TRAILER_FIELD;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //hashAlgorithm = DEFAULT_HASH_ALGORITHM;
+        //maskGenAlgorithm = DEFAULT_MASK_GEN_FUNCTION;
+        //saltLength = DEFAULT_SALT_LENGTH;
+        //trailerField = DEFAULT_TRAILER_FIELD;
     }
 
     
@@ -54,11 +54,11 @@ public class RSASSAPSSparams extends ASN1Encodable {
         this.maskGenAlgorithm = maskGenAlgorithm;
         this.saltLength = saltLength;
         this.trailerField = trailerField;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.hashAlgorithm = hashAlgorithm;
+        //this.maskGenAlgorithm = maskGenAlgorithm;
+        //this.saltLength = saltLength;
+        //this.trailerField = trailerField;
     }
 
     
@@ -91,9 +91,9 @@ switch(o.getTagNo()){
             var70F80A81529BC32ECB922462EAF3303A_1171233685.addTaint(taint);
             throw var70F80A81529BC32ECB922462EAF3303A_1171233685;
 }
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -111,47 +111,43 @@ switch(o.getTagNo()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.522 -0400", hash_original_method = "987E7AACB66963F632D7C499003CC870", hash_generated_method = "60C6BBA1AC81DF1950BBDE51887FDCDD")
     public AlgorithmIdentifier getHashAlgorithm() {
 AlgorithmIdentifier varF85DDCD03B4CF10D8B09A6ADFA8421BD_1268927469 =         hashAlgorithm;
         varF85DDCD03B4CF10D8B09A6ADFA8421BD_1268927469.addTaint(taint);
         return varF85DDCD03B4CF10D8B09A6ADFA8421BD_1268927469;
-        
-        
+        // ---------- Original Method ----------
+        //return hashAlgorithm;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.523 -0400", hash_original_method = "299D9F86E5DBB3444D94BB106A959A17", hash_generated_method = "86153D83F60D599FA02AD273C6B49873")
     public AlgorithmIdentifier getMaskGenAlgorithm() {
 AlgorithmIdentifier var50B0CBAD1CBE25CFB7A74F2139ECC5EC_1109680471 =         maskGenAlgorithm;
         var50B0CBAD1CBE25CFB7A74F2139ECC5EC_1109680471.addTaint(taint);
         return var50B0CBAD1CBE25CFB7A74F2139ECC5EC_1109680471;
-        
-        
+        // ---------- Original Method ----------
+        //return maskGenAlgorithm;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.523 -0400", hash_original_method = "DDACDA0D7B5CB6E5558758D456678E3E", hash_generated_method = "7739D20F6D77717BD4A96726C2A9ACB3")
     public DERInteger getSaltLength() {
 DERInteger varA393991B281E94FBC9FB108ABD1E1E46_1988918755 =         saltLength;
         varA393991B281E94FBC9FB108ABD1E1E46_1988918755.addTaint(taint);
         return varA393991B281E94FBC9FB108ABD1E1E46_1988918755;
-        
-        
+        // ---------- Original Method ----------
+        //return saltLength;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.523 -0400", hash_original_method = "EA52051AAE4EFBA3513689CA3A308153", hash_generated_method = "B835FADB1A6B8604AA7841AA6F5DD7D7")
     public DERInteger getTrailerField() {
 DERInteger var3B01E18491BDB360626EFB4A43588DCD_1786944893 =         trailerField;
         var3B01E18491BDB360626EFB4A43588DCD_1786944893.addTaint(taint);
         return var3B01E18491BDB360626EFB4A43588DCD_1786944893;
-        
-        
+        // ---------- Original Method ----------
+        //return trailerField;
     }
 
     
@@ -161,41 +157,41 @@ DERInteger var3B01E18491BDB360626EFB4A43588DCD_1786944893 =         trailerField
     if(!hashAlgorithm.equals(DEFAULT_HASH_ALGORITHM))        
         {
             v.add(new DERTaggedObject(true, 0, hashAlgorithm));
-        } 
+        } //End block
     if(!maskGenAlgorithm.equals(DEFAULT_MASK_GEN_FUNCTION))        
         {
             v.add(new DERTaggedObject(true, 1, maskGenAlgorithm));
-        } 
+        } //End block
     if(!saltLength.equals(DEFAULT_SALT_LENGTH))        
         {
             v.add(new DERTaggedObject(true, 2, saltLength));
-        } 
+        } //End block
     if(!trailerField.equals(DEFAULT_TRAILER_FIELD))        
         {
             v.add(new DERTaggedObject(true, 3, trailerField));
-        } 
+        } //End block
 DERObject var0B338F106E3279986C87B595B0F4A439_1466014675 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_1466014675.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_1466014675;
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //if (!hashAlgorithm.equals(DEFAULT_HASH_ALGORITHM))
+        //{
+            //v.add(new DERTaggedObject(true, 0, hashAlgorithm));
+        //}
+        //if (!maskGenAlgorithm.equals(DEFAULT_MASK_GEN_FUNCTION))
+        //{
+            //v.add(new DERTaggedObject(true, 1, maskGenAlgorithm));
+        //}
+        //if (!saltLength.equals(DEFAULT_SALT_LENGTH))
+        //{
+            //v.add(new DERTaggedObject(true, 2, saltLength));
+        //}
+        //if (!trailerField.equals(DEFAULT_TRAILER_FIELD))
+        //{
+            //v.add(new DERTaggedObject(true, 3, trailerField));
+        //}
+        //return new DERSequence(v);
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.math.ec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,8 +13,8 @@ class WTauNafPreCompInfo implements PreCompInfo {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.692 -0400", hash_original_method = "8D247B0F1F1EEAB774C9DD19688CF835", hash_generated_method = "B1359D434B9010FCCDA6440C95D74DBB")
       WTauNafPreCompInfo(ECPoint.F2m[] preComp) {
         this.preComp = preComp;
-        
-        
+        // ---------- Original Method ----------
+        //this.preComp = preComp;
     }
 
     
@@ -23,8 +23,8 @@ class WTauNafPreCompInfo implements PreCompInfo {
 ECPoint.F2m[] var859A8A67374BCAAC598F1E4AD75AF98D_154401367 =         preComp;
         var859A8A67374BCAAC598F1E4AD75AF98D_154401367.addTaint(taint);
         return var859A8A67374BCAAC598F1E4AD75AF98D_154401367;
-        
-        
+        // ---------- Original Method ----------
+        //return preComp;
     }
 
     

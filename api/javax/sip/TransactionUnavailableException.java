@@ -1,6 +1,6 @@
 package javax.sip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class TransactionUnavailableException extends SipException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.329 -0400", hash_original_method = "E1225E9A0C179C24A6F556EFDF84E711", hash_generated_method = "43E10BCACF034EAE177943DB519A76E0")
     public  TransactionUnavailableException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class TransactionUnavailableException extends SipException {
     public  TransactionUnavailableException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,7 +26,7 @@ public class TransactionUnavailableException extends SipException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

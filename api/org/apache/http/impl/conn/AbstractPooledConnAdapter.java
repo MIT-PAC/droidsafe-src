@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,8 +23,8 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
         super(manager, entry.connection);
         addTaint(manager.getTaint());
         this.poolEntry = entry;
-        
-        
+        // ---------- Original Method ----------
+        //this.poolEntry = entry;
     }
 
     
@@ -35,11 +35,11 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
             IllegalStateException var4F03C2847F7EFD305CBAEBEAC5D82E5C_1312604430 = new IllegalStateException("Adapter is detached.");
             var4F03C2847F7EFD305CBAEBEAC5D82E5C_1312604430.addTaint(taint);
             throw var4F03C2847F7EFD305CBAEBEAC5D82E5C_1312604430;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (poolEntry == null) {
+            //throw new IllegalStateException("Adapter is detached.");
+        //}
     }
 
     
@@ -48,9 +48,9 @@ public abstract class AbstractPooledConnAdapter extends AbstractClientConnAdapte
     protected void detach() {
         super.detach();
         poolEntry = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.detach();
+        //poolEntry = null;
     }
 
     
@@ -61,10 +61,10 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_1131561128 =         (poolEntry.tr
             null : poolEntry.tracker.toRoute();
         varC5F8D4120C28E1A13BED5146C1E50603_1131561128.addTaint(taint);
         return varC5F8D4120C28E1A13BED5146C1E50603_1131561128;
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //assertAttached();
+        //return (poolEntry.tracker == null) ?
+            //null : poolEntry.tracker.toRoute();
     }
 
     
@@ -76,9 +76,9 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_1131561128 =         (poolEntry.tr
         addTaint(route.getTaint());
         assertAttached();
         poolEntry.open(route, context, params);
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertAttached();
+        //poolEntry.open(route, context, params);
     }
 
     
@@ -88,9 +88,9 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_1131561128 =         (poolEntry.tr
         addTaint(secure);
         assertAttached();
         poolEntry.tunnelTarget(secure, params);
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertAttached();
+        //poolEntry.tunnelTarget(secure, params);
     }
 
     
@@ -101,9 +101,9 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_1131561128 =         (poolEntry.tr
         addTaint(next.getTaint());
         assertAttached();
         poolEntry.tunnelProxy(next, secure, params);
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertAttached();
+        //poolEntry.tunnelProxy(next, secure, params);
     }
 
     
@@ -113,9 +113,9 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_1131561128 =         (poolEntry.tr
         addTaint(context.getTaint());
         assertAttached();
         poolEntry.layerProtocol(context, params);
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertAttached();
+        //poolEntry.layerProtocol(context, params);
     }
 
     
@@ -127,14 +127,14 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_1131561128 =         (poolEntry.tr
     if(conn != null)        
         {
             conn.close();
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (poolEntry != null)
+            //poolEntry.shutdownEntry();
+        //OperatedClientConnection conn = getWrappedConnection();
+        //if (conn != null) {
+            //conn.close();
+        //}
     }
 
     
@@ -146,14 +146,14 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_1131561128 =         (poolEntry.tr
     if(conn != null)        
         {
             conn.shutdown();
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (poolEntry != null)
+            //poolEntry.shutdownEntry();
+        //OperatedClientConnection conn = getWrappedConnection();
+        //if (conn != null) {
+            //conn.shutdown();
+        //}
     }
 
     
@@ -163,9 +163,9 @@ HttpRoute varC5F8D4120C28E1A13BED5146C1E50603_1131561128 =         (poolEntry.tr
 Object var7F2463EB7333088EF88482ACEB1D2901_1864755977 =         poolEntry.getState();
         var7F2463EB7333088EF88482ACEB1D2901_1864755977.addTaint(taint);
         return var7F2463EB7333088EF88482ACEB1D2901_1864755977;
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertAttached();
+        //return poolEntry.getState();
     }
 
     
@@ -174,9 +174,9 @@ Object var7F2463EB7333088EF88482ACEB1D2901_1864755977 =         poolEntry.getSta
         addTaint(state.getTaint());
         assertAttached();
         poolEntry.setState(state);
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertAttached();
+        //poolEntry.setState(state);
     }
 
     

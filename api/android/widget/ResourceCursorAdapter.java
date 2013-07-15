@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,9 +28,9 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
         addTaint(c.getTaint());
         mLayout = mDropDownLayout = layout;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLayout = mDropDownLayout = layout;
+        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     
@@ -41,9 +41,9 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
         addTaint(c.getTaint());
         mLayout = mDropDownLayout = layout;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLayout = mDropDownLayout = layout;
+        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     
@@ -54,9 +54,9 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
         addTaint(c.getTaint());
         mLayout = mDropDownLayout = layout;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLayout = mDropDownLayout = layout;
+        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     
@@ -69,8 +69,8 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
 View var68828DAED9379EACCE08B520DE480281_1647672776 =         mInflater.inflate(mLayout, parent, false);
         var68828DAED9379EACCE08B520DE480281_1647672776.addTaint(taint);
         return var68828DAED9379EACCE08B520DE480281_1647672776;
-        
-        
+        // ---------- Original Method ----------
+        //return mInflater.inflate(mLayout, parent, false);
     }
 
     
@@ -83,26 +83,24 @@ View var68828DAED9379EACCE08B520DE480281_1647672776 =         mInflater.inflate(
 View varD511244D5B36DA80A1C2A116230466EA_255520258 =         mInflater.inflate(mDropDownLayout, parent, false);
         varD511244D5B36DA80A1C2A116230466EA_255520258.addTaint(taint);
         return varD511244D5B36DA80A1C2A116230466EA_255520258;
-        
-        
+        // ---------- Original Method ----------
+        //return mInflater.inflate(mDropDownLayout, parent, false);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.862 -0400", hash_original_method = "D5BDA165ADCD99BE26CEA9E8AC3FEB13", hash_generated_method = "1A4A3AE74ACD1FAC94DDB52DB24657BB")
     public void setViewResource(int layout) {
         mLayout = layout;
-        
-        
+        // ---------- Original Method ----------
+        //mLayout = layout;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.863 -0400", hash_original_method = "62C4D5A7D859DBC1B997DA83ECA5AEBB", hash_generated_method = "B6434D367B58893890DAD8DEC2EDE7DC")
     public void setDropDownViewResource(int dropDownLayout) {
         mDropDownLayout = dropDownLayout;
-        
-        
+        // ---------- Original Method ----------
+        //mDropDownLayout = dropDownLayout;
     }
 
     

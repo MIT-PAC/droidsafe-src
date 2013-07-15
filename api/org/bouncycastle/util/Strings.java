@@ -1,6 +1,6 @@
 package org.bouncycastle.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public final class Strings {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.732 -0400", hash_original_method = "C84AA02E5DB471302FEEBC62E754E49D", hash_generated_method = "C84AA02E5DB471302FEEBC62E754E49D")
     public Strings ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -88,8 +88,7 @@ public final class Strings {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] toUTF8ByteArray(char[] string) {
+        public static byte[] toUTF8ByteArray(char[] string) {
         ByteArrayOutputStream bOut = new ByteArrayOutputStream();
         char[] c = string;
         int i = 0;
@@ -176,8 +175,7 @@ public final class Strings {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static byte[] toByteArray(char[] chars) {
+        public static byte[] toByteArray(char[] chars) {
         byte[] bytes = new byte[chars.length];
         for (int i = 0; i != bytes.length; i++)
         {

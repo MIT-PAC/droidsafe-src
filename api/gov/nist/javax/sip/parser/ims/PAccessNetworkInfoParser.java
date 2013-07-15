@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
     public  PAccessNetworkInfoParser(String accessNetwork) {
         super(accessNetwork);
         addTaint(accessNetwork.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,7 +29,7 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
     protected  PAccessNetworkInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -55,20 +55,20 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
                 NameValue nv = super.nameValue('=');
                 accessNetworkInfo.setParameter(nv);
                 this.lexer.SPorHT();
-            } 
+            } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
 SIPHeader varD15244C320EF41E0D4A4D9B428353746_943606324 =             accessNetworkInfo;
             varD15244C320EF41E0D4A4D9B428353746_943606324.addTaint(taint);
             return varD15244C320EF41E0D4A4D9B428353746_943606324;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("AccessNetworkInfoParser.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

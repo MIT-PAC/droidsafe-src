@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.730 -0400", hash_original_method = "1ABE3FCDF9FB32248BCD2F796A0E487C", hash_generated_method = "1ABE3FCDF9FB32248BCD2F796A0E487C")
     public DefaultHostnameVerifier ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -32,13 +32,13 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         try 
         {
             certs = session.getPeerCertificates();
-        } 
+        } //End block
         catch (SSLException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_515704037 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1752343221 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1752343221;
-        } 
+        } //End block
         X509Certificate x509 = (X509Certificate) certs[0];
         String hostName = host.trim().toLowerCase(Locale.ENGLISH);
         String firstCn = getFirstCn(x509);
@@ -47,7 +47,7 @@ class DefaultHostnameVerifier implements HostnameVerifier {
             boolean varB326B5062B2F0E69046810717534CB09_83229720 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1162964890 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1162964890;
-        } 
+        } //End block
 for(String cn : getDNSSubjectAlts(x509))
         {
     if(matches(hostName, cn))            
@@ -55,34 +55,33 @@ for(String cn : getDNSSubjectAlts(x509))
                 boolean varB326B5062B2F0E69046810717534CB09_488299590 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1603981773 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1603981773;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1840649238 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1658487559 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1658487559;
-        
-        
-        
-            
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Certificate[] certs;
+        //try {
+            //certs = session.getPeerCertificates();
+        //} catch (SSLException e) {
+            //return false;
+        //}
+        //X509Certificate x509 = (X509Certificate) certs[0];
+        //String hostName = host.trim().toLowerCase(Locale.ENGLISH);
+        //String firstCn = getFirstCn(x509);
+        //if (matches(hostName, firstCn)) {
+            //return true;
+        //}
+        //for (String cn : getDNSSubjectAlts(x509)) {
+            //if (matches(hostName, cn)) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.733 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "441B50B7BE9F1B6274D94A388F0B9237")
     private boolean matches(String hostName, String cn) {
         addTaint(cn.getTaint());
@@ -92,7 +91,7 @@ for(String cn : getDNSSubjectAlts(x509))
             boolean var68934A3E9455FA72420237EB05902327_1752992828 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1048265194 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1048265194;
-        } 
+        } //End block
         cn = cn.toLowerCase(Locale.ENGLISH);
     if(cn.startsWith("*."))        
         {
@@ -103,27 +102,27 @@ for(String cn : getDNSSubjectAlts(x509))
                     && !InetAddress.isNumeric(hostName));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192674 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_192674;
-        } 
+        } //End block
         else
         {
             boolean var2666B50D3A0F31A384B26AF31255F5E8_1806900930 = (hostName.equals(cn));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2013465835 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2013465835;
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-                    
-                    
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (cn == null) {
+            //return false;
+        //}
+        //cn = cn.toLowerCase(Locale.ENGLISH);
+        //if (cn.startsWith("*.")) {
+            //int matchLength = cn.length() - 1;
+            //return hostName.regionMatches(hostName.length() - matchLength, cn, 1, matchLength)
+                    //&& cn.indexOf('.', 2) != -1
+                    //&& acceptableCountryWildcard(cn)
+                    //&& !InetAddress.isNumeric(hostName);
+        //} else {
+            //return hostName.equals(cn);
+        //}
     }
 
     
@@ -140,25 +139,24 @@ for(String cn : getDNSSubjectAlts(x509))
                 boolean var3B4A721B7390BAF1B8AFCC251D43D129_1462524889 = (x < 0);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1429692921 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1429692921;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_2094681430 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1328281964 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1328281964;
-        
-        
-        
-            
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int cnLen = cn.length();
+        //if (cnLen >= 7 && cnLen <= 9) {
+            //if (cn.charAt(cnLen - 3) == '.') {
+                //String s = cn.substring(2, cnLen - 3);
+                //int x = Arrays.binarySearch(BAD_COUNTRY_2LDS, s);
+                //return x < 0;
+            //}
+        //}
+        //return true;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.736 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "734310FA843DE023A067395BC3E3EE6A")
     private String getFirstCn(X509Certificate cert) {
         addTaint(cert.getTaint());
@@ -171,20 +169,20 @@ for(String token : subjectPrincipal.split(","))
 String var6C45848D4E5C4A16DF70076C8744CB8A_1043102331 =                 token.substring(x + 3);
                 var6C45848D4E5C4A16DF70076C8744CB8A_1043102331.addTaint(taint);
                 return var6C45848D4E5C4A16DF70076C8744CB8A_1043102331;
-            } 
-        } 
+            } //End block
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_2082547663 =         null;
         var540C13E9E156B687226421B24F2DF178_2082547663.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2082547663;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //String subjectPrincipal = cert.getSubjectX500Principal().toString();
+        //for (String token : subjectPrincipal.split(",")) {
+            //int x = token.indexOf("CN=");
+            //if (x >= 0) {
+                //return token.substring(x + 3);
+            //}
+        //}
+        //return null;
     }
 
     
@@ -195,20 +193,20 @@ String var540C13E9E156B687226421B24F2DF178_2082547663 =         null;
         try 
         {
             subjectAlternativeNames = cert.getSubjectAlternativeNames();
-        } 
+        } //End block
         catch (CertificateParsingException cpe)
         {
             System.logI("Error parsing certificate", cpe);
 List<String> varB803AB532741AA7D5C2F301CCDDD25F2_954976524 =             Collections.emptyList();
             varB803AB532741AA7D5C2F301CCDDD25F2_954976524.addTaint(taint);
             return varB803AB532741AA7D5C2F301CCDDD25F2_954976524;
-        } 
+        } //End block
     if(subjectAlternativeNames == null)        
         {
 List<String> varB803AB532741AA7D5C2F301CCDDD25F2_1692639651 =             Collections.emptyList();
             varB803AB532741AA7D5C2F301CCDDD25F2_1692639651.addTaint(taint);
             return varB803AB532741AA7D5C2F301CCDDD25F2_1692639651;
-        } 
+        } //End block
         List<String> subjectAltList = new ArrayList<String>();
 for(List<?> pair : subjectAlternativeNames)
         {
@@ -216,30 +214,30 @@ for(List<?> pair : subjectAlternativeNames)
     if(type == 2)            
             {
                 subjectAltList.add((String) pair.get(1));
-            } 
-        } 
+            } //End block
+        } //End block
 List<String> var1958EE9065303448D12A47CD69FD4819_1553751414 =         subjectAltList;
         var1958EE9065303448D12A47CD69FD4819_1553751414.addTaint(taint);
         return var1958EE9065303448D12A47CD69FD4819_1553751414;
-        
-        
-        
-            
-        
-            
-            
-        
-        
-            
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Collection<List<?>> subjectAlternativeNames;
+        //try {
+            //subjectAlternativeNames = cert.getSubjectAlternativeNames();
+        //} catch (CertificateParsingException cpe) {
+            //System.logI("Error parsing certificate", cpe);
+            //return Collections.emptyList();
+        //}
+        //if (subjectAlternativeNames == null) {
+            //return Collections.emptyList();
+        //}
+        //List<String> subjectAltList = new ArrayList<String>();
+        //for (List<?> pair : subjectAlternativeNames) {
+            //int type = (Integer) pair.get(0);
+            //if (type == 2) {
+                //subjectAltList.add((String) pair.get(1));
+            //}
+        //}
+        //return subjectAltList;
     }
 
     

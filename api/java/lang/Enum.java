@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,9 +22,9 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     protected  Enum(String name, int ordinal) {
         this.name = name;
         this.ordinal = ordinal;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
+        //this.ordinal = ordinal;
     }
 
     
@@ -33,8 +33,8 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
 String varB017984728AC60AD1F0BF8734F33F15C_746877297 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_746877297.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_746877297;
-        
-        
+        // ---------- Original Method ----------
+        //return name;
     }
 
     
@@ -43,20 +43,19 @@ String varB017984728AC60AD1F0BF8734F33F15C_746877297 =         name;
         int var281858037F7DCF7ED49271BB92C60526_467072075 = (ordinal);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_985829999 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_985829999;
-        
-        
+        // ---------- Original Method ----------
+        //return ordinal;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.702 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "82DA08DC7631412BC665D87704304576")
     @Override
     public String toString() {
 String varB017984728AC60AD1F0BF8734F33F15C_97653883 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_97653883.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_97653883;
-        
-        
+        // ---------- Original Method ----------
+        //return name;
     }
 
     
@@ -67,8 +66,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_97653883 =         name;
         boolean varBE1F9AF96A88D9FBF24773A7F592CAA1_1742507781 = (this == other);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423218408 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_423218408;
-        
-        
+        // ---------- Original Method ----------
+        //return this == other;
     }
 
     
@@ -78,8 +77,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_97653883 =         name;
         int var33D1C4572F13B312B30F81348BACBF5B_76822513 = (ordinal + (name == null ? 0 : name.hashCode()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_448716407 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_448716407;
-        
-        
+        // ---------- Original Method ----------
+        //return ordinal + (name == null ? 0 : name.hashCode());
     }
 
     
@@ -89,8 +88,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_97653883 =         name;
         CloneNotSupportedException var0F695EF6D311AE6302038C57F4C701F5_1022391698 = new CloneNotSupportedException("Enums may not be cloned");
         var0F695EF6D311AE6302038C57F4C701F5_1022391698.addTaint(taint);
         throw var0F695EF6D311AE6302038C57F4C701F5_1022391698;
-        
-        
+        // ---------- Original Method ----------
+        //throw new CloneNotSupportedException("Enums may not be cloned");
     }
 
     
@@ -100,8 +99,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_97653883 =         name;
         int var2F1BC9575CF0B62B5E318FC18441A6C5_535157615 = (ordinal - o.ordinal);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311046405 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311046405;
-        
-        
+        // ---------- Original Method ----------
+        //return ordinal - o.ordinal;
     }
 
     
@@ -115,17 +114,17 @@ String varB017984728AC60AD1F0BF8734F33F15C_97653883 =         name;
 Class<E> varB15DA18871E1717E67B355E232DDA51C_1199473501 =             (Class<E>)myClass;
             varB15DA18871E1717E67B355E232DDA51C_1199473501.addTaint(taint);
             return varB15DA18871E1717E67B355E232DDA51C_1199473501;
-        } 
+        } //End block
 Class<E> var8F6953680D8F9BB6E774268F02FC3AA7_1951049025 =         (Class<E>)mySuperClass;
         var8F6953680D8F9BB6E774268F02FC3AA7_1951049025.addTaint(taint);
         return var8F6953680D8F9BB6E774268F02FC3AA7_1951049025;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Class<?> myClass = getClass();
+        //Class<?> mySuperClass = myClass.getSuperclass();
+        //if (Enum.class == mySuperClass) {
+            //return (Class<E>)myClass;
+        //}
+        //return (Class<E>)mySuperClass;
     }
 
     
@@ -155,7 +154,7 @@ Class<E> var8F6953680D8F9BB6E774268F02FC3AA7_1951049025 =         (Class<E>)mySu
     @Override
     @SuppressWarnings("FinalizeDoesntCallSuperFinalize")
     protected final void finalize() {
-        
+        // ---------- Original Method ----------
     }
 
     

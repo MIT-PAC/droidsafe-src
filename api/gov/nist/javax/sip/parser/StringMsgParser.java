@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,8 +36,8 @@ public class StringMsgParser {
     public  StringMsgParser() {
         super();
         readBody = true;
-        
-        
+        // ---------- Original Method ----------
+        //readBody = true;
     }
 
     
@@ -45,17 +45,16 @@ public class StringMsgParser {
     public  StringMsgParser(ParseExceptionListener exhandler) {
         this();
         parseExceptionListener = exhandler;
-        
-        
+        // ---------- Original Method ----------
+        //parseExceptionListener = exhandler;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.932 -0400", hash_original_method = "E7BB96D94C72A71CC55D419208731E5E", hash_generated_method = "20F944E1A059060117121AD4A329ED73")
     public void setParseExceptionListener(ParseExceptionListener pexhandler) {
         parseExceptionListener = pexhandler;
-        
-        
+        // ---------- Original Method ----------
+        //parseExceptionListener = pexhandler;
     }
 
     
@@ -74,13 +73,13 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_826344044 =         null;
             while
 (msgBuffer[i] < 0x20)            
             i++;
-        } 
+        } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
 SIPMessage var540C13E9E156B687226421B24F2DF178_1184372304 =             null;
             var540C13E9E156B687226421B24F2DF178_1184372304.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1184372304;
-        } 
+        } //End block
         String currentLine = null;
         String currentHeader = null;
         boolean isFirstLine = true;
@@ -93,36 +92,36 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_1184372304 =             null;
                     while
 (msgBuffer[i] != '\r' && msgBuffer[i] != '\n')                    
                     i++;
-                } 
+                } //End block
                 catch (ArrayIndexOutOfBoundsException e)
                 {
                     break;
-                } 
+                } //End block
                 int lineLength = i - lineStart;
                 try 
                 {
                     currentLine = new String(msgBuffer, lineStart, lineLength, "UTF-8");
-                } 
+                } //End block
                 catch (UnsupportedEncodingException e)
                 {
                     ParseException varD69FD0E270D6364D4BBE2AAD578C2CB9_1760674255 = new ParseException("Bad message encoding!", 0);
                     varD69FD0E270D6364D4BBE2AAD578C2CB9_1760674255.addTaint(taint);
                     throw varD69FD0E270D6364D4BBE2AAD578C2CB9_1760674255;
-                } 
+                } //End block
                 currentLine = trimEndOfLine(currentLine);
     if(currentLine.length() == 0)                
                 {
     if(currentHeader != null && message != null)                    
                     {
                         processHeader(currentHeader, message);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
     if(isFirstLine)                    
                     {
                         message = processFirstLine(currentLine);
-                    } 
+                    } //End block
                     else
                     {
                         char firstChar = currentLine.charAt(0);
@@ -135,22 +134,22 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_1184372304 =             null;
                             throw var6FD753E49E329EE8F88129DAE2071C93_2098310999;
                             }
                             currentHeader += currentLine.substring(1);
-                        } 
+                        } //End block
                         else
                         {
     if(currentHeader != null && message != null)                            
                             {
                                 processHeader(currentHeader, message);
-                            } 
+                            } //End block
                             currentHeader = currentLine;
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
     if(msgBuffer[i] == '\r' && msgBuffer.length > i+1 && msgBuffer[i+1] == '\n')                
                 i++;
                 i++;
                 isFirstLine = false;
-            } 
+            } //End block
 } while (currentLine.length() > 0);
     if(message == null)        
         {
@@ -166,12 +165,12 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_1184372304 =             null;
             byte[] body = new byte[bodyLength];
             System.arraycopy(msgBuffer, i, body, 0, bodyLength);
             message.setMessageContent(body,computeContentLengthFromMessage ,message.getContentLength().getContentLength() );
-        } 
+        } //End block
 SIPMessage varFD182D7074F3848E773A38B067BBB880_1470864740 =         message;
         varFD182D7074F3848E773A38B067BBB880_1470864740.addTaint(taint);
         return varFD182D7074F3848E773A38B067BBB880_1470864740;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -190,19 +189,19 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_2036183240 =         null;
             while
 (msgString.charAt(i) < 0x20)            
             i++;
-        } 
+        } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
 SIPMessage var540C13E9E156B687226421B24F2DF178_373955916 =             null;
             var540C13E9E156B687226421B24F2DF178_373955916.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_373955916;
-        } 
+        } //End block
         catch (StringIndexOutOfBoundsException ex)
         {
 SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
             var540C13E9E156B687226421B24F2DF178_884555774.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_884555774;
-        } 
+        } //End block
         String currentLine = null;
         String currentHeader = null;
         boolean isFirstLine = true;
@@ -216,15 +215,15 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
                     while
 (c != '\r' && c != '\n')                    
                     c = msgString.charAt(++i);
-                } 
+                } //End block
                 catch (ArrayIndexOutOfBoundsException e)
                 {
                     break;
-                } 
+                } //End block
                 catch (StringIndexOutOfBoundsException ex)
                 {
                     break;
-                } 
+                } //End block
                 currentLine = msgString.substring(lineStart, i);
                 currentLine = trimEndOfLine(currentLine);
     if(currentLine.length() == 0)                
@@ -232,14 +231,14 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
     if(currentHeader != null)                    
                     {
                         processHeader(currentHeader, message);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
     if(isFirstLine)                    
                     {
                         message = processFirstLine(currentLine);
-                    } 
+                    } //End block
                     else
                     {
                         char firstChar = currentLine.charAt(0);
@@ -252,22 +251,22 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
                             throw var6FD753E49E329EE8F88129DAE2071C93_2085671165;
                             }
                             currentHeader += currentLine.substring(1);
-                        } 
+                        } //End block
                         else
                         {
     if(currentHeader != null)                            
                             {
                                 processHeader(currentHeader, message);
-                            } 
+                            } //End block
                             currentHeader = currentLine;
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
     if(msgString.charAt(i) == '\r' && msgString.length() > i+1 && msgString.charAt(i+1) == '\n')                
                 i++;
                 i++;
                 isFirstLine = false;
-            } 
+            } //End block
 } while (currentLine.length() > 0);
         message.setSize(i);
     if(readBody && message.getContentLength() != null)        
@@ -276,7 +275,7 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
             {
                 String body = msgString.substring(i);
                 message.setMessageContent(body,this.strict,computeContentLengthFromMessage,message.getContentLength().getContentLength());
-            } 
+            } //End block
             else
     if(!computeContentLengthFromMessage && message.getContentLength().getContentLength() == 0 && !msgString.endsWith("\r\n\r\n"))            
             {
@@ -285,18 +284,17 @@ SIPMessage var540C13E9E156B687226421B24F2DF178_884555774 =             null;
                     ParseException var263A08C68221F949D372365C8560497D_1813930885 = new ParseException("Extraneous characters at the end of the message ",i);
                     var263A08C68221F949D372365C8560497D_1813930885.addTaint(taint);
                     throw var263A08C68221F949D372365C8560497D_1813930885;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 SIPMessage varFD182D7074F3848E773A38B067BBB880_1841687280 =         message;
         varFD182D7074F3848E773A38B067BBB880_1841687280.addTaint(taint);
         return varFD182D7074F3848E773A38B067BBB880_1841687280;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.939 -0400", hash_original_method = "790601CAF711B74124A1DBA9FDFB3A7B", hash_generated_method = "3D98E3D46E36AA1F1D97ABDCED219253")
     private String trimEndOfLine(String line) {
         addTaint(line.getTaint());
@@ -325,17 +323,17 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1925305548 =         "";
 String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0, i+1);
         varE97A29D7786D12C0606A8113DDE9DC15_252120272.addTaint(taint);
         return varE97A29D7786D12C0606A8113DDE9DC15_252120272;
-        
-        
-            
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (line == null)
+            //return line;
+        //int i = line.length() - 1;
+        //while (i >= 0 && line.charAt(i) <= 0x20)
+            //i--;
+        //if (i == line.length() - 1)
+            //return line;
+        //if (i == -1)
+            //return "";
+        //return line.substring(0, i+1);
     }
 
     
@@ -351,7 +349,7 @@ String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0,
                 RequestLine requestLine = new RequestLineParser(firstLine + "\n")
                         .parse();
                 ((SIPRequest) message).setRequestLine(requestLine);
-            } 
+            } //End block
             catch (ParseException ex)
             {
     if(this.parseExceptionListener != null)                
@@ -362,8 +360,8 @@ String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0,
                 ex.addTaint(taint);
                 throw ex;
                 }
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             message = new SIPResponse();
@@ -371,30 +369,29 @@ String varE97A29D7786D12C0606A8113DDE9DC15_252120272 =         line.substring(0,
             {
                 StatusLine sl = new StatusLineParser(firstLine + "\n").parse();
                 ((SIPResponse) message).setStatusLine(sl);
-            } 
+            } //End block
             catch (ParseException ex)
             {
     if(this.parseExceptionListener != null)                
                 {
                     this.parseExceptionListener.handleException(ex, message,
                             StatusLine.class, firstLine, rawStringMessage);
-                } 
+                } //End block
                 else
                 {
                 ex.addTaint(taint);
                 throw ex;
                 }
-            } 
-        } 
+            } //End block
+        } //End block
 SIPMessage varFD182D7074F3848E773A38B067BBB880_1672176919 =         message;
         varFD182D7074F3848E773A38B067BBB880_1672176919.addTaint(taint);
         return varFD182D7074F3848E773A38B067BBB880_1672176919;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.941 -0400", hash_original_method = "825D9502572A55E55AC5E33884E71C29", hash_generated_method = "5AC354A9CF877E28FAC2D711E8B9250D")
     private void processHeader(String header, SIPMessage message) throws ParseException {
         addTaint(message.getTaint());
@@ -405,18 +402,18 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_1672176919 =         message;
         try 
         {
             headerParser = ParserFactory.createParser(header + "\n");
-        } 
+        } //End block
         catch (ParseException ex)
         {
             this.parseExceptionListener.handleException(ex, message, null,
                     header, rawStringMessage);
             return;
-        } 
+        } //End block
         try 
         {
             SIPHeader sipHeader = headerParser.parse();
             message.attachHeader(sipHeader, false);
-        } 
+        } //End block
         catch (ParseException ex)
         {
     if(this.parseExceptionListener != null)            
@@ -426,13 +423,13 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_1672176919 =         message;
     if(headerClass == null)                
                 {
                     headerClass = ExtensionHeaderImpl.class;
-                } 
+                } //End block
                 this.parseExceptionListener.handleException(ex, message,
                         headerClass, header, rawStringMessage);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -443,9 +440,9 @@ SIPMessage varFD182D7074F3848E773A38B067BBB880_1672176919 =         message;
 AddressImpl var38834A65BE845C655031CC23ACA4C772_694598808 =         addressParser.address(true);
         var38834A65BE845C655031CC23ACA4C772_694598808.addTaint(taint);
         return var38834A65BE845C655031CC23ACA4C772_694598808;
-        
-        
-        
+        // ---------- Original Method ----------
+        //AddressParser addressParser = new AddressParser(address);
+        //return addressParser.address(true);
     }
 
     
@@ -456,9 +453,9 @@ AddressImpl var38834A65BE845C655031CC23ACA4C772_694598808 =         addressParse
 Host varBFDC80813AB4D3C174FE89D0FE5657A6_1309569484 =         new HostNameParser(lexer).host();
         varBFDC80813AB4D3C174FE89D0FE5657A6_1309569484.addTaint(taint);
         return varBFDC80813AB4D3C174FE89D0FE5657A6_1309569484;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Lexer lexer = new Lexer("charLexer", host);
+        //return new HostNameParser(lexer).host();
     }
 
     
@@ -468,8 +465,8 @@ Host varBFDC80813AB4D3C174FE89D0FE5657A6_1309569484 =         new HostNameParser
 TelephoneNumber var19E7CF3AFA993CEA6FC8BE2686AF0D09_528085699 =         new URLParser(telephone_number).parseTelephoneNumber(true);
         var19E7CF3AFA993CEA6FC8BE2686AF0D09_528085699.addTaint(taint);
         return var19E7CF3AFA993CEA6FC8BE2686AF0D09_528085699;
-        
-        
+        // ---------- Original Method ----------
+        //return new URLParser(telephone_number).parseTelephoneNumber(true);
     }
 
     
@@ -481,19 +478,19 @@ TelephoneNumber var19E7CF3AFA993CEA6FC8BE2686AF0D09_528085699 =         new URLP
 SipUri var945CAFD84159019C48E6373757A24F78_897584717 =             new URLParser(url).sipURL(true);
             var945CAFD84159019C48E6373757A24F78_897584717.addTaint(taint);
             return var945CAFD84159019C48E6373757A24F78_897584717;
-        } 
+        } //End block
         catch (ClassCastException ex)
         {
             ParseException var007E1D465BD35F2F74C467410EE7F33F_1751883525 = new ParseException(url + " Not a SIP URL ", 0);
             var007E1D465BD35F2F74C467410EE7F33F_1751883525.addTaint(taint);
             throw var007E1D465BD35F2F74C467410EE7F33F_1751883525;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return new URLParser(url).sipURL(true);
+        //} catch (ClassCastException ex) {
+            //throw new ParseException(url + " Not a SIP URL ", 0);
+        //}
     }
 
     
@@ -503,8 +500,8 @@ SipUri var945CAFD84159019C48E6373757A24F78_897584717 =             new URLParser
 GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser(url).parse();
         varE1262A481934EE776A587D0EE7911D31_627530314.addTaint(taint);
         return varE1262A481934EE776A587D0EE7911D31_627530314;
-        
-        
+        // ---------- Original Method ----------
+        //return new URLParser(url).parse();
     }
 
     
@@ -521,13 +518,13 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser
             while
 (header.charAt(end) <= 0x20)            
             end--;
-        } 
+        } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
             ParseException varD0054FCA0E60A07FCFE304524FBEBEF4_2052976954 = new ParseException("Empty header.", 0);
             varD0054FCA0E60A07FCFE304524FBEBEF4_2052976954.addTaint(taint);
             throw varD0054FCA0E60A07FCFE304524FBEBEF4_2052976954;
-        } 
+        } //End block
         StringBuffer buffer = new StringBuffer(end + 1);
         int i = start;
         int lineStart = start;
@@ -542,8 +539,8 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser
                 {
                     buffer.append(header.substring(lineStart, i));
                     endOfLine = true;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(endOfLine)                
@@ -553,15 +550,15 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser
                     {
                         buffer.append(' ');
                         lineStart = i + 1;
-                    } 
+                    } //End block
                     else
                     {
                         lineStart = i;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             i++;
-        } 
+        } //End block
         buffer.append(header.substring(lineStart, i));
         buffer.append('\n');
         HeaderParser hp = ParserFactory.createParser(buffer.toString());
@@ -574,8 +571,8 @@ GenericURI varE1262A481934EE776A587D0EE7911D31_627530314 =         new URLParser
 SIPHeader varB31A57F2E73DE9124E0166DAEE7B8802_40068954 =         hp.parse();
         varB31A57F2E73DE9124E0166DAEE7B8802_40068954.addTaint(taint);
         return varB31A57F2E73DE9124E0166DAEE7B8802_40068954;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -586,9 +583,9 @@ SIPHeader varB31A57F2E73DE9124E0166DAEE7B8802_40068954 =         hp.parse();
 RequestLine var21E03B2AA1692429C9EF98FFF07ABBA2_2051535997 =         new RequestLineParser(requestLine).parse();
         var21E03B2AA1692429C9EF98FFF07ABBA2_2051535997.addTaint(taint);
         return var21E03B2AA1692429C9EF98FFF07ABBA2_2051535997;
-        
-        
-        
+        // ---------- Original Method ----------
+        //requestLine += "\n";
+        //return new RequestLineParser(requestLine).parse();
     }
 
     
@@ -599,14 +596,13 @@ RequestLine var21E03B2AA1692429C9EF98FFF07ABBA2_2051535997 =         new Request
 StatusLine varC168C3AEA25683D36962B85515B113E0_1652888183 =         new StatusLineParser(statusLine).parse();
         varC168C3AEA25683D36962B85515B113E0_1652888183.addTaint(taint);
         return varC168C3AEA25683D36962B85515B113E0_1652888183;
-        
-        
-        
+        // ---------- Original Method ----------
+        //statusLine += "\n";
+        //return new StatusLineParser(statusLine).parse();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setComputeContentLengthFromMessage(
+        public static void setComputeContentLengthFromMessage(
             boolean computeContentLengthFromMessage) {
         StringMsgParser.computeContentLengthFromMessage = computeContentLengthFromMessage;
     }
@@ -681,12 +677,11 @@ StatusLine varC168C3AEA25683D36962B85515B113E0_1652888183 =         new StatusLi
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.946 -0400", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "C6177A909B65F45400E04967CBC68CBF")
     public void setStrict(boolean strict) {
         this.strict = strict;
-        
-        
+        // ---------- Original Method ----------
+        //this.strict = strict;
     }
 
     

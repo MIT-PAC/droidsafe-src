@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,14 +41,13 @@ public abstract class MessageChannel {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.631 -0400", hash_original_method = "1B1EF2D32056DF45EB39273AF108BD8B", hash_generated_method = "1B1EF2D32056DF45EB39273AF108BD8B")
     public MessageChannel ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.631 -0400", hash_original_method = "B5543AC884E160C74E00608F95C390A3", hash_generated_method = "547268D6CF76DECC0066A4DC26EFC855")
     protected void uncache() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -101,18 +100,16 @@ public abstract class MessageChannel {
             int receiverPort, boolean reconnectFlag) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.634 -0400", hash_original_method = "CA1BACEAFC0549F0AA4E82303BA5F480", hash_generated_method = "66D9E1607D47C0C321AA11CA87B01C74")
     public String getHost() {
 String var65F2C600F64239A3B364AF9F620B295F_1871729290 =         this.getMessageProcessor().getIpAddress().getHostAddress();
         var65F2C600F64239A3B364AF9F620B295F_1871729290.addTaint(taint);
         return var65F2C600F64239A3B364AF9F620B295F_1871729290;
-        
-        
+        // ---------- Original Method ----------
+        //return this.getMessageProcessor().getIpAddress().getHostAddress();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.635 -0400", hash_original_method = "D12E0B39D0A0A3DBD8096F94437302A2", hash_generated_method = "8060648C455FBD2640ADB759C671475B")
     public int getPort() {
     if(this.messageProcessor != null)        
@@ -127,11 +124,11 @@ String var65F2C600F64239A3B364AF9F620B295F_1871729290 =         this.getMessageP
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531813727 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531813727;
         }
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (this.messageProcessor != null)
+            //return messageProcessor.getPort();
+        //else
+            //return -1;
     }
 
     
@@ -157,38 +154,37 @@ for(MessageProcessor messageProcessor : getSIPStack().getMessageProcessors())
     if(getSIPStack().isLoggingEnabled())                        
                         getSIPStack().getStackLogger().logDebug("Self routing message");
                         return;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             byte[] msg = sipMessage.encodeAsBytes(this.getTransport());
             this.sendMessage(msg, hopAddr, hop.getPort(), sipMessage instanceof SIPRequest);
-        } 
+        } //End block
         catch (IOException ioe)
         {
             ioe.addTaint(taint);
             throw ioe;
-        } 
+        } //End block
         catch (Exception ex)
         {
     if(this.getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_ERROR))            
             {
                 this.getSIPStack().getStackLogger().logError("Error self routing message cause by: ", ex);
-            } 
+            } //End block
             IOException var21FE874BA1463E19D18105CD2D7A1D97_855649303 = new IOException("Error self routing message");
             var21FE874BA1463E19D18105CD2D7A1D97_855649303.addTaint(taint);
             throw var21FE874BA1463E19D18105CD2D7A1D97_855649303;
-        } 
+        } //End block
         finally 
         {
     if(this.getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES))            
             logMessage(sipMessage, hopAddr, hop.getPort(), time);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.636 -0400", hash_original_method = "4AF33D1C82235ED60B6E3DD0D1967C25", hash_generated_method = "C0824AFD3A472BAA5363FBD849866945")
     public void sendMessage(SIPMessage sipMessage, InetAddress receiverAddress, int receiverPort) throws IOException {
         addTaint(receiverPort);
@@ -198,15 +194,14 @@ for(MessageProcessor messageProcessor : getSIPStack().getMessageProcessors())
         byte[] bytes = sipMessage.encodeAsBytes(this.getTransport());
         sendMessage(bytes, receiverAddress, receiverPort, sipMessage instanceof SIPRequest);
         logMessage(sipMessage, receiverAddress, receiverPort, time);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //long time = System.currentTimeMillis();
+        //byte[] bytes = sipMessage.encodeAsBytes(this.getTransport());
+        //sendMessage(bytes, receiverAddress, receiverPort, sipMessage instanceof SIPRequest);
+        //logMessage(sipMessage, receiverAddress, receiverPort, time);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.637 -0400", hash_original_method = "BC100C85F7EEF6C9116B6E540185BCE8", hash_generated_method = "41691E43879F0B20B433872733E25531")
     public String getRawIpSourceAddress() {
         String sourceAddress = getPeerAddress();
@@ -215,41 +210,38 @@ for(MessageProcessor messageProcessor : getSIPStack().getMessageProcessors())
         {
             InetAddress sourceInetAddress = InetAddress.getByName(sourceAddress);
             rawIpSourceAddress = sourceInetAddress.getHostAddress();
-        } 
+        } //End block
         catch (Exception ex)
         {
             InternalErrorHandler.handleException(ex);
-        } 
+        } //End block
 String var0C55497D4040E5B7A276211312B99E60_1686432340 =         rawIpSourceAddress;
         var0C55497D4040E5B7A276211312B99E60_1686432340.addTaint(taint);
         return var0C55497D4040E5B7A276211312B99E60_1686432340;
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String sourceAddress = getPeerAddress();
+        //String rawIpSourceAddress = null;
+        //try {
+            //InetAddress sourceInetAddress = InetAddress.getByName(sourceAddress);
+            //rawIpSourceAddress = sourceInetAddress.getHostAddress();
+        //} catch (Exception ex) {
+            //InternalErrorHandler.handleException(ex);
+        //}
+        //return rawIpSourceAddress;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getKey(InetAddress inetAddr, int port, String transport) {
+        public static String getKey(InetAddress inetAddr, int port, String transport) {
         return (transport + ":" + inetAddr.getHostAddress() + ":" + port).toLowerCase();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getKey(HostPort hostPort, String transport) {
+        public static String getKey(HostPort hostPort, String transport) {
         return (transport + ":" + hostPort.getHost().getHostname() + ":" + hostPort.getPort())
                 .toLowerCase();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.638 -0400", hash_original_method = "A44FE176AC0185A0737BBEE3031992DB", hash_generated_method = "78AF5536D76989A2E56F1082588D7C8E")
     public HostPort getHostPort() {
         HostPort retval = new HostPort();
@@ -258,15 +250,14 @@ String var0C55497D4040E5B7A276211312B99E60_1686432340 =         rawIpSourceAddre
 HostPort varF9E19AD6135C970F387F77C6F3DE4477_319477055 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_319477055.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_319477055;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //HostPort retval = new HostPort();
+        //retval.setHost(new Host(this.getHost()));
+        //retval.setPort(this.getPort());
+        //return retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.639 -0400", hash_original_method = "B86C07836DB50334479A6BD4BF7381CC", hash_generated_method = "682E641BEA3FBB7893B83DD2576BC333")
     public HostPort getPeerHostPort() {
         HostPort retval = new HostPort();
@@ -275,15 +266,14 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_319477055 =         retval;
 HostPort varF9E19AD6135C970F387F77C6F3DE4477_1231214454 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1231214454.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1231214454;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //HostPort retval = new HostPort();
+        //retval.setHost(new Host(this.getPeerAddress()));
+        //retval.setPort(this.getPeerPort());
+        //return retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.640 -0400", hash_original_method = "31F63348466D8C31B05195508CA771AE", hash_generated_method = "5D77069C168102BE1868B7AF39A538C3")
     public Via getViaHeader() {
         Via channelViaHeader;
@@ -291,27 +281,26 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_1231214454 =         retval;
         try 
         {
             channelViaHeader.setTransport(getTransport());
-        } 
+        } //End block
         catch (ParseException ex)
         {
-        } 
+        } //End block
         channelViaHeader.setSentBy(getHostPort());
 Via var35DB1238D58BA2159EC3B88E973131F6_1126258903 =         channelViaHeader;
         var35DB1238D58BA2159EC3B88E973131F6_1126258903.addTaint(taint);
         return var35DB1238D58BA2159EC3B88E973131F6_1126258903;
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Via channelViaHeader;
+        //channelViaHeader = new Via();
+        //try {
+            //channelViaHeader.setTransport(getTransport());
+        //} catch (ParseException ex) {
+        //}
+        //channelViaHeader.setSentBy(getHostPort());
+        //return channelViaHeader;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.641 -0400", hash_original_method = "8AF1560686CCA72CFE111D9FA9C1ECDE", hash_generated_method = "2A7AA626054F690B744221AED5567E81")
     public HostPort getViaHostPort() {
         HostPort retval = new HostPort();
@@ -320,15 +309,14 @@ Via var35DB1238D58BA2159EC3B88E973131F6_1126258903 =         channelViaHeader;
 HostPort varF9E19AD6135C970F387F77C6F3DE4477_451746499 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_451746499.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_451746499;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //HostPort retval = new HostPort();
+        //retval.setHost(new Host(this.getViaHost()));
+        //retval.setPort(this.getViaPort());
+        //return retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.641 -0400", hash_original_method = "C068429579A247F633492130419A4C88", hash_generated_method = "E20D0A2C899AA742E27CCDE796D8C69F")
     protected void logMessage(SIPMessage sipMessage, InetAddress address, int port, long time) {
         addTaint(time);
@@ -341,17 +329,16 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_451746499 =         retval;
         port = 5060;
         getSIPStack().serverLogger.logMessage(sipMessage, this.getHost() + ":" + this.getPort(),
                 address.getHostAddress().toString() + ":" + port, true, time);
-        
-        
-            
-        
-            
-        
-                
+        // ---------- Original Method ----------
+        //if (!getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES))
+            //return;
+        //if (port == -1)
+            //port = 5060;
+        //getSIPStack().serverLogger.logMessage(sipMessage, this.getHost() + ":" + this.getPort(),
+                //address.getHostAddress().toString() + ":" + port, true, time);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.643 -0400", hash_original_method = "F3D4D9112F2E8581D299D1D033206DF5", hash_generated_method = "3BEECD77B61B4D9035D31F7704FA52B0")
     public void logResponse(SIPResponse sipResponse, long receptionTime, String status) {
         addTaint(status.getTaint());
@@ -362,21 +349,21 @@ HostPort varF9E19AD6135C970F387F77C6F3DE4477_451746499 =         retval;
         {
             ContactHeader contact = (ContactHeader) sipResponse.getContactHeaders().getFirst();
             peerport = ((AddressImpl) contact.getAddress()).getPort();
-        } 
+        } //End block
         String from = getPeerAddress().toString() + ":" + peerport;
         String to = this.getHost() + ":" + getPort();
         this.getSIPStack().serverLogger.logMessage(sipResponse, from, to, status, false,
                 receptionTime);
-        
-        
-        
-            
-            
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //int peerport = getPeerPort();
+        //if (peerport == 0 && sipResponse.getContactHeaders() != null) {
+            //ContactHeader contact = (ContactHeader) sipResponse.getContactHeaders().getFirst();
+            //peerport = ((AddressImpl) contact.getAddress()).getPort();
+        //}
+        //String from = getPeerAddress().toString() + ":" + peerport;
+        //String to = this.getHost() + ":" + getPort();
+        //this.getSIPStack().serverLogger.logMessage(sipResponse, from, to, status, false,
+                //receptionTime);
     }
 
     
@@ -420,12 +407,12 @@ String var540C13E9E156B687226421B24F2DF178_1744399192 =         null;
     if(toStart != -1 && buf.indexOf("tag", toStart) == -1)        
         {
             buf.append(";tag=badreq");
-        } 
+        } //End block
         ServerHeader s = MessageFactoryImpl.getDefaultServerHeader();
     if(s != null)        
         {
             buf.append("\r\n" + s.toString());
-        } 
+        } //End block
         int clength = badReq.length();
     if(! (this instanceof UDPMessageChannel) ||
                 clength + buf.length() + ContentTypeHeader.NAME.length()
@@ -437,17 +424,17 @@ String var540C13E9E156B687226421B24F2DF178_1744399192 =         null;
             ContentLength clengthHeader = new ContentLength(clength);
             buf.append("\r\n" + clengthHeader.toString());
             buf.append("\r\n\r\n" + badReq);
-        } 
+        } //End block
         else
         {
             ContentLength clengthHeader = new ContentLength(0);
             buf.append("\r\n" + clengthHeader.toString());
-        } 
+        } //End block
 String var4FC680801218E6372BC708D6FA44AE60_811310195 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_811310195.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_811310195;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -481,14 +468,13 @@ String var4FC680801218E6372BC708D6FA44AE60_811310195 =         buf.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.647 -0400", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "C116D3F5A203C2A91EBEDADCBF7AD84A")
     public MessageProcessor getMessageProcessor() {
 MessageProcessor varEE93DAA9E4FDACE3D0129BF58212AA5C_1007815180 =         this.messageProcessor;
         varEE93DAA9E4FDACE3D0129BF58212AA5C_1007815180.addTaint(taint);
         return varEE93DAA9E4FDACE3D0129BF58212AA5C_1007815180;
-        
-        
+        // ---------- Original Method ----------
+        //return this.messageProcessor;
     }
 
     

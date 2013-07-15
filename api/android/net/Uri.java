@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.736 -0400", hash_original_method = "81E08B95735493D923725112C83DA27A", hash_generated_method = "AE17603DE8C4908F75692349E5C02303")
     private  Uri() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -36,8 +36,8 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         boolean varB0499C09D88ADA4B175FB58912D54137_1772191663 = (!isHierarchical());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_187757106 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_187757106;
-        
-        
+        // ---------- Original Method ----------
+        //return !isHierarchical();
     }
 
     
@@ -49,8 +49,8 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         boolean varA7DC41148D608495EEE12AD396A7094A_1551995100 = (!isRelative());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1744372995 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1744372995;
-        
-        
+        // ---------- Original Method ----------
+        //return !isRelative();
     }
 
     
@@ -113,17 +113,17 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             boolean var68934A3E9455FA72420237EB05902327_1495084640 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1796504318 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1796504318;
-        } 
+        } //End block
         Uri other = (Uri) o;
         boolean var375391202D42F422F32D588DF637C48C_1964378765 = (toString().equals(other.toString()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1521316959 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1521316959;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!(o instanceof Uri)) {
+            //return false;
+        //}
+        //Uri other = (Uri) o;
+        //return toString().equals(other.toString());
     }
 
     
@@ -132,20 +132,19 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         int var3A322A74445239A748BA39CEE0B79D31_589027483 = (toString().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2057136274 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2057136274;
-        
-        
+        // ---------- Original Method ----------
+        //return toString().hashCode();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.738 -0400", hash_original_method = "45EC734684FFFB3EE70A4C12F2A2F839", hash_generated_method = "B1C31B7A3C36B71F84CB66402CA54DA6")
     public int compareTo(Uri other) {
         addTaint(other.getTaint());
         int varB42A77B0F940EC261622D54B298EB83F_286574705 = (toString().compareTo(other.toString()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909904493 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909904493;
-        
-        
+        // ---------- Original Method ----------
+        //return toString().compareTo(other.toString());
     }
 
     
@@ -173,47 +172,45 @@ for(int i=0;i<ssp.length();i++)
     if(c == '-' || c == '@' || c == '.')                        
                         {
                             builder.append(c);
-                        } 
+                        } //End block
                         else
                         {
                             builder.append('x');
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
 String varF4CF030572656354ACFDF83FEE21D7A6_2127649281 =                 builder.toString();
                 varF4CF030572656354ACFDF83FEE21D7A6_2127649281.addTaint(taint);
                 return varF4CF030572656354ACFDF83FEE21D7A6_2127649281;
-            } 
-        } 
+            } //End block
+        } //End block
         StringBuilder builder = new StringBuilder(64);
     if(scheme != null)        
         {
             builder.append(scheme);
             builder.append(':');
-        } 
+        } //End block
     if(ssp != null)        
         {
             builder.append(ssp);
-        } 
+        } //End block
 String varF4CF030572656354ACFDF83FEE21D7A6_1286293928 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_1286293928.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_1286293928;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     public abstract Builder buildUpon();
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri parse(String uriString) {
+        public static Uri parse(String uriString) {
         return new StringUri(uriString);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri fromFile(File file) {
+        public static Uri fromFile(File file) {
         if (file == null) {
             throw new NullPointerException("file");
         }
@@ -223,8 +220,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1286293928 =         builder.toString
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri fromParts(String scheme, String ssp,
+        public static Uri fromParts(String scheme, String ssp,
             String fragment) {
         if (scheme == null) {
             throw new NullPointerException("scheme");
@@ -244,14 +240,14 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1286293928 =         builder.toString
             UnsupportedOperationException var2E178A4FD4690D3AFDBE7B0221793B08_643016007 = new UnsupportedOperationException(NOT_HIERARCHICAL);
             var2E178A4FD4690D3AFDBE7B0221793B08_643016007.addTaint(taint);
             throw var2E178A4FD4690D3AFDBE7B0221793B08_643016007;
-        } 
+        } //End block
         String query = getEncodedQuery();
     if(query == null)        
         {
 Set<String> var5CEAC4B7DE047656E0B916F1F83FCC49_1882485786 =             Collections.emptySet();
             var5CEAC4B7DE047656E0B916F1F83FCC49_1882485786.addTaint(taint);
             return var5CEAC4B7DE047656E0B916F1F83FCC49_1882485786;
-        } 
+        } //End block
         Set<String> names = new LinkedHashSet<String>();
         int start = 0;
         do {
@@ -262,17 +258,17 @@ Set<String> var5CEAC4B7DE047656E0B916F1F83FCC49_1882485786 =             Collect
     if(separator > end || separator == -1)                
                 {
                     separator = end;
-                } 
+                } //End block
                 String name = query.substring(start, separator);
                 names.add(decode(name));
                 start = end + 1;
-            } 
+            } //End block
 } while (start < query.length());
 Set<String> varDD12C3B8A2F9B14F672A88549FBB956F_1993196988 =         Collections.unmodifiableSet(names);
         varDD12C3B8A2F9B14F672A88549FBB956F_1993196988.addTaint(taint);
         return varDD12C3B8A2F9B14F672A88549FBB956F_1993196988;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -284,31 +280,31 @@ Set<String> varDD12C3B8A2F9B14F672A88549FBB956F_1993196988 =         Collections
             UnsupportedOperationException var2E178A4FD4690D3AFDBE7B0221793B08_587919453 = new UnsupportedOperationException(NOT_HIERARCHICAL);
             var2E178A4FD4690D3AFDBE7B0221793B08_587919453.addTaint(taint);
             throw var2E178A4FD4690D3AFDBE7B0221793B08_587919453;
-        } 
+        } //End block
     if(key == null)        
         {
             NullPointerException var6D18FBA697BA09A47EF653F0DB540AE6_689063635 = new NullPointerException("key");
             var6D18FBA697BA09A47EF653F0DB540AE6_689063635.addTaint(taint);
             throw var6D18FBA697BA09A47EF653F0DB540AE6_689063635;
-        } 
+        } //End block
         String query = getEncodedQuery();
     if(query == null)        
         {
 List<String> varB803AB532741AA7D5C2F301CCDDD25F2_524435357 =             Collections.emptyList();
             varB803AB532741AA7D5C2F301CCDDD25F2_524435357.addTaint(taint);
             return varB803AB532741AA7D5C2F301CCDDD25F2_524435357;
-        } 
+        } //End block
         String encodedKey;
         try 
         {
             encodedKey = URLEncoder.encode(key, DEFAULT_ENCODING);
-        } 
+        } //End block
         catch (UnsupportedEncodingException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_733868015 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_733868015.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_733868015;
-        } 
+        } //End block
         ArrayList<String> values = new ArrayList<String>();
         int start = 0;
         do {
@@ -319,34 +315,34 @@ List<String> varB803AB532741AA7D5C2F301CCDDD25F2_524435357 =             Collect
     if(separator > end || separator == -1)                
                 {
                     separator = end;
-                } 
+                } //End block
     if(separator - start == encodedKey.length()
                     && query.regionMatches(start, encodedKey, 0, encodedKey.length()))                
                 {
     if(separator == end)                    
                     {
                         values.add("");
-                    } 
+                    } //End block
                     else
                     {
                         values.add(decode(query.substring(separator + 1, end)));
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(nextAmpersand != -1)                
                 {
                     start = nextAmpersand + 1;
-                } 
+                } //End block
                 else
                 {
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
 } while (true);
 List<String> var00BA81E9B2AB879A295DB9B86426A421_1188090738 =         Collections.unmodifiableList(values);
         var00BA81E9B2AB879A295DB9B86426A421_1188090738.addTaint(taint);
         return var00BA81E9B2AB879A295DB9B86426A421_1188090738;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -358,20 +354,20 @@ List<String> var00BA81E9B2AB879A295DB9B86426A421_1188090738 =         Collection
             UnsupportedOperationException var2E178A4FD4690D3AFDBE7B0221793B08_358550057 = new UnsupportedOperationException(NOT_HIERARCHICAL);
             var2E178A4FD4690D3AFDBE7B0221793B08_358550057.addTaint(taint);
             throw var2E178A4FD4690D3AFDBE7B0221793B08_358550057;
-        } 
+        } //End block
     if(key == null)        
         {
             NullPointerException var6D18FBA697BA09A47EF653F0DB540AE6_743732589 = new NullPointerException("key");
             var6D18FBA697BA09A47EF653F0DB540AE6_743732589.addTaint(taint);
             throw var6D18FBA697BA09A47EF653F0DB540AE6_743732589;
-        } 
+        } //End block
         final String query = getEncodedQuery();
     if(query == null)        
         {
 String var540C13E9E156B687226421B24F2DF178_1622852579 =             null;
             var540C13E9E156B687226421B24F2DF178_1622852579.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1622852579;
-        } 
+        } //End block
         final String encodedKey = encode(key, null);
         final int length = query.length();
         int start = 0;
@@ -383,7 +379,7 @@ String var540C13E9E156B687226421B24F2DF178_1622852579 =             null;
     if(separator > end || separator == -1)                
                 {
                     separator = end;
-                } 
+                } //End block
     if(separator - start == encodedKey.length()
                     && query.regionMatches(start, encodedKey, 0, encodedKey.length()))                
                 {
@@ -392,29 +388,29 @@ String var540C13E9E156B687226421B24F2DF178_1622852579 =             null;
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_729440607 =                         "";
                         var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_729440607.addTaint(taint);
                         return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_729440607;
-                    } 
+                    } //End block
                     else
                     {
 String varEB3B385708156ABD4F6A26F7ED4FD51E_2018334684 =                         decode(query.substring(separator + 1, end));
                         varEB3B385708156ABD4F6A26F7ED4FD51E_2018334684.addTaint(taint);
                         return varEB3B385708156ABD4F6A26F7ED4FD51E_2018334684;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(nextAmpersand != -1)                
                 {
                     start = nextAmpersand + 1;
-                } 
+                } //End block
                 else
                 {
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
 } while (true);
 String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
         var540C13E9E156B687226421B24F2DF178_442394430.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_442394430;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -428,23 +424,22 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
             boolean var16830A58E1E33A4163524366BA7B701B_1064843020 = (defaultValue);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_732363211 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_732363211;
-        } 
+        } //End block
         flag = flag.toLowerCase();
         boolean varEA95ECFC8D5C8F8BB96D459961F0F8E2_1762205217 = ((!"false".equals(flag) && !"0".equals(flag)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1489123998 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1489123998;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //String flag = getQueryParameter(key);
+        //if (flag == null) {
+            //return defaultValue;
+        //}
+        //flag = flag.toLowerCase();
+        //return (!"false".equals(flag) && !"0".equals(flag));
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void writeToParcel(Parcel out, Uri uri) {
+        public static void writeToParcel(Parcel out, Uri uri) {
         if (uri == null) {
             out.writeInt(NULL_TYPE_ID);
         } else {
@@ -574,8 +569,7 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
+        public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
         Builder builder = baseUri.buildUpon();
         builder = builder.appendEncodedPath(pathSegment);
         return builder.build();
@@ -618,30 +612,28 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
                 NullPointerException var68D2986827E7776409B7C54E12824C66_1135541121 = new NullPointerException("uriString");
                 var68D2986827E7776409B7C54E12824C66_1135541121.addTaint(taint);
                 throw var68D2986827E7776409B7C54E12824C66_1135541121;
-            } 
+            } //End block
             this.uriString = uriString;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (uriString == null) {
+                //throw new NullPointerException("uriString");
+            //}
+            //this.uriString = uriString;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        static Uri readFrom(Parcel parcel) {
+                static Uri readFrom(Parcel parcel) {
             return new StringUri(parcel.readString());
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.743 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D66B10463D2B5DE3A20D0A3756A6A264")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1093510345 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_283950918 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_283950918;
-            
-            
+            // ---------- Original Method ----------
+            //return 0;
         }
 
         
@@ -651,9 +643,9 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
             addTaint(parcel.getTaint());
             parcel.writeInt(TYPE_ID);
             parcel.writeString(uriString);
-            
-            
-            
+            // ---------- Original Method ----------
+            //parcel.writeInt(TYPE_ID);
+            //parcel.writeString(uriString);
         }
 
         
@@ -664,10 +656,10 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
                     : cachedSsi);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_500686941 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_500686941;
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //return cachedSsi == NOT_CALCULATED
+                    //? cachedSsi = uriString.indexOf(':')
+                    //: cachedSsi;
         }
 
         
@@ -678,10 +670,10 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
                     : cachedFsi);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73424151 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73424151;
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //return cachedFsi == NOT_CALCULATED
+                    //? cachedFsi = uriString.indexOf('#', findSchemeSeparator())
+                    //: cachedFsi;
         }
 
         
@@ -693,25 +685,25 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
                 boolean varB326B5062B2F0E69046810717534CB09_1421681234 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387834328 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_387834328;
-            } 
+            } //End block
     if(uriString.length() == ssi + 1)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_342811868 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_690665709 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_690665709;
-            } 
+            } //End block
             boolean varC62061A402117AB0C4CED01069D594B5_1366606386 = (uriString.charAt(ssi + 1) == '/');
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1672924472 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1672924472;
-            
-            
-            
-                
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //int ssi = findSchemeSeparator();
+            //if (ssi == NOT_FOUND) {
+                //return true;
+            //}
+            //if (uriString.length() == ssi + 1) {
+                //return false;
+            //}
+            //return uriString.charAt(ssi + 1) == '/';
         }
 
         
@@ -720,8 +712,8 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
             boolean var348FB469184CEBD475FA89D15A3871A3_1269290523 = (findSchemeSeparator() == NOT_FOUND);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1322776603 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1322776603;
-            
-            
+            // ---------- Original Method ----------
+            //return findSchemeSeparator() == NOT_FOUND;
         }
 
         
@@ -731,10 +723,10 @@ String var540C13E9E156B687226421B24F2DF178_442394430 =         null;
 String var5EC068FC8BAF19C405B863C227DA0116_1713594487 =             cached ? scheme : (scheme = parseScheme());
             var5EC068FC8BAF19C405B863C227DA0116_1713594487.addTaint(taint);
             return var5EC068FC8BAF19C405B863C227DA0116_1713594487;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //@SuppressWarnings("StringEquality")
+            //boolean cached = (scheme != NOT_CACHED);
+            //return cached ? scheme : (scheme = parseScheme());
         }
 
         
@@ -744,9 +736,9 @@ String var5EC068FC8BAF19C405B863C227DA0116_1713594487 =             cached ? sch
 String var9A67634AC4372CD6514004924726C40E_1810523629 =             ssi == NOT_FOUND ? null : uriString.substring(0, ssi);
             var9A67634AC4372CD6514004924726C40E_1810523629.addTaint(taint);
             return var9A67634AC4372CD6514004924726C40E_1810523629;
-            
-            
-            
+            // ---------- Original Method ----------
+            //int ssi = findSchemeSeparator();
+            //return ssi == NOT_FOUND ? null : uriString.substring(0, ssi);
         }
 
         
@@ -755,8 +747,8 @@ String var9A67634AC4372CD6514004924726C40E_1810523629 =             ssi == NOT_F
 Part var09914C8DC28309112B8F11C48A2310A0_635942481 =             ssp == null ? ssp = Part.fromEncoded(parseSsp()) : ssp;
             var09914C8DC28309112B8F11C48A2310A0_635942481.addTaint(taint);
             return var09914C8DC28309112B8F11C48A2310A0_635942481;
-            
-            
+            // ---------- Original Method ----------
+            //return ssp == null ? ssp = Part.fromEncoded(parseSsp()) : ssp;
         }
 
         
@@ -765,8 +757,8 @@ Part var09914C8DC28309112B8F11C48A2310A0_635942481 =             ssp == null ? s
 String var393D011CD485FB233FC4BE4326461491_972660729 =             getSsp().getEncoded();
             var393D011CD485FB233FC4BE4326461491_972660729.addTaint(taint);
             return var393D011CD485FB233FC4BE4326461491_972660729;
-            
-            
+            // ---------- Original Method ----------
+            //return getSsp().getEncoded();
         }
 
         
@@ -775,8 +767,8 @@ String var393D011CD485FB233FC4BE4326461491_972660729 =             getSsp().getE
 String varDEA78A046E5755E6A172773CC85259A6_357018450 =             getSsp().getDecoded();
             varDEA78A046E5755E6A172773CC85259A6_357018450.addTaint(taint);
             return varDEA78A046E5755E6A172773CC85259A6_357018450;
-            
-            
+            // ---------- Original Method ----------
+            //return getSsp().getDecoded();
         }
 
         
@@ -789,12 +781,12 @@ String varBF4B489B1C1A01395A08B9487579BBF1_562107650 =             fsi == NOT_FO
                     : uriString.substring(ssi + 1, fsi);
             varBF4B489B1C1A01395A08B9487579BBF1_562107650.addTaint(taint);
             return varBF4B489B1C1A01395A08B9487579BBF1_562107650;
-            
-            
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //int ssi = findSchemeSeparator();
+            //int fsi = findFragmentSeparator();
+            //return fsi == NOT_FOUND
+                    //? uriString.substring(ssi + 1)
+                    //: uriString.substring(ssi + 1, fsi);
         }
 
         
@@ -806,17 +798,17 @@ String varBF4B489B1C1A01395A08B9487579BBF1_562107650 =             fsi == NOT_FO
 Part var381FCECE440D5D319C351EE6F1BBEAAB_1303759437 =                 authority = Part.fromEncoded(encodedAuthority);
                 var381FCECE440D5D319C351EE6F1BBEAAB_1303759437.addTaint(taint);
                 return var381FCECE440D5D319C351EE6F1BBEAAB_1303759437;
-            } 
+            } //End block
 Part var9A4A00E403B4898E9807F68E9EBE5A8B_654084325 =             authority;
             var9A4A00E403B4898E9807F68E9EBE5A8B_654084325.addTaint(taint);
             return var9A4A00E403B4898E9807F68E9EBE5A8B_654084325;
-            
-            
-                
-                        
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (authority == null) {
+                //String encodedAuthority
+                        //= parseAuthority(this.uriString, findSchemeSeparator());
+                //return authority = Part.fromEncoded(encodedAuthority);
+            //}
+            //return authority;
         }
 
         
@@ -825,8 +817,8 @@ Part var9A4A00E403B4898E9807F68E9EBE5A8B_654084325 =             authority;
 String var4F2DF47BEB24727A66BE79DC91AEECC0_431782812 =             getAuthorityPart().getEncoded();
             var4F2DF47BEB24727A66BE79DC91AEECC0_431782812.addTaint(taint);
             return var4F2DF47BEB24727A66BE79DC91AEECC0_431782812;
-            
-            
+            // ---------- Original Method ----------
+            //return getAuthorityPart().getEncoded();
         }
 
         
@@ -835,8 +827,8 @@ String var4F2DF47BEB24727A66BE79DC91AEECC0_431782812 =             getAuthorityP
 String var039061F12DF25903DB753BE4C77CEE48_713635380 =             getAuthorityPart().getDecoded();
             var039061F12DF25903DB753BE4C77CEE48_713635380.addTaint(taint);
             return var039061F12DF25903DB753BE4C77CEE48_713635380;
-            
-            
+            // ---------- Original Method ----------
+            //return getAuthorityPart().getDecoded();
         }
 
         
@@ -847,10 +839,10 @@ PathPart varD78256BB83A04B0BB00412684FCFB6CE_376958901 =             path == nul
                     : path;
             varD78256BB83A04B0BB00412684FCFB6CE_376958901.addTaint(taint);
             return varD78256BB83A04B0BB00412684FCFB6CE_376958901;
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //return path == null
+                    //? path = PathPart.fromEncoded(parsePath())
+                    //: path;
         }
 
         
@@ -859,8 +851,8 @@ PathPart varD78256BB83A04B0BB00412684FCFB6CE_376958901 =             path == nul
 String varEADC8740E16239A469558240BCE0C192_2119209351 =             getPathPart().getDecoded();
             varEADC8740E16239A469558240BCE0C192_2119209351.addTaint(taint);
             return varEADC8740E16239A469558240BCE0C192_2119209351;
-            
-            
+            // ---------- Original Method ----------
+            //return getPathPart().getDecoded();
         }
 
         
@@ -869,8 +861,8 @@ String varEADC8740E16239A469558240BCE0C192_2119209351 =             getPathPart(
 String var5763B1F1953626A1B4119C83521EC238_1721249771 =             getPathPart().getEncoded();
             var5763B1F1953626A1B4119C83521EC238_1721249771.addTaint(taint);
             return var5763B1F1953626A1B4119C83521EC238_1721249771;
-            
-            
+            // ---------- Original Method ----------
+            //return getPathPart().getEncoded();
         }
 
         
@@ -879,8 +871,8 @@ String var5763B1F1953626A1B4119C83521EC238_1721249771 =             getPathPart(
 List<String> var9D1E6922DB3B6A33267FC8778B1D1882_1959755670 =             getPathPart().getPathSegments();
             var9D1E6922DB3B6A33267FC8778B1D1882_1959755670.addTaint(taint);
             return var9D1E6922DB3B6A33267FC8778B1D1882_1959755670;
-            
-            
+            // ---------- Original Method ----------
+            //return getPathPart().getPathSegments();
         }
 
         
@@ -896,34 +888,34 @@ List<String> var9D1E6922DB3B6A33267FC8778B1D1882_1959755670 =             getPat
 String var540C13E9E156B687226421B24F2DF178_524416024 =                     null;
                     var540C13E9E156B687226421B24F2DF178_524416024.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_524416024;
-                } 
+                } //End block
     if(uriString.charAt(ssi + 1) != '/')                
                 {
 String var540C13E9E156B687226421B24F2DF178_2038061337 =                     null;
                     var540C13E9E156B687226421B24F2DF178_2038061337.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_2038061337;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
-            } 
+            } //End block
 String var735954F5F0815F8E40E83E176F832A69_273669062 =             parsePath(uriString, ssi);
             var735954F5F0815F8E40E83E176F832A69_273669062.addTaint(taint);
             return var735954F5F0815F8E40E83E176F832A69_273669062;
-            
-            
-            
-            
-                
-                
-                    
-                
-                
-                    
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //String uriString = this.uriString;
+            //int ssi = findSchemeSeparator();
+            //if (ssi > -1) {
+                //boolean schemeOnly = ssi + 1 == uriString.length();
+                //if (schemeOnly) {
+                    //return null;
+                //}
+                //if (uriString.charAt(ssi + 1) != '/') {
+                    //return null;
+                //}
+            //} else {
+            //}
+            //return parsePath(uriString, ssi);
         }
 
         
@@ -933,9 +925,9 @@ Part varF5F740948841E62E50DE94DCB962384D_2005173445 =             query == null
                     ? query = Part.fromEncoded(parseQuery()) : query;
             varF5F740948841E62E50DE94DCB962384D_2005173445.addTaint(taint);
             return varF5F740948841E62E50DE94DCB962384D_2005173445;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return query == null
+                    //? query = Part.fromEncoded(parseQuery()) : query;
         }
 
         
@@ -944,8 +936,8 @@ Part varF5F740948841E62E50DE94DCB962384D_2005173445 =             query == null
 String var592BAA78F9680D5D07BEE2DE945A79E3_708390229 =             getQueryPart().getEncoded();
             var592BAA78F9680D5D07BEE2DE945A79E3_708390229.addTaint(taint);
             return var592BAA78F9680D5D07BEE2DE945A79E3_708390229;
-            
-            
+            // ---------- Original Method ----------
+            //return getQueryPart().getEncoded();
         }
 
         
@@ -957,36 +949,36 @@ String var592BAA78F9680D5D07BEE2DE945A79E3_708390229 =             getQueryPart(
 String var540C13E9E156B687226421B24F2DF178_1514768809 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1514768809.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1514768809;
-            } 
+            } //End block
             int fsi = findFragmentSeparator();
     if(fsi == NOT_FOUND)            
             {
 String var36038C78F7FD108CFC3CF4002250C153_1750119027 =                 uriString.substring(qsi + 1);
                 var36038C78F7FD108CFC3CF4002250C153_1750119027.addTaint(taint);
                 return var36038C78F7FD108CFC3CF4002250C153_1750119027;
-            } 
+            } //End block
     if(fsi < qsi)            
             {
 String var540C13E9E156B687226421B24F2DF178_1740775312 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1740775312.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1740775312;
-            } 
+            } //End block
 String varCEC45AD9CB71F2C97FE02CF3CA3FEDB4_245878655 =             uriString.substring(qsi + 1, fsi);
             varCEC45AD9CB71F2C97FE02CF3CA3FEDB4_245878655.addTaint(taint);
             return varCEC45AD9CB71F2C97FE02CF3CA3FEDB4_245878655;
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //int qsi = uriString.indexOf('?', findSchemeSeparator());
+            //if (qsi == NOT_FOUND) {
+                //return null;
+            //}
+            //int fsi = findFragmentSeparator();
+            //if (fsi == NOT_FOUND) {
+                //return uriString.substring(qsi + 1);
+            //}
+            //if (fsi < qsi) {
+                //return null;
+            //}
+            //return uriString.substring(qsi + 1, fsi);
         }
 
         
@@ -995,8 +987,8 @@ String varCEC45AD9CB71F2C97FE02CF3CA3FEDB4_245878655 =             uriString.sub
 String varF32257C5D28B6286E14CC639F868B333_1808225868 =             getQueryPart().getDecoded();
             varF32257C5D28B6286E14CC639F868B333_1808225868.addTaint(taint);
             return varF32257C5D28B6286E14CC639F868B333_1808225868;
-            
-            
+            // ---------- Original Method ----------
+            //return getQueryPart().getDecoded();
         }
 
         
@@ -1006,9 +998,9 @@ Part var8550B3AFC925290D75F2A324FFCC8703_963133996 =             fragment == nul
                     ? fragment = Part.fromEncoded(parseFragment()) : fragment;
             var8550B3AFC925290D75F2A324FFCC8703_963133996.addTaint(taint);
             return var8550B3AFC925290D75F2A324FFCC8703_963133996;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return fragment == null
+                    //? fragment = Part.fromEncoded(parseFragment()) : fragment;
         }
 
         
@@ -1017,8 +1009,8 @@ Part var8550B3AFC925290D75F2A324FFCC8703_963133996 =             fragment == nul
 String var15356DF640E39A7E16838423CF95944B_2040174174 =             getFragmentPart().getEncoded();
             var15356DF640E39A7E16838423CF95944B_2040174174.addTaint(taint);
             return var15356DF640E39A7E16838423CF95944B_2040174174;
-            
-            
+            // ---------- Original Method ----------
+            //return getFragmentPart().getEncoded();
         }
 
         
@@ -1028,9 +1020,9 @@ String var15356DF640E39A7E16838423CF95944B_2040174174 =             getFragmentP
 String varDFC5047C05E36D10FFCD890F81F09AE9_520712669 =             fsi == NOT_FOUND ? null : uriString.substring(fsi + 1);
             varDFC5047C05E36D10FFCD890F81F09AE9_520712669.addTaint(taint);
             return varDFC5047C05E36D10FFCD890F81F09AE9_520712669;
-            
-            
-            
+            // ---------- Original Method ----------
+            //int fsi = findFragmentSeparator();
+            //return fsi == NOT_FOUND ? null : uriString.substring(fsi + 1);
         }
 
         
@@ -1039,19 +1031,18 @@ String varDFC5047C05E36D10FFCD890F81F09AE9_520712669 =             fsi == NOT_FO
 String var93BCD471CAA5DE221487CFBAAF871060_225691213 =             getFragmentPart().getDecoded();
             var93BCD471CAA5DE221487CFBAAF871060_225691213.addTaint(taint);
             return var93BCD471CAA5DE221487CFBAAF871060_225691213;
-            
-            
+            // ---------- Original Method ----------
+            //return getFragmentPart().getDecoded();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.748 -0400", hash_original_method = "ECB4588CBE3D957B88D2558A4C044374", hash_generated_method = "BA1567F0944298C267466DD40840B385")
         public String toString() {
 String varA4F4B44693A1936015581C1F7D6F4DAF_1441487951 =             uriString;
             varA4F4B44693A1936015581C1F7D6F4DAF_1441487951.addTaint(taint);
             return varA4F4B44693A1936015581C1F7D6F4DAF_1441487951;
-            
-            
+            // ---------- Original Method ----------
+            //return uriString;
         }
 
         
@@ -1122,7 +1113,7 @@ Builder varF2D941D0CA5C6E55CED50CE66323299C_458937402 =                 new Buil
                         .fragment(getFragmentPart());
                 varF2D941D0CA5C6E55CED50CE66323299C_458937402.addTaint(taint);
                 return varF2D941D0CA5C6E55CED50CE66323299C_458937402;
-            } 
+            } //End block
             else
             {
 Builder varC65AC201593175003FC279C7FC3D63BE_1137035008 =                 new Builder()
@@ -1131,21 +1122,21 @@ Builder varC65AC201593175003FC279C7FC3D63BE_1137035008 =                 new Bui
                         .fragment(getFragmentPart());
                 varC65AC201593175003FC279C7FC3D63BE_1137035008.addTaint(taint);
                 return varC65AC201593175003FC279C7FC3D63BE_1137035008;
-            } 
-            
-            
-                
-                        
-                        
-                        
-                        
-                        
-            
-                
-                        
-                        
-                        
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (isHierarchical()) {
+                //return new Builder()
+                        //.scheme(getScheme())
+                        //.authority(getAuthorityPart())
+                        //.path(getPathPart())
+                        //.query(getQueryPart())
+                        //.fragment(getFragmentPart());
+            //} else {
+                //return new Builder()
+                        //.scheme(getScheme())
+                        //.opaquePart(getSsp())
+                        //.fragment(getFragmentPart());
+            //}
         }
 
         
@@ -1175,15 +1166,14 @@ Builder varC65AC201593175003FC279C7FC3D63BE_1137035008 =                 new Bui
             this.scheme = scheme;
             this.ssp = ssp;
             this.fragment = fragment == null ? Part.NULL : fragment;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.scheme = scheme;
+            //this.ssp = ssp;
+            //this.fragment = fragment == null ? Part.NULL : fragment;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        static Uri readFrom(Parcel parcel) {
+                static Uri readFrom(Parcel parcel) {
             return new OpaqueUri(
                 parcel.readString(),
                 Part.readFrom(parcel),
@@ -1192,14 +1182,13 @@ Builder varC65AC201593175003FC279C7FC3D63BE_1137035008 =                 new Bui
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.750 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "81082252D0B3FA1C811906D3319D6F03")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_455098991 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912851333 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912851333;
-            
-            
+            // ---------- Original Method ----------
+            //return 0;
         }
 
         
@@ -1211,44 +1200,41 @@ Builder varC65AC201593175003FC279C7FC3D63BE_1137035008 =                 new Bui
             parcel.writeString(scheme);
             ssp.writeTo(parcel);
             fragment.writeTo(parcel);
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //parcel.writeInt(TYPE_ID);
+            //parcel.writeString(scheme);
+            //ssp.writeTo(parcel);
+            //fragment.writeTo(parcel);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.750 -0400", hash_original_method = "414EEC63B62C24CE4C288B4F88575946", hash_generated_method = "BF447BFCE93F4F7A23810FE729B90803")
         public boolean isHierarchical() {
             boolean var68934A3E9455FA72420237EB05902327_1014009054 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246035451 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246035451;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.750 -0400", hash_original_method = "9639BAD4AF2BECE413ED6DDD1E0FB03A", hash_generated_method = "6090EDA3E36AA0CD9DCBEB29E95A6124")
         public boolean isRelative() {
             boolean var4518A3BFE1F17529286D9D4EFE362EA9_2097494444 = (scheme == null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1404148692 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1404148692;
-            
-            
+            // ---------- Original Method ----------
+            //return scheme == null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.750 -0400", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "1954CD3CC0F9C55E957AC05061D3E1DB")
         public String getScheme() {
 String varBF26C0D1E8CB9E7F67A307E664136E8F_1944356334 =             this.scheme;
             varBF26C0D1E8CB9E7F67A307E664136E8F_1944356334.addTaint(taint);
             return varBF26C0D1E8CB9E7F67A307E664136E8F_1944356334;
-            
-            
+            // ---------- Original Method ----------
+            //return this.scheme;
         }
 
         
@@ -1257,8 +1243,8 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_1944356334 =             this.scheme;
 String varD902B0CDE27092B0A8D653D3A1CAB3D2_767324158 =             ssp.getEncoded();
             varD902B0CDE27092B0A8D653D3A1CAB3D2_767324158.addTaint(taint);
             return varD902B0CDE27092B0A8D653D3A1CAB3D2_767324158;
-            
-            
+            // ---------- Original Method ----------
+            //return ssp.getEncoded();
         }
 
         
@@ -1267,74 +1253,68 @@ String varD902B0CDE27092B0A8D653D3A1CAB3D2_767324158 =             ssp.getEncode
 String var754BC27394ACBF326C1E9A754D8A46C9_1725893960 =             ssp.getDecoded();
             var754BC27394ACBF326C1E9A754D8A46C9_1725893960.addTaint(taint);
             return var754BC27394ACBF326C1E9A754D8A46C9_1725893960;
-            
-            
+            // ---------- Original Method ----------
+            //return ssp.getDecoded();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.751 -0400", hash_original_method = "31E41E1CB0338F9BAA50A0AC05D7D02D", hash_generated_method = "90166ED8B4B7815534BA78EA10799B5E")
         public String getAuthority() {
 String var540C13E9E156B687226421B24F2DF178_997969942 =             null;
             var540C13E9E156B687226421B24F2DF178_997969942.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_997969942;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.751 -0400", hash_original_method = "C6F3CA63C6BE518EBD2AA32E2786DD3A", hash_generated_method = "F8C04D189E1157AA8E37FFC60DE9155A")
         public String getEncodedAuthority() {
 String var540C13E9E156B687226421B24F2DF178_661848128 =             null;
             var540C13E9E156B687226421B24F2DF178_661848128.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_661848128;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.751 -0400", hash_original_method = "F489014FCD27D67260CBEC8AC84559A2", hash_generated_method = "7669C47318E6934478E064F4DE0165E6")
         public String getPath() {
 String var540C13E9E156B687226421B24F2DF178_1236128700 =             null;
             var540C13E9E156B687226421B24F2DF178_1236128700.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1236128700;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.751 -0400", hash_original_method = "F167E35F53D1A5A8B17A8A72FE8359AE", hash_generated_method = "6A117E8E99A82F6ED069B2AF7FB09FEE")
         public String getEncodedPath() {
 String var540C13E9E156B687226421B24F2DF178_47732062 =             null;
             var540C13E9E156B687226421B24F2DF178_47732062.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_47732062;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.751 -0400", hash_original_method = "2E34959E1DD3631C67E93F1AE6B31056", hash_generated_method = "151D4A5B1658E9F9E7A99E3B008D735D")
         public String getQuery() {
 String var540C13E9E156B687226421B24F2DF178_166255111 =             null;
             var540C13E9E156B687226421B24F2DF178_166255111.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_166255111;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.751 -0400", hash_original_method = "53661DD2D38C9C2E00E8B8D2FF316BB7", hash_generated_method = "324203FB9F1DF9937555F0C3E8AECD55")
         public String getEncodedQuery() {
 String var540C13E9E156B687226421B24F2DF178_79315536 =             null;
             var540C13E9E156B687226421B24F2DF178_79315536.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_79315536;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
@@ -1343,8 +1323,8 @@ String var540C13E9E156B687226421B24F2DF178_79315536 =             null;
 String varAF7E6EDA3A17E940567231584A0703A7_605229009 =             fragment.getDecoded();
             varAF7E6EDA3A17E940567231584A0703A7_605229009.addTaint(taint);
             return varAF7E6EDA3A17E940567231584A0703A7_605229009;
-            
-            
+            // ---------- Original Method ----------
+            //return fragment.getDecoded();
         }
 
         
@@ -1353,8 +1333,8 @@ String varAF7E6EDA3A17E940567231584A0703A7_605229009 =             fragment.getD
 String varC670092882988D295A0AFA2F86B4E2AC_1995015202 =             fragment.getEncoded();
             varC670092882988D295A0AFA2F86B4E2AC_1995015202.addTaint(taint);
             return varC670092882988D295A0AFA2F86B4E2AC_1995015202;
-            
-            
+            // ---------- Original Method ----------
+            //return fragment.getEncoded();
         }
 
         
@@ -1363,63 +1343,58 @@ String varC670092882988D295A0AFA2F86B4E2AC_1995015202 =             fragment.get
 List<String> varB803AB532741AA7D5C2F301CCDDD25F2_739144941 =             Collections.emptyList();
             varB803AB532741AA7D5C2F301CCDDD25F2_739144941.addTaint(taint);
             return varB803AB532741AA7D5C2F301CCDDD25F2_739144941;
-            
-            
+            // ---------- Original Method ----------
+            //return Collections.emptyList();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.752 -0400", hash_original_method = "AE7FF2A9DFCB643CF70873B2C08CD5A8", hash_generated_method = "25D5F6F512AAB4A9F4951696CE45F19D")
         public String getLastPathSegment() {
 String var540C13E9E156B687226421B24F2DF178_623056244 =             null;
             var540C13E9E156B687226421B24F2DF178_623056244.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_623056244;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.752 -0400", hash_original_method = "520FB960E4127ABC7143DD06EFB52356", hash_generated_method = "D115B4196DF6AF54C43CB06051D0A6BE")
         public String getUserInfo() {
 String var540C13E9E156B687226421B24F2DF178_1676495280 =             null;
             var540C13E9E156B687226421B24F2DF178_1676495280.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1676495280;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.752 -0400", hash_original_method = "88ECB0B5D6F4AA907FC3666F8C1418EB", hash_generated_method = "C15556D58F323FF5949495E9108B34C0")
         public String getEncodedUserInfo() {
 String var540C13E9E156B687226421B24F2DF178_1342826186 =             null;
             var540C13E9E156B687226421B24F2DF178_1342826186.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1342826186;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.752 -0400", hash_original_method = "00C71B0865F91AE7EF71B7BE21B14B9F", hash_generated_method = "FF9C472D52675E7B6AC549DA09855AFD")
         public String getHost() {
 String var540C13E9E156B687226421B24F2DF178_1928428253 =             null;
             var540C13E9E156B687226421B24F2DF178_1928428253.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1928428253;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.752 -0400", hash_original_method = "B159430668427C6760C3FB4B772D9F59", hash_generated_method = "BEA588E3F1120476D5168DB6CE97CEBE")
         public int getPort() {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_327522958 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1520277012 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1520277012;
-            
-            
+            // ---------- Original Method ----------
+            //return -1;
         }
 
         
@@ -1431,30 +1406,30 @@ String var540C13E9E156B687226421B24F2DF178_1928428253 =             null;
 String var3B17D0B227025B279C654EE822543E6B_827378147 =                 cachedString;
                 var3B17D0B227025B279C654EE822543E6B_827378147.addTaint(taint);
                 return var3B17D0B227025B279C654EE822543E6B_827378147;
-            } 
+            } //End block
             StringBuilder sb = new StringBuilder();
             sb.append(scheme).append(':');
             sb.append(getEncodedSchemeSpecificPart());
     if(!fragment.isEmpty())            
             {
                 sb.append('#').append(fragment.getEncoded());
-            } 
+            } //End block
 String varC27FFD0D6D1EF6B53917B2D053C6E05C_1799495727 =             cachedString = sb.toString();
             varC27FFD0D6D1EF6B53917B2D053C6E05C_1799495727.addTaint(taint);
             return varC27FFD0D6D1EF6B53917B2D053C6E05C_1799495727;
-            
-            
-            
-            
-                
-            
-            
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //@SuppressWarnings("StringEquality")
+            //boolean cached = cachedString != NOT_CACHED;
+            //if (cached) {
+                //return cachedString;
+            //}
+            //StringBuilder sb = new StringBuilder();
+            //sb.append(scheme).append(':');
+            //sb.append(getEncodedSchemeSpecificPart());
+            //if (!fragment.isEmpty()) {
+                //sb.append('#').append(fragment.getEncoded());
+            //}
+            //return cachedString = sb.toString();
         }
 
         
@@ -1466,11 +1441,11 @@ Builder varB0D57715B2E1FC2447B5F7A2D1E9683B_1880440187 =             new Builder
                     .fragment(this.fragment);
             varB0D57715B2E1FC2447B5F7A2D1E9683B_1880440187.addTaint(taint);
             return varB0D57715B2E1FC2447B5F7A2D1E9683B_1880440187;
-            
-            
-                    
-                    
-                    
+            // ---------- Original Method ----------
+            //return new Builder()
+                    //.scheme(this.scheme)
+                    //.opaquePart(this.ssp)
+                    //.fragment(this.fragment);
         }
 
         
@@ -1493,9 +1468,9 @@ Builder varB0D57715B2E1FC2447B5F7A2D1E9683B_1880440187 =             new Builder
           PathSegments(String[] segments, int size) {
             this.segments = segments;
             this.size = size;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.segments = segments;
+            //this.size = size;
         }
 
         
@@ -1507,26 +1482,25 @@ Builder varB0D57715B2E1FC2447B5F7A2D1E9683B_1880440187 =             new Builder
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1696137700 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_1696137700.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_1696137700;
-            } 
+            } //End block
 String var0670CDC624AB38F74C6CE6D645099017_676802730 =             segments[index];
             var0670CDC624AB38F74C6CE6D645099017_676802730.addTaint(taint);
             return var0670CDC624AB38F74C6CE6D645099017_676802730;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (index >= size) {
+                //throw new IndexOutOfBoundsException();
+            //}
+            //return segments[index];
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.753 -0400", hash_original_method = "BAF1AF8B1284BE94C387C840AF9FA265", hash_generated_method = "D0F47CB201E203BD21DE9CF684E95304")
         public int size() {
             int varFE91D8EC738CF7D8BE7D802E3604E3B0_1824992220 = (this.size);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1847560143 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1847560143;
-            
-            
+            // ---------- Original Method ----------
+            //return this.size;
         }
 
         
@@ -1548,7 +1522,7 @@ String var0670CDC624AB38F74C6CE6D645099017_676802730 =             segments[inde
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.753 -0400", hash_original_method = "CD5B4727D6775EBFE00461F5F237812D", hash_generated_method = "CD5B4727D6775EBFE00461F5F237812D")
         public PathSegmentsBuilder ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1557,24 +1531,24 @@ String var0670CDC624AB38F74C6CE6D645099017_676802730 =             segments[inde
     if(segments == null)            
             {
                 segments = new String[4];
-            } 
+            } //End block
             else
     if(size + 1 == segments.length)            
             {
                 String[] expanded = new String[segments.length * 2];
                 System.arraycopy(segments, 0, expanded, 0, segments.length);
                 segments = expanded;
-            } 
+            } //End block
             segments[size++] = segment;
-            
-            
-                
-            
-                
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (segments == null) {
+                //segments = new String[4];
+            //} else if (size + 1 == segments.length) {
+                //String[] expanded = new String[segments.length * 2];
+                //System.arraycopy(segments, 0, expanded, 0, segments.length);
+                //segments = expanded;
+            //}
+            //segments[size++] = segment;
         }
 
         
@@ -1585,26 +1559,26 @@ String var0670CDC624AB38F74C6CE6D645099017_676802730 =             segments[inde
 PathSegments var61ED7A3446E992CC1D6CE996343F0BB7_1241002676 =                 PathSegments.EMPTY;
                 var61ED7A3446E992CC1D6CE996343F0BB7_1241002676.addTaint(taint);
                 return var61ED7A3446E992CC1D6CE996343F0BB7_1241002676;
-            } 
+            } //End block
             try 
             {
 PathSegments varF93FC2B9FE269AF50DE5689CD2FB3B65_43492692 =                 new PathSegments(segments, size);
                 varF93FC2B9FE269AF50DE5689CD2FB3B65_43492692.addTaint(taint);
                 return varF93FC2B9FE269AF50DE5689CD2FB3B65_43492692;
-            } 
+            } //End block
             finally 
             {
                 segments = null;
-            } 
-            
-            
-                
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (segments == null) {
+                //return PathSegments.EMPTY;
+            //}
+            //try {
+                //return new PathSegments(segments, size);
+            //} finally {
+                //segments = null;
+            //}
         }
 
         
@@ -1626,7 +1600,7 @@ PathSegments varF93FC2B9FE269AF50DE5689CD2FB3B65_43492692 =                 new 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.755 -0400", hash_original_method = "469DE423ED30903E9EDD58224AA80D56", hash_generated_method = "469DE423ED30903E9EDD58224AA80D56")
         public AbstractHierarchicalUri ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1639,17 +1613,17 @@ PathSegments varF93FC2B9FE269AF50DE5689CD2FB3B65_43492692 =                 new 
 String var540C13E9E156B687226421B24F2DF178_1970344649 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1970344649.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1970344649;
-            } 
+            } //End block
 String varEFCF283257D160202712C81EC6306DA0_1605682375 =             segments.get(size - 1);
             varEFCF283257D160202712C81EC6306DA0_1605682375.addTaint(taint);
             return varEFCF283257D160202712C81EC6306DA0_1605682375;
-            
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //List<String> segments = getPathSegments();
+            //int size = segments.size();
+            //if (size == 0) {
+                //return null;
+            //}
+            //return segments.get(size - 1);
         }
 
         
@@ -1659,9 +1633,9 @@ Part varF7E738A42E6D63EB0326855BC730BADF_806831303 =             userInfo == nul
                     ? userInfo = Part.fromEncoded(parseUserInfo()) : userInfo;
             varF7E738A42E6D63EB0326855BC730BADF_806831303.addTaint(taint);
             return varF7E738A42E6D63EB0326855BC730BADF_806831303;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return userInfo == null
+                    //? userInfo = Part.fromEncoded(parseUserInfo()) : userInfo;
         }
 
         
@@ -1670,8 +1644,8 @@ Part varF7E738A42E6D63EB0326855BC730BADF_806831303 =             userInfo == nul
 String var09E3B0803DBA809E674A74FBBA3FD409_8359628 =             getUserInfoPart().getEncoded();
             var09E3B0803DBA809E674A74FBBA3FD409_8359628.addTaint(taint);
             return var09E3B0803DBA809E674A74FBBA3FD409_8359628;
-            
-            
+            // ---------- Original Method ----------
+            //return getUserInfoPart().getEncoded();
         }
 
         
@@ -1683,18 +1657,18 @@ String var09E3B0803DBA809E674A74FBBA3FD409_8359628 =             getUserInfoPart
 String var540C13E9E156B687226421B24F2DF178_1607227214 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1607227214.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1607227214;
-            } 
+            } //End block
             int end = authority.indexOf('@');
 String var9D68F14379A550242867922C161646A9_205947465 =             end == NOT_FOUND ? null : authority.substring(0, end);
             var9D68F14379A550242867922C161646A9_205947465.addTaint(taint);
             return var9D68F14379A550242867922C161646A9_205947465;
-            
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //String authority = getEncodedAuthority();
+            //if (authority == null) {
+                //return null;
+            //}
+            //int end = authority.indexOf('@');
+            //return end == NOT_FOUND ? null : authority.substring(0, end);
         }
 
         
@@ -1703,8 +1677,8 @@ String var9D68F14379A550242867922C161646A9_205947465 =             end == NOT_FO
 String varB4A42524A46C4FAD7FBAC514070D2A61_1881687465 =             getUserInfoPart().getDecoded();
             varB4A42524A46C4FAD7FBAC514070D2A61_1881687465.addTaint(taint);
             return varB4A42524A46C4FAD7FBAC514070D2A61_1881687465;
-            
-            
+            // ---------- Original Method ----------
+            //return getUserInfoPart().getDecoded();
         }
 
         
@@ -1715,11 +1689,11 @@ String var8FB9745AFEFD90E610A95B02DD737746_937101336 =             cached ? host
                     : (host = parseHost());
             var8FB9745AFEFD90E610A95B02DD737746_937101336.addTaint(taint);
             return var8FB9745AFEFD90E610A95B02DD737746_937101336;
-            
-            
-            
-            
-                    
+            // ---------- Original Method ----------
+            //@SuppressWarnings("StringEquality")
+            //boolean cached = (host != NOT_CACHED);
+            //return cached ? host
+                    //: (host = parseHost());
         }
 
         
@@ -1731,7 +1705,7 @@ String var8FB9745AFEFD90E610A95B02DD737746_937101336 =             cached ? host
 String var540C13E9E156B687226421B24F2DF178_1761298539 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1761298539.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1761298539;
-            } 
+            } //End block
             int userInfoSeparator = authority.indexOf('@');
             int portSeparator = authority.indexOf(':', userInfoSeparator);
             String encodedHost = portSeparator == NOT_FOUND
@@ -1740,17 +1714,17 @@ String var540C13E9E156B687226421B24F2DF178_1761298539 =                 null;
 String var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737 =             decode(encodedHost);
             var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737.addTaint(taint);
             return var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737;
-            
-            
-            
-                
-            
-            
-            
-            
-                    
-                    
-            
+            // ---------- Original Method ----------
+            //String authority = getEncodedAuthority();
+            //if (authority == null) {
+                //return null;
+            //}
+            //int userInfoSeparator = authority.indexOf('@');
+            //int portSeparator = authority.indexOf(':', userInfoSeparator);
+            //String encodedHost = portSeparator == NOT_FOUND
+                    //? authority.substring(userInfoSeparator + 1)
+                    //: authority.substring(userInfoSeparator + 1, portSeparator);
+            //return decode(encodedHost);
         }
 
         
@@ -1761,10 +1735,10 @@ String var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737 =             decode(encod
                     : port);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_764798650 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_764798650;
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //return port == NOT_CALCULATED
+                    //? port = parsePort()
+                    //: port;
         }
 
         
@@ -1776,7 +1750,7 @@ String var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737 =             decode(encod
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_2020057780 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1728344313 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1728344313;
-            } 
+            } //End block
             int userInfoSeparator = authority.indexOf('@');
             int portSeparator = authority.indexOf(':', userInfoSeparator);
     if(portSeparator == NOT_FOUND)            
@@ -1784,37 +1758,37 @@ String var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737 =             decode(encod
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_831204335 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_136362490 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_136362490;
-            } 
+            } //End block
             String portString = decode(authority.substring(portSeparator + 1));
             try 
             {
                 int varFBDD8FEF87E1A48D29F5CB7C1376F258_1062853425 = (Integer.parseInt(portString));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008953574 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008953574;
-            } 
+            } //End block
             catch (NumberFormatException e)
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_2146313777 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973112020 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973112020;
-            } 
-            
-            
-            
-                
-            
-            
-            
-            
-                
-            
-            
-            
-                
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //String authority = getEncodedAuthority();
+            //if (authority == null) {
+                //return -1;
+            //}
+            //int userInfoSeparator = authority.indexOf('@');
+            //int portSeparator = authority.indexOf(':', userInfoSeparator);
+            //if (portSeparator == NOT_FOUND) {
+                //return -1;
+            //}
+            //String portString = decode(authority.substring(portSeparator + 1));
+            //try {
+                //return Integer.parseInt(portString);
+            //} catch (NumberFormatException e) {
+                //Log.w(LOG, "Error parsing port string.", e);
+                //return -1;
+            //}
         }
 
         
@@ -1853,17 +1827,16 @@ String var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737 =             decode(encod
             this.path = path == null ? PathPart.NULL : path;
             this.query = Part.nonNull(query);
             this.fragment = Part.nonNull(fragment);
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.scheme = scheme;
+            //this.authority = Part.nonNull(authority);
+            //this.path = path == null ? PathPart.NULL : path;
+            //this.query = Part.nonNull(query);
+            //this.fragment = Part.nonNull(fragment);
         }
 
         
-                @DSModeled(DSC.SPEC)
-        static Uri readFrom(Parcel parcel) {
+                static Uri readFrom(Parcel parcel) {
             return new HierarchicalUri(
                 parcel.readString(),
                 Part.readFrom(parcel),
@@ -1874,14 +1847,13 @@ String var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737 =             decode(encod
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.758 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AAFF96A22F03A5D660B4B2B45477967D")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1711859193 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359337415 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359337415;
-            
-            
+            // ---------- Original Method ----------
+            //return 0;
         }
 
         
@@ -1895,46 +1867,43 @@ String var608417B3BC2F90A7AFAAFAF8F1F376E0_2064067737 =             decode(encod
             path.writeTo(parcel);
             query.writeTo(parcel);
             fragment.writeTo(parcel);
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //parcel.writeInt(TYPE_ID);
+            //parcel.writeString(scheme);
+            //authority.writeTo(parcel);
+            //path.writeTo(parcel);
+            //query.writeTo(parcel);
+            //fragment.writeTo(parcel);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.758 -0400", hash_original_method = "3471DB7575AAB7FBFD2140BF4AB89F77", hash_generated_method = "5C9DD9452A4C04D8FA693366C47FAE91")
         public boolean isHierarchical() {
             boolean varB326B5062B2F0E69046810717534CB09_1967351254 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1792661563 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1792661563;
-            
-            
+            // ---------- Original Method ----------
+            //return true;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.760 -0400", hash_original_method = "9639BAD4AF2BECE413ED6DDD1E0FB03A", hash_generated_method = "ECA3D6EA5E3BBE66E7594C8ECCE1EAE3")
         public boolean isRelative() {
             boolean var4518A3BFE1F17529286D9D4EFE362EA9_657496407 = (scheme == null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_650363226 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_650363226;
-            
-            
+            // ---------- Original Method ----------
+            //return scheme == null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.760 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "FEFCEF6CCE9F6829902E084D07E2C500")
         public String getScheme() {
 String varFD3305CF8340E40F0AC0AB554909AEBC_1879268385 =             scheme;
             varFD3305CF8340E40F0AC0AB554909AEBC_1879268385.addTaint(taint);
             return varFD3305CF8340E40F0AC0AB554909AEBC_1879268385;
-            
-            
+            // ---------- Original Method ----------
+            //return scheme;
         }
 
         
@@ -1944,9 +1913,9 @@ Part var612ADADF05B7551B37A539180151D856_1863722011 =             ssp == null
                     ? ssp = Part.fromEncoded(makeSchemeSpecificPart()) : ssp;
             var612ADADF05B7551B37A539180151D856_1863722011.addTaint(taint);
             return var612ADADF05B7551B37A539180151D856_1863722011;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return ssp == null
+                    //? ssp = Part.fromEncoded(makeSchemeSpecificPart()) : ssp;
         }
 
         
@@ -1955,8 +1924,8 @@ Part var612ADADF05B7551B37A539180151D856_1863722011 =             ssp == null
 String var393D011CD485FB233FC4BE4326461491_2044362727 =             getSsp().getEncoded();
             var393D011CD485FB233FC4BE4326461491_2044362727.addTaint(taint);
             return var393D011CD485FB233FC4BE4326461491_2044362727;
-            
-            
+            // ---------- Original Method ----------
+            //return getSsp().getEncoded();
         }
 
         
@@ -1965,8 +1934,8 @@ String var393D011CD485FB233FC4BE4326461491_2044362727 =             getSsp().get
 String varDEA78A046E5755E6A172773CC85259A6_1941035900 =             getSsp().getDecoded();
             varDEA78A046E5755E6A172773CC85259A6_1941035900.addTaint(taint);
             return varDEA78A046E5755E6A172773CC85259A6_1941035900;
-            
-            
+            // ---------- Original Method ----------
+            //return getSsp().getDecoded();
         }
 
         
@@ -1977,10 +1946,10 @@ String varDEA78A046E5755E6A172773CC85259A6_1941035900 =             getSsp().get
 String varF4CF030572656354ACFDF83FEE21D7A6_1614050809 =             builder.toString();
             varF4CF030572656354ACFDF83FEE21D7A6_1614050809.addTaint(taint);
             return varF4CF030572656354ACFDF83FEE21D7A6_1614050809;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //StringBuilder builder = new StringBuilder();
+            //appendSspTo(builder);
+            //return builder.toString();
         }
 
         
@@ -1991,28 +1960,28 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1614050809 =             builder.toSt
     if(encodedAuthority != null)            
             {
                 builder.append("//").append(encodedAuthority);
-            } 
+            } //End block
             String encodedPath = path.getEncoded();
     if(encodedPath != null)            
             {
                 builder.append(encodedPath);
-            } 
+            } //End block
     if(!query.isEmpty())            
             {
                 builder.append('?').append(query.getEncoded());
-            } 
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //String encodedAuthority = authority.getEncoded();
+            //if (encodedAuthority != null) {
+                //builder.append("//").append(encodedAuthority);
+            //}
+            //String encodedPath = path.getEncoded();
+            //if (encodedPath != null) {
+                //builder.append(encodedPath);
+            //}
+            //if (!query.isEmpty()) {
+                //builder.append('?').append(query.getEncoded());
+            //}
         }
 
         
@@ -2021,8 +1990,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1614050809 =             builder.toSt
 String varDD511262F0E7679CA44A2E8218470028_1059099846 =             this.authority.getDecoded();
             varDD511262F0E7679CA44A2E8218470028_1059099846.addTaint(taint);
             return varDD511262F0E7679CA44A2E8218470028_1059099846;
-            
-            
+            // ---------- Original Method ----------
+            //return this.authority.getDecoded();
         }
 
         
@@ -2031,8 +2000,8 @@ String varDD511262F0E7679CA44A2E8218470028_1059099846 =             this.authori
 String var19AE63614558C7149808DBD062B65B6B_1163704315 =             this.authority.getEncoded();
             var19AE63614558C7149808DBD062B65B6B_1163704315.addTaint(taint);
             return var19AE63614558C7149808DBD062B65B6B_1163704315;
-            
-            
+            // ---------- Original Method ----------
+            //return this.authority.getEncoded();
         }
 
         
@@ -2041,8 +2010,8 @@ String var19AE63614558C7149808DBD062B65B6B_1163704315 =             this.authori
 String varEEAD1A4B4F429D96FD5A6ADB3BF1FFE5_864361052 =             this.path.getEncoded();
             varEEAD1A4B4F429D96FD5A6ADB3BF1FFE5_864361052.addTaint(taint);
             return varEEAD1A4B4F429D96FD5A6ADB3BF1FFE5_864361052;
-            
-            
+            // ---------- Original Method ----------
+            //return this.path.getEncoded();
         }
 
         
@@ -2051,8 +2020,8 @@ String varEEAD1A4B4F429D96FD5A6ADB3BF1FFE5_864361052 =             this.path.get
 String var83F9CE5C9BAF5C5C429C86F8D8178641_1066419813 =             this.path.getDecoded();
             var83F9CE5C9BAF5C5C429C86F8D8178641_1066419813.addTaint(taint);
             return var83F9CE5C9BAF5C5C429C86F8D8178641_1066419813;
-            
-            
+            // ---------- Original Method ----------
+            //return this.path.getDecoded();
         }
 
         
@@ -2061,8 +2030,8 @@ String var83F9CE5C9BAF5C5C429C86F8D8178641_1066419813 =             this.path.ge
 String var0FC25D767B999B6312889F23BA6B3E21_1397121610 =             this.query.getDecoded();
             var0FC25D767B999B6312889F23BA6B3E21_1397121610.addTaint(taint);
             return var0FC25D767B999B6312889F23BA6B3E21_1397121610;
-            
-            
+            // ---------- Original Method ----------
+            //return this.query.getDecoded();
         }
 
         
@@ -2071,8 +2040,8 @@ String var0FC25D767B999B6312889F23BA6B3E21_1397121610 =             this.query.g
 String varD80217C924F7F40BAC074946FDBADEEC_1677782194 =             this.query.getEncoded();
             varD80217C924F7F40BAC074946FDBADEEC_1677782194.addTaint(taint);
             return varD80217C924F7F40BAC074946FDBADEEC_1677782194;
-            
-            
+            // ---------- Original Method ----------
+            //return this.query.getEncoded();
         }
 
         
@@ -2081,8 +2050,8 @@ String varD80217C924F7F40BAC074946FDBADEEC_1677782194 =             this.query.g
 String varD91F6287F55E70D82879F259060BB4F7_1999914189 =             this.fragment.getDecoded();
             varD91F6287F55E70D82879F259060BB4F7_1999914189.addTaint(taint);
             return varD91F6287F55E70D82879F259060BB4F7_1999914189;
-            
-            
+            // ---------- Original Method ----------
+            //return this.fragment.getDecoded();
         }
 
         
@@ -2091,8 +2060,8 @@ String varD91F6287F55E70D82879F259060BB4F7_1999914189 =             this.fragmen
 String var9BE81904ABD2B0EBFE2214CE0EE4BBFD_453306539 =             this.fragment.getEncoded();
             var9BE81904ABD2B0EBFE2214CE0EE4BBFD_453306539.addTaint(taint);
             return var9BE81904ABD2B0EBFE2214CE0EE4BBFD_453306539;
-            
-            
+            // ---------- Original Method ----------
+            //return this.fragment.getEncoded();
         }
 
         
@@ -2101,8 +2070,8 @@ String var9BE81904ABD2B0EBFE2214CE0EE4BBFD_453306539 =             this.fragment
 List<String> varA8049C752B325D0BCB78F1A90EC0D736_2123729167 =             this.path.getPathSegments();
             varA8049C752B325D0BCB78F1A90EC0D736_2123729167.addTaint(taint);
             return varA8049C752B325D0BCB78F1A90EC0D736_2123729167;
-            
-            
+            // ---------- Original Method ----------
+            //return this.path.getPathSegments();
         }
 
         
@@ -2114,11 +2083,11 @@ String var9B86F3459D079E341060C628CFD4EC8E_1499319601 =             cached ? uri
                     : (uriString = makeUriString());
             var9B86F3459D079E341060C628CFD4EC8E_1499319601.addTaint(taint);
             return var9B86F3459D079E341060C628CFD4EC8E_1499319601;
-            
-            
-            
-            
-                    
+            // ---------- Original Method ----------
+            //@SuppressWarnings("StringEquality")
+            //boolean cached = (uriString != NOT_CACHED);
+            //return cached ? uriString
+                    //: (uriString = makeUriString());
         }
 
         
@@ -2128,25 +2097,25 @@ String var9B86F3459D079E341060C628CFD4EC8E_1499319601 =             cached ? uri
     if(scheme != null)            
             {
                 builder.append(scheme).append(':');
-            } 
+            } //End block
             appendSspTo(builder);
     if(!fragment.isEmpty())            
             {
                 builder.append('#').append(fragment.getEncoded());
-            } 
+            } //End block
 String varF4CF030572656354ACFDF83FEE21D7A6_746956393 =             builder.toString();
             varF4CF030572656354ACFDF83FEE21D7A6_746956393.addTaint(taint);
             return varF4CF030572656354ACFDF83FEE21D7A6_746956393;
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //StringBuilder builder = new StringBuilder();
+            //if (scheme != null) {
+                //builder.append(scheme).append(':');
+            //}
+            //appendSspTo(builder);
+            //if (!fragment.isEmpty()) {
+                //builder.append('#').append(fragment.getEncoded());
+            //}
+            //return builder.toString();
         }
 
         
@@ -2160,13 +2129,13 @@ Builder varED3F8822050435D1DCF8FEEC1E3625B3_850670095 =             new Builder(
                     .fragment(fragment);
             varED3F8822050435D1DCF8FEEC1E3625B3_850670095.addTaint(taint);
             return varED3F8822050435D1DCF8FEEC1E3625B3_850670095;
-            
-            
-                    
-                    
-                    
-                    
-                    
+            // ---------- Original Method ----------
+            //return new Builder()
+                    //.scheme(scheme)
+                    //.authority(authority)
+                    //.path(path)
+                    //.query(query)
+                    //.fragment(fragment);
         }
 
         
@@ -2199,33 +2168,31 @@ Builder varED3F8822050435D1DCF8FEEC1E3625B3_850670095 =             new Builder(
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.765 -0400", hash_original_method = "7023F746232F077A36DCA003B1A512D2", hash_generated_method = "7F0D829FE2A4B9F217489244A9FD2E61")
         public  Builder() {
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.766 -0400", hash_original_method = "1FAF048543AEDF54BF8218C15362FDC3", hash_generated_method = "5E4A473D63B3B0ABE52BA8194FA10F35")
         public Builder scheme(String scheme) {
             this.scheme = scheme;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1059307637 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1059307637.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1059307637;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.scheme = scheme;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.766 -0400", hash_original_method = "8D4C2B402A916DF01BF39AF004B22B4B", hash_generated_method = "17BEFD60AADA7D771F221DBF9FE43C76")
          Builder opaquePart(Part opaquePart) {
             this.opaquePart = opaquePart;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1370116580 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1370116580.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1370116580;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.opaquePart = opaquePart;
+            //return this;
         }
 
         
@@ -2235,8 +2202,8 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1370116580 =             this;
 Builder var447EF4E65B1A86D27C660BD3406092A1_753977493 =             opaquePart(Part.fromDecoded(opaquePart));
             var447EF4E65B1A86D27C660BD3406092A1_753977493.addTaint(taint);
             return var447EF4E65B1A86D27C660BD3406092A1_753977493;
-            
-            
+            // ---------- Original Method ----------
+            //return opaquePart(Part.fromDecoded(opaquePart));
         }
 
         
@@ -2246,12 +2213,11 @@ Builder var447EF4E65B1A86D27C660BD3406092A1_753977493 =             opaquePart(P
 Builder var34CFA2F802F04C1F00EC4E996B5D7270_460455063 =             opaquePart(Part.fromEncoded(opaquePart));
             var34CFA2F802F04C1F00EC4E996B5D7270_460455063.addTaint(taint);
             return var34CFA2F802F04C1F00EC4E996B5D7270_460455063;
-            
-            
+            // ---------- Original Method ----------
+            //return opaquePart(Part.fromEncoded(opaquePart));
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.768 -0400", hash_original_method = "CE12FA6D2315F74B1A3B79C027FFFA6D", hash_generated_method = "2ED2FC35E3C2633326DEAAB6A95439A7")
          Builder authority(Part authority) {
             this.opaquePart = null;
@@ -2259,10 +2225,10 @@ Builder var34CFA2F802F04C1F00EC4E996B5D7270_460455063 =             opaquePart(P
 Builder var72A74007B2BE62B849F475C7BDA4658B_1721359575 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1721359575.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1721359575;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.opaquePart = null;
+            //this.authority = authority;
+            //return this;
         }
 
         
@@ -2272,8 +2238,8 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1721359575 =             this;
 Builder var2EDA88150582111521EDC9CAB7001682_448284993 =             authority(Part.fromDecoded(authority));
             var2EDA88150582111521EDC9CAB7001682_448284993.addTaint(taint);
             return var2EDA88150582111521EDC9CAB7001682_448284993;
-            
-            
+            // ---------- Original Method ----------
+            //return authority(Part.fromDecoded(authority));
         }
 
         
@@ -2283,12 +2249,11 @@ Builder var2EDA88150582111521EDC9CAB7001682_448284993 =             authority(Pa
 Builder var426370EFE7B4302B3E1C247DE7CA1F10_489614963 =             authority(Part.fromEncoded(authority));
             var426370EFE7B4302B3E1C247DE7CA1F10_489614963.addTaint(taint);
             return var426370EFE7B4302B3E1C247DE7CA1F10_489614963;
-            
-            
+            // ---------- Original Method ----------
+            //return authority(Part.fromEncoded(authority));
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.769 -0400", hash_original_method = "0552AFD7FA04CD9C4E588C7FB644B387", hash_generated_method = "C52BDA38F6E80C345C9780376570DBFF")
          Builder path(PathPart path) {
             this.opaquePart = null;
@@ -2296,10 +2261,10 @@ Builder var426370EFE7B4302B3E1C247DE7CA1F10_489614963 =             authority(Pa
 Builder var72A74007B2BE62B849F475C7BDA4658B_646277947 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_646277947.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_646277947;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.opaquePart = null;
+            //this.path = path;
+            //return this;
         }
 
         
@@ -2309,8 +2274,8 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_646277947 =             this;
 Builder varE93D7008AE3144DB58924E5F7D03413A_2122082453 =             path(PathPart.fromDecoded(path));
             varE93D7008AE3144DB58924E5F7D03413A_2122082453.addTaint(taint);
             return varE93D7008AE3144DB58924E5F7D03413A_2122082453;
-            
-            
+            // ---------- Original Method ----------
+            //return path(PathPart.fromDecoded(path));
         }
 
         
@@ -2320,8 +2285,8 @@ Builder varE93D7008AE3144DB58924E5F7D03413A_2122082453 =             path(PathPa
 Builder var2C099BD4CBAC004E7DBA3E062586EF05_1634585813 =             path(PathPart.fromEncoded(path));
             var2C099BD4CBAC004E7DBA3E062586EF05_1634585813.addTaint(taint);
             return var2C099BD4CBAC004E7DBA3E062586EF05_1634585813;
-            
-            
+            // ---------- Original Method ----------
+            //return path(PathPart.fromEncoded(path));
         }
 
         
@@ -2331,8 +2296,8 @@ Builder var2C099BD4CBAC004E7DBA3E062586EF05_1634585813 =             path(PathPa
 Builder var8D3C52E329AACC9BA26FC60EDBDA633E_1903733345 =             path(PathPart.appendDecodedSegment(path, newSegment));
             var8D3C52E329AACC9BA26FC60EDBDA633E_1903733345.addTaint(taint);
             return var8D3C52E329AACC9BA26FC60EDBDA633E_1903733345;
-            
-            
+            // ---------- Original Method ----------
+            //return path(PathPart.appendDecodedSegment(path, newSegment));
         }
 
         
@@ -2342,12 +2307,11 @@ Builder var8D3C52E329AACC9BA26FC60EDBDA633E_1903733345 =             path(PathPa
 Builder var15BBA848D385BBCE5F9325C9F07D3D5A_973627066 =             path(PathPart.appendEncodedSegment(path, newSegment));
             var15BBA848D385BBCE5F9325C9F07D3D5A_973627066.addTaint(taint);
             return var15BBA848D385BBCE5F9325C9F07D3D5A_973627066;
-            
-            
+            // ---------- Original Method ----------
+            //return path(PathPart.appendEncodedSegment(path, newSegment));
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.771 -0400", hash_original_method = "526B00AFFC674BC410AFF0DB5058AD68", hash_generated_method = "2BE2E9F2EE9F94C4210F88F2065BC9D7")
          Builder query(Part query) {
             this.opaquePart = null;
@@ -2355,10 +2319,10 @@ Builder var15BBA848D385BBCE5F9325C9F07D3D5A_973627066 =             path(PathPar
 Builder var72A74007B2BE62B849F475C7BDA4658B_849470634 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_849470634.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_849470634;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.opaquePart = null;
+            //this.query = query;
+            //return this;
         }
 
         
@@ -2368,8 +2332,8 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_849470634 =             this;
 Builder var66923BEC3D8C1278767576BF4D394152_416477836 =             query(Part.fromDecoded(query));
             var66923BEC3D8C1278767576BF4D394152_416477836.addTaint(taint);
             return var66923BEC3D8C1278767576BF4D394152_416477836;
-            
-            
+            // ---------- Original Method ----------
+            //return query(Part.fromDecoded(query));
         }
 
         
@@ -2379,21 +2343,20 @@ Builder var66923BEC3D8C1278767576BF4D394152_416477836 =             query(Part.f
 Builder var05319EFE71D4D5FABCEFB5394AF0F3A4_1173885160 =             query(Part.fromEncoded(query));
             var05319EFE71D4D5FABCEFB5394AF0F3A4_1173885160.addTaint(taint);
             return var05319EFE71D4D5FABCEFB5394AF0F3A4_1173885160;
-            
-            
+            // ---------- Original Method ----------
+            //return query(Part.fromEncoded(query));
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.771 -0400", hash_original_method = "AAD8E80453C4B46D11B41869FDCBA00D", hash_generated_method = "28711AA3DF2509F2DAB5D626B2CB5827")
          Builder fragment(Part fragment) {
             this.fragment = fragment;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1755202165 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1755202165.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1755202165;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.fragment = fragment;
+            //return this;
         }
 
         
@@ -2403,8 +2366,8 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1755202165 =             this;
 Builder var8A0E66BF4149A1703B51D880CE7BD3FB_1362213049 =             fragment(Part.fromDecoded(fragment));
             var8A0E66BF4149A1703B51D880CE7BD3FB_1362213049.addTaint(taint);
             return var8A0E66BF4149A1703B51D880CE7BD3FB_1362213049;
-            
-            
+            // ---------- Original Method ----------
+            //return fragment(Part.fromDecoded(fragment));
         }
 
         
@@ -2414,8 +2377,8 @@ Builder var8A0E66BF4149A1703B51D880CE7BD3FB_1362213049 =             fragment(Pa
 Builder varF653F4C1C1E12E452895547E2A8D497C_2054344239 =             fragment(Part.fromEncoded(fragment));
             varF653F4C1C1E12E452895547E2A8D497C_2054344239.addTaint(taint);
             return varF653F4C1C1E12E452895547E2A8D497C_2054344239;
-            
-            
+            // ---------- Original Method ----------
+            //return fragment(Part.fromEncoded(fragment));
         }
 
         
@@ -2432,34 +2395,34 @@ Builder varF653F4C1C1E12E452895547E2A8D497C_2054344239 =             fragment(Pa
 Builder var72A74007B2BE62B849F475C7BDA4658B_1165513973 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1165513973.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1165513973;
-            } 
+            } //End block
             String oldQuery = query.getEncoded();
     if(oldQuery == null || oldQuery.length() == 0)            
             {
                 query = Part.fromEncoded(encodedParameter);
-            } 
+            } //End block
             else
             {
                 query = Part.fromEncoded(oldQuery + "&" + encodedParameter);
-            } 
+            } //End block
 Builder var72A74007B2BE62B849F475C7BDA4658B_1745606145 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1745606145.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1745606145;
-            
-            
-            
-                    
-            
-                
-                
-            
-            
-            
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //this.opaquePart = null;
+            //String encodedParameter = encode(key, null) + "="
+                    //+ encode(value, null);
+            //if (query == null) {
+                //query = Part.fromEncoded(encodedParameter);
+                //return this;
+            //}
+            //String oldQuery = query.getEncoded();
+            //if (oldQuery == null || oldQuery.length() == 0) {
+                //query = Part.fromEncoded(encodedParameter);
+            //} else {
+                //query = Part.fromEncoded(oldQuery + "&" + encodedParameter);
+            //}
+            //return this;
         }
 
         
@@ -2468,12 +2431,11 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1745606145 =             this;
 Builder var53FE33D9FA667E351CE36A4E53159F37_907939201 =             query((Part) null);
             var53FE33D9FA667E351CE36A4E53159F37_907939201.addTaint(taint);
             return var53FE33D9FA667E351CE36A4E53159F37_907939201;
-            
-            
+            // ---------- Original Method ----------
+            //return query((Part) null);
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.774 -0400", hash_original_method = "C36CE5067F02DA1F1C7276BF67665A1B", hash_generated_method = "29B398FF9ADDA5029764FFBFF91D4F7A")
         public Uri build() {
     if(opaquePart != null)            
@@ -2484,45 +2446,44 @@ Builder var53FE33D9FA667E351CE36A4E53159F37_907939201 =             query((Part)
                             "An opaque URI must have a scheme.");
                     varBBE90DF2A7DE2FEB6E102C54C2A10961_1425242323.addTaint(taint);
                     throw varBBE90DF2A7DE2FEB6E102C54C2A10961_1425242323;
-                } 
+                } //End block
 Uri varBD7EC89A1E53A9CF305CC36AF2561E02_249525448 =                 new OpaqueUri(scheme, opaquePart, fragment);
                 varBD7EC89A1E53A9CF305CC36AF2561E02_249525448.addTaint(taint);
                 return varBD7EC89A1E53A9CF305CC36AF2561E02_249525448;
-            } 
+            } //End block
             else
             {
                 PathPart path = this.path;
     if(path == null || path == PathPart.NULL)                
                 {
                     path = PathPart.EMPTY;
-                } 
+                } //End block
                 else
                 {
     if(hasSchemeOrAuthority())                    
                     {
                         path = PathPart.makeAbsolute(path);
-                    } 
-                } 
+                    } //End block
+                } //End block
 Uri var1A5C773E6B2C9527C52233E0D175F391_2039176192 =                 new HierarchicalUri(
                         scheme, authority, path, query, fragment);
                 var1A5C773E6B2C9527C52233E0D175F391_2039176192.addTaint(taint);
                 return var1A5C773E6B2C9527C52233E0D175F391_2039176192;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.774 -0400", hash_original_method = "7917AD3B49169A1AC8EEA7DD014B7E45", hash_generated_method = "2B8E10446CD295DA89FF1688B63463F3")
         private boolean hasSchemeOrAuthority() {
             boolean var66F0DE1EAD0A64E28D3A3FCCC8CAE0D4_1975763531 = (scheme != null
                     || (authority != null && authority != Part.NULL));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_991528605 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_991528605;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return scheme != null
+                    //|| (authority != null && authority != Part.NULL);
         }
 
         
@@ -2532,8 +2493,8 @@ Uri var1A5C773E6B2C9527C52233E0D175F391_2039176192 =                 new Hierarc
 String var83CCC8E6DBC69F3499A1E5AC609A34CF_620334279 =             build().toString();
             var83CCC8E6DBC69F3499A1E5AC609A34CF_620334279.addTaint(taint);
             return var83CCC8E6DBC69F3499A1E5AC609A34CF_620334279;
-            
-            
+            // ---------- Original Method ----------
+            //return build().toString();
         }
 
         
@@ -2553,9 +2514,9 @@ String var83CCC8E6DBC69F3499A1E5AC609A34CF_620334279 =             build().toStr
           AbstractPart(String encoded, String decoded) {
             this.encoded = encoded;
             this.decoded = decoded;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.encoded = encoded;
+            //this.decoded = decoded;
         }
 
         
@@ -2568,10 +2529,10 @@ String var83CCC8E6DBC69F3499A1E5AC609A34CF_620334279 =             build().toStr
 String varF9DE9787DBBABACF674820C53FE77B7A_1267378933 =             hasDecoded ? decoded : (decoded = decode(encoded));
             varF9DE9787DBBABACF674820C53FE77B7A_1267378933.addTaint(taint);
             return varF9DE9787DBBABACF674820C53FE77B7A_1267378933;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //@SuppressWarnings("StringEquality")
+            //boolean hasDecoded = decoded != NOT_CACHED;
+            //return hasDecoded ? decoded : (decoded = decode(encoded));
         }
 
         
@@ -2585,43 +2546,43 @@ String varF9DE9787DBBABACF674820C53FE77B7A_1267378933 =             hasDecoded ?
                 parcel.writeInt(Representation.BOTH);
                 parcel.writeString(encoded);
                 parcel.writeString(decoded);
-            } 
+            } //End block
             else
     if(hasEncoded)            
             {
                 parcel.writeInt(Representation.ENCODED);
                 parcel.writeString(encoded);
-            } 
+            } //End block
             else
     if(hasDecoded)            
             {
                 parcel.writeInt(Representation.DECODED);
                 parcel.writeString(decoded);
-            } 
+            } //End block
             else
             {
                 IllegalArgumentException var25F0B2A44934D2D997027BC02866E4A5_2096874179 = new IllegalArgumentException("Neither encoded nor decoded");
                 var25F0B2A44934D2D997027BC02866E4A5_2096874179.addTaint(taint);
                 throw var25F0B2A44934D2D997027BC02866E4A5_2096874179;
-            } 
-            
-            
-            
-            
-            
-            
-                
-                
-                
-            
-                
-                
-            
-                
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //@SuppressWarnings("StringEquality")
+            //boolean hasEncoded = encoded != NOT_CACHED;
+            //@SuppressWarnings("StringEquality")
+            //boolean hasDecoded = decoded != NOT_CACHED;
+            //if (hasEncoded && hasDecoded) {
+                //parcel.writeInt(Representation.BOTH);
+                //parcel.writeString(encoded);
+                //parcel.writeString(decoded);
+            //} else if (hasEncoded) {
+                //parcel.writeInt(Representation.ENCODED);
+                //parcel.writeString(encoded);
+            //} else if (hasDecoded) {
+                //parcel.writeInt(Representation.DECODED);
+                //parcel.writeString(decoded);
+            //} else {
+                //throw new IllegalArgumentException("Neither encoded nor decoded");
+            //}
         }
 
         
@@ -2630,7 +2591,7 @@ String varF9DE9787DBBABACF674820C53FE77B7A_1267378933 =             hasDecoded ?
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.776 -0400", hash_original_method = "49186660D0AEF0721F749C758CF0FE34", hash_generated_method = "49186660D0AEF0721F749C758CF0FE34")
             public Representation ()
             {
-                
+                //Synthesized constructor
             }
 
 
@@ -2658,18 +2619,17 @@ String varF9DE9787DBBABACF674820C53FE77B7A_1267378933 =             hasDecoded ?
             super(encoded, decoded);
             addTaint(decoded.getTaint());
             addTaint(encoded.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.778 -0400", hash_original_method = "BD94DCCF5B44419F4498543CA74892E2", hash_generated_method = "3938D66DE6C4FFC0DD40BDE259ED0050")
          boolean isEmpty() {
             boolean var68934A3E9455FA72420237EB05902327_1064960387 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_489107858 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_489107858;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
@@ -2679,10 +2639,10 @@ String varF9DE9787DBBABACF674820C53FE77B7A_1267378933 =             hasDecoded ?
 String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_400236575 =             hasEncoded ? encoded : (encoded = encode(decoded));
             varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_400236575.addTaint(taint);
             return varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_400236575;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //@SuppressWarnings("StringEquality")
+            //boolean hasEncoded = encoded != NOT_CACHED;
+            //return hasEncoded ? encoded : (encoded = encode(decoded));
         }
 
         
@@ -2702,8 +2662,7 @@ String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_400236575 =             hasEncoded ? 
         }
 
         
-                @DSModeled(DSC.SAFE)
-        static Part nonNull(Part part) {
+                static Part nonNull(Part part) {
             return part == null ? NULL : part;
         }
 
@@ -2741,19 +2700,18 @@ String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_400236575 =             hasEncoded ? 
             public  EmptyPart(String value) {
                 super(value, value);
                 addTaint(value.getTaint());
-                
+                // ---------- Original Method ----------
             }
 
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.780 -0400", hash_original_method = "9A172AFBEDC6074FE36DA0C4940853DE", hash_generated_method = "923B6A5E84B6D19BB1F586C74C322B15")
             @Override
              boolean isEmpty() {
                 boolean varB326B5062B2F0E69046810717534CB09_89484169 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1542021969 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1542021969;
-                
-                
+                // ---------- Original Method ----------
+                //return true;
             }
 
             
@@ -2781,7 +2739,7 @@ String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_400236575 =             hasEncoded ? 
             super(encoded, decoded);
             addTaint(decoded.getTaint());
             addTaint(encoded.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -2791,10 +2749,10 @@ String varD9CB8C2B20ED9DEC2D7559A7FB72C3A1_400236575 =             hasEncoded ? 
 String varEFDAC2AC5D53E9CE24C648C5C33F0808_818508418 =             hasEncoded ? encoded : (encoded = encode(decoded, "/"));
             varEFDAC2AC5D53E9CE24C648C5C33F0808_818508418.addTaint(taint);
             return varEFDAC2AC5D53E9CE24C648C5C33F0808_818508418;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //@SuppressWarnings("StringEquality")
+            //boolean hasEncoded = encoded != NOT_CACHED;
+            //return hasEncoded ? encoded : (encoded = encode(decoded, "/"));
         }
 
         
@@ -2805,14 +2763,14 @@ String varEFDAC2AC5D53E9CE24C648C5C33F0808_818508418 =             hasEncoded ? 
 PathSegments var5204DC86E95830EB05C770BC38BED307_569365192 =                 pathSegments;
                 var5204DC86E95830EB05C770BC38BED307_569365192.addTaint(taint);
                 return var5204DC86E95830EB05C770BC38BED307_569365192;
-            } 
+            } //End block
             String path = getEncoded();
     if(path == null)            
             {
 PathSegments var73DD0AB3EF50886F4E8427C8CCBD1FAF_233690400 =                 pathSegments = PathSegments.EMPTY;
                 var73DD0AB3EF50886F4E8427C8CCBD1FAF_233690400.addTaint(taint);
                 return var73DD0AB3EF50886F4E8427C8CCBD1FAF_233690400;
-            } 
+            } //End block
             PathSegmentsBuilder segmentBuilder = new PathSegmentsBuilder();
             int previous = 0;
             int current;
@@ -2823,18 +2781,18 @@ PathSegments var73DD0AB3EF50886F4E8427C8CCBD1FAF_233690400 =                 pat
                 {
                     String decodedSegment = decode(path.substring(previous, current));
                     segmentBuilder.add(decodedSegment);
-                } 
+                } //End block
                 previous = current + 1;
-            } 
+            } //End block
     if(previous < path.length())            
             {
                 segmentBuilder.add(decode(path.substring(previous)));
-            } 
+            } //End block
 PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1391484081 =             pathSegments = segmentBuilder.build();
             var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1391484081.addTaint(taint);
             return var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1391484081;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -2983,12 +2941,12 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1391484081 =             pathSe
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.784 -0400", hash_original_field = "B895F573C0891DA82989F42094373576", hash_generated_field = "EA76FA4E6E39D084A2B31303C1E9D60D")
 
     private static final byte[] REPLACEMENT = { (byte) 0xFF, (byte) 0xFD };
-    
+    // orphaned legacy method
     public Uri[] newArray(int size) {
             return new Uri[size];
         }
     
-    
+    // orphaned legacy method
     public Uri createFromParcel(Parcel in) {
             int type = in.readInt();
             switch (type) {
@@ -3002,21 +2960,21 @@ PathSegments var58DFB823F4B6E95DFEC9F8BC0A1DF96E_1391484081 =             pathSe
             throw new IllegalArgumentException("Unknown URI type: " + type);
         }
     
-    
+    // orphaned legacy method
     @Override
 	public int describeContents() {
 		
 		return 0;
 	}
     
-    
+    // orphaned legacy method
     @Override
 	public void writeToParcel(Parcel dest, int flags) {
 		
 		
 	}
     
-    
+    // orphaned legacy field
     private String uriString;
     
 }

@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public class FocusFinder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.771 -0400", hash_original_method = "DC255E332B77A13B263C537BB61FEC63", hash_generated_method = "F16241C74771068F25916AC2FC4602F5")
     private  FocusFinder() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -50,10 +50,10 @@ public class FocusFinder {
 View var39E747E57A07EC9D6124995BE2F3D86F_933591278 =                 userSetNextFocus;
                 var39E747E57A07EC9D6124995BE2F3D86F_933591278.addTaint(taint);
                 return var39E747E57A07EC9D6124995BE2F3D86F_933591278;
-            } 
+            } //End block
             focused.getFocusedRect(mFocusedRect);
             root.offsetDescendantRectToMyCoords(focused, mFocusedRect);
-        } 
+        } //End block
         else
         {
 switch(direction){
@@ -73,12 +73,12 @@ switch(direction){
                             rootRight, rootBottom);
             break;
 }
-        } 
+        } //End block
 View var06DBF2B8AE78C3361DC3744F6164AB4A_1741862042 =         findNextFocus(root, focused, mFocusedRect, direction);
         var06DBF2B8AE78C3361DC3744F6164AB4A_1741862042.addTaint(taint);
         return var06DBF2B8AE78C3361DC3744F6164AB4A_1741862042;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -90,8 +90,8 @@ View var06DBF2B8AE78C3361DC3744F6164AB4A_1741862042 =         findNextFocus(root
 View varA971D394BC5F19CBC9FFD1F74ED9A7F7_21161625 =         findNextFocus(root, null, focusedRect, direction);
         varA971D394BC5F19CBC9FFD1F74ED9A7F7_21161625.addTaint(taint);
         return varA971D394BC5F19CBC9FFD1F74ED9A7F7_21161625;
-        
-        
+        // ---------- Original Method ----------
+        //return findNextFocus(root, null, focusedRect, direction);
     }
 
     
@@ -107,22 +107,22 @@ View varA971D394BC5F19CBC9FFD1F74ED9A7F7_21161625 =         findNextFocus(root, 
 View var540C13E9E156B687226421B24F2DF178_495571507 =             null;
             var540C13E9E156B687226421B24F2DF178_495571507.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_495571507;
-        } 
+        } //End block
     if(direction == View.FOCUS_FORWARD || direction == View.FOCUS_BACKWARD)        
         {
     if(focused != null && !focusables.contains(focused))            
             {
                 focusables.add(focused);
-            } 
+            } //End block
             try 
             {
                 mSequentialFocusComparator.setRoot(root);
                 Collections.sort(focusables, mSequentialFocusComparator);
-            } 
+            } //End block
             finally 
             {
                 mSequentialFocusComparator.recycle();
-            } 
+            } //End block
             final int count = focusables.size();
 switch(direction){
             case View.FOCUS_FORWARD:
@@ -134,8 +134,8 @@ switch(direction){
 View var3E7C83F10EA86CD61058EB13C3C1E614_13604783 =                     focusables.get(position + 1);
                     var3E7C83F10EA86CD61058EB13C3C1E614_13604783.addTaint(taint);
                     return var3E7C83F10EA86CD61058EB13C3C1E614_13604783;
-                } 
-            } 
+                } //End block
+            } //End block
 View var09A623C4F0759197B7F0A0D0CC5AE5E0_602578884 =             focusables.get(0);
             var09A623C4F0759197B7F0A0D0CC5AE5E0_602578884.addTaint(taint);
             return var09A623C4F0759197B7F0A0D0CC5AE5E0_602578884;
@@ -148,15 +148,15 @@ View var09A623C4F0759197B7F0A0D0CC5AE5E0_602578884 =             focusables.get(
 View var429063D739A5BDE099949F1147A699B4_139694128 =                     focusables.get(position - 1);
                     var429063D739A5BDE099949F1147A699B4_139694128.addTaint(taint);
                     return var429063D739A5BDE099949F1147A699B4_139694128;
-                } 
-            } 
+                } //End block
+            } //End block
 View var0DBC784709316F8F2DDFA2F746427950_404574604 =             focusables.get(count - 1);
             var0DBC784709316F8F2DDFA2F746427950_404574604.addTaint(taint);
             return var0DBC784709316F8F2DDFA2F746427950_404574604;
 }View var540C13E9E156B687226421B24F2DF178_373846995 =             null;
             var540C13E9E156B687226421B24F2DF178_373846995.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_373846995;
-        } 
+        } //End block
         mBestCandidateRect.set(focusedRect);
 switch(direction){
         case View.FOCUS_LEFT:
@@ -183,13 +183,13 @@ for(int i = 0;i < numFocusables;i++)
             {
                 mBestCandidateRect.set(mOtherRect);
                 closest = focusable;
-            } 
-        } 
+            } //End block
+        } //End block
 View var65F842BF8DD12196C017063DB033EAE1_1541344409 =         closest;
         var65F842BF8DD12196C017063DB033EAE1_1541344409.addTaint(taint);
         return var65F842BF8DD12196C017063DB033EAE1_1541344409;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -204,25 +204,25 @@ View var65F842BF8DD12196C017063DB033EAE1_1541344409 =         closest;
             boolean var68934A3E9455FA72420237EB05902327_1815054083 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_397284244 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_397284244;
-        } 
+        } //End block
     if(!isCandidate(source, rect2, direction))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1327571528 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_638732357 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_638732357;
-        } 
+        } //End block
     if(beamBeats(direction, source, rect1, rect2))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_19080690 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1151079657 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1151079657;
-        } 
+        } //End block
     if(beamBeats(direction, source, rect2, rect1))        
         {
             boolean var68934A3E9455FA72420237EB05902327_2119896032 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170920179 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1170920179;
-        } 
+        } //End block
         boolean varD1997C9AE1733AF494AE1F50856AA1BF_1271751859 = ((getWeightedDistanceFor(
                         majorAxisDistance(direction, source, rect1),
                         minorAxisDistance(direction, source, rect1))
@@ -231,25 +231,25 @@ View var65F842BF8DD12196C017063DB033EAE1_1541344409 =         closest;
                         minorAxisDistance(direction, source, rect2))));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_430194802 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_430194802;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-                        
-                        
-                
-                        
-                        
+        // ---------- Original Method ----------
+        //if (!isCandidate(source, rect1, direction)) {
+            //return false;
+        //}
+        //if (!isCandidate(source, rect2, direction)) {
+            //return true;
+        //}
+        //if (beamBeats(direction, source, rect1, rect2)) {
+            //return true;
+        //}
+        //if (beamBeats(direction, source, rect2, rect1)) {
+            //return false;
+        //}
+        //return (getWeightedDistanceFor(
+                        //majorAxisDistance(direction, source, rect1),
+                        //minorAxisDistance(direction, source, rect1))
+                //< getWeightedDistanceFor(
+                        //majorAxisDistance(direction, source, rect2),
+                        //minorAxisDistance(direction, source, rect2)));
     }
 
     
@@ -266,41 +266,40 @@ View var65F842BF8DD12196C017063DB033EAE1_1541344409 =         closest;
             boolean var68934A3E9455FA72420237EB05902327_1773968673 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_349740142 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_349740142;
-        } 
+        } //End block
     if(!isToDirectionOf(direction, source, rect2))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_739096048 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_225974530 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_225974530;
-        } 
+        } //End block
     if((direction == View.FOCUS_LEFT || direction == View.FOCUS_RIGHT))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_209311404 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2067069975 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2067069975;
-        } 
+        } //End block
         boolean var6C64953B2A7F3C559925717D155B6779_1289662308 = ((majorAxisDistance(direction, source, rect1)
                 < majorAxisDistanceToFarEdge(direction, source, rect2)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_212800641 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_212800641;
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //final boolean rect1InSrcBeam = beamsOverlap(direction, source, rect1);
+        //final boolean rect2InSrcBeam = beamsOverlap(direction, source, rect2);
+        //if (rect2InSrcBeam || !rect1InSrcBeam) {
+            //return false;
+        //}
+        //if (!isToDirectionOf(direction, source, rect2)) {
+            //return true;
+        //}
+        //if ((direction == View.FOCUS_LEFT || direction == View.FOCUS_RIGHT)) {
+            //return true;
+        //}
+        //return (majorAxisDistance(direction, source, rect1)
+                //< majorAxisDistanceToFarEdge(direction, source, rect2));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.779 -0400", hash_original_method = "1AC6C27686DF7285B59CAB56ADBB9696", hash_generated_method = "8A8D9C1D689F6A2FF9A2320A60A73B03")
      int getWeightedDistanceFor(int majorAxisDistance, int minorAxisDistance) {
         addTaint(minorAxisDistance);
@@ -309,9 +308,9 @@ View var65F842BF8DD12196C017063DB033EAE1_1541344409 =         closest;
                 + minorAxisDistance * minorAxisDistance);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_532491775 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_532491775;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return 13 * majorAxisDistance * majorAxisDistance
+                //+ minorAxisDistance * minorAxisDistance;
     }
 
     
@@ -345,8 +344,8 @@ switch(direction){
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         var772CBA4A53A69BC7091EF474F4AECFF3_442597516.addTaint(taint);
         throw var772CBA4A53A69BC7091EF474F4AECFF3_442597516;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -370,17 +369,17 @@ switch(direction){
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         var772CBA4A53A69BC7091EF474F4AECFF3_7321994.addTaint(taint);
         throw var772CBA4A53A69BC7091EF474F4AECFF3_7321994;
-        
-        
-            
-            
-                
-            
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //switch (direction) {
+            //case View.FOCUS_LEFT:
+            //case View.FOCUS_RIGHT:
+                //return (rect2.bottom >= rect1.top) && (rect2.top <= rect1.bottom);
+            //case View.FOCUS_UP:
+            //case View.FOCUS_DOWN:
+                //return (rect2.right >= rect1.left) && (rect2.left <= rect1.right);
+        //}
+        //throw new IllegalArgumentException("direction must be one of "
+                //+ "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
     }
 
     
@@ -410,19 +409,19 @@ switch(direction){
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         var772CBA4A53A69BC7091EF474F4AECFF3_685578362.addTaint(taint);
         throw var772CBA4A53A69BC7091EF474F4AECFF3_685578362;
-        
-        
-            
-                
-            
-                
-            
-                
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //switch (direction) {
+            //case View.FOCUS_LEFT:
+                //return src.left >= dest.right;
+            //case View.FOCUS_RIGHT:
+                //return src.right <= dest.left;
+            //case View.FOCUS_UP:
+                //return src.top >= dest.bottom;
+            //case View.FOCUS_DOWN:
+                //return src.bottom <= dest.top;
+        //}
+        //throw new IllegalArgumentException("direction must be one of "
+                //+ "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
     }
 
     
@@ -508,7 +507,7 @@ for(int i = 0;i < numTouchables;i++)
     if(!isTouchCandidate(x, y, touchableBounds, direction))            
             {
                 continue;
-            } 
+            } //End block
             int distance = Integer.MAX_VALUE;
 switch(direction){
             case View.FOCUS_LEFT:
@@ -546,14 +545,14 @@ switch(direction){
                     deltas[1] = distance;
                     break;
 }
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 View var65F842BF8DD12196C017063DB033EAE1_657936151 =         closest;
         var65F842BF8DD12196C017063DB033EAE1_657936151.addTaint(taint);
         return var65F842BF8DD12196C017063DB033EAE1_657936151;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -584,19 +583,19 @@ switch(direction){
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
         var772CBA4A53A69BC7091EF474F4AECFF3_1484324497.addTaint(taint);
         throw var772CBA4A53A69BC7091EF474F4AECFF3_1484324497;
-        
-        
-            
-                
-            
-                
-            
-                
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //switch (direction) {
+            //case View.FOCUS_LEFT:
+                //return destRect.left <= x && destRect.top <= y && y <= destRect.bottom;
+            //case View.FOCUS_RIGHT:
+                //return destRect.left >= x && destRect.top <= y && y <= destRect.bottom;
+            //case View.FOCUS_UP:
+                //return destRect.top <= y && destRect.left <= x && x <= destRect.right;
+            //case View.FOCUS_DOWN:
+                //return destRect.top >= y && destRect.left <= x && x <= destRect.right;
+        //}
+        //throw new IllegalArgumentException("direction must be one of "
+                //+ "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
     }
 
     
@@ -614,25 +613,23 @@ switch(direction){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.802 -0400", hash_original_method = "0E280D788A863FD723521B8D9E30F8E5", hash_generated_method = "0E280D788A863FD723521B8D9E30F8E5")
         public SequentialFocusComparator ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.802 -0400", hash_original_method = "AE2DFC878449B0C9A87D974F16153CE8", hash_generated_method = "A8E4B594B1FA8FD9961783DE571544DE")
         public void recycle() {
             mRoot = null;
-            
-            
+            // ---------- Original Method ----------
+            //mRoot = null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.803 -0400", hash_original_method = "0BE2F634C0DBDBECCB40B3CDEBC39607", hash_generated_method = "A135B5CF92D766B2094EDE79DA316D07")
         public void setRoot(ViewGroup root) {
             mRoot = root;
-            
-            
+            // ---------- Original Method ----------
+            //mRoot = root;
         }
 
         
@@ -645,7 +642,7 @@ switch(direction){
                 int varCFCD208495D565EF66E7DFF9F98764DA_298623608 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_917477128 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_917477128;
-            } 
+            } //End block
             getRect(first, mFirstRect);
             getRect(second, mSecondRect);
     if(mFirstRect.top < mSecondRect.top)            
@@ -653,64 +650,64 @@ switch(direction){
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_729063016 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1061310841 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1061310841;
-            } 
+            } //End block
             else
     if(mFirstRect.top > mSecondRect.top)            
             {
                 int varC4CA4238A0B923820DCC509A6F75849B_150738772 = (1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_881016520 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_881016520;
-            } 
+            } //End block
             else
     if(mFirstRect.left < mSecondRect.left)            
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_363903575 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2101433924 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2101433924;
-            } 
+            } //End block
             else
     if(mFirstRect.left > mSecondRect.left)            
             {
                 int varC4CA4238A0B923820DCC509A6F75849B_299457754 = (1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58194629 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58194629;
-            } 
+            } //End block
             else
     if(mFirstRect.bottom < mSecondRect.bottom)            
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1869449025 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629869936 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629869936;
-            } 
+            } //End block
             else
     if(mFirstRect.bottom > mSecondRect.bottom)            
             {
                 int varC4CA4238A0B923820DCC509A6F75849B_1881872955 = (1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_493633496 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_493633496;
-            } 
+            } //End block
             else
     if(mFirstRect.right < mSecondRect.right)            
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_2141478343 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480075435 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480075435;
-            } 
+            } //End block
             else
     if(mFirstRect.right > mSecondRect.right)            
             {
                 int varC4CA4238A0B923820DCC509A6F75849B_1699302816 = (1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047351341 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047351341;
-            } 
+            } //End block
             else
             {
                 int varCFCD208495D565EF66E7DFF9F98764DA_990085299 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626081426 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626081426;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -720,9 +717,9 @@ switch(direction){
             addTaint(view.getTaint());
             view.getDrawingRect(rect);
             mRoot.offsetDescendantRectToMyCoords(view, rect);
-            
-            
-            
+            // ---------- Original Method ----------
+            //view.getDrawingRect(rect);
+            //mRoot.offsetDescendantRectToMyCoords(view, rect);
         }
 
         

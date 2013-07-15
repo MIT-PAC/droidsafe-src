@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public final class Proxy {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.323 -0400", hash_original_method = "9B17734F1ACD31FFE2C2D0AFEC291967", hash_generated_method = "9B17734F1ACD31FFE2C2D0AFEC291967")
     public Proxy ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -225,8 +225,8 @@ public final class Proxy {
             addTaint(prosel.getTaint());
             addTaint(schreg.getTaint());
             mContext = context;
-            
-            
+            // ---------- Original Method ----------
+            //mContext = context;
         }
 
         
@@ -241,8 +241,8 @@ public final class Proxy {
 java.net.Proxy var5B499AD3433E400F9B38C6C2DB6406F2_30510697 =             getProxy(mContext, target.getHostName());
             var5B499AD3433E400F9B38C6C2DB6406F2_30510697.addTaint(taint);
             return var5B499AD3433E400F9B38C6C2DB6406F2_30510697;
-            
-            
+            // ---------- Original Method ----------
+            //return getProxy(mContext, target.getHostName());
         }
 
         
@@ -256,8 +256,8 @@ java.net.Proxy var5B499AD3433E400F9B38C6C2DB6406F2_30510697 =             getPro
 HttpHost var482C37C9B06DF2A4753F7E794E89D67C_77092479 =             getPreferredHttpHost(mContext, target.getHostName());
             var482C37C9B06DF2A4753F7E794E89D67C_77092479.addTaint(taint);
             return var482C37C9B06DF2A4753F7E794E89D67C_77092479;
-            
-            
+            // ---------- Original Method ----------
+            //return getPreferredHttpHost(mContext, target.getHostName());
         }
 
         
@@ -274,20 +274,20 @@ HttpHost var482C37C9B06DF2A4753F7E794E89D67C_77092479 =             getPreferred
 HttpRoute var388BE1934E26966FCFE6F8DBBCA78348_1369155782 =                 new HttpRoute(target);
                 var388BE1934E26966FCFE6F8DBBCA78348_1369155782.addTaint(taint);
                 return var388BE1934E26966FCFE6F8DBBCA78348_1369155782;
-            } 
+            } //End block
             else
             {
 HttpRoute var1047DAA740D371C7B185759950EFDC44_234989930 =                 new HttpRoute(target, null, proxy, false);
                 var1047DAA740D371C7B185759950EFDC44_234989930.addTaint(taint);
                 return var1047DAA740D371C7B185759950EFDC44_234989930;
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //HttpHost proxy = getPreferredHttpHost(mContext, target.getHostName());
+            //if (proxy == null) {
+                //return new HttpRoute(target);
+            //} else {
+                //return new HttpRoute(target, null, proxy, false);
+            //}
         }
 
         

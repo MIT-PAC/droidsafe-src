@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ public abstract class SecurityAgree extends ParametersHeader {
         super(name);
         addTaint(name.getTaint());
         parameters.setSeparator(Separators.SEMICOLON);
-        
-        
+        // ---------- Original Method ----------
+        //parameters.setSeparator(Separators.SEMICOLON);
     }
 
     
@@ -31,8 +31,8 @@ public abstract class SecurityAgree extends ParametersHeader {
     public  SecurityAgree() {
         super();
         parameters.setSeparator(Separators.SEMICOLON);
-        
-        
+        // ---------- Original Method ----------
+        //parameters.setSeparator(Separators.SEMICOLON);
     }
 
     
@@ -60,33 +60,33 @@ public abstract class SecurityAgree extends ParametersHeader {
                 varE60A0A92BA5CA1ED6CE0AA8D83CBF780_788616129.addTaint(taint);
                 throw varE60A0A92BA5CA1ED6CE0AA8D83CBF780_788616129;
                 }
-            } 
+            } //End block
             super.setParameter(nv);
-        } 
+        } //End block
         else
         {
             nv.setValueAsObject(value);
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                            
-            
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (value == null)
+            //throw new NullPointerException("null value");
+        //NameValue nv = super.parameters.getNameValue(name.toLowerCase());
+        //if (nv == null)
+        //{
+            //nv = new NameValue(name, value);
+            //if (name.equalsIgnoreCase(ParameterNamesIms.D_VER))
+            //{
+                //nv.setQuotedValue();
+                //if (value.startsWith(Separators.DOUBLE_QUOTE))
+                    //throw new ParseException(value
+                            //+ " : Unexpected DOUBLE_QUOTE", 0);
+            //}
+            //super.setParameter(nv);
+        //}
+        //else
+        //{
+            //nv.setValueAsObject(value);
+        //}
     }
 
     
@@ -95,8 +95,8 @@ public abstract class SecurityAgree extends ParametersHeader {
 String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism + SEMICOLON + SP + parameters.encode();
         varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972.addTaint(taint);
         return varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972;
-        
-        
+        // ---------- Original Method ----------
+        //return this.secMechanism + SEMICOLON + SP + parameters.encode();
     }
 
     
@@ -111,12 +111,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw var1E2FE2E725583A02D321C97BD8BDEA08_733001472;
         }
         this.secMechanism = secMech;
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (secMech == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityAgree, setSecurityMechanism(), the sec-mechanism parameter is null");
+        //this.secMechanism = secMech;
     }
 
     
@@ -132,12 +132,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw varBB7B6B10423E58E1B7DA3BB6A1BD19ED_2066662062;
         }
         setParameter(ParameterNamesIms.EALG, ealg);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (ealg == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setEncryptionAlgorithm(), the encryption-algorithm parameter is null");
+        //setParameter(ParameterNamesIms.EALG, ealg);
     }
 
     
@@ -153,12 +153,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw var0744B72ED1E48CFCC59F8AE9F067E260_1641988463;
         }
         setParameter(ParameterNamesIms.ALG, alg);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (alg == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setAlgorithm(), the algorithm parameter is null");
+        //setParameter(ParameterNamesIms.ALG, alg);
     }
 
     
@@ -174,12 +174,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw var3577919A38129F3017807BE0D76703E4_1929740040;
         }
         setParameter(ParameterNamesIms.PROT, prot);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (prot == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setProtocol(), the protocol parameter is null");
+        //setParameter(ParameterNamesIms.PROT, prot);
     }
 
     
@@ -195,12 +195,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw varFB15EAA69482AAAA66C4D696123E95B6_620025953;
         }
         setParameter(ParameterNamesIms.MOD, mod);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (mod == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setMode(), the mode parameter is null");
+        //setParameter(ParameterNamesIms.MOD, mod);
     }
 
     
@@ -216,12 +216,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw varD820CC82FDE45148FE61C3EFBF95680A_420346828;
         }
         setParameter(ParameterNamesIms.SPI_C, spic);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (spic < 0)
+            //throw new InvalidArgumentException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setSPIClient(), the spi-c parameter is <0");
+        //setParameter(ParameterNamesIms.SPI_C, spic);
     }
 
     
@@ -237,12 +237,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw var6BB441F3DBCD44E4D4D581E0B7C60995_295891518;
         }
         setParameter(ParameterNamesIms.SPI_S, spis);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (spis < 0)
+            //throw new InvalidArgumentException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setSPIServer(), the spi-s parameter is <0");
+        //setParameter(ParameterNamesIms.SPI_S, spis);
     }
 
     
@@ -258,12 +258,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw var29010A74BC4E1EF0862DF038F331E6B3_1719819513;
         }
         setParameter(ParameterNamesIms.PORT_C, portC);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (portC < 0)
+            //throw new InvalidArgumentException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setPortClient(), the port-c parameter is <0");
+        //setParameter(ParameterNamesIms.PORT_C, portC);
     }
 
     
@@ -279,12 +279,12 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw varB87C08B622F5F7681AB4B9ABBBF4A35E_1938448142;
         }
         setParameter(ParameterNamesIms.PORT_S, portS);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (portS < 0)
+            //throw new InvalidArgumentException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setPortServer(), the port-s parameter is <0");
+        //setParameter(ParameterNamesIms.PORT_S, portS);
     }
 
     
@@ -300,23 +300,22 @@ String varB363CAFDFEE7E20CD6BC0E1D20681BC7_165365972 =         this.secMechanism
         throw var0FE9EC0735B39A14577835889E70CE87_1934226208;
         }
         setParameter(ParameterNamesIms.Q, q);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (q < 0.0f)
+            //throw new InvalidArgumentException(
+                //"JAIN-SIP "
+                    //+ "Exception, SecurityClient, setPreference(), the preference (q) parameter is <0");
+        //setParameter(ParameterNamesIms.Q, q);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.184 -0400", hash_original_method = "B428180B0BF5EA600E8FA7F08EE496F8", hash_generated_method = "7B82C4CB6E5963F86CF6FF60F52DA7CD")
     public String getSecurityMechanism() {
 String var4B79C76D511B5068B7982514555BAC48_1592392380 =         this.secMechanism;
         var4B79C76D511B5068B7982514555BAC48_1592392380.addTaint(taint);
         return var4B79C76D511B5068B7982514555BAC48_1592392380;
-        
-        
+        // ---------- Original Method ----------
+        //return this.secMechanism;
     }
 
     
@@ -325,8 +324,8 @@ String var4B79C76D511B5068B7982514555BAC48_1592392380 =         this.secMechanis
 String varE21C3B124DD167D3CBCA969644C356E9_297899858 =         getParameter(ParameterNamesIms.EALG);
         varE21C3B124DD167D3CBCA969644C356E9_297899858.addTaint(taint);
         return varE21C3B124DD167D3CBCA969644C356E9_297899858;
-        
-        
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.EALG);
     }
 
     
@@ -335,8 +334,8 @@ String varE21C3B124DD167D3CBCA969644C356E9_297899858 =         getParameter(Para
 String var64AC57F7E5736136BB55CD7FDAB4C576_1503554783 =         getParameter(ParameterNamesIms.ALG);
         var64AC57F7E5736136BB55CD7FDAB4C576_1503554783.addTaint(taint);
         return var64AC57F7E5736136BB55CD7FDAB4C576_1503554783;
-        
-        
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.ALG);
     }
 
     
@@ -345,8 +344,8 @@ String var64AC57F7E5736136BB55CD7FDAB4C576_1503554783 =         getParameter(Par
 String var20669F26102CE364C290D5B92D0C9D90_1856357934 =         getParameter(ParameterNamesIms.PROT);
         var20669F26102CE364C290D5B92D0C9D90_1856357934.addTaint(taint);
         return var20669F26102CE364C290D5B92D0C9D90_1856357934;
-        
-        
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.PROT);
     }
 
     
@@ -355,8 +354,8 @@ String var20669F26102CE364C290D5B92D0C9D90_1856357934 =         getParameter(Par
 String varE0E61CDFF4BFF8E844EF94D263035213_301420539 =         getParameter(ParameterNamesIms.MOD);
         varE0E61CDFF4BFF8E844EF94D263035213_301420539.addTaint(taint);
         return varE0E61CDFF4BFF8E844EF94D263035213_301420539;
-        
-        
+        // ---------- Original Method ----------
+        //return getParameter(ParameterNamesIms.MOD);
     }
 
     
@@ -365,8 +364,8 @@ String varE0E61CDFF4BFF8E844EF94D263035213_301420539 =         getParameter(Para
         int varB0D11DD358875318EF28CFAEF8204FE9_866159748 = ((Integer.parseInt(getParameter(ParameterNamesIms.SPI_C))));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882779542 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882779542;
-        
-        
+        // ---------- Original Method ----------
+        //return (Integer.parseInt(getParameter(ParameterNamesIms.SPI_C)));
     }
 
     
@@ -375,8 +374,8 @@ String varE0E61CDFF4BFF8E844EF94D263035213_301420539 =         getParameter(Para
         int var291C13EA23D446CDAE55AC60738D17B3_1524342749 = ((Integer.parseInt(getParameter(ParameterNamesIms.SPI_S))));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487678867 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487678867;
-        
-        
+        // ---------- Original Method ----------
+        //return (Integer.parseInt(getParameter(ParameterNamesIms.SPI_S)));
     }
 
     
@@ -385,8 +384,8 @@ String varE0E61CDFF4BFF8E844EF94D263035213_301420539 =         getParameter(Para
         int var63C7374DA4C387E7AA7C73690C41B44D_1164146057 = ((Integer.parseInt(getParameter(ParameterNamesIms.PORT_C))));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733642476 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733642476;
-        
-        
+        // ---------- Original Method ----------
+        //return (Integer.parseInt(getParameter(ParameterNamesIms.PORT_C)));
     }
 
     
@@ -395,8 +394,8 @@ String varE0E61CDFF4BFF8E844EF94D263035213_301420539 =         getParameter(Para
         int varCADDEE00098FFBB341DEFD35646A4854_1566818148 = ((Integer.parseInt(getParameter(ParameterNamesIms.PORT_S))));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833528516 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833528516;
-        
-        
+        // ---------- Original Method ----------
+        //return (Integer.parseInt(getParameter(ParameterNamesIms.PORT_S)));
     }
 
     
@@ -405,8 +404,8 @@ String varE0E61CDFF4BFF8E844EF94D263035213_301420539 =         getParameter(Para
         float var9B5EB94C7E7B422191F93D7C08FB45C5_286156013 = ((Float.parseFloat(getParameter(ParameterNamesIms.Q))));
                 float var546ADE640B6EDFBC8A086EF31347E768_804448468 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_804448468;
-        
-        
+        // ---------- Original Method ----------
+        //return (Float.parseFloat(getParameter(ParameterNamesIms.Q)));
     }
 
     
@@ -420,18 +419,18 @@ String varE0E61CDFF4BFF8E844EF94D263035213_301420539 =         getParameter(Para
                 && this.equalParameters( (Parameters) o )));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_664844755 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_664844755;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1018512516 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1608808691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1608808691;
-        
-        
-        
-            
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if(other instanceof SecurityAgreeHeader)
+        //{
+            //SecurityAgreeHeader o = (SecurityAgreeHeader) other;
+            //return (this.getSecurityMechanism().equals( o.getSecurityMechanism() )
+                //&& this.equalParameters( (Parameters) o ));
+        //}
+        //return false;
     }
 
     
@@ -443,11 +442,11 @@ String varE0E61CDFF4BFF8E844EF94D263035213_301420539 =         getParameter(Para
 Object varF9E19AD6135C970F387F77C6F3DE4477_1930480422 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1930480422.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1930480422;
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //SecurityAgree retval = (SecurityAgree) super.clone();
+        //if (this.secMechanism != null)
+            //retval.secMechanism = this.secMechanism;
+        //return retval;
     }
 
     

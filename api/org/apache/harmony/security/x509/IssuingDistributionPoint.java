@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,14 +37,13 @@ public final class IssuingDistributionPoint extends ExtensionValue {
             ReasonFlags onlySomeReasons) {
         this.distributionPoint = distributionPoint;
         this.onlySomeReasons = onlySomeReasons;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.distributionPoint = distributionPoint;
+        //this.onlySomeReasons = onlySomeReasons;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static IssuingDistributionPoint decode(byte[] encoding) throws IOException {
+        public static IssuingDistributionPoint decode(byte[] encoding) throws IOException {
         IssuingDistributionPoint idp =
             (IssuingDistributionPoint) ASN1.decode(encoding);
         idp.encoding = encoding;
@@ -52,63 +51,57 @@ public final class IssuingDistributionPoint extends ExtensionValue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.142 -0400", hash_original_method = "03922EAD5E2F9F2AB784075C187D5E70", hash_generated_method = "001164D0F86A35E6C0E014A195A52B2D")
     public void setOnlyContainsUserCerts(boolean onlyContainsUserCerts) {
         this.onlyContainsUserCerts = onlyContainsUserCerts;
-        
-        
+        // ---------- Original Method ----------
+        //this.onlyContainsUserCerts = onlyContainsUserCerts;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.142 -0400", hash_original_method = "6830D99EF8C3DC25A9447803CA3D9DFD", hash_generated_method = "5D96BEC6C002F45CA0C2532E084F39E9")
     public void setOnlyContainsCACerts(boolean onlyContainsCACerts) {
         this.onlyContainsCACerts = onlyContainsCACerts;
-        
-        
+        // ---------- Original Method ----------
+        //this.onlyContainsCACerts = onlyContainsCACerts;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.143 -0400", hash_original_method = "36EDEF780E7094A51B0A764BC2947568", hash_generated_method = "CD3096752BC07691383D6F71ADF7F0E6")
     public void setIndirectCRL(boolean indirectCRL) {
         this.indirectCRL = indirectCRL;
-        
-        
+        // ---------- Original Method ----------
+        //this.indirectCRL = indirectCRL;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.143 -0400", hash_original_method = "58BDD73BA57E97A28C9513E87278364E", hash_generated_method = "75AE7B67E9A4F59328BBA875F3CF861E")
     public void setOnlyContainsAttributeCerts(
             boolean onlyContainsAttributeCerts) {
         this.onlyContainsAttributeCerts = onlyContainsAttributeCerts;
-        
-        
+        // ---------- Original Method ----------
+        //this.onlyContainsAttributeCerts = onlyContainsAttributeCerts;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.143 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "A90E3F389D12938013EB80B7779333AC")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1178991899 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_249120959 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_249120959;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = ASN1.encode(this);
+        //}
+        //return encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.144 -0400", hash_original_method = "CFA4D64F052CACDD48400E19E895ABEB", hash_generated_method = "50487DF9ECEFB72AF82019A05544972F")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -118,27 +111,27 @@ public final class IssuingDistributionPoint extends ExtensionValue {
     if(distributionPoint != null)        
         {
             distributionPoint.dumpValue(sb, "  " + prefix);
-        } 
+        } //End block
         sb.append(prefix).append("  onlyContainsUserCerts: ").append(onlyContainsUserCerts).append('\n');
         sb.append(prefix).append("  onlyContainsCACerts: ").append(onlyContainsCACerts).append('\n');
     if(onlySomeReasons != null)        
         {
             onlySomeReasons.dumpValue(sb, prefix + "  ");
-        } 
+        } //End block
         sb.append(prefix).append("  indirectCRL: ").append(indirectCRL).append('\n');
         sb.append(prefix).append("  onlyContainsAttributeCerts: ").append(onlyContainsAttributeCerts).append('\n');
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //sb.append(prefix).append("Issuing Distribution Point: [\n");
+        //if (distributionPoint != null) {
+            //distributionPoint.dumpValue(sb, "  " + prefix);
+        //}
+        //sb.append(prefix).append("  onlyContainsUserCerts: ").append(onlyContainsUserCerts).append('\n');
+        //sb.append(prefix).append("  onlyContainsCACerts: ").append(onlyContainsCACerts).append('\n');
+        //if (onlySomeReasons != null) {
+            //onlySomeReasons.dumpValue(sb, prefix + "  ");
+        //}
+        //sb.append(prefix).append("  indirectCRL: ").append(indirectCRL).append('\n');
+        //sb.append(prefix).append("  onlyContainsAttributeCerts: ").append(onlyContainsAttributeCerts).append('\n');
     }
 
     
@@ -193,7 +186,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
             values[5] = (idp.onlyContainsAttributeCerts) ? Boolean.TRUE : null;
         }
     };
-    
+    // orphaned legacy method
     protected void getValues(Object object, Object[] values) {
             IssuingDistributionPoint idp = (IssuingDistributionPoint) object;
             values[0] = idp.distributionPoint;
@@ -204,7 +197,7 @@ public final class IssuingDistributionPoint extends ExtensionValue {
             values[5] = (idp.onlyContainsAttributeCerts) ? Boolean.TRUE : null;
         }
     
-    
+    // orphaned legacy method
     protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             IssuingDistributionPoint idp = new IssuingDistributionPoint(

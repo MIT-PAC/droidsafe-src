@@ -1,6 +1,6 @@
 package android.view.textservice;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -69,23 +69,23 @@ public class SpellCheckerSession {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1595006021 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1595006021.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1595006021;
-        } 
+        } //End block
         mSpellCheckerInfo = info;
         mSpellCheckerSessionListenerImpl = new SpellCheckerSessionListenerImpl(mHandler);
         mInternalListener = new InternalListener(mSpellCheckerSessionListenerImpl);
         mTextServicesManager = tsm;
         mIsUsed = true;
         mSpellCheckerSessionListener = listener;
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (info == null || listener == null || tsm == null) {
+            //throw new NullPointerException();
+        //}
+        //mSpellCheckerInfo = info;
+        //mSpellCheckerSessionListenerImpl = new SpellCheckerSessionListenerImpl(mHandler);
+        //mInternalListener = new InternalListener(mSpellCheckerSessionListenerImpl);
+        //mTextServicesManager = tsm;
+        //mIsUsed = true;
+        //mSpellCheckerSessionListener = listener;
     }
 
     
@@ -94,27 +94,26 @@ public class SpellCheckerSession {
         boolean varB67DC46ACA36C27390A3501048D3ED84_1140053432 = (mSpellCheckerSessionListenerImpl.isDisconnected());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_639919855 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_639919855;
-        
-        
+        // ---------- Original Method ----------
+        //return mSpellCheckerSessionListenerImpl.isDisconnected();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.643 -0400", hash_original_method = "DA550B703A137477375C51611DE4E664", hash_generated_method = "F63225B5CF99E0750E6461B3496B22A9")
     public SpellCheckerInfo getSpellChecker() {
 SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_991115069 =         mSpellCheckerInfo;
         var3986F7CD42F0461C45907E6E93ED4397_991115069.addTaint(taint);
         return var3986F7CD42F0461C45907E6E93ED4397_991115069;
-        
-        
+        // ---------- Original Method ----------
+        //return mSpellCheckerInfo;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.644 -0400", hash_original_method = "1E56CD8E935972828D8D1226463A945B", hash_generated_method = "6218E4D03A97D2D067BC5C2A6B63B5D3")
     public void cancel() {
         mSpellCheckerSessionListenerImpl.cancel();
-        
-        
+        // ---------- Original Method ----------
+        //mSpellCheckerSessionListenerImpl.cancel();
     }
 
     
@@ -125,17 +124,17 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_991115069 =         mSpellC
         {
             mSpellCheckerSessionListenerImpl.close();
             mTextServicesManager.finishSpellCheckerService(mSpellCheckerSessionListenerImpl);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-        
-            
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mIsUsed = false;
+        //try {
+            //mSpellCheckerSessionListenerImpl.close();
+            //mTextServicesManager.finishSpellCheckerService(mSpellCheckerSessionListenerImpl);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -144,8 +143,8 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_991115069 =         mSpellC
         addTaint(suggestionsLimit);
         addTaint(textInfo.getTaint());
         getSuggestions(new TextInfo[] {textInfo}, suggestionsLimit, false);
-        
-        
+        // ---------- Original Method ----------
+        //getSuggestions(new TextInfo[] {textInfo}, suggestionsLimit, false);
     }
 
     
@@ -157,15 +156,15 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_991115069 =         mSpellC
         addTaint(textInfos[0].getTaint());
     if(DBG)        
         {
-        } 
+        } //End block
         mSpellCheckerSessionListenerImpl.getSuggestionsMultiple(
                 textInfos, suggestionsLimit, sequentialWords);
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (DBG) {
+            //Log.w(TAG, "getSuggestions from " + mSpellCheckerInfo.getId());
+        //}
+        //mSpellCheckerSessionListenerImpl.getSuggestionsMultiple(
+                //textInfos, suggestionsLimit, sequentialWords);
     }
 
     
@@ -173,8 +172,8 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_991115069 =         mSpellC
     private void handleOnGetSuggestionsMultiple(SuggestionsInfo[] suggestionInfos) {
         addTaint(suggestionInfos[0].getTaint());
         mSpellCheckerSessionListener.onGetSuggestions(suggestionInfos);
-        
-        
+        // ---------- Original Method ----------
+        //mSpellCheckerSessionListener.onGetSuggestions(suggestionInfos);
     }
 
     
@@ -185,36 +184,34 @@ SpellCheckerInfo var3986F7CD42F0461C45907E6E93ED4397_991115069 =         mSpellC
     if(mIsUsed)        
         {
             close();
-        } 
-        
-        
-        
-            
-                    
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.finalize();
+        //if (mIsUsed) {
+            //Log.e(TAG, "SpellCheckerSession was not finished properly." +
+                    //"You should call finishShession() when you finished to use a spell checker.");
+            //close();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.646 -0400", hash_original_method = "EB5F65A578EB2CF49F3B6FAEDD6A03A1", hash_generated_method = "6E73CA9BC3E01E72AB2E60239D9B9C1E")
     public ITextServicesSessionListener getTextServicesSessionListener() {
 ITextServicesSessionListener var7A9AC5CB3CFF90180D6952883712FBEC_1402889722 =         mInternalListener;
         var7A9AC5CB3CFF90180D6952883712FBEC_1402889722.addTaint(taint);
         return var7A9AC5CB3CFF90180D6952883712FBEC_1402889722;
-        
-        
+        // ---------- Original Method ----------
+        //return mInternalListener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.646 -0400", hash_original_method = "49E439EC4CF52AA024CAA5A403E07C82", hash_generated_method = "2F7E1B3D12EEA82D9B42FF27517AF972")
     public ISpellCheckerSessionListener getSpellCheckerSessionListener() {
 ISpellCheckerSessionListener var820AE1A05D9F7D1D7D422F5929FB9AB9_93984612 =         mSpellCheckerSessionListenerImpl;
         var820AE1A05D9F7D1D7D422F5929FB9AB9_93984612.addTaint(taint);
         return var820AE1A05D9F7D1D7D422F5929FB9AB9_93984612;
-        
-        
+        // ---------- Original Method ----------
+        //return mSpellCheckerSessionListenerImpl;
     }
 
     
@@ -242,9 +239,9 @@ ISpellCheckerSessionListener var820AE1A05D9F7D1D7D422F5929FB9AB9_93984612 =     
         public  SpellCheckerSessionListenerImpl(Handler handler) {
             mOpened = false;
             mHandler = handler;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mOpened = false;
+            //mHandler = handler;
         }
 
         
@@ -260,47 +257,47 @@ switch(scp.mWhat){
                 case TASK_CANCEL:
     if(DBG)                
                 {
-                } 
+                } //End block
                 try 
                 {
                     session.onCancel();
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
+                } //End block
                 break;
                 case TASK_GET_SUGGESTIONS_MULTIPLE:
     if(DBG)                
                 {
-                } 
+                } //End block
                 try 
                 {
                     session.onGetSuggestionsMultiple(scp.mTextInfos,
                                     scp.mSuggestionsLimit, scp.mSequentialWords);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
+                } //End block
                 break;
                 case TASK_CLOSE:
     if(DBG)                
                 {
-                } 
+                } //End block
                 try 
                 {
                     session.onClose();
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
+                } //End block
                 break;
 }
-            } 
+            } //End block
             else
             {
                 scp.mSession = session;
                 mAsyncHandler.sendMessage(Message.obtain(mAsyncHandler, 1, scp));
-            } 
+            } //End block
     if(scp.mWhat == TASK_CLOSE)            
             {
                 synchronized
@@ -310,19 +307,19 @@ switch(scp.mWhat){
     if(mThread != null)                    
                     {
                         mThread.quit();
-                    } 
+                    } //End block
                     mThread = null;
                     mAsyncHandler = null;
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.650 -0400", hash_original_method = "469ADA81CD5459833AC5296525D5CDB7", hash_generated_method = "571CDC4BB35AC50B954503799C0C41F6")
         public synchronized void onServiceConnected(ISpellCheckerSession session) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             synchronized
 (this)            {
                 mISpellCheckerSession = session;
@@ -338,23 +335,23 @@ switch(scp.mWhat){
                 addTaint(msg.getTaint());
                 SpellCheckerParams scp = (SpellCheckerParams)msg.obj;
                 processTask(scp.mSession, scp, true);
-                
-                
-                
+                // ---------- Original Method ----------
+                //SpellCheckerParams scp = (SpellCheckerParams)msg.obj;
+                //processTask(scp.mSession, scp, true);
             }
 };
-                } 
+                } //End block
                 mOpened = true;
-            } 
+            } //End block
     if(DBG)            
             Log.d(TAG, "onServiceConnected - Success");
             while
 (!mPendingTasks.isEmpty())            
             {
                 processTask(session, mPendingTasks.poll(), false);
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -362,13 +359,13 @@ switch(scp.mWhat){
         public void cancel() {
     if(DBG)            
             {
-            } 
+            } //End block
             processOrEnqueueTask(new SpellCheckerParams(TASK_CANCEL, null, 0, false));
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (DBG) {
+                //Log.w(TAG, "cancel");
+            //}
+            //processOrEnqueueTask(new SpellCheckerParams(TASK_CANCEL, null, 0, false));
         }
 
         
@@ -380,17 +377,17 @@ switch(scp.mWhat){
             addTaint(textInfos[0].getTaint());
     if(DBG)            
             {
-            } 
+            } //End block
             processOrEnqueueTask(
                     new SpellCheckerParams(TASK_GET_SUGGESTIONS_MULTIPLE, textInfos,
                             suggestionsLimit, sequentialWords));
-            
-            
-                
-            
-            
-                    
-                            
+            // ---------- Original Method ----------
+            //if (DBG) {
+                //Log.w(TAG, "getSuggestionsMultiple");
+            //}
+            //processOrEnqueueTask(
+                    //new SpellCheckerParams(TASK_GET_SUGGESTIONS_MULTIPLE, textInfos,
+                            //suggestionsLimit, sequentialWords));
         }
 
         
@@ -398,24 +395,23 @@ switch(scp.mWhat){
         public void close() {
     if(DBG)            
             {
-            } 
+            } //End block
             processOrEnqueueTask(new SpellCheckerParams(TASK_CLOSE, null, 0, false));
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (DBG) {
+                //Log.w(TAG, "close");
+            //}
+            //processOrEnqueueTask(new SpellCheckerParams(TASK_CLOSE, null, 0, false));
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.651 -0400", hash_original_method = "C74449D517ED376786ADEE83EFA902AD", hash_generated_method = "EBD97ADE232D8783FA3D1BA19FE4507F")
         public boolean isDisconnected() {
             boolean var54E1480729898C5F1743C88D3F4A1642_1409992390 = (mOpened && mISpellCheckerSession == null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2026433541 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2026433541;
-            
-            
+            // ---------- Original Method ----------
+            //return mOpened && mISpellCheckerSession == null;
         }
 
         
@@ -425,7 +421,7 @@ switch(scp.mWhat){
     if(DBG)            
             {
                 Log.d(TAG, "process or enqueue task: " + mISpellCheckerSession);
-            } 
+            } //End block
             ISpellCheckerSession session;
             synchronized
 (this)            {
@@ -442,27 +438,27 @@ switch(scp.mWhat){
     if(tmp.mWhat == TASK_CLOSE)                            
                             {
                                 closeTask = tmp;
-                            } 
-                        } 
-                    } 
+                            } //End block
+                        } //End block
+                    } //End block
                     mPendingTasks.offer(scp);
     if(closeTask != null)                    
                     {
                         mPendingTasks.offer(closeTask);
-                    } 
+                    } //End block
                     return;
-                } 
-            } 
+                } //End block
+            } //End block
             processTask(session, scp, false);
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.652 -0400", hash_original_method = "DF368CC1EE007FCF3291FF75FA752896", hash_generated_method = "5528E791653C08E57DAA0076F90230CB")
         @Override
         public void onGetSuggestions(SuggestionsInfo[] results) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(results[0].getTaint());
             synchronized
 (this)            {
@@ -470,15 +466,15 @@ switch(scp.mWhat){
                 {
                     mHandler.sendMessage(Message.obtain(mHandler,
                             MSG_ON_GET_SUGGESTION_MULTIPLE, results));
-                } 
-            } 
-            
-            
-                
-                    
-                            
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (this) {
+                //if (mHandler != null) {
+                    //mHandler.sendMessage(Message.obtain(mHandler,
+                            //MSG_ON_GET_SUGGESTION_MULTIPLE, results));
+                //}
+            //}
         }
 
         
@@ -506,11 +502,11 @@ switch(scp.mWhat){
                 mTextInfos = textInfos;
                 mSuggestionsLimit = suggestionsLimit;
                 mSequentialWords = sequentialWords;
-                
-                
-                
-                
-                
+                // ---------- Original Method ----------
+                //mWhat = what;
+                //mTextInfos = textInfos;
+                //mSuggestionsLimit = suggestionsLimit;
+                //mSequentialWords = sequentialWords;
             }
 
             
@@ -539,25 +535,25 @@ switch(scp.mWhat){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.654 -0400", hash_original_method = "4338D10CD0AFB882F60E57AC8CDB914E", hash_generated_method = "A8F051AD092B8DFA0B4C78897CB98223")
         public  InternalListener(SpellCheckerSessionListenerImpl spellCheckerSessionListenerImpl) {
             mParentSpellCheckerSessionListenerImpl = spellCheckerSessionListenerImpl;
-            
-            
+            // ---------- Original Method ----------
+            //mParentSpellCheckerSessionListenerImpl = spellCheckerSessionListenerImpl;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.654 -0400", hash_original_method = "822E3A88968051EE65AD939CBD482992", hash_generated_method = "DE267A5A5C18F8D865715C189996BDF6")
         @Override
         public void onServiceConnected(ISpellCheckerSession session) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(session.getTaint());
     if(DBG)            
             {
-            } 
+            } //End block
             mParentSpellCheckerSessionListenerImpl.onServiceConnected(session);
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (DBG) {
+                //Log.w(TAG, "SpellCheckerSession connected.");
+            //}
+            //mParentSpellCheckerSessionListenerImpl.onServiceConnected(session);
         }
 
         

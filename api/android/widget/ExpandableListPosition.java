@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,22 +22,21 @@ class ExpandableListPosition {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.320 -0400", hash_original_method = "AC719FEF152399BDA1BD5A5CA7FBB765", hash_generated_method = "CA9DC1117656D5954D084C62466145DC")
     private  ExpandableListPosition() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.320 -0400", hash_original_method = "6E7C899DC67219985BD699CC84AD95E6", hash_generated_method = "D1043CAEEE96B318519BE4957822CE46")
     private void resetState() {
         groupPos = 0;
         childPos = 0;
         flatListPos = 0;
         type = 0;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //groupPos = 0;
+        //childPos = 0;
+        //flatListPos = 0;
+        //type = 0;
     }
 
     
@@ -55,9 +54,9 @@ class ExpandableListPosition {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_190873589 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_190873589;
         }
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (type == CHILD) return ExpandableListView.getPackedPositionForChild(groupPos, childPos);
+        //else return ExpandableListView.getPackedPositionForGroup(groupPos);
     }
 
     
@@ -119,14 +118,14 @@ class ExpandableListPosition {
     if(sPool.size() < MAX_POOL_SIZE)            
             {
                 sPool.add(this);
-            } 
-        } 
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (sPool) {
+            //if (sPool.size() < MAX_POOL_SIZE) {
+                //sPool.add(this);
+            //}
+        //}
     }
 
     

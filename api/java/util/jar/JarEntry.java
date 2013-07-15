@@ -1,6 +1,6 @@
 package java.util.jar;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,7 +37,7 @@ public class JarEntry extends ZipEntry {
     public  JarEntry(String name) {
         super(name);
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -45,7 +45,7 @@ public class JarEntry extends ZipEntry {
     public  JarEntry(ZipEntry entry) {
         super(entry);
         addTaint(entry.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -55,10 +55,10 @@ public class JarEntry extends ZipEntry {
         parentJar = je.parentJar;
         attributes = je.attributes;
         signers = je.signers;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //parentJar = je.parentJar;
+        //attributes = je.attributes;
+        //signers = je.signers;
     }
 
     
@@ -69,26 +69,26 @@ public class JarEntry extends ZipEntry {
 Attributes var4BBC8979DB64A9C3E2328AA1E06CDBB3_1419474156 =             attributes;
             var4BBC8979DB64A9C3E2328AA1E06CDBB3_1419474156.addTaint(taint);
             return var4BBC8979DB64A9C3E2328AA1E06CDBB3_1419474156;
-        } 
+        } //End block
         Manifest manifest = parentJar.getManifest();
     if(manifest == null)        
         {
 Attributes var540C13E9E156B687226421B24F2DF178_93679428 =             null;
             var540C13E9E156B687226421B24F2DF178_93679428.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_93679428;
-        } 
+        } //End block
 Attributes varEC5B5AF019317A7C65484BE85B3AD11D_2021558255 =         attributes = manifest.getAttributes(getName());
         varEC5B5AF019317A7C65484BE85B3AD11D_2021558255.addTaint(taint);
         return varEC5B5AF019317A7C65484BE85B3AD11D_2021558255;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (attributes != null || parentJar == null) {
+            //return attributes;
+        //}
+        //Manifest manifest = parentJar.getManifest();
+        //if (manifest == null) {
+            //return null;
+        //}
+        //return attributes = manifest.getAttributes(getName());
     }
 
     
@@ -99,35 +99,34 @@ Attributes varEC5B5AF019317A7C65484BE85B3AD11D_2021558255 =         attributes =
 Certificate[] var540C13E9E156B687226421B24F2DF178_887727380 =             null;
             var540C13E9E156B687226421B24F2DF178_887727380.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_887727380;
-        } 
+        } //End block
         JarVerifier jarVerifier = parentJar.verifier;
     if(jarVerifier == null)        
         {
 Certificate[] var540C13E9E156B687226421B24F2DF178_1186562008 =             null;
             var540C13E9E156B687226421B24F2DF178_1186562008.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1186562008;
-        } 
+        } //End block
 Certificate[] varD7F6AB131BE738B5E6706A18E82B3D10_217188085 =         jarVerifier.getCertificates(getName());
         varD7F6AB131BE738B5E6706A18E82B3D10_217188085.addTaint(taint);
         return varD7F6AB131BE738B5E6706A18E82B3D10_217188085;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (parentJar == null) {
+            //return null;
+        //}
+        //JarVerifier jarVerifier = parentJar.verifier;
+        //if (jarVerifier == null) {
+            //return null;
+        //}
+        //return jarVerifier.getCertificates(getName());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.071 -0400", hash_original_method = "DAF50D69E39A2A8F586C4ACAC36673DD", hash_generated_method = "FDB2887914FAA4104F2D0ED03D0034E5")
      void setAttributes(Attributes attrib) {
         attributes = attrib;
-        
-        
+        // ---------- Original Method ----------
+        //attributes = attrib;
     }
 
     
@@ -136,28 +135,28 @@ Certificate[] varD7F6AB131BE738B5E6706A18E82B3D10_217188085 =         jarVerifie
     if(signers == null)        
         {
             signers = getCodeSigners(getCertificates());
-        } 
+        } //End block
     if(signers == null)        
         {
 CodeSigner[] var540C13E9E156B687226421B24F2DF178_883289688 =             null;
             var540C13E9E156B687226421B24F2DF178_883289688.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_883289688;
-        } 
+        } //End block
         CodeSigner[] tmp = new CodeSigner[signers.length];
         System.arraycopy(signers, 0, tmp, 0, tmp.length);
 CodeSigner[] var3F12A0424932F6B5155AA6C49B63FE6E_1528799825 =         tmp;
         var3F12A0424932F6B5155AA6C49B63FE6E_1528799825.addTaint(taint);
         return var3F12A0424932F6B5155AA6C49B63FE6E_1528799825;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (signers == null) {
+            //signers = getCodeSigners(getCertificates());
+        //}
+        //if (signers == null) {
+            //return null;
+        //}
+        //CodeSigner[] tmp = new CodeSigner[signers.length];
+        //System.arraycopy(signers, 0, tmp, 0, tmp.length);
+        //return tmp;
     }
 
     
@@ -169,7 +168,7 @@ CodeSigner[] var3F12A0424932F6B5155AA6C49B63FE6E_1528799825 =         tmp;
 CodeSigner[] var540C13E9E156B687226421B24F2DF178_1959260804 =             null;
             var540C13E9E156B687226421B24F2DF178_1959260804.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1959260804;
-        } 
+        } //End block
         X500Principal prevIssuer = null;
         ArrayList<Certificate> list = new ArrayList<Certificate>(certs.length);
         ArrayList<CodeSigner> asigners = new ArrayList<CodeSigner>();
@@ -178,7 +177,7 @@ for(Certificate element : certs)
     if(!(element instanceof X509Certificate))            
             {
                 continue;
-            } 
+            } //End block
             X509Certificate x509 = (X509Certificate) element;
     if(prevIssuer != null)            
             {
@@ -187,28 +186,28 @@ for(Certificate element : certs)
                 {
                     addCodeSigner(asigners, list);
                     list.clear();
-                } 
-            } 
+                } //End block
+            } //End block
             prevIssuer = x509.getIssuerX500Principal();
             list.add(x509);
-        } 
+        } //End block
     if(!list.isEmpty())        
         {
             addCodeSigner(asigners, list);
-        } 
+        } //End block
     if(asigners.isEmpty())        
         {
 CodeSigner[] var540C13E9E156B687226421B24F2DF178_350637551 =             null;
             var540C13E9E156B687226421B24F2DF178_350637551.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_350637551;
-        } 
+        } //End block
         CodeSigner[] tmp = new CodeSigner[asigners.size()];
         asigners.toArray(tmp);
 CodeSigner[] var3F12A0424932F6B5155AA6C49B63FE6E_168649200 =         tmp;
         var3F12A0424932F6B5155AA6C49B63FE6E_168649200.addTaint(taint);
         return var3F12A0424932F6B5155AA6C49B63FE6E_168649200;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -223,50 +222,50 @@ CodeSigner[] var3F12A0424932F6B5155AA6C49B63FE6E_168649200 =         tmp;
             try 
             {
                 factory = CertificateFactory.getInstance("X.509");
-            } 
+            } //End block
             catch (CertificateException ex)
             {
-            } 
+            } //End block
             finally 
             {
                 isFactoryChecked = true;
-            } 
-        } 
+            } //End block
+        } //End block
     if(factory == null)        
         {
             return;
-        } 
+        } //End block
         try 
         {
             certPath = factory.generateCertPath(list);
-        } 
+        } //End block
         catch (CertificateException ex)
         {
-        } 
+        } //End block
     if(certPath != null)        
         {
             asigners.add(new CodeSigner(certPath, null));
-        } 
-        
-        
-        
-            
-                
-            
-            
-                
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //CertPath certPath = null;
+        //if (!isFactoryChecked) {
+            //try {
+                //factory = CertificateFactory.getInstance("X.509");
+            //} catch (CertificateException ex) {
+            //} finally {
+                //isFactoryChecked = true;
+            //}
+        //}
+        //if (factory == null) {
+            //return;
+        //}
+        //try {
+            //certPath = factory.generateCertPath(list);
+        //} catch (CertificateException ex) {
+        //}
+        //if (certPath != null) {
+            //asigners.add(new CodeSigner(certPath, null));
+        //}
     }
 
     

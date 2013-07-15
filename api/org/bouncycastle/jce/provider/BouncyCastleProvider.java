@@ -1,6 +1,6 @@
 package org.bouncycastle.jce.provider;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,20 +29,20 @@ public final class BouncyCastleProvider extends Provider implements Configurable
 Object var540C13E9E156B687226421B24F2DF178_1261972976 =             null;
             var540C13E9E156B687226421B24F2DF178_1261972976.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1261972976;
-            
-            
-            
+            // ---------- Original Method ----------
+            //setup();
+            //return null;
         }
 });
-        
-        
-        
-            
-            
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //AccessController.doPrivileged(new PrivilegedAction()
+        //{
+            //public Object run()
+            //{
+                //setup();
+                //return null;
+            //}
+        //});
     }
 
     
@@ -251,8 +251,8 @@ Object var540C13E9E156B687226421B24F2DF178_1261972976 =             null;
         put("CertPathValidator.PKIX", "org.bouncycastle.jce.provider.PKIXCertPathValidatorSpi");
         put("CertPathBuilder.PKIX", "org.bouncycastle.jce.provider.PKIXCertPathBuilderSpi");
         put("CertStore.Collection", "org.bouncycastle.jce.provider.CertStoreCollectionSpi");
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -269,32 +269,32 @@ for(int i = 0;i != names.length;i++)
     if(loader != null)                
                 {
                     clazz = loader.loadClass(packageName + names[i] + "$Mappings");
-                } 
+                } //End block
                 else
                 {
                     clazz = Class.forName(packageName + names[i] + "$Mappings");
-                } 
-            } 
+                } //End block
+            } //End block
             catch (ClassNotFoundException e)
             {
-            } 
+            } //End block
     if(clazz != null)            
             {
                 try 
                 {
                     addMappings((Map)clazz.newInstance());
-                } 
+                } //End block
                 catch (Exception e)
                 {
                     InternalError var3EA155D32E485A3F1F8962C0CB64AEFC_537463567 = new InternalError("cannot create instance of "
                         + packageName + names[i] + "$Mappings : " + e);
                     var3EA155D32E485A3F1F8962C0CB64AEFC_537463567.addTaint(taint);
                     throw var3EA155D32E485A3F1F8962C0CB64AEFC_537463567;
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -309,19 +309,19 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
                 IllegalStateException varA1DEC78D76F37D52FBAF9A05AD18BAE8_529366671 = new IllegalStateException("duplicate provider key (" + key + ") found in " + mappings.getClass().getName());
                 varA1DEC78D76F37D52FBAF9A05AD18BAE8_529366671.addTaint(taint);
                 throw varA1DEC78D76F37D52FBAF9A05AD18BAE8_529366671;
-            } 
+            } //End block
             put(key, mappings.get(key));
-        } 
-        
-        
-        
-            
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (Iterator it = mappings.keySet().iterator(); it.hasNext();)
+        //{
+            //Object key = it.next();
+            //if (containsKey(key))
+            //{
+                //throw new IllegalStateException("duplicate provider key (" + key + ") found in " + mappings.getClass().getName());
+            //}
+            //put(key, mappings.get(key));
+        //}
     }
 
     
@@ -341,8 +341,8 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
         put("Mac.PBEWITHHMACSHA", "org.bouncycastle.jce.provider.JCEMac$PBEWithSHA");
         put("Mac.PBEWITHHMACSHA1", "org.bouncycastle.jce.provider.JCEMac$PBEWithSHA");
         put("Alg.Alias.Mac.1.3.14.3.2.26", "PBEWITHHMACSHA");
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -361,14 +361,14 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
         put("KeyGenerator." + mainName, keyGeneratorClassName);
         put("Alg.Alias.KeyGenerator.HMAC-" + algorithm, mainName);
         put("Alg.Alias.KeyGenerator.HMAC/" + algorithm, mainName);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //String mainName = "HMAC" + algorithm;
+        //put("Mac." + mainName, algorithmClassName);
+        //put("Alg.Alias.Mac.HMAC-" + algorithm, mainName);
+        //put("Alg.Alias.Mac.HMAC/" + algorithm, mainName);
+        //put("KeyGenerator." + mainName, keyGeneratorClassName);
+        //put("Alg.Alias.KeyGenerator.HMAC-" + algorithm, mainName);
+        //put("Alg.Alias.KeyGenerator.HMAC/" + algorithm, mainName);
     }
 
     
@@ -381,10 +381,10 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
         String mainName = "HMAC" + algorithm;
         put("Alg.Alias.Mac." + oid, mainName);
         put("Alg.Alias.KeyGenerator." + oid, mainName);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //String mainName = "HMAC" + algorithm;
+        //put("Alg.Alias.Mac." + oid, mainName);
+        //put("Alg.Alias.KeyGenerator." + oid, mainName);
     }
 
     
@@ -405,8 +405,8 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
         put("Alg.Alias.MessageDigest." + NISTObjectIdentifiers.id_sha512, "SHA-512");
         put("MessageDigest.MD5", "org.bouncycastle.jce.provider.JDKMessageDigest$MD5");
         put("Alg.Alias.MessageDigest." + PKCSObjectIdentifiers.md5, "MD5");
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -467,8 +467,8 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
         put("Alg.Alias.Signature.SHA1WithDSA", "SHA1withDSA");
         put("Alg.Alias.Signature.DSAWithSHA1", "SHA1withDSA");
         put("Alg.Alias.Signature.1.2.840.10040.4.3", "SHA1withDSA");
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -477,8 +477,8 @@ for(Iterator it = mappings.keySet().iterator();it.hasNext();)
         addTaint(parameter.getTaint());
         addTaint(parameterName.getTaint());
         ProviderUtil.setParameter(parameterName, parameter);
-        
-        
+        // ---------- Original Method ----------
+        //ProviderUtil.setParameter(parameterName, parameter);
     }
 
     

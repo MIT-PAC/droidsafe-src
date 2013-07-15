@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x9;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class X962NamedCurves {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.446 -0400", hash_original_method = "E9893857EF70F6AC19E01FEF66A94FDD", hash_generated_method = "E9893857EF70F6AC19E01FEF66A94FDD")
     public X962NamedCurves ()
     {
-        
+        //Synthesized constructor
     }
 
 

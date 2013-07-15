@@ -1,6 +1,6 @@
 package android.text.style;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,15 +11,14 @@ public abstract class CharacterStyle {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.148 -0400", hash_original_method = "41D29785B7D143A249368B9153DB6D45", hash_generated_method = "41D29785B7D143A249368B9153DB6D45")
     public CharacterStyle ()
     {
-        
+        //Synthesized constructor
     }
 
 
     public abstract void updateDrawState(TextPaint tp);
 
     
-        @DSModeled(DSC.SAFE)
-    public static CharacterStyle wrap(CharacterStyle cs) {
+        public static CharacterStyle wrap(CharacterStyle cs) {
         if (cs instanceof MetricAffectingSpan) {
             return new MetricAffectingSpan.Passthrough((MetricAffectingSpan) cs);
         } else {
@@ -28,14 +27,13 @@ public abstract class CharacterStyle {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.148 -0400", hash_original_method = "2ADDE7DAB4ECDACBF15B0CE8CBCF2C82", hash_generated_method = "6882906D4A442EBD06DAA7C81918E299")
     public CharacterStyle getUnderlying() {
 CharacterStyle var72A74007B2BE62B849F475C7BDA4658B_857289039 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_857289039.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_857289039;
-        
-        
+        // ---------- Original Method ----------
+        //return this;
     }
 
     
@@ -47,8 +45,8 @@ CharacterStyle var72A74007B2BE62B849F475C7BDA4658B_857289039 =         this;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.149 -0400", hash_original_method = "CAC991CB238644E494D2A55B9FB554CC", hash_generated_method = "7C4191215C179AED62D69BA1F57E231B")
         public  Passthrough(CharacterStyle cs) {
             mStyle = cs;
-            
-            
+            // ---------- Original Method ----------
+            //mStyle = cs;
         }
 
         
@@ -57,8 +55,8 @@ CharacterStyle var72A74007B2BE62B849F475C7BDA4658B_857289039 =         this;
         public void updateDrawState(TextPaint tp) {
             addTaint(tp.getTaint());
             mStyle.updateDrawState(tp);
-            
-            
+            // ---------- Original Method ----------
+            //mStyle.updateDrawState(tp);
         }
 
         
@@ -68,8 +66,8 @@ CharacterStyle var72A74007B2BE62B849F475C7BDA4658B_857289039 =         this;
 CharacterStyle varA3CF534B61190E20D264779841BB2C63_2037012502 =             mStyle.getUnderlying();
             varA3CF534B61190E20D264779841BB2C63_2037012502.addTaint(taint);
             return varA3CF534B61190E20D264779841BB2C63_2037012502;
-            
-            
+            // ---------- Original Method ----------
+            //return mStyle.getUnderlying();
         }
 
         

@@ -1,6 +1,6 @@
 package android.test.suitebuilder;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,7 +53,7 @@ public class TestSuiteBuilder {
     public  TestSuiteBuilder(Class clazz) {
         this(clazz.getName(), clazz.getClassLoader());
         addTaint(clazz.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -64,11 +64,11 @@ public class TestSuiteBuilder {
         this.testGrouping.setClassLoader(classLoader);
         this.testCases = Lists.newArrayList();
         addRequirements(REJECT_SUPPRESSED);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.suiteName = name;
+        //this.testGrouping.setClassLoader(classLoader);
+        //this.testCases = Lists.newArrayList();
+        //addRequirements(REJECT_SUPPRESSED);
     }
 
     
@@ -85,12 +85,12 @@ public class TestSuiteBuilder {
 TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_887725031 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_887725031.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_887725031;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //AndroidTestRunner atr = new AndroidTestRunner();
+        //atr.setContext(context);
+        //atr.setTestClassName(testClassName, testMethodName);
+        //this.testCases.addAll(atr.getTestCases());
+        //return this;
     }
 
     
@@ -100,15 +100,15 @@ TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_887725031 =         this;
 for(TestCase testCase : (List<TestCase>) TestCaseUtil.getTests(testSuite, true))
         {
             this.testCases.add(testCase);
-        } 
+        } //End block
 TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_2131750845 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2131750845.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2131750845;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (TestCase testCase : (List<TestCase>) TestCaseUtil.getTests(testSuite, true)) {
+            //this.testCases.add(testCase);
+        //}
+        //return this;
     }
 
     
@@ -119,9 +119,9 @@ TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_2131750845 =         this;
 TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_41102164 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_41102164.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_41102164;
-        
-        
-        
+        // ---------- Original Method ----------
+        //testGrouping.addPackagesRecursive(packageNames);
+        //return this;
     }
 
     
@@ -132,9 +132,9 @@ TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_41102164 =         this;
 TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_31535655 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_31535655.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_31535655;
-        
-        
-        
+        // ---------- Original Method ----------
+        //testGrouping.removePackagesRecursive(packageNames);
+        //return this;
     }
 
     
@@ -145,9 +145,9 @@ TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_31535655 =         this;
 TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_1266867783 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1266867783.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1266867783;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.predicates.addAll(predicates);
+        //return this;
     }
 
     
@@ -164,39 +164,38 @@ for(int i = 0;i < stackTraceElements.length;i++)
             {
                 callingClassName = stackTraceElements[i + 1].getClassName();
                 break;
-            } 
-        } 
+            } //End block
+        } //End block
         String packageName = parsePackageNameFromClassName(callingClassName);
 TestSuiteBuilder var4236819713B8F2A439526881855F7860_654644741 =         includePackages(packageName);
         var4236819713B8F2A439526881855F7860_654644741.addTaint(taint);
         return var4236819713B8F2A439526881855F7860_654644741;
-        
-        
-        
-        
-        
-            
-            
-                    
-                
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        //String callingClassName = null;
+        //String thisClassName = TestSuiteBuilder.class.getName();
+        //for (int i = 0; i < stackTraceElements.length; i++) {
+            //StackTraceElement element = stackTraceElements[i];
+            //if (thisClassName.equals(element.getClassName())
+                    //&& "includeAllPackagesUnderHere".equals(element.getMethodName())) {
+                //callingClassName = stackTraceElements[i + 1].getClassName();
+                //break;
+            //}
+        //}
+        //String packageName = parsePackageNameFromClassName(callingClassName);
+        //return includePackages(packageName);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.617 -0400", hash_original_method = "DE0BA46F9EE52752A0C868D33280E318", hash_generated_method = "F8868896E7239F189FED6A15A968B3D1")
     public TestSuiteBuilder named(String newSuiteName) {
         suiteName = newSuiteName;
 TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_2071107009 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2071107009.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2071107009;
-        
-        
-        
+        // ---------- Original Method ----------
+        //suiteName = newSuiteName;
+        //return this;
     }
 
     
@@ -211,8 +210,8 @@ for(TestMethod test : testGrouping.getTests())
     if(satisfiesAllPredicates(test))                
                 {
                     addTest(test);
-                } 
-            } 
+                } //End block
+            } //End block
     if(testCases.size() > 0)            
             {
 for(TestCase testCase : testCases)
@@ -220,10 +219,10 @@ for(TestCase testCase : testCases)
     if(satisfiesAllPredicates(new TestMethod(testCase)))                    
                     {
                         addTest(testCase);
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         catch (Exception exception)
         {
             TestSuite suite = new TestSuite(getSuiteName());
@@ -231,23 +230,22 @@ for(TestCase testCase : testCases)
 TestSuite var43F2DCEC46C8EA8C7BBB5E25ABF048E6_21469797 =             suite;
             var43F2DCEC46C8EA8C7BBB5E25ABF048E6_21469797.addTaint(taint);
             return var43F2DCEC46C8EA8C7BBB5E25ABF048E6_21469797;
-        } 
+        } //End block
 TestSuite var68923D4623222795EBF2699ACF0F4B83_835489868 =         rootSuite;
         var68923D4623222795EBF2699ACF0F4B83_835489868.addTaint(taint);
         return var68923D4623222795EBF2699ACF0F4B83_835489868;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.619 -0400", hash_original_method = "FA6CF1B18274415B042FA89686DFBBA8", hash_generated_method = "579A43976301BAE753A42D9AA54AC37B")
     protected String getSuiteName() {
 String varD8C9BC94A6E81F246F976FCCA661D48D_1472188937 =         suiteName;
         varD8C9BC94A6E81F246F976FCCA661D48D_1472188937.addTaint(taint);
         return varD8C9BC94A6E81F246F976FCCA661D48D_1472188937;
-        
-        
+        // ---------- Original Method ----------
+        //return suiteName;
     }
 
     
@@ -259,21 +257,20 @@ String varD8C9BC94A6E81F246F976FCCA661D48D_1472188937 =         suiteName;
 TestSuiteBuilder var69B049DE1E09C679D066531AD48DC89D_704332552 =         addRequirements(list);
         var69B049DE1E09C679D066531AD48DC89D_704332552.addTaint(taint);
         return var69B049DE1E09C679D066531AD48DC89D_704332552;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<Predicate<TestMethod>> list = new ArrayList<Predicate<TestMethod>>();
+        //Collections.addAll(list, predicates);
+        //return addRequirements(list);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.619 -0400", hash_original_method = "95C63968A7356AFE59EE1560EDC6AFD0", hash_generated_method = "E79017C4570DE9B4FD34967CDD434195")
     protected TestGrouping getTestGrouping() {
 TestGrouping var668D3050613E8B26B179F6C37A7EABCF_478968285 =         testGrouping;
         var668D3050613E8B26B179F6C37A7EABCF_478968285.addTaint(taint);
         return var668D3050613E8B26B179F6C37A7EABCF_478968285;
-        
-        
+        // ---------- Original Method ----------
+        //return testGrouping;
     }
 
     
@@ -287,18 +284,18 @@ for(Predicate<TestMethod> predicate : predicates)
                 boolean var68934A3E9455FA72420237EB05902327_164884042 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_308210424 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_308210424;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_118869248 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_861486634 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_861486634;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (Predicate<TestMethod> predicate : predicates) {
+            //if (!predicate.apply(test)) {
+                //return false;
+            //}
+        //}
+        //return true;
     }
 
     
@@ -307,9 +304,9 @@ for(Predicate<TestMethod> predicate : predicates)
         addTaint(testMethod.getTaint());
         addSuiteIfNecessary(testMethod.getEnclosingClassname());
         suiteForCurrentClass.addTest(testMethod.createTest());
-        
-        
-        
+        // ---------- Original Method ----------
+        //addSuiteIfNecessary(testMethod.getEnclosingClassname());
+        //suiteForCurrentClass.addTest(testMethod.createTest());
     }
 
     
@@ -318,9 +315,9 @@ for(Predicate<TestMethod> predicate : predicates)
         addTaint(test.getTaint());
         addSuiteIfNecessary(test.getClass().getName());
         suiteForCurrentClass.addTest(test);
-        
-        
-        
+        // ---------- Original Method ----------
+        //addSuiteIfNecessary(test.getClass().getName());
+        //suiteForCurrentClass.addTest(test);
     }
 
     
@@ -331,13 +328,13 @@ for(Predicate<TestMethod> predicate : predicates)
             currentClassname = parentClassname;
             suiteForCurrentClass = new TestSuite(parentClassname);
             rootSuite.addTest(suiteForCurrentClass);
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!parentClassname.equals(currentClassname)) {
+            //currentClassname = parentClassname;
+            //suiteForCurrentClass = new TestSuite(parentClassname);
+            //rootSuite.addTest(suiteForCurrentClass);
+        //}
     }
 
     
@@ -355,8 +352,8 @@ for(Predicate<TestMethod> predicate : predicates)
         public  FailedToCreateTests(Exception exception) {
             super("testSuiteConstructionFailed");
             this.exception = exception;
-            
-            
+            // ---------- Original Method ----------
+            //this.exception = exception;
         }
 
         
@@ -365,8 +362,8 @@ for(Predicate<TestMethod> predicate : predicates)
             RuntimeException varEA3606177B94E6C5368D72CDFEE8ED30_1272056941 = new RuntimeException("Exception during suite construction", exception);
             varEA3606177B94E6C5368D72CDFEE8ED30_1272056941.addTaint(taint);
             throw varEA3606177B94E6C5368D72CDFEE8ED30_1272056941;
-            
-            
+            // ---------- Original Method ----------
+            //throw new RuntimeException("Exception during suite construction", exception);
         }
 
         

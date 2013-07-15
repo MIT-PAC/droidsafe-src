@@ -1,6 +1,6 @@
 package android.location;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,9 +22,9 @@ public class CountryDetector {
     public  CountryDetector(ICountryDetector service) {
         mService = service;
         mListeners = new HashMap<CountryListener, ListenerTransport>();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mService = service;
+        //mListeners = new HashMap<CountryListener, ListenerTransport>();
     }
 
     
@@ -35,20 +35,20 @@ public class CountryDetector {
 Country varD673DCCCB3DEFF407B3D1CE2BFD6E6FD_2109459355 =             mService.detectCountry();
             varD673DCCCB3DEFF407B3D1CE2BFD6E6FD_2109459355.addTaint(taint);
             return varD673DCCCB3DEFF407B3D1CE2BFD6E6FD_2109459355;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 Country var540C13E9E156B687226421B24F2DF178_1693902221 =             null;
             var540C13E9E156B687226421B24F2DF178_1693902221.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1693902221;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.detectCountry();
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "detectCountry: RemoteException", e);
+            //return null;
+        //}
     }
 
     
@@ -65,24 +65,24 @@ Country var540C13E9E156B687226421B24F2DF178_1693902221 =             null;
                 {
                     mService.addCountryListener(transport);
                     mListeners.put(listener, transport);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mListeners) {
+            //if (!mListeners.containsKey(listener)) {
+                //ListenerTransport transport = new ListenerTransport(listener, looper);
+                //try {
+                    //mService.addCountryListener(transport);
+                    //mListeners.put(listener, transport);
+                //} catch (RemoteException e) {
+                    //Log.e(TAG, "addCountryListener: RemoteException", e);
+                //}
+            //}
+        //}
     }
 
     
@@ -98,24 +98,24 @@ Country var540C13E9E156B687226421B24F2DF178_1693902221 =             null;
                 {
                     mListeners.remove(listener);
                     mService.removeCountryListener(transport);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-        } 
-        
-        
-            
-            
-                
-                    
-                    
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mListeners) {
+            //ListenerTransport transport = mListeners.get(listener);
+            //if (transport != null) {
+                //try {
+                    //mListeners.remove(listener);
+                    //mService.removeCountryListener(transport);
+                //} catch (RemoteException e) {
+                    //Log.e(TAG, "removeCountryListener: RemoteException", e);
+                //}
+            //}
+        //}
     }
 
     
@@ -133,39 +133,39 @@ Country var540C13E9E156B687226421B24F2DF178_1693902221 =             null;
     if(looper != null)            
             {
                 mHandler = new Handler(looper);
-            } 
+            } //End block
             else
             {
                 mHandler = new Handler();
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mListener = listener;
+            //if (looper != null) {
+                //mHandler = new Handler(looper);
+            //} else {
+                //mHandler = new Handler();
+            //}
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.656 -0400", hash_original_method = "F95DEB9AF970A5D9353FC83CA6F7013A", hash_generated_method = "099CDC1DD5C7EB6FC8EC8819A4B7A982")
         public void onCountryDetected(final Country country) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(country.getTaint());
             mHandler.post(new Runnable() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.656 -0400", hash_original_method = "80BD55FB6767C94F80935DEF8974CD11", hash_generated_method = "0AA61EE6BBE285205045685EB9F88C6A")
             public void run() {
                 mListener.onCountryDetected(country);
-                
-                
+                // ---------- Original Method ----------
+                //mListener.onCountryDetected(country);
             }
 });
-            
-            
-                
-                    
-                
-            
+            // ---------- Original Method ----------
+            //mHandler.post(new Runnable() {
+                //public void run() {
+                    //mListener.onCountryDetected(country);
+                //}
+            //});
         }
 
         

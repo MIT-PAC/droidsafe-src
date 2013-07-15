@@ -1,6 +1,6 @@
 package android.inputmethodservice;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,20 +32,19 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
             InputMethodSession inputMethodSession) {
         mCaller = new HandlerCaller(context, this);
         mInputMethodSession = inputMethodSession;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mCaller = new HandlerCaller(context, this);
+        //mInputMethodSession = inputMethodSession;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.138 -0400", hash_original_method = "FE0809D61F310D1DE2584DA263F14DCD", hash_generated_method = "8A2392B4A195A6813023E5960A6360AB")
     public InputMethodSession getInternalInputMethodSession() {
 InputMethodSession var7A6B58D0E9F0FD97AD7D91B209188589_657458247 =         mInputMethodSession;
         var7A6B58D0E9F0FD97AD7D91B209188589_657458247.addTaint(taint);
         return var7A6B58D0E9F0FD97AD7D91B209188589_657458247;
-        
-        
+        // ---------- Original Method ----------
+        //return mInputMethodSession;
     }
 
     
@@ -74,7 +73,7 @@ switch(msg.what){
                                 (IInputMethodCallback)args.arg2));
             mCaller.recycleArgs(args);
             return;
-        } 
+        } //End block
         case DO_DISPATCH_TRACKBALL_EVENT:
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
@@ -84,7 +83,7 @@ switch(msg.what){
                                 (IInputMethodCallback)args.arg2));
             mCaller.recycleArgs(args);
             return;
-        } 
+        } //End block
         case DO_UPDATE_SELECTION:
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
@@ -92,12 +91,12 @@ switch(msg.what){
                         args.argi3, args.argi4, args.argi5, args.argi6);
             mCaller.recycleArgs(args);
             return;
-        } 
+        } //End block
         case DO_UPDATE_CURSOR:
         {
             mInputMethodSession.updateCursor((Rect)msg.obj);
             return;
-        } 
+        } //End block
         case DO_APP_PRIVATE_COMMAND:
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
@@ -105,33 +104,33 @@ switch(msg.what){
                         (Bundle)args.arg2);
             mCaller.recycleArgs(args);
             return;
-        } 
+        } //End block
         case DO_TOGGLE_SOFT_INPUT:
         {
             mInputMethodSession.toggleSoftInput(msg.arg1, msg.arg2);
             return;
-        } 
+        } //End block
         case DO_FINISH_SESSION:
         {
             mInputMethodSession = null;
             return;
-        } 
+        } //End block
         case DO_VIEW_CLICKED:
         {
             mInputMethodSession.viewClicked(msg.arg1 == 1);
             return;
-        } 
+        } //End block
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.140 -0400", hash_original_method = "79448A7650CDA21C9A89B7B8FD63C46C", hash_generated_method = "7E0A06F0572B1B49A610780F58FEC54C")
     public void finishInput() {
         mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_INPUT));
-        
-        
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_INPUT));
     }
 
     
@@ -140,9 +139,9 @@ switch(msg.what){
         addTaint(completions[0].getTaint());
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(
                 DO_DISPLAY_COMPLETIONS, completions));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(
+                //DO_DISPLAY_COMPLETIONS, completions));
     }
 
     
@@ -152,9 +151,9 @@ switch(msg.what){
         addTaint(token);
         mCaller.executeOrSendMessage(mCaller.obtainMessageIO(
                 DO_UPDATE_EXTRACTED_TEXT, token, text));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageIO(
+                //DO_UPDATE_EXTRACTED_TEXT, token, text));
     }
 
     
@@ -165,9 +164,9 @@ switch(msg.what){
         addTaint(seq);
         mCaller.executeOrSendMessage(mCaller.obtainMessageIOO(DO_DISPATCH_KEY_EVENT, seq,
                 event, callback));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageIOO(DO_DISPATCH_KEY_EVENT, seq,
+                //event, callback));
     }
 
     
@@ -178,9 +177,9 @@ switch(msg.what){
         addTaint(seq);
         mCaller.executeOrSendMessage(mCaller.obtainMessageIOO(DO_DISPATCH_TRACKBALL_EVENT, seq,
                 event, callback));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageIOO(DO_DISPATCH_TRACKBALL_EVENT, seq,
+                //event, callback));
     }
 
     
@@ -196,10 +195,10 @@ switch(msg.what){
         mCaller.executeOrSendMessage(mCaller.obtainMessageIIIIII(DO_UPDATE_SELECTION,
                 oldSelStart, oldSelEnd, newSelStart, newSelEnd,
                 candidatesStart, candidatesEnd));
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageIIIIII(DO_UPDATE_SELECTION,
+                //oldSelStart, oldSelEnd, newSelStart, newSelEnd,
+                //candidatesStart, candidatesEnd));
     }
 
     
@@ -207,8 +206,8 @@ switch(msg.what){
     public void viewClicked(boolean focusChanged) {
         addTaint(focusChanged);
         mCaller.executeOrSendMessage(mCaller.obtainMessageI(DO_VIEW_CLICKED, focusChanged ? 1 : 0));
-        
-        
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageI(DO_VIEW_CLICKED, focusChanged ? 1 : 0));
     }
 
     
@@ -217,9 +216,9 @@ switch(msg.what){
         addTaint(newCursor.getTaint());
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_UPDATE_CURSOR,
                 newCursor));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_UPDATE_CURSOR,
+                //newCursor));
     }
 
     
@@ -228,8 +227,8 @@ switch(msg.what){
         addTaint(data.getTaint());
         addTaint(action.getTaint());
         mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_APP_PRIVATE_COMMAND, action, data));
-        
-        
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_APP_PRIVATE_COMMAND, action, data));
     }
 
     
@@ -238,16 +237,16 @@ switch(msg.what){
         addTaint(hideFlags);
         addTaint(showFlags);
         mCaller.executeOrSendMessage(mCaller.obtainMessageII(DO_TOGGLE_SOFT_INPUT, showFlags, hideFlags));
-        
-        
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageII(DO_TOGGLE_SOFT_INPUT, showFlags, hideFlags));
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.144 -0400", hash_original_method = "DD8E8E4C57A8296FF535720B90D4809B", hash_generated_method = "DA2B56A0945E112EFB6C9022E5AD067E")
     public void finishSession() {
         mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_SESSION));
-        
-        
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_FINISH_SESSION));
     }
 
     
@@ -259,8 +258,8 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.145 -0400", hash_original_method = "F69C5DA54CCE399124E2B79C8542153D", hash_generated_method = "B2C17F4C817962B7FCAE664250BDA861")
           InputMethodEventCallbackWrapper(IInputMethodCallback cb) {
             mCb = cb;
-            
-            
+            // ---------- Original Method ----------
+            //mCb = cb;
         }
 
         
@@ -271,15 +270,15 @@ switch(msg.what){
             try 
             {
                 mCb.finishedEvent(seq, handled);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-            
-            
-                
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //mCb.finishedEvent(seq, handled);
+            //} catch (RemoteException e) {
+            //}
         }
 
         

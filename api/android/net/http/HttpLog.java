@@ -1,6 +1,6 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ class HttpLog {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.228 -0400", hash_original_method = "979E726A42018524BC838D3AC9025153", hash_generated_method = "979E726A42018524BC838D3AC9025153")
     public HttpLog ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -21,8 +21,7 @@ class HttpLog {
     }
 
     
-        @DSModeled(DSC.BAN)
-    static void e(String logMe) {
+        static void e(String logMe) {
         Log.e(LOGTAG, logMe);
     }
 

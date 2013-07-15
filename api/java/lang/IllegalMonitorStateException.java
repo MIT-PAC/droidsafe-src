@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class IllegalMonitorStateException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.888 -0400", hash_original_method = "A830880207AC191B3684BF337F5E0247", hash_generated_method = "0C4EAA93E01B549DF2002FFF068D6996")
     public  IllegalMonitorStateException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class IllegalMonitorStateException extends RuntimeException {
     public  IllegalMonitorStateException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

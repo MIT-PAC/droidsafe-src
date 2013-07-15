@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class ATParseEx extends RuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.563 -0400", hash_original_method = "F1F3845C26D0582188BC2F6275397113", hash_generated_method = "7AB30A637E4F0CAF99CB86D5CB1C62DA")
     public  ATParseEx() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -18,7 +18,7 @@ public class ATParseEx extends RuntimeException {
     public  ATParseEx(String s) {
         super(s);
         addTaint(s.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

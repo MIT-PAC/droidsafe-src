@@ -1,6 +1,6 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.115 -0400", hash_original_method = "AFDDADD59FA06C48A3131F90ADCD1B27", hash_generated_method = "C2512795C4B4D09B5344EF8EABF2A19D")
     protected  AbstractList() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,8 +23,8 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1512330546 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1512330546.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1512330546;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -36,9 +36,9 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         boolean varB326B5062B2F0E69046810717534CB09_483737424 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1936248711 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1936248711;
-        
-        
-        
+        // ---------- Original Method ----------
+        //add(size(), object);
+        //return true;
     }
 
     
@@ -51,30 +51,28 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 (it.hasNext())        
         {
             add(location++, it.next());
-        } 
+        } //End block
         boolean varE79DF77F19DD1F1F6B53F87ADB408DD7_27403561 = (!collection.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1295832630 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1295832630;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Iterator<? extends E> it = collection.iterator();
+        //while (it.hasNext()) {
+            //add(location++, it.next());
+        //}
+        //return !collection.isEmpty();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.117 -0400", hash_original_method = "5B9E7BA75E1ADB49B9D7BF05321EEAAC", hash_generated_method = "C69094AE531324E916D6ECED92924926")
     @Override
     public void clear() {
         removeRange(0, size());
-        
-        
+        // ---------- Original Method ----------
+        //removeRange(0, size());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.117 -0400", hash_original_method = "FBFDCAC8150A508191130E5D508BCC64", hash_generated_method = "0E8895AB82B41B2948F782CA6FCB7C24")
     @Override
     public boolean equals(Object object) {
@@ -84,7 +82,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             boolean varB326B5062B2F0E69046810717534CB09_65289531 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1091202057 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1091202057;
-        } 
+        } //End block
     if(object instanceof List)        
         {
             List<?> list = (List<?>) object;
@@ -93,7 +91,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
                 boolean var68934A3E9455FA72420237EB05902327_1771328480 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475603966 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1475603966;
-            } 
+            } //End block
             Iterator<?> it1 = iterator();
             Iterator<?> it2 = list.iterator();
             while
@@ -106,41 +104,40 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
                     boolean var68934A3E9455FA72420237EB05902327_1212388183 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1612497649 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1612497649;
-                } 
-            } 
+                } //End block
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1827450424 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_987114677 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_987114677;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_70834694 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1536131054 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1536131054;
-        
-        
-            
-        
-        
-            
-            
-                
-            
-            
-            
-                
-                
-                    
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this == object) {
+            //return true;
+        //}
+        //if (object instanceof List) {
+            //List<?> list = (List<?>) object;
+            //if (list.size() != size()) {
+                //return false;
+            //}
+            //Iterator<?> it1 = iterator(), it2 = list.iterator();
+            //while (it1.hasNext()) {
+                //Object e1 = it1.next(), e2 = it2.next();
+                //if (!(e1 == null ? e2 == null : e1.equals(e2))) {
+                    //return false;
+                //}
+            //}
+            //return true;
+        //}
+        //return false;
     }
 
     
     public abstract E get(int location);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.118 -0400", hash_original_method = "4C126AEA105405AEB8FC6F1BC74D780D", hash_generated_method = "67287E27C3F5F4E402B45DE40BF38B62")
     @Override
     public int hashCode() {
@@ -151,22 +148,21 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         {
             Object object = it.next();
             result = (31 * result) + (object == null ? 0 : object.hashCode());
-        } 
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_753152343 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1124706850 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1124706850;
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int result = 1;
+        //Iterator<?> it = iterator();
+        //while (it.hasNext()) {
+            //Object object = it.next();
+            //result = (31 * result) + (object == null ? 0 : object.hashCode());
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.119 -0400", hash_original_method = "33CCCA11E9065665C3CB5AA775E1CF23", hash_generated_method = "596E791499AE4A35E1A9DD575B028A49")
     public int indexOf(Object object) {
         addTaint(object.getTaint());
@@ -181,9 +177,9 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
                     int var33BF225344C2DED44373E8C083BED386_1854481085 = (it.previousIndex());
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782872207 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782872207;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
             while
@@ -194,28 +190,28 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
                     int var33BF225344C2DED44373E8C083BED386_2107632756 = (it.previousIndex());
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1240318143 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1240318143;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1523018230 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126555861 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126555861;
-        
-        
-        
-            
-                
-                    
-                
-            
-        
-            
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //ListIterator<?> it = listIterator();
+        //if (object != null) {
+            //while (it.hasNext()) {
+                //if (object.equals(it.next())) {
+                    //return it.previousIndex();
+                //}
+            //}
+        //} else {
+            //while (it.hasNext()) {
+                //if (it.next() == null) {
+                    //return it.previousIndex();
+                //}
+            //}
+        //}
+        //return -1;
     }
 
     
@@ -225,12 +221,11 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 Iterator<E> var98A17F5C644EE571B50E8AB722E91624_657998174 =         new SimpleListIterator();
         var98A17F5C644EE571B50E8AB722E91624_657998174.addTaint(taint);
         return var98A17F5C644EE571B50E8AB722E91624_657998174;
-        
-        
+        // ---------- Original Method ----------
+        //return new SimpleListIterator();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.120 -0400", hash_original_method = "D9C6E95DB4589560C406CE5442E4EDF7", hash_generated_method = "A062C475A4C84EF79C0D19A776488387")
     public int lastIndexOf(Object object) {
         addTaint(object.getTaint());
@@ -245,9 +240,9 @@ Iterator<E> var98A17F5C644EE571B50E8AB722E91624_657998174 =         new SimpleLi
                     int varDF19B7939EE3E8ABC829FDBB0D9E1BDA_965719878 = (it.nextIndex());
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_655330772 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_655330772;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
             while
@@ -258,28 +253,28 @@ Iterator<E> var98A17F5C644EE571B50E8AB722E91624_657998174 =         new SimpleLi
                     int varDF19B7939EE3E8ABC829FDBB0D9E1BDA_1755463700 = (it.nextIndex());
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1676868044 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1676868044;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1452435985 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1217340688 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1217340688;
-        
-        
-        
-            
-                
-                    
-                
-            
-        
-            
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //ListIterator<?> it = listIterator(size());
+        //if (object != null) {
+            //while (it.hasPrevious()) {
+                //if (object.equals(it.previous())) {
+                    //return it.nextIndex();
+                //}
+            //}
+        //} else {
+            //while (it.hasPrevious()) {
+                //if (it.previous() == null) {
+                    //return it.nextIndex();
+                //}
+            //}
+        //}
+        //return -1;
     }
 
     
@@ -288,8 +283,8 @@ Iterator<E> var98A17F5C644EE571B50E8AB722E91624_657998174 =         new SimpleLi
 ListIterator<E> var68247D54D1DDB9E66659394CC1668C3F_1126882828 =         listIterator(0);
         var68247D54D1DDB9E66659394CC1668C3F_1126882828.addTaint(taint);
         return var68247D54D1DDB9E66659394CC1668C3F_1126882828;
-        
-        
+        // ---------- Original Method ----------
+        //return listIterator(0);
     }
 
     
@@ -299,8 +294,8 @@ ListIterator<E> var68247D54D1DDB9E66659394CC1668C3F_1126882828 =         listIte
 ListIterator<E> varA850735745ADA094DBCC6D2BBBE0CA4F_1219493974 =         new FullListIterator(location);
         varA850735745ADA094DBCC6D2BBBE0CA4F_1219493974.addTaint(taint);
         return varA850735745ADA094DBCC6D2BBBE0CA4F_1219493974;
-        
-        
+        // ---------- Original Method ----------
+        //return new FullListIterator(location);
     }
 
     
@@ -310,12 +305,11 @@ ListIterator<E> varA850735745ADA094DBCC6D2BBBE0CA4F_1219493974 =         new Ful
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1222505699 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1222505699.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1222505699;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.122 -0400", hash_original_method = "D592F953402A10CA44AACBE4A2DEE99F", hash_generated_method = "6D6A2347514B81060D28B96CAA380E0C")
     protected void removeRange(int start, int end) {
         addTaint(end);
@@ -325,13 +319,13 @@ for(int i = start;i < end;i++)
         {
             it.next();
             it.remove();
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Iterator<?> it = listIterator(start);
+        //for (int i = start; i < end; i++) {
+            //it.next();
+            //it.remove();
+        //}
     }
 
     
@@ -342,8 +336,8 @@ for(int i = start;i < end;i++)
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2043364943 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2043364943.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2043364943;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -360,29 +354,29 @@ for(int i = start;i < end;i++)
 List<E> var21D5C34678B5990E6FC59B29CAC52CEA_269738487 =                     new SubAbstractListRandomAccess<E>(this, start, end);
                     var21D5C34678B5990E6FC59B29CAC52CEA_269738487.addTaint(taint);
                     return var21D5C34678B5990E6FC59B29CAC52CEA_269738487;
-                } 
+                } //End block
 List<E> var9E0FEF79CE79E4D53BC7ACDCF4F364A1_1454434323 =                 new SubAbstractList<E>(this, start, end);
                 var9E0FEF79CE79E4D53BC7ACDCF4F364A1_1454434323.addTaint(taint);
                 return var9E0FEF79CE79E4D53BC7ACDCF4F364A1_1454434323;
-            } 
+            } //End block
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_2102391898 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_2102391898.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_2102391898;
-        } 
+        } //End block
         IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_53042837 = new IndexOutOfBoundsException();
         varE4A00D3DB3B35ED0F12562B8AA17377A_53042837.addTaint(taint);
         throw varE4A00D3DB3B35ED0F12562B8AA17377A_53042837;
-        
-        
-            
-                
-                    
-                
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (start >= 0 && end <= size()) {
+            //if (start <= end) {
+                //if (this instanceof RandomAccess) {
+                    //return new SubAbstractListRandomAccess<E>(this, start, end);
+                //}
+                //return new SubAbstractList<E>(this, start, end);
+            //}
+            //throw new IllegalArgumentException();
+        //}
+        //throw new IndexOutOfBoundsException();
     }
 
     
@@ -400,8 +394,8 @@ List<E> var9E0FEF79CE79E4D53BC7ACDCF4F364A1_1454434323 =                 new Sub
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.124 -0400", hash_original_method = "490F53403E14C3D703A2316B7D58EECE", hash_generated_method = "521DE0FD8E86B0B1E4563974AFB0BE5F")
           SimpleListIterator() {
             expectedModCount = modCount;
-            
-            
+            // ---------- Original Method ----------
+            //expectedModCount = modCount;
         }
 
         
@@ -410,8 +404,8 @@ List<E> var9E0FEF79CE79E4D53BC7ACDCF4F364A1_1454434323 =                 new Sub
             boolean varEDD3AC44D37300E88D8459F78FCEAE5A_1218211374 = (pos + 1 < size());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1050752382 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1050752382;
-            
-            
+            // ---------- Original Method ----------
+            //return pos + 1 < size();
         }
 
         
@@ -426,28 +420,28 @@ List<E> var9E0FEF79CE79E4D53BC7ACDCF4F364A1_1454434323 =                 new Sub
 E varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057 =                     result;
                     varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057.addTaint(taint);
                     return varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057;
-                } 
+                } //End block
                 catch (IndexOutOfBoundsException e)
                 {
                     NoSuchElementException var28D00AB599969908D71F102AF992D49A_1253122136 = new NoSuchElementException();
                     var28D00AB599969908D71F102AF992D49A_1253122136.addTaint(taint);
                     throw var28D00AB599969908D71F102AF992D49A_1253122136;
-                } 
-            } 
+                } //End block
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_389481187 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_389481187.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_389481187;
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (expectedModCount == modCount) {
+                //try {
+                    //E result = get(pos + 1);
+                    //lastPosition = ++pos;
+                    //return result;
+                //} catch (IndexOutOfBoundsException e) {
+                    //throw new NoSuchElementException();
+                //}
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
@@ -458,46 +452,46 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057 =                     result;
                 IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1661624403 = new IllegalStateException();
                 varC311A989A119B96A6232C22ABFE87C25_1661624403.addTaint(taint);
                 throw varC311A989A119B96A6232C22ABFE87C25_1661624403;
-            } 
+            } //End block
     if(expectedModCount != modCount)            
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_158127266 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_158127266.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_158127266;
-            } 
+            } //End block
             try 
             {
                 AbstractList.this.remove(lastPosition);
-            } 
+            } //End block
             catch (IndexOutOfBoundsException e)
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_127837634 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_127837634.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_127837634;
-            } 
+            } //End block
             expectedModCount = modCount;
     if(pos == lastPosition)            
             {
                 pos--;
-            } 
+            } //End block
             lastPosition = -1;
-            
-            
-                
-            
-            
-                
-            
-            
-                
-            
-                
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (this.lastPosition == -1) {
+                //throw new IllegalStateException();
+            //}
+            //if (expectedModCount != modCount) {
+                //throw new ConcurrentModificationException();
+            //}
+            //try {
+                //AbstractList.this.remove(lastPosition);
+            //} catch (IndexOutOfBoundsException e) {
+                //throw new ConcurrentModificationException();
+            //}
+            //expectedModCount = modCount;
+            //if (pos == lastPosition) {
+                //pos--;
+            //}
+            //lastPosition = -1;
         }
 
         
@@ -513,19 +507,19 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057 =                     result;
     if(start >= 0 && start <= size())            
             {
                 pos = start - 1;
-            } 
+            } //End block
             else
             {
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_936049458 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_936049458.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_936049458;
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (start >= 0 && start <= size()) {
+                //pos = start - 1;
+            //} else {
+                //throw new IndexOutOfBoundsException();
+            //}
         }
 
         
@@ -537,63 +531,61 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057 =                     result;
                 try 
                 {
                     AbstractList.this.add(pos + 1, object);
-                } 
+                } //End block
                 catch (IndexOutOfBoundsException e)
                 {
                     NoSuchElementException var28D00AB599969908D71F102AF992D49A_1875539083 = new NoSuchElementException();
                     var28D00AB599969908D71F102AF992D49A_1875539083.addTaint(taint);
                     throw var28D00AB599969908D71F102AF992D49A_1875539083;
-                } 
+                } //End block
                 pos++;
                 lastPosition = -1;
     if(modCount != expectedModCount)                
                 {
                     expectedModCount = modCount;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1723426690 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_1723426690.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_1723426690;
-            } 
-            
-            
-                
-                    
-                
-                    
-                
-                
-                
-                
-                    
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (expectedModCount == modCount) {
+                //try {
+                    //AbstractList.this.add(pos + 1, object);
+                //} catch (IndexOutOfBoundsException e) {
+                    //throw new NoSuchElementException();
+                //}
+                //pos++;
+                //lastPosition = -1;
+                //if (modCount != expectedModCount) {
+                    //expectedModCount = modCount;
+                //}
+            //} else {
+                //throw new ConcurrentModificationException();
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.127 -0400", hash_original_method = "9E39925604BB7D82864E9E0B4A9B04C9", hash_generated_method = "CBBBC0A7F7B8021869A19A5DB5F09291")
         public boolean hasPrevious() {
             boolean var716A4D992467E57E8EC4184695D584B8_1067398531 = (pos >= 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1213401545 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1213401545;
-            
-            
+            // ---------- Original Method ----------
+            //return pos >= 0;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.127 -0400", hash_original_method = "1B59C01DCB2067B0BBD0025D75B60071", hash_generated_method = "5977224826A5C2880FAC6FA6DE9CE73D")
         public int nextIndex() {
             int varF9B06598B7E41FEBC3492F881D35DA6D_1152113754 = (pos + 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_99822351 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_99822351;
-            
-            
+            // ---------- Original Method ----------
+            //return pos + 1;
         }
 
         
@@ -609,40 +601,39 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1534174057 =                     result;
 E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
                     varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623.addTaint(taint);
                     return varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623;
-                } 
+                } //End block
                 catch (IndexOutOfBoundsException e)
                 {
                     NoSuchElementException var28D00AB599969908D71F102AF992D49A_1498726188 = new NoSuchElementException();
                     var28D00AB599969908D71F102AF992D49A_1498726188.addTaint(taint);
                     throw var28D00AB599969908D71F102AF992D49A_1498726188;
-                } 
-            } 
+                } //End block
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1249145853 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_1249145853.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_1249145853;
-            
-            
-                
-                    
-                    
-                    
-                    
-                
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (expectedModCount == modCount) {
+                //try {
+                    //E result = get(pos);
+                    //lastPosition = pos;
+                    //pos--;
+                    //return result;
+                //} catch (IndexOutOfBoundsException e) {
+                    //throw new NoSuchElementException();
+                //}
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.128 -0400", hash_original_method = "DC75AA0325D63F3F64774210ED43B204", hash_generated_method = "3A98FE066B33FCF746F0494BDF97CE51")
         public int previousIndex() {
             int var5E0BDCBDDCCCA4D66D74BA8C1CEE1A68_910777287 = (pos);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617496970 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617496970;
-            
-            
+            // ---------- Original Method ----------
+            //return pos;
         }
 
         
@@ -654,30 +645,30 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
                 try 
                 {
                     AbstractList.this.set(lastPosition, object);
-                } 
+                } //End block
                 catch (IndexOutOfBoundsException e)
                 {
                     IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1679188100 = new IllegalStateException();
                     varC311A989A119B96A6232C22ABFE87C25_1679188100.addTaint(taint);
                     throw varC311A989A119B96A6232C22ABFE87C25_1679188100;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_772160981 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_772160981.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_772160981;
-            } 
-            
-            
-                
-                    
-                
-                    
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (expectedModCount == modCount) {
+                //try {
+                    //AbstractList.this.set(lastPosition, object);
+                //} catch (IndexOutOfBoundsException e) {
+                    //throw new IllegalStateException();
+                //}
+            //} else {
+                //throw new ConcurrentModificationException();
+            //}
         }
 
         
@@ -693,7 +684,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
             addTaint(end);
             addTaint(start);
             addTaint(list.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -718,11 +709,11 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
             modCount = fullList.modCount;
             offset = start;
             size = end - start;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //fullList = list;
+            //modCount = fullList.modCount;
+            //offset = start;
+            //size = end - start;
         }
 
         
@@ -738,32 +729,32 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
                     fullList.add(location + offset, object);
                     size++;
                     modCount = fullList.modCount;
-                } 
+                } //End block
                 else
                 {
                     IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1851606777 = new IndexOutOfBoundsException();
                     varE4A00D3DB3B35ED0F12562B8AA17377A_1851606777.addTaint(taint);
                     throw varE4A00D3DB3B35ED0F12562B8AA17377A_1851606777;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1630319442 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_1630319442.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_1630319442;
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (modCount == fullList.modCount) {
+                //if (location >= 0 && location <= size) {
+                    //fullList.add(location + offset, object);
+                    //size++;
+                    //modCount = fullList.modCount;
+                //} else {
+                    //throw new IndexOutOfBoundsException();
+                //}
+            //} else {
+                //throw new ConcurrentModificationException();
+            //}
         }
 
         
@@ -781,32 +772,32 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
                     {
                         size += collection.size();
                         modCount = fullList.modCount;
-                    } 
+                    } //End block
                     boolean varB4A88417B3D0170D754C647C30B7216A_1890240043 = (result);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060478521 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060478521;
-                } 
+                } //End block
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1246053953 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_1246053953.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_1246053953;
-            } 
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_697573375 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_697573375.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_697573375;
-            
-            
-                
-                    
-                            
-                    
-                        
-                        
-                    
-                    
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (modCount == fullList.modCount) {
+                //if (location >= 0 && location <= size) {
+                    //boolean result = fullList.addAll(location + offset,
+                            //collection);
+                    //if (result) {
+                        //size += collection.size();
+                        //modCount = fullList.modCount;
+                    //}
+                    //return result;
+                //}
+                //throw new IndexOutOfBoundsException();
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
@@ -820,24 +811,24 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
                 {
                     size += collection.size();
                     modCount = fullList.modCount;
-                } 
+                } //End block
                 boolean varB4A88417B3D0170D754C647C30B7216A_2081379821 = (result);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_483841294 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_483841294;
-            } 
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_2116242960 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_2116242960.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_2116242960;
-            
-            
-                
-                
-                    
-                    
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (modCount == fullList.modCount) {
+                //boolean result = fullList.addAll(offset + size, collection);
+                //if (result) {
+                    //size += collection.size();
+                    //modCount = fullList.modCount;
+                //}
+                //return result;
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
@@ -852,22 +843,22 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1679428623 =                     result;
 E var766ACCB0072F190CABC18A57CF6D40BA_1737257189 =                     fullList.get(location + offset);
                     var766ACCB0072F190CABC18A57CF6D40BA_1737257189.addTaint(taint);
                     return var766ACCB0072F190CABC18A57CF6D40BA_1737257189;
-                } 
+                } //End block
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_78477243 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_78477243.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_78477243;
-            } 
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_918269761 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_918269761.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_918269761;
-            
-            
-                
-                    
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (modCount == fullList.modCount) {
+                //if (location >= 0 && location < size) {
+                    //return fullList.get(location + offset);
+                //}
+                //throw new IndexOutOfBoundsException();
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
@@ -877,8 +868,8 @@ E var766ACCB0072F190CABC18A57CF6D40BA_1737257189 =                     fullList.
 Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_1782679809 =             listIterator(0);
             var68247D54D1DDB9E66659394CC1668C3F_1782679809.addTaint(taint);
             return var68247D54D1DDB9E66659394CC1668C3F_1782679809;
-            
-            
+            // ---------- Original Method ----------
+            //return listIterator(0);
         }
 
         
@@ -895,24 +886,24 @@ ListIterator<E> varB9B1B3D6EADC76A9BB5951AEEBCC5ACB_503979359 =                 
                             size);
                     varB9B1B3D6EADC76A9BB5951AEEBCC5ACB_503979359.addTaint(taint);
                     return varB9B1B3D6EADC76A9BB5951AEEBCC5ACB_503979359;
-                } 
+                } //End block
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1103053149 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_1103053149.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_1103053149;
-            } 
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_451875398 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_451875398.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_451875398;
-            
-            
-                
-                    
-                            
-                            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (modCount == fullList.modCount) {
+                //if (location >= 0 && location <= size) {
+                    //return new SubAbstractListIterator<E>(fullList
+                            //.listIterator(location + offset), this, offset,
+                            //size);
+                //}
+                //throw new IndexOutOfBoundsException();
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
@@ -930,25 +921,25 @@ ListIterator<E> varB9B1B3D6EADC76A9BB5951AEEBCC5ACB_503979359 =                 
 E varDC838461EE2FA0CA4C9BBB70A15456B0_1832923235 =                     result;
                     varDC838461EE2FA0CA4C9BBB70A15456B0_1832923235.addTaint(taint);
                     return varDC838461EE2FA0CA4C9BBB70A15456B0_1832923235;
-                } 
+                } //End block
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_2122227656 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_2122227656.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_2122227656;
-            } 
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1624277930 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_1624277930.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_1624277930;
-            
-            
-                
-                    
-                    
-                    
-                    
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (modCount == fullList.modCount) {
+                //if (location >= 0 && location < size) {
+                    //E result = fullList.remove(location + offset);
+                    //size--;
+                    //modCount = fullList.modCount;
+                    //return result;
+                //}
+                //throw new IndexOutOfBoundsException();
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
@@ -962,24 +953,24 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1832923235 =                     result;
                     fullList.removeRange(start + offset, end + offset);
                     size -= end - start;
                     modCount = fullList.modCount;
-                } 
+                } //End block
                 else
                 {
                     ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_173700580 = new ConcurrentModificationException();
                     var779BA6969BD29E5F2D0448781C543B65_173700580.addTaint(taint);
                     throw var779BA6969BD29E5F2D0448781C543B65_173700580;
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //if (start != end) {
+                //if (modCount == fullList.modCount) {
+                    //fullList.removeRange(start + offset, end + offset);
+                    //size -= end - start;
+                    //modCount = fullList.modCount;
+                //} else {
+                    //throw new ConcurrentModificationException();
+                //}
+            //}
         }
 
         
@@ -995,22 +986,22 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1832923235 =                     result;
 E var95CF0C14865F4C7BC0EBAE627CB27751_1760887204 =                     fullList.set(location + offset, object);
                     var95CF0C14865F4C7BC0EBAE627CB27751_1760887204.addTaint(taint);
                     return var95CF0C14865F4C7BC0EBAE627CB27751_1760887204;
-                } 
+                } //End block
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_282089428 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_282089428.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_282089428;
-            } 
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_617960047 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_617960047.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_617960047;
-            
-            
-                
-                    
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (modCount == fullList.modCount) {
+                //if (location >= 0 && location < size) {
+                    //return fullList.set(location + offset, object);
+                //}
+                //throw new IndexOutOfBoundsException();
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
@@ -1022,38 +1013,37 @@ E var95CF0C14865F4C7BC0EBAE627CB27751_1760887204 =                     fullList.
                 int varF7BD60B75B29D79B660A2859395C1A24_1540133779 = (size);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1981086032 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1981086032;
-            } 
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_927162320 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_927162320.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_927162320;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (modCount == fullList.modCount) {
+                //return size;
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.137 -0400", hash_original_method = "E4C79C12269E967D1174070754018639", hash_generated_method = "9CDE73BCB1714573BB8FFEB74FFC6CC6")
          void sizeChanged(boolean increment) {
             addTaint(increment);
     if(increment)            
             {
                 size++;
-            } 
+            } //End block
             else
             {
                 size--;
-            } 
+            } //End block
             modCount = fullList.modCount;
-            
-            
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (increment) {
+                //size++;
+            //} else {
+                //size--;
+            //}
+            //modCount = fullList.modCount;
         }
 
         
@@ -1078,11 +1068,11 @@ E var95CF0C14865F4C7BC0EBAE627CB27751_1760887204 =                     fullList.
                 subList = list;
                 start = offset;
                 end = start + length;
-                
-                
-                
-                
-                
+                // ---------- Original Method ----------
+                //iterator = it;
+                //subList = list;
+                //start = offset;
+                //end = start + length;
             }
 
             
@@ -1092,10 +1082,10 @@ E var95CF0C14865F4C7BC0EBAE627CB27751_1760887204 =                     fullList.
                 iterator.add(object);
                 subList.sizeChanged(true);
                 end++;
-                
-                
-                
-                
+                // ---------- Original Method ----------
+                //iterator.add(object);
+                //subList.sizeChanged(true);
+                //end++;
             }
 
             
@@ -1104,8 +1094,8 @@ E var95CF0C14865F4C7BC0EBAE627CB27751_1760887204 =                     fullList.
                 boolean var9795C4C630380B412A0C598E1FF40E06_713945979 = (iterator.nextIndex() < end);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2101865990 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2101865990;
-                
-                
+                // ---------- Original Method ----------
+                //return iterator.nextIndex() < end;
             }
 
             
@@ -1114,8 +1104,8 @@ E var95CF0C14865F4C7BC0EBAE627CB27751_1760887204 =                     fullList.
                 boolean varCE4946704927622E8B6F55CBCF1F309D_1649447700 = (iterator.previousIndex() >= start);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_288371242 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_288371242;
-                
-                
+                // ---------- Original Method ----------
+                //return iterator.previousIndex() >= start;
             }
 
             
@@ -1126,15 +1116,15 @@ E var95CF0C14865F4C7BC0EBAE627CB27751_1760887204 =                     fullList.
 E var862BD85102BDD28E8A3902D84E203428_1845457169 =                     iterator.next();
                     var862BD85102BDD28E8A3902D84E203428_1845457169.addTaint(taint);
                     return var862BD85102BDD28E8A3902D84E203428_1845457169;
-                } 
+                } //End block
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_7896256 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_7896256.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_7896256;
-                
-                
-                    
-                
-                
+                // ---------- Original Method ----------
+                //if (iterator.nextIndex() < end) {
+                    //return iterator.next();
+                //}
+                //throw new NoSuchElementException();
             }
 
             
@@ -1143,8 +1133,8 @@ E var862BD85102BDD28E8A3902D84E203428_1845457169 =                     iterator.
                 int var8CB4CF713F171A10EB813B23DAFB77B0_1263700363 = (iterator.nextIndex() - start);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_524329782 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_524329782;
-                
-                
+                // ---------- Original Method ----------
+                //return iterator.nextIndex() - start;
             }
 
             
@@ -1155,15 +1145,15 @@ E var862BD85102BDD28E8A3902D84E203428_1845457169 =                     iterator.
 E var31413FEE771C499A1C4BF17C156DB014_1490393510 =                     iterator.previous();
                     var31413FEE771C499A1C4BF17C156DB014_1490393510.addTaint(taint);
                     return var31413FEE771C499A1C4BF17C156DB014_1490393510;
-                } 
+                } //End block
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_747728422 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_747728422.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_747728422;
-                
-                
-                    
-                
-                
+                // ---------- Original Method ----------
+                //if (iterator.previousIndex() >= start) {
+                    //return iterator.previous();
+                //}
+                //throw new NoSuchElementException();
             }
 
             
@@ -1175,16 +1165,16 @@ E var31413FEE771C499A1C4BF17C156DB014_1490393510 =                     iterator.
                     int var14BA67E0E85B96CD715DE8413CDF52DE_1466335523 = (previous - start);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_706989265 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_706989265;
-                } 
+                } //End block
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_264848395 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_590044125 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_590044125;
-                
-                
-                
-                    
-                
-                
+                // ---------- Original Method ----------
+                //int previous = iterator.previousIndex();
+                //if (previous >= start) {
+                    //return previous - start;
+                //}
+                //return -1;
             }
 
             
@@ -1193,10 +1183,10 @@ E var31413FEE771C499A1C4BF17C156DB014_1490393510 =                     iterator.
                 iterator.remove();
                 subList.sizeChanged(false);
                 end--;
-                
-                
-                
-                
+                // ---------- Original Method ----------
+                //iterator.remove();
+                //subList.sizeChanged(false);
+                //end--;
             }
 
             
@@ -1204,8 +1194,8 @@ E var31413FEE771C499A1C4BF17C156DB014_1490393510 =                     iterator.
             public void set(E object) {
                 addTaint(object.getTaint());
                 iterator.set(object);
-                
-                
+                // ---------- Original Method ----------
+                //iterator.set(object);
             }
 
             

@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,7 +28,7 @@ public class NetworkState implements Parcelable {
         addTaint(linkCapabilities.getTaint());
         addTaint(linkProperties.getTaint());
         addTaint(networkInfo.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,11 +39,11 @@ public class NetworkState implements Parcelable {
         this.linkProperties = linkProperties;
         this.linkCapabilities = linkCapabilities;
         this.subscriberId = subscriberId;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.networkInfo = networkInfo;
+        //this.linkProperties = linkProperties;
+        //this.linkCapabilities = linkCapabilities;
+        //this.subscriberId = subscriberId;
     }
 
     
@@ -53,26 +53,24 @@ public class NetworkState implements Parcelable {
         linkProperties = in.readParcelable(null);
         linkCapabilities = in.readParcelable(null);
         subscriberId = in.readString();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //networkInfo = in.readParcelable(null);
+        //linkProperties = in.readParcelable(null);
+        //linkCapabilities = in.readParcelable(null);
+        //subscriberId = in.readString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.861 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BF984915C2516708770973A7C48AB7E9")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2117948349 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1215297583 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1215297583;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.862 -0400", hash_original_method = "EF66345FC72BF78BF99044E19149D234", hash_generated_method = "48A4DC19AEE40DD53090FA15BD129CC8")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -81,11 +79,11 @@ public class NetworkState implements Parcelable {
         out.writeParcelable(linkProperties, flags);
         out.writeParcelable(linkCapabilities, flags);
         out.writeString(subscriberId);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeParcelable(networkInfo, flags);
+        //out.writeParcelable(linkProperties, flags);
+        //out.writeParcelable(linkCapabilities, flags);
+        //out.writeString(subscriberId);
     }
 
     
@@ -100,12 +98,12 @@ public class NetworkState implements Parcelable {
             return new NetworkState[size];
         }
     };
-    
+    // orphaned legacy method
     public NetworkState createFromParcel(Parcel in) {
             return new NetworkState(in);
         }
     
-    
+    // orphaned legacy method
     public NetworkState[] newArray(int size) {
             return new NetworkState[size];
         }

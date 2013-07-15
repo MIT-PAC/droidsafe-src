@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.dom;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,8 +29,8 @@ public abstract class NodeImpl implements Node {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.907 -0400", hash_original_method = "A803585FEFBC6246911A956CA607D5CA", hash_generated_method = "9F50EA75A2AED9D57A4F24B1458FBC54")
       NodeImpl(DocumentImpl document) {
         this.document = document;
-        
-        
+        // ---------- Original Method ----------
+        //this.document = document;
     }
 
     
@@ -40,8 +40,8 @@ public abstract class NodeImpl implements Node {
         DOMException varB08FA5F9049CD84DC42B7238D3D303A7_217708046 = new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         varB08FA5F9049CD84DC42B7238D3D303A7_217708046.addTaint(taint);
         throw varB08FA5F9049CD84DC42B7238D3D303A7_217708046;
-        
-        
+        // ---------- Original Method ----------
+        //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
     
@@ -51,110 +51,101 @@ public abstract class NodeImpl implements Node {
 Node var04421AF73B134EC262B05FD2063BE675_1490019355 =         document.cloneOrImportNode(UserDataHandler.NODE_CLONED, this, deep);
         var04421AF73B134EC262B05FD2063BE675_1490019355.addTaint(taint);
         return var04421AF73B134EC262B05FD2063BE675_1490019355;
-        
-        
+        // ---------- Original Method ----------
+        //return document.cloneOrImportNode(UserDataHandler.NODE_CLONED, this, deep);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.908 -0400", hash_original_method = "E2D79625FBECAF1E43447A0BEFC228B9", hash_generated_method = "1DF95FE702AD0C2788282E89BACFC3A4")
     public NamedNodeMap getAttributes() {
 NamedNodeMap var540C13E9E156B687226421B24F2DF178_1199673869 =         null;
         var540C13E9E156B687226421B24F2DF178_1199673869.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1199673869;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.909 -0400", hash_original_method = "1F381BCE8228355FEE86D697E02DDE0B", hash_generated_method = "679135F5F481434F93D07E3CE4B3807E")
     public NodeList getChildNodes() {
 NodeList var3EB787547078B98C6DA0C5CC8DE617C5_1991701219 =         EMPTY_LIST;
         var3EB787547078B98C6DA0C5CC8DE617C5_1991701219.addTaint(taint);
         return var3EB787547078B98C6DA0C5CC8DE617C5_1991701219;
-        
-        
+        // ---------- Original Method ----------
+        //return EMPTY_LIST;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.909 -0400", hash_original_method = "DB31E0DD76C8C1947AB843730A5D8205", hash_generated_method = "2FC877E310B02DBC7D493C058A738FB6")
     public Node getFirstChild() {
 Node var540C13E9E156B687226421B24F2DF178_404572476 =         null;
         var540C13E9E156B687226421B24F2DF178_404572476.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_404572476;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.909 -0400", hash_original_method = "6070A4A9C5DDD0223B459D45F6FD5CBB", hash_generated_method = "8B6A7CABB2C134EC403EBD5A51AD6654")
     public Node getLastChild() {
 Node var540C13E9E156B687226421B24F2DF178_233173598 =         null;
         var540C13E9E156B687226421B24F2DF178_233173598.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_233173598;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.910 -0400", hash_original_method = "DEB04882A70946FEC78DD7AD3ABDE01B", hash_generated_method = "C22C25E4A827337F9D32B78AC188BCDF")
     public String getLocalName() {
 String var540C13E9E156B687226421B24F2DF178_127657537 =         null;
         var540C13E9E156B687226421B24F2DF178_127657537.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_127657537;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.910 -0400", hash_original_method = "4D95F58ABD4076A5B25FED87E28A6FD8", hash_generated_method = "4F1A8C51DCA420F879FF94FBD14F2F3B")
     public String getNamespaceURI() {
 String var540C13E9E156B687226421B24F2DF178_1088551392 =         null;
         var540C13E9E156B687226421B24F2DF178_1088551392.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1088551392;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.911 -0400", hash_original_method = "D23B45CE7514A5E8C576F43815BA5C75", hash_generated_method = "AE580892C6D47393E1C952F993BA9E5C")
     public Node getNextSibling() {
 Node var540C13E9E156B687226421B24F2DF178_323817441 =         null;
         var540C13E9E156B687226421B24F2DF178_323817441.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_323817441;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.911 -0400", hash_original_method = "FDA68CAC7DBE692AD654EACCAEB8ADF4", hash_generated_method = "9F6491B52D3FE1C72F2CA7E683A29B53")
     public String getNodeName() {
 String var540C13E9E156B687226421B24F2DF178_168399330 =         null;
         var540C13E9E156B687226421B24F2DF178_168399330.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_168399330;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
     public abstract short getNodeType();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.912 -0400", hash_original_method = "5D533F6B29FA017DED37EB54506CEFCE", hash_generated_method = "229F122FC47667268C6F74FA040D1FB1")
     public String getNodeValue() throws DOMException {
 String var540C13E9E156B687226421B24F2DF178_566073849 =         null;
         var540C13E9E156B687226421B24F2DF178_566073849.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_566073849;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
@@ -163,63 +154,58 @@ String var540C13E9E156B687226421B24F2DF178_566073849 =         null;
 Document var8A49EDE76E6856D243C546DB784C50EC_1767911814 =         document == this ? null : document;
         var8A49EDE76E6856D243C546DB784C50EC_1767911814.addTaint(taint);
         return var8A49EDE76E6856D243C546DB784C50EC_1767911814;
-        
-        
+        // ---------- Original Method ----------
+        //return document == this ? null : document;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.913 -0400", hash_original_method = "2F661FBCA438408BEACED1A87A3CFAEE", hash_generated_method = "6A19A0A51E4BF35CBBA5E63DF0433359")
     public Node getParentNode() {
 Node var540C13E9E156B687226421B24F2DF178_1523835501 =         null;
         var540C13E9E156B687226421B24F2DF178_1523835501.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1523835501;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.913 -0400", hash_original_method = "727413C23E49E727D2327332BBC1F81A", hash_generated_method = "E0904129E0B701998027B8FAB7294215")
     public String getPrefix() {
 String var540C13E9E156B687226421B24F2DF178_1083709204 =         null;
         var540C13E9E156B687226421B24F2DF178_1083709204.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1083709204;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.914 -0400", hash_original_method = "70F44FC98E437F8103C8C034DB4ECB33", hash_generated_method = "0DDFB3055ED30E353182BBEC89B06C8D")
     public Node getPreviousSibling() {
 Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
         var540C13E9E156B687226421B24F2DF178_850895892.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_850895892;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.914 -0400", hash_original_method = "B7795536C66ABB4718F9ED686281788D", hash_generated_method = "6469C6CFB6D0FD0A5C3F712C4002D7C5")
     public boolean hasAttributes() {
         boolean var68934A3E9455FA72420237EB05902327_1966388166 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057266776 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057266776;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.914 -0400", hash_original_method = "75BC1F0CD3DD7ADF1C7C374A2270CAC3", hash_generated_method = "0AF5D34511BFF1E0589C1E137EE44F92")
     public boolean hasChildNodes() {
         boolean var68934A3E9455FA72420237EB05902327_349197934 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_637730941 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_637730941;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -230,8 +216,8 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
         DOMException varB08FA5F9049CD84DC42B7238D3D303A7_76658988 = new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         varB08FA5F9049CD84DC42B7238D3D303A7_76658988.addTaint(taint);
         throw varB08FA5F9049CD84DC42B7238D3D303A7_76658988;
-        
-        
+        // ---------- Original Method ----------
+        //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
     
@@ -242,15 +228,14 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
         boolean varA7FDD0EF468A82511F267BB626337ADB_59760066 = (DOMImplementationImpl.getInstance().hasFeature(feature, version));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308750116 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308750116;
-        
-        
+        // ---------- Original Method ----------
+        //return DOMImplementationImpl.getInstance().hasFeature(feature, version);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.916 -0400", hash_original_method = "6E21C006D39E2D7D2AB395E9723D1D3D", hash_generated_method = "AAB79EA75709AFAC418FB3A2AD6C8459")
     public void normalize() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -260,8 +245,8 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
         DOMException varB08FA5F9049CD84DC42B7238D3D303A7_1663903085 = new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         varB08FA5F9049CD84DC42B7238D3D303A7_1663903085.addTaint(taint);
         throw varB08FA5F9049CD84DC42B7238D3D303A7_1663903085;
-        
-        
+        // ---------- Original Method ----------
+        //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
     
@@ -272,8 +257,8 @@ Node var540C13E9E156B687226421B24F2DF178_850895892 =         null;
         DOMException varB08FA5F9049CD84DC42B7238D3D303A7_1151671109 = new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
         varB08FA5F9049CD84DC42B7238D3D303A7_1151671109.addTaint(taint);
         throw varB08FA5F9049CD84DC42B7238D3D303A7_1151671109;
-        
-        
+        // ---------- Original Method ----------
+        //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
     
@@ -306,16 +291,15 @@ switch(getNodeType()){
         var27285F41C0EC27EB44BA0E5E07EE31A9_742624893.addTaint(taint);
         throw var27285F41C0EC27EB44BA0E5E07EE31A9_742624893;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.917 -0400", hash_original_method = "534A727E4FDB6CDBB5DC8BBEFB80CC50", hash_generated_method = "6394A903E9072527732E970BA56A5453")
     public void setPrefix(String prefix) throws DOMException {
         addTaint(prefix.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -421,30 +405,30 @@ String var8C6C2AA139A5D5DCA0571B7FCE33A53A_2081762519 =         sanitizeUri(((Do
 String varDFCB5250C05033781B180FAD67727786_975944136 =                 getParentBaseUri();
                 varDFCB5250C05033781B180FAD67727786_975944136.addTaint(taint);
                 return varDFCB5250C05033781B180FAD67727786_975944136;
-            } 
+            } //End block
     if(new URI(uri).isAbsolute())            
             {
 String varD12B663A5EB2F9B068EED08B4C05ECCC_1947103527 =                 uri;
                 varD12B663A5EB2F9B068EED08B4C05ECCC_1947103527.addTaint(taint);
                 return varD12B663A5EB2F9B068EED08B4C05ECCC_1947103527;
-            } 
+            } //End block
             String parentUri = getParentBaseUri();
     if(parentUri == null)            
             {
 String var540C13E9E156B687226421B24F2DF178_1343158180 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1343158180.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1343158180;
-            } 
+            } //End block
 String varC92DD9F13100E39CEEEBFB08A9BFC0CA_537296053 =             new URI(parentUri).resolve(uri).toString();
             varC92DD9F13100E39CEEEBFB08A9BFC0CA_537296053.addTaint(taint);
             return varC92DD9F13100E39CEEEBFB08A9BFC0CA_537296053;
-        } 
+        } //End block
         catch (URISyntaxException e)
         {
 String var540C13E9E156B687226421B24F2DF178_2050736372 =             null;
             var540C13E9E156B687226421B24F2DF178_2050736372.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2050736372;
-        } 
+        } //End block
         case PROCESSING_INSTRUCTION_NODE:
 String varDFCB5250C05033781B180FAD67727786_1185006150 =         getParentBaseUri();
         varDFCB5250C05033781B180FAD67727786_1185006150.addTaint(taint);
@@ -473,8 +457,8 @@ String var540C13E9E156B687226421B24F2DF178_1809667097 =         null;
         var27285F41C0EC27EB44BA0E5E07EE31A9_36320437.addTaint(taint);
         throw var27285F41C0EC27EB44BA0E5E07EE31A9_36320437;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -484,9 +468,9 @@ String var540C13E9E156B687226421B24F2DF178_1809667097 =         null;
 String var9F008E4670FF2B5D32F29108A858BFF8_1676128504 =         parentNode != null ? parentNode.getBaseURI() : null;
         var9F008E4670FF2B5D32F29108A858BFF8_1676128504.addTaint(taint);
         return var9F008E4670FF2B5D32F29108A858BFF8_1676128504;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Node parentNode = getParentNode();
+        //return parentNode != null ? parentNode.getBaseURI() : null;
     }
 
     
@@ -498,28 +482,28 @@ String var9F008E4670FF2B5D32F29108A858BFF8_1676128504 =         parentNode != nu
 String var540C13E9E156B687226421B24F2DF178_547713331 =             null;
             var540C13E9E156B687226421B24F2DF178_547713331.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_547713331;
-        } 
+        } //End block
         try 
         {
 String var0370934740A23317A971FB463A48421D_1007119447 =             new URI(uri).toString();
             var0370934740A23317A971FB463A48421D_1007119447.addTaint(taint);
             return var0370934740A23317A971FB463A48421D_1007119447;
-        } 
+        } //End block
         catch (URISyntaxException e)
         {
 String var540C13E9E156B687226421B24F2DF178_1612418045 =             null;
             var540C13E9E156B687226421B24F2DF178_1612418045.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1612418045;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (uri == null || uri.length() == 0) {
+            //return null;
+        //}
+        //try {
+            //return new URI(uri).toString();
+        //} catch (URISyntaxException e) {
+            //return null;
+        //}
     }
 
     
@@ -529,8 +513,8 @@ String var540C13E9E156B687226421B24F2DF178_1612418045 =             null;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_379506800 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_379506800.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_379506800;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -539,8 +523,8 @@ String var540C13E9E156B687226421B24F2DF178_1612418045 =             null;
 String var7364FBEBC22E1599B041B125CD0C1F76_648778828 =         getNodeValue();
         var7364FBEBC22E1599B041B125CD0C1F76_648778828.addTaint(taint);
         return var7364FBEBC22E1599B041B125CD0C1F76_648778828;
-        
-        
+        // ---------- Original Method ----------
+        //return getNodeValue();
     }
 
     
@@ -551,12 +535,12 @@ String var7364FBEBC22E1599B041B125CD0C1F76_648778828 =         getNodeValue();
     if(content != null)        
         {
             buf.append(content);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String content = getNodeValue();
+        //if (content != null) {
+            //buf.append(content);
+        //}
     }
 
     
@@ -576,11 +560,11 @@ switch(getNodeType()){
 ((child = getFirstChild()) != null)        
         {
             removeChild(child);
-        } 
+        } //End block
     if(textContent != null && textContent.length() != 0)        
         {
             appendChild(document.createTextNode(textContent));
-        } 
+        } //End block
         return;
         case ATTRIBUTE_NODE:
         case TEXT_NODE:
@@ -596,20 +580,19 @@ switch(getNodeType()){
         var27285F41C0EC27EB44BA0E5E07EE31A9_1686346210.addTaint(taint);
         throw var27285F41C0EC27EB44BA0E5E07EE31A9_1686346210;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.921 -0400", hash_original_method = "CDCF2BEBCB3DF8B0191B82144C39E4E3", hash_generated_method = "DB8EADA6700842874BEFF22C22812CD4")
     public boolean isSameNode(Node other) {
         addTaint(other.getTaint());
         boolean varBE1F9AF96A88D9FBF24773A7F592CAA1_964434814 = (this == other);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1887116985 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1887116985;
-        
-        
+        // ---------- Original Method ----------
+        //return this == other;
     }
 
     
@@ -649,8 +632,8 @@ NodeImpl var8BC235EA48173B3F91C3D3D2A4E83A35_1526888838 =         getContainingE
         var27285F41C0EC27EB44BA0E5E07EE31A9_237275237.addTaint(taint);
         throw var27285F41C0EC27EB44BA0E5E07EE31A9_237275237;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -663,18 +646,18 @@ for(Node p = getParentNode();p != null;p = p.getParentNode())
 NodeImpl varBEA0A08D3E1C9339930C51EE49C1BB6C_1000331229 =                 (NodeImpl) p;
                 varBEA0A08D3E1C9339930C51EE49C1BB6C_1000331229.addTaint(taint);
                 return varBEA0A08D3E1C9339930C51EE49C1BB6C_1000331229;
-            } 
-        } 
+            } //End block
+        } //End block
 NodeImpl var540C13E9E156B687226421B24F2DF178_1511760899 =         null;
         var540C13E9E156B687226421B24F2DF178_1511760899.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1511760899;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (Node p = getParentNode(); p != null; p = p.getParentNode()) {
+            //if (p.getNodeType() == ELEMENT_NODE) {
+                //return (NodeImpl) p;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -686,7 +669,7 @@ NodeImpl var540C13E9E156B687226421B24F2DF178_1511760899 =         null;
 String var540C13E9E156B687226421B24F2DF178_1132681972 =             null;
             var540C13E9E156B687226421B24F2DF178_1132681972.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1132681972;
-        } 
+        } //End block
         NodeImpl target = getNamespacingElement();
 for(NodeImpl node = target;node != null;node = node.getContainingElement())
         {
@@ -696,11 +679,11 @@ for(NodeImpl node = target;node != null;node = node.getContainingElement())
 String varCA967D60876AC29383C8BF3C2697EA21_1046185278 =                 node.getPrefix();
                 varCA967D60876AC29383C8BF3C2697EA21_1046185278.addTaint(taint);
                 return varCA967D60876AC29383C8BF3C2697EA21_1046185278;
-            } 
+            } //End block
     if(!node.hasAttributes())            
             {
                 continue;
-            } 
+            } //End block
             NamedNodeMap attributes = node.getAttributes();
 for(int i = 0, length = attributes.getLength();i < length;i++)
             {
@@ -710,20 +693,20 @@ for(int i = 0, length = attributes.getLength();i < length;i++)
                         || !namespaceURI.equals(attr.getNodeValue()))                
                 {
                     continue;
-                } 
+                } //End block
     if(target.isPrefixMappedToUri(attr.getLocalName(), namespaceURI))                
                 {
 String varBFF13D60192C772654AA3A036B78200E_1837472326 =                     attr.getLocalName();
                     varBFF13D60192C772654AA3A036B78200E_1837472326.addTaint(taint);
                     return varBFF13D60192C772654AA3A036B78200E_1837472326;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_2060407365 =         null;
         var540C13E9E156B687226421B24F2DF178_2060407365.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2060407365;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -736,17 +719,17 @@ String var540C13E9E156B687226421B24F2DF178_2060407365 =         null;
             boolean var68934A3E9455FA72420237EB05902327_380610799 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_465302308 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_465302308;
-        } 
+        } //End block
         String actual = lookupNamespaceURI(prefix);
         boolean var5089C02DA3CB33691AF3AF6613290012_1442127973 = (uri.equals(actual));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_257231383 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_257231383;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (prefix == null) {
+            //return false;
+        //}
+        //String actual = lookupNamespaceURI(prefix);
+        //return uri.equals(actual);
     }
 
     
@@ -759,11 +742,11 @@ String var540C13E9E156B687226421B24F2DF178_2060407365 =         null;
                 : namespaceURI.equals(actual));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1169432282 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1169432282;
-        
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //String actual = lookupNamespaceURI(null);
+        //return namespaceURI == null
+                //? actual == null
+                //: namespaceURI.equals(actual);
     }
 
     
@@ -783,12 +766,12 @@ for(NodeImpl node = target;node != null;node = node.getContainingElement())
 String var635A0C92002BCF6ED74FC0417E9137AE_445096345 =                     node.getNamespaceURI();
                     var635A0C92002BCF6ED74FC0417E9137AE_445096345.addTaint(taint);
                     return var635A0C92002BCF6ED74FC0417E9137AE_445096345;
-                } 
-            } 
+                } //End block
+            } //End block
     if(!node.hasAttributes())            
             {
                 continue;
-            } 
+            } //End block
             NamedNodeMap attributes = node.getAttributes();
 for(int i = 0, length = attributes.getLength();i < length;i++)
             {
@@ -796,7 +779,7 @@ for(int i = 0, length = attributes.getLength();i < length;i++)
     if(!"http://www.w3.org/2000/xmlns/".equals(attr.getNamespaceURI()))                
                 {
                     continue;
-                } 
+                } //End block
     if(prefix == null 
                         ? "xmlns".equals(attr.getNodeName())
                         : "xmlns".equals(attr.getPrefix()) && prefix.equals(attr.getLocalName()))                
@@ -805,14 +788,14 @@ for(int i = 0, length = attributes.getLength();i < length;i++)
 String var933979A65FDA98D9635B5350FC86EE83_776081469 =                     value.length() > 0 ? value : null;
                     var933979A65FDA98D9635B5350FC86EE83_776081469.addTaint(taint);
                     return var933979A65FDA98D9635B5350FC86EE83_776081469;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_35662591 =         null;
         var540C13E9E156B687226421B24F2DF178_35662591.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_35662591;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -853,7 +836,7 @@ String var540C13E9E156B687226421B24F2DF178_35662591 =         null;
             boolean varB326B5062B2F0E69046810717534CB09_863221927 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_379239207 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_379239207;
-        } 
+        } //End block
         List<Object> listA = createEqualityKey(this);
         List<Object> listB = createEqualityKey(arg);
     if(listA.size() != listB.size())        
@@ -861,7 +844,7 @@ String var540C13E9E156B687226421B24F2DF178_35662591 =         null;
             boolean var68934A3E9455FA72420237EB05902327_2101379641 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1037300020 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1037300020;
-        } 
+        } //End block
 for(int i = 0;i < listA.size();i++)
         {
             Object a = listA.get(i);
@@ -869,14 +852,14 @@ for(int i = 0;i < listA.size();i++)
     if(a == b)            
             {
                 continue;
-            } 
+            } //End block
             else
     if(a == null || b == null)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_2141636317 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_962857339 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_962857339;
-            } 
+            } //End block
             else
     if(a instanceof String || a instanceof Short)            
             {
@@ -885,8 +868,8 @@ for(int i = 0;i < listA.size();i++)
                     boolean var68934A3E9455FA72420237EB05902327_329158139 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_283035196 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_283035196;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(a instanceof NamedNodeMap)            
             {
@@ -896,8 +879,8 @@ for(int i = 0;i < listA.size();i++)
                     boolean var68934A3E9455FA72420237EB05902327_1282565650 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2138653387 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2138653387;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(a instanceof Node)            
             {
@@ -907,20 +890,20 @@ for(int i = 0;i < listA.size();i++)
                     boolean var68934A3E9455FA72420237EB05902327_474378041 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1752684397 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1752684397;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 AssertionError varA81442E36297E737EB908877E58260E8_1346422350 = new AssertionError();
                 varA81442E36297E737EB908877E58260E8_1346422350.addTaint(taint);
                 throw varA81442E36297E737EB908877E58260E8_1346422350;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1291179746 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666602115 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_666602115;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -933,7 +916,7 @@ for(int i = 0;i < listA.size();i++)
             boolean var68934A3E9455FA72420237EB05902327_374959843 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_373106139 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_373106139;
-        } 
+        } //End block
 for(int i = 0;i < a.getLength();i++)
         {
             Node aNode = a.item(i);
@@ -945,25 +928,25 @@ for(int i = 0;i < a.getLength();i++)
                 boolean var68934A3E9455FA72420237EB05902327_2146018568 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_603047246 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_603047246;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_986501216 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2015925063 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2015925063;
-        
-        
-            
-        
-        
-            
-            
-                    
-                    
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (a.getLength() != b.getLength()) {
+            //return false;
+        //}
+        //for (int i = 0; i < a.getLength(); i++) {
+            //Node aNode = a.item(i);
+            //Node bNode = aNode.getLocalName() == null
+                    //? b.getNamedItem(aNode.getNodeName())
+                    //: b.getNamedItemNS(aNode.getNamespaceURI(), aNode.getLocalName());
+            //if (bNode == null || !aNode.isEqualNode(bNode)) {
+                //return false;
+            //}
+        //}
+        //return true;
     }
 
     
@@ -974,8 +957,8 @@ for(int i = 0;i < a.getLength();i++)
 Object var279AA1B9AF99C23199C38B381D516AF6_177533520 =         isSupported(feature, version) ? this : null;
         var279AA1B9AF99C23199C38B381D516AF6_177533520.addTaint(taint);
         return var279AA1B9AF99C23199C38B381D516AF6_177533520;
-        
-        
+        // ---------- Original Method ----------
+        //return isSupported(feature, version) ? this : null;
     }
 
     
@@ -989,7 +972,7 @@ Object var279AA1B9AF99C23199C38B381D516AF6_177533520 =         isSupported(featu
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_827635321 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_827635321.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_827635321;
-        } 
+        } //End block
         Map<String, UserData> map = document.getUserDataMap(this);
         UserData previous = data == null
                 ? map.remove(key)
@@ -997,15 +980,15 @@ Object var279AA1B9AF99C23199C38B381D516AF6_177533520 =         isSupported(featu
 Object var7AEBFE563B5E30066C7D8D5A898AA937_1750695056 =         previous != null ? previous.value : null;
         var7AEBFE563B5E30066C7D8D5A898AA937_1750695056.addTaint(taint);
         return var7AEBFE563B5E30066C7D8D5A898AA937_1750695056;
-        
-        
-            
-        
-        
-        
-                
-                
-        
+        // ---------- Original Method ----------
+        //if (key == null) {
+            //throw new NullPointerException();
+        //}
+        //Map<String, UserData> map = document.getUserDataMap(this);
+        //UserData previous = data == null
+                //? map.remove(key)
+                //: map.put(key, new UserData(data, handler));
+        //return previous != null ? previous.value : null;
     }
 
     
@@ -1017,19 +1000,19 @@ Object var7AEBFE563B5E30066C7D8D5A898AA937_1750695056 =         previous != null
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1358344175 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1358344175.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1358344175;
-        } 
+        } //End block
         Map<String, UserData> map = document.getUserDataMapForRead(this);
         UserData userData = map.get(key);
 Object var0B7881AA1F8DD69A4EC48032632042A1_734203603 =         userData != null ? userData.value : null;
         var0B7881AA1F8DD69A4EC48032632042A1_734203603.addTaint(taint);
         return var0B7881AA1F8DD69A4EC48032632042A1_734203603;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (key == null) {
+            //throw new NullPointerException();
+        //}
+        //Map<String, UserData> map = document.getUserDataMapForRead(this);
+        //UserData userData = map.get(key);
+        //return userData != null ? userData.value : null;
     }
 
     
@@ -1045,9 +1028,9 @@ Object var0B7881AA1F8DD69A4EC48032632042A1_734203603 =         userData != null 
           UserData(Object value, UserDataHandler handler) {
             this.value = value;
             this.handler = handler;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.value = value;
+            //this.handler = handler;
         }
 
         

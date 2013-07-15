@@ -1,6 +1,6 @@
 package javax.crypto;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ public class CipherOutputStream extends FilterOutputStream {
         super(os);
         addTaint(os.getTaint());
         cipher = c;
-        
-        
+        // ---------- Original Method ----------
+        //cipher = c;
     }
 
     
@@ -28,7 +28,7 @@ public class CipherOutputStream extends FilterOutputStream {
     protected  CipherOutputStream(OutputStream os) {
         this(os, new NullCipher());
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -37,8 +37,8 @@ public class CipherOutputStream extends FilterOutputStream {
     public void write(int b) throws IOException {
         addTaint(b);
         Streams.writeSingleByte(this, b);
-        
-        
+        // ---------- Original Method ----------
+        //Streams.writeSingleByte(this, b);
     }
 
     
@@ -51,20 +51,20 @@ public class CipherOutputStream extends FilterOutputStream {
     if(len == 0)        
         {
             return;
-        } 
+        } //End block
         byte[] result = cipher.update(b, off, len);
     if(result != null)        
         {
             out.write(result);
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (len == 0) {
+            //return;
+        //}
+        //byte[] result = cipher.update(b, off, len);
+        //if (result != null) {
+            //out.write(result);
+        //}
     }
 
     
@@ -72,8 +72,8 @@ public class CipherOutputStream extends FilterOutputStream {
     @Override
     public void flush() throws IOException {
         out.flush();
-        
-        
+        // ---------- Original Method ----------
+        //out.flush();
     }
 
     
@@ -89,53 +89,53 @@ public class CipherOutputStream extends FilterOutputStream {
     if(result != null)                
                 {
                     out.write(result);
-                } 
-            } 
+                } //End block
+            } //End block
     if(out != null)            
             {
                 out.flush();
-            } 
-        } 
+            } //End block
+        } //End block
         catch (BadPaddingException e)
         {
             IOException varDFC4605B531BC1C5380FD94E58912494_546223882 = new IOException(e.getMessage());
             varDFC4605B531BC1C5380FD94E58912494_546223882.addTaint(taint);
             throw varDFC4605B531BC1C5380FD94E58912494_546223882;
-        } 
+        } //End block
         catch (IllegalBlockSizeException e)
         {
             IOException varDFC4605B531BC1C5380FD94E58912494_139002718 = new IOException(e.getMessage());
             varDFC4605B531BC1C5380FD94E58912494_139002718.addTaint(taint);
             throw varDFC4605B531BC1C5380FD94E58912494_139002718;
-        } 
+        } //End block
         finally 
         {
     if(out != null)            
             {
                 out.close();
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-                    
-                
-            
-            
-                
-            
-        
-            
-        
-            
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //byte[] result;
+        //try {
+            //if (cipher != null) {
+                //result = cipher.doFinal();
+                //if (result != null) {
+                    //out.write(result);
+                //}
+            //}
+            //if (out != null) {
+                //out.flush();
+            //}
+        //} catch (BadPaddingException e) {
+            //throw new IOException(e.getMessage());
+        //} catch (IllegalBlockSizeException e) {
+            //throw new IOException(e.getMessage());
+        //} finally {
+            //if (out != null) {
+                //out.close();
+            //}
+        //}
     }
 
     

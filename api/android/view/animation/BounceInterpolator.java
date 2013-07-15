@@ -1,6 +1,6 @@
 package android.view.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class BounceInterpolator implements Interpolator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.747 -0400", hash_original_method = "D77038D4E75CFBDE4153E26F51FE597B", hash_generated_method = "BCAE75B7B1877E5388B55FDFCF96BAFF")
     public  BounceInterpolator() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,12 +21,11 @@ public class BounceInterpolator implements Interpolator {
     public  BounceInterpolator(Context context, AttributeSet attrs) {
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static float bounce(float t) {
+        private static float bounce(float t) {
         return t * t * 8.0f;
     }
 
@@ -61,12 +60,12 @@ public class BounceInterpolator implements Interpolator {
                 float var546ADE640B6EDFBC8A086EF31347E768_227974137 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_227974137;
         }
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //t *= 1.1226f;
+        //if (t < 0.3535f) return bounce(t);
+        //else if (t < 0.7408f) return bounce(t - 0.54719f) + 0.7f;
+        //else if (t < 0.9644f) return bounce(t - 0.8526f) + 0.9f;
+        //else return bounce(t - 1.0435f) + 0.95f;
     }
 
     

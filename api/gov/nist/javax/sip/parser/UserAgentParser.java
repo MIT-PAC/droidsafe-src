@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class UserAgentParser extends HeaderParser {
     public  UserAgentParser(String userAgent) {
         super(userAgent);
         addTaint(userAgent.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class UserAgentParser extends HeaderParser {
     protected  UserAgentParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -48,7 +48,7 @@ public class UserAgentParser extends HeaderParser {
                 {
                     String comment = this.lexer.comment();
                     userAgent.addProductToken('(' + comment + ')');
-                } 
+                } //End block
                 else
                 {
                     this.getLexer().SPorHT();
@@ -73,22 +73,22 @@ public class UserAgentParser extends HeaderParser {
                         }
                         productSb.append("/");
                         productSb.append(productVersion);
-                    } 
+                    } //End block
                     userAgent.addProductToken(productSb.toString());
-                } 
+                } //End block
                 this.lexer.SPorHT();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("UserAgentParser.parse");
-        } 
+        } //End block
 SIPHeader varB90BAE9CF13799DF66AC7440F5DAE3DA_316039081 =         userAgent;
         varB90BAE9CF13799DF66AC7440F5DAE3DA_316039081.addTaint(taint);
         return varB90BAE9CF13799DF66AC7440F5DAE3DA_316039081;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.client.protocol;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class RequestDefaultHeaders implements HttpRequestInterceptor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.247 -0400", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BC9A54616EA56C3FB9CBB65BD3CE817E")
     public  RequestDefaultHeaders() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -31,7 +31,7 @@ public class RequestDefaultHeaders implements HttpRequestInterceptor {
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1065650527;
-        } 
+        } //End block
         Collection<?> defHeaders = (Collection<?>) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HEADERS);
     if(defHeaders != null)        
@@ -39,19 +39,19 @@ public class RequestDefaultHeaders implements HttpRequestInterceptor {
 for(Object defHeader : defHeaders)
             {
                 request.addHeader((Header) defHeader);
-            } 
-        } 
-        
-        
-            
-        
-        
-                
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (request == null) {
+            //throw new IllegalArgumentException("HTTP request may not be null");
+        //}
+        //Collection<?> defHeaders = (Collection<?>) request.getParams().getParameter(
+                //ClientPNames.DEFAULT_HEADERS);
+        //if (defHeaders != null) {
+            //for (Object defHeader : defHeaders) {
+                //request.addHeader((Header) defHeader);
+            //}
+        //}
     }
 
     

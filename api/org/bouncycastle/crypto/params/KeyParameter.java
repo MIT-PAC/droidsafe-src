@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.params;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class KeyParameter implements CipherParameters {
         byte[]  key) {
         this(key, 0, key.length);
         addTaint(key[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -28,20 +28,19 @@ public class KeyParameter implements CipherParameters {
         addTaint(keyOff);
         this.key = new byte[keyLen];
         System.arraycopy(key, keyOff, this.key, 0, keyLen);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.key = new byte[keyLen];
+        //System.arraycopy(key, keyOff, this.key, 0, keyLen);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.362 -0400", hash_original_method = "4D0869BDED080E6228BF118F17313DFD", hash_generated_method = "7EC7D9464C4F02C41B2ED5D3860A98FE")
     public byte[] getKey() {
         byte[] var3C6E0B8A9C15224A8228B9A98CA1531D_405568109 = (key);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1633404327 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1633404327;
-        
-        
+        // ---------- Original Method ----------
+        //return key;
     }
 
     

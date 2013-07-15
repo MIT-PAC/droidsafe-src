@@ -1,6 +1,6 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -190,18 +190,17 @@ public class SearchDialog extends Dialog {
                 RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
         mVoiceAppSearchIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         mVoiceAppSearchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        
-        
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //mVoiceWebSearchIntent = new Intent(RecognizerIntent.ACTION_WEB_SEARCH);
+        //mVoiceWebSearchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //mVoiceWebSearchIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                //RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
+        //mVoiceAppSearchIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        //mVoiceAppSearchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static int resolveDialogTheme(Context context) {
+        static int resolveDialogTheme(Context context) {
         TypedValue outValue = new TypedValue();
         context.getTheme().resolveAttribute(com.android.internal.R.attr.searchDialogTheme,
                 outValue, true);
@@ -209,11 +208,10 @@ public class SearchDialog extends Dialog {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.628 -0400", hash_original_method = "ADA44CDEEADE302052A002E44C1889B1", hash_generated_method = "1B09A60335323C910903C36F1E81FFAF")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(savedInstanceState.getTaint());
         super.onCreate(savedInstanceState);
         Window theWindow = getWindow();
@@ -224,16 +222,16 @@ public class SearchDialog extends Dialog {
         lp.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
         theWindow.setAttributes(lp);
         setCanceledOnTouchOutside(true);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onCreate(savedInstanceState);
+        //Window theWindow = getWindow();
+        //WindowManager.LayoutParams lp = theWindow.getAttributes();
+        //lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        //lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
+        //lp.gravity = Gravity.TOP | Gravity.FILL_HORIZONTAL;
+        //lp.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
+        //theWindow.setAttributes(lp);
+        //setCanceledOnTouchOutside(true);
     }
 
     
@@ -253,11 +251,11 @@ public class SearchDialog extends Dialog {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.630 -0400", hash_original_method = "94911F0CA1072E95A75799AAC34EFD5F", hash_generated_method = "1DD1419B1A67DD9095538B767D725B73")
         @Override
         public void onClick(View v) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(v.getTaint());
             dismiss();
-            
-            
+            // ---------- Original Method ----------
+            //dismiss();
         }
 });
         mBadgeLabel = (TextView) mSearchView.findViewById(com.android.internal.R.id.search_badge);
@@ -270,12 +268,11 @@ public class SearchDialog extends Dialog {
         setWorking(false);
         mBadgeLabel.setVisibility(View.GONE);
         mSearchAutoCompleteImeOptions = mSearchAutoComplete.getImeOptions();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.632 -0400", hash_original_method = "08D03C59DE669D3068C0B765E743FE8E", hash_generated_method = "3E8941C10D87BBDF6668A5F10A2D5C59")
     public boolean show(String initialQuery, boolean selectInitialQuery,
             ComponentName componentName, Bundle appSearchData) {
@@ -287,16 +284,16 @@ public class SearchDialog extends Dialog {
     if(success)        
         {
             mSearchAutoComplete.showDropDownAfterLayout();
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_221315465 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1406859253 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1406859253;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean success = doShow(initialQuery, selectInitialQuery, componentName, appSearchData);
+        //if (success) {
+            //mSearchAutoComplete.showDropDownAfterLayout();
+        //}
+        //return success;
     }
 
     
@@ -312,35 +309,34 @@ public class SearchDialog extends Dialog {
             boolean var68934A3E9455FA72420237EB05902327_1189431572 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_895355124 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_895355124;
-        } 
+        } //End block
         setUserQuery(initialQuery);
     if(selectInitialQuery)        
         {
             mSearchAutoComplete.selectAll();
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1676526077 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1315831181 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1315831181;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!show(componentName, appSearchData)) {
+            //return false;
+        //}
+        //setUserQuery(initialQuery);
+        //if (selectInitialQuery) {
+            //mSearchAutoComplete.selectAll();
+        //}
+        //return true;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.636 -0400", hash_original_method = "705B52B556BB75FCC3E8159D4BF0A627", hash_generated_method = "DCED87D0DB91ED8159F0F408052F16A8")
     private boolean show(ComponentName componentName, Bundle appSearchData) {
     if(DBG)        
         {
             Log.d(LOG_TAG, "show(" + componentName + ", " 
                     + appSearchData + ")");
-        } 
+        } //End block
         SearchManager searchManager = (SearchManager)
                 mContext.getSystemService(Context.SEARCH_SERVICE);
         mSearchable = searchManager.getSearchableInfo(componentName);
@@ -349,7 +345,7 @@ public class SearchDialog extends Dialog {
             boolean var68934A3E9455FA72420237EB05902327_276612582 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_772650039 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_772650039;
-        } 
+        } //End block
         mLaunchComponent = componentName;
         mAppSearchData = appSearchData;
         mActivityContext = mSearchable.getActivityContext(getContext());
@@ -359,70 +355,69 @@ public class SearchDialog extends Dialog {
             mSearchView.setSearchableInfo(mSearchable);
             mSearchView.setAppSearchData(mAppSearchData);
             show();
-        } 
+        } //End block
         updateUI();
         boolean varB326B5062B2F0E69046810717534CB09_558690946 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_890246838 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_890246838;
-        
-        
-            
-                    
-        
-        
-                
-        
-        
-            
-        
-        
-        
-        
-        
-            
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) { 
+            //Log.d(LOG_TAG, "show(" + componentName + ", " 
+                    //+ appSearchData + ")");
+        //}
+        //SearchManager searchManager = (SearchManager)
+                //mContext.getSystemService(Context.SEARCH_SERVICE);
+        //mSearchable = searchManager.getSearchableInfo(componentName);
+        //if (mSearchable == null) {
+            //return false;
+        //}
+        //mLaunchComponent = componentName;
+        //mAppSearchData = appSearchData;
+        //mActivityContext = mSearchable.getActivityContext(getContext());
+        //if (!isShowing()) {
+            //createContentView();
+            //mSearchView.setSearchableInfo(mSearchable);
+            //mSearchView.setAppSearchData(mAppSearchData);
+            //show();
+        //}
+        //updateUI();
+        //return true;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.637 -0400", hash_original_method = "57C4DE658D3F4A02662686A9CE61B2E8", hash_generated_method = "BE7B8D8391D43FB6F5DEE404D22862CF")
     @Override
     public void onStart() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onStart();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_CONFIGURATION_CHANGED);
         getContext().registerReceiver(mConfChangeListener, filter);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onStart();
+        //IntentFilter filter = new IntentFilter();
+        //filter.addAction(Intent.ACTION_CONFIGURATION_CHANGED);
+        //getContext().registerReceiver(mConfChangeListener, filter);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.639 -0400", hash_original_method = "6050D9FBC779B270404C43A7E853C1E6", hash_generated_method = "984822E2BAA867DD58A325DECDF6CA94")
     @Override
     public void onStop() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onStop();
         getContext().unregisterReceiver(mConfChangeListener);
         mLaunchComponent = null;
         mAppSearchData = null;
         mSearchable = null;
         mUserQuery = null;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onStop();
+        //getContext().unregisterReceiver(mConfChangeListener);
+        //mLaunchComponent = null;
+        //mAppSearchData = null;
+        //mSearchable = null;
+        //mUserQuery = null;
     }
 
     
@@ -432,17 +427,17 @@ public class SearchDialog extends Dialog {
         mWorkingSpinner.setAlpha(working ? 255 : 0);
         mWorkingSpinner.setVisible(working, false);
         mWorkingSpinner.invalidateSelf();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWorkingSpinner.setAlpha(working ? 255 : 0);
+        //mWorkingSpinner.setVisible(working, false);
+        //mWorkingSpinner.invalidateSelf();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.640 -0400", hash_original_method = "A93DBE942737D1F537AD057E006AED8C", hash_generated_method = "DD8AE8A9FA60B1DB38FA4DE1523C7948")
     @Override
     public Bundle onSaveInstanceState() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
     if(!isShowing())        
         {
 Bundle var540C13E9E156B687226421B24F2DF178_1784351707 =         null;
@@ -456,20 +451,20 @@ Bundle var540C13E9E156B687226421B24F2DF178_1784351707 =         null;
 Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
         var7B2862195409742DCA365D8C6330AB92_851847894.addTaint(taint);
         return var7B2862195409742DCA365D8C6330AB92_851847894;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!isShowing()) return null;
+        //Bundle bundle = new Bundle();
+        //bundle.putParcelable(INSTANCE_KEY_COMPONENT, mLaunchComponent);
+        //bundle.putBundle(INSTANCE_KEY_APPDATA, mAppSearchData);
+        //bundle.putString(INSTANCE_KEY_USER_QUERY, mUserQuery);
+        //return bundle;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.640 -0400", hash_original_method = "D7088D676BF54E193C8B7B9D0CD3713D", hash_generated_method = "7B21B9562E6036EBF8934034DF03F17F")
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(savedInstanceState.getTaint());
     if(savedInstanceState == null)        
         return;
@@ -479,21 +474,21 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
     if(!doShow(userQuery, false, launchComponent, appSearchData))        
         {
             return;
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (savedInstanceState == null) return;
+        //ComponentName launchComponent = savedInstanceState.getParcelable(INSTANCE_KEY_COMPONENT);
+        //Bundle appSearchData = savedInstanceState.getBundle(INSTANCE_KEY_APPDATA);
+        //String userQuery = savedInstanceState.getString(INSTANCE_KEY_USER_QUERY);
+        //if (!doShow(userQuery, false, launchComponent, appSearchData)) {
+            //return;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.641 -0400", hash_original_method = "D7D85FA93E7D9B21BC4DF3FC01DC78AB", hash_generated_method = "B220F7819E1C912DBA45A89B330DF2FC")
     public void onConfigurationChanged() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
     if(mSearchable != null && isShowing())        
         {
             updateSearchAppIcon();
@@ -501,21 +496,20 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
     if(isLandscapeMode(getContext()))            
             {
                 mSearchAutoComplete.ensureImeVisible(true);
-            } 
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mSearchable != null && isShowing()) {
+            //updateSearchAppIcon();
+            //updateSearchBadge();
+            //if (isLandscapeMode(getContext())) {
+                //mSearchAutoComplete.ensureImeVisible(true);
+            //}
+        //}
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static boolean isLandscapeMode(Context context) {
+        static boolean isLandscapeMode(Context context) {
         return context.getResources().getConfiguration().orientation
                 == Configuration.ORIENTATION_LANDSCAPE;
     }
@@ -536,22 +530,22 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
     if(mSearchable.getSuggestAuthority() != null)                
                 {
                     inputType |= InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE;
-                } 
-            } 
+                } //End block
+            } //End block
             mSearchAutoComplete.setInputType(inputType);
             mSearchAutoCompleteImeOptions = mSearchable.getImeOptions();
             mSearchAutoComplete.setImeOptions(mSearchAutoCompleteImeOptions);
     if(mSearchable.getVoiceSearchEnabled())            
             {
                 mSearchAutoComplete.setPrivateImeOptions(IME_OPTION_NO_MICROPHONE);
-            } 
+            } //End block
             else
             {
                 mSearchAutoComplete.setPrivateImeOptions(null);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -559,13 +553,12 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
     private void updateSearchAutoComplete() {
         mSearchAutoComplete.setDropDownDismissedOnCompletion(false);
         mSearchAutoComplete.setForceIgnoreOutsideTouch(false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mSearchAutoComplete.setDropDownDismissedOnCompletion(false);
+        //mSearchAutoComplete.setForceIgnoreOutsideTouch(false);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.644 -0400", hash_original_method = "E83CA9B0957C02D3E99E874CE94E4E80", hash_generated_method = "7BF9C1FD7211EFC373AB440709516B7F")
     private void updateSearchAppIcon() {
         PackageManager pm = getContext().getPackageManager();
@@ -576,29 +569,29 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
             icon = pm.getApplicationIcon(info.applicationInfo);
     if(DBG)            
             Log.d(LOG_TAG, "Using app-specific icon");
-        } 
+        } //End block
         catch (NameNotFoundException e)
         {
             icon = pm.getDefaultActivityIcon();
-        } 
+        } //End block
         mAppIcon.setImageDrawable(icon);
         mAppIcon.setVisibility(View.VISIBLE);
         mSearchPlate.setPadding(SEARCH_PLATE_LEFT_PADDING_NON_GLOBAL, mSearchPlate.getPaddingTop(), mSearchPlate.getPaddingRight(), mSearchPlate.getPaddingBottom());
-        
-        
-        
-        
-            
-            
-            
-                
-        
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //PackageManager pm = getContext().getPackageManager();
+        //Drawable icon;
+        //try {
+            //ActivityInfo info = pm.getActivityInfo(mLaunchComponent, 0);
+            //icon = pm.getApplicationIcon(info.applicationInfo);
+            //if (DBG)
+                //Log.d(LOG_TAG, "Using app-specific icon");
+        //} catch (NameNotFoundException e) {
+            //icon = pm.getDefaultActivityIcon();
+            //Log.w(LOG_TAG, mLaunchComponent + " not found, using generic app icon");
+        //}
+        //mAppIcon.setImageDrawable(icon);
+        //mAppIcon.setVisibility(View.VISIBLE);
+        //mSearchPlate.setPadding(SEARCH_PLATE_LEFT_PADDING_NON_GLOBAL, mSearchPlate.getPaddingTop(), mSearchPlate.getPaddingRight(), mSearchPlate.getPaddingBottom());
     }
 
     
@@ -613,7 +606,7 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
             visibility = View.VISIBLE;
     if(DBG)            
             Log.d(LOG_TAG, "Using badge icon: " + mSearchable.getIconId());
-        } 
+        } //End block
         else
     if(mSearchable.useBadgeLabel())        
         {
@@ -621,33 +614,33 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
             visibility = View.VISIBLE;
     if(DBG)            
             Log.d(LOG_TAG, "Using badge label: " + mSearchable.getLabelId());
-        } 
+        } //End block
         mBadgeLabel.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
         mBadgeLabel.setText(text);
         mBadgeLabel.setVisibility(visibility);
-        
-        
-        
-        
-        
-            
-            
-            
-        
-            
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int visibility = View.GONE;
+        //Drawable icon = null;
+        //CharSequence text = null;
+        //if (mSearchable.useBadgeIcon()) {
+            //icon = mActivityContext.getResources().getDrawable(mSearchable.getIconId());
+            //visibility = View.VISIBLE;
+            //if (DBG) Log.d(LOG_TAG, "Using badge icon: " + mSearchable.getIconId());
+        //} else if (mSearchable.useBadgeLabel()) {
+            //text = mActivityContext.getResources().getText(mSearchable.getLabelId()).toString();
+            //visibility = View.VISIBLE;
+            //if (DBG) Log.d(LOG_TAG, "Using badge label: " + mSearchable.getLabelId());
+        //}
+        //mBadgeLabel.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null);
+        //mBadgeLabel.setText(text);
+        //mBadgeLabel.setVisibility(visibility);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.647 -0400", hash_original_method = "0D9DE884F4C3EB514898202D906CFD1D", hash_generated_method = "F11361A64E163CC6F93AAFFC222F11FA")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
     if(!mSearchAutoComplete.isPopupShowing() && isOutOfBounds(mSearchPlate, event))        
         {
@@ -657,21 +650,20 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
             boolean varB326B5062B2F0E69046810717534CB09_1415054159 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1423682628 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1423682628;
-        } 
+        } //End block
         boolean varB07EB30996A92905DCA4C49613CBAF5F_635054265 = (super.onTouchEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1582408691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1582408691;
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!mSearchAutoComplete.isPopupShowing() && isOutOfBounds(mSearchPlate, event)) {
+            //if (DBG) Log.d(LOG_TAG, "Pop-up not showing and outside of search plate.");
+            //cancel();
+            //return true;
+        //}
+        //return super.onTouchEvent(event);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.647 -0400", hash_original_method = "56250C7379795A076A294BCEF2D5FD2C", hash_generated_method = "CEA82616B9A477B8C9B21D840B2F4C83")
     private boolean isOutOfBounds(View v, MotionEvent event) {
         addTaint(event.getTaint());
@@ -684,13 +676,13 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
                 || (y > (v.getHeight()+slop)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1148836721 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1148836721;
-        
-        
-        
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //final int x = (int) event.getX();
+        //final int y = (int) event.getY();
+        //final int slop = ViewConfiguration.get(mContext).getScaledWindowTouchSlop();
+        //return (x < -slop) || (y < -slop)
+                //|| (x > (v.getWidth()+slop))
+                //|| (y > (v.getHeight()+slop));
     }
 
     
@@ -705,25 +697,25 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
         {
             imm.hideSoftInputFromWindow(
                     getWindow().getDecorView().getWindowToken(), 0);
-        } 
+        } //End block
         super.hide();
-        
-        
-        
-                
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (!isShowing()) return;
+        //InputMethodManager imm = (InputMethodManager)getContext()
+                //.getSystemService(Context.INPUT_METHOD_SERVICE);
+        //if (imm != null) {
+            //imm.hideSoftInputFromWindow(
+                    //getWindow().getDecorView().getWindowToken(), 0);
+        //}
+        //super.hide();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.648 -0400", hash_original_method = "A776EE9CD94492AC9830F6D90123EF80", hash_generated_method = "1F96E398546D6644A16C0EB6DC477101")
     public void launchQuerySearch() {
         launchQuerySearch(KeyEvent.KEYCODE_UNKNOWN, null);
-        
-        
+        // ---------- Original Method ----------
+        //launchQuerySearch(KeyEvent.KEYCODE_UNKNOWN, null);
     }
 
     
@@ -735,43 +727,42 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
         String action = Intent.ACTION_SEARCH;
         Intent intent = createIntent(action, null, null, query, actionKey, actionMsg);
         launchIntent(intent);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //String query = mSearchAutoComplete.getText().toString();
+        //String action = Intent.ACTION_SEARCH;
+        //Intent intent = createIntent(action, null, null, query, actionKey, actionMsg);
+        //launchIntent(intent);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.649 -0400", hash_original_method = "BC4CCAAD8BAD8DFDC06067A6480767AA", hash_generated_method = "7040D0F9E1C6FC04DB30D39E6CAF63DA")
     private void launchIntent(Intent intent) {
         addTaint(intent.getTaint());
     if(intent == null)        
         {
             return;
-        } 
+        } //End block
         Log.d(LOG_TAG, "launching " + intent);
         try 
         {
             getContext().startActivity(intent);
             dismiss();
-        } 
+        } //End block
         catch (RuntimeException ex)
         {
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (intent == null) {
+            //return;
+        //}
+        //Log.d(LOG_TAG, "launching " + intent);
+        //try {
+            //Log.i(LOG_TAG, "Starting (as ourselves) " + intent.toUri(0));
+            //getContext().startActivity(intent);
+            //dismiss();
+        //} catch (RuntimeException ex) {
+            //Log.e(LOG_TAG, "Failed launch activity: " + intent, ex);
+        //}
     }
 
     
@@ -779,12 +770,11 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
     public void setListSelection(int index) {
         addTaint(index);
         mSearchAutoComplete.setListSelection(index);
-        
-        
+        // ---------- Original Method ----------
+        //mSearchAutoComplete.setListSelection(index);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.651 -0400", hash_original_method = "7931502AE551A2F220A0C85C1181EB09", hash_generated_method = "869F09B49C8489D1549EC776A792F2D2")
     private Intent createIntent(String action, Uri data, String extraData, String query,
             int actionKey, String actionMsg) {
@@ -799,70 +789,68 @@ Bundle var7B2862195409742DCA365D8C6330AB92_851847894 =         bundle;
     if(data != null)        
         {
             intent.setData(data);
-        } 
+        } //End block
         intent.putExtra(SearchManager.USER_QUERY, mUserQuery);
     if(query != null)        
         {
             intent.putExtra(SearchManager.QUERY, query);
-        } 
+        } //End block
     if(extraData != null)        
         {
             intent.putExtra(SearchManager.EXTRA_DATA_KEY, extraData);
-        } 
+        } //End block
     if(mAppSearchData != null)        
         {
             intent.putExtra(SearchManager.APP_DATA, mAppSearchData);
-        } 
+        } //End block
     if(actionKey != KeyEvent.KEYCODE_UNKNOWN)        
         {
             intent.putExtra(SearchManager.ACTION_KEY, actionKey);
             intent.putExtra(SearchManager.ACTION_MSG, actionMsg);
-        } 
+        } //End block
         intent.setComponent(mSearchable.getSearchActivity());
 Intent var095937E5B36214360A2644916BF0E8DF_1808906433 =         intent;
         var095937E5B36214360A2644916BF0E8DF_1808906433.addTaint(taint);
         return var095937E5B36214360A2644916BF0E8DF_1808906433;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.651 -0400", hash_original_method = "F1F42C772C06A28CE3769310F1841510", hash_generated_method = "7F2F55BF2822F562769BE1D5622C91F4")
     private boolean isEmpty(AutoCompleteTextView actv) {
         addTaint(actv.getTaint());
         boolean var8E0C66D225FA2540FF4A949E52DCA7E7_1877305951 = (TextUtils.getTrimmedLength(actv.getText()) == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_858719917 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_858719917;
-        
-        
+        // ---------- Original Method ----------
+        //return TextUtils.getTrimmedLength(actv.getText()) == 0;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.652 -0400", hash_original_method = "85C012DD8E7654DEDC3FCC35E518B3D4", hash_generated_method = "C63C6984B12B9C1072C209561E7602E3")
     @Override
     public void onBackPressed() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         InputMethodManager imm = (InputMethodManager)getContext()
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
     if(imm != null && imm.isFullscreenMode() &&
                 imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0))        
         {
             return;
-        } 
+        } //End block
         cancel();
-        
-        
-                
-        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //InputMethodManager imm = (InputMethodManager)getContext()
+                //.getSystemService(Context.INPUT_METHOD_SERVICE);
+        //if (imm != null && imm.isFullscreenMode() &&
+                //imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0)) {
+            //return;
+        //}
+        //cancel();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.652 -0400", hash_original_method = "D537924252E5FBECE100B51E4DF20EDD", hash_generated_method = "DC0A63383ED217B54128944A17FDF02B")
     private boolean onClosePressed() {
     if(isEmpty(mSearchAutoComplete))        
@@ -871,16 +859,16 @@ Intent var095937E5B36214360A2644916BF0E8DF_1808906433 =         intent;
             boolean varB326B5062B2F0E69046810717534CB09_559511415 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_931781851 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_931781851;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_15312882 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_836067712 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_836067712;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isEmpty(mSearchAutoComplete)) {
+            //dismiss();
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -889,17 +877,17 @@ Intent var095937E5B36214360A2644916BF0E8DF_1808906433 =         intent;
     if(query == null)        
         {
             query = "";
-        } 
+        } //End block
         mUserQuery = query;
         mSearchAutoComplete.setText(query);
         mSearchAutoComplete.setSelection(query.length());
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (query == null) {
+            //query = "";
+        //}
+        //mUserQuery = query;
+        //mSearchAutoComplete.setText(query);
+        //mSearchAutoComplete.setSelection(query.length());
     }
 
     
@@ -913,7 +901,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_1808906433 =         intent;
             super(context, attrs);
             addTaint(attrs.getTaint());
             addTaint(context.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -921,20 +909,18 @@ Intent var095937E5B36214360A2644916BF0E8DF_1808906433 =         intent;
         public  SearchBar(Context context) {
             super(context);
             addTaint(context.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.656 -0400", hash_original_method = "7E3A3D5A1CCC1779F8492CDCF581870E", hash_generated_method = "723912D2FF4CFA7FED8D56FF3CC86130")
         public void setSearchDialog(SearchDialog searchDialog) {
             mSearchDialog = searchDialog;
-            
-            
+            // ---------- Original Method ----------
+            //mSearchDialog = searchDialog;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.656 -0400", hash_original_method = "195483BC208A3A4410E3220FCA03E982", hash_generated_method = "47E825A17E6A2B43CAAE7313EBAB8252")
         @Override
         public ActionMode startActionModeForChild(View child, ActionMode.Callback callback) {
@@ -943,8 +929,8 @@ Intent var095937E5B36214360A2644916BF0E8DF_1808906433 =         intent;
 ActionMode var540C13E9E156B687226421B24F2DF178_537832848 =             null;
             var540C13E9E156B687226421B24F2DF178_537832848.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_537832848;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         

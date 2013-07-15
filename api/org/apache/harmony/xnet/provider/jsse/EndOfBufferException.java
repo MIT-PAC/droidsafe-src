@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class EndOfBufferException extends IOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.344 -0400", hash_original_method = "B387D76A75821C43CC4EBF5308FC51E5", hash_generated_method = "6DCE126A7E1ADDC6C23BC29B82C20CEE")
     public  EndOfBufferException() {
-        
+        // ---------- Original Method ----------
     }
 
     

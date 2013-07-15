@@ -1,6 +1,6 @@
 package java.util.zip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public class GZIPInputStream extends InflaterInputStream {
     public  GZIPInputStream(InputStream is) throws IOException {
         this(is, BUF_SIZE);
         addTaint(is.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -40,20 +40,20 @@ public class GZIPInputStream extends InflaterInputStream {
             IOException var46E31AEAA46980334AFA13D41AD42F50_1085337540 = new IOException(String.format("unknown format (magic number %x)", magic));
             var46E31AEAA46980334AFA13D41AD42F50_1085337540.addTaint(taint);
             throw var46E31AEAA46980334AFA13D41AD42F50_1085337540;
-        } 
+        } //End block
         int flags = header[3];
         boolean hcrc = (flags & FHCRC) != 0;
     if(hcrc)        
         {
             crc.update(header, 0, header.length);
-        } 
+        } //End block
     if((flags & FEXTRA) != 0)        
         {
             readFully(header, 0, 2);
     if(hcrc)            
             {
                 crc.update(header, 0, 2);
-            } 
+            } //End block
             int length = Memory.peekShort(header, 0, ByteOrder.LITTLE_ENDIAN) & 0xffff;
             while
 (length > 0)            
@@ -65,22 +65,22 @@ public class GZIPInputStream extends InflaterInputStream {
                     EOFException var0239D63DB748BB20D119EB36D6D1C384_1028631961 = new EOFException();
                     var0239D63DB748BB20D119EB36D6D1C384_1028631961.addTaint(taint);
                     throw var0239D63DB748BB20D119EB36D6D1C384_1028631961;
-                } 
+                } //End block
     if(hcrc)                
                 {
                     crc.update(buf, 0, result);
-                } 
+                } //End block
                 length -= result;
-            } 
-        } 
+            } //End block
+        } //End block
     if((flags & FNAME) != 0)        
         {
             readZeroTerminated(hcrc);
-        } 
+        } //End block
     if((flags & FCOMMENT) != 0)        
         {
             readZeroTerminated(hcrc);
-        } 
+        } //End block
     if(hcrc)        
         {
             readFully(header, 0, 2);
@@ -90,11 +90,11 @@ public class GZIPInputStream extends InflaterInputStream {
                 IOException var6662443A05BBD7E56314F659252E34FC_1756103141 = new IOException("CRC mismatch");
                 var6662443A05BBD7E56314F659252E34FC_1756103141.addTaint(taint);
                 throw var6662443A05BBD7E56314F659252E34FC_1756103141;
-            } 
+            } //End block
             crc.reset();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -103,9 +103,9 @@ public class GZIPInputStream extends InflaterInputStream {
     public void close() throws IOException {
         eos = true;
         super.close();
-        
-        
-        
+        // ---------- Original Method ----------
+        //eos = true;
+        //super.close();
     }
 
     
@@ -120,55 +120,55 @@ public class GZIPInputStream extends InflaterInputStream {
             IOException var4E3F8A3DA623CEFCDEFE68AFA0DAB154_524723670 = new IOException("Stream is closed");
             var4E3F8A3DA623CEFCDEFE68AFA0DAB154_524723670.addTaint(taint);
             throw var4E3F8A3DA623CEFCDEFE68AFA0DAB154_524723670;
-        } 
+        } //End block
     if(eos)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_355736419 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2059451569 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2059451569;
-        } 
+        } //End block
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
         int bytesRead;
         try 
         {
             bytesRead = super.read(buffer, offset, byteCount);
-        } 
+        } //End block
         finally 
         {
             eos = eof;
-        } 
+        } //End block
     if(bytesRead != -1)        
         {
             crc.update(buffer, offset, bytesRead);
-        } 
+        } //End block
     if(eos)        
         {
             verifyCrc();
-        } 
+        } //End block
         int varD871906E18D7E876E6494103DA4BEEBD_1232245285 = (bytesRead);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1044372541 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1044372541;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (closed) {
+            //throw new IOException("Stream is closed");
+        //}
+        //if (eos) {
+            //return -1;
+        //}
+        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
+        //int bytesRead;
+        //try {
+            //bytesRead = super.read(buffer, offset, byteCount);
+        //} finally {
+            //eos = eof; 
+        //}
+        //if (bytesRead != -1) {
+            //crc.update(buffer, offset, bytesRead);
+        //}
+        //if (eos) {
+            //verifyCrc();
+        //}
+        //return bytesRead;
     }
 
     
@@ -185,26 +185,26 @@ public class GZIPInputStream extends InflaterInputStream {
             IOException var6662443A05BBD7E56314F659252E34FC_1129223158 = new IOException("CRC mismatch");
             var6662443A05BBD7E56314F659252E34FC_1129223158.addTaint(taint);
             throw var6662443A05BBD7E56314F659252E34FC_1129223158;
-        } 
+        } //End block
     if(Memory.peekInt(b, 4, ByteOrder.LITTLE_ENDIAN) != inf.getTotalOut())        
         {
             IOException var51D8211A9B3A3EEB7C5C665E9D174100_575258999 = new IOException("Size mismatch");
             var51D8211A9B3A3EEB7C5C665E9D174100_575258999.addTaint(taint);
             throw var51D8211A9B3A3EEB7C5C665E9D174100_575258999;
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int size = inf.getRemaining();
+        //final int trailerSize = 8;
+        //byte[] b = new byte[trailerSize];
+        //int copySize = (size > trailerSize) ? trailerSize : size;
+        //System.arraycopy(buf, len - size, b, 0, copySize);
+        //readFully(b, copySize, trailerSize - copySize);
+        //if (Memory.peekInt(b, 0, ByteOrder.LITTLE_ENDIAN) != (int) crc.getValue()) {
+            //throw new IOException("CRC mismatch");
+        //}
+        //if (Memory.peekInt(b, 4, ByteOrder.LITTLE_ENDIAN) != inf.getTotalOut()) {
+            //throw new IOException("Size mismatch");
+        //}
     }
 
     
@@ -223,20 +223,20 @@ public class GZIPInputStream extends InflaterInputStream {
                 EOFException var0239D63DB748BB20D119EB36D6D1C384_1763839856 = new EOFException();
                 var0239D63DB748BB20D119EB36D6D1C384_1763839856.addTaint(taint);
                 throw var0239D63DB748BB20D119EB36D6D1C384_1763839856;
-            } 
+            } //End block
             offset += result;
             length -= result;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int result;
+        //while (length > 0) {
+            //result = in.read(buffer, offset, length);
+            //if (result == -1) {
+                //throw new EOFException();
+            //}
+            //offset += result;
+            //length -= result;
+        //}
     }
 
     
@@ -250,31 +250,31 @@ public class GZIPInputStream extends InflaterInputStream {
     if(hcrc)            
             {
                 crc.update(result);
-            } 
-        } 
+            } //End block
+        } //End block
     if(result == -1)        
         {
             EOFException var0239D63DB748BB20D119EB36D6D1C384_1846582422 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_1846582422.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_1846582422;
-        } 
+        } //End block
     if(hcrc)        
         {
             crc.update(result);
-        } 
-        
-        
-        
-            
-                
-            
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int result;
+        //while ((result = in.read()) > 0) {
+            //if (hcrc) {
+                //crc.update(result);
+            //}
+        //}
+        //if (result == -1) {
+            //throw new EOFException();
+        //}
+        //if (hcrc) {
+            //crc.update(result);
+        //}
     }
 
     

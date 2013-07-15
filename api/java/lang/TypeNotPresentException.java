@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,19 +15,18 @@ public class TypeNotPresentException extends RuntimeException {
         super("Type " + typeName + " not present", cause);
         addTaint(cause.getTaint());
         this.typeName = typeName;
-        
-        
+        // ---------- Original Method ----------
+        //this.typeName = typeName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.750 -0400", hash_original_method = "4654D488024911B4CA912D2186B5898B", hash_generated_method = "5DCF4D553430859009A8EC1F99BAD598")
     public String typeName() {
 String var4C6AC62FA49FB0840C158A6211BE4A27_309561567 =         typeName;
         var4C6AC62FA49FB0840C158A6211BE4A27_309561567.addTaint(taint);
         return var4C6AC62FA49FB0840C158A6211BE4A27_309561567;
-        
-        
+        // ---------- Original Method ----------
+        //return typeName;
     }
 
     

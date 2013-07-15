@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,15 +41,15 @@ public final class BluetoothAdapter {
             IllegalArgumentException varF7AC7A3C61DFD44AABDCE9021F9BE9CA_1940487524 = new IllegalArgumentException("service is null");
             varF7AC7A3C61DFD44AABDCE9021F9BE9CA_1940487524.addTaint(taint);
             throw varF7AC7A3C61DFD44AABDCE9021F9BE9CA_1940487524;
-        } 
+        } //End block
         mService = service;
         mServiceRecordHandler = null;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (service == null) {
+            //throw new IllegalArgumentException("service is null");
+        //}
+        //mService = service;
+        //mServiceRecordHandler = null;
     }
 
     
@@ -71,8 +71,8 @@ public final class BluetoothAdapter {
 BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_1464391150 =         new BluetoothDevice(address);
         varA8C88F08C60970168666AAFC50FDB9D0_1464391150.addTaint(taint);
         return varA8C88F08C60970168666AAFC50FDB9D0_1464391150;
-        
-        
+        // ---------- Original Method ----------
+        //return new BluetoothDevice(address);
     }
 
     
@@ -83,18 +83,18 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_1464391150 =         new Blu
             boolean var4983BE3E160A6114C5F2C1168FF31C99_2030784217 = (mService.isEnabled());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1991810434 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1991810434;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1429411820 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1937774792 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1937774792;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mService.isEnabled();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return false;
     }
 
     
@@ -105,18 +105,18 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_1464391150 =         new Blu
             int var2B334D76CCE2BDB5B78F0D5680DAE99D_97055548 = (mService.getBluetoothState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_417988140 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_417988140;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         int var086B7832E6E767B5DF57BC1BEDB6288B_1213754562 = (STATE_OFF);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1983784865 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1983784865;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getBluetoothState();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return STATE_OFF;
     }
 
     
@@ -127,18 +127,18 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_1464391150 =         new Blu
             boolean var751005C663F7670EFA072318E4BBB147_1668461992 = (mService.enable());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2109747924 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2109747924;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_651403542 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1225842628 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1225842628;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mService.enable();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return false;
     }
 
     
@@ -149,18 +149,18 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_1464391150 =         new Blu
             boolean var68FC723498B7A5700A03664DED0CF2BB_1469625830 = (mService.disable(true));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_286050418 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_286050418;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1671738374 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1197911321 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1197911321;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mService.disable(true);
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return false;
     }
 
     
@@ -171,18 +171,18 @@ BluetoothDevice varA8C88F08C60970168666AAFC50FDB9D0_1464391150 =         new Blu
 String var13828B60C28DDCB10C9E298867AD149C_908272689 =             mService.getAddress();
             var13828B60C28DDCB10C9E298867AD149C_908272689.addTaint(taint);
             return var13828B60C28DDCB10C9E298867AD149C_908272689;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_944633816 =         null;
         var540C13E9E156B687226421B24F2DF178_944633816.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_944633816;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getAddress();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return null;
     }
 
     
@@ -193,18 +193,18 @@ String var540C13E9E156B687226421B24F2DF178_944633816 =         null;
 String varACE59E9AE3E1C25ADA45C88057569C87_1258861353 =             mService.getName();
             varACE59E9AE3E1C25ADA45C88057569C87_1258861353.addTaint(taint);
             return varACE59E9AE3E1C25ADA45C88057569C87_1258861353;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_1370791727 =         null;
         var540C13E9E156B687226421B24F2DF178_1370791727.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1370791727;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getName();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return null;
     }
 
     
@@ -221,19 +221,19 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1039407764 =         null;
 ParcelUuid[] var0D176EA231D9DB2C5E0E841429622377_1301266822 =             mService.getUuids();
             var0D176EA231D9DB2C5E0E841429622377_1301266822.addTaint(taint);
             return var0D176EA231D9DB2C5E0E841429622377_1301266822;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
         var540C13E9E156B687226421B24F2DF178_1281316479.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1281316479;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return null;
+        //try {
+            //return mService.getUuids();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return null;
     }
 
     
@@ -251,19 +251,19 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
             boolean var63E72F5F92D563AB016C0EC31405D265_1506350438 = (mService.setName(name));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2001768080 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2001768080;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1105710514 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1236696423 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1236696423;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return false;
+        //try {
+            //return mService.setName(name);
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return false;
     }
 
     
@@ -280,19 +280,19 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
             int varB8CA5B84998AE66751392A9E3BE1DBAF_805561208 = (mService.getScanMode());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1783379949 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1783379949;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         int varA1CEDDAA20CDBA863194C58B2CFCC7E4_616959187 = (SCAN_MODE_NONE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979336810 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979336810;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return SCAN_MODE_NONE;
+        //try {
+            //return mService.getScanMode();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return SCAN_MODE_NONE;
     }
 
     
@@ -311,19 +311,19 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
             boolean var7B1D24A9A4CCC6C7243AB0FC62CDCE43_1363432017 = (mService.setScanMode(mode, duration));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_595072502 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_595072502;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1100317486 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1956351717 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1956351717;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return false;
+        //try {
+            //return mService.setScanMode(mode, duration);
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return false;
     }
 
     
@@ -339,9 +339,9 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
         boolean varDD38457F8B656D9E612A212409C7808F_359053713 = (setScanMode(mode, 120));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1800709641 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1800709641;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return false;
+        //return setScanMode(mode, 120);
     }
 
     
@@ -358,19 +358,19 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
             int varE1B8738345572D0901B5E0CC725A1459_537272134 = (mService.getDiscoverableTimeout());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1843276882 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1843276882;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1959012278 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088368368 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088368368;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return -1;
+        //try {
+            //return mService.getDiscoverableTimeout();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return -1;
     }
 
     
@@ -382,15 +382,15 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
         try 
         {
             mService.setDiscoverableTimeout(timeout);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return;
+        //try {
+            //mService.setDiscoverableTimeout(timeout);
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
     }
 
     
@@ -407,19 +407,19 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
             boolean varBF99621D08455D541D00830742175B6A_2069242641 = (mService.startDiscovery());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_106112520 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_106112520;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1070004902 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591300229 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_591300229;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return false;
+        //try {
+            //return mService.startDiscovery();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return false;
     }
 
     
@@ -436,19 +436,19 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
             boolean var24B8C58BBFE355AF38874A0571AD14D5_116257979 = (mService.cancelDiscovery());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1943892718 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1943892718;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1570585957 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1100317268 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1100317268;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return false;
+        //try {
+            //return mService.cancelDiscovery();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return false;
     }
 
     
@@ -465,19 +465,19 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
             boolean var780562F0150B90F23E039B9FA6E9FCCF_1483687877 = (mService.isDiscovering());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_476795664 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_476795664;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_22728054 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1093308129 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1093308129;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return false;
+        //try {
+            //return mService.isDiscovering();
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return false;
     }
 
     
@@ -488,27 +488,27 @@ ParcelUuid[] var540C13E9E156B687226421B24F2DF178_1281316479 =         null;
 Set<BluetoothDevice> var7CC87EB030EA04400B2D3AFB878F1678_232625021 =             toDeviceSet(new String[0]);
             var7CC87EB030EA04400B2D3AFB878F1678_232625021.addTaint(taint);
             return var7CC87EB030EA04400B2D3AFB878F1678_232625021;
-        } 
+        } //End block
         try 
         {
 Set<BluetoothDevice> varE2359B343EAAD093229952EED1A0151C_372950434 =             toDeviceSet(mService.listBonds());
             varE2359B343EAAD093229952EED1A0151C_372950434.addTaint(taint);
             return varE2359B343EAAD093229952EED1A0151C_372950434;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 Set<BluetoothDevice> var540C13E9E156B687226421B24F2DF178_1094162639 =         null;
         var540C13E9E156B687226421B24F2DF178_1094162639.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1094162639;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) {
+            //return toDeviceSet(new String[0]);
+        //}
+        //try {
+            //return toDeviceSet(mService.listBonds());
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return null;
     }
 
     
@@ -525,19 +525,19 @@ Set<BluetoothDevice> var540C13E9E156B687226421B24F2DF178_1094162639 =         nu
             int var89BBF539AAAFA06798B9D48DA63C267B_1991261187 = (mService.getAdapterConnectionState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_770557504 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_770557504;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         int var1F640F1F529317692947FAA04DB1C39E_1937625914 = (BluetoothAdapter.STATE_DISCONNECTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_606937181 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_606937181;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return BluetoothAdapter.STATE_DISCONNECTED;
+        //try {
+            //return mService.getAdapterConnectionState();
+        //} catch (RemoteException e) {Log.e(TAG, "getConnectionState:", e);}
+        //return BluetoothAdapter.STATE_DISCONNECTED;
     }
 
     
@@ -555,21 +555,21 @@ Set<BluetoothDevice> var540C13E9E156B687226421B24F2DF178_1094162639 =         nu
             int var0CA70D65B3B1B1B80DBB7215C5CEEE86_1128493269 = (mService.getProfileConnectionState(profile));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1925185870 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1925185870;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         int var6DC267D6C0363C5B94F222673460F45F_445726924 = (BluetoothProfile.STATE_DISCONNECTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1099273692 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1099273692;
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return BluetoothProfile.STATE_DISCONNECTED;
+        //try {
+            //return mService.getProfileConnectionState(profile);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "getProfileConnectionState:", e);
+        //}
+        //return BluetoothProfile.STATE_DISCONNECTED;
     }
 
     
@@ -584,26 +584,26 @@ Set<BluetoothDevice> var540C13E9E156B687226421B24F2DF178_1094162639 =         nu
             try 
             {
                 socket.close();
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
+            } //End block
             socket.mSocket.throwErrnoNative(errno);
-        } 
+        } //End block
 BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_1475293279 =         socket;
         varA63412D4E099639C1BBCBDC8D705186B_1475293279.addTaint(taint);
         return varA63412D4E099639C1BBCBDC8D705186B_1475293279;
-        
-        
-                
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //BluetoothServerSocket socket = new BluetoothServerSocket(
+                //BluetoothSocket.TYPE_RFCOMM, true, true, channel);
+        //int errno = socket.mSocket.bindListen();
+        //if (errno != 0) {
+            //try {
+                //socket.close();
+            //} catch (IOException e) {}
+            //socket.mSocket.throwErrnoNative(errno);
+        //}
+        //return socket;
     }
 
     
@@ -614,8 +614,8 @@ BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_1475293279 =         s
 BluetoothServerSocket var3EE707F51EA2594385CD32B6F83259E2_746920688 =         createNewRfcommSocketAndRecord(name, uuid, true, true);
         var3EE707F51EA2594385CD32B6F83259E2_746920688.addTaint(taint);
         return var3EE707F51EA2594385CD32B6F83259E2_746920688;
-        
-        
+        // ---------- Original Method ----------
+        //return createNewRfcommSocketAndRecord(name, uuid, true, true);
     }
 
     
@@ -626,8 +626,8 @@ BluetoothServerSocket var3EE707F51EA2594385CD32B6F83259E2_746920688 =         cr
 BluetoothServerSocket var05024ABE095066C27AB01BCCC3793A7A_83500723 =         createNewRfcommSocketAndRecord(name, uuid, false, false);
         var05024ABE095066C27AB01BCCC3793A7A_83500723.addTaint(taint);
         return var05024ABE095066C27AB01BCCC3793A7A_83500723;
-        
-        
+        // ---------- Original Method ----------
+        //return createNewRfcommSocketAndRecord(name, uuid, false, false);
     }
 
     
@@ -639,8 +639,8 @@ BluetoothServerSocket var05024ABE095066C27AB01BCCC3793A7A_83500723 =         cre
 BluetoothServerSocket varA840502DB9CC6BBE7D7E5732FE39C01F_943970754 =         createNewRfcommSocketAndRecord(name, uuid, false, true);
         varA840502DB9CC6BBE7D7E5732FE39C01F_943970754.addTaint(taint);
         return varA840502DB9CC6BBE7D7E5732FE39C01F_943970754;
-        
-        
+        // ---------- Original Method ----------
+        //return createNewRfcommSocketAndRecord(name, uuid, false, true);
     }
 
     
@@ -664,7 +664,7 @@ BluetoothServerSocket varA840502DB9CC6BBE7D7E5732FE39C01F_943970754 =         cr
                 IOException var817A124666112FE225ECD899E78D5369_1454719248 = new IOException("No available channels");
                 var817A124666112FE225ECD899E78D5369_1454719248.addTaint(taint);
                 throw var817A124666112FE225ECD899E78D5369_1454719248;
-            } 
+            } //End block
             socket = new BluetoothServerSocket(
                     BluetoothSocket.TYPE_RFCOMM, auth, encrypt, channel);
             errno = socket.mSocket.bindListen();
@@ -673,7 +673,7 @@ BluetoothServerSocket varA840502DB9CC6BBE7D7E5732FE39C01F_943970754 =         cr
     if(DBG)                
                 Log.d(TAG, "listening on RFCOMM channel " + channel);
                 break;
-            } 
+            } //End block
             else
     if(errno == BluetoothSocket.EADDRINUSE)            
             {
@@ -682,46 +682,46 @@ BluetoothServerSocket varA840502DB9CC6BBE7D7E5732FE39C01F_943970754 =         cr
                 try 
                 {
                     socket.close();
-                } 
+                } //End block
                 catch (IOException e)
                 {
-                } 
+                } //End block
                 continue;
-            } 
+            } //End block
             else
             {
                 try 
                 {
                     socket.close();
-                } 
+                } //End block
                 catch (IOException e)
                 {
-                } 
+                } //End block
                 socket.mSocket.throwErrnoNative(errno);
-            } 
-        } 
+            } //End block
+        } //End block
         int handle = -1;
         try 
         {
             handle = mService.addRfcommServiceRecord(name, new ParcelUuid(uuid), channel,
                     new Binder());
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
     if(handle == -1)        
         {
             try 
             {
                 socket.close();
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
+            } //End block
             IOException var49D6C1F0F64242D5209A78D1088C7196_586813036 = new IOException("Not able to register SDP record for " + name);
             var49D6C1F0F64242D5209A78D1088C7196_586813036.addTaint(taint);
             throw var49D6C1F0F64242D5209A78D1088C7196_586813036;
-        } 
+        } //End block
     if(mServiceRecordHandler == null)        
         {
             mServiceRecordHandler = new Handler(Looper.getMainLooper()) {        
@@ -735,26 +735,26 @@ BluetoothServerSocket varA840502DB9CC6BBE7D7E5732FE39C01F_943970754 =         cr
                 Log.d(TAG, "Removing service record " +
                                            Integer.toHexString(handle));
                 mService.removeServiceRecord(handle);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-            
-            
-            
-                            
-                                           
-                            
-                        
+            } //End block
+            // ---------- Original Method ----------
+            //int handle = msg.what;
+            //try {
+                            //if (DBG) Log.d(TAG, "Removing service record " +
+                                           //Integer.toHexString(handle));
+                            //mService.removeServiceRecord(handle);
+                        //} catch (RemoteException e) {Log.e(TAG, "", e);}
         }
 };
-        } 
+        } //End block
         socket.setCloseHandler(mServiceRecordHandler, handle);
 BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_1077095191 =         socket;
         varA63412D4E099639C1BBCBDC8D705186B_1077095191.addTaint(taint);
         return varA63412D4E099639C1BBCBDC8D705186B_1077095191;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -769,26 +769,26 @@ BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_1077095191 =         s
             try 
             {
                 socket.close();
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
+            } //End block
             socket.mSocket.throwErrnoNative(errno);
-        } 
+        } //End block
 BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_721241557 =         socket;
         varA63412D4E099639C1BBCBDC8D705186B_721241557.addTaint(taint);
         return varA63412D4E099639C1BBCBDC8D705186B_721241557;
-        
-        
-                
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //BluetoothServerSocket socket = new BluetoothServerSocket(
+                //BluetoothSocket.TYPE_RFCOMM, false, false, port);
+        //int errno = socket.mSocket.bindListen();
+        //if (errno != 0) {
+            //try {
+                //socket.close();
+            //} catch (IOException e) {}
+            //socket.mSocket.throwErrnoNative(errno);
+        //}
+        //return socket;
     }
 
     
@@ -803,26 +803,26 @@ BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_721241557 =         so
             try 
             {
                 socket.close();
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
+            } //End block
             socket.mSocket.throwErrnoNative(errno);
-        } 
+        } //End block
 BluetoothServerSocket varA63412D4E099639C1BBCBDC8D705186B_480486913 =         socket;
         varA63412D4E099639C1BBCBDC8D705186B_480486913.addTaint(taint);
         return varA63412D4E099639C1BBCBDC8D705186B_480486913;
-        
-        
-                
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //BluetoothServerSocket socket = new BluetoothServerSocket(
+                //BluetoothSocket.TYPE_RFCOMM, false, true, port);
+        //int errno = socket.mSocket.bindListen();
+        //if (errno != 0) {
+            //try {
+                //socket.close();
+            //} catch (IOException e) {}
+            //socket.mSocket.throwErrnoNative(errno);
+        //}
+        //return socket;
     }
 
     
@@ -865,33 +865,33 @@ Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_327803791 =            
             {
                 Log.d(TAG, "readOutOfBandData:" + Arrays.toString(hash) +
                   ":" + Arrays.toString(randomizer));
-            } 
+            } //End block
 Pair<byte[], byte[]> varA95A3D48A90C7F180DAC8D6CC18BFF1D_1448990941 =             new Pair<byte[], byte[]>(hash, randomizer);
             varA95A3D48A90C7F180DAC8D6CC18BFF1D_1448990941.addTaint(taint);
             return varA95A3D48A90C7F180DAC8D6CC18BFF1D_1448990941;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_1962208414 =         null;
         var540C13E9E156B687226421B24F2DF178_1962208414.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1962208414;
-        
-        
-        
-            
-            
-            
-            
-            
-            
-            
-                
-                  
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getState() != STATE_ON) return null;
+        //try {
+            //byte[] hash;
+            //byte[] randomizer;
+            //byte[] ret = mService.readOutOfBandData();
+            //if (ret  == null || ret.length != 32) return null;
+            //hash = Arrays.copyOfRange(ret, 0, 16);
+            //randomizer = Arrays.copyOfRange(ret, 16, 32);
+            //if (DBG) {
+                //Log.d(TAG, "readOutOfBandData:" + Arrays.toString(hash) +
+                  //":" + Arrays.toString(randomizer));
+            //}
+            //return new Pair<byte[], byte[]>(hash, randomizer);
+        //} catch (RemoteException e) {Log.e(TAG, "", e);}
+        //return null;
     }
 
     
@@ -913,7 +913,7 @@ Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_1962208414 =         nu
             boolean varB326B5062B2F0E69046810717534CB09_1236519279 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_600059615 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_600059615;
-        } 
+        } //End block
         else
     if(profile == BluetoothProfile.A2DP)        
         {
@@ -921,7 +921,7 @@ Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_1962208414 =         nu
             boolean varB326B5062B2F0E69046810717534CB09_92225754 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1822884463 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1822884463;
-        } 
+        } //End block
         else
     if(profile == BluetoothProfile.INPUT_DEVICE)        
         {
@@ -929,7 +929,7 @@ Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_1962208414 =         nu
             boolean varB326B5062B2F0E69046810717534CB09_1013221796 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_84315332 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_84315332;
-        } 
+        } //End block
         else
     if(profile == BluetoothProfile.PAN)        
         {
@@ -937,7 +937,7 @@ Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_1962208414 =         nu
             boolean varB326B5062B2F0E69046810717534CB09_2013499869 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_840828984 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_840828984;
-        } 
+        } //End block
         else
     if(profile == BluetoothProfile.HEALTH)        
         {
@@ -945,15 +945,15 @@ Pair<byte[], byte[]> var540C13E9E156B687226421B24F2DF178_1962208414 =         nu
             boolean varB326B5062B2F0E69046810717534CB09_1077506705 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_533211852 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_533211852;
-        } 
+        } //End block
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_275528008 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2041920435 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2041920435;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -985,8 +985,8 @@ switch(profile){
         health.close();
         break;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1007,22 +1007,22 @@ switch(profile){
                     StateChangeCallbackWrapper(callback), new Binder()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229050643 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_229050643;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_549666114 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_734031793 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_734031793;
-        
-        
-        
-            
-                    
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (callback == null) return false;
+        //try {
+            //return mService.changeApplicationBluetoothState(on, new
+                    //StateChangeCallbackWrapper(callback), new Binder());
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "changeBluetoothState", e);
+        //}
+        //return false;
     }
 
     
@@ -1033,16 +1033,16 @@ switch(profile){
 for(int i = 0;i < addresses.length;i++)
         {
             devices.add(getRemoteDevice(addresses[i]));
-        } 
+        } //End block
 Set<BluetoothDevice> var32AED13893C8FE4C204BFFE342C4B1B8_1587652002 =         Collections.unmodifiableSet(devices);
         var32AED13893C8FE4C204BFFE342C4B1B8_1587652002.addTaint(taint);
         return var32AED13893C8FE4C204BFFE342C4B1B8_1587652002;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Set<BluetoothDevice> devices = new HashSet<BluetoothDevice>(addresses.length);
+        //for (int i = 0; i < addresses.length; i++) {
+            //devices.add(getRemoteDevice(addresses[i]));
+        //}
+        //return Collections.unmodifiableSet(devices);
     }
 
     
@@ -1088,31 +1088,31 @@ Set<BluetoothDevice> var32AED13893C8FE4C204BFFE342C4B1B8_1587652002 =         Co
 for(int i = 1;i <= BluetoothSocket.MAX_RFCOMM_CHANNEL;i++)
                     {
                         sChannels.addLast(new Integer(i));
-                    } 
+                    } //End block
 for(int reserved : RESERVED_RFCOMM_CHANNELS)
                     {
                         sChannels.remove(new Integer(reserved));
-                    } 
+                    } //End block
                     sRandom = new Random();
-                } 
+                } //End block
                 mChannels = (LinkedList<Integer>)sChannels.clone();
-            } 
+            } //End block
             mUuid = uuid;
-            
-            
-                
-                    
-                    
-                        
-                    
-                    
-                        
-                    
-                    
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //synchronized (RfcommChannelPicker.class) {
+                //if (sChannels == null) {
+                    //sChannels = new LinkedList<Integer>();
+                    //for (int i = 1; i <= BluetoothSocket.MAX_RFCOMM_CHANNEL; i++) {
+                        //sChannels.addLast(new Integer(i));
+                    //}
+                    //for (int reserved : RESERVED_RFCOMM_CHANNELS) {
+                        //sChannels.remove(new Integer(reserved));
+                    //}
+                    //sRandom = new Random();
+                //}
+                //mChannels = (LinkedList<Integer>)sChannels.clone();
+            //}
+            //mUuid = uuid;
         }
 
         
@@ -1123,15 +1123,15 @@ for(int reserved : RESERVED_RFCOMM_CHANNELS)
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_405291846 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888097334 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888097334;
-            } 
+            } //End block
             int varA376C04E532E2783FDA95959A08257BE_630023186 = (mChannels.remove(sRandom.nextInt(mChannels.size())));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799128873 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799128873;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mChannels.size() == 0) {
+                //return -1;
+            //}
+            //return mChannels.remove(sRandom.nextInt(mChannels.size()));
         }
 
         
@@ -1162,19 +1162,19 @@ for(int reserved : RESERVED_RFCOMM_CHANNELS)
           StateChangeCallbackWrapper(BluetoothStateChangeCallback
                 callback) {
             mCallback = callback;
-            
-            
+            // ---------- Original Method ----------
+            //mCallback = callback;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.820 -0400", hash_original_method = "A0576354509BA338556525A396FF4F6A", hash_generated_method = "B57E300F8427C46DB1C911A50605A193")
         @Override
         public void onBluetoothStateChange(boolean on) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(on);
             mCallback.onBluetoothStateChange(on);
-            
-            
+            // ---------- Original Method ----------
+            //mCallback.onBluetoothStateChange(on);
         }
 
         

@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -54,7 +54,6 @@ public enum Tone implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(ordinal());
     }
-    @DSModeled(DSC.SAFE)
     public int describeContents() {
         return 0;
     }

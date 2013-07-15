@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class NoSuchMethodException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.032 -0400", hash_original_method = "60C13DDE4E49448CC01A624FC168F601", hash_generated_method = "9D9F27795E3EA552118260D151BF3326")
     public  NoSuchMethodException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class NoSuchMethodException extends Exception {
     public  NoSuchMethodException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.dalvik.ddmc;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,12 +12,12 @@ public class DdmServer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:28.057 -0400", hash_original_method = "9245089A3DC1CB81EAEF9FD5F462A315", hash_generated_method = "285A1E98A8D6D11E80518C3C162413CF")
     private  DdmServer() {
-        
+        // ---------- Original Method ----------
     }
 
     
         public static void registerHandler(int type, ChunkHandler handler) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         if (handler == null)
             throw new NullPointerException();
         synchronized (mHandlerMap) {

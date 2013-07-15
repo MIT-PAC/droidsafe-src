@@ -1,6 +1,6 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public abstract class TimeZone implements Serializable, Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.246 -0400", hash_original_method = "9668D4D4A28DB894D48B4297168D73B9", hash_generated_method = "8E92B7E01B365C66B79257355E0DA018")
     public  TimeZone() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,19 +27,19 @@ public abstract class TimeZone implements Serializable, Cloneable {
 Object var46F3A0D86742C1D6E099C2B166941A33_1344232092 =             super.clone();
             var46F3A0D86742C1D6E099C2B166941A33_1344232092.addTaint(taint);
             return var46F3A0D86742C1D6E099C2B166941A33_1344232092;
-        } 
+        } //End block
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1033697551 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_1033697551.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_1033697551;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return super.clone();
+        //} catch (CloneNotSupportedException e) {
+            //throw new AssertionError(e);
+        //}
     }
 
     
@@ -66,8 +66,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1344232092 =             super.clone(
 String var5F1E216CDC734C0F06A2C8CAF0DFFBB4_1842850761 =         getDisplayName(false, LONG, Locale.getDefault());
         var5F1E216CDC734C0F06A2C8CAF0DFFBB4_1842850761.addTaint(taint);
         return var5F1E216CDC734C0F06A2C8CAF0DFFBB4_1842850761;
-        
-        
+        // ---------- Original Method ----------
+        //return getDisplayName(false, LONG, Locale.getDefault());
     }
 
     
@@ -77,8 +77,8 @@ String var5F1E216CDC734C0F06A2C8CAF0DFFBB4_1842850761 =         getDisplayName(f
 String var4374B9FA1903B21ADAA622AFADA909DC_295762666 =         getDisplayName(false, LONG, locale);
         var4374B9FA1903B21ADAA622AFADA909DC_295762666.addTaint(taint);
         return var4374B9FA1903B21ADAA622AFADA909DC_295762666;
-        
-        
+        // ---------- Original Method ----------
+        //return getDisplayName(false, LONG, locale);
     }
 
     
@@ -89,8 +89,8 @@ String var4374B9FA1903B21ADAA622AFADA909DC_295762666 =         getDisplayName(fa
 String var6AAF92CBF5B6719712FC74B20FF20545_499354266 =         getDisplayName(daylightTime, style, Locale.getDefault());
         var6AAF92CBF5B6719712FC74B20FF20545_499354266.addTaint(taint);
         return var6AAF92CBF5B6719712FC74B20FF20545_499354266;
-        
-        
+        // ---------- Original Method ----------
+        //return getDisplayName(daylightTime, style, Locale.getDefault());
     }
 
     
@@ -104,7 +104,7 @@ String var6AAF92CBF5B6719712FC74B20FF20545_499354266 =         getDisplayName(da
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1659523562 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1659523562.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1659523562;
-        } 
+        } //End block
         boolean useDaylight = daylightTime && useDaylightTime();
         String[][] zoneStrings = TimeZones.getZoneStrings(locale);
         String result = TimeZones.getDisplayName(zoneStrings, getID(), daylightTime, style);
@@ -113,19 +113,19 @@ String var6AAF92CBF5B6719712FC74B20FF20545_499354266 =         getDisplayName(da
 String varDC838461EE2FA0CA4C9BBB70A15456B0_113415347 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_113415347.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_113415347;
-        } 
+        } //End block
         int offset = getRawOffset();
     if(useDaylight && this instanceof SimpleTimeZone)        
         {
             offset += getDSTSavings();
-        } 
+        } //End block
         offset /= 60000;
         char sign = '+';
     if(offset < 0)        
         {
             sign = '-';
             offset = -offset;
-        } 
+        } //End block
         StringBuilder builder = new StringBuilder(9);
         builder.append("GMT");
         builder.append(sign);
@@ -135,8 +135,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_113415347 =             result;
 String varF4CF030572656354ACFDF83FEE21D7A6_897053107 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_897053107.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_897053107;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -149,25 +149,24 @@ String varF4CF030572656354ACFDF83FEE21D7A6_897053107 =         builder.toString(
 for(int i = 0;i < count - string.length();i++)
         {
             builder.append('0');
-        } 
+        } //End block
         builder.append(string);
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String string = Integer.toString(value);
+        //for (int i = 0; i < count - string.length(); i++) {
+            //builder.append('0');
+        //}
+        //builder.append(string);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.250 -0400", hash_original_method = "6351E64C485F9179F5E10C6B44486847", hash_generated_method = "479FD41000DDF9806BA2E5207B02A0DB")
     public String getID() {
 String varA5429A949488C23EB72A92C2F2C63667_868529678 =         ID;
         varA5429A949488C23EB72A92C2F2C63667_868529678.addTaint(taint);
         return varA5429A949488C23EB72A92C2F2C63667_868529678;
-        
-        
+        // ---------- Original Method ----------
+        //return ID;
     }
 
     
@@ -176,8 +175,8 @@ String varA5429A949488C23EB72A92C2F2C63667_868529678 =         ID;
         int varDE7EEA295B1303B84ECAC29561C90EAF_476423441 = (useDaylightTime() ? 3600000 : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1625909011 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1625909011;
-        
-        
+        // ---------- Original Method ----------
+        //return useDaylightTime() ? 3600000 : 0;
     }
 
     
@@ -189,15 +188,15 @@ String varA5429A949488C23EB72A92C2F2C63667_868529678 =         ID;
             int varDE27DA43E00201ED16F13BB186434B29_696913535 = (getRawOffset() + getDSTSavings());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1649730844 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1649730844;
-        } 
+        } //End block
         int varB9E0D5E948172A8866E27FE0BD9D4C92_89979242 = (getRawOffset());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_51515003 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_51515003;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (inDaylightTime(new Date(time))) {
+            //return getRawOffset() + getDSTSavings();
+        //}
+        //return getRawOffset();
     }
 
     
@@ -289,15 +288,15 @@ String varA5429A949488C23EB72A92C2F2C63667_868529678 =         ID;
             boolean var68934A3E9455FA72420237EB05902327_1068815580 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_299796290 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_299796290;
-        } 
+        } //End block
         boolean var06C4D27F918CD5167DEAE2AAEAA0A07D_1678376528 = (getRawOffset() == timeZone.getRawOffset());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2026933679 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2026933679;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (timeZone == null) {
+            //return false;
+        //}
+        //return getRawOffset() == timeZone.getRawOffset();
     }
 
     
@@ -328,13 +327,13 @@ String varA5429A949488C23EB72A92C2F2C63667_868529678 =         ID;
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_911448447 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_911448447.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_911448447;
-        } 
+        } //End block
         ID = id;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (id == null) {
+            //throw new NullPointerException();
+        //}
+        //ID = id;
     }
 
     

@@ -1,6 +1,6 @@
 package javax.crypto;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,13 +12,13 @@ public class ShortBufferException extends GeneralSecurityException {
     public  ShortBufferException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.685 -0400", hash_original_method = "05E1544DF68BDE9AA8F5198F627D7727", hash_generated_method = "83333DD006AC3C65758F9A113F150A4A")
     public  ShortBufferException() {
-        
+        // ---------- Original Method ----------
     }
 
     

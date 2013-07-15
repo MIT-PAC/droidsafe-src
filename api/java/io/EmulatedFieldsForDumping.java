@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,20 +17,19 @@ class EmulatedFieldsForDumping extends ObjectOutputStream.PutField {
       EmulatedFieldsForDumping(ObjectOutputStream oos, ObjectStreamClass streamClass) {
         this.oos = oos;
         this.emulatedFields = new EmulatedFields(streamClass.fields(), (ObjectStreamField[]) null);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.oos = oos;
+        //this.emulatedFields = new EmulatedFields(streamClass.fields(), (ObjectStreamField[]) null);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.914 -0400", hash_original_method = "F09D38B717E770EDAB76B08B81548137", hash_generated_method = "AD13F6AD6C77A489575DA0F90CDBE4E0")
      EmulatedFields emulatedFields() {
 EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedFields;
         var18247BC109AF7C66D9FA0EEEECBE3638_581056841.addTaint(taint);
         return var18247BC109AF7C66D9FA0EEEECBE3638_581056841;
-        
-        
+        // ---------- Original Method ----------
+        //return emulatedFields;
     }
 
     
@@ -40,8 +39,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value);
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -51,8 +50,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value);
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -62,8 +61,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value);
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -73,8 +72,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value);
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -84,8 +83,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value);
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -95,8 +94,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value);
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -106,8 +105,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value.getTaint());
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -117,8 +116,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value);
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -128,8 +127,8 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
         addTaint(value);
         addTaint(name.getTaint());
         emulatedFields.put(name, value);
-        
-        
+        // ---------- Original Method ----------
+        //emulatedFields.put(name, value);
     }
 
     
@@ -143,7 +142,7 @@ EmulatedFields var18247BC109AF7C66D9FA0EEEECBE3638_581056841 =         emulatedF
             IllegalArgumentException var64365E5CD43AE4284E59B03CF8788F85_1546336777 = new IllegalArgumentException("Attempting to write to a different stream than the one that created this PutField");
             var64365E5CD43AE4284E59B03CF8788F85_1546336777.addTaint(taint);
             throw var64365E5CD43AE4284E59B03CF8788F85_1546336777;
-        } 
+        } //End block
 for(EmulatedFields.ObjectSlot slot : emulatedFields.slots())
         {
             Object fieldValue = slot.getFieldValue();
@@ -151,49 +150,49 @@ for(EmulatedFields.ObjectSlot slot : emulatedFields.slots())
     if(type == int.class)            
             {
                 output.writeInt(fieldValue != null ? ((Integer) fieldValue).intValue() : 0);
-            } 
+            } //End block
             else
     if(type == byte.class)            
             {
                 output.writeByte(fieldValue != null ? ((Byte) fieldValue).byteValue() : 0);
-            } 
+            } //End block
             else
     if(type == char.class)            
             {
                 output.writeChar(fieldValue != null ? ((Character) fieldValue).charValue() : 0);
-            } 
+            } //End block
             else
     if(type == short.class)            
             {
                 output.writeShort(fieldValue != null ? ((Short) fieldValue).shortValue() : 0);
-            } 
+            } //End block
             else
     if(type == boolean.class)            
             {
                 output.writeBoolean(fieldValue != null ? ((Boolean) fieldValue).booleanValue() : false);
-            } 
+            } //End block
             else
     if(type == long.class)            
             {
                 output.writeLong(fieldValue != null ? ((Long) fieldValue).longValue() : 0);
-            } 
+            } //End block
             else
     if(type == float.class)            
             {
                 output.writeFloat(fieldValue != null ? ((Float) fieldValue).floatValue() : 0);
-            } 
+            } //End block
             else
     if(type == double.class)            
             {
                 output.writeDouble(fieldValue != null ? ((Double) fieldValue).doubleValue() : 0);
-            } 
+            } //End block
             else
             {
                 output.writeObject(fieldValue);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

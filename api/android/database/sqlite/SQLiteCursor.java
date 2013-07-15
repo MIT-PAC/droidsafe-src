@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,7 +43,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
         addTaint(editTable.getTaint());
         addTaint(driver.getTaint());
         addTaint(db.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -54,21 +54,21 @@ public class SQLiteCursor extends AbstractWindowedCursor {
             IllegalArgumentException var4DCD1112209C612D190CEBACFFC334B6_1077068785 = new IllegalArgumentException("query object cannot be null");
             var4DCD1112209C612D190CEBACFFC334B6_1077068785.addTaint(taint);
             throw var4DCD1112209C612D190CEBACFFC334B6_1077068785;
-        } 
+        } //End block
     if(query.mDatabase == null)        
         {
             IllegalArgumentException var7217DF37FE0EF7B4F0A13015568C047C_1692249083 = new IllegalArgumentException("query.mDatabase cannot be null");
             var7217DF37FE0EF7B4F0A13015568C047C_1692249083.addTaint(taint);
             throw var7217DF37FE0EF7B4F0A13015568C047C_1692249083;
-        } 
+        } //End block
     if(StrictMode.vmSqliteObjectLeaksEnabled())        
         {
             mStackTrace = new DatabaseObjectNotClosedException().fillInStackTrace();
-        } 
+        } //End block
         else
         {
             mStackTrace = null;
-        } 
+        } //End block
         mDriver = driver;
         mEditTable = editTable;
         mColumnNameMap = null;
@@ -84,23 +84,22 @@ for(int i = 0;i < columnCount;i++)
                 mColumns[i] = columnName;
     if(false)                
                 {
-                } 
+                } //End block
     if("_id".equals(columnName))                
                 {
                     mRowIdColumnIndex = i;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
             query.mDatabase.unlock();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.627 -0400", hash_original_method = "AF759727D3C973E194D48B5E653874F6", hash_generated_method = "AB7F41C090CC4621827A13255A8A723B")
     public SQLiteDatabase getDatabase() {
         synchronized
@@ -108,34 +107,34 @@ for(int i = 0;i < columnCount;i++)
 SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_59300907 =             mQuery.mDatabase;
             var74EF8627A8500A3E2D87BFD62025CE19_59300907.addTaint(taint);
             return var74EF8627A8500A3E2D87BFD62025CE19_59300907;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //return mQuery.mDatabase;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.628 -0400", hash_original_method = "B4A0D7606429FC274C47739DBFA1C1E0", hash_generated_method = "59F3BE4CD0BB4F885B6DE70C329B8A3C")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newPosition);
         addTaint(oldPosition);
     if(mWindow == null || newPosition < mWindow.getStartPosition() ||
                 newPosition >= (mWindow.getStartPosition() + mWindow.getNumRows()))        
         {
             fillWindow(newPosition);
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_329283692 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1525354161 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1525354161;
-        
-        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mWindow == null || newPosition < mWindow.getStartPosition() ||
+                //newPosition >= (mWindow.getStartPosition() + mWindow.getNumRows())) {
+            //fillWindow(newPosition);
+        //}
+        //return true;
     }
 
     
@@ -145,15 +144,15 @@ SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_59300907 =             mQuery
     if(mCount == NO_COUNT)        
         {
             fillWindow(0);
-        } 
+        } //End block
         int var4A5FC91463CC1EF00D3AA26340B946C6_590229576 = (mCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050028207 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050028207;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mCount == NO_COUNT) {
+            //fillWindow(0);
+        //}
+        //return mCount;
     }
 
     
@@ -168,9 +167,9 @@ SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_59300907 =             mQuery
     if(Log.isLoggable(TAG, Log.DEBUG))            
             {
                 Log.d(TAG, "received count(*) from native_fill_window: " + count);
-            } 
+            } //End block
             mCount = count;
-        } 
+        } //End block
         else
     if(mCount <= 0)        
         {
@@ -178,31 +177,30 @@ SQLiteDatabase var74EF8627A8500A3E2D87BFD62025CE19_59300907 =             mQuery
                     + "when the start position is non-zero");
             var0CC1C6D0B17DF0CAC4CA7F5C03B3AB88_728707150.addTaint(taint);
             throw var0CC1C6D0B17DF0CAC4CA7F5C03B3AB88_728707150;
-        } 
-        
-        
-        
-        
-        
-            
-                
-            
-            
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //clearOrCreateWindow(getDatabase().getPath());
+        //mWindow.setStartPosition(startPos);
+        //int count = getQuery().fillWindow(mWindow);
+        //if (startPos == 0) { 
+            //if (Log.isLoggable(TAG, Log.DEBUG)) {
+                //Log.d(TAG, "received count(*) from native_fill_window: " + count);
+            //}
+            //mCount = count;
+        //} else if (mCount <= 0) {
+            //throw new IllegalStateException("Row count should never be zero or negative "
+                    //+ "when the start position is non-zero");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.629 -0400", hash_original_method = "976132A7E3467B4AD1CD095C1F4D25D0", hash_generated_method = "C87018021A184A4C7C3B4F00FACAB1EA")
     private synchronized SQLiteQuery getQuery() {
 SQLiteQuery varC104E74F3085CDE7E6D7F4CAA0F9BCA1_1501298399 =         mQuery;
         varC104E74F3085CDE7E6D7F4CAA0F9BCA1_1501298399.addTaint(taint);
         return varC104E74F3085CDE7E6D7F4CAA0F9BCA1_1501298399;
-        
-        
+        // ---------- Original Method ----------
+        //return mQuery;
     }
 
     
@@ -218,42 +216,41 @@ SQLiteQuery varC104E74F3085CDE7E6D7F4CAA0F9BCA1_1501298399 =         mQuery;
 for(int i = 0;i < columnCount;i++)
             {
                 map.put(columns[i], i);
-            } 
+            } //End block
             mColumnNameMap = map;
-        } 
+        } //End block
         final int periodIndex = columnName.lastIndexOf('.');
     if(periodIndex != -1)        
         {
             Exception e = new Exception();
             columnName = columnName.substring(periodIndex + 1);
-        } 
+        } //End block
         Integer i = mColumnNameMap.get(columnName);
     if(i != null)        
         {
             int varF877893BFF35C97E4E3D5D01360AF179_329446821 = (i.intValue());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521250043 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521250043;
-        } 
+        } //End block
         else
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_291911667 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1264185333 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1264185333;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.631 -0400", hash_original_method = "6996FDAE7F544E3AE18BC0C5BC1EECAC", hash_generated_method = "CAB4D3EBA645561070271CA7F8746168")
     @Override
     public String[] getColumnNames() {
 String[] varD3E6185118B69354C5CA1E2493E0C19D_163086916 =         mColumns;
         varD3E6185118B69354C5CA1E2493E0C19D_163086916.addTaint(taint);
         return varD3E6185118B69354C5CA1E2493E0C19D_163086916;
-        
-        
+        // ---------- Original Method ----------
+        //return mColumns;
     }
 
     
@@ -262,9 +259,9 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_163086916 =         mColumns;
     public void deactivate() {
         super.deactivate();
         mDriver.cursorDeactivated();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.deactivate();
+        //mDriver.cursorDeactivated();
     }
 
     
@@ -276,17 +273,16 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_163086916 =         mColumns;
 (this)        {
             mQuery.close();
             mDriver.cursorClosed();
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.close();
+        //synchronized (this) {
+            //mQuery.close();
+            //mDriver.cursorClosed();
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.634 -0400", hash_original_method = "EB44A3C249AFFC8E58A7028D8F44463C", hash_generated_method = "7FD622C3E1254C90E0E1DABAA29281B5")
     @Override
     public boolean requery() {
@@ -295,91 +291,91 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_163086916 =         mColumns;
             boolean var68934A3E9455FA72420237EB05902327_1822196914 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1345507695 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1345507695;
-        } 
+        } //End block
         long timeStart = 0;
     if(false)        
         {
             timeStart = System.currentTimeMillis();
-        } 
+        } //End block
         synchronized
 (this)        {
     if(mWindow != null)            
             {
                 mWindow.clear();
-            } 
+            } //End block
             mPos = -1;
             SQLiteDatabase db = null;
             try 
             {
                 db = mQuery.mDatabase.getDatabaseHandle(mQuery.mSql);
-            } 
+            } //End block
             catch (IllegalStateException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_2124719803 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_56269350 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_56269350;
-            } 
+            } //End block
     if(!db.equals(mQuery.mDatabase))            
             {
                 try 
                 {
                     db.lock(mQuery.mSql);
-                } 
+                } //End block
                 catch (IllegalStateException e)
                 {
                     boolean var68934A3E9455FA72420237EB05902327_1088064671 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980309367 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1980309367;
-                } 
+                } //End block
                 try 
                 {
                     mQuery.close();
                     mQuery = new SQLiteQuery(db, mQuery);
-                } 
+                } //End block
                 catch (IllegalStateException e)
                 {
                     boolean var68934A3E9455FA72420237EB05902327_738554439 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1833467898 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1833467898;
-                } 
+                } //End block
                 finally 
                 {
                     db.unlock();
-                } 
-            } 
+                } //End block
+            } //End block
             mDriver.cursorRequeried(this);
             mCount = NO_COUNT;
             try 
             {
                 mQuery.requery();
-            } 
+            } //End block
             catch (IllegalStateException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1161683601 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_344013693 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_344013693;
-            } 
-        } 
+            } //End block
+        } //End block
     if(false)        
         {
-        } 
+        } //End block
         boolean result = false;
         try 
         {
             result = super.requery();
-        } 
+        } //End block
         catch (IllegalStateException e)
         {
-        } 
+        } //End block
     if(false)        
         {
             long timeEnd = System.currentTimeMillis();
-        } 
+        } //End block
         boolean varB4A88417B3D0170D754C647C30B7216A_1780988796 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_571334409 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_571334409;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -389,9 +385,9 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_163086916 =         mColumns;
         addTaint(window.getTaint());
         super.setWindow(window);
         mCount = NO_COUNT;
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.setWindow(window);
+        //mCount = NO_COUNT;
     }
 
     
@@ -399,8 +395,8 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_163086916 =         mColumns;
     public void setSelectionArguments(String[] selectionArgs) {
         addTaint(selectionArgs[0].getTaint());
         mDriver.setBindArguments(selectionArgs);
-        
-        
+        // ---------- Original Method ----------
+        //mDriver.setBindArguments(selectionArgs);
     }
 
     
@@ -419,23 +415,23 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_163086916 =         mColumns;
                         "database = " + mQuery.mDatabase.getPath() + ", table = " + mEditTable +
                         ", query = " + mQuery.mSql.substring(0, (len > 1000) ? 1000 : len),
                         mStackTrace);
-                } 
+                } //End block
                 close();
                 SQLiteDebug.notifyActiveCursorFinalized();
-            } 
+            } //End block
             else
             {
     if(false)                
                 {
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

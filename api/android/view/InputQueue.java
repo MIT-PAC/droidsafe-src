@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ public final class InputQueue {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.945 -0400", hash_original_method = "578F9F8C0543A874EC0424533736E385", hash_generated_method = "CE3B3177795F0AF995D39C9B3A066820")
     public  InputQueue(InputChannel channel) {
         mChannel = channel;
-        
-        
+        // ---------- Original Method ----------
+        //mChannel = channel;
     }
 
     
@@ -36,20 +36,19 @@ public final class InputQueue {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.946 -0400", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "FAEEAB07963246FEA42BB3434A675E6D")
     public InputChannel getInputChannel() {
 InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1620232544 =         mChannel;
         varE2D76F05D260658A7D968B6D9CBA0D40_1620232544.addTaint(taint);
         return varE2D76F05D260658A7D968B6D9CBA0D40_1620232544;
-        
-        
+        // ---------- Original Method ----------
+        //return mChannel;
     }
 
     
         public static void registerInputChannel(InputChannel inputChannel, InputHandler inputHandler,
             MessageQueue messageQueue) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         if (inputChannel == null) {
             throw new IllegalArgumentException("inputChannel must not be null");
         }
@@ -107,7 +106,7 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1620232544 =         mChannel;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.948 -0400", hash_original_method = "85C1D812E7267DE4D8D0FC0F23F521F1", hash_generated_method = "FE7116F7FDD08D0BCD50ADD251496AB3")
         private  FinishedCallback() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -137,7 +136,7 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1620232544 =         mChannel;
                     IllegalStateException var241EDB98EA12D59AE07921EE5D3D6CA9_1021202942 = new IllegalStateException("Event finished callback already invoked.");
                     var241EDB98EA12D59AE07921EE5D3D6CA9_1021202942.addTaint(taint);
                     throw var241EDB98EA12D59AE07921EE5D3D6CA9_1021202942;
-                } 
+                } //End block
                 nativeFinished(mFinishedToken, handled);
                 mFinishedToken = -1;
     if(sRecycleCount < RECYCLE_MAX_COUNT)                
@@ -148,25 +147,25 @@ InputChannel varE2D76F05D260658A7D968B6D9CBA0D40_1620232544 =         mChannel;
     if(DEBUG_RECYCLING)                    
                     {
                         Slog.d(TAG, "Recycled finished callbacks: " + sRecycleCount);
-                    } 
-                } 
-            } 
-            
-            
-                
-                    
-                
-                
-                
-                
-                    
-                    
-                    
-                    
-                        
-                    
-                
-            
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (sLock) {
+                //if (mFinishedToken == -1) {
+                    //throw new IllegalStateException("Event finished callback already invoked.");
+                //}
+                //nativeFinished(mFinishedToken, handled);
+                //mFinishedToken = -1;
+                //if (sRecycleCount < RECYCLE_MAX_COUNT) {
+                    //mRecycleNext = sRecycleHead;
+                    //sRecycleHead = this;
+                    //sRecycleCount += 1;
+                    //if (DEBUG_RECYCLING) {
+                        //Slog.d(TAG, "Recycled finished callbacks: " + sRecycleCount);
+                    //}
+                //}
+            //}
         }
 
         

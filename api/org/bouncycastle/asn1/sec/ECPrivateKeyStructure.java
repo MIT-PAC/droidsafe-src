@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.sec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,8 +30,8 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
     public  ECPrivateKeyStructure(
         ASN1Sequence  seq) {
         this.seq = seq;
-        
-        
+        // ---------- Original Method ----------
+        //this.seq = seq;
     }
 
     
@@ -44,12 +44,12 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
         v.add(new DERInteger(1));
         v.add(new DEROctetString(bytes));
         seq = new DERSequence(v);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] bytes = BigIntegers.asUnsignedByteArray(key);
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //v.add(new DERInteger(1));
+        //v.add(new DEROctetString(bytes));
+        //seq = new DERSequence(v);
     }
 
     
@@ -60,7 +60,7 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
         this(key, null, parameters);
         addTaint(parameters.getTaint());
         addTaint(key.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -79,26 +79,26 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
     if(parameters != null)        
         {
             v.add(new DERTaggedObject(true, 0, parameters));
-        } 
+        } //End block
     if(publicKey != null)        
         {
             v.add(new DERTaggedObject(true, 1, publicKey));
-        } 
+        } //End block
         seq = new DERSequence(v);
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //byte[] bytes = BigIntegers.asUnsignedByteArray(key);
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //v.add(new DERInteger(1));
+        //v.add(new DEROctetString(bytes));
+        //if (parameters != null)
+        //{
+            //v.add(new DERTaggedObject(true, 0, parameters));
+        //}
+        //if (publicKey != null)
+        //{
+            //v.add(new DERTaggedObject(true, 1, publicKey));
+        //}
+        //seq = new DERSequence(v);
     }
 
     
@@ -108,9 +108,9 @@ public class ECPrivateKeyStructure extends ASN1Encodable {
 BigInteger var80DF0B153BA9995164F4B5B25057318A_1810975329 =         new BigInteger(1, octs.getOctets());
         var80DF0B153BA9995164F4B5B25057318A_1810975329.addTaint(taint);
         return var80DF0B153BA9995164F4B5B25057318A_1810975329;
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1OctetString  octs = (ASN1OctetString)seq.getObjectAt(1);
+        //return new BigInteger(1, octs.getOctets());
     }
 
     
@@ -119,8 +119,8 @@ BigInteger var80DF0B153BA9995164F4B5B25057318A_1810975329 =         new BigInteg
 DERBitString var04EB087ECDC943C1CF143F46DC90A070_1284563892 =         (DERBitString)getObjectInTag(1);
         var04EB087ECDC943C1CF143F46DC90A070_1284563892.addTaint(taint);
         return var04EB087ECDC943C1CF143F46DC90A070_1284563892;
-        
-        
+        // ---------- Original Method ----------
+        //return (DERBitString)getObjectInTag(1);
     }
 
     
@@ -129,8 +129,8 @@ DERBitString var04EB087ECDC943C1CF143F46DC90A070_1284563892 =         (DERBitStr
 ASN1Object var3FB644C7C242382FECABE32076F66AE1_1109655335 =         getObjectInTag(0);
         var3FB644C7C242382FECABE32076F66AE1_1109655335.addTaint(taint);
         return var3FB644C7C242382FECABE32076F66AE1_1109655335;
-        
-        
+        // ---------- Original Method ----------
+        //return getObjectInTag(0);
     }
 
     
@@ -150,38 +150,37 @@ ASN1Object var3FB644C7C242382FECABE32076F66AE1_1109655335 =         getObjectInT
 ASN1Object var47FA15ACC5922DECF9C16982C8B623FE_2049270937 =                     (ASN1Object)((DEREncodable)tag.getObject()).getDERObject();
                     var47FA15ACC5922DECF9C16982C8B623FE_2049270937.addTaint(taint);
                     return var47FA15ACC5922DECF9C16982C8B623FE_2049270937;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 ASN1Object var540C13E9E156B687226421B24F2DF178_598791465 =         null;
         var540C13E9E156B687226421B24F2DF178_598791465.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_598791465;
-        
-        
-        
-        
-            
-            
-            
-                
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Enumeration e = seq.getObjects();
+        //while (e.hasMoreElements())
+        //{
+            //DEREncodable obj = (DEREncodable)e.nextElement();
+            //if (obj instanceof ASN1TaggedObject)
+            //{
+                //ASN1TaggedObject tag = (ASN1TaggedObject)obj;
+                //if (tag.getTagNo() == tagNo)
+                //{
+                    //return (ASN1Object)((DEREncodable)tag.getObject()).getDERObject();
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.543 -0400", hash_original_method = "0BE753B103EB5E27F0AD9CE4B67E8D14", hash_generated_method = "4CE1F54696B114186B69DB419AB6DAC0")
     public DERObject toASN1Object() {
 DERObject var42A78C062640017A329FA085150BC1B8_1479877918 =         seq;
         var42A78C062640017A329FA085150BC1B8_1479877918.addTaint(taint);
         return var42A78C062640017A329FA085150BC1B8_1479877918;
-        
-        
+        // ---------- Original Method ----------
+        //return seq;
     }
 
     

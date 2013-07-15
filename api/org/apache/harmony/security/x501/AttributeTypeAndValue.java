@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x501;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,16 +33,16 @@ public final class AttributeTypeAndValue {
     if(thisOid == null)        
         {
             thisOid = new ObjectIdentifier(oid);
-        } 
+        } //End block
         this.oid = thisOid;
         this.value = value;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //ObjectIdentifier thisOid = getOID(oid);
+        //if (thisOid == null) {
+            //thisOid = new ObjectIdentifier(oid);
+        //}
+        //this.oid = thisOid;
+        //this.value = value;
     }
 
     
@@ -55,9 +55,9 @@ public final class AttributeTypeAndValue {
     if(thisOid == null)            
             {
                 thisOid = new ObjectIdentifier(array);
-            } 
+            } //End block
             this.oid = thisOid;
-        } 
+        } //End block
         else
         {
             this.oid = KNOWN_NAMES.get(sOid.toUpperCase(Locale.US));
@@ -66,24 +66,24 @@ public final class AttributeTypeAndValue {
                 IOException varDB8D0A1481468F0B8911412768EAF7DE_118639173 = new IOException("Unrecognizable attribute name: " + sOid);
                 varDB8D0A1481468F0B8911412768EAF7DE_118639173.addTaint(taint);
                 throw varDB8D0A1481468F0B8911412768EAF7DE_118639173;
-            } 
-        } 
+            } //End block
+        } //End block
         this.value = value;
-        
-        
-            
-            
-            
-                
-            
-            
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (sOid.charAt(0) >= '0' && sOid.charAt(0) <= '9') {
+            //int[] array = org.apache.harmony.security.asn1.ObjectIdentifier.toIntArray(sOid);
+            //ObjectIdentifier thisOid = getOID(array);
+            //if (thisOid == null) {
+                //thisOid = new ObjectIdentifier(array);
+            //}
+            //this.oid = thisOid;
+        //} else {
+            //this.oid = KNOWN_NAMES.get(sOid.toUpperCase(Locale.US));
+            //if (this.oid == null) {
+                //throw new IOException("Unrecognizable attribute name: " + sOid);
+            //}
+        //}
+        //this.value = value;
     }
 
     
@@ -97,26 +97,26 @@ public final class AttributeTypeAndValue {
     if(RFC1779_NAMES == oid.getGroup())            
             {
                 sb.append(oid.getName());
-            } 
+            } //End block
             else
             {
                 sb.append(oid.toOIDString());
-            } 
+            } //End block
             sb.append('=');
     if(value.escapedString == value.getHexString())            
             {
                 sb.append(value.getHexString().toUpperCase(Locale.US));
-            } 
+            } //End block
             else
     if(value.escapedString.length() != value.rawString.length())            
             {
                 value.appendQEString(sb);
-            } 
+            } //End block
             else
             {
                 sb.append(value.escapedString);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             Object group = oid.getGroup();
@@ -131,44 +131,43 @@ public final class AttributeTypeAndValue {
                             && !ASN1StringType.TELETEXSTRING.checkTag(tag))                    
                     {
                         hexFormat = true;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             else
             {
                 sb.append(oid.toString());
                 hexFormat = true;
-            } 
+            } //End block
             sb.append('=');
     if(hexFormat)            
             {
                 sb.append(value.getHexString());
-            } 
+            } //End block
             else
             {
     if(X500Principal.CANONICAL.equals(attrFormat))                
                 {
                     sb.append(value.makeCanonical());
-                } 
+                } //End block
                 else
                 {
                     sb.append(value.escapedString);
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.500 -0400", hash_original_method = "FA85FF96313B2EEDB4486C871DCE0458", hash_generated_method = "7F121C6105DA0460708ACECE2782557C")
     public ObjectIdentifier getType() {
 ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_1508207867 =         oid;
         var6EE0E520E830DF58CC7591C0A7BECFB6_1508207867.addTaint(taint);
         return var6EE0E520E830DF58CC7591C0A7BECFB6_1508207867;
-        
-        
+        // ---------- Original Method ----------
+        //return oid;
     }
 
     
@@ -203,8 +202,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_1508207867 =         oid;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int hashIntArray(int[] oid) {
+        private static int hashIntArray(int[] oid) {
         int intHash = 0;
         for (int i = 0; i < oid.length && i < 4; i++) {
             intHash += oid[i] << (8 * i); 
@@ -418,7 +416,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_1508207867 =         oid;
             values[1] = atav.value;
         }
     };
-    
+    // orphaned legacy method
     public void setEncodingContent(BerOutputStream out) {
             AttributeValue av = (AttributeValue) out.content;
 
@@ -437,12 +435,12 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_1508207867 =         oid;
             }
         }
     
-    
+    // orphaned legacy method
     public boolean checkTag(int tag) {
             return true;
         }
     
-    
+    // orphaned legacy method
     public Object decode(BerInputStream in) throws IOException {
             
             String str = null;
@@ -461,7 +459,7 @@ ObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_1508207867 =         oid;
             return new AttributeValue(str, bytesEncoded, in.tag);
         }
     
-    
+    // orphaned legacy method
     public void encodeContent(BerOutputStream out) {
             
             throw new RuntimeException("AttributeValue encodeContent MUST NOT be invoked");

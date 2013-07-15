@@ -1,6 +1,6 @@
 package java.util.zip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,7 +41,7 @@ public class ZipFile implements ZipConstants {
     public  ZipFile(File file) throws ZipException, IOException {
         this(file, OPEN_READ);
         addTaint(file.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -54,31 +54,31 @@ public class ZipFile implements ZipConstants {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_239885104 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_239885104.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_239885104;
-        } 
+        } //End block
     if((mode & OPEN_DELETE) != 0)        
         {
             fileToDeleteOnClose = file;
-        } 
+        } //End block
         else
         {
             fileToDeleteOnClose = null;
-        } 
+        } //End block
         mRaf = new RandomAccessFile(fileName, "r");
         readCentralDir();
         guard.open("close");
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //fileName = file.getPath();
+        //if (mode != OPEN_READ && mode != (OPEN_READ | OPEN_DELETE)) {
+            //throw new IllegalArgumentException();
+        //}
+        //if ((mode & OPEN_DELETE) != 0) {
+            //fileToDeleteOnClose = file; 
+        //} else {
+            //fileToDeleteOnClose = null;
+        //}
+        //mRaf = new RandomAccessFile(fileName, "r");
+        //readCentralDir();
+        //guard.open("close");
     }
 
     
@@ -86,7 +86,7 @@ public class ZipFile implements ZipConstants {
     public  ZipFile(String name) throws IOException {
         this(new File(name), OPEN_READ);
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -98,33 +98,33 @@ public class ZipFile implements ZipConstants {
     if(guard != null)            
             {
                 guard.warnIfOpen();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             try 
             {
                 super.finalize();
-            } 
+            } //End block
             catch (Throwable t)
             {
                 AssertionError var31F1143F51E5C3306DAC550F61AF5CBA_410899981 = new AssertionError(t);
                 var31F1143F51E5C3306DAC550F61AF5CBA_410899981.addTaint(taint);
                 throw var31F1143F51E5C3306DAC550F61AF5CBA_410899981;
-            } 
-        } 
-        
-        
-            
-                
-            
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (guard != null) {
+                //guard.warnIfOpen();
+            //}
+        //} finally {
+            //try {
+                //super.finalize();
+            //} catch (Throwable t) {
+                //throw new AssertionError(t);
+            //}
+        //}
     }
 
     
@@ -138,26 +138,26 @@ public class ZipFile implements ZipConstants {
 (raf)            {
                 mRaf = null;
                 raf.close();
-            } 
+            } //End block
     if(fileToDeleteOnClose != null)            
             {
                 fileToDeleteOnClose.delete();
                 fileToDeleteOnClose = null;
-            } 
-        } 
-        
-        
-        
-        
-            
-                
-                
-            
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //guard.close();
+        //RandomAccessFile raf = mRaf;
+        //if (raf != null) { 
+            //synchronized(raf) {
+                //mRaf = null;
+                //raf.close();
+            //}
+            //if (fileToDeleteOnClose != null) {
+                //fileToDeleteOnClose.delete();
+                //fileToDeleteOnClose = null;
+            //}
+        //}
     }
 
     
@@ -168,11 +168,11 @@ public class ZipFile implements ZipConstants {
             IllegalStateException var4D2E3C6EC148079EB8B6AAD6FAB0DF1F_230065070 = new IllegalStateException("Zip file closed");
             var4D2E3C6EC148079EB8B6AAD6FAB0DF1F_230065070.addTaint(taint);
             throw var4D2E3C6EC148079EB8B6AAD6FAB0DF1F_230065070;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mRaf == null) {
+            //throw new IllegalStateException("Zip file closed");
+        //}
     }
 
     
@@ -187,9 +187,9 @@ Enumeration<? extends ZipEntry> var5C2492AEF6429BB2452507D2F1DD320A_1009656857 =
             boolean varD6B09E4375C520F8E3C47E2CD37ACCE3_828684741 = (iterator.hasNext());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_110823652 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_110823652;
-            
-            
-            
+            // ---------- Original Method ----------
+            //checkNotClosed();
+            //return iterator.hasNext();
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.539 -0400", hash_original_method = "0AFF9A2DED00798BA27B7711FA7E95F7", hash_generated_method = "3F538D55B97097BC8432AAB69609B01B")
         public ZipEntry nextElement() {
@@ -197,26 +197,26 @@ Enumeration<? extends ZipEntry> var5C2492AEF6429BB2452507D2F1DD320A_1009656857 =
 ZipEntry var862BD85102BDD28E8A3902D84E203428_1892743272 =             iterator.next();
             var862BD85102BDD28E8A3902D84E203428_1892743272.addTaint(taint);
             return var862BD85102BDD28E8A3902D84E203428_1892743272;
-            
-            
-            
+            // ---------- Original Method ----------
+            //checkNotClosed();
+            //return iterator.next();
         }
 };
         var5C2492AEF6429BB2452507D2F1DD320A_1009656857.addTaint(taint);
         return var5C2492AEF6429BB2452507D2F1DD320A_1009656857;
-        
-        
-        
-        
-            
-                
-                
-            
-            
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //checkNotClosed();
+        //final Iterator<ZipEntry> iterator = mEntries.values().iterator();
+        //return new Enumeration<ZipEntry>() {
+            //public boolean hasMoreElements() {
+                //checkNotClosed();
+                //return iterator.hasNext();
+            //}
+            //public ZipEntry nextElement() {
+                //checkNotClosed();
+                //return iterator.next();
+            //}
+        //};
     }
 
     
@@ -229,25 +229,25 @@ ZipEntry var862BD85102BDD28E8A3902D84E203428_1892743272 =             iterator.n
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_944426849 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_944426849.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_944426849;
-        } 
+        } //End block
         ZipEntry ze = mEntries.get(entryName);
     if(ze == null)        
         {
             ze = mEntries.get(entryName + "/");
-        } 
+        } //End block
 ZipEntry var73C8562FB105FA2AE4E182CC2B2A6163_1536642118 =         ze;
         var73C8562FB105FA2AE4E182CC2B2A6163_1536642118.addTaint(taint);
         return var73C8562FB105FA2AE4E182CC2B2A6163_1536642118;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //checkNotClosed();
+        //if (entryName == null) {
+            //throw new NullPointerException();
+        //}
+        //ZipEntry ze = mEntries.get(entryName);
+        //if (ze == null) {
+            //ze = mEntries.get(entryName + "/");
+        //}
+        //return ze;
     }
 
     
@@ -260,7 +260,7 @@ ZipEntry var73C8562FB105FA2AE4E182CC2B2A6163_1536642118 =         ze;
 InputStream var540C13E9E156B687226421B24F2DF178_473500988 =             null;
             var540C13E9E156B687226421B24F2DF178_473500988.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_473500988;
-        } 
+        } //End block
         RandomAccessFile raf = mRaf;
         synchronized
 (raf)        {
@@ -276,27 +276,26 @@ InputStream var540C13E9E156B687226421B24F2DF178_473500988 =             null;
 InputStream varA1A5089AF66D782ED77C510B41C135BF_1967174577 =                 new ZipInflaterInputStream(rafstrm, new Inflater(true), bufSize, entry);
                 varA1A5089AF66D782ED77C510B41C135BF_1967174577.addTaint(taint);
                 return varA1A5089AF66D782ED77C510B41C135BF_1967174577;
-            } 
+            } //End block
             else
             {
 InputStream varCCC692323793F05C82909AF4A23A4D26_1502398053 =                 rafstrm;
                 varCCC692323793F05C82909AF4A23A4D26_1502398053.addTaint(taint);
                 return varCCC692323793F05C82909AF4A23A4D26_1502398053;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.541 -0400", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "72A2243D9A97898B107BAE7DA755BB36")
     public String getName() {
 String varBD5EACC393579FDF5D0E813DB68A2F73_275074010 =         fileName;
         varBD5EACC393579FDF5D0E813DB68A2F73_275074010.addTaint(taint);
         return varBD5EACC393579FDF5D0E813DB68A2F73_275074010;
-        
-        
+        // ---------- Original Method ----------
+        //return fileName;
     }
 
     
@@ -306,9 +305,9 @@ String varBD5EACC393579FDF5D0E813DB68A2F73_275074010 =         fileName;
         int var2B1032AE02C6800C1DF6086DBBBD9D60_374075522 = (mEntries.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_972600544 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_972600544;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkNotClosed();
+        //return mEntries.size();
     }
 
     
@@ -320,12 +319,12 @@ String varBD5EACC393579FDF5D0E813DB68A2F73_275074010 =         fileName;
             ZipException varDCBFD9907BC45F2235339C07B723FE62_1626735170 = new ZipException("too short to be Zip");
             varDCBFD9907BC45F2235339C07B723FE62_1626735170.addTaint(taint);
             throw varDCBFD9907BC45F2235339C07B723FE62_1626735170;
-        } 
+        } //End block
         long stopOffset = scanOffset - 65536;
     if(stopOffset < 0)        
         {
             stopOffset = 0;
-        } 
+        } //End block
         final int ENDHEADERMAGIC = 0x06054b50;
         while
 (true)        
@@ -334,15 +333,15 @@ String varBD5EACC393579FDF5D0E813DB68A2F73_275074010 =         fileName;
     if(Integer.reverseBytes(mRaf.readInt()) == ENDHEADERMAGIC)            
             {
                 break;
-            } 
+            } //End block
             scanOffset--;
     if(scanOffset < stopOffset)            
             {
                 ZipException varB612409481C72D178BCF8ABFBF152D16_1318437871 = new ZipException("EOCD not found; not a Zip archive?");
                 varB612409481C72D178BCF8ABFBF152D16_1318437871.addTaint(taint);
                 throw varB612409481C72D178BCF8ABFBF152D16_1318437871;
-            } 
-        } 
+            } //End block
+        } //End block
         byte[] eocd = new byte[18];
         mRaf.readFully(eocd);
         BufferIterator it = HeapBufferIterator.iterator(eocd, 0, eocd.length, ByteOrder.LITTLE_ENDIAN);
@@ -357,7 +356,7 @@ String varBD5EACC393579FDF5D0E813DB68A2F73_275074010 =         fileName;
             ZipException varAFE6043B45A57CA8A437338ED6816F54_294017054 = new ZipException("spanned archives not supported");
             varAFE6043B45A57CA8A437338ED6816F54_294017054.addTaint(taint);
             throw varAFE6043B45A57CA8A437338ED6816F54_294017054;
-        } 
+        } //End block
         RAFStream rafs = new RAFStream(mRaf, centralDirOffset);
         BufferedInputStream bin = new BufferedInputStream(rafs, 4096);
         byte[] hdrBuf = new byte[CENHDR];
@@ -365,9 +364,9 @@ for(int i = 0;i < numEntries;++i)
         {
             ZipEntry newEntry = new ZipEntry(hdrBuf, bin);
             mEntries.put(newEntry.getName(), newEntry);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -387,22 +386,21 @@ for(int i = 0;i < numEntries;++i)
             mSharedRaf = raf;
             mOffset = pos;
             mLength = raf.length();
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mSharedRaf = raf;
+            //mOffset = pos;
+            //mLength = raf.length();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.544 -0400", hash_original_method = "EBB90581A10714B3978F18E12312CB3A", hash_generated_method = "6A40E3DD3F1AF85008208C1700A23C66")
         @Override
         public int available() throws IOException {
             int varB67C3BA4606855246B67D2231694DBEB_1135112079 = ((mOffset < mLength ? 1 : 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1753754808 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1753754808;
-            
-            
+            // ---------- Original Method ----------
+            //return (mOffset < mLength ? 1 : 0);
         }
 
         
@@ -412,8 +410,8 @@ for(int i = 0;i < numEntries;++i)
             int varC29A5AE95A30EE64395CAB97F32FA4B0_387132827 = (Streams.readSingleByte(this));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889615040 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889615040;
-            
-            
+            // ---------- Original Method ----------
+            //return Streams.readSingleByte(this);
         }
 
         
@@ -429,7 +427,7 @@ for(int i = 0;i < numEntries;++i)
     if(len > mLength - mOffset)                
                 {
                     len = (int) (mLength - mOffset);
-                } 
+                } //End block
                 int count = mSharedRaf.read(b, off, len);
     if(count > 0)                
                 {
@@ -437,49 +435,48 @@ for(int i = 0;i < numEntries;++i)
                     int varE2942A04780E223B215EB8B663CF5353_1623770055 = (count);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851506800 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851506800;
-                } 
+                } //End block
                 else
                 {
                     int var6BB61E3B7BCE0931DA574D19D1D82C88_1813079061 = (-1);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1797594329 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1797594329;
-                } 
-            } 
-            
-            
-                
-                
-                    
-                
-                
-                
-                    
-                    
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mSharedRaf) {
+                //mSharedRaf.seek(mOffset);
+                //if (len > mLength - mOffset) {
+                    //len = (int) (mLength - mOffset);
+                //}
+                //int count = mSharedRaf.read(b, off, len);
+                //if (count > 0) {
+                    //mOffset += count;
+                    //return count;
+                //} else {
+                    //return -1;
+                //}
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.545 -0400", hash_original_method = "62A626F8A4A0AABE786C23986D3622F2", hash_generated_method = "D46255A6FC5EDF3E078E8CFBBF864F0E")
         @Override
         public long skip(long byteCount) throws IOException {
     if(byteCount > mLength - mOffset)            
             {
                 byteCount = mLength - mOffset;
-            } 
+            } //End block
             mOffset += byteCount;
             long varA43EF6D60A83013EA1A61A23BDB16029_813807391 = (byteCount);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1829723032 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1829723032;
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (byteCount > mLength - mOffset) {
+                //byteCount = mLength - mOffset;
+            //}
+            //mOffset += byteCount;
+            //return byteCount;
         }
 
         
@@ -502,8 +499,8 @@ for(int i = 0;i < numEntries;++i)
             addTaint(inf.getTaint());
             addTaint(is.getTaint());
             this.entry = entry;
-            
-            
+            // ---------- Original Method ----------
+            //this.entry = entry;
         }
 
         
@@ -517,16 +514,16 @@ for(int i = 0;i < numEntries;++i)
     if(i != -1)            
             {
                 bytesRead += i;
-            } 
+            } //End block
             int var865C0C0B4AB0E063E5CAA3387C1A8741_1692183002 = (i);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012899170 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012899170;
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //int i = super.read(buffer, off, nbytes);
+            //if (i != -1) {
+                //bytesRead += i;
+            //}
+            //return i;
         }
 
         
@@ -538,15 +535,15 @@ for(int i = 0;i < numEntries;++i)
                 int varCFCD208495D565EF66E7DFF9F98764DA_1517564110 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_575651382 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_575651382;
-            } 
+            } //End block
             int var3815DC5AD829DBA6EC0003920414A82C_620308000 = (super.available() == 0 ? 0 : (int) (entry.getSize() - bytesRead));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_236212917 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_236212917;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (closed) {
+                //return 0;
+            //}
+            //return super.available() == 0 ? 0 : (int) (entry.getSize() - bytesRead);
         }
 
         

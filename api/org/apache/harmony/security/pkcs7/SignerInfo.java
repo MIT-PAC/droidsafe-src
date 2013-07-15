@@ -1,6 +1,6 @@
 package org.apache.harmony.security.pkcs7;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -61,37 +61,35 @@ public final class SignerInfo {
         this.digestEncryptionAlgorithm = digestEncryptionAlgorithm;
         this.encryptedDigest = encryptedDigest;
         this.unauthenticatedAttributes = unauthenticatedAttributes;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.version = version;
+        //this.issuer = ((Name)issuerAndSerialNumber[0]).getX500Principal();
+        //this.serialNumber = ASN1Integer.toBigIntegerValue(issuerAndSerialNumber[1]);
+        //this.digestAlgorithm = digestAlgorithm;
+        //this.authenticatedAttributes = authenticatedAttributes;
+        //this.digestEncryptionAlgorithm = digestEncryptionAlgorithm;
+        //this.encryptedDigest = encryptedDigest;
+        //this.unauthenticatedAttributes = unauthenticatedAttributes;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.146 -0400", hash_original_method = "4521AB691538FE3E0581DA96E2D306DA", hash_generated_method = "C0AC16B11132ED8308FB0A878AF719AF")
     public X500Principal getIssuer() {
 X500Principal var8EF52627413B91AB97DB59853805E979_64781278 =         issuer;
         var8EF52627413B91AB97DB59853805E979_64781278.addTaint(taint);
         return var8EF52627413B91AB97DB59853805E979_64781278;
-        
-        
+        // ---------- Original Method ----------
+        //return issuer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.147 -0400", hash_original_method = "9420C2CEA2A6F47D515C0AB0605412CD", hash_generated_method = "1C9EC0254400895A066D3A56D4AC710B")
     public BigInteger getSerialNumber() {
 BigInteger varC5241B523DA06FB03F5998149659C655_1511091224 =         serialNumber;
         varC5241B523DA06FB03F5998149659C655_1511091224.addTaint(taint);
         return varC5241B523DA06FB03F5998149659C655_1511091224;
-        
-        
+        // ---------- Original Method ----------
+        //return serialNumber;
     }
 
     
@@ -100,8 +98,8 @@ BigInteger varC5241B523DA06FB03F5998149659C655_1511091224 =         serialNumber
 String var1EA0FCDFB070C78EDCDBFC3FC9833618_881821269 =         digestAlgorithm.getAlgorithm();
         var1EA0FCDFB070C78EDCDBFC3FC9833618_881821269.addTaint(taint);
         return var1EA0FCDFB070C78EDCDBFC3FC9833618_881821269;
-        
-        
+        // ---------- Original Method ----------
+        //return digestAlgorithm.getAlgorithm();
     }
 
     
@@ -110,12 +108,11 @@ String var1EA0FCDFB070C78EDCDBFC3FC9833618_881821269 =         digestAlgorithm.g
 String varD7ABE868ACE670569FA3F032243EA182_35547336 =         digestEncryptionAlgorithm.getAlgorithm();
         varD7ABE868ACE670569FA3F032243EA182_35547336.addTaint(taint);
         return varD7ABE868ACE670569FA3F032243EA182_35547336;
-        
-        
+        // ---------- Original Method ----------
+        //return digestEncryptionAlgorithm.getAlgorithm();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.147 -0400", hash_original_method = "AEBE4A58A31E26ADF89831B320BDD2E7", hash_generated_method = "2605052E4DE61336EFE39758502B7ADC")
     public List<AttributeTypeAndValue> getAuthenticatedAttributes() {
     if(authenticatedAttributes == null)        
@@ -123,15 +120,15 @@ String varD7ABE868ACE670569FA3F032243EA182_35547336 =         digestEncryptionAl
 List<AttributeTypeAndValue> var540C13E9E156B687226421B24F2DF178_219893016 =             null;
             var540C13E9E156B687226421B24F2DF178_219893016.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_219893016;
-        } 
+        } //End block
 List<AttributeTypeAndValue> var111D566C00971C79F18A3FFB116CA856_2034026704 =         authenticatedAttributes.getAttributes();
         var111D566C00971C79F18A3FFB116CA856_2034026704.addTaint(taint);
         return var111D566C00971C79F18A3FFB116CA856_2034026704;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (authenticatedAttributes == null) {
+            //return null;
+        //}
+        //return authenticatedAttributes.getAttributes();
     }
 
     
@@ -142,26 +139,25 @@ List<AttributeTypeAndValue> var111D566C00971C79F18A3FFB116CA856_2034026704 =    
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_832904151 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2098963183 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_2098963183;
-        } 
+        } //End block
         byte[] var2ABBE0511CBFCB05060794DBC1CE06FF_328278647 = (authenticatedAttributes.getEncoded());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1682062075 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1682062075;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (authenticatedAttributes == null) {
+            //return null;
+        //}
+        //return authenticatedAttributes.getEncoded();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.148 -0400", hash_original_method = "14A08E1AF72E02B64CEDF5DA67544611", hash_generated_method = "D4D12A444D1B846D0CC1294DEB009498")
     public byte[] getEncryptedDigest() {
         byte[] varEE2C93D60E14AB73DB78160F92DCB869_138663220 = (encryptedDigest);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1569466775 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1569466775;
-        
-        
+        // ---------- Original Method ----------
+        //return encryptedDigest;
     }
 
     
@@ -181,20 +177,20 @@ List<AttributeTypeAndValue> var111D566C00971C79F18A3FFB116CA856_2034026704 =    
     if(authenticatedAttributes != null)        
         {
             res.append(authenticatedAttributes.toString());
-        } 
+        } //End block
         res.append("\ndigestEncryptionAlgorithm: ");
         res.append(digestEncryptionAlgorithm.toString());
         res.append("\nunauthenticatedAttributes: ");
     if(unauthenticatedAttributes != null)        
         {
             res.append(unauthenticatedAttributes.toString());
-        } 
+        } //End block
         res.append("\n-- SignerInfo End\n");
 String varEC7EB75EF3C7FA633C54FC66A0358174_503060659 =         res.toString();
         varEC7EB75EF3C7FA633C54FC66A0358174_503060659.addTaint(taint);
         return varEC7EB75EF3C7FA633C54FC66A0358174_503060659;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

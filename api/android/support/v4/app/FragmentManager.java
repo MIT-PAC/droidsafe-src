@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,7 +39,7 @@ public abstract class FragmentManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.774 -0400", hash_original_method = "0D3FEDE97BC3242ED64134E1F014EA11", hash_generated_method = "0D3FEDE97BC3242ED64134E1F014EA11")
     public FragmentManager ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -52,8 +52,8 @@ public abstract class FragmentManager {
 FragmentTransaction var0C52C1DD23EDCBCDDE04269B6A21160A_1800670013 =         beginTransaction();
         var0C52C1DD23EDCBCDDE04269B6A21160A_1800670013.addTaint(taint);
         return var0C52C1DD23EDCBCDDE04269B6A21160A_1800670013;
-        
-        
+        // ---------- Original Method ----------
+        //return beginTransaction();
     }
 
     
@@ -108,8 +108,7 @@ FragmentTransaction var0C52C1DD23EDCBCDDE04269B6A21160A_1800670013 =         beg
     public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
 
     
-        @DSModeled(DSC.SAFE)
-    public static void enableDebugLogging(boolean enabled) {
+        public static void enableDebugLogging(boolean enabled) {
         FragmentManagerImpl.DEBUG = enabled;
     }
 
@@ -157,7 +156,7 @@ final class FragmentManagerState implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.777 -0400", hash_original_method = "4ADB2DBBD6899E89144480A7958A6490", hash_generated_method = "252DFEAE0ECB79838960A8B564DE42F6")
     public  FragmentManagerState() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -166,21 +165,20 @@ final class FragmentManagerState implements Parcelable {
         mActive = in.createTypedArray(FragmentState.CREATOR);
         mAdded = in.createIntArray();
         mBackStack = in.createTypedArray(BackStackState.CREATOR);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mActive = in.createTypedArray(FragmentState.CREATOR);
+        //mAdded = in.createIntArray();
+        //mBackStack = in.createTypedArray(BackStackState.CREATOR);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.778 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2568BE2895A47284FDBA56B39C3C2603")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_643803641 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271343765 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1271343765;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -191,10 +189,10 @@ final class FragmentManagerState implements Parcelable {
         dest.writeTypedArray(mActive, flags);
         dest.writeIntArray(mAdded);
         dest.writeTypedArray(mBackStack, flags);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeTypedArray(mActive, flags);
+        //dest.writeIntArray(mAdded);
+        //dest.writeTypedArray(mBackStack, flags);
     }
 
     
@@ -299,7 +297,7 @@ final class FragmentManagerImpl extends FragmentManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.781 -0400", hash_original_method = "57A648A59831AB7BB1637AFC6125C81E", hash_generated_method = "57A648A59831AB7BB1637AFC6125C81E")
     public FragmentManagerImpl ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -313,42 +311,42 @@ final class FragmentManagerImpl extends FragmentManager {
             try 
             {
                 mActivity.dump("  ", null, pw, new String[] { });
-            } 
+            } //End block
             catch (Exception e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             try 
             {
                 dump("  ", null, pw, new String[] { });
-            } 
+            } //End block
             catch (Exception e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         ex.addTaint(taint);
         throw ex;
-        
-        
-        
-        
-        
-        
-            
-                
-            
-                
-            
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Log.e(TAG, ex.getMessage());
+        //Log.e(TAG, "Activity state:");
+        //LogWriter logw = new LogWriter(TAG);
+        //PrintWriter pw = new PrintWriter(logw);
+        //if (mActivity != null) {
+            //try {
+                //mActivity.dump("  ", null, pw, new String[] { });
+            //} catch (Exception e) {
+                //Log.e(TAG, "Failed dumping state", e);
+            //}
+        //} else {
+            //try {
+                //dump("  ", null, pw, new String[] { });
+            //} catch (Exception e) {
+                //Log.e(TAG, "Failed dumping state", e);
+            //}
+        //}
+        //throw ex;
     }
 
     
@@ -358,8 +356,8 @@ final class FragmentManagerImpl extends FragmentManager {
 FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new BackStackRecord(this);
         var693A23640A091F7A17064797B040A100_746965462.addTaint(taint);
         return var693A23640A091F7A17064797B040A100_746965462;
-        
-        
+        // ---------- Original Method ----------
+        //return new BackStackRecord(this);
     }
 
     
@@ -369,8 +367,8 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
         boolean var4856074EF8DA58D94BE6E89BEEA5036C_1667750727 = (execPendingActions());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1391419440 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1391419440;
-        
-        
+        // ---------- Original Method ----------
+        //return execPendingActions();
     }
 
     
@@ -382,16 +380,16 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
         @Override
         public void run() {
             popBackStackState(mActivity.mHandler, null, -1, 0);
-            
-            
+            // ---------- Original Method ----------
+            //popBackStackState(mActivity.mHandler, null, -1, 0);
         }
 }, false);
-        
-        
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //enqueueAction(new Runnable() {
+            //@Override public void run() {
+                //popBackStackState(mActivity.mHandler, null, -1, 0);
+            //}
+        //}, false);
     }
 
     
@@ -403,10 +401,10 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
         boolean var9954826F15E8D28E4DBF1B5D9A7FCE6F_68047328 = (popBackStackState(mActivity.mHandler, null, -1, 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_426784440 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_426784440;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkStateLoss();
+        //executePendingTransactions();
+        //return popBackStackState(mActivity.mHandler, null, -1, 0);
     }
 
     
@@ -420,16 +418,16 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
         @Override
         public void run() {
             popBackStackState(mActivity.mHandler, name, -1, flags);
-            
-            
+            // ---------- Original Method ----------
+            //popBackStackState(mActivity.mHandler, name, -1, flags);
         }
 }, false);
-        
-        
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //enqueueAction(new Runnable() {
+            //@Override public void run() {
+                //popBackStackState(mActivity.mHandler, name, -1, flags);
+            //}
+        //}, false);
     }
 
     
@@ -443,10 +441,10 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
         boolean varA92FEAD33A189EAD0299E8FE391444CD_2130934612 = (popBackStackState(mActivity.mHandler, name, -1, flags));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_64936443 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_64936443;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkStateLoss();
+        //executePendingTransactions();
+        //return popBackStackState(mActivity.mHandler, name, -1, flags);
     }
 
     
@@ -460,25 +458,25 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
             IllegalArgumentException var9E36F4D6900BCA3CCA42D845F29CB5B0_1508732674 = new IllegalArgumentException("Bad id: " + id);
             var9E36F4D6900BCA3CCA42D845F29CB5B0_1508732674.addTaint(taint);
             throw var9E36F4D6900BCA3CCA42D845F29CB5B0_1508732674;
-        } 
+        } //End block
         enqueueAction(new Runnable() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.785 -0400", hash_original_method = "DBCE7037D51EB5153CDA373E6D392F0E", hash_generated_method = "905DCE3DB8D6804FD0D561A3F3EB2065")
         @Override
         public void run() {
             popBackStackState(mActivity.mHandler, null, id, flags);
-            
-            
+            // ---------- Original Method ----------
+            //popBackStackState(mActivity.mHandler, null, id, flags);
         }
 }, false);
-        
-        
-            
-        
-        
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //if (id < 0) {
+            //throw new IllegalArgumentException("Bad id: " + id);
+        //}
+        //enqueueAction(new Runnable() {
+            //@Override public void run() {
+                //popBackStackState(mActivity.mHandler, null, id, flags);
+            //}
+        //}, false);
     }
 
     
@@ -494,17 +492,17 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
             IllegalArgumentException var9E36F4D6900BCA3CCA42D845F29CB5B0_738657140 = new IllegalArgumentException("Bad id: " + id);
             var9E36F4D6900BCA3CCA42D845F29CB5B0_738657140.addTaint(taint);
             throw var9E36F4D6900BCA3CCA42D845F29CB5B0_738657140;
-        } 
+        } //End block
         boolean varDBA39B5EE3A31103A5F0342C6B326731_886951267 = (popBackStackState(mActivity.mHandler, null, id, flags));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_382302901 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_382302901;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //checkStateLoss();
+        //executePendingTransactions();
+        //if (id < 0) {
+            //throw new IllegalArgumentException("Bad id: " + id);
+        //}
+        //return popBackStackState(mActivity.mHandler, null, id, flags);
     }
 
     
@@ -514,8 +512,8 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
         int var6DAE2CE6A7F553D663688107A90FA4CC_611950872 = (mBackStack != null ? mBackStack.size() : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372980782 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372980782;
-        
-        
+        // ---------- Original Method ----------
+        //return mBackStack != null ? mBackStack.size() : 0;
     }
 
     
@@ -526,8 +524,8 @@ FragmentTransaction var693A23640A091F7A17064797B040A100_746965462 =         new 
 BackStackEntry var74F933A734514BD5EE40CF9077B41749_327815235 =         mBackStack.get(index);
         var74F933A734514BD5EE40CF9077B41749_327815235.addTaint(taint);
         return var74F933A734514BD5EE40CF9077B41749_327815235;
-        
-        
+        // ---------- Original Method ----------
+        //return mBackStack.get(index);
     }
 
     
@@ -538,13 +536,13 @@ BackStackEntry var74F933A734514BD5EE40CF9077B41749_327815235 =         mBackStac
     if(mBackStackChangeListeners == null)        
         {
             mBackStackChangeListeners = new ArrayList<OnBackStackChangedListener>();
-        } 
+        } //End block
         mBackStackChangeListeners.add(listener);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mBackStackChangeListeners == null) {
+            //mBackStackChangeListeners = new ArrayList<OnBackStackChangedListener>();
+        //}
+        //mBackStackChangeListeners.add(listener);
     }
 
     
@@ -555,11 +553,11 @@ BackStackEntry var74F933A734514BD5EE40CF9077B41749_327815235 =         mBackStac
     if(mBackStackChangeListeners != null)        
         {
             mBackStackChangeListeners.remove(listener);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mBackStackChangeListeners != null) {
+            //mBackStackChangeListeners.remove(listener);
+        //}
     }
 
     
@@ -573,14 +571,14 @@ BackStackEntry var74F933A734514BD5EE40CF9077B41749_327815235 =         mBackStac
         {
             throwException(new IllegalStateException("Fragment " + fragment
                     + " is not currently in the FragmentManager"));
-        } 
+        } //End block
         bundle.putInt(key, fragment.mIndex);
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (fragment.mIndex < 0) {
+            //throwException(new IllegalStateException("Fragment " + fragment
+                    //+ " is not currently in the FragmentManager"));
+        //}
+        //bundle.putInt(key, fragment.mIndex);
     }
 
     
@@ -595,36 +593,36 @@ BackStackEntry var74F933A734514BD5EE40CF9077B41749_327815235 =         mBackStac
 Fragment var540C13E9E156B687226421B24F2DF178_1253413248 =             null;
             var540C13E9E156B687226421B24F2DF178_1253413248.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1253413248;
-        } 
+        } //End block
     if(index >= mActive.size())        
         {
             throwException(new IllegalStateException("Fragement no longer exists for key "
                     + key + ": index " + index));
-        } 
+        } //End block
         Fragment f = mActive.get(index);
     if(f == null)        
         {
             throwException(new IllegalStateException("Fragement no longer exists for key "
                     + key + ": index " + index));
-        } 
+        } //End block
 Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_992319781 =         f;
         varABE3CFB53FE4A79F34CB25BC80BFD6E2_992319781.addTaint(taint);
         return varABE3CFB53FE4A79F34CB25BC80BFD6E2_992319781;
-        
-        
-        
-            
-        
-        
-            
-                    
-        
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //int index = bundle.getInt(key, -1);
+        //if (index == -1) {
+            //return null;
+        //}
+        //if (index >= mActive.size()) {
+            //throwException(new IllegalStateException("Fragement no longer exists for key "
+                    //+ key + ": index " + index));
+        //}
+        //Fragment f = mActive.get(index);
+        //if (f == null) {
+            //throwException(new IllegalStateException("Fragement no longer exists for key "
+                    //+ key + ": index " + index));
+        //}
+        //return f;
     }
 
     
@@ -636,27 +634,27 @@ Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_992319781 =         f;
         {
             throwException( new IllegalStateException("Fragment " + fragment
                     + " is not currently in the FragmentManager"));
-        } 
+        } //End block
     if(fragment.mState > Fragment.INITIALIZING)        
         {
             Bundle result = saveFragmentBasicState(fragment);
 Fragment.SavedState varDF3960AB579B5B5C742EF8D42A1CE853_1304665608 =             result != null ? new Fragment.SavedState(result) : null;
             varDF3960AB579B5B5C742EF8D42A1CE853_1304665608.addTaint(taint);
             return varDF3960AB579B5B5C742EF8D42A1CE853_1304665608;
-        } 
+        } //End block
 Fragment.SavedState var540C13E9E156B687226421B24F2DF178_837028328 =         null;
         var540C13E9E156B687226421B24F2DF178_837028328.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_837028328;
-        
-        
-            
-                    
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (fragment.mIndex < 0) {
+            //throwException( new IllegalStateException("Fragment " + fragment
+                    //+ " is not currently in the FragmentManager"));
+        //}
+        //if (fragment.mState > Fragment.INITIALIZING) {
+            //Bundle result = saveFragmentBasicState(fragment);
+            //return result != null ? new Fragment.SavedState(result) : null;
+        //}
+        //return null;
     }
 
     
@@ -670,27 +668,27 @@ Fragment.SavedState var540C13E9E156B687226421B24F2DF178_837028328 =         null
     if(mParent != null)        
         {
             DebugUtils.buildShortClassTag(mParent, sb);
-        } 
+        } //End block
         else
         {
             DebugUtils.buildShortClassTag(mActivity, sb);
-        } 
+        } //End block
         sb.append("}}");
 String var2460B846747F8B22185AD8BE722266A5_835445110 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_835445110.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_835445110;
-        
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(128);
+        //sb.append("FragmentManager{");
+        //sb.append(Integer.toHexString(System.identityHashCode(this)));
+        //sb.append(" in ");
+        //if (mParent != null) {
+            //DebugUtils.buildShortClassTag(mParent, sb);
+        //} else {
+            //DebugUtils.buildShortClassTag(mActivity, sb);
+        //}
+        //sb.append("}}");
+        //return sb.toString();
     }
 
     
@@ -723,10 +721,10 @@ for(int i=0;i<N;i++)
     if(f != null)                    
                     {
                         f.dump(innerPrefix, fd, writer, args);
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
     if(mAdded != null)        
         {
             N = mAdded.size();
@@ -742,9 +740,9 @@ for(int i=0;i<N;i++)
                     writer.print(i);
                     writer.print(": ");
                     writer.println(f.toString());
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(mCreatedMenus != null)        
         {
             N = mCreatedMenus.size();
@@ -760,9 +758,9 @@ for(int i=0;i<N;i++)
                     writer.print(i);
                     writer.print(": ");
                     writer.println(f.toString());
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(mBackStack != null)        
         {
             N = mBackStack.size();
@@ -779,9 +777,9 @@ for(int i=0;i<N;i++)
                     writer.print(": ");
                     writer.println(bs.toString());
                     bs.dump(innerPrefix, fd, writer, args);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         synchronized
 (this)        {
     if(mBackStackIndices != null)            
@@ -799,16 +797,16 @@ for(int i=0;i<N;i++)
                         writer.print(i);
                         writer.print(": ");
                         writer.println(bs);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(mAvailBackStackIndices != null && mAvailBackStackIndices.size() > 0)            
             {
                 writer.print(prefix);
                 writer.print("mAvailBackStackIndices: ");
                 writer.println(Arrays.toString(mAvailBackStackIndices.toArray()));
-            } 
-        } 
+            } //End block
+        } //End block
     if(mPendingActions != null)        
         {
             N = mPendingActions.size();
@@ -824,9 +822,9 @@ for(int i=0;i<N;i++)
                     writer.print(i);
                     writer.print(": ");
                     writer.println(r);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         writer.print(prefix);
         writer.println("FragmentManager misc state:");
         writer.print(prefix);
@@ -840,7 +838,7 @@ for(int i=0;i<N;i++)
             writer.print(prefix);
             writer.print("  mParent=");
             writer.println(mParent);
-        } 
+        } //End block
         writer.print(prefix);
         writer.print("  mCurState=");
         writer.print(mCurState);
@@ -853,21 +851,21 @@ for(int i=0;i<N;i++)
             writer.print(prefix);
             writer.print("  mNeedMenuInvalidate=");
             writer.println(mNeedMenuInvalidate);
-        } 
+        } //End block
     if(mNoTransactionsBecause != null)        
         {
             writer.print(prefix);
             writer.print("  mNoTransactionsBecause=");
             writer.println(mNoTransactionsBecause);
-        } 
+        } //End block
     if(mAvailIndices != null && mAvailIndices.size() > 0)        
         {
             writer.print(prefix);
             writer.print("  mAvailIndices: ");
             writer.println(Arrays.toString(mAvailIndices.toArray()));
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -909,7 +907,7 @@ for(int i=0;i<N;i++)
 Animation varD2C3244304F8F6616E0E174A4084F820_1586795795 =             animObj;
             varD2C3244304F8F6616E0E174A4084F820_1586795795.addTaint(taint);
             return varD2C3244304F8F6616E0E174A4084F820_1586795795;
-        } 
+        } //End block
     if(fragment.mNextAnim != 0)        
         {
             Animation anim = AnimationUtils.loadAnimation(mActivity, fragment.mNextAnim);
@@ -918,21 +916,21 @@ Animation varD2C3244304F8F6616E0E174A4084F820_1586795795 =             animObj;
 Animation var6E2178F33F884BED37C5DEBCD18F9A96_1467466696 =                 anim;
                 var6E2178F33F884BED37C5DEBCD18F9A96_1467466696.addTaint(taint);
                 return var6E2178F33F884BED37C5DEBCD18F9A96_1467466696;
-            } 
-        } 
+            } //End block
+        } //End block
     if(transit == 0)        
         {
 Animation var540C13E9E156B687226421B24F2DF178_1496560412 =             null;
             var540C13E9E156B687226421B24F2DF178_1496560412.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1496560412;
-        } 
+        } //End block
         int styleIndex = transitToStyleIndex(transit, enter);
     if(styleIndex < 0)        
         {
 Animation var540C13E9E156B687226421B24F2DF178_2109617440 =             null;
             var540C13E9E156B687226421B24F2DF178_2109617440.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2109617440;
-        } 
+        } //End block
 switch(styleIndex){
         case ANIM_STYLE_OPEN_ENTER:
 Animation var276C06FC17F5FF9F0FF5EAD4A48362C9_1238502525 =         makeOpenCloseAnimation(mActivity, 1.125f, 1.0f, 0, 1);
@@ -961,18 +959,18 @@ Animation var61308AA345158F2C39F16F21D18CDC25_990074156 =         makeFadeAnimat
 }    if(transitionStyle == 0 && mActivity.getWindow() != null)        
         {
             transitionStyle = mActivity.getWindow().getAttributes().windowAnimations;
-        } 
+        } //End block
     if(transitionStyle == 0)        
         {
 Animation var540C13E9E156B687226421B24F2DF178_83982685 =             null;
             var540C13E9E156B687226421B24F2DF178_83982685.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_83982685;
-        } 
+        } //End block
 Animation var540C13E9E156B687226421B24F2DF178_1834055647 =         null;
         var540C13E9E156B687226421B24F2DF178_1834055647.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1834055647;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -985,19 +983,19 @@ Animation var540C13E9E156B687226421B24F2DF178_1834055647 =         null;
             {
                 mHavePendingDeferredStart = true;
                 return;
-            } 
+            } //End block
             f.mDeferStart = false;
             moveToState(f, mCurState, 0, 0, false);
-        } 
-        
-        
-            
-                
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (f.mDeferStart) {
+            //if (mExecutingActions) {
+                //mHavePendingDeferredStart = true;
+                //return;
+            //}
+            //f.mDeferStart = false;
+            //moveToState(f, mCurState, 0, 0, false);
+        //}
     }
 
     
@@ -1011,26 +1009,26 @@ Animation var540C13E9E156B687226421B24F2DF178_1834055647 =         null;
     if((!f.mAdded || f.mDetached) && newState > Fragment.CREATED)        
         {
             newState = Fragment.CREATED;
-        } 
+        } //End block
     if(f.mRemoving && newState > f.mState)        
         {
             newState = f.mState;
-        } 
+        } //End block
     if(f.mDeferStart && f.mState < Fragment.STARTED && newState > Fragment.STOPPED)        
         {
             newState = Fragment.STOPPED;
-        } 
+        } //End block
     if(f.mState < newState)        
         {
     if(f.mFromLayout && !f.mInLayout)            
             {
                 return;
-            } 
+            } //End block
     if(f.mAnimatingAway != null)            
             {
                 f.mAnimatingAway = null;
                 moveToState(f, f.mStateAfterAnimating, 0, 0, true);
-            } 
+            } //End block
 switch(f.mState){
             case Fragment.INITIALIZING:
     if(DEBUG){ }    if(f.mSavedFragmentState != null)            
@@ -1043,7 +1041,7 @@ switch(f.mState){
                 {
                     f.mTargetRequestCode = f.mSavedFragmentState.getInt(
                                     FragmentManagerImpl.TARGET_REQUEST_CODE_STATE_TAG, 0);
-                } 
+                } //End block
                 f.mUserVisibleHint = f.mSavedFragmentState.getBoolean(
                                 FragmentManagerImpl.USER_VISIBLE_HINT_TAG, true);
     if(!f.mUserVisibleHint)                
@@ -1052,9 +1050,9 @@ switch(f.mState){
     if(newState > Fragment.STOPPED)                    
                     {
                         newState = Fragment.STOPPED;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             f.mActivity = mActivity;
             f.mParentFragment = mParent;
             f.mFragmentManager = mParent != null
@@ -1067,15 +1065,15 @@ switch(f.mState){
                                 + " did not call through to super.onAttach()");
                 var3B21D72FE3B78DA21309B053881BE5E5_558128182.addTaint(taint);
                 throw var3B21D72FE3B78DA21309B053881BE5E5_558128182;
-            } 
+            } //End block
     if(f.mParentFragment == null)            
             {
                 mActivity.onAttachFragment(f);
-            } 
+            } //End block
     if(!f.mRetaining)            
             {
                 f.performCreate(f.mSavedFragmentState);
-            } 
+            } //End block
             f.mRetaining = false;
     if(f.mFromLayout)            
             {
@@ -1088,12 +1086,12 @@ switch(f.mState){
     if(f.mHidden)                    
                     f.mView.setVisibility(View.GONE);
                     f.onViewCreated(f.mView, f.mSavedFragmentState);
-                } 
+                } //End block
                 else
                 {
                     f.mInnerView = null;
-                } 
-            } 
+                } //End block
+            } //End block
             case Fragment.CREATED:
     if(newState > Fragment.CREATED)            
             {
@@ -1110,8 +1108,8 @@ switch(f.mState){
                                             + Integer.toHexString(f.mContainerId) + " ("
                                             + f.getResources().getResourceName(f.mContainerId)
                                             + ") for fragment " + f));
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     f.mContainer = container;
                     f.mView = f.performCreateView(f.getLayoutInflater(
                                     f.mSavedFragmentState), container, f.mSavedFragmentState);
@@ -1126,31 +1124,31 @@ switch(f.mState){
     if(anim != null)                            
                             {
                                 f.mView.startAnimation(anim);
-                            } 
+                            } //End block
                             container.addView(f.mView);
-                        } 
+                        } //End block
     if(f.mHidden)                        
                         f.mView.setVisibility(View.GONE);
                         f.onViewCreated(f.mView, f.mSavedFragmentState);
-                    } 
+                    } //End block
                     else
                     {
                         f.mInnerView = null;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 f.performActivityCreated(f.mSavedFragmentState);
     if(f.mView != null)                
                 {
                     f.restoreViewState(f.mSavedFragmentState);
-                } 
+                } //End block
                 f.mSavedFragmentState = null;
-            } 
+            } //End block
             case Fragment.ACTIVITY_CREATED:
             case Fragment.STOPPED:
     if(newState > Fragment.STOPPED)            
             {
     if(DEBUG){ }                f.performStart();
-            } 
+            } //End block
             case Fragment.STARTED:
     if(newState > Fragment.STARTED)            
             {
@@ -1158,9 +1156,9 @@ switch(f.mState){
                 f.performResume();
                 f.mSavedFragmentState = null;
                 f.mSavedViewState = null;
-            } 
+            } //End block
 }
-        } 
+        } //End block
         else
     if(f.mState > newState)        
         {
@@ -1170,17 +1168,17 @@ switch(f.mState){
             {
     if(DEBUG){ }                f.performPause();
                 f.mResumed = false;
-            } 
+            } //End block
             case Fragment.STARTED:
     if(newState < Fragment.STARTED)            
             {
     if(DEBUG){ }                f.performStop();
-            } 
+            } //End block
             case Fragment.STOPPED:
     if(newState < Fragment.STOPPED)            
             {
     if(DEBUG){ }                f.performReallyStop();
-            } 
+            } //End block
             case Fragment.ACTIVITY_CREATED:
     if(newState < Fragment.ACTIVITY_CREATED)            
             {
@@ -1189,8 +1187,8 @@ switch(f.mState){
     if(!mActivity.isFinishing() && f.mSavedViewState == null)                    
                     {
                         saveFragmentViewState(f);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 f.performDestroyView();
     if(f.mView != null && f.mContainer != null)                
                 {
@@ -1199,7 +1197,7 @@ switch(f.mState){
                     {
                         anim = loadAnimation(f, transit, false,
                                         transitionStyle);
-                    } 
+                    } //End block
     if(anim != null)                    
                     {
                         final Fragment fragment = f;
@@ -1209,44 +1207,44 @@ switch(f.mState){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.804 -0400", hash_original_method = "ADB37ED087A6B8FD09A7637E04A46959", hash_generated_method = "D4E741AD38CFCD8C66F7F7C330EF18D9")
         @Override
         public void onAnimationEnd(Animation animation) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(animation.getTaint());
     if(fragment.mAnimatingAway != null)            
             {
                 fragment.mAnimatingAway = null;
                 moveToState(fragment, fragment.mStateAfterAnimating,
                                                     0, 0, false);
-            } 
-            
-            
-                                            
-                                            
-                                                    
-                                        
+            } //End block
+            // ---------- Original Method ----------
+            //if (fragment.mAnimatingAway != null) {
+                                            //fragment.mAnimatingAway = null;
+                                            //moveToState(fragment, fragment.mStateAfterAnimating,
+                                                    //0, 0, false);
+                                        //}
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.805 -0400", hash_original_method = "C6539FC3721A6B610C21747FF87D7A97", hash_generated_method = "58C626A9D98C5CFBF993A93EFEF59553")
         @Override
         public void onAnimationRepeat(Animation animation) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(animation.getTaint());
-            
+            // ---------- Original Method ----------
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.805 -0400", hash_original_method = "72AD432A5D6B612A6CC4174C0C1E057D", hash_generated_method = "E455F4DC332660DC5ADFD15AC2AD6C17")
         @Override
         public void onAnimationStart(Animation animation) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(animation.getTaint());
-            
+            // ---------- Original Method ----------
         }
 });
                         f.mView.startAnimation(anim);
-                    } 
+                    } //End block
                     f.mContainer.removeView(f.mView);
-                } 
+                } //End block
                 f.mContainer = null;
                 f.mView = null;
                 f.mInnerView = null;
-            } 
+            } //End block
             case Fragment.CREATED:
     if(newState < Fragment.CREATED)            
             {
@@ -1257,19 +1255,19 @@ switch(f.mState){
                         View v = f.mAnimatingAway;
                         f.mAnimatingAway = null;
                         v.clearAnimation();
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(f.mAnimatingAway != null)                
                 {
                     f.mStateAfterAnimating = newState;
                     newState = Fragment.CREATED;
-                } 
+                } //End block
                 else
                 {
     if(DEBUG){ }    if(!f.mRetaining)                    
                     {
                         f.performDestroy();
-                    } 
+                    } //End block
                     f.mCalled = false;
                     f.onDetach();
     if(!f.mCalled)                    
@@ -1278,26 +1276,26 @@ switch(f.mState){
                                         + " did not call through to super.onDetach()");
                         varA1E86A4AD3397A3A1F40BAC562CFC4E0_2143397082.addTaint(taint);
                         throw varA1E86A4AD3397A3A1F40BAC562CFC4E0_2143397082;
-                    } 
+                    } //End block
     if(!keepActive)                    
                     {
     if(!f.mRetaining)                        
                         {
                             makeInactive(f);
-                        } 
+                        } //End block
                         else
                         {
                             f.mActivity = null;
                             f.mFragmentManager = null;
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
 }
-        } 
+        } //End block
         f.mState = newState;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1305,8 +1303,8 @@ switch(f.mState){
      void moveToState(Fragment f) {
         addTaint(f.getTaint());
         moveToState(f, mCurState, 0, 0, false);
-        
-        
+        // ---------- Original Method ----------
+        //moveToState(f, mCurState, 0, 0, false);
     }
 
     
@@ -1315,8 +1313,8 @@ switch(f.mState){
         addTaint(always);
         addTaint(newState);
         moveToState(newState, 0, 0, always);
-        
-        
+        // ---------- Original Method ----------
+        //moveToState(newState, 0, 0, always);
     }
 
     
@@ -1330,11 +1328,11 @@ switch(f.mState){
             IllegalStateException varC7A3C53EE722E6B94E737EE4538375FA_1309852191 = new IllegalStateException("No activity");
             varC7A3C53EE722E6B94E737EE4538375FA_1309852191.addTaint(taint);
             throw varC7A3C53EE722E6B94E737EE4538375FA_1309852191;
-        } 
+        } //End block
     if(!always && mCurState == newState)        
         {
             return;
-        } 
+        } //End block
         mCurState = newState;
     if(mActive != null)        
         {
@@ -1348,21 +1346,21 @@ for(int i=0;i<mActive.size();i++)
     if(f.mLoaderManager != null)                    
                     {
                         loadersRunning |= f.mLoaderManager.hasRunningLoaders();
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(!loadersRunning)            
             {
                 startPendingDeferredFragments();
-            } 
+            } //End block
     if(mNeedMenuInvalidate && mActivity != null && mCurState == Fragment.RESUMED)            
             {
                 mActivity.supportInvalidateOptionsMenu();
                 mNeedMenuInvalidate = false;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1376,16 +1374,16 @@ for(int i=0;i<mActive.size();i++)
     if(f != null)            
             {
                 performPendingDeferredStart(f);
-            } 
-        } 
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mActive == null) return;
+        //for (int i=0; i<mActive.size(); i++) {
+            //Fragment f = mActive.get(i);
+            //if (f != null) {
+                //performPendingDeferredStart(f);
+            //}
+        //}
     }
 
     
@@ -1395,37 +1393,37 @@ for(int i=0;i<mActive.size();i++)
     if(f.mIndex >= 0)        
         {
             return;
-        } 
+        } //End block
     if(mAvailIndices == null || mAvailIndices.size() <= 0)        
         {
     if(mActive == null)            
             {
                 mActive = new ArrayList<Fragment>();
-            } 
+            } //End block
             f.setIndex(mActive.size(), mParent);
             mActive.add(f);
-        } 
+        } //End block
         else
         {
             f.setIndex(mAvailIndices.remove(mAvailIndices.size()-1), mParent);
             mActive.set(f.mIndex, f);
-        } 
+        } //End block
     if(DEBUG){ }
-        
-        
-            
-        
-        
-            
-                
-            
-            
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (f.mIndex >= 0) {
+            //return;
+        //}
+        //if (mAvailIndices == null || mAvailIndices.size() <= 0) {
+            //if (mActive == null) {
+                //mActive = new ArrayList<Fragment>();
+            //}
+            //f.setIndex(mActive.size(), mParent);
+            //mActive.add(f);
+        //} else {
+            //f.setIndex(mAvailIndices.remove(mAvailIndices.size()-1), mParent);
+            //mActive.set(f.mIndex, f);
+        //}
+        //if (DEBUG) Log.v(TAG, "Allocated fragment index " + f);
     }
 
     
@@ -1435,27 +1433,27 @@ for(int i=0;i<mActive.size();i++)
     if(f.mIndex < 0)        
         {
             return;
-        } 
+        } //End block
     if(DEBUG){ }        mActive.set(f.mIndex, null);
     if(mAvailIndices == null)        
         {
             mAvailIndices = new ArrayList<Integer>();
-        } 
+        } //End block
         mAvailIndices.add(f.mIndex);
         mActivity.invalidateSupportFragment(f.mWho);
         f.initState();
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (f.mIndex < 0) {
+            //return;
+        //}
+        //if (DEBUG) Log.v(TAG, "Freeing fragment index " + f);
+        //mActive.set(f.mIndex, null);
+        //if (mAvailIndices == null) {
+            //mAvailIndices = new ArrayList<Integer>();
+        //}
+        //mAvailIndices.add(f.mIndex);
+        //mActivity.invalidateSupportFragment(f.mWho);
+        //f.initState();
     }
 
     
@@ -1465,7 +1463,7 @@ for(int i=0;i<mActive.size();i++)
     if(mAdded == null)        
         {
             mAdded = new ArrayList<Fragment>();
-        } 
+        } //End block
     if(DEBUG){ }        makeActive(fragment);
     if(!fragment.mDetached)        
         {
@@ -1474,39 +1472,39 @@ for(int i=0;i<mActive.size();i++)
                 IllegalStateException varF8622297B19FD38FB90DFF83821629C6_1231893376 = new IllegalStateException("Fragment already added: " + fragment);
                 varF8622297B19FD38FB90DFF83821629C6_1231893376.addTaint(taint);
                 throw varF8622297B19FD38FB90DFF83821629C6_1231893376;
-            } 
+            } //End block
             mAdded.add(fragment);
             fragment.mAdded = true;
             fragment.mRemoving = false;
     if(fragment.mHasMenu && fragment.mMenuVisible)            
             {
                 mNeedMenuInvalidate = true;
-            } 
+            } //End block
     if(moveToStateNow)            
             {
                 moveToState(fragment);
-            } 
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-                
-            
-            
-            
-            
-            
-                
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAdded == null) {
+            //mAdded = new ArrayList<Fragment>();
+        //}
+        //if (DEBUG) Log.v(TAG, "add: " + fragment);
+        //makeActive(fragment);
+        //if (!fragment.mDetached) {
+            //if (mAdded.contains(fragment)) {
+                //throw new IllegalStateException("Fragment already added: " + fragment);
+            //}
+            //mAdded.add(fragment);
+            //fragment.mAdded = true;
+            //fragment.mRemoving = false;
+            //if (fragment.mHasMenu && fragment.mMenuVisible) {
+                //mNeedMenuInvalidate = true;
+            //}
+            //if (moveToStateNow) {
+                //moveToState(fragment);
+            //}
+        //}
     }
 
     
@@ -1520,31 +1518,31 @@ for(int i=0;i<mActive.size();i++)
     if(mAdded != null)            
             {
                 mAdded.remove(fragment);
-            } 
+            } //End block
     if(fragment.mHasMenu && fragment.mMenuVisible)            
             {
                 mNeedMenuInvalidate = true;
-            } 
+            } //End block
             fragment.mAdded = false;
             fragment.mRemoving = true;
             moveToState(fragment, inactive ? Fragment.INITIALIZING : Fragment.CREATED,
                     transition, transitionStyle, false);
-        } 
-        
-        
-        
-        
-            
-                
-            
-            
-                
-            
-            
-            
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "remove: " + fragment + " nesting=" + fragment.mBackStackNesting);
+        //final boolean inactive = !fragment.isInBackStack();
+        //if (!fragment.mDetached || inactive) {
+            //if (mAdded != null) {
+                //mAdded.remove(fragment);
+            //}
+            //if (fragment.mHasMenu && fragment.mMenuVisible) {
+                //mNeedMenuInvalidate = true;
+            //}
+            //fragment.mAdded = false;
+            //fragment.mRemoving = true;
+            //moveToState(fragment, inactive ? Fragment.INITIALIZING : Fragment.CREATED,
+                    //transition, transitionStyle, false);
+        //}
     }
 
     
@@ -1563,32 +1561,32 @@ for(int i=0;i<mActive.size();i++)
     if(anim != null)                
                 {
                     fragment.mView.startAnimation(anim);
-                } 
+                } //End block
                 fragment.mView.setVisibility(View.GONE);
-            } 
+            } //End block
     if(fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible)            
             {
                 mNeedMenuInvalidate = true;
-            } 
+            } //End block
             fragment.onHiddenChanged(true);
-        } 
-        
-        
-        
-            
-            
-                
-                        
-                
-                    
-                
-                
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "hide: " + fragment);
+        //if (!fragment.mHidden) {
+            //fragment.mHidden = true;
+            //if (fragment.mView != null) {
+                //Animation anim = loadAnimation(fragment, transition, false,
+                        //transitionStyle);
+                //if (anim != null) {
+                    //fragment.mView.startAnimation(anim);
+                //}
+                //fragment.mView.setVisibility(View.GONE);
+            //}
+            //if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
+                //mNeedMenuInvalidate = true;
+            //}
+            //fragment.onHiddenChanged(true);
+        //}
     }
 
     
@@ -1607,32 +1605,32 @@ for(int i=0;i<mActive.size();i++)
     if(anim != null)                
                 {
                     fragment.mView.startAnimation(anim);
-                } 
+                } //End block
                 fragment.mView.setVisibility(View.VISIBLE);
-            } 
+            } //End block
     if(fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible)            
             {
                 mNeedMenuInvalidate = true;
-            } 
+            } //End block
             fragment.onHiddenChanged(false);
-        } 
-        
-        
-        
-            
-            
-                
-                        
-                
-                    
-                
-                
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "show: " + fragment);
+        //if (fragment.mHidden) {
+            //fragment.mHidden = false;
+            //if (fragment.mView != null) {
+                //Animation anim = loadAnimation(fragment, transition, true,
+                        //transitionStyle);
+                //if (anim != null) {
+                    //fragment.mView.startAnimation(anim);
+                //}
+                //fragment.mView.setVisibility(View.VISIBLE);
+            //}
+            //if (fragment.mAdded && fragment.mHasMenu && fragment.mMenuVisible) {
+                //mNeedMenuInvalidate = true;
+            //}
+            //fragment.onHiddenChanged(false);
+        //}
     }
 
     
@@ -1648,31 +1646,31 @@ for(int i=0;i<mActive.size();i++)
     if(mAdded != null)                
                 {
     if(DEBUG){ }                    mAdded.remove(fragment);
-                } 
+                } //End block
     if(fragment.mHasMenu && fragment.mMenuVisible)                
                 {
                     mNeedMenuInvalidate = true;
-                } 
+                } //End block
                 fragment.mAdded = false;
                 moveToState(fragment, Fragment.CREATED, transition, transitionStyle, false);
-            } 
-        } 
-        
-        
-        
-            
-            
-                
-                    
-                    
-                
-                
-                    
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "detach: " + fragment);
+        //if (!fragment.mDetached) {
+            //fragment.mDetached = true;
+            //if (fragment.mAdded) {
+                //if (mAdded != null) {
+                    //if (DEBUG) Log.v(TAG, "remove from detach: " + fragment);
+                    //mAdded.remove(fragment);
+                //}
+                //if (fragment.mHasMenu && fragment.mMenuVisible) {
+                    //mNeedMenuInvalidate = true;
+                //}
+                //fragment.mAdded = false;
+                //moveToState(fragment, Fragment.CREATED, transition, transitionStyle, false);
+            //}
+        //}
     }
 
     
@@ -1688,24 +1686,24 @@ for(int i=0;i<mActive.size();i++)
     if(mAdded == null)                
                 {
                     mAdded = new ArrayList<Fragment>();
-                } 
+                } //End block
     if(mAdded.contains(fragment))                
                 {
                     IllegalStateException varF8622297B19FD38FB90DFF83821629C6_1466244668 = new IllegalStateException("Fragment already added: " + fragment);
                     varF8622297B19FD38FB90DFF83821629C6_1466244668.addTaint(taint);
                     throw varF8622297B19FD38FB90DFF83821629C6_1466244668;
-                } 
+                } //End block
     if(DEBUG){ }                mAdded.add(fragment);
                 fragment.mAdded = true;
     if(fragment.mHasMenu && fragment.mMenuVisible)                
                 {
                     mNeedMenuInvalidate = true;
-                } 
+                } //End block
                 moveToState(fragment, mCurState, transition, transitionStyle, false);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1722,9 +1720,9 @@ for(int i=mAdded.size()-1;i>=0;i--)
 Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_1023743270 =                     f;
                     varABE3CFB53FE4A79F34CB25BC80BFD6E2_1023743270.addTaint(taint);
                     return varABE3CFB53FE4A79F34CB25BC80BFD6E2_1023743270;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(mActive != null)        
         {
 for(int i=mActive.size()-1;i>=0;i--)
@@ -1735,30 +1733,30 @@ for(int i=mActive.size()-1;i>=0;i--)
 Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_1184155807 =                     f;
                     varABE3CFB53FE4A79F34CB25BC80BFD6E2_1184155807.addTaint(taint);
                     return varABE3CFB53FE4A79F34CB25BC80BFD6E2_1184155807;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Fragment var540C13E9E156B687226421B24F2DF178_1486477344 =         null;
         var540C13E9E156B687226421B24F2DF178_1486477344.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1486477344;
-        
-        
-            
-                
-                
-                    
-                
-            
-        
-        
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mAdded != null) {
+            //for (int i=mAdded.size()-1; i>=0; i--) {
+                //Fragment f = mAdded.get(i);
+                //if (f != null && f.mFragmentId == id) {
+                    //return f;
+                //}
+            //}
+        //}
+        //if (mActive != null) {
+            //for (int i=mActive.size()-1; i>=0; i--) {
+                //Fragment f = mActive.get(i);
+                //if (f != null && f.mFragmentId == id) {
+                    //return f;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
@@ -1775,9 +1773,9 @@ for(int i=mAdded.size()-1;i>=0;i--)
 Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_191397611 =                     f;
                     varABE3CFB53FE4A79F34CB25BC80BFD6E2_191397611.addTaint(taint);
                     return varABE3CFB53FE4A79F34CB25BC80BFD6E2_191397611;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(mActive != null && tag != null)        
         {
 for(int i=mActive.size()-1;i>=0;i--)
@@ -1788,30 +1786,30 @@ for(int i=mActive.size()-1;i>=0;i--)
 Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_2094519547 =                     f;
                     varABE3CFB53FE4A79F34CB25BC80BFD6E2_2094519547.addTaint(taint);
                     return varABE3CFB53FE4A79F34CB25BC80BFD6E2_2094519547;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Fragment var540C13E9E156B687226421B24F2DF178_886500933 =         null;
         var540C13E9E156B687226421B24F2DF178_886500933.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_886500933;
-        
-        
-            
-                
-                
-                    
-                
-            
-        
-        
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mAdded != null && tag != null) {
+            //for (int i=mAdded.size()-1; i>=0; i--) {
+                //Fragment f = mAdded.get(i);
+                //if (f != null && tag.equals(f.mTag)) {
+                    //return f;
+                //}
+            //}
+        //}
+        //if (mActive != null && tag != null) {
+            //for (int i=mActive.size()-1; i>=0; i--) {
+                //Fragment f = mActive.get(i);
+                //if (f != null && tag.equals(f.mTag)) {
+                    //return f;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
@@ -1828,22 +1826,22 @@ for(int i=mActive.size()-1;i>=0;i--)
 Fragment varABE3CFB53FE4A79F34CB25BC80BFD6E2_1744525335 =                     f;
                     varABE3CFB53FE4A79F34CB25BC80BFD6E2_1744525335.addTaint(taint);
                     return varABE3CFB53FE4A79F34CB25BC80BFD6E2_1744525335;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
         var540C13E9E156B687226421B24F2DF178_1326360001.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1326360001;
-        
-        
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mActive != null && who != null) {
+            //for (int i=mActive.size()-1; i>=0; i--) {
+                //Fragment f = mActive.get(i);
+                //if (f != null && (f=f.findFragmentByWho(who)) != null) {
+                    //return f;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
@@ -1855,23 +1853,23 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
                     "Can not perform this action after onSaveInstanceState");
             var23A2D8DE9FCE1D4473820F88EF278183_1738292358.addTaint(taint);
             throw var23A2D8DE9FCE1D4473820F88EF278183_1738292358;
-        } 
+        } //End block
     if(mNoTransactionsBecause != null)        
         {
             IllegalStateException varD5A6267DF986948EB71369DC13B836F0_1115334577 = new IllegalStateException(
                     "Can not perform this action inside of " + mNoTransactionsBecause);
             varD5A6267DF986948EB71369DC13B836F0_1115334577.addTaint(taint);
             throw varD5A6267DF986948EB71369DC13B836F0_1115334577;
-        } 
-        
-        
-            
-                    
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mStateSaved) {
+            //throw new IllegalStateException(
+                    //"Can not perform this action after onSaveInstanceState");
+        //}
+        //if (mNoTransactionsBecause != null) {
+            //throw new IllegalStateException(
+                    //"Can not perform this action inside of " + mNoTransactionsBecause);
+        //}
     }
 
     
@@ -1882,7 +1880,7 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
     if(!allowStateLoss)        
         {
             checkStateLoss();
-        } 
+        } //End block
         synchronized
 (this)        {
     if(mActivity == null)            
@@ -1890,35 +1888,35 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
                 IllegalStateException var49610257A997B6EC5B28B22BBA4534E2_1068239836 = new IllegalStateException("Activity has been destroyed");
                 var49610257A997B6EC5B28B22BBA4534E2_1068239836.addTaint(taint);
                 throw var49610257A997B6EC5B28B22BBA4534E2_1068239836;
-            } 
+            } //End block
     if(mPendingActions == null)            
             {
                 mPendingActions = new ArrayList<Runnable>();
-            } 
+            } //End block
             mPendingActions.add(action);
     if(mPendingActions.size() == 1)            
             {
                 mActivity.mHandler.removeCallbacks(mExecCommit);
                 mActivity.mHandler.post(mExecCommit);
-            } 
-        } 
-        
-        
-            
-        
-        
-            
-                
-            
-            
-                
-            
-            
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (!allowStateLoss) {
+            //checkStateLoss();
+        //}
+        //synchronized (this) {
+            //if (mActivity == null) {
+                //throw new IllegalStateException("Activity has been destroyed");
+            //}
+            //if (mPendingActions == null) {
+                //mPendingActions = new ArrayList<Runnable>();
+            //}
+            //mPendingActions.add(action);
+            //if (mPendingActions.size() == 1) {
+                //mActivity.mHandler.removeCallbacks(mExecCommit);
+                //mActivity.mHandler.post(mExecCommit);
+            //}
+        //}
     }
 
     
@@ -1932,13 +1930,13 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
     if(mBackStackIndices == null)                
                 {
                     mBackStackIndices = new ArrayList<BackStackRecord>();
-                } 
+                } //End block
                 int index = mBackStackIndices.size();
     if(DEBUG){ }                mBackStackIndices.add(bse);
                 int var6A992D5529F459A44FEE58C733255E86_1437102949 = (index);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1139471397 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1139471397;
-            } 
+            } //End block
             else
             {
                 int index = mAvailBackStackIndices.remove(mAvailBackStackIndices.size()-1);
@@ -1946,25 +1944,25 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
                 int var6A992D5529F459A44FEE58C733255E86_224809148 = (index);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166340974 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166340974;
-            } 
-        } 
-        
-        
-            
-                
-                    
-                
-                
-                
-                
-                
-            
-                
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (mAvailBackStackIndices == null || mAvailBackStackIndices.size() <= 0) {
+                //if (mBackStackIndices == null) {
+                    //mBackStackIndices = new ArrayList<BackStackRecord>();
+                //}
+                //int index = mBackStackIndices.size();
+                //if (DEBUG) Log.v(TAG, "Setting back stack index " + index + " to " + bse);
+                //mBackStackIndices.add(bse);
+                //return index;
+            //} else {
+                //int index = mAvailBackStackIndices.remove(mAvailBackStackIndices.size()-1);
+                //if (DEBUG) Log.v(TAG, "Adding back stack index " + index + " with " + bse);
+                //mBackStackIndices.set(index, bse);
+                //return index;
+            //}
+        //}
     }
 
     
@@ -1977,12 +1975,12 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
     if(mBackStackIndices == null)            
             {
                 mBackStackIndices = new ArrayList<BackStackRecord>();
-            } 
+            } //End block
             int N = mBackStackIndices.size();
     if(index < N)            
             {
     if(DEBUG){ }                mBackStackIndices.set(index, bse);
-            } 
+            } //End block
             else
             {
                 while
@@ -1992,15 +1990,15 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
     if(mAvailBackStackIndices == null)                    
                     {
                         mAvailBackStackIndices = new ArrayList<Integer>();
-                    } 
+                    } //End block
     if(DEBUG){ }                    mAvailBackStackIndices.add(N);
                     N++;
-                } 
+                } //End block
     if(DEBUG){ }                mBackStackIndices.add(bse);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2013,18 +2011,18 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
     if(mAvailBackStackIndices == null)            
             {
                 mAvailBackStackIndices = new ArrayList<Integer>();
-            } 
+            } //End block
     if(DEBUG){ }            mAvailBackStackIndices.add(index);
-        } 
-        
-        
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //mBackStackIndices.set(index, null);
+            //if (mAvailBackStackIndices == null) {
+                //mAvailBackStackIndices = new ArrayList<Integer>();
+            //}
+            //if (DEBUG) Log.v(TAG, "Freeing back stack index " + index);
+            //mAvailBackStackIndices.add(index);
+        //}
     }
 
     
@@ -2035,13 +2033,13 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
             IllegalStateException var61DF877DA999CC3CF0E0D581264CFF4D_41209683 = new IllegalStateException("Recursive entry to executePendingTransactions");
             var61DF877DA999CC3CF0E0D581264CFF4D_41209683.addTaint(taint);
             throw var61DF877DA999CC3CF0E0D581264CFF4D_41209683;
-        } 
+        } //End block
     if(Looper.myLooper() != mActivity.mHandler.getLooper())        
         {
             IllegalStateException var40716AFC80613C23595006B91BE64761_1580577682 = new IllegalStateException("Must be called from main thread of process");
             var40716AFC80613C23595006B91BE64761_1580577682.addTaint(taint);
             throw var40716AFC80613C23595006B91BE64761_1580577682;
-        } 
+        } //End block
         boolean didSomething = false;
         while
 (true)        
@@ -2052,25 +2050,25 @@ Fragment var540C13E9E156B687226421B24F2DF178_1326360001 =         null;
     if(mPendingActions == null || mPendingActions.size() == 0)                
                 {
                     break;
-                } 
+                } //End block
                 numActions = mPendingActions.size();
     if(mTmpActions == null || mTmpActions.length < numActions)                
                 {
                     mTmpActions = new Runnable[numActions];
-                } 
+                } //End block
                 mPendingActions.toArray(mTmpActions);
                 mPendingActions.clear();
                 mActivity.mHandler.removeCallbacks(mExecCommit);
-            } 
+            } //End block
             mExecutingActions = true;
 for(int i=0;i<numActions;i++)
             {
                 mTmpActions[i].run();
                 mTmpActions[i] = null;
-            } 
+            } //End block
             mExecutingActions = false;
             didSomething = true;
-        } 
+        } //End block
     if(mHavePendingDeferredStart)        
         {
             boolean loadersRunning = false;
@@ -2080,19 +2078,19 @@ for(int i=0;i<mActive.size();i++)
     if(f != null && f.mLoaderManager != null)                
                 {
                     loadersRunning |= f.mLoaderManager.hasRunningLoaders();
-                } 
-            } 
+                } //End block
+            } //End block
     if(!loadersRunning)            
             {
                 mHavePendingDeferredStart = false;
                 startPendingDeferredFragments();
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var5E507AE975F73329F3FD0F0DC8E6DE07_932921450 = (didSomething);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831525738 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831525738;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2103,14 +2101,14 @@ for(int i=0;i<mActive.size();i++)
 for(int i=0;i<mBackStackChangeListeners.size();i++)
             {
                 mBackStackChangeListeners.get(i).onBackStackChanged();
-            } 
-        } 
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mBackStackChangeListeners != null) {
+            //for (int i=0; i<mBackStackChangeListeners.size(); i++) {
+                //mBackStackChangeListeners.get(i).onBackStackChanged();
+            //}
+        //}
     }
 
     
@@ -2120,15 +2118,15 @@ for(int i=0;i<mBackStackChangeListeners.size();i++)
     if(mBackStack == null)        
         {
             mBackStack = new ArrayList<BackStackRecord>();
-        } 
+        } //End block
         mBackStack.add(state);
         reportBackStackChanged();
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mBackStack == null) {
+            //mBackStack = new ArrayList<BackStackRecord>();
+        //}
+        //mBackStack.add(state);
+        //reportBackStackChanged();
     }
 
     
@@ -2143,7 +2141,7 @@ for(int i=0;i<mBackStackChangeListeners.size();i++)
             boolean var68934A3E9455FA72420237EB05902327_1962060793 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_151774755 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_151774755;
-        } 
+        } //End block
     if(name == null && id < 0 && (flags&POP_BACK_STACK_INCLUSIVE) == 0)        
         {
             int last = mBackStack.size()-1;
@@ -2152,11 +2150,11 @@ for(int i=0;i<mBackStackChangeListeners.size();i++)
                 boolean var68934A3E9455FA72420237EB05902327_499432838 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1266347259 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1266347259;
-            } 
+            } //End block
             final BackStackRecord bss = mBackStack.remove(last);
             bss.popFromBackStack(true);
             reportBackStackChanged();
-        } 
+        } //End block
         else
         {
             int index = -1;
@@ -2170,19 +2168,19 @@ for(int i=0;i<mBackStackChangeListeners.size();i++)
     if(name != null && name.equals(bss.getName()))                    
                     {
                         break;
-                    } 
+                    } //End block
     if(id >= 0 && id == bss.mIndex)                    
                     {
                         break;
-                    } 
+                    } //End block
                     index--;
-                } 
+                } //End block
     if(index < 0)                
                 {
                     boolean var68934A3E9455FA72420237EB05902327_1462254730 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_485055301 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_485055301;
-                } 
+                } //End block
     if((flags&POP_BACK_STACK_INCLUSIVE) != 0)                
                 {
                     index--;
@@ -2195,34 +2193,34 @@ for(int i=0;i<mBackStackChangeListeners.size();i++)
                         {
                             index--;
                             continue;
-                        } 
+                        } //End block
                         break;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(index == mBackStack.size()-1)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_1562653078 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2082249472 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2082249472;
-            } 
+            } //End block
             final ArrayList<BackStackRecord> states = new ArrayList<BackStackRecord>();
 for(int i=mBackStack.size()-1;i>index;i--)
             {
                 states.add(mBackStack.remove(i));
-            } 
+            } //End block
             final int LAST = states.size()-1;
 for(int i=0;i<=LAST;i++)
             {
     if(DEBUG){ }                states.get(i).popFromBackStack(i == LAST);
-            } 
+            } //End block
             reportBackStackChanged();
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1237791761 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_313169602 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_313169602;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2239,34 +2237,34 @@ for(int i=0;i<mActive.size();i++)
     if(fragments == null)                    
                     {
                         fragments = new ArrayList<Fragment>();
-                    } 
+                    } //End block
                     fragments.add(f);
                     f.mRetaining = true;
                     f.mTargetIndex = f.mTarget != null ? f.mTarget.mIndex : -1;
     if(DEBUG){ }
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 ArrayList<Fragment> varFEBBCC2DAA2DE5E47E180E56AA61ABE9_1529973126 =         fragments;
         varFEBBCC2DAA2DE5E47E180E56AA61ABE9_1529973126.addTaint(taint);
         return varFEBBCC2DAA2DE5E47E180E56AA61ABE9_1529973126;
-        
-        
-        
-            
-                
-                
-                    
-                        
-                    
-                    
-                    
-                    
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<Fragment> fragments = null;
+        //if (mActive != null) {
+            //for (int i=0; i<mActive.size(); i++) {
+                //Fragment f = mActive.get(i);
+                //if (f != null && f.mRetainInstance) {
+                    //if (fragments == null) {
+                        //fragments = new ArrayList<Fragment>();
+                    //}
+                    //fragments.add(f);
+                    //f.mRetaining = true;
+                    //f.mTargetIndex = f.mTarget != null ? f.mTarget.mIndex : -1;
+                    //if (DEBUG) Log.v(TAG, "retainNonConfig: keeping retained " + f);
+                //}
+            //}
+        //}
+        //return fragments;
     }
 
     
@@ -2276,35 +2274,35 @@ ArrayList<Fragment> varFEBBCC2DAA2DE5E47E180E56AA61ABE9_1529973126 =         fra
     if(f.mInnerView == null)        
         {
             return;
-        } 
+        } //End block
     if(mStateArray == null)        
         {
             mStateArray = new SparseArray<Parcelable>();
-        } 
+        } //End block
         else
         {
             mStateArray.clear();
-        } 
+        } //End block
         f.mInnerView.saveHierarchyState(mStateArray);
     if(mStateArray.size() > 0)        
         {
             f.mSavedViewState = mStateArray;
             mStateArray = null;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (f.mInnerView == null) {
+            //return;
+        //}
+        //if (mStateArray == null) {
+            //mStateArray = new SparseArray<Parcelable>();
+        //} else {
+            //mStateArray.clear();
+        //}
+        //f.mInnerView.saveHierarchyState(mStateArray);
+        //if (mStateArray.size() > 0) {
+            //f.mSavedViewState = mStateArray;
+            //mStateArray = null;
+        //}
     }
 
     
@@ -2315,39 +2313,39 @@ ArrayList<Fragment> varFEBBCC2DAA2DE5E47E180E56AA61ABE9_1529973126 =         fra
     if(mStateBundle == null)        
         {
             mStateBundle = new Bundle();
-        } 
+        } //End block
         f.performSaveInstanceState(mStateBundle);
     if(!mStateBundle.isEmpty())        
         {
             result = mStateBundle;
             mStateBundle = null;
-        } 
+        } //End block
     if(f.mView != null)        
         {
             saveFragmentViewState(f);
-        } 
+        } //End block
     if(f.mSavedViewState != null)        
         {
     if(result == null)            
             {
                 result = new Bundle();
-            } 
+            } //End block
             result.putSparseParcelableArray(
                     FragmentManagerImpl.VIEW_STATE_TAG, f.mSavedViewState);
-        } 
+        } //End block
     if(!f.mUserVisibleHint)        
         {
     if(result == null)            
             {
                 result = new Bundle();
-            } 
+            } //End block
             result.putBoolean(FragmentManagerImpl.USER_VISIBLE_HINT_TAG, f.mUserVisibleHint);
-        } 
+        } //End block
 Bundle varDC838461EE2FA0CA4C9BBB70A15456B0_1733309568 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1733309568.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1733309568;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2357,13 +2355,13 @@ Bundle varDC838461EE2FA0CA4C9BBB70A15456B0_1733309568 =         result;
     if(HONEYCOMB)        
         {
             mStateSaved = true;
-        } 
+        } //End block
     if(mActive == null || mActive.size() <= 0)        
         {
 Parcelable var540C13E9E156B687226421B24F2DF178_1452449336 =             null;
             var540C13E9E156B687226421B24F2DF178_1452449336.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1452449336;
-        } 
+        } //End block
         int N = mActive.size();
         FragmentState[] active = new FragmentState[N];
         boolean haveFragments = false;
@@ -2377,7 +2375,7 @@ for(int i=0;i<N;i++)
                     throwException(new IllegalStateException(
                             "Failure saving state: active " + f
                             + " has cleared index: " + f.mIndex));
-                } 
+                } //End block
                 haveFragments = true;
                 FragmentState fs = new FragmentState(f);
                 active[i] = fs;
@@ -2391,11 +2389,11 @@ for(int i=0;i<N;i++)
                             throwException(new IllegalStateException(
                                     "Failure saving state: " + f
                                     + " has target not in fragment manager: " + f.mTarget));
-                        } 
+                        } //End block
     if(fs.mSavedFragmentState == null)                        
                         {
                             fs.mSavedFragmentState = new Bundle();
-                        } 
+                        } //End block
                         putFragment(fs.mSavedFragmentState,
                                 FragmentManagerImpl.TARGET_STATE_TAG, f.mTarget);
     if(f.mTargetRequestCode != 0)                        
@@ -2403,22 +2401,22 @@ for(int i=0;i<N;i++)
                             fs.mSavedFragmentState.putInt(
                                     FragmentManagerImpl.TARGET_REQUEST_CODE_STATE_TAG,
                                     f.mTargetRequestCode);
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     fs.mSavedFragmentState = f.mSavedFragmentState;
-                } 
+                } //End block
     if(DEBUG){ }
-            } 
-        } 
+            } //End block
+        } //End block
     if(!haveFragments)        
         {
     if(DEBUG){ }Parcelable var540C13E9E156B687226421B24F2DF178_1934096694 =             null;
             var540C13E9E156B687226421B24F2DF178_1934096694.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1934096694;
-        } 
+        } //End block
         int[] added = null;
         BackStackState[] backStack = null;
     if(mAdded != null)        
@@ -2435,11 +2433,11 @@ for(int i=0;i<N;i++)
                         throwException(new IllegalStateException(
                                 "Failure saving state: active " + mAdded.get(i)
                                 + " has cleared index: " + added[i]));
-                    } 
+                    } //End block
     if(DEBUG){ }
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(mBackStack != null)        
         {
             N = mBackStack.size();
@@ -2450,9 +2448,9 @@ for(int i=0;i<N;i++)
                 {
                     backStack[i] = new BackStackState(this, mBackStack.get(i));
     if(DEBUG){ }
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         FragmentManagerState fms = new FragmentManagerState();
         fms.mActive = active;
         fms.mAdded = added;
@@ -2460,8 +2458,8 @@ for(int i=0;i<N;i++)
 Parcelable var7CFA6661E623A7ACE6CCCD8D42B74674_1687932146 =         fms;
         var7CFA6661E623A7ACE6CCCD8D42B74674_1687932146.addTaint(taint);
         return var7CFA6661E623A7ACE6CCCD8D42B74674_1687932146;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2491,14 +2489,14 @@ for(int i=0;i<nonConfig.size();i++)
                     fs.mSavedFragmentState.setClassLoader(mActivity.getClassLoader());
                     f.mSavedViewState = fs.mSavedFragmentState.getSparseParcelableArray(
                             FragmentManagerImpl.VIEW_STATE_TAG);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         mActive = new ArrayList<Fragment>(fms.mActive.length);
     if(mAvailIndices != null)        
         {
             mAvailIndices.clear();
-        } 
+        } //End block
 for(int i=0;i<fms.mActive.length;i++)
         {
             FragmentState fs = fms.mActive[i];
@@ -2507,17 +2505,17 @@ for(int i=0;i<fms.mActive.length;i++)
                 Fragment f = fs.instantiate(mActivity, mParent);
     if(DEBUG){ }                mActive.add(f);
                 fs.mInstance = null;
-            } 
+            } //End block
             else
             {
                 mActive.add(null);
     if(mAvailIndices == null)                
                 {
                     mAvailIndices = new ArrayList<Integer>();
-                } 
+                } //End block
     if(DEBUG){ }                mAvailIndices.add(i);
-            } 
-        } 
+            } //End block
+        } //End block
     if(nonConfig != null)        
         {
 for(int i=0;i<nonConfig.size();i++)
@@ -2528,14 +2526,14 @@ for(int i=0;i<nonConfig.size();i++)
     if(f.mTargetIndex < mActive.size())                    
                     {
                         f.mTarget = mActive.get(f.mTargetIndex);
-                    } 
+                    } //End block
                     else
                     {
                         f.mTarget = null;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
     if(fms.mAdded != null)        
         {
             mAdded = new ArrayList<Fragment>(fms.mAdded.length);
@@ -2546,21 +2544,21 @@ for(int i=0;i<fms.mAdded.length;i++)
                 {
                     throwException(new IllegalStateException(
                             "No instantiated fragment for index #" + fms.mAdded[i]));
-                } 
+                } //End block
                 f.mAdded = true;
     if(DEBUG){ }    if(mAdded.contains(f))                
                 {
                     IllegalStateException var5BC08CE4CC7883538CF6B88A9F67F203_984690259 = new IllegalStateException("Already added!");
                     var5BC08CE4CC7883538CF6B88A9F67F203_984690259.addTaint(taint);
                     throw var5BC08CE4CC7883538CF6B88A9F67F203_984690259;
-                } 
+                } //End block
                 mAdded.add(f);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             mAdded = null;
-        } 
+        } //End block
     if(fms.mBackStack != null)        
         {
             mBackStack = new ArrayList<BackStackRecord>(fms.mBackStack.length);
@@ -2572,20 +2570,20 @@ for(int i=0;i<fms.mBackStack.length;i++)
                     LogWriter logw = new LogWriter(TAG);
                     PrintWriter pw = new PrintWriter(logw);
                     bse.dump("  ", pw, false);
-                } 
+                } //End block
                 mBackStack.add(bse);
     if(bse.mIndex >= 0)                
                 {
                     setBackStackIndex(bse.mIndex, bse);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
             mBackStack = null;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2601,20 +2599,19 @@ for(int i=0;i<fms.mBackStack.length;i++)
         mActivity = activity;
         mContainer = container;
         mParent = parent;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mActivity != null) throw new IllegalStateException("Already attached");
+        //mActivity = activity;
+        //mContainer = container;
+        //mParent = parent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.860 -0400", hash_original_method = "9E4E3FCA42BDE19CBF71140223B4B8D0", hash_generated_method = "B5C7E72CCEE273A62746EE3408615591")
     public void noteStateNotSaved() {
         mStateSaved = false;
-        
-        
+        // ---------- Original Method ----------
+        //mStateSaved = false;
     }
 
     
@@ -2622,9 +2619,9 @@ for(int i=0;i<fms.mBackStack.length;i++)
     public void dispatchCreate() {
         mStateSaved = false;
         moveToState(Fragment.CREATED, false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStateSaved = false;
+        //moveToState(Fragment.CREATED, false);
     }
 
     
@@ -2632,9 +2629,9 @@ for(int i=0;i<fms.mBackStack.length;i++)
     public void dispatchActivityCreated() {
         mStateSaved = false;
         moveToState(Fragment.ACTIVITY_CREATED, false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStateSaved = false;
+        //moveToState(Fragment.ACTIVITY_CREATED, false);
     }
 
     
@@ -2642,9 +2639,9 @@ for(int i=0;i<fms.mBackStack.length;i++)
     public void dispatchStart() {
         mStateSaved = false;
         moveToState(Fragment.STARTED, false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStateSaved = false;
+        //moveToState(Fragment.STARTED, false);
     }
 
     
@@ -2652,17 +2649,17 @@ for(int i=0;i<fms.mBackStack.length;i++)
     public void dispatchResume() {
         mStateSaved = false;
         moveToState(Fragment.RESUMED, false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStateSaved = false;
+        //moveToState(Fragment.RESUMED, false);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.862 -0400", hash_original_method = "E6EE1A1408209BDB9066272C26AA9863", hash_generated_method = "806CEF702E5812DC1949A4F8EE32F575")
     public void dispatchPause() {
         moveToState(Fragment.STARTED, false);
-        
-        
+        // ---------- Original Method ----------
+        //moveToState(Fragment.STARTED, false);
     }
 
     
@@ -2670,25 +2667,25 @@ for(int i=0;i<fms.mBackStack.length;i++)
     public void dispatchStop() {
         mStateSaved = true;
         moveToState(Fragment.STOPPED, false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStateSaved = true;
+        //moveToState(Fragment.STOPPED, false);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.863 -0400", hash_original_method = "DCD943307D69805205EE4AFFC6D1EFE3", hash_generated_method = "89E0EF721C47E2DF40831E82789D0DE5")
     public void dispatchReallyStop() {
         moveToState(Fragment.ACTIVITY_CREATED, false);
-        
-        
+        // ---------- Original Method ----------
+        //moveToState(Fragment.ACTIVITY_CREATED, false);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.863 -0400", hash_original_method = "69F58A9B4E2F72C0D627B376DB1A1CDC", hash_generated_method = "7C0C65D29ADA12A03B42DDDA4BE52A2A")
     public void dispatchDestroyView() {
         moveToState(Fragment.CREATED, false);
-        
-        
+        // ---------- Original Method ----------
+        //moveToState(Fragment.CREATED, false);
     }
 
     
@@ -2700,13 +2697,13 @@ for(int i=0;i<fms.mBackStack.length;i++)
         mActivity = null;
         mContainer = null;
         mParent = null;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDestroyed = true;
+        //execPendingActions();
+        //moveToState(Fragment.INITIALIZING, false);
+        //mActivity = null;
+        //mContainer = null;
+        //mParent = null;
     }
 
     
@@ -2721,18 +2718,18 @@ for(int i=0;i<mAdded.size();i++)
     if(f != null)                
                 {
                     f.performConfigurationChanged(newConfig);
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAdded != null) {
+            //for (int i=0; i<mAdded.size(); i++) {
+                //Fragment f = mAdded.get(i);
+                //if (f != null) {
+                    //f.performConfigurationChanged(newConfig);
+                //}
+            //}
+        //}
     }
 
     
@@ -2746,18 +2743,18 @@ for(int i=0;i<mAdded.size();i++)
     if(f != null)                
                 {
                     f.performLowMemory();
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAdded != null) {
+            //for (int i=0; i<mAdded.size(); i++) {
+                //Fragment f = mAdded.get(i);
+                //if (f != null) {
+                    //f.performLowMemory();
+                //}
+            //}
+        //}
     }
 
     
@@ -2780,12 +2777,12 @@ for(int i=0;i<mAdded.size();i++)
     if(newMenus == null)                        
                         {
                             newMenus = new ArrayList<Fragment>();
-                        } 
+                        } //End block
                         newMenus.add(f);
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
     if(mCreatedMenus != null)        
         {
 for(int i=0;i<mCreatedMenus.size();i++)
@@ -2794,15 +2791,15 @@ for(int i=0;i<mCreatedMenus.size();i++)
     if(newMenus == null || !newMenus.contains(f))                
                 {
                     f.onDestroyOptionsMenu();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         mCreatedMenus = newMenus;
         boolean varA7DD12B1DAB17D25467B0B0A4C8D4A92_1455843766 = (show);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1734468213 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1734468213;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2820,26 +2817,26 @@ for(int i=0;i<mAdded.size();i++)
     if(f.performPrepareOptionsMenu(menu))                    
                     {
                         show = true;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         boolean varA7DD12B1DAB17D25467B0B0A4C8D4A92_1951854068 = (show);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_354893894 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_354893894;
-        
-        
-        
-            
-                
-                
-                    
-                        
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean show = false;
+        //if (mAdded != null) {
+            //for (int i=0; i<mAdded.size(); i++) {
+                //Fragment f = mAdded.get(i);
+                //if (f != null) {
+                    //if (f.performPrepareOptionsMenu(menu)) {
+                        //show = true;
+                    //}
+                //}
+            //}
+        //}
+        //return show;
     }
 
     
@@ -2858,25 +2855,25 @@ for(int i=0;i<mAdded.size();i++)
                         boolean varB326B5062B2F0E69046810717534CB09_206756686 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_763739789 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_763739789;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1884131171 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1161430229 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1161430229;
-        
-        
-            
-                
-                
-                    
-                        
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mAdded != null) {
+            //for (int i=0; i<mAdded.size(); i++) {
+                //Fragment f = mAdded.get(i);
+                //if (f != null) {
+                    //if (f.performOptionsItemSelected(item)) {
+                        //return true;
+                    //}
+                //}
+            //}
+        //}
+        //return false;
     }
 
     
@@ -2895,25 +2892,25 @@ for(int i=0;i<mAdded.size();i++)
                         boolean varB326B5062B2F0E69046810717534CB09_1858291020 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1619111897 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1619111897;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1685558195 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_372986738 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_372986738;
-        
-        
-            
-                
-                
-                    
-                        
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mAdded != null) {
+            //for (int i=0; i<mAdded.size(); i++) {
+                //Fragment f = mAdded.get(i);
+                //if (f != null) {
+                    //if (f.performContextItemSelected(item)) {
+                        //return true;
+                    //}
+                //}
+            //}
+        //}
+        //return false;
     }
 
     
@@ -2928,23 +2925,22 @@ for(int i=0;i<mAdded.size();i++)
     if(f != null)                
                 {
                     f.performOptionsMenuClosed(menu);
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAdded != null) {
+            //for (int i=0; i<mAdded.size(); i++) {
+                //Fragment f = mAdded.get(i);
+                //if (f != null) {
+                    //f.performOptionsMenuClosed(menu);
+                //}
+            //}
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int reverseTransit(int transit) {
+        public static int reverseTransit(int transit) {
         int rev = 0;
         switch (transit) {
             case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:
@@ -2961,8 +2957,7 @@ for(int i=0;i<mAdded.size();i++)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int transitToStyleIndex(int transit, boolean enter) {
+        public static int transitToStyleIndex(int transit, boolean enter) {
         int animAttr = -1;
         switch (transit) {
             case FragmentTransaction.TRANSIT_FRAGMENT_OPEN:

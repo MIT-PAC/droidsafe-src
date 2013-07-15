@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,7 +30,7 @@ public final class PipelinedMsgParser implements Runnable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.434 -0400", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "362C6A06EBFCC475DC7BD25EA8D59893")
     protected  PipelinedMsgParser() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -44,12 +44,12 @@ public final class PipelinedMsgParser implements Runnable {
         this.maxMessageSize = maxMessageSize;
         mythread = new Thread(this);
         mythread.setName("PipelineThread-" + getNewUid());
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.sipMessageListener = sipMessageListener;
+        //rawInputStream = in;
+        //this.maxMessageSize = maxMessageSize;
+        //mythread = new Thread(this);
+        //mythread.setName("PipelineThread-" + getNewUid());
     }
 
     
@@ -60,7 +60,7 @@ public final class PipelinedMsgParser implements Runnable {
         addTaint(maxMsgSize);
         addTaint(in.getTaint());
         addTaint(mhandler.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -68,26 +68,23 @@ public final class PipelinedMsgParser implements Runnable {
     public  PipelinedMsgParser(Pipeline in) {
         this(null, in, false, 0);
         addTaint(in.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static synchronized int getNewUid() {
+        private static synchronized int getNewUid() {
         return uid++;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.438 -0400", hash_original_method = "AFB6FAED7CE2C798D2C88DCB60C1E3BA", hash_generated_method = "5A7C2DED95E3A949F3D0D6A47527D147")
     public void processInput() {
         mythread.start();
-        
-        
+        // ---------- Original Method ----------
+        //mythread.start();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.439 -0400", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "D0EF6DB3757C5769542AB4550A799B66")
     protected Object clone() {
         PipelinedMsgParser p = new PipelinedMsgParser();
@@ -98,22 +95,21 @@ public final class PipelinedMsgParser implements Runnable {
 Object var74E4690D9F2A026504928C017944E149_1052112470 =         p;
         var74E4690D9F2A026504928C017944E149_1052112470.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_1052112470;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //PipelinedMsgParser p = new PipelinedMsgParser();
+        //p.rawInputStream = this.rawInputStream;
+        //p.sipMessageListener = this.sipMessageListener;
+        //Thread mythread = new Thread(p);
+        //mythread.setName("PipelineThread");
+        //return p;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.440 -0400", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "853BB09F699662204A7FAC41D98CD659")
     public void setMessageListener(SIPMessageListener mlistener) {
         sipMessageListener = mlistener;
-        
-        
+        // ---------- Original Method ----------
+        //sipMessageListener = mlistener;
     }
 
     
@@ -131,7 +127,7 @@ Object var74E4690D9F2A026504928C017944E149_1052112470 =         p;
                 IOException varC66D24A26061D49450FA56EB3E7BB066_582528756 = new IOException("End of stream");
                 varC66D24A26061D49450FA56EB3E7BB066_582528756.addTaint(taint);
                 throw varC66D24A26061D49450FA56EB3E7BB066_582528756;
-            } 
+            } //End block
             else
             ch = (char) i;
     if(this.maxMessageSize > 0)            
@@ -143,38 +139,38 @@ Object var74E4690D9F2A026504928C017944E149_1052112470 =         p;
                 var2096C78080BB34E8F80BA52B746DF290_1492702578.addTaint(taint);
                 throw var2096C78080BB34E8F80BA52B746DF290_1492702578;
                 }
-            } 
+            } //End block
     if(ch != '\r')            
             retval.append(ch);
     if(ch == '\n')            
             {
                 break;
-            } 
-        } 
+            } //End block
+        } //End block
 String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_1835986132.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_1835986132;
-        
-        
-        
-            
-            
-            
-                
-            
-                
-            
-                
-                
-                    
-            
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer("");
+        //while (true) {
+            //char ch;
+            //int i = inputStream.read();
+            //if (i == -1) {
+                //throw new IOException("End of stream");
+            //} else
+                //ch = (char) i;
+            //if (this.maxMessageSize > 0) {
+                //this.sizeCounter--;
+                //if (this.sizeCounter <= 0)
+                    //throw new IOException("Max size exceeded!");
+            //}
+            //if (ch != '\r')
+                //retval.append(ch);
+            //if (ch == '\n') {
+                //break;
+            //}
+        //}
+        //return retval.toString();
     }
 
     
@@ -203,19 +199,19 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
     if(Debug.parserDebug)                            
                             {
                                 Debug.println("Discarding blank line. ");
-                            } 
+                            } //End block
                             continue;
-                        } 
+                        } //End block
                         else
                         break;
-                    } 
+                    } //End block
                     catch (IOException ex)
                     {
                         Debug.printStackTrace(ex);
                         this.rawInputStream.stopTimer();
                         return;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 inputBuffer.append(line1);
                 this.rawInputStream.startTimer();
                 Debug.println("Reading Input Stream");
@@ -228,14 +224,14 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
                         inputBuffer.append(line2);
     if(line2.trim().equals(""))                        
                         break;
-                    } 
+                    } //End block
                     catch (IOException ex)
                     {
                         this.rawInputStream.stopTimer();
                         Debug.printStackTrace(ex);
                         return;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 this.rawInputStream.stopTimer();
                 inputBuffer.append(line2);
                 StringMsgParser smp = new StringMsgParser(sipMessageListener);
@@ -246,42 +242,42 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
     if(Debug.debug)                    
                     {
                         Debug.println("About to parse : " + inputBuffer.toString());
-                    } 
+                    } //End block
                     sipMessage = smp.parseSIPMessage(inputBuffer.toString());
     if(sipMessage == null)                    
                     {
                         this.rawInputStream.stopTimer();
                         continue;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 catch (ParseException ex)
                 {
                     Debug.logError("Detected a parse error", ex);
                     continue;
-                } 
+                } //End block
     if(Debug.debug)                
                 {
                     Debug.println("Completed parsing message");
-                } 
+                } //End block
                 ContentLength cl = (ContentLength) sipMessage
                         .getContentLength();
                 int contentLength = 0;
     if(cl != null)                
                 {
                     contentLength = cl.getContentLength();
-                } 
+                } //End block
                 else
                 {
                     contentLength = 0;
-                } 
+                } //End block
     if(Debug.debug)                
                 {
                     Debug.println("contentLength " + contentLength);
-                } 
+                } //End block
     if(contentLength == 0)                
                 {
                     sipMessage.removeContent();
-                } 
+                } //End block
                 else
     if(maxMessageSize == 0
                         || contentLength < this.sizeCounter)                
@@ -299,68 +295,67 @@ String var1B324365A764C077A55854483509F4AB_1835986132 =         retval.toString(
     if(readlength > 0)                            
                             {
                                 nread += readlength;
-                            } 
+                            } //End block
                             else
                             {
                                 break;
-                            } 
-                        } 
+                            } //End block
+                        } //End block
                         catch (IOException ex)
                         {
                             Debug.logError("Exception Reading Content",ex);
                             break;
-                        } 
+                        } //End block
                         finally 
                         {
                             this.rawInputStream.stopTimer();
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     sipMessage.setMessageContent(message_body);
-                } 
+                } //End block
     if(sipMessageListener != null)                
                 {
                     try 
                     {
                         sipMessageListener.processMessage(sipMessage);
-                    } 
+                    } //End block
                     catch (Exception ex)
                     {
                         break;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
             try 
             {
                 inputStream.close();
-            } 
+            } //End block
             catch (IOException e)
             {
                 InternalErrorHandler.handleException(e);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.447 -0400", hash_original_method = "CD7CB4D97896F4DDC9750ED4F3C04317", hash_generated_method = "192A77C307E1B0090303A5E8F33C3527")
     public void close() {
         try 
         {
             this.rawInputStream.close();
-        } 
+        } //End block
         catch (IOException ex)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //this.rawInputStream.close();
+        //} catch (IOException ex) {
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
         addTaint(contentStream.getTaint());
         addTaint(tagNumber);
         addTaint(baseTag);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,32 +39,30 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
         _constructed = constructed;
         _tagNumber = tagNumber;
         _parser = parser;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //_constructed = constructed;
+        //_tagNumber = tagNumber;
+        //_parser = parser;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.845 -0400", hash_original_method = "E640F7F01BC858A63ED48B7251E0457D", hash_generated_method = "750C3040CB3ECDFF1297F1DCEB485CAE")
     public boolean isConstructed() {
         boolean varB52D9E9D9646E0353AB30807D53B3F06_2081445400 = (_constructed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_869027666 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_869027666;
-        
-        
+        // ---------- Original Method ----------
+        //return _constructed;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.845 -0400", hash_original_method = "B35ABF3B77036668E0072FBBE52EC3E8", hash_generated_method = "1F203E2D8EF834EB05C4F9F8B8B2238F")
     public int getTagNo() {
         int varEAE2E4D0FF1C370A789CC8A0673A645C_2094824670 = (_tagNumber);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359287414 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359287414;
-        
-        
+        // ---------- Original Method ----------
+        //return _tagNumber;
     }
 
     
@@ -81,24 +79,24 @@ public class BERTaggedObjectParser implements ASN1TaggedObjectParser {
                 IOException var550978CC5739B156929713E053AB0F8F_1508269987 = new IOException("Explicit tags must be constructed (see X.690 8.14.2)");
                 var550978CC5739B156929713E053AB0F8F_1508269987.addTaint(taint);
                 throw var550978CC5739B156929713E053AB0F8F_1508269987;
-            } 
+            } //End block
 DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_1207500076 =             _parser.readObject();
             var7FA56CC8A68C244D303C7C9A462CBFE7_1207500076.addTaint(taint);
             return var7FA56CC8A68C244D303C7C9A462CBFE7_1207500076;
-        } 
+        } //End block
 DEREncodable varC0A7EA330C97F08D8F4E627A246A5388_524088488 =         _parser.readImplicit(_constructed, tag);
         varC0A7EA330C97F08D8F4E627A246A5388_524088488.addTaint(taint);
         return varC0A7EA330C97F08D8F4E627A246A5388_524088488;
-        
-        
-        
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isExplicit)
+        //{
+            //if (!_constructed)
+            //{
+                //throw new IOException("Explicit tags must be constructed (see X.690 8.14.2)");
+            //}
+            //return _parser.readObject();
+        //}
+        //return _parser.readImplicit(_constructed, tag);
     }
 
     
@@ -107,8 +105,8 @@ DEREncodable varC0A7EA330C97F08D8F4E627A246A5388_524088488 =         _parser.rea
 DERObject var8672A79C191ABECE380987F377B9DD0A_399305940 =         _parser.readTaggedObject(_constructed, _tagNumber);
         var8672A79C191ABECE380987F377B9DD0A_399305940.addTaint(taint);
         return var8672A79C191ABECE380987F377B9DD0A_399305940;
-        
-        
+        // ---------- Original Method ----------
+        //return _parser.readTaggedObject(_constructed, _tagNumber);
     }
 
     
@@ -119,22 +117,22 @@ DERObject var8672A79C191ABECE380987F377B9DD0A_399305940 =         _parser.readTa
 DERObject var86ADD3CA276150B281C3CAF65FB31CFA_1643756107 =             this.getLoadedObject();
             var86ADD3CA276150B281C3CAF65FB31CFA_1643756107.addTaint(taint);
             return var86ADD3CA276150B281C3CAF65FB31CFA_1643756107;
-        } 
+        } //End block
         catch (IOException e)
         {
             ASN1ParsingException var8E62F5E57FC8734C351E697F3199D23E_405058238 = new ASN1ParsingException(e.getMessage());
             var8E62F5E57FC8734C351E697F3199D23E_405058238.addTaint(taint);
             throw var8E62F5E57FC8734C351E697F3199D23E_405058238;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return this.getLoadedObject();
+        //}
+        //catch (IOException e)
+        //{
+            //throw new ASN1ParsingException(e.getMessage());
+        //}
     }
 
     

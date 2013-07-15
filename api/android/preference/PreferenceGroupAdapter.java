@@ -1,6 +1,6 @@
 package android.preference;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -57,12 +57,12 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
         mPreferenceList = new ArrayList<Preference>();
         mPreferenceLayouts = new ArrayList<PreferenceLayout>();
         syncMyPreferences();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPreferenceGroup = preferenceGroup;
+        //mPreferenceGroup.setOnPreferenceChangeInternalListener(this);
+        //mPreferenceList = new ArrayList<Preference>();
+        //mPreferenceLayouts = new ArrayList<PreferenceLayout>();
+        //syncMyPreferences();
     }
 
     
@@ -73,9 +73,9 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     if(mIsSyncing)            
             {
                 return;
-            } 
+            } //End block
             mIsSyncing = true;
-        } 
+        } //End block
         List<Preference> newPreferenceList = new ArrayList<Preference>(mPreferenceList.size());
         flattenPreferenceGroup(newPreferenceList, mPreferenceGroup);
         mPreferenceList = newPreferenceList;
@@ -84,22 +84,22 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
 (this)        {
             mIsSyncing = false;
             notifyAll();
-        } 
-        
-        
-            
-                
-            
-            
-        
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(this) {
+            //if (mIsSyncing) {
+                //return;
+            //}
+            //mIsSyncing = true;
+        //}
+        //List<Preference> newPreferenceList = new ArrayList<Preference>(mPreferenceList.size());
+        //flattenPreferenceGroup(newPreferenceList, mPreferenceGroup);
+        //mPreferenceList = newPreferenceList;
+        //notifyDataSetChanged();
+        //synchronized(this) {
+            //mIsSyncing = false;
+            //notifyAll();
+        //}
     }
 
     
@@ -116,19 +116,19 @@ for(int i = 0;i < groupSize;i++)
     if(!mHasReturnedViewTypeCount && !preference.hasSpecifiedLayout())            
             {
                 addPreferenceClassName(preference);
-            } 
+            } //End block
     if(preference instanceof PreferenceGroup)            
             {
                 final PreferenceGroup preferenceAsGroup = (PreferenceGroup) preference;
     if(preferenceAsGroup.isOnSameScreenAsChildren())                
                 {
                     flattenPreferenceGroup(preferences, preferenceAsGroup);
-                } 
-            } 
+                } //End block
+            } //End block
             preference.setOnPreferenceChangeInternalListener(this);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -143,12 +143,12 @@ for(int i = 0;i < groupSize;i++)
 PreferenceLayout var08A2C4A72E6D9753FFB2150962070B4D_307211105 =         pl;
         var08A2C4A72E6D9753FFB2150962070B4D_307211105.addTaint(taint);
         return var08A2C4A72E6D9753FFB2150962070B4D_307211105;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //PreferenceLayout pl = in != null? in : new PreferenceLayout();
+        //pl.name = preference.getClass().getName();
+        //pl.resId = preference.getLayoutResource();
+        //pl.widgetResId = preference.getWidgetLayoutResource();
+        //return pl;
     }
 
     
@@ -161,14 +161,14 @@ PreferenceLayout var08A2C4A72E6D9753FFB2150962070B4D_307211105 =         pl;
         {
             insertPos = insertPos * -1 - 1;
             mPreferenceLayouts.add(insertPos, pl);
-        } 
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final PreferenceLayout pl = createPreferenceLayout(preference, null);
+        //int insertPos = Collections.binarySearch(mPreferenceLayouts, pl);
+        //if (insertPos < 0) {
+            //insertPos = insertPos * -1 - 1;
+            //mPreferenceLayouts.add(insertPos, pl);
+        //}
     }
 
     
@@ -177,8 +177,8 @@ PreferenceLayout var08A2C4A72E6D9753FFB2150962070B4D_307211105 =         pl;
         int varC421430EA712BB31552DDD51082F5040_699238305 = (mPreferenceList.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1115650367 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1115650367;
-        
-        
+        // ---------- Original Method ----------
+        //return mPreferenceList.size();
     }
 
     
@@ -194,9 +194,9 @@ Preference var540C13E9E156B687226421B24F2DF178_154186857 =         null;
 Preference varC00C7940BC9F3D49E69E634FDBA25534_1220178936 =         mPreferenceList.get(position);
         varC00C7940BC9F3D49E69E634FDBA25534_1220178936.addTaint(taint);
         return varC00C7940BC9F3D49E69E634FDBA25534_1220178936;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (position < 0 || position >= getCount()) return null;
+        //return mPreferenceList.get(position);
     }
 
     
@@ -212,9 +212,9 @@ Preference varC00C7940BC9F3D49E69E634FDBA25534_1220178936 =         mPreferenceL
         long var59A7DB87FD3D5E8E8EFFF8EDCCC92635_232723559 = (this.getItem(position).getId());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_105606218 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_105606218;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (position < 0 || position >= getCount()) return ListView.INVALID_ROW_ID;
+        //return this.getItem(position).getId();
     }
 
     
@@ -228,17 +228,17 @@ Preference varC00C7940BC9F3D49E69E634FDBA25534_1220178936 =         mPreferenceL
     if(Collections.binarySearch(mPreferenceLayouts, mTempPreferenceLayout) < 0)        
         {
             convertView = null;
-        } 
+        } //End block
 View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(convertView, parent);
         var120D4AB100F80F068E5DB1FAB11D521C_977085137.addTaint(taint);
         return var120D4AB100F80F068E5DB1FAB11D521C_977085137;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //final Preference preference = this.getItem(position);
+        //mTempPreferenceLayout = createPreferenceLayout(preference, mTempPreferenceLayout);
+        //if (Collections.binarySearch(mPreferenceLayouts, mTempPreferenceLayout) < 0) {
+            //convertView = null;
+        //}
+        //return preference.getView(convertView, parent);
     }
 
     
@@ -255,55 +255,53 @@ View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(
         boolean var9ED7D97E3459E2D24DE2FF96EC461932_2053772003 = (this.getItem(position).isSelectable());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2112873283 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2112873283;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (position < 0 || position >= getCount()) return true;
+        //return this.getItem(position).isSelectable();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.643 -0400", hash_original_method = "19954EF3B060E791A26DF845CEE18A7B", hash_generated_method = "0CCB65086BCEEB0323D3B2CEE66D10D1")
     @Override
     public boolean areAllItemsEnabled() {
         boolean var68934A3E9455FA72420237EB05902327_1975449717 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_476912730 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_476912730;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.643 -0400", hash_original_method = "C2E233D65C74168849EC7AB5F1A2D9C0", hash_generated_method = "91145FFBCBC5AF1D9C0E8E0FB2D9A366")
     public void onPreferenceChange(Preference preference) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(preference.getTaint());
         notifyDataSetChanged();
-        
-        
+        // ---------- Original Method ----------
+        //notifyDataSetChanged();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.643 -0400", hash_original_method = "96B325BF777CE525D2D64038C1261EF1", hash_generated_method = "7FED000FF54A66B7C90459DCE8D8A82C")
     public void onPreferenceHierarchyChange(Preference preference) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(preference.getTaint());
         mHandler.removeCallbacks(mSyncRunnable);
         mHandler.post(mSyncRunnable);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mHandler.removeCallbacks(mSyncRunnable);
+        //mHandler.post(mSyncRunnable);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.643 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "CDD9EDB699155CEDB6E7F08B99BF76F2")
     @Override
     public boolean hasStableIds() {
         boolean varB326B5062B2F0E69046810717534CB09_1280515804 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1509829928 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1509829928;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -314,14 +312,14 @@ View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(
     if(!mHasReturnedViewTypeCount)        
         {
             mHasReturnedViewTypeCount = true;
-        } 
+        } //End block
         final Preference preference = this.getItem(position);
     if(preference.hasSpecifiedLayout())        
         {
             int varFEBA93B0789497EBEDEB09E7A2E12E05_1442414557 = (IGNORE_ITEM_VIEW_TYPE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1325935801 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1325935801;
-        } 
+        } //End block
         mTempPreferenceLayout = createPreferenceLayout(preference, mTempPreferenceLayout);
         int viewType = Collections.binarySearch(mPreferenceLayouts, mTempPreferenceLayout);
     if(viewType < 0)        
@@ -329,28 +327,28 @@ View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(
             int varFEBA93B0789497EBEDEB09E7A2E12E05_2054416999 = (IGNORE_ITEM_VIEW_TYPE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909461126 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909461126;
-        } 
+        } //End block
         else
         {
             int varBE99FDADF4634E48B1DF67A9485E0784_1871875570 = (viewType);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_477381144 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_477381144;
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!mHasReturnedViewTypeCount) {
+            //mHasReturnedViewTypeCount = true;
+        //}
+        //final Preference preference = this.getItem(position);
+        //if (preference.hasSpecifiedLayout()) {
+            //return IGNORE_ITEM_VIEW_TYPE;
+        //}
+        //mTempPreferenceLayout = createPreferenceLayout(preference, mTempPreferenceLayout);
+        //int viewType = Collections.binarySearch(mPreferenceLayouts, mTempPreferenceLayout);
+        //if (viewType < 0) {
+            //return IGNORE_ITEM_VIEW_TYPE;
+        //} else {
+            //return viewType;
+        //}
     }
 
     
@@ -360,15 +358,15 @@ View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(
     if(!mHasReturnedViewTypeCount)        
         {
             mHasReturnedViewTypeCount = true;
-        } 
+        } //End block
         int var929537438D74B8A936F7559129C853BD_1913023306 = (Math.max(1, mPreferenceLayouts.size()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261654755 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261654755;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!mHasReturnedViewTypeCount) {
+            //mHasReturnedViewTypeCount = true;
+        //}
+        //return Math.max(1, mPreferenceLayouts.size());
     }
 
     
@@ -386,7 +384,7 @@ View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.644 -0400", hash_original_method = "12E8ADB8C3EE61AC77B7A82A93B07078", hash_generated_method = "12E8ADB8C3EE61AC77B7A82A93B07078")
         public PreferenceLayout ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -403,42 +401,42 @@ View var120D4AB100F80F068E5DB1FAB11D521C_977085137 =         preference.getView(
                         int varCFCD208495D565EF66E7DFF9F98764DA_1821046143 = (0);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947965703 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947965703;
-                    } 
+                    } //End block
                     else
                     {
                         int var668428D0DDF44F2DC16828D31178E104_1742293022 = (widgetResId - other.widgetResId);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858139417 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858139417;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     int varD9EFFAD18764D32F3A83FDC89447722F_299230200 = (resId - other.resId);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718156059 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718156059;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 int var691C605F2A969CC09889E4C30F3161B2_1230089519 = (compareNames);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2018244786 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2018244786;
-            } 
-            
-            
-            
-                
-                    
-                        
-                    
-                        
-                    
-                
-                    
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //int compareNames = name.compareTo(other.name);
+            //if (compareNames == 0) {
+                //if (resId == other.resId) {
+                    //if (widgetResId == other.widgetResId) {
+                        //return 0;
+                    //} else {
+                        //return widgetResId - other.widgetResId;
+                    //}
+                //} else {
+                    //return resId - other.resId;
+                //}
+            //} else {
+                //return compareNames;
+            //}
         }
 
         

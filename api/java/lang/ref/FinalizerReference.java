@@ -1,6 +1,6 @@
 package java.lang.ref;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public final class FinalizerReference<T> extends Reference<T> {
         super(r, q);
         addTaint(q.getTaint());
         addTaint(r.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -31,23 +31,21 @@ public final class FinalizerReference<T> extends Reference<T> {
 T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
         var21716E4C70987A9F4C0F382061B0AD90_1643288506.addTaint(taint);
         return var21716E4C70987A9F4C0F382061B0AD90_1643288506;
-        
-        
+        // ---------- Original Method ----------
+        //return zombie;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.830 -0400", hash_original_method = "B5E36D5C5E2E18FD73C503842BC207C6", hash_generated_method = "AA79A11271518D347BCB1CB74D552364")
     @Override
     public void clear() {
         zombie = null;
-        
-        
+        // ---------- Original Method ----------
+        //zombie = null;
     }
 
     
-        @DSModeled(DSC.BAN)
-    static void add(Object referent) {
+        static void add(Object referent) {
         FinalizerReference<?> reference = new FinalizerReference<Object>(referent, queue);
         synchronized (FinalizerReference.class) {
             reference.prev = null;
@@ -60,8 +58,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void remove(FinalizerReference reference) {
+        public static void remove(FinalizerReference reference) {
         synchronized (FinalizerReference.class) {
             FinalizerReference next = reference.next;
             FinalizerReference prev = reference.prev;
@@ -96,7 +93,7 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.832 -0400", hash_original_method = "E2AD40226AFB74C4AE2C6FB439A5AA79", hash_generated_method = "E2AD40226AFB74C4AE2C6FB439A5AA79")
         public Sentinel ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -105,9 +102,9 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
         protected synchronized void finalize() throws Throwable {
             finalized = true;
             notifyAll();
-            
-            
-            
+            // ---------- Original Method ----------
+            //finalized = true;
+            //notifyAll();
         }
 
         
@@ -117,11 +114,11 @@ T var21716E4C70987A9F4C0F382061B0AD90_1643288506 =         zombie;
 (!finalized)            
             {
                 wait();
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //while (!finalized) {
+                //wait();
+            //}
         }
 
         

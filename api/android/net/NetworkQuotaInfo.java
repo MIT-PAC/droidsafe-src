@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,10 +23,10 @@ public class NetworkQuotaInfo implements Parcelable {
         mEstimatedBytes = estimatedBytes;
         mSoftLimitBytes = softLimitBytes;
         mHardLimitBytes = hardLimitBytes;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mEstimatedBytes = estimatedBytes;
+        //mSoftLimitBytes = softLimitBytes;
+        //mHardLimitBytes = hardLimitBytes;
     }
 
     
@@ -35,58 +35,53 @@ public class NetworkQuotaInfo implements Parcelable {
         mEstimatedBytes = in.readLong();
         mSoftLimitBytes = in.readLong();
         mHardLimitBytes = in.readLong();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mEstimatedBytes = in.readLong();
+        //mSoftLimitBytes = in.readLong();
+        //mHardLimitBytes = in.readLong();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.844 -0400", hash_original_method = "9A1B44DAAD2420BC074FF7BE5F6986CE", hash_generated_method = "0E58FC03D0B11F69441EDFE3BAEF7AA4")
     public long getEstimatedBytes() {
         long varE081766EDB5BBAB91596FB5A1B03B4B8_1651390528 = (mEstimatedBytes);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2062130214 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2062130214;
-        
-        
+        // ---------- Original Method ----------
+        //return mEstimatedBytes;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.845 -0400", hash_original_method = "C8858C0BE5B1D5B7AD428D2F09A67941", hash_generated_method = "269FF80F9BBFB0C12C9B72633FCA5CE6")
     public long getSoftLimitBytes() {
         long var407B6D18E17605524108F73C59330777_674313597 = (mSoftLimitBytes);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_648909225 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_648909225;
-        
-        
+        // ---------- Original Method ----------
+        //return mSoftLimitBytes;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.845 -0400", hash_original_method = "32F0E566D231A4A60EB6312295EBA3AB", hash_generated_method = "9BD10ADEC179D93386BA353AC81D0881")
     public long getHardLimitBytes() {
         long varA2D5EBBE48D8BF149BE44E9240D2555E_755424342 = (mHardLimitBytes);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_272168537 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_272168537;
-        
-        
+        // ---------- Original Method ----------
+        //return mHardLimitBytes;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.846 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "094D6481CA416F43CF23ABFB0639B69A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2040122420 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406715058 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406715058;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.846 -0400", hash_original_method = "62923C632AA7262774DF27E525AA9FBB", hash_generated_method = "068BB645A106698A95318ECF8F142BC4")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -94,10 +89,10 @@ public class NetworkQuotaInfo implements Parcelable {
         out.writeLong(mEstimatedBytes);
         out.writeLong(mSoftLimitBytes);
         out.writeLong(mHardLimitBytes);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeLong(mEstimatedBytes);
+        //out.writeLong(mSoftLimitBytes);
+        //out.writeLong(mHardLimitBytes);
     }
 
     
@@ -115,12 +110,12 @@ public class NetworkQuotaInfo implements Parcelable {
             return new NetworkQuotaInfo[size];
         }
     };
-    
+    // orphaned legacy method
     public NetworkQuotaInfo createFromParcel(Parcel in) {
             return new NetworkQuotaInfo(in);
         }
     
-    
+    // orphaned legacy method
     public NetworkQuotaInfo[] newArray(int size) {
             return new NetworkQuotaInfo[size];
         }

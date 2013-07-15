@@ -1,6 +1,6 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -57,7 +57,7 @@ public final class URL implements Serializable {
     public  URL(String spec) throws MalformedURLException {
         this((URL) null, spec, null);
         addTaint(spec.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -66,7 +66,7 @@ public final class URL implements Serializable {
         this(context, spec, null);
         addTaint(spec.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -77,18 +77,18 @@ public final class URL implements Serializable {
             MalformedURLException var21E10CD6C5DF9565D3549D417E79A72D_675274019 = new MalformedURLException();
             var21E10CD6C5DF9565D3549D417E79A72D_675274019.addTaint(taint);
             throw var21E10CD6C5DF9565D3549D417E79A72D_675274019;
-        } 
+        } //End block
     if(handler != null)        
         {
             streamHandler = handler;
-        } 
+        } //End block
         spec = spec.trim();
         protocol = UrlUtils.getSchemePrefix(spec);
         int schemeSpecificPartStart = protocol != null ? (protocol.length() + 1) : 0;
     if(protocol != null && context != null && !protocol.equals(context.protocol))        
         {
             context = null;
-        } 
+        } //End block
     if(context != null)        
         {
             set(context.protocol, context.getHost(), context.getPort(), context.getAuthority(),
@@ -97,15 +97,15 @@ public final class URL implements Serializable {
     if(streamHandler == null)            
             {
                 streamHandler = context.streamHandler;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(protocol == null)        
         {
             MalformedURLException var04557210FB08E0803E5BE7CAA3DD9CD2_613158642 = new MalformedURLException("Protocol not found: " + spec);
             var04557210FB08E0803E5BE7CAA3DD9CD2_613158642.addTaint(taint);
             throw var04557210FB08E0803E5BE7CAA3DD9CD2_613158642;
-        } 
+        } //End block
     if(streamHandler == null)        
         {
             setupStreamHandler();
@@ -114,20 +114,20 @@ public final class URL implements Serializable {
                 MalformedURLException var07B5C4E77556F57242026F1ADEC49249_818230725 = new MalformedURLException("Unknown protocol: " + protocol);
                 var07B5C4E77556F57242026F1ADEC49249_818230725.addTaint(taint);
                 throw var07B5C4E77556F57242026F1ADEC49249_818230725;
-            } 
-        } 
+            } //End block
+        } //End block
         try 
         {
             streamHandler.parseURL(this, spec, schemeSpecificPartStart, spec.length());
-        } 
+        } //End block
         catch (Exception e)
         {
             MalformedURLException var3D13077A83788690F2B218CEE7D7BA6E_122847849 = new MalformedURLException(e.toString());
             var3D13077A83788690F2B218CEE7D7BA6E_122847849.addTaint(taint);
             throw var3D13077A83788690F2B218CEE7D7BA6E_122847849;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -137,7 +137,7 @@ public final class URL implements Serializable {
         addTaint(file.getTaint());
         addTaint(host.getTaint());
         addTaint(protocol.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -148,7 +148,7 @@ public final class URL implements Serializable {
         addTaint(port);
         addTaint(host.getTaint());
         addTaint(protocol.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -160,17 +160,17 @@ public final class URL implements Serializable {
             MalformedURLException var147D9A9055F6D2509E3DA0A51944CDF6_1549006405 = new MalformedURLException("port < -1: " + port);
             var147D9A9055F6D2509E3DA0A51944CDF6_1549006405.addTaint(taint);
             throw var147D9A9055F6D2509E3DA0A51944CDF6_1549006405;
-        } 
+        } //End block
     if(protocol == null)        
         {
             NullPointerException varBD82E106CDE34E01DCE92493FEC93362_714353774 = new NullPointerException("protocol == null");
             varBD82E106CDE34E01DCE92493FEC93362_714353774.addTaint(taint);
             throw varBD82E106CDE34E01DCE92493FEC93362_714353774;
-        } 
+        } //End block
     if(host != null && host.contains(":") && host.charAt(0) != '[')        
         {
             host = "[" + host + "]";
-        } 
+        } //End block
         this.protocol = protocol;
         this.host = host;
         this.port = port;
@@ -180,11 +180,11 @@ public final class URL implements Serializable {
         {
             this.file = file.substring(0, hash);
             this.ref = file.substring(hash + 1);
-        } 
+        } //End block
         else
         {
             this.file = file;
-        } 
+        } //End block
         fixURL(false);
     if(handler == null)        
         {
@@ -194,14 +194,14 @@ public final class URL implements Serializable {
                 MalformedURLException var07B5C4E77556F57242026F1ADEC49249_1616867905 = new MalformedURLException("Unknown protocol: " + protocol);
                 var07B5C4E77556F57242026F1ADEC49249_1616867905.addTaint(taint);
                 throw var07B5C4E77556F57242026F1ADEC49249_1616867905;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             streamHandler = handler;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -224,53 +224,53 @@ public final class URL implements Serializable {
     if(port != -1)            
             {
                 authority = authority + ":" + port;
-            } 
-        } 
+            } //End block
+        } //End block
     if(fixHost)        
         {
     if(host != null && (index = host.lastIndexOf('@')) > -1)            
             {
                 userInfo = host.substring(0, index);
                 host = host.substring(index + 1);
-            } 
+            } //End block
             else
             {
                 userInfo = null;
-            } 
-        } 
+            } //End block
+        } //End block
     if(file != null && (index = file.indexOf('?')) > -1)        
         {
             query = file.substring(index + 1);
             path = file.substring(0, index);
-        } 
+        } //End block
         else
         {
             query = null;
             path = file;
-        } 
-        
-        
-        
-            
-            
-                
-            
-        
-        
-            
-                
-                
-            
-                
-            
-        
-        
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int index;
+        //if (host != null && host.length() > 0) {
+            //authority = host;
+            //if (port != -1) {
+                //authority = authority + ":" + port;
+            //}
+        //}
+        //if (fixHost) {
+            //if (host != null && (index = host.lastIndexOf('@')) > -1) {
+                //userInfo = host.substring(0, index);
+                //host = host.substring(index + 1);
+            //} else {
+                //userInfo = null;
+            //}
+        //}
+        //if (file != null && (index = file.indexOf('?')) > -1) {
+            //query = file.substring(index + 1);
+            //path = file.substring(0, index);
+        //} else {
+            //query = null;
+            //path = file;
+        //}
     }
 
     
@@ -279,23 +279,23 @@ public final class URL implements Serializable {
     if(this.protocol == null)        
         {
             this.protocol = protocol;
-        } 
+        } //End block
         this.host = host;
         this.file = file;
         this.port = port;
         this.ref = ref;
         hashCode = 0;
         fixURL(true);
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (this.protocol == null) {
+            //this.protocol = protocol;
+        //}
+        //this.host = host;
+        //this.file = file;
+        //this.port = port;
+        //this.ref = ref;
+        //hashCode = 0;
+        //fixURL(true);
     }
 
     
@@ -308,45 +308,44 @@ public final class URL implements Serializable {
             boolean var68934A3E9455FA72420237EB05902327_874604616 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1906605651 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1906605651;
-        } 
+        } //End block
     if(this == o)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_716750246 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2059530547 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2059530547;
-        } 
+        } //End block
     if(this.getClass() != o.getClass())        
         {
             boolean var68934A3E9455FA72420237EB05902327_2072535024 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_869876348 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_869876348;
-        } 
+        } //End block
         boolean var3097362AF7B4736FA4D68D8E0A865F72_1748677094 = (streamHandler.equals(this, (URL) o));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1982691686 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1982691686;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (o == null) {
+            //return false;
+        //}
+        //if (this == o) {
+            //return true;
+        //}
+        //if (this.getClass() != o.getClass()) {
+            //return false;
+        //}
+        //return streamHandler.equals(this, (URL) o);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.697 -0400", hash_original_method = "0A94C2599C7A34FBFDE0162C017FE126", hash_generated_method = "830817A3A3EFD5FBEC94E746CF6D05FE")
     public boolean sameFile(URL otherURL) {
         addTaint(otherURL.getTaint());
         boolean varAE9A55027BF692184D897B10BAE44CDF_1399967410 = (streamHandler.sameFile(this, otherURL));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2090711758 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2090711758;
-        
-        
+        // ---------- Original Method ----------
+        //return streamHandler.sameFile(this, otherURL);
     }
 
     
@@ -356,15 +355,15 @@ public final class URL implements Serializable {
     if(hashCode == 0)        
         {
             hashCode = streamHandler.hashCode(this);
-        } 
+        } //End block
         int var550D1CC054A1B23A411DDDA46FD64811_220183903 = (hashCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_999568282 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_999568282;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (hashCode == 0) {
+            //hashCode = streamHandler.hashCode(this);
+        //}
+        //return hashCode;
     }
 
     
@@ -374,7 +373,7 @@ public final class URL implements Serializable {
     if(streamHandler != null)        
         {
             return;
-        } 
+        } //End block
     if(streamHandlerFactory != null)        
         {
             streamHandler = streamHandlerFactory.createURLStreamHandler(protocol);
@@ -382,8 +381,8 @@ public final class URL implements Serializable {
             {
                 streamHandlers.put(protocol, streamHandler);
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
         String packageList = System.getProperty("java.protocol.handler.pkgs");
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
     if(packageList != null && contextClassLoader != null)        
@@ -398,50 +397,50 @@ for(String packageName : packageList.split("\\|"))
     if(streamHandler != null)                    
                     {
                         streamHandlers.put(protocol, streamHandler);
-                    } 
+                    } //End block
                     return;
-                } 
+                } //End block
                 catch (IllegalAccessException ignored)
                 {
-                } 
+                } //End block
                 catch (InstantiationException ignored)
                 {
-                } 
+                } //End block
                 catch (ClassNotFoundException ignored)
                 {
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(protocol.equals("file"))        
         {
             streamHandler = new FileHandler();
-        } 
+        } //End block
         else
     if(protocol.equals("ftp"))        
         {
             streamHandler = new FtpHandler();
-        } 
+        } //End block
         else
     if(protocol.equals("http"))        
         {
             streamHandler = new HttpHandler();
-        } 
+        } //End block
         else
     if(protocol.equals("https"))        
         {
             streamHandler = new HttpsHandler();
-        } 
+        } //End block
         else
     if(protocol.equals("jar"))        
         {
             streamHandler = new JarHandler();
-        } 
+        } //End block
     if(streamHandler != null)        
         {
             streamHandlers.put(protocol, streamHandler);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -450,8 +449,8 @@ for(String packageName : packageList.split("\\|"))
 Object varB0F4ACE0BCE6830B8B39B3ED2F0664DB_866478963 =         openConnection().getContent();
         varB0F4ACE0BCE6830B8B39B3ED2F0664DB_866478963.addTaint(taint);
         return varB0F4ACE0BCE6830B8B39B3ED2F0664DB_866478963;
-        
-        
+        // ---------- Original Method ----------
+        //return openConnection().getContent();
     }
 
     
@@ -462,8 +461,8 @@ Object varB0F4ACE0BCE6830B8B39B3ED2F0664DB_866478963 =         openConnection().
 Object var6F18832B08F01BFE5F09D74E11F75FF3_1622891008 =         openConnection().getContent(types);
         var6F18832B08F01BFE5F09D74E11F75FF3_1622891008.addTaint(taint);
         return var6F18832B08F01BFE5F09D74E11F75FF3_1622891008;
-        
-        
+        // ---------- Original Method ----------
+        //return openConnection().getContent(types);
     }
 
     
@@ -472,8 +471,8 @@ Object var6F18832B08F01BFE5F09D74E11F75FF3_1622891008 =         openConnection()
 InputStream var87790969037245FCECE93EB13FB59F9E_748581088 =         openConnection().getInputStream();
         var87790969037245FCECE93EB13FB59F9E_748581088.addTaint(taint);
         return var87790969037245FCECE93EB13FB59F9E_748581088;
-        
-        
+        // ---------- Original Method ----------
+        //return openConnection().getInputStream();
     }
 
     
@@ -482,8 +481,8 @@ InputStream var87790969037245FCECE93EB13FB59F9E_748581088 =         openConnecti
 URLConnection var8582ACACD5693CAF10280320B49B91CB_882327094 =         streamHandler.openConnection(this);
         var8582ACACD5693CAF10280320B49B91CB_882327094.addTaint(taint);
         return var8582ACACD5693CAF10280320B49B91CB_882327094;
-        
-        
+        // ---------- Original Method ----------
+        //return streamHandler.openConnection(this);
     }
 
     
@@ -495,30 +494,28 @@ URLConnection var8582ACACD5693CAF10280320B49B91CB_882327094 =         streamHand
             IllegalArgumentException varA2CA76786F4D0E32C2985C5E02216614_881536532 = new IllegalArgumentException("proxy == null");
             varA2CA76786F4D0E32C2985C5E02216614_881536532.addTaint(taint);
             throw varA2CA76786F4D0E32C2985C5E02216614_881536532;
-        } 
+        } //End block
 URLConnection varA729B66CE0E41412E468FE52B258A462_1617134805 =         streamHandler.openConnection(this, proxy);
         varA729B66CE0E41412E468FE52B258A462_1617134805.addTaint(taint);
         return varA729B66CE0E41412E468FE52B258A462_1617134805;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (proxy == null) {
+            //throw new IllegalArgumentException("proxy == null");
+        //}
+        //return streamHandler.openConnection(this, proxy);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.711 -0400", hash_original_method = "1E43ADB2B24E4AEE234C287749830ABE", hash_generated_method = "88FCA175EB07FF87A1A2F13E3370C0B9")
     public URI toURI() throws URISyntaxException {
 URI varABE6DEE154A7C8840C60A090742E451F_358152102 =         new URI(toExternalForm());
         varABE6DEE154A7C8840C60A090742E451F_358152102.addTaint(taint);
         return varABE6DEE154A7C8840C60A090742E451F_358152102;
-        
-        
+        // ---------- Original Method ----------
+        //return new URI(toExternalForm());
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.711 -0400", hash_original_method = "9819CA3EECC28CF10D8C0CAB99E6CDCB", hash_generated_method = "00058F7242FE59A76513679ECFA404C9")
     public URI toURILenient() throws URISyntaxException {
     if(streamHandler == null)        
@@ -526,15 +523,15 @@ URI varABE6DEE154A7C8840C60A090742E451F_358152102 =         new URI(toExternalFo
             IllegalStateException varB67EB4FE074D3BB8A5D6AA83D471E820_1013779266 = new IllegalStateException(protocol);
             varB67EB4FE074D3BB8A5D6AA83D471E820_1013779266.addTaint(taint);
             throw varB67EB4FE074D3BB8A5D6AA83D471E820_1013779266;
-        } 
+        } //End block
 URI var0E4EEE42069389967BAFD78A4351D211_119732909 =         new URI(streamHandler.toExternalForm(this, true));
         var0E4EEE42069389967BAFD78A4351D211_119732909.addTaint(taint);
         return var0E4EEE42069389967BAFD78A4351D211_119732909;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (streamHandler == null) {
+            //throw new IllegalStateException(protocol);
+        //}
+        //return new URI(streamHandler.toExternalForm(this, true));
     }
 
     
@@ -544,8 +541,8 @@ URI var0E4EEE42069389967BAFD78A4351D211_119732909 =         new URI(streamHandle
 String varF1450660D1DB6B63C9B83A42FD23AFF4_611615391 =         toExternalForm();
         varF1450660D1DB6B63C9B83A42FD23AFF4_611615391.addTaint(taint);
         return varF1450660D1DB6B63C9B83A42FD23AFF4_611615391;
-        
-        
+        // ---------- Original Method ----------
+        //return toExternalForm();
     }
 
     
@@ -556,15 +553,15 @@ String varF1450660D1DB6B63C9B83A42FD23AFF4_611615391 =         toExternalForm();
 String var4719CC78653EB410AA0D53C0ADA4DFAC_1175615624 =             "unknown protocol(" + protocol + ")://" + host + file;
             var4719CC78653EB410AA0D53C0ADA4DFAC_1175615624.addTaint(taint);
             return var4719CC78653EB410AA0D53C0ADA4DFAC_1175615624;
-        } 
+        } //End block
 String varDCCA36446C90D2AF904BB9935AD90339_1358681858 =         streamHandler.toExternalForm(this);
         varDCCA36446C90D2AF904BB9935AD90339_1358681858.addTaint(taint);
         return varDCCA36446C90D2AF904BB9935AD90339_1358681858;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (streamHandler == null) {
+            //return "unknown protocol(" + protocol + ")://" + host + file;
+        //}
+        //return streamHandler.toExternalForm(this);
     }
 
     
@@ -577,7 +574,7 @@ String varDCCA36446C90D2AF904BB9935AD90339_1358681858 =         streamHandler.to
     if(host != null && authority == null)            
             {
                 fixURL(true);
-            } 
+            } //End block
             else
     if(authority != null)            
             {
@@ -585,34 +582,34 @@ String varDCCA36446C90D2AF904BB9935AD90339_1358681858 =         streamHandler.to
     if((index = authority.lastIndexOf('@')) > -1)                
                 {
                     userInfo = authority.substring(0, index);
-                } 
+                } //End block
     if(file != null && (index = file.indexOf('?')) > -1)                
                 {
                     query = file.substring(index + 1);
                     path = file.substring(0, index);
-                } 
+                } //End block
                 else
                 {
                     path = file;
-                } 
-            } 
+                } //End block
+            } //End block
             setupStreamHandler();
     if(streamHandler == null)            
             {
                 IOException varBE99800DB77FD16EF6EB16B9F3CFFF88_309726684 = new IOException("Unknown protocol: " + protocol);
                 varBE99800DB77FD16EF6EB16B9F3CFFF88_309726684.addTaint(taint);
                 throw varBE99800DB77FD16EF6EB16B9F3CFFF88_309726684;
-            } 
+            } //End block
             hashCode = 0;
-        } 
+        } //End block
         catch (ClassNotFoundException e)
         {
             IOException var0AFB0468CE17165C7EF7344B3E18B39B_12518811 = new IOException(e);
             var0AFB0468CE17165C7EF7344B3E18B39B_12518811.addTaint(taint);
             throw var0AFB0468CE17165C7EF7344B3E18B39B_12518811;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -620,8 +617,8 @@ String varDCCA36446C90D2AF904BB9935AD90339_1358681858 =         streamHandler.to
     private void writeObject(ObjectOutputStream s) throws IOException {
         addTaint(s.getTaint());
         s.defaultWriteObject();
-        
-        
+        // ---------- Original Method ----------
+        //s.defaultWriteObject();
     }
 
     
@@ -630,63 +627,58 @@ String varDCCA36446C90D2AF904BB9935AD90339_1358681858 =         streamHandler.to
         int varE15514297653782693CCA4CFFA420DFA_1438168607 = (URI.getEffectivePort(protocol, port));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423752086 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423752086;
-        
-        
+        // ---------- Original Method ----------
+        //return URI.getEffectivePort(protocol, port);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.715 -0400", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "025E4EBEDB7DAAFAF4BF77BDB998E9C4")
     public String getProtocol() {
 String varDD56EE388A0FA5696BF9686AC14D2DB9_577842848 =         protocol;
         varDD56EE388A0FA5696BF9686AC14D2DB9_577842848.addTaint(taint);
         return varDD56EE388A0FA5696BF9686AC14D2DB9_577842848;
-        
-        
+        // ---------- Original Method ----------
+        //return protocol;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.716 -0400", hash_original_method = "36971585CF0AC7121D34C5DBA5E7B5AD", hash_generated_method = "A8D109BADDBE5829CE185817A209E476")
     public String getAuthority() {
 String var9A4A00E403B4898E9807F68E9EBE5A8B_422789349 =         authority;
         var9A4A00E403B4898E9807F68E9EBE5A8B_422789349.addTaint(taint);
         return var9A4A00E403B4898E9807F68E9EBE5A8B_422789349;
-        
-        
+        // ---------- Original Method ----------
+        //return authority;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.716 -0400", hash_original_method = "C7599F6C2A9D16B1F9E84177D4C93D75", hash_generated_method = "07A93642F9340B235CB898D1A139C666")
     public String getUserInfo() {
 String varBCE8ED9572054839A8E4DF19F3B230E6_856925868 =         userInfo;
         varBCE8ED9572054839A8E4DF19F3B230E6_856925868.addTaint(taint);
         return varBCE8ED9572054839A8E4DF19F3B230E6_856925868;
-        
-        
+        // ---------- Original Method ----------
+        //return userInfo;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.716 -0400", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "ED842AF5D195484C206BDAC974F05AC3")
     public String getHost() {
 String var872E07117C05F1A34EC24B57B694B8E3_1244493231 =         host;
         var872E07117C05F1A34EC24B57B694B8E3_1244493231.addTaint(taint);
         return var872E07117C05F1A34EC24B57B694B8E3_1244493231;
-        
-        
+        // ---------- Original Method ----------
+        //return host;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.717 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "71C7A1648D66E7016476A9BE4192A1FA")
     public int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_835458787 = (port);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1205816056 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1205816056;
-        
-        
+        // ---------- Original Method ----------
+        //return port;
     }
 
     
@@ -695,52 +687,48 @@ String var872E07117C05F1A34EC24B57B694B8E3_1244493231 =         host;
         int varF99D024E2841DC2797F7FC2BFC4F023E_239751749 = (streamHandler.getDefaultPort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521910975 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521910975;
-        
-        
+        // ---------- Original Method ----------
+        //return streamHandler.getDefaultPort();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.717 -0400", hash_original_method = "D4C7450F6A022BC4DF89D66487C9A55A", hash_generated_method = "8743A2B05399DF5EEB5525F619A2054A")
     public String getFile() {
 String varADCB75793FA1DABACC5DEBFFAE466050_1878550918 =         file;
         varADCB75793FA1DABACC5DEBFFAE466050_1878550918.addTaint(taint);
         return varADCB75793FA1DABACC5DEBFFAE466050_1878550918;
-        
-        
+        // ---------- Original Method ----------
+        //return file;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.717 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "43B08A72B0BE67B21A17BDD8B6340B54")
     public String getPath() {
 String var535F4D9720F3B0C96D8143873CE0638C_1643840546 =         path;
         var535F4D9720F3B0C96D8143873CE0638C_1643840546.addTaint(taint);
         return var535F4D9720F3B0C96D8143873CE0638C_1643840546;
-        
-        
+        // ---------- Original Method ----------
+        //return path;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.718 -0400", hash_original_method = "1E279BC97111B7B33A732EF157351512", hash_generated_method = "EBF9E1D0836995F87981B0A62BA1EECF")
     public String getQuery() {
 String varA8A0683638E4CE91D85122D8CD8F3BAC_1188394492 =         query;
         varA8A0683638E4CE91D85122D8CD8F3BAC_1188394492.addTaint(taint);
         return varA8A0683638E4CE91D85122D8CD8F3BAC_1188394492;
-        
-        
+        // ---------- Original Method ----------
+        //return query;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.718 -0400", hash_original_method = "3AAC0179CDFA195C747754E7ED20A392", hash_generated_method = "6D7EDF6F452BB2FC907965ABB1D68833")
     public String getRef() {
 String varEFC1DBC79AB9D4D6FF46C815132543A5_2145506082 =         ref;
         varEFC1DBC79AB9D4D6FF46C815132543A5_2145506082.addTaint(taint);
         return varEFC1DBC79AB9D4D6FF46C815132543A5_2145506082;
-        
-        
+        // ---------- Original Method ----------
+        //return ref;
     }
 
     
@@ -755,22 +743,22 @@ String varEFC1DBC79AB9D4D6FF46C815132543A5_2145506082 =         ref;
     if(query != null && !query.isEmpty())        
         {
             file += "?" + query;
-        } 
+        } //End block
         set(protocol, host, port, file, ref);
         this.authority = authority;
         this.userInfo = userInfo;
         this.path = path;
         this.query = query;
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //String file = path;
+        //if (query != null && !query.isEmpty()) {
+            //file += "?" + query;
+        //}
+        //set(protocol, host, port, file, ref);
+        //this.authority = authority;
+        //this.userInfo = userInfo;
+        //this.path = path;
+        //this.query = query;
     }
 
     

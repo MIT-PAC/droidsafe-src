@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,12 +33,11 @@ public class ZygoteInit {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.306 -0400", hash_original_method = "428A10BCE5663B72CCCACBE02D386E37", hash_generated_method = "B822867C5762398B852DFCB190C609C4")
     private  ZygoteInit() {
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.BAN)
-    static void invokeStaticMain(ClassLoader loader,
+        static void invokeStaticMain(ClassLoader loader,
             String className, String[] argv) throws ZygoteInit.MethodAndArgsCaller {
         Class<?> cl;
         try {
@@ -522,9 +521,9 @@ public class ZygoteInit {
         public  MethodAndArgsCaller(Method method, String[] args) {
             mMethod = method;
             mArgs = args;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mMethod = method;
+            //mArgs = args;
         }
 
         
@@ -533,13 +532,13 @@ public class ZygoteInit {
             try 
             {
                 mMethod.invoke(null, new Object[] { mArgs });
-            } 
+            } //End block
             catch (IllegalAccessException ex)
             {
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_1212560477 = new RuntimeException(ex);
                 varF35D3C95F99DACEE8C542CF38D772C50_1212560477.addTaint(taint);
                 throw varF35D3C95F99DACEE8C542CF38D772C50_1212560477;
-            } 
+            } //End block
             catch (InvocationTargetException ex)
             {
                 Throwable cause = ex.getCause();
@@ -548,32 +547,32 @@ public class ZygoteInit {
                     RuntimeException var2BEB6EF3D41E44EED5E35024D3C50335_786447530 = (RuntimeException) cause;
                     var2BEB6EF3D41E44EED5E35024D3C50335_786447530.addTaint(taint);
                     throw var2BEB6EF3D41E44EED5E35024D3C50335_786447530;
-                } 
+                } //End block
                 else
     if(cause instanceof Error)                
                 {
                     Error varF690D0FEA4496CAA0F487E9481A0D919_617182626 = (Error) cause;
                     varF690D0FEA4496CAA0F487E9481A0D919_617182626.addTaint(taint);
                     throw varF690D0FEA4496CAA0F487E9481A0D919_617182626;
-                } 
+                } //End block
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_973460881 = new RuntimeException(ex);
                 varF35D3C95F99DACEE8C542CF38D772C50_973460881.addTaint(taint);
                 throw varF35D3C95F99DACEE8C542CF38D772C50_973460881;
-            } 
-            
-            
-                
-            
-                
-            
-                
-                
-                    
-                
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //mMethod.invoke(null, new Object[] { mArgs });
+            //} catch (IllegalAccessException ex) {
+                //throw new RuntimeException(ex);
+            //} catch (InvocationTargetException ex) {
+                //Throwable cause = ex.getCause();
+                //if (cause instanceof RuntimeException) {
+                    //throw (RuntimeException) cause;
+                //} else if (cause instanceof Error) {
+                    //throw (Error) cause;
+                //}
+                //throw new RuntimeException(ex);
+            //}
         }
 
         

@@ -1,6 +1,6 @@
 package android.provider;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class Contacts {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.083 -0400", hash_original_method = "F5E3085137E37D29F0F8CB3C296F1F57", hash_generated_method = "EBAB9AC2EF768DD752DA8373D9E74008")
     private  Contacts() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -32,7 +32,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.084 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "2C16D3C86A761A9DF5E58231442F813C")
         private  Settings() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -97,7 +97,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.085 -0400", hash_original_method = "17F062BF4D2F442415926444A39FDFDD", hash_generated_method = "C216C0213EB56168D334ECD3F7BAB76F")
         private  People() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -128,8 +128,7 @@ public class Contacts {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        @Deprecated
+                @Deprecated
         public static Uri addToMyContactsGroup(ContentResolver resolver, long personId) {
             long groupId = tryGetMyContactsGroupId(resolver);
             if (groupId == 0) {
@@ -139,8 +138,7 @@ public class Contacts {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        @Deprecated
+                @Deprecated
         public static Uri addToGroup(ContentResolver resolver, long personId, String groupName) {
             long groupId = 0;
             Cursor groupsCursor = resolver.query(Groups.CONTENT_URI, GROUPS_PROJECTION,
@@ -161,8 +159,7 @@ public class Contacts {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        @Deprecated
+                @Deprecated
         public static Uri addToGroup(ContentResolver resolver, long personId, long groupId) {
             ContentValues values = new ContentValues();
             values.put(GroupMembership.PERSON_ID, personId);
@@ -171,8 +168,7 @@ public class Contacts {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        @Deprecated
+                @Deprecated
         public static Uri createPersonInMyContactsGroup(ContentResolver resolver,
                 ContentValues values) {
             Uri contactUri = resolver.insert(People.CONTENT_URI, values);
@@ -195,8 +191,7 @@ public class Contacts {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        @Deprecated
+                @Deprecated
         public static void setPhotoData(ContentResolver cr, Uri person, byte[] data) {
             Uri photoUri = Uri.withAppendedPath(person, Contacts.Photos.CONTENT_DIRECTORY);
             ContentValues values = new ContentValues();
@@ -205,8 +200,7 @@ public class Contacts {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        @Deprecated
+                @Deprecated
         public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri person) {
             Uri photoUri = Uri.withAppendedPath(person, Contacts.Photos.CONTENT_DIRECTORY);
             Cursor cursor = cr.query(photoUri, new String[]{Photos.DATA}, null, null, null);
@@ -225,8 +219,7 @@ public class Contacts {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        @Deprecated
+                @Deprecated
         public static Bitmap loadContactPhoto(Context context, Uri person,
                 int placeholderImageResource, BitmapFactory.Options options) {
             if (person == null) {
@@ -255,7 +248,7 @@ public class Contacts {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.087 -0400", hash_original_method = "311A54F6C4195C76C43F2FC2F7A3A3E0", hash_generated_method = "E3DEAC6FD2C25762C8DA6828EC61294E")
             private  Phones() {
-                
+                // ---------- Original Method ----------
             }
 
             
@@ -275,7 +268,7 @@ public class Contacts {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.087 -0400", hash_original_method = "AC0A5CAC5D79A50D0A1A1A7D60109A25", hash_generated_method = "D063488DC4FB276BA82857C6DD5F45E0")
             private  ContactMethods() {
-                
+                // ---------- Original Method ----------
             }
 
             
@@ -295,7 +288,7 @@ public class Contacts {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.087 -0400", hash_original_method = "4F6254C867328A153FDD5BD23453E816", hash_generated_method = "2F76D83BC2CB495AB0D58C050F1DA969")
             private  Extensions() {
-                
+                // ---------- Original Method ----------
             }
 
             
@@ -372,7 +365,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.088 -0400", hash_original_method = "7BA2DC4B038FD72F399C633B1C4B5B34", hash_generated_method = "4AF005563E89F66C166EA0E603C46AC1")
         private  Groups() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -414,7 +407,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.089 -0400", hash_original_method = "311A54F6C4195C76C43F2FC2F7A3A3E0", hash_generated_method = "E3DEAC6FD2C25762C8DA6828EC61294E")
         private  Phones() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -481,7 +474,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.090 -0400", hash_original_method = "9948141C64D53CA8E17E7FD2EBA08DA8", hash_generated_method = "428CD6B4AF8D64BBC7FE2E70673D8538")
         private  GroupMembership() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -540,7 +533,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.090 -0400", hash_original_method = "AC0A5CAC5D79A50D0A1A1A7D60109A25", hash_generated_method = "D063488DC4FB276BA82857C6DD5F45E0")
         private  ContactMethods() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -572,8 +565,7 @@ public class Contacts {
         }
 
         
-                @DSModeled(DSC.SAFE)
-        @Deprecated
+                @Deprecated
         public static String lookupProviderNameFromId(int protocol) {
             switch (protocol) {
                 case PROTOCOL_GOOGLE_TALK:
@@ -658,16 +650,16 @@ public class Contacts {
             values.clear();
             values.put(AUX_DATA, locId);
             resolver.update(ContentUris.withAppendedId(CONTENT_URI, postalId), values, null, null);
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //final ContentResolver resolver = context.getContentResolver();
+            //ContentValues values = new ContentValues(2);
+            //values.put(POSTAL_LOCATION_LATITUDE, latitude);
+            //values.put(POSTAL_LOCATION_LONGITUDE, longitude);
+            //Uri loc = resolver.insert(CONTENT_URI, values);
+            //long locId = ContentUris.parseId(loc);
+            //values.clear();
+            //values.put(AUX_DATA, locId);
+            //resolver.update(ContentUris.withAppendedId(CONTENT_URI, postalId), values, null, null);
         }
 
         
@@ -778,7 +770,7 @@ public class Contacts {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.093 -0400", hash_original_method = "FECDF62B9774A3653EF2E5C629F7A49B", hash_generated_method = "FECDF62B9774A3653EF2E5C629F7A49B")
         public Presence ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -824,7 +816,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.093 -0400", hash_original_method = "6B80070A6DD2FB0EB3D1E45B8D1F67CF", hash_generated_method = "E40E7E0EEA87F947049763533B6A22FF")
         private  Organizations() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -870,7 +862,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.093 -0400", hash_original_method = "BDD10C58ECCC962A5941D61E3DCCB1CC", hash_generated_method = "579E283B127B698CEAE38F45D6F0F217")
         private  Photos() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -894,7 +886,7 @@ public class Contacts {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.094 -0400", hash_original_method = "4F6254C867328A153FDD5BD23453E816", hash_generated_method = "2F76D83BC2CB495AB0D58C050F1DA969")
         private  Extensions() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -928,7 +920,7 @@ public class Contacts {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.094 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "B7DECF74799960B181BE08CCA219039E")
         @Deprecated
         public  Intents() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -937,7 +929,7 @@ public class Contacts {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.094 -0400", hash_original_method = "998C7BFCEA8419BCEF695E421ACA0417", hash_generated_method = "BF48FE538E58A03F5DCFCF8BB9DE75AF")
             @Deprecated
             public  UI() {
-                
+                // ---------- Original Method ----------
             }
 
             
@@ -1004,7 +996,7 @@ public class Contacts {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:35.095 -0400", hash_original_method = "B1003A1FA6FEB1932A0DC162C3E36DDF", hash_generated_method = "610703DEED34482762A474154980001E")
             @Deprecated
             public  Insert() {
-                
+                // ---------- Original Method ----------
             }
 
             

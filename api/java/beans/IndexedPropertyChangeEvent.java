@@ -1,6 +1,6 @@
 package java.beans;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,19 +19,18 @@ public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
         addTaint(propertyName.getTaint());
         addTaint(source.getTaint());
         this.index = index;
-        
-        
+        // ---------- Original Method ----------
+        //this.index = index;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.648 -0400", hash_original_method = "398BD1DDC3618561F914960ED7D21764", hash_generated_method = "E8F064071724D63A85EFC009866660B2")
     public int getIndex() {
         int var6A992D5529F459A44FEE58C733255E86_106416849 = (index);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_340606836 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_340606836;
-        
-        
+        // ---------- Original Method ----------
+        //return index;
     }
 
     

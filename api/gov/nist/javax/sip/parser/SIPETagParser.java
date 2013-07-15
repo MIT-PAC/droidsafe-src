@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class SIPETagParser extends HeaderParser {
     public  SIPETagParser(String etag) {
         super(etag);
         addTaint(etag.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class SIPETagParser extends HeaderParser {
     protected  SIPETagParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -43,29 +43,29 @@ public class SIPETagParser extends HeaderParser {
 SIPHeader var178ED0D9475F8DE2B44830603C2DF01C_1908817451 =             sipEtag;
             var178ED0D9475F8DE2B44830603C2DF01C_1908817451.addTaint(taint);
             return var178ED0D9475F8DE2B44830603C2DF01C_1908817451;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("SIPEtag.parse");
-        } 
-        
-        
-            
-        
-        
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("SIPEtag.parse");
+        //SIPETag sipEtag = new SIPETag();
+        //try {
+            //headerName(TokenTypes.SIP_ETAG);
+            //this.lexer.SPorHT();
+            //this.lexer.match(TokenTypes.ID);
+            //Token token = lexer.getNextToken();
+            //sipEtag.setETag(token.getTokenValue());
+            //this.lexer.SPorHT();
+            //this.lexer.match('\n');
+            //return sipEtag;
+        //} finally {
+            //if (debug)
+                //dbg_leave("SIPEtag.parse");
+        //}
     }
 
     

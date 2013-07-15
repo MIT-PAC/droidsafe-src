@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,19 +31,19 @@ public class MemoryFile {
     if(length > 0)        
         {
             mAddress = native_mmap(mFD, length, PROT_READ | PROT_WRITE);
-        } 
+        } //End block
         else
         {
             mAddress = 0;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLength = length;
+        //mFD = native_open(name, length);
+        //if (length > 0) {
+            //mAddress = native_mmap(mFD, length, PROT_READ | PROT_WRITE);
+        //} else {
+            //mAddress = 0;
+        //}
     }
 
     
@@ -100,12 +100,12 @@ public class MemoryFile {
     if(!isClosed())        
         {
             native_close(mFD);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //deactivate();
+        //if (!isClosed()) {
+            //native_close(mFD);
+        //}
     }
 
     
@@ -117,31 +117,30 @@ public class MemoryFile {
             {
                 native_munmap(mAddress, mLength);
                 mAddress = 0;
-            } 
+            } //End block
             catch (IOException ex)
             {
-            } 
-        } 
-        
-        
-            
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (!isDeactivated()) {
+            //try {
+                //native_munmap(mAddress, mLength);
+                //mAddress = 0;
+            //} catch (IOException ex) {
+                //Log.e(TAG, ex.toString());
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.651 -0400", hash_original_method = "6DDBFC199C19310599F0713304591847", hash_generated_method = "8986F821FD345689A179573F68E8240E")
     private boolean isDeactivated() {
         boolean var472664B108BA887238443A411579BA83_1782640223 = (mAddress == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1704612612 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1704612612;
-        
-        
+        // ---------- Original Method ----------
+        //return mAddress == 0;
     }
 
     
@@ -150,8 +149,8 @@ public class MemoryFile {
         boolean var401A99D823C7C2A08DCAD7BDB9EB9F83_1138598300 = (!mFD.valid());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_382067590 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_382067590;
-        
-        
+        // ---------- Original Method ----------
+        //return !mFD.valid();
     }
 
     
@@ -161,34 +160,32 @@ public class MemoryFile {
     if(!isClosed())        
         {
             close();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!isClosed()) {
+            //Log.e(TAG, "MemoryFile.finalize() called while ashmem still open");
+            //close();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.652 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "71C3BDE24976A95A5F3C94D224478654")
     public int length() {
         int var429F431E8CD8AC287AA27460675EAEFE_485496203 = (mLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_367170531 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_367170531;
-        
-        
+        // ---------- Original Method ----------
+        //return mLength;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.652 -0400", hash_original_method = "36BC15D120E9C0B3759A6273F0B6F394", hash_generated_method = "3413478599195E482CD489C11120CAB7")
     public boolean isPurgingAllowed() {
         boolean var9AF79FB5B21F6F4CE7B22525EBD546C0_543356922 = (mAllowPurging);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_874364855 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_874364855;
-        
-        
+        // ---------- Original Method ----------
+        //return mAllowPurging;
     }
 
     
@@ -199,17 +196,17 @@ public class MemoryFile {
         {
             native_pin(mFD, !allowPurging);
             mAllowPurging = allowPurging;
-        } 
+        } //End block
         boolean var0382B9FD9EF50B6A335F35E0AAAEBF99_545369695 = (oldValue);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345338422 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_345338422;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean oldValue = mAllowPurging;
+        //if (oldValue != allowPurging) {
+            //native_pin(mFD, !allowPurging);
+            //mAllowPurging = allowPurging;
+        //}
+        //return oldValue;
     }
 
     
@@ -218,8 +215,8 @@ public class MemoryFile {
 InputStream varF269E856784FF2D368CBB8E7FA0B4440_909939042 =         new MemoryInputStream();
         varF269E856784FF2D368CBB8E7FA0B4440_909939042.addTaint(taint);
         return varF269E856784FF2D368CBB8E7FA0B4440_909939042;
-        
-        
+        // ---------- Original Method ----------
+        //return new MemoryInputStream();
     }
 
     
@@ -228,8 +225,8 @@ InputStream varF269E856784FF2D368CBB8E7FA0B4440_909939042 =         new MemoryIn
 OutputStream var86EFA5916CD0155241780D6EEE9688E0_1431435914 =         new MemoryOutputStream();
         var86EFA5916CD0155241780D6EEE9688E0_1431435914.addTaint(taint);
         return var86EFA5916CD0155241780D6EEE9688E0_1431435914;
-        
-        
+        // ---------- Original Method ----------
+        //return new MemoryOutputStream();
     }
 
     
@@ -244,7 +241,7 @@ OutputStream var86EFA5916CD0155241780D6EEE9688E0_1431435914 =         new Memory
             IOException varEF7D4CDED219AEEF7A68C0F8169B94FE_638794295 = new IOException("Can't read from deactivated memory file.");
             varEF7D4CDED219AEEF7A68C0F8169B94FE_638794295.addTaint(taint);
             throw varEF7D4CDED219AEEF7A68C0F8169B94FE_638794295;
-        } 
+        } //End block
     if(destOffset < 0 || destOffset > buffer.length || count < 0
                 || count > buffer.length - destOffset
                 || srcOffset < 0 || srcOffset > mLength
@@ -253,21 +250,21 @@ OutputStream var86EFA5916CD0155241780D6EEE9688E0_1431435914 =         new Memory
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1112617286 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_1112617286.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1112617286;
-        } 
+        } //End block
         int var6826620B9A9F7560608EC737B9C6EF75_720571850 = (native_read(mFD, mAddress, buffer, srcOffset, destOffset, count, mAllowPurging));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379210536 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379210536;
-        
-        
-            
-        
-        
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isDeactivated()) {
+            //throw new IOException("Can't read from deactivated memory file.");
+        //}
+        //if (destOffset < 0 || destOffset > buffer.length || count < 0
+                //|| count > buffer.length - destOffset
+                //|| srcOffset < 0 || srcOffset > mLength
+                //|| count > mLength - srcOffset) {
+            //throw new IndexOutOfBoundsException();
+        //}
+        //return native_read(mFD, mAddress, buffer, srcOffset, destOffset, count, mAllowPurging);
     }
 
     
@@ -282,7 +279,7 @@ OutputStream var86EFA5916CD0155241780D6EEE9688E0_1431435914 =         new Memory
             IOException var5DEDBFF5DDB744A6396B24807F07EB2F_1976904084 = new IOException("Can't write to deactivated memory file.");
             var5DEDBFF5DDB744A6396B24807F07EB2F_1976904084.addTaint(taint);
             throw var5DEDBFF5DDB744A6396B24807F07EB2F_1976904084;
-        } 
+        } //End block
     if(srcOffset < 0 || srcOffset > buffer.length || count < 0
                 || count > buffer.length - srcOffset
                 || destOffset < 0 || destOffset > mLength
@@ -291,30 +288,29 @@ OutputStream var86EFA5916CD0155241780D6EEE9688E0_1431435914 =         new Memory
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_520010233 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_520010233.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_520010233;
-        } 
+        } //End block
         native_write(mFD, mAddress, buffer, srcOffset, destOffset, count, mAllowPurging);
-        
-        
-            
-        
-        
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isDeactivated()) {
+            //throw new IOException("Can't write to deactivated memory file.");
+        //}
+        //if (srcOffset < 0 || srcOffset > buffer.length || count < 0
+                //|| count > buffer.length - srcOffset
+                //|| destOffset < 0 || destOffset > mLength
+                //|| count > mLength - destOffset) {
+            //throw new IndexOutOfBoundsException();
+        //}
+        //native_write(mFD, mAddress, buffer, srcOffset, destOffset, count, mAllowPurging);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.654 -0400", hash_original_method = "2D6523548F3A6408618EC64E9280F841", hash_generated_method = "2300962B65729C13D36EB434456D2D92")
     public FileDescriptor getFileDescriptor() throws IOException {
 FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
         varECF11D4F04AEADCE51301AA20EB886F5_219755824.addTaint(taint);
         return varECF11D4F04AEADCE51301AA20EB886F5_219755824;
-        
-        
+        // ---------- Original Method ----------
+        //return mFD;
     }
 
     
@@ -337,7 +333,7 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.655 -0400", hash_original_method = "8819C64327DEAF910328E1B34E1904BC", hash_generated_method = "8819C64327DEAF910328E1B34E1904BC")
         public MemoryInputStream ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -349,48 +345,45 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
                 int varCFCD208495D565EF66E7DFF9F98764DA_2028418626 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695635548 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695635548;
-            } 
+            } //End block
             int var0CE244EABE418D5C0C89775582171D8E_2004689022 = (mLength - mOffset);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531508716 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531508716;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mOffset >= mLength) {
+                //return 0;
+            //}
+            //return mLength - mOffset;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.655 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "9EA9321BF50AAD895F68CC88BF76E286")
         @Override
         public boolean markSupported() {
             boolean varB326B5062B2F0E69046810717534CB09_1064814656 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1367708010 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1367708010;
-            
-            
+            // ---------- Original Method ----------
+            //return true;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.656 -0400", hash_original_method = "D9C9FB514524CC537FCE6FACAF9A295C", hash_generated_method = "E4F11F77F2CFC4BD43327EF113355F07")
         @Override
         public void mark(int readlimit) {
             addTaint(readlimit);
             mMark = mOffset;
-            
-            
+            // ---------- Original Method ----------
+            //mMark = mOffset;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.656 -0400", hash_original_method = "35916CEFACB2EEB27C627D30B06B91CE", hash_generated_method = "51C43F06C3033D3370FC41BB3D926B97")
         @Override
         public void reset() throws IOException {
             mOffset = mMark;
-            
-            
+            // ---------- Original Method ----------
+            //mOffset = mMark;
         }
 
         
@@ -400,26 +393,26 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
     if(mSingleByte == null)            
             {
                 mSingleByte = new byte[1];
-            } 
+            } //End block
             int result = read(mSingleByte, 0, 1);
     if(result != 1)            
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1392115529 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749604872 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749604872;
-            } 
+            } //End block
             int varAF82E66A9F7D60CAAC7DD8ED96D784F8_29020436 = (mSingleByte[0]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_183115424 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_183115424;
-            
-            
-                
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mSingleByte == null) {
+                //mSingleByte = new byte[1];
+            //}
+            //int result = read(mSingleByte, 0, 1);
+            //if (result != 1) {
+                //return -1;
+            //}
+            //return mSingleByte[0];
         }
 
         
@@ -434,35 +427,35 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1541439195 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_1541439195.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_1541439195;
-            } 
+            } //End block
             count = Math.min(count, available());
     if(count < 1)            
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_12082167 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_636693281 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_636693281;
-            } 
+            } //End block
             int result = readBytes(buffer, mOffset, offset, count);
     if(result > 0)            
             {
                 mOffset += result;
-            } 
+            } //End block
             int varB4A88417B3D0170D754C647C30B7216A_527335885 = (result);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1716048647 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1716048647;
-            
-            
-                
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (offset < 0 || count < 0 || offset + count > buffer.length) {
+                //throw new IndexOutOfBoundsException();
+            //}
+            //count = Math.min(count, available());
+            //if (count < 1) {
+                //return -1;
+            //}
+            //int result = readBytes(buffer, mOffset, offset, count);
+            //if (result > 0) {
+                //mOffset += result;
+            //}
+            //return result;
         }
 
         
@@ -472,17 +465,17 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
     if(mOffset + n > mLength)            
             {
                 n = mLength - mOffset;
-            } 
+            } //End block
             mOffset += n;
             long var7B8B965AD4BCA0E41AB51DE7B31363A1_941333939 = (n);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1756395080 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1756395080;
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mOffset + n > mLength) {
+                //n = mLength - mOffset;
+            //}
+            //mOffset += n;
+            //return n;
         }
 
         
@@ -501,7 +494,7 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.658 -0400", hash_original_method = "E9EA5EC07A45A76AA096F4AAFF6BF1DB", hash_generated_method = "E9EA5EC07A45A76AA096F4AAFF6BF1DB")
         public MemoryOutputStream ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -512,9 +505,9 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
             addTaint(buffer[0]);
             writeBytes(buffer, offset, mOffset, count);
             mOffset += count;
-            
-            
-            
+            // ---------- Original Method ----------
+            //writeBytes(buffer, offset, mOffset, count);
+            //mOffset += count;
         }
 
         
@@ -524,15 +517,15 @@ FileDescriptor varECF11D4F04AEADCE51301AA20EB886F5_219755824 =         mFD;
     if(mSingleByte == null)            
             {
                 mSingleByte = new byte[1];
-            } 
+            } //End block
             mSingleByte[0] = (byte)oneByte;
             write(mSingleByte, 0, 1);
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mSingleByte == null) {
+                //mSingleByte = new byte[1];
+            //}
+            //mSingleByte[0] = (byte)oneByte;
+            //write(mSingleByte, 0, 1);
         }
 
         

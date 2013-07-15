@@ -1,6 +1,6 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,7 +34,7 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener, On
         addTaint(year);
         addTaint(callBack.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -62,25 +62,25 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener, On
         setView(view);
         mDatePicker = (DatePicker) view.findViewById(R.id.datePicker);
         mDatePicker.init(year, monthOfYear, dayOfMonth, this);
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mCallBack = callBack;
+        //Context themeContext = getContext();
+        //setButton(BUTTON_POSITIVE, themeContext.getText(R.string.date_time_set), this);
+        //setButton(BUTTON_NEGATIVE, themeContext.getText(R.string.cancel), (OnClickListener) null);
+        //setIcon(0);
+        //setTitle(R.string.date_picker_dialog_title);
+        //LayoutInflater inflater =
+                //(LayoutInflater) themeContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //View view = inflater.inflate(R.layout.date_picker_dialog, null);
+        //setView(view);
+        //mDatePicker = (DatePicker) view.findViewById(R.id.datePicker);
+        //mDatePicker.init(year, monthOfYear, dayOfMonth, this);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.730 -0400", hash_original_method = "570F8D0CC141D3B1D2B15B140C7533C1", hash_generated_method = "16C39278F3143831DA3553CD5BC45543")
     public void onClick(DialogInterface dialog, int which) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(which);
         addTaint(dialog.getTaint());
     if(mCallBack != null)        
@@ -88,38 +88,37 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener, On
             mDatePicker.clearFocus();
             mCallBack.onDateSet(mDatePicker, mDatePicker.getYear(),
                     mDatePicker.getMonth(), mDatePicker.getDayOfMonth());
-        } 
-        
-        
-            
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mCallBack != null) {
+            //mDatePicker.clearFocus();
+            //mCallBack.onDateSet(mDatePicker, mDatePicker.getYear(),
+                    //mDatePicker.getMonth(), mDatePicker.getDayOfMonth());
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.732 -0400", hash_original_method = "5B2F5D001AB6D47E96CA9095E2255728", hash_generated_method = "0691471494E36896916BBBDC1BE3F0D5")
     public void onDateChanged(DatePicker view, int year,
             int month, int day) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(day);
         addTaint(month);
         addTaint(year);
         addTaint(view.getTaint());
         mDatePicker.init(year, month, day, null);
-        
-        
+        // ---------- Original Method ----------
+        //mDatePicker.init(year, month, day, null);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.733 -0400", hash_original_method = "54FCA4CF326BECF6DDD25A8F55E4D660", hash_generated_method = "38E347DD6ADEFF38D1E6619E32E2ECA1")
     public DatePicker getDatePicker() {
 DatePicker varD27B4AF16BDD34A107C6FB34013DD24E_702538829 =         mDatePicker;
         varD27B4AF16BDD34A107C6FB34013DD24E_702538829.addTaint(taint);
         return varD27B4AF16BDD34A107C6FB34013DD24E_702538829;
-        
-        
+        // ---------- Original Method ----------
+        //return mDatePicker;
     }
 
     
@@ -129,15 +128,15 @@ DatePicker varD27B4AF16BDD34A107C6FB34013DD24E_702538829 =         mDatePicker;
         addTaint(monthOfYear);
         addTaint(year);
         mDatePicker.updateDate(year, monthOfYear, dayOfMonth);
-        
-        
+        // ---------- Original Method ----------
+        //mDatePicker.updateDate(year, monthOfYear, dayOfMonth);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.734 -0400", hash_original_method = "66D833569B1DDDA11BC9B393F8A7D6F5", hash_generated_method = "799934ED3D4C71404768DF632150F38F")
     @Override
     public Bundle onSaveInstanceState() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         Bundle state = super.onSaveInstanceState();
         state.putInt(YEAR, mDatePicker.getYear());
         state.putInt(MONTH, mDatePicker.getMonth());
@@ -145,31 +144,31 @@ DatePicker varD27B4AF16BDD34A107C6FB34013DD24E_702538829 =         mDatePicker;
 Bundle var37C56C9D63C623261861C16DCFB73F6D_378397728 =         state;
         var37C56C9D63C623261861C16DCFB73F6D_378397728.addTaint(taint);
         return var37C56C9D63C623261861C16DCFB73F6D_378397728;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Bundle state = super.onSaveInstanceState();
+        //state.putInt(YEAR, mDatePicker.getYear());
+        //state.putInt(MONTH, mDatePicker.getMonth());
+        //state.putInt(DAY, mDatePicker.getDayOfMonth());
+        //return state;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.735 -0400", hash_original_method = "B84D42280083F8905ED43E1BDBCA6009", hash_generated_method = "486D25150A1CEDCFA4046F2340606D2C")
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(savedInstanceState.getTaint());
         super.onRestoreInstanceState(savedInstanceState);
         int year = savedInstanceState.getInt(YEAR);
         int month = savedInstanceState.getInt(MONTH);
         int day = savedInstanceState.getInt(DAY);
         mDatePicker.init(year, month, day, this);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onRestoreInstanceState(savedInstanceState);
+        //int year = savedInstanceState.getInt(YEAR);
+        //int month = savedInstanceState.getInt(MONTH);
+        //int day = savedInstanceState.getInt(DAY);
+        //mDatePicker.init(year, month, day, this);
     }
 
     

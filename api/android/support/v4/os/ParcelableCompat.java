@@ -1,6 +1,6 @@
 package android.support.v4.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class ParcelableCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.475 -0400", hash_original_method = "072A1AE559281E061E9C91BC62D0E2B9", hash_generated_method = "072A1AE559281E061E9C91BC62D0E2B9")
     public ParcelableCompat ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -30,12 +30,11 @@ public class ParcelableCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.476 -0400", hash_original_method = "89A37E66A919C0F4D6C87A6FE2ED98DC", hash_generated_method = "80CA192AA1E9F07F13E9C5A1CFD882FF")
         public  CompatCreator(ParcelableCompatCreatorCallbacks<T> callbacks) {
             mCallbacks = callbacks;
-            
-            
+            // ---------- Original Method ----------
+            //mCallbacks = callbacks;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.476 -0400", hash_original_method = "BC4263EA8B5E453C51CC1CF339ED2394", hash_generated_method = "882E72DD926F7EF2EC01D84D830943C6")
         @Override
         public T createFromParcel(Parcel source) {
@@ -43,12 +42,11 @@ public class ParcelableCompat {
 T var25D98B315EBA03ECC7F6F53097856CE3_285144324 =             mCallbacks.createFromParcel(source, null);
             var25D98B315EBA03ECC7F6F53097856CE3_285144324.addTaint(taint);
             return var25D98B315EBA03ECC7F6F53097856CE3_285144324;
-            
-            
+            // ---------- Original Method ----------
+            //return mCallbacks.createFromParcel(source, null);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.476 -0400", hash_original_method = "5AB872DFD1AEB45ECC63ABABFF71FE11", hash_generated_method = "888C38BEBAFB415004BF877377958C5F")
         @Override
         public T[] newArray(int size) {
@@ -56,8 +54,8 @@ T var25D98B315EBA03ECC7F6F53097856CE3_285144324 =             mCallbacks.createF
 T[] var656003BC8B102ED1F977FF7902F94727_1455050949 =             mCallbacks.newArray(size);
             var656003BC8B102ED1F977FF7902F94727_1455050949.addTaint(taint);
             return var656003BC8B102ED1F977FF7902F94727_1455050949;
-            
-            
+            // ---------- Original Method ----------
+            //return mCallbacks.newArray(size);
         }
 
         

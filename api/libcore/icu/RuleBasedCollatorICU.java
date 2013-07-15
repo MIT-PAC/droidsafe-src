@@ -1,6 +1,6 @@
 package libcore.icu;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,29 +21,29 @@ public final class RuleBasedCollatorICU implements Cloneable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1434173980 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1434173980.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1434173980;
-        } 
+        } //End block
         address = NativeCollation.openCollatorFromRules(rules, VALUE_OFF, VALUE_DEFAULT_STRENGTH);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (rules == null) {
+            //throw new NullPointerException();
+        //}
+        //address = NativeCollation.openCollatorFromRules(rules, VALUE_OFF, VALUE_DEFAULT_STRENGTH);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:25.464 -0400", hash_original_method = "A5C323A76C17F2A5DAD617321306AD0B", hash_generated_method = "07D3C04B8B8E2257419AF3C327B3B479")
     public  RuleBasedCollatorICU(Locale locale) {
         address = NativeCollation.openCollator(locale.toString());
-        
-        
+        // ---------- Original Method ----------
+        //address = NativeCollation.openCollator(locale.toString());
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:25.464 -0400", hash_original_method = "A318B723665122F54B169082CADE3CC3", hash_generated_method = "372D2CB5171EA86DC45CCC1173FBD6F1")
     private  RuleBasedCollatorICU(int address) {
         this.address = address;
-        
-        
+        // ---------- Original Method ----------
+        //this.address = address;
     }
 
     
@@ -52,8 +52,8 @@ public final class RuleBasedCollatorICU implements Cloneable {
 Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedCollatorICU(NativeCollation.safeClone(address));
         var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524.addTaint(taint);
         return var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524;
-        
-        
+        // ---------- Original Method ----------
+        //return new RuleBasedCollatorICU(NativeCollation.safeClone(address));
     }
 
     
@@ -64,8 +64,8 @@ Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedColl
         int varB423AA2E2351899A80FC6DF8454FA4D6_2076617905 = (NativeCollation.compare(address, source, target));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474184345 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474184345;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeCollation.compare(address, source, target);
     }
 
     
@@ -74,8 +74,8 @@ Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedColl
         int var5D29D9E5D7CFCCF42EE5D15AF9DBED2C_1208997932 = (NativeCollation.getAttribute(address, DECOMPOSITION_MODE));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_616673725 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_616673725;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeCollation.getAttribute(address, DECOMPOSITION_MODE);
     }
 
     
@@ -83,8 +83,8 @@ Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedColl
     public void setDecomposition(int mode) {
         addTaint(mode);
         NativeCollation.setAttribute(address, DECOMPOSITION_MODE, mode);
-        
-        
+        // ---------- Original Method ----------
+        //NativeCollation.setAttribute(address, DECOMPOSITION_MODE, mode);
     }
 
     
@@ -93,8 +93,8 @@ Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedColl
         int varF365839574D47FB0A9065461012BAD07_1664579004 = (NativeCollation.getAttribute(address, STRENGTH));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_766905940 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_766905940;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeCollation.getAttribute(address, STRENGTH);
     }
 
     
@@ -102,8 +102,8 @@ Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedColl
     public void setStrength(int strength) {
         addTaint(strength);
         NativeCollation.setAttribute(address, STRENGTH, strength);
-        
-        
+        // ---------- Original Method ----------
+        //NativeCollation.setAttribute(address, STRENGTH, strength);
     }
 
     
@@ -112,8 +112,8 @@ Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedColl
         addTaint(value);
         addTaint(type);
         NativeCollation.setAttribute(address, type, value);
-        
-        
+        // ---------- Original Method ----------
+        //NativeCollation.setAttribute(address, type, value);
     }
 
     
@@ -123,8 +123,8 @@ Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedColl
         int var36AF4EC494F8B2CD52D534DAE820F45E_1071898678 = (NativeCollation.getAttribute(address, type));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2069693053 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2069693053;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeCollation.getAttribute(address, type);
     }
 
     
@@ -136,26 +136,26 @@ Object var61AF93F4B07FC27B7B07C0F7916BCD9B_505714524 =         new RuleBasedColl
 CollationKey var540C13E9E156B687226421B24F2DF178_1084571138 =             null;
             var540C13E9E156B687226421B24F2DF178_1084571138.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1084571138;
-        } 
+        } //End block
         byte[] key = NativeCollation.getSortKey(address, source);
     if(key == null)        
         {
 CollationKey var540C13E9E156B687226421B24F2DF178_1423981419 =             null;
             var540C13E9E156B687226421B24F2DF178_1423981419.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1423981419;
-        } 
+        } //End block
 CollationKey varC02C69FE9E56EAE95347BB4D3145D4AF_1764621409 =         new CollationKeyICU(source, key);
         varC02C69FE9E56EAE95347BB4D3145D4AF_1764621409.addTaint(taint);
         return varC02C69FE9E56EAE95347BB4D3145D4AF_1764621409;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (source == null) {
+            //return null;
+        //}
+        //byte[] key = NativeCollation.getSortKey(address, source);
+        //if (key == null) {
+            //return null;
+        //}
+        //return new CollationKeyICU(source, key);
     }
 
     
@@ -164,8 +164,8 @@ CollationKey varC02C69FE9E56EAE95347BB4D3145D4AF_1764621409 =         new Collat
 String var3726B2388D662DC588D1A47031972F2F_100012364 =         NativeCollation.getRules(address);
         var3726B2388D662DC588D1A47031972F2F_100012364.addTaint(taint);
         return var3726B2388D662DC588D1A47031972F2F_100012364;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeCollation.getRules(address);
     }
 
     
@@ -175,8 +175,8 @@ String var3726B2388D662DC588D1A47031972F2F_100012364 =         NativeCollation.g
 CollationElementIteratorICU var7655C91E85873BB3154568D8684ED324_29410113 =         CollationElementIteratorICU.getInstance(address, source);
         var7655C91E85873BB3154568D8684ED324_29410113.addTaint(taint);
         return var7655C91E85873BB3154568D8684ED324_29410113;
-        
-        
+        // ---------- Original Method ----------
+        //return CollationElementIteratorICU.getInstance(address, source);
     }
 
     
@@ -186,8 +186,8 @@ CollationElementIteratorICU var7655C91E85873BB3154568D8684ED324_29410113 =      
 CollationElementIteratorICU var9C852F1F0476779AB6D95093BE3D4B76_177282794 =         getCollationElementIterator(characterIteratorToString(it));
         var9C852F1F0476779AB6D95093BE3D4B76_177282794.addTaint(taint);
         return var9C852F1F0476779AB6D95093BE3D4B76_177282794;
-        
-        
+        // ---------- Original Method ----------
+        //return getCollationElementIterator(characterIteratorToString(it));
     }
 
     
@@ -198,28 +198,27 @@ CollationElementIteratorICU var9C852F1F0476779AB6D95093BE3D4B76_177282794 =     
 for(char ch = it.current();ch != CharacterIterator.DONE;ch = it.next())
         {
             result.append(ch);
-        } 
+        } //End block
 String varE65B3A02759122992CB82C0E651AD408_32720754 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_32720754.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_32720754;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder result = new StringBuilder();
+        //for (char ch = it.current(); ch != CharacterIterator.DONE; ch = it.next()) {
+            //result.append(ch);
+        //}
+        //return result.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:25.470 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "94D9E1CA7DF06279E2A4130BD989AA46")
     @Override
     public int hashCode() {
         int varA1D0C6E83F027327D8461063F4AC58A6_1331493275 = (42);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1269212457 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1269212457;
-        
-        
+        // ---------- Original Method ----------
+        //return 42;
     }
 
     
@@ -230,8 +229,8 @@ String varE65B3A02759122992CB82C0E651AD408_32720754 =         result.toString();
         boolean varCC4E783AFB2D2C096C220A69BFAF5B6E_1282407355 = ((compare(source, target) == 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1261100355 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1261100355;
-        
-        
+        // ---------- Original Method ----------
+        //return (compare(source, target) == 0);
     }
 
     
@@ -244,30 +243,30 @@ String varE65B3A02759122992CB82C0E651AD408_32720754 =         result.toString();
             boolean varB326B5062B2F0E69046810717534CB09_539877269 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_279258346 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_279258346;
-        } 
+        } //End block
     if(!(object instanceof RuleBasedCollatorICU))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1740014793 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736112620 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_736112620;
-        } 
+        } //End block
         RuleBasedCollatorICU rhs = (RuleBasedCollatorICU) object;
         boolean var2565A28C2EBF0847B7B982CEC8F94EF1_2121165157 = (getRules().equals(rhs.getRules()) &&
                 getStrength() == rhs.getStrength() &&
                 getDecomposition() == rhs.getDecomposition());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2129954902 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2129954902;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //if (object ==  this) {
+            //return true;
+        //}
+        //if (!(object instanceof RuleBasedCollatorICU)) {
+            //return false;
+        //}
+        //RuleBasedCollatorICU rhs = (RuleBasedCollatorICU) object;
+        //return getRules().equals(rhs.getRules()) &&
+                //getStrength() == rhs.getStrength() &&
+                //getDecomposition() == rhs.getDecomposition();
     }
 
     
@@ -277,17 +276,17 @@ String varE65B3A02759122992CB82C0E651AD408_32720754 =         result.toString();
         try 
         {
             NativeCollation.closeCollator(address);
-        } 
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //NativeCollation.closeCollator(address);
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     

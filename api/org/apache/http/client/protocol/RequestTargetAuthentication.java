@@ -1,6 +1,6 @@
 package org.apache.http.client.protocol;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public class RequestTargetAuthentication implements HttpRequestInterceptor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.268 -0400", hash_original_method = "18D614B059705CD511AA931F33F39470", hash_generated_method = "54C850D3041D3B5C1C4E415558AD142B")
     public  RequestTargetAuthentication() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -38,50 +38,50 @@ public class RequestTargetAuthentication implements HttpRequestInterceptor {
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1709589183 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_1709589183.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1709589183;
-        } 
+        } //End block
     if(context == null)        
         {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_7896963 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_7896963.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_7896963;
-        } 
+        } //End block
     if(request.containsHeader(AUTH.WWW_AUTH_RESP))        
         {
             return;
-        } 
+        } //End block
         AuthState authState = (AuthState) context.getAttribute(
                 ClientContext.TARGET_AUTH_STATE);
     if(authState == null)        
         {
             return;
-        } 
+        } //End block
         AuthScheme authScheme = authState.getAuthScheme();
     if(authScheme == null)        
         {
             return;
-        } 
+        } //End block
         Credentials creds = authState.getCredentials();
     if(creds == null)        
         {
             this.log.debug("User credentials not available");
             return;
-        } 
+        } //End block
     if(authState.getAuthScope() != null || !authScheme.isConnectionBased())        
         {
             try 
             {
                 request.addHeader(authScheme.authenticate(creds, request));
-            } 
+            } //End block
             catch (AuthenticationException ex)
             {
     if(this.log.isErrorEnabled())                
                 {
                     this.log.error("Authentication error: " + ex.getMessage());
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,15 +15,15 @@ public class ServiceRoute extends gov.nist.javax.sip.header.AddressParametersHea
         super(NAME);
         addTaint(address.getTaint());
         this.address = address;
-        
-        
+        // ---------- Original Method ----------
+        //this.address = address;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.225 -0400", hash_original_method = "DFE1A15880B80307A8195E7AA915629C", hash_generated_method = "6DF26201368D44BF3E02DEA232CD4D93")
     public  ServiceRoute() {
         super(SERVICE_ROUTE);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -33,29 +33,29 @@ public class ServiceRoute extends gov.nist.javax.sip.header.AddressParametersHea
     if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
             retval.append(LESS_THAN);
-        } 
+        } //End block
         retval.append(address.encode());
     if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
             retval.append(GREATER_THAN);
-        } 
+        } //End block
     if(!parameters.isEmpty())        
         retval.append(SEMICOLON + this.parameters.encode());
 String var1B324365A764C077A55854483509F4AB_1435458673 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_1435458673.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_1435458673;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
+            //retval.append(LESS_THAN);
+        //}
+        //retval.append(address.encode());
+        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
+            //retval.append(GREATER_THAN);
+        //}
+        //if (!parameters.isEmpty())
+            //retval.append(SEMICOLON + this.parameters.encode());
+        //return retval.toString();
     }
 
     
@@ -65,8 +65,8 @@ String var1B324365A764C077A55854483509F4AB_1435458673 =         retval.toString(
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_811404169 = new ParseException (value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_811404169.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_811404169;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ParseException (value,0);
     }
 
     

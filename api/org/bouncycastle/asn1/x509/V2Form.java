@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,8 +27,8 @@ public class V2Form extends ASN1Encodable {
     public  V2Form(
         GeneralNames    issuerName) {
         this.issuerName = issuerName;
-        
-        
+        // ---------- Original Method ----------
+        //this.issuerName = issuerName;
     }
 
     
@@ -40,35 +40,35 @@ public class V2Form extends ASN1Encodable {
             IllegalArgumentException varA2072CF614C7B8C7696DD5A02DBCCE9C_1772986120 = new IllegalArgumentException("Bad sequence size: " + seq.size());
             varA2072CF614C7B8C7696DD5A02DBCCE9C_1772986120.addTaint(taint);
             throw varA2072CF614C7B8C7696DD5A02DBCCE9C_1772986120;
-        } 
+        } //End block
         int index = 0;
     if(!(seq.getObjectAt(0) instanceof ASN1TaggedObject))        
         {
             index++;
             this.issuerName = GeneralNames.getInstance(seq.getObjectAt(0));
-        } 
+        } //End block
 for(int i = index;i != seq.size();i++)
         {
             ASN1TaggedObject o = ASN1TaggedObject.getInstance(seq.getObjectAt(i));
     if(o.getTagNo() == 0)            
             {
                 baseCertificateID = IssuerSerial.getInstance(o, false);
-            } 
+            } //End block
             else
     if(o.getTagNo() == 1)            
             {
                 objectDigestInfo = ObjectDigestInfo.getInstance(o, false);
-            } 
+            } //End block
             else
             {
                 IllegalArgumentException varFD6FEEE1E1E2BFC14EB475E44DFD6000_925974073 = new IllegalArgumentException("Bad tag number: "
                         + o.getTagNo());
                 varFD6FEEE1E1E2BFC14EB475E44DFD6000_925974073.addTaint(taint);
                 throw varFD6FEEE1E1E2BFC14EB475E44DFD6000_925974073;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -93,36 +93,33 @@ for(int i = index;i != seq.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.343 -0400", hash_original_method = "55884F30CB8A32C82BBC3BF8E06EF566", hash_generated_method = "E581A50E0E7B717730C6494DFB7B800A")
     public GeneralNames getIssuerName() {
 GeneralNames var45766B0DF0D0B85E6E779A59D6C70FDF_1682330075 =         issuerName;
         var45766B0DF0D0B85E6E779A59D6C70FDF_1682330075.addTaint(taint);
         return var45766B0DF0D0B85E6E779A59D6C70FDF_1682330075;
-        
-        
+        // ---------- Original Method ----------
+        //return issuerName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.344 -0400", hash_original_method = "0056368CFDBAD05E126455DF61F0B2E7", hash_generated_method = "FBAEE54FADD6034A217146B3D09E27A0")
     public IssuerSerial getBaseCertificateID() {
 IssuerSerial var3F2CF66981EEEACD456AAF29D2BB1816_144065548 =         baseCertificateID;
         var3F2CF66981EEEACD456AAF29D2BB1816_144065548.addTaint(taint);
         return var3F2CF66981EEEACD456AAF29D2BB1816_144065548;
-        
-        
+        // ---------- Original Method ----------
+        //return baseCertificateID;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.344 -0400", hash_original_method = "BF432F04B889EC14E618C49342356E7A", hash_generated_method = "393C8BDA3D7511388D68C758F5B59B0F")
     public ObjectDigestInfo getObjectDigestInfo() {
 ObjectDigestInfo var8645E6823C16465BE8DE456BAC146566_1706722228 =         objectDigestInfo;
         var8645E6823C16465BE8DE456BAC146566_1706722228.addTaint(taint);
         return var8645E6823C16465BE8DE456BAC146566_1706722228;
-        
-        
+        // ---------- Original Method ----------
+        //return objectDigestInfo;
     }
 
     
@@ -132,33 +129,33 @@ ObjectDigestInfo var8645E6823C16465BE8DE456BAC146566_1706722228 =         object
     if(issuerName != null)        
         {
             v.add(issuerName);
-        } 
+        } //End block
     if(baseCertificateID != null)        
         {
             v.add(new DERTaggedObject(false, 0, baseCertificateID));
-        } 
+        } //End block
     if(objectDigestInfo != null)        
         {
             v.add(new DERTaggedObject(false, 1, objectDigestInfo));
-        } 
+        } //End block
 DERObject var0B338F106E3279986C87B595B0F4A439_2052729819 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_2052729819.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_2052729819;
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector  v = new ASN1EncodableVector();
+        //if (issuerName != null)
+        //{
+            //v.add(issuerName);
+        //}
+        //if (baseCertificateID != null)
+        //{
+            //v.add(new DERTaggedObject(false, 0, baseCertificateID));
+        //}
+        //if (objectDigestInfo != null)
+        //{
+            //v.add(new DERTaggedObject(false, 1, objectDigestInfo));
+        //}
+        //return new DERSequence(v);
     }
 
     

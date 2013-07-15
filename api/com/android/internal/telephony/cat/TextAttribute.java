@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,16 +47,16 @@ public class TextAttribute {
         this.underlined = underlined;
         this.strikeThrough = strikeThrough;
         this.color = color;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.start = start;
+        //this.length = length;
+        //this.align = align;
+        //this.size = size;
+        //this.bold = bold;
+        //this.italic = italic;
+        //this.underlined = underlined;
+        //this.strikeThrough = strikeThrough;
+        //this.color = color;
     }
 
     

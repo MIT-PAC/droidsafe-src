@@ -1,6 +1,6 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,36 +17,34 @@ public class MissingFormatWidthException extends IllegalFormatException {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_656526667 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_656526667.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_656526667;
-        } 
+        } //End block
         this.s = s;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (s == null) {
+            //throw new NullPointerException();
+        //}
+        //this.s = s;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.254 -0400", hash_original_method = "4D96301902AD0649417B90D095E1EDFD", hash_generated_method = "E97A86A8F7E631C357289E7F09C6A4D0")
     public String getFormatSpecifier() {
 String var0478718F0636FB61899C13801CE9FE09_329733792 =         s;
         var0478718F0636FB61899C13801CE9FE09_329733792.addTaint(taint);
         return var0478718F0636FB61899C13801CE9FE09_329733792;
-        
-        
+        // ---------- Original Method ----------
+        //return s;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.254 -0400", hash_original_method = "0A4C8E3EAB801D8800E3A2D920D74C80", hash_generated_method = "31166B51A5D3BEA791D4D09539097064")
     @Override
     public String getMessage() {
 String var0478718F0636FB61899C13801CE9FE09_620229218 =         s;
         var0478718F0636FB61899C13801CE9FE09_620229218.addTaint(taint);
         return var0478718F0636FB61899C13801CE9FE09_620229218;
-        
-        
+        // ---------- Original Method ----------
+        //return s;
     }
 
     

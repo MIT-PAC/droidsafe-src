@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,20 +23,20 @@ public class BasicLineParser implements LineParser {
     if(proto == null)        
         {
             proto = HttpVersion.HTTP_1_1;
-        } 
+        } //End block
         this.protocol = proto;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (proto == null) {
+            //proto = HttpVersion.HTTP_1_1;
+        //}
+        //this.protocol = proto;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.596 -0400", hash_original_method = "214300EBA90AB0F87C7DC4ACF56AF3C7", hash_generated_method = "E1AC9D5EDA5F536927594BFCD2962534")
     public  BasicLineParser() {
         this(null);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -65,13 +65,13 @@ public class BasicLineParser implements LineParser {
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1401711294 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1401711294.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1401711294;
-        } 
+        } //End block
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1759216026 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1759216026.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1759216026;
-        } 
+        } //End block
         final String protoname = this.protocol.getProtocol();
         final int protolength = protoname.length();
         int indexFrom = cursor.getPos();
@@ -85,16 +85,16 @@ public class BasicLineParser implements LineParser {
                  buffer.substring(indexFrom, indexTo));
             var6ADED26E4CD538774103DA31BCED7784_2064967523.addTaint(taint);
             throw var6ADED26E4CD538774103DA31BCED7784_2064967523;
-        } 
+        } //End block
         boolean ok = true;
 for(int j=0;ok && (j<protolength);j++)
         {
             ok = (buffer.charAt(i+j) == protoname.charAt(j));
-        } 
+        } //End block
     if(ok)        
         {
             ok = (buffer.charAt(i+protolength) == '/');
-        } 
+        } //End block
     if(!ok)        
         {
             ParseException var6ADED26E4CD538774103DA31BCED7784_1513173357 = new ParseException
@@ -102,7 +102,7 @@ for(int j=0;ok && (j<protolength);j++)
                  buffer.substring(indexFrom, indexTo));
             var6ADED26E4CD538774103DA31BCED7784_1513173357.addTaint(taint);
             throw var6ADED26E4CD538774103DA31BCED7784_1513173357;
-        } 
+        } //End block
         i += protolength+1;
         int period = buffer.indexOf('.', i, indexTo);
     if(period == -1)        
@@ -112,12 +112,12 @@ for(int j=0;ok && (j<protolength);j++)
                  buffer.substring(indexFrom, indexTo));
             var351DDCFBA064BB3CCA4D629CDF058E34_95221078.addTaint(taint);
             throw var351DDCFBA064BB3CCA4D629CDF058E34_95221078;
-        } 
+        } //End block
         int major;
         try 
         {
             major = Integer.parseInt(buffer.substringTrimmed(i, period));
-        } 
+        } //End block
         catch (NumberFormatException e)
         {
             ParseException varEE07770C5BA9EB3A78FFF01785DEE06F_463507878 = new ParseException
@@ -125,18 +125,18 @@ for(int j=0;ok && (j<protolength);j++)
                  buffer.substring(indexFrom, indexTo));
             varEE07770C5BA9EB3A78FFF01785DEE06F_463507878.addTaint(taint);
             throw varEE07770C5BA9EB3A78FFF01785DEE06F_463507878;
-        } 
+        } //End block
         i = period + 1;
         int blank = buffer.indexOf(' ', i, indexTo);
     if(blank == -1)        
         {
             blank = indexTo;
-        } 
+        } //End block
         int minor;
         try 
         {
             minor = Integer.parseInt(buffer.substringTrimmed(i, blank));
-        } 
+        } //End block
         catch (NumberFormatException e)
         {
             ParseException varB45AE5F4E578A2CA45A4F3D1266B7D8B_60441420 = new ParseException(
@@ -144,13 +144,13 @@ for(int j=0;ok && (j<protolength);j++)
                 buffer.substring(indexFrom, indexTo));
             varB45AE5F4E578A2CA45A4F3D1266B7D8B_60441420.addTaint(taint);
             throw varB45AE5F4E578A2CA45A4F3D1266B7D8B_60441420;
-        } 
+        } //End block
         cursor.updatePos(blank);
 ProtocolVersion varF2205928791B2E1CCE50A23C9DF678D3_567703279 =         createProtocolVersion(major, minor);
         varF2205928791B2E1CCE50A23C9DF678D3_567703279.addTaint(taint);
         return varF2205928791B2E1CCE50A23C9DF678D3_567703279;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -161,8 +161,8 @@ ProtocolVersion varF2205928791B2E1CCE50A23C9DF678D3_567703279 =         createPr
 ProtocolVersion var6103A6032F3333D8CD36C83A0BC5134B_1044563585 =         protocol.forVersion(major, minor);
         var6103A6032F3333D8CD36C83A0BC5134B_1044563585.addTaint(taint);
         return var6103A6032F3333D8CD36C83A0BC5134B_1044563585;
-        
-        
+        // ---------- Original Method ----------
+        //return protocol.forVersion(major, minor);
     }
 
     
@@ -176,13 +176,13 @@ ProtocolVersion var6103A6032F3333D8CD36C83A0BC5134B_1044563585 =         protoco
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_143698098 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_143698098.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_143698098;
-        } 
+        } //End block
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_560071745 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_560071745.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_560071745;
-        } 
+        } //End block
         int index = cursor.getPos();
         final String protoname = this.protocol.getProtocol();
         final int protolength = protoname.length();
@@ -195,7 +195,7 @@ ProtocolVersion var6103A6032F3333D8CD36C83A0BC5134B_1044563585 =         protoco
     if(index < 0)        
         {
             index = buffer.length() -4 -protolength;
-        } 
+        } //End block
         else
     if(index == 0)        
         {
@@ -204,8 +204,8 @@ ProtocolVersion var6103A6032F3333D8CD36C83A0BC5134B_1044563585 =         protoco
                     HTTP.isWhitespace(buffer.charAt(index)))            
             {
                 index++;
-            } 
-        } 
+            } //End block
+        } //End block
     if(index + protolength + 4 > buffer.length())        
         {
         boolean var68934A3E9455FA72420237EB05902327_634840522 = (false);
@@ -216,16 +216,16 @@ ProtocolVersion var6103A6032F3333D8CD36C83A0BC5134B_1044563585 =         protoco
 for(int j=0;ok && (j<protolength);j++)
         {
             ok = (buffer.charAt(index+j) == protoname.charAt(j));
-        } 
+        } //End block
     if(ok)        
         {
             ok = (buffer.charAt(index+protolength) == '/');
-        } 
+        } //End block
         boolean var444BCB3A3FCF8389296C49467F27E1D6_1081209679 = (ok);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_14375290 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_14375290;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -254,13 +254,13 @@ for(int j=0;ok && (j<protolength);j++)
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1994823962 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1994823962.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1994823962;
-        } 
+        } //End block
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1892432004 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1892432004.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1892432004;
-        } 
+        } //End block
         int indexFrom = cursor.getPos();
         int indexTo = cursor.getUpperBound();
         try 
@@ -274,7 +274,7 @@ for(int j=0;ok && (j<protolength);j++)
                         buffer.substring(indexFrom, indexTo));
                 var9D425035B5F9F7514E71F47640F0A03B_1027789650.addTaint(taint);
                 throw var9D425035B5F9F7514E71F47640F0A03B_1027789650;
-            } 
+            } //End block
             String method = buffer.substringTrimmed(i, blank);
             cursor.updatePos(blank);
             skipWhitespace(buffer, cursor);
@@ -286,7 +286,7 @@ for(int j=0;ok && (j<protolength);j++)
                         buffer.substring(indexFrom, indexTo));
                 var9D425035B5F9F7514E71F47640F0A03B_1278672344.addTaint(taint);
                 throw var9D425035B5F9F7514E71F47640F0A03B_1278672344;
-            } 
+            } //End block
             String uri = buffer.substringTrimmed(i, blank);
             cursor.updatePos(blank);
             ProtocolVersion ver = parseProtocolVersion(buffer, cursor);
@@ -297,20 +297,20 @@ for(int j=0;ok && (j<protolength);j++)
                         buffer.substring(indexFrom, indexTo));
                 var9D425035B5F9F7514E71F47640F0A03B_791861003.addTaint(taint);
                 throw var9D425035B5F9F7514E71F47640F0A03B_791861003;
-            } 
+            } //End block
 RequestLine varF2255B0B7430193D41EA321978E75271_1815123261 =             createRequestLine(method, uri, ver);
             varF2255B0B7430193D41EA321978E75271_1815123261.addTaint(taint);
             return varF2255B0B7430193D41EA321978E75271_1815123261;
-        } 
+        } //End block
         catch (IndexOutOfBoundsException e)
         {
             ParseException var9D425035B5F9F7514E71F47640F0A03B_461015896 = new ParseException("Invalid request line: " + 
                                      buffer.substring(indexFrom, indexTo));
             var9D425035B5F9F7514E71F47640F0A03B_461015896.addTaint(taint);
             throw var9D425035B5F9F7514E71F47640F0A03B_461015896;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -324,8 +324,8 @@ RequestLine varF2255B0B7430193D41EA321978E75271_1815123261 =             createR
 RequestLine var21398EE0F79F6732234579A2A1746261_1908810550 =         new BasicRequestLine(method, uri, ver);
         var21398EE0F79F6732234579A2A1746261_1908810550.addTaint(taint);
         return var21398EE0F79F6732234579A2A1746261_1908810550;
-        
-        
+        // ---------- Original Method ----------
+        //return new BasicRequestLine(method, uri, ver);
     }
 
     
@@ -354,13 +354,13 @@ RequestLine var21398EE0F79F6732234579A2A1746261_1908810550 =         new BasicRe
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1856772101 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1856772101.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1856772101;
-        } 
+        } //End block
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1338767721 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1338767721.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1338767721;
-        } 
+        } //End block
         int indexFrom = cursor.getPos();
         int indexTo = cursor.getUpperBound();
         try 
@@ -372,13 +372,13 @@ RequestLine var21398EE0F79F6732234579A2A1746261_1908810550 =         new BasicRe
     if(blank < 0)            
             {
                 blank = indexTo;
-            } 
+            } //End block
             int statusCode = 0;
             try 
             {
                 statusCode =
                     Integer.parseInt(buffer.substringTrimmed(i, blank));
-            } 
+            } //End block
             catch (NumberFormatException e)
             {
                 ParseException var78DE7686257645235023A96281C150DF_982058180 = new ParseException(
@@ -386,30 +386,30 @@ RequestLine var21398EE0F79F6732234579A2A1746261_1908810550 =         new BasicRe
                     + buffer.substring(indexFrom, indexTo));
                 var78DE7686257645235023A96281C150DF_982058180.addTaint(taint);
                 throw var78DE7686257645235023A96281C150DF_982058180;
-            } 
+            } //End block
             i = blank;
             String reasonPhrase = null;
     if(i < indexTo)            
             {
                 reasonPhrase = buffer.substringTrimmed(i, indexTo);
-            } 
+            } //End block
             else
             {
                 reasonPhrase = "";
-            } 
+            } //End block
 StatusLine var0B0E9078CC8F6F2F5D3BE8156FA67B50_945186963 =             createStatusLine(ver, statusCode, reasonPhrase);
             var0B0E9078CC8F6F2F5D3BE8156FA67B50_945186963.addTaint(taint);
             return var0B0E9078CC8F6F2F5D3BE8156FA67B50_945186963;
-        } 
+        } //End block
         catch (IndexOutOfBoundsException e)
         {
             ParseException var839BD94C0C2AF9E2A366392FADC8DE8D_683338157 = new ParseException("Invalid status line: " + 
                                      buffer.substring(indexFrom, indexTo));
             var839BD94C0C2AF9E2A366392FADC8DE8D_683338157.addTaint(taint);
             throw var839BD94C0C2AF9E2A366392FADC8DE8D_683338157;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -423,8 +423,8 @@ StatusLine var0B0E9078CC8F6F2F5D3BE8156FA67B50_945186963 =             createSta
 StatusLine var7EDDFAD7D61BF3995B3F3AC2FA08033B_62526811 =         new BasicStatusLine(ver, status, reason);
         var7EDDFAD7D61BF3995B3F3AC2FA08033B_62526811.addTaint(taint);
         return var7EDDFAD7D61BF3995B3F3AC2FA08033B_62526811;
-        
-        
+        // ---------- Original Method ----------
+        //return new BasicStatusLine(ver, status, reason);
     }
 
     
@@ -448,8 +448,8 @@ StatusLine var7EDDFAD7D61BF3995B3F3AC2FA08033B_62526811 =         new BasicStatu
 Header varA538F19AF489509DED0A3819B3004747_725931195 =         new BufferedHeader(buffer);
         varA538F19AF489509DED0A3819B3004747_725931195.addTaint(taint);
         return varA538F19AF489509DED0A3819B3004747_725931195;
-        
-        
+        // ---------- Original Method ----------
+        //return new BufferedHeader(buffer);
     }
 
     
@@ -464,16 +464,16 @@ Header varA538F19AF489509DED0A3819B3004747_725931195 =         new BufferedHeade
                HTTP.isWhitespace(buffer.charAt(pos)))        
         {
             pos++;
-        } 
+        } //End block
         cursor.updatePos(pos);
-        
-        
-        
-        
-               
-            
-        
-        
+        // ---------- Original Method ----------
+        //int pos = cursor.getPos();
+        //int indexTo = cursor.getUpperBound();
+        //while ((pos < indexTo) &&
+               //HTTP.isWhitespace(buffer.charAt(pos))) {
+            //pos++;
+        //}
+        //cursor.updatePos(pos);
     }
 
     

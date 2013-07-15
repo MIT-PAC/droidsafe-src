@@ -1,6 +1,6 @@
 package java.util.zip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
         this(os, def, BUF_SIZE, false);
         addTaint(def.getTaint());
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -37,7 +37,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
     public  DeflaterOutputStream(OutputStream os) {
         this(os, new Deflater(), BUF_SIZE, false);
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -47,7 +47,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
         addTaint(bsize);
         addTaint(def.getTaint());
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -56,7 +56,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
         this(os, new Deflater(), BUF_SIZE, syncFlush);
         addTaint(syncFlush);
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -66,7 +66,7 @@ public class DeflaterOutputStream extends FilterOutputStream {
         addTaint(syncFlush);
         addTaint(def.getTaint());
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -79,26 +79,26 @@ public class DeflaterOutputStream extends FilterOutputStream {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_2117023211 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_2117023211.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_2117023211;
-        } 
+        } //End block
     if(bsize <= 0)        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_942487962 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_942487962.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_942487962;
-        } 
+        } //End block
         this.def = def;
         this.syncFlush = syncFlush;
         buf = new byte[bsize];
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (os == null || def == null) {
+            //throw new NullPointerException();
+        //}
+        //if (bsize <= 0) {
+            //throw new IllegalArgumentException();
+        //}
+        //this.def = def;
+        //this.syncFlush = syncFlush;
+        //buf = new byte[bsize];
     }
 
     
@@ -109,12 +109,12 @@ public class DeflaterOutputStream extends FilterOutputStream {
 ((byteCount = def.deflate(buf)) != 0)        
         {
             out.write(buf, 0, byteCount);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int byteCount;
+        //while ((byteCount = def.deflate(buf)) != 0) {
+            //out.write(buf, 0, byteCount);
+        //}
     }
 
     
@@ -124,15 +124,15 @@ public class DeflaterOutputStream extends FilterOutputStream {
     if(!def.finished())        
         {
             finish();
-        } 
+        } //End block
         def.end();
         out.close();
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!def.finished()) {
+            //finish();
+        //}
+        //def.end();
+        //out.close();
     }
 
     
@@ -141,25 +141,25 @@ public class DeflaterOutputStream extends FilterOutputStream {
     if(done)        
         {
             return;
-        } 
+        } //End block
         def.finish();
         while
 (!def.finished())        
         {
             int byteCount = def.deflate(buf);
             out.write(buf, 0, byteCount);
-        } 
+        } //End block
         done = true;
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (done) {
+            //return;
+        //}
+        //def.finish();
+        //while (!def.finished()) {
+            //int byteCount = def.deflate(buf);
+            //out.write(buf, 0, byteCount);
+        //}
+        //done = true;
     }
 
     
@@ -168,8 +168,8 @@ public class DeflaterOutputStream extends FilterOutputStream {
     public void write(int i) throws IOException {
         addTaint(i);
         Streams.writeSingleByte(this, i);
-        
-        
+        // ---------- Original Method ----------
+        //Streams.writeSingleByte(this, i);
     }
 
     
@@ -184,26 +184,26 @@ public class DeflaterOutputStream extends FilterOutputStream {
             IOException varF29E1D4708786ED420EF7756108AEC17_1123202876 = new IOException("attempt to write after finish");
             varF29E1D4708786ED420EF7756108AEC17_1123202876.addTaint(taint);
             throw varF29E1D4708786ED420EF7756108AEC17_1123202876;
-        } 
+        } //End block
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
     if(!def.needsInput())        
         {
             IOException var1508E3FDF27FD56D4E1051DB16DE1816_978032350 = new IOException();
             var1508E3FDF27FD56D4E1051DB16DE1816_978032350.addTaint(taint);
             throw var1508E3FDF27FD56D4E1051DB16DE1816_978032350;
-        } 
+        } //End block
         def.setInput(buffer, offset, byteCount);
         deflate();
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (done) {
+            //throw new IOException("attempt to write after finish");
+        //}
+        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
+        //if (!def.needsInput()) {
+            //throw new IOException();
+        //}
+        //def.setInput(buffer, offset, byteCount);
+        //deflate();
     }
 
     
@@ -217,17 +217,17 @@ public class DeflaterOutputStream extends FilterOutputStream {
 ((byteCount = def.deflate(buf, 0, buf.length, Deflater.SYNC_FLUSH)) != 0)            
             {
                 out.write(buf, 0, byteCount);
-            } 
-        } 
+            } //End block
+        } //End block
         out.flush();
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (syncFlush) {
+            //int byteCount;
+            //while ((byteCount = def.deflate(buf, 0, buf.length, Deflater.SYNC_FLUSH)) != 0) {
+                //out.write(buf, 0, byteCount);
+            //}
+        //}
+        //out.flush();
     }
 
     

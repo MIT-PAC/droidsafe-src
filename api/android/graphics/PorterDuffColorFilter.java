@@ -1,6 +1,6 @@
 package android.graphics;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,9 +13,9 @@ public class PorterDuffColorFilter extends ColorFilter {
         addTaint(srcColor);
         native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
         nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);
-        
-        
-        
+        // ---------- Original Method ----------
+        //native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
+        //nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);
     }
 
     

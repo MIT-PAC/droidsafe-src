@@ -1,6 +1,6 @@
 package org.apache.commons.codec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class DecoderException extends Exception {
     public  DecoderException(String pMessage) {
         super(pMessage);
         addTaint(pMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

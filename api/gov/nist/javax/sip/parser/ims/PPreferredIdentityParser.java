@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
     public  PPreferredIdentityParser(String preferredIdentity) {
         super(preferredIdentity);
         addTaint(preferredIdentity.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,7 +25,7 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
     protected  PPreferredIdentityParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -44,27 +44,27 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
 SIPHeader var74E4690D9F2A026504928C017944E149_135608270 =             p;
             var74E4690D9F2A026504928C017944E149_135608270.addTaint(taint);
             return var74E4690D9F2A026504928C017944E149_135608270;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("PreferredIdentityParser.parse");
-        } 
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-        
-            
-                
-            
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("PreferredIdentityParser.parse");
+        //try {
+            //this.lexer.match(TokenTypes.P_PREFERRED_IDENTITY);
+            //this.lexer.SPorHT();
+            //this.lexer.match(':');
+            //this.lexer.SPorHT();
+            //PPreferredIdentity p = new PPreferredIdentity();
+            //super.parse( p );
+            //return p;
+        //} finally {
+            //if (debug)
+                //dbg_leave("PreferredIdentityParser.parse");
+            //}
     }
 
     

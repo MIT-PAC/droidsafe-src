@@ -1,6 +1,6 @@
 package android.net.wifi.p2p;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public class WifiP2pDevice implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.134 -0400", hash_original_method = "6DEE1BC764FD2CB933A4912269652401", hash_generated_method = "F64008BCEC449AEC52DED02A9FF6F441")
     public  WifiP2pDevice() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -52,12 +52,12 @@ public class WifiP2pDevice implements Parcelable {
             IllegalArgumentException varC6004F11587813439225B94CE376D336_1445488896 = new IllegalArgumentException("Malformed supplicant event");
             varC6004F11587813439225B94CE376D336_1445488896.addTaint(taint);
             throw varC6004F11587813439225B94CE376D336_1445488896;
-        } 
+        } //End block
     if(tokens.length == 1)        
         {
             deviceAddress = string;
             return;
-        } 
+        } //End block
 for(String token : tokens)
         {
             String[] nameValue = token.split("=");
@@ -67,39 +67,39 @@ for(String token : tokens)
             {
                 deviceAddress = nameValue[1];
                 continue;
-            } 
+            } //End block
     if(nameValue[0].equals("pri_dev_type"))            
             {
                 primaryDeviceType = nameValue[1];
                 continue;
-            } 
+            } //End block
     if(nameValue[0].equals("name"))            
             {
                 deviceName = trimQuotes(nameValue[1]);
                 continue;
-            } 
+            } //End block
     if(nameValue[0].equals("config_methods"))            
             {
                 wpsConfigMethodsSupported = parseHex(nameValue[1]);
                 continue;
-            } 
+            } //End block
     if(nameValue[0].equals("dev_capab"))            
             {
                 deviceCapability = parseHex(nameValue[1]);
                 continue;
-            } 
+            } //End block
     if(nameValue[0].equals("group_capab"))            
             {
                 groupCapability = parseHex(nameValue[1]);
                 continue;
-            } 
-        } 
+            } //End block
+        } //End block
     if(tokens[0].startsWith("P2P-DEVICE-FOUND"))        
         {
             status = AVAILABLE;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -116,74 +116,69 @@ for(String token : tokens)
             deviceCapability = source.deviceCapability;
             groupCapability = source.groupCapability;
             status = source.status;
-        } 
-        
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (source != null) {
+            //deviceName = source.deviceName;
+            //deviceAddress = source.deviceAddress;
+            //interfaceAddress = source.interfaceAddress;
+            //primaryDeviceType = source.primaryDeviceType;
+            //secondaryDeviceType = source.secondaryDeviceType;
+            //wpsConfigMethodsSupported = source.wpsConfigMethodsSupported;
+            //deviceCapability = source.deviceCapability;
+            //groupCapability = source.groupCapability;
+            //status = source.status;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.138 -0400", hash_original_method = "76992CA06444764D9CF7DB1AFF10640E", hash_generated_method = "93CCDE1B42606723D42B46110E6B7578")
     public boolean wpsPbcSupported() {
         boolean var3C08D742A43F3CA6BCBC29B07201315B_678003651 = ((wpsConfigMethodsSupported & WPS_CONFIG_PUSHBUTTON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1346596633 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1346596633;
-        
-        
+        // ---------- Original Method ----------
+        //return (wpsConfigMethodsSupported & WPS_CONFIG_PUSHBUTTON) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.138 -0400", hash_original_method = "B2A0BAE23B24F963FF842B8EAAF5D840", hash_generated_method = "B53642ECF4DD2E20CD2FEFDD48FBBE24")
     public boolean wpsKeypadSupported() {
         boolean var1C14923349E39578A26384C6AAF203C8_1198042623 = ((wpsConfigMethodsSupported & WPS_CONFIG_KEYPAD) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_188212143 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_188212143;
-        
-        
+        // ---------- Original Method ----------
+        //return (wpsConfigMethodsSupported & WPS_CONFIG_KEYPAD) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.138 -0400", hash_original_method = "89517E0D3099BE3BB50FEAB8A124BB8F", hash_generated_method = "E99299A35DDD614C3F8F7263EFCAAC18")
     public boolean wpsDisplaySupported() {
         boolean var26C0ADF20D06F65D2845F4DBA6CB06E9_1375015733 = ((wpsConfigMethodsSupported & WPS_CONFIG_DISPLAY) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_602051106 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_602051106;
-        
-        
+        // ---------- Original Method ----------
+        //return (wpsConfigMethodsSupported & WPS_CONFIG_DISPLAY) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.139 -0400", hash_original_method = "3FBC138270F4ADEAF27B9A0357206073", hash_generated_method = "9CA007C0F6CDF3BCB2C213965D7F5EA2")
     public boolean isServiceDiscoveryCapable() {
         boolean var5EA4B87FB1FADC800F9BA0C2976C9B9B_654679432 = ((deviceCapability & DEVICE_CAPAB_SERVICE_DISCOVERY) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_774525671 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_774525671;
-        
-        
+        // ---------- Original Method ----------
+        //return (deviceCapability & DEVICE_CAPAB_SERVICE_DISCOVERY) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.139 -0400", hash_original_method = "A041F8E96FF7F1638DE5EDEE0D23FE8B", hash_generated_method = "6366353FF088994A66DD2FAA79CA66FB")
     public boolean isGroupOwner() {
         boolean var5AA29A5D99A1CCDE4C4E4C88D30C9F46_1168515314 = ((groupCapability & GROUP_CAPAB_GROUP_OWNER) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1027184788 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1027184788;
-        
-        
+        // ---------- Original Method ----------
+        //return (groupCapability & GROUP_CAPAB_GROUP_OWNER) != 0;
     }
 
     
@@ -209,18 +204,18 @@ for(String token : tokens)
             boolean var0D483FE855C694067868829C3EC1FDB2_550043579 = ((deviceAddress == null));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_588491372 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_588491372;
-        } 
+        } //End block
         boolean varBA854C6752A405C2F84DE40A233F53E0_19932565 = (other.deviceAddress.equals(deviceAddress));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_383887260 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_383887260;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this == obj) return true;
+        //if (!(obj instanceof WifiP2pDevice)) return false;
+        //WifiP2pDevice other = (WifiP2pDevice) obj;
+        //if (other == null || other.deviceAddress == null) {
+            //return (deviceAddress == null);
+        //}
+        //return other.deviceAddress.equals(deviceAddress);
     }
 
     
@@ -239,29 +234,28 @@ for(String token : tokens)
 String var69222FFA45D1268AEE1923C5558B0BD5_846022831 =         sbuf.toString();
         var69222FFA45D1268AEE1923C5558B0BD5_846022831.addTaint(taint);
         return var69222FFA45D1268AEE1923C5558B0BD5_846022831;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuffer sbuf = new StringBuffer();
+        //sbuf.append("Device: ").append(deviceName);
+        //sbuf.append("\n deviceAddress: ").append(deviceAddress);
+        //sbuf.append("\n interfaceAddress: ").append(interfaceAddress);
+        //sbuf.append("\n primary type: ").append(primaryDeviceType);
+        //sbuf.append("\n secondary type: ").append(secondaryDeviceType);
+        //sbuf.append("\n wps: ").append(wpsConfigMethodsSupported);
+        //sbuf.append("\n grpcapab: ").append(groupCapability);
+        //sbuf.append("\n devcapab: ").append(deviceCapability);
+        //sbuf.append("\n status: ").append(status);
+        //return sbuf.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.140 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B2E924A4FD70525AF9B885A5A543F833")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1086140651 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202850837 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202850837;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -278,16 +272,16 @@ String var69222FFA45D1268AEE1923C5558B0BD5_846022831 =         sbuf.toString();
         dest.writeInt(deviceCapability);
         dest.writeInt(groupCapability);
         dest.writeInt(status);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeString(deviceName);
+        //dest.writeString(deviceAddress);
+        //dest.writeString(interfaceAddress);
+        //dest.writeString(primaryDeviceType);
+        //dest.writeString(secondaryDeviceType);
+        //dest.writeInt(wpsConfigMethodsSupported);
+        //dest.writeInt(deviceCapability);
+        //dest.writeInt(groupCapability);
+        //dest.writeInt(status);
     }
 
     
@@ -300,16 +294,16 @@ String var69222FFA45D1268AEE1923C5558B0BD5_846022831 =         sbuf.toString();
 String var8B365E7532D232C6C0049AB493A762A6_1485853008 =             str.substring(1, str.length()-1);
             var8B365E7532D232C6C0049AB493A762A6_1485853008.addTaint(taint);
             return var8B365E7532D232C6C0049AB493A762A6_1485853008;
-        } 
+        } //End block
 String var061B89662D09DE43FE2A2D88636258A2_1435452816 =         str;
         var061B89662D09DE43FE2A2D88636258A2_1435452816.addTaint(taint);
         return var061B89662D09DE43FE2A2D88636258A2_1435452816;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //str = str.trim();
+        //if (str.startsWith("'") && str.endsWith("'")) {
+            //return str.substring(1, str.length()-1);
+        //}
+        //return str;
     }
 
     
@@ -320,28 +314,28 @@ String var061B89662D09DE43FE2A2D88636258A2_1435452816 =         str;
     if(hexString.startsWith("0x") || hexString.startsWith("0X"))        
         {
             hexString = hexString.substring(2);
-        } 
+        } //End block
         try 
         {
             num = Integer.parseInt(hexString, 16);
-        } 
+        } //End block
         catch (NumberFormatException e)
         {
-        } 
+        } //End block
         int var0FC3CFBC27E91EA60A787DE13DAE3E3C_1391790727 = (num);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585006851 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585006851;
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int num = 0;
+        //if (hexString.startsWith("0x") || hexString.startsWith("0X")) {
+            //hexString = hexString.substring(2);
+        //}
+        //try {
+            //num = Integer.parseInt(hexString, 16);
+        //} catch(NumberFormatException e) {
+            //Log.e(TAG, "Failed to parse hex string " + hexString);
+        //}
+        //return num;
     }
 
     
@@ -433,7 +427,7 @@ String var061B89662D09DE43FE2A2D88636258A2_1435452816 =         str;
                 return new WifiP2pDevice[size];
             }
         };
-    
+    // orphaned legacy method
     public WifiP2pDevice createFromParcel(Parcel in) {
                 WifiP2pDevice device = new WifiP2pDevice();
                 device.deviceName = in.readString();
@@ -448,7 +442,7 @@ String var061B89662D09DE43FE2A2D88636258A2_1435452816 =         str;
                 return device;
             }
     
-    
+    // orphaned legacy method
     public WifiP2pDevice[] newArray(int size) {
                 return new WifiP2pDevice[size];
             }

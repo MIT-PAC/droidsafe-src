@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,10 +29,10 @@ public class AlgorithmParameters {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = algPramSpi;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.provider = provider;
+        //this.algorithm = algorithm;
+        //this.spiImpl = algPramSpi;
     }
 
     
@@ -77,8 +77,8 @@ public class AlgorithmParameters {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_491395408 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_491395408.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_491395408;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
@@ -87,8 +87,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_491395408 =         provider;
 String var44A46B4003FC81ACB0223385BA1FA818_184502094 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_184502094.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_184502094;
-        
-        
+        // ---------- Original Method ----------
+        //return algorithm;
     }
 
     
@@ -100,15 +100,15 @@ String var44A46B4003FC81ACB0223385BA1FA818_184502094 =         algorithm;
             InvalidParameterSpecException var5DB2ADB5E96DF64DAD68995CB4827B7B_40015977 = new InvalidParameterSpecException("Parameter has already been initialized");
             var5DB2ADB5E96DF64DAD68995CB4827B7B_40015977.addTaint(taint);
             throw var5DB2ADB5E96DF64DAD68995CB4827B7B_40015977;
-        } 
+        } //End block
         spiImpl.engineInit(paramSpec);
         initialized = true;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (initialized) {
+            //throw new InvalidParameterSpecException("Parameter has already been initialized");
+        //}
+        //spiImpl.engineInit(paramSpec);
+        //initialized = true;
     }
 
     
@@ -120,15 +120,15 @@ String var44A46B4003FC81ACB0223385BA1FA818_184502094 =         algorithm;
             IOException var26602866FB927D6A5CB453D4A246F2C3_967778813 = new IOException("Parameter has already been initialized");
             var26602866FB927D6A5CB453D4A246F2C3_967778813.addTaint(taint);
             throw var26602866FB927D6A5CB453D4A246F2C3_967778813;
-        } 
+        } //End block
         spiImpl.engineInit(params);
         initialized = true;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (initialized) {
+            //throw new IOException("Parameter has already been initialized");
+        //}
+        //spiImpl.engineInit(params);
+        //initialized = true;
     }
 
     
@@ -141,15 +141,15 @@ String var44A46B4003FC81ACB0223385BA1FA818_184502094 =         algorithm;
             IOException var26602866FB927D6A5CB453D4A246F2C3_932070399 = new IOException("Parameter has already been initialized");
             var26602866FB927D6A5CB453D4A246F2C3_932070399.addTaint(taint);
             throw var26602866FB927D6A5CB453D4A246F2C3_932070399;
-        } 
+        } //End block
         spiImpl.engineInit(params, format);
         initialized = true;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (initialized) {
+            //throw new IOException("Parameter has already been initialized");
+        //}
+        //spiImpl.engineInit(params, format);
+        //initialized = true;
     }
 
     
@@ -161,15 +161,15 @@ String var44A46B4003FC81ACB0223385BA1FA818_184502094 =         algorithm;
             InvalidParameterSpecException var54E4AE85F53D5769EC35860EC68CC518_671257100 = new InvalidParameterSpecException("Parameter has not been initialized");
             var54E4AE85F53D5769EC35860EC68CC518_671257100.addTaint(taint);
             throw var54E4AE85F53D5769EC35860EC68CC518_671257100;
-        } 
+        } //End block
 T var85314A191FE096CEB6FC1BB15A481DB0_1279402434 =         spiImpl.engineGetParameterSpec(paramSpec);
         var85314A191FE096CEB6FC1BB15A481DB0_1279402434.addTaint(taint);
         return var85314A191FE096CEB6FC1BB15A481DB0_1279402434;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!initialized) {
+            //throw new InvalidParameterSpecException("Parameter has not been initialized");
+        //}
+        //return spiImpl.engineGetParameterSpec(paramSpec);
     }
 
     
@@ -180,15 +180,15 @@ T var85314A191FE096CEB6FC1BB15A481DB0_1279402434 =         spiImpl.engineGetPara
             IOException varFF5A49CE886DAE4E8184341E6FCF0FCB_1177145090 = new IOException("Parameter has not been initialized");
             varFF5A49CE886DAE4E8184341E6FCF0FCB_1177145090.addTaint(taint);
             throw varFF5A49CE886DAE4E8184341E6FCF0FCB_1177145090;
-        } 
+        } //End block
         byte[] var74DF2EDCBF8D5B4561F96A3F84E23BB1_756855178 = (spiImpl.engineGetEncoded());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_398066940 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_398066940;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!initialized) {
+            //throw new IOException("Parameter has not been initialized");
+        //}
+        //return spiImpl.engineGetEncoded();
     }
 
     
@@ -200,15 +200,15 @@ T var85314A191FE096CEB6FC1BB15A481DB0_1279402434 =         spiImpl.engineGetPara
             IOException varFF5A49CE886DAE4E8184341E6FCF0FCB_1103451964 = new IOException("Parameter has not been initialized");
             varFF5A49CE886DAE4E8184341E6FCF0FCB_1103451964.addTaint(taint);
             throw varFF5A49CE886DAE4E8184341E6FCF0FCB_1103451964;
-        } 
+        } //End block
         byte[] varF1DD7B79C07D160117794D1825EAE692_66626815 = (spiImpl.engineGetEncoded(format));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_436138989 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_436138989;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!initialized) {
+            //throw new IOException("Parameter has not been initialized");
+        //}
+        //return spiImpl.engineGetEncoded(format);
     }
 
     
@@ -220,15 +220,15 @@ T var85314A191FE096CEB6FC1BB15A481DB0_1279402434 =         spiImpl.engineGetPara
 String var540C13E9E156B687226421B24F2DF178_793422023 =             null;
             var540C13E9E156B687226421B24F2DF178_793422023.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_793422023;
-        } 
+        } //End block
 String varCE1E0EFB1D2A110810605AD0151D4ECA_806741560 =         spiImpl.engineToString();
         varCE1E0EFB1D2A110810605AD0151D4ECA_806741560.addTaint(taint);
         return varCE1E0EFB1D2A110810605AD0151D4ECA_806741560;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!initialized) {
+            //return null;
+        //}
+        //return spiImpl.engineToString();
     }
 
     

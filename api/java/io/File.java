@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,15 +28,15 @@ public class File implements Serializable, Comparable<File> {
         this(dir == null ? null : dir.getPath(), name);
         addTaint(name.getTaint());
         addTaint(dir.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.115 -0400", hash_original_method = "2175D562A2B588CC53D616403013683C", hash_generated_method = "F0CF2469DAAFA8B053A90565BD5CE965")
     public  File(String path) {
         this.path = fixSlashes(path);
-        
-        
+        // ---------- Original Method ----------
+        //this.path = fixSlashes(path);
     }
 
     
@@ -47,31 +47,31 @@ public class File implements Serializable, Comparable<File> {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_648153928 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_648153928.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_648153928;
-        } 
+        } //End block
     if(dirPath == null || dirPath.isEmpty())        
         {
             this.path = fixSlashes(name);
-        } 
+        } //End block
         else
     if(name.isEmpty())        
         {
             this.path = fixSlashes(dirPath);
-        } 
+        } //End block
         else
         {
             this.path = fixSlashes(join(dirPath, name));
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new NullPointerException();
+        //}
+        //if (dirPath == null || dirPath.isEmpty()) {
+            //this.path = fixSlashes(name);
+        //} else if (name.isEmpty()) {
+            //this.path = fixSlashes(dirPath);
+        //} else {
+            //this.path = fixSlashes(join(dirPath, name));
+        //}
     }
 
     
@@ -79,9 +79,9 @@ public class File implements Serializable, Comparable<File> {
     public  File(URI uri) {
         checkURI(uri);
         this.path = fixSlashes(uri.getPath());
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkURI(uri);
+        //this.path = fixSlashes(uri.getPath());
     }
 
     
@@ -119,8 +119,7 @@ public class File implements Serializable, Comparable<File> {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void checkURI(URI uri) {
+        private static void checkURI(URI uri) {
         if (!uri.isAbsolute()) {
             throw new IllegalArgumentException("URI is not absolute: " + uri);
         } else if (!uri.getRawSchemeSpecificPart().startsWith("/")) {
@@ -155,8 +154,8 @@ public class File implements Serializable, Comparable<File> {
         boolean varC901E9B79BA5577EEE7F81ECCABA7C1D_1935228943 = (doAccess(X_OK));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1961000220 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1961000220;
-        
-        
+        // ---------- Original Method ----------
+        //return doAccess(X_OK);
     }
 
     
@@ -165,8 +164,8 @@ public class File implements Serializable, Comparable<File> {
         boolean var16CC90803A133688E46C28059E79DEE7_1086178431 = (doAccess(R_OK));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051154145 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051154145;
-        
-        
+        // ---------- Original Method ----------
+        //return doAccess(R_OK);
     }
 
     
@@ -175,8 +174,8 @@ public class File implements Serializable, Comparable<File> {
         boolean varBEFAAAD5410F30F686A9D9145A271872_715362218 = (doAccess(W_OK));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1401455482 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1401455482;
-        
-        
+        // ---------- Original Method ----------
+        //return doAccess(W_OK);
     }
 
     
@@ -188,19 +187,19 @@ public class File implements Serializable, Comparable<File> {
             boolean varB9681A08D4EE8BFF06C85294995AA993_1124921188 = (Libcore.os.access(path, mode));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_818055501 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_818055501;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             boolean var68934A3E9455FA72420237EB05902327_467565806 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1324451382 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1324451382;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return Libcore.os.access(path, mode);
+        //} catch (ErrnoException errnoException) {
+            //return false;
+        //}
     }
 
     
@@ -210,8 +209,8 @@ public class File implements Serializable, Comparable<File> {
         int varC3EBE29AE605A15DC4B40B4FA04382FC_1391121102 = (this.getPath().compareTo(another.getPath()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2125825449 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2125825449;
-        
-        
+        // ---------- Original Method ----------
+        //return this.getPath().compareTo(another.getPath());
     }
 
     
@@ -223,28 +222,28 @@ public class File implements Serializable, Comparable<File> {
             boolean varB326B5062B2F0E69046810717534CB09_1778456956 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_499788591 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_499788591;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             boolean var68934A3E9455FA72420237EB05902327_965519061 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591064889 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_591064889;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Libcore.os.remove(path);
+            //return true;
+        //} catch (ErrnoException errnoException) {
+            //return false;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.135 -0400", hash_original_method = "CB1935EF5F2FD9C7C5DF0BCD9272AB92", hash_generated_method = "1DCAE6528A5E92D9050119D34A45FB7D")
     public void deleteOnExit() {
         DeleteOnExit.getInstance().addFile(getAbsolutePath());
-        
-        
+        // ---------- Original Method ----------
+        //DeleteOnExit.getInstance().addFile(getAbsolutePath());
     }
 
     
@@ -257,15 +256,15 @@ public class File implements Serializable, Comparable<File> {
             boolean var68934A3E9455FA72420237EB05902327_453764653 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908284738 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_908284738;
-        } 
+        } //End block
         boolean varB906D56A2FF677286A447976F1898945_347455588 = (path.equals(((File) obj).getPath()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1960158452 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1960158452;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!(obj instanceof File)) {
+            //return false;
+        //}
+        //return path.equals(((File) obj).getPath());
     }
 
     
@@ -274,8 +273,8 @@ public class File implements Serializable, Comparable<File> {
         boolean varF8AC394411A576A02E0863588CE659D9_1976773936 = (doAccess(F_OK));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_745032002 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_745032002;
-        
-        
+        // ---------- Original Method ----------
+        //return doAccess(F_OK);
     }
 
     
@@ -286,17 +285,17 @@ public class File implements Serializable, Comparable<File> {
 String var535F4D9720F3B0C96D8143873CE0638C_2040237459 =             path;
             var535F4D9720F3B0C96D8143873CE0638C_2040237459.addTaint(taint);
             return var535F4D9720F3B0C96D8143873CE0638C_2040237459;
-        } 
+        } //End block
         String userDir = System.getProperty("user.dir");
 String var4F090B9F25B3E37BF995BFA6769B0207_1559118705 =         path.isEmpty() ? userDir : join(userDir, path);
         var4F090B9F25B3E37BF995BFA6769B0207_1559118705.addTaint(taint);
         return var4F090B9F25B3E37BF995BFA6769B0207_1559118705;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (isAbsolute()) {
+            //return path;
+        //}
+        //String userDir = System.getProperty("user.dir");
+        //return path.isEmpty() ? userDir : join(userDir, path);
     }
 
     
@@ -305,8 +304,8 @@ String var4F090B9F25B3E37BF995BFA6769B0207_1559118705 =         path.isEmpty() ?
 File var91C0F04A5F15A2E39EBA9EBFE05CB3F9_624975813 =         new File(getAbsolutePath());
         var91C0F04A5F15A2E39EBA9EBFE05CB3F9_624975813.addTaint(taint);
         return var91C0F04A5F15A2E39EBA9EBFE05CB3F9_624975813;
-        
-        
+        // ---------- Original Method ----------
+        //return new File(getAbsolutePath());
     }
 
     
@@ -315,8 +314,8 @@ File var91C0F04A5F15A2E39EBA9EBFE05CB3F9_624975813 =         new File(getAbsolut
 String var5E4E102EA6F7E6699A26045AE0D4A4C0_79207150 =         realpath(getAbsolutePath());
         var5E4E102EA6F7E6699A26045AE0D4A4C0_79207150.addTaint(taint);
         return var5E4E102EA6F7E6699A26045AE0D4A4C0_79207150;
-        
-        
+        // ---------- Original Method ----------
+        //return realpath(getAbsolutePath());
     }
 
     
@@ -337,8 +336,8 @@ String var5E4E102EA6F7E6699A26045AE0D4A4C0_79207150 =         realpath(getAbsolu
 File var1398763BFC9F15F6CE7A7CED1F2E0123_585072243 =         new File(getCanonicalPath());
         var1398763BFC9F15F6CE7A7CED1F2E0123_585072243.addTaint(taint);
         return var1398763BFC9F15F6CE7A7CED1F2E0123_585072243;
-        
-        
+        // ---------- Original Method ----------
+        //return new File(getCanonicalPath());
     }
 
     
@@ -348,9 +347,9 @@ File var1398763BFC9F15F6CE7A7CED1F2E0123_585072243 =         new File(getCanonic
 String varB9D1E148737978EE546D05465B0A35CE_576967849 =         (separatorIndex < 0) ? path : path.substring(separatorIndex + 1, path.length());
         varB9D1E148737978EE546D05465B0A35CE_576967849.addTaint(taint);
         return varB9D1E148737978EE546D05465B0A35CE_576967849;
-        
-        
-        
+        // ---------- Original Method ----------
+        //int separatorIndex = path.lastIndexOf(separator);
+        //return (separatorIndex < 0) ? path : path.substring(separatorIndex + 1, path.length());
     }
 
     
@@ -361,45 +360,45 @@ String varB9D1E148737978EE546D05465B0A35CE_576967849 =         (separatorIndex <
     if(separatorChar == '\\' && length > 2 && path.charAt(1) == ':')        
         {
             firstInPath = 2;
-        } 
+        } //End block
         int index = path.lastIndexOf(separatorChar);
     if(index == -1 && firstInPath > 0)        
         {
             index = 2;
-        } 
+        } //End block
     if(index == -1 || path.charAt(length - 1) == separatorChar)        
         {
 String var540C13E9E156B687226421B24F2DF178_950910300 =             null;
             var540C13E9E156B687226421B24F2DF178_950910300.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_950910300;
-        } 
+        } //End block
     if(path.indexOf(separatorChar) == index
                 && path.charAt(firstInPath) == separatorChar)        
         {
 String var357282AC880EAB1E0039AAC475A27A53_1323354071 =             path.substring(0, index + 1);
             var357282AC880EAB1E0039AAC475A27A53_1323354071.addTaint(taint);
             return var357282AC880EAB1E0039AAC475A27A53_1323354071;
-        } 
+        } //End block
 String varB5FC3A328A09035853AC34C6C06DC9DC_77696520 =         path.substring(0, index);
         varB5FC3A328A09035853AC34C6C06DC9DC_77696520.addTaint(taint);
         return varB5FC3A328A09035853AC34C6C06DC9DC_77696520;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
-        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int length = path.length(), firstInPath = 0;
+        //if (separatorChar == '\\' && length > 2 && path.charAt(1) == ':') {
+            //firstInPath = 2;
+        //}
+        //int index = path.lastIndexOf(separatorChar);
+        //if (index == -1 && firstInPath > 0) {
+            //index = 2;
+        //}
+        //if (index == -1 || path.charAt(length - 1) == separatorChar) {
+            //return null;
+        //}
+        //if (path.indexOf(separatorChar) == index
+                //&& path.charAt(firstInPath) == separatorChar) {
+            //return path.substring(0, index + 1);
+        //}
+        //return path.substring(0, index);
     }
 
     
@@ -411,27 +410,26 @@ String varB5FC3A328A09035853AC34C6C06DC9DC_77696520 =         path.substring(0, 
 File var540C13E9E156B687226421B24F2DF178_2023641309 =             null;
             var540C13E9E156B687226421B24F2DF178_2023641309.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2023641309;
-        } 
+        } //End block
 File varD8B3B9F37F2A78EA9F84CD2AE0544A52_1350042859 =         new File(tempParent);
         varD8B3B9F37F2A78EA9F84CD2AE0544A52_1350042859.addTaint(taint);
         return varD8B3B9F37F2A78EA9F84CD2AE0544A52_1350042859;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String tempParent = getParent();
+        //if (tempParent == null) {
+            //return null;
+        //}
+        //return new File(tempParent);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.156 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "37C21016B20E3AF34C44FC916B540003")
     public String getPath() {
 String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         var535F4D9720F3B0C96D8143873CE0638C_1772683556.addTaint(taint);
         return var535F4D9720F3B0C96D8143873CE0638C_1772683556;
-        
-        
+        // ---------- Original Method ----------
+        //return path;
     }
 
     
@@ -441,8 +439,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         int var69A94F24A603FF8EC28F2CB95FF1273E_2078949795 = (getPath().hashCode() ^ 1234321);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1474838354 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1474838354;
-        
-        
+        // ---------- Original Method ----------
+        //return getPath().hashCode() ^ 1234321;
     }
 
     
@@ -451,8 +449,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         boolean var7FA6955EF77820B7CB434F8F4B9C1BA0_479959119 = (path.length() > 0 && path.charAt(0) == separatorChar);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1729339862 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1729339862;
-        
-        
+        // ---------- Original Method ----------
+        //return path.length() > 0 && path.charAt(0) == separatorChar;
     }
 
     
@@ -463,19 +461,19 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
             boolean var4B8DF19CF597FF030ECB92DCEF92F772_1649049447 = (S_ISDIR(Libcore.os.stat(path).st_mode));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790190886 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1790190886;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             boolean var68934A3E9455FA72420237EB05902327_766963565 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1120323240 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1120323240;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return S_ISDIR(Libcore.os.stat(path).st_mode);
+        //} catch (ErrnoException errnoException) {
+            //return false;
+        //}
     }
 
     
@@ -486,19 +484,19 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
             boolean var23B0CD3ED8850077D03D70146096FAD6_1978551205 = (S_ISREG(Libcore.os.stat(path).st_mode));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_93287309 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_93287309;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             boolean var68934A3E9455FA72420237EB05902327_1644506302 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2033660739 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2033660739;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return S_ISREG(Libcore.os.stat(path).st_mode);
+        //} catch (ErrnoException errnoException) {
+            //return false;
+        //}
     }
 
     
@@ -509,15 +507,15 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
             boolean var68934A3E9455FA72420237EB05902327_1071337414 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_282478663 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_282478663;
-        } 
+        } //End block
         boolean var6FA1B6AE89C70C02B418B153337A505B_776474823 = (getName().startsWith("."));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736305626 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_736305626;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (path.isEmpty()) {
+            //return false;
+        //}
+        //return getName().startsWith(".");
     }
 
     
@@ -528,19 +526,19 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
             long var0663E05393D05DACB96D74C2258268AA_746201364 = (Libcore.os.stat(path).st_mtime * 1000L);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_947722262 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_947722262;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             long varCFCD208495D565EF66E7DFF9F98764DA_1774904140 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_22229165 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_22229165;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return Libcore.os.stat(path).st_mtime * 1000L;
+        //} catch (ErrnoException errnoException) {
+            //return 0;
+        //}
     }
 
     
@@ -552,15 +550,15 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
             IllegalArgumentException varB8559A4A56D1E9E972ED6F7DB9D29FE8_9034508 = new IllegalArgumentException("time < 0");
             varB8559A4A56D1E9E972ED6F7DB9D29FE8_9034508.addTaint(taint);
             throw varB8559A4A56D1E9E972ED6F7DB9D29FE8_9034508;
-        } 
+        } //End block
         boolean varD17DF9F97B466F892C09B9434A3E81EA_387400898 = (setLastModifiedImpl(path, time));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2095755733 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2095755733;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (time < 0) {
+            //throw new IllegalArgumentException("time < 0");
+        //}
+        //return setLastModifiedImpl(path, time);
     }
 
     
@@ -576,8 +574,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         boolean varA56C101F7C066CC2FB2A405D5121B78E_948192885 = (setWritable(false, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_919554981 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_919554981;
-        
-        
+        // ---------- Original Method ----------
+        //return setWritable(false, false);
     }
 
     
@@ -588,8 +586,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         boolean varE7642FF076B81623232A54476AE77555_1342176641 = (doChmod(ownerOnly ? S_IXUSR : (S_IXUSR | S_IXGRP | S_IXOTH), executable));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1646291098 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1646291098;
-        
-        
+        // ---------- Original Method ----------
+        //return doChmod(ownerOnly ? S_IXUSR : (S_IXUSR | S_IXGRP | S_IXOTH), executable);
     }
 
     
@@ -599,8 +597,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         boolean var72FFE20D190F553CE0FBD56EAC8180B9_863202996 = (setExecutable(executable, true));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_911838943 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_911838943;
-        
-        
+        // ---------- Original Method ----------
+        //return setExecutable(executable, true);
     }
 
     
@@ -611,8 +609,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         boolean varA1C07C3B4F0CB28891C75DFC32EABAD1_1396660710 = (doChmod(ownerOnly ? S_IRUSR : (S_IRUSR | S_IRGRP | S_IROTH), readable));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879629930 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879629930;
-        
-        
+        // ---------- Original Method ----------
+        //return doChmod(ownerOnly ? S_IRUSR : (S_IRUSR | S_IRGRP | S_IROTH), readable);
     }
 
     
@@ -622,8 +620,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         boolean var4D3FAF2A9781DA582CF879708D932A86_1145053136 = (setReadable(readable, true));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_496341759 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_496341759;
-        
-        
+        // ---------- Original Method ----------
+        //return setReadable(readable, true);
     }
 
     
@@ -634,8 +632,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         boolean var7E7D573895F2F1DAEBC92E098C540DEE_1438390368 = (doChmod(ownerOnly ? S_IWUSR : (S_IWUSR | S_IWGRP | S_IWOTH), writable));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_48731273 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_48731273;
-        
-        
+        // ---------- Original Method ----------
+        //return doChmod(ownerOnly ? S_IWUSR : (S_IWUSR | S_IWGRP | S_IWOTH), writable);
     }
 
     
@@ -645,8 +643,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
         boolean varD9C9754172505A976ED3D05649F90027_1449295036 = (setWritable(writable, true));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_217536624 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_217536624;
-        
-        
+        // ---------- Original Method ----------
+        //return setWritable(writable, true);
     }
 
     
@@ -662,22 +660,22 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
             boolean varB326B5062B2F0E69046810717534CB09_436369748 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174145112 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174145112;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             boolean var68934A3E9455FA72420237EB05902327_1268833588 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1195144279 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1195144279;
-        } 
-        
-        
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //StructStat sb = Libcore.os.stat(path);
+            //int newMode = set ? (sb.st_mode | mask) : (sb.st_mode & ~mask);
+            //Libcore.os.chmod(path, newMode);
+            //return true;
+        //} catch (ErrnoException errnoException) {
+            //return false;
+        //}
     }
 
     
@@ -688,19 +686,19 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
             long var4EF3814C0FB7DB72C328FDC964345424_1693711174 = (Libcore.os.stat(path).st_size);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1223065844 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1223065844;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             long varCFCD208495D565EF66E7DFF9F98764DA_1393850117 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_2052049323 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2052049323;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return Libcore.os.stat(path).st_size;
+        //} catch (ErrnoException errnoException) {
+            //return 0;
+        //}
     }
 
     
@@ -709,8 +707,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1772683556 =         path;
 String[] var4F4C7F90EA62B6A2861763194713B35C_463784834 =         listImpl(path);
         var4F4C7F90EA62B6A2861763194713B35C_463784834.addTaint(taint);
         return var4F4C7F90EA62B6A2861763194713B35C_463784834;
-        
-        
+        // ---------- Original Method ----------
+        //return listImpl(path);
     }
 
     
@@ -729,30 +727,30 @@ String[] var4F4C7F90EA62B6A2861763194713B35C_463784834 =         listImpl(path);
 String[] var6D54B04A16B4CABC2F5099A0A3EDD446_1774400301 =             filenames;
             var6D54B04A16B4CABC2F5099A0A3EDD446_1774400301.addTaint(taint);
             return var6D54B04A16B4CABC2F5099A0A3EDD446_1774400301;
-        } 
+        } //End block
         List<String> result = new ArrayList<String>(filenames.length);
 for(String filename : filenames)
         {
     if(filter.accept(this, filename))            
             {
                 result.add(filename);
-            } 
-        } 
+            } //End block
+        } //End block
 String[] var51A2A63AEB43607DDC4545933C4B2C78_325224655 =         result.toArray(new String[result.size()]);
         var51A2A63AEB43607DDC4545933C4B2C78_325224655.addTaint(taint);
         return var51A2A63AEB43607DDC4545933C4B2C78_325224655;
-        
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //String[] filenames = list();
+        //if (filter == null || filenames == null) {
+            //return filenames;
+        //}
+        //List<String> result = new ArrayList<String>(filenames.length);
+        //for (String filename : filenames) {
+            //if (filter.accept(this, filename)) {
+                //result.add(filename);
+            //}
+        //}
+        //return result.toArray(new String[result.size()]);
     }
 
     
@@ -761,8 +759,8 @@ String[] var51A2A63AEB43607DDC4545933C4B2C78_325224655 =         result.toArray(
 File[] var1B7983DA994F07FB8F700D410235399C_187240688 =         filenamesToFiles(list());
         var1B7983DA994F07FB8F700D410235399C_187240688.addTaint(taint);
         return var1B7983DA994F07FB8F700D410235399C_187240688;
-        
-        
+        // ---------- Original Method ----------
+        //return filenamesToFiles(list());
     }
 
     
@@ -772,8 +770,8 @@ File[] var1B7983DA994F07FB8F700D410235399C_187240688 =         filenamesToFiles(
 File[] var5324373AF7B0AF1EB8D446F24EE9274B_860223636 =         filenamesToFiles(list(filter));
         var5324373AF7B0AF1EB8D446F24EE9274B_860223636.addTaint(taint);
         return var5324373AF7B0AF1EB8D446F24EE9274B_860223636;
-        
-        
+        // ---------- Original Method ----------
+        //return filenamesToFiles(list(filter));
     }
 
     
@@ -786,30 +784,30 @@ File[] var5324373AF7B0AF1EB8D446F24EE9274B_860223636 =         filenamesToFiles(
 File[] var41733365F073B7D9D72A60B6E8BB11F4_811318901 =             files;
             var41733365F073B7D9D72A60B6E8BB11F4_811318901.addTaint(taint);
             return var41733365F073B7D9D72A60B6E8BB11F4_811318901;
-        } 
+        } //End block
         List<File> result = new ArrayList<File>(files.length);
 for(File file : files)
         {
     if(filter.accept(file))            
             {
                 result.add(file);
-            } 
-        } 
+            } //End block
+        } //End block
 File[] var36CD04F8590545BE163F612A0C547736_1964530857 =         result.toArray(new File[result.size()]);
         var36CD04F8590545BE163F612A0C547736_1964530857.addTaint(taint);
         return var36CD04F8590545BE163F612A0C547736_1964530857;
-        
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //File[] files = listFiles();
+        //if (filter == null || files == null) {
+            //return files;
+        //}
+        //List<File> result = new ArrayList<File>(files.length);
+        //for (File file : files) {
+            //if (filter.accept(file)) {
+                //result.add(file);
+            //}
+        //}
+        //return result.toArray(new File[result.size()]);
     }
 
     
@@ -821,26 +819,26 @@ File[] var36CD04F8590545BE163F612A0C547736_1964530857 =         result.toArray(n
 File[] var540C13E9E156B687226421B24F2DF178_563475961 =             null;
             var540C13E9E156B687226421B24F2DF178_563475961.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_563475961;
-        } 
+        } //End block
         int count = filenames.length;
         File[] result = new File[count];
 for(int i = 0;i < count;++i)
         {
             result[i] = new File(this, filenames[i]);
-        } 
+        } //End block
 File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553;
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (filenames == null) {
+            //return null;
+        //}
+        //int count = filenames.length;
+        //File[] result = new File[count];
+        //for (int i = 0; i < count; ++i) {
+            //result[i] = new File(this, filenames[i]);
+        //}
+        //return result;
     }
 
     
@@ -852,20 +850,20 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553 =         result;
             boolean varB326B5062B2F0E69046810717534CB09_785044148 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_129516708 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_129516708;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             boolean var68934A3E9455FA72420237EB05902327_472028153 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676140905 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_676140905;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Libcore.os.mkdir(path, S_IRWXU);
+            //return true;
+        //} catch (ErrnoException errnoException) {
+            //return false;
+        //}
     }
 
     
@@ -876,35 +874,35 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553 =         result;
             boolean var68934A3E9455FA72420237EB05902327_61935455 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1097378672 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1097378672;
-        } 
+        } //End block
     if(mkdir())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_206658860 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_587625381 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_587625381;
-        } 
+        } //End block
         String parentDir = getParent();
     if(parentDir == null)        
         {
             boolean var68934A3E9455FA72420237EB05902327_908105980 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_972527410 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_972527410;
-        } 
+        } //End block
         boolean var32C4D9D2D48215B684F04282CDBA9D48_1181944305 = ((new File(parentDir).mkdirs() && mkdir()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_844353199 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_844353199;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (exists()) {
+            //return false;
+        //}
+        //if (mkdir()) {
+            //return true;
+        //}
+        //String parentDir = getParent();
+        //if (parentDir == null) {
+            //return false;
+        //}
+        //return (new File(parentDir).mkdirs() && mkdir());
     }
 
     
@@ -917,7 +915,7 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553 =         result;
             boolean varB326B5062B2F0E69046810717534CB09_502050516 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1259726564 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1259726564;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
     if(errnoException.errno == EEXIST)            
@@ -925,28 +923,28 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553 =         result;
                 boolean var68934A3E9455FA72420237EB05902327_37635095 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901888222 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_901888222;
-            } 
+            } //End block
             java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_301480989 = errnoException.rethrowAsIOException();
             var533DBF3F7D78874DC97ED285C3BC3B22_301480989.addTaint(taint);
             throw var533DBF3F7D78874DC97ED285C3BC3B22_301480989;
-        } 
+        } //End block
         finally 
         {
             IoUtils.close(fd);
-        } 
-        
-        
-        
-            
-            
-        
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //FileDescriptor fd = null;
+        //try {
+            //fd = Libcore.os.open(path, O_RDWR | O_CREAT | O_EXCL, 0600);
+            //return true;
+        //} catch (ErrnoException errnoException) {
+            //if (errnoException.errno == EEXIST) {
+                //return false;
+            //}
+            //throw errnoException.rethrowAsIOException();
+        //} finally {
+            //IoUtils.close(fd); 
+        //}
     }
 
     
@@ -984,36 +982,34 @@ File[] varDC838461EE2FA0CA4C9BBB70A15456B0_1133811553 =         result;
             boolean varB326B5062B2F0E69046810717534CB09_493724507 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543064273 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_543064273;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             boolean var68934A3E9455FA72420237EB05902327_748529396 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_616094501 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_616094501;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Libcore.os.rename(path, newPath.path);
+            //return true;
+        //} catch (ErrnoException errnoException) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.401 -0400", hash_original_method = "2B0DBB93241DF37011E39BE4D10F6879", hash_generated_method = "50D89DF4F29D7EB95EA86A602FB9F454")
     @Override
     public String toString() {
 String var535F4D9720F3B0C96D8143873CE0638C_888147156 =         path;
         var535F4D9720F3B0C96D8143873CE0638C_888147156.addTaint(taint);
         return var535F4D9720F3B0C96D8143873CE0638C_888147156;
-        
-        
+        // ---------- Original Method ----------
+        //return path;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.412 -0400", hash_original_method = "700C756497BE64476D6C692FA75956E5", hash_generated_method = "1EF49E95BC472C43CE76FF7E680A8B65")
     public URI toURI() {
         String name = getAbsoluteName();
@@ -1024,40 +1020,39 @@ String var535F4D9720F3B0C96D8143873CE0638C_888147156 =         path;
 URI var81CE9C8452AED16CEDF893615168C3D2_695822009 =                 new URI("file", null, "/" + name, null, null);
                 var81CE9C8452AED16CEDF893615168C3D2_695822009.addTaint(taint);
                 return var81CE9C8452AED16CEDF893615168C3D2_695822009;
-            } 
+            } //End block
             else
     if(name.startsWith("//"))            
             {
 URI var29D90A9A6DADA7CCD352DB7E1FC69FFB_1409128065 =                 new URI("file", "", name, null);
                 var29D90A9A6DADA7CCD352DB7E1FC69FFB_1409128065.addTaint(taint);
                 return var29D90A9A6DADA7CCD352DB7E1FC69FFB_1409128065;
-            } 
+            } //End block
 URI varEF9537D825B1B2B07B3A54F3FC640952_1798021472 =             new URI("file", null, name, null, null);
             varEF9537D825B1B2B07B3A54F3FC640952_1798021472.addTaint(taint);
             return varEF9537D825B1B2B07B3A54F3FC640952_1798021472;
-        } 
+        } //End block
         catch (URISyntaxException e)
         {
 URI var540C13E9E156B687226421B24F2DF178_1805726078 =             null;
             var540C13E9E156B687226421B24F2DF178_1805726078.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1805726078;
-        } 
-        
-        
-        
-            
-                
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String name = getAbsoluteName();
+        //try {
+            //if (!name.startsWith("/")) {
+                //return new URI("file", null, "/" + name, null, null);
+            //} else if (name.startsWith("//")) {
+                //return new URI("file", "", name, null); 
+            //}
+            //return new URI("file", null, name, null, null);
+        //} catch (URISyntaxException e) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.431 -0400", hash_original_method = "A697C8A8DDF3EFD4E15B0A56A47ADC60", hash_generated_method = "9D4166729FBF67E106CDD78B3A5D7A25")
     @Deprecated
     public URL toURL() throws java.net.MalformedURLException {
@@ -1067,25 +1062,25 @@ URI var540C13E9E156B687226421B24F2DF178_1805726078 =             null;
 URL var347EE1274B4A53E8A16CAFF7EB7D3896_503580223 =             new URL("file", "", -1, "/" + name, null);
             var347EE1274B4A53E8A16CAFF7EB7D3896_503580223.addTaint(taint);
             return var347EE1274B4A53E8A16CAFF7EB7D3896_503580223;
-        } 
+        } //End block
         else
     if(name.startsWith("//"))        
         {
 URL varB6E76567327A20845E8CD7E94383DAA5_1084791337 =             new URL("file:" + name);
             varB6E76567327A20845E8CD7E94383DAA5_1084791337.addTaint(taint);
             return varB6E76567327A20845E8CD7E94383DAA5_1084791337;
-        } 
+        } //End block
 URL var9F0992E1CDD9692D51AE22365958494F_739612927 =         new URL("file", "", -1, name, null);
         var9F0992E1CDD9692D51AE22365958494F_739612927.addTaint(taint);
         return var9F0992E1CDD9692D51AE22365958494F_739612927;
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String name = getAbsoluteName();
+        //if (!name.startsWith("/")) {
+            //return new URL("file", "", -1, "/" + name, null);
+        //} else if (name.startsWith("//")) {
+            //return new URL("file:" + name); 
+        //}
+        //return new URL("file", "", -1, name, null);
     }
 
     
@@ -1096,24 +1091,24 @@ URL var9F0992E1CDD9692D51AE22365958494F_739612927 =         new URL("file", "", 
     if(f.isDirectory() && name.charAt(name.length() - 1) != separatorChar)        
         {
             name = name + "/";
-        } 
+        } //End block
     if(separatorChar != '/')        
         {
             name = name.replace(separatorChar, '/');
-        } 
+        } //End block
 String varB017984728AC60AD1F0BF8734F33F15C_2117736917 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_2117736917.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_2117736917;
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //File f = getAbsoluteFile();
+        //String name = f.getPath();
+        //if (f.isDirectory() && name.charAt(name.length() - 1) != separatorChar) {
+            //name = name + "/";
+        //}
+        //if (separatorChar != '/') { 
+            //name = name.replace(separatorChar, '/');
+        //}
+        //return name;
     }
 
     
@@ -1122,9 +1117,9 @@ String varB017984728AC60AD1F0BF8734F33F15C_2117736917 =         name;
         addTaint(stream.getTaint());
         stream.defaultWriteObject();
         stream.writeChar(separatorChar);
-        
-        
-        
+        // ---------- Original Method ----------
+        //stream.defaultWriteObject();
+        //stream.writeChar(separatorChar);
     }
 
     
@@ -1134,10 +1129,10 @@ String varB017984728AC60AD1F0BF8734F33F15C_2117736917 =         name;
         stream.defaultReadObject();
         char inSeparator = stream.readChar();
         this.path = fixSlashes(path.replace(inSeparator, separatorChar));
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //stream.defaultReadObject();
+        //char inSeparator = stream.readChar();
+        //this.path = fixSlashes(path.replace(inSeparator, separatorChar));
     }
 
     
@@ -1149,20 +1144,20 @@ String varB017984728AC60AD1F0BF8734F33F15C_2117736917 =         name;
             long var5772D9E8E485ABB02EDC3C147B3EE2C4_304742795 = (sb.f_blocks * sb.f_bsize);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_2144066849 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2144066849;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             long varCFCD208495D565EF66E7DFF9F98764DA_2127657226 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1472503050 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1472503050;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //StructStatFs sb = Libcore.os.statfs(path);
+            //return sb.f_blocks * sb.f_bsize; 
+        //} catch (ErrnoException errnoException) {
+            //return 0;
+        //}
     }
 
     
@@ -1174,20 +1169,20 @@ String varB017984728AC60AD1F0BF8734F33F15C_2117736917 =         name;
             long var08F24160F7D4587C47CECCB9E8E4C31D_811922219 = (sb.f_bavail * sb.f_bsize);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_2103889164 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2103889164;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             long varCFCD208495D565EF66E7DFF9F98764DA_846621094 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_194616764 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_194616764;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //StructStatFs sb = Libcore.os.statfs(path);
+            //return sb.f_bavail * sb.f_bsize; 
+        //} catch (ErrnoException errnoException) {
+            //return 0;
+        //}
     }
 
     
@@ -1199,20 +1194,20 @@ String varB017984728AC60AD1F0BF8734F33F15C_2117736917 =         name;
             long var6A72B5421CCB9D514F2491AE02FA6A83_824119462 = (sb.f_bfree * sb.f_bsize);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_600865342 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_600865342;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             long varCFCD208495D565EF66E7DFF9F98764DA_1406782730 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_453203355 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_453203355;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //StructStatFs sb = Libcore.os.statfs(path);
+            //return sb.f_bfree * sb.f_bsize; 
+        //} catch (ErrnoException errnoException) {
+            //return 0;
+        //}
     }
 
     

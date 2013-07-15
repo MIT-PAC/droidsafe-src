@@ -1,6 +1,6 @@
 package android.text;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,10 +45,10 @@ for(int i = 0;i < spans.length;i++)
     if(en > end)                
                 en = end;
                 setSpan(spans[i], st - start, en - start, fl);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -57,8 +57,8 @@ for(int i = 0;i < spans.length;i++)
         int varDC3F5DE2558DF3D25118F6362DE3EB1B_1494391095 = (mText.length());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869163340 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869163340;
-        
-        
+        // ---------- Original Method ----------
+        //return mText.length();
     }
 
     
@@ -68,8 +68,8 @@ for(int i = 0;i < spans.length;i++)
         char varB3CA569F165E0C73B6F01672D61D9642_166756719 = (mText.charAt(i));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_811692163 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_811692163;
-        
-        
+        // ---------- Original Method ----------
+        //return mText.charAt(i);
     }
 
     
@@ -78,8 +78,8 @@ for(int i = 0;i < spans.length;i++)
 String var7F7ECB4B14362FFBA020956966B29A66_628949370 =         mText;
         var7F7ECB4B14362FFBA020956966B29A66_628949370.addTaint(taint);
         return var7F7ECB4B14362FFBA020956966B29A66_628949370;
-        
-        
+        // ---------- Original Method ----------
+        //return mText;
     }
 
     
@@ -90,12 +90,11 @@ String var7F7ECB4B14362FFBA020956966B29A66_628949370 =         mText;
         addTaint(end);
         addTaint(start);
         mText.getChars(start, end, dest, off);
-        
-        
+        // ---------- Original Method ----------
+        //mText.getChars(start, end, dest, off);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.717 -0400", hash_original_method = "7B198AB61B6B726FF2E2996AF3FF95CD", hash_generated_method = "076CF2C4CD6529D13A59F56E486EC6BB")
      void setSpan(Object what, int start, int end, int flags) {
         int nstart = start;
@@ -114,7 +113,7 @@ String var7F7ECB4B14362FFBA020956966B29A66_628949370 =         mText;
                 var2A229F9AFF0C89140BABD24D2D46D889_2112474967.addTaint(taint);
                 throw var2A229F9AFF0C89140BABD24D2D46D889_2112474967;
                 }
-            } 
+            } //End block
     if(end != 0 && end != length())            
             {
                 char c = charAt(end - 1);
@@ -126,8 +125,8 @@ String var7F7ECB4B14362FFBA020956966B29A66_628949370 =         mText;
                 var6D56B600862D5EE845FBA75F6411AE65_824014715.addTaint(taint);
                 throw var6D56B600862D5EE845FBA75F6411AE65_824014715;
                 }
-            } 
-        } 
+            } //End block
+        } //End block
         int count = mSpanCount;
         Object[] spans = mSpans;
         int[] data = mSpanData;
@@ -142,8 +141,8 @@ for(int i = 0;i < count;i++)
                 data[i * COLUMNS + FLAGS] = flags;
                 sendSpanChanged(what, ostart, oend, nstart, nend);
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mSpanCount + 1 >= mSpans.length)        
         {
             int newsize = ArrayUtils.idealIntArraySize(mSpanCount + 1);
@@ -153,7 +152,7 @@ for(int i = 0;i < count;i++)
             System.arraycopy(mSpanData, 0, newdata, 0, mSpanCount * 3);
             mSpans = newtags;
             mSpanData = newdata;
-        } 
+        } //End block
         mSpans[mSpanCount] = what;
         mSpanData[mSpanCount * COLUMNS + START] = start;
         mSpanData[mSpanCount * COLUMNS + END] = end;
@@ -161,12 +160,11 @@ for(int i = 0;i < count;i++)
         mSpanCount++;
     if(this instanceof Spannable)        
         sendSpanAdded(what, nstart, nend);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.718 -0400", hash_original_method = "03C5B870069E116AF35881F1682BF48B", hash_generated_method = "E118E8AB7BC3606808A5EA7875B8BCD9")
      void removeSpan(Object what) {
         addTaint(what.getTaint());
@@ -186,29 +184,28 @@ for(int i = count - 1;i >= 0;i--)
                 mSpanCount--;
                 sendSpanRemoved(what, ostart, oend);
                 return;
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-                
-                
-                
-                
-                
-                                 
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int count = mSpanCount;
+        //Object[] spans = mSpans;
+        //int[] data = mSpanData;
+        //for (int i = count - 1; i >= 0; i--) {
+            //if (spans[i] == what) {
+                //int ostart = data[i * COLUMNS + START];
+                //int oend = data[i * COLUMNS + END];
+                //int c = count - (i + 1);
+                //System.arraycopy(spans, i + 1, spans, i, c);
+                //System.arraycopy(data, (i + 1) * COLUMNS,
+                                 //data, i * COLUMNS, c * COLUMNS);
+                //mSpanCount--;
+                //sendSpanRemoved(what, ostart, oend);
+                //return;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.719 -0400", hash_original_method = "2C34546685C4DD853C66A09CEFBD0C65", hash_generated_method = "546F14CA6C5FA24F19DDA199C27EB9CA")
     public int getSpanStart(Object what) {
         addTaint(what.getTaint());
@@ -222,25 +219,24 @@ for(int i = count - 1;i >= 0;i--)
                 int varF377C9413456093AE12A95281ECCF544_134081374 = (data[i * COLUMNS + START]);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_265955207 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_265955207;
-            } 
-        } 
+            } //End block
+        } //End block
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1840900510 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1918005203 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1918005203;
-        
-        
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = mSpanCount;
+        //Object[] spans = mSpans;
+        //int[] data = mSpanData;
+        //for (int i = count - 1; i >= 0; i--) {
+            //if (spans[i] == what) {
+                //return data[i * COLUMNS + START];
+            //}
+        //}
+        //return -1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.719 -0400", hash_original_method = "D299E1841C6A6AC66FA9181AA7F112ED", hash_generated_method = "76368477EACFDAEE29968167058AC439")
     public int getSpanEnd(Object what) {
         addTaint(what.getTaint());
@@ -254,25 +250,24 @@ for(int i = count - 1;i >= 0;i--)
                 int varB6D1E05B77F70E7B90C9A78947A136DB_1707241348 = (data[i * COLUMNS + END]);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_778293013 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_778293013;
-            } 
-        } 
+            } //End block
+        } //End block
         int var6BB61E3B7BCE0931DA574D19D1D82C88_606882114 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1702642179 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1702642179;
-        
-        
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = mSpanCount;
+        //Object[] spans = mSpans;
+        //int[] data = mSpanData;
+        //for (int i = count - 1; i >= 0; i--) {
+            //if (spans[i] == what) {
+                //return data[i * COLUMNS + END];
+            //}
+        //}
+        //return -1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.720 -0400", hash_original_method = "0BC2A6452DDDFB33D1E74093A43A22EC", hash_generated_method = "ABDF95A51C720B4002B4E14C98A701AD")
     public int getSpanFlags(Object what) {
         addTaint(what.getTaint());
@@ -286,21 +281,21 @@ for(int i = count - 1;i >= 0;i--)
                 int var1EAC940D0BAE97B6358D4CB0A527BAB4_1179421950 = (data[i * COLUMNS + FLAGS]);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_513023084 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_513023084;
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1350256229 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_79618227 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_79618227;
-        
-        
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = mSpanCount;
+        //Object[] spans = mSpans;
+        //int[] data = mSpanData;
+        //for (int i = count - 1; i >= 0; i--) {
+            //if (spans[i] == what) {
+                //return data[i * COLUMNS + FLAGS];
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -320,40 +315,40 @@ for(int i = 0;i < spanCount;i++)
     if(kind != null && !kind.isInstance(spans[i]))            
             {
                 continue;
-            } 
+            } //End block
             int spanStart = data[i * COLUMNS + START];
             int spanEnd = data[i * COLUMNS + END];
     if(spanStart > queryEnd)            
             {
                 continue;
-            } 
+            } //End block
     if(spanEnd < queryStart)            
             {
                 continue;
-            } 
+            } //End block
     if(spanStart != spanEnd && queryStart != queryEnd)            
             {
     if(spanStart == queryEnd)                
                 {
                     continue;
-                } 
+                } //End block
     if(spanEnd == queryStart)                
                 {
                     continue;
-                } 
-            } 
+                } //End block
+            } //End block
     if(count == 0)            
             {
                 ret1 = spans[i];
                 count++;
-            } 
+            } //End block
             else
             {
     if(count == 1)                
                 {
                     ret = (Object[]) Array.newInstance(kind, spanCount - i + 1);
                     ret[0] = ret1;
-                } 
+                } //End block
                 int prio = data[i * COLUMNS + FLAGS] & Spanned.SPAN_PRIORITY;
     if(prio != 0)                
                 {
@@ -364,24 +359,24 @@ for(j = 0;j < count;j++)
     if(prio > p)                        
                         {
                             break;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     System.arraycopy(ret, j, ret, j + 1, count - j);
                     ret[j] = spans[i];
                     count++;
-                } 
+                } //End block
                 else
                 {
                     ret[count++] = spans[i];
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(count == 0)        
         {
 T[] var2CE1F6B8DBEF82A682E5E21A4D0315D3_1371987915 =             (T[]) ArrayUtils.emptyArray(kind);
             var2CE1F6B8DBEF82A682E5E21A4D0315D3_1371987915.addTaint(taint);
             return var2CE1F6B8DBEF82A682E5E21A4D0315D3_1371987915;
-        } 
+        } //End block
     if(count == 1)        
         {
             ret = (Object[]) Array.newInstance(kind, 1);
@@ -389,24 +384,23 @@ T[] var2CE1F6B8DBEF82A682E5E21A4D0315D3_1371987915 =             (T[]) ArrayUtil
 T[] var110CDC22E76A3D741F90CE34DAD38798_510349951 =             (T[]) ret;
             var110CDC22E76A3D741F90CE34DAD38798_510349951.addTaint(taint);
             return var110CDC22E76A3D741F90CE34DAD38798_510349951;
-        } 
+        } //End block
     if(count == ret.length)        
         {
 T[] var110CDC22E76A3D741F90CE34DAD38798_1727201787 =             (T[]) ret;
             var110CDC22E76A3D741F90CE34DAD38798_1727201787.addTaint(taint);
             return var110CDC22E76A3D741F90CE34DAD38798_1727201787;
-        } 
+        } //End block
         Object[] nret = (Object[]) Array.newInstance(kind, count);
         System.arraycopy(ret, 0, nret, 0, count);
 T[] varC2D15B14AC552DB2CA74824AA0037754_1195998602 =         (T[]) nret;
         varC2D15B14AC552DB2CA74824AA0037754_1195998602.addTaint(taint);
         return varC2D15B14AC552DB2CA74824AA0037754_1195998602;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.724 -0400", hash_original_method = "AE7B5CCE37B25ED0DAD474C110343705", hash_generated_method = "EE766560A9E0568C6A8EADB0837EFB8C")
     public int nextSpanTransition(int start, int limit, Class kind) {
         addTaint(kind.getTaint());
@@ -418,7 +412,7 @@ T[] varC2D15B14AC552DB2CA74824AA0037754_1195998602 =         (T[]) nret;
     if(kind == null)        
         {
             kind = Object.class;
-        } 
+        } //End block
 for(int i = 0;i < count;i++)
         {
             int st = data[i * COLUMNS + START];
@@ -427,30 +421,29 @@ for(int i = 0;i < count;i++)
             limit = st;
     if(en > start && en < limit && kind.isInstance(spans[i]))            
             limit = en;
-        } 
+        } //End block
         int varAA9F73EEA60A006820D0F8768BC8A3FC_1745353285 = (limit);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1514227964 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1514227964;
-        
-        
-        
-        
-        
-            
-        
-        
-            
-            
-            
-                
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //int count = mSpanCount;
+        //Object[] spans = mSpans;
+        //int[] data = mSpanData;
+        //if (kind == null) {
+            //kind = Object.class;
+        //}
+        //for (int i = 0; i < count; i++) {
+            //int st = data[i * COLUMNS + START];
+            //int en = data[i * COLUMNS + END];
+            //if (st > start && st < limit && kind.isInstance(spans[i]))
+                //limit = st;
+            //if (en > start && en < limit && kind.isInstance(spans[i]))
+                //limit = en;
+        //}
+        //return limit;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.724 -0400", hash_original_method = "AE5753E793A4485018C5FAB8D6A92DBC", hash_generated_method = "E3FED9D828B8C60E350C18074421AE2E")
     private void sendSpanAdded(Object what, int start, int end) {
         addTaint(end);
@@ -461,17 +454,16 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < n;i++)
         {
             recip[i].onSpanAdded((Spannable) this, what, start, end);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SpanWatcher[] recip = getSpans(start, end, SpanWatcher.class);
+        //int n = recip.length;
+        //for (int i = 0; i < n; i++) {
+            //recip[i].onSpanAdded((Spannable) this, what, start, end);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.725 -0400", hash_original_method = "60A86A7ABB49125FA35263BF87AB59D6", hash_generated_method = "2FA99781654342E619A8954DE98C0A4B")
     private void sendSpanRemoved(Object what, int start, int end) {
         addTaint(end);
@@ -482,17 +474,16 @@ for(int i = 0;i < n;i++)
 for(int i = 0;i < n;i++)
         {
             recip[i].onSpanRemoved((Spannable) this, what, start, end);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SpanWatcher[] recip = getSpans(start, end, SpanWatcher.class);
+        //int n = recip.length;
+        //for (int i = 0; i < n; i++) {
+            //recip[i].onSpanRemoved((Spannable) this, what, start, end);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.725 -0400", hash_original_method = "859EF27A1BB05860E7E5EF0EAB661D52", hash_generated_method = "18D2923662B1F7267D9A8F9A1863BDD0")
     private void sendSpanChanged(Object what, int s, int e, int st, int en) {
         addTaint(en);
@@ -506,19 +497,18 @@ for(int i = 0;i < n;i++)
 for(int i = 0;i < n;i++)
         {
             recip[i].onSpanChanged((Spannable) this, what, s, e, st, en);
-        } 
-        
-        
-                                       
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SpanWatcher[] recip = getSpans(Math.min(s, st), Math.max(e, en),
+                                       //SpanWatcher.class);
+        //int n = recip.length;
+        //for (int i = 0; i < n; i++) {
+            //recip[i].onSpanChanged((Spannable) this, what, s, e, st, en);
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static String region(int start, int end) {
+        private static String region(int start, int end) {
         return "(" + start + " ... " + end + ")";
     }
 
@@ -535,7 +525,7 @@ for(int i = 0;i < n;i++)
                                                 " has end before start");
             var0A76EA0A48ED6C51950B16720A582CC3_1207615713.addTaint(taint);
             throw var0A76EA0A48ED6C51950B16720A582CC3_1207615713;
-        } 
+        } //End block
         int len = length();
     if(start > len || end > len)        
         {
@@ -544,7 +534,7 @@ for(int i = 0;i < n;i++)
                                                 " ends beyond length " + len);
             varD58429F37119CB80293875D6807CEE60_1530475620.addTaint(taint);
             throw varD58429F37119CB80293875D6807CEE60_1530475620;
-        } 
+        } //End block
     if(start < 0 || end < 0)        
         {
             IndexOutOfBoundsException varD13539DAB1C12D0F1B25FAC18E24F2A0_219818201 = new IndexOutOfBoundsException(operation + " " +
@@ -552,24 +542,24 @@ for(int i = 0;i < n;i++)
                                                 " starts before 0");
             varD13539DAB1C12D0F1B25FAC18E24F2A0_219818201.addTaint(taint);
             throw varD13539DAB1C12D0F1B25FAC18E24F2A0_219818201;
-        } 
-        
-        
-            
-                                                
-                                                
-        
-        
-        
-            
-                                                
-                                                
-        
-        
-            
-                                                
-                                                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (end < start) {
+            //throw new IndexOutOfBoundsException(operation + " " +
+                                                //region(start, end) +
+                                                //" has end before start");
+        //}
+        //int len = length();
+        //if (start > len || end > len) {
+            //throw new IndexOutOfBoundsException(operation + " " +
+                                                //region(start, end) +
+                                                //" ends beyond length " + len);
+        //}
+        //if (start < 0 || end < 0) {
+            //throw new IndexOutOfBoundsException(operation + " " +
+                                                //region(start, end) +
+                                                //" starts before 0");
+        //}
     }
 
     

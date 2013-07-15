@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public class RequestLineParser extends Parser {
     public  RequestLineParser(String requestLine) {
         addTaint(requestLine.getTaint());
         this.lexer = new Lexer("method_keywordLexer", requestLine);
-        
-        
+        // ---------- Original Method ----------
+        //this.lexer = new Lexer("method_keywordLexer", requestLine);
     }
 
     
@@ -24,9 +24,9 @@ public class RequestLineParser extends Parser {
         addTaint(lexer.getTaint());
         this.lexer = lexer;
         this.lexer.selectLexer("method_keywordLexer");
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.lexer = lexer;
+        //this.lexer.selectLexer("method_keywordLexer");
     }
 
     
@@ -53,35 +53,35 @@ public class RequestLineParser extends Parser {
 RequestLine varF9E19AD6135C970F387F77C6F3DE4477_1977756574 =             retval;
             varF9E19AD6135C970F387F77C6F3DE4477_1977756574.addTaint(taint);
             return varF9E19AD6135C970F387F77C6F3DE4477_1977756574;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("parse");
-        } 
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("parse");
+        //try {
+            //RequestLine retval = new RequestLine();
+            //String m = method();
+            //lexer.SPorHT();
+            //retval.setMethod(m);
+            //this.lexer.selectLexer("sip_urlLexer");
+            //URLParser urlParser = new URLParser(this.getLexer());
+            //GenericURI url = urlParser.uriReference(true);
+            //lexer.SPorHT();
+            //retval.setUri(url);
+            //this.lexer.selectLexer("request_lineLexer");
+            //String v = sipVersion();
+            //retval.setSipVersion(v);
+            //lexer.SPorHT();
+            //lexer.match('\n');
+            //return retval;
+        //} finally {
+            //if (debug)
+                //dbg_leave("parse");
+        //}
     }
 
     

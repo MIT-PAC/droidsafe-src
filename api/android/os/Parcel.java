@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,13 +41,13 @@ public final class Parcel {
     if(DEBUG_RECYCLE)        
         {
             mStack = new RuntimeException();
-        } 
+        } //End block
         init(obj);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DEBUG_RECYCLE) {
+            //mStack = new RuntimeException();
+        //}
+        //init(obj);
     }
 
     
@@ -84,21 +84,21 @@ for(int i=0;i<POOL_SIZE;i++)
                 {
                     pool[i] = this;
                     return;
-                } 
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-                
-                    
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG_RECYCLE) mStack = null;
+        //freeBuffer();
+        //final Parcel[] pool = mOwnObject != 0 ? sOwnedPool : sHolderPool;
+        //synchronized (pool) {
+            //for (int i=0; i<POOL_SIZE; i++) {
+                //if (pool[i] == null) {
+                    //pool[i] = this;
+                    //return;
+                //}
+            //}
+        //}
     }
 
     
@@ -195,8 +195,8 @@ for(int i=0;i<POOL_SIZE;i++)
     public final void writeByteArray(byte[] b) {
         addTaint(b[0]);
         writeByteArray(b, 0, (b != null) ? b.length : 0);
-        
-        
+        // ---------- Original Method ----------
+        //writeByteArray(b, 0, (b != null) ? b.length : 0);
     }
 
     
@@ -209,20 +209,19 @@ for(int i=0;i<POOL_SIZE;i++)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         Arrays.checkOffsetAndCount(b.length, offset, len);
         writeNative(b, offset, len);
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (b == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //Arrays.checkOffsetAndCount(b.length, offset, len);
+        //writeNative(b, offset, len);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.032 -0400", hash_original_method = "13EF9FAE46E0DC273567B76840FE8431", hash_generated_method = "B7B1791B1819FAA4AC4DF261A54493B1")
     private void writeNative(byte[] b, int offset, int len) {
     }
@@ -257,8 +256,8 @@ for(int i=0;i<POOL_SIZE;i++)
     public final void writeCharSequence(CharSequence val) {
         addTaint(val.getTaint());
         TextUtils.writeToParcel(val, this, 0);
-        
-        
+        // ---------- Original Method ----------
+        //TextUtils.writeToParcel(val, this, 0);
     }
 
     
@@ -271,8 +270,8 @@ for(int i=0;i<POOL_SIZE;i++)
     public final void writeStrongInterface(IInterface val) {
         addTaint(val.getTaint());
         writeStrongBinder(val == null ? null : val.asBinder());
-        
-        
+        // ---------- Original Method ----------
+        //writeStrongBinder(val == null ? null : val.asBinder());
     }
 
     
@@ -285,8 +284,8 @@ for(int i=0;i<POOL_SIZE;i++)
     public final void writeByte(byte val) {
         addTaint(val);
         writeInt(val);
-        
-        
+        // ---------- Original Method ----------
+        //writeInt(val);
     }
 
     
@@ -294,8 +293,8 @@ for(int i=0;i<POOL_SIZE;i++)
     public final void writeMap(Map val) {
         addTaint(val.getTaint());
         writeMapInternal((Map<String,Object>) val);
-        
-        
+        // ---------- Original Method ----------
+        //writeMapInternal((Map<String,Object>) val);
     }
 
     
@@ -306,25 +305,25 @@ for(int i=0;i<POOL_SIZE;i++)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         Set<Map.Entry<String,Object>> entries = val.entrySet();
         writeInt(entries.size());
 for(Map.Entry<String,Object> e : entries)
         {
             writeValue(e.getKey());
             writeValue(e.getValue());
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //Set<Map.Entry<String,Object>> entries = val.entrySet();
+        //writeInt(entries.size());
+        //for (Map.Entry<String,Object> e : entries) {
+            //writeValue(e.getKey());
+            //writeValue(e.getValue());
+        //}
     }
 
     
@@ -335,14 +334,14 @@ for(Map.Entry<String,Object> e : entries)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         val.writeToParcel(this, 0);
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //val.writeToParcel(this, 0);
     }
 
     
@@ -353,7 +352,7 @@ for(Map.Entry<String,Object> e : entries)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         int N = val.size();
         int i = 0;
         writeInt(N);
@@ -362,19 +361,19 @@ for(Map.Entry<String,Object> e : entries)
         {
             writeValue(val.get(i));
             i++;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //int N = val.size();
+        //int i=0;
+        //writeInt(N);
+        //while (i < N) {
+            //writeValue(val.get(i));
+            //i++;
+        //}
     }
 
     
@@ -385,7 +384,7 @@ for(Map.Entry<String,Object> e : entries)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         int N = val.length;
         int i = 0;
         writeInt(N);
@@ -394,19 +393,19 @@ for(Map.Entry<String,Object> e : entries)
         {
             writeValue(val[i]);
             i++;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //int N = val.length;
+        //int i=0;
+        //writeInt(N);
+        //while (i < N) {
+            //writeValue(val[i]);
+            //i++;
+        //}
     }
 
     
@@ -417,7 +416,7 @@ for(Map.Entry<String,Object> e : entries)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         int N = val.size();
         writeInt(N);
         int i = 0;
@@ -427,20 +426,20 @@ for(Map.Entry<String,Object> e : entries)
             writeInt(val.keyAt(i));
             writeValue(val.valueAt(i));
             i++;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //int N = val.size();
+        //writeInt(N);
+        //int i=0;
+        //while (i < N) {
+            //writeInt(val.keyAt(i));
+            //writeValue(val.valueAt(i));
+            //i++;
+        //}
     }
 
     
@@ -451,7 +450,7 @@ for(Map.Entry<String,Object> e : entries)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         int N = val.size();
         writeInt(N);
         int i = 0;
@@ -461,20 +460,20 @@ for(Map.Entry<String,Object> e : entries)
             writeInt(val.keyAt(i));
             writeByte((byte)(val.valueAt(i) ? 1 : 0));
             i++;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //int N = val.size();
+        //writeInt(N);
+        //int i=0;
+        //while (i < N) {
+            //writeInt(val.keyAt(i));
+            //writeByte((byte)(val.valueAt(i) ? 1 : 0));
+            //i++;
+        //}
     }
 
     
@@ -488,22 +487,22 @@ for(Map.Entry<String,Object> e : entries)
 for(int i=0;i<N;i++)
             {
                 writeInt(val[i] ? 1 : 0);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeInt(val[i] ? 1 : 0);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -516,28 +515,28 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readInt() != 0;
-            } 
+            } //End block
             boolean[] var3A6D0284E743DC4A9B86F97D6DD1A3BF_383330337 = (val);
                         boolean[] var503EB2F420079C4024483971CE5EDEA8_1766176683 = {getTaintBoolean()};
             return var503EB2F420079C4024483971CE5EDEA8_1766176683;
-        } 
+        } //End block
         else
         {
             boolean[] var37A6259CC0C1DAE299A7866489DFF0BD_300501529 = (null);
                         boolean[] var503EB2F420079C4024483971CE5EDEA8_451499420 = {getTaintBoolean()};
             return var503EB2F420079C4024483971CE5EDEA8_451499420;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N >= 0 && N <= (dataAvail() >> 2)) {
+            //boolean[] val = new boolean[N];
+            //for (int i=0; i<N; i++) {
+                //val[i] = readInt() != 0;
+            //}
+            //return val;
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -550,23 +549,23 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readInt() != 0;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_51712964 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_51712964.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_51712964;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //val[i] = readInt() != 0;
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -580,22 +579,22 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 writeInt((int)val[i]);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeInt((int)val[i]);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -608,28 +607,28 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = (char)readInt();
-            } 
+            } //End block
             char[] var3A6D0284E743DC4A9B86F97D6DD1A3BF_2056229575 = (val);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1856169355 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_1856169355;
-        } 
+        } //End block
         else
         {
             char[] var37A6259CC0C1DAE299A7866489DFF0BD_292109552 = (null);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1574129585 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_1574129585;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N >= 0 && N <= (dataAvail() >> 2)) {
+            //char[] val = new char[N];
+            //for (int i=0; i<N; i++) {
+                //val[i] = (char)readInt();
+            //}
+            //return val;
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -642,23 +641,23 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = (char)readInt();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_1801933237 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_1801933237.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_1801933237;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //val[i] = (char)readInt();
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -672,22 +671,22 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 writeInt(val[i]);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeInt(val[i]);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -700,28 +699,28 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readInt();
-            } 
+            } //End block
             int[] var3A6D0284E743DC4A9B86F97D6DD1A3BF_830087845 = (val);
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1284819398 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_1284819398;
-        } 
+        } //End block
         else
         {
             int[] var37A6259CC0C1DAE299A7866489DFF0BD_175662869 = (null);
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1342974818 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_1342974818;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N >= 0 && N <= (dataAvail() >> 2)) {
+            //int[] val = new int[N];
+            //for (int i=0; i<N; i++) {
+                //val[i] = readInt();
+            //}
+            //return val;
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -734,23 +733,23 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readInt();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_536017088 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_536017088.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_536017088;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //val[i] = readInt();
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -764,22 +763,22 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 writeLong(val[i]);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeLong(val[i]);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -792,28 +791,28 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readLong();
-            } 
+            } //End block
             long[] var3A6D0284E743DC4A9B86F97D6DD1A3BF_1792935625 = (val);
                         long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1849973278 = {getTaintLong()};
             return var3908C7C3AF5171CEE1F112DAE77A5C4D_1849973278;
-        } 
+        } //End block
         else
         {
             long[] var37A6259CC0C1DAE299A7866489DFF0BD_21551557 = (null);
                         long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_957449710 = {getTaintLong()};
             return var3908C7C3AF5171CEE1F112DAE77A5C4D_957449710;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N >= 0 && N <= (dataAvail() >> 3)) {
+            //long[] val = new long[N];
+            //for (int i=0; i<N; i++) {
+                //val[i] = readLong();
+            //}
+            //return val;
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -826,23 +825,23 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readLong();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_384138645 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_384138645.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_384138645;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //val[i] = readLong();
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -856,22 +855,22 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 writeFloat(val[i]);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeFloat(val[i]);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -884,28 +883,28 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readFloat();
-            } 
+            } //End block
             float[] var3A6D0284E743DC4A9B86F97D6DD1A3BF_1433753080 = (val);
                         float[] varB2C245003BAB9224CFB496218F7DAFE0_1198188503 = {getTaintFloat()};
             return varB2C245003BAB9224CFB496218F7DAFE0_1198188503;
-        } 
+        } //End block
         else
         {
             float[] var37A6259CC0C1DAE299A7866489DFF0BD_400279317 = (null);
                         float[] varB2C245003BAB9224CFB496218F7DAFE0_1313732175 = {getTaintFloat()};
             return varB2C245003BAB9224CFB496218F7DAFE0_1313732175;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N >= 0 && N <= (dataAvail() >> 2)) {
+            //float[] val = new float[N];
+            //for (int i=0; i<N; i++) {
+                //val[i] = readFloat();
+            //}
+            //return val;
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -918,23 +917,23 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readFloat();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_1093875538 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_1093875538.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_1093875538;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //val[i] = readFloat();
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -948,22 +947,22 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 writeDouble(val[i]);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeDouble(val[i]);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -976,28 +975,28 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readDouble();
-            } 
+            } //End block
             double[] var3A6D0284E743DC4A9B86F97D6DD1A3BF_2008180655 = (val);
                         double[] var74D44D7D9EE6FE6C3433D694F869E521_312015878 = {getTaintDouble()};
             return var74D44D7D9EE6FE6C3433D694F869E521_312015878;
-        } 
+        } //End block
         else
         {
             double[] var37A6259CC0C1DAE299A7866489DFF0BD_2029494320 = (null);
                         double[] var74D44D7D9EE6FE6C3433D694F869E521_1203974414 = {getTaintDouble()};
             return var74D44D7D9EE6FE6C3433D694F869E521_1203974414;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N >= 0 && N <= (dataAvail() >> 3)) {
+            //double[] val = new double[N];
+            //for (int i=0; i<N; i++) {
+                //val[i] = readDouble();
+            //}
+            //return val;
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -1010,23 +1009,23 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readDouble();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_85028452 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_85028452.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_85028452;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //val[i] = readDouble();
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -1040,22 +1039,22 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 writeString(val[i]);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeString(val[i]);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -1068,28 +1067,28 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readString();
-            } 
+            } //End block
 String[] varD943F4EF06EF0FF7F541DA63567F3076_178898457 =             val;
             varD943F4EF06EF0FF7F541DA63567F3076_178898457.addTaint(taint);
             return varD943F4EF06EF0FF7F541DA63567F3076_178898457;
-        } 
+        } //End block
         else
         {
 String[] var540C13E9E156B687226421B24F2DF178_1201552128 =             null;
             var540C13E9E156B687226421B24F2DF178_1201552128.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1201552128;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N >= 0) {
+            //String[] val = new String[N];
+            //for (int i=0; i<N; i++) {
+                //val[i] = readString();
+            //}
+            //return val;
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -1102,23 +1101,23 @@ String[] var540C13E9E156B687226421B24F2DF178_1201552128 =             null;
 for(int i=0;i<N;i++)
             {
                 val[i] = readString();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_1102461070 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_1102461070.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_1102461070;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //val[i] = readString();
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -1132,22 +1131,22 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 writeStrongBinder(val[i]);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeStrongBinder(val[i]);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -1161,22 +1160,22 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 writeCharSequence(val[i]);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeCharSequence(val[i]);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -1189,28 +1188,28 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 val[i] = readStrongBinder();
-            } 
+            } //End block
 IBinder[] varD943F4EF06EF0FF7F541DA63567F3076_1612321813 =             val;
             varD943F4EF06EF0FF7F541DA63567F3076_1612321813.addTaint(taint);
             return varD943F4EF06EF0FF7F541DA63567F3076_1612321813;
-        } 
+        } //End block
         else
         {
 IBinder[] var540C13E9E156B687226421B24F2DF178_2086114165 =             null;
             var540C13E9E156B687226421B24F2DF178_2086114165.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2086114165;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N >= 0) {
+            //IBinder[] val = new IBinder[N];
+            //for (int i=0; i<N; i++) {
+                //val[i] = readStrongBinder();
+            //}
+            //return val;
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -1223,23 +1222,23 @@ IBinder[] var540C13E9E156B687226421B24F2DF178_2086114165 =             null;
 for(int i=0;i<N;i++)
             {
                 val[i] = readStrongBinder();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_1120125524 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_1120125524.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_1120125524;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //val[i] = readStrongBinder();
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -1250,7 +1249,7 @@ for(int i=0;i<N;i++)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         int N = val.size();
         int i = 0;
         writeInt(N);
@@ -1262,31 +1261,31 @@ for(int i=0;i<N;i++)
             {
                 writeInt(1);
                 item.writeToParcel(this, 0);
-            } 
+            } //End block
             else
             {
                 writeInt(0);
-            } 
+            } //End block
             i++;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-        
-            
-            
-                
-                
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //int N = val.size();
+        //int i=0;
+        //writeInt(N);
+        //while (i < N) {
+            //T item = val.get(i);
+            //if (item != null) {
+                //writeInt(1);
+                //item.writeToParcel(this, 0);
+            //} else {
+                //writeInt(0);
+            //}
+            //i++;
+        //}
     }
 
     
@@ -1297,7 +1296,7 @@ for(int i=0;i<N;i++)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         int N = val.size();
         int i = 0;
         writeInt(N);
@@ -1306,19 +1305,19 @@ for(int i=0;i<N;i++)
         {
             writeString(val.get(i));
             i++;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //int N = val.size();
+        //int i=0;
+        //writeInt(N);
+        //while (i < N) {
+            //writeString(val.get(i));
+            //i++;
+        //}
     }
 
     
@@ -1329,7 +1328,7 @@ for(int i=0;i<N;i++)
         {
             writeInt(-1);
             return;
-        } 
+        } //End block
         int N = val.size();
         int i = 0;
         writeInt(N);
@@ -1338,19 +1337,19 @@ for(int i=0;i<N;i++)
         {
             writeStrongBinder(val.get(i));
             i++;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val == null) {
+            //writeInt(-1);
+            //return;
+        //}
+        //int N = val.size();
+        //int i=0;
+        //writeInt(N);
+        //while (i < N) {
+            //writeStrongBinder(val.get(i));
+            //i++;
+        //}
     }
 
     
@@ -1370,33 +1369,33 @@ for(int i=0;i<N;i++)
                 {
                     writeInt(1);
                     item.writeToParcel(this, parcelableFlags);
-                } 
+                } //End block
                 else
                 {
                     writeInt(0);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-                
-                    
-                    
-                
-                    
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val != null) {
+            //int N = val.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //T item = val[i];
+                //if (item != null) {
+                    //writeInt(1);
+                    //item.writeToParcel(this, parcelableFlags);
+                //} else {
+                    //writeInt(0);
+                //}
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -1406,159 +1405,159 @@ for(int i=0;i<N;i++)
     if(v == null)        
         {
             writeInt(VAL_NULL);
-        } 
+        } //End block
         else
     if(v instanceof String)        
         {
             writeInt(VAL_STRING);
             writeString((String) v);
-        } 
+        } //End block
         else
     if(v instanceof Integer)        
         {
             writeInt(VAL_INTEGER);
             writeInt((Integer) v);
-        } 
+        } //End block
         else
     if(v instanceof Map)        
         {
             writeInt(VAL_MAP);
             writeMap((Map) v);
-        } 
+        } //End block
         else
     if(v instanceof Bundle)        
         {
             writeInt(VAL_BUNDLE);
             writeBundle((Bundle) v);
-        } 
+        } //End block
         else
     if(v instanceof Parcelable)        
         {
             writeInt(VAL_PARCELABLE);
             writeParcelable((Parcelable) v, 0);
-        } 
+        } //End block
         else
     if(v instanceof Short)        
         {
             writeInt(VAL_SHORT);
             writeInt(((Short) v).intValue());
-        } 
+        } //End block
         else
     if(v instanceof Long)        
         {
             writeInt(VAL_LONG);
             writeLong((Long) v);
-        } 
+        } //End block
         else
     if(v instanceof Float)        
         {
             writeInt(VAL_FLOAT);
             writeFloat((Float) v);
-        } 
+        } //End block
         else
     if(v instanceof Double)        
         {
             writeInt(VAL_DOUBLE);
             writeDouble((Double) v);
-        } 
+        } //End block
         else
     if(v instanceof Boolean)        
         {
             writeInt(VAL_BOOLEAN);
             writeInt((Boolean) v ? 1 : 0);
-        } 
+        } //End block
         else
     if(v instanceof CharSequence)        
         {
             writeInt(VAL_CHARSEQUENCE);
             writeCharSequence((CharSequence) v);
-        } 
+        } //End block
         else
     if(v instanceof List)        
         {
             writeInt(VAL_LIST);
             writeList((List) v);
-        } 
+        } //End block
         else
     if(v instanceof SparseArray)        
         {
             writeInt(VAL_SPARSEARRAY);
             writeSparseArray((SparseArray) v);
-        } 
+        } //End block
         else
     if(v instanceof boolean[])        
         {
             writeInt(VAL_BOOLEANARRAY);
             writeBooleanArray((boolean[]) v);
-        } 
+        } //End block
         else
     if(v instanceof byte[])        
         {
             writeInt(VAL_BYTEARRAY);
             writeByteArray((byte[]) v);
-        } 
+        } //End block
         else
     if(v instanceof String[])        
         {
             writeInt(VAL_STRINGARRAY);
             writeStringArray((String[]) v);
-        } 
+        } //End block
         else
     if(v instanceof CharSequence[])        
         {
             writeInt(VAL_CHARSEQUENCEARRAY);
             writeCharSequenceArray((CharSequence[]) v);
-        } 
+        } //End block
         else
     if(v instanceof IBinder)        
         {
             writeInt(VAL_IBINDER);
             writeStrongBinder((IBinder) v);
-        } 
+        } //End block
         else
     if(v instanceof Parcelable[])        
         {
             writeInt(VAL_PARCELABLEARRAY);
             writeParcelableArray((Parcelable[]) v, 0);
-        } 
+        } //End block
         else
     if(v instanceof Object[])        
         {
             writeInt(VAL_OBJECTARRAY);
             writeArray((Object[]) v);
-        } 
+        } //End block
         else
     if(v instanceof int[])        
         {
             writeInt(VAL_INTARRAY);
             writeIntArray((int[]) v);
-        } 
+        } //End block
         else
     if(v instanceof long[])        
         {
             writeInt(VAL_LONGARRAY);
             writeLongArray((long[]) v);
-        } 
+        } //End block
         else
     if(v instanceof Byte)        
         {
             writeInt(VAL_BYTE);
             writeInt((Byte) v);
-        } 
+        } //End block
         else
     if(v instanceof Serializable)        
         {
             writeInt(VAL_SERIALIZABLE);
             writeSerializable((Serializable) v);
-        } 
+        } //End block
         else
         {
             RuntimeException var284A4D973E14F821446B28DBFEF37100_531699977 = new RuntimeException("Parcel: unable to marshal value " + v);
             var284A4D973E14F821446B28DBFEF37100_531699977.addTaint(taint);
             throw var284A4D973E14F821446B28DBFEF37100_531699977;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1570,18 +1569,18 @@ for(int i=0;i<N;i++)
         {
             writeString(null);
             return;
-        } 
+        } //End block
         String name = p.getClass().getName();
         writeString(name);
         p.writeToParcel(this, parcelableFlags);
-        
-        
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (p == null) {
+            //writeString(null);
+            //return;
+        //}
+        //String name = p.getClass().getName();
+        //writeString(name);
+        //p.writeToParcel(this, parcelableFlags);
     }
 
     
@@ -1592,7 +1591,7 @@ for(int i=0;i<N;i++)
         {
             writeString(null);
             return;
-        } 
+        } //End block
         String name = s.getClass().getName();
         writeString(name);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -1602,7 +1601,7 @@ for(int i=0;i<N;i++)
             oos.writeObject(s);
             oos.close();
             writeByteArray(baos.toByteArray());
-        } 
+        } //End block
         catch (IOException ioe)
         {
             RuntimeException var97FAFC1E20C33DAA9290D0BA6BCBCF76_1146989018 = new RuntimeException("Parcelable encountered " +
@@ -1610,25 +1609,25 @@ for(int i=0;i<N;i++)
                 ")", ioe);
             var97FAFC1E20C33DAA9290D0BA6BCBCF76_1146989018.addTaint(taint);
             throw var97FAFC1E20C33DAA9290D0BA6BCBCF76_1146989018;
-        } 
-        
-        
-            
-            
-        
-        
-        
-        
-        
-            
-            
-            
-            
-        
-            
-                
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (s == null) {
+            //writeString(null);
+            //return;
+        //}
+        //String name = s.getClass().getName();
+        //writeString(name);
+        //ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        //try {
+            //ObjectOutputStream oos = new ObjectOutputStream(baos);
+            //oos.writeObject(s);
+            //oos.close();
+            //writeByteArray(baos.toByteArray());
+        //} catch (IOException ioe) {
+            //throw new RuntimeException("Parcelable encountered " +
+                //"IOException writing serializable object (name = " + name +
+                //")", ioe);
+        //}
     }
 
     
@@ -1639,27 +1638,27 @@ for(int i=0;i<N;i++)
     if(e instanceof SecurityException)        
         {
             code = EX_SECURITY;
-        } 
+        } //End block
         else
     if(e instanceof BadParcelableException)        
         {
             code = EX_BAD_PARCELABLE;
-        } 
+        } //End block
         else
     if(e instanceof IllegalArgumentException)        
         {
             code = EX_ILLEGAL_ARGUMENT;
-        } 
+        } //End block
         else
     if(e instanceof NullPointerException)        
         {
             code = EX_NULL_POINTER;
-        } 
+        } //End block
         else
     if(e instanceof IllegalStateException)        
         {
             code = EX_ILLEGAL_STATE;
-        } 
+        } //End block
         writeInt(code);
         StrictMode.clearGatheredViolations();
     if(code == 0)        
@@ -1669,34 +1668,34 @@ for(int i=0;i<N;i++)
                 RuntimeException var5C191DD520881308BE807157DCE34F5D_382046496 = (RuntimeException) e;
                 var5C191DD520881308BE807157DCE34F5D_382046496.addTaint(taint);
                 throw var5C191DD520881308BE807157DCE34F5D_382046496;
-            } 
+            } //End block
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_724128254 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_724128254.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_724128254;
-        } 
+        } //End block
         writeString(e.getMessage());
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-        
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int code = 0;
+        //if (e instanceof SecurityException) {
+            //code = EX_SECURITY;
+        //} else if (e instanceof BadParcelableException) {
+            //code = EX_BAD_PARCELABLE;
+        //} else if (e instanceof IllegalArgumentException) {
+            //code = EX_ILLEGAL_ARGUMENT;
+        //} else if (e instanceof NullPointerException) {
+            //code = EX_NULL_POINTER;
+        //} else if (e instanceof IllegalStateException) {
+            //code = EX_ILLEGAL_STATE;
+        //}
+        //writeInt(code);
+        //StrictMode.clearGatheredViolations();
+        //if (code == 0) {
+            //if (e instanceof RuntimeException) {
+                //throw (RuntimeException) e;
+            //}
+            //throw new RuntimeException(e);
+        //}
+        //writeString(e.getMessage());
     }
 
     
@@ -1712,24 +1711,24 @@ for(int i=0;i<N;i++)
             setDataPosition(sizePosition);
             writeInt(payloadPosition - sizePosition);
             setDataPosition(payloadPosition);
-        } 
+        } //End block
         else
         {
             writeInt(0);
-        } 
-        
-        
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (StrictMode.hasGatheredViolations()) {
+            //writeInt(EX_HAS_REPLY_HEADER);
+            //final int sizePosition = dataPosition();
+            //writeInt(0);  
+            //StrictMode.writeGatheredViolationsToParcel(this);
+            //final int payloadPosition = dataPosition();
+            //setDataPosition(sizePosition);
+            //writeInt(payloadPosition - sizePosition);  
+            //setDataPosition(payloadPosition);
+        //} else {
+            //writeInt(0);
+        //}
     }
 
     
@@ -1740,13 +1739,13 @@ for(int i=0;i<N;i++)
         {
             String msg = readString();
             readException(code, msg);
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int code = readExceptionCode();
+        //if (code != 0) {
+            //String msg = readString();
+            //readException(code, msg);
+        //}
     }
 
     
@@ -1758,30 +1757,30 @@ for(int i=0;i<N;i++)
             int headerSize = readInt();
     if(headerSize == 0)            
             {
-            } 
+            } //End block
             else
             {
                 StrictMode.readAndHandleBinderCallViolations(this);
-            } 
+            } //End block
             int varCFCD208495D565EF66E7DFF9F98764DA_81035085 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359158064 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359158064;
-        } 
+        } //End block
         int varC13367945D5D4C91047B3B50234AA7AB_353937408 = (code);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679287291 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679287291;
-        
-        
-        
-            
-            
-                
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int code = readInt();
+        //if (code == EX_HAS_REPLY_HEADER) {
+            //int headerSize = readInt();
+            //if (headerSize == 0) {
+                //Log.e(TAG, "Unexpected zero-sized Parcel reply header.");
+            //} else {
+                //StrictMode.readAndHandleBinderCallViolations(this);
+            //}
+            //return 0;
+        //}
+        //return code;
     }
 
     
@@ -1814,21 +1813,21 @@ switch(code){
                 + " msg " + msg);
         var54B7A65DDF30FE54BECB8935C80BD0C3_1043388421.addTaint(taint);
         throw var54B7A65DDF30FE54BECB8935C80BD0C3_1043388421;
-        
-        
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //switch (code) {
+            //case EX_SECURITY:
+                //throw new SecurityException(msg);
+            //case EX_BAD_PARCELABLE:
+                //throw new BadParcelableException(msg);
+            //case EX_ILLEGAL_ARGUMENT:
+                //throw new IllegalArgumentException(msg);
+            //case EX_NULL_POINTER:
+                //throw new NullPointerException(msg);
+            //case EX_ILLEGAL_STATE:
+                //throw new IllegalStateException(msg);
+        //}
+        //throw new RuntimeException("Unknown exception code: " + code
+                //+ " msg " + msg);
     }
 
     
@@ -1871,8 +1870,8 @@ switch(code){
 CharSequence var9AAE8D340A8F9D8FD499074EA0575B81_1175429015 =         TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(this);
         var9AAE8D340A8F9D8FD499074EA0575B81_1175429015.addTaint(taint);
         return var9AAE8D340A8F9D8FD499074EA0575B81_1175429015;
-        
-        
+        // ---------- Original Method ----------
+        //return TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(this);
     }
 
     
@@ -1890,9 +1889,9 @@ CharSequence var9AAE8D340A8F9D8FD499074EA0575B81_1175429015 =         TextUtils.
 ParcelFileDescriptor var725A79CEA33B3AFB56482C39608FC1A3_1402875234 =         fd != null ? new ParcelFileDescriptor(fd) : null;
         var725A79CEA33B3AFB56482C39608FC1A3_1402875234.addTaint(taint);
         return var725A79CEA33B3AFB56482C39608FC1A3_1402875234;
-        
-        
-        
+        // ---------- Original Method ----------
+        //FileDescriptor fd = internalReadFileDescriptor();
+        //return fd != null ? new ParcelFileDescriptor(fd) : null;
     }
 
     
@@ -1932,8 +1931,8 @@ ParcelFileDescriptor var725A79CEA33B3AFB56482C39608FC1A3_1402875234 =         fd
         byte varE071C5D630A02AE6A4948158962BC9D3_1521949930 = ((byte)(readInt() & 0xff));
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_1157836848 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1157836848;
-        
-        
+        // ---------- Original Method ----------
+        //return (byte)(readInt() & 0xff);
     }
 
     
@@ -1943,9 +1942,9 @@ ParcelFileDescriptor var725A79CEA33B3AFB56482C39608FC1A3_1402875234 =         fd
         addTaint(outVal.getTaint());
         int N = readInt();
         readMapInternal(outVal, N, loader);
-        
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //readMapInternal(outVal, N, loader);
     }
 
     
@@ -1955,9 +1954,9 @@ ParcelFileDescriptor var725A79CEA33B3AFB56482C39608FC1A3_1402875234 =         fd
         addTaint(outVal.getTaint());
         int N = readInt();
         readListInternal(outVal, N, loader);
-        
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //readListInternal(outVal, N, loader);
     }
 
     
@@ -1970,20 +1969,20 @@ ParcelFileDescriptor var725A79CEA33B3AFB56482C39608FC1A3_1402875234 =         fd
 HashMap var540C13E9E156B687226421B24F2DF178_1178419571 =             null;
             var540C13E9E156B687226421B24F2DF178_1178419571.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1178419571;
-        } 
+        } //End block
         HashMap m = new HashMap(N);
         readMapInternal(m, N, loader);
 HashMap varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1377173287 =         m;
         varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1377173287.addTaint(taint);
         return varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1377173287;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //HashMap m = new HashMap(N);
+        //readMapInternal(m, N, loader);
+        //return m;
     }
 
     
@@ -1992,8 +1991,8 @@ HashMap varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1377173287 =         m;
 Bundle var9904488AC49D8F932DD98395B8FD50F4_1129138832 =         readBundle(null);
         var9904488AC49D8F932DD98395B8FD50F4_1129138832.addTaint(taint);
         return var9904488AC49D8F932DD98395B8FD50F4_1129138832;
-        
-        
+        // ---------- Original Method ----------
+        //return readBundle(null);
     }
 
     
@@ -2006,25 +2005,25 @@ Bundle var9904488AC49D8F932DD98395B8FD50F4_1129138832 =         readBundle(null)
 Bundle var540C13E9E156B687226421B24F2DF178_382812132 =             null;
             var540C13E9E156B687226421B24F2DF178_382812132.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_382812132;
-        } 
+        } //End block
         final Bundle bundle = new Bundle(this, length);
     if(loader != null)        
         {
             bundle.setClassLoader(loader);
-        } 
+        } //End block
 Bundle var7B2862195409742DCA365D8C6330AB92_621180998 =         bundle;
         var7B2862195409742DCA365D8C6330AB92_621180998.addTaint(taint);
         return var7B2862195409742DCA365D8C6330AB92_621180998;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int length = readInt();
+        //if (length < 0) {
+            //return null;
+        //}
+        //final Bundle bundle = new Bundle(this, length);
+        //if (loader != null) {
+            //bundle.setClassLoader(loader);
+        //}
+        //return bundle;
     }
 
     
@@ -2042,20 +2041,20 @@ Bundle var7B2862195409742DCA365D8C6330AB92_621180998 =         bundle;
     if(ba.length == val.length)        
         {
             System.arraycopy(ba, 0, val, 0, ba.length);
-        } 
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_616662764 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_616662764.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_616662764;
-        } 
-        
-        
-        
-           
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //byte[] ba = createByteArray();
+        //if (ba.length == val.length) {
+           //System.arraycopy(ba, 0, val, 0, ba.length);
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -2069,23 +2068,23 @@ Bundle var7B2862195409742DCA365D8C6330AB92_621180998 =         bundle;
 for(int i = 0;i < length;i++)
             {
                 array[i] = readString();
-            } 
-        } 
+            } //End block
+        } //End block
 String[] var1270D5B74B756F17D644A15D775499D9_1616915395 =         array;
         var1270D5B74B756F17D644A15D775499D9_1616915395.addTaint(taint);
         return var1270D5B74B756F17D644A15D775499D9_1616915395;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //String[] array = null;
+        //int length = readInt();
+        //if (length >= 0)
+        //{
+            //array = new String[length];
+            //for (int i = 0 ; i < length ; i++)
+            //{
+                //array[i] = readString();
+            //}
+        //}
+        //return array;
     }
 
     
@@ -2099,23 +2098,23 @@ String[] var1270D5B74B756F17D644A15D775499D9_1616915395 =         array;
 for(int i = 0;i < length;i++)
             {
                 array[i] = readCharSequence();
-            } 
-        } 
+            } //End block
+        } //End block
 CharSequence[] var1270D5B74B756F17D644A15D775499D9_1126623468 =         array;
         var1270D5B74B756F17D644A15D775499D9_1126623468.addTaint(taint);
         return var1270D5B74B756F17D644A15D775499D9_1126623468;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //CharSequence[] array = null;
+        //int length = readInt();
+        //if (length >= 0)
+        //{
+            //array = new CharSequence[length];
+            //for (int i = 0 ; i < length ; i++)
+            //{
+                //array[i] = readCharSequence();
+            //}
+        //}
+        //return array;
     }
 
     
@@ -2128,20 +2127,20 @@ CharSequence[] var1270D5B74B756F17D644A15D775499D9_1126623468 =         array;
 ArrayList var540C13E9E156B687226421B24F2DF178_1460300364 =             null;
             var540C13E9E156B687226421B24F2DF178_1460300364.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1460300364;
-        } 
+        } //End block
         ArrayList l = new ArrayList(N);
         readListInternal(l, N, loader);
 ArrayList var792FD495AAD83D144D2F19BF9BB22987_33158438 =         l;
         var792FD495AAD83D144D2F19BF9BB22987_33158438.addTaint(taint);
         return var792FD495AAD83D144D2F19BF9BB22987_33158438;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //ArrayList l = new ArrayList(N);
+        //readListInternal(l, N, loader);
+        //return l;
     }
 
     
@@ -2154,20 +2153,20 @@ ArrayList var792FD495AAD83D144D2F19BF9BB22987_33158438 =         l;
 Object[] var540C13E9E156B687226421B24F2DF178_262320226 =             null;
             var540C13E9E156B687226421B24F2DF178_262320226.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_262320226;
-        } 
+        } //End block
         Object[] l = new Object[N];
         readArrayInternal(l, N, loader);
 Object[] var792FD495AAD83D144D2F19BF9BB22987_1146287080 =         l;
         var792FD495AAD83D144D2F19BF9BB22987_1146287080.addTaint(taint);
         return var792FD495AAD83D144D2F19BF9BB22987_1146287080;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //Object[] l = new Object[N];
+        //readArrayInternal(l, N, loader);
+        //return l;
     }
 
     
@@ -2180,20 +2179,20 @@ Object[] var792FD495AAD83D144D2F19BF9BB22987_1146287080 =         l;
 SparseArray var540C13E9E156B687226421B24F2DF178_1308091662 =             null;
             var540C13E9E156B687226421B24F2DF178_1308091662.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1308091662;
-        } 
+        } //End block
         SparseArray sa = new SparseArray(N);
         readSparseArrayInternal(sa, N, loader);
 SparseArray varDB7E08DF6F59CAA1AFB42C12F35ED909_1998840032 =         sa;
         varDB7E08DF6F59CAA1AFB42C12F35ED909_1998840032.addTaint(taint);
         return varDB7E08DF6F59CAA1AFB42C12F35ED909_1998840032;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //SparseArray sa = new SparseArray(N);
+        //readSparseArrayInternal(sa, N, loader);
+        //return sa;
     }
 
     
@@ -2205,20 +2204,20 @@ SparseArray varDB7E08DF6F59CAA1AFB42C12F35ED909_1998840032 =         sa;
 SparseBooleanArray var540C13E9E156B687226421B24F2DF178_498438758 =             null;
             var540C13E9E156B687226421B24F2DF178_498438758.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_498438758;
-        } 
+        } //End block
         SparseBooleanArray sa = new SparseBooleanArray(N);
         readSparseBooleanArrayInternal(sa, N);
 SparseBooleanArray varDB7E08DF6F59CAA1AFB42C12F35ED909_1217628490 =         sa;
         varDB7E08DF6F59CAA1AFB42C12F35ED909_1217628490.addTaint(taint);
         return varDB7E08DF6F59CAA1AFB42C12F35ED909_1217628490;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //SparseBooleanArray sa = new SparseBooleanArray(N);
+        //readSparseBooleanArrayInternal(sa, N);
+        //return sa;
     }
 
     
@@ -2231,7 +2230,7 @@ SparseBooleanArray varDB7E08DF6F59CAA1AFB42C12F35ED909_1217628490 =         sa;
 ArrayList<T> var540C13E9E156B687226421B24F2DF178_143175867 =             null;
             var540C13E9E156B687226421B24F2DF178_143175867.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_143175867;
-        } 
+        } //End block
         ArrayList<T> l = new ArrayList<T>(N);
         while
 (N > 0)        
@@ -2239,31 +2238,31 @@ ArrayList<T> var540C13E9E156B687226421B24F2DF178_143175867 =             null;
     if(readInt() != 0)            
             {
                 l.add(c.createFromParcel(this));
-            } 
+            } //End block
             else
             {
                 l.add(null);
-            } 
+            } //End block
             N--;
-        } 
+        } //End block
 ArrayList<T> var792FD495AAD83D144D2F19BF9BB22987_1727974486 =         l;
         var792FD495AAD83D144D2F19BF9BB22987_1727974486.addTaint(taint);
         return var792FD495AAD83D144D2F19BF9BB22987_1727974486;
-        
-        
-        
-            
-        
-        
-        
-            
-                
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //ArrayList<T> l = new ArrayList<T>(N);
+        //while (N > 0) {
+            //if (readInt() != 0) {
+                //l.add(c.createFromParcel(this));
+            //} else {
+                //l.add(null);
+            //}
+            //N--;
+        //}
+        //return l;
     }
 
     
@@ -2279,48 +2278,48 @@ for(;i < M && i < N;i++)
     if(readInt() != 0)            
             {
                 list.set(i, c.createFromParcel(this));
-            } 
+            } //End block
             else
             {
                 list.set(i, null);
-            } 
-        } 
+            } //End block
+        } //End block
 for(;i<N;i++)
         {
     if(readInt() != 0)            
             {
                 list.add(c.createFromParcel(this));
-            } 
+            } //End block
             else
             {
                 list.add(null);
-            } 
-        } 
+            } //End block
+        } //End block
 for(;i<M;i++)
         {
             list.remove(N);
-        } 
-        
-        
-        
-        
-        
-            
-                
-            
-                
-            
-        
-        
-            
-                
-            
-                
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int M = list.size();
+        //int N = readInt();
+        //int i = 0;
+        //for (; i < M && i < N; i++) {
+            //if (readInt() != 0) {
+                //list.set(i, c.createFromParcel(this));
+            //} else {
+                //list.set(i, null);
+            //}
+        //}
+        //for (; i<N; i++) {
+            //if (readInt() != 0) {
+                //list.add(c.createFromParcel(this));
+            //} else {
+                //list.add(null);
+            //}
+        //}
+        //for (; i<M; i++) {
+            //list.remove(N);
+        //}
     }
 
     
@@ -2332,28 +2331,28 @@ for(;i<M;i++)
 ArrayList<String> var540C13E9E156B687226421B24F2DF178_400702225 =             null;
             var540C13E9E156B687226421B24F2DF178_400702225.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_400702225;
-        } 
+        } //End block
         ArrayList<String> l = new ArrayList<String>(N);
         while
 (N > 0)        
         {
             l.add(readString());
             N--;
-        } 
+        } //End block
 ArrayList<String> var792FD495AAD83D144D2F19BF9BB22987_1886134156 =         l;
         var792FD495AAD83D144D2F19BF9BB22987_1886134156.addTaint(taint);
         return var792FD495AAD83D144D2F19BF9BB22987_1886134156;
-        
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //ArrayList<String> l = new ArrayList<String>(N);
+        //while (N > 0) {
+            //l.add(readString());
+            //N--;
+        //}
+        //return l;
     }
 
     
@@ -2365,28 +2364,28 @@ ArrayList<String> var792FD495AAD83D144D2F19BF9BB22987_1886134156 =         l;
 ArrayList<IBinder> var540C13E9E156B687226421B24F2DF178_552114951 =             null;
             var540C13E9E156B687226421B24F2DF178_552114951.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_552114951;
-        } 
+        } //End block
         ArrayList<IBinder> l = new ArrayList<IBinder>(N);
         while
 (N > 0)        
         {
             l.add(readStrongBinder());
             N--;
-        } 
+        } //End block
 ArrayList<IBinder> var792FD495AAD83D144D2F19BF9BB22987_1533725445 =         l;
         var792FD495AAD83D144D2F19BF9BB22987_1533725445.addTaint(taint);
         return var792FD495AAD83D144D2F19BF9BB22987_1533725445;
-        
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //ArrayList<IBinder> l = new ArrayList<IBinder>(N);
+        //while (N > 0) {
+            //l.add(readStrongBinder());
+            //N--;
+        //}
+        //return l;
     }
 
     
@@ -2399,28 +2398,28 @@ ArrayList<IBinder> var792FD495AAD83D144D2F19BF9BB22987_1533725445 =         l;
 for(;i < M && i < N;i++)
         {
             list.set(i, readString());
-        } 
+        } //End block
 for(;i<N;i++)
         {
             list.add(readString());
-        } 
+        } //End block
 for(;i<M;i++)
         {
             list.remove(N);
-        } 
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int M = list.size();
+        //int N = readInt();
+        //int i = 0;
+        //for (; i < M && i < N; i++) {
+            //list.set(i, readString());
+        //}
+        //for (; i<N; i++) {
+            //list.add(readString());
+        //}
+        //for (; i<M; i++) {
+            //list.remove(N);
+        //}
     }
 
     
@@ -2433,28 +2432,28 @@ for(;i<M;i++)
 for(;i < M && i < N;i++)
         {
             list.set(i, readStrongBinder());
-        } 
+        } //End block
 for(;i<N;i++)
         {
             list.add(readStrongBinder());
-        } 
+        } //End block
 for(;i<M;i++)
         {
             list.remove(N);
-        } 
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int M = list.size();
+        //int N = readInt();
+        //int i = 0;
+        //for (; i < M && i < N; i++) {
+            //list.set(i, readStrongBinder());
+        //}
+        //for (; i<N; i++) {
+            //list.add(readStrongBinder());
+        //}
+        //for (; i<M; i++) {
+            //list.remove(N);
+        //}
     }
 
     
@@ -2467,30 +2466,30 @@ for(;i<M;i++)
 T[] var540C13E9E156B687226421B24F2DF178_1010234107 =             null;
             var540C13E9E156B687226421B24F2DF178_1010234107.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1010234107;
-        } 
+        } //End block
         T[] l = c.newArray(N);
 for(int i=0;i<N;i++)
         {
     if(readInt() != 0)            
             {
                 l[i] = c.createFromParcel(this);
-            } 
-        } 
+            } //End block
+        } //End block
 T[] var792FD495AAD83D144D2F19BF9BB22987_1827708759 =         l;
         var792FD495AAD83D144D2F19BF9BB22987_1827708759.addTaint(taint);
         return var792FD495AAD83D144D2F19BF9BB22987_1827708759;
-        
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //T[] l = c.newArray(N);
+        //for (int i=0; i<N; i++) {
+            //if (readInt() != 0) {
+                //l[i] = c.createFromParcel(this);
+            //}
+        //}
+        //return l;
     }
 
     
@@ -2506,32 +2505,32 @@ for(int i=0;i<N;i++)
     if(readInt() != 0)                
                 {
                     val[i] = c.createFromParcel(this);
-                } 
+                } //End block
                 else
                 {
                     val[i] = null;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
             RuntimeException varABCC3A7B1CC9FF559D2CBC4762AA26B5_476400190 = new RuntimeException("bad array lengths");
             varABCC3A7B1CC9FF559D2CBC4762AA26B5_476400190.addTaint(taint);
             throw varABCC3A7B1CC9FF559D2CBC4762AA26B5_476400190;
-        } 
-        
-        
-        
-            
-                
-                    
-                
-                    
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N == val.length) {
+            //for (int i=0; i<N; i++) {
+                //if (readInt() != 0) {
+                    //val[i] = c.createFromParcel(this);
+                //} else {
+                    //val[i] = null;
+                //}
+            //}
+        //} else {
+            //throw new RuntimeException("bad array lengths");
+        //}
     }
 
     
@@ -2542,8 +2541,8 @@ for(int i=0;i<N;i++)
 T[] varD8B9B68676FCD05D5EF0D55511663E8B_1276271386 =         createTypedArray(c);
         varD8B9B68676FCD05D5EF0D55511663E8B_1276271386.addTaint(taint);
         return varD8B9B68676FCD05D5EF0D55511663E8B_1276271386;
-        
-        
+        // ---------- Original Method ----------
+        //return createTypedArray(c);
     }
 
     
@@ -2559,22 +2558,22 @@ T[] varD8B9B68676FCD05D5EF0D55511663E8B_1276271386 =         createTypedArray(c)
 for(int i=0;i<N;i++)
             {
                 writeParcelable(value[i], parcelableFlags);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             writeInt(-1);
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (value != null) {
+            //int N = value.length;
+            //writeInt(N);
+            //for (int i=0; i<N; i++) {
+                //writeParcelable(value[i], parcelableFlags);
+            //}
+        //} else {
+            //writeInt(-1);
+        //}
     }
 
     
@@ -2694,8 +2693,8 @@ Object var18CCBE7D54870399D34EEB9384F84276_1299044754 =         readBundle(loade
         var77BBFA44455436A2B6822FCECC83B1A2_922289934.addTaint(taint);
         throw var77BBFA44455436A2B6822FCECC83B1A2_922289934;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2708,7 +2707,7 @@ Object var18CCBE7D54870399D34EEB9384F84276_1299044754 =         readBundle(loade
 T var540C13E9E156B687226421B24F2DF178_1254479191 =             null;
             var540C13E9E156B687226421B24F2DF178_1254479191.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1254479191;
-        } 
+        } //End block
         Parcelable.Creator<T> creator;
         synchronized
 (mCreators)        {
@@ -2717,7 +2716,7 @@ T var540C13E9E156B687226421B24F2DF178_1254479191 =             null;
             {
                 map = new HashMap<String,Parcelable.Creator>();
                 mCreators.put(loader, map);
-            } 
+            } //End block
             creator = map.get(name);
     if(creator == null)            
             {
@@ -2727,21 +2726,21 @@ T var540C13E9E156B687226421B24F2DF178_1254479191 =             null;
                         Class.forName(name) : Class.forName(name, true, loader);
                     Field f = c.getField("CREATOR");
                     creator = (Parcelable.Creator)f.get(null);
-                } 
+                } //End block
                 catch (IllegalAccessException e)
                 {
                     BadParcelableException var15FCD9AA54D8944C231B211507F3334B_2116776209 = new BadParcelableException(
                             "IllegalAccessException when unmarshalling: " + name);
                     var15FCD9AA54D8944C231B211507F3334B_2116776209.addTaint(taint);
                     throw var15FCD9AA54D8944C231B211507F3334B_2116776209;
-                } 
+                } //End block
                 catch (ClassNotFoundException e)
                 {
                     BadParcelableException var9884CE22BD75DBF2AB51DBB6570AD212_1526243190 = new BadParcelableException(
                             "ClassNotFoundException when unmarshalling: " + name);
                     var9884CE22BD75DBF2AB51DBB6570AD212_1526243190.addTaint(taint);
                     throw var9884CE22BD75DBF2AB51DBB6570AD212_1526243190;
-                } 
+                } //End block
                 catch (ClassCastException e)
                 {
                     BadParcelableException var22C8D62E6BDC114FCD2BA76A51A5950F_364770466 = new BadParcelableException("Parcelable protocol requires a "
@@ -2749,7 +2748,7 @@ T var540C13E9E156B687226421B24F2DF178_1254479191 =             null;
                                         + " CREATOR on class " + name);
                     var22C8D62E6BDC114FCD2BA76A51A5950F_364770466.addTaint(taint);
                     throw var22C8D62E6BDC114FCD2BA76A51A5950F_364770466;
-                } 
+                } //End block
                 catch (NoSuchFieldException e)
                 {
                     BadParcelableException var22C8D62E6BDC114FCD2BA76A51A5950F_1104519858 = new BadParcelableException("Parcelable protocol requires a "
@@ -2757,7 +2756,7 @@ T var540C13E9E156B687226421B24F2DF178_1254479191 =             null;
                                         + " CREATOR on class " + name);
                     var22C8D62E6BDC114FCD2BA76A51A5950F_1104519858.addTaint(taint);
                     throw var22C8D62E6BDC114FCD2BA76A51A5950F_1104519858;
-                } 
+                } //End block
     if(creator == null)                
                 {
                     BadParcelableException var22C8D62E6BDC114FCD2BA76A51A5950F_863683116 = new BadParcelableException("Parcelable protocol requires a "
@@ -2765,21 +2764,21 @@ T var540C13E9E156B687226421B24F2DF178_1254479191 =             null;
                                         + " CREATOR on class " + name);
                     var22C8D62E6BDC114FCD2BA76A51A5950F_863683116.addTaint(taint);
                     throw var22C8D62E6BDC114FCD2BA76A51A5950F_863683116;
-                } 
+                } //End block
                 map.put(name, creator);
-            } 
-        } 
+            } //End block
+        } //End block
     if(creator instanceof Parcelable.ClassLoaderCreator<?>)        
         {
 T var887616FA43D03675155AEBD7DCF83E91_1112396738 =             ((Parcelable.ClassLoaderCreator<T>)creator).createFromParcel(this, loader);
             var887616FA43D03675155AEBD7DCF83E91_1112396738.addTaint(taint);
             return var887616FA43D03675155AEBD7DCF83E91_1112396738;
-        } 
+        } //End block
 T var0C23B451CBB62FD5D8C4AD9A5BFF5338_514642387 =         creator.createFromParcel(this);
         var0C23B451CBB62FD5D8C4AD9A5BFF5338_514642387.addTaint(taint);
         return var0C23B451CBB62FD5D8C4AD9A5BFF5338_514642387;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2792,25 +2791,25 @@ T var0C23B451CBB62FD5D8C4AD9A5BFF5338_514642387 =         creator.createFromParc
 Parcelable[] var540C13E9E156B687226421B24F2DF178_1100987773 =             null;
             var540C13E9E156B687226421B24F2DF178_1100987773.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1100987773;
-        } 
+        } //End block
         Parcelable[] p = new Parcelable[N];
 for(int i = 0;i < N;i++)
         {
             p[i] = (Parcelable) readParcelable(loader);
-        } 
+        } //End block
 Parcelable[] var74E4690D9F2A026504928C017944E149_177678925 =         p;
         var74E4690D9F2A026504928C017944E149_177678925.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_177678925;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int N = readInt();
+        //if (N < 0) {
+            //return null;
+        //}
+        //Parcelable[] p = new Parcelable[N];
+        //for (int i = 0; i < N; i++) {
+            //p[i] = (Parcelable) readParcelable(loader);
+        //}
+        //return p;
     }
 
     
@@ -2822,7 +2821,7 @@ Parcelable[] var74E4690D9F2A026504928C017944E149_177678925 =         p;
 Serializable var540C13E9E156B687226421B24F2DF178_392094825 =             null;
             var540C13E9E156B687226421B24F2DF178_392094825.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_392094825;
-        } 
+        } //End block
         byte[] serializedData = createByteArray();
         ByteArrayInputStream bais = new ByteArrayInputStream(serializedData);
         try 
@@ -2831,7 +2830,7 @@ Serializable var540C13E9E156B687226421B24F2DF178_392094825 =             null;
 Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serializable) ois.readObject();
             var930DCC71CFA7380BC4F670D7295108B3_211330144.addTaint(taint);
             return var930DCC71CFA7380BC4F670D7295108B3_211330144;
-        } 
+        } //End block
         catch (IOException ioe)
         {
             RuntimeException var1C12C41CD3F67C30067ECC5DE54279D9_2041529495 = new RuntimeException("Parcelable encountered " +
@@ -2839,7 +2838,7 @@ Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serial
                 ")", ioe);
             var1C12C41CD3F67C30067ECC5DE54279D9_2041529495.addTaint(taint);
             throw var1C12C41CD3F67C30067ECC5DE54279D9_2041529495;
-        } 
+        } //End block
         catch (ClassNotFoundException cnfe)
         {
             RuntimeException var0BFE3BC28DCFBA5DD5D3128C443C298B_621303865 = new RuntimeException("Parcelable encountered" +
@@ -2847,9 +2846,9 @@ Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serial
                 + name + ")", cnfe);
             var0BFE3BC28DCFBA5DD5D3128C443C298B_621303865.addTaint(taint);
             throw var0BFE3BC28DCFBA5DD5D3128C443C298B_621303865;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2880,38 +2879,34 @@ Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serial
         {
     if(mStack != null)            
             {
-            } 
-        } 
+            } //End block
+        } //End block
         destroy();
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DEBUG_RECYCLE) {
+            //if (mStack != null) {
+                //Log.w(TAG, "Client did not call Parcel.recycle()", mStack);
+            //}
+        //}
+        //destroy();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.090 -0400", hash_original_method = "C0427B473F1AF57292972C32F441E719", hash_generated_method = "61A4E66F7E3CD1708E9FB208543A8E37")
     private void freeBuffer() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.091 -0400", hash_original_method = "70F6A5F1801DEC2DB8BE38968C81061C", hash_generated_method = "2B68B9C20AB085D1D67AAC97913FD822")
     private void init(int obj) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.091 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "870C0C4D9949E316DFA0E367EFD712A9")
     private void destroy() {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.092 -0400", hash_original_method = "377C79A0AFFA00A75F96A5842171AC58", hash_generated_method = "C3E38E9D387FCF808198E9F74199C991")
      void readMapInternal(Map outVal, int N,
         ClassLoader loader) {
@@ -2925,18 +2920,17 @@ Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serial
             Object value = readValue(loader);
             outVal.put(key, value);
             N--;
-        } 
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (N > 0) {
+            //Object key = readValue(loader);
+            //Object value = readValue(loader);
+            //outVal.put(key, value);
+            //N--;
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.092 -0400", hash_original_method = "9EEE2505D88E68CC65378BE9FEB363CC", hash_generated_method = "6B5827457146BEB0975595F45FF3C4BD")
     private void readListInternal(List outVal, int N,
         ClassLoader loader) {
@@ -2949,17 +2943,16 @@ Serializable var930DCC71CFA7380BC4F670D7295108B3_211330144 =             (Serial
             Object value = readValue(loader);
             outVal.add(value);
             N--;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (N > 0) {
+            //Object value = readValue(loader);
+            //outVal.add(value);
+            //N--;
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.093 -0400", hash_original_method = "8048910DC1D629DD4CA2AB6051E757D5", hash_generated_method = "6A537B36D083B1B8A5017BE43AA2DBBB")
     private void readArrayInternal(Object[] outVal, int N,
         ClassLoader loader) {
@@ -2970,16 +2963,15 @@ for(int i = 0;i < N;i++)
         {
             Object value = readValue(loader);
             outVal[i] = value;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = 0; i < N; i++) {
+            //Object value = readValue(loader);
+            //outVal[i] = value;
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.093 -0400", hash_original_method = "43DDAB261C65CF1F1B4E5B19576BB376", hash_generated_method = "AF3AB278C20FB2120ED94E0370ECB013")
     private void readSparseArrayInternal(SparseArray outVal, int N,
         ClassLoader loader) {
@@ -2993,14 +2985,14 @@ for(int i = 0;i < N;i++)
             Object value = readValue(loader);
             outVal.append(key, value);
             N--;
-        } 
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (N > 0) {
+            //int key = readInt();
+            //Object value = readValue(loader);
+            //outVal.append(key, value);
+            //N--;
+        //}
     }
 
     
@@ -3015,14 +3007,14 @@ for(int i = 0;i < N;i++)
             boolean value = this.readByte() == 1;
             outVal.append(key, value);
             N--;
-        } 
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (N > 0) {
+            //int key = readInt();
+            //boolean value = this.readByte() == 1;
+            //outVal.append(key, value);
+            //N--;
+        //}
     }
 
     
@@ -3151,12 +3143,12 @@ for(int i = 0;i < N;i++)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.097 -0400", hash_original_field = "EAE59FB152640F6C5452B3D15C76FF4C", hash_generated_field = "30232A053737FDB52FF30B185E9D15EC")
 
     private static final HashMap<ClassLoader,HashMap<String,Parcelable.Creator>> mCreators = new HashMap<ClassLoader,HashMap<String,Parcelable.Creator>>();
-    
+    // orphaned legacy method
     public String createFromParcel(Parcel source) {
 		return source.readString();
 	}
     
-    
+    // orphaned legacy method
     public String[] newArray(int size) {
 		return new String[size];
 	}

@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,9 +32,9 @@ public class PluginManager {
     private  PluginManager(Context context) {
         mContext = context;
         mPackageInfoCache = new ArrayList<PackageInfo>();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mPackageInfoCache = new ArrayList<PackageInfo>();
     }
 
     
@@ -56,14 +56,13 @@ public class PluginManager {
         BrowserFrame.sJavaBridge.obtainMessage(
                 JWebCoreJavaBridge.REFRESH_PLUGINS, reloadOpenPages)
                 .sendToTarget();
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //BrowserFrame.sJavaBridge.obtainMessage(
+                //JWebCoreJavaBridge.REFRESH_PLUGINS, reloadOpenPages)
+                //.sendToTarget();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.943 -0400", hash_original_method = "7B4BF60DDCCCE0391FC04EA9A7E517B7", hash_generated_method = "062D2BDF861F105C0438002629C35B86")
      String[] getPluginDirectories() {
         ArrayList<String> directories = new ArrayList<String>();
@@ -79,22 +78,22 @@ for(ResolveInfo info : plugins)
     if(serviceInfo == null)                
                 {
                     continue;
-                } 
+                } //End block
                 PackageInfo pkgInfo;
                 try 
                 {
                     pkgInfo = pm.getPackageInfo(serviceInfo.packageName,
                                     PackageManager.GET_PERMISSIONS
                                     | PackageManager.GET_SIGNATURES);
-                } 
+                } //End block
                 catch (NameNotFoundException e)
                 {
                     continue;
-                } 
+                } //End block
     if(pkgInfo == null)                
                 {
                     continue;
-                } 
+                } //End block
                 String directory = pkgInfo.applicationInfo.dataDir + "/lib";
                 final int appFlags = pkgInfo.applicationInfo.flags;
                 final int updatedSystemFlags = ApplicationInfo.FLAG_SYSTEM |
@@ -102,20 +101,20 @@ for(ResolveInfo info : plugins)
     if((appFlags & updatedSystemFlags) == ApplicationInfo.FLAG_SYSTEM)                
                 {
                     directory = PLUGIN_SYSTEM_LIB + pkgInfo.packageName;
-                } 
+                } //End block
     if(!containsPluginPermissionAndSignatures(pkgInfo))                
                 {
                     continue;
-                } 
+                } //End block
     if(serviceInfo.metaData == null)                
                 {
                     continue;
-                } 
+                } //End block
                 String pluginType = serviceInfo.metaData.getString(PLUGIN_TYPE);
     if(!TYPE_NATIVE.equals(pluginType))                
                 {
                     continue;
-                } 
+                } //End block
                 try 
                 {
                     Class<?> cls = getPluginClass(serviceInfo.packageName, serviceInfo.name);
@@ -123,25 +122,25 @@ for(ResolveInfo info : plugins)
     if(!classFound)                    
                     {
                         continue;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 catch (NameNotFoundException e)
                 {
                     continue;
-                } 
+                } //End block
                 catch (ClassNotFoundException e)
                 {
                     continue;
-                } 
+                } //End block
                 mPackageInfoCache.add(pkgInfo);
                 directories.add(directory);
-            } 
-        } 
+            } //End block
+        } //End block
 String[] varE0C2C4B802B12586A2E4ACEA1B32FB7F_1672508956 =         directories.toArray(new String[directories.size()]);
         varE0C2C4B802B12586A2E4ACEA1B32FB7F_1672508956.addTaint(taint);
         return varE0C2C4B802B12586A2E4ACEA1B32FB7F_1672508956;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -158,26 +157,26 @@ String[] varE0C2C4B802B12586A2E4ACEA1B32FB7F_1672508956 =         directories.to
                 boolean var7E9C4B361B32EAE359D1546AFEEC5371_509929054 = (containsPluginPermissionAndSignatures(pkgInfo));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_773471883 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_773471883;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (NameNotFoundException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_341026065 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2104282185 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2104282185;
-        
-        
-        
-            
-                    
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //PackageManager pm = mContext.getPackageManager();
+        //try {
+            //PackageInfo pkgInfo = pm.getPackageInfo(pluginAPKName, PackageManager.GET_PERMISSIONS
+                    //| PackageManager.GET_SIGNATURES);
+            //if (pkgInfo != null) {
+                //return containsPluginPermissionAndSignatures(pkgInfo);
+            //}
+        //} catch (NameNotFoundException e) {
+            //Log.w(LOGTAG, "Can't find plugin: " + pluginAPKName);
+        //}
+        //return false;
     }
 
     
@@ -226,7 +225,7 @@ String[] varE0C2C4B802B12586A2E4ACEA1B32FB7F_1672508956 =         directories.to
 String var540C13E9E156B687226421B24F2DF178_2080320035 =             null;
             var540C13E9E156B687226421B24F2DF178_2080320035.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2080320035;
-        } 
+        } //End block
         synchronized
 (mPackageInfoCache)        {
 for(PackageInfo pkgInfo : mPackageInfoCache)
@@ -236,24 +235,24 @@ for(PackageInfo pkgInfo : mPackageInfoCache)
 String var7514B34483602F51F303DF2FCD8A50B8_1406536189 =                     pkgInfo.packageName;
                     var7514B34483602F51F303DF2FCD8A50B8_1406536189.addTaint(taint);
                     return var7514B34483602F51F303DF2FCD8A50B8_1406536189;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_1277112232 =         null;
         var540C13E9E156B687226421B24F2DF178_1277112232.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1277112232;
-        
-        
-            
-        
-        
-            
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (pluginLib == null || pluginLib.length() == 0) {
+            //return null;
+        //}
+        //synchronized(mPackageInfoCache) {
+            //for (PackageInfo pkgInfo : mPackageInfoCache) {
+                //if (pluginLib.contains(pkgInfo.packageName)) {
+                    //return pkgInfo.packageName;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
@@ -262,8 +261,8 @@ String var540C13E9E156B687226421B24F2DF178_1277112232 =         null;
 String var9DD7862E5AB9FDDCC7694533E6D60BB1_526079147 =         mContext.getDir("plugins", 0).getPath();
         var9DD7862E5AB9FDDCC7694533E6D60BB1_526079147.addTaint(taint);
         return var9DD7862E5AB9FDDCC7694533E6D60BB1_526079147;
-        
-        
+        // ---------- Original Method ----------
+        //return mContext.getDir("plugins", 0).getPath();
     }
 
     
@@ -278,12 +277,12 @@ String var9DD7862E5AB9FDDCC7694533E6D60BB1_526079147 =         mContext.getDir("
 Class<?> var9D02688E720C112834603EB7198E6440_405309146 =         pluginCL.loadClass(className);
         var9D02688E720C112834603EB7198E6440_405309146.addTaint(taint);
         return var9D02688E720C112834603EB7198E6440_405309146;
-        
-        
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //Context pluginContext = mContext.createPackageContext(packageName,
+                //Context.CONTEXT_INCLUDE_CODE |
+                //Context.CONTEXT_IGNORE_SECURITY);
+        //ClassLoader pluginCL = pluginContext.getClassLoader();
+        //return pluginCL.loadClass(className);
     }
 
     

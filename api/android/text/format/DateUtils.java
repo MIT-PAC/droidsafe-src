@@ -1,6 +1,6 @@
 package android.text.format;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class DateUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.122 -0400", hash_original_method = "15B73761459E939452D7F92AFEA42834", hash_generated_method = "15B73761459E939452D7F92AFEA42834")
     public DateUtils ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -342,8 +342,7 @@ public class DateUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static char toDigitChar(long digit) {
+        private static char toDigitChar(long digit) {
         return (char) (digit + '0');
     }
 

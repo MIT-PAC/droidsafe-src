@@ -1,6 +1,6 @@
 package android.text.style;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,22 +12,21 @@ public abstract class MetricAffectingSpan extends CharacterStyle implements Upda
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.233 -0400", hash_original_method = "9C185298DCF08F9282BECADE276ABE7A", hash_generated_method = "9C185298DCF08F9282BECADE276ABE7A")
     public MetricAffectingSpan ()
     {
-        
+        //Synthesized constructor
     }
 
 
     public abstract void updateMeasureState(TextPaint p);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.234 -0400", hash_original_method = "A42CCA74DCEA4DF7BFE10765D4FB4AEF", hash_generated_method = "B36AA09BBEF9A70885D3A632F01CC1FD")
     @Override
     public MetricAffectingSpan getUnderlying() {
 MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1209995970 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1209995970.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1209995970;
-        
-        
+        // ---------- Original Method ----------
+        //return this;
     }
 
     
@@ -39,8 +38,8 @@ MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1209995970 =         thi
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.234 -0400", hash_original_method = "E5C4C18A2D9007D25412D59B1295CF18", hash_generated_method = "75C2CC207212A07203A3BA36C4AE0A96")
         public  Passthrough(MetricAffectingSpan cs) {
             mStyle = cs;
-            
-            
+            // ---------- Original Method ----------
+            //mStyle = cs;
         }
 
         
@@ -49,8 +48,8 @@ MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1209995970 =         thi
         public void updateDrawState(TextPaint tp) {
             addTaint(tp.getTaint());
             mStyle.updateDrawState(tp);
-            
-            
+            // ---------- Original Method ----------
+            //mStyle.updateDrawState(tp);
         }
 
         
@@ -59,8 +58,8 @@ MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1209995970 =         thi
         public void updateMeasureState(TextPaint tp) {
             addTaint(tp.getTaint());
             mStyle.updateMeasureState(tp);
-            
-            
+            // ---------- Original Method ----------
+            //mStyle.updateMeasureState(tp);
         }
 
         
@@ -70,8 +69,8 @@ MetricAffectingSpan var72A74007B2BE62B849F475C7BDA4658B_1209995970 =         thi
 MetricAffectingSpan varA3CF534B61190E20D264779841BB2C63_1568916693 =             mStyle.getUnderlying();
             varA3CF534B61190E20D264779841BB2C63_1568916693.addTaint(taint);
             return varA3CF534B61190E20D264779841BB2C63_1568916693;
-            
-            
+            // ---------- Original Method ----------
+            //return mStyle.getUnderlying();
         }
 
         

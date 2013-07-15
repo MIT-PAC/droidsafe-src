@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public class SecureRandom extends Random {
             this.provider = null;
             this.secureRandomSpi = new SHA1PRNG_SecureRandomImpl();
             this.algorithm = "SHA1PRNG";
-        } 
+        } //End block
         else
         {
             try 
@@ -41,30 +41,30 @@ public class SecureRandom extends Random {
                 this.provider = service.getProvider();
                 this.secureRandomSpi = (SecureRandomSpi)service.newInstance(null);
                 this.algorithm = service.getAlgorithm();
-            } 
+            } //End block
             catch (Exception e)
             {
                 RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_51640129 = new RuntimeException(e);
                 varC76ADF009CE2FEDD948F7A54F409BA37_51640129.addTaint(taint);
                 throw varC76ADF009CE2FEDD948F7A54F409BA37_51640129;
-            } 
-        } 
-        
-        
-        
-        
-            
-            
-            
-        
-            
-                
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //Services.refresh();
+        //Provider.Service service = Services.getSecureRandomService();
+        //if (service == null) {
+            //this.provider = null;
+            //this.secureRandomSpi = new SHA1PRNG_SecureRandomImpl();
+            //this.algorithm = "SHA1PRNG";
+        //} else {
+            //try {
+                //this.provider = service.getProvider();
+                //this.secureRandomSpi = (SecureRandomSpi)service.newInstance(null);
+                //this.algorithm = service.getAlgorithm();
+            //} catch (Exception e) {
+                //throw new RuntimeException(e);
+            //}
+        //}
     }
 
     
@@ -73,8 +73,8 @@ public class SecureRandom extends Random {
         this();
         addTaint(seed[0]);
         setSeed(seed);
-        
-        
+        // ---------- Original Method ----------
+        //setSeed(seed);
     }
 
     
@@ -84,7 +84,7 @@ public class SecureRandom extends Random {
         this(secureRandomSpi, provider, "unknown");
         addTaint(provider.getTaint());
         addTaint(secureRandomSpi.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -96,10 +96,10 @@ public class SecureRandom extends Random {
         this.provider = provider;
         this.algorithm = algorithm;
         this.secureRandomSpi = secureRandomSpi;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.provider = provider;
+        //this.algorithm = algorithm;
+        //this.secureRandomSpi = secureRandomSpi;
     }
 
     
@@ -142,19 +142,18 @@ public class SecureRandom extends Random {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_305030696 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_305030696.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_305030696;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.408 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "D0470E6A2A7D25626FAA079B6CFA1A40")
     public String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1587991177 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_1587991177.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_1587991177;
-        
-        
+        // ---------- Original Method ----------
+        //return algorithm;
     }
 
     
@@ -162,8 +161,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1587991177 =         algorithm;
     public synchronized void setSeed(byte[] seed) {
         addTaint(seed[0]);
         secureRandomSpi.engineSetSeed(seed);
-        
-        
+        // ---------- Original Method ----------
+        //secureRandomSpi.engineSetSeed(seed);
     }
 
     
@@ -174,17 +173,17 @@ String var44A46B4003FC81ACB0223385BA1FA818_1587991177 =         algorithm;
     if(seed == 0)        
         {
             return;
-        } 
+        } //End block
         byte[] byteSeed = new byte[SizeOf.LONG];
         Memory.pokeLong(byteSeed, 0, seed, ByteOrder.BIG_ENDIAN);
         setSeed(byteSeed);
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (seed == 0) {    
+            //return;
+        //}
+        //byte[] byteSeed = new byte[SizeOf.LONG];
+        //Memory.pokeLong(byteSeed, 0, seed, ByteOrder.BIG_ENDIAN);
+        //setSeed(byteSeed);
     }
 
     
@@ -193,8 +192,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1587991177 =         algorithm;
     public synchronized void nextBytes(byte[] bytes) {
         addTaint(bytes[0]);
         secureRandomSpi.engineNextBytes(bytes);
-        
-        
+        // ---------- Original Method ----------
+        //secureRandomSpi.engineNextBytes(bytes);
     }
 
     
@@ -205,14 +204,14 @@ String var44A46B4003FC81ACB0223385BA1FA818_1587991177 =         algorithm;
     if(numBits < 0)        
         {
             numBits = 0;
-        } 
+        } //End block
         else
         {
     if(numBits > 32)            
             {
                 numBits = 32;
-            } 
-        } 
+            } //End block
+        } //End block
         int bytes = (numBits+7)/8;
         byte[] next = new byte[bytes];
         int ret = 0;
@@ -220,28 +219,28 @@ String var44A46B4003FC81ACB0223385BA1FA818_1587991177 =         algorithm;
 for(int i = 0;i < bytes;i++)
         {
             ret = (next[i] & 0xFF) | (ret << 8);
-        } 
+        } //End block
         ret = ret >>> (bytes*8 - numBits);
         int var2CB9DF9898E55FD0AD829DC202DDBD1C_1674040475 = (ret);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_208983508 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_208983508;
-        
-        
-            
-        
-            
-                
-            
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (numBits < 0) {
+            //numBits = 0;
+        //} else {
+            //if (numBits > 32) {
+                //numBits = 32;
+            //}
+        //}
+        //int bytes = (numBits+7)/8;
+        //byte[] next = new byte[bytes];
+        //int ret = 0;
+        //nextBytes(next);
+        //for (int i = 0; i < bytes; i++) {
+            //ret = (next[i] & 0xFF) | (ret << 8);
+        //}
+        //ret = ret >>> (bytes*8 - numBits);
+        //return ret;
     }
 
     
@@ -260,8 +259,8 @@ for(int i = 0;i < bytes;i++)
         byte[] var97A56C9A99A47BD0462A7C39E603268E_1859447253 = (secureRandomSpi.engineGenerateSeed(numBytes));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_960799315 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_960799315;
-        
-        
+        // ---------- Original Method ----------
+        //return secureRandomSpi.engineGenerateSeed(numBytes);
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
       ClientHandshakeImpl(Object owner) {
         super(owner);
         addTaint(owner.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -43,22 +43,22 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     if(session == null)        
         {
             session = findSessionToResume();
-        } 
+        } //End block
         else
         {
     if(clientHello != null && this.status != FINISHED)            
             {
                 return;
-            } 
+            } //End block
     if(!session.isValid())            
             {
                 session = null;
-            } 
-        } 
+            } //End block
+        } //End block
     if(session != null)        
         {
             isResuming = true;
-        } 
+        } //End block
         else
     if(parameters.getEnableSessionCreation())        
         {
@@ -67,21 +67,21 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     if(engineOwner != null)            
             {
                 session.setPeer(engineOwner.getPeerHost(), engineOwner.getPeerPort());
-            } 
+            } //End block
             else
             {
                 session.setPeer(socketOwner.getInetAddress().getHostName(), socketOwner.getPort());
-            } 
+            } //End block
             session.protocol = ProtocolVersion.getLatestVersion(parameters.getEnabledProtocols());
             recordProtocol.setVersion(session.protocol.version);
-        } 
+        } //End block
         else
         {
             fatalAlert(AlertProtocol.HANDSHAKE_FAILURE, "SSL Session may not be created ");
-        } 
+        } //End block
         startSession();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -94,36 +94,36 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     if(engineOwner != null)            
             {
                 session.setPeer(engineOwner.getPeerHost(), engineOwner.getPeerPort());
-            } 
+            } //End block
             else
             {
                 session.setPeer(socketOwner.getInetAddress().getHostName(), socketOwner.getPort());
-            } 
+            } //End block
             session.protocol = ProtocolVersion.getLatestVersion(parameters.getEnabledProtocols());
             recordProtocol.setVersion(session.protocol.version);
             startSession();
-        } 
+        } //End block
         else
         {
             status = NOT_HANDSHAKING;
             sendWarningAlert(AlertProtocol.NO_RENEGOTIATION);
-        } 
-        
-        
-            
-            
-            
-                
-            
-                
-            
-            
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (parameters.getEnableSessionCreation()){
+            //isResuming = false;
+            //session = new SSLSessionImpl(parameters.getSecureRandom());
+            //if (engineOwner != null) {
+                //session.setPeer(engineOwner.getPeerHost(), engineOwner.getPeerPort());
+            //} else {
+                //session.setPeer(socketOwner.getInetAddress().getHostName(), socketOwner.getPort());
+            //}
+            //session.protocol = ProtocolVersion.getLatestVersion(parameters.getEnabledProtocols());
+            //recordProtocol.setVersion(session.protocol.version);
+            //startSession();
+        //} else {
+            //status = NOT_HANDSHAKING;
+            //sendWarningAlert(AlertProtocol.NO_RENEGOTIATION);
+        //}
     }
 
     
@@ -133,28 +133,28 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
     if(isResuming)        
         {
             cipher_suites = new CipherSuite[] { session.cipherSuite };
-        } 
+        } //End block
         else
         {
             cipher_suites = parameters.getEnabledCipherSuitesMember();
-        } 
+        } //End block
         clientHello = new ClientHello(parameters.getSecureRandom(),
                 session.protocol.version, session.id, cipher_suites);
         session.clientRandom = clientHello.random;
         send(clientHello);
         status = NEED_UNWRAP;
-        
-        
-        
-            
-        
-            
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //CipherSuite[] cipher_suites;
+        //if (isResuming) {
+            //cipher_suites = new CipherSuite[] { session.cipherSuite };
+        //} else {
+            //cipher_suites = parameters.getEnabledCipherSuitesMember();
+        //}
+        //clientHello = new ClientHello(parameters.getSecureRandom(),
+                //session.protocol.version, session.id, cipher_suites);
+        //session.clientRandom = clientHello.random;
+        //send(clientHello);
+        //status = NEED_UNWRAP;
     }
 
     
@@ -167,7 +167,7 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
             Exception e = this.delegatedTaskErr;
             this.delegatedTaskErr = null;
             this.fatalAlert(AlertProtocol.HANDSHAKE_FAILURE, "Error in delegated task", e);
-        } 
+        } //End block
         int handshakeType;
         io_stream.append(bytes);
         while
@@ -183,7 +183,7 @@ public class ClientHandshakeImpl extends HandshakeProtocol {
                 {
                     io_stream.reset();
                     return;
-                } 
+                } //End block
 switch(handshakeType){
                 case 0:
                 io_stream.removeFromMarkedPosition();
@@ -191,24 +191,24 @@ switch(handshakeType){
                             && (clientFinished == null || serverFinished == null))                
                 {
                     break;
-                } 
+                } //End block
     if(session.isValid())                
                 {
                     session = (SSLSessionImpl) session.clone();
                     isResuming = true;
                     startSession();
-                } 
+                } //End block
                 else
                 {
                     renegotiateNewSession();
-                } 
+                } //End block
                 break;
                 case 2:
     if(clientHello == null || serverHello != null)                
                 {
                     unexpectedMessage();
                     return;
-                } 
+                } //End block
                 serverHello = new ServerHello(io_stream, length);
                 ProtocolVersion servProt = ProtocolVersion.getByVersion(serverHello.server_version);
                 String[] enabled = parameters.getEnabledProtocols();
@@ -219,16 +219,16 @@ for(int i = 0;i < enabled.length;i++)
     if(servProt.equals(ProtocolVersion.getByName(enabled[i])))                        
                         {
                             break find;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                    "Bad server hello protocol version");
-                } 
+                } //End block
     if(serverHello.compression_method != 0)                
                 {
                     fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                    "Bad server hello compression method");
-                } 
+                } //End block
                 CipherSuite[] enabledSuites = parameters.getEnabledCipherSuitesMember();
     find                :
                 {
@@ -237,43 +237,43 @@ for(int i = 0;i < enabledSuites.length;i++)
     if(serverHello.cipher_suite.equals(enabledSuites[i]))                        
                         {
                             break find;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                    "Bad server hello cipher suite");
-                } 
+                } //End block
     if(isResuming)                
                 {
     if(serverHello.session_id.length == 0)                    
                     {
                         isResuming = false;
-                    } 
+                    } //End block
                     else
     if(!Arrays.equals(serverHello.session_id, clientHello.session_id))                    
                     {
                         isResuming = false;
-                    } 
+                    } //End block
                     else
     if(!session.protocol.equals(servProt))                    
                     {
                         fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                        "Bad server hello protocol version");
-                    } 
+                    } //End block
                     else
     if(!session.cipherSuite.equals(serverHello.cipher_suite))                    
                     {
                         fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                                        "Bad server hello cipher suite");
-                    } 
+                    } //End block
     if(serverHello.server_version[1] == 1)                    
                     {
                         computerReferenceVerifyDataTLS("server finished");
-                    } 
+                    } //End block
                     else
                     {
                         computerReferenceVerifyDataSSLv3(SSLv3Constants.server);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 session.protocol = servProt;
                 recordProtocol.setVersion(session.protocol.version);
                 session.cipherSuite = serverHello.cipher_suite;
@@ -286,7 +286,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 {
                     unexpectedMessage();
                     return;
-                } 
+                } //End block
                 serverCert = new CertificateMessage(io_stream, length);
                 break;
                 case 12:
@@ -295,7 +295,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 {
                     unexpectedMessage();
                     return;
-                } 
+                } //End block
                 serverKeyExchange = new ServerKeyExchange(io_stream,
                             length, session.cipherSuite.keyExchange);
                 break;
@@ -305,7 +305,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 {
                     unexpectedMessage();
                     return;
-                } 
+                } //End block
                 certificateRequest = new CertificateRequest(io_stream, length);
                 break;
                 case 14:
@@ -313,7 +313,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 {
                     unexpectedMessage();
                     return;
-                } 
+                } //End block
                 serverHelloDone = new ServerHelloDone(io_stream, length);
     if(this.nonBlocking)                
                 {
@@ -321,12 +321,12 @@ for(int i = 0;i < enabledSuites.length;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.076 -0400", hash_original_method = "0DFF79E1B822BFCDEB6260105932743B", hash_generated_method = "5828D0275E43E6D76D054149775437AB")
         public void run() {
             processServerHelloDone();
-            
-            
+            // ---------- Original Method ----------
+            //processServerHelloDone();
         }
 }, this));
                     return;
-                } 
+                } //End block
                 processServerHelloDone();
                 break;
                 case 20:
@@ -334,7 +334,7 @@ for(int i = 0;i < enabledSuites.length;i++)
                 {
                     unexpectedMessage();
                     return;
-                } 
+                } //End block
                 serverFinished = new Finished(io_stream, length);
                 verifyFinished(serverFinished.getData());
                 session.lastAccessedTime = System.currentTimeMillis();
@@ -343,26 +343,26 @@ for(int i = 0;i < enabledSuites.length;i++)
     if(isResuming)                
                 {
                     sendChangeCipherSpec();
-                } 
+                } //End block
                 else
                 {
                     session.lastAccessedTime = System.currentTimeMillis();
                     status = FINISHED;
-                } 
+                } //End block
                 break;
                 default:
                 unexpectedMessage();
                 return;
 }
-            } 
+            } //End block
             catch (IOException e)
             {
                 io_stream.reset();
                 return;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -371,8 +371,8 @@ for(int i = 0;i < enabledSuites.length;i++)
     public void unwrapSSLv2(byte[] bytes) {
         addTaint(bytes[0]);
         unexpectedMessage();
-        
-        
+        // ---------- Original Method ----------
+        //unexpectedMessage();
     }
 
     
@@ -384,33 +384,33 @@ for(int i = 0;i < enabledSuites.length;i++)
         {
             verify_data = new byte[12];
             computerVerifyDataTLS("client finished", verify_data);
-        } 
+        } //End block
         else
         {
             verify_data = new byte[36];
             computerVerifyDataSSLv3(SSLv3Constants.client, verify_data);
-        } 
+        } //End block
         clientFinished = new Finished(verify_data);
         send(clientFinished);
     if(isResuming)        
         {
             session.lastAccessedTime = System.currentTimeMillis();
             status = FINISHED;
-        } 
+        } //End block
         else
         {
     if(serverHello.server_version[1] == 1)            
             {
                 computerReferenceVerifyDataTLS("server finished");
-            } 
+            } //End block
             else
             {
                 computerReferenceVerifyDataSSLv3(SSLv3Constants.server);
-            } 
+            } //End block
             status = NEED_UNWRAP;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -423,17 +423,17 @@ for(int i = 0;i < enabledSuites.length;i++)
             {
                 unexpectedMessage();
                 return;
-            } 
+            } //End block
             verifyServerCert();
-        } 
+        } //End block
         else
         {
     if(!session.cipherSuite.isAnonymous())            
             {
                 unexpectedMessage();
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
     if(certificateRequest != null)        
         {
             X509Certificate[] certs = null;
@@ -447,29 +447,29 @@ for(int i = 0;i < enabledSuites.length;i++)
     if(this.socketOwner != null)                
                 {
                     alias = ekm.chooseClientAlias(certTypes, issuers, this.socketOwner);
-                } 
+                } //End block
                 else
                 {
                     alias = ekm.chooseEngineClientAlias(certTypes, issuers, this.engineOwner);
-                } 
+                } //End block
     if(alias != null)                
                 {
                     certs = ekm.getCertificateChain(alias);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 alias = km.chooseClientAlias(certTypes, issuers, this.socketOwner);
     if(alias != null)                
                 {
                     certs = km.getCertificateChain(alias);
-                } 
-            } 
+                } //End block
+            } //End block
             session.localCertificates = certs;
             clientCert = new CertificateMessage(certs);
             clientKey = km.getPrivateKey(alias);
             send(clientCert);
-        } 
+        } //End block
     if(session.cipherSuite.keyExchange == CipherSuite.KEY_EXCHANGE_RSA
                 || session.cipherSuite.keyExchange == CipherSuite.KEY_EXCHANGE_RSA_EXPORT)        
         {
@@ -481,18 +481,18 @@ for(int i = 0;i < enabledSuites.length;i++)
                 {
                     c.init(Cipher.ENCRYPT_MODE, serverKeyExchange
                             .getRSAPublicKey());
-                } 
+                } //End block
                 else
                 {
                     c.init(Cipher.ENCRYPT_MODE, serverCert.certs[0]);
-                } 
-            } 
+                } //End block
+            } //End block
             catch (Exception e)
             {
                 fatalAlert(AlertProtocol.INTERNAL_ERROR,
                         "Unexpected exception", e);
                 return;
-            } 
+            } //End block
             preMasterSecret = new byte[48];
             parameters.getSecureRandom().nextBytes(preMasterSecret);
             System.arraycopy(clientHello.client_version, 0, preMasterSecret, 0, 2);
@@ -501,14 +501,14 @@ for(int i = 0;i < enabledSuites.length;i++)
                 clientKeyExchange = new ClientKeyExchange(c
                         .doFinal(preMasterSecret),
                         serverHello.server_version[1] == 1);
-            } 
+            } //End block
             catch (Exception e)
             {
                 fatalAlert(AlertProtocol.INTERNAL_ERROR,
                         "Unexpected exception", e);
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             try 
@@ -525,12 +525,12 @@ for(int i = 0;i < enabledSuites.length;i++)
                             serverKeyExchange.par2));
                     spec = new DHParameterSpec(serverKeyExchange.par1,
                             serverKeyExchange.par2);
-                } 
+                } //End block
                 else
                 {
                     serverPublic = serverCert.certs[0].getPublicKey();
                     spec = ((DHPublicKey) serverPublic).getParams();
-                } 
+                } //End block
                 kpg.initialize(spec);
                 KeyPair kp = kpg.generateKeyPair();
                 Key key = kp.getPublic();
@@ -550,30 +550,30 @@ for(int i = 0;i < enabledSuites.length;i++)
                                     .equals(((DHKey) server_pk).getParams().getG()))                        
                         {
                             clientKeyExchange = new ClientKeyExchange();
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     clientKeyExchange = new ClientKeyExchange(
                             ((DHPublicKey) key).getY());
-                } 
+                } //End block
                 key = kp.getPrivate();
                 agreement.init(key);
                 agreement.doPhase(serverPublic, true);
                 preMasterSecret = agreement.generateSecret();
-            } 
+            } //End block
             catch (Exception e)
             {
                 fatalAlert(AlertProtocol.INTERNAL_ERROR,
                         "Unexpected exception", e);
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
     if(clientKeyExchange != null)        
         {
             send(clientKeyExchange);
-        } 
+        } //End block
         computerMasterSecret();
     if(clientCert != null && !clientKeyExchange.isEmpty())        
         {
@@ -584,18 +584,18 @@ for(int i = 0;i < enabledSuites.length;i++)
             {
                 ds.setMD5(io_stream.getDigestMD5());
                 ds.setSHA(io_stream.getDigestSHA());
-            } 
+            } //End block
             else
     if("DSA".equals(authType))            
             {
                 ds.setSHA(io_stream.getDigestSHA());
-            } 
+            } //End block
             certificateVerify = new CertificateVerify(ds.sign());
             send(certificateVerify);
-        } 
+        } //End block
         sendChangeCipherSpec();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -605,29 +605,29 @@ for(int i = 0;i < enabledSuites.length;i++)
     if(authType == null)        
         {
             return;
-        } 
+        } //End block
         try 
         {
             parameters.getTrustManager().checkServerTrusted(serverCert.certs, authType);
-        } 
+        } //End block
         catch (CertificateException e)
         {
             fatalAlert(AlertProtocol.BAD_CERTIFICATE, "Not trusted server certificate", e);
             return;
-        } 
+        } //End block
         session.peerCertificates = serverCert.certs;
-        
-        
-        
-            
-        
-        
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //String authType = session.cipherSuite.getAuthType(serverKeyExchange != null);
+        //if (authType == null) {
+            //return;
+        //}
+        //try {
+            //parameters.getTrustManager().checkServerTrusted(serverCert.certs, authType);
+        //} catch (CertificateException e) {
+            //fatalAlert(AlertProtocol.BAD_CERTIFICATE, "Not trusted server certificate", e);
+            //return;
+        //}
+        //session.peerCertificates = serverCert.certs;
     }
 
     
@@ -639,23 +639,23 @@ for(int i = 0;i < enabledSuites.length;i++)
     if(serverHello == null)            
             {
                 unexpectedMessage();
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(clientFinished == null)        
         {
             unexpectedMessage();
-        } 
+        } //End block
         changeCipherSpecReceived = true;
-        
-        
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isResuming) {
+            //if (serverHello == null) {
+                //unexpectedMessage();
+            //}
+        //} else if (clientFinished == null) {
+            //unexpectedMessage();
+        //}
+        //changeCipherSpecReceived = true;
     }
 
     
@@ -667,47 +667,47 @@ for(int i = 0;i < enabledSuites.length;i++)
         {
             host = engineOwner.getPeerHost();
             port = engineOwner.getPeerPort();
-        } 
+        } //End block
         else
         {
             host = socketOwner.getInetAddress().getHostName();
             port = socketOwner.getPort();
-        } 
+        } //End block
     if(host == null || port == -1)        
         {
 SSLSessionImpl var540C13E9E156B687226421B24F2DF178_624631115 =             null;
             var540C13E9E156B687226421B24F2DF178_624631115.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_624631115;
-        } 
+        } //End block
         ClientSessionContext context = parameters.getClientSessionContext();
         SSLSessionImpl session = (SSLSessionImpl) context.getSession(host, port);
     if(session != null)        
         {
             session = (SSLSessionImpl) session.clone();
-        } 
+        } //End block
 SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_311660083 =         session;
         varD555E544A66E0F97DA6BCDE940E3E79C_311660083.addTaint(taint);
         return varD555E544A66E0F97DA6BCDE940E3E79C_311660083;
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-        
-            
-        
-        
-        
-                
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String host = null;
+        //int port = -1;
+        //if (engineOwner != null) {
+            //host = engineOwner.getPeerHost();
+            //port = engineOwner.getPeerPort();
+        //} else {
+            //host = socketOwner.getInetAddress().getHostName();
+            //port = socketOwner.getPort();
+        //}
+        //if (host == null || port == -1) {
+            //return null; 
+        //}
+        //ClientSessionContext context = parameters.getClientSessionContext();
+        //SSLSessionImpl session
+                //= (SSLSessionImpl) context.getSession(host, port);
+        //if (session != null) {
+            //session = (SSLSessionImpl) session.clone();
+        //}
+        //return session;
     }
 
     

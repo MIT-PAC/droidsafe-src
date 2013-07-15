@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public final class SQLiteDebug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.950 -0400", hash_original_method = "E568765EE49290FB5EEF63EB9FC3FADB", hash_generated_method = "E568765EE49290FB5EEF63EB9FC3FADB")
     public SQLiteDebug ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -60,14 +60,12 @@ public final class SQLiteDebug {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getNumActiveCursorsFinalized() {
+        public static int getNumActiveCursorsFinalized() {
         return sNumActiveCursorsFinalized;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static synchronized void notifyActiveCursorFinalized() {
+        static synchronized void notifyActiveCursorFinalized() {
         sNumActiveCursorsFinalized++;
     }
 
@@ -101,7 +99,7 @@ public final class SQLiteDebug {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.954 -0400", hash_original_method = "8C8E95FFCB1088531CECBA4CD1169D76", hash_generated_method = "8C8E95FFCB1088531CECBA4CD1169D76")
         public PagerStats ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -134,12 +132,12 @@ public final class SQLiteDebug {
             dbSize = (pageCount * pageSize) / 1024;
             this.lookaside = lookaside;
             this.cache = hits + "/" + misses + "/" + cachesize;
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.dbName = dbName;
+            //this.pageSize = pageSize / 1024;
+            //dbSize = (pageCount * pageSize) / 1024;
+            //this.lookaside = lookaside;
+            //this.cache = hits + "/" + misses + "/" + cachesize;
         }
 
         

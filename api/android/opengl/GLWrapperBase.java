@@ -1,6 +1,6 @@
 package android.opengl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,33 +34,33 @@ abstract class GLWrapperBase implements GL, GL10, GL10Ext, GL11, GL11Ext, GL11Ex
     if(gl instanceof GL10Ext)        
         {
             mgl10Ext = (GL10Ext) gl;
-        } 
+        } //End block
     if(gl instanceof GL11)        
         {
             mgl11 = (GL11) gl;
-        } 
+        } //End block
     if(gl instanceof GL11Ext)        
         {
             mgl11Ext = (GL11Ext) gl;
-        } 
+        } //End block
     if(gl instanceof GL11ExtensionPack)        
         {
             mgl11ExtensionPack = (GL11ExtensionPack) gl;
-        } 
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mgl = (GL10) gl;
+        //if (gl instanceof GL10Ext) {
+            //mgl10Ext = (GL10Ext) gl;
+        //}
+        //if (gl instanceof GL11) {
+            //mgl11 = (GL11) gl;
+        //}
+        //if (gl instanceof GL11Ext) {
+            //mgl11Ext = (GL11Ext) gl;
+        //}
+        //if (gl instanceof GL11ExtensionPack) {
+            //mgl11ExtensionPack = (GL11ExtensionPack) gl;
+        //}
     }
 
     

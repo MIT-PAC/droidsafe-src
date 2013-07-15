@@ -1,6 +1,6 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,10 +21,10 @@ public class InterfaceAddress {
         this.address = address;
         this.broadcastAddress = broadcastAddress;
         this.prefixLength = countPrefixLength(mask);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.address = address;
+        //this.broadcastAddress = broadcastAddress;
+        //this.prefixLength = countPrefixLength(mask);
     }
 
     
@@ -33,15 +33,14 @@ public class InterfaceAddress {
         this.address = address;
         this.broadcastAddress = null;
         this.prefixLength = prefixLength;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.address = address;
+        //this.broadcastAddress = null;
+        //this.prefixLength = prefixLength;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static short countPrefixLength(Inet4Address mask) {
+        private static short countPrefixLength(Inet4Address mask) {
         short count = 0;
         for (byte b : mask.ipaddress) {
             for (int i = 0; i < 8; ++i) {
@@ -63,30 +62,30 @@ public class InterfaceAddress {
             boolean varB326B5062B2F0E69046810717534CB09_379414785 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_209840808 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_209840808;
-        } 
+        } //End block
     if(!(obj instanceof InterfaceAddress))        
         {
             boolean var68934A3E9455FA72420237EB05902327_160124887 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_550638301 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_550638301;
-        } 
+        } //End block
         InterfaceAddress rhs = (InterfaceAddress) obj;
         boolean var433225E5F3672F8A92E0BC4781C28D2B_1274399566 = (((address == null) ? rhs.address == null : address.equals(rhs.address)) &&
                 (rhs.prefixLength == prefixLength) &&
                 ((broadcastAddress == null) ? rhs.broadcastAddress == null : broadcastAddress.equals(rhs.broadcastAddress)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2145800425 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2145800425;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //if (obj == this){
+            //return true;
+        //}
+        //if (!(obj instanceof InterfaceAddress)) {
+            //return false;
+        //}
+        //InterfaceAddress rhs = (InterfaceAddress) obj;
+        //return ((address == null) ? rhs.address == null : address.equals(rhs.address)) &&
+                //(rhs.prefixLength == prefixLength) &&
+                //((broadcastAddress == null) ? rhs.broadcastAddress == null : broadcastAddress.equals(rhs.broadcastAddress));
     }
 
     
@@ -99,11 +98,11 @@ public class InterfaceAddress {
         int var550D1CC054A1B23A411DDDA46FD64811_357318275 = (hashCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966302404 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966302404;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int hashCode = address == null ? 0 : -address.hashCode();
+        //hashCode += broadcastAddress == null ? 0 : broadcastAddress.hashCode();
+        //hashCode += prefixLength;
+        //return hashCode;
     }
 
     
@@ -113,41 +112,38 @@ public class InterfaceAddress {
 String varB4AC98B78928509CD00779ABDF2F15A5_1197127626 =         address + "/" + prefixLength + " [" + broadcastAddress + "]";
         varB4AC98B78928509CD00779ABDF2F15A5_1197127626.addTaint(taint);
         return varB4AC98B78928509CD00779ABDF2F15A5_1197127626;
-        
-        
+        // ---------- Original Method ----------
+        //return address + "/" + prefixLength + " [" + broadcastAddress + "]";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.825 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "1ECDD261D4E7A50447579309A9A2CDEC")
     public InetAddress getAddress() {
 InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_53335643 =         address;
         var814577DDD37BAFB17E08CBEFDB411BAE_53335643.addTaint(taint);
         return var814577DDD37BAFB17E08CBEFDB411BAE_53335643;
-        
-        
+        // ---------- Original Method ----------
+        //return address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.825 -0400", hash_original_method = "CFDC66E7DE04051E5606E381D802784E", hash_generated_method = "32749A12D73A6D6B1F89FA3DE0F72746")
     public InetAddress getBroadcast() {
 InetAddress var2E663694B670997E584545D6213E4BAD_2033270403 =         broadcastAddress;
         var2E663694B670997E584545D6213E4BAD_2033270403.addTaint(taint);
         return var2E663694B670997E584545D6213E4BAD_2033270403;
-        
-        
+        // ---------- Original Method ----------
+        //return broadcastAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.826 -0400", hash_original_method = "D89613E4F9F0153F2E4A2BF9077CFCE5", hash_generated_method = "2B7AB9F56CC786295F76AEC92B0F0AE4")
     public short getNetworkPrefixLength() {
         short var66E8BBB112C8BE88E6A5CE871B315D9D_694071977 = (prefixLength);
                 short var4F09DAA9D95BCB166A302407A0E0BABE_2009672304 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_2009672304;
-        
-        
+        // ---------- Original Method ----------
+        //return prefixLength;
     }
 
     

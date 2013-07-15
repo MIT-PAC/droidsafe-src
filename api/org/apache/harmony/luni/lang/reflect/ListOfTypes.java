@@ -1,6 +1,6 @@
 package org.apache.harmony.luni.lang.reflect;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ public final class ListOfTypes {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.377 -0400", hash_original_method = "1B717CC03BB3C0AEB2AD5F80BAEDAB75", hash_generated_method = "4DC1BA96B5060DA9D761A0767EF562F5")
       ListOfTypes(int capacity) {
         types = new ArrayList<Type>(capacity);
-        
-        
+        // ---------- Original Method ----------
+        //types = new ArrayList<Type>(capacity);
     }
 
     
@@ -30,12 +30,12 @@ public final class ListOfTypes {
 for(Type type : types)
         {
             this.types.add(type);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.types = new ArrayList<Type>(types.length);
+        //for (Type type : types) {
+            //this.types.add(type);
+        //}
     }
 
     
@@ -47,13 +47,13 @@ for(Type type : types)
             NullPointerException varCD4724072671F65422BAAD1C59E26C3D_1087910181 = new NullPointerException("type == null");
             varCD4724072671F65422BAAD1C59E26C3D_1087910181.addTaint(taint);
             throw varCD4724072671F65422BAAD1C59E26C3D_1087910181;
-        } 
+        } //End block
         types.add(type);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (type == null) {
+            //throw new NullPointerException("type == null");
+        //}
+        //types.add(type);
     }
 
     
@@ -62,8 +62,8 @@ for(Type type : types)
         int var09DE4273DF28F413F1060AF72C4E73F0_720585895 = (types.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041653747 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041653747;
-        
-        
+        // ---------- Original Method ----------
+        //return types.size();
     }
 
     
@@ -73,9 +73,9 @@ for(Type type : types)
 Type[] var4FC3DD720A833DD110402A8E8C2EB61B_513815630 =         result != null ? result : (resolvedTypes = resolveTypes(types));
         var4FC3DD720A833DD110402A8E8C2EB61B_513815630.addTaint(taint);
         return var4FC3DD720A833DD110402A8E8C2EB61B_513815630;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Type[] result = resolvedTypes;
+        //return result != null ? result : (resolvedTypes = resolveTypes(types));
     }
 
     
@@ -89,26 +89,26 @@ for(int i = 0;i < unresolved.size();i++)
             try 
             {
                 result[i] = ((ImplForType) type).getResolvedType();
-            } 
+            } //End block
             catch (ClassCastException e)
             {
                 result[i] = type;
-            } 
-        } 
+            } //End block
+        } //End block
 Type[] varDC838461EE2FA0CA4C9BBB70A15456B0_307896444 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_307896444.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_307896444;
-        
-        
-        
-            
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Type[] result = new Type[unresolved.size()];
+        //for (int i = 0; i < unresolved.size(); i++) {
+            //Type type = unresolved.get(i);
+            //try {
+                //result[i] = ((ImplForType) type).getResolvedType();
+            //} catch (ClassCastException e) {
+                //result[i] = type;
+            //}
+        //}
+        //return result;
     }
 
     
@@ -121,21 +121,21 @@ for(int i = 0;i < types.size();i++)
     if(i > 0)            
             {
                 result.append(", ");
-            } 
+            } //End block
             result.append(types.get(i));
-        } 
+        } //End block
 String varE65B3A02759122992CB82C0E651AD408_890000765 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_890000765.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_890000765;
-        
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder result = new StringBuilder();
+        //for (int i = 0; i < types.size(); i++) {
+            //if (i > 0) {
+                //result.append(", ");
+            //}
+            //result.append(types.get(i));
+        //}
+        //return result.toString();
     }
 
     

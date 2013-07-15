@@ -1,6 +1,6 @@
 package android.content.res;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,20 +48,20 @@ public class AssetManager {
             {
                 mNumRefs = 0;
                 incRefsLocked(this.hashCode());
-            } 
+            } //End block
             init();
     if(localLOGV){ }            ensureSystemAssets();
-        } 
-        
-        
-            
-                
-                
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (DEBUG_REFS) {
+                //mNumRefs = 0;
+                //incRefsLocked(this.hashCode());
+            //}
+            //init();
+            //if (localLOGV) Log.v(TAG, "New asset manager: " + this);
+            //ensureSystemAssets();
+        //}
     }
 
     
@@ -74,19 +74,19 @@ public class AssetManager {
 (this)            {
                 mNumRefs = 0;
                 incRefsLocked(this.hashCode());
-            } 
-        } 
+            } //End block
+        } //End block
         init();
     if(localLOGV){ }
-        
-        
-            
-                
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DEBUG_REFS) {
+            //synchronized (this) {
+                //mNumRefs = 0;
+                //incRefsLocked(this.hashCode());
+            //}
+        //}
+        //init();
+        //if (localLOGV) Log.v(TAG, "New asset manager: " + this);
     }
 
     
@@ -115,15 +115,15 @@ public class AssetManager {
             {
                 mOpen = false;
                 decRefsLocked(this.hashCode());
-            } 
-        } 
-        
-        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(this) {
+            //if (mOpen) {
+                //mOpen = false;
+                //decRefsLocked(this.hashCode());
+            //}
+        //}
     }
 
     
@@ -141,27 +141,27 @@ public class AssetManager {
 CharSequence var09B760A53753A9A5EC67FF338BD5B918_1080119898 =                     mStringBlocks[block].get(tmpValue.data);
                     var09B760A53753A9A5EC67FF338BD5B918_1080119898.addTaint(taint);
                     return var09B760A53753A9A5EC67FF338BD5B918_1080119898;
-                } 
+                } //End block
 CharSequence var143A8D8DAA05C02C1D1E29D098E2AB03_1210019493 =                 tmpValue.coerceToString();
                 var143A8D8DAA05C02C1D1E29D098E2AB03_1210019493.addTaint(taint);
                 return var143A8D8DAA05C02C1D1E29D098E2AB03_1210019493;
-            } 
-        } 
+            } //End block
+        } //End block
 CharSequence var540C13E9E156B687226421B24F2DF178_1916511784 =         null;
         var540C13E9E156B687226421B24F2DF178_1916511784.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1916511784;
-        
-        
-            
-            
-            
-                
-                    
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //TypedValue tmpValue = mValue;
+            //int block = loadResourceValue(ident, (short) 0, tmpValue, true);
+            //if (block >= 0) {
+                //if (tmpValue.type == TypedValue.TYPE_STRING) {
+                    //return mStringBlocks[block].get(tmpValue.data);
+                //}
+                //return tmpValue.coerceToString();
+            //}
+        //}
+        //return null;
     }
 
     
@@ -180,27 +180,27 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1916511784 =         null;
 CharSequence var09B760A53753A9A5EC67FF338BD5B918_1162766057 =                     mStringBlocks[block].get(tmpValue.data);
                     var09B760A53753A9A5EC67FF338BD5B918_1162766057.addTaint(taint);
                     return var09B760A53753A9A5EC67FF338BD5B918_1162766057;
-                } 
+                } //End block
 CharSequence var143A8D8DAA05C02C1D1E29D098E2AB03_1331632864 =                 tmpValue.coerceToString();
                 var143A8D8DAA05C02C1D1E29D098E2AB03_1331632864.addTaint(taint);
                 return var143A8D8DAA05C02C1D1E29D098E2AB03_1331632864;
-            } 
-        } 
+            } //End block
+        } //End block
 CharSequence var540C13E9E156B687226421B24F2DF178_1813868486 =         null;
         var540C13E9E156B687226421B24F2DF178_1813868486.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1813868486;
-        
-        
-            
-            
-            
-                
-                    
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //TypedValue tmpValue = mValue;
+            //int block = loadResourceBagValue(ident, bagEntryId, tmpValue, true);
+            //if (block >= 0) {
+                //if (tmpValue.type == TypedValue.TYPE_STRING) {
+                    //return mStringBlocks[block].get(tmpValue.data);
+                //}
+                //return tmpValue.coerceToString();
+            //}
+        //}
+        //return null;
     }
 
     
@@ -211,9 +211,9 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1813868486 =         null;
 String[] var99D8976FAB8D6731FEC3A476C186DDE3_1072370686 =         retArray;
         var99D8976FAB8D6731FEC3A476C186DDE3_1072370686.addTaint(taint);
         return var99D8976FAB8D6731FEC3A476C186DDE3_1072370686;
-        
-        
-        
+        // ---------- Original Method ----------
+        //String[] retArray = getArrayStringResource(id);
+        //return retArray;
     }
 
     
@@ -234,25 +234,25 @@ String[] var99D8976FAB8D6731FEC3A476C186DDE3_1072370686 =         retArray;
                 boolean varB326B5062B2F0E69046810717534CB09_1273706021 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1282108641 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1282108641;
-            } 
+            } //End block
             outValue.string = mStringBlocks[block].get(outValue.data);
             boolean varB326B5062B2F0E69046810717534CB09_1756939041 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1233527367 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1233527367;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_2032703136 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2059522716 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2059522716;
-        
-        
-        
-            
-                
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int block = loadResourceValue(ident, (short) density, outValue, resolveRefs);
+        //if (block >= 0) {
+            //if (outValue.type != TypedValue.TYPE_STRING) {
+                //return true;
+            //}
+            //outValue.string = mStringBlocks[block].get(outValue.data);
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -270,23 +270,23 @@ for(int i = 0, j = 0;i < rawInfoArrayLen;i = i + 2,j++)
             block = rawInfoArray[i];
             index = rawInfoArray[i + 1];
             retArray[j] = index >= 0 ? mStringBlocks[block].get(index) : null;
-        } 
+        } //End block
 CharSequence[] var99D8976FAB8D6731FEC3A476C186DDE3_233350887 =         retArray;
         var99D8976FAB8D6731FEC3A476C186DDE3_233350887.addTaint(taint);
         return var99D8976FAB8D6731FEC3A476C186DDE3_233350887;
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int[] rawInfoArray = getArrayStringInfo(id);
+        //int rawInfoArrayLen = rawInfoArray.length;
+        //final int infoArrayLen = rawInfoArrayLen / 2;
+        //int block;
+        //int index;
+        //CharSequence[] retArray = new CharSequence[infoArrayLen];
+        //for (int i = 0, j = 0; i < rawInfoArrayLen; i = i + 2, j++) {
+            //block = rawInfoArray[i];
+            //index = rawInfoArray[i + 1];
+            //retArray[j] = index >= 0 ? mStringBlocks[block].get(index) : null;
+        //}
+        //return retArray;
     }
 
     
@@ -305,36 +305,36 @@ CharSequence[] var99D8976FAB8D6731FEC3A476C186DDE3_233350887 =         retArray;
                 boolean varB326B5062B2F0E69046810717534CB09_1363756088 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2002259525 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2002259525;
-            } 
+            } //End block
             StringBlock[] blocks = mStringBlocks;
     if(blocks == null)            
             {
                 ensureStringBlocks();
                 blocks = mStringBlocks;
-            } 
+            } //End block
             outValue.string = blocks[block].get(outValue.data);
             boolean varB326B5062B2F0E69046810717534CB09_440463274 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1884416358 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1884416358;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_645132040 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1680535869 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1680535869;
-        
-        
-        
-            
-                
-            
-            
-            
-                
-                
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int block = loadThemeAttributeValue(theme, ident, outValue, resolveRefs);
+        //if (block >= 0) {
+            //if (outValue.type != TypedValue.TYPE_STRING) {
+                //return true;
+            //}
+            //StringBlock[] blocks = mStringBlocks;
+            //if (blocks == null) {
+                //ensureStringBlocks();
+                //blocks = mStringBlocks;
+            //}
+            //outValue.string = blocks[block].get(outValue.data);
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -347,17 +347,17 @@ CharSequence[] var99D8976FAB8D6731FEC3A476C186DDE3_233350887 =         retArray;
     if(mStringBlocks == null)                
                 {
                     makeStringBlocks(true);
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mStringBlocks == null) {
+            //synchronized (this) {
+                //if (mStringBlocks == null) {
+                    //makeStringBlocks(true);
+                //}
+            //}
+        //}
     }
 
     
@@ -372,25 +372,25 @@ CharSequence[] var99D8976FAB8D6731FEC3A476C186DDE3_233350887 =         retArray;
     if(i < sysNum)            
             {
                 mStringBlocks[i] = sSystem.mStringBlocks[i];
-            } 
+            } //End block
             else
             {
                 mStringBlocks[i] = new StringBlock(getNativeStringBlock(i), true);
-            } 
-        } 
-        
-        
-        
-        
-        
-                
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //final int sysNum = copyFromSystem ? sSystem.mStringBlocks.length : 0;
+        //final int num = getStringBlockCount();
+        //mStringBlocks = new StringBlock[num];
+        //if (localLOGV) Log.v(TAG, "Making string blocks for " + this
+                //+ ": " + num);
+        //for (int i=0; i<num; i++) {
+            //if (i < sysNum) {
+                //mStringBlocks[i] = sSystem.mStringBlocks[i];
+            //} else {
+                //mStringBlocks[i] = new StringBlock(getNativeStringBlock(i), true);
+            //}
+        //}
     }
 
     
@@ -401,8 +401,8 @@ CharSequence[] var99D8976FAB8D6731FEC3A476C186DDE3_233350887 =         retArray;
 CharSequence varCFF2C0E2848EAAE639F8AE3BB2CBAC82_390632383 =         mStringBlocks[block-1].get(id);
         varCFF2C0E2848EAAE639F8AE3BB2CBAC82_390632383.addTaint(taint);
         return varCFF2C0E2848EAAE639F8AE3BB2CBAC82_390632383;
-        
-        
+        // ---------- Original Method ----------
+        //return mStringBlocks[block-1].get(id);
     }
 
     
@@ -412,8 +412,8 @@ CharSequence varCFF2C0E2848EAAE639F8AE3BB2CBAC82_390632383 =         mStringBloc
 InputStream var92A3B81455F572F39D40F8415AC5486E_2019608830 =         open(fileName, ACCESS_STREAMING);
         var92A3B81455F572F39D40F8415AC5486E_2019608830.addTaint(taint);
         return var92A3B81455F572F39D40F8415AC5486E_2019608830;
-        
-        
+        // ---------- Original Method ----------
+        //return open(fileName, ACCESS_STREAMING);
     }
 
     
@@ -428,7 +428,7 @@ InputStream var92A3B81455F572F39D40F8415AC5486E_2019608830 =         open(fileNa
                 RuntimeException varE42575155A0C2DE5DFF4A5F9340BD4F8_1831358130 = new RuntimeException("Assetmanager has been closed");
                 varE42575155A0C2DE5DFF4A5F9340BD4F8_1831358130.addTaint(taint);
                 throw varE42575155A0C2DE5DFF4A5F9340BD4F8_1831358130;
-            } 
+            } //End block
             int asset = openAsset(fileName, accessMode);
     if(asset != 0)            
             {
@@ -437,24 +437,24 @@ InputStream var92A3B81455F572F39D40F8415AC5486E_2019608830 =         open(fileNa
 InputStream varB5053E025797B3BF768F5C37934C244D_2144628950 =                 res;
                 varB5053E025797B3BF768F5C37934C244D_2144628950.addTaint(taint);
                 return varB5053E025797B3BF768F5C37934C244D_2144628950;
-            } 
-        } 
+            } //End block
+        } //End block
         FileNotFoundException var01F0E0AF88D5794F91300289D5B4F5BD_1070484861 = new FileNotFoundException("Asset file: " + fileName);
         var01F0E0AF88D5794F91300289D5B4F5BD_1070484861.addTaint(taint);
         throw var01F0E0AF88D5794F91300289D5B4F5BD_1070484861;
-        
-        
-            
-                
-            
-            
-            
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (!mOpen) {
+                //throw new RuntimeException("Assetmanager has been closed");
+            //}
+            //int asset = openAsset(fileName, accessMode);
+            //if (asset != 0) {
+                //AssetInputStream res = new AssetInputStream(asset);
+                //incRefsLocked(res.hashCode());
+                //return res;
+            //}
+        //}
+        //throw new FileNotFoundException("Asset file: " + fileName);
     }
 
     
@@ -468,29 +468,29 @@ InputStream varB5053E025797B3BF768F5C37934C244D_2144628950 =                 res
                 RuntimeException varE42575155A0C2DE5DFF4A5F9340BD4F8_43961333 = new RuntimeException("Assetmanager has been closed");
                 varE42575155A0C2DE5DFF4A5F9340BD4F8_43961333.addTaint(taint);
                 throw varE42575155A0C2DE5DFF4A5F9340BD4F8_43961333;
-            } 
+            } //End block
             ParcelFileDescriptor pfd = openAssetFd(fileName, mOffsets);
     if(pfd != null)            
             {
 AssetFileDescriptor varBF59062CA5609D0A51AB7CA763EFD373_2067045883 =                 new AssetFileDescriptor(pfd, mOffsets[0], mOffsets[1]);
                 varBF59062CA5609D0A51AB7CA763EFD373_2067045883.addTaint(taint);
                 return varBF59062CA5609D0A51AB7CA763EFD373_2067045883;
-            } 
-        } 
+            } //End block
+        } //End block
         FileNotFoundException var01F0E0AF88D5794F91300289D5B4F5BD_1760479714 = new FileNotFoundException("Asset file: " + fileName);
         var01F0E0AF88D5794F91300289D5B4F5BD_1760479714.addTaint(taint);
         throw var01F0E0AF88D5794F91300289D5B4F5BD_1760479714;
-        
-        
-            
-                
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (!mOpen) {
+                //throw new RuntimeException("Assetmanager has been closed");
+            //}
+            //ParcelFileDescriptor pfd = openAssetFd(fileName, mOffsets);
+            //if (pfd != null) {
+                //return new AssetFileDescriptor(pfd, mOffsets[0], mOffsets[1]);
+            //}
+        //}
+        //throw new FileNotFoundException("Asset file: " + fileName);
     }
 
     
@@ -508,8 +508,8 @@ AssetFileDescriptor varBF59062CA5609D0A51AB7CA763EFD373_2067045883 =            
 InputStream var1978765D6D5CAEBB79282DC978C7C36C_1173557269 =         openNonAsset(0, fileName, ACCESS_STREAMING);
         var1978765D6D5CAEBB79282DC978C7C36C_1173557269.addTaint(taint);
         return var1978765D6D5CAEBB79282DC978C7C36C_1173557269;
-        
-        
+        // ---------- Original Method ----------
+        //return openNonAsset(0, fileName, ACCESS_STREAMING);
     }
 
     
@@ -520,8 +520,8 @@ InputStream var1978765D6D5CAEBB79282DC978C7C36C_1173557269 =         openNonAsse
 InputStream varB0D157343C35C04E44909221F6AD2640_1384121798 =         openNonAsset(0, fileName, accessMode);
         varB0D157343C35C04E44909221F6AD2640_1384121798.addTaint(taint);
         return varB0D157343C35C04E44909221F6AD2640_1384121798;
-        
-        
+        // ---------- Original Method ----------
+        //return openNonAsset(0, fileName, accessMode);
     }
 
     
@@ -532,8 +532,8 @@ InputStream varB0D157343C35C04E44909221F6AD2640_1384121798 =         openNonAsse
 InputStream var80B26222AE1DD66F85CDD73D459781A0_519893641 =         openNonAsset(cookie, fileName, ACCESS_STREAMING);
         var80B26222AE1DD66F85CDD73D459781A0_519893641.addTaint(taint);
         return var80B26222AE1DD66F85CDD73D459781A0_519893641;
-        
-        
+        // ---------- Original Method ----------
+        //return openNonAsset(cookie, fileName, ACCESS_STREAMING);
     }
 
     
@@ -549,7 +549,7 @@ InputStream var80B26222AE1DD66F85CDD73D459781A0_519893641 =         openNonAsset
                 RuntimeException varE42575155A0C2DE5DFF4A5F9340BD4F8_2035226603 = new RuntimeException("Assetmanager has been closed");
                 varE42575155A0C2DE5DFF4A5F9340BD4F8_2035226603.addTaint(taint);
                 throw varE42575155A0C2DE5DFF4A5F9340BD4F8_2035226603;
-            } 
+            } //End block
             int asset = openNonAssetNative(cookie, fileName, accessMode);
     if(asset != 0)            
             {
@@ -558,24 +558,24 @@ InputStream var80B26222AE1DD66F85CDD73D459781A0_519893641 =         openNonAsset
 InputStream varB5053E025797B3BF768F5C37934C244D_1344285818 =                 res;
                 varB5053E025797B3BF768F5C37934C244D_1344285818.addTaint(taint);
                 return varB5053E025797B3BF768F5C37934C244D_1344285818;
-            } 
-        } 
+            } //End block
+        } //End block
         FileNotFoundException varDEF76FF6EB2B6BD3A247F1248FD6001E_399044470 = new FileNotFoundException("Asset absolute file: " + fileName);
         varDEF76FF6EB2B6BD3A247F1248FD6001E_399044470.addTaint(taint);
         throw varDEF76FF6EB2B6BD3A247F1248FD6001E_399044470;
-        
-        
-            
-                
-            
-            
-            
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (!mOpen) {
+                //throw new RuntimeException("Assetmanager has been closed");
+            //}
+            //int asset = openNonAssetNative(cookie, fileName, accessMode);
+            //if (asset != 0) {
+                //AssetInputStream res = new AssetInputStream(asset);
+                //incRefsLocked(res.hashCode());
+                //return res;
+            //}
+        //}
+        //throw new FileNotFoundException("Asset absolute file: " + fileName);
     }
 
     
@@ -585,8 +585,8 @@ InputStream varB5053E025797B3BF768F5C37934C244D_1344285818 =                 res
 AssetFileDescriptor varD680C72B1E420D2B21AECBC55E301903_1410306956 =         openNonAssetFd(0, fileName);
         varD680C72B1E420D2B21AECBC55E301903_1410306956.addTaint(taint);
         return varD680C72B1E420D2B21AECBC55E301903_1410306956;
-        
-        
+        // ---------- Original Method ----------
+        //return openNonAssetFd(0, fileName);
     }
 
     
@@ -602,7 +602,7 @@ AssetFileDescriptor varD680C72B1E420D2B21AECBC55E301903_1410306956 =         ope
                 RuntimeException varE42575155A0C2DE5DFF4A5F9340BD4F8_1183486776 = new RuntimeException("Assetmanager has been closed");
                 varE42575155A0C2DE5DFF4A5F9340BD4F8_1183486776.addTaint(taint);
                 throw varE42575155A0C2DE5DFF4A5F9340BD4F8_1183486776;
-            } 
+            } //End block
             ParcelFileDescriptor pfd = openNonAssetFdNative(cookie,
                     fileName, mOffsets);
     if(pfd != null)            
@@ -610,23 +610,23 @@ AssetFileDescriptor varD680C72B1E420D2B21AECBC55E301903_1410306956 =         ope
 AssetFileDescriptor varBF59062CA5609D0A51AB7CA763EFD373_1976476394 =                 new AssetFileDescriptor(pfd, mOffsets[0], mOffsets[1]);
                 varBF59062CA5609D0A51AB7CA763EFD373_1976476394.addTaint(taint);
                 return varBF59062CA5609D0A51AB7CA763EFD373_1976476394;
-            } 
-        } 
+            } //End block
+        } //End block
         FileNotFoundException varDEF76FF6EB2B6BD3A247F1248FD6001E_273372195 = new FileNotFoundException("Asset absolute file: " + fileName);
         varDEF76FF6EB2B6BD3A247F1248FD6001E_273372195.addTaint(taint);
         throw varDEF76FF6EB2B6BD3A247F1248FD6001E_273372195;
-        
-        
-            
-                
-            
-            
-                    
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (!mOpen) {
+                //throw new RuntimeException("Assetmanager has been closed");
+            //}
+            //ParcelFileDescriptor pfd = openNonAssetFdNative(cookie,
+                    //fileName, mOffsets);
+            //if (pfd != null) {
+                //return new AssetFileDescriptor(pfd, mOffsets[0], mOffsets[1]);
+            //}
+        //}
+        //throw new FileNotFoundException("Asset absolute file: " + fileName);
     }
 
     
@@ -636,8 +636,8 @@ AssetFileDescriptor varBF59062CA5609D0A51AB7CA763EFD373_1976476394 =            
 XmlResourceParser var4EB7981FF5CDF306906BF8D2C643895A_1276314089 =         openXmlResourceParser(0, fileName);
         var4EB7981FF5CDF306906BF8D2C643895A_1276314089.addTaint(taint);
         return var4EB7981FF5CDF306906BF8D2C643895A_1276314089;
-        
-        
+        // ---------- Original Method ----------
+        //return openXmlResourceParser(0, fileName);
     }
 
     
@@ -652,11 +652,11 @@ XmlResourceParser var4EB7981FF5CDF306906BF8D2C643895A_1276314089 =         openX
 XmlResourceParser var94881A9110223122354D848EDB699834_1940707030 =         rp;
         var94881A9110223122354D848EDB699834_1940707030.addTaint(taint);
         return var94881A9110223122354D848EDB699834_1940707030;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //XmlBlock block = openXmlBlockAsset(cookie, fileName);
+        //XmlResourceParser rp = block.newParser();
+        //block.close();
+        //return rp;
     }
 
     
@@ -666,8 +666,8 @@ XmlResourceParser var94881A9110223122354D848EDB699834_1940707030 =         rp;
 XmlBlock varD782855715D61EF8E08F4443A4672770_1611477406 =         openXmlBlockAsset(0, fileName);
         varD782855715D61EF8E08F4443A4672770_1611477406.addTaint(taint);
         return varD782855715D61EF8E08F4443A4672770_1611477406;
-        
-        
+        // ---------- Original Method ----------
+        //return openXmlBlockAsset(0, fileName);
     }
 
     
@@ -682,7 +682,7 @@ XmlBlock varD782855715D61EF8E08F4443A4672770_1611477406 =         openXmlBlockAs
                 RuntimeException varE42575155A0C2DE5DFF4A5F9340BD4F8_1879294879 = new RuntimeException("Assetmanager has been closed");
                 varE42575155A0C2DE5DFF4A5F9340BD4F8_1879294879.addTaint(taint);
                 throw varE42575155A0C2DE5DFF4A5F9340BD4F8_1879294879;
-            } 
+            } //End block
             int xmlBlock = openXmlAssetNative(cookie, fileName);
     if(xmlBlock != 0)            
             {
@@ -691,24 +691,24 @@ XmlBlock varD782855715D61EF8E08F4443A4672770_1611477406 =         openXmlBlockAs
 XmlBlock varB5053E025797B3BF768F5C37934C244D_210366909 =                 res;
                 varB5053E025797B3BF768F5C37934C244D_210366909.addTaint(taint);
                 return varB5053E025797B3BF768F5C37934C244D_210366909;
-            } 
-        } 
+            } //End block
+        } //End block
         FileNotFoundException var9DA950BB293223EDCA2C990E69AC6509_1786913055 = new FileNotFoundException("Asset XML file: " + fileName);
         var9DA950BB293223EDCA2C990E69AC6509_1786913055.addTaint(taint);
         throw var9DA950BB293223EDCA2C990E69AC6509_1786913055;
-        
-        
-            
-                
-            
-            
-            
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (!mOpen) {
+                //throw new RuntimeException("Assetmanager has been closed");
+            //}
+            //int xmlBlock = openXmlAssetNative(cookie, fileName);
+            //if (xmlBlock != 0) {
+                //XmlBlock res = new XmlBlock(this, xmlBlock);
+                //incRefsLocked(res.hashCode());
+                //return res;
+            //}
+        //}
+        //throw new FileNotFoundException("Asset XML file: " + fileName);
     }
 
     
@@ -718,11 +718,11 @@ XmlBlock varB5053E025797B3BF768F5C37934C244D_210366909 =                 res;
         synchronized
 (this)        {
             decRefsLocked(id);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //decRefsLocked(id);
+        //}
     }
 
     
@@ -735,22 +735,22 @@ XmlBlock varB5053E025797B3BF768F5C37934C244D_210366909 =                 res;
                 RuntimeException varE42575155A0C2DE5DFF4A5F9340BD4F8_1790263734 = new RuntimeException("Assetmanager has been closed");
                 varE42575155A0C2DE5DFF4A5F9340BD4F8_1790263734.addTaint(taint);
                 throw varE42575155A0C2DE5DFF4A5F9340BD4F8_1790263734;
-            } 
+            } //End block
             int res = newTheme();
             incRefsLocked(res);
             int var9B207167E5381C47682C6B4F58A623FB_222189679 = (res);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696947872 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696947872;
-        } 
-        
-        
-            
-                
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (!mOpen) {
+                //throw new RuntimeException("Assetmanager has been closed");
+            //}
+            //int res = newTheme();
+            //incRefsLocked(res);
+            //return res;
+        //}
     }
 
     
@@ -761,12 +761,12 @@ XmlBlock varB5053E025797B3BF768F5C37934C244D_210366909 =                 res;
 (this)        {
             deleteTheme(theme);
             decRefsLocked(theme);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //deleteTheme(theme);
+            //decRefsLocked(theme);
+        //}
     }
 
     
@@ -780,30 +780,30 @@ XmlBlock varB5053E025797B3BF768F5C37934C244D_210366909 =                 res;
                 {
 for(RuntimeException e : mRefStacks.values())
                     {
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             destroy();
-        } 
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-                        
-                
-                    
-                        
-                    
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (DEBUG_REFS && mNumRefs != 0) {
+                //Log.w(TAG, "AssetManager " + this
+                        //+ " finalized with non-zero refs: " + mNumRefs);
+                //if (mRefStacks != null) {
+                    //for (RuntimeException e : mRefStacks.values()) {
+                        //Log.w(TAG, "Reference from here", e);
+                    //}
+                //}
+            //}
+            //destroy();
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
@@ -822,24 +822,24 @@ for(RuntimeException e : mRefStacks.values())
             int[] var37A6259CC0C1DAE299A7866489DFF0BD_378915099 = (null);
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1701245929 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_1701245929;
-        } 
+        } //End block
         int[] cookies = new int[paths.length];
 for(int i = 0;i < paths.length;i++)
         {
             cookies[i] = addAssetPath(paths[i]);
-        } 
+        } //End block
         int[] var55E7DD3016CE4AC57B9A0F56AF12F7C2_571206033 = (cookies);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1963602440 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1963602440;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (paths == null) {
+            //return null;
+        //}
+        //int[] cookies = new int[paths.length];
+        //for (int i = 0; i < paths.length; i++) {
+            //cookies[i] = addAssetPath(paths[i]);
+        //}
+        //return cookies;
     }
 
     
@@ -1140,19 +1140,19 @@ for(int i = 0;i < paths.length;i++)
                 RuntimeException ex = new RuntimeException();
                 ex.fillInStackTrace();
                 mRefStacks.put(this.hashCode(), ex);
-            } 
-        } 
+            } //End block
+        } //End block
         mNumRefs++;
-        
-        
-            
-                
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DEBUG_REFS) {
+            //if (mRefStacks == null) {
+                //mRefStacks = new HashMap<Integer, RuntimeException>();
+                //RuntimeException ex = new RuntimeException();
+                //ex.fillInStackTrace();
+                //mRefStacks.put(this.hashCode(), ex);
+            //}
+        //}
+        //mNumRefs++;
     }
 
     
@@ -1162,20 +1162,20 @@ for(int i = 0;i < paths.length;i++)
     if(DEBUG_REFS && mRefStacks != null)        
         {
             mRefStacks.remove(id);
-        } 
+        } //End block
         mNumRefs--;
     if(mNumRefs == 0)        
         {
             destroy();
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG_REFS && mRefStacks != null) {
+            //mRefStacks.remove(id);
+        //}
+        //mNumRefs--;
+        //if (mNumRefs == 0) {
+            //destroy();
+        //}
     }
 
     
@@ -1194,9 +1194,9 @@ for(int i = 0;i < paths.length;i++)
         private  AssetInputStream(int asset) {
             mAsset = asset;
             mLength = getAssetLength(asset);
-            
-            
-            
+            // ---------- Original Method ----------
+            //mAsset = asset;
+            //mLength = getAssetLength(asset);
         }
 
         
@@ -1205,8 +1205,8 @@ for(int i = 0;i < paths.length;i++)
             int var8D5507884B6C9BEABDB04A59A4DBA58B_651141652 = (mAsset);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295969922 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295969922;
-            
-            
+            // ---------- Original Method ----------
+            //return mAsset;
         }
 
         
@@ -1215,8 +1215,8 @@ for(int i = 0;i < paths.length;i++)
             int varA3E4FEF8659A951EAED9491FC4AE3BAB_1634940685 = (readAssetChar(mAsset));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_791758541 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_791758541;
-            
-            
+            // ---------- Original Method ----------
+            //return readAssetChar(mAsset);
         }
 
         
@@ -1225,8 +1225,8 @@ for(int i = 0;i < paths.length;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1327783835 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845875058 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845875058;
-            
-            
+            // ---------- Original Method ----------
+            //return true;
         }
 
         
@@ -1236,9 +1236,9 @@ for(int i = 0;i < paths.length;i++)
             int varA0026651D2865D206B2BDD4F1F26B8CD_1731955468 = (len > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int)len);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_984169377 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_984169377;
-            
-            
-            
+            // ---------- Original Method ----------
+            //long len = getAssetRemainingLength(mAsset);
+            //return len > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int)len;
         }
 
         
@@ -1251,16 +1251,16 @@ for(int i = 0;i < paths.length;i++)
                     destroyAsset(mAsset);
                     mAsset = 0;
                     decRefsLocked(hashCode());
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (AssetManager.this) {
+                //if (mAsset != 0) {
+                    //destroyAsset(mAsset);
+                    //mAsset = 0;
+                    //decRefsLocked(hashCode());
+                //}
+            //}
         }
 
         
@@ -1268,16 +1268,16 @@ for(int i = 0;i < paths.length;i++)
         public final void mark(int readlimit) {
             addTaint(readlimit);
             mMarkPos = seekAsset(mAsset, 0, 0);
-            
-            
+            // ---------- Original Method ----------
+            //mMarkPos = seekAsset(mAsset, 0, 0);
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.660 -0400", hash_original_method = "659AE57C7CC5071324BF80AF83D49F86", hash_generated_method = "0CAF64AFA3C71A633C3AE770A153F1FF")
         public final void reset() throws IOException {
             seekAsset(mAsset, mMarkPos, -1);
-            
-            
+            // ---------- Original Method ----------
+            //seekAsset(mAsset, mMarkPos, -1);
         }
 
         
@@ -1287,8 +1287,8 @@ for(int i = 0;i < paths.length;i++)
             int var823A4CE1D2F4F36EB9B0F1AA949BD23C_820785560 = (readAsset(mAsset, b, 0, b.length));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670856784 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670856784;
-            
-            
+            // ---------- Original Method ----------
+            //return readAsset(mAsset, b, 0, b.length);
         }
 
         
@@ -1300,8 +1300,8 @@ for(int i = 0;i < paths.length;i++)
             int varB0C4AC9768BF98E63A0C50FC439F0659_1791500657 = (readAsset(mAsset, b, off, len));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_893227586 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_893227586;
-            
-            
+            // ---------- Original Method ----------
+            //return readAsset(mAsset, b, off, len);
         }
 
         
@@ -1312,31 +1312,31 @@ for(int i = 0;i < paths.length;i++)
     if((pos+n) > mLength)            
             {
                 n = mLength-pos;
-            } 
+            } //End block
     if(n > 0)            
             {
                 seekAsset(mAsset, n, 0);
-            } 
+            } //End block
             long var7B8B965AD4BCA0E41AB51DE7B31363A1_1456339679 = (n);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1996995697 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1996995697;
-            
-            
-            
-                
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //long pos = seekAsset(mAsset, 0, 0);
+            //if ((pos+n) > mLength) {
+                //n = mLength-pos;
+            //}
+            //if (n > 0) {
+                //seekAsset(mAsset, n, 0);
+            //}
+            //return n;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.662 -0400", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "D49A6EC8D8327F8E6A58054E448C9AAB")
         protected void finalize() throws Throwable {
             close();
-            
-            
+            // ---------- Original Method ----------
+            //close();
         }
 
         

@@ -1,6 +1,6 @@
 package android.test.suitebuilder.annotation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ class HasClassAnnotation implements Predicate<TestMethod> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.630 -0400", hash_original_method = "A8B3157C0F26BC2F3EBE54C11E9286F8", hash_generated_method = "D643D546E8362B14DCA24E57B04EAFC6")
     public  HasClassAnnotation(Class<? extends Annotation> annotationClass) {
         this.annotationClass = annotationClass;
-        
-        
+        // ---------- Original Method ----------
+        //this.annotationClass = annotationClass;
     }
 
     
@@ -27,8 +27,8 @@ class HasClassAnnotation implements Predicate<TestMethod> {
         boolean var65A2DA678C561FC94BB91558C7468F80_193028225 = (testMethod.getEnclosingClass().getAnnotation(annotationClass) != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1032584167 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1032584167;
-        
-        
+        // ---------- Original Method ----------
+        //return testMethod.getEnclosingClass().getAnnotation(annotationClass) != null;
     }
 
     

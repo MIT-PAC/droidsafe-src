@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,7 +32,7 @@ public final class InputDevice implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.824 -0400", hash_original_method = "2C37C35B619B46784669EFC9CA5E5179", hash_generated_method = "93E63FA312CE70DEEBBCD18536A99918")
     private  InputDevice() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -58,47 +58,43 @@ public final class InputDevice implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.824 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "D472F103AF15DC72E60B2C2AF61E3389")
     public int getId() {
         int var6AC7F06B6413A1BE9C136DC7DF0D2B60_1352459076 = (mId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037645606 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037645606;
-        
-        
+        // ---------- Original Method ----------
+        //return mId;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.824 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "345E92494D894721CFD8647887DC5BD4")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_133733504 =         mName;
         varDBF15A5FB8102A5C28D5046A0E92E443_133733504.addTaint(taint);
         return varDBF15A5FB8102A5C28D5046A0E92E443_133733504;
-        
-        
+        // ---------- Original Method ----------
+        //return mName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.825 -0400", hash_original_method = "3BD5CDD2AD0F6E345998577876EA9513", hash_generated_method = "B1797F9D34F342B00423D1A9507C0821")
     public int getSources() {
         int varDB16CA429360673C225135A6E95335E5_754290897 = (mSources);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_717887945 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_717887945;
-        
-        
+        // ---------- Original Method ----------
+        //return mSources;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.825 -0400", hash_original_method = "3E019E9C92E6EAD3726AE49F913F1619", hash_generated_method = "EC5A5AE8EE5EB2199EB5165FD92128A2")
     public int getKeyboardType() {
         int var4F373ED5F3CABA41929A1177EB3FB926_2001164075 = (mKeyboardType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1347126772 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1347126772;
-        
-        
+        // ---------- Original Method ----------
+        //return mKeyboardType;
     }
 
     
@@ -107,19 +103,18 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_133733504 =         mName;
 KeyCharacterMap var0C467EEC84F0F598C0D81E03A823790D_308097438 =         KeyCharacterMap.load(mId);
         var0C467EEC84F0F598C0D81E03A823790D_308097438.addTaint(taint);
         return var0C467EEC84F0F598C0D81E03A823790D_308097438;
-        
-        
+        // ---------- Original Method ----------
+        //return KeyCharacterMap.load(mId);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.825 -0400", hash_original_method = "6E63969CFD2DFD594C82531499F7DA54", hash_generated_method = "9FF63717585EDD893B06915A18C463F0")
      String getKeyCharacterMapFile() {
 String varC41B4C4A25BA902F7F690BA9A2B25586_678091145 =         mKeyCharacterMapFile;
         varC41B4C4A25BA902F7F690BA9A2B25586_678091145.addTaint(taint);
         return varC41B4C4A25BA902F7F690BA9A2B25586_678091145;
-        
-        
+        // ---------- Original Method ----------
+        //return mKeyCharacterMapFile;
     }
 
     
@@ -135,20 +130,20 @@ for(int i = 0;i < numRanges;i++)
 MotionRange varF8A2EC64DE65E58A942AA1E46755B5CE_1409075301 =                 range;
                 varF8A2EC64DE65E58A942AA1E46755B5CE_1409075301.addTaint(taint);
                 return varF8A2EC64DE65E58A942AA1E46755B5CE_1409075301;
-            } 
-        } 
+            } //End block
+        } //End block
 MotionRange var540C13E9E156B687226421B24F2DF178_341012899 =         null;
         var540C13E9E156B687226421B24F2DF178_341012899.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_341012899;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int numRanges = mMotionRanges.size();
+        //for (int i = 0; i < numRanges; i++) {
+            //final MotionRange range = mMotionRanges.get(i);
+            //if (range.mAxis == axis) {
+                //return range;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -165,20 +160,20 @@ for(int i = 0;i < numRanges;i++)
 MotionRange varF8A2EC64DE65E58A942AA1E46755B5CE_2125760374 =                 range;
                 varF8A2EC64DE65E58A942AA1E46755B5CE_2125760374.addTaint(taint);
                 return varF8A2EC64DE65E58A942AA1E46755B5CE_2125760374;
-            } 
-        } 
+            } //End block
+        } //End block
 MotionRange var540C13E9E156B687226421B24F2DF178_1733194559 =         null;
         var540C13E9E156B687226421B24F2DF178_1733194559.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1733194559;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int numRanges = mMotionRanges.size();
+        //for (int i = 0; i < numRanges; i++) {
+            //final MotionRange range = mMotionRanges.get(i);
+            //if (range.mAxis == axis && range.mSource == source) {
+                //return range;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -187,8 +182,8 @@ MotionRange var540C13E9E156B687226421B24F2DF178_1733194559 =         null;
 List<MotionRange> varFFE5FF278A34CE0245187BDB61690F1F_1457759159 =         mMotionRanges;
         varFFE5FF278A34CE0245187BDB61690F1F_1457759159.addTaint(taint);
         return varFFE5FF278A34CE0245187BDB61690F1F_1457759159;
-        
-        
+        // ---------- Original Method ----------
+        //return mMotionRanges;
     }
 
     
@@ -202,8 +197,8 @@ List<MotionRange> varFFE5FF278A34CE0245187BDB61690F1F_1457759159 =         mMoti
         addTaint(source);
         addTaint(axis);
         mMotionRanges.add(new MotionRange(axis, source, min, max, flat, fuzz));
-        
-        
+        // ---------- Original Method ----------
+        //mMotionRanges.add(new MotionRange(axis, source, min, max, flat, fuzz));
     }
 
     
@@ -220,24 +215,24 @@ for(;;)
     if(axis < 0)            
             {
                 break;
-            } 
+            } //End block
             addMotionRange(axis, in.readInt(),
                     in.readFloat(), in.readFloat(), in.readFloat(), in.readFloat());
-        } 
-        
-        
-        
-        
-        
-        
-        
-            
-            
-                
-            
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mId = in.readInt();
+        //mName = in.readString();
+        //mSources = in.readInt();
+        //mKeyboardType = in.readInt();
+        //mKeyCharacterMapFile = in.readString();
+        //for (;;) {
+            //int axis = in.readInt();
+            //if (axis < 0) {
+                //break;
+            //}
+            //addMotionRange(axis, in.readInt(),
+                    //in.readFloat(), in.readFloat(), in.readFloat(), in.readFloat());
+        //}
     }
 
     
@@ -261,37 +256,36 @@ for(int i = 0;i < numRanges;i++)
             out.writeFloat(range.mMax);
             out.writeFloat(range.mFlat);
             out.writeFloat(range.mFuzz);
-        } 
+        } //End block
         out.writeInt(-1);
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //out.writeInt(mId);
+        //out.writeString(mName);
+        //out.writeInt(mSources);
+        //out.writeInt(mKeyboardType);
+        //out.writeString(mKeyCharacterMapFile);
+        //final int numRanges = mMotionRanges.size();
+        //for (int i = 0; i < numRanges; i++) {
+            //MotionRange range = mMotionRanges.get(i);
+            //out.writeInt(range.mAxis);
+            //out.writeInt(range.mSource);
+            //out.writeFloat(range.mMin);
+            //out.writeFloat(range.mMax);
+            //out.writeFloat(range.mFlat);
+            //out.writeFloat(range.mFuzz);
+        //}
+        //out.writeInt(-1);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.826 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "93B3070E7AB8A6092F518D5D90CE5597")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1031564640 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727773109 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727773109;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -335,12 +329,12 @@ for(int i = 0;i < numAxes;i++)
             description.append(" flat=").append(range.mFlat);
             description.append(" fuzz=").append(range.mFuzz);
             description.append("\n");
-        } 
+        } //End block
 String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toString();
         var748F562E35834E3B11BDA296A09FD9A8_1435486335.addTaint(taint);
         return var748F562E35834E3B11BDA296A09FD9A8_1435486335;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -354,12 +348,12 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
         {
             description.append(" ");
             description.append(sourceName);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ((mSources & source) == source) {
+            //description.append(" ");
+            //description.append(sourceName);
+        //}
     }
 
     
@@ -391,90 +385,83 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
             mMax = max;
             mFlat = flat;
             mFuzz = fuzz;
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mAxis = axis;
+            //mSource = source;
+            //mMin = min;
+            //mMax = max;
+            //mFlat = flat;
+            //mFuzz = fuzz;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.828 -0400", hash_original_method = "7AA123496C72318A01ADA9E2FDF13D66", hash_generated_method = "D0F97BC044F85C098EB0731A2ABC4C67")
         public int getAxis() {
             int varDDDC097689F9367A976032A7CB2D356F_443367582 = (mAxis);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313866322 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313866322;
-            
-            
+            // ---------- Original Method ----------
+            //return mAxis;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.828 -0400", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "C9A424DFB73AEE330584CB8B4F789CF9")
         public int getSource() {
             int var6917951DFB797D97827BAAA584F128DE_1759150339 = (mSource);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1224486045 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1224486045;
-            
-            
+            // ---------- Original Method ----------
+            //return mSource;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "5BD2FEA7B11B9283C78F11EA439073DF", hash_generated_method = "3424212D1CD872B81591AC72482C030B")
         public float getMin() {
             float var5226ADEF3F3B32783B4143237DC7F62E_458243706 = (mMin);
                         float var546ADE640B6EDFBC8A086EF31347E768_1997256247 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1997256247;
-            
-            
+            // ---------- Original Method ----------
+            //return mMin;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "CDE9D2624870C8EBE80058272C14174B", hash_generated_method = "6D118BD00C9FF440DB0860934B1D535C")
         public float getMax() {
             float varC886C6FF92A43B3F6833B7BAFD354FBA_1644291953 = (mMax);
                         float var546ADE640B6EDFBC8A086EF31347E768_1844018070 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1844018070;
-            
-            
+            // ---------- Original Method ----------
+            //return mMax;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "FCC48134B6B008CC9CD869CCEF03FE5F", hash_generated_method = "3D556B7E4E09BF75C283FD4A5ABA12E4")
         public float getRange() {
             float varBCE7EEE240F58C938F84D6A44D3B7270_1892877933 = (mMax - mMin);
                         float var546ADE640B6EDFBC8A086EF31347E768_2066126171 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_2066126171;
-            
-            
+            // ---------- Original Method ----------
+            //return mMax - mMin;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "6E70447A0F19559DDEE9B218BFC4E0A9", hash_generated_method = "1D6337AC8D31E29D19FB169B3C7AC03A")
         public float getFlat() {
             float varC5775080456E320FD2BA8673FDF85440_198376123 = (mFlat);
                         float var546ADE640B6EDFBC8A086EF31347E768_189796 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_189796;
-            
-            
+            // ---------- Original Method ----------
+            //return mFlat;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.829 -0400", hash_original_method = "6C32BE9CB35AEE464A215A2BDA6324A6", hash_generated_method = "6471731E1309DC76A95EA00C613FD64E")
         public float getFuzz() {
             float varA0A8D80651D8BE9B0B3FA9DF5C043C6F_889038023 = (mFuzz);
                         float var546ADE640B6EDFBC8A086EF31347E768_1586882966 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1586882966;
-            
-            
+            // ---------- Original Method ----------
+            //return mFuzz;
         }
 
         
@@ -592,14 +579,14 @@ String var748F562E35834E3B11BDA296A09FD9A8_1435486335 =         description.toSt
             return new InputDevice[size];
         }
     };
-    
+    // orphaned legacy method
     public InputDevice createFromParcel(Parcel in) {
             InputDevice result = new InputDevice();
             result.readFromParcel(in);
             return result;
         }
     
-    
+    // orphaned legacy method
     public InputDevice[] newArray(int size) {
             return new InputDevice[size];
         }

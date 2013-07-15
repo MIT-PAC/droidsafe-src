@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,13 +11,13 @@ public class DigestException extends GeneralSecurityException {
     public  DigestException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.951 -0400", hash_original_method = "4BFD0A9812571E805B2B692917954A18", hash_generated_method = "32516E3A03E7277423B9AFF8010A7A86")
     public  DigestException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,7 +26,7 @@ public class DigestException extends GeneralSecurityException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,7 +34,7 @@ public class DigestException extends GeneralSecurityException {
     public  DigestException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

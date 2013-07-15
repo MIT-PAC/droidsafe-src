@@ -1,6 +1,6 @@
 package com.android.internal.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,20 +40,20 @@ public class SortCursor extends AbstractCursor {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.591 -0400", hash_original_method = "F00E20B7880C90825F84FA73002A8738", hash_generated_method = "E84AFD080C6F2A7124E647128DDF036E")
         @Override
         public void onChanged() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             mPos = -1;
-            
-            
+            // ---------- Original Method ----------
+            //mPos = -1;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.591 -0400", hash_original_method = "4CD83AD480AFA6CEDD96BF4385EF1A22", hash_generated_method = "567541AA29BE5959C655A66397E71654")
         @Override
         public void onInvalidated() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             mPos = -1;
-            
-            
+            // ---------- Original Method ----------
+            //mPos = -1;
         }
 
         
@@ -71,7 +71,7 @@ for(int i = 0;i < length;i++)
             mCursors[i].registerDataSetObserver(mObserver);
             mCursors[i].moveToFirst();
             mSortColumns[i] = mCursors[i].getColumnIndexOrThrow(sortcolumn);
-        } 
+        } //End block
         mCursor = null;
         String smallest = "";
 for(int j = 0;j < length;j++)
@@ -83,15 +83,15 @@ for(int j = 0;j < length;j++)
             {
                 smallest = current;
                 mCursor = mCursors[j];
-            } 
-        } 
+            } //End block
+        } //End block
 for(int i = mRowNumCache.length - 1;i >= 0;i--)
         {
             mRowNumCache[i] = -2;
-        } 
+        } //End block
         mCurRowNumCache = new int[ROWCACHESIZE][length];
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -105,27 +105,27 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 count += mCursors[i].getCount();
-            } 
-        } 
+            } //End block
+        } //End block
         int varE2942A04780E223B215EB8B663CF5353_1786469091 = (count);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1661618724 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1661618724;
-        
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = 0;
+        //int length = mCursors.length;
+        //for (int i = 0 ; i < length ; i++) {
+            //if (mCursors[i] != null) {
+                //count += mCursors[i].getCount();
+            //}
+        //}
+        //return count;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.595 -0400", hash_original_method = "84C72ACE5D5A745A5633B3A38CCC072D", hash_generated_method = "CC2E0B77EB093BD280043C417A56DF2E")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(oldPosition);
     if(oldPosition == newPosition)        
         {
@@ -143,13 +143,13 @@ for(int i = 0;i < length;i++)
                 boolean var68934A3E9455FA72420237EB05902327_67452183 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247375834 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247375834;
-            } 
+            } //End block
             mCursor.moveToPosition(mCurRowNumCache[cache_entry][which]);
             mLastCacheHit = cache_entry;
             boolean varB326B5062B2F0E69046810717534CB09_1747077295 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1884235118 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1884235118;
-        } 
+        } //End block
         mCursor = null;
         int length = mCursors.length;
     if(mLastCacheHit >= 0)        
@@ -159,8 +159,8 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] == null)                
                 continue;
                 mCursors[i].moveToPosition(mCurRowNumCache[mLastCacheHit][i]);
-            } 
-        } 
+            } //End block
+        } //End block
     if(newPosition < oldPosition || oldPosition == -1)        
         {
 for(int i = 0;i < length;i++)
@@ -168,13 +168,13 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] == null)                
                 continue;
                 mCursors[i].moveToFirst();
-            } 
+            } //End block
             oldPosition = 0;
-        } 
+        } //End block
     if(oldPosition < 0)        
         {
             oldPosition = 0;
-        } 
+        } //End block
         int smallestIdx = -1;
 for(int i = oldPosition;i <= newPosition;i++)
         {
@@ -185,21 +185,21 @@ for(int j = 0;j < length;j++)
     if(mCursors[j] == null || mCursors[j].isAfterLast())                
                 {
                     continue;
-                } 
+                } //End block
                 String current = mCursors[j].getString(mSortColumns[j]);
     if(smallestIdx < 0 || current.compareToIgnoreCase(smallest) < 0)                
                 {
                     smallest = current;
                     smallestIdx = j;
-                } 
-            } 
+                } //End block
+            } //End block
     if(i == newPosition)            
             break;
     if(mCursors[smallestIdx] != null)            
             {
                 mCursors[smallestIdx].moveToNext();
-            } 
-        } 
+            } //End block
+        } //End block
         mCursor = mCursors[smallestIdx];
         mRowNumCache[cache_entry] = newPosition;
         mCursorCache[cache_entry] = smallestIdx;
@@ -208,14 +208,14 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 mCurRowNumCache[cache_entry][i] = mCursors[i].getPosition();
-            } 
-        } 
+            } //End block
+        } //End block
         mLastCacheHit = -1;
         boolean varB326B5062B2F0E69046810717534CB09_698843707 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_612526183 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_612526183;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -226,8 +226,8 @@ for(int i = 0;i < length;i++)
 String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString(column);
         varBF070AA93B429966B971F1DEC6945F8B_836995961.addTaint(taint);
         return varBF070AA93B429966B971F1DEC6945F8B_836995961;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getString(column);
     }
 
     
@@ -238,8 +238,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
         short varCF39ED121EBE45D3D2DC5918BE5E01F5_934181263 = (mCursor.getShort(column));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1705794300 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1705794300;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getShort(column);
     }
 
     
@@ -250,8 +250,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
         int var2E07EF4470929EC8B6F136BFA91B860A_1879582766 = (mCursor.getInt(column));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439338812 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439338812;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getInt(column);
     }
 
     
@@ -262,8 +262,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
         long var771B739BF5A02FA05A73BCB0054D98D5_141758846 = (mCursor.getLong(column));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1482220514 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1482220514;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getLong(column);
     }
 
     
@@ -274,8 +274,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
         float var848ACA0CA9C00651ACC23CAEA64B6535_888095896 = (mCursor.getFloat(column));
                 float var546ADE640B6EDFBC8A086EF31347E768_1887602438 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1887602438;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getFloat(column);
     }
 
     
@@ -286,8 +286,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
         double var3ECDC303791021B0ABF6510DCFD995F2_445982448 = (mCursor.getDouble(column));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_601684795 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_601684795;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getDouble(column);
     }
 
     
@@ -298,8 +298,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
         int var309B5A67BFA317E363B4314879AC9AD4_942396365 = (mCursor.getType(column));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2934775 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2934775;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getType(column);
     }
 
     
@@ -310,8 +310,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
         boolean var1088A1081C6173A5FD1F3233B0A3611C_1651461967 = (mCursor.isNull(column));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1022873623 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1022873623;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.isNull(column);
     }
 
     
@@ -322,8 +322,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
         byte[] var0E5AB00079F8E51D240AB21E2A09AC74_1395126875 = (mCursor.getBlob(column));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1656193300 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1656193300;
-        
-        
+        // ---------- Original Method ----------
+        //return mCursor.getBlob(column);
     }
 
     
@@ -335,7 +335,7 @@ String varBF070AA93B429966B971F1DEC6945F8B_836995961 =         mCursor.getString
 String[] varF8FF07705E74C2344D2EF0339BC7BE26_1502379554 =             mCursor.getColumnNames();
             varF8FF07705E74C2344D2EF0339BC7BE26_1502379554.addTaint(taint);
             return varF8FF07705E74C2344D2EF0339BC7BE26_1502379554;
-        } 
+        } //End block
         else
         {
             int length = mCursors.length;
@@ -346,24 +346,24 @@ for(int i = 0;i < length;i++)
 String[] var90D18CEB9F718E94701547140114F98C_861234187 =                     mCursors[i].getColumnNames();
                     var90D18CEB9F718E94701547140114F98C_861234187.addTaint(taint);
                     return var90D18CEB9F718E94701547140114F98C_861234187;
-                } 
-            } 
+                } //End block
+            } //End block
             IllegalStateException var4DD288F0D5A057C1622FA17A2BEFA85F_1430255192 = new IllegalStateException("No cursor that can return names");
             var4DD288F0D5A057C1622FA17A2BEFA85F_1430255192.addTaint(taint);
             throw var4DD288F0D5A057C1622FA17A2BEFA85F_1430255192;
-        } 
-        
-        
-            
-        
-            
-            
-                
-                    
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mCursor != null) {
+            //return mCursor.getColumnNames();
+        //} else {
+            //int length = mCursors.length;
+            //for (int i = 0 ; i < length ; i++) {
+                //if (mCursors[i] != null) {
+                    //return mCursors[i].getColumnNames();
+                //}
+            //}
+            //throw new IllegalStateException("No cursor that can return names");
+        //}
     }
 
     
@@ -376,13 +376,13 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] == null)            
             continue;
             mCursors[i].deactivate();
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int length = mCursors.length;
+        //for (int i = 0 ; i < length ; i++) {
+            //if (mCursors[i] == null) continue;
+            //mCursors[i].deactivate();
+        //}
     }
 
     
@@ -395,20 +395,20 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] == null)            
             continue;
             mCursors[i].close();
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int length = mCursors.length;
+        //for (int i = 0 ; i < length ; i++) {
+            //if (mCursors[i] == null) continue;
+            //mCursors[i].close();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.599 -0400", hash_original_method = "3D4B0E24965017562B726DF84968F4EF", hash_generated_method = "C7510007050BE162AA6B2F6945600829")
     @Override
     public void registerDataSetObserver(DataSetObserver observer) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(observer.getTaint());
         int length = mCursors.length;
 for(int i = 0;i < length;i++)
@@ -416,15 +416,15 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 mCursors[i].registerDataSetObserver(observer);
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int length = mCursors.length;
+        //for (int i = 0 ; i < length ; i++) {
+            //if (mCursors[i] != null) {
+                //mCursors[i].registerDataSetObserver(observer);
+            //}
+        //}
     }
 
     
@@ -438,15 +438,15 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 mCursors[i].unregisterDataSetObserver(observer);
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int length = mCursors.length;
+        //for (int i = 0 ; i < length ; i++) {
+            //if (mCursors[i] != null) {
+                //mCursors[i].unregisterDataSetObserver(observer);
+            //}
+        //}
     }
 
     
@@ -463,20 +463,20 @@ for(int i = 0;i < length;i++)
                 boolean var68934A3E9455FA72420237EB05902327_314157990 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1396007567 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1396007567;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_138296531 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1959567308 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1959567308;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int length = mCursors.length;
+        //for (int i = 0 ; i < length ; i++) {
+            //if (mCursors[i] == null) continue;
+            //if (mCursors[i].requery() == false) {
+                //return false;
+            //}
+        //}
+        //return true;
     }
 
     

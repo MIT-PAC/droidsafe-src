@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class WWWAuthenticateParser extends ChallengeParser {
     public  WWWAuthenticateParser(String wwwAuthenticate) {
         super(wwwAuthenticate);
         addTaint(wwwAuthenticate.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,11 +21,10 @@ public class WWWAuthenticateParser extends ChallengeParser {
     protected  WWWAuthenticateParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.576 -0400", hash_original_method = "21D63394A7F5FCF103E716C1D0FF5141", hash_generated_method = "BC1BD4A467E4B8E37EAE2C37A1241CDB")
     public SIPHeader parse() throws ParseException {
     if(debug)        
@@ -38,24 +37,24 @@ public class WWWAuthenticateParser extends ChallengeParser {
 SIPHeader varBCB9696E34DE6C6E990E36231F1734E3_304270473 =             wwwAuthenticate;
             varBCB9696E34DE6C6E990E36231F1734E3_304270473.addTaint(taint);
             return varBCB9696E34DE6C6E990E36231F1734E3_304270473;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("parse");
-        } 
-        
-        
-            
-        
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("parse");
+        //try {
+            //headerName(TokenTypes.WWW_AUTHENTICATE);
+            //WWWAuthenticate wwwAuthenticate = new WWWAuthenticate();
+            //super.parse(wwwAuthenticate);
+            //return wwwAuthenticate;
+        //} finally {
+            //if (debug)
+                //dbg_leave("parse");
+        //}
     }
 
     

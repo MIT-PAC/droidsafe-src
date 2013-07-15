@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,9 +17,9 @@ public class Pair<F, S> {
     public  Pair(F first, S second) {
         this.first = first;
         this.second = second;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.first = first;
+        //this.second = second;
     }
 
     
@@ -42,26 +42,26 @@ public class Pair<F, S> {
         try 
         {
             other = (Pair<F, S>) o;
-        } 
+        } //End block
         catch (ClassCastException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_514816225 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1177820458 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1177820458;
-        } 
+        } //End block
         boolean var7204782B993AA31869DD0A2FEBF55CFC_1936170401 = (first.equals(other.first) && second.equals(other.second));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1903793828 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1903793828;
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (o == this) return true;
+        //if (!(o instanceof Pair)) return false;
+        //final Pair<F, S> other;
+        //try {
+            //other = (Pair<F, S>) o;
+        //} catch (ClassCastException e) {
+            //return false;
+        //}
+        //return first.equals(other.first) && second.equals(other.second);
     }
 
     
@@ -73,11 +73,11 @@ public class Pair<F, S> {
         int varB4A88417B3D0170D754C647C30B7216A_824549214 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677820613 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677820613;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int result = 17;
+        //result = 31 * result + first.hashCode();
+        //result = 31 * result + second.hashCode();
+        //return result;
     }
 
     

@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -181,8 +181,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         super(context);
         addTaint(context.getTaint());
         initViewGroup();
-        
-        
+        // ---------- Original Method ----------
+        //initViewGroup();
     }
 
     
@@ -193,9 +193,9 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(context.getTaint());
         initViewGroup();
         initFromAttributes(context, attrs);
-        
-        
-        
+        // ---------- Original Method ----------
+        //initViewGroup();
+        //initFromAttributes(context, attrs);
     }
 
     
@@ -207,9 +207,9 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         addTaint(context.getTaint());
         initViewGroup();
         initFromAttributes(context, attrs);
-        
-        
-        
+        // ---------- Original Method ----------
+        //initViewGroup();
+        //initFromAttributes(context, attrs);
     }
 
     
@@ -224,25 +224,25 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     if(mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB)        
         {
             mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        } 
+        } //End block
         setDescendantFocusability(FOCUS_BEFORE_DESCENDANTS);
         mChildren = new View[ARRAY_INITIAL_CAPACITY];
         mChildrenCount = 0;
         mPersistentDrawingCache = PERSISTENT_SCROLLING_CACHE;
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //setFlags(WILL_NOT_DRAW, DRAW_MASK);
+        //mGroupFlags |= FLAG_CLIP_CHILDREN;
+        //mGroupFlags |= FLAG_CLIP_TO_PADDING;
+        //mGroupFlags |= FLAG_ANIMATION_DONE;
+        //mGroupFlags |= FLAG_ANIMATION_CACHE;
+        //mGroupFlags |= FLAG_ALWAYS_DRAWN_WITH_CACHE;
+        //if (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB) {
+            //mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
+        //}
+        //setDescendantFocusability(FOCUS_BEFORE_DESCENDANTS);
+        //mChildren = new View[ARRAY_INITIAL_CAPACITY];
+        //mChildrenCount = 0;
+        //mPersistentDrawingCache = PERSISTENT_SCROLLING_CACHE;
     }
 
     
@@ -280,7 +280,7 @@ switch(attr){
     if(id > 0)            
             {
                 setLayoutAnimation(AnimationUtils.loadLayoutAnimation(mContext, id));
-            } 
+            } //End block
             break;
             case R.styleable.ViewGroup_descendantFocusability:
             setDescendantFocusability(DESCENDANT_FOCUSABILITY_FLAGS[a.getInt(attr, 0)]);
@@ -293,17 +293,16 @@ switch(attr){
     if(animateLayoutChanges)            
             {
                 setLayoutTransition(new LayoutTransition());
-            } 
+            } //End block
             break;
 }
-        } 
+        } //End block
         a.recycle();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.398 -0400", hash_original_method = "9DEFF27CA0C7CA0A646DEBC837B35971", hash_generated_method = "D3B65449AAF0AB34ACB80FAB687A25EF")
     @ViewDebug.ExportedProperty(category = "focus", mapping = {
         @ViewDebug.IntToString(from = FOCUS_BEFORE_DESCENDANTS, to = "FOCUS_BEFORE_DESCENDANTS"),
@@ -314,8 +313,8 @@ switch(attr){
         int varDE65DC4F383CC3E2A0CC45BA852286F8_1568541814 = (mGroupFlags & FLAG_MASK_FOCUSABILITY);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039834099 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039834099;
-        
-        
+        // ---------- Original Method ----------
+        //return mGroupFlags & FLAG_MASK_FOCUSABILITY;
     }
 
     
@@ -333,18 +332,18 @@ switch(focusability){
         throw var3C40DAC1F803FF24E2F1E823974A078B_1581273122;
 }        mGroupFlags &= ~FLAG_MASK_FOCUSABILITY;
         mGroupFlags |= (focusability & FLAG_MASK_FOCUSABILITY);
-        
-        
-            
-            
-            
-                
-            
-                
-                        
-        
-        
-        
+        // ---------- Original Method ----------
+        //switch (focusability) {
+            //case FOCUS_BEFORE_DESCENDANTS:
+            //case FOCUS_AFTER_DESCENDANTS:
+            //case FOCUS_BLOCK_DESCENDANTS:
+                //break;
+            //default:
+                //throw new IllegalArgumentException("must be one of FOCUS_BEFORE_DESCENDANTS, "
+                        //+ "FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS");
+        //}
+        //mGroupFlags &= ~FLAG_MASK_FOCUSABILITY;
+        //mGroupFlags |= (focusability & FLAG_MASK_FOCUSABILITY);
     }
 
     
@@ -357,14 +356,14 @@ switch(focusability){
         {
             mFocused.unFocus();
             mFocused = null;
-        } 
+        } //End block
         super.handleFocusGainInternal(direction, previouslyFocusedRect);
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mFocused != null) {
+            //mFocused.unFocus();
+            //mFocused = null;
+        //}
+        //super.handleFocusGainInternal(direction, previouslyFocusedRect);
     }
 
     
@@ -374,41 +373,41 @@ switch(focusability){
     if(DBG)        
         {
             System.out.println(this + " requestChildFocus()");
-        } 
+        } //End block
     if(getDescendantFocusability() == FOCUS_BLOCK_DESCENDANTS)        
         {
             return;
-        } 
+        } //End block
         super.unFocus();
     if(mFocused != child)        
         {
     if(mFocused != null)            
             {
                 mFocused.unFocus();
-            } 
+            } //End block
             mFocused = child;
-        } 
+        } //End block
     if(mParent != null)        
         {
             mParent.requestChildFocus(this, focused);
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-                
-            
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DBG) {
+            //System.out.println(this + " requestChildFocus()");
+        //}
+        //if (getDescendantFocusability() == FOCUS_BLOCK_DESCENDANTS) {
+            //return;
+        //}
+        //super.unFocus();
+        //if (mFocused != child) {
+            //if (mFocused != null) {
+                //mFocused.unFocus();
+            //}
+            //mFocused = child;
+        //}
+        //if (mParent != null) {
+            //mParent.requestChildFocus(this, focused);
+        //}
     }
 
     
@@ -420,13 +419,13 @@ switch(focusability){
                 && !(isFocused() && getDescendantFocusability() != FOCUS_AFTER_DESCENDANTS))        
         {
             mParent.focusableViewAvailable(v);
-        } 
-        
-        
-                
-                
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mParent != null
+                //&& (getDescendantFocusability() != FOCUS_BLOCK_DESCENDANTS)
+                //&& !(isFocused() && getDescendantFocusability() != FOCUS_AFTER_DESCENDANTS)) {
+            //mParent.focusableViewAvailable(v);
+        //}
     }
 
     
@@ -436,8 +435,8 @@ switch(focusability){
         boolean varD43080C29435A813C96B242E11855E1A_1183039990 = (mParent != null && mParent.showContextMenuForChild(originalView));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_746183562 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_746183562;
-        
-        
+        // ---------- Original Method ----------
+        //return mParent != null && mParent.showContextMenuForChild(originalView);
     }
 
     
@@ -448,8 +447,8 @@ switch(focusability){
 ActionMode varA4CB90969CA4AE0EAA9D3E65662D33E9_153117129 =         mParent != null ? mParent.startActionModeForChild(originalView, callback) : null;
         varA4CB90969CA4AE0EAA9D3E65662D33E9_153117129.addTaint(taint);
         return varA4CB90969CA4AE0EAA9D3E65662D33E9_153117129;
-        
-        
+        // ---------- Original Method ----------
+        //return mParent != null ? mParent.startActionModeForChild(originalView, callback) : null;
     }
 
     
@@ -462,28 +461,27 @@ ActionMode varA4CB90969CA4AE0EAA9D3E65662D33E9_153117129 =         mParent != nu
 View var4B697582AFCAF9BE54EF2B0BDE95A6DF_578011352 =             FocusFinder.getInstance().findNextFocus(this, focused, direction);
             var4B697582AFCAF9BE54EF2B0BDE95A6DF_578011352.addTaint(taint);
             return var4B697582AFCAF9BE54EF2B0BDE95A6DF_578011352;
-        } 
+        } //End block
         else
     if(mParent != null)        
         {
 View varCFDB149F9AAD9A4DF9AD86DEA2C9AFB0_1744929022 =             mParent.focusSearch(focused, direction);
             varCFDB149F9AAD9A4DF9AD86DEA2C9AFB0_1744929022.addTaint(taint);
             return varCFDB149F9AAD9A4DF9AD86DEA2C9AFB0_1744929022;
-        } 
+        } //End block
 View var540C13E9E156B687226421B24F2DF178_893367794 =         null;
         var540C13E9E156B687226421B24F2DF178_893367794.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_893367794;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isRootNamespace()) {
+            //return FocusFinder.getInstance().findNextFocus(this, focused, direction);
+        //} else if (mParent != null) {
+            //return mParent.focusSearch(focused, direction);
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.417 -0400", hash_original_method = "1A209ACB79681B08302166E2C48344A2", hash_generated_method = "44104C9FE7AADA8BF4F33AF647507323")
     public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean immediate) {
         addTaint(immediate);
@@ -492,8 +490,8 @@ View var540C13E9E156B687226421B24F2DF178_893367794 =         null;
         boolean var68934A3E9455FA72420237EB05902327_79381724 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_35829835 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_35829835;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -507,33 +505,33 @@ View var540C13E9E156B687226421B24F2DF178_893367794 =         null;
             boolean var68934A3E9455FA72420237EB05902327_563283531 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1888247207 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1888247207;
-        } 
+        } //End block
         final boolean propagate = onRequestSendAccessibilityEvent(child, event);
     if(!propagate)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1881423283 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2139184360 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2139184360;
-        } 
+        } //End block
         boolean var12459EE8A10B8E2F8355E7B18F170464_138997106 = (parent.requestSendAccessibilityEvent(this, event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510828419 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_510828419;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ViewParent parent = getParent();
+        //if (parent == null) {
+            //return false;
+        //}
+        //final boolean propagate = onRequestSendAccessibilityEvent(child, event);
+        //if (!propagate) {
+            //return false;
+        //}
+        //return parent.requestSendAccessibilityEvent(this, event);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.417 -0400", hash_original_method = "0D2782B4A269D15DF81200BFDAFE535A", hash_generated_method = "445F3F071A9E492723DD748366DCB2FA")
     public boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(child.getTaint());
     if(mAccessibilityDelegate != null)        
@@ -541,33 +539,32 @@ View var540C13E9E156B687226421B24F2DF178_893367794 =         null;
             boolean varDEC6159CC044C7CB7315783B7FC62C32_543925167 = (mAccessibilityDelegate.onRequestSendAccessibilityEvent(this, child, event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1545552098 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1545552098;
-        } 
+        } //End block
         else
         {
             boolean varA5AE8846A1EE623EFB55210EBDCBCF74_306911962 = (onRequestSendAccessibilityEventInternal(child, event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_879408342 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_879408342;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAccessibilityDelegate != null) {
+            //return mAccessibilityDelegate.onRequestSendAccessibilityEvent(this, child, event);
+        //} else {
+            //return onRequestSendAccessibilityEventInternal(child, event);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.417 -0400", hash_original_method = "F0DFCA5DE1F330F511BBFF62182D5BD4", hash_generated_method = "0EDB7153580832B2497426066A375AB6")
      boolean onRequestSendAccessibilityEventInternal(View child, AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(child.getTaint());
         boolean varB326B5062B2F0E69046810717534CB09_1963531608 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_243383269 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_243383269;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -580,9 +577,9 @@ View var540C13E9E156B687226421B24F2DF178_893367794 =         null;
                 mFocused.dispatchUnhandledMove(focused, direction));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1306886552 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1306886552;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return mFocused != null &&
+                //mFocused.dispatchUnhandledMove(focused, direction);
     }
 
     
@@ -592,20 +589,20 @@ View var540C13E9E156B687226421B24F2DF178_893367794 =         null;
     if(DBG)        
         {
             System.out.println(this + " clearChildFocus()");
-        } 
+        } //End block
         mFocused = null;
     if(mParent != null)        
         {
             mParent.clearChildFocus(this);
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DBG) {
+            //System.out.println(this + " clearChildFocus()");
+        //}
+        //mFocused = null;
+        //if (mParent != null) {
+            //mParent.clearChildFocus(this);
+        //}
     }
 
     
@@ -616,12 +613,12 @@ View var540C13E9E156B687226421B24F2DF178_893367794 =         null;
     if(mFocused != null)        
         {
             mFocused.clearFocus();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.clearFocus();
+        //if (mFocused != null) {
+            //mFocused.clearFocus();
+        //}
     }
 
     
@@ -631,45 +628,43 @@ View var540C13E9E156B687226421B24F2DF178_893367794 =         null;
     if(DBG)        
         {
             System.out.println(this + " unFocus()");
-        } 
+        } //End block
         super.unFocus();
     if(mFocused != null)        
         {
             mFocused.unFocus();
-        } 
+        } //End block
         mFocused = null;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) {
+            //System.out.println(this + " unFocus()");
+        //}
+        //super.unFocus();
+        //if (mFocused != null) {
+            //mFocused.unFocus();
+        //}
+        //mFocused = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.419 -0400", hash_original_method = "F6AEE91365C496A95D4F4B1572422CF5", hash_generated_method = "5F938ACA1354FE50C0C852DE648B82FB")
     public View getFocusedChild() {
 View var2D88D1CA663928F256EE13E1B5302149_1660676793 =         mFocused;
         var2D88D1CA663928F256EE13E1B5302149_1660676793.addTaint(taint);
         return var2D88D1CA663928F256EE13E1B5302149_1660676793;
-        
-        
+        // ---------- Original Method ----------
+        //return mFocused;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.419 -0400", hash_original_method = "3D9AAFDE8E8826B256A10D32D774D94B", hash_generated_method = "7E9154501BCC0B8234537C572B2B9A93")
     @Override
     public boolean hasFocus() {
         boolean var9F9F70BB63D42AA061212110BAF2CBC7_888388596 = ((mPrivateFlags & FOCUSED) != 0 || mFocused != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_125031535 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_125031535;
-        
-        
+        // ---------- Original Method ----------
+        //return (mPrivateFlags & FOCUSED) != 0 || mFocused != null;
     }
 
     
@@ -680,34 +675,34 @@ View var2D88D1CA663928F256EE13E1B5302149_1660676793 =         mFocused;
         {
             System.out.println("Find focus in " + this + ": flags="
                     + isFocused() + ", child=" + mFocused);
-        } 
+        } //End block
     if(isFocused())        
         {
 View var72A74007B2BE62B849F475C7BDA4658B_1082528862 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1082528862.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1082528862;
-        } 
+        } //End block
     if(mFocused != null)        
         {
 View varFE641E0984CCFFF141AB1C7E4A7E0A0C_484422346 =             mFocused.findFocus();
             varFE641E0984CCFFF141AB1C7E4A7E0A0C_484422346.addTaint(taint);
             return varFE641E0984CCFFF141AB1C7E4A7E0A0C_484422346;
-        } 
+        } //End block
 View var540C13E9E156B687226421B24F2DF178_651174585 =         null;
         var540C13E9E156B687226421B24F2DF178_651174585.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_651174585;
-        
-        
-            
-                    
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) {
+            //System.out.println("Find focus in " + this + ": flags="
+                    //+ isFocused() + ", child=" + mFocused);
+        //}
+        //if (isFocused()) {
+            //return this;
+        //}
+        //if (mFocused != null) {
+            //return mFocused.findFocus();
+        //}
+        //return null;
     }
 
     
@@ -719,13 +714,13 @@ View var540C13E9E156B687226421B24F2DF178_651174585 =         null;
             boolean var68934A3E9455FA72420237EB05902327_1237223401 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1411905492 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1411905492;
-        } 
+        } //End block
     if(isFocusable())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1890537403 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1372774084 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1372774084;
-        } 
+        } //End block
         final int descendantFocusability = getDescendantFocusability();
     if(descendantFocusability != FOCUS_BLOCK_DESCENDANTS)        
         {
@@ -739,31 +734,31 @@ for(int i = 0;i < count;i++)
                     boolean varB326B5062B2F0E69046810717534CB09_1312358277 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2017479955 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2017479955;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_905424824 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_460066897 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_460066897;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((mViewFlags & VISIBILITY_MASK) != VISIBLE) {
+            //return false;
+        //}
+        //if (isFocusable()) {
+            //return true;
+        //}
+        //final int descendantFocusability = getDescendantFocusability();
+        //if (descendantFocusability != FOCUS_BLOCK_DESCENDANTS) {
+            //final int count = mChildrenCount;
+            //final View[] children = mChildren;
+            //for (int i = 0; i < count; i++) {
+                //final View child = children[i];
+                //if (child.hasFocusable()) {
+                    //return true;
+                //}
+            //}
+        //}
+        //return false;
     }
 
     
@@ -773,8 +768,8 @@ for(int i = 0;i < count;i++)
         addTaint(direction);
         addTaint(views.getTaint());
         addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
-        
-        
+        // ---------- Original Method ----------
+        //addFocusables(views, direction, FOCUSABLES_TOUCH_MODE);
     }
 
     
@@ -796,32 +791,32 @@ for(int i = 0;i < count;i++)
     if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE)                
                 {
                     child.addFocusables(views, direction, focusableMode);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
                 (focusableCount == views.size()))        
         {
             super.addFocusables(views, direction, focusableMode);
-        } 
-        
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-        
-        
-            
-                
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int focusableCount = views.size();
+        //final int descendantFocusability = getDescendantFocusability();
+        //if (descendantFocusability != FOCUS_BLOCK_DESCENDANTS) {
+            //final int count = mChildrenCount;
+            //final View[] children = mChildren;
+            //for (int i = 0; i < count; i++) {
+                //final View child = children[i];
+                //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
+                    //child.addFocusables(views, direction, focusableMode);
+                //}
+            //}
+        //}
+        //if (
+            //descendantFocusability != FOCUS_AFTER_DESCENDANTS ||
+                //(focusableCount == views.size())) {
+            //super.addFocusables(views, direction, focusableMode);
+        //}
     }
 
     
@@ -841,19 +836,19 @@ for(int i = 0;i < childrenCount;i++)
                     && (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0)            
             {
                 child.findViewsWithText(outViews, text, flags);
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-            
-                    
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.findViewsWithText(outViews, text, flags);
+        //final int childrenCount = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < childrenCount; i++) {
+            //View child = children[i];
+            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
+                    //&& (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
+                //child.findViewsWithText(outViews, text, flags);
+            //}
+        //}
     }
 
     
@@ -867,7 +862,7 @@ for(int i = 0;i < childrenCount;i++)
 View varC924E529DE927E973A786678D4C8F00A_650629638 =             foundView;
             varC924E529DE927E973A786678D4C8F00A_650629638.addTaint(taint);
             return varC924E529DE927E973A786678D4C8F00A_650629638;
-        } 
+        } //End block
         final int childrenCount = mChildrenCount;
         final View[] children = mChildren;
 for(int i = 0;i < childrenCount;i++)
@@ -879,26 +874,26 @@ for(int i = 0;i < childrenCount;i++)
 View varC924E529DE927E973A786678D4C8F00A_2058865779 =                 foundView;
                 varC924E529DE927E973A786678D4C8F00A_2058865779.addTaint(taint);
                 return varC924E529DE927E973A786678D4C8F00A_2058865779;
-            } 
-        } 
+            } //End block
+        } //End block
 View var540C13E9E156B687226421B24F2DF178_1617927855 =         null;
         var540C13E9E156B687226421B24F2DF178_1617927855.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1617927855;
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //View foundView = super.findViewByAccessibilityIdTraversal(accessibilityId);
+        //if (foundView != null) {
+            //return foundView;
+        //}
+        //final int childrenCount = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < childrenCount; i++) {
+            //View child = children[i];
+            //foundView = child.findViewByAccessibilityIdTraversal(accessibilityId);
+            //if (foundView != null) {
+                //return foundView;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -912,14 +907,14 @@ View var540C13E9E156B687226421B24F2DF178_1617927855 =         null;
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchWindowFocusChanged(hasFocus);
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchWindowFocusChanged(hasFocus);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchWindowFocusChanged(hasFocus);
+        //}
     }
 
     
@@ -936,18 +931,18 @@ for(int i = 0;i < count;i++)
     if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE)            
             {
                 child.addTouchables(views);
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.addTouchables(views);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //final View child = children[i];
+            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
+                //child.addTouchables(views);
+            //}
+        //}
     }
 
     
@@ -961,20 +956,20 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchDisplayHint(hint);
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchDisplayHint(hint);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchDisplayHint(hint);
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.424 -0400", hash_original_method = "39046505104385736A9526E25AC3965D", hash_generated_method = "C2250440708CA62DC29F0FE3B9C18947")
     protected void onChildVisibilityChanged(View child, int visibility) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(visibility);
         addTaint(child.getTaint());
     if(mTransition != null)        
@@ -982,33 +977,33 @@ for(int i = 0;i < count;i++)
     if(visibility == VISIBLE)            
             {
                 mTransition.showChild(this, child);
-            } 
+            } //End block
             else
             {
                 mTransition.hideChild(this, child);
-            } 
+            } //End block
     if(visibility != VISIBLE)            
             {
     if(mVisibilityChangingChildren == null)                
                 {
                     mVisibilityChangingChildren = new ArrayList<View>();
-                } 
+                } //End block
                 mVisibilityChangingChildren.add(child);
     if(mTransitioningViews != null && mTransitioningViews.contains(child))                
                 {
                     addDisappearingView(child);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(mCurrentDrag != null)        
         {
     if(visibility == VISIBLE)            
             {
                 notifyChildOfDrag(child);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1023,14 +1018,14 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchVisibilityChanged(changedView, visibility);
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchVisibilityChanged(changedView, visibility);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchVisibilityChanged(changedView, visibility);
+        //}
     }
 
     
@@ -1044,14 +1039,14 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchWindowVisibilityChanged(visibility);
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchWindowVisibilityChanged(visibility);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchWindowVisibilityChanged(visibility);
+        //}
     }
 
     
@@ -1065,14 +1060,14 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchConfigurationChanged(newConfig);
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchConfigurationChanged(newConfig);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchConfigurationChanged(newConfig);
+        //}
     }
 
     
@@ -1084,12 +1079,12 @@ for(int i = 0;i < count;i++)
             ViewParent parent = mParent;
     if(parent != null)            
             parent.recomputeViewAttributes(this);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAttachInfo != null && !mAttachInfo.mRecomputeGlobalAttributes) {
+            //ViewParent parent = mParent;
+            //if (parent != null) parent.recomputeViewAttributes(this);
+        //}
     }
 
     
@@ -1104,15 +1099,15 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchCollectViewAttributes(visibility);
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //visibility |= mViewFlags&VISIBILITY_MASK;
+        //super.dispatchCollectViewAttributes(visibility);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchCollectViewAttributes(visibility);
+        //}
     }
 
     
@@ -1125,14 +1120,14 @@ for(int i = 0;i < count;i++)
             removeFromArray(index);
             addInArray(child, mChildrenCount);
             child.mParent = this;
-        } 
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int index = indexOfChild(child);
+        //if (index >= 0) {
+            //removeFromArray(index);
+            //addInArray(child, mChildrenCount);
+            //child.mParent = this;
+        //}
     }
 
     
@@ -1151,11 +1146,11 @@ switch(event.mAction){
     if(mDragNotifiedChildren == null)            
             {
                 mDragNotifiedChildren = new HashSet<View>();
-            } 
+            } //End block
             else
             {
                 mDragNotifiedChildren.clear();
-            } 
+            } //End block
             mChildAcceptsDrag = false;
             final int count = mChildrenCount;
             final View[] children = mChildren;
@@ -1169,14 +1164,14 @@ for(int i = 0;i < count;i++)
     if(handled)                    
                     {
                         mChildAcceptsDrag = true;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(mChildAcceptsDrag)            
             {
                 retval = true;
-            } 
-        } 
+            } //End block
+        } //End block
         break;
         case DragEvent.ACTION_DRAG_ENDED:
         {
@@ -1187,16 +1182,16 @@ for(View child : mDragNotifiedChildren)
                     child.dispatchDragEvent(event);
                     child.mPrivateFlags2 &= ~View.DRAG_MASK;
                     child.refreshDrawableState();
-                } 
+                } //End block
                 mDragNotifiedChildren.clear();
                 mCurrentDrag.recycle();
                 mCurrentDrag = null;
-            } 
+            } //End block
     if(mChildAcceptsDrag)            
             {
                 retval = true;
-            } 
-        } 
+            } //End block
+        } //End block
         break;
         case DragEvent.ACTION_DRAG_LOCATION:
         {
@@ -1212,7 +1207,7 @@ for(View child : mDragNotifiedChildren)
                     view.dispatchDragEvent(event);
                     view.mPrivateFlags2 &= ~View.DRAG_HOVERED;
                     view.refreshDrawableState();
-                } 
+                } //End block
                 mCurrentDragView = target;
     if(target != null)                
                 {
@@ -1220,9 +1215,9 @@ for(View child : mDragNotifiedChildren)
                     target.dispatchDragEvent(event);
                     target.mPrivateFlags2 |= View.DRAG_HOVERED;
                     target.refreshDrawableState();
-                } 
+                } //End block
                 event.mAction = action;
-            } 
+            } //End block
     if(target != null)            
             {
                 event.mX = mLocalPoint.x;
@@ -1230,8 +1225,8 @@ for(View child : mDragNotifiedChildren)
                 retval = target.dispatchDragEvent(event);
                 event.mX = tx;
                 event.mY = ty;
-            } 
-        } 
+            } //End block
+        } //End block
         break;
         case DragEvent.ACTION_DRAG_EXITED:
         {
@@ -1242,8 +1237,8 @@ for(View child : mDragNotifiedChildren)
                 view.mPrivateFlags2 &= ~View.DRAG_HOVERED;
                 view.refreshDrawableState();
                 mCurrentDragView = null;
-            } 
-        } 
+            } //End block
+        } //End block
         break;
         case DragEvent.ACTION_DROP:
         {
@@ -1259,25 +1254,25 @@ for(View child : mDragNotifiedChildren)
                 retval = target.dispatchDragEvent(event);
                 event.mX = tx;
                 event.mY = ty;
-            } 
+            } //End block
             else
             {
     if(ViewDebug.DEBUG_DRAG)                
                 {
                     Log.d(View.VIEW_LOG_TAG, "   not dropped on an accepting view");
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         break;
 }    if(!retval)        
         {
             retval = super.dispatchDragEvent(event);
-        } 
+        } //End block
         boolean var020B759ADEF679A47CB9AFE965BB2314_1798948435 = (retval);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_334237915 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_334237915;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1294,30 +1289,30 @@ for(int i = count - 1;i >= 0;i--)
     if(!child.canAcceptDrag())            
             {
                 continue;
-            } 
+            } //End block
     if(isTransformedTouchPointInView(x, y, child, outLocalPoint))            
             {
 View var73902FD3E151130B4329B76EF04D2A54_1662350036 =                 child;
                 var73902FD3E151130B4329B76EF04D2A54_1662350036.addTaint(taint);
                 return var73902FD3E151130B4329B76EF04D2A54_1662350036;
-            } 
-        } 
+            } //End block
+        } //End block
 View var540C13E9E156B687226421B24F2DF178_1923179473 =         null;
         var540C13E9E156B687226421B24F2DF178_1923179473.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1923179473;
-        
-        
-        
-        
-            
-            
-                
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = count - 1; i >= 0; i--) {
+            //final View child = children[i];
+            //if (!child.canAcceptDrag()) {
+                //continue;
+            //}
+            //if (isTransformedTouchPointInView(x, y, child, outLocalPoint)) {
+                //return child;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -1327,7 +1322,7 @@ View var540C13E9E156B687226421B24F2DF178_1923179473 =         null;
     if(ViewDebug.DEBUG_DRAG)        
         {
             Log.d(View.VIEW_LOG_TAG, "Sending drag-started to view: " + child);
-        } 
+        } //End block
         boolean canAccept = false;
     if(! mDragNotifiedChildren.contains(child))        
         {
@@ -1337,25 +1332,25 @@ View var540C13E9E156B687226421B24F2DF178_1923179473 =         null;
             {
                 child.mPrivateFlags2 |= View.DRAG_CAN_ACCEPT;
                 child.refreshDrawableState();
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var7C160A680BF8FE3A1442CDA61F51A3C7_513594235 = (canAccept);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1735122596 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1735122596;
-        
-        
-            
-        
-        
-        
-            
-            
-            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (ViewDebug.DEBUG_DRAG) {
+            //Log.d(View.VIEW_LOG_TAG, "Sending drag-started to view: " + child);
+        //}
+        //boolean canAccept = false;
+        //if (! mDragNotifiedChildren.contains(child)) {
+            //mDragNotifiedChildren.add(child);
+            //canAccept = child.dispatchDragEvent(mCurrentDrag);
+            //if (canAccept && !child.canAcceptDrag()) {
+                //child.mPrivateFlags2 |= View.DRAG_CAN_ACCEPT;
+                //child.refreshDrawableState();
+            //}
+        //}
+        //return canAccept;
     }
 
     
@@ -1370,15 +1365,15 @@ for(int i=0;i <count;i++)
         {
             final View child = children[i];
             child.dispatchSystemUiVisibilityChanged(visible);
-        } 
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchSystemUiVisibilityChanged(visible);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i=0; i <count; i++) {
+            //final View child = children[i];
+            //child.dispatchSystemUiVisibilityChanged(visible);
+        //}
     }
 
     
@@ -1394,15 +1389,15 @@ for(int i=0;i <count;i++)
         {
             final View child = children[i];
             child.updateLocalSystemUiVisibility(localValue, localChanges);
-        } 
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.updateLocalSystemUiVisibility(localValue, localChanges);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i=0; i <count; i++) {
+            //final View child = children[i];
+            //child.updateLocalSystemUiVisibility(localValue, localChanges);
+        //}
     }
 
     
@@ -1415,24 +1410,24 @@ for(int i=0;i <count;i++)
             boolean varAD26EBB665BD1801922446CC5B67330F_1990491726 = (super.dispatchKeyEventPreIme(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687509554 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687509554;
-        } 
+        } //End block
         else
     if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
         {
             boolean var67EB3F9E393515134372804C53C9C518_2144336194 = (mFocused.dispatchKeyEventPreIme(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1544514036 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1544514036;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_608481804 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_451770486 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_451770486;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            //return super.dispatchKeyEventPreIme(event);
+        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            //return mFocused.dispatchKeyEventPreIme(event);
+        //}
+        //return false;
     }
 
     
@@ -1443,7 +1438,7 @@ for(int i=0;i <count;i++)
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onKeyEvent(event, 1);
-        } 
+        } //End block
     if((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS))        
         {
     if(super.dispatchKeyEvent(event))            
@@ -1451,8 +1446,8 @@ for(int i=0;i <count;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1682705801 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1075031976 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1075031976;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
         {
@@ -1461,32 +1456,32 @@ for(int i=0;i <count;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1283814315 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1242587237 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1242587237;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1240793100 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500542872 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_500542872;
-        
-        
-            
-        
-        
-            
-                
-            
-        
-            
-                
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mInputEventConsistencyVerifier != null) {
+            //mInputEventConsistencyVerifier.onKeyEvent(event, 1);
+        //}
+        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            //if (super.dispatchKeyEvent(event)) {
+                //return true;
+            //}
+        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            //if (mFocused.dispatchKeyEvent(event)) {
+                //return true;
+            //}
+        //}
+        //if (mInputEventConsistencyVerifier != null) {
+            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
+        //}
+        //return false;
     }
 
     
@@ -1499,24 +1494,24 @@ for(int i=0;i <count;i++)
             boolean var45F6457C378081163B5FC74C9DEC97F3_1615964878 = (super.dispatchKeyShortcutEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_124279346 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_124279346;
-        } 
+        } //End block
         else
     if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
         {
             boolean var5C18B5D2EFEF2D901A4FBE828D26F883_1912897880 = (mFocused.dispatchKeyShortcutEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327979324 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327979324;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1948163862 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2050467913 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2050467913;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            //return super.dispatchKeyShortcutEvent(event);
+        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            //return mFocused.dispatchKeyShortcutEvent(event);
+        //}
+        //return false;
     }
 
     
@@ -1527,7 +1522,7 @@ for(int i=0;i <count;i++)
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onTrackballEvent(event, 1);
-        } 
+        } //End block
     if((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS))        
         {
     if(super.dispatchTrackballEvent(event))            
@@ -1535,8 +1530,8 @@ for(int i=0;i <count;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1788607430 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_578345903 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_578345903;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
         {
@@ -1545,32 +1540,32 @@ for(int i=0;i <count;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1801255499 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_933761297 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_933761297;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_920219969 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_882831724 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_882831724;
-        
-        
-            
-        
-        
-            
-                
-            
-        
-            
-                
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mInputEventConsistencyVerifier != null) {
+            //mInputEventConsistencyVerifier.onTrackballEvent(event, 1);
+        //}
+        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            //if (super.dispatchTrackballEvent(event)) {
+                //return true;
+            //}
+        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            //if (mFocused.dispatchTrackballEvent(event)) {
+                //return true;
+            //}
+        //}
+        //if (mInputEventConsistencyVerifier != null) {
+            //mInputEventConsistencyVerifier.onUnhandledEvent(event, 1);
+        //}
+        //return false;
     }
 
     
@@ -1602,7 +1597,7 @@ for(int i = childrenCount - 1;i >= 0;i--)
                             || !isTransformedTouchPointInView(x, y, child, null))                    
                     {
                         continue;
-                    } 
+                    } //End block
                     HoverTarget hoverTarget = firstOldHoverTarget;
                     boolean wasHovered;
 for(HoverTarget predecessor = null;;)
@@ -1612,41 +1607,41 @@ for(HoverTarget predecessor = null;;)
                             hoverTarget = HoverTarget.obtain(child);
                             wasHovered = false;
                             break;
-                        } 
+                        } //End block
     if(hoverTarget.child == child)                        
                         {
     if(predecessor != null)                            
                             {
                                 predecessor.next = hoverTarget.next;
-                            } 
+                            } //End block
                             else
                             {
                                 firstOldHoverTarget = hoverTarget.next;
-                            } 
+                            } //End block
                             hoverTarget.next = null;
                             wasHovered = true;
                             break;
-                        } 
+                        } //End block
                         predecessor = hoverTarget;
                         hoverTarget = hoverTarget.next;
-                    } 
+                    } //End block
     if(lastHoverTarget != null)                    
                     {
                         lastHoverTarget.next = hoverTarget;
-                    } 
+                    } //End block
                     else
                     {
                         lastHoverTarget = hoverTarget;
                         mFirstHoverTarget = hoverTarget;
-                    } 
+                    } //End block
     if(action == MotionEvent.ACTION_HOVER_ENTER)                    
                     {
     if(!wasHovered)                        
                         {
                             handled |= dispatchTransformedGenericPointerEvent(
                                     event, child);
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
     if(action == MotionEvent.ACTION_HOVER_MOVE)                    
                     {
@@ -1659,19 +1654,19 @@ for(HoverTarget predecessor = null;;)
                             eventNoHistory.setAction(action);
                             handled |= dispatchTransformedGenericPointerEvent(
                                     eventNoHistory, child);
-                        } 
+                        } //End block
                         else
                         {
                             handled |= dispatchTransformedGenericPointerEvent(event, child);
-                        } 
-                    } 
+                        } //End block
+                    } //End block
     if(handled)                    
                     {
                         break;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         while
 (firstOldHoverTarget != null)        
         {
@@ -1680,32 +1675,32 @@ for(HoverTarget predecessor = null;;)
             {
                 handled |= dispatchTransformedGenericPointerEvent(
                         event, child);
-            } 
+            } //End block
             else
             {
     if(action == MotionEvent.ACTION_HOVER_MOVE)                
                 {
                     dispatchTransformedGenericPointerEvent(
                             event, child);
-                } 
+                } //End block
                 eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
                 eventNoHistory.setAction(MotionEvent.ACTION_HOVER_EXIT);
                 dispatchTransformedGenericPointerEvent(
                         eventNoHistory, child);
                 eventNoHistory.setAction(action);
-            } 
+            } //End block
             final HoverTarget nextOldHoverTarget = firstOldHoverTarget.next;
             firstOldHoverTarget.recycle();
             firstOldHoverTarget = nextOldHoverTarget;
-        } 
+        } //End block
         boolean newHoveredSelf = !handled;
     if(newHoveredSelf == mHoveredSelf)        
         {
     if(newHoveredSelf)            
             {
                 handled |= super.dispatchHoverEvent(event);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(mHoveredSelf)            
@@ -1713,27 +1708,27 @@ for(HoverTarget predecessor = null;;)
     if(action == MotionEvent.ACTION_HOVER_EXIT)                
                 {
                     handled |= super.dispatchHoverEvent(event);
-                } 
+                } //End block
                 else
                 {
     if(action == MotionEvent.ACTION_HOVER_MOVE)                    
                     {
                         super.dispatchHoverEvent(event);
-                    } 
+                    } //End block
                     eventNoHistory = obtainMotionEventNoHistoryOrSelf(eventNoHistory);
                     eventNoHistory.setAction(MotionEvent.ACTION_HOVER_EXIT);
                     super.dispatchHoverEvent(eventNoHistory);
                     eventNoHistory.setAction(action);
-                } 
+                } //End block
                 mHoveredSelf = false;
-            } 
+            } //End block
     if(newHoveredSelf)            
             {
     if(action == MotionEvent.ACTION_HOVER_ENTER)                
                 {
                     handled |= super.dispatchHoverEvent(event);
                     mHoveredSelf = true;
-                } 
+                } //End block
                 else
     if(action == MotionEvent.ACTION_HOVER_MOVE)                
                 {
@@ -1743,43 +1738,41 @@ for(HoverTarget predecessor = null;;)
                     eventNoHistory.setAction(action);
                     handled |= super.dispatchHoverEvent(eventNoHistory);
                     mHoveredSelf = true;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(eventNoHistory != event)        
         {
             eventNoHistory.recycle();
-        } 
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_150702154 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_762327303 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_762327303;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.435 -0400", hash_original_method = "CAF0CE39145036A2F3E98F46F45FF397", hash_generated_method = "9500DCC137818C9C07070E4B5AE73D79")
     @Override
     protected boolean hasHoveredChild() {
         boolean var691CB797C7D641EC9107D527AE8EF0A0_667103579 = (mFirstHoverTarget != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1920938223 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1920938223;
-        
-        
+        // ---------- Original Method ----------
+        //return mFirstHoverTarget != null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.435 -0400", hash_original_method = "039A9532EA6933A3F4F8681C30CC9E2B", hash_generated_method = "3C81184ECFE1F3C20CED7D1ABC539E82")
     public boolean onInterceptHoverEvent(MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_1710225509 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_355008225 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_355008225;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -1808,36 +1801,36 @@ for(int i = childrenCount - 1;i >= 0;i--)
                         || !isTransformedTouchPointInView(x, y, child, null))                
                 {
                     continue;
-                } 
+                } //End block
     if(dispatchTransformedGenericPointerEvent(event, child))                
                 {
                     boolean varB326B5062B2F0E69046810717534CB09_398978752 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1250492298 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1250492298;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean var8FA0858FA87CEBD93204BD9A753A90CE_369367440 = (super.dispatchGenericPointerEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1910608686 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1910608686;
-        
-        
-        
-            
-            
-            
-            
-                
-                
-                        
-                    
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int childrenCount = mChildrenCount;
+        //if (childrenCount != 0) {
+            //final View[] children = mChildren;
+            //final float x = event.getX();
+            //final float y = event.getY();
+            //for (int i = childrenCount - 1; i >= 0; i--) {
+                //final View child = children[i];
+                //if (!canViewReceivePointerEvents(child)
+                        //|| !isTransformedTouchPointInView(x, y, child, null)) {
+                    //continue;
+                //}
+                //if (dispatchTransformedGenericPointerEvent(event, child)) {
+                    //return true;
+                //}
+            //}
+        //}
+        //return super.dispatchGenericPointerEvent(event);
     }
 
     
@@ -1850,24 +1843,24 @@ for(int i = childrenCount - 1;i >= 0;i--)
             boolean var06DFB0F35E9F10B2081F8C55181B9CEE_1120684451 = (super.dispatchGenericFocusedEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1320408324 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1320408324;
-        } 
+        } //End block
         else
     if(mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS)        
         {
             boolean var1353853FA34FA9D345150925B27CC14A_1524430108 = (mFocused.dispatchGenericMotionEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011400456 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011400456;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_342007857 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1979365691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1979365691;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((mPrivateFlags & (FOCUSED | HAS_BOUNDS)) == (FOCUSED | HAS_BOUNDS)) {
+            //return super.dispatchGenericFocusedEvent(event);
+        //} else if (mFocused != null && (mFocused.mPrivateFlags & HAS_BOUNDS) == HAS_BOUNDS) {
+            //return mFocused.dispatchGenericMotionEvent(event);
+        //}
+        //return false;
     }
 
     
@@ -1885,32 +1878,32 @@ for(int i = childrenCount - 1;i >= 0;i--)
             transformedEvent.transform(child.getInverseMatrix());
             handled = child.dispatchGenericMotionEvent(transformedEvent);
             transformedEvent.recycle();
-        } 
+        } //End block
         else
         {
             event.offsetLocation(offsetX, offsetY);
             handled = child.dispatchGenericMotionEvent(event);
             event.offsetLocation(-offsetX, -offsetY);
-        } 
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_712745804 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1985056586 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1985056586;
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //final float offsetX = mScrollX - child.mLeft;
+        //final float offsetY = mScrollY - child.mTop;
+        //boolean handled;
+        //if (!child.hasIdentityMatrix()) {
+            //MotionEvent transformedEvent = MotionEvent.obtain(event);
+            //transformedEvent.offsetLocation(offsetX, offsetY);
+            //transformedEvent.transform(child.getInverseMatrix());
+            //handled = child.dispatchGenericMotionEvent(transformedEvent);
+            //transformedEvent.recycle();
+        //} else {
+            //event.offsetLocation(offsetX, offsetY);
+            //handled = child.dispatchGenericMotionEvent(event);
+            //event.offsetLocation(-offsetX, -offsetY);
+        //}
+        //return handled;
     }
 
     
@@ -1920,7 +1913,7 @@ for(int i = childrenCount - 1;i >= 0;i--)
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onTouchEvent(ev, 1);
-        } 
+        } //End block
         boolean handled = false;
     if(onFilterTouchEventForSecurity(ev))        
         {
@@ -1930,7 +1923,7 @@ for(int i = childrenCount - 1;i >= 0;i--)
             {
                 cancelAndClearTouchTargets(ev);
                 resetTouchState();
-            } 
+            } //End block
             boolean intercepted;
     if(actionMasked == MotionEvent.ACTION_DOWN
                     || mFirstTouchTarget != null)            
@@ -1940,16 +1933,16 @@ for(int i = childrenCount - 1;i >= 0;i--)
                 {
                     intercepted = onInterceptTouchEvent(ev);
                     ev.setAction(action);
-                } 
+                } //End block
                 else
                 {
                     intercepted = false;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 intercepted = true;
-            } 
+            } //End block
             final boolean canceled = resetCancelNextUpFlag(this)
                     || actionMasked == MotionEvent.ACTION_CANCEL;
             final boolean split = (mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) != 0;
@@ -1978,13 +1971,13 @@ for(int i = childrenCount - 1;i >= 0;i--)
                                     || !isTransformedTouchPointInView(x, y, child, null))                            
                             {
                                 continue;
-                            } 
+                            } //End block
                             newTouchTarget = getTouchTarget(child);
     if(newTouchTarget != null)                            
                             {
                                 newTouchTarget.pointerIdBits |= idBitsToAssign;
                                 break;
-                            } 
+                            } //End block
                             resetCancelNextUpFlag(child);
     if(dispatchTransformedTouchEvent(ev, false, child, idBitsToAssign))                            
                             {
@@ -1995,9 +1988,9 @@ for(int i = childrenCount - 1;i >= 0;i--)
                                 newTouchTarget = addTouchTarget(child, idBitsToAssign);
                                 alreadyDispatchedToNewTouchTarget = true;
                                 break;
-                            } 
-                        } 
-                    } 
+                            } //End block
+                        } //End block
+                    } //End block
     if(newTouchTarget == null && mFirstTouchTarget != null)                    
                     {
                         newTouchTarget = mFirstTouchTarget;
@@ -2005,16 +1998,16 @@ for(int i = childrenCount - 1;i >= 0;i--)
 (newTouchTarget.next != null)                        
                         {
                             newTouchTarget = newTouchTarget.next;
-                        } 
+                        } //End block
                         newTouchTarget.pointerIdBits |= idBitsToAssign;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(mFirstTouchTarget == null)            
             {
                 handled = dispatchTransformedTouchEvent(ev, canceled, null,
                         TouchTarget.ALL_POINTER_IDS);
-            } 
+            } //End block
             else
             {
                 TouchTarget predecessor = null;
@@ -2026,7 +2019,7 @@ for(int i = childrenCount - 1;i >= 0;i--)
     if(alreadyDispatchedToNewTouchTarget && target == newTouchTarget)                    
                     {
                         handled = true;
-                    } 
+                    } //End block
                     else
                     {
                         final boolean cancelChild = resetCancelNextUpFlag(target.child)
@@ -2035,49 +2028,49 @@ for(int i = childrenCount - 1;i >= 0;i--)
                                 target.child, target.pointerIdBits))                        
                         {
                             handled = true;
-                        } 
+                        } //End block
     if(cancelChild)                        
                         {
     if(predecessor == null)                            
                             {
                                 mFirstTouchTarget = next;
-                            } 
+                            } //End block
                             else
                             {
                                 predecessor.next = next;
-                            } 
+                            } //End block
                             target.recycle();
                             target = next;
                             continue;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     predecessor = target;
                     target = next;
-                } 
-            } 
+                } //End block
+            } //End block
     if(canceled
                     || actionMasked == MotionEvent.ACTION_UP
                     || actionMasked == MotionEvent.ACTION_HOVER_MOVE)            
             {
                 resetTouchState();
-            } 
+            } //End block
             else
     if(split && actionMasked == MotionEvent.ACTION_POINTER_UP)            
             {
                 final int actionIndex = ev.getActionIndex();
                 final int idBitsToRemove = 1 << ev.getPointerId(actionIndex);
                 removePointersFromTouchTargets(idBitsToRemove);
-            } 
-        } 
+            } //End block
+        } //End block
     if(!handled && mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(ev, 1);
-        } 
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_173169293 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1996929687 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1996929687;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2086,14 +2079,13 @@ for(int i = childrenCount - 1;i >= 0;i--)
         clearTouchTargets();
         resetCancelNextUpFlag(this);
         mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //clearTouchTargets();
+        //resetCancelNextUpFlag(this);
+        //mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.449 -0400", hash_original_method = "B31FF6D343B2149E4D841C0A7CD04309", hash_generated_method = "B753B270043C4897FBCA9AC04A4DFB08")
     private boolean resetCancelNextUpFlag(View view) {
         addTaint(view.getTaint());
@@ -2103,16 +2095,16 @@ for(int i = childrenCount - 1;i >= 0;i--)
             boolean varB326B5062B2F0E69046810717534CB09_104770072 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_222216693 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_222216693;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1048310698 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1870722472 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1870722472;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((view.mPrivateFlags & CANCEL_NEXT_UP_EVENT) != 0) {
+            //view.mPrivateFlags &= ~CANCEL_NEXT_UP_EVENT;
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -2126,20 +2118,20 @@ for(int i = childrenCount - 1;i >= 0;i--)
                     TouchTarget next = target.next;
                     target.recycle();
                     target = next;
-                } 
+                } //End block
 } while (target != null);
             mFirstTouchTarget = null;
-        } 
-        
-        
-        
-            
-                
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //TouchTarget target = mFirstTouchTarget;
+        //if (target != null) {
+            //do {
+                //TouchTarget next = target.next;
+                //target.recycle();
+                //target = next;
+            //} while (target != null);
+            //mFirstTouchTarget = null;
+        //}
     }
 
     
@@ -2156,41 +2148,40 @@ for(int i = childrenCount - 1;i >= 0;i--)
                         MotionEvent.ACTION_CANCEL, 0.0f, 0.0f, 0);
                 event.setSource(InputDevice.SOURCE_TOUCHSCREEN);
                 syntheticEvent = true;
-            } 
+            } //End block
 for(TouchTarget target = mFirstTouchTarget;target != null;target = target.next)
             {
                 resetCancelNextUpFlag(target.child);
                 dispatchTransformedTouchEvent(event, true, target.child, target.pointerIdBits);
-            } 
+            } //End block
             clearTouchTargets();
     if(syntheticEvent)            
             {
                 event.recycle();
-            } 
-        } 
-        
-        
-            
-            
-                
-                
-                        
-                
-                
-            
-            
-                
-                
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mFirstTouchTarget != null) {
+            //boolean syntheticEvent = false;
+            //if (event == null) {
+                //final long now = SystemClock.uptimeMillis();
+                //event = MotionEvent.obtain(now, now,
+                        //MotionEvent.ACTION_CANCEL, 0.0f, 0.0f, 0);
+                //event.setSource(InputDevice.SOURCE_TOUCHSCREEN);
+                //syntheticEvent = true;
+            //}
+            //for (TouchTarget target = mFirstTouchTarget; target != null; target = target.next) {
+                //resetCancelNextUpFlag(target.child);
+                //dispatchTransformedTouchEvent(event, true, target.child, target.pointerIdBits);
+            //}
+            //clearTouchTargets();
+            //if (syntheticEvent) {
+                //event.recycle();
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.450 -0400", hash_original_method = "1855BFFFC59D88D1613C9B59C4B43D4C", hash_generated_method = "91CB85E47B56EC1E5A69F072D28C28AE")
     private TouchTarget getTouchTarget(View child) {
         addTaint(child.getTaint());
@@ -2201,18 +2192,18 @@ for(TouchTarget target = mFirstTouchTarget;target != null;target = target.next)
 TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_160083869 =                 target;
                 varA7DD35DE8EDE4A2FCAF77CE202E687B3_160083869.addTaint(taint);
                 return varA7DD35DE8EDE4A2FCAF77CE202E687B3_160083869;
-            } 
-        } 
+            } //End block
+        } //End block
 TouchTarget var540C13E9E156B687226421B24F2DF178_1089381566 =         null;
         var540C13E9E156B687226421B24F2DF178_1089381566.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1089381566;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (TouchTarget target = mFirstTouchTarget; target != null; target = target.next) {
+            //if (target.child == child) {
+                //return target;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -2226,11 +2217,11 @@ TouchTarget var540C13E9E156B687226421B24F2DF178_1089381566 =         null;
 TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
         varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240.addTaint(taint);
         return varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //TouchTarget target = TouchTarget.obtain(child, pointerIdBits);
+        //target.next = mFirstTouchTarget;
+        //mFirstTouchTarget = target;
+        //return target;
     }
 
     
@@ -2251,40 +2242,40 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
     if(predecessor == null)                    
                     {
                         mFirstTouchTarget = next;
-                    } 
+                    } //End block
                     else
                     {
                         predecessor.next = next;
-                    } 
+                    } //End block
                     target.recycle();
                     target = next;
                     continue;
-                } 
-            } 
+                } //End block
+            } //End block
             predecessor = target;
             target = next;
-        } 
-        
-        
-        
-        
-            
-            
-                
-                
-                    
-                        
-                    
-                        
-                    
-                    
-                    
-                    
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //TouchTarget predecessor = null;
+        //TouchTarget target = mFirstTouchTarget;
+        //while (target != null) {
+            //final TouchTarget next = target.next;
+            //if ((target.pointerIdBits & pointerIdBits) != 0) {
+                //target.pointerIdBits &= ~pointerIdBits;
+                //if (target.pointerIdBits == 0) {
+                    //if (predecessor == null) {
+                        //mFirstTouchTarget = next;
+                    //} else {
+                        //predecessor.next = next;
+                    //}
+                    //target.recycle();
+                    //target = next;
+                    //continue;
+                //}
+            //}
+            //predecessor = target;
+            //target = next;
+        //}
     }
 
     
@@ -2311,31 +2302,31 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
             child.getInverseMatrix().mapPoints(localXY);
             localX = localXY[0];
             localY = localXY[1];
-        } 
+        } //End block
         final boolean isInView = child.pointInView(localX, localY);
     if(isInView && outLocalPoint != null)        
         {
             outLocalPoint.set(localX, localY);
-        } 
+        } //End block
         boolean varAA526901E4660D693B9B802DFC753973_527666871 = (isInView);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_178707083 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_178707083;
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //float localX = x + mScrollX - child.mLeft;
+        //float localY = y + mScrollY - child.mTop;
+        //if (! child.hasIdentityMatrix() && mAttachInfo != null) {
+            //final float[] localXY = mAttachInfo.mTmpTransformLocation;
+            //localXY[0] = localX;
+            //localXY[1] = localY;
+            //child.getInverseMatrix().mapPoints(localXY);
+            //localX = localXY[0];
+            //localY = localXY[1];
+        //}
+        //final boolean isInView = child.pointInView(localX, localY);
+        //if (isInView && outLocalPoint != null) {
+            //outLocalPoint.set(localX, localY);
+        //}
+        //return isInView;
     }
 
     
@@ -2354,16 +2345,16 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
     if(child == null)            
             {
                 handled = super.dispatchTouchEvent(event);
-            } 
+            } //End block
             else
             {
                 handled = child.dispatchTouchEvent(event);
-            } 
+            } //End block
             event.setAction(oldAction);
             boolean var98F0599AF776A1FE4101C199A40EEB8F_962641654 = (handled);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_471410853 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_471410853;
-        } 
+        } //End block
         final int oldPointerIdBits = event.getPointerIdBits();
         final int newPointerIdBits = oldPointerIdBits & desiredPointerIdBits;
     if(newPointerIdBits == 0)        
@@ -2371,7 +2362,7 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
             boolean var68934A3E9455FA72420237EB05902327_515349502 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_121925012 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_121925012;
-        } 
+        } //End block
         MotionEvent transformedEvent;
     if(newPointerIdBits == oldPointerIdBits)        
         {
@@ -2380,7 +2371,7 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
     if(child == null)                
                 {
                     handled = super.dispatchTouchEvent(event);
-                } 
+                } //End block
                 else
                 {
                     final float offsetX = mScrollX - child.mLeft;
@@ -2388,21 +2379,21 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
                     event.offsetLocation(offsetX, offsetY);
                     handled = child.dispatchTouchEvent(event);
                     event.offsetLocation(-offsetX, -offsetY);
-                } 
+                } //End block
                 boolean var98F0599AF776A1FE4101C199A40EEB8F_419939336 = (handled);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_391981910 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_391981910;
-            } 
+            } //End block
             transformedEvent = MotionEvent.obtain(event);
-        } 
+        } //End block
         else
         {
             transformedEvent = event.split(newPointerIdBits);
-        } 
+        } //End block
     if(child == null)        
         {
             handled = super.dispatchTouchEvent(transformedEvent);
-        } 
+        } //End block
         else
         {
             final float offsetX = mScrollX - child.mLeft;
@@ -2411,47 +2402,45 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
     if(! child.hasIdentityMatrix())            
             {
                 transformedEvent.transform(child.getInverseMatrix());
-            } 
+            } //End block
             handled = child.dispatchTouchEvent(transformedEvent);
-        } 
+        } //End block
         transformedEvent.recycle();
         boolean var98F0599AF776A1FE4101C199A40EEB8F_1676167631 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_69826740 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_69826740;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.455 -0400", hash_original_method = "2F47BE30FCD7EA97F91B7B6F74081615", hash_generated_method = "D911B2DA92C5859318E7FFC0E72C6AAB")
     public void setMotionEventSplittingEnabled(boolean split) {
         addTaint(split);
     if(split)        
         {
             mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
-        } 
+        } //End block
         else
         {
             mGroupFlags &= ~FLAG_SPLIT_MOTION_EVENTS;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (split) {
+            //mGroupFlags |= FLAG_SPLIT_MOTION_EVENTS;
+        //} else {
+            //mGroupFlags &= ~FLAG_SPLIT_MOTION_EVENTS;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.455 -0400", hash_original_method = "F89425D39488194D486F55EA5F8582C3", hash_generated_method = "C4E827EB791AA7AEFE78F76FAC7272CA")
     public boolean isMotionEventSplittingEnabled() {
         boolean var6E66B9803A17F451177E1783526B17F5_1068653888 = ((mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) == FLAG_SPLIT_MOTION_EVENTS);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_776309373 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_776309373;
-        
-        
+        // ---------- Original Method ----------
+        //return (mGroupFlags & FLAG_SPLIT_MOTION_EVENTS) == FLAG_SPLIT_MOTION_EVENTS;
     }
 
     
@@ -2461,44 +2450,43 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
     if(disallowIntercept == ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0))        
         {
             return;
-        } 
+        } //End block
     if(disallowIntercept)        
         {
             mGroupFlags |= FLAG_DISALLOW_INTERCEPT;
-        } 
+        } //End block
         else
         {
             mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
-        } 
+        } //End block
     if(mParent != null)        
         {
             mParent.requestDisallowInterceptTouchEvent(disallowIntercept);
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (disallowIntercept == ((mGroupFlags & FLAG_DISALLOW_INTERCEPT) != 0)) {
+            //return;
+        //}
+        //if (disallowIntercept) {
+            //mGroupFlags |= FLAG_DISALLOW_INTERCEPT;
+        //} else {
+            //mGroupFlags &= ~FLAG_DISALLOW_INTERCEPT;
+        //}
+        //if (mParent != null) {
+            //mParent.requestDisallowInterceptTouchEvent(disallowIntercept);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.456 -0400", hash_original_method = "2FB27FC0FD3119EC0BB03A9B8DB1F75C", hash_generated_method = "D3183671117DD9E15B80DB6DE32796D1")
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(ev.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_1548607506 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_187996531 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_187996531;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -2511,7 +2499,7 @@ TouchTarget varA7DD35DE8EDE4A2FCAF77CE202E687B3_90947240 =         target;
         {
             System.out.println(this + " ViewGroup.requestFocus direction="
                     + direction);
-        } 
+        } //End block
         int descendantFocusability = getDescendantFocusability();
 switch(descendantFocusability){
         case FOCUS_BLOCK_DESCENDANTS:
@@ -2524,14 +2512,14 @@ switch(descendantFocusability){
             boolean var2B62CC438A4575F03C2C63A1CE1E2659_1206018131 = (took ? took : onRequestFocusInDescendants(direction, previouslyFocusedRect));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_728302752 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_728302752;
-        } 
+        } //End block
         case FOCUS_AFTER_DESCENDANTS:
         {
             final boolean took = onRequestFocusInDescendants(direction, previouslyFocusedRect);
             boolean varE8F264ECB5528EAEC8351269E67D124D_1892393083 = (took ? took : super.requestFocus(direction, previouslyFocusedRect));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1190255878 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1190255878;
-        } 
+        } //End block
         default:
         IllegalStateException varA66618BCDE1225525CF2A1EA5E6D183B_247001554 = new IllegalStateException("descendant focusability must be "
                         + "one of FOCUS_BEFORE_DESCENDANTS, FOCUS_AFTER_DESCENDANTS, FOCUS_BLOCK_DESCENDANTS "
@@ -2539,8 +2527,8 @@ switch(descendantFocusability){
         varA66618BCDE1225525CF2A1EA5E6D183B_247001554.addTaint(taint);
         throw varA66618BCDE1225525CF2A1EA5E6D183B_247001554;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2548,7 +2536,7 @@ switch(descendantFocusability){
     @SuppressWarnings({"ConstantConditions"})
     protected boolean onRequestFocusInDescendants(int direction,
             Rect previouslyFocusedRect) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(previouslyFocusedRect.getTaint());
         addTaint(direction);
         int index;
@@ -2560,13 +2548,13 @@ switch(descendantFocusability){
             index = 0;
             increment = 1;
             end = count;
-        } 
+        } //End block
         else
         {
             index = count - 1;
             increment = -1;
             end = -1;
-        } 
+        } //End block
         final View[] children = mChildren;
 for(int i = index;i != end;i += increment)
         {
@@ -2578,36 +2566,36 @@ for(int i = index;i != end;i += increment)
                     boolean varB326B5062B2F0E69046810717534CB09_1832650788 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_873354594 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_873354594;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_365274665 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1255792938 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1255792938;
-        
-        
-        
-        
-        
-        
-            
-            
-            
-        
-            
-            
-            
-        
-        
-        
-            
-            
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int index;
+        //int increment;
+        //int end;
+        //int count = mChildrenCount;
+        //if ((direction & FOCUS_FORWARD) != 0) {
+            //index = 0;
+            //increment = 1;
+            //end = count;
+        //} else {
+            //index = count - 1;
+            //increment = -1;
+            //end = -1;
+        //}
+        //final View[] children = mChildren;
+        //for (int i = index; i != end; i += increment) {
+            //View child = children[i];
+            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
+                //if (child.requestFocus(direction, previouslyFocusedRect)) {
+                    //return true;
+                //}
+            //}
+        //}
+        //return false;
     }
 
     
@@ -2620,14 +2608,14 @@ for(int i = index;i != end;i += increment)
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchStartTemporaryDetach();
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchStartTemporaryDetach();
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchStartTemporaryDetach();
+        //}
     }
 
     
@@ -2640,14 +2628,14 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchFinishTemporaryDetach();
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchFinishTemporaryDetach();
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchFinishTemporaryDetach();
+        //}
     }
 
     
@@ -2665,17 +2653,17 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchAttachedToWindow(info, visibility);
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mGroupFlags |= FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW;
+        //super.dispatchAttachedToWindow(info, visibility);
+        //mGroupFlags &= ~FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW;
+        //visibility |= mViewFlags & VISIBILITY_MASK;
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchAttachedToWindow(info, visibility);
+        //}
     }
 
     
@@ -2689,7 +2677,7 @@ for(int i = 0;i < count;i++)
             boolean var98F0599AF776A1FE4101C199A40EEB8F_1919163546 = (handled);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1557781554 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1557781554;
-        } 
+        } //End block
 for(int i = 0, count = getChildCount();i < count;i++)
         {
             View child = getChildAt(i);
@@ -2701,34 +2689,34 @@ for(int i = 0, count = getChildCount();i < count;i++)
                     boolean var98F0599AF776A1FE4101C199A40EEB8F_590045784 = (handled);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1804642549 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1804642549;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_185175524 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_705388510 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_705388510;
-        
-        
-        
-            
-        
-        
-            
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean handled = super.dispatchPopulateAccessibilityEventInternal(event);
+        //if (handled) {
+            //return handled;
+        //}
+        //for (int i = 0, count = getChildCount(); i < count; i++) {
+            //View child = getChildAt(i);
+            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
+                //handled = getChildAt(i).dispatchPopulateAccessibilityEvent(event);
+                //if (handled) {
+                    //return handled;
+                //}
+            //}
+        //}
+        //return false;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.457 -0400", hash_original_method = "D1F5A3B1D56655AA52CA4B460A89AF1D", hash_generated_method = "5C5BD83AD2BFA01C3C671F6B2E0681FD")
     @Override
      void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(info.getTaint());
         super.onInitializeAccessibilityNodeInfoInternal(info);
 for(int i = 0, count = mChildrenCount;i < count;i++)
@@ -2738,17 +2726,17 @@ for(int i = 0, count = mChildrenCount;i < count;i++)
                     && (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0)            
             {
                 info.addChild(child);
-            } 
-        } 
-        
-        
-        
-            
-            
-                    
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.onInitializeAccessibilityNodeInfoInternal(info);
+        //for (int i = 0, count = mChildrenCount; i < count; i++) {
+            //View child = mChildren[i];
+            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE
+                    //&& (child.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
+                //info.addChild(child);
+            //}
+        //}
     }
 
     
@@ -2762,28 +2750,28 @@ for(int i = 0, count = mChildrenCount;i < count;i++)
         {
             mCurrentDrag.recycle();
             mCurrentDrag = null;
-        } 
+        } //End block
         final int count = mChildrenCount;
         final View[] children = mChildren;
 for(int i = 0;i < count;i++)
         {
             children[i].dispatchDetachedFromWindow();
-        } 
+        } //End block
         super.dispatchDetachedFromWindow();
-        
-        
-        
-        
-        
-            
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //cancelAndClearTouchTargets(null);
+        //mLayoutSuppressed = false;
+        //mDragNotifiedChildren = null;
+        //if (mCurrentDrag != null) {
+            //mCurrentDrag.recycle();
+            //mCurrentDrag = null;
+        //}
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //children[i].dispatchDetachedFromWindow();
+        //}
+        //super.dispatchDetachedFromWindow();
     }
 
     
@@ -2798,18 +2786,18 @@ for(int i = 0;i < count;i++)
     if((mPaddingLeft | mPaddingTop | mPaddingRight | mPaddingBottom) != 0)        
         {
             mGroupFlags |= FLAG_PADDING_NOT_NULL;
-        } 
+        } //End block
         else
         {
             mGroupFlags &= ~FLAG_PADDING_NOT_NULL;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.setPadding(left, top, right, bottom);
+        //if ((mPaddingLeft | mPaddingTop | mPaddingRight | mPaddingBottom) != 0) {
+            //mGroupFlags |= FLAG_PADDING_NOT_NULL;
+        //} else {
+            //mGroupFlags &= ~FLAG_PADDING_NOT_NULL;
+        //}
     }
 
     
@@ -2826,18 +2814,18 @@ for(int i = 0;i < count;i++)
     if((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED)            
             {
                 c.dispatchSaveInstanceState(container);
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchSaveInstanceState(container);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //View c = children[i];
+            //if ((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) {
+                //c.dispatchSaveInstanceState(container);
+            //}
+        //}
     }
 
     
@@ -2845,8 +2833,8 @@ for(int i = 0;i < count;i++)
     protected void dispatchFreezeSelfOnly(SparseArray<Parcelable> container) {
         addTaint(container.getTaint());
         super.dispatchSaveInstanceState(container);
-        
-        
+        // ---------- Original Method ----------
+        //super.dispatchSaveInstanceState(container);
     }
 
     
@@ -2863,18 +2851,18 @@ for(int i = 0;i < count;i++)
     if((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED)            
             {
                 c.dispatchRestoreInstanceState(container);
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispatchRestoreInstanceState(container);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //View c = children[i];
+            //if ((c.mViewFlags & PARENT_SAVE_DISABLED_MASK) != PARENT_SAVE_DISABLED) {
+                //c.dispatchRestoreInstanceState(container);
+            //}
+        //}
     }
 
     
@@ -2882,8 +2870,8 @@ for(int i = 0;i < count;i++)
     protected void dispatchThawSelfOnly(SparseArray<Parcelable> container) {
         addTaint(container.getTaint());
         super.dispatchRestoreInstanceState(container);
-        
-        
+        // ---------- Original Method ----------
+        //super.dispatchRestoreInstanceState(container);
     }
 
     
@@ -2897,23 +2885,23 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
             {
                 children[i].setDrawingCacheEnabled(enabled);
-            } 
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (enabled || (mPersistentDrawingCache & PERSISTENT_ALL_CACHES) != PERSISTENT_ALL_CACHES) {
+            //final View[] children = mChildren;
+            //final int count = mChildrenCount;
+            //for (int i = 0; i < count; i++) {
+                //children[i].setDrawingCacheEnabled(enabled);
+            //}
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.459 -0400", hash_original_method = "C6BD5BCC8D99F50AFC626E34071E2FAF", hash_generated_method = "A124A8FDEC4DFE54A3A982869CB8A044")
     @Override
     protected void onAnimationStart() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onAnimationStart();
     if((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE)        
         {
@@ -2929,35 +2917,35 @@ for(int i = 0;i < count;i++)
     if(buildCache)                    
                     {
                         child.buildDrawingCache(true);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
-        } 
-        
-        
-        
-            
-            
-            
-            
-                
-                
-                    
-                    
-                        
-                    
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onAnimationStart();
+        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
+            //final int count = mChildrenCount;
+            //final View[] children = mChildren;
+            //final boolean buildCache = !isHardwareAccelerated();
+            //for (int i = 0; i < count; i++) {
+                //final View child = children[i];
+                //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE) {
+                    //child.setDrawingCacheEnabled(true);
+                    //if (buildCache) {
+                        //child.buildDrawingCache(true);
+                    //}
+                //}
+            //}
+            //mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.459 -0400", hash_original_method = "D937B1A7AD9A1EFB7CAF69E9B3174965", hash_generated_method = "529B56950A58E4725CADEF109ED5C0E6")
     @Override
     protected void onAnimationEnd() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onAnimationEnd();
     if((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE)        
         {
@@ -2965,16 +2953,16 @@ for(int i = 0;i < count;i++)
     if((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0)            
             {
                 setChildrenDrawingCacheEnabled(false);
-            } 
-        } 
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.onAnimationEnd();
+        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
+            //mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
+            //if ((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0) {
+                //setChildrenDrawingCacheEnabled(false);
+            //}
+        //}
     }
 
     
@@ -2996,40 +2984,40 @@ for(int i = 0;i < count;i++)
     if(visibilities[i] == View.VISIBLE)                
                 {
                     child.setVisibility(INVISIBLE);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         Bitmap b = super.createSnapshot(quality, backgroundColor, skipChildren);
     if(skipChildren)        
         {
 for(int i = 0;i < count;i++)
             {
                 getChildAt(i).setVisibility(visibilities[i]);
-            } 
-        } 
+            } //End block
+        } //End block
 Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_640024458 =         b;
         var73F89FAC8F369DF0913D10C37C1E0EA1_640024458.addTaint(taint);
         return var73F89FAC8F369DF0913D10C37C1E0EA1_640024458;
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                    
-                
-            
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = mChildrenCount;
+        //int[] visibilities = null;
+        //if (skipChildren) {
+            //visibilities = new int[count];
+            //for (int i = 0; i < count; i++) {
+                //View child = getChildAt(i);
+                //visibilities[i] = child.getVisibility();
+                //if (visibilities[i] == View.VISIBLE) {
+                    //child.setVisibility(INVISIBLE);
+                //}
+            //}
+        //}
+        //Bitmap b = super.createSnapshot(quality, backgroundColor, skipChildren);
+        //if (skipChildren) {
+            //for (int i = 0; i < count; i++) {
+                //getChildAt(i).setVisibility(visibilities[i]);
+            //}
+        //}
+        //return b;
     }
 
     
@@ -3058,27 +3046,27 @@ for(int i = 0;i < count;i++)
     if(buildCache)                        
                         {
                             child.buildDrawingCache(true);
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             final LayoutAnimationController controller = mLayoutAnimationController;
     if(controller.willOverlap())            
             {
                 mGroupFlags |= FLAG_OPTIMIZE_INVALIDATE;
-            } 
+            } //End block
             controller.start();
             mGroupFlags &= ~FLAG_RUN_ANIMATION;
             mGroupFlags &= ~FLAG_ANIMATION_DONE;
     if(cache)            
             {
                 mGroupFlags |= FLAG_CHILDREN_DRAWN_WITH_CACHE;
-            } 
+            } //End block
     if(mAnimationListener != null)            
             {
                 mAnimationListener.onAnimationStart(controller.getAnimation());
-            } 
-        } 
+            } //End block
+        } //End block
         int saveCount = 0;
         final boolean clipToPadding = (flags & CLIP_TO_PADDING_MASK) == CLIP_TO_PADDING_MASK;
     if(clipToPadding)        
@@ -3087,7 +3075,7 @@ for(int i = 0;i < count;i++)
             canvas.clipRect(mScrollX + mPaddingLeft, mScrollY + mPaddingTop,
                     mScrollX + mRight - mLeft - mPaddingRight,
                     mScrollY + mBottom - mTop - mPaddingBottom);
-        } 
+        } //End block
         mPrivateFlags &= ~DRAW_ANIMATION;
         mGroupFlags &= ~FLAG_INVALIDATE_REQUIRED;
         boolean more = false;
@@ -3100,9 +3088,9 @@ for(int i = 0;i < count;i++)
     if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null)                
                 {
                     more |= drawChild(canvas, child, drawingTime);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
 for(int i = 0;i < count;i++)
@@ -3111,9 +3099,9 @@ for(int i = 0;i < count;i++)
     if((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null)                
                 {
                     more |= drawChild(canvas, child, drawingTime);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(mDisappearingChildren != null)        
         {
             final ArrayList<View> disappearingChildren = mDisappearingChildren;
@@ -3122,17 +3110,17 @@ for(int i = disappearingCount;i >= 0;i--)
             {
                 final View child = disappearingChildren.get(i);
                 more |= drawChild(canvas, child, drawingTime);
-            } 
-        } 
+            } //End block
+        } //End block
     if(clipToPadding)        
         {
             canvas.restoreToCount(saveCount);
-        } 
+        } //End block
         flags = mGroupFlags;
     if((flags & FLAG_INVALIDATE_REQUIRED) == FLAG_INVALIDATE_REQUIRED)        
         {
             invalidate(true);
-        } 
+        } //End block
     if((flags & FLAG_ANIMATION_DONE) == 0 && (flags & FLAG_NOTIFY_ANIMATION_LISTENER) == 0 &&
                 mLayoutAnimationController.isDone() && !more)        
         {
@@ -3143,13 +3131,12 @@ for(int i = disappearingCount;i >= 0;i--)
                }
             };
             post(end);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.462 -0400", hash_original_method = "314AC469B646186EB8E30D4AB123CD56", hash_generated_method = "4D1AC7BB82CDEF37027B2B458415F5FA")
     protected int getChildDrawingOrder(int childCount, int i) {
         addTaint(i);
@@ -3157,8 +3144,8 @@ for(int i = disappearingCount;i >= 0;i--)
         int var865C0C0B4AB0E063E5CAA3387C1A8741_550626560 = (i);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_29658839 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_29658839;
-        
-        
+        // ---------- Original Method ----------
+        //return i;
     }
 
     
@@ -3174,34 +3161,34 @@ for(int i = disappearingCount;i >= 0;i--)
                }
            };
             post(end);
-        } 
+        } //End block
     if((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE)        
         {
             mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
     if((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0)            
             {
                 setChildrenDrawingCacheEnabled(false);
-            } 
-        } 
+            } //End block
+        } //End block
         invalidate(true);
-        
-        
-        
-        
-           
-               
-                   
-               
-           
-           
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //mGroupFlags &= ~FLAG_NOTIFY_ANIMATION_LISTENER;
+        //mGroupFlags |= FLAG_ANIMATION_DONE;
+        //if (mAnimationListener != null) {
+           //final Runnable end = new Runnable() {
+               //public void run() {
+                   //mAnimationListener.onAnimationEnd(mLayoutAnimationController.getAnimation());
+               //}
+           //};
+           //post(end);
+        //}
+        //if ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE) {
+            //mGroupFlags &= ~FLAG_CHILDREN_DRAWN_WITH_CACHE;
+            //if ((mPersistentDrawingCache & PERSISTENT_ANIMATION_CACHE) == 0) {
+                //setChildrenDrawingCacheEnabled(false);
+            //}
+        //}
+        //invalidate(true);
     }
 
     
@@ -3220,21 +3207,21 @@ for(int i = 0;i < count;i++)
                 child.mPrivateFlags &= ~INVALIDATED;
                 child.getDisplayList();
                 child.mRecreateDisplayList = false;
-            } 
-        } 
-        
-        
-        
-        
-            
-            
-                    
-                
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //final View child = children[i];
+            //if (((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) &&
+                    //child.hasStaticLayer()) {
+                //child.mRecreateDisplayList = (child.mPrivateFlags & INVALIDATED) == INVALIDATED;
+                //child.mPrivateFlags &= ~INVALIDATED;
+                //child.getDisplayList();
+                //child.mRecreateDisplayList = false;
+            //}
+        //}
     }
 
     
@@ -3254,7 +3241,7 @@ for(int i = 0;i < count;i++)
         {
             mChildTransformation.clear();
             mGroupFlags &= ~FLAG_CLEAR_TRANSFORMATION;
-        } 
+        } //End block
         Transformation transformToApply = null;
         Transformation invalidationTransform;
         final Animation a = child.getAnimation();
@@ -3269,11 +3256,11 @@ for(int i = 0;i < count;i++)
             caching = true;
     if(mAttachInfo != null)            
             scalingRequired = mAttachInfo.mScalingRequired;
-        } 
+        } //End block
         else
         {
             caching = (layerType != LAYER_TYPE_NONE) || hardwareAccelerated;
-        } 
+        } //End block
     if(a != null)        
         {
             final boolean initialized = a.isInitialized();
@@ -3282,7 +3269,7 @@ for(int i = 0;i < count;i++)
                 a.initialize(cr - cl, cb - ct, getWidth(), getHeight());
                 a.initializeInvalidateRegion(0, 0, cr - cl, cb - ct);
                 child.onAnimationStart();
-            } 
+            } //End block
             more = a.getTransformation(drawingTime, mChildTransformation,
                     scalingRequired ? mAttachInfo.mApplicationScale : 1f);
     if(scalingRequired && mAttachInfo.mApplicationScale != 1f)            
@@ -3290,14 +3277,14 @@ for(int i = 0;i < count;i++)
     if(mInvalidationTransformation == null)                
                 {
                     mInvalidationTransformation = new Transformation();
-                } 
+                } //End block
                 invalidationTransform = mInvalidationTransformation;
                 a.getTransformation(drawingTime, invalidationTransform, 1f);
-            } 
+            } //End block
             else
             {
                 invalidationTransform = mChildTransformation;
-            } 
+            } //End block
             transformToApply = mChildTransformation;
             concatMatrix = a.willChangeTransformationMatrix();
     if(more)            
@@ -3308,20 +3295,20 @@ for(int i = 0;i < count;i++)
                             FLAG_OPTIMIZE_INVALIDATE)                    
                     {
                         mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-                    } 
+                    } //End block
                     else
     if((flags & FLAG_INVALIDATE_REQUIRED) == 0)                    
                     {
                         mPrivateFlags |= DRAW_ANIMATION;
                         invalidate(cl, ct, cr, cb);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
     if(mInvalidateRegion == null)                    
                     {
                         mInvalidateRegion = new RectF();
-                    } 
+                    } //End block
                     final RectF region = mInvalidateRegion;
                     a.getInvalidateRegion(0, 0, cr - cl, cb - ct, region, invalidationTransform);
                     mPrivateFlags |= DRAW_ANIMATION;
@@ -3329,9 +3316,9 @@ for(int i = 0;i < count;i++)
                     final int top = ct + (int) region.top;
                     invalidate(left, top, left + (int) (region.width() + .5f),
                             top + (int) (region.height() + .5f));
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
     if((flags & FLAG_SUPPORT_STATIC_TRANSFORMATIONS) ==
                 FLAG_SUPPORT_STATIC_TRANSFORMATIONS)        
@@ -3343,8 +3330,8 @@ for(int i = 0;i < count;i++)
                 transformToApply = transformType != Transformation.TYPE_IDENTITY ?
                         mChildTransformation : null;
                 concatMatrix = (transformType & Transformation.TYPE_MATRIX) != 0;
-            } 
-        } 
+            } //End block
+        } //End block
         concatMatrix |= !childHasIdentityMatrix;
         child.mPrivateFlags |= DRAWN;
     if(!concatMatrix && canvas.quickReject(cl, ct, cr, cb, Canvas.EdgeType.BW) &&
@@ -3353,12 +3340,12 @@ for(int i = 0;i < count;i++)
             boolean varADDEC426932E71323700AFA1911F8F1C_190849878 = (more);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_795908875 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_795908875;
-        } 
+        } //End block
     if(hardwareAccelerated)        
         {
             child.mRecreateDisplayList = (child.mPrivateFlags & INVALIDATED) == INVALIDATED;
             child.mPrivateFlags &= ~INVALIDATED;
-        } 
+        } //End block
         child.computeScroll();
         final int sx = child.mScrollX;
         final int sy = child.mScrollY;
@@ -3373,9 +3360,9 @@ for(int i = 0;i < count;i++)
                 {
                     layerType = LAYER_TYPE_SOFTWARE;
                     child.buildDrawingCache(true);
-                } 
+                } //End block
                 cache = child.getDrawingCache(true);
-            } 
+            } //End block
             else
             {
 switch(layerType){
@@ -3387,8 +3374,8 @@ switch(layerType){
                 hasDisplayList = child.canHaveDisplayList();
                 break;
 }
-            } 
-        } 
+            } //End block
+        } //End block
         final boolean hasNoCache = cache == null || hasDisplayList;
         final boolean offsetForScroll = cache == null && !hasDisplayList &&
                 layerType != LAYER_TYPE_HARDWARE;
@@ -3396,7 +3383,7 @@ switch(layerType){
     if(offsetForScroll)        
         {
             canvas.translate(cl - sx, ct - sy);
-        } 
+        } //End block
         else
         {
             canvas.translate(cl, ct);
@@ -3404,8 +3391,8 @@ switch(layerType){
             {
                 final float scale = 1.0f / mAttachInfo.mApplicationScale;
                 canvas.scale(scale, scale);
-            } 
-        } 
+            } //End block
+        } //End block
         float alpha = child.getAlpha();
     if(transformToApply != null || alpha < 1.0f || !child.hasIdentityMatrix())        
         {
@@ -3417,7 +3404,7 @@ switch(layerType){
                 {
                     transX = -sx;
                     transY = -sy;
-                } 
+                } //End block
     if(transformToApply != null)                
                 {
     if(concatMatrix)                    
@@ -3426,21 +3413,21 @@ switch(layerType){
                         canvas.concat(transformToApply.getMatrix());
                         canvas.translate(transX, transY);
                         mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
-                    } 
+                    } //End block
                     float transformAlpha = transformToApply.getAlpha();
     if(transformAlpha < 1.0f)                    
                     {
                         alpha *= transformToApply.getAlpha();
                         mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(!childHasIdentityMatrix)                
                 {
                     canvas.translate(-transX, -transY);
                     canvas.concat(child.getMatrix());
                     canvas.translate(transX, transY);
-                } 
-            } 
+                } //End block
+            } //End block
     if(alpha < 1.0f)            
             {
                 mGroupFlags |= FLAG_CLEAR_TRANSFORMATION;
@@ -3454,46 +3441,46 @@ switch(layerType){
                                 layerType != LAYER_TYPE_NONE)                        
                         {
                             layerFlags |= Canvas.CLIP_TO_LAYER_SAVE_FLAG;
-                        } 
+                        } //End block
     if(layerType == LAYER_TYPE_NONE)                        
                         {
                             final int scrollX = hasDisplayList ? 0 : sx;
                             final int scrollY = hasDisplayList ? 0 : sy;
                             canvas.saveLayerAlpha(scrollX, scrollY, scrollX + cr - cl,
                                     scrollY + cb - ct, multipliedAlpha, layerFlags);
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
                     {
                         child.mPrivateFlags |= ALPHA_SET;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         else
     if((child.mPrivateFlags & ALPHA_SET) == ALPHA_SET)        
         {
             child.onSetAlpha(255);
             child.mPrivateFlags &= ~ALPHA_SET;
-        } 
+        } //End block
     if((flags & FLAG_CLIP_CHILDREN) == FLAG_CLIP_CHILDREN)        
         {
     if(offsetForScroll)            
             {
                 canvas.clipRect(sx, sy, sx + (cr - cl), sy + (cb - ct));
-            } 
+            } //End block
             else
             {
     if(!scalingRequired || cache == null)                
                 {
                     canvas.clipRect(0, 0, cr - cl, cb - ct);
-                } 
+                } //End block
                 else
                 {
                     canvas.clipRect(0, 0, cache.getWidth(), cache.getHeight());
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(hasDisplayList)        
         {
             displayList = child.getDisplayList();
@@ -3501,8 +3488,8 @@ switch(layerType){
             {
                 displayList = null;
                 hasDisplayList = false;
-            } 
-        } 
+            } //End block
+        } //End block
     if(hasNoCache)        
         {
             boolean layerRendered = false;
@@ -3514,7 +3501,7 @@ switch(layerType){
                     child.mLayerPaint.setAlpha((int) (alpha * 255));
                     ((HardwareCanvas) canvas).drawHardwareLayer(layer, 0, 0, child.mLayerPaint);
                     layerRendered = true;
-                } 
+                } //End block
                 else
                 {
                     final int scrollX = hasDisplayList ? 0 : sx;
@@ -3522,8 +3509,8 @@ switch(layerType){
                     canvas.saveLayer(scrollX, scrollY,
                             scrollX + cr - cl, scrollY + cb - ct, child.mLayerPaint,
                             Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.CLIP_TO_LAYER_SAVE_FLAG);
-                } 
-            } 
+                } //End block
+            } //End block
     if(!layerRendered)            
             {
     if(!hasDisplayList)                
@@ -3533,22 +3520,22 @@ switch(layerType){
     if(ViewDebug.TRACE_HIERARCHY)                        
                         {
                             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.DRAW);
-                        } 
+                        } //End block
                         child.mPrivateFlags &= ~DIRTY_MASK;
                         child.dispatchDraw(canvas);
-                    } 
+                    } //End block
                     else
                     {
                         child.draw(canvas);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     child.mPrivateFlags &= ~DIRTY_MASK;
                     ((HardwareCanvas) canvas).drawDisplayList(displayList, cr - cl, cb - ct, null);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
     if(cache != null)        
         {
@@ -3562,49 +3549,49 @@ switch(layerType){
                     cachePaint = new Paint();
                     cachePaint.setDither(false);
                     mCachePaint = cachePaint;
-                } 
+                } //End block
     if(alpha < 1.0f)                
                 {
                     cachePaint.setAlpha((int) (alpha * 255));
                     mGroupFlags |= FLAG_ALPHA_LOWER_THAN_ONE;
-                } 
+                } //End block
                 else
     if((flags & FLAG_ALPHA_LOWER_THAN_ONE) == FLAG_ALPHA_LOWER_THAN_ONE)                
                 {
                     cachePaint.setAlpha(255);
                     mGroupFlags &= ~FLAG_ALPHA_LOWER_THAN_ONE;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 cachePaint = child.mLayerPaint;
                 cachePaint.setAlpha((int) (alpha * 255));
-            } 
+            } //End block
             canvas.drawBitmap(cache, 0.0f, 0.0f, cachePaint);
-        } 
+        } //End block
         canvas.restoreToCount(restoreTo);
     if(a != null && !more)        
         {
     if(!hardwareAccelerated && !a.getFillAfter())            
             {
                 child.onSetAlpha(255);
-            } 
+            } //End block
             finishAnimatingView(child, a);
-        } 
+        } //End block
     if(more && hardwareAccelerated)        
         {
             invalidate(true);
     if(a.hasAlpha() && (child.mPrivateFlags & ALPHA_SET) == ALPHA_SET)            
             {
                 child.invalidate(true);
-            } 
-        } 
+            } //End block
+        } //End block
         child.mRecreateDisplayList = false;
         boolean varADDEC426932E71323700AFA1911F8F1C_1446286467 = (more);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_489993297 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_489993297;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -3620,20 +3607,20 @@ for(int i = 0;i < mChildrenCount;i++)
     if(child.mLayerType != LAYER_TYPE_NONE)                
                 {
                     child.invalidate(true);
-                } 
-            } 
-        } 
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (enabled != mDrawLayers) {
+            //mDrawLayers = enabled;
+            //invalidate(true);
+            //for (int i = 0; i < mChildrenCount; i++) {
+                //View child = mChildren[i];
+                //if (child.mLayerType != LAYER_TYPE_NONE) {
+                    //child.invalidate(true);
+                //}
+            //}
+        //}
     }
 
     
@@ -3641,8 +3628,8 @@ for(int i = 0;i < mChildrenCount;i++)
     public void setClipChildren(boolean clipChildren) {
         addTaint(clipChildren);
         setBooleanFlag(FLAG_CLIP_CHILDREN, clipChildren);
-        
-        
+        // ---------- Original Method ----------
+        //setBooleanFlag(FLAG_CLIP_CHILDREN, clipChildren);
     }
 
     
@@ -3650,8 +3637,8 @@ for(int i = 0;i < mChildrenCount;i++)
     public void setClipToPadding(boolean clipToPadding) {
         addTaint(clipToPadding);
         setBooleanFlag(FLAG_CLIP_TO_PADDING, clipToPadding);
-        
-        
+        // ---------- Original Method ----------
+        //setBooleanFlag(FLAG_CLIP_TO_PADDING, clipToPadding);
     }
 
     
@@ -3664,13 +3651,13 @@ for(int i = 0;i < mChildrenCount;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].setSelected(selected);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final View[] children = mChildren;
+        //final int count = mChildrenCount;
+        //for (int i = 0; i < count; i++) {
+            //children[i].setSelected(selected);
+        //}
     }
 
     
@@ -3683,13 +3670,13 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].setActivated(activated);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final View[] children = mChildren;
+        //final int count = mChildrenCount;
+        //for (int i = 0; i < count; i++) {
+            //children[i].setActivated(activated);
+        //}
     }
 
     
@@ -3702,13 +3689,13 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].setPressed(pressed);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final View[] children = mChildren;
+        //final int count = mChildrenCount;
+        //for (int i = 0; i < count; i++) {
+            //children[i].setPressed(pressed);
+        //}
     }
 
     
@@ -3716,12 +3703,11 @@ for(int i = 0;i < count;i++)
     protected void setStaticTransformationsEnabled(boolean enabled) {
         addTaint(enabled);
         setBooleanFlag(FLAG_SUPPORT_STATIC_TRANSFORMATIONS, enabled);
-        
-        
+        // ---------- Original Method ----------
+        //setBooleanFlag(FLAG_SUPPORT_STATIC_TRANSFORMATIONS, enabled);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.475 -0400", hash_original_method = "767004ADA8C3853AF520B9D176A534BE", hash_generated_method = "3DB0F39193F29D765F568978225173B7")
     protected boolean getChildStaticTransformation(View child, Transformation t) {
         addTaint(t.getTaint());
@@ -3729,8 +3715,8 @@ for(int i = 0;i < count;i++)
         boolean var68934A3E9455FA72420237EB05902327_801845671 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2062593992 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2062593992;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -3743,7 +3729,7 @@ for(int i = 0;i < count;i++)
 View var72A74007B2BE62B849F475C7BDA4658B_1004633405 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1004633405.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1004633405;
-        } 
+        } //End block
         final View[] where = mChildren;
         final int len = mChildrenCount;
 for(int i = 0;i < len;i++)
@@ -3757,28 +3743,28 @@ for(int i = 0;i < len;i++)
 View var6DC76BC51820DD65E8396280E884AA78_505705960 =                     v;
                     var6DC76BC51820DD65E8396280E884AA78_505705960.addTaint(taint);
                     return var6DC76BC51820DD65E8396280E884AA78_505705960;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 View var540C13E9E156B687226421B24F2DF178_770520380 =         null;
         var540C13E9E156B687226421B24F2DF178_770520380.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_770520380;
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (id == mID) {
+            //return this;
+        //}
+        //final View[] where = mChildren;
+        //final int len = mChildrenCount;
+        //for (int i = 0; i < len; i++) {
+            //View v = where[i];
+            //if ((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
+                //v = v.findViewById(id);
+                //if (v != null) {
+                    //return v;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
@@ -3791,7 +3777,7 @@ View var540C13E9E156B687226421B24F2DF178_770520380 =         null;
 View var72A74007B2BE62B849F475C7BDA4658B_2145167030 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_2145167030.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_2145167030;
-        } 
+        } //End block
         final View[] where = mChildren;
         final int len = mChildrenCount;
 for(int i = 0;i < len;i++)
@@ -3805,28 +3791,28 @@ for(int i = 0;i < len;i++)
 View var6DC76BC51820DD65E8396280E884AA78_29060201 =                     v;
                     var6DC76BC51820DD65E8396280E884AA78_29060201.addTaint(taint);
                     return var6DC76BC51820DD65E8396280E884AA78_29060201;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 View var540C13E9E156B687226421B24F2DF178_848845341 =         null;
         var540C13E9E156B687226421B24F2DF178_848845341.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_848845341;
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (tag != null && tag.equals(mTag)) {
+            //return this;
+        //}
+        //final View[] where = mChildren;
+        //final int len = mChildrenCount;
+        //for (int i = 0; i < len; i++) {
+            //View v = where[i];
+            //if ((v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
+                //v = v.findViewWithTag(tag);
+                //if (v != null) {
+                    //return v;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
@@ -3840,7 +3826,7 @@ View var540C13E9E156B687226421B24F2DF178_848845341 =         null;
 View var72A74007B2BE62B849F475C7BDA4658B_612195911 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_612195911.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_612195911;
-        } 
+        } //End block
         final View[] where = mChildren;
         final int len = mChildrenCount;
 for(int i = 0;i < len;i++)
@@ -3854,28 +3840,28 @@ for(int i = 0;i < len;i++)
 View var6DC76BC51820DD65E8396280E884AA78_341063386 =                     v;
                     var6DC76BC51820DD65E8396280E884AA78_341063386.addTaint(taint);
                     return var6DC76BC51820DD65E8396280E884AA78_341063386;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
         var540C13E9E156B687226421B24F2DF178_1991977945.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1991977945;
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (predicate.apply(this)) {
+            //return this;
+        //}
+        //final View[] where = mChildren;
+        //final int len = mChildrenCount;
+        //for (int i = 0; i < len; i++) {
+            //View v = where[i];
+            //if (v != childToSkip && (v.mPrivateFlags & IS_ROOT_NAMESPACE) == 0) {
+                //v = v.findViewByPredicate(predicate);
+                //if (v != null) {
+                    //return v;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
@@ -3883,8 +3869,8 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
     public void addView(View child) {
         addTaint(child.getTaint());
         addView(child, -1);
-        
-        
+        // ---------- Original Method ----------
+        //addView(child, -1);
     }
 
     
@@ -3901,18 +3887,18 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
                 IllegalArgumentException varC986FBA31949518009336B3DE110AC27_2634192 = new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
                 varC986FBA31949518009336B3DE110AC27_2634192.addTaint(taint);
                 throw varC986FBA31949518009336B3DE110AC27_2634192;
-            } 
-        } 
+            } //End block
+        } //End block
         addView(child, index, params);
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //LayoutParams params = child.getLayoutParams();
+        //if (params == null) {
+            //params = generateDefaultLayoutParams();
+            //if (params == null) {
+                //throw new IllegalArgumentException("generateDefaultLayoutParams() cannot return null");
+            //}
+        //}
+        //addView(child, index, params);
     }
 
     
@@ -3925,11 +3911,11 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
         params.width = width;
         params.height = height;
         addView(child, -1, params);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final LayoutParams params = generateDefaultLayoutParams();
+        //params.width = width;
+        //params.height = height;
+        //addView(child, -1, params);
     }
 
     
@@ -3938,8 +3924,8 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
         addTaint(params.getTaint());
         addTaint(child.getTaint());
         addView(child, -1, params);
-        
-        
+        // ---------- Original Method ----------
+        //addView(child, -1, params);
     }
 
     
@@ -3951,17 +3937,17 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
     if(DBG)        
         {
             System.out.println(this + " addView");
-        } 
+        } //End block
         requestLayout();
         invalidate(true);
         addViewInner(child, index, params, false);
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) {
+            //System.out.println(this + " addView");
+        //}
+        //requestLayout();
+        //invalidate(true);
+        //addViewInner(child, index, params, false);
     }
 
     
@@ -3974,73 +3960,71 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
             IllegalArgumentException varFE35611D48A20AFF08E77DA77512451F_935697306 = new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
             varFE35611D48A20AFF08E77DA77512451F_935697306.addTaint(taint);
             throw varFE35611D48A20AFF08E77DA77512451F_935697306;
-        } 
+        } //End block
     if(view.mParent != this)        
         {
             IllegalArgumentException var862EA8241E17B1317F48A84AF1A073A6_1216327476 = new IllegalArgumentException("Given view not a child of " + this);
             var862EA8241E17B1317F48A84AF1A073A6_1216327476.addTaint(taint);
             throw var862EA8241E17B1317F48A84AF1A073A6_1216327476;
-        } 
+        } //End block
         view.setLayoutParams(params);
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!checkLayoutParams(params)) {
+            //throw new IllegalArgumentException("Invalid LayoutParams supplied to " + this);
+        //}
+        //if (view.mParent != this) {
+            //throw new IllegalArgumentException("Given view not a child of " + this);
+        //}
+        //view.setLayoutParams(params);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.478 -0400", hash_original_method = "C2EE5015ED0F9B04763A6A0F4C905EDB", hash_generated_method = "0F56FC00BD6D4F0CF1CE244F50E949DE")
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
         addTaint(p.getTaint());
         boolean var1E5F1565E1078D66EAA4E10A30FB47AF_1942639607 = (p != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1796466953 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1796466953;
-        
-        
+        // ---------- Original Method ----------
+        //return  p != null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.479 -0400", hash_original_method = "2EFEB52353D2008493D1621282A03886", hash_generated_method = "7C3C20C1075C2C96B31EA398AE09593A")
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
         mOnHierarchyChangeListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnHierarchyChangeListener = listener;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.479 -0400", hash_original_method = "7C8375F0DCFCC6770307465540C43F29", hash_generated_method = "988F1B5E9B349B10714473F7CB4F6087")
     protected void onViewAdded(View child) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(child.getTaint());
     if(mOnHierarchyChangeListener != null)        
         {
             mOnHierarchyChangeListener.onChildViewAdded(this, child);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mOnHierarchyChangeListener != null) {
+            //mOnHierarchyChangeListener.onChildViewAdded(this, child);
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.479 -0400", hash_original_method = "2969A02DF6E73517C4A5610098A20201", hash_generated_method = "19C1E9CD1D46F5A30D9C434B5F3196ED")
     protected void onViewRemoved(View child) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(child.getTaint());
     if(mOnHierarchyChangeListener != null)        
         {
             mOnHierarchyChangeListener.onChildViewRemoved(this, child);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mOnHierarchyChangeListener != null) {
+            //mOnHierarchyChangeListener.onChildViewRemoved(this, child);
+        //}
     }
 
     
@@ -4052,8 +4036,8 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
         boolean varD12C22798F7F0037110E10C4AEC4EDDC_1324608677 = (addViewInLayout(child, index, params, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1204117878 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1204117878;
-        
-        
+        // ---------- Original Method ----------
+        //return addViewInLayout(child, index, params, false);
     }
 
     
@@ -4070,21 +4054,20 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_131659229 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_861003126 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_861003126;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //child.mParent = null;
+        //addViewInner(child, index, params, preventRequestLayout);
+        //child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK) | DRAWN;
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.480 -0400", hash_original_method = "156A75B155CF89ADA3C99A75E911D53A", hash_generated_method = "A250998716A3206F2291C31B0B214D0D")
     protected void cleanupLayoutState(View child) {
         addTaint(child.getTaint());
         child.mPrivateFlags &= ~View.FORCE_LAYOUT;
-        
-        
+        // ---------- Original Method ----------
+        //child.mPrivateFlags &= ~View.FORCE_LAYOUT;
     }
 
     
@@ -4098,47 +4081,47 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
     if(mTransition != null)        
         {
             mTransition.cancel(LayoutTransition.DISAPPEARING);
-        } 
+        } //End block
     if(child.getParent() != null)        
         {
             IllegalStateException var39C9655FD829B33D080F9E2B96D69795_641395954 = new IllegalStateException("The specified child already has a parent. " +
                     "You must call removeView() on the child's parent first.");
             var39C9655FD829B33D080F9E2B96D69795_641395954.addTaint(taint);
             throw var39C9655FD829B33D080F9E2B96D69795_641395954;
-        } 
+        } //End block
     if(mTransition != null)        
         {
             mTransition.addChild(this, child);
-        } 
+        } //End block
     if(!checkLayoutParams(params))        
         {
             params = generateLayoutParams(params);
-        } 
+        } //End block
     if(preventRequestLayout)        
         {
             child.mLayoutParams = params;
-        } 
+        } //End block
         else
         {
             child.setLayoutParams(params);
-        } 
+        } //End block
     if(index < 0)        
         {
             index = mChildrenCount;
-        } 
+        } //End block
         addInArray(child, index);
     if(preventRequestLayout)        
         {
             child.assignParent(this);
-        } 
+        } //End block
         else
         {
             child.mParent = this;
-        } 
+        } //End block
     if(child.hasFocus())        
         {
             requestChildFocus(child, child.findFocus());
-        } 
+        } //End block
         AttachInfo ai = mAttachInfo;
     if(ai != null && (mGroupFlags & FLAG_PREVENT_DISPATCH_ATTACHED_TO_WINDOW) == 0)        
         {
@@ -4148,16 +4131,16 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
     if(ai.mKeepScreenOn)            
             {
                 needGlobalAttributesUpdate(true);
-            } 
+            } //End block
             ai.mKeepScreenOn = lastKeepOn;
-        } 
+        } //End block
         onViewAdded(child);
     if((child.mViewFlags & DUPLICATE_PARENT_STATE) == DUPLICATE_PARENT_STATE)        
         {
             mGroupFlags |= FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4174,9 +4157,9 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
                 mChildren = new View[size + ARRAY_CAPACITY_INCREMENT];
                 System.arraycopy(children, 0, mChildren, 0, size);
                 children = mChildren;
-            } 
+            } //End block
             children[mChildrenCount++] = child;
-        } 
+        } //End block
         else
     if(index < count)        
         {
@@ -4186,26 +4169,26 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
                 System.arraycopy(children, 0, mChildren, 0, index);
                 System.arraycopy(children, index, mChildren, index + 1, count - index);
                 children = mChildren;
-            } 
+            } //End block
             else
             {
                 System.arraycopy(children, index, children, index + 1, count - index);
-            } 
+            } //End block
             children[index] = child;
             mChildrenCount++;
     if(mLastTouchDownIndex >= index)            
             {
                 mLastTouchDownIndex++;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             IndexOutOfBoundsException varA2DB98543D9852DA596036448F470221_1930210441 = new IndexOutOfBoundsException("index=" + index + " count=" + count);
             varA2DB98543D9852DA596036448F470221_1930210441.addTaint(taint);
             throw varA2DB98543D9852DA596036448F470221_1930210441;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4216,54 +4199,54 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
     if(!(mTransitioningViews != null && mTransitioningViews.contains(children[index])))        
         {
             children[index].mParent = null;
-        } 
+        } //End block
         final int count = mChildrenCount;
     if(index == count - 1)        
         {
             children[--mChildrenCount] = null;
-        } 
+        } //End block
         else
     if(index >= 0 && index < count)        
         {
             System.arraycopy(children, index + 1, children, index, count - index - 1);
             children[--mChildrenCount] = null;
-        } 
+        } //End block
         else
         {
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1464879852 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_1464879852.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1464879852;
-        } 
+        } //End block
     if(mLastTouchDownIndex == index)        
         {
             mLastTouchDownTime = 0;
             mLastTouchDownIndex = -1;
-        } 
+        } //End block
         else
     if(mLastTouchDownIndex > index)        
         {
             mLastTouchDownIndex--;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
-            
-            
-        
-            
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final View[] children = mChildren;
+        //if (!(mTransitioningViews != null && mTransitioningViews.contains(children[index]))) {
+            //children[index].mParent = null;
+        //}
+        //final int count = mChildrenCount;
+        //if (index == count - 1) {
+            //children[--mChildrenCount] = null;
+        //} else if (index >= 0 && index < count) {
+            //System.arraycopy(children, index + 1, children, index, count - index - 1);
+            //children[--mChildrenCount] = null;
+        //} else {
+            //throw new IndexOutOfBoundsException();
+        //}
+        //if (mLastTouchDownIndex == index) {
+            //mLastTouchDownTime = 0;
+            //mLastTouchDownIndex = -1;
+        //} else if (mLastTouchDownIndex > index) {
+            //mLastTouchDownIndex--;
+        //}
     }
 
     
@@ -4277,30 +4260,30 @@ View var540C13E9E156B687226421B24F2DF178_1991977945 =         null;
     if(start == end)        
         {
             return;
-        } 
+        } //End block
     if(end == childrenCount)        
         {
 for(int i = start;i < end;i++)
             {
                 children[i].mParent = null;
                 children[i] = null;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
 for(int i = start;i < end;i++)
             {
                 children[i].mParent = null;
-            } 
+            } //End block
             System.arraycopy(children, end, children, start, childrenCount - end);
 for(int i = childrenCount - (end - start);i < childrenCount;i++)
             {
                 children[i] = null;
-            } 
-        } 
+            } //End block
+        } //End block
         mChildrenCount -= (end - start);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4309,9 +4292,9 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
         addTaint(child.getTaint());
         Animation a = mLayoutAnimationController.getAnimationForView(child);
         child.setAnimation(a);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Animation a = mLayoutAnimationController.getAnimationForView(child);
+        //child.setAnimation(a);
     }
 
     
@@ -4327,18 +4310,18 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
         {
             animationParams = new LayoutAnimationController.AnimationParameters();
             params.layoutAnimationParameters = animationParams;
-        } 
+        } //End block
         animationParams.count = count;
         animationParams.index = index;
-        
-        
-                    
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //LayoutAnimationController.AnimationParameters animationParams =
+                    //params.layoutAnimationParameters;
+        //if (animationParams == null) {
+            //animationParams = new LayoutAnimationController.AnimationParameters();
+            //params.layoutAnimationParameters = animationParams;
+        //}
+        //animationParams.count = count;
+        //animationParams.index = index;
     }
 
     
@@ -4348,10 +4331,10 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
         removeViewInternal(view);
         requestLayout();
         invalidate(true);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //removeViewInternal(view);
+        //requestLayout();
+        //invalidate(true);
     }
 
     
@@ -4359,8 +4342,8 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
     public void removeViewInLayout(View view) {
         addTaint(view.getTaint());
         removeViewInternal(view);
-        
-        
+        // ---------- Original Method ----------
+        //removeViewInternal(view);
     }
 
     
@@ -4369,8 +4352,8 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
         addTaint(count);
         addTaint(start);
         removeViewsInternal(start, count);
-        
-        
+        // ---------- Original Method ----------
+        //removeViewsInternal(start, count);
     }
 
     
@@ -4380,10 +4363,10 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
         removeViewInternal(index, getChildAt(index));
         requestLayout();
         invalidate(true);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //removeViewInternal(index, getChildAt(index));
+        //requestLayout();
+        //invalidate(true);
     }
 
     
@@ -4394,10 +4377,10 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
         removeViewsInternal(start, count);
         requestLayout();
         invalidate(true);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //removeViewsInternal(start, count);
+        //requestLayout();
+        //invalidate(true);
     }
 
     
@@ -4408,12 +4391,12 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
     if(index >= 0)        
         {
             removeViewInternal(index, view);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int index = indexOfChild(view);
+        //if (index >= 0) {
+            //removeViewInternal(index, view);
+        //}
     }
 
     
@@ -4424,51 +4407,51 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
     if(mTransition != null)        
         {
             mTransition.removeChild(this, view);
-        } 
+        } //End block
         boolean clearChildFocus = false;
     if(view == mFocused)        
         {
             view.clearFocusForRemoval();
             clearChildFocus = true;
-        } 
+        } //End block
     if(view.getAnimation() != null ||
                 (mTransitioningViews != null && mTransitioningViews.contains(view)))        
         {
             addDisappearingView(view);
-        } 
+        } //End block
         else
     if(view.mAttachInfo != null)        
         {
             view.dispatchDetachedFromWindow();
-        } 
+        } //End block
         onViewRemoved(view);
         needGlobalAttributesUpdate(false);
         removeFromArray(index);
     if(clearChildFocus)        
         {
             clearChildFocus(view);
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
-                
-            
-        
-           
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mTransition != null) {
+            //mTransition.removeChild(this, view);
+        //}
+        //boolean clearChildFocus = false;
+        //if (view == mFocused) {
+            //view.clearFocusForRemoval();
+            //clearChildFocus = true;
+        //}
+        //if (view.getAnimation() != null ||
+                //(mTransitioningViews != null && mTransitioningViews.contains(view))) {
+            //addDisappearingView(view);
+        //} else if (view.mAttachInfo != null) {
+           //view.dispatchDetachedFromWindow();
+        //}
+        //onViewRemoved(view);
+        //needGlobalAttributesUpdate(false);
+        //removeFromArray(index);
+        //if (clearChildFocus) {
+            //clearChildFocus(view);
+        //}
     }
 
     
@@ -4477,31 +4460,30 @@ for(int i = childrenCount - (end - start);i < childrenCount;i++)
     if(mTransition != null)        
         {
             mTransition.removeTransitionListener(mLayoutTransitionListener);
-        } 
+        } //End block
         mTransition = transition;
     if(mTransition != null)        
         {
             mTransition.addTransitionListener(mLayoutTransitionListener);
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mTransition != null) {
+            //mTransition.removeTransitionListener(mLayoutTransitionListener);
+        //}
+        //mTransition = transition;
+        //if (mTransition != null) {
+            //mTransition.addTransitionListener(mLayoutTransitionListener);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.490 -0400", hash_original_method = "33E35321C94CA74A9D9819C2C9739D2F", hash_generated_method = "C4C4BE48DFDEAB6DD878FAA82D39F25F")
     public LayoutTransition getLayoutTransition() {
 LayoutTransition var370C76BDB0B670397042ABD46E153355_766315969 =         mTransition;
         var370C76BDB0B670397042ABD46E153355_766315969.addTaint(taint);
         return var370C76BDB0B670397042ABD46E153355_766315969;
-        
-        
+        // ---------- Original Method ----------
+        //return mTransition;
     }
 
     
@@ -4520,32 +4502,32 @@ for(int i = start;i < end;i++)
     if(mTransition != null)            
             {
                 mTransition.removeChild(this, view);
-            } 
+            } //End block
     if(view == focused)            
             {
                 view.clearFocusForRemoval();
                 clearChildFocus = view;
-            } 
+            } //End block
     if(view.getAnimation() != null ||
                 (mTransitioningViews != null && mTransitioningViews.contains(view)))            
             {
                 addDisappearingView(view);
-            } 
+            } //End block
             else
     if(detach)            
             {
                 view.dispatchDetachedFromWindow();
-            } 
+            } //End block
             needGlobalAttributesUpdate(false);
             onViewRemoved(view);
-        } 
+        } //End block
         removeFromArray(start, count);
     if(clearChildFocus != null)        
         {
             clearChildFocus(clearChildFocus);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4554,10 +4536,10 @@ for(int i = start;i < end;i++)
         removeAllViewsInLayout();
         requestLayout();
         invalidate(true);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //removeAllViewsInLayout();
+        //requestLayout();
+        //invalidate(true);
     }
 
     
@@ -4567,7 +4549,7 @@ for(int i = start;i < end;i++)
     if(count <= 0)        
         {
             return;
-        } 
+        } //End block
         final View[] children = mChildren;
         mChildrenCount = 0;
         final View focused = mFocused;
@@ -4580,32 +4562,32 @@ for(int i = count - 1;i >= 0;i--)
     if(mTransition != null)            
             {
                 mTransition.removeChild(this, view);
-            } 
+            } //End block
     if(view == focused)            
             {
                 view.clearFocusForRemoval();
                 clearChildFocus = view;
-            } 
+            } //End block
     if(view.getAnimation() != null ||
                     (mTransitioningViews != null && mTransitioningViews.contains(view)))            
             {
                 addDisappearingView(view);
-            } 
+            } //End block
             else
     if(detach)            
             {
                 view.dispatchDetachedFromWindow();
-            } 
+            } //End block
             onViewRemoved(view);
             view.mParent = null;
             children[i] = null;
-        } 
+        } //End block
     if(clearChildFocus != null)        
         {
             clearChildFocus(clearChildFocus);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4616,36 +4598,36 @@ for(int i = count - 1;i >= 0;i--)
     if(mTransition != null)        
         {
             mTransition.removeChild(this, child);
-        } 
+        } //End block
     if(child == mFocused)        
         {
             child.clearFocus();
-        } 
+        } //End block
     if((animate && child.getAnimation() != null) ||
                 (mTransitioningViews != null && mTransitioningViews.contains(child)))        
         {
             addDisappearingView(child);
-        } 
+        } //End block
         else
     if(child.mAttachInfo != null)        
         {
             child.dispatchDetachedFromWindow();
-        } 
+        } //End block
         onViewRemoved(child);
-        
-        
-            
-        
-        
-            
-        
-        
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mTransition != null) {
+            //mTransition.removeChild(this, child);
+        //}
+        //if (child == mFocused) {
+            //child.clearFocus();
+        //}
+        //if ((animate && child.getAnimation() != null) ||
+                //(mTransitioningViews != null && mTransitioningViews.contains(child))) {
+            //addDisappearingView(child);
+        //} else if (child.mAttachInfo != null) {
+            //child.dispatchDetachedFromWindow();
+        //}
+        //onViewRemoved(child);
     }
 
     
@@ -4658,7 +4640,7 @@ for(int i = count - 1;i >= 0;i--)
     if(index < 0)        
         {
             index = mChildrenCount;
-        } 
+        } //End block
         addInArray(child, index);
         child.mParent = this;
         child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK & ~DRAWING_CACHE_VALID) |
@@ -4667,20 +4649,20 @@ for(int i = count - 1;i >= 0;i--)
     if(child.hasFocus())        
         {
             requestChildFocus(child, child.findFocus());
-        } 
-        
-        
-        
-            
-        
-        
-        
-        
-                
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //child.mLayoutParams = params;
+        //if (index < 0) {
+            //index = mChildrenCount;
+        //}
+        //addInArray(child, index);
+        //child.mParent = this;
+        //child.mPrivateFlags = (child.mPrivateFlags & ~DIRTY_MASK & ~DRAWING_CACHE_VALID) |
+                //DRAWN | INVALIDATED;
+        //this.mPrivateFlags |= INVALIDATED;
+        //if (child.hasFocus()) {
+            //requestChildFocus(child, child.findFocus());
+        //}
     }
 
     
@@ -4688,8 +4670,8 @@ for(int i = count - 1;i >= 0;i--)
     protected void detachViewFromParent(View child) {
         addTaint(child.getTaint());
         removeFromArray(indexOfChild(child));
-        
-        
+        // ---------- Original Method ----------
+        //removeFromArray(indexOfChild(child));
     }
 
     
@@ -4697,8 +4679,8 @@ for(int i = count - 1;i >= 0;i--)
     protected void detachViewFromParent(int index) {
         addTaint(index);
         removeFromArray(index);
-        
-        
+        // ---------- Original Method ----------
+        //removeFromArray(index);
     }
 
     
@@ -4707,37 +4689,36 @@ for(int i = count - 1;i >= 0;i--)
         addTaint(count);
         addTaint(start);
         removeFromArray(start, count);
-        
-        
+        // ---------- Original Method ----------
+        //removeFromArray(start, count);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.499 -0400", hash_original_method = "FD3027623927AF219788395D1D83AA06", hash_generated_method = "7E0224B117E520B64C422B689EB459CB")
     protected void detachAllViewsFromParent() {
         final int count = mChildrenCount;
     if(count <= 0)        
         {
             return;
-        } 
+        } //End block
         final View[] children = mChildren;
         mChildrenCount = 0;
 for(int i = count - 1;i >= 0;i--)
         {
             children[i].mParent = null;
             children[i] = null;
-        } 
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int count = mChildrenCount;
+        //if (count <= 0) {
+            //return;
+        //}
+        //final View[] children = mChildren;
+        //mChildrenCount = 0;
+        //for (int i = count - 1; i >= 0; i--) {
+            //children[i].mParent = null;
+            //children[i] = null;
+        //}
     }
 
     
@@ -4748,7 +4729,7 @@ for(int i = count - 1;i >= 0;i--)
     if(ViewDebug.TRACE_HIERARCHY)        
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE_CHILD);
-        } 
+        } //End block
         ViewParent parent = this;
         final AttachInfo attachInfo = mAttachInfo;
     if(attachInfo != null)        
@@ -4761,7 +4742,7 @@ for(int i = count - 1;i >= 0;i--)
                     mPrivateFlags |= INVALIDATED;
                     mPrivateFlags &= ~DRAWING_CACHE_VALID;
                     child.mLocalDirtyRect.setEmpty();
-                } 
+                } //End block
                 do {
                     {
                         View view = null;
@@ -4776,30 +4757,30 @@ for(int i = count - 1;i >= 0;i--)
                                     final View grandParent = (View) view.getParent();
                                     grandParent.mPrivateFlags |= INVALIDATED;
                                     grandParent.mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                                } 
-                            } 
+                                } //End block
+                            } //End block
     if((view.mPrivateFlags & DIRTY_MASK) != 0)                            
                             {
                                 break;
-                            } 
-                        } 
+                            } //End block
+                        } //End block
     if(drawAnimation)                        
                         {
     if(view != null)                            
                             {
                                 view.mPrivateFlags |= DRAW_ANIMATION;
-                            } 
+                            } //End block
                             else
     if(parent instanceof ViewRootImpl)                            
                             {
                                 ((ViewRootImpl) parent).mIsAnimating = true;
-                            } 
-                        } 
+                            } //End block
+                        } //End block
     if(parent instanceof ViewRootImpl)                        
                         {
                             ((ViewRootImpl) parent).invalidate();
                             parent = null;
-                        } 
+                        } //End block
                         else
     if(view != null)                        
                         {
@@ -4809,15 +4790,15 @@ for(int i = count - 1;i >= 0;i--)
                                 view.mPrivateFlags &= ~DRAWING_CACHE_VALID;
                                 view.mPrivateFlags |= DIRTY;
                                 parent = view.mParent;
-                            } 
+                            } //End block
                             else
                             {
                                 parent = null;
-                            } 
-                        } 
-                    } 
+                            } //End block
+                        } //End block
+                    } //End block
 } while (parent != null);
-            } 
+            } //End block
             else
             {
                 final boolean isOpaque = child.isOpaque() && !drawAnimation &&
@@ -4828,7 +4809,7 @@ for(int i = count - 1;i >= 0;i--)
                     mPrivateFlags |= INVALIDATED;
                     mPrivateFlags &= ~DRAWING_CACHE_VALID;
                     child.mLocalDirtyRect.union(dirty);
-                } 
+                } //End block
                 final int[] location = attachInfo.mInvalidateChildLocation;
                 location[CHILD_LEFT_INDEX] = child.mLeft;
                 location[CHILD_TOP_INDEX] = child.mTop;
@@ -4842,7 +4823,7 @@ for(int i = count - 1;i >= 0;i--)
                             (int) (boundingRect.top - 0.5f),
                             (int) (boundingRect.right + 0.5f),
                             (int) (boundingRect.bottom + 0.5f));
-                } 
+                } //End block
                 do {
                     {
                         View view = null;
@@ -4855,32 +4836,32 @@ for(int i = count - 1;i >= 0;i--)
                                 final View grandParent = (View) view.getParent();
                                 grandParent.mPrivateFlags |= INVALIDATED;
                                 grandParent.mPrivateFlags &= ~DRAWING_CACHE_VALID;
-                            } 
-                        } 
+                            } //End block
+                        } //End block
     if(drawAnimation)                        
                         {
     if(view != null)                            
                             {
                                 view.mPrivateFlags |= DRAW_ANIMATION;
-                            } 
+                            } //End block
                             else
     if(parent instanceof ViewRootImpl)                            
                             {
                                 ((ViewRootImpl) parent).mIsAnimating = true;
-                            } 
-                        } 
+                            } //End block
+                        } //End block
     if(view != null)                        
                         {
     if((view.mViewFlags & FADING_EDGE_MASK) != 0 &&
                                 view.getSolidColor() == 0)                            
                             {
                                 opaqueFlag = DIRTY;
-                            } 
+                            } //End block
     if((view.mPrivateFlags & DIRTY_MASK) != DIRTY)                            
                             {
                                 view.mPrivateFlags = (view.mPrivateFlags & ~DIRTY_MASK) | opaqueFlag;
-                            } 
-                        } 
+                            } //End block
+                        } //End block
                         parent = parent.invalidateChildInParent(location, dirty);
     if(view != null)                        
                         {
@@ -4893,14 +4874,14 @@ for(int i = count - 1;i >= 0;i--)
                                 dirty.set((int) boundingRect.left, (int) boundingRect.top,
                                     (int) (boundingRect.right + 0.5f),
                                     (int) (boundingRect.bottom + 0.5f));
-                            } 
-                        } 
-                    } 
+                            } //End block
+                        } //End block
+                    } //End block
 } while (parent != null);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4911,7 +4892,7 @@ for(int i = count - 1;i >= 0;i--)
     if(ViewDebug.TRACE_HIERARCHY)        
         {
             ViewDebug.trace(this, ViewDebug.HierarchyTraceType.INVALIDATE_CHILD_IN_PARENT);
-        } 
+        } //End block
     if((mPrivateFlags & DRAWN) == DRAWN ||
                 (mPrivateFlags & DRAWING_CACHE_VALID) == DRAWING_CACHE_VALID)        
         {
@@ -4932,12 +4913,12 @@ for(int i = count - 1;i >= 0;i--)
     if(mLayerType != LAYER_TYPE_NONE)                    
                     {
                         mLocalDirtyRect.union(dirty);
-                    } 
+                    } //End block
 ViewParent var0FD24AAB8334CCBF65F979972AC650BD_132376194 =                     mParent;
                     var0FD24AAB8334CCBF65F979972AC650BD_132376194.addTaint(taint);
                     return var0FD24AAB8334CCBF65F979972AC650BD_132376194;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 mPrivateFlags &= ~DRAWN & ~DRAWING_CACHE_VALID;
@@ -4946,25 +4927,25 @@ ViewParent var0FD24AAB8334CCBF65F979972AC650BD_132376194 =                     m
     if((mGroupFlags & FLAG_CLIP_CHILDREN) == FLAG_CLIP_CHILDREN)                
                 {
                     dirty.set(0, 0, mRight - mLeft, mBottom - mTop);
-                } 
+                } //End block
                 else
                 {
                     dirty.union(0, 0, mRight - mLeft, mBottom - mTop);
-                } 
+                } //End block
     if(mLayerType != LAYER_TYPE_NONE)                
                 {
                     mLocalDirtyRect.union(dirty);
-                } 
+                } //End block
 ViewParent var0FD24AAB8334CCBF65F979972AC650BD_2077233165 =                 mParent;
                 var0FD24AAB8334CCBF65F979972AC650BD_2077233165.addTaint(taint);
                 return var0FD24AAB8334CCBF65F979972AC650BD_2077233165;
-            } 
-        } 
+            } //End block
+        } //End block
 ViewParent var540C13E9E156B687226421B24F2DF178_1578200718 =         null;
         var540C13E9E156B687226421B24F2DF178_1578200718.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1578200718;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4973,8 +4954,8 @@ ViewParent var540C13E9E156B687226421B24F2DF178_1578200718 =         null;
         addTaint(rect.getTaint());
         addTaint(descendant.getTaint());
         offsetRectBetweenParentAndChild(descendant, rect, true, false);
-        
-        
+        // ---------- Original Method ----------
+        //offsetRectBetweenParentAndChild(descendant, rect, true, false);
     }
 
     
@@ -4983,8 +4964,8 @@ ViewParent var540C13E9E156B687226421B24F2DF178_1578200718 =         null;
         addTaint(rect.getTaint());
         addTaint(descendant.getTaint());
         offsetRectBetweenParentAndChild(descendant, rect, false, false);
-        
-        
+        // ---------- Original Method ----------
+        //offsetRectBetweenParentAndChild(descendant, rect, false, false);
     }
 
     
@@ -4998,7 +4979,7 @@ ViewParent var540C13E9E156B687226421B24F2DF178_1578200718 =         null;
     if(descendant == this)        
         {
             return;
-        } 
+        } //End block
         ViewParent theParent = descendant.mParent;
         while
 ((theParent != null)
@@ -5013,46 +4994,45 @@ ViewParent var540C13E9E156B687226421B24F2DF178_1578200718 =         null;
                 {
                     View p = (View) theParent;
                     rect.intersect(0, 0, p.mRight - p.mLeft, p.mBottom - p.mTop);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(clipToBounds)                
                 {
                     View p = (View) theParent;
                     rect.intersect(0, 0, p.mRight - p.mLeft, p.mBottom - p.mTop);
-                } 
+                } //End block
                 rect.offset(descendant.mScrollX - descendant.mLeft,
                         descendant.mScrollY - descendant.mTop);
-            } 
+            } //End block
             descendant = (View) theParent;
             theParent = descendant.mParent;
-        } 
+        } //End block
     if(theParent == this)        
         {
     if(offsetFromChildToParent)            
             {
                 rect.offset(descendant.mLeft - descendant.mScrollX,
                         descendant.mTop - descendant.mScrollY);
-            } 
+            } //End block
             else
             {
                 rect.offset(descendant.mScrollX - descendant.mLeft,
                         descendant.mScrollY - descendant.mTop);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             IllegalArgumentException varA60C75C651AEBBFE7F7318529C05F253_1404358015 = new IllegalArgumentException("parameter must be a descendant of this view");
             varA60C75C651AEBBFE7F7318529C05F253_1404358015.addTaint(taint);
             throw varA60C75C651AEBBFE7F7318529C05F253_1404358015;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.509 -0400", hash_original_method = "7A1B0B3F062F0EF6FC199DD0C643A517", hash_generated_method = "8393E9E90C5096EE6C85D8AD282614A6")
     public void offsetChildrenTopAndBottom(int offset) {
         addTaint(offset);
@@ -5063,15 +5043,15 @@ for(int i = 0;i < count;i++)
             final View v = children[i];
             v.mTop += offset;
             v.mBottom += offset;
-        } 
-        
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //final View v = children[i];
+            //v.mTop += offset;
+            //v.mBottom += offset;
+        //}
     }
 
     
@@ -5085,7 +5065,7 @@ for(int i = 0;i < count;i++)
     if(!child.hasIdentityMatrix())        
         {
             child.getMatrix().mapRect(rect);
-        } 
+        } //End block
         int dx = child.mLeft - mScrollX;
         int dy = child.mTop - mScrollY;
         rect.offset(dx, dy);
@@ -5100,10 +5080,10 @@ for(int i = 0;i < count;i++)
                 child.getMatrix().mapPoints(position);
                 offset.x = (int) (position[0] + 0.5f);
                 offset.y = (int) (position[1] + 0.5f);
-            } 
+            } //End block
             offset.x += dx;
             offset.y += dy;
-        } 
+        } //End block
     if(rect.intersect(0, 0, mRight - mLeft, mBottom - mTop))        
         {
     if(mParent == null)            
@@ -5117,12 +5097,12 @@ for(int i = 0;i < count;i++)
             boolean var923A98A5D39B2F1E49EF1BD40DCADE16_1208376893 = (mParent.getChildVisibleRect(this, r, offset));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1698128109 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1698128109;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_47732731 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1942811799 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1942811799;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -5136,17 +5116,17 @@ for(int i = 0;i < count;i++)
     if(mTransition == null || !mTransition.isChangingLayout())        
         {
             super.layout(l, t, r, b);
-        } 
+        } //End block
         else
         {
             mLayoutSuppressed = true;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mTransition == null || !mTransition.isChangingLayout()) {
+            //super.layout(l, t, r, b);
+        //} else {
+            //mLayoutSuppressed = true;
+        //}
     }
 
     
@@ -5155,14 +5135,13 @@ protected abstract void onLayout(boolean changed,
             int l, int t, int r, int b);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.511 -0400", hash_original_method = "74094E4283ACC987205CEBE8397B866C", hash_generated_method = "8C888B997E7C6A2C5A8DCD54A12D060B")
     protected boolean canAnimate() {
         boolean varF64A4557C7728F3EF192131F68E42B36_412727532 = (mLayoutAnimationController != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327615722 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327615722;
-        
-        
+        // ---------- Original Method ----------
+        //return mLayoutAnimationController != null;
     }
 
     
@@ -5172,60 +5151,56 @@ protected abstract void onLayout(boolean changed,
         {
             mGroupFlags |= FLAG_RUN_ANIMATION;
             requestLayout();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mLayoutAnimationController != null) {
+            //mGroupFlags |= FLAG_RUN_ANIMATION;
+            //requestLayout();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.511 -0400", hash_original_method = "06C0C7BBCCF19FA4957838E03EE331C8", hash_generated_method = "79A372FB31048C6468EBF3B2058D214E")
     public void scheduleLayoutAnimation() {
         mGroupFlags |= FLAG_RUN_ANIMATION;
-        
-        
+        // ---------- Original Method ----------
+        //mGroupFlags |= FLAG_RUN_ANIMATION;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.511 -0400", hash_original_method = "76D54B6C61296EF04870B520A219B087", hash_generated_method = "A0A0A1904EFC35287777D58AAB963432")
     public void setLayoutAnimation(LayoutAnimationController controller) {
         mLayoutAnimationController = controller;
     if(mLayoutAnimationController != null)        
         {
             mGroupFlags |= FLAG_RUN_ANIMATION;
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLayoutAnimationController = controller;
+        //if (mLayoutAnimationController != null) {
+            //mGroupFlags |= FLAG_RUN_ANIMATION;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.511 -0400", hash_original_method = "BD382B237F964A42E5B6E00A5B3A23FD", hash_generated_method = "046E2414EEE85CFA53A3A3DE55D63850")
     public LayoutAnimationController getLayoutAnimation() {
 LayoutAnimationController var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938 =         mLayoutAnimationController;
         var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938.addTaint(taint);
         return var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938;
-        
-        
+        // ---------- Original Method ----------
+        //return mLayoutAnimationController;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.511 -0400", hash_original_method = "91C32769C37DCC6F9F6B4528E4A57D15", hash_generated_method = "B0B7C68352E64C7CDF13F8C29C6681E4")
     @ViewDebug.ExportedProperty
     public boolean isAnimationCacheEnabled() {
         boolean var9F17249DB8879D2EEA65EE9B6E656C4C_1904311359 = ((mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1056649805 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1056649805;
-        
-        
+        // ---------- Original Method ----------
+        //return (mGroupFlags & FLAG_ANIMATION_CACHE) == FLAG_ANIMATION_CACHE;
     }
 
     
@@ -5233,20 +5208,19 @@ LayoutAnimationController var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938 =      
     public void setAnimationCacheEnabled(boolean enabled) {
         addTaint(enabled);
         setBooleanFlag(FLAG_ANIMATION_CACHE, enabled);
-        
-        
+        // ---------- Original Method ----------
+        //setBooleanFlag(FLAG_ANIMATION_CACHE, enabled);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.514 -0400", hash_original_method = "B9ACD8DAE870BEF4EFBF779A704F6EA0", hash_generated_method = "671B791B1A3C803894B1A79703710367")
     @ViewDebug.ExportedProperty(category = "drawing")
     public boolean isAlwaysDrawnWithCacheEnabled() {
         boolean var7BFC97307655810F32F04FBCABE3CDAE_704310199 = ((mGroupFlags & FLAG_ALWAYS_DRAWN_WITH_CACHE) == FLAG_ALWAYS_DRAWN_WITH_CACHE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_263569164 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_263569164;
-        
-        
+        // ---------- Original Method ----------
+        //return (mGroupFlags & FLAG_ALWAYS_DRAWN_WITH_CACHE) == FLAG_ALWAYS_DRAWN_WITH_CACHE;
     }
 
     
@@ -5254,20 +5228,19 @@ LayoutAnimationController var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938 =      
     public void setAlwaysDrawnWithCacheEnabled(boolean always) {
         addTaint(always);
         setBooleanFlag(FLAG_ALWAYS_DRAWN_WITH_CACHE, always);
-        
-        
+        // ---------- Original Method ----------
+        //setBooleanFlag(FLAG_ALWAYS_DRAWN_WITH_CACHE, always);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.514 -0400", hash_original_method = "4364C0D051F178DD0E8ADCB73D61750A", hash_generated_method = "2F4D1D0D5BBD020450DAA44D1EC50CAE")
     @ViewDebug.ExportedProperty(category = "drawing")
     protected boolean isChildrenDrawnWithCacheEnabled() {
         boolean varC5F6B3BF85F536497CB388460DF1376E_380572164 = ((mGroupFlags & FLAG_CHILDREN_DRAWN_WITH_CACHE) == FLAG_CHILDREN_DRAWN_WITH_CACHE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1481196342 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1481196342;
-        
-        
+        // ---------- Original Method ----------
+        //return (mGroupFlags & FLAG_CHILDREN_DRAWN_WITH_CACHE) == FLAG_CHILDREN_DRAWN_WITH_CACHE;
     }
 
     
@@ -5275,20 +5248,19 @@ LayoutAnimationController var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938 =      
     protected void setChildrenDrawnWithCacheEnabled(boolean enabled) {
         addTaint(enabled);
         setBooleanFlag(FLAG_CHILDREN_DRAWN_WITH_CACHE, enabled);
-        
-        
+        // ---------- Original Method ----------
+        //setBooleanFlag(FLAG_CHILDREN_DRAWN_WITH_CACHE, enabled);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.515 -0400", hash_original_method = "5166D8925764E3FCE51BAB9F8B82BB83", hash_generated_method = "1948E6748A5CA51166E931A0575F7ACD")
     @ViewDebug.ExportedProperty(category = "drawing")
     protected boolean isChildrenDrawingOrderEnabled() {
         boolean varBFDCA02BAADB4FD2B2924117AAC9F43F_2025587426 = ((mGroupFlags & FLAG_USE_CHILD_DRAWING_ORDER) == FLAG_USE_CHILD_DRAWING_ORDER);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181629986 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_181629986;
-        
-        
+        // ---------- Original Method ----------
+        //return (mGroupFlags & FLAG_USE_CHILD_DRAWING_ORDER) == FLAG_USE_CHILD_DRAWING_ORDER;
     }
 
     
@@ -5296,33 +5268,31 @@ LayoutAnimationController var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938 =      
     protected void setChildrenDrawingOrderEnabled(boolean enabled) {
         addTaint(enabled);
         setBooleanFlag(FLAG_USE_CHILD_DRAWING_ORDER, enabled);
-        
-        
+        // ---------- Original Method ----------
+        //setBooleanFlag(FLAG_USE_CHILD_DRAWING_ORDER, enabled);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.516 -0400", hash_original_method = "DAA9F10BF0EA997E391E78BA1DF6ABEE", hash_generated_method = "76D699AEF8A2E78C0E7D6249ABC668A5")
     private void setBooleanFlag(int flag, boolean value) {
         addTaint(value);
     if(value)        
         {
             mGroupFlags |= flag;
-        } 
+        } //End block
         else
         {
             mGroupFlags &= ~flag;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (value) {
+            //mGroupFlags |= flag;
+        //} else {
+            //mGroupFlags &= ~flag;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.516 -0400", hash_original_method = "944A8E363FECEAC5FA18188B2A82EEA9", hash_generated_method = "BC7A44768DE79342D24614DD21BE4D1C")
     @ViewDebug.ExportedProperty(category = "drawing", mapping = {
         @ViewDebug.IntToString(from = PERSISTENT_NO_CACHE,        to = "NONE"),
@@ -5334,17 +5304,16 @@ LayoutAnimationController var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938 =      
         int varCFD9A5A2BA3F2274ECC022BF6DB661C8_153778320 = (mPersistentDrawingCache);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309882017 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309882017;
-        
-        
+        // ---------- Original Method ----------
+        //return mPersistentDrawingCache;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.516 -0400", hash_original_method = "E1A853399F91DFB847E7C25FCC355E2E", hash_generated_method = "8158E6575E5BC3B0CF39A9A0E9990C3F")
     public void setPersistentDrawingCache(int drawingCacheToKeep) {
         mPersistentDrawingCache = drawingCacheToKeep & PERSISTENT_ALL_CACHES;
-        
-        
+        // ---------- Original Method ----------
+        //mPersistentDrawingCache = drawingCacheToKeep & PERSISTENT_ALL_CACHES;
     }
 
     
@@ -5354,20 +5323,19 @@ LayoutAnimationController var8A452609EA18DB1E1E5EB31AC66AC9BE_1257670938 =      
 LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_1334519595 =         new LayoutParams(getContext(), attrs);
         var023B3FAAA9940C6DE114BF4C9FED2D73_1334519595.addTaint(taint);
         return var023B3FAAA9940C6DE114BF4C9FED2D73_1334519595;
-        
-        
+        // ---------- Original Method ----------
+        //return new LayoutParams(getContext(), attrs);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.516 -0400", hash_original_method = "732F05B425275E63BD87B7814AB2A9CD", hash_generated_method = "3CF0E7F3C0F3416134FA95DE0B1877D7")
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         addTaint(p.getTaint());
 LayoutParams var74E4690D9F2A026504928C017944E149_1282140938 =         p;
         var74E4690D9F2A026504928C017944E149_1282140938.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_1282140938;
-        
-        
+        // ---------- Original Method ----------
+        //return p;
     }
 
     
@@ -5376,8 +5344,8 @@ LayoutParams var74E4690D9F2A026504928C017944E149_1282140938 =         p;
 LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_1683802355 =         new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         var65BA47367D3E2EC837A3E887EEE5A3B3_1683802355.addTaint(taint);
         return var65BA47367D3E2EC837A3E887EEE5A3B3_1683802355;
-        
-        
+        // ---------- Original Method ----------
+        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     }
 
     
@@ -5392,25 +5360,25 @@ for(int i = 0;i < count;i++)
         {
     if(!children[i].dispatchConsistencyCheck(consistency))            
             result = false;
-        } 
+        } //End block
         boolean varB4A88417B3D0170D754C647C30B7216A_464948637 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_361332895 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_361332895;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean result = super.dispatchConsistencyCheck(consistency);
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //if (!children[i].dispatchConsistencyCheck(consistency)) result = false;
+        //}
+        //return result;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.517 -0400", hash_original_method = "9938C74D91901C257958D174411BCA62", hash_generated_method = "8490516F37FB7A69ED9F89FCEBFD25DC")
     @Override
     protected boolean onConsistencyCheck(int consistency) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(consistency);
         boolean result = super.onConsistencyCheck(consistency);
         final boolean checkLayout = (consistency & ViewDebug.CONSISTENCY_LAYOUT) != 0;
@@ -5426,9 +5394,9 @@ for(int i = 0;i < count;i++)
                     result = false;
                     android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
                             "View " + children[i] + " has no parent/a parent that is not " + this);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(checkDrawing)        
         {
     if((mPrivateFlags & DIRTY_MASK) != 0)            
@@ -5441,15 +5409,15 @@ for(int i = 0;i < count;i++)
                         result = false;
                         android.util.Log.d(ViewDebug.CONSISTENCY_LOG_TAG,
                                 "ViewGroup " + this + " is dirty but its parent is not: " + this);
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         boolean varB4A88417B3D0170D754C647C30B7216A_1790339344 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_139027509 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_139027509;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -5464,52 +5432,51 @@ for(int i = 0;i < count;i++)
             output = debugIndent(depth);
             output += "mFocused";
             Log.d(VIEW_LOG_TAG, output);
-        } 
+        } //End block
     if(mChildrenCount != 0)        
         {
             output = debugIndent(depth);
             output += "{";
             Log.d(VIEW_LOG_TAG, output);
-        } 
+        } //End block
         int count = mChildrenCount;
 for(int i = 0;i < count;i++)
         {
             View child = mChildren[i];
             child.debug(depth + 1);
-        } 
+        } //End block
     if(mChildrenCount != 0)        
         {
             output = debugIndent(depth);
             output += "}";
             Log.d(VIEW_LOG_TAG, output);
-        } 
-        
-        
-        
-        
-            
-            
-            
-        
-        
-            
-            
-            
-        
-        
-        
-            
-            
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.debug(depth);
+        //String output;
+        //if (mFocused != null) {
+            //output = debugIndent(depth);
+            //output += "mFocused";
+            //Log.d(VIEW_LOG_TAG, output);
+        //}
+        //if (mChildrenCount != 0) {
+            //output = debugIndent(depth);
+            //output += "{";
+            //Log.d(VIEW_LOG_TAG, output);
+        //}
+        //int count = mChildrenCount;
+        //for (int i = 0; i < count; i++) {
+            //View child = mChildren[i];
+            //child.debug(depth + 1);
+        //}
+        //if (mChildrenCount != 0) {
+            //output = debugIndent(depth);
+            //output += "}";
+            //Log.d(VIEW_LOG_TAG, output);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.518 -0400", hash_original_method = "A3819F4FC73AAB74FEBE19CD2546FBCA", hash_generated_method = "2F29C0EF91350CF0B81988E87AEAC590")
     public int indexOfChild(View child) {
         addTaint(child.getTaint());
@@ -5522,35 +5489,33 @@ for(int i = 0;i < count;i++)
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_2105526957 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481620002 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481620002;
-            } 
-        } 
+            } //End block
+        } //End block
         int var6BB61E3B7BCE0931DA574D19D1D82C88_734770138 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126529068 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126529068;
-        
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int count = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < count; i++) {
+            //if (children[i] == child) {
+                //return i;
+            //}
+        //}
+        //return -1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.518 -0400", hash_original_method = "7030903D0CFC3D101159E57E177A8D82", hash_generated_method = "AA548A74B1496434EF521FE7E4F17FD3")
     public int getChildCount() {
         int varA5034A70A83D3C81CEC027BDCAA166D7_1237269929 = (mChildrenCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822455068 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822455068;
-        
-        
+        // ---------- Original Method ----------
+        //return mChildrenCount;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.518 -0400", hash_original_method = "DC55A008910617641F1AE978A0E895D4", hash_generated_method = "3CC4F6B986B9F416AE14F39CE1304E04")
     public View getChildAt(int index) {
         addTaint(index);
@@ -5559,15 +5524,15 @@ for(int i = 0;i < count;i++)
 View var540C13E9E156B687226421B24F2DF178_1953409856 =             null;
             var540C13E9E156B687226421B24F2DF178_1953409856.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1953409856;
-        } 
+        } //End block
 View var59DDA6BC6C72B3E73E3ACF199F9201D0_1526318259 =         mChildren[index];
         var59DDA6BC6C72B3E73E3ACF199F9201D0_1526318259.addTaint(taint);
         return var59DDA6BC6C72B3E73E3ACF199F9201D0_1526318259;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (index < 0 || index >= mChildrenCount) {
+            //return null;
+        //}
+        //return mChildren[index];
     }
 
     
@@ -5583,17 +5548,17 @@ for(int i = 0;i < size;++i)
     if((child.mViewFlags & VISIBILITY_MASK) != GONE)            
             {
                 measureChild(child, widthMeasureSpec, heightMeasureSpec);
-            } 
-        } 
-        
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //final int size = mChildrenCount;
+        //final View[] children = mChildren;
+        //for (int i = 0; i < size; ++i) {
+            //final View child = children[i];
+            //if ((child.mViewFlags & VISIBILITY_MASK) != GONE) {
+                //measureChild(child, widthMeasureSpec, heightMeasureSpec);
+            //}
+        //}
     }
 
     
@@ -5609,13 +5574,13 @@ for(int i = 0;i < size;++i)
         final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
                 mPaddingTop + mPaddingBottom, lp.height);
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        
-        
-        
-                
-        
-                
-        
+        // ---------- Original Method ----------
+        //final LayoutParams lp = child.getLayoutParams();
+        //final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
+                //mPaddingLeft + mPaddingRight, lp.width);
+        //final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
+                //mPaddingTop + mPaddingBottom, lp.height);
+        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
     }
 
     
@@ -5636,15 +5601,15 @@ for(int i = 0;i < size;++i)
                 mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin
                         + heightUsed, lp.height);
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        
-        
-        
-                
-                        
-        
-                
-                        
-        
+        // ---------- Original Method ----------
+        //final MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
+        //final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec,
+                //mPaddingLeft + mPaddingRight + lp.leftMargin + lp.rightMargin
+                        //+ widthUsed, lp.width);
+        //final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec,
+                //mPaddingTop + mPaddingBottom + lp.topMargin + lp.bottomMargin
+                        //+ heightUsed, lp.height);
+        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
     }
 
     
@@ -5701,11 +5666,11 @@ for(int i = 0;i < size;++i)
     if(mDisappearingChildren != null)        
         {
             mDisappearingChildren.clear();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mDisappearingChildren != null) {
+            //mDisappearingChildren.clear();
+        //}
     }
 
     
@@ -5716,14 +5681,14 @@ for(int i = 0;i < size;++i)
     if(disappearingChildren == null)        
         {
             disappearingChildren = mDisappearingChildren = new ArrayList<View>();
-        } 
+        } //End block
         disappearingChildren.add(v);
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<View> disappearingChildren = mDisappearingChildren;
+        //if (disappearingChildren == null) {
+            //disappearingChildren = mDisappearingChildren = new ArrayList<View>();
+        //}
+        //disappearingChildren.add(v);
     }
 
     
@@ -5740,23 +5705,23 @@ for(int i = 0;i < size;++i)
     if(view.mAttachInfo != null)                
                 {
                     view.dispatchDetachedFromWindow();
-                } 
+                } //End block
                 view.clearAnimation();
                 mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-            } 
-        } 
+            } //End block
+        } //End block
     if(animation != null && !animation.getFillAfter())        
         {
             view.clearAnimation();
-        } 
+        } //End block
     if((view.mPrivateFlags & ANIMATION_STARTED) == ANIMATION_STARTED)        
         {
             view.onAnimationEnd();
             view.mPrivateFlags &= ~ANIMATION_STARTED;
             mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -5766,8 +5731,8 @@ for(int i = 0;i < size;++i)
         boolean var668E624AF39227481B993213F9102405_897420934 = ((mTransitioningViews != null && mTransitioningViews.contains(view)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780757763 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780757763;
-        
-        
+        // ---------- Original Method ----------
+        //return (mTransitioningViews != null && mTransitioningViews.contains(view));
     }
 
     
@@ -5779,16 +5744,16 @@ for(int i = 0;i < size;++i)
     if(mTransitioningViews == null)            
             {
                 mTransitioningViews = new ArrayList<View>();
-            } 
+            } //End block
             mTransitioningViews.add(view);
-        } 
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (view.mParent == this) {
+            //if (mTransitioningViews == null) {
+                //mTransitioningViews = new ArrayList<View>();
+            //}
+            //mTransitioningViews.add(view);
+        //}
     }
 
     
@@ -5806,23 +5771,23 @@ for(int i = 0;i < size;++i)
                         mVisibilityChangingChildren.contains(view))                
                 {
                     mVisibilityChangingChildren.remove(view);
-                } 
+                } //End block
                 else
                 {
     if(view.mAttachInfo != null)                    
                     {
                         view.dispatchDetachedFromWindow();
-                    } 
+                    } //End block
     if(view.mParent != null)                    
                     {
                         view.mParent = null;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 mGroupFlags |= FLAG_INVALIDATE_REQUIRED;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -5836,7 +5801,7 @@ for(int i = 0;i < size;++i)
             boolean varB326B5062B2F0E69046810717534CB09_125481710 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1551394549 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1551394549;
-        } 
+        } //End block
         super.gatherTransparentRegion(region);
         final View[] children = mChildren;
         final int count = mChildrenCount;
@@ -5849,30 +5814,30 @@ for(int i = 0;i < count;i++)
     if(!child.gatherTransparentRegion(region))                
                 {
                     noneOfTheChildrenAreTransparent = false;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean varCB2BC7FF4565A20F7924E844EB7028C0_1102887416 = (meOpaque || noneOfTheChildrenAreTransparent);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1911556736 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1911556736;
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-            
-            
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //final boolean meOpaque = (mPrivateFlags & View.REQUEST_TRANSPARENT_REGIONS) == 0;
+        //if (meOpaque && region == null) {
+            //return true;
+        //}
+        //super.gatherTransparentRegion(region);
+        //final View[] children = mChildren;
+        //final int count = mChildrenCount;
+        //boolean noneOfTheChildrenAreTransparent = true;
+        //for (int i = 0; i < count; i++) {
+            //final View child = children[i];
+            //if ((child.mViewFlags & VISIBILITY_MASK) == VISIBLE || child.getAnimation() != null) {
+                //if (!child.gatherTransparentRegion(region)) {
+                    //noneOfTheChildrenAreTransparent = false;
+                //}
+            //}
+        //}
+        //return meOpaque || noneOfTheChildrenAreTransparent;
     }
 
     
@@ -5885,15 +5850,15 @@ for(int i = 0;i < count;i++)
     if(mParent != null)            
             {
                 mParent.requestTransparentRegion(this);
-            } 
-        } 
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (child != null) {
+            //child.mPrivateFlags |= View.REQUEST_TRANSPARENT_REGIONS;
+            //if (mParent != null) {
+                //mParent.requestTransparentRegion(this);
+            //}
+        //}
     }
 
     
@@ -5912,36 +5877,35 @@ for(int i = 0;i < count;i++)
     if(done)                
                 {
                     break;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean var6B2DED51D81A4403D8A4BD25FA1E57EE_1027953378 = (done);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2033777656 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2033777656;
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean done = super.fitSystemWindows(insets);
+        //if (!done) {
+            //final int count = mChildrenCount;
+            //final View[] children = mChildren;
+            //for (int i = 0; i < count; i++) {
+                //done = children[i].fitSystemWindows(insets);
+                //if (done) {
+                    //break;
+                //}
+            //}
+        //}
+        //return done;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.528 -0400", hash_original_method = "B3B3B12C071F8F31617EDB75C1351CBC", hash_generated_method = "160C9FF7C7D6BEF7CFCC4D98041FA267")
     public Animation.AnimationListener getLayoutAnimationListener() {
 Animation.AnimationListener varAF2C9816117CD49985736EFF62CB9500_721397800 =         mAnimationListener;
         varAF2C9816117CD49985736EFF62CB9500_721397800.addTaint(taint);
         return varAF2C9816117CD49985736EFF62CB9500_721397800;
-        
-        
+        // ---------- Original Method ----------
+        //return mAnimationListener;
     }
 
     
@@ -5957,7 +5921,7 @@ Animation.AnimationListener varAF2C9816117CD49985736EFF62CB9500_721397800 =     
                         + " child has duplicateParentState set to true");
                 var706E30DEC7D234066B92798F99EC5280_1631261288.addTaint(taint);
                 throw var706E30DEC7D234066B92798F99EC5280_1631261288;
-            } 
+            } //End block
             final View[] children = mChildren;
             final int count = mChildrenCount;
 for(int i = 0;i < count;i++)
@@ -5966,25 +5930,25 @@ for(int i = 0;i < count;i++)
     if((child.mViewFlags & DUPLICATE_PARENT_STATE) != 0)                
                 {
                     child.refreshDrawableState();
-                } 
-            } 
-        } 
-        
-        
-        
-            
-                
-                        
-            
-            
-            
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.drawableStateChanged();
+        //if ((mGroupFlags & FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE) != 0) {
+            //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0) {
+                //throw new IllegalStateException("addStateFromChildren cannot be enabled if a"
+                        //+ " child has duplicateParentState set to true");
+            //}
+            //final View[] children = mChildren;
+            //final int count = mChildrenCount;
+            //for (int i = 0; i < count; i++) {
+                //final View child = children[i];
+                //if ((child.mViewFlags & DUPLICATE_PARENT_STATE) != 0) {
+                    //child.refreshDrawableState();
+                //}
+            //}
+        //}
     }
 
     
@@ -5997,28 +5961,28 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children[i].jumpDrawablesToCurrentState();
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.jumpDrawablesToCurrentState();
+        //final View[] children = mChildren;
+        //final int count = mChildrenCount;
+        //for (int i = 0; i < count; i++) {
+            //children[i].jumpDrawablesToCurrentState();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.528 -0400", hash_original_method = "0411A3FE715B4530882EE6CBB1252DCB", hash_generated_method = "21CF04B7502A9949DEBC8626E6878A04")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(extraSpace);
     if((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) == 0)        
         {
             int[] var66AAC6FF29C922B79B81CD6E0D9D06DC_1924235314 = (super.onCreateDrawableState(extraSpace));
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1060157954 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_1060157954;
-        } 
+        } //End block
         int need = 0;
         int n = getChildCount();
 for(int i = 0;i < n;i++)
@@ -6027,8 +5991,8 @@ for(int i = 0;i < n;i++)
     if(childState != null)            
             {
                 need += childState.length;
-            } 
-        } 
+            } //End block
+        } //End block
         int[] state = super.onCreateDrawableState(extraSpace + need);
 for(int i = 0;i < n;i++)
         {
@@ -6036,31 +6000,31 @@ for(int i = 0;i < n;i++)
     if(childState != null)            
             {
                 state = mergeDrawableStates(state, childState);
-            } 
-        } 
+            } //End block
+        } //End block
         int[] var9ED39E2EA931586B6A985A6942EF573E_2071423619 = (state);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_674383153 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_674383153;
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) == 0) {
+            //return super.onCreateDrawableState(extraSpace);
+        //}
+        //int need = 0;
+        //int n = getChildCount();
+        //for (int i = 0; i < n; i++) {
+            //int[] childState = getChildAt(i).getDrawableState();
+            //if (childState != null) {
+                //need += childState.length;
+            //}
+        //}
+        //int[] state = super.onCreateDrawableState(extraSpace + need);
+        //for (int i = 0; i < n; i++) {
+            //int[] childState = getChildAt(i).getDrawableState();
+            //if (childState != null) {
+                //state = mergeDrawableStates(state, childState);
+            //}
+        //}
+        //return state;
     }
 
     
@@ -6070,30 +6034,29 @@ for(int i = 0;i < n;i++)
     if(addsStates)        
         {
             mGroupFlags |= FLAG_ADD_STATES_FROM_CHILDREN;
-        } 
+        } //End block
         else
         {
             mGroupFlags &= ~FLAG_ADD_STATES_FROM_CHILDREN;
-        } 
+        } //End block
         refreshDrawableState();
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (addsStates) {
+            //mGroupFlags |= FLAG_ADD_STATES_FROM_CHILDREN;
+        //} else {
+            //mGroupFlags &= ~FLAG_ADD_STATES_FROM_CHILDREN;
+        //}
+        //refreshDrawableState();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.530 -0400", hash_original_method = "026C4CEB09DFE602F5C11A5652FC3C1F", hash_generated_method = "8592F6E387B41B29F461DB6C06595CA3")
     public boolean addStatesFromChildren() {
         boolean var440C4FBFCBC0E99B747DBAF8B257FDF0_1894043953 = ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461157165 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1461157165;
-        
-        
+        // ---------- Original Method ----------
+        //return (mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0;
     }
 
     
@@ -6103,20 +6066,19 @@ for(int i = 0;i < n;i++)
     if((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0)        
         {
             refreshDrawableState();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ((mGroupFlags & FLAG_ADD_STATES_FROM_CHILDREN) != 0) {
+            //refreshDrawableState();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.530 -0400", hash_original_method = "CCA9986B4D287F2F006BAE825941ECAA", hash_generated_method = "28A9F6F2C654D2AA771EAFD01C6ECAA2")
     public void setLayoutAnimationListener(Animation.AnimationListener animationListener) {
         mAnimationListener = animationListener;
-        
-        
+        // ---------- Original Method ----------
+        //mAnimationListener = animationListener;
     }
 
     
@@ -6127,12 +6089,12 @@ for(int i = 0;i < n;i++)
     if(viewAncestor != null)        
         {
             viewAncestor.requestTransitionStart(transition);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ViewRootImpl viewAncestor = getViewRootImpl();
+        //if (viewAncestor != null) {
+            //viewAncestor.requestTransitionStart(transition);
+        //}
     }
 
     
@@ -6147,17 +6109,17 @@ for(int i = 0;i < count;i++)
     if(child.getLayoutDirection() == LAYOUT_DIRECTION_INHERIT)            
             {
                 child.resetResolvedLayoutDirection();
-            } 
-        } 
-        
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.resetResolvedLayoutDirection();
+        //final int count = getChildCount();
+        //for (int i = 0; i < count; i++) {
+            //final View child = getChildAt(i);
+            //if (child.getLayoutDirection() == LAYOUT_DIRECTION_INHERIT) {
+                //child.resetResolvedLayoutDirection();
+            //}
+        //}
     }
 
     
@@ -6172,28 +6134,27 @@ for(int i = 0;i < count;i++)
     if(child.getTextDirection() == TEXT_DIRECTION_INHERIT)            
             {
                 child.resetResolvedTextDirection();
-            } 
-        } 
-        
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.resetResolvedTextDirection();
+        //final int count = getChildCount();
+        //for (int i = 0; i < count; i++) {
+            //final View child = getChildAt(i);
+            //if (child.getTextDirection() == TEXT_DIRECTION_INHERIT) {
+                //child.resetResolvedTextDirection();
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.545 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "81BF602D40DA82AC27426C61ABBD40ED")
     public boolean shouldDelayChildPressedState() {
         boolean varB326B5062B2F0E69046810717534CB09_2111691055 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1141552735 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1141552735;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -6223,12 +6184,12 @@ for(int i = 0;i < count;i++)
                     R.styleable.ViewGroup_Layout_layout_width,
                     R.styleable.ViewGroup_Layout_layout_height);
             a.recycle();
-            
-            
-            
-                    
-                    
-            
+            // ---------- Original Method ----------
+            //TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.ViewGroup_Layout);
+            //setBaseAttributes(a,
+                    //R.styleable.ViewGroup_Layout_layout_width,
+                    //R.styleable.ViewGroup_Layout_layout_height);
+            //a.recycle();
         }
 
         
@@ -6236,9 +6197,9 @@ for(int i = 0;i < count;i++)
         public  LayoutParams(int width, int height) {
             this.width = width;
             this.height = height;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.width = width;
+            //this.height = height;
         }
 
         
@@ -6246,15 +6207,15 @@ for(int i = 0;i < count;i++)
         public  LayoutParams(LayoutParams source) {
             this.width = source.width;
             this.height = source.height;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.width = source.width;
+            //this.height = source.height;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.546 -0400", hash_original_method = "6916C65008FD05252A1C29A02882BE94", hash_generated_method = "45AC97A074BFD055B1BD45042F079476")
           LayoutParams() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -6262,17 +6223,16 @@ for(int i = 0;i < count;i++)
         protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr) {
             width = a.getLayoutDimension(widthAttr, "layout_width");
             height = a.getLayoutDimension(heightAttr, "layout_height");
-            
-            
-            
+            // ---------- Original Method ----------
+            //width = a.getLayoutDimension(widthAttr, "layout_width");
+            //height = a.getLayoutDimension(heightAttr, "layout_height");
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.547 -0400", hash_original_method = "CE6F1B4BC3F83182FFE42E3A8827DEEC", hash_generated_method = "6D86F89DE956B69559B0A86CF3A2E3CD")
         protected void resolveWithDirection(int layoutDirection) {
             addTaint(layoutDirection);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -6283,9 +6243,9 @@ String var415ADF52E55102ED4321EF30FF1080EF_754598537 =             output + "Vie
                     + sizeToString(width) + ", height=" + sizeToString(height) + " }";
             var415ADF52E55102ED4321EF30FF1080EF_754598537.addTaint(taint);
             return var415ADF52E55102ED4321EF30FF1080EF_754598537;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return output + "ViewGroup.LayoutParams={ width="
+                    //+ sizeToString(width) + ", height=" + sizeToString(height) + " }";
         }
 
         
@@ -6352,7 +6312,7 @@ String var415ADF52E55102ED4321EF30FF1080EF_754598537 =             output + "Vie
                 topMargin = margin;
                 rightMargin= margin;
                 bottomMargin = margin;
-            } 
+            } //End block
             else
             {
                 leftMargin = a.getDimensionPixelSize(
@@ -6367,10 +6327,10 @@ String var415ADF52E55102ED4321EF30FF1080EF_754598537 =             output + "Vie
                         R.styleable.ViewGroup_MarginLayout_layout_marginStart, DEFAULT_RELATIVE);
                 endMargin = a.getDimensionPixelSize(
                         R.styleable.ViewGroup_MarginLayout_layout_marginEnd, DEFAULT_RELATIVE);
-            } 
+            } //End block
             a.recycle();
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -6379,7 +6339,7 @@ String var415ADF52E55102ED4321EF30FF1080EF_754598537 =             output + "Vie
             super(width, height);
             addTaint(height);
             addTaint(width);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -6393,15 +6353,15 @@ String var415ADF52E55102ED4321EF30FF1080EF_754598537 =             output + "Vie
             this.bottomMargin = source.bottomMargin;
             this.startMargin = source.startMargin;
             this.endMargin = source.endMargin;
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.width = source.width;
+            //this.height = source.height;
+            //this.leftMargin = source.leftMargin;
+            //this.topMargin = source.topMargin;
+            //this.rightMargin = source.rightMargin;
+            //this.bottomMargin = source.bottomMargin;
+            //this.startMargin = source.startMargin;
+            //this.endMargin = source.endMargin;
         }
 
         
@@ -6409,74 +6369,68 @@ String var415ADF52E55102ED4321EF30FF1080EF_754598537 =             output + "Vie
         public  MarginLayoutParams(LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.549 -0400", hash_original_method = "A7CFD8E9AA47AE278733C57B8CF5503F", hash_generated_method = "E9FA91064C566B35F37192AF7E41F6DA")
         public void setMargins(int left, int top, int right, int bottom) {
             leftMargin = left;
             topMargin = top;
             rightMargin = right;
             bottomMargin = bottom;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //leftMargin = left;
+            //topMargin = top;
+            //rightMargin = right;
+            //bottomMargin = bottom;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.552 -0400", hash_original_method = "F5A63690A2F55CE5C4D6B1F24495E028", hash_generated_method = "142C3C1A10C4FC10B505CFEA80893BBF")
         public void setMarginsRelative(int start, int top, int end, int bottom) {
             startMargin = start;
             topMargin = top;
             endMargin = end;
             bottomMargin = bottom;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //startMargin = start;
+            //topMargin = top;
+            //endMargin = end;
+            //bottomMargin = bottom;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.552 -0400", hash_original_method = "A60FB56334BFE35432A89BE021472DEF", hash_generated_method = "5977BB05202683D0436577A6EF1EB73E")
         public int getMarginStart() {
             int varC874E28EA0EF3808AC84E8C887C093B2_174981755 = (startMargin);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_989232350 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_989232350;
-            
-            
+            // ---------- Original Method ----------
+            //return startMargin;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.552 -0400", hash_original_method = "2B74CF4F3396E75552B1A46DF3D4BFD7", hash_generated_method = "77F34D6C924E9085B447D93B247A6A93")
         public int getMarginEnd() {
             int varEA04B189325C9C7BE8FFE77419F7BF62_578732345 = (endMargin);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_830457025 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_830457025;
-            
-            
+            // ---------- Original Method ----------
+            //return endMargin;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.552 -0400", hash_original_method = "C9EA583BDFA2583A2B96D706C959CDBC", hash_generated_method = "D92D0F843066857436BEC503714ED135")
         public boolean isMarginRelative() {
             boolean var5EFA4C87369FD13EFEA666438ECAD258_224926869 = ((startMargin != DEFAULT_RELATIVE) || (endMargin != DEFAULT_RELATIVE));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305743348 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_305743348;
-            
-            
+            // ---------- Original Method ----------
+            //return (startMargin != DEFAULT_RELATIVE) || (endMargin != DEFAULT_RELATIVE);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.553 -0400", hash_original_method = "25B74C4F994FDDCB83271E7B2F9BDDEE", hash_generated_method = "6B46188643EE44AC27C32BC0234CF632")
         @Override
         protected void resolveWithDirection(int layoutDirection) {
@@ -6492,18 +6446,18 @@ switch(layoutDirection){
             rightMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : rightMargin;
             break;
 }
-            
-            
-                
-                    
-                    
-                    
-                
-                
-                    
-                    
-                    
-            
+            // ---------- Original Method ----------
+            //switch(layoutDirection) {
+                //case View.LAYOUT_DIRECTION_RTL:
+                    //leftMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : leftMargin;
+                    //rightMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : rightMargin;
+                    //break;
+                //case View.LAYOUT_DIRECTION_LTR:
+                //default:
+                    //leftMargin = (startMargin > DEFAULT_RELATIVE) ? startMargin : leftMargin;
+                    //rightMargin = (endMargin > DEFAULT_RELATIVE) ? endMargin : rightMargin;
+                    //break;
+            //}
         }
 
         
@@ -6527,7 +6481,7 @@ switch(layoutDirection){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.553 -0400", hash_original_method = "5259B67E5A6C02FEFA0EB82F43285FB5", hash_generated_method = "B32A208B999EE5B494ADD3A3C0776E12")
         private  TouchTarget() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -6549,7 +6503,6 @@ switch(layoutDirection){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.553 -0400", hash_original_method = "0B1C6D1635B2332F7800E0E7CCBD2BE0", hash_generated_method = "FC2DA8796F1F045A8AB2E7A88DFBDC6D")
         public void recycle() {
             synchronized
@@ -6559,24 +6512,24 @@ switch(layoutDirection){
                     next = sRecycleBin;
                     sRecycleBin = this;
                     sRecycledCount += 1;
-                } 
+                } //End block
                 else
                 {
                     next = null;
-                } 
+                } //End block
                 child = null;
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (sRecycleLock) {
+                //if (sRecycledCount < MAX_RECYCLED) {
+                    //next = sRecycleBin;
+                    //sRecycleBin = this;
+                    //sRecycledCount += 1;
+                //} else {
+                    //next = null;
+                //}
+                //child = null;
+            //}
         }
 
         
@@ -6609,7 +6562,7 @@ switch(layoutDirection){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.554 -0400", hash_original_method = "5539B57739929C533DCF7E732D22C4F2", hash_generated_method = "726B690AE07312555BAF165F7E5F62F6")
         private  HoverTarget() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -6630,7 +6583,6 @@ switch(layoutDirection){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.556 -0400", hash_original_method = "0B1C6D1635B2332F7800E0E7CCBD2BE0", hash_generated_method = "FC2DA8796F1F045A8AB2E7A88DFBDC6D")
         public void recycle() {
             synchronized
@@ -6640,24 +6592,24 @@ switch(layoutDirection){
                     next = sRecycleBin;
                     sRecycleBin = this;
                     sRecycledCount += 1;
-                } 
+                } //End block
                 else
                 {
                     next = null;
-                } 
+                } //End block
                 child = null;
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (sRecycleLock) {
+                //if (sRecycledCount < MAX_RECYCLED) {
+                    //next = sRecycleBin;
+                    //sRecycleBin = this;
+                    //sRecycledCount += 1;
+                //} else {
+                    //next = null;
+                //}
+                //child = null;
+            //}
         }
 
         

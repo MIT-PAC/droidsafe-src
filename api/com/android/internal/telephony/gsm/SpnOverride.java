@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,9 +25,9 @@ public class SpnOverride {
       SpnOverride() {
         CarrierSpnMap = new HashMap<String, String>();
         loadSpnOverrides();
-        
-        
-        
+        // ---------- Original Method ----------
+        //CarrierSpnMap = new HashMap<String, String>();
+        //loadSpnOverrides();
     }
 
     
@@ -37,8 +37,8 @@ public class SpnOverride {
         boolean var3E2E3D095BA2761DCABCAFC35B2AAA8A_1429863590 = (CarrierSpnMap.containsKey(carrier));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_305500923 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_305500923;
-        
-        
+        // ---------- Original Method ----------
+        //return CarrierSpnMap.containsKey(carrier);
     }
 
     
@@ -48,8 +48,8 @@ public class SpnOverride {
 String varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375 =         CarrierSpnMap.get(carrier);
         varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375.addTaint(taint);
         return varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375;
-        
-        
+        // ---------- Original Method ----------
+        //return CarrierSpnMap.get(carrier);
     }
 
     
@@ -61,11 +61,11 @@ String varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375 =         CarrierSpnMap.get
         try 
         {
             spnReader = new FileReader(spnFile);
-        } 
+        } //End block
         catch (FileNotFoundException e)
         {
             return;
-        } 
+        } //End block
         try 
         {
             XmlPullParser parser = Xml.newPullParser();
@@ -79,20 +79,20 @@ String varA4F692C7E4CB5AD08C930C1C2050AB6F_132413375 =         CarrierSpnMap.get
     if(!"spnOverride".equals(name))                
                 {
                     break;
-                } 
+                } //End block
                 String numeric = parser.getAttributeValue(null, "numeric");
                 String data = parser.getAttributeValue(null, "spn");
                 CarrierSpnMap.put(numeric, data);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (XmlPullParserException e)
         {
-        } 
+        } //End block
         catch (IOException e)
         {
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

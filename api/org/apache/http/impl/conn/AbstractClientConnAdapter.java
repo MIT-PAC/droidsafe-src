@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,48 +50,45 @@ public abstract class AbstractClientConnAdapter implements ManagedClientConnecti
         markedReusable = false;
         aborted = false;
         duration = Long.MAX_VALUE;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //executionThread = Thread.currentThread();
+        //connManager = mgr;
+        //wrappedConnection = conn;
+        //markedReusable = false;
+        //aborted = false;
+        //duration = Long.MAX_VALUE;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.702 -0400", hash_original_method = "5CCC2D76AB339C78C9BD8A2A561C74E1", hash_generated_method = "C05FA2E5875C4FAD66CDB84286BB9B34")
     protected void detach() {
         wrappedConnection = null;
         connManager = null;
         duration = Long.MAX_VALUE;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //wrappedConnection = null;
+        //connManager = null;
+        //duration = Long.MAX_VALUE;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.703 -0400", hash_original_method = "6A8409740777F9B554371FD5CA23B84B", hash_generated_method = "2FD9B2D0BF06975373AEE74C561BA9DC")
     protected OperatedClientConnection getWrappedConnection() {
 OperatedClientConnection var67BFE8639BF4D54D36BCCAB7D2BDEA1E_673752894 =         wrappedConnection;
         var67BFE8639BF4D54D36BCCAB7D2BDEA1E_673752894.addTaint(taint);
         return var67BFE8639BF4D54D36BCCAB7D2BDEA1E_673752894;
-        
-        
+        // ---------- Original Method ----------
+        //return wrappedConnection;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.703 -0400", hash_original_method = "D124AA8CBEEBBCAB0459F467E40DD04B", hash_generated_method = "BE8B08BF6F012565B9D3D94BAF11112F")
     protected ClientConnectionManager getManager() {
 ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =         connManager;
         varA3F19198A23DEA30D08223E00C8A3A82_1263756657.addTaint(taint);
         return varA3F19198A23DEA30D08223E00C8A3A82_1263756657;
-        
-        
+        // ---------- Original Method ----------
+        //return connManager;
     }
 
     
@@ -102,11 +99,11 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
             InterruptedIOException var5B27A46B909A31111E8F9174329C2770_206844204 = new InterruptedIOException("Connection has been shut down.");
             var5B27A46B909A31111E8F9174329C2770_206844204.addTaint(taint);
             throw var5B27A46B909A31111E8F9174329C2770_206844204;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (aborted) {
+            //throw new InterruptedIOException("Connection has been shut down.");
+        //}
     }
 
     
@@ -119,11 +116,11 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
             IllegalStateException var4F64B52FA212B6D9F221A3F109CFE0F8_1461056774 = new IllegalStateException("No wrapped connection.");
             var4F64B52FA212B6D9F221A3F109CFE0F8_1461056774.addTaint(taint);
             throw var4F64B52FA212B6D9F221A3F109CFE0F8_1461056774;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (wrappedConn == null) {
+            //throw new IllegalStateException("No wrapped connection.");
+        //}
     }
 
     
@@ -139,11 +136,11 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
         boolean var160D40DABB921BD72607FBE1DD13336F_66567089 = (conn.isOpen());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_224624335 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_224624335;
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //if (conn == null)
+            //return false;
+        //return conn.isOpen();
     }
 
     
@@ -165,13 +162,13 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
         boolean var25BF3D1354E39595C509CB31111EF97B_2005436400 = (conn.isStale());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_471979061 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_471979061;
-        
-        
-            
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (aborted)
+            //return true;
+        //OperatedClientConnection conn = getWrappedConnection();
+        //if (conn == null)
+            //return true;
+        //return conn.isStale();
     }
 
     
@@ -181,10 +178,10 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         conn.setSocketTimeout(timeout);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //conn.setSocketTimeout(timeout);
     }
 
     
@@ -195,10 +192,10 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
         int var95FFA445D5A9A4BC36AB1DC44BAE0D85_2102113468 = (conn.getSocketTimeout());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032381219 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032381219;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //return conn.getSocketTimeout();
     }
 
     
@@ -209,10 +206,10 @@ ClientConnectionManager varA3F19198A23DEA30D08223E00C8A3A82_1263756657 =        
 HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         conn.getMetrics();
         varEB4189BE8F03207E4416B4772007C2FF_1793846969.addTaint(taint);
         return varEB4189BE8F03207E4416B4772007C2FF_1793846969;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //return conn.getMetrics();
     }
 
     
@@ -222,11 +219,11 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         c
         OperatedClientConnection conn = getWrappedConnection();
         assertValid(conn);
         conn.flush();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertNotAborted();
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //conn.flush();
     }
 
     
@@ -239,11 +236,11 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         c
         boolean var8EF05C19AD6A8E1E89B4F486FD4CC329_1404441566 = (conn.isResponseAvailable(timeout));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1326319082 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1326319082;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertNotAborted();
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //return conn.isResponseAvailable(timeout);
     }
 
     
@@ -255,12 +252,12 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         c
         assertValid(conn);
         unmarkReusable();
         conn.receiveResponseEntity(response);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertNotAborted();
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //unmarkReusable();
+        //conn.receiveResponseEntity(response);
     }
 
     
@@ -273,12 +270,12 @@ HttpConnectionMetrics varEB4189BE8F03207E4416B4772007C2FF_1793846969 =         c
 HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_769436373 =         conn.receiveResponseHeader();
         varE063336E2071DB69DB08B2CDD9CDA3CC_769436373.addTaint(taint);
         return varE063336E2071DB69DB08B2CDD9CDA3CC_769436373;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertNotAborted();
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //unmarkReusable();
+        //return conn.receiveResponseHeader();
     }
 
     
@@ -290,12 +287,12 @@ HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_769436373 =         conn.receiv
         assertValid(conn);
         unmarkReusable();
         conn.sendRequestEntity(request);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertNotAborted();
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //unmarkReusable();
+        //conn.sendRequestEntity(request);
     }
 
     
@@ -307,12 +304,12 @@ HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_769436373 =         conn.receiv
         assertValid(conn);
         unmarkReusable();
         conn.sendRequestHeader(request);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //assertNotAborted();
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //unmarkReusable();
+        //conn.sendRequestHeader(request);
     }
 
     
@@ -323,10 +320,10 @@ HttpResponse varE063336E2071DB69DB08B2CDD9CDA3CC_769436373 =         conn.receiv
 InetAddress varCDFAB36BFB4DA07291E03E81DE197703_784569213 =         conn.getLocalAddress();
         varCDFAB36BFB4DA07291E03E81DE197703_784569213.addTaint(taint);
         return varCDFAB36BFB4DA07291E03E81DE197703_784569213;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //return conn.getLocalAddress();
     }
 
     
@@ -337,10 +334,10 @@ InetAddress varCDFAB36BFB4DA07291E03E81DE197703_784569213 =         conn.getLoca
         int varA232E3DF66EF4784D674D13BEA784FF7_701427354 = (conn.getLocalPort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304980211 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304980211;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //return conn.getLocalPort();
     }
 
     
@@ -351,10 +348,10 @@ InetAddress varCDFAB36BFB4DA07291E03E81DE197703_784569213 =         conn.getLoca
 InetAddress varC665637F3EB55A5589053A929E6B6A83_2014786125 =         conn.getRemoteAddress();
         varC665637F3EB55A5589053A929E6B6A83_2014786125.addTaint(taint);
         return varC665637F3EB55A5589053A929E6B6A83_2014786125;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //return conn.getRemoteAddress();
     }
 
     
@@ -365,10 +362,10 @@ InetAddress varC665637F3EB55A5589053A929E6B6A83_2014786125 =         conn.getRem
         int var7C19380A7B4AEDEFF30B3FCBB4DEFBBC_718078397 = (conn.getRemotePort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1261030417 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1261030417;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //return conn.getRemotePort();
     }
 
     
@@ -379,10 +376,10 @@ InetAddress varC665637F3EB55A5589053A929E6B6A83_2014786125 =         conn.getRem
         boolean var79772CEFF0063644ED296D0AE2ECD1B3_1814817982 = (conn.isSecure());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1706561883 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1706561883;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //return conn.isSecure();
     }
 
     
@@ -401,50 +398,47 @@ SSLSession var540C13E9E156B687226421B24F2DF178_539965491 =         null;
     if(sock instanceof SSLSocket)        
         {
             result = ((SSLSocket)sock).getSession();
-        } 
+        } //End block
 SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970;
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //OperatedClientConnection conn = getWrappedConnection();
+        //assertValid(conn);
+        //if (!isOpen())
+            //return null;
+        //SSLSession result = null;
+        //Socket    sock    = conn.getSocket();
+        //if (sock instanceof SSLSocket) {
+            //result = ((SSLSocket)sock).getSession();
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.711 -0400", hash_original_method = "839709285FE118C452FA26DE879FFB1D", hash_generated_method = "7BE665094380AED20128BA3103013769")
     public void markReusable() {
         markedReusable = true;
-        
-        
+        // ---------- Original Method ----------
+        //markedReusable = true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.712 -0400", hash_original_method = "7923E01503297FB76AA22E34EEF6FDF5", hash_generated_method = "F127E589DEE28AC35FB277B0F37C1F36")
     public void unmarkReusable() {
         markedReusable = false;
-        
-        
+        // ---------- Original Method ----------
+        //markedReusable = false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.712 -0400", hash_original_method = "2387742F6BF9638BB6ECF14FF1FDB0EE", hash_generated_method = "DDA269BF6DFDC5344333820FE3FBB008")
     public boolean isMarkedReusable() {
         boolean var77035017D39C20BF71D208F4896BC5CA_1855628578 = (markedReusable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_630475367 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_630475367;
-        
-        
+        // ---------- Original Method ----------
+        //return markedReusable;
     }
 
     
@@ -453,17 +447,17 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     if(duration > 0)        
         {
             this.duration = unit.toMillis(duration);
-        } 
+        } //End block
         else
         {
             this.duration = -1;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if(duration > 0) {
+            //this.duration = unit.toMillis(duration);
+        //} else {
+            //this.duration = -1;
+        //}
     }
 
     
@@ -472,11 +466,11 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     if(connManager != null)        
         {
             connManager.releaseConnection(this, duration, TimeUnit.MILLISECONDS);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (connManager != null) {
+            //connManager.releaseConnection(this, duration, TimeUnit.MILLISECONDS);
+        //}
     }
 
     
@@ -485,33 +479,33 @@ SSLSession varDC838461EE2FA0CA4C9BBB70A15456B0_1102524970 =         result;
     if(aborted)        
         {
             return;
-        } 
+        } //End block
         aborted = true;
         unmarkReusable();
         try 
         {
             shutdown();
-        } 
+        } //End block
         catch (IOException ignore)
         {
-        } 
+        } //End block
     if(executionThread.equals(Thread.currentThread()))        
         {
             releaseConnection();
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (aborted) {
+            //return;
+        //}
+        //aborted = true;
+        //unmarkReusable();
+        //try {
+            //shutdown();
+        //} catch (IOException ignore) {
+        //}
+        //if (executionThread.equals(Thread.currentThread())) {
+            //releaseConnection();
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package android.opengl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,13 +39,13 @@ class EGLLogWrapper implements EGL11 {
             (GLDebugHelper.CONFIG_LOG_ARGUMENT_NAMES & configFlags) != 0;
         mCheckError =
             (GLDebugHelper.CONFIG_CHECK_GL_ERROR & configFlags) != 0;
-        
-        
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //mEgl10 = (EGL10) egl;
+        //mLog = log;
+        //mLogArgumentNames =
+            //(GLDebugHelper.CONFIG_LOG_ARGUMENT_NAMES & configFlags) != 0;
+        //mCheckError =
+            //(GLDebugHelper.CONFIG_CHECK_GL_ERROR & configFlags) != 0;
     }
 
     
@@ -71,19 +71,19 @@ class EGLLogWrapper implements EGL11 {
         boolean varB4A88417B3D0170D754C647C30B7216A_1034799609 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_260195719 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_260195719;
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglChooseConfig");
+        //arg("display", display);
+        //arg("attrib_list", attrib_list);
+        //arg("config_size", config_size);
+        //end();
+        //boolean result = mEgl10.eglChooseConfig(display, attrib_list, configs,
+                //config_size, num_config);
+        //arg("configs", configs);
+        //arg("num_config", num_config);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -104,16 +104,16 @@ class EGLLogWrapper implements EGL11 {
         boolean varB4A88417B3D0170D754C647C30B7216A_30253439 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1640271975 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1640271975;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglCopyBuffers");
+        //arg("display", display);
+        //arg("surface", surface);
+        //arg("native_pixmap", native_pixmap);
+        //end();
+        //boolean result = mEgl10.eglCopyBuffers(display, surface, native_pixmap);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -137,18 +137,18 @@ class EGLLogWrapper implements EGL11 {
 EGLContext varDC838461EE2FA0CA4C9BBB70A15456B0_545719346 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_545719346.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_545719346;
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglCreateContext");
+        //arg("display", display);
+        //arg("config", config);
+        //arg("share_context", share_context);
+        //arg("attrib_list", attrib_list);
+        //end();
+        //EGLContext result = mEgl10.eglCreateContext(display, config,
+                //share_context, attrib_list);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -170,17 +170,17 @@ EGLContext varDC838461EE2FA0CA4C9BBB70A15456B0_545719346 =         result;
 EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_171157302 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_171157302.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_171157302;
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglCreatePbufferSurface");
+        //arg("display", display);
+        //arg("config", config);
+        //arg("attrib_list", attrib_list);
+        //end();
+        //EGLSurface result = mEgl10.eglCreatePbufferSurface(display, config,
+                //attrib_list);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -204,18 +204,18 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_171157302 =         result;
 EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1181382364 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1181382364.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1181382364;
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglCreatePixmapSurface");
+        //arg("display", display);
+        //arg("config", config);
+        //arg("native_pixmap", native_pixmap);
+        //arg("attrib_list", attrib_list);
+        //end();
+        //EGLSurface result = mEgl10.eglCreatePixmapSurface(display, config,
+                //native_pixmap, attrib_list);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -239,18 +239,18 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1181382364 =         result;
 EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670;
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglCreateWindowSurface");
+        //arg("display", display);
+        //arg("config", config);
+        //arg("native_window", native_window);
+        //arg("attrib_list", attrib_list);
+        //end();
+        //EGLSurface result = mEgl10.eglCreateWindowSurface(display, config,
+                //native_window, attrib_list);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -268,15 +268,15 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_173490984 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1430059573 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1430059573;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglDestroyContext");
+        //arg("display", display);
+        //arg("context", context);
+        //end();
+        //boolean result = mEgl10.eglDestroyContext(display, context);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -294,15 +294,15 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_1068117148 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1634211408 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1634211408;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglDestroySurface");
+        //arg("display", display);
+        //arg("surface", surface);
+        //end();
+        //boolean result = mEgl10.eglDestroySurface(display, surface);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -326,18 +326,18 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
         boolean var68934A3E9455FA72420237EB05902327_336352235 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_746309393 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_746309393;
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglGetConfigAttrib");
+        //arg("display", display);
+        //arg("config", config);
+        //arg("attribute", attribute);
+        //end();
+        //boolean result = mEgl10.eglGetConfigAttrib(display, config, attribute,
+                //value);
+        //arg("value", value);
+        //returns(result);
+        //checkError();
+        //return false;
     }
 
     
@@ -361,18 +361,18 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_425214293 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1163968010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1163968010;
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglGetConfigs");
+        //arg("display", display);
+        //arg("config_size", config_size);
+        //end();
+        //boolean result = mEgl10.eglGetConfigs(display, configs, config_size,
+                //num_config);
+        //arg("configs", configs);
+        //arg("num_config", num_config);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -386,13 +386,13 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1896795670 =         result;
 EGLContext varDC838461EE2FA0CA4C9BBB70A15456B0_2041830721 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_2041830721.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_2041830721;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglGetCurrentContext");
+        //end();
+        //EGLContext result = mEgl10.eglGetCurrentContext();
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -406,13 +406,13 @@ EGLContext varDC838461EE2FA0CA4C9BBB70A15456B0_2041830721 =         result;
 EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_1794706667 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1794706667.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1794706667;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglGetCurrentDisplay");
+        //end();
+        //EGLDisplay result = mEgl10.eglGetCurrentDisplay();
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -428,14 +428,14 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_1794706667 =         result;
 EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1649181117 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1649181117.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1649181117;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglGetCurrentSurface");
+        //arg("readdraw", readdraw);
+        //end();
+        //EGLSurface result = mEgl10.eglGetCurrentSurface(readdraw);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -451,14 +451,14 @@ EGLSurface varDC838461EE2FA0CA4C9BBB70A15456B0_1649181117 =         result;
 EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_57727382.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_57727382;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglGetDisplay");
+        //arg("native_display", native_display);
+        //end();
+        //EGLDisplay result = mEgl10.eglGetDisplay(native_display);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -471,12 +471,12 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
         int varB4A88417B3D0170D754C647C30B7216A_968987259 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_831285632 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_831285632;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglGetError");
+        //end();
+        //int result = mEgl10.eglGetError();
+        //returns(getErrorString(result));
+        //return result;
     }
 
     
@@ -494,15 +494,15 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_701358685 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2004369937 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2004369937;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglInitialize");
+        //arg("display", display);
+        //end();
+        //boolean result = mEgl10.eglInitialize(display, major_minor);
+        //returns(result);
+        //arg("major_minor", major_minor);
+        //checkError();
+        //return result;
     }
 
     
@@ -525,17 +525,17 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_32764373 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1240359928 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1240359928;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglMakeCurrent");
+        //arg("display", display);
+        //arg("draw", draw);
+        //arg("read", read);
+        //arg("context", context);
+        //end();
+        //boolean result = mEgl10.eglMakeCurrent(display, draw, read, context);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -559,18 +559,18 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_476021062 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_977745033 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_977745033;
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglQueryContext");
+        //arg("display", display);
+        //arg("context", context);
+        //arg("attribute", attribute);
+        //end();
+        //boolean result = mEgl10.eglQueryContext(display, context, attribute,
+                //value);
+        //returns(value[0]);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -588,15 +588,15 @@ EGLDisplay varDC838461EE2FA0CA4C9BBB70A15456B0_57727382 =         result;
 String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglQueryString");
+        //arg("display", display);
+        //arg("name", name);
+        //end();
+        //String result = mEgl10.eglQueryString(display, name);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -620,18 +620,18 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_1923280090 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_385499377 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_385499377;
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglQuerySurface");
+        //arg("display", display);
+        //arg("surface", surface);
+        //arg("attribute", attribute);
+        //end();
+        //boolean result = mEgl10.eglQuerySurface(display, surface, attribute,
+                //value);
+        //returns(value[0]);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -645,13 +645,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_1708065109 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1832462120 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1832462120;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglReleaseThread");
+        //end();
+        //boolean result = mEgl10.eglReleaseThread();
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -669,15 +669,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_93539059 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435283857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_435283857;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglInitialize");
+        //arg("display", display);
+        //arg("surface", surface);
+        //end();
+        //boolean result = mEgl10.eglSwapBuffers(display, surface);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -693,14 +693,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_1394722367 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_722533800 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_722533800;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglTerminate");
+        //arg("display", display);
+        //end();
+        //boolean result = mEgl10.eglTerminate(display);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -714,13 +714,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_380187951 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_402505592 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_402505592;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglWaitGL");
+        //end();
+        //boolean result = mEgl10.eglWaitGL();
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -738,15 +738,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_771057278 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_115947208 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_115947208;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("eglWaitNative");
+        //arg("engine", engine);
+        //arg("bindTarget", bindTarget);
+        //end();
+        //boolean result = mEgl10.eglWaitNative(engine, bindTarget);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -762,17 +762,17 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
                 GLException var9F15425ECFD387370DF00B2A8FBDE5B5_258067874 = new GLException(eglError, errorMessage);
                 var9F15425ECFD387370DF00B2A8FBDE5B5_258067874.addTaint(taint);
                 throw var9F15425ECFD387370DF00B2A8FBDE5B5_258067874;
-            } 
-        } 
-        
-        
-        
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int eglError;
+        //if ((eglError = mEgl10.eglGetError()) != EGL_SUCCESS) {
+            //String errorMessage = "eglError: " + getErrorString(eglError);
+            //logLine(errorMessage);
+            //if (mCheckError) {
+                //throw new GLException(eglError, errorMessage);
+            //}
+        //}
     }
 
     
@@ -780,27 +780,26 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     private void logLine(String message) {
         addTaint(message.getTaint());
         log(message + '\n');
-        
-        
+        // ---------- Original Method ----------
+        //log(message + '\n');
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.142 -0400", hash_original_method = "55C0C6DBDFA700D90D9FD20B92BCF082", hash_generated_method = "1FD69062587B8774F2FBFC9AB6BCAD1D")
     private void log(String message) {
         addTaint(message.getTaint());
         try 
         {
             mLog.write(message);
-        } 
+        } //End block
         catch (IOException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mLog.write(message);
+        //} catch (IOException e) {
+        //}
     }
 
     
@@ -809,9 +808,9 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         addTaint(name.getTaint());
         log(name + '(');
         mArgCount = 0;
-        
-        
-        
+        // ---------- Original Method ----------
+        //log(name + '(');
+        //mArgCount = 0;
     }
 
     
@@ -822,20 +821,20 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     if(mArgCount++ > 0)        
         {
             log(", ");
-        } 
+        } //End block
     if(mLogArgumentNames)        
         {
             log(name + "=");
-        } 
+        } //End block
         log(value);
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mArgCount++ > 0) {
+            //log(", ");
+        //}
+        //if (mLogArgumentNames) {
+            //log(name + "=");
+        //}
+        //log(value);
     }
 
     
@@ -843,9 +842,9 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     private void end() {
         log(");\n");
         flush();
-        
-        
-        
+        // ---------- Original Method ----------
+        //log(");\n");
+        //flush();
     }
 
     
@@ -854,17 +853,17 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         try 
         {
             mLog.flush();
-        } 
+        } //End block
         catch (IOException e)
         {
             mLog = null;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mLog.flush();
+        //} catch (IOException e) {
+            //mLog = null;
+        //}
     }
 
     
@@ -873,8 +872,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         addTaint(value);
         addTaint(name.getTaint());
         arg(name, Integer.toString(value));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, Integer.toString(value));
     }
 
     
@@ -883,8 +882,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         addTaint(object.getTaint());
         addTaint(name.getTaint());
         arg(name, toString(object));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, toString(object));
     }
 
     
@@ -895,24 +894,24 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     if(object == EGL10.EGL_DEFAULT_DISPLAY)        
         {
             arg(name, "EGL10.EGL_DEFAULT_DISPLAY");
-        } 
+        } //End block
         else
     if(object == EGL_NO_DISPLAY)        
         {
             arg(name, "EGL10.EGL_NO_DISPLAY");
-        } 
+        } //End block
         else
         {
             arg(name, toString(object));
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (object == EGL10.EGL_DEFAULT_DISPLAY) {
+            //arg(name, "EGL10.EGL_DEFAULT_DISPLAY");
+        //} else if (object == EGL_NO_DISPLAY) {
+            //arg(name, "EGL10.EGL_NO_DISPLAY");
+        //} else {
+            //arg(name, toString(object));
+        //}
     }
 
     
@@ -923,17 +922,17 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     if(object == EGL10.EGL_NO_CONTEXT)        
         {
             arg(name, "EGL10.EGL_NO_CONTEXT");
-        } 
+        } //End block
         else
         {
             arg(name, toString(object));
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (object == EGL10.EGL_NO_CONTEXT) {
+            //arg(name, "EGL10.EGL_NO_CONTEXT");
+        //} else {
+            //arg(name, toString(object));
+        //}
     }
 
     
@@ -944,17 +943,17 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     if(object == EGL10.EGL_NO_SURFACE)        
         {
             arg(name, "EGL10.EGL_NO_SURFACE");
-        } 
+        } //End block
         else
         {
             arg(name, toString(object));
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (object == EGL10.EGL_NO_SURFACE) {
+            //arg(name, "EGL10.EGL_NO_SURFACE");
+        //} else {
+            //arg(name, toString(object));
+        //}
     }
 
     
@@ -963,9 +962,9 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
         addTaint(result.getTaint());
         log(" returns " + result + ";\n");
         flush();
-        
-        
-        
+        // ---------- Original Method ----------
+        //log(" returns " + result + ";\n");
+        //flush();
     }
 
     
@@ -973,8 +972,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     private void returns(int result) {
         addTaint(result);
         returns(Integer.toString(result));
-        
-        
+        // ---------- Original Method ----------
+        //returns(Integer.toString(result));
     }
 
     
@@ -982,8 +981,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     private void returns(boolean result) {
         addTaint(result);
         returns(Boolean.toString(result));
-        
-        
+        // ---------- Original Method ----------
+        //returns(Boolean.toString(result));
     }
 
     
@@ -991,8 +990,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
     private void returns(Object result) {
         addTaint(result.getTaint());
         returns(toString(result));
-        
-        
+        // ---------- Original Method ----------
+        //returns(toString(result));
     }
 
     
@@ -1004,19 +1003,19 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_2001642649 =         result;
 String var1D801F10795A50869C3F1F514D9B9BF5_1147107389 =             "null";
             var1D801F10795A50869C3F1F514D9B9BF5_1147107389.addTaint(taint);
             return var1D801F10795A50869C3F1F514D9B9BF5_1147107389;
-        } 
+        } //End block
         else
         {
 String varCC7F0868C1207D03CC528BFE14315765_1021734488 =             obj.toString();
             varCC7F0868C1207D03CC528BFE14315765_1021734488.addTaint(taint);
             return varCC7F0868C1207D03CC528BFE14315765_1021734488;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (obj == null) {
+            //return "null";
+        //} else {
+            //return obj.toString();
+        //}
     }
 
     
@@ -1027,17 +1026,17 @@ String varCC7F0868C1207D03CC528BFE14315765_1021734488 =             obj.toString
     if(arr == null)        
         {
             arg(name, "null");
-        } 
+        } //End block
         else
         {
             arg(name, toString(arr.length, arr, 0));
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (arr == null) {
+            //arg(name, "null");
+        //} else {
+            //arg(name, toString(arr.length, arr, 0));
+        //}
     }
 
     
@@ -1048,17 +1047,17 @@ String varCC7F0868C1207D03CC528BFE14315765_1021734488 =             obj.toString
     if(arr == null)        
         {
             arg(name, "null");
-        } 
+        } //End block
         else
         {
             arg(name, toString(arr.length, arr, 0));
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (arr == null) {
+            //arg(name, "null");
+        //} else {
+            //arg(name, toString(arr.length, arr, 0));
+        //}
     }
 
     
@@ -1077,33 +1076,33 @@ for(int i = 0;i < n;i++)
     if(index < 0 || index >= arrLen)            
             {
                 buf.append("out of bounds");
-            } 
+            } //End block
             else
             {
                 buf.append(arr[index]);
-            } 
+            } //End block
             buf.append('\n');
-        } 
+        } //End block
         buf.append("}");
 String var4FC680801218E6372BC708D6FA44AE60_5859014 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_5859014.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_5859014;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-                
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buf = new StringBuilder();
+        //buf.append("{\n");
+        //int arrLen = arr.length;
+        //for (int i = 0; i < n; i++) {
+            //int index = offset + i;
+            //buf.append(" [" + index + "] = ");
+            //if (index < 0 || index >= arrLen) {
+                //buf.append("out of bounds");
+            //} else {
+                //buf.append(arr[index]);
+            //}
+            //buf.append('\n');
+        //}
+        //buf.append("}");
+        //return buf.toString();
     }
 
     
@@ -1122,33 +1121,33 @@ for(int i = 0;i < n;i++)
     if(index < 0 || index >= arrLen)            
             {
                 buf.append("out of bounds");
-            } 
+            } //End block
             else
             {
                 buf.append(arr[index]);
-            } 
+            } //End block
             buf.append('\n');
-        } 
+        } //End block
         buf.append("}");
 String var4FC680801218E6372BC708D6FA44AE60_2107898270 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_2107898270.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_2107898270;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-                
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buf = new StringBuilder();
+        //buf.append("{\n");
+        //int arrLen = arr.length;
+        //for (int i = 0; i < n; i++) {
+            //int index = offset + i;
+            //buf.append(" [" + index + "] = ");
+            //if (index < 0 || index >= arrLen) {
+                //buf.append("out of bounds");
+            //} else {
+                //buf.append(arr[index]);
+            //}
+            //buf.append('\n');
+        //}
+        //buf.append("}");
+        //return buf.toString();
     }
 
     

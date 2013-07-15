@@ -1,6 +1,6 @@
 package org.xml.sax.helpers;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,8 +34,8 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.574 -0400", hash_original_method = "76BB97F012769A161CBA88EA8A2E4EBA", hash_generated_method = "ACE6CAC3BCC79737302ED6D2560D7BCC")
     public  XMLReaderAdapter() throws SAXException {
         setup(XMLReaderFactory.createXMLReader());
-        
-        
+        // ---------- Original Method ----------
+        //setup(XMLReaderFactory.createXMLReader());
     }
 
     
@@ -43,8 +43,8 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     public  XMLReaderAdapter(XMLReader xmlReader) {
         addTaint(xmlReader.getTaint());
         setup(xmlReader);
-        
-        
+        // ---------- Original Method ----------
+        //setup(xmlReader);
     }
 
     
@@ -55,15 +55,15 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
             NullPointerException var132C8432BDD011DD7E9C2E2174C2B9F3_1099322180 = new NullPointerException("XMLReader must not be null");
             var132C8432BDD011DD7E9C2E2174C2B9F3_1099322180.addTaint(taint);
             throw var132C8432BDD011DD7E9C2E2174C2B9F3_1099322180;
-        } 
+        } //End block
         this.xmlReader = xmlReader;
         qAtts = new AttributesAdapter();
-        
-        
-        
-    
-        
-        
+        // ---------- Original Method ----------
+        //if (xmlReader == null) {
+        //throw new NullPointerException("XMLReader must not be null");
+    //}
+        //this.xmlReader = xmlReader;
+        //qAtts = new AttributesAdapter();
     }
 
     
@@ -73,8 +73,8 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         SAXNotSupportedException var4EB729013FC6081584201FCF4557393A_1827235375 = new SAXNotSupportedException("setLocale not supported");
         var4EB729013FC6081584201FCF4557393A_1827235375.addTaint(taint);
         throw var4EB729013FC6081584201FCF4557393A_1827235375;
-        
-        
+        // ---------- Original Method ----------
+        //throw new SAXNotSupportedException("setLocale not supported");
     }
 
     
@@ -82,8 +82,8 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     public void setEntityResolver(EntityResolver resolver) {
         addTaint(resolver.getTaint());
         xmlReader.setEntityResolver(resolver);
-        
-        
+        // ---------- Original Method ----------
+        //xmlReader.setEntityResolver(resolver);
     }
 
     
@@ -91,17 +91,16 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     public void setDTDHandler(DTDHandler handler) {
         addTaint(handler.getTaint());
         xmlReader.setDTDHandler(handler);
-        
-        
+        // ---------- Original Method ----------
+        //xmlReader.setDTDHandler(handler);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.576 -0400", hash_original_method = "066AA0855CEAF16F5A4DD1498A9898AE", hash_generated_method = "0F2ADD0F92A8C507A348EECB68D8069E")
     public void setDocumentHandler(DocumentHandler handler) {
         documentHandler = handler;
-        
-        
+        // ---------- Original Method ----------
+        //documentHandler = handler;
     }
 
     
@@ -109,8 +108,8 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     public void setErrorHandler(ErrorHandler handler) {
         addTaint(handler.getTaint());
         xmlReader.setErrorHandler(handler);
-        
-        
+        // ---------- Original Method ----------
+        //xmlReader.setErrorHandler(handler);
     }
 
     
@@ -118,8 +117,8 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     public void parse(String systemId) throws IOException, SAXException {
         addTaint(systemId.getTaint());
         parse(new InputSource(systemId));
-        
-        
+        // ---------- Original Method ----------
+        //parse(new InputSource(systemId));
     }
 
     
@@ -128,9 +127,9 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         addTaint(input.getTaint());
         setupXMLReader();
         xmlReader.parse(input);
-        
-        
-        
+        // ---------- Original Method ----------
+        //setupXMLReader();
+        //xmlReader.parse(input);
     }
 
     
@@ -141,19 +140,19 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         {
             xmlReader.setFeature("http://xml.org/sax/features/namespaces",
                              false);
-        } 
+        } //End block
         catch (SAXException e)
         {
-        } 
+        } //End block
         xmlReader.setContentHandler(this);
-        
-        
-        
-        
-                             
-    
-    
-        
+        // ---------- Original Method ----------
+        //xmlReader.setFeature("http://xml.org/sax/features/namespace-prefixes", true);
+        //try {
+        //xmlReader.setFeature("http://xml.org/sax/features/namespaces",
+                             //false);
+    //} catch (SAXException e) {
+    //}
+        //xmlReader.setContentHandler(this);
     }
 
     
@@ -162,9 +161,9 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         addTaint(locator.getTaint());
     if(documentHandler != null)        
         documentHandler.setDocumentLocator(locator);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (documentHandler != null)
+        //documentHandler.setDocumentLocator(locator);
     }
 
     
@@ -172,9 +171,9 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     public void startDocument() throws SAXException {
     if(documentHandler != null)        
         documentHandler.startDocument();
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (documentHandler != null)
+        //documentHandler.startDocument();
     }
 
     
@@ -182,26 +181,24 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
     public void endDocument() throws SAXException {
     if(documentHandler != null)        
         documentHandler.endDocument();
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (documentHandler != null)
+        //documentHandler.endDocument();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.578 -0400", hash_original_method = "A4FE8368A0813DB39B9B2D62745BDC50", hash_generated_method = "8FDC55F9D464E2D689D2B0B5CDBBC246")
     public void startPrefixMapping(String prefix, String uri) {
         addTaint(uri.getTaint());
         addTaint(prefix.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.578 -0400", hash_original_method = "6288457D9104DBA73FF5F77796A5069B", hash_generated_method = "398A8D091F972C52779202B902D2C498")
     public void endPrefixMapping(String prefix) {
         addTaint(prefix.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -216,12 +213,12 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         {
             qAtts.setAttributes(atts);
             documentHandler.startElement(qName, qAtts);
-        } 
-        
-        
-        
-        
-    
+        } //End block
+        // ---------- Original Method ----------
+        //if (documentHandler != null) {
+        //qAtts.setAttributes(atts);
+        //documentHandler.startElement(qName, qAtts);
+    //}
     }
 
     
@@ -233,9 +230,9 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         addTaint(uri.getTaint());
     if(documentHandler != null)        
         documentHandler.endElement(qName);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (documentHandler != null)
+        //documentHandler.endElement(qName);
     }
 
     
@@ -246,9 +243,9 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         addTaint(ch[0]);
     if(documentHandler != null)        
         documentHandler.characters(ch, start, length);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (documentHandler != null)
+        //documentHandler.characters(ch, start, length);
     }
 
     
@@ -259,9 +256,9 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         addTaint(ch[0]);
     if(documentHandler != null)        
         documentHandler.ignorableWhitespace(ch, start, length);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (documentHandler != null)
+        //documentHandler.ignorableWhitespace(ch, start, length);
     }
 
     
@@ -271,17 +268,16 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         addTaint(target.getTaint());
     if(documentHandler != null)        
         documentHandler.processingInstruction(target, data);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (documentHandler != null)
+        //documentHandler.processingInstruction(target, data);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.580 -0400", hash_original_method = "1616136BE44E483876717F8A446FD8E6", hash_generated_method = "78177C3306D49108B776A6C694C380AB")
     public void skippedEntity(String name) throws SAXException {
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -292,16 +288,15 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.580 -0400", hash_original_method = "E50C9A4E371E1BB1DB8AD3C2D41905DA", hash_generated_method = "6DD45A539CB2C54185009851E7F4E171")
           AttributesAdapter() {
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.581 -0400", hash_original_method = "53FC4E3BB2217D6659CB21AA159A3250", hash_generated_method = "7A0F98D55CE81AA31A2B8414CFC871B3")
          void setAttributes(Attributes attributes) {
             this.attributes = attributes;
-            
-            
+            // ---------- Original Method ----------
+            //this.attributes = attributes;
         }
 
         
@@ -310,8 +305,8 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
             int var88709B1969FAA074A8AF53DE81D847BB_1151960463 = (attributes.getLength());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060711790 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060711790;
-            
-            
+            // ---------- Original Method ----------
+            //return attributes.getLength();
         }
 
         
@@ -321,8 +316,8 @@ public class XMLReaderAdapter implements Parser, ContentHandler {
 String varD3C415BCDC7E1755014BC06AE2F77294_1116798341 =             attributes.getQName(i);
             varD3C415BCDC7E1755014BC06AE2F77294_1116798341.addTaint(taint);
             return varD3C415BCDC7E1755014BC06AE2F77294_1116798341;
-            
-            
+            // ---------- Original Method ----------
+            //return attributes.getQName(i);
         }
 
         
@@ -332,8 +327,8 @@ String varD3C415BCDC7E1755014BC06AE2F77294_1116798341 =             attributes.g
 String var3818F318EC5F073B13DD78EF162E343C_1348390820 =             attributes.getType(i);
             var3818F318EC5F073B13DD78EF162E343C_1348390820.addTaint(taint);
             return var3818F318EC5F073B13DD78EF162E343C_1348390820;
-            
-            
+            // ---------- Original Method ----------
+            //return attributes.getType(i);
         }
 
         
@@ -343,8 +338,8 @@ String var3818F318EC5F073B13DD78EF162E343C_1348390820 =             attributes.g
 String varAAEFE96E9C44A0217652CF0D167CC709_186473975 =             attributes.getValue(i);
             varAAEFE96E9C44A0217652CF0D167CC709_186473975.addTaint(taint);
             return varAAEFE96E9C44A0217652CF0D167CC709_186473975;
-            
-            
+            // ---------- Original Method ----------
+            //return attributes.getValue(i);
         }
 
         
@@ -354,8 +349,8 @@ String varAAEFE96E9C44A0217652CF0D167CC709_186473975 =             attributes.ge
 String varD43747F64DB59BD3B1BAF20BB8E1CFE0_1672162981 =             attributes.getType(qName);
             varD43747F64DB59BD3B1BAF20BB8E1CFE0_1672162981.addTaint(taint);
             return varD43747F64DB59BD3B1BAF20BB8E1CFE0_1672162981;
-            
-            
+            // ---------- Original Method ----------
+            //return attributes.getType(qName);
         }
 
         
@@ -365,8 +360,8 @@ String varD43747F64DB59BD3B1BAF20BB8E1CFE0_1672162981 =             attributes.g
 String varDF2956FE705B1355F49D307CB14564B0_1342504650 =             attributes.getValue(qName);
             varDF2956FE705B1355F49D307CB14564B0_1342504650.addTaint(taint);
             return varDF2956FE705B1355F49D307CB14564B0_1342504650;
-            
-            
+            // ---------- Original Method ----------
+            //return attributes.getValue(qName);
         }
 
         

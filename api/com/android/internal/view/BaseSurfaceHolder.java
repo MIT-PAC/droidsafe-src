@@ -1,6 +1,6 @@
 package com.android.internal.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -58,7 +58,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.078 -0400", hash_original_method = "65236AFB54FAB65BD2FC1C8CD2966A75", hash_generated_method = "65236AFB54FAB65BD2FC1C8CD2966A75")
     public BaseSurfaceHolder ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -71,51 +71,46 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     public abstract boolean onAllowLockCanvas();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.079 -0400", hash_original_method = "3AF431EE7D6883EB1B4141BFAE213C2E", hash_generated_method = "40B608521E58F7AEFD3215AB24737718")
     public int getRequestedWidth() {
         int varDAF12D28BCAFCD8EC4B5B68A0352444B_344592652 = (mRequestedWidth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1758422159 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1758422159;
-        
-        
+        // ---------- Original Method ----------
+        //return mRequestedWidth;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.079 -0400", hash_original_method = "2ED2833D03220673A510D00698E2D0FF", hash_generated_method = "91FD3C7BCDAC45432A29AE461C70CDC1")
     public int getRequestedHeight() {
         int var607ECA59F8428E44FACCC287BB658A06_1603669483 = (mRequestedHeight);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189253168 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189253168;
-        
-        
+        // ---------- Original Method ----------
+        //return mRequestedHeight;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.079 -0400", hash_original_method = "E655118A2C284546E2D290C1F5BE4CAA", hash_generated_method = "128CE4844079B9D00AFF49EF35FF40F3")
     public int getRequestedFormat() {
         int var1D9A5E4502690E61DCBE59F0D63D60CF_1186201880 = (mRequestedFormat);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1470988722 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1470988722;
-        
-        
+        // ---------- Original Method ----------
+        //return mRequestedFormat;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.079 -0400", hash_original_method = "1ADEF52CA934B4124985C64931FCC871", hash_generated_method = "C6C4AA43C0D77050CFF98880A466D4D8")
     public int getRequestedType() {
         int var041382B53F7833EFA1F8B723782EDE61_42490135 = (mRequestedType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_138966050 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_138966050;
-        
-        
+        // ---------- Original Method ----------
+        //return mRequestedType;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.079 -0400", hash_original_method = "A6B53DAA62C6D5AB170B791AD6D4E39D", hash_generated_method = "D7A505DD115C685DA72AFFC736187E58")
     public void addCallback(Callback callback) {
         addTaint(callback.getTaint());
@@ -124,14 +119,14 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     if(mCallbacks.contains(callback) == false)            
             {
                 mCallbacks.add(callback);
-            } 
-        } 
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCallbacks) {
+            //if (mCallbacks.contains(callback) == false) {      
+                //mCallbacks.add(callback);
+            //}
+        //}
     }
 
     
@@ -141,11 +136,11 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
         synchronized
 (mCallbacks)        {
             mCallbacks.remove(callback);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCallbacks) {
+            //mCallbacks.remove(callback);
+        //}
     }
 
     
@@ -156,7 +151,7 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
 SurfaceHolder.Callback[] var045A4A088B10EA41A936A83AC51470FC_1777416936 =             mGottenCallbacks;
             var045A4A088B10EA41A936A83AC51470FC_1777416936.addTaint(taint);
             return var045A4A088B10EA41A936A83AC51470FC_1777416936;
-        } 
+        } //End block
         synchronized
 (mCallbacks)        {
             final int N = mCallbacks.size();
@@ -165,44 +160,43 @@ SurfaceHolder.Callback[] var045A4A088B10EA41A936A83AC51470FC_1777416936 =       
     if(mGottenCallbacks == null || mGottenCallbacks.length != N)                
                 {
                     mGottenCallbacks = new SurfaceHolder.Callback[N];
-                } 
+                } //End block
                 mCallbacks.toArray(mGottenCallbacks);
-            } 
+            } //End block
             else
             {
                 mGottenCallbacks = null;
-            } 
+            } //End block
             mHaveGottenCallbacks = true;
-        } 
+        } //End block
 SurfaceHolder.Callback[] var045A4A088B10EA41A936A83AC51470FC_952755017 =         mGottenCallbacks;
         var045A4A088B10EA41A936A83AC51470FC_952755017.addTaint(taint);
         return var045A4A088B10EA41A936A83AC51470FC_952755017;
-        
-        
-            
-        
-        
-            
-            
-                
-                    
-                
-                
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mHaveGottenCallbacks) {
+            //return mGottenCallbacks;
+        //}
+        //synchronized (mCallbacks) {
+            //final int N = mCallbacks.size();
+            //if (N > 0) {
+                //if (mGottenCallbacks == null || mGottenCallbacks.length != N) {
+                    //mGottenCallbacks = new SurfaceHolder.Callback[N];
+                //}
+                //mCallbacks.toArray(mGottenCallbacks);
+            //} else {
+                //mGottenCallbacks = null;
+            //}
+            //mHaveGottenCallbacks = true;
+        //}
+        //return mGottenCallbacks;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.080 -0400", hash_original_method = "B038D0F820D93ACBDF8182E2BE5C1116", hash_generated_method = "B4DB9781FDECFBFCC3D06A75C53FB30C")
     public void ungetCallbacks() {
         mHaveGottenCallbacks = false;
-        
-        
+        // ---------- Original Method ----------
+        //mHaveGottenCallbacks = false;
     }
 
     
@@ -213,13 +207,13 @@ SurfaceHolder.Callback[] var045A4A088B10EA41A936A83AC51470FC_952755017 =        
             mRequestedWidth = width;
             mRequestedHeight = height;
             onRelayoutContainer();
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mRequestedWidth != width || mRequestedHeight != height) {
+            //mRequestedWidth = width;
+            //mRequestedHeight = height;
+            //onRelayoutContainer();
+        //}
     }
 
     
@@ -229,12 +223,12 @@ SurfaceHolder.Callback[] var045A4A088B10EA41A936A83AC51470FC_952755017 =        
         {
             mRequestedWidth = mRequestedHeight = -1;
             onRelayoutContainer();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mRequestedWidth != -1 || mRequestedHeight != -1) {
+            //mRequestedWidth = mRequestedHeight = -1;
+            //onRelayoutContainer();
+        //}
     }
 
     
@@ -244,12 +238,12 @@ SurfaceHolder.Callback[] var045A4A088B10EA41A936A83AC51470FC_952755017 =        
         {
             mRequestedFormat = format;
             onUpdateSurface();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mRequestedFormat != format) {
+            //mRequestedFormat = format;
+            //onUpdateSurface();
+        //}
     }
 
     
@@ -267,25 +261,25 @@ switch(type){
         {
             mRequestedType = type;
             onUpdateSurface();
-        } 
+        } //End block
         break;
 }
-        
-        
-        
-        
-            
-            
-        
-        
-        
-        
-            
-                
-                
-            
-            
-        
+        // ---------- Original Method ----------
+        //switch (type) {
+        //case SURFACE_TYPE_HARDWARE:
+        //case SURFACE_TYPE_GPU:
+            //type = SURFACE_TYPE_NORMAL;
+            //break;
+        //}
+        //switch (type) {
+        //case SURFACE_TYPE_NORMAL:
+        //case SURFACE_TYPE_PUSH_BUFFERS:
+            //if (mRequestedType != type) {
+                //mRequestedType = type;
+                //onUpdateSurface();
+            //}
+            //break;
+        //}
     }
 
     
@@ -294,8 +288,8 @@ switch(type){
 Canvas varDE61BB4FF724D2412289EA61714EB9A6_1644893164 =         internalLockCanvas(null);
         varDE61BB4FF724D2412289EA61714EB9A6_1644893164.addTaint(taint);
         return varDE61BB4FF724D2412289EA61714EB9A6_1644893164;
-        
-        
+        // ---------- Original Method ----------
+        //return internalLockCanvas(null);
     }
 
     
@@ -305,8 +299,8 @@ Canvas varDE61BB4FF724D2412289EA61714EB9A6_1644893164 =         internalLockCanv
 Canvas var78B0430AF4ECF3E90510E88412E9F8FF_1016255250 =         internalLockCanvas(dirty);
         var78B0430AF4ECF3E90510E88412E9F8FF_1016255250.addTaint(taint);
         return var78B0430AF4ECF3E90510E88412E9F8FF_1016255250;
-        
-        
+        // ---------- Original Method ----------
+        //return internalLockCanvas(dirty);
     }
 
     
@@ -319,7 +313,7 @@ Canvas var78B0430AF4ECF3E90510E88412E9F8FF_1016255250 =         internalLockCanv
                     "Surface type is SURFACE_TYPE_PUSH_BUFFERS");
             var00366FDD1C7FB26465FD12593DB0FD1A_157896212.addTaint(taint);
             throw var00366FDD1C7FB26465FD12593DB0FD1A_157896212;
-        } 
+        } //End block
         mSurfaceLock.lock();
     if(DEBUG){ }        Canvas c = null;
     if(onAllowLockCanvas())        
@@ -329,25 +323,25 @@ Canvas var78B0430AF4ECF3E90510E88412E9F8FF_1016255250 =         internalLockCanv
     if(mTmpDirty == null)                
                 {
                     mTmpDirty = new Rect();
-                } 
+                } //End block
                 mTmpDirty.set(mSurfaceFrame);
                 dirty = mTmpDirty;
-            } 
+            } //End block
             try 
             {
                 c = mSurface.lockCanvas(dirty);
-            } 
+            } //End block
             catch (Exception e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
     if(DEBUG){ }    if(c != null)        
         {
             mLastLockTime = SystemClock.uptimeMillis();
 Canvas var807FB10045EE51C06BDB74744A6714DF_484189847 =             c;
             var807FB10045EE51C06BDB74744A6714DF_484189847.addTaint(taint);
             return var807FB10045EE51C06BDB74744A6714DF_484189847;
-        } 
+        } //End block
         long now = SystemClock.uptimeMillis();
         long nextTime = mLastLockTime + 100;
     if(nextTime > now)        
@@ -355,19 +349,19 @@ Canvas var807FB10045EE51C06BDB74744A6714DF_484189847 =             c;
             try 
             {
                 Thread.sleep(nextTime-now);
-            } 
+            } //End block
             catch (InterruptedException e)
             {
-            } 
+            } //End block
             now = SystemClock.uptimeMillis();
-        } 
+        } //End block
         mLastLockTime = now;
         mSurfaceLock.unlock();
 Canvas var540C13E9E156B687226421B24F2DF178_226829480 =         null;
         var540C13E9E156B687226421B24F2DF178_226829480.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_226829480;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -376,46 +370,43 @@ Canvas var540C13E9E156B687226421B24F2DF178_226829480 =         null;
         addTaint(canvas.getTaint());
         mSurface.unlockCanvasAndPost(canvas);
         mSurfaceLock.unlock();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mSurface.unlockCanvasAndPost(canvas);
+        //mSurfaceLock.unlock();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.085 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "D951EDAA6FFF7B7A67EA6348E002DDA7")
     public Surface getSurface() {
 Surface varB7C98568942B156EFD367CE054011CDA_778084324 =         mSurface;
         varB7C98568942B156EFD367CE054011CDA_778084324.addTaint(taint);
         return varB7C98568942B156EFD367CE054011CDA_778084324;
-        
-        
+        // ---------- Original Method ----------
+        //return mSurface;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.085 -0400", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "E19BC4588412D6C9029A2342C67ECC46")
     public Rect getSurfaceFrame() {
 Rect varE9ECEDEA5A2368584CD71CAA52747028_1442681064 =         mSurfaceFrame;
         varE9ECEDEA5A2368584CD71CAA52747028_1442681064.addTaint(taint);
         return varE9ECEDEA5A2368584CD71CAA52747028_1442681064;
-        
-        
+        // ---------- Original Method ----------
+        //return mSurfaceFrame;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.086 -0400", hash_original_method = "B2173B72636D8AF8E14456C4D20DEB0F", hash_generated_method = "3C164CF7F26EF369524BF1E8345A5299")
     public void setSurfaceFrameSize(int width, int height) {
         mSurfaceFrame.top = 0;
         mSurfaceFrame.left = 0;
         mSurfaceFrame.right = width;
         mSurfaceFrame.bottom = height;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mSurfaceFrame.top = 0;
+        //mSurfaceFrame.left = 0;
+        //mSurfaceFrame.right = width;
+        //mSurfaceFrame.bottom = height;
     }
 
     

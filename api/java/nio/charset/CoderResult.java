@@ -1,6 +1,6 @@
 package java.nio.charset;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,9 +20,9 @@ public class CoderResult {
     private  CoderResult(int type, int length) {
         this.type = type;
         this.length = length;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.type = type;
+        //this.length = length;
     }
 
     
@@ -58,60 +58,55 @@ public class CoderResult {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.865 -0400", hash_original_method = "72D962B2D73E7D1A25E9E1AB76F037A1", hash_generated_method = "2BFAB51AAC7DF0A531F002D290FF761A")
     public boolean isUnderflow() {
         boolean var199C46FD26760D2F597FADB518575C49_541341656 = (this.type == TYPE_UNDERFLOW);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790535620 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1790535620;
-        
-        
+        // ---------- Original Method ----------
+        //return this.type == TYPE_UNDERFLOW;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.865 -0400", hash_original_method = "6E4CD2CEA8B470E2711551FAF2632892", hash_generated_method = "F6D7C7A7E5B6F6754CF7449C49E2CAD5")
     public boolean isError() {
         boolean varB8B82089CC11F3579FBA3CE7896EA15E_999790420 = (this.type == TYPE_MALFORMED_INPUT
                 || this.type == TYPE_UNMAPPABLE_CHAR);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_87834295 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_87834295;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return this.type == TYPE_MALFORMED_INPUT
+                //|| this.type == TYPE_UNMAPPABLE_CHAR;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.866 -0400", hash_original_method = "A1FC6FBF45CD4662583E11635A563069", hash_generated_method = "D7E05B24EC7CF8DBA3E6F253B3A81D16")
     public boolean isMalformed() {
         boolean varDD3233C41C713B9066D93354948FC49E_1963124611 = (this.type == TYPE_MALFORMED_INPUT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_765995448 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_765995448;
-        
-        
+        // ---------- Original Method ----------
+        //return this.type == TYPE_MALFORMED_INPUT;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.866 -0400", hash_original_method = "B611C5CE05597AA2840AB6FA98EFB1D0", hash_generated_method = "958E5D1F9793B7EF5EF0E930C96A8F70")
     public boolean isOverflow() {
         boolean varE5ABA22019AFE03E2FC80214B2DEAA0E_1333206543 = (this.type == TYPE_OVERFLOW);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588430119 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588430119;
-        
-        
+        // ---------- Original Method ----------
+        //return this.type == TYPE_OVERFLOW;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.866 -0400", hash_original_method = "406F98BDE206F12612B0B50954C0A2D7", hash_generated_method = "E0210D56967915C5C9B982EA427547F5")
     public boolean isUnmappable() {
         boolean var52B287FE15C090F89BAACCEA5B469454_1653764770 = (this.type == TYPE_UNMAPPABLE_CHAR);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_429067047 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_429067047;
-        
-        
+        // ---------- Original Method ----------
+        //return this.type == TYPE_UNMAPPABLE_CHAR;
     }
 
     
@@ -122,15 +117,15 @@ public class CoderResult {
             int varB9E8DC303FCECCA10418D2C0EA295E0F_2065884629 = (this.length);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328036322 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328036322;
-        } 
+        } //End block
         UnsupportedOperationException varDFA7339E20F7A5B1CB7B49318CBDEFC4_1749348515 = new UnsupportedOperationException("length meaningless for " + toString());
         varDFA7339E20F7A5B1CB7B49318CBDEFC4_1749348515.addTaint(taint);
         throw varDFA7339E20F7A5B1CB7B49318CBDEFC4_1749348515;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.type == TYPE_MALFORMED_INPUT || this.type == TYPE_UNMAPPABLE_CHAR) {
+            //return this.length;
+        //}
+        //throw new UnsupportedOperationException("length meaningless for " + toString());
     }
 
     
@@ -160,19 +155,19 @@ switch(this.type){
         varCDD38155BBAC05DABCCABFD20A3EDDFE_2068085407.addTaint(taint);
         throw varCDD38155BBAC05DABCCABFD20A3EDDFE_2068085407;
 }
-        
-        
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-        
+        // ---------- Original Method ----------
+        //switch (this.type) {
+            //case TYPE_UNDERFLOW:
+                //throw new BufferUnderflowException();
+            //case TYPE_OVERFLOW:
+                //throw new BufferOverflowException();
+            //case TYPE_UNMAPPABLE_CHAR:
+                //throw new UnmappableCharacterException(this.length);
+            //case TYPE_MALFORMED_INPUT:
+                //throw new MalformedInputException(this.length);
+            //default:
+                //throw new CharacterCodingException();
+        //}
     }
 
     
@@ -201,28 +196,28 @@ switch(this.type){
 }String varABCB20B7FF8451810E3A6D6380893900_1168596739 =         getClass().getName() + "[" + dsc + "]";
         varABCB20B7FF8451810E3A6D6380893900_1168596739.addTaint(taint);
         return varABCB20B7FF8451810E3A6D6380893900_1168596739;
-        
-        
-        
-            
-                
-                
-            
-                
-                
-            
-                
-                        
-                
-            
-                
-                        
-                
-            
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //String dsc = null;
+        //switch (this.type) {
+            //case TYPE_UNDERFLOW:
+                //dsc = "UNDERFLOW error";
+                //break;
+            //case TYPE_OVERFLOW:
+                //dsc = "OVERFLOW error";
+                //break;
+            //case TYPE_UNMAPPABLE_CHAR:
+                //dsc = "Unmappable-character error with erroneous input length "
+                        //+ this.length;
+                //break;
+            //case TYPE_MALFORMED_INPUT:
+                //dsc = "Malformed-input error with erroneous input length "
+                        //+ this.length;
+                //break;
+            //default:
+                //dsc = "";
+                //break;
+        //}
+        //return getClass().getName() + "[" + dsc + "]";
     }
 
     

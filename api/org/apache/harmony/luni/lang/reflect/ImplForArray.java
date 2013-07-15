@@ -1,6 +1,6 @@
 package org.apache.harmony.luni.lang.reflect;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ public final class ImplForArray implements GenericArrayType {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.288 -0400", hash_original_method = "2027F862B9235E5067268A95F39519F4", hash_generated_method = "FF0AF6F4DC1AD0565714CE91EA701306")
     public  ImplForArray(Type componentType) {
         this.componentType = componentType;
-        
-        
+        // ---------- Original Method ----------
+        //this.componentType = componentType;
     }
 
     
@@ -27,19 +27,19 @@ public final class ImplForArray implements GenericArrayType {
 Type var02EBCB8B6C8A87B230261C6EC7F3F14C_1776809363 =             ((ImplForType)componentType).getResolvedType();
             var02EBCB8B6C8A87B230261C6EC7F3F14C_1776809363.addTaint(taint);
             return var02EBCB8B6C8A87B230261C6EC7F3F14C_1776809363;
-        } 
+        } //End block
         catch (ClassCastException e)
         {
 Type var62B4DAC76A381C72E7C16DCF7E120C0E_1761714208 =             componentType;
             var62B4DAC76A381C72E7C16DCF7E120C0E_1761714208.addTaint(taint);
             return var62B4DAC76A381C72E7C16DCF7E120C0E_1761714208;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return ((ImplForType)componentType).getResolvedType();
+        //} catch (ClassCastException e) {
+            //return componentType;
+        //}
     }
 
     
@@ -48,8 +48,8 @@ Type var62B4DAC76A381C72E7C16DCF7E120C0E_1761714208 =             componentType;
 String varA243640258685B816D0B9D5AF9381898_539473302 =         componentType.toString() + "[]";
         varA243640258685B816D0B9D5AF9381898_539473302.addTaint(taint);
         return varA243640258685B816D0B9D5AF9381898_539473302;
-        
-        
+        // ---------- Original Method ----------
+        //return componentType.toString() + "[]";
     }
 
     

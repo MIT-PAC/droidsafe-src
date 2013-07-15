@@ -1,6 +1,6 @@
 package org.apache.http.params;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public abstract class AbstractHttpParams implements HttpParams {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.781 -0400", hash_original_method = "A2A1500AC9CF1B321965DC9E32B8AC94", hash_generated_method = "5B65DC7C08874714362B5424DEF66589")
     protected  AbstractHttpParams() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,16 +25,16 @@ public abstract class AbstractHttpParams implements HttpParams {
             long var16830A58E1E33A4163524366BA7B701B_458564308 = (defaultValue);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_2051535471 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2051535471;
-        } 
+        } //End block
         long varFEC3808006CE3F331EED8CE670FA08AF_2115022153 = (((Long)param).longValue());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_375552216 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_375552216;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object param = getParameter(name);
+        //if (param == null) {
+            //return defaultValue;
+        //}
+        //return ((Long)param).longValue();
     }
 
     
@@ -46,9 +46,9 @@ public abstract class AbstractHttpParams implements HttpParams {
 HttpParams var72A74007B2BE62B849F475C7BDA4658B_1869094925 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1869094925.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1869094925;
-        
-        
-        
+        // ---------- Original Method ----------
+        //setParameter(name, new Long(value));
+        //return this;
     }
 
     
@@ -62,16 +62,16 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_1869094925 =         this;
             int var16830A58E1E33A4163524366BA7B701B_841689931 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1196749792 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1196749792;
-        } 
+        } //End block
         int var7613F8A9E258BBDE76FCAFCC2F8CB3F6_1759990052 = (((Integer)param).intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1517727876 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1517727876;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object param = getParameter(name);
+        //if (param == null) {
+            //return defaultValue;
+        //}
+        //return ((Integer)param).intValue();
     }
 
     
@@ -83,9 +83,9 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_1869094925 =         this;
 HttpParams var72A74007B2BE62B849F475C7BDA4658B_1322952520 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1322952520.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1322952520;
-        
-        
-        
+        // ---------- Original Method ----------
+        //setParameter(name, new Integer(value));
+        //return this;
     }
 
     
@@ -99,16 +99,16 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_1322952520 =         this;
             double var16830A58E1E33A4163524366BA7B701B_2036403965 = (defaultValue);
                         double varE8CD7DA078A86726031AD64F35F5A6C0_1357378514 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1357378514;
-        } 
+        } //End block
         double var2AD84D71211077721EEB863D0FC8A3E0_2113459590 = (((Double)param).doubleValue());
                 double varE8CD7DA078A86726031AD64F35F5A6C0_332637375 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_332637375;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object param = getParameter(name);
+        //if (param == null) {
+            //return defaultValue;
+        //}
+        //return ((Double)param).doubleValue();
     }
 
     
@@ -120,9 +120,9 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_1322952520 =         this;
 HttpParams var72A74007B2BE62B849F475C7BDA4658B_88555781 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_88555781.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_88555781;
-        
-        
-        
+        // ---------- Original Method ----------
+        //setParameter(name, new Double(value));
+        //return this;
     }
 
     
@@ -136,16 +136,16 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_88555781 =         this;
             boolean var16830A58E1E33A4163524366BA7B701B_2021642816 = (defaultValue);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1809737888 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1809737888;
-        } 
+        } //End block
         boolean var33C268572195B3818AC002A924E193EC_1930741641 = (((Boolean)param).booleanValue());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_721163403 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_721163403;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object param = getParameter(name);
+        //if (param == null) {
+            //return defaultValue;
+        //}
+        //return ((Boolean)param).booleanValue();
     }
 
     
@@ -157,9 +157,9 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_88555781 =         this;
 HttpParams var72A74007B2BE62B849F475C7BDA4658B_1035804791 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1035804791.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1035804791;
-        
-        
-        
+        // ---------- Original Method ----------
+        //setParameter(name, value ? Boolean.TRUE : Boolean.FALSE);
+        //return this;
     }
 
     
@@ -169,8 +169,8 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_1035804791 =         this;
         boolean var5144B95D7077918AA97AB71B165677C3_1646341549 = (getBooleanParameter(name, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606176562 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1606176562;
-        
-        
+        // ---------- Original Method ----------
+        //return getBooleanParameter(name, false);
     }
 
     
@@ -180,8 +180,8 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_1035804791 =         this;
         boolean varA7866A6E783D818EF38087A5C0C0C6B0_261353615 = (!getBooleanParameter(name, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1747429545 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1747429545;
-        
-        
+        // ---------- Original Method ----------
+        //return !getBooleanParameter(name, false);
     }
 
     

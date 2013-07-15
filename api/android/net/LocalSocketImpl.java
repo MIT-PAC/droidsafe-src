@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,19 +35,18 @@ class LocalSocketImpl {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.590 -0400", hash_original_method = "EB46FEA2FE489ABD86FB64E17870F7D5", hash_generated_method = "CD8997B5BBD288454729017F9D0FB34B")
       LocalSocketImpl() {
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.591 -0400", hash_original_method = "D456C6C1E42DF15F5B9AFA3DF483BFD5", hash_generated_method = "B8BE2A9636FAA52F24039EE3D67E5778")
       LocalSocketImpl(FileDescriptor fd) throws IOException {
         this.fd = fd;
-        
-        
+        // ---------- Original Method ----------
+        //this.fd = fd;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.591 -0400", hash_original_method = "2758981D1030A8FDA90CA71A02304595", hash_generated_method = "0C23089977AC6E52CFAD396BC33CB3D7")
     private int available_native(FileDescriptor fd) throws IOException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2020836989 = getTaintInt();
@@ -55,13 +54,11 @@ class LocalSocketImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.592 -0400", hash_original_method = "C4F1C4509B0A008CEB1A520A33B1432C", hash_generated_method = "65052700D9C4973B893CD8795118A216")
     private void close_native(FileDescriptor fd) throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.592 -0400", hash_original_method = "C5E1B2BCA848D2C54F079D7825712FAA", hash_generated_method = "A72E1ACEEC3BFA782022502E2FD2C07D")
     private int read_native(FileDescriptor fd) throws IOException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1616659506 = getTaintInt();
@@ -69,7 +66,6 @@ class LocalSocketImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.592 -0400", hash_original_method = "6C0CD8F9940E6252A80F192C7FCEF247", hash_generated_method = "0352D4C2FD13A07C936923091DAF3548")
     private int readba_native(byte[] b, int off, int len,
             FileDescriptor fd) throws IOException {
@@ -78,27 +74,23 @@ class LocalSocketImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.593 -0400", hash_original_method = "411B6D80F43D59E374103A18918D197B", hash_generated_method = "FD1B0D2DA87E5E80BACB15431ECDA287")
     private void writeba_native(byte[] b, int off, int len,
             FileDescriptor fd) throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.593 -0400", hash_original_method = "EC6860394B0EC0B22E9CA8C353E6B2CD", hash_generated_method = "835004AB0F491C4E0A07CDC42E7C75E8")
     private void write_native(int b, FileDescriptor fd) throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.593 -0400", hash_original_method = "FB81706A2E5D939365DC1E11BB4FE7D5", hash_generated_method = "8D9BD02ECD0E57124CC839B8088FFC25")
     private void connectLocal(FileDescriptor fd, String name,
             int namespace) throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.594 -0400", hash_original_method = "62C617B37F715EB0C7D8B05FC6062D1C", hash_generated_method = "D330883423CE48AEB21D6EDBB834187E")
     private void bindLocal(FileDescriptor fd, String name, int namespace) throws IOException {
     }
@@ -113,13 +105,11 @@ class LocalSocketImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.595 -0400", hash_original_method = "565F45EE1777149341C55D43CF68422B", hash_generated_method = "2AF7CD29BD9A03ADED92A7A2D76B8EE6")
     private void listen_native(FileDescriptor fd, int backlog) throws IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.595 -0400", hash_original_method = "AE79C436903413982C1AAE7FD29B4B48", hash_generated_method = "92ADCFCA446C23326021228A20115975")
     private void shutdown(FileDescriptor fd, boolean shutdownInput) {
     }
@@ -135,7 +125,6 @@ class LocalSocketImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.596 -0400", hash_original_method = "57547C3595B23A135CCDE37FD7052F1D", hash_generated_method = "040AFCB3ABA9277A84614AA07F28C5CC")
     private int getOption_native(FileDescriptor fd, int optID) throws IOException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1873363775 = getTaintInt();
@@ -143,7 +132,6 @@ class LocalSocketImpl {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.596 -0400", hash_original_method = "DE678D0521D206818FAC33E612ECDEF9", hash_generated_method = "9958FF02EB38A803062C9BF2F8520BBE")
     private void setOption_native(FileDescriptor fd, int optID,
             int b, int value) throws IOException {
@@ -164,8 +152,8 @@ class LocalSocketImpl {
 String varBBD38A3C72C38F43F51C318DEB0F7748_1242904926 =         super.toString() + " fd:" + fd;
         varBBD38A3C72C38F43F51C318DEB0F7748_1242904926.addTaint(taint);
         return varBBD38A3C72C38F43F51C318DEB0F7748_1242904926;
-        
-        
+        // ---------- Original Method ----------
+        //return super.toString() + " fd:" + fd;
     }
 
     
@@ -174,11 +162,11 @@ String varBBD38A3C72C38F43F51C318DEB0F7748_1242904926 =         super.toString()
     if(fd == null)        
         {
             fd = create_native(stream);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //fd = create_native(stream);
+        //}
     }
 
     
@@ -190,13 +178,13 @@ String varBBD38A3C72C38F43F51C318DEB0F7748_1242904926 =         super.toString()
             return;
             close_native(fd);
             fd = null;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (LocalSocketImpl.this) {
+            //if (fd == null) return;
+            //close_native(fd);
+            //fd = null;
+        //}
     }
 
     
@@ -209,13 +197,13 @@ String varBBD38A3C72C38F43F51C318DEB0F7748_1242904926 =         super.toString()
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_1629420634 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_1629420634.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_1629420634;
-        } 
+        } //End block
         connectLocal(fd, address.getName(), address.getNamespace().getId());
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //connectLocal(fd, address.getName(), address.getNamespace().getId());
     }
 
     
@@ -227,13 +215,13 @@ String varBBD38A3C72C38F43F51C318DEB0F7748_1242904926 =         super.toString()
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_427764241 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_427764241.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_427764241;
-        } 
+        } //End block
         bindLocal(fd, endpoint.getName(), endpoint.getNamespace().getId());
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //bindLocal(fd, endpoint.getName(), endpoint.getNamespace().getId());
     }
 
     
@@ -245,13 +233,13 @@ String varBBD38A3C72C38F43F51C318DEB0F7748_1242904926 =         super.toString()
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_1667387327 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_1667387327.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_1667387327;
-        } 
+        } //End block
         listen_native(fd, backlog);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //listen_native(fd, backlog);
     }
 
     
@@ -262,13 +250,13 @@ String varBBD38A3C72C38F43F51C318DEB0F7748_1242904926 =         super.toString()
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_2141954655 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_2141954655.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_2141954655;
-        } 
+        } //End block
         s.fd = accept(fd, s);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //s.fd = accept(fd, s);
     }
 
     
@@ -279,27 +267,27 @@ String varBBD38A3C72C38F43F51C318DEB0F7748_1242904926 =         super.toString()
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_1475571866 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_1475571866.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_1475571866;
-        } 
+        } //End block
         synchronized
 (this)        {
     if(fis == null)            
             {
                 fis = new SocketInputStream();
-            } 
+            } //End block
 InputStream var52B0B71450302D727BC240B0D6CCA213_620713366 =             fis;
             var52B0B71450302D727BC240B0D6CCA213_620713366.addTaint(taint);
             return var52B0B71450302D727BC240B0D6CCA213_620713366;
-        } 
-        
-        
-            
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //synchronized (this) {
+            //if (fis == null) {
+                //fis = new SocketInputStream();
+            //}
+            //return fis;
+        //}
     }
 
     
@@ -310,27 +298,27 @@ InputStream var52B0B71450302D727BC240B0D6CCA213_620713366 =             fis;
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_1807079931 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_1807079931.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_1807079931;
-        } 
+        } //End block
         synchronized
 (this)        {
     if(fos == null)            
             {
                 fos = new SocketOutputStream();
-            } 
+            } //End block
 OutputStream varEF20B018C31FD4204B36935D484B0EEF_1224822306 =             fos;
             varEF20B018C31FD4204B36935D484B0EEF_1224822306.addTaint(taint);
             return varEF20B018C31FD4204B36935D484B0EEF_1224822306;
-        } 
-        
-        
-            
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //synchronized (this) {
+            //if (fos == null) {
+                //fos = new SocketOutputStream();
+            //}
+            //return fos;
+        //}
     }
 
     
@@ -339,8 +327,8 @@ OutputStream varEF20B018C31FD4204B36935D484B0EEF_1224822306 =             fos;
         int varA225F5703EE5C9EEBF4FCC434C121F39_1013299486 = (getInputStream().available());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_592541867 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_592541867;
-        
-        
+        // ---------- Original Method ----------
+        //return getInputStream().available();
     }
 
     
@@ -351,13 +339,13 @@ OutputStream varEF20B018C31FD4204B36935D484B0EEF_1224822306 =             fos;
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_1440722138 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_1440722138.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_1440722138;
-        } 
+        } //End block
         shutdown(fd, true);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //shutdown(fd, true);
     }
 
     
@@ -368,35 +356,33 @@ OutputStream varEF20B018C31FD4204B36935D484B0EEF_1224822306 =             fos;
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_1454534424 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_1454534424.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_1454534424;
-        } 
+        } //End block
         shutdown(fd, false);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //shutdown(fd, false);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.601 -0400", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "EEB85CBDEEA8283312FF10C68430536A")
     protected FileDescriptor getFileDescriptor() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1517154147 =         fd;
         var020F72FC5D1BB0511CAD11CC0AA674A0_1517154147.addTaint(taint);
         return var020F72FC5D1BB0511CAD11CC0AA674A0_1517154147;
-        
-        
+        // ---------- Original Method ----------
+        //return fd;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.602 -0400", hash_original_method = "84442B2358C6BD30716C7D72481FD8C4", hash_generated_method = "5B889456B5CA33A8720E491278A6E3EE")
     protected boolean supportsUrgentData() {
         boolean var68934A3E9455FA72420237EB05902327_1945438204 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543776681 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_543776681;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -406,8 +392,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1517154147 =         fd;
         RuntimeException varD5DEB5F8DD6120C266C98497281BDBF0_766820983 = new RuntimeException ("not impled");
         varD5DEB5F8DD6120C266C98497281BDBF0_766820983.addTaint(taint);
         throw varD5DEB5F8DD6120C266C98497281BDBF0_766820983;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException ("not impled");
     }
 
     
@@ -419,13 +405,13 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1517154147 =         fd;
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_1419155322 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_1419155322.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_1419155322;
-        } 
+        } //End block
     if(optID == SocketOptions.SO_TIMEOUT)        
         {
 Object varBB30BA0B277E7E114796D8BD84617021_1835985079 =             0;
             varBB30BA0B277E7E114796D8BD84617021_1835985079.addTaint(taint);
             return varBB30BA0B277E7E114796D8BD84617021_1835985079;
-        } 
+        } //End block
         int value = getOption_native(fd, optID);
 switch(optID){
         case SocketOptions.SO_RCVBUF:
@@ -439,23 +425,23 @@ Object varAF280DA2BC37D8BE783D8499160168DE_529584783 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_529584783.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_529584783;
 }
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-            
-            
-                
-        
+        // ---------- Original Method ----------
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //if (optID == SocketOptions.SO_TIMEOUT) {
+            //return 0;
+        //}
+        //int value = getOption_native(fd, optID);
+        //switch (optID)
+        //{
+            //case SocketOptions.SO_RCVBUF:
+            //case SocketOptions.SO_SNDBUF:
+                //return value;
+            //case SocketOptions.SO_REUSEADDR:
+            //default:
+                //return value;
+        //}
     }
 
     
@@ -470,55 +456,53 @@ Object varAF280DA2BC37D8BE783D8499160168DE_529584783 =         value;
             IOException varD7C4099B93ACF61FB97254FAACA9EEB7_710454428 = new IOException("socket not created");
             varD7C4099B93ACF61FB97254FAACA9EEB7_710454428.addTaint(taint);
             throw varD7C4099B93ACF61FB97254FAACA9EEB7_710454428;
-        } 
+        } //End block
     if(value instanceof Integer)        
         {
             intValue = (Integer)value;
-        } 
+        } //End block
         else
     if(value instanceof Boolean)        
         {
             boolValue = ((Boolean) value)? 1 : 0;
-        } 
+        } //End block
         else
         {
             IOException var375460487CF2255639281BC3FBCF008C_781856500 = new IOException("bad value: " + value);
             var375460487CF2255639281BC3FBCF008C_781856500.addTaint(taint);
             throw var375460487CF2255639281BC3FBCF008C_781856500;
-        } 
+        } //End block
         setOption_native(fd, optID, boolValue, intValue);
-        
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int boolValue = -1;
+        //int intValue = 0;
+        //if (fd == null) {
+            //throw new IOException("socket not created");
+        //}
+        //if (value instanceof Integer) {
+            //intValue = (Integer)value;
+        //} else if (value instanceof Boolean) {
+            //boolValue = ((Boolean) value)? 1 : 0;
+        //} else {
+            //throw new IOException("bad value: " + value);
+        //}
+        //setOption_native(fd, optID, boolValue, intValue);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.604 -0400", hash_original_method = "AEC4AD692525702323537BC369199B7F", hash_generated_method = "0145A2A90FD2F3AE28D0747645172228")
     public void setFileDescriptorsForSend(FileDescriptor[] fds) {
         synchronized
 (writeMonitor)        {
             outboundFileDescriptors = fds;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(writeMonitor) {
+            //outboundFileDescriptors = fds;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.605 -0400", hash_original_method = "D444308F286D853D2E5F97ACF37B86DF", hash_generated_method = "A2DCF849F10885C51E204FF557827ADD")
     public FileDescriptor[] getAncillaryFileDescriptors() throws IOException {
         synchronized
@@ -528,13 +512,13 @@ Object varAF280DA2BC37D8BE783D8499160168DE_529584783 =         value;
 FileDescriptor[] varDC838461EE2FA0CA4C9BBB70A15456B0_68939418 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_68939418.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_68939418;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(readMonitor) {
+            //FileDescriptor[] result = inboundFileDescriptors;
+            //inboundFileDescriptors = null;
+            //return result;
+        //}
     }
 
     
@@ -543,19 +527,18 @@ FileDescriptor[] varDC838461EE2FA0CA4C9BBB70A15456B0_68939418 =             resu
 Credentials var151C0AB12006F1E3EA87BF5023251DA7_1301379495 =         getPeerCredentials_native(fd);
         var151C0AB12006F1E3EA87BF5023251DA7_1301379495.addTaint(taint);
         return var151C0AB12006F1E3EA87BF5023251DA7_1301379495;
-        
-        
+        // ---------- Original Method ----------
+        //return getPeerCredentials_native(fd);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.606 -0400", hash_original_method = "C6AD39B00524B9355CA4153DB07C4B13", hash_generated_method = "1BE0B1A2EF5A76CA60DC5108678AFEB5")
     public LocalSocketAddress getSockAddress() throws IOException {
 LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null;
         var540C13E9E156B687226421B24F2DF178_1063876621.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1063876621;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
@@ -563,8 +546,8 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
     @Override
     protected void finalize() throws IOException {
         close();
-        
-        
+        // ---------- Original Method ----------
+        //close();
     }
 
     
@@ -573,7 +556,7 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.607 -0400", hash_original_method = "AF927FBDB8352BCBCFDDC9969A694B0C", hash_generated_method = "AF927FBDB8352BCBCFDDC9969A694B0C")
         public SocketInputStream ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -583,8 +566,8 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
             int varC5D231F9AEF85849D71CE1501FCAA953_1912261948 = (available_native(fd));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1224390503 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1224390503;
-            
-            
+            // ---------- Original Method ----------
+            //return available_native(fd);
         }
 
         
@@ -592,8 +575,8 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
         @Override
         public void close() throws IOException {
             LocalSocketImpl.this.close();
-            
-            
+            // ---------- Original Method ----------
+            //LocalSocketImpl.this.close();
         }
 
         
@@ -614,15 +597,15 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
                 int var2CB9DF9898E55FD0AD829DC202DDBD1C_1603075243 = (ret);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2084138348 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2084138348;
-            } 
-            
-            
-            
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //int ret;
+            //synchronized (readMonitor) {
+                //FileDescriptor myFd = fd;
+                //if (myFd == null) throw new IOException("socket closed");
+                //ret = read_native(myFd);
+                //return ret;
+            //}
         }
 
         
@@ -633,8 +616,8 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
             int var3AE1B8835719D1E8BA9C297EF156E04B_468891504 = (read(b, 0, b.length));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_405440523 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_405440523;
-            
-            
+            // ---------- Original Method ----------
+            //return read(b, 0, b.length);
         }
 
         
@@ -658,22 +641,22 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
                     ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_1547195843 = new ArrayIndexOutOfBoundsException();
                     var37DB57B1FEB1C9FBA644A093BFA8B678_1547195843.addTaint(taint);
                     throw var37DB57B1FEB1C9FBA644A093BFA8B678_1547195843;
-                } 
+                } //End block
                 int ret = readba_native(b, off, len, myFd);
                 int var2CB9DF9898E55FD0AD829DC202DDBD1C_889471901 = (ret);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1821943537 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1821943537;
-            } 
-            
-            
-                
-                
-                
-                    
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (readMonitor) {
+                //FileDescriptor myFd = fd;
+                //if (myFd == null) throw new IOException("socket closed");
+                //if (off < 0 || len < 0 || (off + len) > b.length ) {
+                    //throw new ArrayIndexOutOfBoundsException();
+                //}
+                //int ret = readba_native(b, off, len, myFd);
+                //return ret;
+            //}
         }
 
         
@@ -686,7 +669,7 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.610 -0400", hash_original_method = "9DAA385F4ED568E05EE1F0223FEA6D4A", hash_generated_method = "9DAA385F4ED568E05EE1F0223FEA6D4A")
         public SocketOutputStream ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -694,8 +677,8 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
         @Override
         public void close() throws IOException {
             LocalSocketImpl.this.close();
-            
-            
+            // ---------- Original Method ----------
+            //LocalSocketImpl.this.close();
         }
 
         
@@ -704,8 +687,8 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
         public void write(byte[] b) throws IOException {
             addTaint(b[0]);
             write(b, 0, b.length);
-            
-            
+            // ---------- Original Method ----------
+            //write(b, 0, b.length);
         }
 
         
@@ -729,18 +712,18 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
                     ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_336799706 = new ArrayIndexOutOfBoundsException();
                     var37DB57B1FEB1C9FBA644A093BFA8B678_336799706.addTaint(taint);
                     throw var37DB57B1FEB1C9FBA644A093BFA8B678_336799706;
-                } 
+                } //End block
                 writeba_native(b, off, len, myFd);
-            } 
-            
-            
-                
-                
-                
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (writeMonitor) {
+                //FileDescriptor myFd = fd;
+                //if (myFd == null) throw new IOException("socket closed");
+                //if (off < 0 || len < 0 || (off + len) > b.length ) {
+                    //throw new ArrayIndexOutOfBoundsException();
+                //}
+                //writeba_native(b, off, len, myFd);
+            //}
         }
 
         
@@ -758,13 +741,13 @@ LocalSocketAddress var540C13E9E156B687226421B24F2DF178_1063876621 =         null
                 throw var5459B998E5CC9DF81A064696FBF5CD9C_735657802;
                 }
                 write_native(b, myFd);
-            } 
-            
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (writeMonitor) {
+                //FileDescriptor myFd = fd;
+                //if (myFd == null) throw new IOException("socket closed");
+                //write_native(b, myFd);
+            //}
         }
 
         

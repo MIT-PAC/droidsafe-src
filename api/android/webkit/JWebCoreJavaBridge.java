@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,8 +33,8 @@ final class JWebCoreJavaBridge extends Handler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.456 -0400", hash_original_method = "24BC54E57520E50B51FEB9301490242D", hash_generated_method = "9B3CC2C64CF55497F3B6EC76A3A8A00C")
     public  JWebCoreJavaBridge() {
         nativeConstructor();
-        
-        
+        // ---------- Original Method ----------
+        //nativeConstructor();
     }
 
     
@@ -42,8 +42,8 @@ final class JWebCoreJavaBridge extends Handler {
     @Override
     protected void finalize() {
         nativeFinalize();
-        
-        
+        // ---------- Original Method ----------
+        //nativeFinalize();
     }
 
     
@@ -63,14 +63,13 @@ final class JWebCoreJavaBridge extends Handler {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.457 -0400", hash_original_method = "02E069F093A33F917985EC0A146AF5DF", hash_generated_method = "482361C838A1D6C0B6F62C16E4D30209")
     private void fireSharedTimer() {
         mHasInstantTimer = false;
         sharedTimerFired();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mHasInstantTimer = false;
+        //sharedTimerFired();
     }
 
     
@@ -84,13 +83,13 @@ switch(msg.what){
     if(mTimerPaused)            
             {
                 mHasDeferredTimers = true;
-            } 
+            } //End block
             else
             {
                 fireSharedTimer();
-            } 
+            } //End block
             break;
-        } 
+        } //End block
         case FUNCPTR_MESSAGE:
         nativeServiceFuncPtrQueue();
         break;
@@ -100,25 +99,25 @@ switch(msg.what){
                         .booleanValue());
         break;
 }
-        
-        
-            
-                
-                    
-                
-                    
-                
-                
-            
-            
-                
-                
-            
-                
-                        
-                        
-                
-        
+        // ---------- Original Method ----------
+        //switch (msg.what) {
+            //case TIMER_MESSAGE: {
+                //if (mTimerPaused) {
+                    //mHasDeferredTimers = true;
+                //} else {
+                    //fireSharedTimer();
+                //}
+                //break;
+            //}
+            //case FUNCPTR_MESSAGE:
+                //nativeServiceFuncPtrQueue();
+                //break;
+            //case REFRESH_PLUGINS:
+                //nativeUpdatePluginDirectories(PluginManager.getInstance(null)
+                        //.getPluginDirectories(), ((Boolean) msg.obj)
+                        //.booleanValue());
+                //break;
+        //}
     }
 
     
@@ -126,31 +125,29 @@ switch(msg.what){
     private void signalServiceFuncPtrQueue() {
         Message msg = obtainMessage(FUNCPTR_MESSAGE);
         sendMessage(msg);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = obtainMessage(FUNCPTR_MESSAGE);
+        //sendMessage(msg);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.458 -0400", hash_original_method = "7F0F2EACA52373092F02E1C8C47DF6D2", hash_generated_method = "6600CFE6221B9A1E6606BE98A91D05C6")
     private void nativeServiceFuncPtrQueue() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.458 -0400", hash_original_method = "DCDD00DDB3DA5C0826A1E2E2E5E3FA67", hash_generated_method = "96A1FD464DCFA4908690A441DD814413")
     public void pause() {
     if(!mTimerPaused)        
         {
             mTimerPaused = true;
             mHasDeferredTimers = false;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!mTimerPaused) {
+            //mTimerPaused = true;
+            //mHasDeferredTimers = false;
+        //}
     }
 
     
@@ -163,26 +160,24 @@ switch(msg.what){
             {
                 mHasDeferredTimers = false;
                 fireSharedTimer();
-            } 
-        } 
-        
-        
-           
-           
-               
-               
-           
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mTimerPaused) {
+           //mTimerPaused = false;
+           //if (mHasDeferredTimers) {
+               //mHasDeferredTimers = false;
+               //fireSharedTimer();
+           //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.459 -0400", hash_original_method = "B06B3FDC2D2CDF223C79F9432CF6B221", hash_generated_method = "40CEB3675B2F6C9D2120A50F6D591BB2")
     public void setCacheSize(int bytes) {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.460 -0400", hash_original_method = "D5A9FC7DDB356B7F9D175C82B50A2AF1", hash_generated_method = "29D5F5345B4E8FB18A42984A246E1751")
     private void setCookies(String url, String value) {
         addTaint(value.getTaint());
@@ -202,32 +197,31 @@ switch(msg.what){
     if(newi > i)                
                 {
                     buffer.append(value.subSequence(i, newi));
-                } 
+                } //End block
                 else
     if(newi == -1)                
                 {
                     buffer.append(value.subSequence(i, size));
                     break;
-                } 
+                } //End block
                 i = newi + 1;
-            } 
+            } //End block
             value = buffer.toString();
-        } 
+        } //End block
         CookieManager.getInstance().setCookie(url, value);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.460 -0400", hash_original_method = "E3D7D6931554145E868760CB2C4A26A3", hash_generated_method = "06F2843DC4FEF80D68D818C1E6CB8E3D")
     private String cookies(String url) {
         addTaint(url.getTaint());
 String varAECD863DE9AAC895DB47A4271B851D54_902864996 =         CookieManager.getInstance().getCookie(url);
         varAECD863DE9AAC895DB47A4271B851D54_902864996.addTaint(taint);
         return varAECD863DE9AAC895DB47A4271B851D54_902864996;
-        
-        
+        // ---------- Original Method ----------
+        //return CookieManager.getInstance().getCookie(url);
     }
 
     
@@ -236,8 +230,8 @@ String varAECD863DE9AAC895DB47A4271B851D54_902864996 =         CookieManager.get
         boolean varD80850DD1D24F86E3200FD3D2B28A132_605268557 = (CookieManager.getInstance().acceptCookie());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013111741 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013111741;
-        
-        
+        // ---------- Original Method ----------
+        //return CookieManager.getInstance().acceptCookie();
     }
 
     
@@ -246,8 +240,8 @@ String varAECD863DE9AAC895DB47A4271B851D54_902864996 =         CookieManager.get
 String[] var07F6A7380CC680CBDF46335135D62147_1170840549 =         PluginManager.getInstance(null).getPluginDirectories();
         var07F6A7380CC680CBDF46335135D62147_1170840549.addTaint(taint);
         return var07F6A7380CC680CBDF46335135D62147_1170840549;
-        
-        
+        // ---------- Original Method ----------
+        //return PluginManager.getInstance(null).getPluginDirectories();
     }
 
     
@@ -256,8 +250,8 @@ String[] var07F6A7380CC680CBDF46335135D62147_1170840549 =         PluginManager.
 String var0D77ECDD31455C4DF86C73A42D37FC8D_37080297 =         PluginManager.getInstance(null).getPluginSharedDataDirectory();
         var0D77ECDD31455C4DF86C73A42D37FC8D_37080297.addTaint(taint);
         return var0D77ECDD31455C4DF86C73A42D37FC8D_37080297;
-        
-        
+        // ---------- Original Method ----------
+        //return PluginManager.getInstance(null).getPluginSharedDataDirectory();
     }
 
     
@@ -269,33 +263,33 @@ String var0D77ECDD31455C4DF86C73A42D37FC8D_37080297 =         PluginManager.getI
     if(mHasInstantTimer)            
             {
                 return;
-            } 
+            } //End block
             else
             {
                 mHasInstantTimer = true;
                 Message msg = obtainMessage(TIMER_MESSAGE);
                 sendMessageDelayed(msg, timemillis);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             Message msg = obtainMessage(TIMER_MESSAGE);
             sendMessageDelayed(msg, timemillis);
-        } 
-        
-        
-        
-            
-                
-            
-                
-                
-                
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DebugFlags.J_WEB_CORE_JAVA_BRIDGE) Log.v(LOGTAG, "setSharedTimer " + timemillis);
+        //if (timemillis <= 0) {
+            //if (mHasInstantTimer) {
+                //return;
+            //} else {
+                //mHasInstantTimer = true;
+                //Message msg = obtainMessage(TIMER_MESSAGE);
+                //sendMessageDelayed(msg, timemillis);
+            //}
+        //} else {
+            //Message msg = obtainMessage(TIMER_MESSAGE);
+            //sendMessageDelayed(msg, timemillis);
+        //}
     }
 
     
@@ -303,17 +297,17 @@ String var0D77ECDD31455C4DF86C73A42D37FC8D_37080297 =         PluginManager.getI
     private void stopSharedTimer() {
     if(DebugFlags.J_WEB_CORE_JAVA_BRIDGE)        
         {
-        } 
+        } //End block
         removeMessages(TIMER_MESSAGE);
         mHasInstantTimer = false;
         mHasDeferredTimers = false;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DebugFlags.J_WEB_CORE_JAVA_BRIDGE) {
+            //Log.v(LOGTAG, "stopSharedTimer removing all timers");
+        //}
+        //removeMessages(TIMER_MESSAGE);
+        //mHasInstantTimer = false;
+        //mHasDeferredTimers = false;
     }
 
     
@@ -322,12 +316,11 @@ String var0D77ECDD31455C4DF86C73A42D37FC8D_37080297 =         PluginManager.getI
 String[] varDBCAD717D2F0C05E3C7F0AAD2619EDB5_1159775468 =         CertTool.getKeyStrengthList();
         varDBCAD717D2F0C05E3C7F0AAD2619EDB5_1159775468.addTaint(taint);
         return varDBCAD717D2F0C05E3C7F0AAD2619EDB5_1159775468;
-        
-        
+        // ---------- Original Method ----------
+        //return CertTool.getKeyStrengthList();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.462 -0400", hash_original_method = "A59843A23C4CF1F3FD140F676EC35D8E", hash_generated_method = "21705674460553F4E0BFAF8806C966F2")
     synchronized private String getSignedPublicKey(int index, String challenge,
             String url) {
@@ -341,22 +334,22 @@ String var6B3A61A0AB4A4B0F95275D92D5A6DE51_1899656116 =             CertTool.get
                     current.getContext(), index, challenge);
             var6B3A61A0AB4A4B0F95275D92D5A6DE51_1899656116.addTaint(taint);
             return var6B3A61A0AB4A4B0F95275D92D5A6DE51_1899656116;
-        } 
+        } //End block
         else
         {
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_538500157 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_538500157.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_538500157;
-        } 
-        
-        
-        
-            
-                    
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //WebView current = sCurrentMainWebView.get();
+        //if (current != null) {
+            //return CertTool.getSignedPublicKey(
+                    //current.getContext(), index, challenge);
+        //} else {
+            //Log.e(LOGTAG, "There is no active WebView for getSignedPublicKey");
+            //return "";
+        //}
     }
 
     
@@ -371,21 +364,21 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_538500157 =             "";
 String varBD5EACC393579FDF5D0E813DB68A2F73_1231605426 =                 fileName;
                 varBD5EACC393579FDF5D0E813DB68A2F73_1231605426.addTaint(taint);
                 return varBD5EACC393579FDF5D0E813DB68A2F73_1231605426;
-            } 
-        } 
+            } //End block
+        } //End block
         Uri jUri = Uri.parse(uri);
 String var1EE236BB903DF73F2308F7F9F181EF48_1846144243 =         jUri.getLastPathSegment();
         var1EE236BB903DF73F2308F7F9F181EF48_1846144243.addTaint(taint);
         return var1EE236BB903DF73F2308F7F9F181EF48_1846144243;
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mContentUriToFilePathMap != null) {
+            //String fileName = mContentUriToFilePathMap.get(uri);
+            //if (fileName != null) {
+                //return fileName;
+            //}
+        //}
+        //Uri jUri = Uri.parse(uri);
+        //return jUri.getLastPathSegment();
     }
 
     
@@ -396,13 +389,13 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1846144243 =         jUri.getLastPath
     if(mContentUriToFilePathMap == null)        
         {
             mContentUriToFilePathMap = new HashMap<String, String>();
-        } 
+        } //End block
         mContentUriToFilePathMap.put(contentUri, path);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mContentUriToFilePathMap == null) {
+            //mContentUriToFilePathMap = new HashMap<String, String>();
+        //}
+        //mContentUriToFilePathMap.put(contentUri, path);
     }
 
     
@@ -413,57 +406,51 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1846144243 =         jUri.getLastPath
         {
             nativeUpdateProxy("", "");
             return;
-        } 
+        } //End block
         String host = proxyProperties.getHost();
         int port = proxyProperties.getPort();
     if(port != 0)        
         host += ":" + port;
         nativeUpdateProxy(host, proxyProperties.getExclusionList());
-        
-        
-            
-            
-        
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (proxyProperties == null) {
+            //nativeUpdateProxy("", "");
+            //return;
+        //}
+        //String host = proxyProperties.getHost();
+        //int port = proxyProperties.getPort();
+        //if (port != 0)
+            //host += ":" + port;
+        //nativeUpdateProxy(host, proxyProperties.getExclusionList());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "CB9D9CAF93B6F7C6AC078700B30D5B3A", hash_generated_method = "B34C03FE423B4EE0844813601A2B0A67")
     private void nativeConstructor() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "46D026C452E34CB5D17D4D7413C83210", hash_generated_method = "76DCFAD42AA6902991CC86FFBD4823C2")
     private void nativeFinalize() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "509DDA1BD92D7B897CEF90224EAD9875", hash_generated_method = "AC2815A7BF25B7D98F063D4757A74F41")
     private void sharedTimerFired() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "9316866F322C157E5A357156C0328836", hash_generated_method = "0894466BDD76BC6CCF8988BD75C70B60")
     private void nativeUpdatePluginDirectories(String[] directories,
             boolean reload) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "DB39049AAE02496ACE7C7C1E193B0ADF", hash_generated_method = "D032B386D2B3E2A3611A9E9397D501D0")
     public void setNetworkOnLine(boolean online) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.465 -0400", hash_original_method = "E4793A664EF98A715ED3BAC198AF4EBD", hash_generated_method = "0BF6A0594BE2D247A95E23B02A51ECCF")
     public void setNetworkType(String type, String subtype) {
     }
@@ -474,19 +461,16 @@ String var1EE236BB903DF73F2308F7F9F181EF48_1846144243 =         jUri.getLastPath
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.466 -0400", hash_original_method = "B071A6644C9AA816555B15D21EE52FB4", hash_generated_method = "0C564C4E48A08A51377B9BD8DC556B50")
     public void addPackageName(String packageName) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.466 -0400", hash_original_method = "143D937A228206F27207E7C61286CEC1", hash_generated_method = "1C9E54868B04A06DAF8309867D2F41A3")
     public void removePackageName(String packageName) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.466 -0400", hash_original_method = "562AC1C8CCB348A368D1FD0970777261", hash_generated_method = "CDD15C7E3E55587B192A2AF9CC08B56E")
     public void nativeUpdateProxy(String newProxy, String exclusionList) {
     }

@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,8 +13,8 @@ public class FilterInputStream extends InputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.686 -0400", hash_original_method = "28F38498A0B180D5BCC888F2248F3934", hash_generated_method = "5A27BC4A52A8F095F38D366D78918442")
     protected  FilterInputStream(InputStream in) {
         this.in = in;
-        
-        
+        // ---------- Original Method ----------
+        //this.in = in;
     }
 
     
@@ -24,8 +24,8 @@ public class FilterInputStream extends InputStream {
         int var443A4CD22A314221356D4EA83AFE1E61_220662178 = (in.available());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2098222844 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2098222844;
-        
-        
+        // ---------- Original Method ----------
+        //return in.available();
     }
 
     
@@ -33,8 +33,8 @@ public class FilterInputStream extends InputStream {
     @Override
     public void close() throws IOException {
         in.close();
-        
-        
+        // ---------- Original Method ----------
+        //in.close();
     }
 
     
@@ -43,8 +43,8 @@ public class FilterInputStream extends InputStream {
     public synchronized void mark(int readlimit) {
         addTaint(readlimit);
         in.mark(readlimit);
-        
-        
+        // ---------- Original Method ----------
+        //in.mark(readlimit);
     }
 
     
@@ -54,8 +54,8 @@ public class FilterInputStream extends InputStream {
         boolean var92424DC7E92354A95936078BD657F7DC_1417720816 = (in.markSupported());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2069977762 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2069977762;
-        
-        
+        // ---------- Original Method ----------
+        //return in.markSupported();
     }
 
     
@@ -65,8 +65,8 @@ public class FilterInputStream extends InputStream {
         int varC746AA2461228F1337791E992A2C4661_1756647113 = (in.read());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2030009545 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2030009545;
-        
-        
+        // ---------- Original Method ----------
+        //return in.read();
     }
 
     
@@ -79,8 +79,8 @@ public class FilterInputStream extends InputStream {
         int var16B8A5ED779D2972EF4A24F254214E3B_169763220 = (in.read(buffer, offset, count));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200150935 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200150935;
-        
-        
+        // ---------- Original Method ----------
+        //return in.read(buffer, offset, count);
     }
 
     
@@ -88,8 +88,8 @@ public class FilterInputStream extends InputStream {
     @Override
     public synchronized void reset() throws IOException {
         in.reset();
-        
-        
+        // ---------- Original Method ----------
+        //in.reset();
     }
 
     
@@ -100,8 +100,8 @@ public class FilterInputStream extends InputStream {
         long varEBA3748D4ACE0E943E64A9E07D224ABB_1712006226 = (in.skip(byteCount));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1800465496 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1800465496;
-        
-        
+        // ---------- Original Method ----------
+        //return in.skip(byteCount);
     }
 
     

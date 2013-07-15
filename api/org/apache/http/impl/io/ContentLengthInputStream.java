@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,24 +30,24 @@ public class ContentLengthInputStream extends InputStream {
             IllegalArgumentException var6634DF518EA4C41A5618DC0E4E5C5981_628977929 = new IllegalArgumentException("Input stream may not be null");
             var6634DF518EA4C41A5618DC0E4E5C5981_628977929.addTaint(taint);
             throw var6634DF518EA4C41A5618DC0E4E5C5981_628977929;
-        } 
+        } //End block
     if(contentLength < 0)        
         {
             IllegalArgumentException varC9A4EC004E3A33FE21D2178F89740754_1369543123 = new IllegalArgumentException("Content length may not be negative");
             varC9A4EC004E3A33FE21D2178F89740754_1369543123.addTaint(taint);
             throw varC9A4EC004E3A33FE21D2178F89740754_1369543123;
-        } 
+        } //End block
         this.in = in;
         this.contentLength = contentLength;
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (in == null) {
+            //throw new IllegalArgumentException("Input stream may not be null");
+        //}
+        //if (contentLength < 0) {
+            //throw new IllegalArgumentException("Content length may not be negative");
+        //}
+        //this.in = in;
+        //this.contentLength = contentLength;
     }
 
     
@@ -61,23 +61,23 @@ public class ContentLengthInputStream extends InputStream {
                 while
 (read(buffer) >= 0)                
                 {
-                } 
-            } 
+                } //End block
+            } //End block
             finally 
             {
                 closed = true;
-            } 
-        } 
-        
-        
-            
-                
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (!closed) {
+            //try {
+                //byte buffer[] = new byte[BUFFER_SIZE];
+                //while (read(buffer) >= 0) {
+                //}
+            //} finally {
+                //closed = true;
+            //}
+        //}
     }
 
     
@@ -88,26 +88,26 @@ public class ContentLengthInputStream extends InputStream {
             IOException varEE3E399CAE0E5DE731C2BF5A8C5ABA04_11999268 = new IOException("Attempted read from closed stream.");
             varEE3E399CAE0E5DE731C2BF5A8C5ABA04_11999268.addTaint(taint);
             throw varEE3E399CAE0E5DE731C2BF5A8C5ABA04_11999268;
-        } 
+        } //End block
     if(pos >= contentLength)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_278073854 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580987703 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_580987703;
-        } 
+        } //End block
         pos++;
         int var4B24E33D3D9F67DD13235F201B80A449_996667189 = (this.in.read());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756770329 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756770329;
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (closed) {
+            //throw new IOException("Attempted read from closed stream.");
+        //}
+        //if (pos >= contentLength) {
+            //return -1;
+        //}
+        //pos++;
+        //return this.in.read();
     }
 
     
@@ -121,35 +121,35 @@ public class ContentLengthInputStream extends InputStream {
             IOException varEE3E399CAE0E5DE731C2BF5A8C5ABA04_569678461 = new IOException("Attempted read from closed stream.");
             varEE3E399CAE0E5DE731C2BF5A8C5ABA04_569678461.addTaint(taint);
             throw varEE3E399CAE0E5DE731C2BF5A8C5ABA04_569678461;
-        } 
+        } //End block
     if(pos >= contentLength)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_855488899 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463377532 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463377532;
-        } 
+        } //End block
     if(pos + len > contentLength)        
         {
             len = (int) (contentLength - pos);
-        } 
+        } //End block
         int count = this.in.read(b, off, len);
         pos += count;
         int varE2942A04780E223B215EB8B663CF5353_1712033036 = (count);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_883936087 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_883936087;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (closed) {
+            //throw new IOException("Attempted read from closed stream.");
+        //}
+        //if (pos >= contentLength) {
+            //return -1;
+        //}
+        //if (pos + len > contentLength) {
+            //len = (int) (contentLength - pos);
+        //}
+        //int count = this.in.read(b, off, len);
+        //pos += count;
+        //return count;
     }
 
     
@@ -159,8 +159,8 @@ public class ContentLengthInputStream extends InputStream {
         int var3AE1B8835719D1E8BA9C297EF156E04B_50668780 = (read(b, 0, b.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836001629 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836001629;
-        
-        
+        // ---------- Original Method ----------
+        //return read(b, 0, b.length);
     }
 
     
@@ -172,7 +172,7 @@ public class ContentLengthInputStream extends InputStream {
             long varCFCD208495D565EF66E7DFF9F98764DA_258973424 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_361418271 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_361418271;
-        } 
+        } //End block
         byte[] buffer = new byte[BUFFER_SIZE];
         long remaining = Math.min(n, this.contentLength - this.pos);
         long count = 0;
@@ -183,31 +183,31 @@ public class ContentLengthInputStream extends InputStream {
     if(l == -1)            
             {
                 break;
-            } 
+            } //End block
             count += l;
             remaining -= l;
-        } 
+        } //End block
         this.pos += count;
         long varE2942A04780E223B215EB8B663CF5353_687473915 = (count);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1348954309 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1348954309;
-        
-        
-            
-        
-        
-        
-        
-        
-            
-            
-                
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (n <= 0) {
+            //return 0;
+        //}
+        //byte[] buffer = new byte[BUFFER_SIZE];
+        //long remaining = Math.min(n, this.contentLength - this.pos);
+        //long count = 0;
+        //while (remaining > 0) {
+            //int l = read(buffer, 0, (int)Math.min(BUFFER_SIZE, remaining));
+            //if (l == -1) {
+                //break;
+            //}
+            //count += l;
+            //remaining -= l;
+        //}
+        //this.pos += count;
+        //return count;
     }
 
     

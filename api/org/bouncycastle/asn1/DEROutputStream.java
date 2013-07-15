@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
         OutputStream    os) {
         super(os);
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -31,36 +31,36 @@ public class DEROutputStream extends FilterOutputStream implements DERTags {
 ((val >>>= 8) != 0)            
             {
                 size++;
-            } 
+            } //End block
             write((byte)(size | 0x80));
 for(int i = (size - 1) * 8;i >= 0;i -= 8)
             {
                 write((byte)(length >> i));
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             write((byte)length);
-        } 
-        
-        
-        
-            
-            
-            
-            
-                
-            
-            
-            
-            
-                
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (length > 127)
+        //{
+            //int size = 1;
+            //int val = length;
+            //while ((val >>>= 8) != 0)
+            //{
+                //size++;
+            //}
+            //write((byte)(size | 0x80));
+            //for (int i = (size - 1) * 8; i >= 0; i -= 8)
+            //{
+                //write((byte)(length >> i));
+            //}
+        //}
+        //else
+        //{
+            //write((byte)length);
+        //}
     }
 
     
@@ -73,10 +73,10 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
         write(tag);
         writeLength(bytes.length);
         write(bytes);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //write(tag);
+        //writeLength(bytes.length);
+        //write(bytes);
     }
 
     
@@ -87,14 +87,14 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     if(tagNo < 31)        
         {
             write(flags | tagNo);
-        } 
+        } //End block
         else
         {
             write(flags | 0x1f);
     if(tagNo < 128)            
             {
                 write(tagNo);
-            } 
+            } //End block
             else
             {
                 byte[] stack = new byte[5];
@@ -104,37 +104,37 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
                     {
                         tagNo >>= 7;
                         stack[--pos] = (byte)(tagNo & 0x7F | 0x80);
-                    } 
+                    } //End block
 } while (tagNo > 127);
                 write(stack, pos, stack.length - pos);
-            } 
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-            
-            
-                
-            
-            
-            
-                
-                
-                
-                
-                
-                    
-                    
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (tagNo < 31)
+        //{
+            //write(flags | tagNo);
+        //}
+        //else
+        //{
+            //write(flags | 0x1f);
+            //if (tagNo < 128)
+            //{
+                //write(tagNo);
+            //}
+            //else
+            //{
+                //byte[] stack = new byte[5];
+                //int pos = stack.length;
+                //stack[--pos] = (byte)(tagNo & 0x7F);
+                //do
+                //{
+                    //tagNo >>= 7;
+                    //stack[--pos] = (byte)(tagNo & 0x7F | 0x80);
+                //}
+                //while (tagNo > 127);
+                //write(stack, pos, stack.length - pos);
+            //}
+        //}
     }
 
     
@@ -146,10 +146,10 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
         writeTag(flags, tagNo);
         writeLength(bytes.length);
         write(bytes);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //writeTag(flags, tagNo);
+        //writeLength(bytes.length);
+        //write(bytes);
     }
 
     
@@ -157,9 +157,9 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     protected void writeNull() throws IOException {
         write(NULL);
         write(0x00);
-        
-        
-        
+        // ---------- Original Method ----------
+        //write(NULL);
+        //write(0x00);
     }
 
     
@@ -167,8 +167,8 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     public void write(byte[] buf) throws IOException {
         addTaint(buf[0]);
         out.write(buf, 0, buf.length);
-        
-        
+        // ---------- Original Method ----------
+        //out.write(buf, 0, buf.length);
     }
 
     
@@ -178,8 +178,8 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
         addTaint(offSet);
         addTaint(buf[0]);
         out.write(buf, offSet, len);
-        
-        
+        // ---------- Original Method ----------
+        //out.write(buf, offSet, len);
     }
 
     
@@ -190,40 +190,40 @@ for(int i = (size - 1) * 8;i >= 0;i -= 8)
     if(obj == null)        
         {
             writeNull();
-        } 
+        } //End block
         else
     if(obj instanceof DERObject)        
         {
             ((DERObject)obj).encode(this);
-        } 
+        } //End block
         else
     if(obj instanceof DEREncodable)        
         {
             ((DEREncodable)obj).getDERObject().encode(this);
-        } 
+        } //End block
         else
         {
             IOException var73E9FE5DD68FF5A265BB6FC7D1A21AE7_32391256 = new IOException("object not DEREncodable");
             var73E9FE5DD68FF5A265BB6FC7D1A21AE7_32391256.addTaint(taint);
             throw var73E9FE5DD68FF5A265BB6FC7D1A21AE7_32391256;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (obj == null)
+        //{
+            //writeNull();
+        //}
+        //else if (obj instanceof DERObject)
+        //{
+            //((DERObject)obj).encode(this);
+        //}
+        //else if (obj instanceof DEREncodable)
+        //{
+            //((DEREncodable)obj).getDERObject().encode(this);
+        //}
+        //else 
+        //{
+            //throw new IOException("object not DEREncodable");
+        //}
     }
 
     

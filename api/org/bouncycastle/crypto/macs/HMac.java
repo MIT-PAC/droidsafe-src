@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.macs;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public class HMac implements Mac {
         Digest digest) {
         this(digest, getByteLength(digest));
         addTaint(digest.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -46,12 +46,12 @@ public class HMac implements Mac {
         this.blockLength = byteLength;
         inputPad = new byte[blockLength];
         outputPad = new byte[blockLength];
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.digest = digest;
+        //digestSize = digest.getDigestSize();
+        //this.blockLength = byteLength;
+        //inputPad = new byte[blockLength];
+        //outputPad = new byte[blockLength];
     }
 
     
@@ -75,19 +75,18 @@ public class HMac implements Mac {
 String var3B1F39D8F465DFD1B0D3818B237F2D32_245111379 =         digest.getAlgorithmName() + "/HMAC";
         var3B1F39D8F465DFD1B0D3818B237F2D32_245111379.addTaint(taint);
         return var3B1F39D8F465DFD1B0D3818B237F2D32_245111379;
-        
-        
+        // ---------- Original Method ----------
+        //return digest.getAlgorithmName() + "/HMAC";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.316 -0400", hash_original_method = "DF57895E7914F211606EA32A352DF2A7", hash_generated_method = "4A2DCA11D2CEF3D570D6C242C5C29737")
     public Digest getUnderlyingDigest() {
 Digest var3198260B9187CD88530E727D50A62D10_1809758900 =         digest;
         var3198260B9187CD88530E727D50A62D10_1809758900.addTaint(taint);
         return var3198260B9187CD88530E727D50A62D10_1809758900;
-        
-        
+        // ---------- Original Method ----------
+        //return digest;
     }
 
     
@@ -104,40 +103,39 @@ Digest var3198260B9187CD88530E727D50A62D10_1809758900 =         digest;
 for(int i = digestSize;i < inputPad.length;i++)
             {
                 inputPad[i] = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             System.arraycopy(key, 0, inputPad, 0, key.length);
 for(int i = key.length;i < inputPad.length;i++)
             {
                 inputPad[i] = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         outputPad = new byte[inputPad.length];
         System.arraycopy(inputPad, 0, outputPad, 0, inputPad.length);
 for(int i = 0;i < inputPad.length;i++)
         {
             inputPad[i] ^= IPAD;
-        } 
+        } //End block
 for(int i = 0;i < outputPad.length;i++)
         {
             outputPad[i] ^= OPAD;
-        } 
+        } //End block
         digest.update(inputPad, 0, inputPad.length);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.319 -0400", hash_original_method = "26B5BCE6AD930971148E6F9157D6A115", hash_generated_method = "0B4B9FABC9E06D9375CF3B3567A173CE")
     public int getMacSize() {
         int var9255F8D1984F4EA41BF6AA324C3097B4_688848666 = (digestSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218473067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218473067;
-        
-        
+        // ---------- Original Method ----------
+        //return digestSize;
     }
 
     
@@ -146,8 +144,8 @@ for(int i = 0;i < outputPad.length;i++)
         byte in) {
         addTaint(in);
         digest.update(in);
-        
-        
+        // ---------- Original Method ----------
+        //digest.update(in);
     }
 
     
@@ -160,8 +158,8 @@ for(int i = 0;i < outputPad.length;i++)
         addTaint(inOff);
         addTaint(in[0]);
         digest.update(in, inOff, len);
-        
-        
+        // ---------- Original Method ----------
+        //digest.update(in, inOff, len);
     }
 
     
@@ -180,14 +178,14 @@ for(int i = 0;i < outputPad.length;i++)
         int varF5A8E923F8CD24B56B3BAB32358CC58A_565379858 = (len);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730053257 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730053257;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] tmp = new byte[digestSize];
+        //digest.doFinal(tmp, 0);
+        //digest.update(outputPad, 0, outputPad.length);
+        //digest.update(tmp, 0, tmp.length);
+        //int     len = digest.doFinal(out, outOff);
+        //reset();
+        //return len;
     }
 
     
@@ -195,9 +193,9 @@ for(int i = 0;i < outputPad.length;i++)
     public void reset() {
         digest.reset();
         digest.update(inputPad, 0, inputPad.length);
-        
-        
-        
+        // ---------- Original Method ----------
+        //digest.reset();
+        //digest.update(inputPad, 0, inputPad.length);
     }
 
     

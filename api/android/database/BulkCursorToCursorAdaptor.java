@@ -1,6 +1,6 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,11 +28,10 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.000 -0400", hash_original_method = "579A2D9511CAAA6B79AA847929FD0E6D", hash_generated_method = "579A2D9511CAAA6B79AA847929FD0E6D")
     public BulkCursorToCursorAdaptor ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.001 -0400", hash_original_method = "BDEAB060DBF06B617753E5FD68DF3DA6", hash_generated_method = "CF17B3F2DAC2067844F40FF84CF8C685")
     public void initialize(IBulkCursor bulkCursor, int count, int idIndex,
             boolean wantsAllOnMoveCalls) {
@@ -42,12 +41,12 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
         mCount = count;
         mRowIdColumnIndex = idIndex;
         mWantsAllOnMoveCalls = wantsAllOnMoveCalls;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mBulkCursor = bulkCursor;
+        //mColumns = null;
+        //mCount = count;
+        //mRowIdColumnIndex = idIndex;
+        //mWantsAllOnMoveCalls = wantsAllOnMoveCalls;
     }
 
     
@@ -67,8 +66,8 @@ public final class BulkCursorToCursorAdaptor extends AbstractWindowedCursor {
 IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObserverBridge.getContentObserver();
         var79B4C6682518603384B80B07D25B4279_1318970171.addTaint(taint);
         return var79B4C6682518603384B80B07D25B4279_1318970171;
-        
-        
+        // ---------- Original Method ----------
+        //return mObserverBridge.getContentObserver();
     }
 
     
@@ -79,11 +78,11 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
             StaleDataException var241EC54C1C02F408EBF48FDE17C24E97_1893770721 = new StaleDataException("Attempted to access a cursor after it has been closed.");
             var241EC54C1C02F408EBF48FDE17C24E97_1893770721.addTaint(taint);
             throw var241EC54C1C02F408EBF48FDE17C24E97_1893770721;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mBulkCursor == null) {
+            //throw new StaleDataException("Attempted to access a cursor after it has been closed.");
+        //}
     }
 
     
@@ -94,17 +93,16 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
         int var4A5FC91463CC1EF00D3AA26340B946C6_528914145 = (mCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_336376915 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_336376915;
-        
-        
-        
+        // ---------- Original Method ----------
+        //throwIfCursorIsClosed();
+        //return mCount;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.003 -0400", hash_original_method = "A467CB6464BEC42A874BA0630DE4F114", hash_generated_method = "5FDAE91A1EDF61E7FC4F2BC5E5D27063")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newPosition);
         addTaint(oldPosition);
         throwIfCursorIsClosed();
@@ -115,50 +113,49 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
                     || newPosition >= mWindow.getStartPosition() + mWindow.getNumRows())            
             {
                 setWindow(mBulkCursor.getWindow(newPosition));
-            } 
+            } //End block
             else
     if(mWantsAllOnMoveCalls)            
             {
                 mBulkCursor.onMove(newPosition);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_1669640994 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192652764 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_192652764;
-        } 
+        } //End block
     if(mWindow == null)        
         {
             boolean var68934A3E9455FA72420237EB05902327_363667412 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1586838955 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1586838955;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_2061549910 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1684463767 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1684463767;
-        
-        
-        
-            
-                    
-                    
-                
-            
-                
-            
-        
-            
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //throwIfCursorIsClosed();
+        //try {
+            //if (mWindow == null
+                    //|| newPosition < mWindow.getStartPosition()
+                    //|| newPosition >= mWindow.getStartPosition() + mWindow.getNumRows()) {
+                //setWindow(mBulkCursor.getWindow(newPosition));
+            //} else if (mWantsAllOnMoveCalls) {
+                //mBulkCursor.onMove(newPosition);
+            //}
+        //} catch (RemoteException ex) {
+            //Log.e(TAG, "Unable to get window because the remote process is dead");
+            //return false;
+        //}
+        //if (mWindow == null) {
+            //return false;
+        //}
+        //return true;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.003 -0400", hash_original_method = "DCD3F558B41192D9CD395623901FE4A3", hash_generated_method = "ED7A593E1FCB5ECE9BD6FCEFF4B73CDD")
     @Override
     public void deactivate() {
@@ -168,20 +165,20 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
             try 
             {
                 mBulkCursor.deactivate();
-            } 
+            } //End block
             catch (RemoteException ex)
             {
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.deactivate();
+        //if (mBulkCursor != null) {
+            //try {
+                //mBulkCursor.deactivate();
+            //} catch (RemoteException ex) {
+                //Log.w(TAG, "Remote process exception when deactivating");
+            //}
+        //}
     }
 
     
@@ -194,30 +191,29 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
             try 
             {
                 mBulkCursor.close();
-            } 
+            } //End block
             catch (RemoteException ex)
             {
-            } 
+            } //End block
             finally 
             {
                 mBulkCursor = null;
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.close();
+        //if (mBulkCursor != null) {
+            //try {
+                //mBulkCursor.close();
+            //} catch (RemoteException ex) {
+                //Log.w(TAG, "Remote process exception when closing");
+            //} finally {
+                //mBulkCursor = null;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.005 -0400", hash_original_method = "2BB8C0DB5A3CE31D75C859DF8A5992AB", hash_generated_method = "BDBEEC9DF9B39A61C8C91A042F031EC1")
     @Override
     public boolean requery() {
@@ -233,40 +229,40 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
                 boolean varB326B5062B2F0E69046810717534CB09_1238598005 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_744538067 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_744538067;
-            } 
+            } //End block
             else
             {
                 deactivate();
                 boolean var68934A3E9455FA72420237EB05902327_1194340608 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1523271919 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1523271919;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (Exception ex)
         {
             deactivate();
             boolean var68934A3E9455FA72420237EB05902327_3856915 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1975744410 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1975744410;
-        } 
-        
-        
-        
-            
-            
-                
-                
-                
-                
-            
-                
-                
-            
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //throwIfCursorIsClosed();
+        //try {
+            //mCount = mBulkCursor.requery(getObserver());
+            //if (mCount != -1) {
+                //mPos = -1;
+                //closeWindow();
+                //super.requery();
+                //return true;
+            //} else {
+                //deactivate();
+                //return false;
+            //}
+        //} catch (Exception ex) {
+            //Log.e(TAG, "Unable to requery because the remote process exception " + ex.getMessage());
+            //deactivate();
+            //return false;
+        //}
     }
 
     
@@ -279,32 +275,31 @@ IContentObserver var79B4C6682518603384B80B07D25B4279_1318970171 =         mObser
             try 
             {
                 mColumns = mBulkCursor.getColumnNames();
-            } 
+            } //End block
             catch (RemoteException ex)
             {
 String[] var540C13E9E156B687226421B24F2DF178_1636749489 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1636749489.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1636749489;
-            } 
-        } 
+            } //End block
+        } //End block
 String[] varD3E6185118B69354C5CA1E2493E0C19D_1079731183 =         mColumns;
         varD3E6185118B69354C5CA1E2493E0C19D_1079731183.addTaint(taint);
         return varD3E6185118B69354C5CA1E2493E0C19D_1079731183;
-        
-        
-        
-            
-                
-            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //throwIfCursorIsClosed();
+        //if (mColumns == null) {
+            //try {
+                //mColumns = mBulkCursor.getColumnNames();
+            //} catch (RemoteException ex) {
+                //Log.e(TAG, "Unable to fetch column names because the remote process is dead");
+                //return null;
+            //}
+        //}
+        //return mColumns;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.006 -0400", hash_original_method = "5109D579D87DF77312539D6DDC351AB2", hash_generated_method = "4620EF584F69894E5FD9C80DDC9BA6A0")
     @Override
     public Bundle getExtras() {
@@ -314,24 +309,23 @@ String[] varD3E6185118B69354C5CA1E2493E0C19D_1079731183 =         mColumns;
 Bundle varC9D220A55BC9FCE6E848D4BF5278F31D_2101728474 =             mBulkCursor.getExtras();
             varC9D220A55BC9FCE6E848D4BF5278F31D_2101728474.addTaint(taint);
             return varC9D220A55BC9FCE6E848D4BF5278F31D_2101728474;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1011501676 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1011501676.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1011501676;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //throwIfCursorIsClosed();
+        //try {
+            //return mBulkCursor.getExtras();
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.008 -0400", hash_original_method = "EAE7773B95560E382A302B739F6438AF", hash_generated_method = "0EC1AA2494B840D129421A63A640A894")
     @Override
     public Bundle respond(Bundle extras) {
@@ -342,21 +336,21 @@ Bundle varC9D220A55BC9FCE6E848D4BF5278F31D_2101728474 =             mBulkCursor.
 Bundle varDA852F898B244A7E1232C20D0C2D350D_1675579451 =             mBulkCursor.respond(extras);
             varDA852F898B244A7E1232C20D0C2D350D_1675579451.addTaint(taint);
             return varDA852F898B244A7E1232C20D0C2D350D_1675579451;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 Bundle var998437625BBF03281B97467174D26383_1353462489 =             Bundle.EMPTY;
             var998437625BBF03281B97467174D26383_1353462489.addTaint(taint);
             return var998437625BBF03281B97467174D26383_1353462489;
-        } 
-        
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //throwIfCursorIsClosed();
+        //try {
+            //return mBulkCursor.respond(extras);
+        //} catch (RemoteException e) {
+            //Log.w(TAG, "respond() threw RemoteException, returning an empty bundle.", e);
+            //return Bundle.EMPTY;
+        //}
     }
 
     

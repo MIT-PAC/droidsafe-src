@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class CSeqParser extends HeaderParser {
     public  CSeqParser(String cseq) {
         super(cseq);
         addTaint(cseq.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -24,7 +24,7 @@ public class CSeqParser extends HeaderParser {
     protected  CSeqParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -47,23 +47,23 @@ public class CSeqParser extends HeaderParser {
 SIPHeader var807FB10045EE51C06BDB74744A6714DF_363789817 =             c;
             var807FB10045EE51C06BDB74744A6714DF_363789817.addTaint(taint);
             return var807FB10045EE51C06BDB74744A6714DF_363789817;
-        } 
+        } //End block
         catch (NumberFormatException ex)
         {
             Debug.printStackTrace(ex);
             java.text.ParseException var47EC6AB6ED56A46F510856200B27A259_697299512 = createParseException("Number format exception");
             var47EC6AB6ED56A46F510856200B27A259_697299512.addTaint(taint);
             throw var47EC6AB6ED56A46F510856200B27A259_697299512;
-        } 
+        } //End block
         catch (InvalidArgumentException ex)
         {
             Debug.printStackTrace(ex);
             java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_756534673 = createParseException(ex.getMessage());
             varB8C80F72F95BF6A850D07F4EC5726C09_756534673.addTaint(taint);
             throw varB8C80F72F95BF6A850D07F4EC5726C09_756534673;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

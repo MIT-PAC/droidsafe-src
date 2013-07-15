@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,10 +25,10 @@ final class SslClientCertLookupTable {
         privateKeys = new HashMap<String, byte[]>();
         certificateChains = new HashMap<String, byte[][]>();
         denied = new HashSet<String>();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //privateKeys = new HashMap<String, byte[]>();
+        //certificateChains = new HashMap<String, byte[][]>();
+        //denied = new HashSet<String>();
     }
 
     
@@ -48,10 +48,10 @@ final class SslClientCertLookupTable {
         privateKeys.put(host_and_port, privateKey);
         certificateChains.put(host_and_port, chain);
         denied.remove(host_and_port);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //privateKeys.put(host_and_port, privateKey);
+        //certificateChains.put(host_and_port, chain);
+        //denied.remove(host_and_port);
     }
 
     
@@ -61,10 +61,10 @@ final class SslClientCertLookupTable {
         privateKeys.remove(host_and_port);
         certificateChains.remove(host_and_port);
         denied.add(host_and_port);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //privateKeys.remove(host_and_port);
+        //certificateChains.remove(host_and_port);
+        //denied.add(host_and_port);
     }
 
     
@@ -74,8 +74,8 @@ final class SslClientCertLookupTable {
         boolean var554E7D4145B926C96C4CAF2FC8B5FE58_1855094025 = (privateKeys.containsKey(host_and_port));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_134816727 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_134816727;
-        
-        
+        // ---------- Original Method ----------
+        //return privateKeys.containsKey(host_and_port);
     }
 
     
@@ -85,8 +85,8 @@ final class SslClientCertLookupTable {
         boolean var4857EF46086F507A63B7BC5CF4DFCB25_525588492 = (denied.contains(host_and_port));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1563156989 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1563156989;
-        
-        
+        // ---------- Original Method ----------
+        //return denied.contains(host_and_port);
     }
 
     
@@ -96,8 +96,8 @@ final class SslClientCertLookupTable {
         byte[] var1E57468162B2C5D87AB75EFB58E3E43F_1019046646 = (privateKeys.get(host_and_port));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1802636666 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1802636666;
-        
-        
+        // ---------- Original Method ----------
+        //return privateKeys.get(host_and_port);
     }
 
     
@@ -107,8 +107,8 @@ final class SslClientCertLookupTable {
         byte[][] varD82177E8D08910160012DA92AB7A7C44_2028769524 = (certificateChains.get(host_and_port));
                 byte[][] var09EEFE93BC05FD972F5A60957AA3195B_261125414 = {{getTaintByte()}};
         return var09EEFE93BC05FD972F5A60957AA3195B_261125414;
-        
-        
+        // ---------- Original Method ----------
+        //return certificateChains.get(host_and_port);
     }
 
     

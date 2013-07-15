@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,13 +11,13 @@ public class UnrecoverableKeyException extends UnrecoverableEntryException {
     public  UnrecoverableKeyException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.578 -0400", hash_original_method = "03224602BAA5F9956174116E90B167DC", hash_generated_method = "457CE1EC41599347D74B5CD5A4C0D88F")
     public  UnrecoverableKeyException() {
-        
+        // ---------- Original Method ----------
     }
 
     

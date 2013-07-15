@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
         super(method, uri);
         addTaint(uri.getTaint());
         addTaint(method.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -32,7 +32,7 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
         addTaint(ver.getTaint());
         addTaint(uri.getTaint());
         addTaint(method.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -40,26 +40,25 @@ public class BasicHttpEntityEnclosingRequest extends BasicHttpRequest implements
     public  BasicHttpEntityEnclosingRequest(final RequestLine requestline) {
         super(requestline);
         addTaint(requestline.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.475 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "47F9447E532AD1D9C3B9356A7E990E23")
     public HttpEntity getEntity() {
 HttpEntity varB0390008473457B24431D383C02B7BE2_1774602571 =         this.entity;
         varB0390008473457B24431D383C02B7BE2_1774602571.addTaint(taint);
         return varB0390008473457B24431D383C02B7BE2_1774602571;
-        
-        
+        // ---------- Original Method ----------
+        //return this.entity;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.476 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;
-        
-        
+        // ---------- Original Method ----------
+        //this.entity = entity;
     }
 
     
@@ -69,9 +68,9 @@ HttpEntity varB0390008473457B24431D383C02B7BE2_1774602571 =         this.entity;
         boolean varBD99B96B93C1B43067A5D22A1607F29C_295984578 = (expect != null && HTTP.EXPECT_CONTINUE.equalsIgnoreCase(expect.getValue()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_389847354 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_389847354;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Header expect = getFirstHeader(HTTP.EXPECT_DIRECTIVE);
+        //return expect != null && HTTP.EXPECT_CONTINUE.equalsIgnoreCase(expect.getValue());
     }
 
     

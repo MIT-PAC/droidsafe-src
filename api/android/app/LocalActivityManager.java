@@ -1,6 +1,6 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,10 +45,10 @@ public class LocalActivityManager {
         mActivityThread = ActivityThread.currentActivityThread();
         mParent = parent;
         mSingleMode = singleMode;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mActivityThread = ActivityThread.currentActivityThread();
+        //mParent = parent;
+        //mSingleMode = singleMode;
     }
 
     
@@ -59,7 +59,7 @@ public class LocalActivityManager {
     if(r.curState == RESTORED || r.curState == DESTROYED)        
         {
             return;
-        } 
+        } //End block
     if(r.curState == INITIALIZING)        
         {
             HashMap<String, Object> lastNonConfigurationInstances = mParent.getLastNonConfigurationChildInstances();
@@ -67,23 +67,23 @@ public class LocalActivityManager {
     if(lastNonConfigurationInstances != null)            
             {
                 instanceObj = lastNonConfigurationInstances.get(r.id);
-            } 
+            } //End block
             Activity.NonConfigurationInstances instance = null;
     if(instanceObj != null)            
             {
                 instance = new Activity.NonConfigurationInstances();
                 instance.activity = instanceObj;
-            } 
+            } //End block
     if(localLOGV){ }    if(r.activityInfo == null)            
             {
                 r.activityInfo = mActivityThread.resolveActivityInfo(r.intent);
-            } 
+            } //End block
             r.activity = mActivityThread.startActivityNow(
                     mParent, r.id, r.intent, r.activityInfo, r, r.instanceState, instance);
     if(r.activity == null)            
             {
                 return;
-            } 
+            } //End block
             r.window = r.activity.getWindow();
             r.instanceState = null;
             r.curState = STARTED;
@@ -91,22 +91,22 @@ public class LocalActivityManager {
             {
     if(localLOGV){ }                mActivityThread.performResumeActivity(r, true);
                 r.curState = RESUMED;
-            } 
+            } //End block
             return;
-        } 
+        } //End block
 switch(r.curState){
         case CREATED:
     if(desiredState == STARTED)        
         {
     if(localLOGV){ }            mActivityThread.performRestartActivity(r);
             r.curState = STARTED;
-        } 
+        } //End block
     if(desiredState == RESUMED)        
         {
     if(localLOGV){ }            mActivityThread.performRestartActivity(r);
             mActivityThread.performResumeActivity(r, true);
             r.curState = RESUMED;
-        } 
+        } //End block
         return;
         case STARTED:
     if(desiredState == RESUMED)        
@@ -114,29 +114,29 @@ switch(r.curState){
     if(localLOGV){ }            mActivityThread.performResumeActivity(r, true);
             r.instanceState = null;
             r.curState = RESUMED;
-        } 
+        } //End block
     if(desiredState == CREATED)        
         {
     if(localLOGV){ }            mActivityThread.performStopActivity(r, false);
             r.curState = CREATED;
-        } 
+        } //End block
         return;
         case RESUMED:
     if(desiredState == STARTED)        
         {
     if(localLOGV){ }            performPause(r, mFinishing);
             r.curState = STARTED;
-        } 
+        } //End block
     if(desiredState == CREATED)        
         {
     if(localLOGV){ }            performPause(r, mFinishing);
     if(localLOGV){ }            mActivityThread.performStopActivity(r, false);
             r.curState = CREATED;
-        } 
+        } //End block
         return;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -150,18 +150,17 @@ switch(r.curState){
     if(needState)        
         {
             r.instanceState = instanceState;
-        } 
-        
-        
-        
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //boolean needState = r.instanceState == null;
+        //Bundle instanceState = mActivityThread.performPauseActivity(r,
+                //finishing, needState);
+        //if (needState) {
+            //r.instanceState = instanceState;
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.218 -0400", hash_original_method = "0A59627F0C289533278C9C6F1CF55EF3", hash_generated_method = "42B412C6433CC941932DE9CEB151F175")
     public Window startActivity(String id, Intent intent) {
         addTaint(intent.getTaint());
@@ -172,7 +171,7 @@ switch(r.curState){
                     "Activities can't be added until the containing group has been created.");
             varFDC55787E198DFC1F5952E4AF9F8CB12_1372813679.addTaint(taint);
             throw varFDC55787E198DFC1F5952E4AF9F8CB12_1372813679;
-        } 
+        } //End block
         boolean adding = false;
         boolean sameIntent = false;
         ActivityInfo aInfo = null;
@@ -181,7 +180,7 @@ switch(r.curState){
         {
             r = new LocalActivityRecord(id, intent);
             adding = true;
-        } 
+        } //End block
         else
     if(r.intent != null)        
         {
@@ -189,25 +188,25 @@ switch(r.curState){
     if(sameIntent)            
             {
                 aInfo = r.activityInfo;
-            } 
-        } 
+            } //End block
+        } //End block
     if(aInfo == null)        
         {
             aInfo = mActivityThread.resolveActivityInfo(intent);
-        } 
+        } //End block
     if(mSingleMode)        
         {
             LocalActivityRecord old = mResumed;
     if(old != null && old != r && mCurState == RESUMED)            
             {
                 moveToState(old, STARTED);
-            } 
-        } 
+            } //End block
+        } //End block
     if(adding)        
         {
             mActivities.put(id, r);
             mActivityArray.add(r);
-        } 
+        } //End block
         else
     if(r.activityInfo != null)        
         {
@@ -226,11 +225,11 @@ switch(r.curState){
     if(mSingleMode)                    
                     {
                         mResumed = r;
-                    } 
+                    } //End block
 Window var48B86E8FFA177D997A5C756A6FCAA4D0_506864517 =                     r.window;
                     var48B86E8FFA177D997A5C756A6FCAA4D0_506864517.addTaint(taint);
                     return var48B86E8FFA177D997A5C756A6FCAA4D0_506864517;
-                } 
+                } //End block
     if(sameIntent &&
                         (intent.getFlags()&Intent.FLAG_ACTIVITY_CLEAR_TOP) == 0)                
                 {
@@ -239,14 +238,14 @@ Window var48B86E8FFA177D997A5C756A6FCAA4D0_506864517 =                     r.win
     if(mSingleMode)                    
                     {
                         mResumed = r;
-                    } 
+                    } //End block
 Window var48B86E8FFA177D997A5C756A6FCAA4D0_534821140 =                     r.window;
                     var48B86E8FFA177D997A5C756A6FCAA4D0_534821140.addTaint(taint);
                     return var48B86E8FFA177D997A5C756A6FCAA4D0_534821140;
-                } 
-            } 
+                } //End block
+            } //End block
             performDestroy(r, true);
-        } 
+        } //End block
         r.intent = intent;
         r.curState = INITIALIZING;
         r.activityInfo = aInfo;
@@ -254,12 +253,12 @@ Window var48B86E8FFA177D997A5C756A6FCAA4D0_534821140 =                     r.win
     if(mSingleMode)        
         {
             mResumed = r;
-        } 
+        } //End block
 Window var48B86E8FFA177D997A5C756A6FCAA4D0_813548033 =         r.window;
         var48B86E8FFA177D997A5C756A6FCAA4D0_813548033.addTaint(taint);
         return var48B86E8FFA177D997A5C756A6FCAA4D0_813548033;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -272,33 +271,33 @@ Window var48B86E8FFA177D997A5C756A6FCAA4D0_813548033 =         r.window;
     if(r.curState == RESUMED && !finish)        
         {
             performPause(r, finish);
-        } 
+        } //End block
     if(localLOGV){ }        mActivityThread.performDestroyActivity(r, finish);
         r.activity = null;
         r.window = null;
     if(finish)        
         {
             r.instanceState = null;
-        } 
+        } //End block
         r.curState = DESTROYED;
 Window varEDD7B2DCFC39518AEE1744DBB03DF9FF_156410805 =         win;
         varEDD7B2DCFC39518AEE1744DBB03DF9FF_156410805.addTaint(taint);
         return varEDD7B2DCFC39518AEE1744DBB03DF9FF_156410805;
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Window win;
+        //win = r.window;
+        //if (r.curState == RESUMED && !finish) {
+            //performPause(r, finish);
+        //}
+        //if (localLOGV) Log.v(TAG, r.id + ": destroying");
+        //mActivityThread.performDestroyActivity(r, finish);
+        //r.activity = null;
+        //r.window = null;
+        //if (finish) {
+            //r.instanceState = null;
+        //}
+        //r.curState = DESTROYED;
+        //return win;
     }
 
     
@@ -315,44 +314,42 @@ Window varEDD7B2DCFC39518AEE1744DBB03DF9FF_156410805 =         win;
             {
                 mActivities.remove(id);
                 mActivityArray.remove(r);
-            } 
-        } 
+            } //End block
+        } //End block
 Window varEDD7B2DCFC39518AEE1744DBB03DF9FF_237466515 =         win;
         varEDD7B2DCFC39518AEE1744DBB03DF9FF_237466515.addTaint(taint);
         return varEDD7B2DCFC39518AEE1744DBB03DF9FF_237466515;
-        
-        
-        
-        
-            
-            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //LocalActivityRecord r = mActivities.get(id);
+        //Window win = null;
+        //if (r != null) {
+            //win = performDestroy(r, finish);
+            //if (finish) {
+                //mActivities.remove(id);
+                //mActivityArray.remove(r);
+            //}
+        //}
+        //return win;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.222 -0400", hash_original_method = "DDB5384220B4A60C69552CE8336AA299", hash_generated_method = "2B01F12B5A6BF0CBF12595399C44AB32")
     public Activity getCurrentActivity() {
 Activity varE19544236484E5B0DC9FAEA2B920206B_2076894378 =         mResumed != null ? mResumed.activity : null;
         varE19544236484E5B0DC9FAEA2B920206B_2076894378.addTaint(taint);
         return varE19544236484E5B0DC9FAEA2B920206B_2076894378;
-        
-        
+        // ---------- Original Method ----------
+        //return mResumed != null ? mResumed.activity : null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.222 -0400", hash_original_method = "4729520AC64C6CA5B20AE92550B34CDA", hash_generated_method = "C8454EDDBD5979A539C92C9DB76E48E5")
     public String getCurrentId() {
 String var2FDA46E65C37C9EE8C9E00B555D28E22_656001903 =         mResumed != null ? mResumed.id : null;
         var2FDA46E65C37C9EE8C9E00B555D28E22_656001903.addTaint(taint);
         return var2FDA46E65C37C9EE8C9E00B555D28E22_656001903;
-        
-        
+        // ---------- Original Method ----------
+        //return mResumed != null ? mResumed.id : null;
     }
 
     
@@ -363,9 +360,9 @@ String var2FDA46E65C37C9EE8C9E00B555D28E22_656001903 =         mResumed != null 
 Activity var58139E1C236E1FCA1AFDE9E3968F4817_217264258 =         r != null ? r.activity : null;
         var58139E1C236E1FCA1AFDE9E3968F4817_217264258.addTaint(taint);
         return var58139E1C236E1FCA1AFDE9E3968F4817_217264258;
-        
-        
-        
+        // ---------- Original Method ----------
+        //LocalActivityRecord r = mActivities.get(id);
+        //return r != null ? r.activity : null;
     }
 
     
@@ -383,41 +380,41 @@ for(String id : state.keySet())
     if(r != null)                    
                     {
                         r.instanceState = astate;
-                    } 
+                    } //End block
                     else
                     {
                         r = new LocalActivityRecord(id, null);
                         r.instanceState = astate;
                         mActivities.put(id, r);
                         mActivityArray.add(r);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 catch (Exception e)
                 {
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         mCurState = CREATED;
-        
-        
-            
-                
-                    
-                    
-                    
-                        
-                    
-                        
-                        
-                        
-                        
-                    
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (state != null) {
+            //for (String id : state.keySet()) {
+                //try {
+                    //final Bundle astate = state.getBundle(id);
+                    //LocalActivityRecord r = mActivities.get(id);
+                    //if (r != null) {
+                        //r.instanceState = astate;
+                    //} else {
+                        //r = new LocalActivityRecord(id, null);
+                        //r.instanceState = astate;
+                        //mActivities.put(id, r);
+                        //mActivityArray.add(r);
+                    //}
+                //} catch (Exception e) {
+                    //Log.e(TAG, "Exception thrown when restoring LocalActivityManager state", e);
+                //}
+            //}
+        //}
+        //mCurState = CREATED;
     }
 
     
@@ -431,41 +428,41 @@ for(int i=0;i<N;i++)
     if(state == null)            
             {
                 state = new Bundle();
-            } 
+            } //End block
     if((r.instanceState != null || r.curState == RESUMED)
                     && r.activity != null)            
             {
                 final Bundle childState = new Bundle();
                 r.activity.performSaveInstanceState(childState);
                 r.instanceState = childState;
-            } 
+            } //End block
     if(r.instanceState != null)            
             {
                 state.putBundle(r.id, r.instanceState);
-            } 
-        } 
+            } //End block
+        } //End block
 Bundle var37C56C9D63C623261861C16DCFB73F6D_1777714069 =         state;
         var37C56C9D63C623261861C16DCFB73F6D_1777714069.addTaint(taint);
         return var37C56C9D63C623261861C16DCFB73F6D_1777714069;
-        
-        
-        
-        
-            
-            
-                
-            
-            
-                    
-                
-                
-                
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Bundle state = null;
+        //final int N = mActivityArray.size();
+        //for (int i=0; i<N; i++) {
+            //final LocalActivityRecord r = mActivityArray.get(i);
+            //if (state == null) {
+                //state = new Bundle();
+            //}
+            //if ((r.instanceState != null || r.curState == RESUMED)
+                    //&& r.activity != null) {
+                //final Bundle childState = new Bundle();
+                //r.activity.performSaveInstanceState(childState);
+                //r.instanceState = childState;
+            //}
+            //if (r.instanceState != null) {
+                //state.putBundle(r.id, r.instanceState);
+            //}
+        //}
+        //return state;
     }
 
     
@@ -477,28 +474,28 @@ Bundle var37C56C9D63C623261861C16DCFB73F6D_1777714069 =         state;
     if(mResumed != null)            
             {
                 moveToState(mResumed, RESUMED);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             final int N = mActivityArray.size();
 for(int i=0;i<N;i++)
             {
                 moveToState(mActivityArray.get(i), RESUMED);
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //mCurState = RESUMED;
+        //if (mSingleMode) {
+            //if (mResumed != null) {
+                //moveToState(mResumed, RESUMED);
+            //}
+        //} else {
+            //final int N = mActivityArray.size();
+            //for (int i=0; i<N; i++) {
+                //moveToState(mActivityArray.get(i), RESUMED);
+            //}
+        //}
     }
 
     
@@ -508,15 +505,15 @@ for(int i=0;i<N;i++)
     if(finishing)        
         {
             mFinishing = true;
-        } 
+        } //End block
         mCurState = STARTED;
     if(mSingleMode)        
         {
     if(mResumed != null)            
             {
                 moveToState(mResumed, STARTED);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             final int N = mActivityArray.size();
@@ -526,27 +523,27 @@ for(int i=0;i<N;i++)
     if(r.curState == RESUMED)                
                 {
                     moveToState(r, STARTED);
-                } 
-            } 
-        } 
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
-            
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (finishing) {
+            //mFinishing = true;
+        //}
+        //mCurState = STARTED;
+        //if (mSingleMode) {
+            //if (mResumed != null) {
+                //moveToState(mResumed, STARTED);
+            //}
+        //} else {
+            //final int N = mActivityArray.size();
+            //for (int i=0; i<N; i++) {
+                //LocalActivityRecord r = mActivityArray.get(i);
+                //if (r.curState == RESUMED) {
+                    //moveToState(r, STARTED);
+                //}
+            //}
+        //}
     }
 
     
@@ -558,14 +555,14 @@ for(int i=0;i<N;i++)
         {
             LocalActivityRecord r = mActivityArray.get(i);
             moveToState(r, CREATED);
-        } 
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mCurState = CREATED;
+        //final int N = mActivityArray.size();
+        //for (int i=0; i<N; i++) {
+            //LocalActivityRecord r = mActivityArray.get(i);
+            //moveToState(r, CREATED);
+        //}
     }
 
     
@@ -584,38 +581,38 @@ for(int i=0;i<N;i++)
     if(instanceMap == null)                    
                     {
                         instanceMap = new HashMap<String,Object>();
-                    } 
+                    } //End block
                     instanceMap.put(r.id, instance);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 HashMap<String,Object> var827B7F1D928BBF862EF323B8FA47F73C_325164770 =         instanceMap;
         var827B7F1D928BBF862EF323B8FA47F73C_325164770.addTaint(taint);
         return var827B7F1D928BBF862EF323B8FA47F73C_325164770;
-        
-        
-        
-        
-            
-            
-                
-                
-                    
-                        
-                    
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //HashMap<String,Object> instanceMap = null;
+        //final int N = mActivityArray.size();
+        //for (int i=0; i<N; i++) {
+            //LocalActivityRecord r = mActivityArray.get(i);
+            //if ((r != null) && (r.activity != null)) {
+                //Object instance = r.activity.onRetainNonConfigurationInstance();
+                //if (instance != null) {
+                    //if (instanceMap == null) {
+                        //instanceMap = new HashMap<String,Object>();
+                    //}
+                    //instanceMap.put(r.id, instance);
+                //}
+            //}
+        //}
+        //return instanceMap;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:04.231 -0400", hash_original_method = "430AC76EEFA93CEEF93A908E5EA7F34D", hash_generated_method = "3A4DA8DA5947061AF99B48F41BC8F89F")
     public void removeAllActivities() {
         dispatchDestroy(true);
-        
-        
+        // ---------- Original Method ----------
+        //dispatchDestroy(true);
     }
 
     
@@ -627,18 +624,18 @@ for(int i=0;i<N;i++)
         {
             LocalActivityRecord r = mActivityArray.get(i);
     if(localLOGV){ }            mActivityThread.performDestroyActivity(r, finishing);
-        } 
+        } //End block
         mActivities.clear();
         mActivityArray.clear();
-        
-        
-        
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //final int N = mActivityArray.size();
+        //for (int i=0; i<N; i++) {
+            //LocalActivityRecord r = mActivityArray.get(i);
+            //if (localLOGV) Log.v(TAG, r.id + ": destroying");
+            //mActivityThread.performDestroyActivity(r, finishing);
+        //}
+        //mActivities.clear();
+        //mActivityArray.clear();
     }
 
     
@@ -669,9 +666,9 @@ for(int i=0;i<N;i++)
           LocalActivityRecord(String _id, Intent _intent) {
             id = _id;
             intent = _intent;
-            
-            
-            
+            // ---------- Original Method ----------
+            //id = _id;
+            //intent = _intent;
         }
 
         

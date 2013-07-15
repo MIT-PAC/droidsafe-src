@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -112,34 +112,33 @@ public abstract class HandshakeProtocol {
             engineOwner = (SSLEngineImpl) owner;
             nonBlocking = true;
             this.parameters = engineOwner.sslParameters;
-        } 
+        } //End block
         else
     if(owner instanceof SSLSocketImpl)        
         {
             socketOwner = (SSLSocketImpl) owner;
             nonBlocking = false;
             this.parameters = socketOwner.sslParameters;
-        } 
-        
-        
-            
-            
-            
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (owner instanceof SSLEngineImpl) {
+            //engineOwner = (SSLEngineImpl) owner;
+            //nonBlocking = true;
+            //this.parameters = engineOwner.sslParameters;
+        //}
+        //else if (owner instanceof SSLSocketImpl) {
+            //socketOwner = (SSLSocketImpl) owner;
+            //nonBlocking = false;
+            //this.parameters = socketOwner.sslParameters;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.464 -0400", hash_original_method = "4783F18A2AEFB1BF115D21F8D4F4E6FF", hash_generated_method = "C9083453A9DF96FB9488FD8E42A9D875")
     public void setRecordProtocol(SSLRecordProtocol recordProtocol) {
         this.recordProtocol = recordProtocol;
-        
-        
+        // ---------- Original Method ----------
+        //this.recordProtocol = recordProtocol;
     }
 
     
@@ -150,9 +149,9 @@ public abstract class HandshakeProtocol {
     protected void stop() {
         clearMessages();
         status = NOT_HANDSHAKING;
-        
-        
-        
+        // ---------- Original Method ----------
+        //clearMessages();
+        //status = NOT_HANDSHAKING;
     }
 
     
@@ -164,13 +163,13 @@ public abstract class HandshakeProtocol {
 SSLEngineResult.HandshakeStatus varD93BC47E4428FB80139BCF884A7D0255_972411984 =             SSLEngineResult.HandshakeStatus.NEED_WRAP;
             varD93BC47E4428FB80139BCF884A7D0255_972411984.addTaint(taint);
             return varD93BC47E4428FB80139BCF884A7D0255_972411984;
-        } 
+        } //End block
     if(!delegatedTasks.isEmpty())        
         {
 SSLEngineResult.HandshakeStatus var66C6E1C839111D0AF19785858C8C7668_1582282066 =             SSLEngineResult.HandshakeStatus.NEED_TASK;
             var66C6E1C839111D0AF19785858C8C7668_1582282066.addTaint(taint);
             return var66C6E1C839111D0AF19785858C8C7668_1582282066;
-        } 
+        } //End block
 switch(status){
         case HandshakeProtocol.NEED_UNWRAP:
 SSLEngineResult.HandshakeStatus var410FAE431F4BF2BADF6C4EA25EB0AEE4_2029588497 =         SSLEngineResult.HandshakeStatus.NEED_UNWRAP;
@@ -187,53 +186,50 @@ SSLEngineResult.HandshakeStatus var68E71D62754FEACD6A50A6182D14BA78_116038222 = 
         var68E71D62754FEACD6A50A6182D14BA78_116038222.addTaint(taint);
         return var68E71D62754FEACD6A50A6182D14BA78_116038222;
 }
-        
-        
-                
-            
-        
-        
-            
-        
-        
-        
-            
-        
-            
-            
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (io_stream.hasData() || needSendCCSpec ||
+                //needSendHelloRequest || delegatedTaskErr != null) {
+            //return SSLEngineResult.HandshakeStatus.NEED_WRAP;
+        //}
+        //if (!delegatedTasks.isEmpty()) {
+            //return SSLEngineResult.HandshakeStatus.NEED_TASK;
+        //}
+        //switch (status) {
+        //case HandshakeProtocol.NEED_UNWRAP:
+            //return SSLEngineResult.HandshakeStatus.NEED_UNWRAP;
+        //case HandshakeProtocol.FINISHED:
+            //status = NOT_HANDSHAKING;
+            //clearMessages();
+            //return SSLEngineResult.HandshakeStatus.FINISHED;
+        //default: 
+            //return SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.465 -0400", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "9277AFCF40B641D75735A70FC37CEF61")
     public SSLSessionImpl getSession() {
 SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
         varD555E544A66E0F97DA6BCDE940E3E79C_2045241958.addTaint(taint);
         return varD555E544A66E0F97DA6BCDE940E3E79C_2045241958;
-        
-        
+        // ---------- Original Method ----------
+        //return session;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.466 -0400", hash_original_method = "95F30AE0B715D4F051584DDF5B47A5AE", hash_generated_method = "5DF4A49BCAA2F792F82CA4782AE77904")
     protected void sendChangeCipherSpec() {
         needSendCCSpec = true;
-        
-        
+        // ---------- Original Method ----------
+        //needSendCCSpec = true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.466 -0400", hash_original_method = "CD5990AD34611898DF18221C46BBB35B", hash_generated_method = "3ED1C82D1126AC414DC77295B793F13B")
     protected void sendHelloRequest() {
         needSendHelloRequest = true;
-        
-        
+        // ---------- Original Method ----------
+        //needSendHelloRequest = true;
     }
 
     
@@ -257,13 +253,13 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
             delegatedTaskErr = null;
             fatalAlert(AlertProtocol.HANDSHAKE_FAILURE,
                     "Error occured in delegated task:" + e.getMessage(), e);
-        } 
+        } //End block
     if(io_stream.hasData())        
         {
             byte[] varC3BAFD57CDA596F2A9ACE9ACB2E2AD34_681495709 = (recordProtocol.wrap(ContentType.HANDSHAKE, io_stream));
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1993389249 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1993389249;
-        } 
+        } //End block
         else
     if(needSendCCSpec)        
         {
@@ -272,7 +268,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
             byte[] var365C71722FB9582534E9FBEF8559C0EC_1610867987 = (recordProtocol.getChangeCipherSpecMesage(getSession()));
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_137885357 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_137885357;
-        } 
+        } //End block
         else
     if(needSendHelloRequest)        
         {
@@ -281,15 +277,15 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
                     new byte[] {0, 0, 0, 0}, 0, 4));
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_880375216 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_880375216;
-        } 
+        } //End block
         else
         {
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_921384268 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_254377595 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_254377595;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -297,8 +293,8 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
     protected void sendWarningAlert(byte description) {
         addTaint(description);
         recordProtocol.alert(AlertProtocol.WARNING, description);
-        
-        
+        // ---------- Original Method ----------
+        //recordProtocol.alert(AlertProtocol.WARNING, description);
     }
 
     
@@ -309,8 +305,8 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
         AlertException var799552F05CBB23D97AC6FE1EE17DC122_1347330632 = new AlertException(description, new SSLHandshakeException(reason));
         var799552F05CBB23D97AC6FE1EE17DC122_1347330632.addTaint(taint);
         throw var799552F05CBB23D97AC6FE1EE17DC122_1347330632;
-        
-        
+        // ---------- Original Method ----------
+        //throw new AlertException(description, new SSLHandshakeException(reason));
     }
 
     
@@ -322,8 +318,8 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
         AlertException varAB600E5C2470883884CE64C72AED6B37_1481223569 = new AlertException(description, new SSLException(reason, cause));
         varAB600E5C2470883884CE64C72AED6B37_1481223569.addTaint(taint);
         throw varAB600E5C2470883884CE64C72AED6B37_1481223569;
-        
-        
+        // ---------- Original Method ----------
+        //throw new AlertException(description, new SSLException(reason, cause));
     }
 
     
@@ -334,8 +330,8 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
         AlertException varD81CE1ACBFEF9CC9BC82E95B34A392F7_31831001 = new AlertException(description, cause);
         varD81CE1ACBFEF9CC9BC82E95B34A392F7_31831001.addTaint(taint);
         throw varD81CE1ACBFEF9CC9BC82E95B34A392F7_31831001;
-        
-        
+        // ---------- Original Method ----------
+        //throw new AlertException(description, cause);
     }
 
     
@@ -343,8 +339,8 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
     protected void computerReferenceVerifyDataTLS(String label) {
         addTaint(label.getTaint());
         computerVerifyDataTLS(label, verify_data);
-        
-        
+        // ---------- Original Method ----------
+        //computerVerifyDataTLS(label, verify_data);
     }
 
     
@@ -362,24 +358,24 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
         {
             PRF.computePRF(buf, session.master_secret,
                     label.getBytes(), digest);
-        } 
+        } //End block
         catch (GeneralSecurityException e)
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR, "PRF error", e);
-        } 
-        
-        
-        
-        
-        
-        
-                
-        
-            
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //byte[] md5_digest = io_stream.getDigestMD5();
+        //byte[] sha_digest = io_stream.getDigestSHA();
+        //byte[] digest = new byte[md5_digest.length + sha_digest.length];
+        //System.arraycopy(md5_digest, 0, digest, 0, md5_digest.length);
+        //System.arraycopy(sha_digest, 0, digest, md5_digest.length,
+                //sha_digest.length);
+        //try {
+            //PRF.computePRF(buf, session.master_secret,
+                    //label.getBytes(), digest);
+        //} catch (GeneralSecurityException e) {
+            //fatalAlert(AlertProtocol.INTERNAL_ERROR, "PRF error", e);
+        //}
     }
 
     
@@ -388,9 +384,9 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
         addTaint(sender[0]);
         verify_data = new byte[36];
         computerVerifyDataSSLv3(sender, verify_data);
-        
-        
-        
+        // ---------- Original Method ----------
+        //verify_data = new byte[36];
+        //computerVerifyDataSSLv3(sender, verify_data);
     }
 
     
@@ -404,14 +400,14 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
         {
             md5 = MessageDigest.getInstance("MD5");
             sha = MessageDigest.getInstance("SHA-1");
-        } 
+        } //End block
         catch (Exception e)
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR,
                        "Could not initialize the Digest Algorithms.",
                        e);
             return;
-        } 
+        } //End block
         try 
         {
             byte[] handshake_messages = io_stream.getMessages();
@@ -429,13 +425,13 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
             sha.update(session.master_secret);
             sha.update(SSLv3Constants.SHApad2);
             System.arraycopy(sha.digest(b), 0, buf, 16, 20);
-        } 
+        } //End block
         catch (Exception e)
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR, "INTERNAL ERROR", e);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -445,19 +441,19 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
     if(!Arrays.equals(verify_data, data))        
         {
             fatalAlert(AlertProtocol.HANDSHAKE_FAILURE, "Incorrect FINISED");
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!Arrays.equals(verify_data, data)) {
+            //fatalAlert(AlertProtocol.HANDSHAKE_FAILURE, "Incorrect FINISED");
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.471 -0400", hash_original_method = "BE3E381DC2DA6E41C1335D1916EA3AE1", hash_generated_method = "BB36759016C3CEDFE0C884DBCD94ACA3")
     protected void unexpectedMessage() {
         fatalAlert(AlertProtocol.UNEXPECTED_MESSAGE, "UNEXPECTED MESSAGE");
-        
-        
+        // ---------- Original Method ----------
+        //fatalAlert(AlertProtocol.UNEXPECTED_MESSAGE, "UNEXPECTED MESSAGE");
     }
 
     
@@ -467,10 +463,10 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
         io_stream.writeUint8(message.getType());
         io_stream.writeUint24(message.length());
         message.send(io_stream);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //io_stream.writeUint8(message.getType());
+        //io_stream.writeUint24(message.length());
+        //message.send(io_stream);
     }
 
     
@@ -486,35 +482,35 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
             {
                 PRF.computePRF(session.master_secret, preMasterSecret,
                         master_secret_bytes, seed);
-            } 
+            } //End block
             catch (GeneralSecurityException e)
             {
                 fatalAlert(AlertProtocol.INTERNAL_ERROR, "PRF error", e);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             PRF.computePRF_SSLv3(session.master_secret, preMasterSecret, seed);
-        } 
+        } //End block
         Arrays.fill(preMasterSecret, (byte)0);
         preMasterSecret = null;
-        
-        
-        
-        
-        
-        
-            
-                
-                        
-            
-                
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] seed = new byte[64];
+        //System.arraycopy(clientHello.getRandom(), 0, seed, 0, 32);
+        //System.arraycopy(serverHello.getRandom(), 0, seed, 32, 32);
+        //session.master_secret = new byte[48];
+        //if (serverHello.server_version[1] == 1) { 
+            //try {
+                //PRF.computePRF(session.master_secret, preMasterSecret,
+                        //master_secret_bytes, seed);
+            //} catch (GeneralSecurityException e) {
+                //fatalAlert(AlertProtocol.INTERNAL_ERROR, "PRF error", e);
+            //}
+        //} else { 
+            //PRF.computePRF_SSLv3(session.master_secret, preMasterSecret, seed);
+        //}
+        //Arrays.fill(preMasterSecret, (byte)0);
+        //preMasterSecret = null;
     }
 
     
@@ -525,15 +521,15 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_2045241958 =         session;
 Runnable var540C13E9E156B687226421B24F2DF178_36191908 =             null;
             var540C13E9E156B687226421B24F2DF178_36191908.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_36191908;
-        } 
+        } //End block
 Runnable var26C8C3773B386D0D496AF0D33B0E53BA_1091736267 =         delegatedTasks.remove(0);
         var26C8C3773B386D0D496AF0D33B0E53BA_1091736267.addTaint(taint);
         return var26C8C3773B386D0D496AF0D33B0E53BA_1091736267;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (delegatedTasks.isEmpty()) {
+            //return null;
+        //}
+        //return delegatedTasks.remove(0);
     }
 
     
@@ -551,19 +547,19 @@ Runnable var26C8C3773B386D0D496AF0D33B0E53BA_1091736267 =         delegatedTasks
         certificateVerify = null;
         clientFinished = null;
         serverFinished = null;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //io_stream.clearBuffer();
+        //clientHello = null;
+        //serverHello = null;
+        //serverCert = null;
+        //serverKeyExchange = null;
+        //certificateRequest = null;
+        //serverHelloDone = null;
+        //clientCert = null;
+        //clientKeyExchange = null;
+        //certificateVerify = null;
+        //clientFinished = null;
+        //serverFinished = null;
     }
 
     
@@ -586,11 +582,11 @@ Runnable var26C8C3773B386D0D496AF0D33B0E53BA_1091736267 =         delegatedTasks
         session = null;
         preMasterSecret = null;
         delegatedTasks.clear();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //clearMessages();
+        //session = null;
+        //preMasterSecret = null;
+        //delegatedTasks.clear();
     }
 
     

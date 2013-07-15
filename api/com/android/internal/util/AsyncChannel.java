@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,7 +37,7 @@ public class AsyncChannel {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.608 -0400", hash_original_method = "FDD6D3EF5F7BC7D6883E0BF7536BB913", hash_generated_method = "CBC4A48158E97A41700C96C588786574")
     public  AsyncChannel() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -61,18 +61,18 @@ public class AsyncChannel {
         int var1AC7C9796BC1520CC7268C33CB683A44_1197773481 = (result ? STATUS_SUCCESSFUL : STATUS_BINDING_UNSUCCESSFUL);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479735053 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479735053;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("connect srcHandler to dst Package & class E");
+        //mConnection = new AsyncChannelConnection();
+        //mSrcContext = srcContext;
+        //mSrcHandler = srcHandler;
+        //mSrcMessenger = new Messenger(srcHandler);
+        //mDstMessenger = null;
+        //Intent intent = new Intent(Intent.ACTION_MAIN);
+        //intent.setClassName(dstPackageName, dstClassName);
+        //boolean result = srcContext.bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+        //if (DBG) log("connect srcHandler to dst Package & class X result=" + result);
+        //return result ? STATUS_SUCCESSFUL : STATUS_BINDING_UNSUCCESSFUL;
     }
 
     
@@ -89,11 +89,11 @@ public class AsyncChannel {
         int varD23D9492A3BD1374EC1F40BED7C7B412_830205050 = (STATUS_SUCCESSFUL);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_877524464 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_877524464;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("halfConnectSync srcHandler to the dstMessenger  E");
+        //connected(srcContext, srcHandler, dstMessenger);
+        //if (DBG) log("halfConnectSync srcHandler to the dstMessenger X");
+        //return STATUS_SUCCESSFUL;
     }
 
     
@@ -105,8 +105,8 @@ public class AsyncChannel {
         int var3A3611EEEC27DF63C067ACCB07382B70_1791917136 = (connectSync(srcContext, srcHandler, new Messenger(dstHandler)));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126969118 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126969118;
-        
-        
+        // ---------- Original Method ----------
+        //return connectSync(srcContext, srcHandler, new Messenger(dstHandler));
     }
 
     
@@ -120,17 +120,17 @@ public class AsyncChannel {
         {
             Message response = sendMessageSynchronously(CMD_CHANNEL_FULL_CONNECTION);
             status = response.arg1;
-        } 
+        } //End block
         int var9ACB44549B41563697BB490144EC6258_1324180665 = (status);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594409779 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594409779;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int status = connectSync(srcContext, srcHandler, dstHandler);
+        //if (status == STATUS_SUCCESSFUL) {
+            //Message response = sendMessageSynchronously(CMD_CHANNEL_FULL_CONNECTION);
+            //status = response.arg1;
+        //}
+        //return status;
     }
 
     
@@ -159,11 +159,11 @@ public class AsyncChannel {
                 mSrcHdlr = srcHandler;
                 mDstPackageName = dstPackageName;
                 mDstClassName = dstClassName;
-                
-                
-                
-                
-                
+                // ---------- Original Method ----------
+                //mSrcCtx = srcContext;
+                //mSrcHdlr = srcHandler;
+                //mDstPackageName = dstPackageName;
+                //mDstClassName = dstClassName;
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.610 -0400", hash_original_method = "16F182387C74E8BFEA3B17CE5A08CAA0", hash_generated_method = "C4A4854D1D30E31E416BAF5B738DF7AC")
             @Override
@@ -171,18 +171,18 @@ public class AsyncChannel {
                 int result = connectSrcHandlerToPackageSync(mSrcCtx, mSrcHdlr, mDstPackageName,
                         mDstClassName);
                 replyHalfConnected(result);
-                
-                
-                        
-                
+                // ---------- Original Method ----------
+                //int result = connectSrcHandlerToPackageSync(mSrcCtx, mSrcHdlr, mDstPackageName,
+                        //mDstClassName);
+                //replyHalfConnected(result);
             }
         }
         ConnectAsync ca = new ConnectAsync(srcContext, srcHandler, dstPackageName, dstClassName);
         new Thread(ca).start();
     if(DBG)        
         log("connect srcHandler to dst Package & class X");
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -192,8 +192,8 @@ public class AsyncChannel {
         addTaint(srcHandler.getTaint());
         addTaint(srcContext.getTaint());
         connect(srcContext, srcHandler, klass.getPackage().getName(), klass.getName());
-        
-        
+        // ---------- Original Method ----------
+        //connect(srcContext, srcHandler, klass.getPackage().getName(), klass.getName());
     }
 
     
@@ -208,11 +208,11 @@ public class AsyncChannel {
         replyHalfConnected(STATUS_SUCCESSFUL);
     if(DBG)        
         log("connect srcHandler to the dstMessenger X");
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("connect srcHandler to the dstMessenger  E");
+        //connected(srcContext, srcHandler, dstMessenger);
+        //replyHalfConnected(STATUS_SUCCESSFUL);
+        //if (DBG) log("connect srcHandler to the dstMessenger X");
     }
 
     
@@ -226,13 +226,13 @@ public class AsyncChannel {
         mDstMessenger = dstMessenger;
     if(DBG)        
         log("connected srcHandler to the dstMessenger X");
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("connected srcHandler to the dstMessenger  E");
+        //mSrcContext = srcContext;
+        //mSrcHandler = srcHandler;
+        //mSrcMessenger = new Messenger(mSrcHandler);
+        //mDstMessenger = dstMessenger;
+        //if (DBG) log("connected srcHandler to the dstMessenger X");
     }
 
     
@@ -242,8 +242,8 @@ public class AsyncChannel {
         addTaint(srcHandler.getTaint());
         addTaint(srcContext.getTaint());
         connect(srcContext, srcHandler, new Messenger(dstHandler));
-        
-        
+        // ---------- Original Method ----------
+        //connect(srcContext, srcHandler, new Messenger(dstHandler));
     }
 
     
@@ -252,12 +252,11 @@ public class AsyncChannel {
         addTaint(dstMessenger.getTaint());
         addTaint(srcAsyncService.getTaint());
         connect(srcAsyncService, srcAsyncService.getHandler(), dstMessenger);
-        
-        
+        // ---------- Original Method ----------
+        //connect(srcAsyncService, srcAsyncService.getHandler(), dstMessenger);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.611 -0400", hash_original_method = "C231E33C68F8FEC3C6EDCF993CA1BD7A", hash_generated_method = "F0979877F363BD7302AAF19A7B022C1A")
     public void disconnected() {
         mSrcContext = null;
@@ -265,12 +264,12 @@ public class AsyncChannel {
         mSrcMessenger = null;
         mDstMessenger = null;
         mConnection = null;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mSrcContext = null;
+        //mSrcHandler = null;
+        //mSrcMessenger = null;
+        //mDstMessenger = null;
+        //mConnection = null;
     }
 
     
@@ -279,18 +278,18 @@ public class AsyncChannel {
     if((mConnection != null) && (mSrcContext != null))        
         {
             mSrcContext.unbindService(mConnection);
-        } 
+        } //End block
     if(mSrcHandler != null)        
         {
             replyDisconnected(STATUS_SUCCESSFUL);
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ((mConnection != null) && (mSrcContext != null)) {
+            //mSrcContext.unbindService(mConnection);
+        //}
+        //if (mSrcHandler != null) {
+            //replyDisconnected(STATUS_SUCCESSFUL);
+        //}
     }
 
     
@@ -301,18 +300,18 @@ public class AsyncChannel {
         try 
         {
             mDstMessenger.send(msg);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             replyDisconnected(STATUS_SEND_UNSUCCESSFUL);
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //msg.replyTo = mSrcMessenger;
+        //try {
+            //mDstMessenger.send(msg);
+        //} catch (RemoteException e) {
+            //replyDisconnected(STATUS_SEND_UNSUCCESSFUL);
+        //}
     }
 
     
@@ -322,10 +321,10 @@ public class AsyncChannel {
         Message msg = Message.obtain();
         msg.what = what;
         sendMessage(msg);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //sendMessage(msg);
     }
 
     
@@ -337,11 +336,11 @@ public class AsyncChannel {
         msg.what = what;
         msg.arg1 = arg1;
         sendMessage(msg);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //sendMessage(msg);
     }
 
     
@@ -355,12 +354,12 @@ public class AsyncChannel {
         msg.arg1 = arg1;
         msg.arg2 = arg2;
         sendMessage(msg);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //msg.arg2 = arg2;
+        //sendMessage(msg);
     }
 
     
@@ -376,13 +375,13 @@ public class AsyncChannel {
         msg.arg2 = arg2;
         msg.obj = obj;
         sendMessage(msg);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //msg.arg2 = arg2;
+        //msg.obj = obj;
+        //sendMessage(msg);
     }
 
     
@@ -394,11 +393,11 @@ public class AsyncChannel {
         msg.what = what;
         msg.obj = obj;
         sendMessage(msg);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.obj = obj;
+        //sendMessage(msg);
     }
 
     
@@ -410,20 +409,20 @@ public class AsyncChannel {
         {
             dstMsg.replyTo = mSrcMessenger;
             srcMsg.replyTo.send(dstMsg);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             log("TODO: handle replyToMessage RemoteException" + e);
             e.printStackTrace();
-        } 
-        
-        
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //dstMsg.replyTo = mSrcMessenger;
+            //srcMsg.replyTo.send(dstMsg);
+        //} catch (RemoteException e) {
+            //log("TODO: handle replyToMessage RemoteException" + e);
+            //e.printStackTrace();
+        //}
     }
 
     
@@ -434,10 +433,10 @@ public class AsyncChannel {
         Message msg = Message.obtain();
         msg.what = what;
         replyToMessage(srcMsg, msg);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //replyToMessage(srcMsg, msg);
     }
 
     
@@ -450,11 +449,11 @@ public class AsyncChannel {
         msg.what = what;
         msg.arg1 = arg1;
         replyToMessage(srcMsg, msg);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //replyToMessage(srcMsg, msg);
     }
 
     
@@ -469,12 +468,12 @@ public class AsyncChannel {
         msg.arg1 = arg1;
         msg.arg2 = arg2;
         replyToMessage(srcMsg, msg);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //msg.arg2 = arg2;
+        //replyToMessage(srcMsg, msg);
     }
 
     
@@ -491,13 +490,13 @@ public class AsyncChannel {
         msg.arg2 = arg2;
         msg.obj = obj;
         replyToMessage(srcMsg, msg);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //msg.arg2 = arg2;
+        //msg.obj = obj;
+        //replyToMessage(srcMsg, msg);
     }
 
     
@@ -510,11 +509,11 @@ public class AsyncChannel {
         msg.what = what;
         msg.obj = obj;
         replyToMessage(srcMsg, msg);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.obj = obj;
+        //replyToMessage(srcMsg, msg);
     }
 
     
@@ -525,9 +524,9 @@ public class AsyncChannel {
 Message varB356C499DD5E97FACB94A386F09DEB99_62572991 =         resultMsg;
         varB356C499DD5E97FACB94A386F09DEB99_62572991.addTaint(taint);
         return varB356C499DD5E97FACB94A386F09DEB99_62572991;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message resultMsg = SyncMessenger.sendMessageSynchronously(mDstMessenger, msg);
+        //return resultMsg;
     }
 
     
@@ -540,11 +539,11 @@ Message varB356C499DD5E97FACB94A386F09DEB99_62572991 =         resultMsg;
 Message varB356C499DD5E97FACB94A386F09DEB99_218215309 =         resultMsg;
         varB356C499DD5E97FACB94A386F09DEB99_218215309.addTaint(taint);
         return varB356C499DD5E97FACB94A386F09DEB99_218215309;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //Message resultMsg = sendMessageSynchronously(msg);
+        //return resultMsg;
     }
 
     
@@ -559,12 +558,12 @@ Message varB356C499DD5E97FACB94A386F09DEB99_218215309 =         resultMsg;
 Message varB356C499DD5E97FACB94A386F09DEB99_1702424420 =         resultMsg;
         varB356C499DD5E97FACB94A386F09DEB99_1702424420.addTaint(taint);
         return varB356C499DD5E97FACB94A386F09DEB99_1702424420;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //Message resultMsg = sendMessageSynchronously(msg);
+        //return resultMsg;
     }
 
     
@@ -581,13 +580,13 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1702424420 =         resultMsg;
 Message varB356C499DD5E97FACB94A386F09DEB99_1205224704 =         resultMsg;
         varB356C499DD5E97FACB94A386F09DEB99_1205224704.addTaint(taint);
         return varB356C499DD5E97FACB94A386F09DEB99_1205224704;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //msg.arg2 = arg2;
+        //Message resultMsg = sendMessageSynchronously(msg);
+        //return resultMsg;
     }
 
     
@@ -606,14 +605,14 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1205224704 =         resultMsg;
 Message varB356C499DD5E97FACB94A386F09DEB99_1656322970 =         resultMsg;
         varB356C499DD5E97FACB94A386F09DEB99_1656322970.addTaint(taint);
         return varB356C499DD5E97FACB94A386F09DEB99_1656322970;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.arg1 = arg1;
+        //msg.arg2 = arg2;
+        //msg.obj = obj;
+        //Message resultMsg = sendMessageSynchronously(msg);
+        //return resultMsg;
     }
 
     
@@ -628,12 +627,12 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1656322970 =         resultMsg;
 Message varB356C499DD5E97FACB94A386F09DEB99_1394197526 =         resultMsg;
         varB356C499DD5E97FACB94A386F09DEB99_1394197526.addTaint(taint);
         return varB356C499DD5E97FACB94A386F09DEB99_1394197526;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain();
+        //msg.what = what;
+        //msg.obj = obj;
+        //Message resultMsg = sendMessageSynchronously(msg);
+        //return resultMsg;
     }
 
     
@@ -645,12 +644,12 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1394197526 =         resultMsg;
         msg.obj = this;
         msg.replyTo = mDstMessenger;
         mSrcHandler.sendMessage(msg);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = mSrcHandler.obtainMessage(CMD_CHANNEL_HALF_CONNECTED);
+        //msg.arg1 = status;
+        //msg.obj = this;
+        //msg.replyTo = mDstMessenger;
+        //mSrcHandler.sendMessage(msg);
     }
 
     
@@ -662,12 +661,12 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1394197526 =         resultMsg;
         msg.obj = this;
         msg.replyTo = mDstMessenger;
         mSrcHandler.sendMessage(msg);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = mSrcHandler.obtainMessage(CMD_CHANNEL_DISCONNECTED);
+        //msg.arg1 = status;
+        //msg.obj = this;
+        //msg.replyTo = mDstMessenger;
+        //mSrcHandler.sendMessage(msg);
     }
 
     
@@ -689,7 +688,7 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1394197526 =         resultMsg;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.615 -0400", hash_original_method = "836D007993A4B13DC1AF265962B161E2", hash_generated_method = "C3453B046382A1E37BE69572B5A5208C")
         private  SyncMessenger() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -715,11 +714,11 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1394197526 =         resultMsg;
             synchronized
 (sStack)            {
                 sStack.push(this);
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (sStack) {
+                //sStack.push(this);
+            //}
         }
 
         
@@ -758,7 +757,7 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1394197526 =         resultMsg;
             private  SyncHandler(Looper looper) {
                 super(looper);
                 addTaint(looper.getTaint());
-                
+                // ---------- Original Method ----------
             }
 
             
@@ -771,13 +770,13 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1394197526 =         resultMsg;
                 synchronized
 (mLockObject)                {
                     mLockObject.notify();
-                } 
-                
-                
-                
-                
-                    
-                
+                } //End block
+                // ---------- Original Method ----------
+                //mResultMsg = Message.obtain();
+                //mResultMsg.copyFrom(msg);
+                //synchronized(mLockObject) {
+                    //mLockObject.notify();
+                //}
             }
 
             
@@ -799,32 +798,32 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1394197526 =         resultMsg;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.615 -0400", hash_original_method = "5CA2E7F994E5D5CA10120B6A293C36BC", hash_generated_method = "A6BACC4CE181C0EB5D92D381782508F2")
           AsyncChannelConnection() {
-            
+            // ---------- Original Method ----------
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.615 -0400", hash_original_method = "0E2027B9824173FAE83BA1B2B965BB96", hash_generated_method = "AF4832D931480F2287E43C9F8D5B6162")
         @Override
         public void onServiceConnected(ComponentName className, IBinder service) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(service.getTaint());
             addTaint(className.getTaint());
             mDstMessenger = new Messenger(service);
             replyHalfConnected(STATUS_SUCCESSFUL);
-            
-            
-            
+            // ---------- Original Method ----------
+            //mDstMessenger = new Messenger(service);
+            //replyHalfConnected(STATUS_SUCCESSFUL);
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.616 -0400", hash_original_method = "050AF9875EBB5531901E44E1327B5019", hash_generated_method = "9B68FC3708EF5E8A7003120A0B0EC98A")
         @Override
         public void onServiceDisconnected(ComponentName className) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(className.getTaint());
             replyDisconnected(STATUS_SUCCESSFUL);
-            
-            
+            // ---------- Original Method ----------
+            //replyDisconnected(STATUS_SUCCESSFUL);
         }
 
         

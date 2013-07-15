@@ -1,6 +1,6 @@
 package android.location;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,27 +23,26 @@ public abstract class LocationProvider {
                 " contains an illegal character");
             var85E94FA077970DDA7050839618B516D5_728077594.addTaint(taint);
             throw var85E94FA077970DDA7050839618B516D5_728077594;
-        } 
+        } //End block
         mName = name;
         mService = service;
-        
-        
-            
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (name.matches(BAD_CHARS_REGEX)) {
+            //throw new IllegalArgumentException("name " + name +
+                //" contains an illegal character");
+        //}
+        //mName = name;
+        //mService = service;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.476 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "C0736FE1DEA9E5A4D0675D98F4D9338C")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_914656587 =         mName;
         varDBF15A5FB8102A5C28D5046A0E92E443_914656587.addTaint(taint);
         return varDBF15A5FB8102A5C28D5046A0E92E443_914656587;
-        
-        
+        // ---------- Original Method ----------
+        //return mName;
     }
 
     
@@ -55,20 +54,20 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_914656587 =         mName;
             boolean var6441C998D6EFE0D365E481E0F9D32F81_1245371267 = (mService.providerMeetsCriteria(mName, criteria));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_259818267 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_259818267;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1409723278 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1445649829 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1445649829;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.providerMeetsCriteria(mName, criteria);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "meetsCriteria: RemoteException", e);
+            //return false;
+        //}
     }
 
     

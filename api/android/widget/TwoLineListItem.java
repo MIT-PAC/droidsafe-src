@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class TwoLineListItem extends RelativeLayout {
     public  TwoLineListItem(Context context) {
         this(context, null, 0);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -33,7 +33,7 @@ public class TwoLineListItem extends RelativeLayout {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -46,46 +46,44 @@ public class TwoLineListItem extends RelativeLayout {
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.TwoLineListItem, defStyle, 0);
         a.recycle();
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //TypedArray a = context.obtainStyledAttributes(attrs,
+                //com.android.internal.R.styleable.TwoLineListItem, defStyle, 0);
+        //a.recycle();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.904 -0400", hash_original_method = "8089C6FCEBF2C15DBA19075B8780AF97", hash_generated_method = "C9BF355422712BB517B06701C14C698B")
     @Override
     protected void onFinishInflate() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onFinishInflate();
         mText1 = (TextView) findViewById(com.android.internal.R.id.text1);
         mText2 = (TextView) findViewById(com.android.internal.R.id.text2);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onFinishInflate();
+        //mText1 = (TextView) findViewById(com.android.internal.R.id.text1);
+        //mText2 = (TextView) findViewById(com.android.internal.R.id.text2);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.904 -0400", hash_original_method = "6D31016C3EFADAD00849C6FB753C3139", hash_generated_method = "38651C22AAC4E366A3E5C3514E81BCB3")
     public TextView getText1() {
 TextView var43BEA2B78E19BF93FAB5B45950C069F2_1693616459 =         mText1;
         var43BEA2B78E19BF93FAB5B45950C069F2_1693616459.addTaint(taint);
         return var43BEA2B78E19BF93FAB5B45950C069F2_1693616459;
-        
-        
+        // ---------- Original Method ----------
+        //return mText1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.904 -0400", hash_original_method = "3E15133DBF34E1DA0E6FF67809AEAC81", hash_generated_method = "DA84E924A49102EEB5B23E411CE54DDA")
     public TextView getText2() {
 TextView var882466576CD0969F2DE58CB488A1C8BC_1054782041 =         mText2;
         var882466576CD0969F2DE58CB488A1C8BC_1054782041.addTaint(taint);
         return var882466576CD0969F2DE58CB488A1C8BC_1054782041;
-        
-        
+        // ---------- Original Method ----------
+        //return mText2;
     }
 
     

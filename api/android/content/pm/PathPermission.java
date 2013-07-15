@@ -1,6 +1,6 @@
 package android.content.pm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,9 +24,9 @@ public class PathPermission extends PatternMatcher {
         addTaint(pattern.getTaint());
         mReadPermission = readPermission;
         mWritePermission = writePermission;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mReadPermission = readPermission;
+        //mWritePermission = writePermission;
     }
 
     
@@ -35,35 +35,32 @@ public class PathPermission extends PatternMatcher {
         super(src);
         mReadPermission = src.readString();
         mWritePermission = src.readString();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mReadPermission = src.readString();
+        //mWritePermission = src.readString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.070 -0400", hash_original_method = "5C94FD95ADD3C0054247C1BF6F500E4F", hash_generated_method = "D91CAC15B8652BD0A4F68D8F345B76B2")
     public String getReadPermission() {
 String varB7C8F391110CA2789E72296FC3D45BB5_1034908787 =         mReadPermission;
         varB7C8F391110CA2789E72296FC3D45BB5_1034908787.addTaint(taint);
         return varB7C8F391110CA2789E72296FC3D45BB5_1034908787;
-        
-        
+        // ---------- Original Method ----------
+        //return mReadPermission;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.070 -0400", hash_original_method = "7A0A16A9FA1EB10AD9D087C65A3EFFB1", hash_generated_method = "FCA40E0B29BC44FE7CE26C494330F95A")
     public String getWritePermission() {
 String var59D1027D8312A72F6CBAE99932E8098B_1901620803 =         mWritePermission;
         var59D1027D8312A72F6CBAE99932E8098B_1901620803.addTaint(taint);
         return var59D1027D8312A72F6CBAE99932E8098B_1901620803;
-        
-        
+        // ---------- Original Method ----------
+        //return mWritePermission;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.071 -0400", hash_original_method = "A803A7F07F4B7A6BE15492168684C07E", hash_generated_method = "7B7018DD15BB7E9DC32C95019CC04DA6")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -71,10 +68,10 @@ String var59D1027D8312A72F6CBAE99932E8098B_1901620803 =         mWritePermission
         super.writeToParcel(dest, flags);
         dest.writeString(mReadPermission);
         dest.writeString(mWritePermission);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.writeToParcel(dest, flags);
+        //dest.writeString(mReadPermission);
+        //dest.writeString(mWritePermission);
     }
 
     
@@ -90,12 +87,12 @@ String var59D1027D8312A72F6CBAE99932E8098B_1901620803 =         mWritePermission
             return new PathPermission[size];
         }
     };
-    
+    // orphaned legacy method
     public PathPermission createFromParcel(Parcel source) {
             return new PathPermission(source);
         }
     
-    
+    // orphaned legacy method
     public PathPermission[] newArray(int size) {
             return new PathPermission[size];
         }

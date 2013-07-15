@@ -1,6 +1,6 @@
 package com.android.internal.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,19 +22,18 @@ public class LegacyVpnInfo implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.845 -0400", hash_original_method = "1DAFF6D63CD8989C4DEAE95F675849A5", hash_generated_method = "1DAFF6D63CD8989C4DEAE95F675849A5")
     public LegacyVpnInfo ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.845 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E335084E28245D86B7D01C5E4B9DD241")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_991640759 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998593338 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998593338;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -46,10 +45,10 @@ public class LegacyVpnInfo implements Parcelable {
         out.writeString(key);
         out.writeInt(state);
         out.writeParcelable(intent, flags);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeString(key);
+        //out.writeInt(state);
+        //out.writeParcelable(intent, flags);
     }
 
     

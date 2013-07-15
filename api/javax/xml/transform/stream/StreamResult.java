@@ -1,6 +1,6 @@
 package javax.xml.transform.stream;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class StreamResult implements Result {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.130 -0400", hash_original_method = "C19C2736EBF8CAB01BA3786E202D7316", hash_generated_method = "F31287276C2A464F5FF68A1022DE3F68")
     public  StreamResult() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -30,8 +30,8 @@ public class StreamResult implements Result {
     public  StreamResult(OutputStream outputStream) {
         addTaint(outputStream.getTaint());
         setOutputStream(outputStream);
-        
-        
+        // ---------- Original Method ----------
+        //setOutputStream(outputStream);
     }
 
     
@@ -39,16 +39,16 @@ public class StreamResult implements Result {
     public  StreamResult(Writer writer) {
         addTaint(writer.getTaint());
         setWriter(writer);
-        
-        
+        // ---------- Original Method ----------
+        //setWriter(writer);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.131 -0400", hash_original_method = "CE70A50578573A39D0EE1A321E1352B9", hash_generated_method = "6596525B6F4518BD897D217812ABED11")
     public  StreamResult(String systemId) {
         this.systemId = systemId;
-        
-        
+        // ---------- Original Method ----------
+        //this.systemId = systemId;
     }
 
     
@@ -56,76 +56,70 @@ public class StreamResult implements Result {
     public  StreamResult(File f) {
         addTaint(f.getTaint());
         setSystemId(f);
-        
-        
+        // ---------- Original Method ----------
+        //setSystemId(f);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.132 -0400", hash_original_method = "817A5A0ADE99B2865B232C517A9FCF0D", hash_generated_method = "F857F15E184B65891F5640F76C952DBE")
     public void setOutputStream(OutputStream outputStream) {
         this.outputStream = outputStream;
-        
-        
+        // ---------- Original Method ----------
+        //this.outputStream = outputStream;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.132 -0400", hash_original_method = "05E68097FF3105B2AAABD34E89C7728F", hash_generated_method = "911AB15C7BDBB6C9569023BBF8F6D95E")
     public OutputStream getOutputStream() {
 OutputStream var864D919353B9AF56DB2472A4EBA3E730_797594882 =         outputStream;
         var864D919353B9AF56DB2472A4EBA3E730_797594882.addTaint(taint);
         return var864D919353B9AF56DB2472A4EBA3E730_797594882;
-        
-        
+        // ---------- Original Method ----------
+        //return outputStream;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.133 -0400", hash_original_method = "5911383E76829BA237C0C98FFA879183", hash_generated_method = "5A42584FF7D14E5EEE57ABF668EF394C")
     public void setWriter(Writer writer) {
         this.writer = writer;
-        
-        
+        // ---------- Original Method ----------
+        //this.writer = writer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.133 -0400", hash_original_method = "F0F74844AEEC9ABE14D7628D5DF26AE9", hash_generated_method = "604A41E031D4DCFAA25254B323860E0F")
     public Writer getWriter() {
 Writer varF684C05FE6F21143B285791952B93F74_1034555874 =         writer;
         varF684C05FE6F21143B285791952B93F74_1034555874.addTaint(taint);
         return varF684C05FE6F21143B285791952B93F74_1034555874;
-        
-        
+        // ---------- Original Method ----------
+        //return writer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.134 -0400", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "DE20300D341EFA9D9888E5637810608B")
     public void setSystemId(String systemId) {
         this.systemId = systemId;
-        
-        
+        // ---------- Original Method ----------
+        //this.systemId = systemId;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.134 -0400", hash_original_method = "30231F16AB3AB378740EA121A3BAEA6C", hash_generated_method = "15625C9663782FB88EBA4526C2B24DF7")
     public void setSystemId(File f) {
         this.systemId = FilePathToURI.filepath2URI(f.getAbsolutePath());
-        
-        
+        // ---------- Original Method ----------
+        //this.systemId = FilePathToURI.filepath2URI(f.getAbsolutePath());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.134 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "FE700598CAFB0ADC0FC7999BF25FEAE9")
     public String getSystemId() {
 String varB7D0727ACC7388EA86587212DD1C6E9F_1759352239 =         systemId;
         varB7D0727ACC7388EA86587212DD1C6E9F_1759352239.addTaint(taint);
         return varB7D0727ACC7388EA86587212DD1C6E9F_1759352239;
-        
-        
+        // ---------- Original Method ----------
+        //return systemId;
     }
 
     

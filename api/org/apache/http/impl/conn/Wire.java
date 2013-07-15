@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,8 +17,8 @@ public class Wire {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.956 -0400", hash_original_method = "B4B1AB4B499B8A15063D0CC014BEC991", hash_generated_method = "FBE8B17783F099F7154A4AC40DE90B09")
     public  Wire(Log log) {
         this.log = log;
-        
-        
+        // ---------- Original Method ----------
+        //this.log = log;
     }
 
     
@@ -34,7 +34,7 @@ public class Wire {
     if(ch == 13)            
             {
                 buffer.append("[\\r]");
-            } 
+            } //End block
             else
     if(ch == 10)            
             {
@@ -43,28 +43,28 @@ public class Wire {
                 buffer.insert(0, header);
                 log.debug(buffer.toString());
                 buffer.setLength(0);
-            } 
+            } //End block
             else
     if((ch < 32) || (ch > 127))            
             {
                 buffer.append("[0x");
                 buffer.append(Integer.toHexString(ch));
                 buffer.append("]");
-            } 
+            } //End block
             else
             {
                 buffer.append((char) ch);
-            } 
-        } 
+            } //End block
+        } //End block
     if(buffer.length() > 0)        
         {
             buffer.append('\"');
             buffer.insert(0, '\"');
             buffer.insert(0, header);
             log.debug(buffer.toString());
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -73,8 +73,8 @@ public class Wire {
         boolean varF9714C35AB36CA5601F98E2200BBE3AC_118993757 = (log.isDebugEnabled());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_691057198 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_691057198;
-        
-        
+        // ---------- Original Method ----------
+        //return log.isDebugEnabled();
     }
 
     
@@ -86,13 +86,13 @@ public class Wire {
             IllegalArgumentException var91ADD4620ED43F45967EB40A1A3359AB_853583713 = new IllegalArgumentException("Output may not be null");
             var91ADD4620ED43F45967EB40A1A3359AB_853583713.addTaint(taint);
             throw var91ADD4620ED43F45967EB40A1A3359AB_853583713;
-        } 
+        } //End block
         wire(">> ", outstream);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (outstream == null) {
+            //throw new IllegalArgumentException("Output may not be null"); 
+        //}
+        //wire(">> ", outstream);
     }
 
     
@@ -104,13 +104,13 @@ public class Wire {
             IllegalArgumentException varC4554915823C05F7220C82D9CA8CD62E_1305972580 = new IllegalArgumentException("Input may not be null");
             varC4554915823C05F7220C82D9CA8CD62E_1305972580.addTaint(taint);
             throw varC4554915823C05F7220C82D9CA8CD62E_1305972580;
-        } 
+        } //End block
         wire("<< ", instream);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (instream == null) {
+            //throw new IllegalArgumentException("Input may not be null"); 
+        //}
+        //wire("<< ", instream);
     }
 
     
@@ -124,13 +124,13 @@ public class Wire {
             IllegalArgumentException var91ADD4620ED43F45967EB40A1A3359AB_1270579546 = new IllegalArgumentException("Output may not be null");
             var91ADD4620ED43F45967EB40A1A3359AB_1270579546.addTaint(taint);
             throw var91ADD4620ED43F45967EB40A1A3359AB_1270579546;
-        } 
+        } //End block
         wire(">> ", new ByteArrayInputStream(b, off, len));
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (b == null) {
+            //throw new IllegalArgumentException("Output may not be null"); 
+        //}
+        //wire(">> ", new ByteArrayInputStream(b, off, len));
     }
 
     
@@ -144,13 +144,13 @@ public class Wire {
             IllegalArgumentException varC4554915823C05F7220C82D9CA8CD62E_2068486751 = new IllegalArgumentException("Input may not be null");
             varC4554915823C05F7220C82D9CA8CD62E_2068486751.addTaint(taint);
             throw varC4554915823C05F7220C82D9CA8CD62E_2068486751;
-        } 
+        } //End block
         wire("<< ", new ByteArrayInputStream(b, off, len));
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (b == null) {
+            //throw new IllegalArgumentException("Input may not be null"); 
+        //}
+        //wire("<< ", new ByteArrayInputStream(b, off, len));
     }
 
     
@@ -162,13 +162,13 @@ public class Wire {
             IllegalArgumentException var91ADD4620ED43F45967EB40A1A3359AB_1910314813 = new IllegalArgumentException("Output may not be null");
             var91ADD4620ED43F45967EB40A1A3359AB_1910314813.addTaint(taint);
             throw var91ADD4620ED43F45967EB40A1A3359AB_1910314813;
-        } 
+        } //End block
         wire(">> ", new ByteArrayInputStream(b));
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (b == null) {
+            //throw new IllegalArgumentException("Output may not be null"); 
+        //}
+        //wire(">> ", new ByteArrayInputStream(b));
     }
 
     
@@ -180,13 +180,13 @@ public class Wire {
             IllegalArgumentException varC4554915823C05F7220C82D9CA8CD62E_1461168558 = new IllegalArgumentException("Input may not be null");
             varC4554915823C05F7220C82D9CA8CD62E_1461168558.addTaint(taint);
             throw varC4554915823C05F7220C82D9CA8CD62E_1461168558;
-        } 
+        } //End block
         wire("<< ", new ByteArrayInputStream(b));
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (b == null) {
+            //throw new IllegalArgumentException("Input may not be null"); 
+        //}
+        //wire("<< ", new ByteArrayInputStream(b));
     }
 
     
@@ -194,8 +194,8 @@ public class Wire {
     public void output(int b) throws IOException {
         addTaint(b);
         output(new byte[] {(byte) b});
-        
-        
+        // ---------- Original Method ----------
+        //output(new byte[] {(byte) b});
     }
 
     
@@ -203,8 +203,8 @@ public class Wire {
     public void input(int b) throws IOException {
         addTaint(b);
         input(new byte[] {(byte) b});
-        
-        
+        // ---------- Original Method ----------
+        //input(new byte[] {(byte) b});
     }
 
     
@@ -216,13 +216,13 @@ public class Wire {
             IllegalArgumentException var91ADD4620ED43F45967EB40A1A3359AB_1190661733 = new IllegalArgumentException("Output may not be null");
             var91ADD4620ED43F45967EB40A1A3359AB_1190661733.addTaint(taint);
             throw var91ADD4620ED43F45967EB40A1A3359AB_1190661733;
-        } 
+        } //End block
         output(s.getBytes());
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (s == null) {
+            //throw new IllegalArgumentException("Output may not be null"); 
+        //}
+        //output(s.getBytes());
     }
 
     
@@ -234,13 +234,13 @@ public class Wire {
             IllegalArgumentException varC4554915823C05F7220C82D9CA8CD62E_1259894303 = new IllegalArgumentException("Input may not be null");
             varC4554915823C05F7220C82D9CA8CD62E_1259894303.addTaint(taint);
             throw varC4554915823C05F7220C82D9CA8CD62E_1259894303;
-        } 
+        } //End block
         input(s.getBytes());
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (s == null) {
+            //throw new IllegalArgumentException("Input may not be null"); 
+        //}
+        //input(s.getBytes());
     }
 
     

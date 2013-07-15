@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -46,7 +46,7 @@ public final class Message implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.691 -0400", hash_original_method = "07161C5E5BFC528DA3FC2F6017B16172", hash_generated_method = "95F5AD60FAEEEF50B67BC5FEEDEC5F61")
     public  Message() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -144,17 +144,17 @@ public final class Message implements Parcelable {
                 next = sPool;
                 sPool = this;
                 sPoolSize++;
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //clearForRecycle();
+        //synchronized (sPoolSync) {
+            //if (sPoolSize < MAX_POOL_SIZE) {
+                //next = sPool;
+                //sPool = this;
+                //sPoolSize++;
+            //}
+        //}
     }
 
     
@@ -169,65 +169,61 @@ public final class Message implements Parcelable {
     if(o.data != null)        
         {
             this.data = (Bundle) o.data.clone();
-        } 
+        } //End block
         else
         {
             this.data = null;
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.flags = o.flags & ~FLAGS_TO_CLEAR_ON_COPY_FROM;
+        //this.what = o.what;
+        //this.arg1 = o.arg1;
+        //this.arg2 = o.arg2;
+        //this.obj = o.obj;
+        //this.replyTo = o.replyTo;
+        //if (o.data != null) {
+            //this.data = (Bundle) o.data.clone();
+        //} else {
+            //this.data = null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.696 -0400", hash_original_method = "003296F505672677447BEB837B373395", hash_generated_method = "F35AD71564D31F4319BFDB612E79A606")
     public long getWhen() {
         long varDF491A4DE50739FA9CFFDBD4E3F4B4BB_1303423623 = (when);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1445492138 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1445492138;
-        
-        
+        // ---------- Original Method ----------
+        //return when;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.696 -0400", hash_original_method = "4206C8A14E5D790EB7EB282A0235F495", hash_generated_method = "BFA69EC1EEA25086C4D9E40A15F143AE")
     public void setTarget(Handler target) {
         this.target = target;
-        
-        
+        // ---------- Original Method ----------
+        //this.target = target;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.696 -0400", hash_original_method = "71A342D68A16A50B25BC4BF2093BFF62", hash_generated_method = "FEEB8F0F96DDB732C09833C04CCA8E3A")
     public Handler getTarget() {
 Handler varA7DD35DE8EDE4A2FCAF77CE202E687B3_659864432 =         target;
         varA7DD35DE8EDE4A2FCAF77CE202E687B3_659864432.addTaint(taint);
         return varA7DD35DE8EDE4A2FCAF77CE202E687B3_659864432;
-        
-        
+        // ---------- Original Method ----------
+        //return target;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.697 -0400", hash_original_method = "BE120AA50B796443E57F262EC015813E", hash_generated_method = "93A968A1040D5E1B1F7E19B77595CBD2")
     public Runnable getCallback() {
 Runnable var221B6914C84D3DFBD8B1EDBBC49B8CE3_319013397 =         callback;
         var221B6914C84D3DFBD8B1EDBBC49B8CE3_319013397.addTaint(taint);
         return var221B6914C84D3DFBD8B1EDBBC49B8CE3_319013397;
-        
-        
+        // ---------- Original Method ----------
+        //return callback;
     }
 
     
@@ -236,47 +232,44 @@ Runnable var221B6914C84D3DFBD8B1EDBBC49B8CE3_319013397 =         callback;
     if(data == null)        
         {
             data = new Bundle();
-        } 
+        } //End block
 Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_2085669608 =         data;
         var0C8B2C9585EB05DD9CD70726CF8CBC07_2085669608.addTaint(taint);
         return var0C8B2C9585EB05DD9CD70726CF8CBC07_2085669608;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (data == null) {
+            //data = new Bundle();
+        //}
+        //return data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.697 -0400", hash_original_method = "82F96E5D1D9A678E87ADC3DA47E10262", hash_generated_method = "7A89545FECD67375F7ED764A56C8A198")
     public Bundle peekData() {
 Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875 =         data;
         var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875.addTaint(taint);
         return var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875;
-        
-        
+        // ---------- Original Method ----------
+        //return data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.698 -0400", hash_original_method = "2A3AF1BEE5D39047FC40D7968EE3828B", hash_generated_method = "EAE8CA4F21A678E5FDC9CFA85AC5AD0E")
     public void setData(Bundle data) {
         this.data = data;
-        
-        
+        // ---------- Original Method ----------
+        //this.data = data;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.698 -0400", hash_original_method = "2D3F3759D60A7A1CBA79B8F487061097", hash_generated_method = "3B7F287400275060A2AE0E3943AFE99E")
     public void sendToTarget() {
         target.sendMessage(this);
-        
-        
+        // ---------- Original Method ----------
+        //target.sendMessage(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.699 -0400", hash_original_method = "9CE194651C6176A08C0A91B012A85C32", hash_generated_method = "11A13B0F3660F78F0D526315F89EA24B")
      void clearForRecycle() {
         flags = 0;
@@ -289,37 +282,35 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875 =         data;
         target = null;
         callback = null;
         data = null;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //flags = 0;
+        //what = 0;
+        //arg1 = 0;
+        //arg2 = 0;
+        //obj = null;
+        //replyTo = null;
+        //when = 0;
+        //target = null;
+        //callback = null;
+        //data = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.699 -0400", hash_original_method = "2F71B67A0204C39D3FE8504F70842AAF", hash_generated_method = "19B48906729B976F872251C868C3A73A")
      boolean isInUse() {
         boolean var74582B96000F3154DC110B64F0D6FDDF_1799553454 = (((flags & FLAG_IN_USE) == FLAG_IN_USE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1404883348 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1404883348;
-        
-        
+        // ---------- Original Method ----------
+        //return ((flags & FLAG_IN_USE) == FLAG_IN_USE);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.700 -0400", hash_original_method = "05D8812E72ABC796A0F0FB73D8BB23FD", hash_generated_method = "2406C8342B30A3F95EC80EECA1F8197F")
      void markInUse() {
         flags |= FLAG_IN_USE;
-        
-        
+        // ---------- Original Method ----------
+        //flags |= FLAG_IN_USE;
     }
 
     
@@ -328,8 +319,8 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_1341795875 =         data;
 String var91A42A27C64601C07B4F59782CF2294C_436882112 =         toString(SystemClock.uptimeMillis());
         var91A42A27C64601C07B4F59782CF2294C_436882112.addTaint(taint);
         return var91A42A27C64601C07B4F59782CF2294C_436882112;
-        
-        
+        // ---------- Original Method ----------
+        //return toString(SystemClock.uptimeMillis());
     }
 
     
@@ -345,52 +336,51 @@ String var91A42A27C64601C07B4F59782CF2294C_436882112 =         toString(SystemCl
         {
             b.append(" arg1=");
             b.append(arg1);
-        } 
+        } //End block
     if(arg2 != 0)        
         {
             b.append(" arg2=");
             b.append(arg2);
-        } 
+        } //End block
     if(obj != null)        
         {
             b.append(" obj=");
             b.append(obj);
-        } 
+        } //End block
         b.append(" }");
 String var53F188277CD163A95D3D9B5184E22806_1785862232 =         b.toString();
         var53F188277CD163A95D3D9B5184E22806_1785862232.addTaint(taint);
         return var53F188277CD163A95D3D9B5184E22806_1785862232;
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder   b = new StringBuilder();
+        //b.append("{ what=");
+        //b.append(what);
+        //b.append(" when=");
+        //TimeUtils.formatDuration(when-now, b);
+        //if (arg1 != 0) {
+            //b.append(" arg1=");
+            //b.append(arg1);
+        //}
+        //if (arg2 != 0) {
+            //b.append(" arg2=");
+            //b.append(arg2);
+        //}
+        //if (obj != null) {
+            //b.append(" obj=");
+            //b.append(obj);
+        //}
+        //b.append(" }");
+        //return b.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.701 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A2FE4B856800D447713920BEFA0B6324")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1486104355 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552047054 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1552047054;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -404,7 +394,7 @@ String var53F188277CD163A95D3D9B5184E22806_1785862232 =         b.toString();
                 "Can't marshal callbacks across processes.");
             var36B9E2BBA96CFD5DBB1D4D140A1FE82D_358068838.addTaint(taint);
             throw var36B9E2BBA96CFD5DBB1D4D140A1FE82D_358068838;
-        } 
+        } //End block
         dest.writeInt(what);
         dest.writeInt(arg1);
         dest.writeInt(arg2);
@@ -415,45 +405,45 @@ String var53F188277CD163A95D3D9B5184E22806_1785862232 =         b.toString();
                 Parcelable p = (Parcelable)obj;
                 dest.writeInt(1);
                 dest.writeParcelable(p, flags);
-            } 
+            } //End block
             catch (ClassCastException e)
             {
                 RuntimeException varEF8002C3571C0E4E39167FD1D2280D44_1949986921 = new RuntimeException(
                     "Can't marshal non-Parcelable objects across processes.");
                 varEF8002C3571C0E4E39167FD1D2280D44_1949986921.addTaint(taint);
                 throw varEF8002C3571C0E4E39167FD1D2280D44_1949986921;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             dest.writeInt(0);
-        } 
+        } //End block
         dest.writeLong(when);
         dest.writeBundle(data);
         Messenger.writeMessengerOrNullToParcel(replyTo, dest);
-        
-        
-            
-                
-        
-        
-        
-        
-        
-            
-                
-                
-                
-            
-                
-                    
-            
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (callback != null) {
+            //throw new RuntimeException(
+                //"Can't marshal callbacks across processes.");
+        //}
+        //dest.writeInt(what);
+        //dest.writeInt(arg1);
+        //dest.writeInt(arg2);
+        //if (obj != null) {
+            //try {
+                //Parcelable p = (Parcelable)obj;
+                //dest.writeInt(1);
+                //dest.writeParcelable(p, flags);
+            //} catch (ClassCastException e) {
+                //throw new RuntimeException(
+                    //"Can't marshal non-Parcelable objects across processes.");
+            //}
+        //} else {
+            //dest.writeInt(0);
+        //}
+        //dest.writeLong(when);
+        //dest.writeBundle(data);
+        //Messenger.writeMessengerOrNullToParcel(replyTo, dest);
     }
 
     
@@ -465,20 +455,20 @@ String var53F188277CD163A95D3D9B5184E22806_1785862232 =         b.toString();
     if(source.readInt() != 0)        
         {
             obj = source.readParcelable(getClass().getClassLoader());
-        } 
+        } //End block
         when = source.readLong();
         data = source.readBundle();
         replyTo = Messenger.readMessengerOrNullFromParcel(source);
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //what = source.readInt();
+        //arg1 = source.readInt();
+        //arg2 = source.readInt();
+        //if (source.readInt() != 0) {
+            //obj = source.readParcelable(getClass().getClassLoader());
+        //}
+        //when = source.readLong();
+        //data = source.readBundle();
+        //replyTo = Messenger.readMessengerOrNullFromParcel(source);
     }
 
     
@@ -517,14 +507,14 @@ String var53F188277CD163A95D3D9B5184E22806_1785862232 =         b.toString();
             return new Message[size];
         }
     };
-    
+    // orphaned legacy method
     public Message createFromParcel(Parcel source) {
             Message msg = Message.obtain();
             msg.readFromParcel(source);
             return msg;
         }
     
-    
+    // orphaned legacy method
     public Message[] newArray(int size) {
             return new Message[size];
         }

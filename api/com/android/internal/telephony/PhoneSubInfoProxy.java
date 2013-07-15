@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,21 +21,20 @@ public class PhoneSubInfoProxy extends IPhoneSubInfo.Stub {
     if(ServiceManager.getService("iphonesubinfo") == null)        
         {
             ServiceManager.addService("iphonesubinfo", this);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mPhoneSubInfo = phoneSubInfo;
+        //if(ServiceManager.getService("iphonesubinfo") == null) {
+            //ServiceManager.addService("iphonesubinfo", this);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.357 -0400", hash_original_method = "2283D2DC026CDBFF3477BE41D42C9914", hash_generated_method = "D262168F541585EBD460EBA7053A0B05")
     public void setmPhoneSubInfo(PhoneSubInfo phoneSubInfo) {
         this.mPhoneSubInfo = phoneSubInfo;
-        
-        
+        // ---------- Original Method ----------
+        //this.mPhoneSubInfo = phoneSubInfo;
     }
 
     
@@ -44,8 +43,8 @@ public class PhoneSubInfoProxy extends IPhoneSubInfo.Stub {
 String var774D6DF031E7B965971D1CC76B153EA8_1601711775 =         mPhoneSubInfo.getDeviceId();
         var774D6DF031E7B965971D1CC76B153EA8_1601711775.addTaint(taint);
         return var774D6DF031E7B965971D1CC76B153EA8_1601711775;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getDeviceId();
     }
 
     
@@ -54,8 +53,8 @@ String var774D6DF031E7B965971D1CC76B153EA8_1601711775 =         mPhoneSubInfo.ge
 String var658195DA09987FCDC970237CFC50B17E_1081533127 =         mPhoneSubInfo.getDeviceSvn();
         var658195DA09987FCDC970237CFC50B17E_1081533127.addTaint(taint);
         return var658195DA09987FCDC970237CFC50B17E_1081533127;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getDeviceSvn();
     }
 
     
@@ -64,8 +63,8 @@ String var658195DA09987FCDC970237CFC50B17E_1081533127 =         mPhoneSubInfo.ge
 String var15EB06BD6E38A16CE0B50FC4860EBF88_449130785 =         mPhoneSubInfo.getSubscriberId();
         var15EB06BD6E38A16CE0B50FC4860EBF88_449130785.addTaint(taint);
         return var15EB06BD6E38A16CE0B50FC4860EBF88_449130785;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getSubscriberId();
     }
 
     
@@ -74,8 +73,8 @@ String var15EB06BD6E38A16CE0B50FC4860EBF88_449130785 =         mPhoneSubInfo.get
 String var9B3DE8D3BA77FF712AFF1319F5781C49_1350674193 =         mPhoneSubInfo.getIccSerialNumber();
         var9B3DE8D3BA77FF712AFF1319F5781C49_1350674193.addTaint(taint);
         return var9B3DE8D3BA77FF712AFF1319F5781C49_1350674193;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getIccSerialNumber();
     }
 
     
@@ -84,8 +83,8 @@ String var9B3DE8D3BA77FF712AFF1319F5781C49_1350674193 =         mPhoneSubInfo.ge
 String var78619270DC9056B01A41B8C7ADA444E2_638446639 =         mPhoneSubInfo.getLine1Number();
         var78619270DC9056B01A41B8C7ADA444E2_638446639.addTaint(taint);
         return var78619270DC9056B01A41B8C7ADA444E2_638446639;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getLine1Number();
     }
 
     
@@ -94,8 +93,8 @@ String var78619270DC9056B01A41B8C7ADA444E2_638446639 =         mPhoneSubInfo.get
 String varA8750D8FD1CA94253E89C0BCFFC60CB9_27905860 =         mPhoneSubInfo.getLine1AlphaTag();
         varA8750D8FD1CA94253E89C0BCFFC60CB9_27905860.addTaint(taint);
         return varA8750D8FD1CA94253E89C0BCFFC60CB9_27905860;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getLine1AlphaTag();
     }
 
     
@@ -104,8 +103,8 @@ String varA8750D8FD1CA94253E89C0BCFFC60CB9_27905860 =         mPhoneSubInfo.getL
 String var24AED85838D389D195B12B51CA6359D7_1823035080 =         mPhoneSubInfo.getMsisdn();
         var24AED85838D389D195B12B51CA6359D7_1823035080.addTaint(taint);
         return var24AED85838D389D195B12B51CA6359D7_1823035080;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getMsisdn();
     }
 
     
@@ -114,8 +113,8 @@ String var24AED85838D389D195B12B51CA6359D7_1823035080 =         mPhoneSubInfo.ge
 String var1289AC061895FC7282FA4480C7C40382_1565895766 =         mPhoneSubInfo.getVoiceMailNumber();
         var1289AC061895FC7282FA4480C7C40382_1565895766.addTaint(taint);
         return var1289AC061895FC7282FA4480C7C40382_1565895766;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getVoiceMailNumber();
     }
 
     
@@ -124,8 +123,8 @@ String var1289AC061895FC7282FA4480C7C40382_1565895766 =         mPhoneSubInfo.ge
 String var8DA80BFB3A6CD92FEEE1AD2D526947DD_1076766276 =         mPhoneSubInfo.getCompleteVoiceMailNumber();
         var8DA80BFB3A6CD92FEEE1AD2D526947DD_1076766276.addTaint(taint);
         return var8DA80BFB3A6CD92FEEE1AD2D526947DD_1076766276;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getCompleteVoiceMailNumber();
     }
 
     
@@ -134,8 +133,8 @@ String var8DA80BFB3A6CD92FEEE1AD2D526947DD_1076766276 =         mPhoneSubInfo.ge
 String var6A0254709F47E9FE1BF2249A2A4C13F1_2058421023 =         mPhoneSubInfo.getVoiceMailAlphaTag();
         var6A0254709F47E9FE1BF2249A2A4C13F1_2058421023.addTaint(taint);
         return var6A0254709F47E9FE1BF2249A2A4C13F1_2058421023;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getVoiceMailAlphaTag();
     }
 
     
@@ -144,8 +143,8 @@ String var6A0254709F47E9FE1BF2249A2A4C13F1_2058421023 =         mPhoneSubInfo.ge
 String varC865A193A4F67CD851C732734DBFA25B_963880986 =         mPhoneSubInfo.getIsimImpi();
         varC865A193A4F67CD851C732734DBFA25B_963880986.addTaint(taint);
         return varC865A193A4F67CD851C732734DBFA25B_963880986;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getIsimImpi();
     }
 
     
@@ -154,8 +153,8 @@ String varC865A193A4F67CD851C732734DBFA25B_963880986 =         mPhoneSubInfo.get
 String var541DEE58069D9B2633FB1B116ACC1357_288879881 =         mPhoneSubInfo.getIsimDomain();
         var541DEE58069D9B2633FB1B116ACC1357_288879881.addTaint(taint);
         return var541DEE58069D9B2633FB1B116ACC1357_288879881;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getIsimDomain();
     }
 
     
@@ -164,8 +163,8 @@ String var541DEE58069D9B2633FB1B116ACC1357_288879881 =         mPhoneSubInfo.get
 String[] varC760810C18B4A09AFC768FF863D29C8E_713793185 =         mPhoneSubInfo.getIsimImpu();
         varC760810C18B4A09AFC768FF863D29C8E_713793185.addTaint(taint);
         return varC760810C18B4A09AFC768FF863D29C8E_713793185;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhoneSubInfo.getIsimImpu();
     }
 
     
@@ -175,8 +174,8 @@ String[] varC760810C18B4A09AFC768FF863D29C8E_713793185 =         mPhoneSubInfo.g
         addTaint(pw.getTaint());
         addTaint(fd.getTaint());
         mPhoneSubInfo.dump(fd, pw, args);
-        
-        
+        // ---------- Original Method ----------
+        //mPhoneSubInfo.dump(fd, pw, args);
     }
 
     

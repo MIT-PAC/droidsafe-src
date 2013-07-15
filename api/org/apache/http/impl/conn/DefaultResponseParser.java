@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,20 +45,20 @@ public class DefaultResponseParser extends AbstractMessageParser {
                 ("Response factory may not be null");
             var4DE4C2B8B51C37D4C049343CDF1871A3_1042252740.addTaint(taint);
             throw var4DE4C2B8B51C37D4C049343CDF1871A3_1042252740;
-        } 
+        } //End block
         this.responseFactory = responseFactory;
         this.lineBuf = new CharArrayBuffer(128);
         this.maxGarbageLines = params.getIntParameter(
             ConnConnectionPNames.MAX_STATUS_LINE_GARBAGE, Integer.MAX_VALUE);
-        
-        
-            
-                
-        
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //if (responseFactory == null) {
+            //throw new IllegalArgumentException
+                //("Response factory may not be null");
+        //}
+        //this.responseFactory = responseFactory;
+        //this.lineBuf = new CharArrayBuffer(128);
+        //this.maxGarbageLines = params.getIntParameter(
+            //ConnConnectionPNames.MAX_STATUS_LINE_GARBAGE, Integer.MAX_VALUE);
     }
 
     
@@ -78,12 +78,12 @@ public class DefaultResponseParser extends AbstractMessageParser {
                     NoHttpResponseException var8E6E6A11E770AF132B510E2C0E1EA88C_1635714280 = new NoHttpResponseException("The target server failed to respond");
                     var8E6E6A11E770AF132B510E2C0E1EA88C_1635714280.addTaint(taint);
                     throw var8E6E6A11E770AF132B510E2C0E1EA88C_1635714280;
-                } 
+                } //End block
                 cursor = new ParserCursor(0, this.lineBuf.length());
     if(lineParser.hasProtocolVersion(this.lineBuf, cursor))                
                 {
                     break;
-                } 
+                } //End block
                 else
     if(i == -1 || count >= this.maxGarbageLines)                
                 {
@@ -91,16 +91,16 @@ public class DefaultResponseParser extends AbstractMessageParser {
                         "valid HTTP response");
                     var56F68048747662B1A2EC94E4A8575C56_1607596421.addTaint(taint);
                     throw var56F68048747662B1A2EC94E4A8575C56_1607596421;
-                } 
+                } //End block
                 count++;
-            } 
+            } //End block
 } while (true);
         StatusLine statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
 HttpMessage varFF4A03EE8787FE969C6D68F686A70D62_1532660330 =         this.responseFactory.newHttpResponse(statusline, null);
         varFF4A03EE8787FE969C6D68F686A70D62_1532660330.addTaint(taint);
         return varFF4A03EE8787FE969C6D68F686A70D62_1532660330;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

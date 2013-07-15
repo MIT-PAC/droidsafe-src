@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,46 +27,46 @@ public class SSLEngineResult {
             IllegalArgumentException var0942C630AF72DE2BFAEF5B370BC34D38_1906141155 = new IllegalArgumentException("status is null");
             var0942C630AF72DE2BFAEF5B370BC34D38_1906141155.addTaint(taint);
             throw var0942C630AF72DE2BFAEF5B370BC34D38_1906141155;
-        } 
+        } //End block
     if(handshakeStatus == null)        
         {
             IllegalArgumentException varB99CC69C46C6DB9382D7F79A0AFCB228_559690479 = new IllegalArgumentException("handshakeStatus is null");
             varB99CC69C46C6DB9382D7F79A0AFCB228_559690479.addTaint(taint);
             throw varB99CC69C46C6DB9382D7F79A0AFCB228_559690479;
-        } 
+        } //End block
     if(bytesConsumed < 0)        
         {
             IllegalArgumentException varA0F469183671466F2BB471E20BA09B05_2091979765 = new IllegalArgumentException("bytesConsumed is negative");
             varA0F469183671466F2BB471E20BA09B05_2091979765.addTaint(taint);
             throw varA0F469183671466F2BB471E20BA09B05_2091979765;
-        } 
+        } //End block
     if(bytesProduced < 0)        
         {
             IllegalArgumentException varB233E283F5476C881DBBB0A747935895_1496216175 = new IllegalArgumentException("bytesProduced is negative");
             varB233E283F5476C881DBBB0A747935895_1496216175.addTaint(taint);
             throw varB233E283F5476C881DBBB0A747935895_1496216175;
-        } 
+        } //End block
         this.status = status;
         this.handshakeStatus = handshakeStatus;
         this.bytesConsumed = bytesConsumed;
         this.bytesProduced = bytesProduced;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (status == null) {
+            //throw new IllegalArgumentException("status is null");
+        //}
+        //if (handshakeStatus == null) {
+            //throw new IllegalArgumentException("handshakeStatus is null");
+        //}
+        //if (bytesConsumed < 0) {
+            //throw new IllegalArgumentException("bytesConsumed is negative");
+        //}
+        //if (bytesProduced < 0) {
+            //throw new IllegalArgumentException("bytesProduced is negative");
+        //}
+        //this.status = status;
+        //this.handshakeStatus = handshakeStatus;
+        //this.bytesConsumed = bytesConsumed;
+        //this.bytesProduced = bytesProduced;
     }
 
     
@@ -75,8 +75,8 @@ public class SSLEngineResult {
 Status var62D3D5D442782C1992154E821A40FA75_158016852 =         status;
         var62D3D5D442782C1992154E821A40FA75_158016852.addTaint(taint);
         return var62D3D5D442782C1992154E821A40FA75_158016852;
-        
-        
+        // ---------- Original Method ----------
+        //return status;
     }
 
     
@@ -85,8 +85,8 @@ Status var62D3D5D442782C1992154E821A40FA75_158016852 =         status;
 HandshakeStatus varA438FF77BFC821A5A761FEC3F6183918_1532005227 =         handshakeStatus;
         varA438FF77BFC821A5A761FEC3F6183918_1532005227.addTaint(taint);
         return varA438FF77BFC821A5A761FEC3F6183918_1532005227;
-        
-        
+        // ---------- Original Method ----------
+        //return handshakeStatus;
     }
 
     
@@ -95,8 +95,8 @@ HandshakeStatus varA438FF77BFC821A5A761FEC3F6183918_1532005227 =         handsha
         int var98DE14CF6ED8BA2A08621F8989CBB73D_984247078 = (bytesConsumed);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663672878 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663672878;
-        
-        
+        // ---------- Original Method ----------
+        //return bytesConsumed;
     }
 
     
@@ -105,8 +105,8 @@ HandshakeStatus varA438FF77BFC821A5A761FEC3F6183918_1532005227 =         handsha
         int varE2C06B4E3C7D872CA40631F2B897CED4_1901228958 = (bytesProduced);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724223734 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724223734;
-        
-        
+        // ---------- Original Method ----------
+        //return bytesProduced;
     }
 
     
@@ -118,10 +118,10 @@ String varDE9DD2D87E9E529ADDDDF77023101E71_1963059640 =         "SSLEngineReport
                 + bytesProduced;
         varDE9DD2D87E9E529ADDDDF77023101E71_1963059640.addTaint(taint);
         return varDE9DD2D87E9E529ADDDDF77023101E71_1963059640;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return "SSLEngineReport: Status = " + status + "  HandshakeStatus = " + handshakeStatus
+                //+ "\n                 bytesConsumed = " + bytesConsumed + " bytesProduced = "
+                //+ bytesProduced;
     }
 
     

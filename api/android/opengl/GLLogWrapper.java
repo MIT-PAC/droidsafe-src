@@ -1,6 +1,6 @@
 package android.opengl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -62,9 +62,9 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(gl.getTaint());
         mLog = log;
         mLogArgumentNames = logArgumentNames;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLog = log;
+        //mLogArgumentNames = logArgumentNames;
     }
 
     
@@ -75,13 +75,13 @@ class GLLogWrapper extends GLWrapperBase {
         {
             String errorMessage = "glError: " + Integer.toString(glError);
             logLine(errorMessage);
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int glError;
+        //if ((glError = mgl.glGetError()) != 0) {
+            //String errorMessage = "glError: " + Integer.toString(glError);
+            //logLine(errorMessage);
+        //}
     }
 
     
@@ -89,8 +89,8 @@ class GLLogWrapper extends GLWrapperBase {
     private void logLine(String message) {
         addTaint(message.getTaint());
         log(message + '\n');
-        
-        
+        // ---------- Original Method ----------
+        //log(message + '\n');
     }
 
     
@@ -100,15 +100,15 @@ class GLLogWrapper extends GLWrapperBase {
         try 
         {
             mLog.write(message);
-        } 
+        } //End block
         catch (IOException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mLog.write(message);
+        //} catch (IOException e) {
+        //}
     }
 
     
@@ -117,9 +117,9 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(name.getTaint());
         log(name + '(');
         mArgCount = 0;
-        
-        
-        
+        // ---------- Original Method ----------
+        //log(name + '(');
+        //mArgCount = 0;
     }
 
     
@@ -130,20 +130,20 @@ class GLLogWrapper extends GLWrapperBase {
     if(mArgCount++ > 0)        
         {
             log(", ");
-        } 
+        } //End block
     if(mLogArgumentNames)        
         {
             log(name + "=");
-        } 
+        } //End block
         log(value);
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mArgCount++ > 0) {
+            //log(", ");
+        //}
+        //if (mLogArgumentNames) {
+            //log(name + "=");
+        //}
+        //log(value);
     }
 
     
@@ -151,9 +151,9 @@ class GLLogWrapper extends GLWrapperBase {
     private void end() {
         log(");\n");
         flush();
-        
-        
-        
+        // ---------- Original Method ----------
+        //log(");\n");
+        //flush();
     }
 
     
@@ -162,17 +162,17 @@ class GLLogWrapper extends GLWrapperBase {
         try 
         {
             mLog.flush();
-        } 
+        } //End block
         catch (IOException e)
         {
             mLog = null;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mLog.flush();
+        //} catch (IOException e) {
+            //mLog = null;
+        //}
     }
 
     
@@ -181,8 +181,8 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(value);
         addTaint(name.getTaint());
         arg(name, Boolean.toString(value));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, Boolean.toString(value));
     }
 
     
@@ -191,8 +191,8 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(value);
         addTaint(name.getTaint());
         arg(name, Integer.toString(value));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, Integer.toString(value));
     }
 
     
@@ -201,8 +201,8 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(value);
         addTaint(name.getTaint());
         arg(name, Float.toString(value));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, Float.toString(value));
     }
 
     
@@ -211,9 +211,9 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(result.getTaint());
         log(") returns " + result + ";\n");
         flush();
-        
-        
-        
+        // ---------- Original Method ----------
+        //log(") returns " + result + ";\n");
+        //flush();
     }
 
     
@@ -221,8 +221,8 @@ class GLLogWrapper extends GLWrapperBase {
     private void returns(int result) {
         addTaint(result);
         returns(Integer.toString(result));
-        
-        
+        // ---------- Original Method ----------
+        //returns(Integer.toString(result));
     }
 
     
@@ -233,8 +233,8 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(n);
         addTaint(name.getTaint());
         arg(name, toString(n, FORMAT_INT, arr, offset));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, toString(n, FORMAT_INT, arr, offset));
     }
 
     
@@ -245,8 +245,8 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(n);
         addTaint(name.getTaint());
         arg(name, toString(n, arr, offset));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, toString(n, arr, offset));
     }
 
     
@@ -257,8 +257,8 @@ class GLLogWrapper extends GLWrapperBase {
         addTaint(n);
         addTaint(name.getTaint());
         arg(name, toString(n, arr, offset));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, toString(n, arr, offset));
     }
 
     
@@ -278,18 +278,18 @@ switch(format){
         buf.append(value / 65536.0f);
         break;
 }
-        
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
+        // ---------- Original Method ----------
+        //switch (format) {
+        //case FORMAT_INT:
+            //buf.append(value);
+            //break;
+        //case FORMAT_FLOAT:
+            //buf.append(Float.intBitsToFloat(value));
+            //break;
+        //case FORMAT_FIXED:
+            //buf.append(value / 65536.0f);
+            //break;
+        //}
     }
 
     
@@ -309,33 +309,33 @@ for(int i = 0;i < n;i++)
     if(index < 0 || index >= arrLen)            
             {
                 buf.append("out of bounds");
-            } 
+            } //End block
             else
             {
                 formattedAppend(buf, arr[index], format);
-            } 
+            } //End block
             buf.append('\n');
-        } 
+        } //End block
         buf.append("}");
 String var4FC680801218E6372BC708D6FA44AE60_59257702 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_59257702.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_59257702;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-                
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buf = new StringBuilder();
+        //buf.append("{\n");
+        //int arrLen = arr.length;
+        //for (int i = 0; i < n; i++) {
+            //int index = offset + i;
+            //buf.append(" [" + index + "] = ");
+            //if (index < 0 || index >= arrLen) {
+                //buf.append("out of bounds");
+            //} else {
+                //formattedAppend(buf, arr[index], format);
+            //}
+            //buf.append('\n');
+        //}
+        //buf.append("}");
+        //return buf.toString();
     }
 
     
@@ -354,33 +354,33 @@ for(int i = 0;i < n;i++)
     if(index < 0 || index >= arrLen)            
             {
                 buf.append("out of bounds");
-            } 
+            } //End block
             else
             {
                 buf.append(arr[index]);
-            } 
+            } //End block
             buf.append('\n');
-        } 
+        } //End block
         buf.append("}");
 String var4FC680801218E6372BC708D6FA44AE60_973632355 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_973632355.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_973632355;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-                
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buf = new StringBuilder();
+        //buf.append("{\n");
+        //int arrLen = arr.length;
+        //for (int i = 0; i < n; i++) {
+            //int index = offset + i;
+            //buf.append(" [" + index + "] = ");
+            //if (index < 0 || index >= arrLen) {
+                //buf.append("out of bounds");
+            //} else {
+                //buf.append(arr[index]);
+            //}
+            //buf.append('\n');
+        //}
+        //buf.append("}");
+        //return buf.toString();
     }
 
     
@@ -399,33 +399,33 @@ for(int i = 0;i < n;i++)
     if(index < 0 || index >= arrLen)            
             {
                 buf.append("out of bounds");
-            } 
+            } //End block
             else
             {
                 buf.append(arr[index]);
-            } 
+            } //End block
             buf.append('\n');
-        } 
+        } //End block
         buf.append("}");
 String var4FC680801218E6372BC708D6FA44AE60_2096178406 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_2096178406.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_2096178406;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-                
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buf = new StringBuilder();
+        //buf.append("{\n");
+        //int arrLen = arr.length;
+        //for (int i = 0; i < n; i++) {
+            //int index = offset + i;
+            //buf.append("[" + index + "] = ");
+            //if (index < 0 || index >= arrLen) {
+                //buf.append("out of bounds");
+            //} else {
+                //buf.append(arr[index]);
+            //}
+            //buf.append('\n');
+        //}
+        //buf.append("}");
+        //return buf.toString();
     }
 
     
@@ -438,19 +438,19 @@ String var4FC680801218E6372BC708D6FA44AE60_2096178406 =         buf.toString();
 for(int i = 0;i < n;i++)
         {
             builder.append(" [" + i + "] = " + buf.get(i) + '\n');
-        } 
+        } //End block
         builder.append("}");
 String varF4CF030572656354ACFDF83FEE21D7A6_1537695601 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_1537695601.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_1537695601;
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder builder = new StringBuilder();
+        //builder.append("{\n");
+        //for (int i = 0; i < n; i++) {
+            //builder.append(" [" + i + "] = " + buf.get(i) + '\n');
+        //}
+        //builder.append("}");
+        //return builder.toString();
     }
 
     
@@ -466,21 +466,21 @@ for(int i = 0;i < n;i++)
             builder.append(" [" + i + "] = ");
             formattedAppend(builder, buf.get(i), format);
             builder.append('\n');
-        } 
+        } //End block
         builder.append("}");
 String varF4CF030572656354ACFDF83FEE21D7A6_2090853386 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_2090853386.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_2090853386;
-        
-        
-        
-        
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder builder = new StringBuilder();
+        //builder.append("{\n");
+        //for (int i = 0; i < n; i++) {
+            //builder.append(" [" + i + "] = ");
+            //formattedAppend(builder, buf.get(i), format);
+            //builder.append('\n');
+        //}
+        //builder.append("}");
+        //return builder.toString();
     }
 
     
@@ -493,19 +493,19 @@ String varF4CF030572656354ACFDF83FEE21D7A6_2090853386 =         builder.toString
 for(int i = 0;i < n;i++)
         {
             builder.append(" [" + i + "] = " + buf.get(i) + '\n');
-        } 
+        } //End block
         builder.append("}");
 String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_1719382842.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_1719382842;
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder builder = new StringBuilder();
+        //builder.append("{\n");
+        //for (int i = 0; i < n; i++) {
+            //builder.append(" [" + i + "] = " + buf.get(i) + '\n');
+        //}
+        //builder.append("}");
+        //return builder.toString();
     }
 
     
@@ -515,8 +515,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
         addTaint(n);
         addTaint(name.getTaint());
         arg(name, toString(n, buf));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, toString(n, buf));
     }
 
     
@@ -526,8 +526,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
         addTaint(n);
         addTaint(name.getTaint());
         arg(name, toString(n, FORMAT_INT, buf));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, toString(n, FORMAT_INT, buf));
     }
 
     
@@ -537,8 +537,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
         addTaint(n);
         addTaint(name.getTaint());
         arg(name, toString(n, buf));
-        
-        
+        // ---------- Original Method ----------
+        //arg(name, toString(n, buf));
     }
 
     
@@ -552,11 +552,11 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
         arg("type", getPointerTypeName(type));
         arg("stride", stride);
         arg("pointer", pointer.toString());
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //arg("size", size);
+        //arg("type", getPointerTypeName(type));
+        //arg("stride", stride);
+        //arg("pointer", pointer.toString());
     }
 
     
@@ -595,38 +595,38 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1719382842 =         builder.toString
         {
             b.append("GL_DEPTH_BUFFER_BIT");
             mask &= ~GL_DEPTH_BUFFER_BIT;
-        } 
+        } //End block
     if((mask & GL_STENCIL_BUFFER_BIT) != 0)        
         {
     if(b.length() > 0)            
             {
                 b.append(" | ");
-            } 
+            } //End block
             b.append("GL_STENCIL_BUFFER_BIT");
             mask &= ~GL_STENCIL_BUFFER_BIT;
-        } 
+        } //End block
     if((mask & GL_COLOR_BUFFER_BIT) != 0)        
         {
     if(b.length() > 0)            
             {
                 b.append(" | ");
-            } 
+            } //End block
             b.append("GL_COLOR_BUFFER_BIT");
             mask &= ~GL_COLOR_BUFFER_BIT;
-        } 
+        } //End block
     if(mask != 0)        
         {
     if(b.length() > 0)            
             {
                 b.append(" | ");
-            } 
+            } //End block
             b.append(getHex(mask));
-        } 
+        } //End block
 String var53F188277CD163A95D3D9B5184E22806_1376863362 =         b.toString();
         var53F188277CD163A95D3D9B5184E22806_1376863362.addTaint(taint);
         return var53F188277CD163A95D3D9B5184E22806_1376863362;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -683,8 +683,8 @@ String var840A741A36C6E9A10DFD6A3AB19799AA_723207574 =         getHex(factor);
         var840A741A36C6E9A10DFD6A3AB19799AA_723207574.addTaint(taint);
         return var840A741A36C6E9A10DFD6A3AB19799AA_723207574;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -705,15 +705,15 @@ String var7DB0EEEE1FF94A813E16434692E1FB9C_1204098533 =         getHex(model);
         var7DB0EEEE1FF94A813E16434692E1FB9C_1204098533.addTaint(taint);
         return var7DB0EEEE1FF94A813E16434692E1FB9C_1204098533;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch(model) {
+        //case GL_FLAT:
+            //return "GL_FLAT";
+        //case GL_SMOOTH:
+            //return "GL_SMOOTH";
+        //default:
+            //return getHex(model);
+        //}
     }
 
     
@@ -730,13 +730,13 @@ String varC5BCCB40D483945AD16346DCD4C1BFD9_950850500 =         getHex(target);
         varC5BCCB40D483945AD16346DCD4C1BFD9_950850500.addTaint(taint);
         return varC5BCCB40D483945AD16346DCD4C1BFD9_950850500;
 }
-        
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (target) {
+        //case GL_TEXTURE_2D:
+            //return "GL_TEXTURE_2D";
+        //default:
+            //return getHex(target);
+        //}
     }
 
     
@@ -753,13 +753,13 @@ String varC5BCCB40D483945AD16346DCD4C1BFD9_963114930 =         getHex(target);
         varC5BCCB40D483945AD16346DCD4C1BFD9_963114930.addTaint(taint);
         return varC5BCCB40D483945AD16346DCD4C1BFD9_963114930;
 }
-        
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (target) {
+        //case GL_TEXTURE_ENV:
+            //return "GL_TEXTURE_ENV";
+        //default:
+            //return getHex(target);
+        //}
     }
 
     
@@ -780,19 +780,18 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_59766863 =         getHex(pname);
         var17EB31AEABC63CBC4D8F00A7873C8076_59766863.addTaint(taint);
         return var17EB31AEABC63CBC4D8F00A7873C8076_59766863;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_TEXTURE_ENV_MODE:
+            //return "GL_TEXTURE_ENV_MODE";
+        //case GL_TEXTURE_ENV_COLOR:
+            //return "GL_TEXTURE_ENV_COLOR";
+        //default:
+            //return getHex(pname);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.219 -0400", hash_original_method = "814F9443E35DD12509B9BA466EE8DCB2", hash_generated_method = "85A3931DAB6417AA33872EEAF8FDD372")
     private int getTextureEnvParamCount(int pname) {
         addTaint(pname);
@@ -810,15 +809,15 @@ switch(pname){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718348608 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718348608;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_TEXTURE_ENV_MODE:
+            //return 1;
+        //case GL_TEXTURE_ENV_COLOR:
+            //return 4;
+        //default:
+            //return 0;
+        //}
     }
 
     
@@ -858,31 +857,31 @@ String var7B2DE54FA3769EF164A155C968F33479_276895378 =             getHex(iparam
             var7B2DE54FA3769EF164A155C968F33479_276895378.addTaint(taint);
             return var7B2DE54FA3769EF164A155C968F33479_276895378;
 }
-        } 
+        } //End block
 String var41CF4871428AE4E5BF75FAC31BD7499F_1339748215 =         Float.toString(param);
         var41CF4871428AE4E5BF75FAC31BD7499F_1339748215.addTaint(taint);
         return var41CF4871428AE4E5BF75FAC31BD7499F_1339748215;
-        
-        
-        
-            
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int iparam = (int) param;
+        //if (param == (float) iparam) {
+            //switch (iparam) {
+            //case GL_REPLACE:
+                //return "GL_REPLACE";
+            //case GL_MODULATE:
+                //return "GL_MODULATE";
+            //case GL_DECAL:
+                //return "GL_DECAL";
+            //case GL_BLEND:
+                //return "GL_BLEND";
+            //case GL_ADD:
+                //return "GL_ADD";
+            //case GL_COMBINE:
+                //return "GL_COMBINE";
+            //default:
+                //return getHex(iparam);
+            //}
+        //}
+        //return Float.toString(param);
     }
 
     
@@ -907,17 +906,17 @@ String varC63359BEBE10899C8958631BF0D303FF_377559618 =         getHex(matrixMode
         varC63359BEBE10899C8958631BF0D303FF_377559618.addTaint(taint);
         return varC63359BEBE10899C8958631BF0D303FF_377559618;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (matrixMode) {
+        //case GL_MODELVIEW:
+            //return "GL_MODELVIEW";
+        //case GL_PROJECTION:
+            //return "GL_PROJECTION";
+        //case GL_TEXTURE:
+            //return "GL_TEXTURE";
+        //default:
+            //return getHex(matrixMode);
+        //}
     }
 
     
@@ -946,19 +945,19 @@ String varF0023A1C20D46A3CAEFA6083F72A1D1C_902719480 =         getHex(clientStat
         varF0023A1C20D46A3CAEFA6083F72A1D1C_902719480.addTaint(taint);
         return varF0023A1C20D46A3CAEFA6083F72A1D1C_902719480;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (clientState) {
+        //case GL_COLOR_ARRAY:
+            //return "GL_COLOR_ARRAY";
+        //case GL_VERTEX_ARRAY:
+            //return "GL_VERTEX_ARRAY";
+        //case GL_NORMAL_ARRAY:
+            //return "GL_NORMAL_ARRAY";
+        //case GL_TEXTURE_COORD_ARRAY:
+            //return "GL_TEXTURE_COORD_ARRAY";
+        //default:
+            //return getHex(clientState);
+        //}
     }
 
     
@@ -1099,8 +1098,8 @@ String var7988E6ED7ECB3CDD25FE6FDA245358C7_483243742 =         getHex(cap);
         var7988E6ED7ECB3CDD25FE6FDA245358C7_483243742.addTaint(taint);
         return var7988E6ED7ECB3CDD25FE6FDA245358C7_483243742;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1137,23 +1136,23 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_1701170547 =         getHex(pname);
         var17EB31AEABC63CBC4D8F00A7873C8076_1701170547.addTaint(taint);
         return var17EB31AEABC63CBC4D8F00A7873C8076_1701170547;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_TEXTURE_MAG_FILTER:
+            //return "GL_TEXTURE_MAG_FILTER";
+        //case GL_TEXTURE_MIN_FILTER:
+            //return "GL_TEXTURE_MIN_FILTER";
+        //case GL_TEXTURE_WRAP_S:
+            //return "GL_TEXTURE_WRAP_S";
+        //case GL_TEXTURE_WRAP_T:
+            //return "GL_TEXTURE_WRAP_T";
+        //case GL_GENERATE_MIPMAP:
+            //return "GL_GENERATE_MIPMAP";
+        //case GL_TEXTURE_CROP_RECT_OES:
+            //return "GL_TEXTURE_CROP_RECT_OES";
+        //default:
+            //return getHex(pname);
+        //}
     }
 
     
@@ -1201,12 +1200,12 @@ String var7B2DE54FA3769EF164A155C968F33479_1155633577 =             getHex(ipara
             var7B2DE54FA3769EF164A155C968F33479_1155633577.addTaint(taint);
             return var7B2DE54FA3769EF164A155C968F33479_1155633577;
 }
-        } 
+        } //End block
 String var41CF4871428AE4E5BF75FAC31BD7499F_926024304 =         Float.toString(param);
         var41CF4871428AE4E5BF75FAC31BD7499F_926024304.addTaint(taint);
         return var41CF4871428AE4E5BF75FAC31BD7499F_926024304;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1239,25 +1238,24 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_1560918792 =         getHex(pname);
         var17EB31AEABC63CBC4D8F00A7873C8076_1560918792.addTaint(taint);
         return var17EB31AEABC63CBC4D8F00A7873C8076_1560918792;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_FOG_DENSITY:
+            //return "GL_FOG_DENSITY";
+        //case GL_FOG_START:
+            //return "GL_FOG_START";
+        //case GL_FOG_END:
+            //return "GL_FOG_END";
+        //case GL_FOG_MODE:
+            //return "GL_FOG_MODE";
+        //case GL_FOG_COLOR:
+            //return "GL_FOG_COLOR";
+        //default:
+            //return getHex(pname);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.223 -0400", hash_original_method = "9A07F659DA306C4A6520A0B0A227379C", hash_generated_method = "71C6041CEC0B63627C429FC2277CA5BA")
     private int getFogParamCount(int pname) {
         addTaint(pname);
@@ -1287,21 +1285,21 @@ switch(pname){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_490275517 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_490275517;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_FOG_DENSITY:
+            //return 1;
+        //case GL_FOG_START:
+            //return 1;
+        //case GL_FOG_END:
+            //return 1;
+        //case GL_FOG_MODE:
+            //return 1;
+        //case GL_FOG_COLOR:
+            //return 4;
+        //default:
+            //return 0;
+        //}
     }
 
     
@@ -1342,25 +1340,25 @@ String var7FC1C26E2EBB1099D9597F452FB535CF_2109387062 =         getHex(mode);
         var7FC1C26E2EBB1099D9597F452FB535CF_2109387062.addTaint(taint);
         return var7FC1C26E2EBB1099D9597F452FB535CF_2109387062;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (mode) {
+        //case GL_POINTS:
+            //return "GL_POINTS";
+        //case GL_LINES:
+            //return "GL_LINES";
+        //case GL_LINE_LOOP:
+            //return "GL_LINE_LOOP";
+        //case GL_LINE_STRIP:
+            //return "GL_LINE_STRIP";
+        //case GL_TRIANGLES:
+            //return "GL_TRIANGLES";
+        //case GL_TRIANGLE_STRIP:
+            //return "GL_TRIANGLE_STRIP";
+        //case GL_TRIANGLE_FAN:
+            //return "GL_TRIANGLE_FAN";
+        //default:
+            //return getHex(mode);
+        //}
     }
 
     
@@ -1381,15 +1379,15 @@ String varD1FC67380EDAAC4DC9A33E588E1EDA29_1490912942 =         getHex(type);
         varD1FC67380EDAAC4DC9A33E588E1EDA29_1490912942.addTaint(taint);
         return varD1FC67380EDAAC4DC9A33E588E1EDA29_1490912942;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (type) {
+        //case GL_UNSIGNED_SHORT:
+            //return "GL_UNSIGNED_SHORT";
+        //case GL_UNSIGNED_BYTE:
+            //return "GL_UNSIGNED_BYTE";
+        //default:
+            //return getHex(type);
+        //}
     }
 
     
@@ -1502,8 +1500,8 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_1349900910 =         getHex(pname);
         var17EB31AEABC63CBC4D8F00A7873C8076_1349900910.addTaint(taint);
         return var17EB31AEABC63CBC4D8F00A7873C8076_1349900910;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1534,7 +1532,7 @@ switch(pname){
             int var8A6BC19381673FA226DB1B0828B91CF3_1712617167 = (buffer[0]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_475137279 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_475137279;
-        } 
+        } //End block
         case GL_DEPTH_BITS:
         int varC4CA4238A0B923820DCC509A6F75849B_1124046935 = (1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_574859752 = getTaintInt();
@@ -1614,12 +1612,11 @@ switch(pname){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353041890 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353041890;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.228 -0400", hash_original_method = "6506A323D3627F82CBA6E7723B0EB9F3", hash_generated_method = "09A67FAB628C203C244DD1C4888DD5C4")
     private int getIntegerStateFormat(int pname) {
         addTaint(pname);
@@ -1635,15 +1632,15 @@ switch(pname){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894415322 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894415322;
 }
-        
-        
-        
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES:
+        //case GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES:
+        //case GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES:
+            //return FORMAT_FLOAT;
+        //default:
+            //return FORMAT_INT;
+        //}
     }
 
     
@@ -1680,23 +1677,23 @@ String varC5BCCB40D483945AD16346DCD4C1BFD9_1255125845 =         getHex(target);
         varC5BCCB40D483945AD16346DCD4C1BFD9_1255125845.addTaint(taint);
         return varC5BCCB40D483945AD16346DCD4C1BFD9_1255125845;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (target) {
+        //case GL_FOG_HINT:
+            //return "GL_FOG_HINT";
+        //case GL_LINE_SMOOTH_HINT:
+            //return "GL_LINE_SMOOTH_HINT";
+        //case GL_PERSPECTIVE_CORRECTION_HINT:
+            //return "GL_PERSPECTIVE_CORRECTION_HINT";
+        //case GL_POINT_SMOOTH_HINT:
+            //return "GL_POINT_SMOOTH_HINT";
+        //case GL_POLYGON_SMOOTH_HINT:
+            //return "GL_POLYGON_SMOOTH_HINT";
+        //case GL_GENERATE_MIPMAP_HINT:
+            //return "GL_GENERATE_MIPMAP_HINT";
+        //default:
+            //return getHex(target);
+        //}
     }
 
     
@@ -1721,17 +1718,17 @@ String var7FC1C26E2EBB1099D9597F452FB535CF_185003334 =         getHex(mode);
         var7FC1C26E2EBB1099D9597F452FB535CF_185003334.addTaint(taint);
         return var7FC1C26E2EBB1099D9597F452FB535CF_185003334;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (mode) {
+        //case GL_FASTEST:
+            //return "GL_FASTEST";
+        //case GL_NICEST:
+            //return "GL_NICEST";
+        //case GL_DONT_CARE:
+            //return "GL_DONT_CARE";
+        //default:
+            //return getHex(mode);
+        //}
     }
 
     
@@ -1748,13 +1745,13 @@ String varD1678B9B653067F48DEDC0D2C1EFDF64_374027785 =         getHex(face);
         varD1678B9B653067F48DEDC0D2C1EFDF64_374027785.addTaint(taint);
         return varD1678B9B653067F48DEDC0D2C1EFDF64_374027785;
 }
-        
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (face) {
+        //case GL_FRONT_AND_BACK:
+            //return "GL_FRONT_AND_BACK";
+        //default:
+            //return getHex(face);
+        //}
     }
 
     
@@ -1791,27 +1788,26 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_167681089 =         getHex(pname);
         var17EB31AEABC63CBC4D8F00A7873C8076_167681089.addTaint(taint);
         return var17EB31AEABC63CBC4D8F00A7873C8076_167681089;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_AMBIENT:
+            //return "GL_AMBIENT";
+        //case GL_DIFFUSE:
+            //return "GL_DIFFUSE";
+        //case GL_SPECULAR:
+            //return "GL_SPECULAR";
+        //case GL_EMISSION:
+            //return "GL_EMISSION";
+        //case GL_SHININESS:
+            //return "GL_SHININESS";
+        //case GL_AMBIENT_AND_DIFFUSE:
+            //return "GL_AMBIENT_AND_DIFFUSE";
+        //default:
+            //return getHex(pname);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.230 -0400", hash_original_method = "B0395F459DFDFEE2447C01CFFCEE6702", hash_generated_method = "88F75986EF0CB8687CE2B183DC739500")
     private int getMaterialParamCount(int pname) {
         addTaint(pname);
@@ -1845,23 +1841,23 @@ switch(pname){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356558387 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356558387;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_AMBIENT:
+            //return 4;
+        //case GL_DIFFUSE:
+            //return 4;
+        //case GL_SPECULAR:
+            //return 4;
+        //case GL_EMISSION:
+            //return 4;
+        //case GL_SHININESS:
+            //return 1;
+        //case GL_AMBIENT_AND_DIFFUSE:
+            //return 4;
+        //default:
+            //return 0;
+        //}
     }
 
     
@@ -1873,15 +1869,15 @@ switch(pname){
 String var054439158506CBA8A39A80227C5487C2_1398567920 =             "GL_LIGHT" + Integer.toString(light);
             var054439158506CBA8A39A80227C5487C2_1398567920.addTaint(taint);
             return var054439158506CBA8A39A80227C5487C2_1398567920;
-        } 
+        } //End block
 String varA56BF31A21B14BF74666C55011828245_1687023895 =         getHex(light);
         varA56BF31A21B14BF74666C55011828245_1687023895.addTaint(taint);
         return varA56BF31A21B14BF74666C55011828245_1687023895;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (light >= GL_LIGHT0 && light <= GL_LIGHT7) {
+            //return "GL_LIGHT" + Integer.toString(light);
+        //}
+        //return getHex(light);
     }
 
     
@@ -1934,35 +1930,34 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_1794535072 =         getHex(pname);
         var17EB31AEABC63CBC4D8F00A7873C8076_1794535072.addTaint(taint);
         return var17EB31AEABC63CBC4D8F00A7873C8076_1794535072;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_AMBIENT:
+            //return "GL_AMBIENT";
+        //case GL_DIFFUSE:
+            //return "GL_DIFFUSE";
+        //case GL_SPECULAR:
+            //return "GL_SPECULAR";
+        //case GL_POSITION:
+            //return "GL_POSITION";
+        //case GL_SPOT_DIRECTION:
+            //return "GL_SPOT_DIRECTION";
+        //case GL_SPOT_EXPONENT:
+            //return "GL_SPOT_EXPONENT";
+        //case GL_SPOT_CUTOFF:
+            //return "GL_SPOT_CUTOFF";
+        //case GL_CONSTANT_ATTENUATION:
+            //return "GL_CONSTANT_ATTENUATION";
+        //case GL_LINEAR_ATTENUATION:
+            //return "GL_LINEAR_ATTENUATION";
+        //case GL_QUADRATIC_ATTENUATION:
+            //return "GL_QUADRATIC_ATTENUATION";
+        //default:
+            //return getHex(pname);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.232 -0400", hash_original_method = "53908AF1FF50B43C5A4BA064020594CA", hash_generated_method = "4D32D5E0FC7904F20B285F9995643BE8")
     private int getLightParamCount(int pname) {
         addTaint(pname);
@@ -2012,31 +2007,31 @@ switch(pname){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1355721372 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1355721372;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_AMBIENT:
+            //return 4;
+        //case GL_DIFFUSE:
+            //return 4;
+        //case GL_SPECULAR:
+            //return 4;
+        //case GL_POSITION:
+            //return 4;
+        //case GL_SPOT_DIRECTION:
+            //return 3;
+        //case GL_SPOT_EXPONENT:
+            //return 1;
+        //case GL_SPOT_CUTOFF:
+            //return 1;
+        //case GL_CONSTANT_ATTENUATION:
+            //return 1;
+        //case GL_LINEAR_ATTENUATION:
+            //return 1;
+        //case GL_QUADRATIC_ATTENUATION:
+            //return 1;
+        //default:
+            //return 0;
+        //}
     }
 
     
@@ -2057,19 +2052,18 @@ String var17EB31AEABC63CBC4D8F00A7873C8076_575439550 =         getHex(pname);
         var17EB31AEABC63CBC4D8F00A7873C8076_575439550.addTaint(taint);
         return var17EB31AEABC63CBC4D8F00A7873C8076_575439550;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_LIGHT_MODEL_AMBIENT:
+            //return "GL_LIGHT_MODEL_AMBIENT";
+        //case GL_LIGHT_MODEL_TWO_SIDE:
+            //return "GL_LIGHT_MODEL_TWO_SIDE";
+        //default:
+            //return getHex(pname);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.233 -0400", hash_original_method = "2FC4AD179486887F278ED181B7A670E7", hash_generated_method = "F17CFCF4A7D48BB6A62426163E473FFB")
     private int getLightModelParamCount(int pname) {
         addTaint(pname);
@@ -2087,15 +2081,15 @@ switch(pname){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2030775783 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2030775783;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (pname) {
+        //case GL_LIGHT_MODEL_AMBIENT:
+            //return 4;
+        //case GL_LIGHT_MODEL_TWO_SIDE:
+            //return 1;
+        //default:
+            //return 0;
+        //}
     }
 
     
@@ -2128,21 +2122,21 @@ String varD1FC67380EDAAC4DC9A33E588E1EDA29_1124764355 =         getHex(type);
         varD1FC67380EDAAC4DC9A33E588E1EDA29_1124764355.addTaint(taint);
         return varD1FC67380EDAAC4DC9A33E588E1EDA29_1124764355;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (type) {
+        //case GL_BYTE:
+            //return "GL_BYTE";
+        //case GL_UNSIGNED_BYTE:
+            //return "GL_UNSIGNED_BYTE";
+        //case GL_SHORT:
+            //return "GL_SHORT";
+        //case GL_FIXED:
+            //return "GL_FIXED";
+        //case GL_FLOAT:
+            //return "GL_FLOAT";
+        //default:
+            //return getHex(type);
+        //}
     }
 
     
@@ -2159,14 +2153,14 @@ String varD1FC67380EDAAC4DC9A33E588E1EDA29_1124764355 =         getHex(type);
     if(convertWholeBuffer)            
             {
                 byteCount = input2.limit() - position;
-            } 
+            } //End block
             result = ByteBuffer.allocate(byteCount).order(input2.order());
 for(int i = 0;i < byteCount;i++)
             {
                 result.put(input2.get());
-            } 
+            } //End block
             input2.position(position);
-        } 
+        } //End block
         else
     if(input instanceof CharBuffer)        
         {
@@ -2175,15 +2169,15 @@ for(int i = 0;i < byteCount;i++)
     if(convertWholeBuffer)            
             {
                 byteCount = (input2.limit() - position) * 2;
-            } 
+            } //End block
             result = ByteBuffer.allocate(byteCount).order(input2.order());
             CharBuffer result2 = result.asCharBuffer();
 for(int i = 0;i < byteCount / 2;i++)
             {
                 result2.put(input2.get());
-            } 
+            } //End block
             input2.position(position);
-        } 
+        } //End block
         else
     if(input instanceof ShortBuffer)        
         {
@@ -2192,15 +2186,15 @@ for(int i = 0;i < byteCount / 2;i++)
     if(convertWholeBuffer)            
             {
                 byteCount = (input2.limit() - position)* 2;
-            } 
+            } //End block
             result = ByteBuffer.allocate(byteCount).order(input2.order());
             ShortBuffer result2 = result.asShortBuffer();
 for(int i = 0;i < byteCount / 2;i++)
             {
                 result2.put(input2.get());
-            } 
+            } //End block
             input2.position(position);
-        } 
+        } //End block
         else
     if(input instanceof IntBuffer)        
         {
@@ -2209,15 +2203,15 @@ for(int i = 0;i < byteCount / 2;i++)
     if(convertWholeBuffer)            
             {
                 byteCount = (input2.limit() - position) * 4;
-            } 
+            } //End block
             result = ByteBuffer.allocate(byteCount).order(input2.order());
             IntBuffer result2 = result.asIntBuffer();
 for(int i = 0;i < byteCount / 4;i++)
             {
                 result2.put(input2.get());
-            } 
+            } //End block
             input2.position(position);
-        } 
+        } //End block
         else
     if(input instanceof FloatBuffer)        
         {
@@ -2226,15 +2220,15 @@ for(int i = 0;i < byteCount / 4;i++)
     if(convertWholeBuffer)            
             {
                 byteCount = (input2.limit() - position) * 4;
-            } 
+            } //End block
             result = ByteBuffer.allocate(byteCount).order(input2.order());
             FloatBuffer result2 = result.asFloatBuffer();
 for(int i = 0;i < byteCount / 4;i++)
             {
                 result2.put(input2.get());
-            } 
+            } //End block
             input2.position(position);
-        } 
+        } //End block
         else
     if(input instanceof DoubleBuffer)        
         {
@@ -2243,15 +2237,15 @@ for(int i = 0;i < byteCount / 4;i++)
     if(convertWholeBuffer)            
             {
                 byteCount = (input2.limit() - position) * 8;
-            } 
+            } //End block
             result = ByteBuffer.allocate(byteCount).order(input2.order());
             DoubleBuffer result2 = result.asDoubleBuffer();
 for(int i = 0;i < byteCount / 8;i++)
             {
                 result2.put(input2.get());
-            } 
+            } //End block
             input2.position(position);
-        } 
+        } //End block
         else
     if(input instanceof LongBuffer)        
         {
@@ -2260,28 +2254,28 @@ for(int i = 0;i < byteCount / 8;i++)
     if(convertWholeBuffer)            
             {
                 byteCount = (input2.limit() - position) * 8;
-            } 
+            } //End block
             result = ByteBuffer.allocate(byteCount).order(input2.order());
             LongBuffer result2 = result.asLongBuffer();
 for(int i = 0;i < byteCount / 8;i++)
             {
                 result2.put(input2.get());
-            } 
+            } //End block
             input2.position(position);
-        } 
+        } //End block
         else
         {
             RuntimeException varCB5E332CEC15D5BC2E552D3AE6650C14_513938529 = new RuntimeException("Unimplemented Buffer subclass.");
             varCB5E332CEC15D5BC2E552D3AE6650C14_513938529.addTaint(taint);
             throw varCB5E332CEC15D5BC2E552D3AE6650C14_513938529;
-        } 
+        } //End block
         result.rewind();
         result.order(ByteOrder.nativeOrder());
 ByteBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_2016967994 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_2016967994.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_2016967994;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2300,8 +2294,8 @@ switch(type){
 for(int i = 0;i < count;i++)
             {
                 result[i] = (char) (0xff & array[offset + i]);
-            } 
-        } 
+            } //End block
+        } //End block
         break;
         case GL_UNSIGNED_SHORT:
         {
@@ -2309,25 +2303,25 @@ for(int i = 0;i < count;i++)
     if(indices instanceof CharBuffer)            
             {
                 charBuffer = (CharBuffer) indices;
-            } 
+            } //End block
             else
             {
                 ByteBuffer byteBuffer = toByteBuffer(count * 2, indices);
                 charBuffer = byteBuffer.asCharBuffer();
-            } 
+            } //End block
             int oldPosition = charBuffer.position();
             charBuffer.position(0);
             charBuffer.get(result);
             charBuffer.position(oldPosition);
-        } 
+        } //End block
         break;
         default:
         break;
 }        char[] varB4A88417B3D0170D754C647C30B7216A_151823506 = (result);
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_2015148537 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_2015148537;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2342,19 +2336,19 @@ for(int i = 0;i < count;i++)
     if(!enabled)        
         {
             return;
-        } 
+        } //End block
         builder.append(" ");
         builder.append(name + ":{");
     if(pointer == null || pointer.mTempByteBuffer == null)        
         {
             builder.append("undefined }");
             return;
-        } 
+        } //End block
     if(pointer.mStride < 0)        
         {
             builder.append("invalid stride");
             return;
-        } 
+        } //End block
         int stride = pointer.getStride();
         ByteBuffer byteBuffer = pointer.mTempByteBuffer;
         int size = pointer.mSize;
@@ -2366,49 +2360,49 @@ for(int i = 0;i < size;i++)
     if(i > 0)            
             {
                 builder.append(", ");
-            } 
+            } //End block
 switch(type){
             case GL_BYTE:
             {
                 byte d = byteBuffer.get(byteOffset);
                 builder.append(Integer.toString(d));
-            } 
+            } //End block
             break;
             case GL_UNSIGNED_BYTE:
             {
                 byte d = byteBuffer.get(byteOffset);
                 builder.append(Integer.toString(0xff & d));
-            } 
+            } //End block
             break;
             case GL_SHORT:
             {
                 ShortBuffer shortBuffer = byteBuffer.asShortBuffer();
                 short d = shortBuffer.get(byteOffset / 2);
                 builder.append(Integer.toString(d));
-            } 
+            } //End block
             break;
             case GL_FIXED:
             {
                 IntBuffer intBuffer = byteBuffer.asIntBuffer();
                 int d = intBuffer.get(byteOffset / 4);
                 builder.append(Integer.toString(d));
-            } 
+            } //End block
             break;
             case GL_FLOAT:
             {
                 FloatBuffer intBuffer = byteBuffer.asFloatBuffer();
                 float d = intBuffer.get(byteOffset / 4);
                 builder.append(Float.toString(d));
-            } 
+            } //End block
             break;
             default:
             builder.append("?");
             break;
 }            byteOffset += sizeofType;
-        } 
+        } //End block
         builder.append("}");
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2427,17 +2421,17 @@ switch(type){
         doArrayElement(builder, mTextureCoordArrayEnabled, "t",
                 mTexCoordPointer, vertexIndex);
         builder.append("\n");
-        
-        
-        
-                
-        
-                
-        
-                
-        
-                
-        
+        // ---------- Original Method ----------
+        //builder.append(" [" + ordinal + " : " + vertexIndex + "] =");
+        //doArrayElement(builder, mVertexArrayEnabled, "v", mVertexPointer,
+                //vertexIndex);
+        //doArrayElement(builder, mNormalArrayEnabled, "n", mNormalPointer,
+                //vertexIndex);
+        //doArrayElement(builder, mColorArrayEnabled, "c", mColorPointer,
+                //vertexIndex);
+        //doArrayElement(builder, mTextureCoordArrayEnabled, "t",
+                //mTexCoordPointer, vertexIndex);
+        //builder.append("\n");
     }
 
     
@@ -2451,15 +2445,15 @@ switch(type){
         mTexCoordPointer.bindByteBuffer();
     if(mVertexArrayEnabled)        
         mVertexPointer.bindByteBuffer();
-        
-        
-            
-        
-            
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (mColorArrayEnabled)
+            //mColorPointer.bindByteBuffer();
+        //if (mNormalArrayEnabled)
+            //mNormalPointer.bindByteBuffer();
+        //if (mTextureCoordArrayEnabled)
+            //mTexCoordPointer.bindByteBuffer();
+        //if (mVertexArrayEnabled)
+            //mVertexPointer.bindByteBuffer();
     }
 
     
@@ -2473,15 +2467,15 @@ switch(type){
         mTexCoordPointer.unbindByteBuffer();
     if(mVertexArrayEnabled)        
         mVertexPointer.unbindByteBuffer();
-        
-        
-            
-        
-            
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (mColorArrayEnabled)
+            //mColorPointer.unbindByteBuffer();
+        //if (mNormalArrayEnabled)
+            //mNormalPointer.unbindByteBuffer();
+        //if (mTextureCoordArrayEnabled)
+            //mTexCoordPointer.unbindByteBuffer();
+        //if (mVertexArrayEnabled)
+            //mVertexPointer.unbindByteBuffer();
     }
 
     
@@ -2490,10 +2484,10 @@ switch(type){
         mStringBuilder = new StringBuilder();
         mStringBuilder.append("\n");
         bindArrays();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStringBuilder = new StringBuilder();
+        //mStringBuilder.append("\n");
+        //bindArrays();
     }
 
     
@@ -2501,9 +2495,9 @@ switch(type){
     private void endLogIndices() {
         log(mStringBuilder.toString());
         unbindArrays();
-        
-        
-        
+        // ---------- Original Method ----------
+        //log(mStringBuilder.toString());
+        //unbindArrays();
     }
 
     
@@ -2515,12 +2509,12 @@ switch(type){
         end();
         mgl.glActiveTexture(texture);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glActiveTexture");
+        //arg("texture", texture);
+        //end();
+        //mgl.glActiveTexture(texture);
+        //checkError();
     }
 
     
@@ -2534,13 +2528,13 @@ switch(type){
         end();
         mgl.glAlphaFunc(func, ref);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glAlphaFunc");
+        //arg("func", func);
+        //arg("ref", ref);
+        //end();
+        //mgl.glAlphaFunc(func, ref);
+        //checkError();
     }
 
     
@@ -2554,13 +2548,13 @@ switch(type){
         end();
         mgl.glAlphaFuncx(func, ref);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glAlphaFuncx");
+        //arg("func", func);
+        //arg("ref", ref);
+        //end();
+        //mgl.glAlphaFuncx(func, ref);
+        //checkError();
     }
 
     
@@ -2574,13 +2568,13 @@ switch(type){
         end();
         mgl.glBindTexture(target, texture);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBindTexture");
+        //arg("target", getTextureTarget(target));
+        //arg("texture", texture);
+        //end();
+        //mgl.glBindTexture(target, texture);
+        //checkError();
     }
 
     
@@ -2594,13 +2588,13 @@ switch(type){
         end();
         mgl.glBlendFunc(sfactor, dfactor);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBlendFunc");
+        //arg("sfactor", getFactor(sfactor));
+        //arg("dfactor", getFactor(dfactor));
+        //end();
+        //mgl.glBlendFunc(sfactor, dfactor);
+        //checkError();
     }
 
     
@@ -2612,12 +2606,12 @@ switch(type){
         end();
         mgl.glClear(mask);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClear");
+        //arg("mask", getClearBufferMask(mask));
+        //end();
+        //mgl.glClear(mask);
+        //checkError();
     }
 
     
@@ -2635,15 +2629,15 @@ switch(type){
         end();
         mgl.glClearColor(red, green, blue, alpha);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClearColor");
+        //arg("red", red);
+        //arg("green", green);
+        //arg("blue", blue);
+        //arg("alpha", alpha);
+        //end();
+        //mgl.glClearColor(red, green, blue, alpha);
+        //checkError();
     }
 
     
@@ -2661,15 +2655,15 @@ switch(type){
         end();
         mgl.glClearColorx(red, green, blue, alpha);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClearColor");
+        //arg("red", red);
+        //arg("green", green);
+        //arg("blue", blue);
+        //arg("alpha", alpha);
+        //end();
+        //mgl.glClearColorx(red, green, blue, alpha);
+        //checkError();
     }
 
     
@@ -2681,12 +2675,12 @@ switch(type){
         end();
         mgl.glClearDepthf(depth);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClearDepthf");
+        //arg("depth", depth);
+        //end();
+        //mgl.glClearDepthf(depth);
+        //checkError();
     }
 
     
@@ -2698,12 +2692,12 @@ switch(type){
         end();
         mgl.glClearDepthx(depth);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClearDepthx");
+        //arg("depth", depth);
+        //end();
+        //mgl.glClearDepthx(depth);
+        //checkError();
     }
 
     
@@ -2715,12 +2709,12 @@ switch(type){
         end();
         mgl.glClearStencil(s);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClearStencil");
+        //arg("s", s);
+        //end();
+        //mgl.glClearStencil(s);
+        //checkError();
     }
 
     
@@ -2732,12 +2726,12 @@ switch(type){
         end();
         mgl.glClientActiveTexture(texture);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClientActiveTexture");
+        //arg("texture", texture);
+        //end();
+        //mgl.glClientActiveTexture(texture);
+        //checkError();
     }
 
     
@@ -2755,15 +2749,15 @@ switch(type){
         end();
         mgl.glColor4f(red, green, blue, alpha);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glColor4f");
+        //arg("red", red);
+        //arg("green", green);
+        //arg("blue", blue);
+        //arg("alpha", alpha);
+        //end();
+        //mgl.glColor4f(red, green, blue, alpha);
+        //checkError();
     }
 
     
@@ -2781,15 +2775,15 @@ switch(type){
         end();
         mgl.glColor4x(red, green, blue, alpha);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glColor4x");
+        //arg("red", red);
+        //arg("green", green);
+        //arg("blue", blue);
+        //arg("alpha", alpha);
+        //end();
+        //mgl.glColor4x(red, green, blue, alpha);
+        //checkError();
     }
 
     
@@ -2808,15 +2802,15 @@ switch(type){
         end();
         mgl.glColorMask(red, green, blue, alpha);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glColorMask");
+        //arg("red", red);
+        //arg("green", green);
+        //arg("blue", blue);
+        //arg("alpha", alpha);
+        //end();
+        //mgl.glColorMask(red, green, blue, alpha);
+        //checkError();
     }
 
     
@@ -2828,13 +2822,13 @@ switch(type){
         mColorPointer = new PointerInfo(size, type, stride, pointer);
         mgl.glColorPointer(size, type, stride, pointer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glColorPointer");
+        //argPointer(size, type, stride, pointer);
+        //end();
+        //mColorPointer = new PointerInfo(size, type, stride, pointer);
+        //mgl.glColorPointer(size, type, stride, pointer);
+        //checkError();
     }
 
     
@@ -2863,20 +2857,20 @@ switch(type){
         mgl.glCompressedTexImage2D(target, level, internalformat, width,
                 height, border, imageSize, data);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //begin("glCompressedTexImage2D");
+        //arg("target", getTextureTarget(target));
+        //arg("level", level);
+        //arg("internalformat", internalformat);
+        //arg("width", width);
+        //arg("height", height);
+        //arg("border", border);
+        //arg("imageSize", imageSize);
+        //arg("data", data.toString());
+        //end();
+        //mgl.glCompressedTexImage2D(target, level, internalformat, width,
+                //height, border, imageSize, data);
+        //checkError();
     }
 
     
@@ -2907,21 +2901,21 @@ switch(type){
         mgl.glCompressedTexSubImage2D(target, level, xoffset, yoffset, width,
                 height, format, imageSize, data);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //begin("glCompressedTexSubImage2D");
+        //arg("target", getTextureTarget(target));
+        //arg("level", level);
+        //arg("xoffset", xoffset);
+        //arg("yoffset", yoffset);
+        //arg("width", width);
+        //arg("height", height);
+        //arg("format", format);
+        //arg("imageSize", imageSize);
+        //arg("data", data.toString());
+        //end();
+        //mgl.glCompressedTexSubImage2D(target, level, xoffset, yoffset, width,
+                //height, format, imageSize, data);
+        //checkError();
     }
 
     
@@ -2949,20 +2943,20 @@ switch(type){
         mgl.glCopyTexImage2D(target, level, internalformat, x, y, width,
                 height, border);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //begin("glCopyTexImage2D");
+        //arg("target", getTextureTarget(target));
+        //arg("level", level);
+        //arg("internalformat", internalformat);
+        //arg("x", x);
+        //arg("y", y);
+        //arg("width", width);
+        //arg("height", height);
+        //arg("border", border);
+        //end();
+        //mgl.glCopyTexImage2D(target, level, internalformat, x, y, width,
+                //height, border);
+        //checkError();
     }
 
     
@@ -2990,20 +2984,20 @@ switch(type){
         mgl.glCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width,
                 height);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //begin("glCopyTexSubImage2D");
+        //arg("target", getTextureTarget(target));
+        //arg("level", level);
+        //arg("xoffset", xoffset);
+        //arg("yoffset", yoffset);
+        //arg("x", x);
+        //arg("y", y);
+        //arg("width", width);
+        //arg("height", height);
+        //end();
+        //mgl.glCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width,
+                //height);
+        //checkError();
     }
 
     
@@ -3015,12 +3009,12 @@ switch(type){
         end();
         mgl.glCullFace(mode);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glCullFace");
+        //arg("mode", mode);
+        //end();
+        //mgl.glCullFace(mode);
+        //checkError();
     }
 
     
@@ -3036,14 +3030,14 @@ switch(type){
         end();
         mgl.glDeleteTextures(n, textures, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDeleteTextures");
+        //arg("n", n);
+        //arg("textures", n, textures, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glDeleteTextures(n, textures, offset);
+        //checkError();
     }
 
     
@@ -3057,13 +3051,13 @@ switch(type){
         end();
         mgl.glDeleteTextures(n, textures);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDeleteTextures");
+        //arg("n", n);
+        //arg("textures", n, textures);
+        //end();
+        //mgl.glDeleteTextures(n, textures);
+        //checkError();
     }
 
     
@@ -3075,12 +3069,12 @@ switch(type){
         end();
         mgl.glDepthFunc(func);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDepthFunc");
+        //arg("func", func);
+        //end();
+        //mgl.glDepthFunc(func);
+        //checkError();
     }
 
     
@@ -3092,12 +3086,12 @@ switch(type){
         end();
         mgl.glDepthMask(flag);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDepthMask");
+        //arg("flag", flag);
+        //end();
+        //mgl.glDepthMask(flag);
+        //checkError();
     }
 
     
@@ -3111,13 +3105,13 @@ switch(type){
         end();
         mgl.glDepthRangef(near, far);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDepthRangef");
+        //arg("near", near);
+        //arg("far", far);
+        //end();
+        //mgl.glDepthRangef(near, far);
+        //checkError();
     }
 
     
@@ -3131,13 +3125,13 @@ switch(type){
         end();
         mgl.glDepthRangex(near, far);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDepthRangex");
+        //arg("near", near);
+        //arg("far", far);
+        //end();
+        //mgl.glDepthRangex(near, far);
+        //checkError();
     }
 
     
@@ -3149,12 +3143,12 @@ switch(type){
         end();
         mgl.glDisable(cap);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDisable");
+        //arg("cap", getCap(cap));
+        //end();
+        //mgl.glDisable(cap);
+        //checkError();
     }
 
     
@@ -3179,26 +3173,26 @@ switch(array){
         break;
 }        mgl.glDisableClientState(array);
         checkError();
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDisableClientState");
+        //arg("array", getClientState(array));
+        //end();
+        //switch (array) {
+        //case GL_COLOR_ARRAY:
+            //mColorArrayEnabled = false;
+            //break;
+        //case GL_NORMAL_ARRAY:
+            //mNormalArrayEnabled = false;
+            //break;
+        //case GL_TEXTURE_COORD_ARRAY:
+            //mTextureCoordArrayEnabled = false;
+            //break;
+        //case GL_VERTEX_ARRAY:
+            //mVertexArrayEnabled = false;
+            //break;
+        //}
+        //mgl.glDisableClientState(array);
+        //checkError();
     }
 
     
@@ -3215,24 +3209,24 @@ switch(array){
 for(int i = 0;i < count;i++)
         {
             doElement(mStringBuilder, i, first + i);
-        } 
+        } //End block
         endLogIndices();
         end();
         mgl.glDrawArrays(mode, first, count);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawArrays");
+        //arg("mode", mode);
+        //arg("first", first);
+        //arg("count", count);
+        //startLogIndices();
+        //for (int i = 0; i < count; i++) {
+            //doElement(mStringBuilder, i, first + i);
+        //}
+        //endLogIndices();
+        //end();
+        //mgl.glDrawArrays(mode, first, count);
+        //checkError();
     }
 
     
@@ -3252,26 +3246,26 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < indexArrayLength;i++)
         {
             doElement(mStringBuilder, i, indexArray[i]);
-        } 
+        } //End block
         endLogIndices();
         end();
         mgl.glDrawElements(mode, count, type, indices);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawElements");
+        //arg("mode", getBeginMode(mode));
+        //arg("count", count);
+        //arg("type", getIndexType(type));
+        //char[] indexArray = toCharIndices(count, type, indices);
+        //int indexArrayLength = indexArray.length;
+        //startLogIndices();
+        //for (int i = 0; i < indexArrayLength; i++) {
+            //doElement(mStringBuilder, i, indexArray[i]);
+        //}
+        //endLogIndices();
+        //end();
+        //mgl.glDrawElements(mode, count, type, indices);
+        //checkError();
     }
 
     
@@ -3283,12 +3277,12 @@ for(int i = 0;i < indexArrayLength;i++)
         end();
         mgl.glEnable(cap);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glEnable");
+        //arg("cap", getCap(cap));
+        //end();
+        //mgl.glEnable(cap);
+        //checkError();
     }
 
     
@@ -3313,26 +3307,26 @@ switch(array){
         break;
 }        mgl.glEnableClientState(array);
         checkError();
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glEnableClientState");
+        //arg("array", getClientState(array));
+        //end();
+        //switch (array) {
+        //case GL_COLOR_ARRAY:
+            //mColorArrayEnabled = true;
+            //break;
+        //case GL_NORMAL_ARRAY:
+            //mNormalArrayEnabled = true;
+            //break;
+        //case GL_TEXTURE_COORD_ARRAY:
+            //mTextureCoordArrayEnabled = true;
+            //break;
+        //case GL_VERTEX_ARRAY:
+            //mVertexArrayEnabled = true;
+            //break;
+        //}
+        //mgl.glEnableClientState(array);
+        //checkError();
     }
 
     
@@ -3342,11 +3336,11 @@ switch(array){
         end();
         mgl.glFinish();
         checkError();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFinish");
+        //end();
+        //mgl.glFinish();
+        //checkError();
     }
 
     
@@ -3356,11 +3350,11 @@ switch(array){
         end();
         mgl.glFlush();
         checkError();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFlush");
+        //end();
+        //mgl.glFlush();
+        //checkError();
     }
 
     
@@ -3374,13 +3368,13 @@ switch(array){
         end();
         mgl.glFogf(pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFogf");
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl.glFogf(pname, param);
+        //checkError();
     }
 
     
@@ -3396,14 +3390,14 @@ switch(array){
         end();
         mgl.glFogfv(pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFogfv");
+        //arg("pname", getFogPName(pname));
+        //arg("params", getFogParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glFogfv(pname, params, offset);
+        //checkError();
     }
 
     
@@ -3417,13 +3411,13 @@ switch(array){
         end();
         mgl.glFogfv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFogfv");
+        //arg("pname", getFogPName(pname));
+        //arg("params", getFogParamCount(pname), params);
+        //end();
+        //mgl.glFogfv(pname, params);
+        //checkError();
     }
 
     
@@ -3437,13 +3431,13 @@ switch(array){
         end();
         mgl.glFogx(pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFogx");
+        //arg("pname", getFogPName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glFogx(pname, param);
+        //checkError();
     }
 
     
@@ -3459,14 +3453,14 @@ switch(array){
         end();
         mgl.glFogxv(pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFogxv");
+        //arg("pname", getFogPName(pname));
+        //arg("params", getFogParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glFogxv(pname, params, offset);
+        //checkError();
     }
 
     
@@ -3480,13 +3474,13 @@ switch(array){
         end();
         mgl.glFogxv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFogxv");
+        //arg("pname", getFogPName(pname));
+        //arg("params", getFogParamCount(pname), params);
+        //end();
+        //mgl.glFogxv(pname, params);
+        //checkError();
     }
 
     
@@ -3498,12 +3492,12 @@ switch(array){
         end();
         mgl.glFrontFace(mode);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFrontFace");
+        //arg("mode", mode);
+        //end();
+        //mgl.glFrontFace(mode);
+        //checkError();
     }
 
     
@@ -3526,17 +3520,17 @@ switch(array){
         end();
         mgl.glFrustumf(left, right, bottom, top, near, far);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFrustumf");
+        //arg("left", left);
+        //arg("right", right);
+        //arg("bottom", bottom);
+        //arg("top", top);
+        //arg("near", near);
+        //arg("far", far);
+        //end();
+        //mgl.glFrustumf(left, right, bottom, top, near, far);
+        //checkError();
     }
 
     
@@ -3559,17 +3553,17 @@ switch(array){
         end();
         mgl.glFrustumx(left, right, bottom, top, near, far);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFrustumx");
+        //arg("left", left);
+        //arg("right", right);
+        //arg("bottom", bottom);
+        //arg("top", top);
+        //arg("near", near);
+        //arg("far", far);
+        //end();
+        //mgl.glFrustumx(left, right, bottom, top, near, far);
+        //checkError();
     }
 
     
@@ -3585,14 +3579,14 @@ switch(array){
         mgl.glGenTextures(n, textures, offset);
         returns(toString(n, FORMAT_INT, textures, offset));
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenTextures");
+        //arg("n", n);
+        //arg("textures", Arrays.toString(textures));
+        //arg("offset", offset);
+        //mgl.glGenTextures(n, textures, offset);
+        //returns(toString(n, FORMAT_INT, textures, offset));
+        //checkError();
     }
 
     
@@ -3606,13 +3600,13 @@ switch(array){
         mgl.glGenTextures(n, textures);
         returns(toString(n, FORMAT_INT, textures));
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenTextures");
+        //arg("n", n);
+        //arg("textures", textures.toString());
+        //mgl.glGenTextures(n, textures);
+        //returns(toString(n, FORMAT_INT, textures));
+        //checkError();
     }
 
     
@@ -3624,11 +3618,11 @@ switch(array){
         int varB4A88417B3D0170D754C647C30B7216A_348662340 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_269218188 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_269218188;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetError");
+        //int result = mgl.glGetError();
+        //returns(result);
+        //return result;
     }
 
     
@@ -3645,15 +3639,15 @@ switch(array){
         returns(toString(getIntegerStateSize(pname),
                 getIntegerStateFormat(pname), params, offset));
         checkError();
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //begin("glGetIntegerv");
+        //arg("pname", getIntegerStateName(pname));
+        //arg("params", Arrays.toString(params));
+        //arg("offset", offset);
+        //mgl.glGetIntegerv(pname, params, offset);
+        //returns(toString(getIntegerStateSize(pname),
+                //getIntegerStateFormat(pname), params, offset));
+        //checkError();
     }
 
     
@@ -3668,14 +3662,14 @@ switch(array){
         returns(toString(getIntegerStateSize(pname),
                 getIntegerStateFormat(pname), params));
         checkError();
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //begin("glGetIntegerv");
+        //arg("pname", getIntegerStateName(pname));
+        //arg("params", params.toString());
+        //mgl.glGetIntegerv(pname, params);
+        //returns(toString(getIntegerStateSize(pname),
+                //getIntegerStateFormat(pname), params));
+        //checkError();
     }
 
     
@@ -3690,13 +3684,13 @@ switch(array){
 String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetString");
+        //arg("name", name);
+        //String result = mgl.glGetString(name);
+        //returns(result);
+        //checkError();
+        //return result;
     }
 
     
@@ -3710,13 +3704,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glHint(target, mode);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glHint");
+        //arg("target", getHintTarget(target));
+        //arg("mode", getHintMode(mode));
+        //end();
+        //mgl.glHint(target, mode);
+        //checkError();
     }
 
     
@@ -3730,13 +3724,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightModelf(pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightModelf");
+        //arg("pname", getLightModelPName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glLightModelf(pname, param);
+        //checkError();
     }
 
     
@@ -3752,14 +3746,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightModelfv(pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightModelfv");
+        //arg("pname", getLightModelPName(pname));
+        //arg("params", getLightModelParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glLightModelfv(pname, params, offset);
+        //checkError();
     }
 
     
@@ -3773,13 +3767,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightModelfv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightModelfv");
+        //arg("pname", getLightModelPName(pname));
+        //arg("params", getLightModelParamCount(pname), params);
+        //end();
+        //mgl.glLightModelfv(pname, params);
+        //checkError();
     }
 
     
@@ -3793,13 +3787,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightModelx(pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightModelx");
+        //arg("pname", getLightModelPName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glLightModelx(pname, param);
+        //checkError();
     }
 
     
@@ -3815,14 +3809,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightModelxv(pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightModelxv");
+        //arg("pname", getLightModelPName(pname));
+        //arg("params", getLightModelParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glLightModelxv(pname, params, offset);
+        //checkError();
     }
 
     
@@ -3836,13 +3830,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightModelxv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightModelfv");
+        //arg("pname", getLightModelPName(pname));
+        //arg("params", getLightModelParamCount(pname), params);
+        //end();
+        //mgl.glLightModelxv(pname, params);
+        //checkError();
     }
 
     
@@ -3858,14 +3852,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightf(light, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightf");
+        //arg("light", getLightName(light));
+        //arg("pname", getLightPName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glLightf(light, pname, param);
+        //checkError();
     }
 
     
@@ -3883,15 +3877,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightfv(light, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightfv");
+        //arg("light", getLightName(light));
+        //arg("pname", getLightPName(pname));
+        //arg("params", getLightParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glLightfv(light, pname, params, offset);
+        //checkError();
     }
 
     
@@ -3907,14 +3901,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightfv(light, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightfv");
+        //arg("light", getLightName(light));
+        //arg("pname", getLightPName(pname));
+        //arg("params", getLightParamCount(pname), params);
+        //end();
+        //mgl.glLightfv(light, pname, params);
+        //checkError();
     }
 
     
@@ -3930,14 +3924,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightx(light, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightx");
+        //arg("light", getLightName(light));
+        //arg("pname", getLightPName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glLightx(light, pname, param);
+        //checkError();
     }
 
     
@@ -3955,15 +3949,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightxv(light, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightxv");
+        //arg("light", getLightName(light));
+        //arg("pname", getLightPName(pname));
+        //arg("params", getLightParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glLightxv(light, pname, params, offset);
+        //checkError();
     }
 
     
@@ -3979,14 +3973,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLightxv(light, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLightxv");
+        //arg("light", getLightName(light));
+        //arg("pname", getLightPName(pname));
+        //arg("params", getLightParamCount(pname), params);
+        //end();
+        //mgl.glLightxv(light, pname, params);
+        //checkError();
     }
 
     
@@ -3998,12 +3992,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLineWidth(width);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLineWidth");
+        //arg("width", width);
+        //end();
+        //mgl.glLineWidth(width);
+        //checkError();
     }
 
     
@@ -4015,12 +4009,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLineWidthx(width);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLineWidthx");
+        //arg("width", width);
+        //end();
+        //mgl.glLineWidthx(width);
+        //checkError();
     }
 
     
@@ -4030,11 +4024,11 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLoadIdentity();
         checkError();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLoadIdentity");
+        //end();
+        //mgl.glLoadIdentity();
+        //checkError();
     }
 
     
@@ -4048,13 +4042,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLoadMatrixf(m, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLoadMatrixf");
+        //arg("m", 16, m, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glLoadMatrixf(m, offset);
+        //checkError();
     }
 
     
@@ -4066,12 +4060,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLoadMatrixf(m);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLoadMatrixf");
+        //arg("m", 16, m);
+        //end();
+        //mgl.glLoadMatrixf(m);
+        //checkError();
     }
 
     
@@ -4085,13 +4079,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLoadMatrixx(m, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLoadMatrixx");
+        //arg("m", 16, m, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glLoadMatrixx(m, offset);
+        //checkError();
     }
 
     
@@ -4103,12 +4097,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLoadMatrixx(m);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLoadMatrixx");
+        //arg("m", 16, m);
+        //end();
+        //mgl.glLoadMatrixx(m);
+        //checkError();
     }
 
     
@@ -4120,12 +4114,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glLogicOp(opcode);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLogicOp");
+        //arg("opcode", opcode);
+        //end();
+        //mgl.glLogicOp(opcode);
+        //checkError();
     }
 
     
@@ -4141,14 +4135,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMaterialf(face, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMaterialf");
+        //arg("face", getFaceName(face));
+        //arg("pname", getMaterialPName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glMaterialf(face, pname, param);
+        //checkError();
     }
 
     
@@ -4166,15 +4160,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMaterialfv(face, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMaterialfv");
+        //arg("face", getFaceName(face));
+        //arg("pname", getMaterialPName(pname));
+        //arg("params", getMaterialParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glMaterialfv(face, pname, params, offset);
+        //checkError();
     }
 
     
@@ -4190,14 +4184,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMaterialfv(face, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMaterialfv");
+        //arg("face", getFaceName(face));
+        //arg("pname", getMaterialPName(pname));
+        //arg("params", getMaterialParamCount(pname), params);
+        //end();
+        //mgl.glMaterialfv(face, pname, params);
+        //checkError();
     }
 
     
@@ -4213,14 +4207,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMaterialx(face, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMaterialx");
+        //arg("face", getFaceName(face));
+        //arg("pname", getMaterialPName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glMaterialx(face, pname, param);
+        //checkError();
     }
 
     
@@ -4238,15 +4232,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMaterialxv(face, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMaterialxv");
+        //arg("face", getFaceName(face));
+        //arg("pname", getMaterialPName(pname));
+        //arg("params", getMaterialParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glMaterialxv(face, pname, params, offset);
+        //checkError();
     }
 
     
@@ -4262,14 +4256,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMaterialxv(face, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMaterialxv");
+        //arg("face", getFaceName(face));
+        //arg("pname", getMaterialPName(pname));
+        //arg("params", getMaterialParamCount(pname), params);
+        //end();
+        //mgl.glMaterialxv(face, pname, params);
+        //checkError();
     }
 
     
@@ -4281,12 +4275,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMatrixMode(mode);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMatrixMode");
+        //arg("mode", getMatrixMode(mode));
+        //end();
+        //mgl.glMatrixMode(mode);
+        //checkError();
     }
 
     
@@ -4300,13 +4294,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMultMatrixf(m, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMultMatrixf");
+        //arg("m", 16, m, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glMultMatrixf(m, offset);
+        //checkError();
     }
 
     
@@ -4318,12 +4312,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMultMatrixf(m);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMultMatrixf");
+        //arg("m", 16, m);
+        //end();
+        //mgl.glMultMatrixf(m);
+        //checkError();
     }
 
     
@@ -4337,13 +4331,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMultMatrixx(m, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMultMatrixx");
+        //arg("m", 16, m, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glMultMatrixx(m, offset);
+        //checkError();
     }
 
     
@@ -4355,12 +4349,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMultMatrixx(m);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMultMatrixx");
+        //arg("m", 16, m);
+        //end();
+        //mgl.glMultMatrixx(m);
+        //checkError();
     }
 
     
@@ -4380,16 +4374,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMultiTexCoord4f(target, s, t, r, q);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMultiTexCoord4f");
+        //arg("target", target);
+        //arg("s", s);
+        //arg("t", t);
+        //arg("r", r);
+        //arg("q", q);
+        //end();
+        //mgl.glMultiTexCoord4f(target, s, t, r, q);
+        //checkError();
     }
 
     
@@ -4409,16 +4403,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glMultiTexCoord4x(target, s, t, r, q);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMultiTexCoord4x");
+        //arg("target", target);
+        //arg("s", s);
+        //arg("t", t);
+        //arg("r", r);
+        //arg("q", q);
+        //end();
+        //mgl.glMultiTexCoord4x(target, s, t, r, q);
+        //checkError();
     }
 
     
@@ -4434,14 +4428,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glNormal3f(nx, ny, nz);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glNormal3f");
+        //arg("nx", nx);
+        //arg("ny", ny);
+        //arg("nz", nz);
+        //end();
+        //mgl.glNormal3f(nx, ny, nz);
+        //checkError();
     }
 
     
@@ -4457,14 +4451,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glNormal3x(nx, ny, nz);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glNormal3x");
+        //arg("nx", nx);
+        //arg("ny", ny);
+        //arg("nz", nz);
+        //end();
+        //mgl.glNormal3x(nx, ny, nz);
+        //checkError();
     }
 
     
@@ -4478,15 +4472,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         mNormalPointer = new PointerInfo(3, type, stride, pointer);
         mgl.glNormalPointer(type, stride, pointer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glNormalPointer");
+        //arg("type", type);
+        //arg("stride", stride);
+        //arg("pointer", pointer.toString());
+        //end();
+        //mNormalPointer = new PointerInfo(3, type, stride, pointer);
+        //mgl.glNormalPointer(type, stride, pointer);
+        //checkError();
     }
 
     
@@ -4509,17 +4503,17 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glOrthof(left, right, bottom, top, near, far);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glOrthof");
+        //arg("left", left);
+        //arg("right", right);
+        //arg("bottom", bottom);
+        //arg("top", top);
+        //arg("near", near);
+        //arg("far", far);
+        //end();
+        //mgl.glOrthof(left, right, bottom, top, near, far);
+        //checkError();
     }
 
     
@@ -4542,17 +4536,17 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glOrthox(left, right, bottom, top, near, far);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glOrthox");
+        //arg("left", left);
+        //arg("right", right);
+        //arg("bottom", bottom);
+        //arg("top", top);
+        //arg("near", near);
+        //arg("far", far);
+        //end();
+        //mgl.glOrthox(left, right, bottom, top, near, far);
+        //checkError();
     }
 
     
@@ -4566,13 +4560,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glPixelStorei(pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPixelStorei");
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl.glPixelStorei(pname, param);
+        //checkError();
     }
 
     
@@ -4584,12 +4578,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glPointSize(size);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointSize");
+        //arg("size", size);
+        //end();
+        //mgl.glPointSize(size);
+        //checkError();
     }
 
     
@@ -4601,12 +4595,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glPointSizex(size);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointSizex");
+        //arg("size", size);
+        //end();
+        //mgl.glPointSizex(size);
+        //checkError();
     }
 
     
@@ -4620,13 +4614,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glPolygonOffset(factor, units);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPolygonOffset");
+        //arg("factor", factor);
+        //arg("units", units);
+        //end();
+        //mgl.glPolygonOffset(factor, units);
+        //checkError();
     }
 
     
@@ -4640,13 +4634,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glPolygonOffsetx(factor, units);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPolygonOffsetx");
+        //arg("factor", factor);
+        //arg("units", units);
+        //end();
+        //mgl.glPolygonOffsetx(factor, units);
+        //checkError();
     }
 
     
@@ -4656,11 +4650,11 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glPopMatrix();
         checkError();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPopMatrix");
+        //end();
+        //mgl.glPopMatrix();
+        //checkError();
     }
 
     
@@ -4670,11 +4664,11 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glPushMatrix();
         checkError();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPushMatrix");
+        //end();
+        //mgl.glPushMatrix();
+        //checkError();
     }
 
     
@@ -4699,18 +4693,18 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glReadPixels(x, y, width, height, format, type, pixels);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glReadPixels");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("width", width);
+        //arg("height", height);
+        //arg("format", format);
+        //arg("type", type);
+        //arg("pixels", pixels.toString());
+        //end();
+        //mgl.glReadPixels(x, y, width, height, format, type, pixels);
+        //checkError();
     }
 
     
@@ -4728,15 +4722,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glRotatef(angle, x, y, z);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glRotatef");
+        //arg("angle", angle);
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //end();
+        //mgl.glRotatef(angle, x, y, z);
+        //checkError();
     }
 
     
@@ -4754,15 +4748,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glRotatex(angle, x, y, z);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glRotatex");
+        //arg("angle", angle);
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //end();
+        //mgl.glRotatex(angle, x, y, z);
+        //checkError();
     }
 
     
@@ -4776,13 +4770,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glSampleCoverage(value, invert);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glSampleCoveragex");
+        //arg("value", value);
+        //arg("invert", invert);
+        //end();
+        //mgl.glSampleCoverage(value, invert);
+        //checkError();
     }
 
     
@@ -4796,13 +4790,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glSampleCoveragex(value, invert);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glSampleCoveragex");
+        //arg("value", value);
+        //arg("invert", invert);
+        //end();
+        //mgl.glSampleCoveragex(value, invert);
+        //checkError();
     }
 
     
@@ -4818,14 +4812,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glScalef(x, y, z);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glScalef");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //end();
+        //mgl.glScalef(x, y, z);
+        //checkError();
     }
 
     
@@ -4841,14 +4835,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glScalex(x, y, z);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glScalex");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //end();
+        //mgl.glScalex(x, y, z);
+        //checkError();
     }
 
     
@@ -4866,15 +4860,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glScissor(x, y, width, height);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glScissor");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("width", width);
+        //arg("height", height);
+        //end();
+        //mgl.glScissor(x, y, width, height);
+        //checkError();
     }
 
     
@@ -4886,12 +4880,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glShadeModel(mode);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glShadeModel");
+        //arg("mode", getShadeModel(mode));
+        //end();
+        //mgl.glShadeModel(mode);
+        //checkError();
     }
 
     
@@ -4907,14 +4901,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glStencilFunc(func, ref, mask);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glStencilFunc");
+        //arg("func", func);
+        //arg("ref", ref);
+        //arg("mask", mask);
+        //end();
+        //mgl.glStencilFunc(func, ref, mask);
+        //checkError();
     }
 
     
@@ -4926,12 +4920,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glStencilMask(mask);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glStencilMask");
+        //arg("mask", mask);
+        //end();
+        //mgl.glStencilMask(mask);
+        //checkError();
     }
 
     
@@ -4947,14 +4941,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glStencilOp(fail, zfail, zpass);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glStencilOp");
+        //arg("fail", fail);
+        //arg("zfail", zfail);
+        //arg("zpass", zpass);
+        //end();
+        //mgl.glStencilOp(fail, zfail, zpass);
+        //checkError();
     }
 
     
@@ -4966,13 +4960,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         mTexCoordPointer = new PointerInfo(size, type, stride, pointer);
         mgl.glTexCoordPointer(size, type, stride, pointer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexCoordPointer");
+        //argPointer(size, type, stride, pointer);
+        //end();
+        //mTexCoordPointer = new PointerInfo(size, type, stride, pointer);
+        //mgl.glTexCoordPointer(size, type, stride, pointer);
+        //checkError();
     }
 
     
@@ -4988,14 +4982,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTexEnvf(target, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnvf");
+        //arg("target", getTextureEnvTarget(target));
+        //arg("pname", getTextureEnvPName(pname));
+        //arg("param", getTextureEnvParamName(param));
+        //end();
+        //mgl.glTexEnvf(target, pname, param);
+        //checkError();
     }
 
     
@@ -5013,15 +5007,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTexEnvfv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnvfv");
+        //arg("target", getTextureEnvTarget(target));
+        //arg("pname", getTextureEnvPName(pname));
+        //arg("params", getTextureEnvParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glTexEnvfv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -5037,14 +5031,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTexEnvfv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnvfv");
+        //arg("target", getTextureEnvTarget(target));
+        //arg("pname", getTextureEnvPName(pname));
+        //arg("params", getTextureEnvParamCount(pname), params);
+        //end();
+        //mgl.glTexEnvfv(target, pname, params);
+        //checkError();
     }
 
     
@@ -5060,14 +5054,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTexEnvx(target, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnvx");
+        //arg("target", getTextureEnvTarget(target));
+        //arg("pname", getTextureEnvPName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glTexEnvx(target, pname, param);
+        //checkError();
     }
 
     
@@ -5085,15 +5079,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTexEnvxv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnvxv");
+        //arg("target", getTextureEnvTarget(target));
+        //arg("pname", getTextureEnvPName(pname));
+        //arg("params", getTextureEnvParamCount(pname), params, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl.glTexEnvxv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -5109,14 +5103,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTexEnvxv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnvxv");
+        //arg("target", getTextureEnvTarget(target));
+        //arg("pname", getTextureEnvPName(pname));
+        //arg("params", getTextureEnvParamCount(pname), params);
+        //end();
+        //mgl.glTexEnvxv(target, pname, params);
+        //checkError();
     }
 
     
@@ -5147,21 +5141,21 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         mgl.glTexImage2D(target, level, internalformat, width, height, border,
                 format, type, pixels);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //begin("glTexImage2D");
+        //arg("target", target);
+        //arg("level", level);
+        //arg("internalformat", internalformat);
+        //arg("width", width);
+        //arg("height", height);
+        //arg("border", border);
+        //arg("format", format);
+        //arg("type", type);
+        //arg("pixels", pixels.toString());
+        //end();
+        //mgl.glTexImage2D(target, level, internalformat, width, height, border,
+                //format, type, pixels);
+        //checkError();
     }
 
     
@@ -5177,14 +5171,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTexParameterf(target, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameterf");
+        //arg("target", getTextureTarget(target));
+        //arg("pname", getTexturePName(pname));
+        //arg("param", getTextureParamName(param));
+        //end();
+        //mgl.glTexParameterf(target, pname, param);
+        //checkError();
     }
 
     
@@ -5200,14 +5194,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTexParameterx(target, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameterx");
+        //arg("target", getTextureTarget(target));
+        //arg("pname", getTexturePName(pname));
+        //arg("param", param);
+        //end();
+        //mgl.glTexParameterx(target, pname, param);
+        //checkError();
     }
 
     
@@ -5224,14 +5218,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexParameteriv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameteriv");
+        //arg("target", getTextureTarget(target));
+        //arg("pname", getTexturePName(pname));
+        //arg("params", 4, params, offset);
+        //end();
+        //mgl11.glTexParameteriv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -5247,14 +5241,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexParameteriv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameteriv");
+        //arg("target", getTextureTarget(target));
+        //arg("pname", getTexturePName(pname));
+        //arg("params", 4, params);
+        //end();
+        //mgl11.glTexParameteriv(target, pname, params);
+        //checkError();
     }
 
     
@@ -5285,21 +5279,21 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         mgl.glTexSubImage2D(target, level, xoffset, yoffset, width, height,
                 format, type, pixels);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //begin("glTexSubImage2D");
+        //arg("target", getTextureTarget(target));
+        //arg("level", level);
+        //arg("xoffset", xoffset);
+        //arg("yoffset", yoffset);
+        //arg("width", width);
+        //arg("height", height);
+        //arg("format", format);
+        //arg("type", type);
+        //arg("pixels", pixels.toString());
+        //end();
+        //mgl.glTexSubImage2D(target, level, xoffset, yoffset, width, height,
+                //format, type, pixels);
+        //checkError();
     }
 
     
@@ -5315,14 +5309,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTranslatef(x, y, z);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTranslatef");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //end();
+        //mgl.glTranslatef(x, y, z);
+        //checkError();
     }
 
     
@@ -5338,14 +5332,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glTranslatex(x, y, z);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTranslatex");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //end();
+        //mgl.glTranslatex(x, y, z);
+        //checkError();
     }
 
     
@@ -5357,13 +5351,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         mVertexPointer = new PointerInfo(size, type, stride, pointer);
         mgl.glVertexPointer(size, type, stride, pointer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glVertexPointer");
+        //argPointer(size, type, stride, pointer);
+        //end();
+        //mVertexPointer = new PointerInfo(size, type, stride, pointer);
+        //mgl.glVertexPointer(size, type, stride, pointer);
+        //checkError();
     }
 
     
@@ -5381,15 +5375,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl.glViewport(x, y, width, height);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glViewport");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("width", width);
+        //arg("height", height);
+        //end();
+        //mgl.glViewport(x, y, width, height);
+        //checkError();
     }
 
     
@@ -5405,14 +5399,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glClipPlanef(plane, equation, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClipPlanef");
+        //arg("plane", plane);
+        //arg("equation", 4, equation, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl11.glClipPlanef(plane, equation, offset);
+        //checkError();
     }
 
     
@@ -5426,13 +5420,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glClipPlanef(plane, equation);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClipPlanef");
+        //arg("plane", plane);
+        //arg("equation", 4, equation);
+        //end();
+        //mgl11.glClipPlanef(plane, equation);
+        //checkError();
     }
 
     
@@ -5448,14 +5442,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glClipPlanex(plane, equation, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClipPlanex");
+        //arg("plane", plane);
+        //arg("equation", 4, equation, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl11.glClipPlanex(plane, equation, offset);
+        //checkError();
     }
 
     
@@ -5469,13 +5463,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glClipPlanex(plane, equation);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glClipPlanef");
+        //arg("plane", plane);
+        //arg("equation", 4, equation);
+        //end();
+        //mgl11.glClipPlanex(plane, equation);
+        //checkError();
     }
 
     
@@ -5496,16 +5490,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexfOES(x, y, z, width, height);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexfOES");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //arg("width", width);
+        //arg("height", height);
+        //end();
+        //mgl11Ext.glDrawTexfOES(x, y, z, width, height);
+        //checkError();
     }
 
     
@@ -5519,13 +5513,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexfvOES(coords, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexfvOES");
+        //arg("coords", 5, coords, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl11Ext.glDrawTexfvOES(coords, offset);
+        //checkError();
     }
 
     
@@ -5537,12 +5531,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexfvOES(coords);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexfvOES");
+        //arg("coords", 5, coords);
+        //end();
+        //mgl11Ext.glDrawTexfvOES(coords);
+        //checkError();
     }
 
     
@@ -5562,16 +5556,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexiOES(x, y, z, width, height);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexiOES");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //arg("width", width);
+        //arg("height", height);
+        //end();
+        //mgl11Ext.glDrawTexiOES(x, y, z, width, height);
+        //checkError();
     }
 
     
@@ -5585,13 +5579,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexivOES(coords, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexivOES");
+        //arg("coords", 5, coords, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl11Ext.glDrawTexivOES(coords, offset);
+        //checkError();
     }
 
     
@@ -5603,12 +5597,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexivOES(coords);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexivOES");
+        //arg("coords", 5, coords);
+        //end();
+        //mgl11Ext.glDrawTexivOES(coords);
+        //checkError();
     }
 
     
@@ -5629,16 +5623,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexsOES(x, y, z, width, height);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexsOES");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //arg("width", width);
+        //arg("height", height);
+        //end();
+        //mgl11Ext.glDrawTexsOES(x, y, z, width, height);
+        //checkError();
     }
 
     
@@ -5652,13 +5646,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexsvOES(coords, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexsvOES");
+        //arg("coords", 5, coords, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl11Ext.glDrawTexsvOES(coords, offset);
+        //checkError();
     }
 
     
@@ -5670,12 +5664,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexsvOES(coords);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexsvOES");
+        //arg("coords", 5, coords);
+        //end();
+        //mgl11Ext.glDrawTexsvOES(coords);
+        //checkError();
     }
 
     
@@ -5695,16 +5689,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexxOES(x, y, z, width, height);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexxOES");
+        //arg("x", x);
+        //arg("y", y);
+        //arg("z", z);
+        //arg("width", width);
+        //arg("height", height);
+        //end();
+        //mgl11Ext.glDrawTexxOES(x, y, z, width, height);
+        //checkError();
     }
 
     
@@ -5718,13 +5712,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexxvOES(coords, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexxvOES");
+        //arg("coords", 5, coords, offset);
+        //arg("offset", offset);
+        //end();
+        //mgl11Ext.glDrawTexxvOES(coords, offset);
+        //checkError();
     }
 
     
@@ -5736,12 +5730,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glDrawTexxvOES(coords);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawTexxvOES");
+        //arg("coords", 5, coords);
+        //end();
+        //mgl11Ext.glDrawTexxvOES(coords);
+        //checkError();
     }
 
     
@@ -5764,17 +5758,17 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         int var9F7D0EE82B6A6CA7DDEAE841F3253059_650231353 = (valid);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_594158823 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_594158823;
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glQueryMatrixxOES");
+        //arg("mantissa", Arrays.toString(mantissa));
+        //arg("exponent", Arrays.toString(exponent));
+        //end();
+        //int valid = mgl10Ext.glQueryMatrixxOES(mantissa, mantissaOffset,
+            //exponent, exponentOffset);
+        //returns(toString(16, FORMAT_FIXED, mantissa, mantissaOffset));
+        //returns(toString(16, FORMAT_INT, exponent, exponentOffset));
+        //checkError();
+        //return valid;
     }
 
     
@@ -5793,16 +5787,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         int var9F7D0EE82B6A6CA7DDEAE841F3253059_1944660643 = (valid);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644560432 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644560432;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glQueryMatrixxOES");
+        //arg("mantissa", mantissa.toString());
+        //arg("exponent", exponent.toString());
+        //end();
+        //int valid = mgl10Ext.glQueryMatrixxOES(mantissa, exponent);
+        //returns(toString(16, FORMAT_FIXED, mantissa));
+        //returns(toString(16, FORMAT_INT, exponent));
+        //checkError();
+        //return valid;
     }
 
     
@@ -5816,13 +5810,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glBindBuffer(target, buffer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBindBuffer");
+        //arg("target", target);
+        //arg("buffer", buffer);
+        //end();
+        //mgl11.glBindBuffer(target, buffer);
+        //checkError();
     }
 
     
@@ -5840,15 +5834,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glBufferData(target, size, data, usage);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBufferData");
+        //arg("target", target);
+        //arg("size", size);
+        //arg("data", data.toString());
+        //arg("usage", usage);
+        //end();
+        //mgl11.glBufferData(target, size, data, usage);
+        //checkError();
     }
 
     
@@ -5866,15 +5860,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glBufferSubData(target, offset, size, data);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBufferSubData");
+        //arg("target", target);
+        //arg("offset", offset);
+        //arg("size", size);
+        //arg("data", data.toString());
+        //end();
+        //mgl11.glBufferSubData(target, offset, size, data);
+        //checkError();
     }
 
     
@@ -5892,15 +5886,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glColor4ub(red, green, blue, alpha);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glColor4ub");
+        //arg("red", red);
+        //arg("green", green);
+        //arg("blue", blue);
+        //arg("alpha", alpha);
+        //end();
+        //mgl11.glColor4ub(red, green, blue, alpha);
+        //checkError();
     }
 
     
@@ -5916,14 +5910,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glDeleteBuffers(n, buffers, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDeleteBuffers");
+        //arg("n", n);
+        //arg("buffers", buffers.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glDeleteBuffers(n, buffers, offset);
+        //checkError();
     }
 
     
@@ -5937,13 +5931,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glDeleteBuffers(n, buffers);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDeleteBuffers");
+        //arg("n", n);
+        //arg("buffers", buffers.toString());
+        //end();
+        //mgl11.glDeleteBuffers(n, buffers);
+        //checkError();
     }
 
     
@@ -5959,14 +5953,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGenBuffers(n, buffers, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenBuffers");
+        //arg("n", n);
+        //arg("buffers", buffers.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGenBuffers(n, buffers, offset);
+        //checkError();
     }
 
     
@@ -5980,13 +5974,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGenBuffers(n, buffers);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenBuffers");
+        //arg("n", n);
+        //arg("buffers", buffers.toString());
+        //end();
+        //mgl11.glGenBuffers(n, buffers);
+        //checkError();
     }
 
     
@@ -6002,14 +5996,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetBooleanv(pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetBooleanv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetBooleanv(pname, params, offset);
+        //checkError();
     }
 
     
@@ -6023,13 +6017,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetBooleanv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetBooleanv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetBooleanv(pname, params);
+        //checkError();
     }
 
     
@@ -6048,15 +6042,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetBufferParameteriv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetBufferParameteriv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetBufferParameteriv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6072,14 +6066,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetBufferParameteriv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetBufferParameteriv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetBufferParameteriv(target, pname, params);
+        //checkError();
     }
 
     
@@ -6095,14 +6089,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetClipPlanef(pname, eqn, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetClipPlanef");
+        //arg("pname", pname);
+        //arg("eqn", eqn.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetClipPlanef(pname, eqn, offset);
+        //checkError();
     }
 
     
@@ -6116,13 +6110,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetClipPlanef(pname, eqn);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetClipPlanef");
+        //arg("pname", pname);
+        //arg("eqn", eqn.toString());
+        //end();
+        //mgl11.glGetClipPlanef(pname, eqn);
+        //checkError();
     }
 
     
@@ -6137,13 +6131,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         arg("offset", offset);
         end();
         mgl11.glGetClipPlanex(pname, eqn, offset);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetClipPlanex");
+        //arg("pname", pname);
+        //arg("eqn", eqn.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetClipPlanex(pname, eqn, offset);
     }
 
     
@@ -6157,13 +6151,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetClipPlanex(pname, eqn);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetClipPlanex");
+        //arg("pname", pname);
+        //arg("eqn", eqn.toString());
+        //end();
+        //mgl11.glGetClipPlanex(pname, eqn);
+        //checkError();
     }
 
     
@@ -6178,13 +6172,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         arg("offset", offset);
         end();
         mgl11.glGetFixedv(pname, params, offset);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetFixedv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetFixedv(pname, params, offset);
     }
 
     
@@ -6198,13 +6192,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetFixedv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetFixedv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetFixedv(pname, params);
+        //checkError();
     }
 
     
@@ -6219,13 +6213,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         arg("offset", offset);
         end();
         mgl11.glGetFloatv(pname, params, offset);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetFloatv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetFloatv(pname, params, offset);
     }
 
     
@@ -6239,13 +6233,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetFloatv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetFloatv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetFloatv(pname, params);
+        //checkError();
     }
 
     
@@ -6263,15 +6257,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetLightfv(light, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetLightfv");
+        //arg("light", light);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetLightfv(light, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6287,14 +6281,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetLightfv(light, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetLightfv");
+        //arg("light", light);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetLightfv(light, pname, params);
+        //checkError();
     }
 
     
@@ -6312,15 +6306,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetLightxv(light, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetLightxv");
+        //arg("light", light);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetLightxv(light, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6336,14 +6330,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetLightxv(light, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetLightxv");
+        //arg("light", light);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetLightxv(light, pname, params);
+        //checkError();
     }
 
     
@@ -6362,15 +6356,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetMaterialfv(face, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetMaterialfv");
+        //arg("face", face);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetMaterialfv(face, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6386,14 +6380,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetMaterialfv(face, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetMaterialfv");
+        //arg("face", face);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetMaterialfv(face, pname, params);
+        //checkError();
     }
 
     
@@ -6411,15 +6405,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetMaterialxv(face, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetMaterialxv");
+        //arg("face", face);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetMaterialxv(face, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6435,14 +6429,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetMaterialxv(face, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetMaterialxv");
+        //arg("face", face);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetMaterialxv(face, pname, params);
+        //checkError();
     }
 
     
@@ -6460,15 +6454,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexEnviv(env, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexEnviv");
+        //arg("env", env);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetTexEnviv(env, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6484,14 +6478,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexEnviv(env, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexEnviv");
+        //arg("env", env);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetTexEnviv(env, pname, params);
+        //checkError();
     }
 
     
@@ -6509,15 +6503,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexEnviv(env, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexEnviv");
+        //arg("env", env);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetTexEnviv(env, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6533,14 +6527,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexEnvxv(env, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexEnviv");
+        //arg("env", env);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetTexEnvxv(env, pname, params);
+        //checkError();
     }
 
     
@@ -6558,15 +6552,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexParameterfv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexParameterfv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetTexParameterfv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6582,14 +6576,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexParameterfv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexParameterfv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetTexParameterfv(target, pname, params);
+        //checkError();
     }
 
     
@@ -6607,15 +6601,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexEnviv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexParameteriv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetTexEnviv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6631,14 +6625,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexParameteriv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexParameteriv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetTexParameteriv(target, pname, params);
+        //checkError();
     }
 
     
@@ -6657,15 +6651,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexParameterxv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexParameterxv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glGetTexParameterxv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6681,14 +6675,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetTexParameterxv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexParameterxv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetTexParameterxv(target, pname, params);
+        //checkError();
     }
 
     
@@ -6703,13 +6697,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_1805032218 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1925356783 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1925356783;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glIsBuffer");
+        //arg("buffer", buffer);
+        //end();
+        //boolean result = mgl11.glIsBuffer(buffer);
+        //checkError();
+        //return result;
     }
 
     
@@ -6724,13 +6718,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_518894896 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_354177062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_354177062;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glIsEnabled");
+        //arg("cap", cap);
+        //end();
+        //boolean result = mgl11.glIsEnabled(cap);
+        //checkError();
+        //return result;
     }
 
     
@@ -6745,13 +6739,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_16114554 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1877728857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1877728857;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glIsTexture");
+        //arg("texture", texture);
+        //end();
+        //boolean result = mgl11.glIsTexture(texture);
+        //checkError();
+        //return result;
     }
 
     
@@ -6765,13 +6759,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glPointParameterf( pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointParameterf");
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl11.glPointParameterf( pname, param);
+        //checkError();
     }
 
     
@@ -6787,14 +6781,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glPointParameterfv(pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointParameterfv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glPointParameterfv(pname, params, offset);
+        //checkError();
     }
 
     
@@ -6808,13 +6802,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glPointParameterfv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointParameterfv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glPointParameterfv(pname, params);
+        //checkError();
     }
 
     
@@ -6828,13 +6822,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glPointParameterx( pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointParameterfv");
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl11.glPointParameterx( pname, param);
+        //checkError();
     }
 
     
@@ -6850,14 +6844,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glPointParameterxv(pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointParameterxv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glPointParameterxv(pname, params, offset);
+        //checkError();
     }
 
     
@@ -6871,13 +6865,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glPointParameterxv( pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointParameterxv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glPointParameterxv( pname, params);
+        //checkError();
     }
 
     
@@ -6893,14 +6887,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glPointSizePointerOES( type, stride, pointer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glPointSizePointerOES");
+        //arg("type", type);
+        //arg("stride", stride);
+        //arg("params", pointer.toString());
+        //end();
+        //mgl11.glPointSizePointerOES( type, stride, pointer);
+        //checkError();
     }
 
     
@@ -6916,14 +6910,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexEnvi(target, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnvi");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl11.glTexEnvi(target, pname, param);
+        //checkError();
     }
 
     
@@ -6941,15 +6935,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexEnviv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnviv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glTexEnviv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -6965,14 +6959,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexEnviv( target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexEnviv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glTexEnviv( target, pname, params);
+        //checkError();
     }
 
     
@@ -6991,15 +6985,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexParameterfv( target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameterfv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glTexParameterfv( target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -7015,14 +7009,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexParameterfv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameterfv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glTexParameterfv(target, pname, params);
+        //checkError();
     }
 
     
@@ -7038,14 +7032,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexParameteri(target, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameterxv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl11.glTexParameteri(target, pname, param);
+        //checkError();
     }
 
     
@@ -7064,15 +7058,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexParameterxv(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameterxv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11.glTexParameterxv(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -7088,14 +7082,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glTexParameterxv(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexParameterxv");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glTexParameterxv(target, pname, params);
+        //checkError();
     }
 
     
@@ -7113,15 +7107,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glColorPointer(size, type, stride, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glColorPointer");
+        //arg("size", size);
+        //arg("type", type);
+        //arg("stride", stride);
+        //arg("offset", offset);
+        //end();
+        //mgl11.glColorPointer(size, type, stride, offset);
+        //checkError();
     }
 
     
@@ -7139,15 +7133,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glDrawElements(mode, count, type, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDrawElements");
+        //arg("mode", mode);
+        //arg("count", count);
+        //arg("type", type);
+        //arg("offset", offset);
+        //end();
+        //mgl11.glDrawElements(mode, count, type, offset);
+        //checkError();
     }
 
     
@@ -7161,13 +7155,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11.glGetPointerv(pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetPointerv");
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11.glGetPointerv(pname, params);
+        //checkError();
     }
 
     
@@ -7182,13 +7176,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         arg("offset", offset);
         end();
         mgl11.glNormalPointer(type, stride, offset);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glNormalPointer");
+        //arg("type", type);
+        //arg("stride", stride);
+        //arg("offset", offset);
+        //end();
+        //mgl11.glNormalPointer(type, stride, offset);
     }
 
     
@@ -7205,14 +7199,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         arg("offset", offset);
         end();
         mgl11.glTexCoordPointer(size, type, stride, offset);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexCoordPointer");
+        //arg("size", size);
+        //arg("type", type);
+        //arg("stride", stride);
+        //arg("offset", offset);
+        //end();
+        //mgl11.glTexCoordPointer(size, type, stride, offset);
     }
 
     
@@ -7229,14 +7223,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         arg("offset", offset);
         end();
         mgl11.glVertexPointer(size, type, stride, offset);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glVertexPointer");
+        //arg("size", size);
+        //arg("type", type);
+        //arg("stride", stride);
+        //arg("offset", offset);
+        //end();
+        //mgl11.glVertexPointer(size, type, stride, offset);
     }
 
     
@@ -7248,12 +7242,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glCurrentPaletteMatrixOES(matrixpaletteindex);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glCurrentPaletteMatrixOES");
+        //arg("matrixpaletteindex", matrixpaletteindex);
+        //end();
+        //mgl11Ext.glCurrentPaletteMatrixOES(matrixpaletteindex);
+        //checkError();
     }
 
     
@@ -7263,11 +7257,11 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glLoadPaletteFromModelViewMatrixOES();
         checkError();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glLoadPaletteFromModelViewMatrixOES");
+        //end();
+        //mgl11Ext.glLoadPaletteFromModelViewMatrixOES();
+        //checkError();
     }
 
     
@@ -7283,12 +7277,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glMatrixIndexPointerOES(size, type, stride, pointer);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMatrixIndexPointerOES");
+        //argPointer(size, type, stride, pointer);
+        //end();
+        //mgl11Ext.glMatrixIndexPointerOES(size, type, stride, pointer);
+        //checkError();
     }
 
     
@@ -7307,15 +7301,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glMatrixIndexPointerOES(size, type, stride, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glMatrixIndexPointerOES");
+        //arg("size", size);
+        //arg("type", type);
+        //arg("stride", stride);
+        //arg("offset", offset);
+        //end();
+        //mgl11Ext.glMatrixIndexPointerOES(size, type, stride, offset);
+        //checkError();
     }
 
     
@@ -7331,12 +7325,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glWeightPointerOES(size, type, stride, pointer);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glWeightPointerOES");
+        //argPointer(size, type, stride, pointer);
+        //end();
+        //mgl11Ext.glWeightPointerOES(size, type, stride, pointer);
+        //checkError();
     }
 
     
@@ -7354,15 +7348,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11Ext.glWeightPointerOES(size, type, stride, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glWeightPointerOES");
+        //arg("size", size);
+        //arg("type", type);
+        //arg("stride", stride);
+        //arg("offset", offset);
+        //end();
+        //mgl11Ext.glWeightPointerOES(size, type, stride, offset);
+        //checkError();
     }
 
     
@@ -7377,13 +7371,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glBindFramebufferOES(target, framebuffer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBindFramebufferOES");
+        //arg("target", target);
+        //arg("framebuffer", framebuffer);
+        //end();
+        //mgl11ExtensionPack.glBindFramebufferOES(target, framebuffer);
+        //checkError();
     }
 
     
@@ -7398,13 +7392,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glBindRenderbufferOES(target, renderbuffer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBindRenderbufferOES");
+        //arg("target", target);
+        //arg("renderbuffer", renderbuffer);
+        //end();
+        //mgl11ExtensionPack.glBindRenderbufferOES(target, renderbuffer);
+        //checkError();
     }
 
     
@@ -7417,12 +7411,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glBlendEquation(mode);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBlendEquation");
+        //arg("mode", mode);
+        //end();
+        //mgl11ExtensionPack.glBlendEquation(mode);
+        //checkError();
     }
 
     
@@ -7437,13 +7431,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glBlendEquationSeparate(modeRGB, modeAlpha);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBlendEquationSeparate");
+        //arg("modeRGB", modeRGB);
+        //arg("modeAlpha", modeAlpha);
+        //end();
+        //mgl11ExtensionPack.glBlendEquationSeparate(modeRGB, modeAlpha);
+        //checkError();
     }
 
     
@@ -7463,15 +7457,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glBlendFuncSeparate(srcRGB, dstRGB, srcAlpha, dstAlpha);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glBlendFuncSeparate");
+        //arg("srcRGB", srcRGB);
+        //arg("dstRGB", dstRGB);
+        //arg("srcAlpha", srcAlpha);
+        //arg("dstAlpha", dstAlpha);
+        //end();
+        //mgl11ExtensionPack.glBlendFuncSeparate(srcRGB, dstRGB, srcAlpha, dstAlpha);
+        //checkError();
     }
 
     
@@ -7487,13 +7481,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         int varB4A88417B3D0170D754C647C30B7216A_892794962 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2033107821 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2033107821;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glCheckFramebufferStatusOES");
+        //arg("target", target);
+        //end();
+        //int result = mgl11ExtensionPack.glCheckFramebufferStatusOES(target);
+        //checkError();
+        //return result;
     }
 
     
@@ -7510,14 +7504,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glDeleteFramebuffersOES(n, framebuffers, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDeleteFramebuffersOES");
+        //arg("n", n);
+        //arg("framebuffers", framebuffers.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glDeleteFramebuffersOES(n, framebuffers, offset);
+        //checkError();
     }
 
     
@@ -7532,13 +7526,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glDeleteFramebuffersOES(n, framebuffers);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDeleteFramebuffersOES");
+        //arg("n", n);
+        //arg("framebuffers", framebuffers.toString());
+        //end();
+        //mgl11ExtensionPack.glDeleteFramebuffersOES(n, framebuffers);
+        //checkError();
     }
 
     
@@ -7555,14 +7549,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glDeleteRenderbuffersOES(n, renderbuffers, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDeleteRenderbuffersOES");
+        //arg("n", n);
+        //arg("renderbuffers", renderbuffers.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glDeleteRenderbuffersOES(n, renderbuffers, offset);
+        //checkError();
     }
 
     
@@ -7577,13 +7571,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glDeleteRenderbuffersOES(n, renderbuffers);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glDeleteRenderbuffersOES");
+        //arg("n", n);
+        //arg("renderbuffers", renderbuffers.toString());
+        //end();
+        //mgl11ExtensionPack.glDeleteRenderbuffersOES(n, renderbuffers);
+        //checkError();
     }
 
     
@@ -7603,15 +7597,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glFramebufferRenderbufferOES(target, attachment, renderbuffertarget, renderbuffer);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFramebufferRenderbufferOES");
+        //arg("target", target);
+        //arg("attachment", attachment);
+        //arg("renderbuffertarget", renderbuffertarget);
+        //arg("renderbuffer", renderbuffer);
+        //end();
+        //mgl11ExtensionPack.glFramebufferRenderbufferOES(target, attachment, renderbuffertarget, renderbuffer);
+        //checkError();
     }
 
     
@@ -7633,16 +7627,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glFramebufferTexture2DOES(target, attachment, textarget, texture, level);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glFramebufferTexture2DOES");
+        //arg("target", target);
+        //arg("attachment", attachment);
+        //arg("textarget", textarget);
+        //arg("texture", texture);
+        //arg("level", level);
+        //end();
+        //mgl11ExtensionPack.glFramebufferTexture2DOES(target, attachment, textarget, texture, level);
+        //checkError();
     }
 
     
@@ -7655,12 +7649,12 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGenerateMipmapOES(target);
         checkError();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenerateMipmapOES");
+        //arg("target", target);
+        //end();
+        //mgl11ExtensionPack.glGenerateMipmapOES(target);
+        //checkError();
     }
 
     
@@ -7677,14 +7671,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGenFramebuffersOES(n, framebuffers, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenFramebuffersOES");
+        //arg("n", n);
+        //arg("framebuffers", framebuffers.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glGenFramebuffersOES(n, framebuffers, offset);
+        //checkError();
     }
 
     
@@ -7699,13 +7693,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGenFramebuffersOES(n, framebuffers);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenFramebuffersOES");
+        //arg("n", n);
+        //arg("framebuffers", framebuffers.toString());
+        //end();
+        //mgl11ExtensionPack.glGenFramebuffersOES(n, framebuffers);
+        //checkError();
     }
 
     
@@ -7722,14 +7716,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGenRenderbuffersOES(n, renderbuffers, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenRenderbuffersOES");
+        //arg("n", n);
+        //arg("renderbuffers", renderbuffers.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glGenRenderbuffersOES(n, renderbuffers, offset);
+        //checkError();
     }
 
     
@@ -7744,13 +7738,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGenRenderbuffersOES(n, renderbuffers);
         checkError();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGenRenderbuffersOES");
+        //arg("n", n);
+        //arg("renderbuffers", renderbuffers.toString());
+        //end();
+        //mgl11ExtensionPack.glGenRenderbuffersOES(n, renderbuffers);
+        //checkError();
     }
 
     
@@ -7772,16 +7766,16 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetFramebufferAttachmentParameterivOES(target, attachment, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetFramebufferAttachmentParameterivOES");
+        //arg("target", target);
+        //arg("attachment", attachment);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glGetFramebufferAttachmentParameterivOES(target, attachment, pname, params, offset);
+        //checkError();
     }
 
     
@@ -7801,15 +7795,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetFramebufferAttachmentParameterivOES(target, attachment, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetFramebufferAttachmentParameterivOES");
+        //arg("target", target);
+        //arg("attachment", attachment);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11ExtensionPack.glGetFramebufferAttachmentParameterivOES(target, attachment, pname, params);
+        //checkError();
     }
 
     
@@ -7829,15 +7823,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetRenderbufferParameterivOES(target, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetRenderbufferParameterivOES");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glGetRenderbufferParameterivOES(target, pname, params, offset);
+        //checkError();
     }
 
     
@@ -7855,14 +7849,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetRenderbufferParameterivOES(target, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetRenderbufferParameterivOES");
+        //arg("target", target);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11ExtensionPack.glGetRenderbufferParameterivOES(target, pname, params);
+        //checkError();
     }
 
     
@@ -7881,15 +7875,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetTexGenfv(coord, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexGenfv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glGetTexGenfv(coord, pname, params, offset);
+        //checkError();
     }
 
     
@@ -7906,14 +7900,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetTexGenfv(coord, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexGenfv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11ExtensionPack.glGetTexGenfv(coord, pname, params);
+        //checkError();
     }
 
     
@@ -7932,15 +7926,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetTexGeniv(coord, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexGeniv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glGetTexGeniv(coord, pname, params, offset);
+        //checkError();
     }
 
     
@@ -7957,14 +7951,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetTexGeniv(coord, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexGeniv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11ExtensionPack.glGetTexGeniv(coord, pname, params);
+        //checkError();
     }
 
     
@@ -7983,15 +7977,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetTexGenxv(coord, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexGenxv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glGetTexGenxv(coord, pname, params, offset);
+        //checkError();
     }
 
     
@@ -8008,14 +8002,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glGetTexGenxv(coord, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glGetTexGenxv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11ExtensionPack.glGetTexGenxv(coord, pname, params);
+        //checkError();
     }
 
     
@@ -8031,13 +8025,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         boolean varB4A88417B3D0170D754C647C30B7216A_33314499 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659413735 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_659413735;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glIsFramebufferOES");
+        //arg("framebuffer", framebuffer);
+        //end();
+        //boolean result = mgl11ExtensionPack.glIsFramebufferOES(framebuffer);
+        //checkError();
+        //return result;
     }
 
     
@@ -8053,13 +8047,13 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         boolean var68934A3E9455FA72420237EB05902327_151912538 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845444725 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845444725;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glIsRenderbufferOES");
+        //arg("renderbuffer", renderbuffer);
+        //end();
+        //mgl11ExtensionPack.glIsRenderbufferOES(renderbuffer);
+        //checkError();
+        //return false;
     }
 
     
@@ -8079,15 +8073,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glRenderbufferStorageOES(target, internalformat, width, height);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glRenderbufferStorageOES");
+        //arg("target", target);
+        //arg("internalformat", internalformat);
+        //arg("width", width);
+        //arg("height", height);
+        //end();
+        //mgl11ExtensionPack.glRenderbufferStorageOES(target, internalformat, width, height);
+        //checkError();
     }
 
     
@@ -8104,14 +8098,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGenf(coord, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGenf");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl11ExtensionPack.glTexGenf(coord, pname, param);
+        //checkError();
     }
 
     
@@ -8130,15 +8124,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGenfv(coord, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGenfv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glTexGenfv(coord, pname, params, offset);
+        //checkError();
     }
 
     
@@ -8155,14 +8149,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGenfv(coord, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGenfv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11ExtensionPack.glTexGenfv(coord, pname, params);
+        //checkError();
     }
 
     
@@ -8179,14 +8173,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGeni(coord, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGeni");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl11ExtensionPack.glTexGeni(coord, pname, param);
+        //checkError();
     }
 
     
@@ -8205,15 +8199,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGeniv(coord, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGeniv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glTexGeniv(coord, pname, params, offset);
+        //checkError();
     }
 
     
@@ -8230,14 +8224,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGeniv(coord, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGeniv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11ExtensionPack.glTexGeniv(coord, pname, params);
+        //checkError();
     }
 
     
@@ -8254,14 +8248,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGenx(coord, pname, param);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGenx");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("param", param);
+        //end();
+        //mgl11ExtensionPack.glTexGenx(coord, pname, param);
+        //checkError();
     }
 
     
@@ -8280,15 +8274,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGenxv(coord, pname, params, offset);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGenxv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //arg("offset", offset);
+        //end();
+        //mgl11ExtensionPack.glTexGenxv(coord, pname, params, offset);
+        //checkError();
     }
 
     
@@ -8305,14 +8299,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         end();
         mgl11ExtensionPack.glTexGenxv(coord, pname, params);
         checkError();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //begin("glTexGenxv");
+        //arg("coord", coord);
+        //arg("pname", pname);
+        //arg("params", params.toString());
+        //end();
+        //mgl11ExtensionPack.glTexGenxv(coord, pname, params);
+        //checkError();
     }
 
     
@@ -8335,7 +8329,7 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.354 -0400", hash_original_method = "2509173D0AE6A11561E2EDCFDAA6FFC8", hash_generated_method = "51CC6407DCF00513E197FB9A315A08C4")
         public  PointerInfo() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -8345,15 +8339,14 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1015806564 =         result;
             mType = type;
             mStride = stride;
             mPointer = pointer;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mSize = size;
+            //mType = type;
+            //mStride = stride;
+            //mPointer = pointer;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.355 -0400", hash_original_method = "F900B23CD310C985564C675BA1B721DF", hash_generated_method = "A774F9888E3FDDBF949FDA34F4C0D59F")
         public int sizeof(int type) {
             addTaint(type);
@@ -8383,21 +8376,21 @@ switch(type){
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923741030 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923741030;
 }
-            
-            
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
+            // ---------- Original Method ----------
+            //switch (type) {
+            //case GL_UNSIGNED_BYTE:
+                //return 1;
+            //case GL_BYTE:
+                //return 1;
+            //case GL_SHORT:
+                //return 2;
+            //case GL_FIXED:
+                //return 4;
+            //case GL_FLOAT:
+                //return 4;
+            //default:
+                //return 0;
+            //}
         }
 
         
@@ -8406,25 +8399,24 @@ switch(type){
             int var9E95A309D40EA19CFE29EC0E636D0CFA_967052724 = (mStride > 0 ? mStride : sizeof(mType) * mSize);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895882381 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895882381;
-            
-            
+            // ---------- Original Method ----------
+            //return mStride > 0 ? mStride : sizeof(mType) * mSize;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.356 -0400", hash_original_method = "CE219A6CF66D5CC900891E4666E4C00F", hash_generated_method = "4F46BB203F1321E126F71625F24110B5")
         public void bindByteBuffer() {
             mTempByteBuffer = mPointer == null ? null : toByteBuffer(-1, mPointer);
-            
-            
+            // ---------- Original Method ----------
+            //mTempByteBuffer = mPointer == null ? null : toByteBuffer(-1, mPointer);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.356 -0400", hash_original_method = "D17614F7FAC564729C1CBF8DA38BB52A", hash_generated_method = "6221050C1BE13543EB30A39BF2099676")
         public void unbindByteBuffer() {
             mTempByteBuffer = null;
-            
-            
+            // ---------- Original Method ----------
+            //mTempByteBuffer = null;
         }
 
         

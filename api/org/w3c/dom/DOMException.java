@@ -1,6 +1,6 @@
 package org.w3c.dom;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ public class DOMException extends RuntimeException {
         super(message);
         addTaint(message.getTaint());
         this.code = code;
-        
-        
+        // ---------- Original Method ----------
+        //this.code = code;
     }
 
     

@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,17 +21,17 @@ public class CountDownLatch {
         throw varAEB2F18A5228FBCF89210BA55B20E012_290944776;
         }
         this.sync = new Sync(count);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (count < 0) throw new IllegalArgumentException("count < 0");
+        //this.sync = new Sync(count);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.443 -0400", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "D070BA44558B523604A261CE2882A091")
     public void await() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
-        
-        
+        // ---------- Original Method ----------
+        //sync.acquireSharedInterruptibly(1);
     }
 
     
@@ -42,16 +42,16 @@ public class CountDownLatch {
         boolean varF9FFBA7272EE05E2720644344A388E0D_1851183470 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_737915935 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_737915935;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.tryAcquireSharedNanos(1, unit.toNanos(timeout));
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.443 -0400", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "5F72B9A21B37F73F93872F70DF24474A")
     public void countDown() {
         sync.releaseShared(1);
-        
-        
+        // ---------- Original Method ----------
+        //sync.releaseShared(1);
     }
 
     
@@ -60,8 +60,8 @@ public class CountDownLatch {
         long varEADBA8DEF1BC9738D4EDEC8923318B63_1084453054 = (sync.getCount());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1875767672 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1875767672;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.getCount();
     }
 
     
@@ -70,8 +70,8 @@ public class CountDownLatch {
 String var4D62EFEC3E50E2AF5780683B34D1CC77_361297067 =         super.toString() + "[Count = " + sync.getCount() + "]";
         var4D62EFEC3E50E2AF5780683B34D1CC77_361297067.addTaint(taint);
         return var4D62EFEC3E50E2AF5780683B34D1CC77_361297067;
-        
-        
+        // ---------- Original Method ----------
+        //return super.toString() + "[Count = " + sync.getCount() + "]";
     }
 
     
@@ -81,8 +81,8 @@ String var4D62EFEC3E50E2AF5780683B34D1CC77_361297067 =         super.toString() 
           Sync(int count) {
             addTaint(count);
             setState(count);
-            
-            
+            // ---------- Original Method ----------
+            //setState(count);
         }
 
         
@@ -91,8 +91,8 @@ String var4D62EFEC3E50E2AF5780683B34D1CC77_361297067 =         super.toString() 
             int var118C4F58F1303398C344B8AAB7CE6EE1_373586212 = (getState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735112698 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735112698;
-            
-            
+            // ---------- Original Method ----------
+            //return getState();
         }
 
         
@@ -102,8 +102,8 @@ String var4D62EFEC3E50E2AF5780683B34D1CC77_361297067 =         super.toString() 
             int var3EC71F3BC01146A4D6BAB5C90EB4C53B_1054521476 = ((getState() == 0) ? 1 : -1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1130481289 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1130481289;
-            
-            
+            // ---------- Original Method ----------
+            //return (getState() == 0) ? 1 : -1;
         }
 
         
@@ -126,16 +126,16 @@ for(;;)
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692470954 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_692470954;
                 }
-            } 
-            
-            
-                
-                
-                    
-                
-                
-                    
-            
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int c = getState();
+                //if (c == 0)
+                    //return false;
+                //int nextc = c-1;
+                //if (compareAndSetState(c, nextc))
+                    //return nextc == 0;
+            //}
         }
 
         

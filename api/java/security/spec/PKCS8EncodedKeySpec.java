@@ -1,6 +1,6 @@
 package java.security.spec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class PKCS8EncodedKeySpec extends EncodedKeySpec {
     public  PKCS8EncodedKeySpec(byte[] encodedKey) {
         super(encodedKey);
         addTaint(encodedKey[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -20,8 +20,8 @@ public class PKCS8EncodedKeySpec extends EncodedKeySpec {
         byte[] varE852F609BBA3F241A4F96363DE8BC6BE_1009403246 = (super.getEncoded());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_543725976 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_543725976;
-        
-        
+        // ---------- Original Method ----------
+        //return super.getEncoded();
     }
 
     
@@ -30,8 +30,8 @@ public class PKCS8EncodedKeySpec extends EncodedKeySpec {
 String var686AFE2B0ECF96FA2A9E09461660945E_641642373 =         "PKCS#8";
         var686AFE2B0ECF96FA2A9E09461660945E_641642373.addTaint(taint);
         return var686AFE2B0ECF96FA2A9E09461660945E_641642373;
-        
-        
+        // ---------- Original Method ----------
+        //return "PKCS#8";
     }
 
     

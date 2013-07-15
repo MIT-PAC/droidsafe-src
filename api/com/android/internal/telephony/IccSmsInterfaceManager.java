@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,9 +27,9 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     protected  IccSmsInterfaceManager(PhoneBase phone) {
         mPhone = phone;
         mContext = phone.getContext();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPhone = phone;
+        //mContext = phone.getContext();
     }
 
     
@@ -40,11 +40,11 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
                 "android.permission.RECEIVE_SMS", message);
         mContext.enforceCallingPermission(
                 "android.permission.SEND_SMS", message);
-        
-        
-                
-        
-                
+        // ---------- Original Method ----------
+        //mContext.enforceCallingPermission(
+                //"android.permission.RECEIVE_SMS", message);
+        //mContext.enforceCallingPermission(
+                //"android.permission.SEND_SMS", message);
     }
 
     
@@ -65,18 +65,18 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
             log("sendData: destAddr=" + destAddr + " scAddr=" + scAddr + " destPort=" +
                 destPort + " data='"+ HexDump.toHexString(data)  + "' sentIntent=" +
                 sentIntent + " deliveryIntent=" + deliveryIntent);
-        } 
+        } //End block
         mDispatcher.sendData(destAddr, scAddr, destPort, data, sentIntent, deliveryIntent);
-        
-        
-                
-                
-        
-            
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //mPhone.getContext().enforceCallingPermission(
+                //"android.permission.SEND_SMS",
+                //"Sending SMS message");
+        //if (Log.isLoggable("SMS", Log.VERBOSE)) {
+            //log("sendData: destAddr=" + destAddr + " scAddr=" + scAddr + " destPort=" +
+                //destPort + " data='"+ HexDump.toHexString(data)  + "' sentIntent=" +
+                //sentIntent + " deliveryIntent=" + deliveryIntent);
+        //}
+        //mDispatcher.sendData(destAddr, scAddr, destPort, data, sentIntent, deliveryIntent);
     }
 
     
@@ -96,18 +96,18 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
             log("sendText: destAddr=" + destAddr + " scAddr=" + scAddr +
                 " text='"+ text + "' sentIntent=" +
                 sentIntent + " deliveryIntent=" + deliveryIntent);
-        } 
+        } //End block
         mDispatcher.sendText(destAddr, scAddr, text, sentIntent, deliveryIntent);
-        
-        
-                
-                
-        
-            
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //mPhone.getContext().enforceCallingOrSelfPermission(
+                //"android.permission.SEND_SMS",
+                //"Sending SMS message");
+        //if (Log.isLoggable("SMS", Log.VERBOSE)) {
+            //log("sendText: destAddr=" + destAddr + " scAddr=" + scAddr +
+                //" text='"+ text + "' sentIntent=" +
+                //sentIntent + " deliveryIntent=" + deliveryIntent);
+        //}
+        //mDispatcher.sendText(destAddr, scAddr, text, sentIntent, deliveryIntent);
     }
 
     
@@ -129,23 +129,23 @@ for(String part : parts)
             {
                 log("sendMultipartText: destAddr=" + destAddr + ", srAddr=" + scAddr +
                         ", part[" + (i++) + "]=" + part);
-            } 
-        } 
+            } //End block
+        } //End block
         mDispatcher.sendMultipartText(destAddr, scAddr, (ArrayList<String>) parts,
                 (ArrayList<PendingIntent>) sentIntents, (ArrayList<PendingIntent>) deliveryIntents);
-        
-        
-                
-                
-        
-            
-            
-                
-                        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //mPhone.getContext().enforceCallingPermission(
+                //"android.permission.SEND_SMS",
+                //"Sending SMS message");
+        //if (Log.isLoggable("SMS", Log.VERBOSE)) {
+            //int i = 0;
+            //for (String part : parts) {
+                //log("sendMultipartText: destAddr=" + destAddr + ", srAddr=" + scAddr +
+                        //", part[" + (i++) + "]=" + part);
+            //}
+        //}
+        //mDispatcher.sendMultipartText(destAddr, scAddr, (ArrayList<String>) parts,
+                //(ArrayList<PendingIntent>) sentIntents, (ArrayList<PendingIntent>) deliveryIntents);
     }
 
     
@@ -161,28 +161,28 @@ for(int i = 0;i < count;i++)
     if(ba[0] == STATUS_ON_ICC_FREE)            
             {
                 ret.add(null);
-            } 
+            } //End block
             else
             {
                 ret.add(new SmsRawData(messages.get(i)));
-            } 
-        } 
+            } //End block
+        } //End block
 ArrayList<SmsRawData> varEDFF4FBBF053B5DC2B444ADFA049EE0F_71675977 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_71675977.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_71675977;
-        
-        
-        
-        
-        
-            
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = messages.size();
+        //ArrayList<SmsRawData> ret;
+        //ret = new ArrayList<SmsRawData>(count);
+        //for (int i = 0; i < count; i++) {
+            //byte[] ba = messages.get(i);
+            //if (ba[0] == STATUS_ON_ICC_FREE) {
+                //ret.add(null);
+            //} else {
+                //ret.add(new SmsRawData(messages.get(i)));
+            //}
+        //}
+        //return ret;
     }
 
     
@@ -196,18 +196,18 @@ ArrayList<SmsRawData> varEDFF4FBBF053B5DC2B444ADFA049EE0F_71675977 =         ret
 for(int j = pdu.length+1;j < IccConstants.SMS_RECORD_LENGTH;j++)
         {
             data[j] = -1;
-        } 
+        } //End block
         byte[] var8D777F385D3DFEC8815D20F7496026DC_636935095 = (data);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_484616862 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_484616862;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //byte[] data = new byte[IccConstants.SMS_RECORD_LENGTH];
+        //data[0] = (byte)(status & 7);
+        //System.arraycopy(pdu, 0, data, 1, pdu.length);
+        //for (int j = pdu.length+1; j < IccConstants.SMS_RECORD_LENGTH; j++) {
+            //data[j] = -1;
+        //}
+        //return data;
     }
 
     

@@ -1,6 +1,6 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -49,9 +49,9 @@ public class WallpaperManager {
         addTaint(handler.getTaint());
         mContext = context;
         initGlobals(context.getMainLooper());
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //initGlobals(context.getMainLooper());
     }
 
     
@@ -75,8 +75,8 @@ public class WallpaperManager {
 IWallpaperManager varBC9BA9E0BC90EB794A65A5242E56B9CA_772098920 =         sGlobals.mService;
         varBC9BA9E0BC90EB794A65A5242E56B9CA_772098920.addTaint(taint);
         return varBC9BA9E0BC90EB794A65A5242E56B9CA_772098920;
-        
-        
+        // ---------- Original Method ----------
+        //return sGlobals.mService;
     }
 
     
@@ -90,18 +90,18 @@ IWallpaperManager varBC9BA9E0BC90EB794A65A5242E56B9CA_772098920 =         sGloba
 Drawable varDA2FE1A9D9D8285A7F4D54668C2E4AE3_924182653 =             dr;
             varDA2FE1A9D9D8285A7F4D54668C2E4AE3_924182653.addTaint(taint);
             return varDA2FE1A9D9D8285A7F4D54668C2E4AE3_924182653;
-        } 
+        } //End block
 Drawable var540C13E9E156B687226421B24F2DF178_1625069622 =         null;
         var540C13E9E156B687226421B24F2DF178_1625069622.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1625069622;
-        
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, true);
+        //if (bm != null) {
+            //Drawable dr = new BitmapDrawable(mContext.getResources(), bm);
+            //dr.setDither(false);
+            //return dr;
+        //}
+        //return null;
     }
 
     
@@ -115,18 +115,18 @@ Drawable var540C13E9E156B687226421B24F2DF178_1625069622 =         null;
 Drawable varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1892665996 =             dr;
             varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1892665996.addTaint(taint);
             return varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1892665996;
-        } 
+        } //End block
 Drawable var540C13E9E156B687226421B24F2DF178_1300967474 =         null;
         var540C13E9E156B687226421B24F2DF178_1300967474.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1300967474;
-        
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, false);
+        //if (bm != null) {
+            //Drawable dr = new BitmapDrawable(mContext.getResources(), bm);
+            //dr.setDither(false);
+            //return dr;
+        //}
+        //return null;
     }
 
     
@@ -138,16 +138,16 @@ Drawable var540C13E9E156B687226421B24F2DF178_1300967474 =         null;
 Drawable var6679CB9AAED6402C21CF9F5F5B35DF1E_1133671270 =             new FastBitmapDrawable(bm);
             var6679CB9AAED6402C21CF9F5F5B35DF1E_1133671270.addTaint(taint);
             return var6679CB9AAED6402C21CF9F5F5B35DF1E_1133671270;
-        } 
+        } //End block
 Drawable var540C13E9E156B687226421B24F2DF178_1179085623 =         null;
         var540C13E9E156B687226421B24F2DF178_1179085623.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1179085623;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, true);
+        //if (bm != null) {
+            //return new FastBitmapDrawable(bm);
+        //}
+        //return null;
     }
 
     
@@ -159,16 +159,16 @@ Drawable var540C13E9E156B687226421B24F2DF178_1179085623 =         null;
 Drawable var6679CB9AAED6402C21CF9F5F5B35DF1E_1349430969 =             new FastBitmapDrawable(bm);
             var6679CB9AAED6402C21CF9F5F5B35DF1E_1349430969.addTaint(taint);
             return var6679CB9AAED6402C21CF9F5F5B35DF1E_1349430969;
-        } 
+        } //End block
 Drawable var540C13E9E156B687226421B24F2DF178_445443300 =         null;
         var540C13E9E156B687226421B24F2DF178_445443300.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_445443300;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, false);
+        //if (bm != null) {
+            //return new FastBitmapDrawable(bm);
+        //}
+        //return null;
     }
 
     
@@ -177,16 +177,16 @@ Drawable var540C13E9E156B687226421B24F2DF178_445443300 =         null;
 Bitmap varCA837979D68D3CF2EF7A932B9188079C_158455143 =         sGlobals.peekWallpaperBitmap(mContext, true);
         varCA837979D68D3CF2EF7A932B9188079C_158455143.addTaint(taint);
         return varCA837979D68D3CF2EF7A932B9188079C_158455143;
-        
-        
+        // ---------- Original Method ----------
+        //return sGlobals.peekWallpaperBitmap(mContext, true);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.308 -0400", hash_original_method = "9DD74CD1F13AD5E4F4CF15160B046494", hash_generated_method = "E137D675DA1C337DD2F3C32778252113")
     public void forgetLoadedWallpaper() {
         sGlobals.forgetLoadedWallpaper();
-        
-        
+        // ---------- Original Method ----------
+        //sGlobals.forgetLoadedWallpaper();
     }
 
     
@@ -197,19 +197,19 @@ Bitmap varCA837979D68D3CF2EF7A932B9188079C_158455143 =         sGlobals.peekWall
 WallpaperInfo var75A430F26FA0EDE23F28A1F72746D1D7_541820165 =             sGlobals.mService.getWallpaperInfo();
             var75A430F26FA0EDE23F28A1F72746D1D7_541820165.addTaint(taint);
             return var75A430F26FA0EDE23F28A1F72746D1D7_541820165;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             var540C13E9E156B687226421B24F2DF178_1344622307.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1344622307;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sGlobals.mService.getWallpaperInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -228,37 +228,37 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
                 {
                     fos = new ParcelFileDescriptor.AutoCloseOutputStream(fd);
                     setWallpaper(resources.openRawResource(resid), fos);
-                } 
+                } //End block
                 finally 
                 {
     if(fos != null)                    
                     {
                         fos.close();
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-            
-                    
-            
-                
-                
-                    
-                    
-                
-                    
-                        
-                    
-                
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Resources resources = mContext.getResources();
+            //ParcelFileDescriptor fd = sGlobals.mService.setWallpaper(
+                    //"res:" + resources.getResourceName(resid));
+            //if (fd != null) {
+                //FileOutputStream fos = null;
+                //try {
+                    //fos = new ParcelFileDescriptor.AutoCloseOutputStream(fd);
+                    //setWallpaper(resources.openRawResource(resid), fos);
+                //} finally {
+                    //if (fos != null) {
+                        //fos.close();
+                    //}
+                //}
+            //}
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -271,41 +271,41 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
     if(fd == null)            
             {
                 return;
-            } 
+            } //End block
             FileOutputStream fos = null;
             try 
             {
                 fos = new ParcelFileDescriptor.AutoCloseOutputStream(fd);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 90, fos);
-            } 
+            } //End block
             finally 
             {
     if(fos != null)                
                 {
                     fos.close();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-            
-                
-            
-            
-            
-                
-                
-            
-                
-                    
-                
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //ParcelFileDescriptor fd = sGlobals.mService.setWallpaper(null);
+            //if (fd == null) {
+                //return;
+            //}
+            //FileOutputStream fos = null;
+            //try {
+                //fos = new ParcelFileDescriptor.AutoCloseOutputStream(fd);
+                //bitmap.compress(Bitmap.CompressFormat.PNG, 90, fos);
+            //} finally {
+                //if (fos != null) {
+                    //fos.close();
+                //}
+            //}
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -318,41 +318,41 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
     if(fd == null)            
             {
                 return;
-            } 
+            } //End block
             FileOutputStream fos = null;
             try 
             {
                 fos = new ParcelFileDescriptor.AutoCloseOutputStream(fd);
                 setWallpaper(data, fos);
-            } 
+            } //End block
             finally 
             {
     if(fos != null)                
                 {
                     fos.close();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-            
-                
-            
-            
-            
-                
-                
-            
-                
-                    
-                
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //ParcelFileDescriptor fd = sGlobals.mService.setWallpaper(null);
+            //if (fd == null) {
+                //return;
+            //}
+            //FileOutputStream fos = null;
+            //try {
+                //fos = new ParcelFileDescriptor.AutoCloseOutputStream(fd);
+                //setWallpaper(data, fos);
+            //} finally {
+                //if (fos != null) {
+                    //fos.close();
+                //}
+            //}
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -366,13 +366,13 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
 ((amt=data.read(buffer)) > 0)        
         {
             fos.write(buffer, 0, amt);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //byte[] buffer = new byte[32768];
+        //int amt;
+        //while ((amt=data.read(buffer)) > 0) {
+            //fos.write(buffer, 0, amt);
+        //}
     }
 
     
@@ -383,19 +383,19 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             int var5554EC7C8DA473A2EFE58312B6DE3DEB_1937590868 = (sGlobals.mService.getWidthHint());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222695432 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222695432;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1332021905 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869307364 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869307364;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sGlobals.mService.getWidthHint();
+        //} catch (RemoteException e) {
+            //return 0;
+        //}
     }
 
     
@@ -406,19 +406,19 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             int var8081CB13FA563EE91C3EEC65E27BBF83_1656153351 = (sGlobals.mService.getHeightHint());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2119899921 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2119899921;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1502718564 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1952508304 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1952508304;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sGlobals.mService.getHeightHint();
+        //} catch (RemoteException e) {
+            //return 0;
+        //}
     }
 
     
@@ -429,15 +429,15 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         try 
         {
             sGlobals.mService.setDimensionHints(minimumWidth, minimumHeight);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sGlobals.mService.setDimensionHints(minimumWidth, minimumHeight);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -456,47 +456,46 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             {
                 ViewRootImpl.getWindowSession(mContext.getMainLooper()).setWallpaperPosition(
                             fWindowToken, fXOffset, fYOffset, mWallpaperXStep, mWallpaperYStep);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
+            } //End block
             catch (IllegalArgumentException e)
             {
-            } 
-            
-            
-                    
-                            
-                
-                
-                
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                    //ViewRootImpl.getWindowSession(mContext.getMainLooper()).setWallpaperPosition(
+                            //fWindowToken, fXOffset, fYOffset, mWallpaperXStep, mWallpaperYStep);
+                //} catch (RemoteException e) {
+                //} catch (IllegalArgumentException e) {
+                //}
         }
 });
-        
-        
-        
-        
-        
-            
-                
-                    
-                            
-                
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //final IBinder fWindowToken = windowToken;
+        //final float fXOffset = xOffset;
+        //final float fYOffset = yOffset;
+        //sGlobals.getHandler().post(new Runnable() {
+            //public void run() {
+                //try {
+                    //ViewRootImpl.getWindowSession(mContext.getMainLooper()).setWallpaperPosition(
+                            //fWindowToken, fXOffset, fYOffset, mWallpaperXStep, mWallpaperYStep);
+                //} catch (RemoteException e) {
+                //} catch (IllegalArgumentException e) {
+                //}
+            //}
+        //});
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.322 -0400", hash_original_method = "D2E7CBA6FEE1F1016E75D81DE5B86ECC", hash_generated_method = "EADA38664BEC7414A75FE025CEA53E62")
     public void setWallpaperOffsetSteps(float xStep, float yStep) {
         mWallpaperXStep = xStep;
         mWallpaperYStep = yStep;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWallpaperXStep = xStep;
+        //mWallpaperYStep = yStep;
     }
 
     
@@ -513,16 +512,16 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         {
             ViewRootImpl.getWindowSession(mContext.getMainLooper()).sendWallpaperCommand(
                     windowToken, action, x, y, z, extras, false);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-                    
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //ViewRootImpl.getWindowSession(mContext.getMainLooper()).sendWallpaperCommand(
+                    //windowToken, action, x, y, z, extras, false);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -533,24 +532,24 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         {
             ViewRootImpl.getWindowSession(mContext.getMainLooper()).setWallpaperPosition(
                     windowToken, -1, -1, -1, -1);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-                    
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //ViewRootImpl.getWindowSession(mContext.getMainLooper()).setWallpaperPosition(
+                    //windowToken, -1, -1, -1, -1);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.326 -0400", hash_original_method = "C7793256C05758E1D6CDFCE99A7FE546", hash_generated_method = "AB99E5138557A852157F08526E2516F1")
     public void clear() throws IOException {
         setResource(com.android.internal.R.drawable.default_wallpaper);
-        
-        
+        // ---------- Original Method ----------
+        //setResource(com.android.internal.R.drawable.default_wallpaper);
     }
 
     
@@ -627,13 +626,13 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             setBounds(0, 0, mWidth, mHeight);
             mPaint = new Paint();
             mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mBitmap = bitmap;
+            //mWidth = bitmap.getWidth();
+            //mHeight = bitmap.getHeight();
+            //setBounds(0, 0, mWidth, mHeight);
+            //mPaint = new Paint();
+            //mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
         }
 
         
@@ -642,32 +641,30 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
         public void draw(Canvas canvas) {
             addTaint(canvas.getTaint());
             canvas.drawBitmap(mBitmap, mDrawLeft, mDrawTop, mPaint);
-            
-            
+            // ---------- Original Method ----------
+            //canvas.drawBitmap(mBitmap, mDrawLeft, mDrawTop, mPaint);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.348 -0400", hash_original_method = "20937ACEFD1116260A9689661466F3F7", hash_generated_method = "4F8B14AE94C3B06D810568C3EBF00CBB")
         @Override
         public int getOpacity() {
             int var159D51265084B78CCBC493D119AF4EAE_1448485951 = (PixelFormat.OPAQUE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822609351 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822609351;
-            
-            
+            // ---------- Original Method ----------
+            //return PixelFormat.OPAQUE;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.349 -0400", hash_original_method = "AD75C11A4E8AD86B9F9EB3DCD5857128", hash_generated_method = "DD8AC77956034A39F37DA405A27E901A")
         @Override
         public void setBounds(int left, int top, int right, int bottom) {
             mDrawLeft = left + (right-left - mWidth) / 2;
             mDrawTop = top + (bottom-top - mHeight) / 2;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mDrawLeft = left + (right-left - mWidth) / 2;
+            //mDrawTop = top + (bottom-top - mHeight) / 2;
         }
 
         
@@ -678,8 +675,8 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             UnsupportedOperationException var263E7B902D67C7095DD2E4F557985957_705444590 = new UnsupportedOperationException("Not supported with this drawable");
             var263E7B902D67C7095DD2E4F557985957_705444590.addTaint(taint);
             throw var263E7B902D67C7095DD2E4F557985957_705444590;
-            
-            
+            // ---------- Original Method ----------
+            //throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
         
@@ -690,8 +687,8 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             UnsupportedOperationException var263E7B902D67C7095DD2E4F557985957_1945034712 = new UnsupportedOperationException("Not supported with this drawable");
             var263E7B902D67C7095DD2E4F557985957_1945034712.addTaint(taint);
             throw var263E7B902D67C7095DD2E4F557985957_1945034712;
-            
-            
+            // ---------- Original Method ----------
+            //throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
         
@@ -702,8 +699,8 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             UnsupportedOperationException var263E7B902D67C7095DD2E4F557985957_1404873863 = new UnsupportedOperationException("Not supported with this drawable");
             var263E7B902D67C7095DD2E4F557985957_1404873863.addTaint(taint);
             throw var263E7B902D67C7095DD2E4F557985957_1404873863;
-            
-            
+            // ---------- Original Method ----------
+            //throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
         
@@ -714,56 +711,52 @@ WallpaperInfo var540C13E9E156B687226421B24F2DF178_1344622307 =             null;
             UnsupportedOperationException var263E7B902D67C7095DD2E4F557985957_390482022 = new UnsupportedOperationException("Not supported with this drawable");
             var263E7B902D67C7095DD2E4F557985957_390482022.addTaint(taint);
             throw var263E7B902D67C7095DD2E4F557985957_390482022;
-            
-            
+            // ---------- Original Method ----------
+            //throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.355 -0400", hash_original_method = "7C6E7C05DAF2C7C11CBD631A19BA11F2", hash_generated_method = "859BD912F069127B4386A6F414559BFA")
         @Override
         public int getIntrinsicWidth() {
             int varA3DB1626A190732E588FD0D14FC8FB31_272140552 = (mWidth);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756166477 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756166477;
-            
-            
+            // ---------- Original Method ----------
+            //return mWidth;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.356 -0400", hash_original_method = "3C735D6B09C7947D1D4F4735F7E16410", hash_generated_method = "F0C3254A881E1DD5DDA26B10399B69C7")
         @Override
         public int getIntrinsicHeight() {
             int var483542B05A951AA16D89C7F809C20811_44669318 = (mHeight);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781868437 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781868437;
-            
-            
+            // ---------- Original Method ----------
+            //return mHeight;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.356 -0400", hash_original_method = "6C36D8FD6C4DA506CC2056E38D29BDE3", hash_generated_method = "B9FDC2303677DFE6FF9E52B39C33E744")
         @Override
         public int getMinimumWidth() {
             int varA3DB1626A190732E588FD0D14FC8FB31_1836327012 = (mWidth);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833675413 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833675413;
-            
-            
+            // ---------- Original Method ----------
+            //return mWidth;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.357 -0400", hash_original_method = "F7F1B37FEC841079758C9B817D6DD4F6", hash_generated_method = "03029CFC55C8775BC4F3C810069E84A6")
         @Override
         public int getMinimumHeight() {
             int var483542B05A951AA16D89C7F809C20811_1651981764 = (mHeight);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_956240312 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_956240312;
-            
-            
+            // ---------- Original Method ----------
+            //return mHeight;
         }
 
         
@@ -800,56 +793,55 @@ switch(msg.what){
 (this)                {
                     mWallpaper = null;
                     mDefaultWallpaper = null;
-                } 
+                } //End block
                 break;
 }
-                
-                
-                        
-                            
-                                
-                                
-                            
-                            
-                    
+                // ---------- Original Method ----------
+                //switch (msg.what) {
+                        //case MSG_CLEAR_WALLPAPER:
+                            //synchronized (this) {
+                                //mWallpaper = null;
+                                //mDefaultWallpaper = null;
+                            //}
+                            //break;
+                    //}
             }
 };
-            
-            
-            
-            
-                
-                
-                    
-                        
-                            
-                                
-                                
-                            
-                            
-                    
-                
-            
+            // ---------- Original Method ----------
+            //IBinder b = ServiceManager.getService(Context.WALLPAPER_SERVICE);
+            //mService = IWallpaperManager.Stub.asInterface(b);
+            //mHandler = new Handler(looper) {
+                //@Override
+                //public void handleMessage(Message msg) {
+                    //switch (msg.what) {
+                        //case MSG_CLEAR_WALLPAPER:
+                            //synchronized (this) {
+                                //mWallpaper = null;
+                                //mDefaultWallpaper = null;
+                            //}
+                            //break;
+                    //}
+                //}
+            //};
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.360 -0400", hash_original_method = "F846E10F84F4E35E470DA1B587CB2864", hash_generated_method = "288447422A981A1450135744449D6BD1")
         public void onWallpaperChanged() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             mHandler.sendEmptyMessage(MSG_CLEAR_WALLPAPER);
-            
-            
+            // ---------- Original Method ----------
+            //mHandler.sendEmptyMessage(MSG_CLEAR_WALLPAPER);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.361 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "2888D0CDB055AB93CC886D9545029A22")
         public Handler getHandler() {
 Handler varF60F4C595C5EF9EE40FAD1FE8119479B_1647084 =             mHandler;
             varF60F4C595C5EF9EE40FAD1FE8119479B_1647084.addTaint(taint);
             return varF60F4C595C5EF9EE40FAD1FE8119479B_1647084;
-            
-            
+            // ---------- Original Method ----------
+            //return mHandler;
         }
 
         
@@ -863,21 +855,21 @@ Handler varF60F4C595C5EF9EE40FAD1FE8119479B_1647084 =             mHandler;
 Bitmap varC038012FF42C722A2F248588A92BE2E9_678628758 =                     mWallpaper;
                     varC038012FF42C722A2F248588A92BE2E9_678628758.addTaint(taint);
                     return varC038012FF42C722A2F248588A92BE2E9_678628758;
-                } 
+                } //End block
     if(mDefaultWallpaper != null)                
                 {
 Bitmap var3EEC6F8E322FB1EBD331F174E194038B_346974005 =                     mDefaultWallpaper;
                     var3EEC6F8E322FB1EBD331F174E194038B_346974005.addTaint(taint);
                     return var3EEC6F8E322FB1EBD331F174E194038B_346974005;
-                } 
+                } //End block
                 mWallpaper = null;
                 try 
                 {
                     mWallpaper = getCurrentWallpaperLocked();
-                } 
+                } //End block
                 catch (OutOfMemoryError e)
                 {
-                } 
+                } //End block
     if(returnDefault)                
                 {
     if(mWallpaper == null)                    
@@ -886,34 +878,33 @@ Bitmap var3EEC6F8E322FB1EBD331F174E194038B_346974005 =                     mDefa
 Bitmap var3EEC6F8E322FB1EBD331F174E194038B_1779670379 =                         mDefaultWallpaper;
                         var3EEC6F8E322FB1EBD331F174E194038B_1779670379.addTaint(taint);
                         return var3EEC6F8E322FB1EBD331F174E194038B_1779670379;
-                    } 
+                    } //End block
                     else
                     {
                         mDefaultWallpaper = null;
-                    } 
-                } 
+                    } //End block
+                } //End block
 Bitmap varC038012FF42C722A2F248588A92BE2E9_2075052419 =                 mWallpaper;
                 varC038012FF42C722A2F248588A92BE2E9_2075052419.addTaint(taint);
                 return varC038012FF42C722A2F248588A92BE2E9_2075052419;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.364 -0400", hash_original_method = "0171ADD4BBF298493CC8451FAA0D3640", hash_generated_method = "D9BB3FC4AB08399BDA57536FEC203D0F")
         public void forgetLoadedWallpaper() {
             synchronized
 (this)            {
                 mWallpaper = null;
                 mDefaultWallpaper = null;
-            } 
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (this) {
+                //mWallpaper = null;
+                //mDefaultWallpaper = null;
+            //}
         }
 
         
@@ -935,30 +926,30 @@ Bitmap varC038012FF42C722A2F248588A92BE2E9_2075052419 =                 mWallpap
 Bitmap var1D039D0CCDEFFF307D958D1412EFBD6C_318376113 =                         generateBitmap(bm, width, height);
                         var1D039D0CCDEFFF307D958D1412EFBD6C_318376113.addTaint(taint);
                         return var1D039D0CCDEFFF307D958D1412EFBD6C_318376113;
-                    } 
+                    } //End block
                     catch (OutOfMemoryError e)
                     {
-                    } 
+                    } //End block
                     finally 
                     {
                         try 
                         {
                             fd.close();
-                        } 
+                        } //End block
                         catch (IOException e)
                         {
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             catch (RemoteException e)
             {
-            } 
+            } //End block
 Bitmap var540C13E9E156B687226421B24F2DF178_1921250402 =             null;
             var540C13E9E156B687226421B24F2DF178_1921250402.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1921250402;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -980,30 +971,30 @@ Bitmap var540C13E9E156B687226421B24F2DF178_1921250402 =             null;
 Bitmap var1D039D0CCDEFFF307D958D1412EFBD6C_976886073 =                         generateBitmap(bm, width, height);
                         var1D039D0CCDEFFF307D958D1412EFBD6C_976886073.addTaint(taint);
                         return var1D039D0CCDEFFF307D958D1412EFBD6C_976886073;
-                    } 
+                    } //End block
                     catch (OutOfMemoryError e)
                     {
-                    } 
+                    } //End block
                     finally 
                     {
                         try 
                         {
                             is.close();
-                        } 
+                        } //End block
                         catch (IOException e)
                         {
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             catch (RemoteException e)
             {
-            } 
+            } //End block
 Bitmap var540C13E9E156B687226421B24F2DF178_1741994858 =             null;
             var540C13E9E156B687226421B24F2DF178_1741994858.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1741994858;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

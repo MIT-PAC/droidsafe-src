@@ -1,6 +1,6 @@
 package android.speech.tts;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -70,7 +70,7 @@ public class TextToSpeech {
         this(context, listener, null);
         addTaint(listener.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -80,7 +80,7 @@ public class TextToSpeech {
         addTaint(engine.getTaint());
         addTaint(listener.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -97,37 +97,36 @@ public class TextToSpeech {
     if(packageName != null)        
         {
             mPackageName = packageName;
-        } 
+        } //End block
         else
         {
             mPackageName = mContext.getPackageName();
-        } 
+        } //End block
         initTts();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mInitListener = listener;
+        //mRequestedEngine = engine;
+        //mEarcons = new HashMap<String, Uri>();
+        //mUtterances = new HashMap<String, Uri>();
+        //mUtteranceProgressListener = null;
+        //mEnginesHelper = new TtsEngines(mContext);
+        //if (packageName != null) {
+            //mPackageName = packageName;
+        //} else {
+            //mPackageName = mContext.getPackageName();
+        //}
+        //initTts();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.488 -0400", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "2DEAD8D0CEC9CB7275A5B493F0D280F9")
     private String getPackageName() {
 String var5601F77C1E784C31FA233AB799182FA6_1064570548 =         mPackageName;
         var5601F77C1E784C31FA233AB799182FA6_1064570548.addTaint(taint);
         return var5601F77C1E784C31FA233AB799182FA6_1064570548;
-        
-        
+        // ---------- Original Method ----------
+        //return mPackageName;
     }
 
     
@@ -139,8 +138,8 @@ String var5601F77C1E784C31FA233AB799182FA6_1064570548 =         mPackageName;
 R var6CD80DC7ED7C75CB0A432FA52BFDBB11_45796599 =         runAction(action, errorResult, method, false);
         var6CD80DC7ED7C75CB0A432FA52BFDBB11_45796599.addTaint(taint);
         return var6CD80DC7ED7C75CB0A432FA52BFDBB11_45796599;
-        
-        
+        // ---------- Original Method ----------
+        //return runAction(action, errorResult, method, false);
     }
 
     
@@ -152,8 +151,8 @@ R var6CD80DC7ED7C75CB0A432FA52BFDBB11_45796599 =         runAction(action, error
 R varBE0F0122D8EC62CE380C7C3C781DBEA1_1321638623 =         runAction(action, errorResult, method, true);
         varBE0F0122D8EC62CE380C7C3C781DBEA1_1321638623.addTaint(taint);
         return varBE0F0122D8EC62CE380C7C3C781DBEA1_1321638623;
-        
-        
+        // ---------- Original Method ----------
+        //return runAction(action, errorResult, method, true);
     }
 
     
@@ -170,19 +169,19 @@ R varBE0F0122D8EC62CE380C7C3C781DBEA1_1321638623 =         runAction(action, err
 R var79B35EE005A3F2115C55AE7046E4A0E2_1576155018 =                 errorResult;
                 var79B35EE005A3F2115C55AE7046E4A0E2_1576155018.addTaint(taint);
                 return var79B35EE005A3F2115C55AE7046E4A0E2_1576155018;
-            } 
+            } //End block
 R var6E73D2A7B1D3CEC549E60088058AF61B_651202102 =             mServiceConnection.runAction(action, errorResult, method, reconnect);
             var6E73D2A7B1D3CEC549E60088058AF61B_651202102.addTaint(taint);
             return var6E73D2A7B1D3CEC549E60088058AF61B_651202102;
-        } 
-        
-        
-            
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mStartLock) {
+            //if (mServiceConnection == null) {
+                //Log.w(TAG, method + " failed: not bound to TTS engine");
+                //return errorResult;
+            //}
+            //return mServiceConnection.runAction(action, errorResult, method, reconnect);
+        //}
     }
 
     
@@ -196,8 +195,8 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_651202102 =             mServiceConnection
                 int varD0749AABA8B833466DFCBB0428E4F89C_415681456 = (SUCCESS);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1560874222 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1560874222;
-            } 
-        } 
+            } //End block
+        } //End block
         final String defaultEngine = getDefaultEngine();
     if(defaultEngine != null && !defaultEngine.equals(mRequestedEngine))        
         {
@@ -207,8 +206,8 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_651202102 =             mServiceConnection
                 int varD0749AABA8B833466DFCBB0428E4F89C_911918176 = (SUCCESS);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1182789580 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1182789580;
-            } 
-        } 
+            } //End block
+        } //End block
         final String highestRanked = mEnginesHelper.getHighestRankedEngineName();
     if(highestRanked != null && !highestRanked.equals(mRequestedEngine) &&
                 !highestRanked.equals(defaultEngine))        
@@ -219,15 +218,15 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_651202102 =             mServiceConnection
                 int varD0749AABA8B833466DFCBB0428E4F89C_494347753 = (SUCCESS);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2057885878 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2057885878;
-            } 
-        } 
+            } //End block
+        } //End block
         mCurrentEngine = null;
         dispatchOnInit(ERROR);
         int varBB1CA97EC761FC37101737BA0AA2E7C5_1436805873 = (ERROR);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_983965366 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_983965366;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -243,25 +242,25 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_651202102 =             mServiceConnection
             boolean var68934A3E9455FA72420237EB05902327_75331102 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_52960114 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_52960114;
-        } 
+        } //End block
         else
         {
             boolean varB326B5062B2F0E69046810717534CB09_1041214881 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_811523492 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_811523492;
-        } 
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Connection connection = new Connection();
+        //Intent intent = new Intent(Engine.INTENT_ACTION_TTS_SERVICE);
+        //intent.setPackage(engine);
+        //boolean bound = mContext.bindService(intent, connection, Context.BIND_AUTO_CREATE);
+        //if (!bound) {
+            //Log.e(TAG, "Failed to bind to " + engine);
+            //return false;
+        //} else {
+            //Log.i(TAG, "Sucessfully bound to " + engine);
+            //return true;
+        //}
     }
 
     
@@ -274,15 +273,15 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_651202102 =             mServiceConnection
             {
                 mInitListener.onInit(result);
                 mInitListener = null;
-            } 
-        } 
-        
-        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mStartLock) {
+            //if (mInitListener != null) {
+                //mInitListener.onInit(result);
+                //mInitListener = null;
+            //}
+        //}
     }
 
     
@@ -301,27 +300,27 @@ R var6E73D2A7B1D3CEC549E60088058AF61B_651202102 =             mServiceConnection
 Void var540C13E9E156B687226421B24F2DF178_774945443 =             null;
             var540C13E9E156B687226421B24F2DF178_774945443.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_774945443;
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //service.setCallback(getPackageName(), null);
+            //service.stop(getPackageName());
+            //mServiceConnection.disconnect();
+            //mServiceConnection = null;
+            //mCurrentEngine = null;
+            //return null;
         }
 }, null, "shutdown");
-        
-        
-            
-            
-                
-                
-                
-                
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //runActionNoReconnect(new Action<Void>() {
+            //@Override
+            //public Void run(ITextToSpeechService service) throws RemoteException {
+                //service.setCallback(getPackageName(), null);
+                //service.stop(getPackageName());
+                //mServiceConnection.disconnect();
+                //mServiceConnection = null;
+                //mCurrentEngine = null;
+                //return null;
+            //}
+        //}, null, "shutdown");
     }
 
     
@@ -336,12 +335,12 @@ Void var540C13E9E156B687226421B24F2DF178_774945443 =             null;
             int varD0749AABA8B833466DFCBB0428E4F89C_1283310755 = (SUCCESS);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437148320 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437148320;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mStartLock) {
+            //mUtterances.put(text, makeResourceUri(packagename, resourceId));
+            //return SUCCESS;
+        //}
     }
 
     
@@ -355,12 +354,12 @@ Void var540C13E9E156B687226421B24F2DF178_774945443 =             null;
             int varD0749AABA8B833466DFCBB0428E4F89C_979270292 = (SUCCESS);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1139796164 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1139796164;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mStartLock) {
+            //mUtterances.put(text, Uri.parse(filename));
+            //return SUCCESS;
+        //}
     }
 
     
@@ -375,12 +374,12 @@ Void var540C13E9E156B687226421B24F2DF178_774945443 =             null;
             int varD0749AABA8B833466DFCBB0428E4F89C_1201016068 = (SUCCESS);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732058993 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732058993;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mStartLock) {
+            //mEarcons.put(earcon, makeResourceUri(packagename, resourceId));
+            //return SUCCESS;
+        //}
     }
 
     
@@ -394,16 +393,15 @@ Void var540C13E9E156B687226421B24F2DF178_774945443 =             null;
             int varD0749AABA8B833466DFCBB0428E4F89C_266741419 = (SUCCESS);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1691748503 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1691748503;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mStartLock) {
+            //mEarcons.put(earcon, Uri.parse(filename));
+            //return SUCCESS;
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.506 -0400", hash_original_method = "276BC175828DCE484EB0703A6A0D8E9B", hash_generated_method = "265BCC8E7FDAF1C7B61360584544A6BA")
     private Uri makeResourceUri(String packageName, int resourceId) {
         addTaint(resourceId);
@@ -415,12 +413,12 @@ Uri var5AA96771068ABD432380D30C1FF16905_2016544362 =         new Uri.Builder()
                 .build();
         var5AA96771068ABD432380D30C1FF16905_2016544362.addTaint(taint);
         return var5AA96771068ABD432380D30C1FF16905_2016544362;
-        
-        
-                
-                
-                
-                
+        // ---------- Original Method ----------
+        //return new Uri.Builder()
+                //.scheme(ContentResolver.SCHEME_ANDROID_RESOURCE)
+                //.encodedAuthority(packageName)
+                //.appendEncodedPath(String.valueOf(resourceId))
+                //.build();
     }
 
     
@@ -441,38 +439,38 @@ Integer varC830AAB5FAB696E7256A7C3D283C883D_1391392770 =                 service
                             getParams(params));
                 varC830AAB5FAB696E7256A7C3D283C883D_1391392770.addTaint(taint);
                 return varC830AAB5FAB696E7256A7C3D283C883D_1391392770;
-            } 
+            } //End block
             else
             {
 Integer var74EFE1A3416A985FD34BFF617FF395BF_1599113184 =                 service.speak(getPackageName(), text, queueMode, getParams(params));
                 var74EFE1A3416A985FD34BFF617FF395BF_1599113184.addTaint(taint);
                 return var74EFE1A3416A985FD34BFF617FF395BF_1599113184;
-            } 
-            
-            
-            
-                    
-                            
-                
-                    
-                
+            } //End block
+            // ---------- Original Method ----------
+            //Uri utteranceUri = mUtterances.get(text);
+            //if (utteranceUri != null) {
+                    //return service.playAudio(getPackageName(), utteranceUri, queueMode,
+                            //getParams(params));
+                //} else {
+                    //return service.speak(getPackageName(), text, queueMode, getParams(params));
+                //}
         }
 }, ERROR, "speak"));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521617113 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521617113;
-        
-        
-            
-            
-                
-                
-                    
-                            
-                
-                    
-                
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Integer>() {
+            //@Override
+            //public Integer run(ITextToSpeechService service) throws RemoteException {
+                //Uri utteranceUri = mUtterances.get(text);
+                //if (utteranceUri != null) {
+                    //return service.playAudio(getPackageName(), utteranceUri, queueMode,
+                            //getParams(params));
+                //} else {
+                    //return service.speak(getPackageName(), text, queueMode, getParams(params));
+                //}
+            //}
+        //}, ERROR, "speak");
     }
 
     
@@ -493,34 +491,34 @@ Integer var74EFE1A3416A985FD34BFF617FF395BF_1599113184 =                 service
 Integer var3F5FB64C1A12F0A78F9609D9CC474A24_2122971830 =                 ERROR;
                 var3F5FB64C1A12F0A78F9609D9CC474A24_2122971830.addTaint(taint);
                 return var3F5FB64C1A12F0A78F9609D9CC474A24_2122971830;
-            } 
+            } //End block
 Integer var3F4F7F85D5B430AD0CF35D2C5F73E872_486677747 =             service.playAudio(getPackageName(), earconUri, queueMode,
                         getParams(params));
             var3F4F7F85D5B430AD0CF35D2C5F73E872_486677747.addTaint(taint);
             return var3F4F7F85D5B430AD0CF35D2C5F73E872_486677747;
-            
-            
-            
-                    
-                
-            
-                        
+            // ---------- Original Method ----------
+            //Uri earconUri = mEarcons.get(earcon);
+            //if (earconUri == null) {
+                    //return ERROR;
+                //}
+            //return service.playAudio(getPackageName(), earconUri, queueMode,
+                        //getParams(params));
         }
 }, ERROR, "playEarcon"));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221884353 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221884353;
-        
-        
-            
-            
-                
-                
-                    
-                
-                
-                        
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Integer>() {
+            //@Override
+            //public Integer run(ITextToSpeechService service) throws RemoteException {
+                //Uri earconUri = mEarcons.get(earcon);
+                //if (earconUri == null) {
+                    //return ERROR;
+                //}
+                //return service.playAudio(getPackageName(), earconUri, queueMode,
+                        //getParams(params));
+            //}
+        //}, ERROR, "playEarcon");
     }
 
     
@@ -539,21 +537,21 @@ Integer varF960BC12575747C24E20C0225559D5BB_503683950 =             service.play
                         getParams(params));
             varF960BC12575747C24E20C0225559D5BB_503683950.addTaint(taint);
             return varF960BC12575747C24E20C0225559D5BB_503683950;
-            
-            
-                        
+            // ---------- Original Method ----------
+            //return service.playSilence(getPackageName(), durationInMs, queueMode,
+                        //getParams(params));
         }
 }, ERROR, "playSilence"));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_130901785 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_130901785;
-        
-        
-            
-            
-                
-                        
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Integer>() {
+            //@Override
+            //public Integer run(ITextToSpeechService service) throws RemoteException {
+                //return service.playSilence(getPackageName(), durationInMs, queueMode,
+                        //getParams(params));
+            //}
+        //}, ERROR, "playSilence");
     }
 
     
@@ -574,37 +572,37 @@ Set<String> var628544D9C2D4854478D09F82EACFFF99_1001683886 =         runAction(n
 Set<String> var5857656592B7BBF1A241131B963ED712_460762720 =                 featureSet;
                 var5857656592B7BBF1A241131B963ED712_460762720.addTaint(taint);
                 return var5857656592B7BBF1A241131B963ED712_460762720;
-            } 
+            } //End block
 Set<String> var540C13E9E156B687226421B24F2DF178_1924797060 =             null;
             var540C13E9E156B687226421B24F2DF178_1924797060.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1924797060;
-            
-            
-                        
-            
-                    
-                    
-                    
-                
-            
+            // ---------- Original Method ----------
+            //String[] features = service.getFeaturesForLanguage(
+                        //locale.getISO3Language(), locale.getISO3Country(), locale.getVariant());
+            //if (features != null) {
+                    //final Set<String> featureSet = new HashSet<String>();
+                    //Collections.addAll(featureSet, features);
+                    //return featureSet;
+                //}
+            //return null;
         }
 }, null, "getFeatures");
         var628544D9C2D4854478D09F82EACFFF99_1001683886.addTaint(taint);
         return var628544D9C2D4854478D09F82EACFFF99_1001683886;
-        
-        
-            
-            
-                
-                        
-                
-                    
-                    
-                    
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Set<String>>() {
+            //@Override
+            //public Set<String> run(ITextToSpeechService service) throws RemoteException {
+                //String[] features = service.getFeaturesForLanguage(
+                        //locale.getISO3Language(), locale.getISO3Country(), locale.getVariant());
+                //if (features != null) {
+                    //final Set<String> featureSet = new HashSet<String>();
+                    //Collections.addAll(featureSet, features);
+                    //return featureSet;
+                //}
+                //return null;
+            //}
+        //}, null, "getFeatures");
     }
 
     
@@ -618,19 +616,19 @@ Set<String> var540C13E9E156B687226421B24F2DF178_1924797060 =             null;
 Boolean var8E649280B66AA64AE13D2F0B9F1A2024_336844809 =             service.isSpeaking();
             var8E649280B66AA64AE13D2F0B9F1A2024_336844809.addTaint(taint);
             return var8E649280B66AA64AE13D2F0B9F1A2024_336844809;
-            
-            
+            // ---------- Original Method ----------
+            //return service.isSpeaking();
         }
 }, false, "isSpeaking"));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8391240 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_8391240;
-        
-        
-            
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Boolean>() {
+            //@Override
+            //public Boolean run(ITextToSpeechService service) throws RemoteException {
+                //return service.isSpeaking();
+            //}
+        //}, false, "isSpeaking");
     }
 
     
@@ -644,19 +642,19 @@ Boolean var8E649280B66AA64AE13D2F0B9F1A2024_336844809 =             service.isSp
 Integer varE12943068FF9423862F1428EAB10C44E_594155218 =             service.stop(getPackageName());
             varE12943068FF9423862F1428EAB10C44E_594155218.addTaint(taint);
             return varE12943068FF9423862F1428EAB10C44E_594155218;
-            
-            
+            // ---------- Original Method ----------
+            //return service.stop(getPackageName());
         }
 }, ERROR, "stop"));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1298834310 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1298834310;
-        
-        
-            
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Integer>() {
+            //@Override
+            //public Integer run(ITextToSpeechService service) throws RemoteException {
+                //return service.stop(getPackageName());
+            //}
+        //}, ERROR, "stop");
     }
 
     
@@ -671,26 +669,26 @@ Integer varE12943068FF9423862F1428EAB10C44E_594155218 =             service.stop
                 synchronized
 (mStartLock)                {
                     mParams.putInt(Engine.KEY_PARAM_RATE, intRate);
-                } 
+                } //End block
                 int varD0749AABA8B833466DFCBB0428E4F89C_1812824592 = (SUCCESS);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_397099494 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_397099494;
-            } 
-        } 
+            } //End block
+        } //End block
         int varBB1CA97EC761FC37101737BA0AA2E7C5_891028293 = (ERROR);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003457335 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003457335;
-        
-        
-            
-            
-                
-                    
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (speechRate > 0.0f) {
+            //int intRate = (int)(speechRate * 100);
+            //if (intRate > 0) {
+                //synchronized (mStartLock) {
+                    //mParams.putInt(Engine.KEY_PARAM_RATE, intRate);
+                //}
+                //return SUCCESS;
+            //}
+        //}
+        //return ERROR;
     }
 
     
@@ -705,37 +703,36 @@ Integer varE12943068FF9423862F1428EAB10C44E_594155218 =             service.stop
                 synchronized
 (mStartLock)                {
                     mParams.putInt(Engine.KEY_PARAM_PITCH, intPitch);
-                } 
+                } //End block
                 int varD0749AABA8B833466DFCBB0428E4F89C_99695893 = (SUCCESS);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132218794 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132218794;
-            } 
-        } 
+            } //End block
+        } //End block
         int varBB1CA97EC761FC37101737BA0AA2E7C5_1764582672 = (ERROR);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406312329 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406312329;
-        
-        
-            
-            
-                
-                    
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (pitch > 0.0f) {
+            //int intPitch = (int)(pitch * 100);
+            //if (intPitch > 0) {
+                //synchronized (mStartLock) {
+                    //mParams.putInt(Engine.KEY_PARAM_PITCH, intPitch);
+                //}
+                //return SUCCESS;
+            //}
+        //}
+        //return ERROR;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.509 -0400", hash_original_method = "6F277B1B16E884F81974EA73065A64D8", hash_generated_method = "28F7B2CF674EEEAA2C6DAEB8F094369E")
     public String getCurrentEngine() {
 String varF0379D96643374605D6BA399231446A3_1088072200 =         mCurrentEngine;
         varF0379D96643374605D6BA399231446A3_1088072200.addTaint(taint);
         return varF0379D96643374605D6BA399231446A3_1088072200;
-        
-        
+        // ---------- Original Method ----------
+        //return mCurrentEngine;
     }
 
     
@@ -752,7 +749,7 @@ String varF0379D96643374605D6BA399231446A3_1088072200 =         mCurrentEngine;
 Integer var9D0095E272DA84611754C424FD1F1417_1092511828 =                 LANG_NOT_SUPPORTED;
                 var9D0095E272DA84611754C424FD1F1417_1092511828.addTaint(taint);
                 return var9D0095E272DA84611754C424FD1F1417_1092511828;
-            } 
+            } //End block
             String language = loc.getISO3Language();
             String country = loc.getISO3Country();
             String variant = loc.getVariant();
@@ -765,23 +762,23 @@ Integer var9D0095E272DA84611754C424FD1F1417_1092511828 =                 LANG_NO
     if(result < LANG_COUNTRY_AVAILABLE)                    
                     {
                         country = "";
-                    } 
-                } 
+                    } //End block
+                } //End block
                 mParams.putString(Engine.KEY_PARAM_LANGUAGE, language);
                 mParams.putString(Engine.KEY_PARAM_COUNTRY, country);
                 mParams.putString(Engine.KEY_PARAM_VARIANT, variant);
-            } 
+            } //End block
 Integer varDC838461EE2FA0CA4C9BBB70A15456B0_610345275 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_610345275.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_610345275;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 }, LANG_NOT_SUPPORTED, "setLanguage"));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1773664151 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1773664151;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -798,31 +795,31 @@ Locale var0611285425B54BCEC8D4A31276F61EE9_966341318 =         runAction(new Act
 Locale varB43BF46312C2A6C29483921803035C51_1847746383 =                 new Locale(locStrings[0], locStrings[1], locStrings[2]);
                 varB43BF46312C2A6C29483921803035C51_1847746383.addTaint(taint);
                 return varB43BF46312C2A6C29483921803035C51_1847746383;
-            } 
+            } //End block
 Locale var540C13E9E156B687226421B24F2DF178_1447233126 =             null;
             var540C13E9E156B687226421B24F2DF178_1447233126.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1447233126;
-            
-            
-            
-                    
-                
-            
+            // ---------- Original Method ----------
+            //String[] locStrings = service.getLanguage();
+            //if (locStrings != null && locStrings.length == 3) {
+                    //return new Locale(locStrings[0], locStrings[1], locStrings[2]);
+                //}
+            //return null;
         }
 }, null, "getLanguage");
         var0611285425B54BCEC8D4A31276F61EE9_966341318.addTaint(taint);
         return var0611285425B54BCEC8D4A31276F61EE9_966341318;
-        
-        
-            
-            
-                
-                
-                    
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Locale>() {
+            //@Override
+            //public Locale run(ITextToSpeechService service) throws RemoteException {
+                //String[] locStrings = service.getLanguage();
+                //if (locStrings != null && locStrings.length == 3) {
+                    //return new Locale(locStrings[0], locStrings[1], locStrings[2]);
+                //}
+                //return null;
+            //}
+        //}, null, "getLanguage");
     }
 
     
@@ -838,21 +835,21 @@ Integer varD84127CF44AD07A1F9D09370E321480F_1759874501 =             service.isL
                         loc.getISO3Country(), loc.getVariant());
             varD84127CF44AD07A1F9D09370E321480F_1759874501.addTaint(taint);
             return varD84127CF44AD07A1F9D09370E321480F_1759874501;
-            
-            
-                        
+            // ---------- Original Method ----------
+            //return service.isLanguageAvailable(loc.getISO3Language(),
+                        //loc.getISO3Country(), loc.getVariant());
         }
 }, LANG_NOT_SUPPORTED, "isLanguageAvailable"));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1344467604 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1344467604;
-        
-        
-            
-            
-                
-                        
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Integer>() {
+            //@Override
+            //public Integer run(ITextToSpeechService service) throws RemoteException {
+                //return service.isLanguageAvailable(loc.getISO3Language(),
+                        //loc.getISO3Country(), loc.getVariant());
+            //}
+        //}, LANG_NOT_SUPPORTED, "isLanguageAvailable");
     }
 
     
@@ -871,21 +868,21 @@ Integer varC17144DAEB3B66EB3DD5823B0FC8BDAB_565915187 =             service.synt
                         getParams(params));
             varC17144DAEB3B66EB3DD5823B0FC8BDAB_565915187.addTaint(taint);
             return varC17144DAEB3B66EB3DD5823B0FC8BDAB_565915187;
-            
-            
-                        
+            // ---------- Original Method ----------
+            //return service.synthesizeToFile(getPackageName(), text, filename,
+                        //getParams(params));
         }
 }, ERROR, "synthesizeToFile"));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93990464 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93990464;
-        
-        
-            
-            
-                
-                        
-            
-        
+        // ---------- Original Method ----------
+        //return runAction(new Action<Integer>() {
+            //@Override
+            //public Integer run(ITextToSpeechService service) throws RemoteException {
+                //return service.synthesizeToFile(getPackageName(), text, filename,
+                        //getParams(params));
+            //}
+        //}, ERROR, "synthesizeToFile");
     }
 
     
@@ -909,21 +906,21 @@ for(Map.Entry<String, String> entry : params.entrySet())
     if(key != null && key.startsWith(mCurrentEngine))                    
                     {
                         bundle.putString(key, entry.getValue());
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
 Bundle var7B2862195409742DCA365D8C6330AB92_1155623514 =             bundle;
             var7B2862195409742DCA365D8C6330AB92_1155623514.addTaint(taint);
             return var7B2862195409742DCA365D8C6330AB92_1155623514;
-        } 
+        } //End block
         else
         {
 Bundle var1ECA468F8F118273F13D0667CCE29D60_1419058719 =             mParams;
             var1ECA468F8F118273F13D0667CCE29D60_1419058719.addTaint(taint);
             return var1ECA468F8F118273F13D0667CCE29D60_1419058719;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -936,12 +933,12 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_1419058719 =             mParams;
     if(value != null)        
         {
             bundle.putString(key, value);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String value = params.get(key);
+        //if (value != null) {
+            //bundle.putString(key, value);
+        //}
     }
 
     
@@ -957,20 +954,20 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_1419058719 =             mParams;
             {
                 int value = Integer.parseInt(valueString);
                 bundle.putInt(key, value);
-            } 
+            } //End block
             catch (NumberFormatException ex)
             {
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-            
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //String valueString = params.get(key);
+        //if (!TextUtils.isEmpty(valueString)) {
+            //try {
+                //int value = Integer.parseInt(valueString);
+                //bundle.putInt(key, value);
+            //} catch (NumberFormatException ex) {
+            //}
+        //}
     }
 
     
@@ -986,20 +983,20 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_1419058719 =             mParams;
             {
                 float value = Float.parseFloat(valueString);
                 bundle.putFloat(key, value);
-            } 
+            } //End block
             catch (NumberFormatException ex)
             {
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-            
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //String valueString = params.get(key);
+        //if (!TextUtils.isEmpty(valueString)) {
+            //try {
+                //float value = Float.parseFloat(valueString);
+                //bundle.putFloat(key, value);
+            //} catch (NumberFormatException ex) {
+            //}
+        //}
     }
 
     
@@ -1010,22 +1007,21 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_1419058719 =             mParams;
         int var29748D5FD7A8274F3DF6C0697E48D88B_1315605633 = (TextToSpeech.SUCCESS);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_649275750 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_649275750;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mUtteranceProgressListener = UtteranceProgressListener.from(listener);
+        //return TextToSpeech.SUCCESS;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.512 -0400", hash_original_method = "98074E19965AB76BE23153F0217E2857", hash_generated_method = "6A2F9DD31162300B877E68390A8619E9")
     public int setOnUtteranceProgressListener(UtteranceProgressListener listener) {
         mUtteranceProgressListener = listener;
         int var29748D5FD7A8274F3DF6C0697E48D88B_1287951696 = (TextToSpeech.SUCCESS);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_994358958 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_994358958;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mUtteranceProgressListener = listener;
+        //return TextToSpeech.SUCCESS;
     }
 
     
@@ -1036,9 +1032,9 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_1419058719 =             mParams;
         int varA378E50E83B3BEF2BF06C44276D52CC5_1307234509 = (initTts());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1708189429 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1708189429;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mRequestedEngine = enginePackageName;
+        //return initTts();
     }
 
     
@@ -1047,19 +1043,18 @@ Bundle var1ECA468F8F118273F13D0667CCE29D60_1419058719 =             mParams;
 String varF168E94075BBE3E03A9472F1231D848D_73500005 =         mEnginesHelper.getDefaultEngine();
         varF168E94075BBE3E03A9472F1231D848D_73500005.addTaint(taint);
         return varF168E94075BBE3E03A9472F1231D848D_73500005;
-        
-        
+        // ---------- Original Method ----------
+        //return mEnginesHelper.getDefaultEngine();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.512 -0400", hash_original_method = "FDBC18F088428D1AA4FA407CF8A38EB5", hash_generated_method = "27D856C849EB66A6953B0A78F0850A7F")
     public boolean areDefaultsEnforced() {
         boolean var68934A3E9455FA72420237EB05902327_937697649 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_858790828 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_858790828;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -1068,8 +1063,8 @@ String varF168E94075BBE3E03A9472F1231D848D_73500005 =         mEnginesHelper.get
 List<EngineInfo> var581E578A303E6D7E78C66653FD081751_1957637112 =         mEnginesHelper.getEngines();
         var581E578A303E6D7E78C66653FD081751_1957637112.addTaint(taint);
         return var581E578A303E6D7E78C66653FD081751_1957637112;
-        
-        
+        // ---------- Original Method ----------
+        //return mEnginesHelper.getEngines();
     }
 
     
@@ -1078,7 +1073,7 @@ List<EngineInfo> var581E578A303E6D7E78C66653FD081751_1957637112 =         mEngin
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.512 -0400", hash_original_method = "0CEE966FD083EAF9A38425EF355FEEF7", hash_generated_method = "0CEE966FD083EAF9A38425EF355FEEF7")
         public Engine ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1271,54 +1266,54 @@ List<EngineInfo> var581E578A303E6D7E78C66653FD081751_1957637112 =         mEngin
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.515 -0400", hash_original_method = "4879E6D30CC79D00A25F9B445CF68B6E", hash_generated_method = "4879E6D30CC79D00A25F9B445CF68B6E")
         public Connection ()
         {
-            
+            //Synthesized constructor
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.516 -0400", hash_original_method = "E38F495B4498EDF08C66FB9F592C4572", hash_generated_method = "A1514C12F5D6C61A269996643C2C0762")
         public void onServiceConnected(ComponentName name, IBinder service) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(name.getTaint());
             synchronized
 (mStartLock)            {
     if(mServiceConnection != null)                
                 {
                     mServiceConnection.disconnect();
-                } 
+                } //End block
                 mServiceConnection = this;
                 mService = ITextToSpeechService.Stub.asInterface(service);
                 try 
                 {
                     mService.setCallback(getPackageName(), mCallback);
                     dispatchOnInit(SUCCESS);
-                } 
+                } //End block
                 catch (RemoteException re)
                 {
                     dispatchOnInit(ERROR);
-                } 
-            } 
-            
-            
-            
-                
-                    
-                
-                
-                
-                
-                    
-                    
-                
-                    
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //Log.i(TAG, "Connected to " + name);
+            //synchronized(mStartLock) {
+                //if (mServiceConnection != null) {
+                    //mServiceConnection.disconnect();
+                //}
+                //mServiceConnection = this;
+                //mService = ITextToSpeechService.Stub.asInterface(service);
+                //try {
+                    //mService.setCallback(getPackageName(), mCallback);
+                    //dispatchOnInit(SUCCESS);
+                //} catch (RemoteException re) {
+                    //Log.e(TAG, "Error connecting to service, setCallback() failed");
+                    //dispatchOnInit(ERROR);
+                //}
+            //}
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.516 -0400", hash_original_method = "9CBB724FFDF56C58A2F363CBB7ADEB66", hash_generated_method = "D28DEE74DED717A18DE07AB51DBABDBD")
         public void onServiceDisconnected(ComponentName name) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(name.getTaint());
             synchronized
 (mStartLock)            {
@@ -1326,23 +1321,23 @@ List<EngineInfo> var581E578A303E6D7E78C66653FD081751_1957637112 =         mEngin
     if(mServiceConnection == this)                
                 {
                     mServiceConnection = null;
-                } 
-            } 
-            
-            
-                
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized(mStartLock) {
+                //mService = null;
+                //if (mServiceConnection == this) {
+                    //mServiceConnection = null;
+                //}
+            //}
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.516 -0400", hash_original_method = "670DB56217535BA78AC55188B9013676", hash_generated_method = "22BDFB36185642ED4E82BED8A6D53D5B")
         public void disconnect() {
             mContext.unbindService(this);
-            
-            
+            // ---------- Original Method ----------
+            //mContext.unbindService(this);
         }
 
         
@@ -1361,40 +1356,40 @@ List<EngineInfo> var581E578A303E6D7E78C66653FD081751_1957637112 =         mEngin
 R var79B35EE005A3F2115C55AE7046E4A0E2_1177946337 =                         errorResult;
                         var79B35EE005A3F2115C55AE7046E4A0E2_1177946337.addTaint(taint);
                         return var79B35EE005A3F2115C55AE7046E4A0E2_1177946337;
-                    } 
+                    } //End block
 R varD2997F7A1AE93B1FCC30EEA67FF3D50D_776526598 =                     action.run(mService);
                     varD2997F7A1AE93B1FCC30EEA67FF3D50D_776526598.addTaint(taint);
                     return varD2997F7A1AE93B1FCC30EEA67FF3D50D_776526598;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (RemoteException ex)
             {
     if(reconnect)                
                 {
                     disconnect();
                     initTts();
-                } 
+                } //End block
 R var79B35EE005A3F2115C55AE7046E4A0E2_357284263 =                 errorResult;
                 var79B35EE005A3F2115C55AE7046E4A0E2_357284263.addTaint(taint);
                 return var79B35EE005A3F2115C55AE7046E4A0E2_357284263;
-            } 
-            
-            
-                
-                    
-                        
-                        
-                    
-                    
-                
-            
-                
-                
-                    
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //synchronized (mStartLock) {
+                    //if (mService == null) {
+                        //Log.w(TAG, method + " failed: not connected to TTS engine");
+                        //return errorResult;
+                    //}
+                    //return action.run(mService);
+                //}
+            //} catch (RemoteException ex) {
+                //Log.e(TAG, method + " failed", ex);
+                //if (reconnect) {
+                    //disconnect();
+                    //initTts();
+                //}
+                //return errorResult;
+            //}
         }
 
         
@@ -1422,7 +1417,7 @@ R var79B35EE005A3F2115C55AE7046E4A0E2_357284263 =                 errorResult;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.517 -0400", hash_original_method = "1BD677F38EE0D51841725F2C2D5029FA", hash_generated_method = "1BD677F38EE0D51841725F2C2D5029FA")
         public EngineInfo ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1432,8 +1427,8 @@ R var79B35EE005A3F2115C55AE7046E4A0E2_357284263 =                 errorResult;
 String varD2DF1B343E843F1081AD8889C5F4C655_1043290930 =             "EngineInfo{name=" + name + "}";
             varD2DF1B343E843F1081AD8889C5F4C655_1043290930.addTaint(taint);
             return varD2DF1B343E843F1081AD8889C5F4C655_1043290930;
-            
-            
+            // ---------- Original Method ----------
+            //return "EngineInfo{name=" + name + "}";
         }
 
         

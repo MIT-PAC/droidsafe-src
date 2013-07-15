@@ -1,6 +1,6 @@
 package android.preference;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -97,22 +97,22 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.552 -0400", hash_original_method = "7AC8446BD8400B4FB28876E58FD0C82C", hash_generated_method = "7AC8446BD8400B4FB28876E58FD0C82C")
     public PreferenceFragment ()
     {
-        
+        //Synthesized constructor
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.553 -0400", hash_original_method = "14584F9C5C89DF812017D65CA10140CA", hash_generated_method = "6FF9C151A932DCC9F728AF78F9445317")
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(savedInstanceState.getTaint());
         super.onCreate(savedInstanceState);
         mPreferenceManager = new PreferenceManager(getActivity(), FIRST_REQUEST_CODE);
         mPreferenceManager.setFragment(this);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onCreate(savedInstanceState);
+        //mPreferenceManager = new PreferenceManager(getActivity(), FIRST_REQUEST_CODE);
+        //mPreferenceManager.setFragment(this);
     }
 
     
@@ -120,7 +120,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(savedInstanceState.getTaint());
         addTaint(container.getTaint());
         addTaint(inflater.getTaint());
@@ -128,22 +128,22 @@ View varD0B63ED7DA328F8BD7BA58ECA7EAE095_1457184047 =         inflater.inflate(c
                 false);
         varD0B63ED7DA328F8BD7BA58ECA7EAE095_1457184047.addTaint(taint);
         return varD0B63ED7DA328F8BD7BA58ECA7EAE095_1457184047;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return inflater.inflate(com.android.internal.R.layout.preference_list_fragment, container,
+                //false);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.554 -0400", hash_original_method = "428378000E0F8A164C3A97E3B49B3453", hash_generated_method = "C353F02A7DFF1ACD9E116D03A0983B7A")
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(savedInstanceState.getTaint());
         super.onActivityCreated(savedInstanceState);
     if(mHavePrefs)        
         {
             bindPreferences();
-        } 
+        } //End block
         mInitDone = true;
     if(savedInstanceState != null)        
         {
@@ -154,85 +154,85 @@ View varD0B63ED7DA328F8BD7BA58ECA7EAE095_1457184047 =         inflater.inflate(c
     if(preferenceScreen != null)                
                 {
                     preferenceScreen.restoreHierarchyState(container);
-                } 
-            } 
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.onActivityCreated(savedInstanceState);
+        //if (mHavePrefs) {
+            //bindPreferences();
+        //}
+        //mInitDone = true;
+        //if (savedInstanceState != null) {
+            //Bundle container = savedInstanceState.getBundle(PREFERENCES_TAG);
+            //if (container != null) {
+                //final PreferenceScreen preferenceScreen = getPreferenceScreen();
+                //if (preferenceScreen != null) {
+                    //preferenceScreen.restoreHierarchyState(container);
+                //}
+            //}
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.554 -0400", hash_original_method = "43649DF11F13E2637210DBACA4CC8D33", hash_generated_method = "D0689129ACB54896271454CAE57B768E")
     @Override
     public void onStart() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onStart();
         mPreferenceManager.setOnPreferenceTreeClickListener(this);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onStart();
+        //mPreferenceManager.setOnPreferenceTreeClickListener(this);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.555 -0400", hash_original_method = "A0B40E1EDC23C730D4B2DB4DFCBF5599", hash_generated_method = "3377460E54B2419A8818E67B2FC42EBA")
     @Override
     public void onStop() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onStop();
         mPreferenceManager.dispatchActivityStop();
         mPreferenceManager.setOnPreferenceTreeClickListener(null);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onStop();
+        //mPreferenceManager.dispatchActivityStop();
+        //mPreferenceManager.setOnPreferenceTreeClickListener(null);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.555 -0400", hash_original_method = "DD4A0119F9218E9767B3382C8F996136", hash_generated_method = "A18F8A2A0A2FA9C65A7E34DB52823907")
     @Override
     public void onDestroyView() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         mList = null;
         mHandler.removeCallbacks(mRequestFocus);
         mHandler.removeMessages(MSG_BIND_PREFERENCES);
         super.onDestroyView();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mList = null;
+        //mHandler.removeCallbacks(mRequestFocus);
+        //mHandler.removeMessages(MSG_BIND_PREFERENCES);
+        //super.onDestroyView();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.556 -0400", hash_original_method = "A8BE499835A02B140E34CDE8D21019C1", hash_generated_method = "0899F3D9FAF778E9CAC863266C36BEDB")
     @Override
     public void onDestroy() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDestroy();
         mPreferenceManager.dispatchActivityDestroy();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onDestroy();
+        //mPreferenceManager.dispatchActivityDestroy();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.556 -0400", hash_original_method = "26BF943D86091571AFE724B01D9065B4", hash_generated_method = "C35FFADF09A43FCB362DC3815BF256A6")
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(outState.getTaint());
         super.onSaveInstanceState(outState);
         final PreferenceScreen preferenceScreen = getPreferenceScreen();
@@ -241,42 +241,40 @@ View varD0B63ED7DA328F8BD7BA58ECA7EAE095_1457184047 =         inflater.inflate(c
             Bundle container = new Bundle();
             preferenceScreen.saveHierarchyState(container);
             outState.putBundle(PREFERENCES_TAG, container);
-        } 
-        
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onSaveInstanceState(outState);
+        //final PreferenceScreen preferenceScreen = getPreferenceScreen();
+        //if (preferenceScreen != null) {
+            //Bundle container = new Bundle();
+            //preferenceScreen.saveHierarchyState(container);
+            //outState.putBundle(PREFERENCES_TAG, container);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.556 -0400", hash_original_method = "ED65E8315019E6E9FED78D8EFC0AFB01", hash_generated_method = "1069C8639F7071B756CD13F5B7EC18FB")
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(data.getTaint());
         addTaint(resultCode);
         addTaint(requestCode);
         super.onActivityResult(requestCode, resultCode, data);
         mPreferenceManager.dispatchActivityResult(requestCode, resultCode, data);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onActivityResult(requestCode, resultCode, data);
+        //mPreferenceManager.dispatchActivityResult(requestCode, resultCode, data);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.557 -0400", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "9831F36C04165A418CC1CC9886477461")
     public PreferenceManager getPreferenceManager() {
 PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_394564967 =         mPreferenceManager;
         var00374A2A6A541F0EA9C609E6C6447EED_394564967.addTaint(taint);
         return var00374A2A6A541F0EA9C609E6C6447EED_394564967;
-        
-        
+        // ---------- Original Method ----------
+        //return mPreferenceManager;
     }
 
     
@@ -289,15 +287,15 @@ PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_394564967 =         mPrefe
     if(mInitDone)            
             {
                 postBindPreferences();
-            } 
-        } 
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mPreferenceManager.setPreferences(preferenceScreen) && preferenceScreen != null) {
+            //mHavePrefs = true;
+            //if (mInitDone) {
+                //postBindPreferences();
+            //}
+        //}
     }
 
     
@@ -306,20 +304,19 @@ PreferenceManager var00374A2A6A541F0EA9C609E6C6447EED_394564967 =         mPrefe
 PreferenceScreen varDAFD38741BC1123E8F4608DDE091E020_697703308 =         mPreferenceManager.getPreferenceScreen();
         varDAFD38741BC1123E8F4608DDE091E020_697703308.addTaint(taint);
         return varDAFD38741BC1123E8F4608DDE091E020_697703308;
-        
-        
+        // ---------- Original Method ----------
+        //return mPreferenceManager.getPreferenceScreen();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.558 -0400", hash_original_method = "5674CE8C214451535BFAB18211614C8C", hash_generated_method = "F85F789656537B3736817DCDDFC2985D")
     public void addPreferencesFromIntent(Intent intent) {
         addTaint(intent.getTaint());
         requirePreferenceManager();
         setPreferenceScreen(mPreferenceManager.inflateFromIntent(intent, getPreferenceScreen()));
-        
-        
-        
+        // ---------- Original Method ----------
+        //requirePreferenceManager();
+        //setPreferenceScreen(mPreferenceManager.inflateFromIntent(intent, getPreferenceScreen()));
     }
 
     
@@ -329,17 +326,17 @@ PreferenceScreen varDAFD38741BC1123E8F4608DDE091E020_697703308 =         mPrefer
         requirePreferenceManager();
         setPreferenceScreen(mPreferenceManager.inflateFromResource(getActivity(),
                 preferencesResId, getPreferenceScreen()));
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //requirePreferenceManager();
+        //setPreferenceScreen(mPreferenceManager.inflateFromResource(getActivity(),
+                //preferencesResId, getPreferenceScreen()));
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.559 -0400", hash_original_method = "80D6854EDB6C9EF01A71267A1360D8F7", hash_generated_method = "AB84BF2D317F1CA6C25169C01A8E3B66")
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             Preference preference) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(preference.getTaint());
         addTaint(preferenceScreen.getTaint());
     if(preference.getFragment() != null &&
@@ -349,17 +346,17 @@ PreferenceScreen varDAFD38741BC1123E8F4608DDE091E020_697703308 =         mPrefer
                     this, preference));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_469951999 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_469951999;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_2147247652 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511656601 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_511656601;
-        
-        
-                
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (preference.getFragment() != null &&
+                //getActivity() instanceof OnPreferenceStartFragmentCallback) {
+            //return ((OnPreferenceStartFragmentCallback)getActivity()).onPreferenceStartFragment(
+                    //this, preference);
+        //}
+        //return false;
     }
 
     
@@ -371,15 +368,15 @@ PreferenceScreen varDAFD38741BC1123E8F4608DDE091E020_697703308 =         mPrefer
 Preference var540C13E9E156B687226421B24F2DF178_174596585 =             null;
             var540C13E9E156B687226421B24F2DF178_174596585.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_174596585;
-        } 
+        } //End block
 Preference var3F9904390C47A44ACE8B6D395680E8CD_1191423825 =         mPreferenceManager.findPreference(key);
         var3F9904390C47A44ACE8B6D395680E8CD_1191423825.addTaint(taint);
         return var3F9904390C47A44ACE8B6D395680E8CD_1191423825;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mPreferenceManager == null) {
+            //return null;
+        //}
+        //return mPreferenceManager.findPreference(key);
     }
 
     
@@ -390,11 +387,11 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1191423825 =         mPreferenceM
             RuntimeException var3378A9C87F81772D2E810C2DBC2CC508_259921552 = new RuntimeException("This should be called after super.onCreate.");
             var3378A9C87F81772D2E810C2DBC2CC508_259921552.addTaint(taint);
             throw var3378A9C87F81772D2E810C2DBC2CC508_259921552;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mPreferenceManager == null) {
+            //throw new RuntimeException("This should be called after super.onCreate.");
+        //}
     }
 
     
@@ -403,9 +400,9 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1191423825 =         mPreferenceM
     if(mHandler.hasMessages(MSG_BIND_PREFERENCES))        
         return;
         mHandler.obtainMessage(MSG_BIND_PREFERENCES).sendToTarget();
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mHandler.hasMessages(MSG_BIND_PREFERENCES)) return;
+        //mHandler.obtainMessage(MSG_BIND_PREFERENCES).sendToTarget();
     }
 
     
@@ -415,12 +412,12 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1191423825 =         mPreferenceM
     if(preferenceScreen != null)        
         {
             preferenceScreen.bind(getListView());
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final PreferenceScreen preferenceScreen = getPreferenceScreen();
+        //if (preferenceScreen != null) {
+            //preferenceScreen.bind(getListView());
+        //}
     }
 
     
@@ -430,9 +427,9 @@ Preference var3F9904390C47A44ACE8B6D395680E8CD_1191423825 =         mPreferenceM
 ListView var344AE622895130273F3D062543816FEE_38083014 =         mList;
         var344AE622895130273F3D062543816FEE_38083014.addTaint(taint);
         return var344AE622895130273F3D062543816FEE_38083014;
-        
-        
-        
+        // ---------- Original Method ----------
+        //ensureList();
+        //return mList;
     }
 
     
@@ -441,14 +438,14 @@ ListView var344AE622895130273F3D062543816FEE_38083014 =         mList;
     if(mList != null)        
         {
             return;
-        } 
+        } //End block
         View root = getView();
     if(root == null)        
         {
             IllegalStateException var052948DC6923A855D5D68E1310933CAB_2008390570 = new IllegalStateException("Content view not yet created");
             var052948DC6923A855D5D68E1310933CAB_2008390570.addTaint(taint);
             throw var052948DC6923A855D5D68E1310933CAB_2008390570;
-        } 
+        } //End block
         View rawListView = root.findViewById(android.R.id.list);
     if(!(rawListView instanceof ListView))        
         {
@@ -457,7 +454,7 @@ ListView var344AE622895130273F3D062543816FEE_38083014 =         mList;
                     + "that is not a ListView class");
             var21587997F544C4FA9C985E7B90148739_812751941.addTaint(taint);
             throw var21587997F544C4FA9C985E7B90148739_812751941;
-        } 
+        } //End block
         mList = (ListView)rawListView;
     if(mList == null)        
         {
@@ -466,11 +463,11 @@ ListView var344AE622895130273F3D062543816FEE_38083014 =         mList;
                     "'android.R.id.list'");
             var814898E2A75124B230F991BD301E888E_1058362237.addTaint(taint);
             throw var814898E2A75124B230F991BD301E888E_1058362237;
-        } 
+        } //End block
         mList.setOnKeyListener(mListOnKeyListener);
         mHandler.post(mRequestFocus);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.266 -0400", hash_original_method = "04F34AE7A99F7FC60EC2CE238423FC91", hash_generated_method = "B92C196A4B4BAB1C64D53F4B3E22B74A")
     public  ContentLanguage() {
         super(CONTENT_LANGUAGE);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,8 +23,8 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
         super(CONTENT_LANGUAGE);
         addTaint(languageTag.getTaint());
         this.setLanguageTag( languageTag );
-        
-        
+        // ---------- Original Method ----------
+        //this.setLanguageTag( languageTag );
     }
 
     
@@ -33,8 +33,8 @@ public class ContentLanguage extends SIPHeader implements javax.sip.header.Conte
 String var8C1CD6F54EF4D18C716132A3D390019B_1422151184 =         this.getLanguageTag();
         var8C1CD6F54EF4D18C716132A3D390019B_1422151184.addTaint(taint);
         return var8C1CD6F54EF4D18C716132A3D390019B_1422151184;
-        
-        
+        // ---------- Original Method ----------
+        //return this.getLanguageTag();
     }
 
     
@@ -45,19 +45,19 @@ String var8C1CD6F54EF4D18C716132A3D390019B_1422151184 =         this.getLanguage
 String var83CEAEBE4B936D4AAED30065F0E63287_431949153 =             locale.getLanguage();
             var83CEAEBE4B936D4AAED30065F0E63287_431949153.addTaint(taint);
             return var83CEAEBE4B936D4AAED30065F0E63287_431949153;
-        } 
+        } //End block
         else
         {
 String var9D965CDE9A5FC69D278845CD5ADE967F_1616933772 =             locale.getLanguage() + '-' + locale.getCountry();
             var9D965CDE9A5FC69D278845CD5ADE967F_1616933772.addTaint(taint);
             return var9D965CDE9A5FC69D278845CD5ADE967F_1616933772;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ( "".equals(locale.getCountry())) {
+            //return locale.getLanguage();
+        //} else {
+            //return locale.getLanguage() + '-' + locale.getCountry();
+        //}
     }
 
     
@@ -67,38 +67,36 @@ String var9D965CDE9A5FC69D278845CD5ADE967F_1616933772 =             locale.getLa
     if(slash>=0)        
         {
             this.locale = new Locale(languageTag.substring(0,slash), languageTag.substring(slash+1) );
-        } 
+        } //End block
         else
         {
             this.locale = new Locale(languageTag);
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int slash = languageTag.indexOf('-');
+        //if (slash>=0) {
+            //this.locale = new Locale(languageTag.substring(0,slash), languageTag.substring(slash+1) );
+        //} else {
+            //this.locale = new Locale(languageTag);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.268 -0400", hash_original_method = "BB5B9CEBF2423E9AF1F4569292591142", hash_generated_method = "2BC19841DA48D39F14BF693D92BBDE3A")
     public Locale getContentLanguage() {
 Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_1961161150 =         locale;
         varB14E682FEAD06D8198D8ADBCBD62DEDB_1961161150.addTaint(taint);
         return varB14E682FEAD06D8198D8ADBCBD62DEDB_1961161150;
-        
-        
+        // ---------- Original Method ----------
+        //return locale;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.268 -0400", hash_original_method = "7E2DC8255947AB5497CF8DB62C4D31B5", hash_generated_method = "ECC90E2EED8E215D634D57C08DDAA062")
     public void setContentLanguage(Locale language) {
         this.locale = language;
-        
-        
+        // ---------- Original Method ----------
+        //this.locale = language;
     }
 
     
@@ -110,11 +108,11 @@ Locale varB14E682FEAD06D8198D8ADBCBD62DEDB_1961161150 =         locale;
 Object varF9E19AD6135C970F387F77C6F3DE4477_1079576836 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1079576836.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1079576836;
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //ContentLanguage retval = (ContentLanguage) super.clone();
+        //if (this.locale != null)
+            //retval.locale = (Locale) this.locale.clone();
+        //return retval;
     }
 
     

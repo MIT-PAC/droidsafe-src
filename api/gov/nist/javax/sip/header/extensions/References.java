@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.extensions;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,18 +17,17 @@ public class References extends ParametersHeader implements ReferencesHeader, Ex
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.725 -0400", hash_original_method = "6B62E640F31436F860F8D9827B037777", hash_generated_method = "768BC1B29AB1FAC713C1D8CE0EE02B20")
     public  References() {
         super(ReferencesHeader.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.726 -0400", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "1D86390EEE27886727F9BF659D02B974")
     public String getCallId() {
 String var5E6A5595C014DC7657F3E7EDB5AB9AD0_1245966909 =         callId;
         var5E6A5595C014DC7657F3E7EDB5AB9AD0_1245966909.addTaint(taint);
         return var5E6A5595C014DC7657F3E7EDB5AB9AD0_1245966909;
-        
-        
+        // ---------- Original Method ----------
+        //return callId;
     }
 
     
@@ -37,17 +36,16 @@ String var5E6A5595C014DC7657F3E7EDB5AB9AD0_1245966909 =         callId;
 String varEA085D01929B1B42394A68C55CC5EB34_342568854 =         this.getParameter(REL);
         varEA085D01929B1B42394A68C55CC5EB34_342568854.addTaint(taint);
         return varEA085D01929B1B42394A68C55CC5EB34_342568854;
-        
-        
+        // ---------- Original Method ----------
+        //return this.getParameter(REL);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.727 -0400", hash_original_method = "6391CCCA5D3045DA0366706159D24F88", hash_generated_method = "89EAE1F620DB52540F2B1E2C4575CE19")
     public void setCallId(String callId) {
         this.callId = callId;
-        
-        
+        // ---------- Original Method ----------
+        //this.callId = callId;
     }
 
     
@@ -57,11 +55,11 @@ String varEA085D01929B1B42394A68C55CC5EB34_342568854 =         this.getParameter
     if(rel != null)        
         {
             this.setParameter(REL,rel);
-        } 
-        
-        
-          
-      
+        } //End block
+        // ---------- Original Method ----------
+        //if ( rel != null ) {
+          //this.setParameter(REL,rel);
+      //}
     }
 
     
@@ -71,8 +69,8 @@ String varEA085D01929B1B42394A68C55CC5EB34_342568854 =         this.getParameter
 String var93ABFC9A758D64F9CF0A48E2109D5044_1835841862 =         super.getParameter(name);
         var93ABFC9A758D64F9CF0A48E2109D5044_1835841862.addTaint(taint);
         return var93ABFC9A758D64F9CF0A48E2109D5044_1835841862;
-        
-        
+        // ---------- Original Method ----------
+        //return super.getParameter(name);
     }
 
     
@@ -81,8 +79,8 @@ String var93ABFC9A758D64F9CF0A48E2109D5044_1835841862 =         super.getParamet
 Iterator var94DC65FB2EC0E6D50D73D04A0A1EDA98_310469284 =         super.getParameterNames();
         var94DC65FB2EC0E6D50D73D04A0A1EDA98_310469284.addTaint(taint);
         return var94DC65FB2EC0E6D50D73D04A0A1EDA98_310469284;
-        
-        
+        // ---------- Original Method ----------
+        //return super.getParameterNames();
     }
 
     
@@ -90,8 +88,8 @@ Iterator var94DC65FB2EC0E6D50D73D04A0A1EDA98_310469284 =         super.getParame
     public void removeParameter(String name) {
         addTaint(name.getTaint());
         super.removeParameter(name);
-        
-        
+        // ---------- Original Method ----------
+        //super.removeParameter(name);
     }
 
     
@@ -100,19 +98,18 @@ Iterator var94DC65FB2EC0E6D50D73D04A0A1EDA98_310469284 =         super.getParame
         addTaint(value.getTaint());
         addTaint(name.getTaint());
         super.setParameter(name,value);
-        
-        
+        // ---------- Original Method ----------
+        //super.setParameter(name,value);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.729 -0400", hash_original_method = "E46EA6665F0CD807BC3E748EE65E1EE2", hash_generated_method = "2112FEBF1CD89EDE43D48E4C1DBAC918")
     public String getName() {
 String var3CAE5995445ABD1DAEB0EE0A43C2A8EA_1830584497 =         ReferencesHeader.NAME;
         var3CAE5995445ABD1DAEB0EE0A43C2A8EA_1830584497.addTaint(taint);
         return var3CAE5995445ABD1DAEB0EE0A43C2A8EA_1830584497;
-        
-        
+        // ---------- Original Method ----------
+        //return ReferencesHeader.NAME;
     }
 
     
@@ -123,19 +120,19 @@ String var3CAE5995445ABD1DAEB0EE0A43C2A8EA_1830584497 =         ReferencesHeader
 String var5E6A5595C014DC7657F3E7EDB5AB9AD0_93777225 =             callId;
             var5E6A5595C014DC7657F3E7EDB5AB9AD0_93777225.addTaint(taint);
             return var5E6A5595C014DC7657F3E7EDB5AB9AD0_93777225;
-        } 
+        } //End block
         else
         {
 String var9E25CF61F2A135B94A4051F3E07DACF2_1364893277 =             callId + ";" + super.parameters.encode();
             var9E25CF61F2A135B94A4051F3E07DACF2_1364893277.addTaint(taint);
             return var9E25CF61F2A135B94A4051F3E07DACF2_1364893277;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ( super.parameters.isEmpty()) {
+            //return callId ;
+        //} else {
+            //return callId + ";" + super.parameters.encode();
+        //}
     }
 
     
@@ -145,8 +142,8 @@ String var9E25CF61F2A135B94A4051F3E07DACF2_1364893277 =             callId + ";"
         UnsupportedOperationException varC0F97110833DF7AE83952ACC5DAEC8C5_1476779234 = new UnsupportedOperationException("operation not supported");
         varC0F97110833DF7AE83952ACC5DAEC8C5_1476779234.addTaint(taint);
         throw varC0F97110833DF7AE83952ACC5DAEC8C5_1476779234;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException("operation not supported");
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.client.methods;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,8 +40,8 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
     public  HttpRequestBase() {
         super();
         this.abortLock = new ReentrantLock();
-        
-        
+        // ---------- Original Method ----------
+        //this.abortLock = new ReentrantLock();
     }
 
     
@@ -53,19 +53,18 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
 ProtocolVersion varEDB6822BC4AFEFEDB387B740DB02A284_107137331 =         HttpProtocolParams.getVersion(getParams());
         varEDB6822BC4AFEFEDB387B740DB02A284_107137331.addTaint(taint);
         return varEDB6822BC4AFEFEDB387B740DB02A284_107137331;
-        
-        
+        // ---------- Original Method ----------
+        //return HttpProtocolParams.getVersion(getParams());
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.191 -0400", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "0F8512D9B387DDF993BE02D26632AEAA")
     public URI getURI() {
 URI varF8A43570A6D9CE873AAA24BBE28B6265_951100121 =         this.uri;
         varF8A43570A6D9CE873AAA24BBE28B6265_951100121.addTaint(taint);
         return varF8A43570A6D9CE873AAA24BBE28B6265_951100121;
-        
-        
+        // ---------- Original Method ----------
+        //return this.uri;
     }
 
     
@@ -78,34 +77,34 @@ URI varF8A43570A6D9CE873AAA24BBE28B6265_951100121 =         this.uri;
     if(uri != null)        
         {
             uritext = uri.toASCIIString();
-        } 
+        } //End block
     if(uritext == null || uritext.length() == 0)        
         {
             uritext = "/";
-        } 
+        } //End block
 RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_705143166 =         new BasicRequestLine(method, uritext, ver);
         var61D16D1DBAF633F6BF5B3B3F6C9131D9_705143166.addTaint(taint);
         return var61D16D1DBAF633F6BF5B3B3F6C9131D9_705143166;
-        
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String method = getMethod();
+        //ProtocolVersion ver = getProtocolVersion();
+        //URI uri = getURI();
+        //String uritext = null;
+        //if (uri != null) {
+            //uritext = uri.toASCIIString();
+        //}
+        //if (uritext == null || uritext.length() == 0) {
+            //uritext = "/";
+        //}
+        //return new BasicRequestLine(method, uritext, ver);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.193 -0400", hash_original_method = "3320A765B2CE48350AC27D9599EAC026", hash_generated_method = "C72876729647E8A3A80A7FBC268F56B2")
     public void setURI(final URI uri) {
         this.uri = uri;
-        
-        
+        // ---------- Original Method ----------
+        //this.uri = uri;
     }
 
     
@@ -119,25 +118,25 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_705143166 =         new BasicReq
                 IOException var9ED6BC09125D6400798327C9041CA613_1181752608 = new IOException("Request already aborted");
                 var9ED6BC09125D6400798327C9041CA613_1181752608.addTaint(taint);
                 throw var9ED6BC09125D6400798327C9041CA613_1181752608;
-            } 
+            } //End block
             this.releaseTrigger = null;
             this.connRequest = connRequest;
-        } 
+        } //End block
         finally 
         {
             this.abortLock.unlock();
-        } 
-        
-        
-        
-            
-                
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.abortLock.lock();
+        //try {
+            //if (this.aborted) {
+                //throw new IOException("Request already aborted");
+            //}
+            //this.releaseTrigger = null;
+            //this.connRequest = connRequest;
+        //} finally {
+            //this.abortLock.unlock();
+        //}
     }
 
     
@@ -151,25 +150,25 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_705143166 =         new BasicReq
                 IOException var9ED6BC09125D6400798327C9041CA613_2117017127 = new IOException("Request already aborted");
                 var9ED6BC09125D6400798327C9041CA613_2117017127.addTaint(taint);
                 throw var9ED6BC09125D6400798327C9041CA613_2117017127;
-            } 
+            } //End block
             this.connRequest = null;
             this.releaseTrigger = releaseTrigger;
-        } 
+        } //End block
         finally 
         {
             this.abortLock.unlock();
-        } 
-        
-        
-        
-            
-                
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.abortLock.lock();
+        //try {
+            //if (this.aborted) {
+                //throw new IOException("Request already aborted");
+            //}
+            //this.connRequest = null;
+            //this.releaseTrigger = releaseTrigger;
+        //} finally {
+            //this.abortLock.unlock();
+        //}
     }
 
     
@@ -183,63 +182,62 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_705143166 =         new BasicReq
     if(this.aborted)            
             {
                 return;
-            } 
+            } //End block
             this.aborted = true;
             localRequest = connRequest;
             localTrigger = releaseTrigger;
-        } 
+        } //End block
         finally 
         {
             this.abortLock.unlock();
-        } 
+        } //End block
     if(localRequest != null)        
         {
             localRequest.abortRequest();
-        } 
+        } //End block
     if(localTrigger != null)        
         {
             try 
             {
                 localTrigger.abortConnection();
-            } 
+            } //End block
             catch (IOException ex)
             {
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-                
-            
-            
-            
-            
-        
-            
-        
-        
-            
-        
-        
-            
-                
-            
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //ClientConnectionRequest localRequest;
+        //ConnectionReleaseTrigger localTrigger;
+        //this.abortLock.lock();
+        //try {
+            //if (this.aborted) {
+                //return;
+            //}            
+            //this.aborted = true;
+            //localRequest = connRequest;
+            //localTrigger = releaseTrigger;
+        //} finally {
+            //this.abortLock.unlock();
+        //}
+        //if (localRequest != null) {
+            //localRequest.abortRequest();
+        //}
+        //if (localTrigger != null) {
+            //try {
+                //localTrigger.abortConnection();
+            //} catch (IOException ex) {
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.197 -0400", hash_original_method = "2E6315A95F3ECC29CFD4A6E95CF920AD", hash_generated_method = "BE4678D6BB697E981FCF38DAFCB101CF")
     public boolean isAborted() {
         boolean var37D13E93374D4F6A174832DCC5E644B0_760959517 = (this.aborted);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1288628737 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1288628737;
-        
-        
+        // ---------- Original Method ----------
+        //return this.aborted;
     }
 
     
@@ -256,15 +254,15 @@ RequestLine var61D16D1DBAF633F6BF5B3B3F6C9131D9_705143166 =         new BasicReq
 Object var3DE52045BFD3C1BF3742F994ED6139AD_487119509 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_487119509.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_487119509;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //HttpRequestBase clone = (HttpRequestBase) super.clone();
+        //clone.abortLock = new ReentrantLock();
+        //clone.aborted = false;
+        //clone.releaseTrigger = null;
+        //clone.connRequest = null;
+        //clone.headergroup = (HeaderGroup) CloneUtils.clone(this.headergroup);
+        //clone.params = (HttpParams) CloneUtils.clone(this.params);
+        //return clone;
     }
 
     

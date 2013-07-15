@@ -1,6 +1,6 @@
 package javax.xml.transform;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public class TransformerException extends Exception {
         addTaint(message.getTaint());
         this.containedException = null;
         this.locator            = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.containedException = null;
+        //this.locator            = null;
     }
 
     
@@ -30,9 +30,9 @@ public class TransformerException extends Exception {
         super(e.toString());
         this.containedException = e;
         this.locator            = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.containedException = e;
+        //this.locator            = null;
     }
 
     
@@ -44,9 +44,9 @@ public class TransformerException extends Exception {
         addTaint(message.getTaint());
         this.containedException = e;
         this.locator            = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.containedException = e;
+        //this.locator            = null;
     }
 
     
@@ -56,9 +56,9 @@ public class TransformerException extends Exception {
         addTaint(message.getTaint());
         this.containedException = null;
         this.locator            = locator;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.containedException = null;
+        //this.locator            = locator;
     }
 
     
@@ -69,44 +69,40 @@ public class TransformerException extends Exception {
         addTaint(message.getTaint());
         this.containedException = e;
         this.locator            = locator;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.containedException = e;
+        //this.locator            = locator;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.040 -0400", hash_original_method = "78CCEDF93B9D36FA2F4D6EE8483F521D", hash_generated_method = "88D2467F613ABC99E986FC90C5AF31B5")
     public SourceLocator getLocator() {
 SourceLocator var33D67455F55B75787251435F488B9C18_1182678572 =         locator;
         var33D67455F55B75787251435F488B9C18_1182678572.addTaint(taint);
         return var33D67455F55B75787251435F488B9C18_1182678572;
-        
-        
+        // ---------- Original Method ----------
+        //return locator;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.040 -0400", hash_original_method = "2730D26302DDFE02DFC9B94C57BA2229", hash_generated_method = "3A60D6D9C48F9C8CC784DDE0EBAB1BA2")
     public void setLocator(SourceLocator location) {
         locator = location;
-        
-        
+        // ---------- Original Method ----------
+        //locator = location;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.041 -0400", hash_original_method = "4E3501B9804FC98D0826FF297E292112", hash_generated_method = "829A07627C1CC71FE605BDFCFF0C6983")
     public Throwable getException() {
 Throwable varF2A110AF41FD2A1760878EFAF72F9E9A_1808704599 =         containedException;
         varF2A110AF41FD2A1760878EFAF72F9E9A_1808704599.addTaint(taint);
         return varF2A110AF41FD2A1760878EFAF72F9E9A_1808704599;
-        
-        
+        // ---------- Original Method ----------
+        //return containedException;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.041 -0400", hash_original_method = "CFB99AF15EF81FE883309E381BCDFD32", hash_generated_method = "B00D6E3ECBDA4BFE9B80E137805AC085")
     public Throwable getCause() {
 Throwable var7AD5C7EA160E04D21F46409BCB89DECC_245867874 =         ((containedException == this)
@@ -114,10 +110,10 @@ Throwable var7AD5C7EA160E04D21F46409BCB89DECC_245867874 =         ((containedExc
                 : containedException);
         var7AD5C7EA160E04D21F46409BCB89DECC_245867874.addTaint(taint);
         return var7AD5C7EA160E04D21F46409BCB89DECC_245867874;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return ((containedException == this)
+                //? null
+                //: containedException);
     }
 
     
@@ -128,28 +124,28 @@ Throwable var7AD5C7EA160E04D21F46409BCB89DECC_245867874 =         ((containedExc
             IllegalStateException varE9003A1100706138F1345FD3B3B905A3_832652879 = new IllegalStateException("Can't overwrite cause");
             varE9003A1100706138F1345FD3B3B905A3_832652879.addTaint(taint);
             throw varE9003A1100706138F1345FD3B3B905A3_832652879;
-        } 
+        } //End block
     if(cause == this)        
         {
             IllegalArgumentException var3A4BD4026EBDC61CB9C770B3ED542F24_741704650 = new IllegalArgumentException(
                 "Self-causation not permitted");
             var3A4BD4026EBDC61CB9C770B3ED542F24_741704650.addTaint(taint);
             throw var3A4BD4026EBDC61CB9C770B3ED542F24_741704650;
-        } 
+        } //End block
         this.containedException = cause;
 Throwable var72A74007B2BE62B849F475C7BDA4658B_1623437520 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1623437520.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1623437520;
-        
-        
-            
-        
-        
-            
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (this.containedException != null) {
+            //throw new IllegalStateException("Can't overwrite cause");
+        //}
+        //if (cause == this) {
+            //throw new IllegalArgumentException(
+                //"Self-causation not permitted");
+        //}
+        //this.containedException = cause;
+        //return this;
     }
 
     
@@ -160,7 +156,7 @@ Throwable var72A74007B2BE62B849F475C7BDA4658B_1623437520 =         this;
     if(null != message)        
         {
             sbuffer.append(message);
-        } 
+        } //End block
     if(null != locator)        
         {
             String systemID = locator.getSystemId();
@@ -170,23 +166,23 @@ Throwable var72A74007B2BE62B849F475C7BDA4658B_1623437520 =         this;
             {
                 sbuffer.append("; SystemID: ");
                 sbuffer.append(systemID);
-            } 
+            } //End block
     if(0 != line)            
             {
                 sbuffer.append("; Line#: ");
                 sbuffer.append(line);
-            } 
+            } //End block
     if(0 != column)            
             {
                 sbuffer.append("; Column#: ");
                 sbuffer.append(column);
-            } 
-        } 
+            } //End block
+        } //End block
 String varEFC2B84A819C9F41414BE54046FF2802_2005431785 =         sbuffer.toString();
         varEFC2B84A819C9F41414BE54046FF2802_2005431785.addTaint(taint);
         return varEFC2B84A819C9F41414BE54046FF2802_2005431785;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -202,57 +198,57 @@ String varEFC2B84A819C9F41414BE54046FF2802_2005431785 =         sbuffer.toString
             {
                 sbuffer.append("; SystemID: ");
                 sbuffer.append(systemID);
-            } 
+            } //End block
     if(0 != line)            
             {
                 sbuffer.append("; Line#: ");
                 sbuffer.append(line);
-            } 
+            } //End block
     if(0 != column)            
             {
                 sbuffer.append("; Column#: ");
                 sbuffer.append(column);
-            } 
+            } //End block
 String varEFC2B84A819C9F41414BE54046FF2802_1463812570 =             sbuffer.toString();
             varEFC2B84A819C9F41414BE54046FF2802_1463812570.addTaint(taint);
             return varEFC2B84A819C9F41414BE54046FF2802_1463812570;
-        } 
+        } //End block
         else
         {
 String var540C13E9E156B687226421B24F2DF178_719207140 =             null;
             var540C13E9E156B687226421B24F2DF178_719207140.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_719207140;
-        } 
-        
-        
-            
-            
-            
-            
-            
-                
-                
-            
-            
-                
-                
-            
-            
-                
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (null != locator) {
+            //StringBuilder sbuffer  = new StringBuilder();
+            //String       systemID = locator.getSystemId();
+            //int          line     = locator.getLineNumber();
+            //int          column   = locator.getColumnNumber();
+            //if (null != systemID) {
+                //sbuffer.append("; SystemID: ");
+                //sbuffer.append(systemID);
+            //}
+            //if (0 != line) {
+                //sbuffer.append("; Line#: ");
+                //sbuffer.append(line);
+            //}
+            //if (0 != column) {
+                //sbuffer.append("; Column#: ");
+                //sbuffer.append(column);
+            //}
+            //return sbuffer.toString();
+        //} else {
+            //return null;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.046 -0400", hash_original_method = "BFEE5D773C8C1A637BA8549A5548CE5E", hash_generated_method = "5DE43A2AD9D57F579CB99E2DD2DEBB6F")
     public void printStackTrace() {
         printStackTrace(new java.io.PrintWriter(System.err, true));
-        
-        
+        // ---------- Original Method ----------
+        //printStackTrace(new java.io.PrintWriter(System.err, true));
     }
 
     
@@ -260,8 +256,8 @@ String var540C13E9E156B687226421B24F2DF178_719207140 =             null;
     public void printStackTrace(java.io.PrintStream s) {
         addTaint(s.getTaint());
         printStackTrace(new java.io.PrintWriter(s));
-        
-        
+        // ---------- Original Method ----------
+        //printStackTrace(new java.io.PrintWriter(s));
     }
 
     
@@ -271,30 +267,30 @@ String var540C13E9E156B687226421B24F2DF178_719207140 =             null;
     if(s == null)        
         {
             s = new java.io.PrintWriter(System.err, true);
-        } 
+        } //End block
         try 
         {
             String locInfo = getLocationAsString();
     if(null != locInfo)            
             {
                 s.println(locInfo);
-            } 
+            } //End block
             super.printStackTrace(s);
-        } 
+        } //End block
         catch (Throwable e)
         {
-        } 
-        
-        
-            
-        
-        
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (s == null) {
+            //s = new java.io.PrintWriter(System.err, true);
+        //}
+        //try {
+            //String locInfo = getLocationAsString();
+            //if (null != locInfo) {
+                //s.println(locInfo);
+            //}
+            //super.printStackTrace(s);
+        //} catch (Throwable e) {}
     }
 
     

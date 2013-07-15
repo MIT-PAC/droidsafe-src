@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,10 +28,10 @@ public class SSLContext {
         this.provider = provider;
         this.protocol = protocol;
         this.spiImpl = contextSpi;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.provider = provider;
+        //this.protocol = protocol;
+        //this.spiImpl = contextSpi;
     }
 
     
@@ -96,8 +96,8 @@ public class SSLContext {
 String varDD56EE388A0FA5696BF9686AC14D2DB9_2090572277 =         protocol;
         varDD56EE388A0FA5696BF9686AC14D2DB9_2090572277.addTaint(taint);
         return varDD56EE388A0FA5696BF9686AC14D2DB9_2090572277;
-        
-        
+        // ---------- Original Method ----------
+        //return protocol;
     }
 
     
@@ -106,8 +106,8 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_2090572277 =         protocol;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1605342160 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_1605342160.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_1605342160;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
@@ -117,8 +117,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1605342160 =         provider;
         addTaint(tm[0].getTaint());
         addTaint(km[0].getTaint());
         spiImpl.engineInit(km, tm, sr);
-        
-        
+        // ---------- Original Method ----------
+        //spiImpl.engineInit(km, tm, sr);
     }
 
     
@@ -127,8 +127,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1605342160 =         provider;
 SSLSocketFactory var2D18C46B5E469E561E5021C32B0BF794_46818049 =         spiImpl.engineGetSocketFactory();
         var2D18C46B5E469E561E5021C32B0BF794_46818049.addTaint(taint);
         return var2D18C46B5E469E561E5021C32B0BF794_46818049;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetSocketFactory();
     }
 
     
@@ -137,8 +137,8 @@ SSLSocketFactory var2D18C46B5E469E561E5021C32B0BF794_46818049 =         spiImpl.
 SSLServerSocketFactory var7E9BC44DA92239FF15F8006EC182721D_1760267611 =         spiImpl.engineGetServerSocketFactory();
         var7E9BC44DA92239FF15F8006EC182721D_1760267611.addTaint(taint);
         return var7E9BC44DA92239FF15F8006EC182721D_1760267611;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetServerSocketFactory();
     }
 
     
@@ -147,8 +147,8 @@ SSLServerSocketFactory var7E9BC44DA92239FF15F8006EC182721D_1760267611 =         
 SSLEngine varCD10BF3495E7A8E52EEE8B2C72D42FD5_907377943 =         spiImpl.engineCreateSSLEngine();
         varCD10BF3495E7A8E52EEE8B2C72D42FD5_907377943.addTaint(taint);
         return varCD10BF3495E7A8E52EEE8B2C72D42FD5_907377943;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineCreateSSLEngine();
     }
 
     
@@ -159,8 +159,8 @@ SSLEngine varCD10BF3495E7A8E52EEE8B2C72D42FD5_907377943 =         spiImpl.engine
 SSLEngine var1A76A595CAF981399E8C7C474C6E2206_294115325 =         spiImpl.engineCreateSSLEngine(peerHost, peerPort);
         var1A76A595CAF981399E8C7C474C6E2206_294115325.addTaint(taint);
         return var1A76A595CAF981399E8C7C474C6E2206_294115325;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineCreateSSLEngine(peerHost, peerPort);
     }
 
     
@@ -169,8 +169,8 @@ SSLEngine var1A76A595CAF981399E8C7C474C6E2206_294115325 =         spiImpl.engine
 SSLSessionContext var59E3C7B53100428E09253F19A434260D_1499047124 =         spiImpl.engineGetServerSessionContext();
         var59E3C7B53100428E09253F19A434260D_1499047124.addTaint(taint);
         return var59E3C7B53100428E09253F19A434260D_1499047124;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetServerSessionContext();
     }
 
     
@@ -179,8 +179,8 @@ SSLSessionContext var59E3C7B53100428E09253F19A434260D_1499047124 =         spiIm
 SSLSessionContext varB643B89BF4ED54EBAC6544846113C8F8_1162510885 =         spiImpl.engineGetClientSessionContext();
         varB643B89BF4ED54EBAC6544846113C8F8_1162510885.addTaint(taint);
         return varB643B89BF4ED54EBAC6544846113C8F8_1162510885;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetClientSessionContext();
     }
 
     
@@ -189,8 +189,8 @@ SSLSessionContext varB643B89BF4ED54EBAC6544846113C8F8_1162510885 =         spiIm
 SSLParameters varB426CDA0AACA982014D2DC2AF001398D_308829526 =         spiImpl.engineGetDefaultSSLParameters();
         varB426CDA0AACA982014D2DC2AF001398D_308829526.addTaint(taint);
         return varB426CDA0AACA982014D2DC2AF001398D_308829526;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetDefaultSSLParameters();
     }
 
     
@@ -199,8 +199,8 @@ SSLParameters varB426CDA0AACA982014D2DC2AF001398D_308829526 =         spiImpl.en
 SSLParameters varA10A0D98761882C3BD5659C2844BAF6F_1832744141 =         spiImpl.engineGetSupportedSSLParameters();
         varA10A0D98761882C3BD5659C2844BAF6F_1832744141.addTaint(taint);
         return varA10A0D98761882C3BD5659C2844BAF6F_1832744141;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetSupportedSSLParameters();
     }
 
     

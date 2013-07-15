@@ -1,6 +1,6 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ class CharArrayBuffers {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.940 -0400", hash_original_method = "757048C9429CD89F62E53746321F0081", hash_generated_method = "757048C9429CD89F62E53746321F0081")
     public CharArrayBuffers ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -55,8 +55,7 @@ class CharArrayBuffers {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static char toLower(char c) {
+        private static char toLower(char c) {
         if (c >= 'A' && c <= 'Z'){
             c += uppercaseAddon;
         }

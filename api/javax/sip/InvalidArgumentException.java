@@ -1,6 +1,6 @@
 package javax.sip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class InvalidArgumentException extends SipException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.210 -0400", hash_original_method = "058727A85A3561BD87B89BB684E2068E", hash_generated_method = "4A6154754A702AA8F9C7A1F4710C43C1")
     public  InvalidArgumentException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class InvalidArgumentException extends SipException {
     public  InvalidArgumentException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,7 +26,7 @@ public class InvalidArgumentException extends SipException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

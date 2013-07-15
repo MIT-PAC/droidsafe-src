@@ -1,6 +1,6 @@
 package android.nfc;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,9 +51,9 @@ public final class NfcAdapter {
       NfcAdapter(Context context) {
         mContext = context;
         mNfcActivityManager = new NfcActivityManager(this);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mNfcActivityManager = new NfcActivityManager(this);
     }
 
     
@@ -136,14 +136,13 @@ public final class NfcAdapter {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.656 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "6CAB212FBA4C4567F064914BEAB0FA48")
     public Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_976022965 =         mContext;
         var178E2AD52D6FBBB503F908168856B574_976022965.addTaint(taint);
         return var178E2AD52D6FBBB503F908168856B574_976022965;
-        
-        
+        // ---------- Original Method ----------
+        //return mContext;
     }
 
     
@@ -153,9 +152,9 @@ Context var178E2AD52D6FBBB503F908168856B574_976022965 =         mContext;
 INfcAdapter var938DAF7C4B8292E45D258C2CDDCCD9C3_1693737592 =         sService;
         var938DAF7C4B8292E45D258C2CDDCCD9C3_1693737592.addTaint(taint);
         return var938DAF7C4B8292E45D258C2CDDCCD9C3_1693737592;
-        
-        
-        
+        // ---------- Original Method ----------
+        //isEnabled();
+        //return sService;
     }
 
     
@@ -165,9 +164,9 @@ INfcAdapter var938DAF7C4B8292E45D258C2CDDCCD9C3_1693737592 =         sService;
 INfcTag var95361F532ED5F296684FC2AB649983EC_1863948422 =         sTagService;
         var95361F532ED5F296684FC2AB649983EC_1863948422.addTaint(taint);
         return var95361F532ED5F296684FC2AB649983EC_1863948422;
-        
-        
-        
+        // ---------- Original Method ----------
+        //isEnabled();
+        //return sTagService;
     }
 
     
@@ -178,30 +177,30 @@ INfcTag var95361F532ED5F296684FC2AB649983EC_1863948422 =         sTagService;
     if(service == null)        
         {
             return;
-        } 
+        } //End block
         sService = service;
         try 
         {
             sTagService = service.getNfcTagInterface();
-        } 
+        } //End block
         catch (RemoteException ee)
         {
-        } 
+        } //End block
         return;
-        
-        
-        
-        
-            
-            
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Log.e(TAG, "NFC service dead - attempting to recover", e);
+        //INfcAdapter service = getServiceInterface();
+        //if (service == null) {
+            //Log.e(TAG, "could not retrieve NFC service during service recovery");
+            //return;
+        //}
+        //sService = service;
+        //try {
+            //sTagService = service.getNfcTagInterface();
+        //} catch (RemoteException ee) {
+            //Log.e(TAG, "could not retrieve NFC tag service during service recovery");
+        //}
+        //return;
     }
 
     
@@ -212,21 +211,21 @@ INfcTag var95361F532ED5F296684FC2AB649983EC_1863948422 =         sTagService;
             boolean varCC361E2FB22CF45855688F850C27E53C_518315778 = (sService.getState() == STATE_ON);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1411019097 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1411019097;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
             boolean var68934A3E9455FA72420237EB05902327_1518986154 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_402250836 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_402250836;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.getState() == STATE_ON;
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+            //return false;
+        //}
     }
 
     
@@ -237,21 +236,21 @@ INfcTag var95361F532ED5F296684FC2AB649983EC_1863948422 =         sTagService;
             int var7F03367C92C380A2F1C14F7B990829D7_1473177130 = (sService.getState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857969822 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857969822;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
             int varB3CC8A8B913CDC32BBF03AD716A4D656_1215269659 = (NfcAdapter.STATE_OFF);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1527371454 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1527371454;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.getState();
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+            //return NfcAdapter.STATE_OFF;
+        //}
     }
 
     
@@ -262,21 +261,21 @@ INfcTag var95361F532ED5F296684FC2AB649983EC_1863948422 =         sTagService;
             boolean varD3C1CFA6F5055200D9D8AC5042182D54_192680011 = (sService.enable());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1613638400 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1613638400;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
             boolean var68934A3E9455FA72420237EB05902327_1006718942 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1006945812 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1006945812;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.enable();
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+            //return false;
+        //}
     }
 
     
@@ -287,21 +286,21 @@ INfcTag var95361F532ED5F296684FC2AB649983EC_1863948422 =         sTagService;
             boolean varFCD5C868A0B8451A8803861ABA2A69E5_100760417 = (sService.disable());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_718788745 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_718788745;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
             boolean var68934A3E9455FA72420237EB05902327_162431624 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_268271984 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_268271984;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.disable();
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+            //return false;
+        //}
     }
 
     
@@ -316,7 +315,7 @@ INfcTag var95361F532ED5F296684FC2AB649983EC_1863948422 =         sTagService;
             NullPointerException varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_805852018 = new NullPointerException("activity cannot be null");
             varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_805852018.addTaint(taint);
             throw varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_805852018;
-        } 
+        } //End block
         mNfcActivityManager.setNdefPushMessage(activity, message);
 for(Activity a : activities)
         {
@@ -325,20 +324,20 @@ for(Activity a : activities)
                 NullPointerException var733F4F427D8A0EDBD91FCC2BC1473083_1359181928 = new NullPointerException("activities cannot contain null");
                 var733F4F427D8A0EDBD91FCC2BC1473083_1359181928.addTaint(taint);
                 throw var733F4F427D8A0EDBD91FCC2BC1473083_1359181928;
-            } 
+            } //End block
             mNfcActivityManager.setNdefPushMessage(a, message);
-        } 
-        
-        
-            
-        
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (activity == null) {
+            //throw new NullPointerException("activity cannot be null");
+        //}
+        //mNfcActivityManager.setNdefPushMessage(activity, message);
+        //for (Activity a : activities) {
+            //if (a == null) {
+                //throw new NullPointerException("activities cannot contain null");
+            //}
+            //mNfcActivityManager.setNdefPushMessage(a, message);
+        //}
     }
 
     
@@ -353,7 +352,7 @@ for(Activity a : activities)
             NullPointerException varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1591530363 = new NullPointerException("activity cannot be null");
             varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1591530363.addTaint(taint);
             throw varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1591530363;
-        } 
+        } //End block
         mNfcActivityManager.setNdefPushMessageCallback(activity, callback);
 for(Activity a : activities)
         {
@@ -362,20 +361,20 @@ for(Activity a : activities)
                 NullPointerException var733F4F427D8A0EDBD91FCC2BC1473083_2000440187 = new NullPointerException("activities cannot contain null");
                 var733F4F427D8A0EDBD91FCC2BC1473083_2000440187.addTaint(taint);
                 throw var733F4F427D8A0EDBD91FCC2BC1473083_2000440187;
-            } 
+            } //End block
             mNfcActivityManager.setNdefPushMessageCallback(a, callback);
-        } 
-        
-        
-            
-        
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (activity == null) {
+            //throw new NullPointerException("activity cannot be null");
+        //}
+        //mNfcActivityManager.setNdefPushMessageCallback(activity, callback);
+        //for (Activity a : activities) {
+            //if (a == null) {
+                //throw new NullPointerException("activities cannot contain null");
+            //}
+            //mNfcActivityManager.setNdefPushMessageCallback(a, callback);
+        //}
     }
 
     
@@ -390,7 +389,7 @@ for(Activity a : activities)
             NullPointerException varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1509074014 = new NullPointerException("activity cannot be null");
             varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1509074014.addTaint(taint);
             throw varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1509074014;
-        } 
+        } //End block
         mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callback);
 for(Activity a : activities)
         {
@@ -399,20 +398,20 @@ for(Activity a : activities)
                 NullPointerException var733F4F427D8A0EDBD91FCC2BC1473083_598294699 = new NullPointerException("activities cannot contain null");
                 var733F4F427D8A0EDBD91FCC2BC1473083_598294699.addTaint(taint);
                 throw var733F4F427D8A0EDBD91FCC2BC1473083_598294699;
-            } 
+            } //End block
             mNfcActivityManager.setOnNdefPushCompleteCallback(a, callback);
-        } 
-        
-        
-            
-        
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (activity == null) {
+            //throw new NullPointerException("activity cannot be null");
+        //}
+        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callback);
+        //for (Activity a : activities) {
+            //if (a == null) {
+                //throw new NullPointerException("activities cannot contain null");
+            //}
+            //mNfcActivityManager.setOnNdefPushCompleteCallback(a, callback);
+        //}
     }
 
     
@@ -428,48 +427,48 @@ for(Activity a : activities)
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_997203380 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_997203380.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_997203380;
-        } 
+        } //End block
     if(!activity.isResumed())        
         {
             IllegalStateException varB2586EF98F77842DA20777812DF98FC3_1986908385 = new IllegalStateException("Foreground dispatch can only be enabled " +
                     "when your activity is resumed");
             varB2586EF98F77842DA20777812DF98FC3_1986908385.addTaint(taint);
             throw varB2586EF98F77842DA20777812DF98FC3_1986908385;
-        } 
+        } //End block
         try 
         {
             TechListParcel parcel = null;
     if(techLists != null && techLists.length > 0)            
             {
                 parcel = new TechListParcel(techLists);
-            } 
+            } //End block
             ActivityThread.currentActivityThread().registerOnActivityPausedListener(activity,
                     mForegroundDispatchListener);
             sService.setForegroundDispatch(intent, filters, parcel);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } 
-        
-        
-            
-        
-        
-            
-                    
-        
-        
-            
-            
-                
-            
-            
-                    
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (activity == null || intent == null) {
+            //throw new NullPointerException();
+        //}
+        //if (!activity.isResumed()) {
+            //throw new IllegalStateException("Foreground dispatch can only be enabled " +
+                    //"when your activity is resumed");
+        //}
+        //try {
+            //TechListParcel parcel = null;
+            //if (techLists != null && techLists.length > 0) {
+                //parcel = new TechListParcel(techLists);
+            //}
+            //ActivityThread.currentActivityThread().registerOnActivityPausedListener(activity,
+                    //mForegroundDispatchListener);
+            //sService.setForegroundDispatch(intent, filters, parcel);
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+        //}
     }
 
     
@@ -479,10 +478,10 @@ for(Activity a : activities)
         ActivityThread.currentActivityThread().unregisterOnActivityPausedListener(activity,
                 mForegroundDispatchListener);
         disableForegroundDispatchInternal(activity, false);
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //ActivityThread.currentActivityThread().unregisterOnActivityPausedListener(activity,
+                //mForegroundDispatchListener);
+        //disableForegroundDispatchInternal(activity, false);
     }
 
     
@@ -499,22 +498,22 @@ for(Activity a : activities)
                         "while your activity is still resumed");
                 varCFA7471A5AC7D6E813AE5E0ADEFCCE55_2063371222.addTaint(taint);
                 throw varCFA7471A5AC7D6E813AE5E0ADEFCCE55_2063371222;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
-        } 
-        
-        
-            
-            
-                
-                        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.setForegroundDispatch(null, null, null);
+            //if (!force && !activity.isResumed()) {
+                //throw new IllegalStateException("You must disable foreground dispatching " +
+                        //"while your activity is still resumed");
+            //}
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+        //}
     }
 
     
@@ -528,15 +527,15 @@ for(Activity a : activities)
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_477390394 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_477390394.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_477390394;
-        } 
+        } //End block
         enforceResumed(activity);
         mNfcActivityManager.setNdefPushMessage(activity, message);
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (activity == null || message == null) {
+            //throw new NullPointerException();
+        //}
+        //enforceResumed(activity);
+        //mNfcActivityManager.setNdefPushMessage(activity, message);
     }
 
     
@@ -548,19 +547,19 @@ for(Activity a : activities)
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1355770844 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1355770844.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1355770844;
-        } 
+        } //End block
         enforceResumed(activity);
         mNfcActivityManager.setNdefPushMessage(activity, null);
         mNfcActivityManager.setNdefPushMessageCallback(activity, null);
         mNfcActivityManager.setOnNdefPushCompleteCallback(activity, null);
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (activity == null) {
+            //throw new NullPointerException();
+        //}
+        //enforceResumed(activity);
+        //mNfcActivityManager.setNdefPushMessage(activity, null);
+        //mNfcActivityManager.setNdefPushMessageCallback(activity, null);
+        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, null);
     }
 
     
@@ -574,19 +573,19 @@ for(Activity a : activities)
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_35124357 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_35124357.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_35124357;
-        } 
+        } //End block
         enforceResumed(activity);
         LegacyCallbackWrapper callbackWrapper = new LegacyCallbackWrapper(callback);
         mNfcActivityManager.setNdefPushMessageCallback(activity, callbackWrapper);
         mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callbackWrapper);
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (activity == null || callback == null) {
+            //throw new NullPointerException();
+        //}
+        //enforceResumed(activity);
+        //LegacyCallbackWrapper callbackWrapper = new LegacyCallbackWrapper(callback);
+        //mNfcActivityManager.setNdefPushMessageCallback(activity, callbackWrapper);
+        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callbackWrapper);
     }
 
     
@@ -597,21 +596,21 @@ for(Activity a : activities)
             boolean varE02BEB5844CA701534F5B85CA0654B2C_1273857154 = (sService.enableNdefPush());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_402825380 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_402825380;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
             boolean var68934A3E9455FA72420237EB05902327_336052523 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1768906115 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1768906115;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.enableNdefPush();
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+            //return false;
+        //}
     }
 
     
@@ -622,21 +621,21 @@ for(Activity a : activities)
             boolean var8BA03E77403647B1D417F922F80047EE_1880418418 = (sService.disableNdefPush());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1086039362 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1086039362;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
             boolean var68934A3E9455FA72420237EB05902327_72149074 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_628000799 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_628000799;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.disableNdefPush();
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+            //return false;
+        //}
     }
 
     
@@ -647,21 +646,21 @@ for(Activity a : activities)
             boolean varDBD27EFED216468AF5DCC6742D47A68C_1374167303 = (sService.isNdefPushEnabled());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_448170122 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_448170122;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
             boolean var68934A3E9455FA72420237EB05902327_1317155685 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_986351248 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_986351248;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.isNdefPushEnabled();
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+            //return false;
+        //}
     }
 
     
@@ -673,31 +672,31 @@ for(Activity a : activities)
                     + " NFC extras APIs");
             varC950F527E6C526FA74DB304A2DC00F0C_2044455663.addTaint(taint);
             throw varC950F527E6C526FA74DB304A2DC00F0C_2044455663;
-        } 
+        } //End block
         try 
         {
 INfcAdapterExtras var57D052F3D4FA0853A3A8D75F81D61555_1479397752 =             sService.getNfcAdapterExtrasInterface(mContext.getPackageName());
             var57D052F3D4FA0853A3A8D75F81D61555_1479397752.addTaint(taint);
             return var57D052F3D4FA0853A3A8D75F81D61555_1479397752;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             attemptDeadServiceRecovery(e);
 INfcAdapterExtras var540C13E9E156B687226421B24F2DF178_1446166861 =             null;
             var540C13E9E156B687226421B24F2DF178_1446166861.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1446166861;
-        } 
-        
-        
-            
-                    
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mContext == null) {
+            //throw new UnsupportedOperationException("You need a context on NfcAdapter to use the "
+                    //+ " NFC extras APIs");
+        //}
+        //try {
+            //return sService.getNfcAdapterExtrasInterface(mContext.getPackageName());
+        //} catch (RemoteException e) {
+            //attemptDeadServiceRecovery(e);
+            //return null;
+        //}
     }
 
     
@@ -709,11 +708,11 @@ INfcAdapterExtras var540C13E9E156B687226421B24F2DF178_1446166861 =             n
             IllegalStateException var84383A9F11310D2CF8AAB2CF74320295_106855988 = new IllegalStateException("API cannot be called while activity is paused");
             var84383A9F11310D2CF8AAB2CF74320295_106855988.addTaint(taint);
             throw var84383A9F11310D2CF8AAB2CF74320295_106855988;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!activity.isResumed()) {
+            //throw new IllegalStateException("API cannot be called while activity is paused");
+        //}
     }
 
     
@@ -725,19 +724,19 @@ INfcAdapterExtras var540C13E9E156B687226421B24F2DF178_1446166861 =             n
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.669 -0400", hash_original_method = "6BEF15BCF15DD0D85DE3520BB316E0D4", hash_generated_method = "21E11278C209B656E61A1BA349ACB39A")
           LegacyCallbackWrapper(NdefPushCallback legacyCallback) {
             mLegacyCallback = legacyCallback;
-            
-            
+            // ---------- Original Method ----------
+            //mLegacyCallback = legacyCallback;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.669 -0400", hash_original_method = "D841E457F2B17E12C1E2098B1C645A79", hash_generated_method = "CD0E4C6F116DCF59D10B209EF8EF5FD7")
         @Override
         public void onNdefPushComplete(NfcEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             mLegacyCallback.onMessagePushed();
-            
-            
+            // ---------- Original Method ----------
+            //mLegacyCallback.onMessagePushed();
         }
 
         
@@ -748,8 +747,8 @@ INfcAdapterExtras var540C13E9E156B687226421B24F2DF178_1446166861 =             n
 NdefMessage varAF42AD55DEAE724D07B6EF46A48CC555_1443282647 =             mLegacyCallback.createMessage();
             varAF42AD55DEAE724D07B6EF46A48CC555_1443282647.addTaint(taint);
             return varAF42AD55DEAE724D07B6EF46A48CC555_1443282647;
-            
-            
+            // ---------- Original Method ----------
+            //return mLegacyCallback.createMessage();
         }
 
         

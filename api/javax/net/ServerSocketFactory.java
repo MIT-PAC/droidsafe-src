@@ -1,6 +1,6 @@
 package javax.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class ServerSocketFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.519 -0400", hash_original_method = "50A5AD4489C33A1F5479F4B6ACCE6C5A", hash_generated_method = "93523426EE53B436B1AC84C7AA84A8F5")
     protected  ServerSocketFactory() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -30,8 +30,8 @@ public abstract class ServerSocketFactory {
         SocketException varDA6818F72EC9252110B74ED429FAE910_1771899893 = new SocketException("Unbound server sockets not implemented");
         varDA6818F72EC9252110B74ED429FAE910_1771899893.addTaint(taint);
         throw varDA6818F72EC9252110B74ED429FAE910_1771899893;
-        
-        
+        // ---------- Original Method ----------
+        //throw new SocketException("Unbound server sockets not implemented");
     }
 
     

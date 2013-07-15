@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,12 +28,11 @@ public class SamplingProfilerIntegration {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.132 -0400", hash_original_method = "C843367E35B636EBAF34BDED63CFE66E", hash_generated_method = "C843367E35B636EBAF34BDED63CFE66E")
     public SamplingProfilerIntegration ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static boolean isEnabled() {
+        public static boolean isEnabled() {
         return enabled;
     }
 

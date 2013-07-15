@@ -1,6 +1,6 @@
 package android.test;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -46,7 +46,7 @@ public class AndroidTestRunner extends BaseTestRunner {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.800 -0400", hash_original_method = "2722F23348F424AF929858C44CF90573", hash_generated_method = "2722F23348F424AF929858C44CF90573")
     public AndroidTestRunner ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -61,20 +61,20 @@ public class AndroidTestRunner extends BaseTestRunner {
             TestCase testCase = buildSingleTestMethod(testClass, testMethodName);
             mTestCases = Lists.newArrayList(testCase);
             mTestClassName = testClass.getSimpleName();
-        } 
+        } //End block
         else
         {
             setTest(getTest(testClass), testClass);
-        } 
-        
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Class testClass = loadTestClass(testClassName);
+        //if (shouldRunSingleTestMethod(testMethodName, testClass)) {
+            //TestCase testCase = buildSingleTestMethod(testClass, testMethodName);
+            //mTestCases = Lists.newArrayList(testCase);
+            //mTestClassName = testClass.getSimpleName();
+        //} else {
+            //setTest(getTest(testClass), testClass);
+        //}
     }
 
     
@@ -82,8 +82,8 @@ public class AndroidTestRunner extends BaseTestRunner {
     public void setTest(Test test) {
         addTaint(test.getTaint());
         setTest(test, test.getClass());
-        
-        
+        // ---------- Original Method ----------
+        //setTest(test, test.getClass());
     }
 
     
@@ -93,26 +93,26 @@ public class AndroidTestRunner extends BaseTestRunner {
     if(TestSuite.class.isAssignableFrom(testClass))        
         {
             mTestClassName = TestCaseUtil.getTestName(test);
-        } 
+        } //End block
         else
         {
             mTestClassName = testClass.getSimpleName();
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mTestCases = (List<TestCase>) TestCaseUtil.getTests(test, true);
+        //if (TestSuite.class.isAssignableFrom(testClass)) {
+            //mTestClassName = TestCaseUtil.getTestName(test);
+        //} else {
+            //mTestClassName = testClass.getSimpleName();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.802 -0400", hash_original_method = "934673426DE78D3BF4595E284314BBA0", hash_generated_method = "0391313513991CD10F2F9FB4A878CA34")
     public void clearTestListeners() {
         mTestListeners.clear();
-        
-        
+        // ---------- Original Method ----------
+        //mTestListeners.clear();
     }
 
     
@@ -122,11 +122,11 @@ public class AndroidTestRunner extends BaseTestRunner {
     if(testListener != null)        
         {
             mTestListeners.add(testListener);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (testListener != null) {
+            //mTestListeners.add(testListener);
+        //}
     }
 
     
@@ -139,21 +139,21 @@ public class AndroidTestRunner extends BaseTestRunner {
 Class<? extends Test> var30ECC5D58D34BFEFC07D6F484C75F66D_752226736 =             (Class<? extends Test>) mContext.getClassLoader().loadClass(testClassName);
             var30ECC5D58D34BFEFC07D6F484C75F66D_752226736.addTaint(taint);
             return var30ECC5D58D34BFEFC07D6F484C75F66D_752226736;
-        } 
+        } //End block
         catch (ClassNotFoundException e)
         {
             runFailed("Could not find test class. Class: " + testClassName);
-        } 
+        } //End block
 Class<? extends Test> var540C13E9E156B687226421B24F2DF178_1804336090 =         null;
         var540C13E9E156B687226421B24F2DF178_1804336090.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1804336090;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return (Class<? extends Test>) mContext.getClassLoader().loadClass(testClassName);
+        //} catch (ClassNotFoundException e) {
+            //runFailed("Could not find test class. Class: " + testClassName);
+        //}
+        //return null;
     }
 
     
@@ -168,29 +168,29 @@ Class<? extends Test> var540C13E9E156B687226421B24F2DF178_1804336090 =         n
 TestCase varFB127DFE6431D25557ED04A60EC03FF7_74428453 =             testCase;
             varFB127DFE6431D25557ED04A60EC03FF7_74428453.addTaint(taint);
             return varFB127DFE6431D25557ED04A60EC03FF7_74428453;
-        } 
+        } //End block
         catch (IllegalAccessException e)
         {
             runFailed("Could not access test class. Class: " + testClass.getName());
-        } 
+        } //End block
         catch (InstantiationException e)
         {
             runFailed("Could not instantiate test class. Class: " + testClass.getName());
-        } 
+        } //End block
 TestCase var540C13E9E156B687226421B24F2DF178_1491100624 =         null;
         var540C13E9E156B687226421B24F2DF178_1491100624.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1491100624;
-        
-        
-            
-            
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //TestCase testCase = (TestCase) testClass.newInstance();
+            //testCase.setName(testMethodName);
+            //return testCase;
+        //} catch (IllegalAccessException e) {
+            //runFailed("Could not access test class. Class: " + testClass.getName());
+        //} catch (InstantiationException e) {
+            //runFailed("Could not instantiate test class. Class: " + testClass.getName());
+        //}
+        //return null;
     }
 
     
@@ -202,8 +202,8 @@ TestCase var540C13E9E156B687226421B24F2DF178_1491100624 =         null;
         boolean var908F3200A69B401FB0E0BC02ECC36290_2079749192 = (testMethodName != null && TestCase.class.isAssignableFrom(testClass));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2067880883 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2067880883;
-        
-        
+        // ---------- Original Method ----------
+        //return testMethodName != null && TestCase.class.isAssignableFrom(testClass);
     }
 
     
@@ -218,29 +218,29 @@ TestCase var540C13E9E156B687226421B24F2DF178_1491100624 =         null;
 Test var68AE946AB4E14D9FAAB225BDA8F4D94A_13123521 =                 testSuiteProvider.getTestSuite();
                 var68AE946AB4E14D9FAAB225BDA8F4D94A_13123521.addTaint(taint);
                 return var68AE946AB4E14D9FAAB225BDA8F4D94A_13123521;
-            } 
+            } //End block
             catch (InstantiationException e)
             {
                 runFailed("Could not instantiate test suite provider. Class: " + clazz.getName());
-            } 
+            } //End block
             catch (IllegalAccessException e)
             {
                 runFailed("Illegal access of test suite provider. Class: " + clazz.getName());
-            } 
+            } //End block
             catch (InvocationTargetException e)
             {
                 runFailed("Invocation exception test suite provider. Class: " + clazz.getName());
-            } 
+            } //End block
             catch (NoSuchMethodException e)
             {
                 runFailed("No such method on test suite provider. Class: " + clazz.getName());
-            } 
-        } 
+            } //End block
+        } //End block
 Test var996CF625C9F3B89DE3BAFE852F5148F8_2064322932 =         getTest(clazz.getName());
         var996CF625C9F3B89DE3BAFE852F5148F8_2064322932.addTaint(taint);
         return var996CF625C9F3B89DE3BAFE852F5148F8_2064322932;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -251,24 +251,23 @@ Test var996CF625C9F3B89DE3BAFE852F5148F8_2064322932 =         getTest(clazz.getN
 TestResult varA06DDFD40BCE7BD2DEE2613EAA6910FC_1080637305 =             new NoExecTestResult();
             varA06DDFD40BCE7BD2DEE2613EAA6910FC_1080637305.addTaint(taint);
             return varA06DDFD40BCE7BD2DEE2613EAA6910FC_1080637305;
-        } 
+        } //End block
 TestResult varB1D52DB2FC7B844B35F46763F5119AF7_1360309060 =         new TestResult();
         varB1D52DB2FC7B844B35F46763F5119AF7_1360309060.addTaint(taint);
         return varB1D52DB2FC7B844B35F46763F5119AF7_1360309060;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mSkipExecution) {
+            //return new NoExecTestResult();
+        //}
+        //return new TestResult();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.804 -0400", hash_original_method = "35C6F654589DD3EA8896BA4A5DEE7BCB", hash_generated_method = "52A0B91FB5E6FFC3CAC7A12EB59B5758")
      void setSkipExecution(boolean skip) {
         mSkipExecution = skip;
-        
-        
+        // ---------- Original Method ----------
+        //mSkipExecution = skip;
     }
 
     
@@ -277,38 +276,36 @@ TestResult varB1D52DB2FC7B844B35F46763F5119AF7_1360309060 =         new TestResu
 List<TestCase> var8F97DD99F42FF73EAB8CDB477DFEE3E9_561792965 =         mTestCases;
         var8F97DD99F42FF73EAB8CDB477DFEE3E9_561792965.addTaint(taint);
         return var8F97DD99F42FF73EAB8CDB477DFEE3E9_561792965;
-        
-        
+        // ---------- Original Method ----------
+        //return mTestCases;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.805 -0400", hash_original_method = "F2D7E2FB778FC0649CC40AF9C1142527", hash_generated_method = "1B9792FF5C6553CA83BE8721B7558EAA")
     public String getTestClassName() {
 String var1CB478C44ABEF9FA32CEDB99E8709D2F_143442411 =         mTestClassName;
         var1CB478C44ABEF9FA32CEDB99E8709D2F_143442411.addTaint(taint);
         return var1CB478C44ABEF9FA32CEDB99E8709D2F_143442411;
-        
-        
+        // ---------- Original Method ----------
+        //return mTestClassName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.805 -0400", hash_original_method = "5B53C1B8ED988918C7336B043C531676", hash_generated_method = "9A4F310A0990337919F52142D165DB26")
     public TestResult getTestResult() {
 TestResult var437D81FF8A497B3A9605171F4D29C8AB_207503714 =         mTestResult;
         var437D81FF8A497B3A9605171F4D29C8AB_207503714.addTaint(taint);
         return var437D81FF8A497B3A9605171F4D29C8AB_207503714;
-        
-        
+        // ---------- Original Method ----------
+        //return mTestResult;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.805 -0400", hash_original_method = "99F47304AAC4A5C182E0EF1BC1C1BE8D", hash_generated_method = "B2AC6C3F8BB8B04F2AB4C8D04FFDB305")
     public void runTest() {
         runTest(createTestResult());
-        
-        
+        // ---------- Original Method ----------
+        //runTest(createTestResult());
     }
 
     
@@ -318,7 +315,7 @@ TestResult var437D81FF8A497B3A9605171F4D29C8AB_207503714 =         mTestResult;
 for(TestListener testListener : mTestListeners)
         {
             mTestResult.addListener(testListener);
-        } 
+        } //End block
         Context testContext = mInstrumentation == null ? mContext : mInstrumentation.getContext();
 for(TestCase testCase : mTestCases)
         {
@@ -326,19 +323,19 @@ for(TestCase testCase : mTestCases)
             setInstrumentationIfInstrumentationTestCase(testCase, mInstrumentation);
             setPerformanceWriterIfPerformanceCollectorTestCase(testCase, mPerfWriter);
             testCase.run(mTestResult);
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mTestResult = testResult;
+        //for (TestListener testListener : mTestListeners) {
+            //mTestResult.addListener(testListener);
+        //}
+        //Context testContext = mInstrumentation == null ? mContext : mInstrumentation.getContext();
+        //for (TestCase testCase : mTestCases) {
+            //setContextIfAndroidTestCase(testCase, mContext, testContext);
+            //setInstrumentationIfInstrumentationTestCase(testCase, mInstrumentation);
+            //setPerformanceWriterIfPerformanceCollectorTestCase(testCase, mPerfWriter);
+            //testCase.run(mTestResult);
+        //}
     }
 
     
@@ -351,21 +348,20 @@ for(TestCase testCase : mTestCases)
         {
             ((AndroidTestCase) test).setContext(context);
             ((AndroidTestCase) test).setTestContext(testContext);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (AndroidTestCase.class.isAssignableFrom(test.getClass())) {
+            //((AndroidTestCase) test).setContext(context);
+            //((AndroidTestCase) test).setTestContext(testContext);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.807 -0400", hash_original_method = "79C5FD8850A7FDB4967DBA296D1AB9AD", hash_generated_method = "6F13A8B42448B2C5D39C1B275EFDE141")
     public void setContext(Context context) {
         mContext = context;
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
     }
 
     
@@ -377,11 +373,11 @@ for(TestCase testCase : mTestCases)
     if(InstrumentationTestCase.class.isAssignableFrom(test.getClass()))        
         {
             ((InstrumentationTestCase) test).injectInstrumentation(instrumentation);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (InstrumentationTestCase.class.isAssignableFrom(test.getClass())) {
+            //((InstrumentationTestCase) test).injectInstrumentation(instrumentation);
+        //}
     }
 
     
@@ -393,40 +389,37 @@ for(TestCase testCase : mTestCases)
     if(PerformanceCollectorTestCase.class.isAssignableFrom(test.getClass()))        
         {
             ((PerformanceCollectorTestCase) test).setPerformanceResultsWriter(writer);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (PerformanceCollectorTestCase.class.isAssignableFrom(test.getClass())) {
+            //((PerformanceCollectorTestCase) test).setPerformanceResultsWriter(writer);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.808 -0400", hash_original_method = "0EFFD9B799AED609D4828DB6F7AAB0E5", hash_generated_method = "3ACD0016E8612A780C3363D803A8AF08")
     public void setInstrumentation(Instrumentation instrumentation) {
         mInstrumentation = instrumentation;
-        
-        
+        // ---------- Original Method ----------
+        //mInstrumentation = instrumentation;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.808 -0400", hash_original_method = "8B0B0B0117FF17F8E6C78456D5FA2528", hash_generated_method = "3EF8B0CB7FF92401818A0D3175C4DD53")
     @Deprecated
     public void setInstrumentaiton(Instrumentation instrumentation) {
         addTaint(instrumentation.getTaint());
         setInstrumentation(instrumentation);
-        
-        
+        // ---------- Original Method ----------
+        //setInstrumentation(instrumentation);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.808 -0400", hash_original_method = "37F3C4CB00E2065177941F440A1EB96E", hash_generated_method = "B9C8894AFEBF94656C66FAA8B38F355F")
     public void setPerformanceResultsWriter(PerformanceResultsWriter writer) {
         mPerfWriter = writer;
-        
-        
+        // ---------- Original Method ----------
+        //mPerfWriter = writer;
     }
 
     
@@ -437,34 +430,31 @@ for(TestCase testCase : mTestCases)
 Class var46F17594A492923407012C376C374B95_1754615885 =         mContext.getClassLoader().loadClass(suiteClassName);
         var46F17594A492923407012C376C374B95_1754615885.addTaint(taint);
         return var46F17594A492923407012C376C374B95_1754615885;
-        
-        
+        // ---------- Original Method ----------
+        //return mContext.getClassLoader().loadClass(suiteClassName);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.809 -0400", hash_original_method = "1FEF70E96102D7304D006BBFDC4DE6B7", hash_generated_method = "4FAFD7517E2617F717E5C9E85C0A14FE")
     public void testStarted(String testName) {
         addTaint(testName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.809 -0400", hash_original_method = "95F90AC078029D49ABA36F5E39CE4989", hash_generated_method = "9E4B00FBBA1794C65D5334E8AFC03502")
     public void testEnded(String testName) {
         addTaint(testName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.809 -0400", hash_original_method = "3C8F23863ACC349D5F634378B8407602", hash_generated_method = "343C81A91A376A476B6E63854712BD10")
     public void testFailed(int status, Test test, Throwable t) {
         addTaint(t.getTaint());
         addTaint(test.getTaint());
         addTaint(status);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -474,8 +464,8 @@ Class var46F17594A492923407012C376C374B95_1754615885 =         mContext.getClass
         RuntimeException var84ECB4EA3AEDFA95D03DB645F86E7A03_2082457288 = new RuntimeException(message);
         var84ECB4EA3AEDFA95D03DB645F86E7A03_2082457288.addTaint(taint);
         throw var84ECB4EA3AEDFA95D03DB645F86E7A03_2082457288;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException(message);
     }
 
     

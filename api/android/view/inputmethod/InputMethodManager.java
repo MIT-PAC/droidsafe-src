@@ -1,6 +1,6 @@
 package android.view.inputmethod;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -211,16 +211,16 @@ public final class InputMethodManager {
     if(mInstance == null)        
         {
             mInstance = this;
-        } 
-        
-        
-        
-        
-        
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mService = service;
+        //mMainLooper = looper;
+        //mH = new H(looper);
+        //mIInputContext = new ControlledInputConnectionWrapper(looper,
+                //mDummyInputConnection, this);
+        //if (mInstance == null) {
+            //mInstance = this;
+        //}
     }
 
     
@@ -242,31 +242,28 @@ public final class InputMethodManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static public InputMethodManager peekInstance() {
+        static public InputMethodManager peekInstance() {
         return mInstance;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.457 -0400", hash_original_method = "3D9C93A013E7DC300254687B6593E9DE", hash_generated_method = "7BAD767D5472314AA334A20D2D7A9EF9")
     public IInputMethodClient getClient() {
 IInputMethodClient varC088D1DF075112E0906917C9520017A1_1267598167 =         mClient;
         varC088D1DF075112E0906917C9520017A1_1267598167.addTaint(taint);
         return varC088D1DF075112E0906917C9520017A1_1267598167;
-        
-        
+        // ---------- Original Method ----------
+        //return mClient;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.457 -0400", hash_original_method = "BB1CC2AA4E519DFF3D7BB1A17FAAA9A1", hash_generated_method = "01207D2CC8403B0638DEB8E6BCCEACED")
     public IInputContext getInputContext() {
 IInputContext var3882EE78855F016992A015D7D670188F_1836917192 =         mIInputContext;
         var3882EE78855F016992A015D7D670188F_1836917192.addTaint(taint);
         return var3882EE78855F016992A015D7D670188F_1836917192;
-        
-        
+        // ---------- Original Method ----------
+        //return mIInputContext;
     }
 
     
@@ -277,19 +274,19 @@ IInputContext var3882EE78855F016992A015D7D670188F_1836917192 =         mIInputCo
 List<InputMethodInfo> var1AF35DE97ED7980EC5787923E9C91923_250226833 =             mService.getInputMethodList();
             var1AF35DE97ED7980EC5787923E9C91923_250226833.addTaint(taint);
             return var1AF35DE97ED7980EC5787923E9C91923_250226833;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1092557326 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1092557326.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1092557326;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getInputMethodList();
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -300,19 +297,19 @@ List<InputMethodInfo> var1AF35DE97ED7980EC5787923E9C91923_250226833 =           
 List<InputMethodInfo> var66B28E882645C61D424E3DABD0D9FB5B_2024815833 =             mService.getEnabledInputMethodList();
             var66B28E882645C61D424E3DABD0D9FB5B_2024815833.addTaint(taint);
             return var66B28E882645C61D424E3DABD0D9FB5B_2024815833;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1207898286 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1207898286.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1207898286;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getEnabledInputMethodList();
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -326,19 +323,19 @@ List<InputMethodInfo> var66B28E882645C61D424E3DABD0D9FB5B_2024815833 =          
 List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =             mService.getEnabledInputMethodSubtypeList(imi, allowsImplicitlySelectedSubtypes);
             var49F293FBAEA52142275424C14023DA83_1555405078.addTaint(taint);
             return var49F293FBAEA52142275424C14023DA83_1555405078;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_599746350 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_599746350.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_599746350;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getEnabledInputMethodSubtypeList(imi, allowsImplicitlySelectedSubtypes);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -350,19 +347,19 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.updateStatusIcon(imeToken, packageName, iconId);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_918845043 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_918845043.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_918845043;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.updateStatusIcon(imeToken, packageName, iconId);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -372,19 +369,19 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.updateStatusIcon(imeToken, null, 0);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_336649628 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_336649628.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_336649628;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.updateStatusIcon(imeToken, null, 0);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -396,51 +393,50 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.setImeWindowStatus(imeToken, vis, backDisposition);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1825529069 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1825529069.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1825529069;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setImeWindowStatus(imeToken, vis, backDisposition);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.461 -0400", hash_original_method = "E3510526CEDC6D4EEDFFA989F1389EB2", hash_generated_method = "DBF532BC0434234D838BC6C0A047FC02")
     public void setFullscreenMode(boolean fullScreen) {
         mFullscreenMode = fullScreen;
-        
-        
+        // ---------- Original Method ----------
+        //mFullscreenMode = fullScreen;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.462 -0400", hash_original_method = "CEA057AD7D0092E84D73E0D04E9F9DEE", hash_generated_method = "1C86BBAE6CE0F3E14C5771953A504B27")
     public void registerSuggestionSpansForNotification(SuggestionSpan[] spans) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(spans[0].getTaint());
         try 
         {
             mService.registerSuggestionSpansForNotification(spans);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1628594811 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1628594811.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1628594811;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.registerSuggestionSpansForNotification(spans);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -452,30 +448,29 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.notifySuggestionPicked(span, originalString, index);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_825833409 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_825833409.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_825833409;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.notifySuggestionPicked(span, originalString, index);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.463 -0400", hash_original_method = "FCDCA2DC24AB76EAA903F8369A9A45F8", hash_generated_method = "444EEE6259545778FBE12E3E8C7DB0C9")
     public boolean isFullscreenMode() {
         boolean var21C88B20DA84168713D6AAB9A7589738_1060537557 = (mFullscreenMode);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1875300421 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1875300421;
-        
-        
+        // ---------- Original Method ----------
+        //return mFullscreenMode;
     }
 
     
@@ -491,15 +486,15 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     && mCurrentTextBoxAttribute != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1561703455 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1561703455;
-        } 
-        
-        
-        
-            
-                    
-                            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //return (mServedView == view
+                    //|| (mServedView != null
+                            //&& mServedView.checkInputConnectionProxy(view)))
+                    //&& mCurrentTextBoxAttribute != null;
+        //}
     }
 
     
@@ -511,12 +506,12 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
             boolean varBB0CEA0C9E6F127AC4C2F90A80CCCBF9_22226293 = (mServedView != null && mCurrentTextBoxAttribute != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1992689659 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1992689659;
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //return mServedView != null && mCurrentTextBoxAttribute != null;
+        //}
     }
 
     
@@ -526,9 +521,9 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         boolean var8562F8F908DA04D4207AD28139C892F4_951914546 = (mServedInputConnection != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_237684363 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_237684363;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkFocus();
+        //return mServedInputConnection != null;
     }
 
     
@@ -538,22 +533,21 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         mBindSequence = -1;
         mCurId = null;
         mCurMethod = null;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //clearConnectionLocked();
+        //mBindSequence = -1;
+        //mCurId = null;
+        //mCurMethod = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.465 -0400", hash_original_method = "7C74580464CD8E195E3FB8BED8B93C53", hash_generated_method = "EFB7670AA252AD66E15371A32A6F6C81")
      void clearConnectionLocked() {
         mCurrentTextBoxAttribute = null;
         mServedInputConnection = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mCurrentTextBoxAttribute = null;
+        //mServedInputConnection = null;
     }
 
     
@@ -567,11 +561,11 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 try 
                 {
                     mService.finishInput(mClient);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
+                } //End block
+            } //End block
     if(mServedInputConnection != null)            
             {
                 Handler vh = mServedView.getHandler();
@@ -579,15 +573,15 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 {
                     vh.sendMessage(vh.obtainMessage(ViewRootImpl.FINISH_INPUT_CONNECTION,
                             mServedInputConnection));
-                } 
-            } 
+                } //End block
+            } //End block
             mServedView = null;
             mCompletions = null;
             mServedConnecting = false;
             clearConnectionLocked();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -597,11 +591,11 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     if(mServedInputConnection != ic)        
         {
             ic.finishComposingText();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mServedInputConnection != ic) {
+            //ic.finishComposingText();
+        //}
     }
 
     
@@ -615,34 +609,34 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                             || !mServedView.checkInputConnectionProxy(view)))            
             {
                 return;
-            } 
+            } //End block
             mCompletions = completions;
     if(mCurMethod != null)            
             {
                 try 
                 {
                     mCurMethod.displayCompletions(mCompletions);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-        } 
-        
-        
-        
-            
-                            
-                
-            
-            
-            
-                
-                    
-                
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //if (mServedView != view && (mServedView == null
+                            //|| !mServedView.checkInputConnectionProxy(view))) {
+                //return;
+            //}
+            //mCompletions = completions;
+            //if (mCurMethod != null) {
+                //try {
+                    //mCurMethod.displayCompletions(mCompletions);
+                //} catch (RemoteException e) {
+                //}
+            //}
+        //}
     }
 
     
@@ -658,32 +652,32 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     || !mServedView.checkInputConnectionProxy(view)))            
             {
                 return;
-            } 
+            } //End block
     if(mCurMethod != null)            
             {
                 try 
                 {
                     mCurMethod.updateExtractedText(token, text);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-        } 
-        
-        
-        
-            
-                    
-                
-            
-            
-                
-                    
-                
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //if (mServedView != view && (mServedView == null
+                    //|| !mServedView.checkInputConnectionProxy(view))) {
+                //return;
+            //}
+            //if (mCurMethod != null) {
+                //try {
+                    //mCurMethod.updateExtractedText(token, text);
+                //} catch (RemoteException e) {
+                //}
+            //}
+        //}
     }
 
     
@@ -694,8 +688,8 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         boolean var41628D7736FAA5407A38B32DAED9019A_848167453 = (showSoftInput(view, flags, null));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_519560501 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_519560501;
-        
-        
+        // ---------- Original Method ----------
+        //return showSoftInput(view, flags, null);
     }
 
     
@@ -713,33 +707,33 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 boolean var68934A3E9455FA72420237EB05902327_1234314698 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_662929420 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_662929420;
-            } 
+            } //End block
             try 
             {
                 boolean var70E9CF5D2EAD7D5D373E3E57E703E5EC_1707908369 = (mService.showSoftInput(mClient, flags, resultReceiver));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1534719561 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1534719561;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_645314984 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_527679571 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_527679571;
-        } 
-        
-        
-        
-            
-                    
-                
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //if (mServedView != view && (mServedView == null
+                    //|| !mServedView.checkInputConnectionProxy(view))) {
+                //return false;
+            //}
+            //try {
+                //return mService.showSoftInput(mClient, flags, resultReceiver);
+            //} catch (RemoteException e) {
+            //}
+            //return false;
+        //}
     }
 
     
@@ -750,15 +744,15 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.showSoftInput(mClient, flags, resultReceiver);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.showSoftInput(mClient, flags, resultReceiver);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -769,8 +763,8 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         boolean varEC6673B190EBB01F5C474FB5E1D2B444_1000435152 = (hideSoftInputFromWindow(windowToken, flags, null));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394039087 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394039087;
-        
-        
+        // ---------- Original Method ----------
+        //return hideSoftInputFromWindow(windowToken, flags, null);
     }
 
     
@@ -788,32 +782,32 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 boolean var68934A3E9455FA72420237EB05902327_765931376 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_41043205 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_41043205;
-            } 
+            } //End block
             try 
             {
                 boolean var1E4256830B68A2F3007A7875AEFAF5D1_1081677276 = (mService.hideSoftInput(mClient, flags, resultReceiver));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1441955305 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1441955305;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_143880943 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1677733271 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1677733271;
-        } 
-        
-        
-        
-            
-                
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //if (mServedView == null || mServedView.getWindowToken() != windowToken) {
+                //return false;
+            //}
+            //try {
+                //return mService.hideSoftInput(mClient, flags, resultReceiver);
+            //} catch (RemoteException e) {
+            //}
+            //return false;
+        //}
     }
 
     
@@ -827,30 +821,30 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     if(mServedView == null || mServedView.getWindowToken() != windowToken)            
             {
                 return;
-            } 
+            } //End block
     if(mCurMethod != null)            
             {
                 try 
                 {
                     mCurMethod.toggleSoftInput(showFlags, hideFlags);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-        } 
-        
-        
-            
-                
-            
-            
-                
-                    
-                
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //if (mServedView == null || mServedView.getWindowToken() != windowToken) {
+                //return;
+            //}
+            //if (mCurMethod != null) {
+                //try {
+                    //mCurMethod.toggleSoftInput(showFlags, hideFlags);
+                //} catch (RemoteException e) {
+                //}
+            //}
+        //}
     }
 
     
@@ -863,18 +857,18 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
             try 
             {
                 mCurMethod.toggleSoftInput(showFlags, hideFlags);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mCurMethod != null) {
+            //try {
+                //mCurMethod.toggleSoftInput(showFlags, hideFlags);
+            //} catch (RemoteException e) {
+            //}
+        //}
     }
 
     
@@ -888,20 +882,20 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     || !mServedView.checkInputConnectionProxy(view)))            
             {
                 return;
-            } 
+            } //End block
             mServedConnecting = true;
-        } 
+        } //End block
         startInputInner();
-        
-        
-        
-            
-                    
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //if (mServedView != view && (mServedView == null
+                    //|| !mServedView.checkInputConnectionProxy(view))) {
+                //return;
+            //}
+            //mServedConnecting = true;
+        //}
+        //startInputInner();
     }
 
     
@@ -914,25 +908,25 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     if(DEBUG){ }    if(view == null)            
             {
     if(DEBUG){ }                return;
-            } 
-        } 
+            } //End block
+        } //End block
         Handler vh = view.getHandler();
     if(vh == null)        
         {
     if(DEBUG){ }            return;
-        } 
+        } //End block
     if(vh.getLooper() != Looper.myLooper())        
         {
     if(DEBUG){ }            vh.post(new Runnable() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.472 -0400", hash_original_method = "BAD6C7ED699C9A68B8082FE4BB335F01", hash_generated_method = "997F4E26C6EE75BE46DC00501A56EA99")
         public void run() {
             startInputInner();
-            
-            
+            // ---------- Original Method ----------
+            //startInputInner();
         }
 });
             return;
-        } 
+        } //End block
         EditorInfo tba = new EditorInfo();
         tba.packageName = view.getContext().getPackageName();
         tba.fieldId = view.getId();
@@ -942,7 +936,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     if(mServedView != view || !mServedConnecting)            
             {
     if(DEBUG){ }                return;
-            } 
+            } //End block
             final boolean initial = mCurrentTextBoxAttribute == null;
             mCurrentTextBoxAttribute = tba;
             mServedConnecting = false;
@@ -956,11 +950,11 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 mCursorCandEnd = -1;
                 mCursorRect.setEmpty();
                 servedContext = new ControlledInputConnectionWrapper(vh.getLooper(), ic, this);
-            } 
+            } //End block
             else
             {
                 servedContext = null;
-            } 
+            } //End block
             try 
             {
     if(DEBUG){ }                InputBindResult res = mService.startInput(mClient,
@@ -971,30 +965,30 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     {
                         mBindSequence = res.sequence;
                         mCurMethod = res.method;
-                    } 
+                    } //End block
                     else
     if(mCurMethod == null)                    
                     {
     if(DEBUG){ }                        return;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(mCurMethod != null && mCompletions != null)                
                 {
                     try 
                     {
                         mCurMethod.displayCompletions(mCompletions);
-                    } 
+                    } //End block
                     catch (RemoteException e)
                     {
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1008,16 +1002,16 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     mServedView.getWindowToken() == appWindowToken)            
             {
                 finishInputLocked();
-            } 
-        } 
-        
-        
-        
-            
-                    
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //if (mServedView != null &&
+                    //mServedView.getWindowToken() == appWindowToken) {
+                //finishInputLocked();
+            //}
+        //}
     }
 
     
@@ -1027,11 +1021,11 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         synchronized
 (mH)        {
             focusInLocked(view);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //focusInLocked(view);
+        //}
     }
 
     
@@ -1040,21 +1034,20 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     if(DEBUG){ }    if(mCurRootView != view.getRootView())        
         {
     if(DEBUG){ }            return;
-        } 
+        } //End block
         mNextServedView = view;
         scheduleCheckFocusLocked(view);
-        
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "focusIn: " + view);
+        //if (mCurRootView != view.getRootView()) {
+            //if (DEBUG) Log.v(TAG, "Not IME target window, ignoring");
+            //return;
+        //}
+        //mNextServedView = view;
+        //scheduleCheckFocusLocked(view);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.475 -0400", hash_original_method = "CA0F410F50592B0E0C8F6A16050EA193", hash_generated_method = "475A287226C5A66FD9EF549C33DD228D")
     public void focusOut(View view) {
         addTaint(view.getTaint());
@@ -1066,21 +1059,21 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 {
                     mNextServedView = null;
                     scheduleCheckFocusLocked(view);
-                } 
-            } 
-        } 
-        
-        
-            
-                    
-                    
-            
-                
-                    
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //if (DEBUG) Log.v(TAG, "focusOut: " + view
+                    //+ " mServedView=" + mServedView
+                    //+ " winFocus=" + view.hasWindowFocus());
+            //if (mServedView != view) {
+                //if (false && view.hasWindowFocus()) {
+                    //mNextServedView = null;
+                    //scheduleCheckFocusLocked(view);
+                //}
+            //}
+        //}
     }
 
     
@@ -1091,12 +1084,12 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     if(vh != null && !vh.hasMessages(ViewRootImpl.CHECK_FOCUS))        
         {
             vh.sendMessage(vh.obtainMessage(ViewRootImpl.CHECK_FOCUS));
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Handler vh = view.getHandler();
+        //if (vh != null && !vh.hasMessages(ViewRootImpl.CHECK_FOCUS)) {
+            //vh.sendMessage(vh.obtainMessage(ViewRootImpl.CHECK_FOCUS));
+        //}
     }
 
     
@@ -1105,34 +1098,34 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
     if(mServedView == mNextServedView && !mNextServedNeedsStart)        
         {
             return;
-        } 
+        } //End block
         InputConnection ic = null;
         synchronized
 (mH)        {
     if(mServedView == mNextServedView && !mNextServedNeedsStart)            
             {
                 return;
-            } 
+            } //End block
     if(DEBUG){ }            mNextServedNeedsStart = false;
     if(mNextServedView == null)            
             {
                 finishInputLocked();
                 closeCurrentInput();
                 return;
-            } 
+            } //End block
             ic = mServedInputConnection;
             mServedView = mNextServedView;
             mCurrentTextBoxAttribute = null;
             mCompletions = null;
             mServedConnecting = true;
-        } 
+        } //End block
     if(ic != null)        
         {
             ic.finishComposingText();
-        } 
+        } //End block
         startInputInner();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1141,22 +1134,22 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.hideSoftInput(mClient, HIDE_NOT_ALWAYS, null);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.hideSoftInput(mClient, HIDE_NOT_ALWAYS, null);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.477 -0400", hash_original_method = "4893EC862C01D5D2A6E85A7017E94B9B", hash_generated_method = "ED58CCC433760687FDF522A84949FC15")
     public void onWindowFocus(View rootView, View focusedView, int softInputMode,
             boolean first, int windowFlags) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(windowFlags);
         addTaint(first);
         addTaint(softInputMode);
@@ -1168,9 +1161,9 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
             {
     if(DEBUG){ }                mHasBeenInactive = false;
                 mNextServedNeedsStart = true;
-            } 
+            } //End block
             focusInLocked(focusedView != null ? focusedView : rootView);
-        } 
+        } //End block
         checkFocus();
         synchronized
 (mH)        {
@@ -1181,27 +1174,26 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 mService.windowGainedFocus(mClient, rootView.getWindowToken(),
                         focusedView != null, isTextEditor, softInputMode, first,
                         windowFlags);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.478 -0400", hash_original_method = "1A7A85BD07D131CBE39BA9D28F0E6F2A", hash_generated_method = "0A208EAE955229328DAD0F6EFFFA781D")
     public void startGettingWindowFocus(View rootView) {
         synchronized
 (mH)        {
             mCurRootView = rootView;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //mCurRootView = rootView;
+        //}
     }
 
     
@@ -1217,7 +1209,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     || mCurrentTextBoxAttribute == null || mCurMethod == null)            
             {
                 return;
-            } 
+            } //End block
     if(mCursorSelStart != selStart || mCursorSelEnd != selEnd
                     || mCursorCandStart != candidatesStart
                     || mCursorCandEnd != candidatesEnd)            
@@ -1232,14 +1224,14 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     mCursorSelEnd = selEnd;
                     mCursorCandStart = candidatesStart;
                     mCursorCandEnd = candidatesEnd;
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1255,43 +1247,42 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     || mCurrentTextBoxAttribute == null || mCurMethod == null)            
             {
                 return;
-            } 
+            } //End block
             try 
             {
     if(DEBUG){ }                mCurMethod.viewClicked(focusChanged);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-        
-        
-            
-                    
-                    
-                
-            
-            
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //final boolean focusChanged = mServedView != mNextServedView;
+        //checkFocus();
+        //synchronized (mH) {
+            //if ((mServedView != view && (mServedView == null
+                    //|| !mServedView.checkInputConnectionProxy(view)))
+                    //|| mCurrentTextBoxAttribute == null || mCurMethod == null) {
+                //return;
+            //}
+            //try {
+                //if (DEBUG) Log.v(TAG, "onViewClicked: " + focusChanged);
+                //mCurMethod.viewClicked(focusChanged);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.480 -0400", hash_original_method = "385DC57C25B266614A0F3F767A2E43B1", hash_generated_method = "0453E634C975C2CBFF38EAE554982EF3")
     public boolean isWatchingCursor(View view) {
         addTaint(view.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_510002831 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_605340923 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_605340923;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -1310,7 +1301,7 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     || mCurrentTextBoxAttribute == null || mCurMethod == null)            
             {
                 return;
-            } 
+            } //End block
             mTmpCursorRect.set(left, top, right, bottom);
     if(!mCursorRect.equals(mTmpCursorRect))            
             {
@@ -1320,14 +1311,14 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 {
     if(DEBUG){ }                    mCurMethod.updateCursor(mTmpCursorRect);
                     mCursorRect.set(mTmpCursorRect);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1344,30 +1335,30 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                     || mCurrentTextBoxAttribute == null || mCurMethod == null)            
             {
                 return;
-            } 
+            } //End block
             try 
             {
     if(DEBUG){ }                mCurMethod.appPrivateCommand(action, data);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-        
-            
-                        
-                    
-                
-            
-            
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //checkFocus();
+        //synchronized (mH) {
+            //if ((mServedView != view && (mServedView == null
+                        //|| !mServedView.checkInputConnectionProxy(view)))
+                    //|| mCurrentTextBoxAttribute == null || mCurMethod == null) {
+                //return;
+            //}
+            //try {
+                //if (DEBUG) Log.v(TAG, "APP PRIVATE COMMAND " + action + ": " + data);
+                //mCurMethod.appPrivateCommand(action, data);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+            //}
+        //}
     }
 
     
@@ -1378,19 +1369,19 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.setInputMethod(token, id);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1924887982 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1924887982.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1924887982;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setInputMethod(token, id);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -1402,19 +1393,19 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.setInputMethodAndSubtype(token, id, subtype);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1201896225 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1201896225.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1201896225;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setInputMethodAndSubtype(token, id, subtype);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -1425,19 +1416,19 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.hideMySoftInput(token, flags);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_904846006 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_904846006.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_904846006;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.hideMySoftInput(token, flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -1448,19 +1439,19 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
         try 
         {
             mService.showMySoftInput(token, flags);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_2052657128 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_2052657128.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_2052657128;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.showMySoftInput(token, flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -1480,12 +1471,12 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 try 
                 {
                     callback.finishedEvent(seq, false);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
+                } //End block
                 return;
-            } 
+            } //End block
     if(key.getAction() == KeyEvent.ACTION_DOWN
                     && key.getKeyCode() == KeyEvent.KEYCODE_SYM)            
             {
@@ -1493,29 +1484,29 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 try 
                 {
                     callback.finishedEvent(seq, true);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
+                } //End block
                 return;
-            } 
+            } //End block
             try 
             {
     if(DEBUG){ }                mCurMethod.dispatchKeyEvent(seq, key, callback);
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 try 
                 {
                     callback.finishedEvent(seq, false);
-                } 
+                } //End block
                 catch (RemoteException ex)
                 {
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1535,29 +1526,29 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
                 try 
                 {
                     callback.finishedEvent(seq, false);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
+                } //End block
                 return;
-            } 
+            } //End block
             try 
             {
     if(DEBUG){ }                mCurMethod.dispatchTrackballEvent(seq, motion, callback);
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 try 
                 {
                     callback.finishedEvent(seq, false);
-                } 
+                } //End block
                 catch (RemoteException ex)
                 {
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1568,19 +1559,19 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
             try 
             {
                 mService.showInputMethodPickerFromClient(mClient);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //try {
+                //mService.showInputMethodPickerFromClient(mClient);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+            //}
+        //}
     }
 
     
@@ -1592,19 +1583,19 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
             try 
             {
                 mService.showInputMethodAndSubtypeEnablerFromClient(mClient, imiId);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //try {
+                //mService.showInputMethodAndSubtypeEnablerFromClient(mClient, imiId);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+            //}
+        //}
     }
 
     
@@ -1617,23 +1608,23 @@ List<InputMethodSubtype> var49F293FBAEA52142275424C14023DA83_1555405078 =       
 InputMethodSubtype var9658C72DA07C52E27EAE101FC3B0E8BF_415347116 =                 mService.getCurrentInputMethodSubtype();
                 var9658C72DA07C52E27EAE101FC3B0E8BF_415347116.addTaint(taint);
                 return var9658C72DA07C52E27EAE101FC3B0E8BF_415347116;
-            } 
+            } //End block
             catch (RemoteException e)
             {
 InputMethodSubtype var540C13E9E156B687226421B24F2DF178_250660591 =                 null;
                 var540C13E9E156B687226421B24F2DF178_250660591.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_250660591;
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //try {
+                //return mService.getCurrentInputMethodSubtype();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+                //return null;
+            //}
+        //}
     }
 
     
@@ -1647,23 +1638,23 @@ InputMethodSubtype var540C13E9E156B687226421B24F2DF178_250660591 =              
                 boolean varDB4940A413ABB67533B45BC6995A6A40_706941373 = (mService.setCurrentInputMethodSubtype(subtype));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802665111 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802665111;
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1200678764 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1067452709 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1067452709;
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //try {
+                //return mService.setCurrentInputMethodSubtype(subtype);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+                //return false;
+            //}
+        //}
     }
 
     
@@ -1687,27 +1678,27 @@ for(int i = 0;i < N;++i)
     if(ret.containsKey(o))                            
                             {
                                 break;
-                            } 
+                            } //End block
                             subtypes = new ArrayList<InputMethodSubtype>();
                             ret.put((InputMethodInfo)o, subtypes);
-                        } 
+                        } //End block
                         else
     if(subtypes != null && o instanceof InputMethodSubtype)                        
                         {
                             subtypes.add((InputMethodSubtype)o);
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             catch (RemoteException e)
             {
-            } 
+            } //End block
 Map<InputMethodInfo, List<InputMethodSubtype>> varEDFF4FBBF053B5DC2B444ADFA049EE0F_2043420872 =             ret;
             varEDFF4FBBF053B5DC2B444ADFA049EE0F_2043420872.addTaint(taint);
             return varEDFF4FBBF053B5DC2B444ADFA049EE0F_2043420872;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1721,23 +1712,23 @@ Map<InputMethodInfo, List<InputMethodSubtype>> varEDFF4FBBF053B5DC2B444ADFA049EE
                 boolean var8E446ADFF5B3C47A0DE923099F1A6690_1190345920 = (mService.switchToLastInputMethod(imeToken));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_125258435 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_125258435;
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_862273590 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065850687 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065850687;
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //try {
+                //return mService.switchToLastInputMethod(imeToken);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+                //return false;
+            //}
+        //}
     }
 
     
@@ -1750,19 +1741,19 @@ Map<InputMethodInfo, List<InputMethodSubtype>> varEDFF4FBBF053B5DC2B444ADFA049EE
             try 
             {
                 mService.setAdditionalInputMethodSubtypes(imiId, subtypes);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //try {
+                //mService.setAdditionalInputMethodSubtypes(imiId, subtypes);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+            //}
+        //}
     }
 
     
@@ -1775,23 +1766,23 @@ Map<InputMethodInfo, List<InputMethodSubtype>> varEDFF4FBBF053B5DC2B444ADFA049EE
 InputMethodSubtype var16F0C678D9CB015A44EBE28C16A06773_715518033 =                 mService.getLastInputMethodSubtype();
                 var16F0C678D9CB015A44EBE28C16A06773_715518033.addTaint(taint);
                 return var16F0C678D9CB015A44EBE28C16A06773_715518033;
-            } 
+            } //End block
             catch (RemoteException e)
             {
 InputMethodSubtype var540C13E9E156B687226421B24F2DF178_126322729 =                 null;
                 var540C13E9E156B687226421B24F2DF178_126322729.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_126322729;
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mH) {
+            //try {
+                //return mService.getLastInputMethodSubtype();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "IME died: " + mCurId, e);
+                //return null;
+            //}
+        //}
     }
 
     
@@ -1819,11 +1810,11 @@ InputMethodSubtype var540C13E9E156B687226421B24F2DF178_126322729 =              
         {
             p.println("  mCurrentTextBoxAttribute:");
             mCurrentTextBoxAttribute.dump(p, "    ");
-        } 
+        } //End block
         else
         {
             p.println("  mCurrentTextBoxAttribute: null");
-        } 
+        } //End block
         p.println("  mServedInputConnection=" + mServedInputConnection);
         p.println("  mCompletions=" + mCompletions);
         p.println("  mCursorRect=" + mCursorRect);
@@ -1831,8 +1822,8 @@ InputMethodSubtype var540C13E9E156B687226421B24F2DF178_126322729 =              
                 + " mCursorSelEnd=" + mCursorSelEnd
                 + " mCursorCandStart=" + mCursorCandStart
                 + " mCursorCandEnd=" + mCursorCandEnd);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1842,7 +1833,7 @@ InputMethodSubtype var540C13E9E156B687226421B24F2DF178_126322729 =              
           H(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -1858,17 +1849,17 @@ switch(msg.what){
                 {
                     doDump((FileDescriptor)args.arg1,
                                 (PrintWriter)args.arg2, (String[])args.arg3);
-                } 
+                } //End block
                 catch (RuntimeException e)
                 {
                     ((PrintWriter)args.arg2).println("Exception: " + e);
-                } 
+                } //End block
                 synchronized
 (args.arg4)                {
                     ((CountDownLatch)args.arg4).countDown();
-                } 
+                } //End block
                 return;
-            } 
+            } //End block
             case MSG_BIND:
             {
                 final InputBindResult res = (InputBindResult)msg.obj;
@@ -1877,14 +1868,14 @@ switch(msg.what){
     if(mBindSequence < 0 || mBindSequence != res.sequence)                    
                     {
                         return;
-                    } 
+                    } //End block
                     mCurMethod = res.method;
                     mCurId = res.id;
                     mBindSequence = res.sequence;
-                } 
+                } //End block
                 startInputInner();
                 return;
-            } 
+            } //End block
             case MSG_UNBIND:
             {
                 final int sequence = msg.arg1;
@@ -1899,22 +1890,22 @@ switch(msg.what){
                                 try 
                                 {
                                     mCurMethod.finishInput();
-                                } 
+                                } //End block
                                 catch (RemoteException e)
                                 {
-                                } 
-                            } 
-                        } 
+                                } //End block
+                            } //End block
+                        } //End block
                         clearBindingLocked();
     if(mServedView != null && mServedView.isFocused())                        
                         {
                             mServedConnecting = true;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     startInputInner();
-                } 
+                } //End block
                 return;
-            } 
+            } //End block
             case MSG_SET_ACTIVE:
             {
                 final boolean active = msg.arg1 != 0;
@@ -1928,17 +1919,17 @@ switch(msg.what){
                         try 
                         {
                             mIInputContext.finishComposingText();
-                        } 
+                        } //End block
                         catch (RemoteException e)
                         {
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 return;
-            } 
+            } //End block
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1958,20 +1949,19 @@ switch(msg.what){
             addTaint(conn.getTaint());
             addTaint(mainLooper.getTaint());
             mParentInputMethodManager = inputMethodManager;
-            
-            
+            // ---------- Original Method ----------
+            //mParentInputMethodManager = inputMethodManager;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.493 -0400", hash_original_method = "FB049513493D8EDB25EAFF891B2EE0A9", hash_generated_method = "8636D8CEF05422F00300E37EFDDD85AB")
         @Override
         public boolean isActive() {
             boolean varE2C9D3F7971F80EB8C16F4B4FA09F04E_1439542772 = (mParentInputMethodManager.mActive);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1485917421 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1485917421;
-            
-            
+            // ---------- Original Method ----------
+            //return mParentInputMethodManager.mActive;
         }
 
         

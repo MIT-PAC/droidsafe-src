@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,9 +24,9 @@ public class CharArrayReader extends Reader {
     public  CharArrayReader(char[] buf) {
         this.buf = buf;
         this.count = buf.length;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.buf = buf;
+        //this.count = buf.length;
     }
 
     
@@ -37,21 +37,21 @@ public class CharArrayReader extends Reader {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_137268019 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_137268019.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_137268019;
-        } 
+        } //End block
         this.buf = buf;
         this.pos = offset;
         this.markedPos = offset;
         int bufferLength = buf.length;
         this.count = offset + length < bufferLength ? length : bufferLength;
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (offset < 0 || offset > buf.length || length < 0 || offset + length < 0) {
+            //throw new IllegalArgumentException();
+        //}
+        //this.buf = buf;
+        //this.pos = offset;
+        //this.markedPos = offset;
+        //int bufferLength = buf.length;
+        //this.count = offset + length < bufferLength ? length : bufferLength;
     }
 
     
@@ -63,36 +63,34 @@ public class CharArrayReader extends Reader {
     if(isOpen())            
             {
                 buf = null;
-            } 
-        } 
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //if (isOpen()) {
+                //buf = null;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.980 -0400", hash_original_method = "F0DC6C1F8DBE67146FDB19D4375AE051", hash_generated_method = "43CD7CFDCFDA4B1D61B8C34590DD1299")
     private boolean isOpen() {
         boolean var0C54AD404B2ACA93D3F8FCA41C54249F_1582981133 = (buf != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_469757745 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_469757745;
-        
-        
+        // ---------- Original Method ----------
+        //return buf != null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.980 -0400", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "B571318A9CFEA87451A6D77054343323")
     private boolean isClosed() {
         boolean var424D22B8FEEB84C8061682CC5DE6923D_63018866 = (buf == null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1134014451 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1134014451;
-        
-        
+        // ---------- Original Method ----------
+        //return buf == null;
     }
 
     
@@ -104,12 +102,12 @@ public class CharArrayReader extends Reader {
 (lock)        {
             checkNotClosed();
             markedPos = pos;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //checkNotClosed();
+            //markedPos = pos;
+        //}
     }
 
     
@@ -120,23 +118,22 @@ public class CharArrayReader extends Reader {
             IOException var6FF3D475D6B6A8CBEBE32ED673C65A5D_1374223832 = new IOException("CharArrayReader is closed");
             var6FF3D475D6B6A8CBEBE32ED673C65A5D_1374223832.addTaint(taint);
             throw var6FF3D475D6B6A8CBEBE32ED673C65A5D_1374223832;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (isClosed()) {
+            //throw new IOException("CharArrayReader is closed");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.982 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "3DE4516045CDA8AA6BBE0F35C11FE326")
     @Override
     public boolean markSupported() {
         boolean varB326B5062B2F0E69046810717534CB09_1224787328 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573002164 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573002164;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -151,19 +148,19 @@ public class CharArrayReader extends Reader {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_528744696 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_792704623 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_792704623;
-            } 
+            } //End block
             int varB70884BE019EF8C23F78111B3A15614D_2036472836 = (buf[pos++]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_926688316 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_926688316;
-        } 
-        
-        
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //checkNotClosed();
+            //if (pos == count) {
+                //return -1;
+            //}
+            //return buf[pos++];
+        //}
     }
 
     
@@ -185,23 +182,23 @@ public class CharArrayReader extends Reader {
                 int varD871906E18D7E876E6494103DA4BEEBD_616385339 = (bytesRead);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1403634447 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1403634447;
-            } 
+            } //End block
             int var6BB61E3B7BCE0931DA574D19D1D82C88_52227941 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1997184839 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1997184839;
-        } 
-        
-        
-        
-            
-            
-                
-                
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(buffer.length, offset, len);
+        //synchronized (lock) {
+            //checkNotClosed();
+            //if (pos < this.count) {
+                //int bytesRead = pos + len > this.count ? this.count - pos : len;
+                //System.arraycopy(this.buf, pos, buffer, offset, bytesRead);
+                //pos += bytesRead;
+                //return bytesRead;
+            //}
+            //return -1;
+        //}
     }
 
     
@@ -214,12 +211,12 @@ public class CharArrayReader extends Reader {
             boolean var3E3DF576B4392DC316ADFA6F86F61189_1483673251 = (pos != count);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2083107571 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2083107571;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //checkNotClosed();
+            //return pos != count;
+        //}
     }
 
     
@@ -230,12 +227,12 @@ public class CharArrayReader extends Reader {
 (lock)        {
             checkNotClosed();
             pos = markedPos != -1 ? markedPos : 0;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //checkNotClosed();
+            //pos = markedPos != -1 ? markedPos : 0;
+        //}
     }
 
     
@@ -250,38 +247,38 @@ public class CharArrayReader extends Reader {
                 long varCFCD208495D565EF66E7DFF9F98764DA_1535393075 = (0);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_21904879 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_21904879;
-            } 
+            } //End block
             long skipped = 0;
     if(charCount < this.count - pos)            
             {
                 pos = pos + (int) charCount;
                 skipped = charCount;
-            } 
+            } //End block
             else
             {
                 skipped = this.count - pos;
                 pos = this.count;
-            } 
+            } //End block
             long varE52E279299E912838F689D4380C81F4A_1518890243 = (skipped);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_368659062 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_368659062;
-        } 
-        
-        
-            
-            
-                
-            
-            
-            
-                
-                
-            
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //checkNotClosed();
+            //if (charCount <= 0) {
+                //return 0;
+            //}
+            //long skipped = 0;
+            //if (charCount < this.count - pos) {
+                //pos = pos + (int) charCount;
+                //skipped = charCount;
+            //} else {
+                //skipped = this.count - pos;
+                //pos = this.count;
+            //}
+            //return skipped;
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class InternalError extends VirtualMachineError {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.019 -0400", hash_original_method = "18A11DFE954AAC7F3401D9A18E98EAA5", hash_generated_method = "6CB2AD680A92FD012F933015174E0A46")
     public  InternalError() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class InternalError extends VirtualMachineError {
     public  InternalError(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

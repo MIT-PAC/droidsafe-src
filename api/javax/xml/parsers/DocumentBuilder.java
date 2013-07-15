@@ -1,6 +1,6 @@
 package javax.xml.parsers;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public abstract class DocumentBuilder {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.365 -0400", hash_original_method = "A55CBA234E1648A7F9C09E5B63DC560C", hash_generated_method = "BA105E34266083D2C63C902BC6535525")
     protected  DocumentBuilder() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -32,12 +32,12 @@ public abstract class DocumentBuilder {
             );
         varD57A366DA765BBC5B5CB8D1F17AA41CA_257499705.addTaint(taint);
         throw varD57A366DA765BBC5B5CB8D1F17AA41CA_257499705;
-        
-        
-            
-            
-            
-            
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException(
+            //"This DocumentBuilder, \"" + this.getClass().getName() + "\", does not support the reset functionality."
+            //+ "  Specification \"" + this.getClass().getPackage().getSpecificationTitle() + "\""
+            //+ " version \"" + this.getClass().getPackage().getSpecificationVersion() + "\""
+            //);
     }
 
     
@@ -49,17 +49,17 @@ public abstract class DocumentBuilder {
             IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_350679484 = new IllegalArgumentException("InputStream cannot be null");
             varC815381FE103054CE280DFD5B97A6E37_350679484.addTaint(taint);
             throw varC815381FE103054CE280DFD5B97A6E37_350679484;
-        } 
+        } //End block
         InputSource in = new InputSource(is);
 Document var8BBF39D47F9CE28DC6E7F629ED464CBB_646125927 =         parse(in);
         var8BBF39D47F9CE28DC6E7F629ED464CBB_646125927.addTaint(taint);
         return var8BBF39D47F9CE28DC6E7F629ED464CBB_646125927;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (is == null) {
+            //throw new IllegalArgumentException("InputStream cannot be null");
+        //}
+        //InputSource in = new InputSource(is);
+        //return parse(in);
     }
 
     
@@ -72,19 +72,19 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_646125927 =         parse(in);
             IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_2125217235 = new IllegalArgumentException("InputStream cannot be null");
             varC815381FE103054CE280DFD5B97A6E37_2125217235.addTaint(taint);
             throw varC815381FE103054CE280DFD5B97A6E37_2125217235;
-        } 
+        } //End block
         InputSource in = new InputSource(is);
         in.setSystemId(systemId);
 Document var8BBF39D47F9CE28DC6E7F629ED464CBB_768983779 =         parse(in);
         var8BBF39D47F9CE28DC6E7F629ED464CBB_768983779.addTaint(taint);
         return var8BBF39D47F9CE28DC6E7F629ED464CBB_768983779;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (is == null) {
+            //throw new IllegalArgumentException("InputStream cannot be null");
+        //}
+        //InputSource in = new InputSource(is);
+        //in.setSystemId(systemId);
+        //return parse(in);
     }
 
     
@@ -96,17 +96,17 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_768983779 =         parse(in);
             IllegalArgumentException varF6E0E2AFA82B103FC9C391721448DB47_587315946 = new IllegalArgumentException("URI cannot be null");
             varF6E0E2AFA82B103FC9C391721448DB47_587315946.addTaint(taint);
             throw varF6E0E2AFA82B103FC9C391721448DB47_587315946;
-        } 
+        } //End block
         InputSource in = new InputSource(uri);
 Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1737582690 =         parse(in);
         var8BBF39D47F9CE28DC6E7F629ED464CBB_1737582690.addTaint(taint);
         return var8BBF39D47F9CE28DC6E7F629ED464CBB_1737582690;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (uri == null) {
+            //throw new IllegalArgumentException("URI cannot be null");
+        //}
+        //InputSource in = new InputSource(uri);
+        //return parse(in);
     }
 
     
@@ -118,26 +118,26 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1737582690 =         parse(in);
             IllegalArgumentException varFEC080412D1250CB64DE25E01D0B1780_1359339912 = new IllegalArgumentException("File cannot be null");
             varFEC080412D1250CB64DE25E01D0B1780_1359339912.addTaint(taint);
             throw varFEC080412D1250CB64DE25E01D0B1780_1359339912;
-        } 
+        } //End block
         String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
     if(DEBUG)        
         {
             System.out.println("Escaped URI = " + escapedURI);
-        } 
+        } //End block
         InputSource in = new InputSource(escapedURI);
 Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594 =         parse(in);
         var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594.addTaint(taint);
         return var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594;
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (f == null) {
+            //throw new IllegalArgumentException("File cannot be null");
+        //}
+        //String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
+        //if (DEBUG) {
+            //System.out.println("Escaped URI = " + escapedURI);
+        //}
+        //InputSource in = new InputSource(escapedURI);
+        //return parse(in);
     }
 
     
@@ -174,14 +174,14 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594 =         parse(in);
             );
         varE9742D55AB47AEF31209978AAE994BE9_1156412758.addTaint(taint);
         throw varE9742D55AB47AEF31209978AAE994BE9_1156412758;
-        
-        
-            
-            
-            
-            
-            
-            
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException(
+            //"This parser does not support specification \""
+            //+ this.getClass().getPackage().getSpecificationTitle()
+            //+ "\" version \""
+            //+ this.getClass().getPackage().getSpecificationVersion()
+            //+ "\""
+            //);
     }
 
     
@@ -196,14 +196,14 @@ Document var8BBF39D47F9CE28DC6E7F629ED464CBB_1165156594 =         parse(in);
             );
         varE9742D55AB47AEF31209978AAE994BE9_433446108.addTaint(taint);
         throw varE9742D55AB47AEF31209978AAE994BE9_433446108;
-        
-        
-            
-            
-            
-            
-            
-            
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException(
+            //"This parser does not support specification \""
+            //+ this.getClass().getPackage().getSpecificationTitle()
+            //+ "\" version \""
+            //+ this.getClass().getPackage().getSpecificationVersion()
+            //+ "\""
+            //);
     }
 
     

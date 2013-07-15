@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -327,11 +327,11 @@ public class MediaController extends FrameLayout {
         mContext = context;
         mUseFastForward = true;
         mFromXml = true;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mRoot = this;
+        //mContext = context;
+        //mUseFastForward = true;
+        //mFromXml = true;
     }
 
     
@@ -342,11 +342,11 @@ public class MediaController extends FrameLayout {
         mUseFastForward = useFastForward;
         initFloatingWindowLayout();
         initFloatingWindow();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mUseFastForward = useFastForward;
+        //initFloatingWindowLayout();
+        //initFloatingWindow();
     }
 
     
@@ -354,19 +354,19 @@ public class MediaController extends FrameLayout {
     public  MediaController(Context context) {
         this(context, true);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.280 -0400", hash_original_method = "73B20F41AD38A9B689CAB773B229DC2D", hash_generated_method = "CE88E5124B8C53CF9E94382EA0C9CFDD")
     @Override
     public void onFinishInflate() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
     if(mRoot != null)        
         initControllerView(mRoot);
-        
-        
-            
+        // ---------- Original Method ----------
+        //if (mRoot != null)
+            //initControllerView(mRoot);
     }
 
     
@@ -385,20 +385,20 @@ public class MediaController extends FrameLayout {
         setFocusableInTouchMode(true);
         setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
         requestFocus();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWindowManager = (WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE);
+        //mWindow = PolicyManager.makeNewWindow(mContext);
+        //mWindow.setWindowManager(mWindowManager, null, null);
+        //mWindow.requestFeature(Window.FEATURE_NO_TITLE);
+        //mDecor = mWindow.getDecorView();
+        //mDecor.setOnTouchListener(mTouchListener);
+        //mWindow.setContentView(this);
+        //mWindow.setBackgroundDrawableResource(android.R.color.transparent);
+        //mWindow.setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        //setFocusable(true);
+        //setFocusableInTouchMode(true);
+        //setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
+        //requestFocus();
     }
 
     
@@ -416,19 +416,19 @@ public class MediaController extends FrameLayout {
                 | WindowManager.LayoutParams.FLAG_SPLIT_TOUCH;
         p.token = null;
         p.windowAnimations = 0;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //mDecorLayoutParams = new WindowManager.LayoutParams();
+        //WindowManager.LayoutParams p = mDecorLayoutParams;
+        //p.gravity = Gravity.TOP;
+        //p.height = LayoutParams.WRAP_CONTENT;
+        //p.x = 0;
+        //p.format = PixelFormat.TRANSLUCENT;
+        //p.type = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
+        //p.flags |= WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM
+                //| WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+                //| WindowManager.LayoutParams.FLAG_SPLIT_TOUCH;
+        //p.token = null;
+        //p.windowAnimations = 0;
     }
 
     
@@ -439,12 +439,12 @@ public class MediaController extends FrameLayout {
         WindowManager.LayoutParams p = mDecorLayoutParams;
         p.width = mAnchor.getWidth();
         p.y = anchorPos[1] + mAnchor.getHeight();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int [] anchorPos = new int[2];
+        //mAnchor.getLocationOnScreen(anchorPos);
+        //WindowManager.LayoutParams p = mDecorLayoutParams;
+        //p.width = mAnchor.getWidth();
+        //p.y = anchorPos[1] + mAnchor.getHeight();
     }
 
     
@@ -452,9 +452,9 @@ public class MediaController extends FrameLayout {
     public void setMediaPlayer(MediaPlayerControl player) {
         mPlayer = player;
         updatePausePlay();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPlayer = player;
+        //updatePausePlay();
     }
 
     
@@ -463,12 +463,12 @@ public class MediaController extends FrameLayout {
     if(mAnchor != null)        
         {
             mAnchor.removeOnLayoutChangeListener(mLayoutChangeListener);
-        } 
+        } //End block
         mAnchor = view;
     if(mAnchor != null)        
         {
             mAnchor.addOnLayoutChangeListener(mLayoutChangeListener);
-        } 
+        } //End block
         FrameLayout.LayoutParams frameParams = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
@@ -476,21 +476,21 @@ public class MediaController extends FrameLayout {
         removeAllViews();
         View v = makeControllerView();
         addView(v, frameParams);
-        
-        
-            
-        
-        
-        
-            
-        
-        
-                
-                
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mAnchor != null) {
+            //mAnchor.removeOnLayoutChangeListener(mLayoutChangeListener);
+        //}
+        //mAnchor = view;
+        //if (mAnchor != null) {
+            //mAnchor.addOnLayoutChangeListener(mLayoutChangeListener);
+        //}
+        //FrameLayout.LayoutParams frameParams = new FrameLayout.LayoutParams(
+                //ViewGroup.LayoutParams.MATCH_PARENT,
+                //ViewGroup.LayoutParams.MATCH_PARENT
+        //);
+        //removeAllViews();
+        //View v = makeControllerView();
+        //addView(v, frameParams);
     }
 
     
@@ -502,11 +502,11 @@ public class MediaController extends FrameLayout {
 View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
         var17ED5111C4228ECEE4A6CF715C735C69_1669061061.addTaint(taint);
         return var17ED5111C4228ECEE4A6CF715C735C69_1669061061;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //LayoutInflater inflate = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //mRoot = inflate.inflate(com.android.internal.R.layout.media_controller, null);
+        //initControllerView(mRoot);
+        //return mRoot;
     }
 
     
@@ -517,7 +517,7 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
         {
             mPauseButton.requestFocus();
             mPauseButton.setOnClickListener(mPauseListener);
-        } 
+        } //End block
         mFfwdButton = (ImageButton) v.findViewById(com.android.internal.R.id.ffwd);
     if(mFfwdButton != null)        
         {
@@ -525,8 +525,8 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
     if(!mFromXml)            
             {
                 mFfwdButton.setVisibility(mUseFastForward ? View.VISIBLE : View.GONE);
-            } 
-        } 
+            } //End block
+        } //End block
         mRewButton = (ImageButton) v.findViewById(com.android.internal.R.id.rew);
     if(mRewButton != null)        
         {
@@ -534,18 +534,18 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
     if(!mFromXml)            
             {
                 mRewButton.setVisibility(mUseFastForward ? View.VISIBLE : View.GONE);
-            } 
-        } 
+            } //End block
+        } //End block
         mNextButton = (ImageButton) v.findViewById(com.android.internal.R.id.next);
     if(mNextButton != null && !mFromXml && !mListenersSet)        
         {
             mNextButton.setVisibility(View.GONE);
-        } 
+        } //End block
         mPrevButton = (ImageButton) v.findViewById(com.android.internal.R.id.prev);
     if(mPrevButton != null && !mFromXml && !mListenersSet)        
         {
             mPrevButton.setVisibility(View.GONE);
-        } 
+        } //End block
         mProgress = (ProgressBar) v.findViewById(com.android.internal.R.id.mediacontroller_progress);
     if(mProgress != null)        
         {
@@ -553,24 +553,24 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
             {
                 SeekBar seeker = (SeekBar) mProgress;
                 seeker.setOnSeekBarChangeListener(mSeekListener);
-            } 
+            } //End block
             mProgress.setMax(1000);
-        } 
+        } //End block
         mEndTime = (TextView) v.findViewById(com.android.internal.R.id.time);
         mCurrentTime = (TextView) v.findViewById(com.android.internal.R.id.time_current);
         mFormatBuilder = new StringBuilder();
         mFormatter = new Formatter(mFormatBuilder, Locale.getDefault());
         installPrevNextListeners();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.288 -0400", hash_original_method = "F96F3B42B5EBC38D2746BE6361617E40", hash_generated_method = "5CD112AEC01E8D805545E23D791EAB4F")
     public void show() {
         show(sDefaultTimeout);
-        
-        
+        // ---------- Original Method ----------
+        //show(sDefaultTimeout);
     }
 
     
@@ -581,32 +581,32 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
     if(mPauseButton != null && !mPlayer.canPause())            
             {
                 mPauseButton.setEnabled(false);
-            } 
+            } //End block
     if(mRewButton != null && !mPlayer.canSeekBackward())            
             {
                 mRewButton.setEnabled(false);
-            } 
+            } //End block
     if(mFfwdButton != null && !mPlayer.canSeekForward())            
             {
                 mFfwdButton.setEnabled(false);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IncompatibleClassChangeError ex)
         {
-        } 
-        
-        
-            
-                
-            
-            
-                
-            
-            
-                
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (mPauseButton != null && !mPlayer.canPause()) {
+                //mPauseButton.setEnabled(false);
+            //}
+            //if (mRewButton != null && !mPlayer.canSeekBackward()) {
+                //mRewButton.setEnabled(false);
+            //}
+            //if (mFfwdButton != null && !mPlayer.canSeekForward()) {
+                //mFfwdButton.setEnabled(false);
+            //}
+        //} catch (IncompatibleClassChangeError ex) {
+        //}
     }
 
     
@@ -619,12 +619,12 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
     if(mPauseButton != null)            
             {
                 mPauseButton.requestFocus();
-            } 
+            } //End block
             disableUnsupportedButtons();
             updateFloatingWindowLayout();
             mWindowManager.addView(mDecor, mDecorLayoutParams);
             mShowing = true;
-        } 
+        } //End block
         updatePausePlay();
         mHandler.sendEmptyMessage(SHOW_PROGRESS);
         Message msg = mHandler.obtainMessage(FADE_OUT);
@@ -632,36 +632,35 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
         {
             mHandler.removeMessages(FADE_OUT);
             mHandler.sendMessageDelayed(msg, timeout);
-        } 
-        
-        
-            
-            
-                
-            
-            
-            
-            
-            
-        
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!mShowing && mAnchor != null) {
+            //setProgress();
+            //if (mPauseButton != null) {
+                //mPauseButton.requestFocus();
+            //}
+            //disableUnsupportedButtons();
+            //updateFloatingWindowLayout();
+            //mWindowManager.addView(mDecor, mDecorLayoutParams);
+            //mShowing = true;
+        //}
+        //updatePausePlay();
+        //mHandler.sendEmptyMessage(SHOW_PROGRESS);
+        //Message msg = mHandler.obtainMessage(FADE_OUT);
+        //if (timeout != 0) {
+            //mHandler.removeMessages(FADE_OUT);
+            //mHandler.sendMessageDelayed(msg, timeout);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.289 -0400", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "4C0714DF4A7467BD2803EC5433944881")
     public boolean isShowing() {
         boolean varED7142E6C56E85275A9E1F55586553C1_1427687128 = (mShowing);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1101018332 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1101018332;
-        
-        
+        // ---------- Original Method ----------
+        //return mShowing;
     }
 
     
@@ -675,24 +674,24 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
             {
                 mHandler.removeMessages(SHOW_PROGRESS);
                 mWindowManager.removeView(mDecor);
-            } 
+            } //End block
             catch (IllegalArgumentException ex)
             {
-            } 
+            } //End block
             mShowing = false;
-        } 
-        
-        
-            
-        
-            
-                
-                
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAnchor == null)
+            //return;
+        //if (mShowing) {
+            //try {
+                //mHandler.removeMessages(SHOW_PROGRESS);
+                //mWindowManager.removeView(mDecor);
+            //} catch (IllegalArgumentException ex) {
+                //Log.w("MediaController", "already removed");
+            //}
+            //mShowing = false;
+        //}
     }
 
     
@@ -709,24 +708,24 @@ View var17ED5111C4228ECEE4A6CF715C735C69_1669061061 =         mRoot;
 String varCE7E2E10EFE2470EBFC4F3C6DE6DB9DC_1869213862 =             mFormatter.format("%d:%02d:%02d", hours, minutes, seconds).toString();
             varCE7E2E10EFE2470EBFC4F3C6DE6DB9DC_1869213862.addTaint(taint);
             return varCE7E2E10EFE2470EBFC4F3C6DE6DB9DC_1869213862;
-        } 
+        } //End block
         else
         {
 String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.format("%02d:%02d", minutes, seconds).toString();
             var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324.addTaint(taint);
             return var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324;
-        } 
-        
-        
-        
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int totalSeconds = timeMs / 1000;
+        //int seconds = totalSeconds % 60;
+        //int minutes = (totalSeconds / 60) % 60;
+        //int hours   = totalSeconds / 3600;
+        //mFormatBuilder.setLength(0);
+        //if (hours > 0) {
+            //return mFormatter.format("%d:%02d:%02d", hours, minutes, seconds).toString();
+        //} else {
+            //return mFormatter.format("%02d:%02d", minutes, seconds).toString();
+        //}
     }
 
     
@@ -737,7 +736,7 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
             int varCFCD208495D565EF66E7DFF9F98764DA_2026748796 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039758976 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039758976;
-        } 
+        } //End block
         int position = mPlayer.getCurrentPosition();
         int duration = mPlayer.getDuration();
     if(mProgress != null)        
@@ -746,10 +745,10 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
             {
                 long pos = 1000L * position / duration;
                 mProgress.setProgress( (int) pos);
-            } 
+            } //End block
             int percent = mPlayer.getBufferPercentage();
             mProgress.setSecondaryProgress(percent * 10);
-        } 
+        } //End block
     if(mEndTime != null)        
         mEndTime.setText(stringForTime(duration));
     if(mCurrentTime != null)        
@@ -757,55 +756,55 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
         int var4757FE07FD492A8BE0EA6A760D683D6E_6774283 = (position);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967869499 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967869499;
-        
-        
-            
-        
-        
-        
-        
-            
-                
-                
-            
-            
-            
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (mPlayer == null || mDragging) {
+            //return 0;
+        //}
+        //int position = mPlayer.getCurrentPosition();
+        //int duration = mPlayer.getDuration();
+        //if (mProgress != null) {
+            //if (duration > 0) {
+                //long pos = 1000L * position / duration;
+                //mProgress.setProgress( (int) pos);
+            //}
+            //int percent = mPlayer.getBufferPercentage();
+            //mProgress.setSecondaryProgress(percent * 10);
+        //}
+        //if (mEndTime != null)
+            //mEndTime.setText(stringForTime(duration));
+        //if (mCurrentTime != null)
+            //mCurrentTime.setText(stringForTime(position));
+        //return position;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.291 -0400", hash_original_method = "804998442429040CE8E4A7C248858770", hash_generated_method = "791AB46D9048A1C8D197EEED731412AF")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         show(sDefaultTimeout);
         boolean varB326B5062B2F0E69046810717534CB09_105633771 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1916878395 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1916878395;
-        
-        
-        
+        // ---------- Original Method ----------
+        //show(sDefaultTimeout);
+        //return true;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.292 -0400", hash_original_method = "294FBCC6A05258601D3163C3FD371667", hash_generated_method = "CAD0C8454EF62D319AC42C0146B54994")
     @Override
     public boolean onTrackballEvent(MotionEvent ev) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(ev.getTaint());
         show(sDefaultTimeout);
         boolean var68934A3E9455FA72420237EB05902327_660321111 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1192462908 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1192462908;
-        
-        
-        
+        // ---------- Original Method ----------
+        //show(sDefaultTimeout);
+        //return false;
     }
 
     
@@ -827,12 +826,12 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
     if(mPauseButton != null)                
                 {
                     mPauseButton.requestFocus();
-                } 
-            } 
+                } //End block
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1549582474 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_429371900 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_429371900;
-        } 
+        } //End block
         else
     if(keyCode == KeyEvent.KEYCODE_MEDIA_PLAY)        
         {
@@ -841,11 +840,11 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
                 mPlayer.start();
                 updatePausePlay();
                 show(sDefaultTimeout);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_15284943 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_903875390 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_903875390;
-        } 
+        } //End block
         else
     if(keyCode == KeyEvent.KEYCODE_MEDIA_STOP
                 || keyCode == KeyEvent.KEYCODE_MEDIA_PAUSE)        
@@ -855,11 +854,11 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
                 mPlayer.pause();
                 updatePausePlay();
                 show(sDefaultTimeout);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1464996813 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984917029 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984917029;
-        } 
+        } //End block
         else
     if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN
                 || keyCode == KeyEvent.KEYCODE_VOLUME_UP
@@ -868,24 +867,24 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
             boolean var639DD27D10E8FF69097B1398D445D1B9_170185017 = (super.dispatchKeyEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_877050260 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_877050260;
-        } 
+        } //End block
         else
     if(keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_MENU)        
         {
     if(uniqueDown)            
             {
                 hide();
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1754938926 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1068622456 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1068622456;
-        } 
+        } //End block
         show(sDefaultTimeout);
         boolean var639DD27D10E8FF69097B1398D445D1B9_618828141 = (super.dispatchKeyEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_452513300 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_452513300;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -896,19 +895,19 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
     if(mPlayer.isPlaying())        
         {
             mPauseButton.setImageResource(com.android.internal.R.drawable.ic_media_pause);
-        } 
+        } //End block
         else
         {
             mPauseButton.setImageResource(com.android.internal.R.drawable.ic_media_play);
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mRoot == null || mPauseButton == null)
+            //return;
+        //if (mPlayer.isPlaying()) {
+            //mPauseButton.setImageResource(com.android.internal.R.drawable.ic_media_pause);
+        //} else {
+            //mPauseButton.setImageResource(com.android.internal.R.drawable.ic_media_play);
+        //}
     }
 
     
@@ -917,19 +916,19 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
     if(mPlayer.isPlaying())        
         {
             mPlayer.pause();
-        } 
+        } //End block
         else
         {
             mPlayer.start();
-        } 
+        } //End block
         updatePausePlay();
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mPlayer.isPlaying()) {
+            //mPlayer.pause();
+        //} else {
+            //mPlayer.start();
+        //}
+        //updatePausePlay();
     }
 
     
@@ -940,50 +939,50 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
     if(mPauseButton != null)        
         {
             mPauseButton.setEnabled(enabled);
-        } 
+        } //End block
     if(mFfwdButton != null)        
         {
             mFfwdButton.setEnabled(enabled);
-        } 
+        } //End block
     if(mRewButton != null)        
         {
             mRewButton.setEnabled(enabled);
-        } 
+        } //End block
     if(mNextButton != null)        
         {
             mNextButton.setEnabled(enabled && mNextListener != null);
-        } 
+        } //End block
     if(mPrevButton != null)        
         {
             mPrevButton.setEnabled(enabled && mPrevListener != null);
-        } 
+        } //End block
     if(mProgress != null)        
         {
             mProgress.setEnabled(enabled);
-        } 
+        } //End block
         disableUnsupportedButtons();
         super.setEnabled(enabled);
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mPauseButton != null) {
+            //mPauseButton.setEnabled(enabled);
+        //}
+        //if (mFfwdButton != null) {
+            //mFfwdButton.setEnabled(enabled);
+        //}
+        //if (mRewButton != null) {
+            //mRewButton.setEnabled(enabled);
+        //}
+        //if (mNextButton != null) {
+            //mNextButton.setEnabled(enabled && mNextListener != null);
+        //}
+        //if (mPrevButton != null) {
+            //mPrevButton.setEnabled(enabled && mPrevListener != null);
+        //}
+        //if (mProgress != null) {
+            //mProgress.setEnabled(enabled);
+        //}
+        //disableUnsupportedButtons();
+        //super.setEnabled(enabled);
     }
 
     
@@ -993,21 +992,21 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
         {
             mNextButton.setOnClickListener(mNextListener);
             mNextButton.setEnabled(mNextListener != null);
-        } 
+        } //End block
     if(mPrevButton != null)        
         {
             mPrevButton.setOnClickListener(mPrevListener);
             mPrevButton.setEnabled(mPrevListener != null);
-        } 
-        
-        
-            
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mNextButton != null) {
+            //mNextButton.setOnClickListener(mNextListener);
+            //mNextButton.setEnabled(mNextListener != null);
+        //}
+        //if (mPrevButton != null) {
+            //mPrevButton.setOnClickListener(mPrevListener);
+            //mPrevButton.setEnabled(mPrevListener != null);
+        //}
     }
 
     
@@ -1022,25 +1021,25 @@ String var62E3B0507D0D1F6D3251AAF88ECDF1E3_106119324 =             mFormatter.fo
     if(mNextButton != null && !mFromXml)            
             {
                 mNextButton.setVisibility(View.VISIBLE);
-            } 
+            } //End block
     if(mPrevButton != null && !mFromXml)            
             {
                 mPrevButton.setVisibility(View.VISIBLE);
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-            
-                
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //mNextListener = next;
+        //mPrevListener = prev;
+        //mListenersSet = true;
+        //if (mRoot != null) {
+            //installPrevNextListeners();
+            //if (mNextButton != null && !mFromXml) {
+                //mNextButton.setVisibility(View.VISIBLE);
+            //}
+            //if (mPrevButton != null && !mFromXml) {
+                //mPrevButton.setVisibility(View.VISIBLE);
+            //}
+        //}
     }
 
     

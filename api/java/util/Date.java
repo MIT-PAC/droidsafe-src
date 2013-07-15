@@ -1,6 +1,6 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.045 -0400", hash_original_method = "117F9B64DCE96B425DE39D6FF0E7C956", hash_generated_method = "B532C1831EBB14D72EFD726653EE6196")
     public  Date() {
         this(System.currentTimeMillis());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,10 +34,10 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
         GregorianCalendar cal = new GregorianCalendar(false);
         cal.set(1900 + year, month, day);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(false);
+        //cal.set(1900 + year, month, day);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
@@ -52,10 +52,10 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
         GregorianCalendar cal = new GregorianCalendar(false);
         cal.set(1900 + year, month, day, hour, minute);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(false);
+        //cal.set(1900 + year, month, day, hour, minute);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
@@ -71,18 +71,18 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
         GregorianCalendar cal = new GregorianCalendar(false);
         cal.set(1900 + year, month, day, hour, minute, second);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(false);
+        //cal.set(1900 + year, month, day, hour, minute, second);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.059 -0400", hash_original_method = "F91B8E0C111622A18C17EB4FC5AA472B", hash_generated_method = "E4592A518430609A4961F6175BC1CB09")
     public  Date(long milliseconds) {
         this.milliseconds = milliseconds;
-        
-        
+        // ---------- Original Method ----------
+        //this.milliseconds = milliseconds;
     }
 
     
@@ -90,32 +90,30 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
     @Deprecated
     public  Date(String string) {
         milliseconds = parse(string);
-        
-        
+        // ---------- Original Method ----------
+        //milliseconds = parse(string);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.060 -0400", hash_original_method = "A5A1DDC35C23D543E612D23967A596DA", hash_generated_method = "72EEF74066174EA0E31508AF4C7CF140")
     public boolean after(Date date) {
         addTaint(date.getTaint());
         boolean varAA1B5AE06D7D8914F4C88F1B2B9CAF39_1081746938 = (milliseconds > date.milliseconds);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2064584188 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2064584188;
-        
-        
+        // ---------- Original Method ----------
+        //return milliseconds > date.milliseconds;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.061 -0400", hash_original_method = "EB21B83A31DD3DBD1842C230376F433E", hash_generated_method = "705F0C750F52E7D7519F2A94CF7B24E9")
     public boolean before(Date date) {
         addTaint(date.getTaint());
         boolean var8F37454CBE5A948B51DA3DDBC3CD8EF2_1928426664 = (milliseconds < date.milliseconds);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591752288 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_591752288;
-        
-        
+        // ---------- Original Method ----------
+        //return milliseconds < date.milliseconds;
     }
 
     
@@ -127,23 +125,22 @@ public class Date implements Serializable, Cloneable, Comparable<Date> {
 Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone();
             var46F3A0D86742C1D6E099C2B166941A33_904798089.addTaint(taint);
             return var46F3A0D86742C1D6E099C2B166941A33_904798089;
-        } 
+        } //End block
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_193654815 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_193654815.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_193654815;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return super.clone();
+        //} catch (CloneNotSupportedException e) {
+            //throw new AssertionError(e);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.062 -0400", hash_original_method = "7C9742DC24BA8DF560999557E5DD5087", hash_generated_method = "3226421FC884815D8FCEFA68E6887FE8")
     public int compareTo(Date date) {
         addTaint(date.getTaint());
@@ -152,28 +149,27 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
             int var6BB61E3B7BCE0931DA574D19D1D82C88_512513585 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836764192 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836764192;
-        } 
+        } //End block
     if(milliseconds == date.milliseconds)        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1895775631 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_94971653 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_94971653;
-        } 
+        } //End block
         int varC4CA4238A0B923820DCC509A6F75849B_1839740911 = (1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_555193731 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_555193731;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (milliseconds < date.milliseconds) {
+            //return -1;
+        //}
+        //if (milliseconds == date.milliseconds) {
+            //return 0;
+        //}
+        //return 1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.064 -0400", hash_original_method = "DDDF9262D80550B9DB77ACA0997BD3D6", hash_generated_method = "DFB558AC537F36CA3B322D8E2B8ACE8E")
     @Override
     public boolean equals(Object object) {
@@ -182,9 +178,9 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
                 && (milliseconds == ((Date) object).milliseconds));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_693825724 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_693825724;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return (object == this) || (object instanceof Date)
+                //&& (milliseconds == ((Date) object).milliseconds);
     }
 
     
@@ -194,8 +190,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         int varE2F6EA00624EB60C2933E928C123A826_698467547 = (new GregorianCalendar(milliseconds).get(Calendar.DATE));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501377067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501377067;
-        
-        
+        // ---------- Original Method ----------
+        //return new GregorianCalendar(milliseconds).get(Calendar.DATE);
     }
 
     
@@ -205,8 +201,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         int varB2F8B9B398FDB94E56389833F5F3960F_1118624696 = (new GregorianCalendar(milliseconds).get(Calendar.DAY_OF_WEEK) - 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2087739511 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2087739511;
-        
-        
+        // ---------- Original Method ----------
+        //return new GregorianCalendar(milliseconds).get(Calendar.DAY_OF_WEEK) - 1;
     }
 
     
@@ -216,8 +212,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         int var9F064158B6196C9FECB2CFB763A03009_2116733421 = (new GregorianCalendar(milliseconds).get(Calendar.HOUR_OF_DAY));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1003830039 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1003830039;
-        
-        
+        // ---------- Original Method ----------
+        //return new GregorianCalendar(milliseconds).get(Calendar.HOUR_OF_DAY);
     }
 
     
@@ -227,8 +223,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         int var09A9E1FE99091EAD78E67B90E4CF4603_230409878 = (new GregorianCalendar(milliseconds).get(Calendar.MINUTE));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1754784421 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1754784421;
-        
-        
+        // ---------- Original Method ----------
+        //return new GregorianCalendar(milliseconds).get(Calendar.MINUTE);
     }
 
     
@@ -238,8 +234,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         int var637D8ACF7955DD157D716D483491F8C7_290952130 = (new GregorianCalendar(milliseconds).get(Calendar.MONTH));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1182322843 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1182322843;
-        
-        
+        // ---------- Original Method ----------
+        //return new GregorianCalendar(milliseconds).get(Calendar.MONTH);
     }
 
     
@@ -249,19 +245,18 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         int varE3AF7E687FBCFDC6C65FC46B025DC11D_495053926 = (new GregorianCalendar(milliseconds).get(Calendar.SECOND));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749302158 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749302158;
-        
-        
+        // ---------- Original Method ----------
+        //return new GregorianCalendar(milliseconds).get(Calendar.SECOND);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.067 -0400", hash_original_method = "6634404A1A66BE1A7302C8A8E427A289", hash_generated_method = "BC338FA7EAAA460496E780E89AA302F4")
     public long getTime() {
         long varC50C3B1CA82BA7B7AB55AFDF66A2F6C9_1648044379 = (milliseconds);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1553917933 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1553917933;
-        
-        
+        // ---------- Original Method ----------
+        //return milliseconds;
     }
 
     
@@ -272,9 +267,9 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         int var802B628393FD498AF64B8F7FDD4E24EC_1477853642 = (-(cal.get(Calendar.ZONE_OFFSET) + cal.get(Calendar.DST_OFFSET)) / 60000);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415250952 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415250952;
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(milliseconds);
+        //return -(cal.get(Calendar.ZONE_OFFSET) + cal.get(Calendar.DST_OFFSET)) / 60000;
     }
 
     
@@ -284,20 +279,19 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         int var0889031199AB7E2784826BF4CFC13EBD_2023557477 = (new GregorianCalendar(milliseconds).get(Calendar.YEAR) - 1900);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074019605 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074019605;
-        
-        
+        // ---------- Original Method ----------
+        //return new GregorianCalendar(milliseconds).get(Calendar.YEAR) - 1900;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.068 -0400", hash_original_method = "B128FED5B5AAAF883404F36E34AD6524", hash_generated_method = "6283D4728D316DEE6B7D1D74047BA88C")
     @Override
     public int hashCode() {
         int var4163CD569649CA0E044A164821F626CA_219559333 = ((int) (milliseconds >>> 32) ^ (int) milliseconds);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1939211459 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1939211459;
-        
-        
+        // ---------- Original Method ----------
+        //return (int) (milliseconds >>> 32) ^ (int) milliseconds;
     }
 
     
@@ -496,10 +490,10 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         GregorianCalendar cal = new GregorianCalendar(milliseconds);
         cal.set(Calendar.DATE, day);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(milliseconds);
+        //cal.set(Calendar.DATE, day);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
@@ -510,10 +504,10 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         GregorianCalendar cal = new GregorianCalendar(milliseconds);
         cal.set(Calendar.HOUR_OF_DAY, hour);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(milliseconds);
+        //cal.set(Calendar.HOUR_OF_DAY, hour);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
@@ -524,10 +518,10 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         GregorianCalendar cal = new GregorianCalendar(milliseconds);
         cal.set(Calendar.MINUTE, minute);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(milliseconds);
+        //cal.set(Calendar.MINUTE, minute);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
@@ -538,10 +532,10 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         GregorianCalendar cal = new GregorianCalendar(milliseconds);
         cal.set(Calendar.MONTH, month);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(milliseconds);
+        //cal.set(Calendar.MONTH, month);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
@@ -552,19 +546,18 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         GregorianCalendar cal = new GregorianCalendar(milliseconds);
         cal.set(Calendar.SECOND, second);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(milliseconds);
+        //cal.set(Calendar.SECOND, second);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.072 -0400", hash_original_method = "9E6A699B7F6421DBF4934C3ED6E82161", hash_generated_method = "1BF1F7F86998003806F58E7BCFC18FB0")
     public void setTime(long milliseconds) {
         this.milliseconds = milliseconds;
-        
-        
+        // ---------- Original Method ----------
+        //this.milliseconds = milliseconds;
     }
 
     
@@ -575,10 +568,10 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
         GregorianCalendar cal = new GregorianCalendar(milliseconds);
         cal.set(Calendar.YEAR, year + 1900);
         milliseconds = cal.getTimeInMillis();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //GregorianCalendar cal = new GregorianCalendar(milliseconds);
+        //cal.set(Calendar.YEAR, year + 1900);
+        //milliseconds = cal.getTimeInMillis();
     }
 
     
@@ -593,13 +586,13 @@ Object var46F3A0D86742C1D6E099C2B166941A33_904798089 =             super.clone()
 String var3D3DAAC9586EC28FD8E8B7CAD3910303_1432280450 =         sdf.format(this);
         var3D3DAAC9586EC28FD8E8B7CAD3910303_1432280450.addTaint(taint);
         return var3D3DAAC9586EC28FD8E8B7CAD3910303_1432280450;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //SimpleDateFormat sdf = new SimpleDateFormat("d MMM y HH:mm:ss 'GMT'", Locale.US);
+        //TimeZone gmtZone = TimeZone.getTimeZone("GMT");
+        //sdf.setTimeZone(gmtZone);
+        //GregorianCalendar gc = new GregorianCalendar(gmtZone);
+        //gc.setTimeInMillis(milliseconds);
+        //return sdf.format(this);
     }
 
     
@@ -609,8 +602,8 @@ String var3D3DAAC9586EC28FD8E8B7CAD3910303_1432280450 =         sdf.format(this)
 String varB49EBA2640DE06D41F94611F3DCCEEA9_949693979 =         DateFormat.getDateTimeInstance().format(this);
         varB49EBA2640DE06D41F94611F3DCCEEA9_949693979.addTaint(taint);
         return varB49EBA2640DE06D41F94611F3DCCEEA9_949693979;
-        
-        
+        // ---------- Original Method ----------
+        //return DateFormat.getDateTimeInstance().format(this);
     }
 
     
@@ -639,8 +632,8 @@ String varB49EBA2640DE06D41F94611F3DCCEEA9_949693979 =         DateFormat.getDat
 String varE65B3A02759122992CB82C0E651AD408_2006945014 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_2006945014.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_2006945014;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -696,9 +689,9 @@ String varE65B3A02759122992CB82C0E651AD408_2006945014 =         result.toString(
         addTaint(stream.getTaint());
         stream.defaultWriteObject();
         stream.writeLong(getTime());
-        
-        
-        
+        // ---------- Original Method ----------
+        //stream.defaultWriteObject();
+        //stream.writeLong(getTime());
     }
 
     
@@ -708,9 +701,9 @@ String varE65B3A02759122992CB82C0E651AD408_2006945014 =         result.toString(
         addTaint(stream.getTaint());
         stream.defaultReadObject();
         setTime(stream.readLong());
-        
-        
-        
+        // ---------- Original Method ----------
+        //stream.defaultReadObject();
+        //setTime(stream.readLong());
     }
 
     

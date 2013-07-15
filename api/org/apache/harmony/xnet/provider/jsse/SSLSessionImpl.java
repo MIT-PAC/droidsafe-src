@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -79,7 +79,7 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
             id = EmptyArray.BYTE;
             isServer = false;
             isValid = false;
-        } 
+        } //End block
         else
         {
             this.cipherSuite = cipher_suite;
@@ -91,26 +91,26 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
             id[30] = (byte) ((time & 0x0000FF00) >>> 8);
             id[31] = (byte) ((time & 0x000000FF));
             isServer = true;
-        } 
-        
-        
-        
-        
-            
-            
-            
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //creationTime = System.currentTimeMillis();
+        //lastAccessedTime = creationTime;
+        //if (cipher_suite == null) {
+            //this.cipherSuite = CipherSuite.SSL_NULL_WITH_NULL_NULL;
+            //id = EmptyArray.BYTE;
+            //isServer = false;
+            //isValid = false;
+        //} else {
+            //this.cipherSuite = cipher_suite;
+            //id = new byte[32];
+            //secureRandom.nextBytes(id);
+            //long time = creationTime / 1000;
+            //id[28] = (byte) ((time & 0xFF000000) >>> 24);
+            //id[29] = (byte) ((time & 0x00FF0000) >>> 16);
+            //id[30] = (byte) ((time & 0x0000FF00) >>> 8);
+            //id[31] = (byte) ((time & 0x000000FF));
+            //isServer = true;
+        //}
     }
 
     
@@ -118,18 +118,17 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
     public  SSLSessionImpl(SecureRandom secureRandom) {
         this(null, secureRandom);
         addTaint(secureRandom.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.500 -0400", hash_original_method = "A8B8393BBD8B21276043F8F436BCE41F", hash_generated_method = "D2A9292801C9F9B54EAF71577DE1E7F1")
     public int getApplicationBufferSize() {
         int var241C2B32F58EBF2C562C0D8BE125FE0C_1553647346 = (SSLRecordProtocol.MAX_DATA_LENGTH);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260930217 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260930217;
-        
-        
+        // ---------- Original Method ----------
+        //return SSLRecordProtocol.MAX_DATA_LENGTH;
     }
 
     
@@ -138,52 +137,48 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
 String var80FBB7E6B734C861203B0EF1B8AB804F_923241733 =         cipherSuite.getName();
         var80FBB7E6B734C861203B0EF1B8AB804F_923241733.addTaint(taint);
         return var80FBB7E6B734C861203B0EF1B8AB804F_923241733;
-        
-        
+        // ---------- Original Method ----------
+        //return cipherSuite.getName();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.501 -0400", hash_original_method = "09A0842085DDEEEFFBE4843237FA7655", hash_generated_method = "9C58435F649200811770B80F218AE9CF")
     public long getCreationTime() {
         long var8799ECF12F308B9267E84384F8C130BF_2031512254 = (creationTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1006556452 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1006556452;
-        
-        
+        // ---------- Original Method ----------
+        //return creationTime;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.501 -0400", hash_original_method = "6FF1AD4C2D68C6B37F5B643FEDAC8BE4", hash_generated_method = "B2DEB6EC0A503265BFB78A8D24D8B4AA")
     public byte[] getId() {
         byte[] varB80BB7740288FDA1F201890375A60C8F_1590308076 = (id);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1509392512 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1509392512;
-        
-        
+        // ---------- Original Method ----------
+        //return id;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.502 -0400", hash_original_method = "79FEA1654BACC0D1C8F52D94037731AA", hash_generated_method = "8082F6C10ECCF91D1EC505D76C5BEB58")
     public long getLastAccessedTime() {
         long varD52BF263BB592DFD5C99BCFC956503E4_560632351 = (lastAccessedTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_800016825 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_800016825;
-        
-        
+        // ---------- Original Method ----------
+        //return lastAccessedTime;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.502 -0400", hash_original_method = "00176E7E524F828990985588910F48EC", hash_generated_method = "036AA02C1C6A85F59E623C246760CA34")
     public Certificate[] getLocalCertificates() {
 Certificate[] var4C5AE20413882C8DD1DF3FE09B18641D_2009165099 =         localCertificates;
         var4C5AE20413882C8DD1DF3FE09B18641D_2009165099.addTaint(taint);
         return var4C5AE20413882C8DD1DF3FE09B18641D_2009165099;
-        
-        
+        // ---------- Original Method ----------
+        //return localCertificates;
     }
 
     
@@ -194,26 +189,25 @@ Certificate[] var4C5AE20413882C8DD1DF3FE09B18641D_2009165099 =         localCert
 Principal var8766F23B953392F7F4017C72F2D2F8A5_1007398192 =             localCertificates[0].getSubjectX500Principal();
             var8766F23B953392F7F4017C72F2D2F8A5_1007398192.addTaint(taint);
             return var8766F23B953392F7F4017C72F2D2F8A5_1007398192;
-        } 
+        } //End block
 Principal var540C13E9E156B687226421B24F2DF178_944546976 =         null;
         var540C13E9E156B687226421B24F2DF178_944546976.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_944546976;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (localCertificates != null && localCertificates.length > 0) {
+            //return localCertificates[0].getSubjectX500Principal();
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.503 -0400", hash_original_method = "D48FD6D531D6586277314A5CB11C610B", hash_generated_method = "57357E4E414D4AE6638B99984A9AAAE9")
     public int getPacketBufferSize() {
         int varC83B5DF623EDEFDB0686BE40106F81D9_679394393 = (SSLRecordProtocol.MAX_SSL_PACKET_SIZE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850336689 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850336689;
-        
-        
+        // ---------- Original Method ----------
+        //return SSLRecordProtocol.MAX_SSL_PACKET_SIZE;
     }
 
     
@@ -224,7 +218,7 @@ Principal var540C13E9E156B687226421B24F2DF178_944546976 =         null;
             SSLPeerUnverifiedException var0FB3652A7C89F3D0BB8816AC8678472B_222134137 = new SSLPeerUnverifiedException("No peer certificate");
             var0FB3652A7C89F3D0BB8816AC8678472B_222134137.addTaint(taint);
             throw var0FB3652A7C89F3D0BB8816AC8678472B_222134137;
-        } 
+        } //End block
         javax.security.cert.X509Certificate[] certs = new javax.security.cert.X509Certificate[peerCertificates.length];
 for(int i = 0;i < certs.length;i++)
         {
@@ -232,31 +226,31 @@ for(int i = 0;i < certs.length;i++)
             {
                 certs[i] = javax.security.cert.X509Certificate.getInstance(peerCertificates[i]
                         .getEncoded());
-            } 
+            } //End block
             catch (javax.security.cert.CertificateException ignored)
             {
-            } 
+            } //End block
             catch (CertificateEncodingException ignored)
             {
-            } 
-        } 
+            } //End block
+        } //End block
 javax.security.cert.X509Certificate[] var9BDF30FA618B8006CA81E4F4FD9FBC1B_948251500 =         certs;
         var9BDF30FA618B8006CA81E4F4FD9FBC1B_948251500.addTaint(taint);
         return var9BDF30FA618B8006CA81E4F4FD9FBC1B_948251500;
-        
-        
-            
-        
-        
-        
-            
-                
-                        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (peerCertificates == null) {
+            //throw new SSLPeerUnverifiedException("No peer certificate");
+        //}
+        //javax.security.cert.X509Certificate[] certs = new javax.security.cert.X509Certificate[peerCertificates.length];
+        //for (int i = 0; i < certs.length; i++) {
+            //try {
+                //certs[i] = javax.security.cert.X509Certificate.getInstance(peerCertificates[i]
+                        //.getEncoded());
+            //} catch (javax.security.cert.CertificateException ignored) {
+            //} catch (CertificateEncodingException ignored) {
+            //}
+        //}
+        //return certs;
     }
 
     
@@ -267,37 +261,35 @@ javax.security.cert.X509Certificate[] var9BDF30FA618B8006CA81E4F4FD9FBC1B_948251
             SSLPeerUnverifiedException var0FB3652A7C89F3D0BB8816AC8678472B_822985837 = new SSLPeerUnverifiedException("No peer certificate");
             var0FB3652A7C89F3D0BB8816AC8678472B_822985837.addTaint(taint);
             throw var0FB3652A7C89F3D0BB8816AC8678472B_822985837;
-        } 
+        } //End block
 Certificate[] varF937CE92F117196F80CD35B09BCDC7EA_1569890517 =         peerCertificates;
         varF937CE92F117196F80CD35B09BCDC7EA_1569890517.addTaint(taint);
         return varF937CE92F117196F80CD35B09BCDC7EA_1569890517;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (peerCertificates == null) {
+            //throw new SSLPeerUnverifiedException("No peer certificate");
+        //}
+        //return peerCertificates;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.504 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "CD6C5018026D1702C4F118D6086EE13F")
     public String getPeerHost() {
 String varFEF815055C97D4B621404BF729E85DA2_223717088 =         peerHost;
         varFEF815055C97D4B621404BF729E85DA2_223717088.addTaint(taint);
         return varFEF815055C97D4B621404BF729E85DA2_223717088;
-        
-        
+        // ---------- Original Method ----------
+        //return peerHost;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.505 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "028BCB00E8D36733EA764E658BFB944E")
     public int getPeerPort() {
         int varBBD5741C4F9994864582D25DD194C4DE_1581720676 = (peerPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_415151100 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_415151100;
-        
-        
+        // ---------- Original Method ----------
+        //return peerPort;
     }
 
     
@@ -308,37 +300,35 @@ String varFEF815055C97D4B621404BF729E85DA2_223717088 =         peerHost;
             SSLPeerUnverifiedException var0FB3652A7C89F3D0BB8816AC8678472B_287883919 = new SSLPeerUnverifiedException("No peer certificate");
             var0FB3652A7C89F3D0BB8816AC8678472B_287883919.addTaint(taint);
             throw var0FB3652A7C89F3D0BB8816AC8678472B_287883919;
-        } 
+        } //End block
 Principal var9A28761194D2D1E856FBE408F69063AC_1946620011 =         peerCertificates[0].getSubjectX500Principal();
         var9A28761194D2D1E856FBE408F69063AC_1946620011.addTaint(taint);
         return var9A28761194D2D1E856FBE408F69063AC_1946620011;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (peerCertificates == null) {
+            //throw new SSLPeerUnverifiedException("No peer certificate");
+        //}
+        //return peerCertificates[0].getSubjectX500Principal();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.505 -0400", hash_original_method = "70FFC4864CFD3FC7BC69978E71944D24", hash_generated_method = "DF5870D494BFDC1A653FACAE6ED329C3")
     public String getProtocol() {
 String varC1869FB983D83359EAFE829125122338_2119704046 =         (protocol == null) ? "NONE" : protocol.name;
         varC1869FB983D83359EAFE829125122338_2119704046.addTaint(taint);
         return varC1869FB983D83359EAFE829125122338_2119704046;
-        
-        
+        // ---------- Original Method ----------
+        //return (protocol == null) ? "NONE" : protocol.name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.506 -0400", hash_original_method = "E54F5411F9B3E4DD60F47670618D45C7", hash_generated_method = "1EB75247AB97E164F18D6EA122B811CB")
     public SSLSessionContext getSessionContext() {
 SSLSessionContext var4C2DD4015CB4BB3F876A587F79816595_1897751854 =         context;
         var4C2DD4015CB4BB3F876A587F79816595_1897751854.addTaint(taint);
         return var4C2DD4015CB4BB3F876A587F79816595_1897751854;
-        
-        
+        // ---------- Original Method ----------
+        //return context;
     }
 
     
@@ -350,15 +340,15 @@ SSLSessionContext var4C2DD4015CB4BB3F876A587F79816595_1897751854 =         conte
             IllegalArgumentException var6DECD338B4ADF738B2F3D7F9B2BA118C_1861702989 = new IllegalArgumentException("name == null");
             var6DECD338B4ADF738B2F3D7F9B2BA118C_1861702989.addTaint(taint);
             throw var6DECD338B4ADF738B2F3D7F9B2BA118C_1861702989;
-        } 
+        } //End block
 Object var6DAEDF94ADFD5EF7FEDE28F5B58DA162_1827220973 =         values.get(name);
         var6DAEDF94ADFD5EF7FEDE28F5B58DA162_1827220973.addTaint(taint);
         return var6DAEDF94ADFD5EF7FEDE28F5B58DA162_1827220973;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new IllegalArgumentException("name == null");
+        //}
+        //return values.get(name);
     }
 
     
@@ -367,19 +357,18 @@ Object var6DAEDF94ADFD5EF7FEDE28F5B58DA162_1827220973 =         values.get(name)
 String[] var8EC09F25808BADEED53BE05F8E91790F_718462388 =         values.keySet().toArray(new String[values.size()]);
         var8EC09F25808BADEED53BE05F8E91790F_718462388.addTaint(taint);
         return var8EC09F25808BADEED53BE05F8E91790F_718462388;
-        
-        
+        // ---------- Original Method ----------
+        //return values.keySet().toArray(new String[values.size()]);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.507 -0400", hash_original_method = "81658CAC0BD01D20DC226803375A1EFC", hash_generated_method = "1607D36240D420C7B62C0493DECE3B97")
     public void invalidate() {
         isValid = false;
         context = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //isValid = false;
+        //context = null;
     }
 
     
@@ -389,16 +378,16 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_718462388 =         values.keySet()
                 && lastAccessedTime + context.getSessionTimeout() > System.currentTimeMillis())        
         {
             isValid = false;
-        } 
+        } //End block
         boolean varCE74825B5A01C99B06AF231DE0BD667D_984850402 = (isValid);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2027772409 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2027772409;
-        
-        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isValid && context != null && context.getSessionTimeout() != 0
+                //&& lastAccessedTime + context.getSessionTimeout() > System.currentTimeMillis()) {
+            //isValid = false;
+        //}
+        //return isValid;
     }
 
     
@@ -411,27 +400,27 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_718462388 =         values.keySet()
             IllegalArgumentException var8B2F8D7AAF6CA4AD931494119DFBFE29_532492742 = new IllegalArgumentException("name == null || value == null");
             var8B2F8D7AAF6CA4AD931494119DFBFE29_532492742.addTaint(taint);
             throw var8B2F8D7AAF6CA4AD931494119DFBFE29_532492742;
-        } 
+        } //End block
         Object old = values.put(name, value);
     if(value instanceof SSLSessionBindingListener)        
         {
             ((SSLSessionBindingListener) value).valueBound(new SSLSessionBindingEvent(this, name));
-        } 
+        } //End block
     if(old instanceof SSLSessionBindingListener)        
         {
             ((SSLSessionBindingListener) old).valueUnbound(new SSLSessionBindingEvent(this, name));
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (name == null || value == null) {
+            //throw new IllegalArgumentException("name == null || value == null");
+        //}
+        //Object old = values.put(name, value);
+        //if (value instanceof SSLSessionBindingListener) {
+            //((SSLSessionBindingListener) value).valueBound(new SSLSessionBindingEvent(this, name));
+        //}
+        //if (old instanceof SSLSessionBindingListener) {
+            //((SSLSessionBindingListener) old).valueUnbound(new SSLSessionBindingEvent(this, name));
+        //}
     }
 
     
@@ -443,22 +432,22 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_718462388 =         values.keySet()
             IllegalArgumentException var6DECD338B4ADF738B2F3D7F9B2BA118C_943336690 = new IllegalArgumentException("name == null");
             var6DECD338B4ADF738B2F3D7F9B2BA118C_943336690.addTaint(taint);
             throw var6DECD338B4ADF738B2F3D7F9B2BA118C_943336690;
-        } 
+        } //End block
         Object old = values.remove(name);
     if(old instanceof SSLSessionBindingListener)        
         {
             SSLSessionBindingListener listener = (SSLSessionBindingListener) old;
             listener.valueUnbound(new SSLSessionBindingEvent(this, name));
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new IllegalArgumentException("name == null");
+        //}
+        //Object old = values.remove(name);
+        //if (old instanceof SSLSessionBindingListener) {
+            //SSLSessionBindingListener listener = (SSLSessionBindingListener) old;
+            //listener.valueUnbound(new SSLSessionBindingEvent(this, name));
+        //}
     }
 
     
@@ -470,30 +459,29 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_718462388 =         values.keySet()
 Object var46F3A0D86742C1D6E099C2B166941A33_1006216671 =             super.clone();
             var46F3A0D86742C1D6E099C2B166941A33_1006216671.addTaint(taint);
             return var46F3A0D86742C1D6E099C2B166941A33_1006216671;
-        } 
+        } //End block
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1432809872 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_1432809872.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_1432809872;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return super.clone();
+        //} catch (CloneNotSupportedException e) {
+            //throw new AssertionError(e);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.510 -0400", hash_original_method = "1B64858E0F9CF91B520A55B4E94E3F8D", hash_generated_method = "0E66339A36DC0FF9D4F6EB65322A02EE")
      void setPeer(String peerHost, int peerPort) {
         this.peerHost = peerHost;
         this.peerPort = peerPort;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.peerHost = peerHost;
+        //this.peerPort = peerPort;
     }
 
     

@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -42,15 +42,15 @@ public final class StructStatFs {
         this.f_ffree = f_ffree;
         this.f_namemax = f_namemax;
         this.f_frsize = f_frsize;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.f_bsize = f_bsize;
+        //this.f_blocks = f_blocks;
+        //this.f_bfree = f_bfree;
+        //this.f_bavail = f_bavail;
+        //this.f_files = f_files;
+        //this.f_ffree = f_ffree;
+        //this.f_namemax = f_namemax;
+        //this.f_frsize = f_frsize;
     }
 
     

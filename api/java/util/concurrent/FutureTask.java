@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,18 +20,18 @@ public class FutureTask<V> implements RunnableFuture<V> {
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_1802023511;
         }
         sync = new Sync(callable);
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (callable == null)
+            //throw new NullPointerException();
+        //sync = new Sync(callable);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.982 -0400", hash_original_method = "343C63FBFE3927352CC6BAC59E679D87", hash_generated_method = "445A2B29F4B296EBE069C195B0BDE12E")
     public  FutureTask(Runnable runnable, V result) {
         sync = new Sync(Executors.callable(runnable, result));
-        
-        
+        // ---------- Original Method ----------
+        //sync = new Sync(Executors.callable(runnable, result));
     }
 
     
@@ -40,8 +40,8 @@ public class FutureTask<V> implements RunnableFuture<V> {
         boolean var8BF5A93E962ACD00396C5A3C10E32D6D_1183784444 = (sync.innerIsCancelled());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1231070757 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1231070757;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.innerIsCancelled();
     }
 
     
@@ -50,8 +50,8 @@ public class FutureTask<V> implements RunnableFuture<V> {
         boolean var0CA19EE88E1C42206EB8810802615E80_471821421 = (sync.innerIsDone());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1914181462 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1914181462;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.innerIsDone();
     }
 
     
@@ -61,8 +61,8 @@ public class FutureTask<V> implements RunnableFuture<V> {
         boolean varFB185C2D76B8417436995523961A0076_2027804805 = (sync.innerCancel(mayInterruptIfRunning));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1110661112 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1110661112;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.innerCancel(mayInterruptIfRunning);
     }
 
     
@@ -71,8 +71,8 @@ public class FutureTask<V> implements RunnableFuture<V> {
 V var85F1CBC08013F2D5AD7E74CF674146E5_2115448836 =         sync.innerGet();
         var85F1CBC08013F2D5AD7E74CF674146E5_2115448836.addTaint(taint);
         return var85F1CBC08013F2D5AD7E74CF674146E5_2115448836;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.innerGet();
     }
 
     
@@ -83,15 +83,14 @@ V var85F1CBC08013F2D5AD7E74CF674146E5_2115448836 =         sync.innerGet();
 V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toNanos(timeout));
         var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634.addTaint(taint);
         return var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.innerGet(unit.toNanos(timeout));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.984 -0400", hash_original_method = "17876694EB227DDF47ED60F50DDB1AB8", hash_generated_method = "11FDBB8776367F84FB5CD85A1E1E97A9")
     protected void done() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -99,8 +98,8 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
     protected void set(V v) {
         addTaint(v.getTaint());
         sync.innerSet(v);
-        
-        
+        // ---------- Original Method ----------
+        //sync.innerSet(v);
     }
 
     
@@ -108,16 +107,16 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
     protected void setException(Throwable t) {
         addTaint(t.getTaint());
         sync.innerSetException(t);
-        
-        
+        // ---------- Original Method ----------
+        //sync.innerSetException(t);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.985 -0400", hash_original_method = "C774B2E8DA9F32069C4712123B43B6CD", hash_generated_method = "41358DA92AFAAC7C338B8FDD86F6983F")
     public void run() {
         sync.innerRun();
-        
-        
+        // ---------- Original Method ----------
+        //sync.innerRun();
     }
 
     
@@ -126,8 +125,8 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
         boolean var3C3199211714AF73C9FF4117A88D6471_2088369447 = (sync.innerRunAndReset());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1149845545 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1149845545;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.innerRunAndReset();
     }
 
     
@@ -148,20 +147,19 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.986 -0400", hash_original_method = "D4E27E5AB3ABB7CBBB62FE148674AC0F", hash_generated_method = "571EDA94F9E2C606AE2FD2F082453C98")
           Sync(Callable<V> callable) {
             this.callable = callable;
-            
-            
+            // ---------- Original Method ----------
+            //this.callable = callable;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.987 -0400", hash_original_method = "87EA2642D244DCFE21163D8924915415", hash_generated_method = "21A1A0A6209306BA9DA65CADE7397404")
         private boolean ranOrCancelled(int state) {
             addTaint(state);
             boolean varF426E25E5EBA5053CDF87EB34E0847CC_1956761181 = ((state & (RAN | CANCELLED)) != 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1595216123 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1595216123;
-            
-            
+            // ---------- Original Method ----------
+            //return (state & (RAN | CANCELLED)) != 0;
         }
 
         
@@ -171,12 +169,11 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
             int var97132568738497C8C8BBD351EC2CB210_721125372 = (innerIsDone() ? 1 : -1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1646890725 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1646890725;
-            
-            
+            // ---------- Original Method ----------
+            //return innerIsDone() ? 1 : -1;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.987 -0400", hash_original_method = "BADEFBD4164CAA2A58BD789F486A58F8", hash_generated_method = "B6815821F3F6182C5AF9D376BF0F1DE3")
         protected boolean tryReleaseShared(int ignore) {
             addTaint(ignore);
@@ -184,9 +181,9 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
             boolean varB326B5062B2F0E69046810717534CB09_2064005807 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1911607782 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1911607782;
-            
-            
-            
+            // ---------- Original Method ----------
+            //runner = null;
+            //return true;
         }
 
         
@@ -195,8 +192,8 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
             boolean varC8F0BB487210E6EF22F33D571975E8E6_828861593 = (getState() == CANCELLED);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_249244779 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_249244779;
-            
-            
+            // ---------- Original Method ----------
+            //return getState() == CANCELLED;
         }
 
         
@@ -205,8 +202,8 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
             boolean var4316EAD4E51BC5A1F44BFD16D0388A9F_602664300 = (ranOrCancelled(getState()) && runner == null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_466413977 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_466413977;
-            
-            
+            // ---------- Original Method ----------
+            //return ranOrCancelled(getState()) && runner == null;
         }
 
         
@@ -228,13 +225,13 @@ V var4C2A78DBAFD6AD30BA87C753CA8CEF1C_100659634 =         sync.innerGet(unit.toN
 V varDC838461EE2FA0CA4C9BBB70A15456B0_1115990545 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1115990545.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1115990545;
-            
-            
-            
-                
-            
-                
-            
+            // ---------- Original Method ----------
+            //acquireSharedInterruptibly(0);
+            //if (getState() == CANCELLED)
+                //throw new CancellationException();
+            //if (exception != null)
+                //throw new ExecutionException(exception);
+            //return result;
         }
 
         
@@ -262,14 +259,14 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_1115990545 =             result;
 V varDC838461EE2FA0CA4C9BBB70A15456B0_593420235 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_593420235.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_593420235;
-            
-            
-                
-            
-                
-            
-                
-            
+            // ---------- Original Method ----------
+            //if (!tryAcquireSharedNanos(0, nanosTimeout))
+                //throw new TimeoutException();
+            //if (getState() == CANCELLED)
+                //throw new CancellationException();
+            //if (exception != null)
+                //throw new ExecutionException(exception);
+            //return result;
         }
 
         
@@ -284,31 +281,31 @@ for(;;)
                 {
                     releaseShared(0);
                     return;
-                } 
+                } //End block
     if(compareAndSetState(s, RAN))                
                 {
                     result = v;
                     releaseShared(0);
                     done();
                     return;
-                } 
-            } 
-            
-            
-                
-                
-                    
-                
-                    
-                    
-                
-                
-                    
-                    
-                    
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int s = getState();
+                //if (s == RAN)
+                    //return;
+                //if (s == CANCELLED) {
+                    //releaseShared(0);
+                    //return;
+                //}
+                //if (compareAndSetState(s, RAN)) {
+                    //result = v;
+                    //releaseShared(0);
+                    //done();
+                    //return;
+                //}
+            //}
         }
 
         
@@ -323,31 +320,31 @@ for(;;)
                 {
                     releaseShared(0);
                     return;
-                } 
+                } //End block
     if(compareAndSetState(s, RAN))                
                 {
                     exception = t;
                     releaseShared(0);
                     done();
                     return;
-                } 
-            } 
-            
-            
-                
-                
-                    
-                
-                    
-                    
-                
-                
-                    
-                    
-                    
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int s = getState();
+                //if (s == RAN)
+                    //return;
+                //if (s == CANCELLED) {
+                    //releaseShared(0);
+                    //return;
+                //}
+                //if (compareAndSetState(s, RAN)) {
+                    //exception = t;
+                    //releaseShared(0);
+                    //done();
+                    //return;
+                //}
+            //}
         }
 
         
@@ -365,34 +362,34 @@ for(;;)
                 }
     if(compareAndSetState(s, CANCELLED))                
                 break;
-            } 
+            } //End block
     if(mayInterruptIfRunning)            
             {
                 Thread r = runner;
     if(r != null)                
                 r.interrupt();
-            } 
+            } //End block
             releaseShared(0);
             done();
             boolean varB326B5062B2F0E69046810717534CB09_345156664 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_567145191 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_567145191;
-            
-            
-                
-                
-                    
-                
-                    
-            
-            
-                
-                
-                    
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int s = getState();
+                //if (ranOrCancelled(s))
+                    //return false;
+                //if (compareAndSetState(s, CANCELLED))
+                    //break;
+            //}
+            //if (mayInterruptIfRunning) {
+                //Thread r = runner;
+                //if (r != null)
+                    //r.interrupt();
+            //}
+            //releaseShared(0);
+            //done();
+            //return true;
         }
 
         
@@ -407,34 +404,34 @@ for(;;)
                 try 
                 {
                     result = callable.call();
-                } 
+                } //End block
                 catch (Throwable ex)
                 {
                     setException(ex);
                     return;
-                } 
+                } //End block
                 set(result);
-            } 
+            } //End block
             else
             {
                 releaseShared(0);
-            } 
-            
-            
-                
-            
-            
-                
-                
-                    
-                
-                    
-                    
-                
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (!compareAndSetState(READY, RUNNING))
+                //return;
+            //runner = Thread.currentThread();
+            //if (getState() == RUNNING) { 
+                //V result;
+                //try {
+                    //result = callable.call();
+                //} catch (Throwable ex) {
+                    //setException(ex);
+                    //return;
+                //}
+                //set(result);
+            //} else {
+                //releaseShared(0); 
+            //}
         }
 
         
@@ -455,27 +452,27 @@ for(;;)
                 boolean var30F1DD35E2B5768309A006C35C7113CF_1569137829 = (compareAndSetState(RUNNING, READY));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_169506409 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_169506409;
-            } 
+            } //End block
             catch (Throwable ex)
             {
                 setException(ex);
                 boolean var68934A3E9455FA72420237EB05902327_1856260131 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_496623488 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_496623488;
-            } 
-            
-            
-                
-            
-                
-                
-                    
-                
-                
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (!compareAndSetState(READY, RUNNING))
+                //return false;
+            //try {
+                //runner = Thread.currentThread();
+                //if (getState() == RUNNING)
+                    //callable.call(); 
+                //runner = null;
+                //return compareAndSetState(RUNNING, READY);
+            //} catch (Throwable ex) {
+                //setException(ex);
+                //return false;
+            //}
         }
 
         

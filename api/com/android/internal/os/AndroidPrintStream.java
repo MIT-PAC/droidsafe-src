@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,15 +21,15 @@ class AndroidPrintStream extends LoggingPrintStream {
             NullPointerException var2114B990560383A0F782B34B8530F1E4_1324974950 = new NullPointerException("tag");
             var2114B990560383A0F782B34B8530F1E4_1324974950.addTaint(taint);
             throw var2114B990560383A0F782B34B8530F1E4_1324974950;
-        } 
+        } //End block
         this.priority = priority;
         this.tag = tag;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (tag == null) {
+            //throw new NullPointerException("tag");
+        //}
+        //this.priority = priority;
+        //this.tag = tag;
     }
 
     
@@ -37,8 +37,8 @@ class AndroidPrintStream extends LoggingPrintStream {
     protected void log(String line) {
         addTaint(line.getTaint());
         Log.println(priority, tag, line);
-        
-        
+        // ---------- Original Method ----------
+        //Log.println(priority, tag, line);
     }
 
     

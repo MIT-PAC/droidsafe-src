@@ -1,6 +1,6 @@
 package android.text.style;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,7 +35,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     public  ImageSpan(Bitmap b) {
         this(null, b, ALIGN_BOTTOM);
         addTaint(b.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -45,7 +45,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(null, b, verticalAlignment);
         addTaint(verticalAlignment);
         addTaint(b.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -54,7 +54,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(context, b, ALIGN_BOTTOM);
         addTaint(b.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -69,14 +69,14 @@ public class ImageSpan extends DynamicDrawableSpan {
         int width = mDrawable.getIntrinsicWidth();
         int height = mDrawable.getIntrinsicHeight();
         mDrawable.setBounds(0, 0, width > 0 ? width : 0, height > 0 ? height : 0);
-        
-        
-        
-                
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mDrawable = context != null
+                //? new BitmapDrawable(context.getResources(), b)
+                //: new BitmapDrawable(b);
+        //int width = mDrawable.getIntrinsicWidth();
+        //int height = mDrawable.getIntrinsicHeight();
+        //mDrawable.setBounds(0, 0, width > 0 ? width : 0, height > 0 ? height : 0);
     }
 
     
@@ -84,7 +84,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     public  ImageSpan(Drawable d) {
         this(d, ALIGN_BOTTOM);
         addTaint(d.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -93,8 +93,8 @@ public class ImageSpan extends DynamicDrawableSpan {
         super(verticalAlignment);
         addTaint(verticalAlignment);
         mDrawable = d;
-        
-        
+        // ---------- Original Method ----------
+        //mDrawable = d;
     }
 
     
@@ -103,7 +103,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(d, source, ALIGN_BOTTOM);
         addTaint(source.getTaint());
         addTaint(d.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -113,9 +113,9 @@ public class ImageSpan extends DynamicDrawableSpan {
         addTaint(verticalAlignment);
         mDrawable = d;
         mSource = source;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDrawable = d;
+        //mSource = source;
     }
 
     
@@ -124,7 +124,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(context, uri, ALIGN_BOTTOM);
         addTaint(uri.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -135,10 +135,10 @@ public class ImageSpan extends DynamicDrawableSpan {
         mContext = context;
         mContentUri = uri;
         mSource = uri.toString();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mContentUri = uri;
+        //mSource = uri.toString();
     }
 
     
@@ -147,7 +147,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         this(context, resourceId, ALIGN_BOTTOM);
         addTaint(resourceId);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -157,13 +157,12 @@ public class ImageSpan extends DynamicDrawableSpan {
         addTaint(verticalAlignment);
         mContext = context;
         mResourceId = resourceId;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mResourceId = resourceId;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.213 -0400", hash_original_method = "16DECD9D0B2DB9DD9C51FE274851DFB5", hash_generated_method = "262718C151030B8F8717951B0E8FD6EB")
     @Override
     public Drawable getDrawable() {
@@ -171,7 +170,7 @@ public class ImageSpan extends DynamicDrawableSpan {
     if(mDrawable != null)        
         {
             drawable = mDrawable;
-        } 
+        } //End block
         else
     if(mContentUri != null)        
         {
@@ -185,11 +184,11 @@ public class ImageSpan extends DynamicDrawableSpan {
                 drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
                         drawable.getIntrinsicHeight());
                 is.close();
-            } 
+            } //End block
             catch (Exception e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             try 
@@ -197,27 +196,26 @@ public class ImageSpan extends DynamicDrawableSpan {
                 drawable = mContext.getResources().getDrawable(mResourceId);
                 drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),
                         drawable.getIntrinsicHeight());
-            } 
+            } //End block
             catch (Exception e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
 Drawable varA22A26D75522826F9AEFA195DDDFD365_1091464886 =         drawable;
         varA22A26D75522826F9AEFA195DDDFD365_1091464886.addTaint(taint);
         return varA22A26D75522826F9AEFA195DDDFD365_1091464886;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.213 -0400", hash_original_method = "6D9DB226EA21C548410845AA7A7E2DD4", hash_generated_method = "4CB9D1FDB47A3A1D736DEE61ED737565")
     public String getSource() {
 String varFD1075CFFA556ED219E8DC68F6D057EC_789605945 =         mSource;
         varFD1075CFFA556ED219E8DC68F6D057EC_789605945.addTaint(taint);
         return varFD1075CFFA556ED219E8DC68F6D057EC_789605945;
-        
-        
+        // ---------- Original Method ----------
+        //return mSource;
     }
 
     

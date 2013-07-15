@@ -1,6 +1,6 @@
 package android.net.sip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,9 +27,9 @@ public class SipManager {
     private  SipManager(Context context) {
         mContext = context;
         createSipService();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //createSipService();
     }
 
     
@@ -60,9 +60,9 @@ public class SipManager {
     private void createSipService() {
         IBinder b = ServiceManager.getService(Context.SIP_SERVICE);
         mSipService = ISipService.Stub.asInterface(b);
-        
-        
-        
+        // ---------- Original Method ----------
+        //IBinder b = ServiceManager.getService(Context.SIP_SERVICE);
+        //mSipService = ISipService.Stub.asInterface(b);
     }
 
     
@@ -72,19 +72,19 @@ public class SipManager {
         try 
         {
             mSipService.open(localProfile);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException varCB0579D24A003D85D77D2B823CB864A5_400020054 = new SipException("open()", e);
             varCB0579D24A003D85D77D2B823CB864A5_400020054.addTaint(taint);
             throw varCB0579D24A003D85D77D2B823CB864A5_400020054;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mSipService.open(localProfile);
+        //} catch (RemoteException e) {
+            //throw new SipException("open()", e);
+        //}
     }
 
     
@@ -101,29 +101,29 @@ public class SipManager {
                     "incomingCallPendingIntent cannot be null");
             var758BF7B5707A01CCB97ABAB18EFCB65B_2067045335.addTaint(taint);
             throw var758BF7B5707A01CCB97ABAB18EFCB65B_2067045335;
-        } 
+        } //End block
         try 
         {
             mSipService.open3(localProfile, incomingCallPendingIntent,
                     createRelay(listener, localProfile.getUriString()));
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException varCB0579D24A003D85D77D2B823CB864A5_1425428762 = new SipException("open()", e);
             varCB0579D24A003D85D77D2B823CB864A5_1425428762.addTaint(taint);
             throw varCB0579D24A003D85D77D2B823CB864A5_1425428762;
-        } 
-        
-        
-            
-                    
-        
-        
-            
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (incomingCallPendingIntent == null) {
+            //throw new NullPointerException(
+                    //"incomingCallPendingIntent cannot be null");
+        //}
+        //try {
+            //mSipService.open3(localProfile, incomingCallPendingIntent,
+                    //createRelay(listener, localProfile.getUriString()));
+        //} catch (RemoteException e) {
+            //throw new SipException("open()", e);
+        //}
     }
 
     
@@ -136,20 +136,20 @@ public class SipManager {
         {
             mSipService.setRegistrationListener(
                     localProfileUri, createRelay(listener, localProfileUri));
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException varCA7719AD468776365EA6329C0FFE0E1E_2019097693 = new SipException("setRegistrationListener()", e);
             varCA7719AD468776365EA6329C0FFE0E1E_2019097693.addTaint(taint);
             throw varCA7719AD468776365EA6329C0FFE0E1E_2019097693;
-        } 
-        
-        
-            
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mSipService.setRegistrationListener(
+                    //localProfileUri, createRelay(listener, localProfileUri));
+        //} catch (RemoteException e) {
+            //throw new SipException("setRegistrationListener()", e);
+        //}
     }
 
     
@@ -159,19 +159,19 @@ public class SipManager {
         try 
         {
             mSipService.close(localProfileUri);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException varA154EDD252A68D36BAB4E1286AEFF90B_1327614139 = new SipException("close()", e);
             varA154EDD252A68D36BAB4E1286AEFF90B_1327614139.addTaint(taint);
             throw varA154EDD252A68D36BAB4E1286AEFF90B_1327614139;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mSipService.close(localProfileUri);
+        //} catch (RemoteException e) {
+            //throw new SipException("close()", e);
+        //}
     }
 
     
@@ -183,19 +183,19 @@ public class SipManager {
             boolean varA4D016A36A7A90E1A72A9A0DC36DB33B_1695357991 = (mSipService.isOpened(localProfileUri));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_160110208 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_160110208;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException varED4BDD1B23EC4951520E98F12E07278C_864079772 = new SipException("isOpened()", e);
             varED4BDD1B23EC4951520E98F12E07278C_864079772.addTaint(taint);
             throw varED4BDD1B23EC4951520E98F12E07278C_864079772;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mSipService.isOpened(localProfileUri);
+        //} catch (RemoteException e) {
+            //throw new SipException("isOpened()", e);
+        //}
     }
 
     
@@ -207,19 +207,19 @@ public class SipManager {
             boolean varAF98DE914DAC60491DD0A6FE2204799D_1342465120 = (mSipService.isRegistered(localProfileUri));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_142881621 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_142881621;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException varB5FECD082731BD3404DBCD5D770DDB82_915316689 = new SipException("isRegistered()", e);
             varB5FECD082731BD3404DBCD5D770DDB82_915316689.addTaint(taint);
             throw varB5FECD082731BD3404DBCD5D770DDB82_915316689;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mSipService.isRegistered(localProfileUri);
+        //} catch (RemoteException e) {
+            //throw new SipException("isRegistered()", e);
+        //}
     }
 
     
@@ -235,7 +235,7 @@ public class SipManager {
             SipException var8139D71B537813371F04348D0E0BAE9A_344135829 = new SipException("VOIP API is not supported");
             var8139D71B537813371F04348D0E0BAE9A_344135829.addTaint(taint);
             throw var8139D71B537813371F04348D0E0BAE9A_344135829;
-        } 
+        } //End block
         SipAudioCall call = new SipAudioCall(mContext, localProfile);
         call.setListener(listener);
         SipSession s = createSipSession(localProfile, null);
@@ -243,15 +243,15 @@ public class SipManager {
 SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1462271047 =         call;
         var9D8B92386554E95AD0A8E3E03CF7AAB5_1462271047.addTaint(taint);
         return var9D8B92386554E95AD0A8E3E03CF7AAB5_1462271047;
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!isVoipSupported(mContext)) {
+            //throw new SipException("VOIP API is not supported");
+        //}
+        //SipAudioCall call = new SipAudioCall(mContext, localProfile);
+        //call.setListener(listener);
+        //SipSession s = createSipSession(localProfile, null);
+        //call.makeCall(peerProfile, s, timeout);
+        //return call;
     }
 
     
@@ -267,7 +267,7 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1462271047 =         call;
             SipException var8139D71B537813371F04348D0E0BAE9A_1686170946 = new SipException("VOIP API is not supported");
             var8139D71B537813371F04348D0E0BAE9A_1686170946.addTaint(taint);
             throw var8139D71B537813371F04348D0E0BAE9A_1686170946;
-        } 
+        } //End block
         try 
         {
 SipAudioCall varDD46E855D795EA36DF290A4F301961E6_809949033 =             makeAudioCall(
@@ -276,29 +276,28 @@ SipAudioCall varDD46E855D795EA36DF290A4F301961E6_809949033 =             makeAud
                     timeout);
             varDD46E855D795EA36DF290A4F301961E6_809949033.addTaint(taint);
             return varDD46E855D795EA36DF290A4F301961E6_809949033;
-        } 
+        } //End block
         catch (ParseException e)
         {
             SipException var38208256843D40529D556690AD1B5760_969195961 = new SipException("build SipProfile", e);
             var38208256843D40529D556690AD1B5760_969195961.addTaint(taint);
             throw var38208256843D40529D556690AD1B5760_969195961;
-        } 
-        
-        
-            
-        
-        
-            
-                    
-                    
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!isVoipSupported(mContext)) {
+            //throw new SipException("VOIP API is not supported");
+        //}
+        //try {
+            //return makeAudioCall(
+                    //new SipProfile.Builder(localProfileUri).build(),
+                    //new SipProfile.Builder(peerProfileUri).build(), listener,
+                    //timeout);
+        //} catch (ParseException e) {
+            //throw new SipException("build SipProfile", e);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.353 -0400", hash_original_method = "E0DC1BF0888BDAC076F0EBE49A950610", hash_generated_method = "3D72C603A714FB241BCDEDF5E9B732D3")
     public SipAudioCall takeAudioCall(Intent incomingCallIntent,
             SipAudioCall.Listener listener) throws SipException {
@@ -309,14 +308,14 @@ SipAudioCall varDD46E855D795EA36DF290A4F301961E6_809949033 =             makeAud
             SipException varF6F2718AF27329287F11B31E9104E4D7_1994181554 = new SipException("Cannot retrieve session with null intent");
             varF6F2718AF27329287F11B31E9104E4D7_1994181554.addTaint(taint);
             throw varF6F2718AF27329287F11B31E9104E4D7_1994181554;
-        } 
+        } //End block
         String callId = getCallId(incomingCallIntent);
     if(callId == null)        
         {
             SipException varA9DD4F2B3E4DB745AA4BBCCE44D3789B_1671020707 = new SipException("Call ID missing in incoming call intent");
             varA9DD4F2B3E4DB745AA4BBCCE44D3789B_1671020707.addTaint(taint);
             throw varA9DD4F2B3E4DB745AA4BBCCE44D3789B_1671020707;
-        } 
+        } //End block
         String offerSd = getOfferSessionDescription(incomingCallIntent);
     if(offerSd == null)        
         {
@@ -324,7 +323,7 @@ SipAudioCall varDD46E855D795EA36DF290A4F301961E6_809949033 =             makeAud
                     + "call intent");
             varDCD6B05ADA9C964A8B56EA277D8CF34F_1867844079.addTaint(taint);
             throw varDCD6B05ADA9C964A8B56EA277D8CF34F_1867844079;
-        } 
+        } //End block
         try 
         {
             ISipSession session = mSipService.getPendingSession(callId);
@@ -333,7 +332,7 @@ SipAudioCall varDD46E855D795EA36DF290A4F301961E6_809949033 =             makeAud
                 SipException var8AFC5648F5B766BF57183FC711875607_261980677 = new SipException("No pending session for the call");
                 var8AFC5648F5B766BF57183FC711875607_261980677.addTaint(taint);
                 throw var8AFC5648F5B766BF57183FC711875607_261980677;
-            } 
+            } //End block
             SipAudioCall call = new SipAudioCall(
                     mContext, session.getLocalProfile());
             call.attachCall(new SipSession(session), offerSd);
@@ -341,20 +340,19 @@ SipAudioCall varDD46E855D795EA36DF290A4F301961E6_809949033 =             makeAud
 SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834 =             call;
             var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834.addTaint(taint);
             return var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834;
-        } 
+        } //End block
         catch (Throwable t)
         {
             SipException varADB6A791E2E55698D8F0A5AC49F803B9_1095158439 = new SipException("takeAudioCall()", t);
             varADB6A791E2E55698D8F0A5AC49F803B9_1095158439.addTaint(taint);
             throw varADB6A791E2E55698D8F0A5AC49F803B9_1095158439;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isIncomingCallIntent(Intent intent) {
+        public static boolean isIncomingCallIntent(Intent intent) {
         if (intent == null) return false;
         String callId = getCallId(intent);
         String offerSd = getOfferSessionDescription(intent);
@@ -362,20 +360,17 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834 =             call;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String getCallId(Intent incomingCallIntent) {
+        public static String getCallId(Intent incomingCallIntent) {
         return incomingCallIntent.getStringExtra(EXTRA_CALL_ID);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String getOfferSessionDescription(Intent incomingCallIntent) {
+        public static String getOfferSessionDescription(Intent incomingCallIntent) {
         return incomingCallIntent.getStringExtra(EXTRA_OFFER_SD);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Intent createIncomingCallBroadcast(String callId,
+        public static Intent createIncomingCallBroadcast(String callId,
             String sessionDescription) {
         Intent intent = new Intent();
         intent.putExtra(EXTRA_CALL_ID, callId);
@@ -400,27 +395,27 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834 =             call;
                         "SipService.createSession() returns null");
                 varD6A109936A364A960EC4652FD5897969_1474196307.addTaint(taint);
                 throw varD6A109936A364A960EC4652FD5897969_1474196307;
-            } 
+            } //End block
             session.register(expiryTime);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException varF6AF4E3DE6F2D1A1134920B8CA7AE7F8_964235268 = new SipException("register()", e);
             varF6AF4E3DE6F2D1A1134920B8CA7AE7F8_964235268.addTaint(taint);
             throw varF6AF4E3DE6F2D1A1134920B8CA7AE7F8_964235268;
-        } 
-        
-        
-            
-                    
-            
-                
-                        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //ISipSession session = mSipService.createSession(localProfile,
+                    //createRelay(listener, localProfile.getUriString()));
+            //if (session == null) {
+                //throw new SipException(
+                        //"SipService.createSession() returns null");
+            //}
+            //session.register(expiryTime);
+        //} catch (RemoteException e) {
+            //throw new SipException("register()", e);
+        //}
     }
 
     
@@ -439,31 +434,30 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834 =             call;
                         "SipService.createSession() returns null");
                 varD6A109936A364A960EC4652FD5897969_2055231965.addTaint(taint);
                 throw varD6A109936A364A960EC4652FD5897969_2055231965;
-            } 
+            } //End block
             session.unregister();
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException var8381CB852324840322A4751640629FAE_1514879903 = new SipException("unregister()", e);
             var8381CB852324840322A4751640629FAE_1514879903.addTaint(taint);
             throw var8381CB852324840322A4751640629FAE_1514879903;
-        } 
-        
-        
-            
-                    
-            
-                
-                        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //ISipSession session = mSipService.createSession(localProfile,
+                    //createRelay(listener, localProfile.getUriString()));
+            //if (session == null) {
+                //throw new SipException(
+                        //"SipService.createSession() returns null");
+            //}
+            //session.unregister();
+        //} catch (RemoteException e) {
+            //throw new SipException("unregister()", e);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.357 -0400", hash_original_method = "EDCDF2FC84E74B60CE6B84F2ED6BCA20", hash_generated_method = "3757901F7FD3DCA6E6CB1F773ADA1C2F")
     public SipSession getSessionFor(Intent incomingCallIntent) throws SipException {
         addTaint(incomingCallIntent.getTaint());
@@ -474,21 +468,21 @@ SipAudioCall var9D8B92386554E95AD0A8E3E03CF7AAB5_1125474834 =             call;
 SipSession varCDEBB4B2D7C9C11FEA72AC760BD9229E_888222284 =             ((s == null) ? null : new SipSession(s));
             varCDEBB4B2D7C9C11FEA72AC760BD9229E_888222284.addTaint(taint);
             return varCDEBB4B2D7C9C11FEA72AC760BD9229E_888222284;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException var80CEEDE9C49A29376E908BAE69F247A4_1703189526 = new SipException("getSessionFor()", e);
             var80CEEDE9C49A29376E908BAE69F247A4_1703189526.addTaint(taint);
             throw var80CEEDE9C49A29376E908BAE69F247A4_1703189526;
-        } 
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //String callId = getCallId(incomingCallIntent);
+            //ISipSession s = mSipService.getPendingSession(callId);
+            //return ((s == null) ? null : new SipSession(s));
+        //} catch (RemoteException e) {
+            //throw new SipException("getSessionFor()", e);
+        //}
     }
 
     
@@ -512,28 +506,28 @@ SipSession varCDEBB4B2D7C9C11FEA72AC760BD9229E_888222284 =             ((s == nu
                         "Failed to create SipSession; network unavailable?");
                 var3AF8663CE1EE03CDCEF0AA50A4B96B4B_630565027.addTaint(taint);
                 throw var3AF8663CE1EE03CDCEF0AA50A4B96B4B_630565027;
-            } 
+            } //End block
 SipSession var4963606BA616877CE0A6A4A5E865B5F2_1562900349 =             new SipSession(s, listener);
             var4963606BA616877CE0A6A4A5E865B5F2_1562900349.addTaint(taint);
             return var4963606BA616877CE0A6A4A5E865B5F2_1562900349;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             SipException var278B540E7CD3077E05CDFD0453087A0B_466362524 = new SipException("createSipSession()", e);
             var278B540E7CD3077E05CDFD0453087A0B_466362524.addTaint(taint);
             throw var278B540E7CD3077E05CDFD0453087A0B_466362524;
-        } 
-        
-        
-            
-            
-                
-                        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //ISipSession s = mSipService.createSession(localProfile, null);
+            //if (s == null) {
+                //throw new SipException(
+                        //"Failed to create SipSession; network unavailable?");
+            //}
+            //return new SipSession(s, listener);
+        //} catch (RemoteException e) {
+            //throw new SipException("createSipSession()", e);
+        //}
     }
 
     
@@ -544,19 +538,19 @@ SipSession var4963606BA616877CE0A6A4A5E865B5F2_1562900349 =             new SipS
 SipProfile[] varE3884862958FF0D2CD617F1EC83EE03A_544856529 =             mSipService.getListOfProfiles();
             varE3884862958FF0D2CD617F1EC83EE03A_544856529.addTaint(taint);
             return varE3884862958FF0D2CD617F1EC83EE03A_544856529;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 SipProfile[] var7F3AFDA0578CF1A81A72F7621B23A66E_2064857576 =             new SipProfile[0];
             var7F3AFDA0578CF1A81A72F7621B23A66E_2064857576.addTaint(taint);
             return var7F3AFDA0578CF1A81A72F7621B23A66E_2064857576;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mSipService.getListOfProfiles();
+        //} catch (RemoteException e) {
+            //return new SipProfile[0];
+        //}
     }
 
     
@@ -572,9 +566,9 @@ SipProfile[] var7F3AFDA0578CF1A81A72F7621B23A66E_2064857576 =             new Si
         public  ListenerRelay(SipRegistrationListener listener, String uri) {
             mListener = listener;
             mUri = uri;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mListener = listener;
+            //mUri = uri;
         }
 
         
@@ -588,50 +582,50 @@ String varA6028DAE09D13E33E95BA56BE14987AC_1997739971 =                 ((sessio
                         : session.getLocalProfile().getUriString());
                 varA6028DAE09D13E33E95BA56BE14987AC_1997739971.addTaint(taint);
                 return varA6028DAE09D13E33E95BA56BE14987AC_1997739971;
-            } 
+            } //End block
             catch (Throwable e)
             {
 String var540C13E9E156B687226421B24F2DF178_1052646442 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1052646442.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1052646442;
-            } 
-            
-            
-                
-                        
-                        
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //return ((session == null)
+                        //? mUri
+                        //: session.getLocalProfile().getUriString());
+            //} catch (Throwable e) {
+                //Log.w(TAG, "getUri(): " + e);
+                //return null;
+            //}
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.359 -0400", hash_original_method = "5C196F3BA9DB038EA3DA210A6D75DA60", hash_generated_method = "59F85FC775AA322FA0827DD5E74A44FE")
         @Override
         public void onRegistering(ISipSession session) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(session.getTaint());
             mListener.onRegistering(getUri(session));
-            
-            
+            // ---------- Original Method ----------
+            //mListener.onRegistering(getUri(session));
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.360 -0400", hash_original_method = "C7A68C57912DB0D6749A6AEEEB478950", hash_generated_method = "B2273E3EDC668F5971099183F53E0CF3")
         @Override
         public void onRegistrationDone(ISipSession session, int duration) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(duration);
             addTaint(session.getTaint());
             long expiryTime = duration;
     if(duration > 0)            
             expiryTime += System.currentTimeMillis();
             mListener.onRegistrationDone(getUri(session), expiryTime);
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //long expiryTime = duration;
+            //if (duration > 0) expiryTime += System.currentTimeMillis();
+            //mListener.onRegistrationDone(getUri(session), expiryTime);
         }
 
         
@@ -639,26 +633,26 @@ String var540C13E9E156B687226421B24F2DF178_1052646442 =                 null;
         @Override
         public void onRegistrationFailed(ISipSession session, int errorCode,
                 String message) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(message.getTaint());
             addTaint(errorCode);
             addTaint(session.getTaint());
             mListener.onRegistrationFailed(getUri(session), errorCode, message);
-            
-            
+            // ---------- Original Method ----------
+            //mListener.onRegistrationFailed(getUri(session), errorCode, message);
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.360 -0400", hash_original_method = "3FA96A1C02B279EF2B5BC0F9EDE11DE7", hash_generated_method = "A0F2834AF372F5C47976274653094CD7")
         @Override
         public void onRegistrationTimeout(ISipSession session) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(session.getTaint());
             mListener.onRegistrationFailed(getUri(session),
                     SipErrorCode.TIME_OUT, "registration timed out");
-            
-            
-                    
+            // ---------- Original Method ----------
+            //mListener.onRegistrationFailed(getUri(session),
+                    //SipErrorCode.TIME_OUT, "registration timed out");
         }
 
         

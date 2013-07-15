@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class AddressParametersParser extends ParametersParser {
     protected  AddressParametersParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class AddressParametersParser extends ParametersParser {
     protected  AddressParametersParser(String buffer) {
         super(buffer);
         addTaint(buffer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -43,38 +43,38 @@ public class AddressParametersParser extends ParametersParser {
                  this.lexer.startsId())            
             {
                 super.parseNameValueList(addressParametersHeader);
-            } 
+            } //End block
             else
             super.parse(addressParametersHeader);
-        } 
+        } //End block
         catch (ParseException ex)
         {
             ex.addTaint(taint);
             throw ex;
-        } 
+        } //End block
         finally 
         {
             dbg_leave("AddressParametersParser.parse");
-        } 
-        
-        
-        
-            
-            
-            
-            
-            
-            
-                 
-                 
-                 
-                 
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //dbg_enter("AddressParametersParser.parse");
+        //try {
+            //AddressParser addressParser = new AddressParser(this.getLexer());
+            //AddressImpl addr = addressParser.address(false);
+            //addressParametersHeader.setAddress(addr);
+            //lexer.SPorHT();
+            //char la = this.lexer.lookAhead(0);
+            //if ( this.lexer.hasMoreChars() &&
+                 //la != '\0' &&
+                 //la != '\n' &&
+                 //this.lexer.startsId()) {
+                 //super.parseNameValueList(addressParametersHeader);
+            //}  else super.parse(addressParametersHeader);
+        //} catch (ParseException ex) {
+            //throw ex;
+        //} finally {
+            //dbg_leave("AddressParametersParser.parse");
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package com.android.internal.logging;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,20 +18,20 @@ public class AndroidConfig {
             rootLogger.addHandler(new AndroidHandler());
             rootLogger.setLevel(Level.INFO);
             Logger.getLogger("org.apache").setLevel(Level.WARNING);
-        } 
+        } //End block
         catch (Exception ex)
         {
             ex.printStackTrace();
-        } 
-        
-        
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Logger rootLogger = Logger.getLogger("");
+            //rootLogger.addHandler(new AndroidHandler());
+            //rootLogger.setLevel(Level.INFO);
+            //Logger.getLogger("org.apache").setLevel(Level.WARNING);
+        //} catch (Exception ex) {
+            //ex.printStackTrace();
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class DefaultMessageLogFactory implements LogRecordFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.375 -0400", hash_original_method = "21AC114112EFF523B2B54D53457EBCA3", hash_generated_method = "21AC114112EFF523B2B54D53457EBCA3")
     public DefaultMessageLogFactory ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -33,9 +33,9 @@ LogRecord var78D95E71B445F3D0B3A5C204500A3C42_677581852 =         new MessageLog
                 isSender, firstLine, tid, callId, tsHeaderValue);
         var78D95E71B445F3D0B3A5C204500A3C42_677581852.addTaint(taint);
         return var78D95E71B445F3D0B3A5C204500A3C42_677581852;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return new MessageLog(message, source, destination, timeStamp,
+                //isSender, firstLine, tid, callId, tsHeaderValue);
     }
 
     
@@ -56,9 +56,9 @@ LogRecord var85CE2421DBC16C4BEEA23E275AA06A8A_706947927 =         new MessageLog
                 isSender, firstLine, tid, callId, timestampVal);
         var85CE2421DBC16C4BEEA23E275AA06A8A_706947927.addTaint(taint);
         return var85CE2421DBC16C4BEEA23E275AA06A8A_706947927;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return new MessageLog(message, source, destination, timeStamp,
+                //isSender, firstLine, tid, callId, timestampVal);
     }
 
     

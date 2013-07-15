@@ -1,6 +1,6 @@
 package java.text;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ public class FieldPosition {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.667 -0400", hash_original_method = "E695F5151E58D69BC230540B458252AA", hash_generated_method = "3294FD3CC73A07FA36D86DFE9E3E23F0")
     public  FieldPosition(int field) {
         myField = field;
-        
-        
+        // ---------- Original Method ----------
+        //myField = field;
     }
 
     
@@ -31,9 +31,9 @@ public class FieldPosition {
     public  FieldPosition(Format.Field attribute) {
         myAttribute = attribute;
         myField = -1;
-        
-        
-        
+        // ---------- Original Method ----------
+        //myAttribute = attribute;
+        //myField = -1;
     }
 
     
@@ -41,22 +41,20 @@ public class FieldPosition {
     public  FieldPosition(Format.Field attribute, int field) {
         myAttribute = attribute;
         myField = field;
-        
-        
-        
+        // ---------- Original Method ----------
+        //myAttribute = attribute;
+        //myField = field;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.668 -0400", hash_original_method = "0917A34BEC387437E422442FF9D128A9", hash_generated_method = "7B55DCEF19A54303A6AEE5DCD2981156")
      void clear() {
         beginIndex = endIndex = 0;
-        
-        
+        // ---------- Original Method ----------
+        //beginIndex = endIndex = 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.669 -0400", hash_original_method = "2EFD5CC62AE2C3EDB89CEF52D471F874", hash_generated_method = "023955D49B68A9A5CCA4695F44CEF6E0")
     @Override
     public boolean equals(Object object) {
@@ -66,67 +64,62 @@ public class FieldPosition {
             boolean var68934A3E9455FA72420237EB05902327_1582909880 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1760989852 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1760989852;
-        } 
+        } //End block
         FieldPosition pos = (FieldPosition) object;
         boolean varB329B14BF376013966B7864B31331406_531981610 = (myField == pos.myField && myAttribute == pos.myAttribute
                 && beginIndex == pos.beginIndex && endIndex == pos.endIndex);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152638540 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1152638540;
-        
-        
-            
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (!(object instanceof FieldPosition)) {
+            //return false;
+        //}
+        //FieldPosition pos = (FieldPosition) object;
+        //return myField == pos.myField && myAttribute == pos.myAttribute
+                //&& beginIndex == pos.beginIndex && endIndex == pos.endIndex;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.669 -0400", hash_original_method = "D73EFD1B11663E2F20B33728384A7709", hash_generated_method = "9D3E60F73172CA51429ECDCEE1D7E8D1")
     public int getBeginIndex() {
         int var28E05C3ABF05791ED24C5E5CAEA5AD15_617440699 = (beginIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1572189769 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1572189769;
-        
-        
+        // ---------- Original Method ----------
+        //return beginIndex;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.669 -0400", hash_original_method = "9236177A75F6147947B59829E100715E", hash_generated_method = "5E406C0D3833B15120FEF8FF54F7BFFE")
     public int getEndIndex() {
         int var6C7C6ECF23A364EB2EC70B77C92E7A4E_23560864 = (endIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_965234497 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_965234497;
-        
-        
+        // ---------- Original Method ----------
+        //return endIndex;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.670 -0400", hash_original_method = "FA0D18F7CDA71089ACF7D0CA54DB97A6", hash_generated_method = "9F172738FDF476CB78D63089482621BF")
     public int getField() {
         int var4E5C9DDEA6C3DDCCF3C5EDA0B8239137_348605577 = (myField);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1088273767 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1088273767;
-        
-        
+        // ---------- Original Method ----------
+        //return myField;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.670 -0400", hash_original_method = "7CAF144562B490BE3E2EB59461F9FF9F", hash_generated_method = "70C4D5E38382193527D4C2455BC1EDDD")
     public Format.Field getFieldAttribute() {
 Format.Field varC989273768E79F118062181F4D7B1A1F_1629524481 =         myAttribute;
         varC989273768E79F118062181F4D7B1A1F_1629524481.addTaint(taint);
         return varC989273768E79F118062181F4D7B1A1F_1629524481;
-        
-        
+        // ---------- Original Method ----------
+        //return myAttribute;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.670 -0400", hash_original_method = "C545ABA0B6D3CBB4D119673C6F3DBEAC", hash_generated_method = "07A4340B3F2F11C04F15A849DBB707D1")
     @Override
     public int hashCode() {
@@ -134,31 +127,28 @@ Format.Field varC989273768E79F118062181F4D7B1A1F_1629524481 =         myAttribut
         int var1E2C656F547B32050EFD4D5BDD319E7D_562608963 = (attributeHash + myField * 10 + beginIndex * 100 + endIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946237434 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946237434;
-        
-        
-        
+        // ---------- Original Method ----------
+        //int attributeHash = (myAttribute == null) ? 0 : myAttribute.hashCode();
+        //return attributeHash + myField * 10 + beginIndex * 100 + endIndex;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.671 -0400", hash_original_method = "B6704CE8D3A3B86DBE7C4466AFBF63DE", hash_generated_method = "52375A7B9E133C46ADD8958312B215FD")
     public void setBeginIndex(int index) {
         beginIndex = index;
-        
-        
+        // ---------- Original Method ----------
+        //beginIndex = index;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.671 -0400", hash_original_method = "D0945845F8EA8830C89E5D5682FA6C51", hash_generated_method = "D80F847F9AB2F854C130F487969DD63C")
     public void setEndIndex(int index) {
         endIndex = index;
-        
-        
+        // ---------- Original Method ----------
+        //endIndex = index;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.672 -0400", hash_original_method = "C87731FA15F0C601F30AE5E2B46DBDCA", hash_generated_method = "A0FF9641042A8ED2FF6E586511337115")
     @Override
     public String toString() {
@@ -167,10 +157,10 @@ String varC4DFBFDD2DEE990D7C4D51C7B64C7D88_1487916117 =         getClass().getNa
                 + endIndex + "]";
         varC4DFBFDD2DEE990D7C4D51C7B64C7D88_1487916117.addTaint(taint);
         return varC4DFBFDD2DEE990D7C4D51C7B64C7D88_1487916117;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return getClass().getName() + "[attribute=" + myAttribute + ", field="
+                //+ myField + ", beginIndex=" + beginIndex + ", endIndex="
+                //+ endIndex + "]";
     }
 
     

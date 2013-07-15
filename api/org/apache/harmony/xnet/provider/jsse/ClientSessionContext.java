@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class ClientSessionContext extends AbstractSessionContext {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.159 -0400", hash_original_method = "6120BD96B39A4004425E377055807D67", hash_generated_method = "F659DA8BD462D7F6605B182211013349")
     public  ClientSessionContext() {
         super(10, 0);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -28,17 +28,16 @@ public class ClientSessionContext extends AbstractSessionContext {
         int varA6F0EF27A4AA4518AF01C97064847341_245826431 = (sessionsByHostAndPort.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_890164112 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_890164112;
-        
-        
+        // ---------- Original Method ----------
+        //return sessionsByHostAndPort.size();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.160 -0400", hash_original_method = "FA4F1A172590244BE031F2E8797E17F3", hash_generated_method = "A79C5685284AC076EFF257C20CDA7F14")
     public void setPersistentCache(SSLClientSessionCache persistentCache) {
         this.persistentCache = persistentCache;
-        
-        
+        // ---------- Original Method ----------
+        //this.persistentCache = persistentCache;
     }
 
     
@@ -50,22 +49,22 @@ public class ClientSessionContext extends AbstractSessionContext {
     if(host == null)        
         {
             return;
-        } 
+        } //End block
         HostAndPort hostAndPortKey = new HostAndPort(host, port);
         synchronized
 (sessionsByHostAndPort)        {
             sessionsByHostAndPort.remove(hostAndPortKey);
-        } 
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String host = session.getPeerHost();
+        //int port = session.getPeerPort();
+        //if (host == null) {
+            //return;
+        //}
+        //HostAndPort hostAndPortKey = new HostAndPort(host, port);
+        //synchronized (sessionsByHostAndPort) {
+            //sessionsByHostAndPort.remove(hostAndPortKey);
+        //}
     }
 
     
@@ -78,19 +77,19 @@ public class ClientSessionContext extends AbstractSessionContext {
 SSLSession var540C13E9E156B687226421B24F2DF178_1465100384 =             null;
             var540C13E9E156B687226421B24F2DF178_1465100384.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1465100384;
-        } 
+        } //End block
         SSLSession session;
         HostAndPort hostAndPortKey = new HostAndPort(host, port);
         synchronized
 (sessionsByHostAndPort)        {
             session = sessionsByHostAndPort.get(hostAndPortKey);
-        } 
+        } //End block
     if(session != null && session.isValid())        
         {
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1209328730 =             session;
             varD555E544A66E0F97DA6BCDE940E3E79C_1209328730.addTaint(taint);
             return varD555E544A66E0F97DA6BCDE940E3E79C_1209328730;
-        } 
+        } //End block
     if(persistentCache != null)        
         {
             byte[] data = persistentCache.getSessionData(host, port);
@@ -103,18 +102,18 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1209328730 =             session;
                     synchronized
 (sessionsByHostAndPort)                    {
                         sessionsByHostAndPort.put(hostAndPortKey, session);
-                    } 
+                    } //End block
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_632871615 =                     session;
                     varD555E544A66E0F97DA6BCDE940E3E79C_632871615.addTaint(taint);
                     return varD555E544A66E0F97DA6BCDE940E3E79C_632871615;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 SSLSession var540C13E9E156B687226421B24F2DF178_104733301 =         null;
         var540C13E9E156B687226421B24F2DF178_104733301.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_104733301;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -128,37 +127,37 @@ SSLSession var540C13E9E156B687226421B24F2DF178_104733301 =         null;
     if(host == null)        
         {
             return;
-        } 
+        } //End block
         HostAndPort hostAndPortKey = new HostAndPort(host, port);
         synchronized
 (sessionsByHostAndPort)        {
             sessionsByHostAndPort.put(hostAndPortKey, session);
-        } 
+        } //End block
     if(persistentCache != null)        
         {
             byte[] data = toBytes(session);
     if(data != null)            
             {
                 persistentCache.putSessionData(session, data);
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.putSession(session);
+        //String host = session.getPeerHost();
+        //int port = session.getPeerPort();
+        //if (host == null) {
+            //return;
+        //}
+        //HostAndPort hostAndPortKey = new HostAndPort(host, port);
+        //synchronized (sessionsByHostAndPort) {
+            //sessionsByHostAndPort.put(hostAndPortKey, session);
+        //}
+        //if (persistentCache != null) {
+            //byte[] data = toBytes(session);
+            //if (data != null) {
+                //persistentCache.putSessionData(session, data);
+            //}
+        //}
     }
 
     
@@ -174,9 +173,9 @@ SSLSession var540C13E9E156B687226421B24F2DF178_104733301 =         null;
           HostAndPort(String host, int port) {
             this.host = host;
             this.port = port;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.host = host;
+            //this.port = port;
         }
 
         
@@ -186,8 +185,8 @@ SSLSession var540C13E9E156B687226421B24F2DF178_104733301 =         null;
             int var0E647E455323522CA08273F434480BED_266711972 = (host.hashCode() * 31 + port);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313785164 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313785164;
-            
-            
+            // ---------- Original Method ----------
+            //return host.hashCode() * 31 + port;
         }
 
         
@@ -200,17 +199,17 @@ SSLSession var540C13E9E156B687226421B24F2DF178_104733301 =         null;
                 boolean var68934A3E9455FA72420237EB05902327_1915239876 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586086148 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_586086148;
-            } 
+            } //End block
             HostAndPort lhs = (HostAndPort) o;
             boolean var45784A7547F187311A8A553C07904FBF_2108498369 = (host.equals(lhs.host) && port == lhs.port);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2142070385 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2142070385;
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (!(o instanceof HostAndPort)) {
+                //return false;
+            //}
+            //HostAndPort lhs = (HostAndPort) o;
+            //return host.equals(lhs.host) && port == lhs.port;
         }
 
         

@@ -1,6 +1,6 @@
 package java.nio.channels.spi;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,7 +43,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.681 -0400", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "06F598EF6A4A993889CD9DF449D06062")
     protected  AbstractInterruptibleChannel() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -53,8 +53,8 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
         boolean var4908E58294CD6D2132BB006252469CCC_284722138 = (!closed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1181772371 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1181772371;
-        
-        
+        // ---------- Original Method ----------
+        //return !closed;
     }
 
     
@@ -69,26 +69,26 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
                 {
                     closed = true;
                     implCloseChannel();
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                    
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (!closed) {
+            //synchronized (this) {
+                //if (!closed) {
+                    //closed = true;
+                    //implCloseChannel();
+                //}
+            //}
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.683 -0400", hash_original_method = "F0AA56CB3350B0CEA7EF4FF29453D45D", hash_generated_method = "6DCC83F0ECF94F334D94D331BE79DAA7")
     protected final void begin() {
         Thread.currentThread().pushInterruptAction$(interruptAndCloseRunnable);
-        
-        
+        // ---------- Original Method ----------
+        //Thread.currentThread().pushInterruptAction$(interruptAndCloseRunnable);
     }
 
     
@@ -102,22 +102,22 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
             ClosedByInterruptException varD80208BA16F6143DC97608490F50E558_1313295263 = new ClosedByInterruptException();
             varD80208BA16F6143DC97608490F50E558_1313295263.addTaint(taint);
             throw varD80208BA16F6143DC97608490F50E558_1313295263;
-        } 
+        } //End block
     if(!success && closed)        
         {
             AsynchronousCloseException var408657B9AB02DE83170163F9E7F7B5FD_1128726122 = new AsynchronousCloseException();
             var408657B9AB02DE83170163F9E7F7B5FD_1128726122.addTaint(taint);
             throw var408657B9AB02DE83170163F9E7F7B5FD_1128726122;
-        } 
-        
-        
-        
-            
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Thread.currentThread().popInterruptAction$(interruptAndCloseRunnable);
+        //if (interrupted) {
+            //interrupted = false;
+            //throw new ClosedByInterruptException();
+        //}
+        //if (!success && closed) {
+            //throw new AsynchronousCloseException();
+        //}
     }
 
     

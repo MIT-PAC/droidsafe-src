@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ public class RegexCache {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.266 -0400", hash_original_method = "21C87B9404006AB8BDC70A7D87D605C9", hash_generated_method = "BA72428A9A53B792FB4D16D0540B1699")
     public  RegexCache(int size) {
         cache = new LRUCache<String, Pattern>(size);
-        
-        
+        // ---------- Original Method ----------
+        //cache = new LRUCache<String, Pattern>(size);
     }
 
     
@@ -29,17 +29,17 @@ public class RegexCache {
         {
             pattern = Pattern.compile(regex);
             cache.put(regex, pattern);
-        } 
+        } //End block
 Pattern var407D32260E541B695CF3FD3F7EFB76AB_986472401 =         pattern;
         var407D32260E541B695CF3FD3F7EFB76AB_986472401.addTaint(taint);
         return var407D32260E541B695CF3FD3F7EFB76AB_986472401;
-        
-        
-        
-      
-      
-    
-        
+        // ---------- Original Method ----------
+        //Pattern pattern = cache.get(regex);
+        //if (pattern == null) {
+      //pattern = Pattern.compile(regex);
+      //cache.put(regex, pattern);
+    //}
+        //return pattern;
     }
 
     
@@ -49,8 +49,8 @@ Pattern var407D32260E541B695CF3FD3F7EFB76AB_986472401 =         pattern;
         boolean var270B0AAC269CF9448F1E6159F9C60FE7_1190176006 = (cache.containsKey(regex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1007945219 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1007945219;
-        
-        
+        // ---------- Original Method ----------
+        //return cache.containsKey(regex);
     }
 
     
@@ -74,53 +74,50 @@ Pattern var407D32260E541B695CF3FD3F7EFB76AB_986472401 =         pattern;
                 boolean var4536DB7FE41CFF7E06CD6ABACDCD12AC_1520044045 = (size() > LRUCache.this.size);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_80473660 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_80473660;
-                
-                
+                // ---------- Original Method ----------
+                //return size() > LRUCache.this.size;
             }
 };
-            
-            
-            
-        
-        
-          
-        
-      
+            // ---------- Original Method ----------
+            //this.size = size;
+            //map = new LinkedHashMap<K, V>(size * 4 / 3 + 1, 0.75f, true) {
+        //@Override
+        //protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+          //return size() > LRUCache.this.size;
+        //}
+      //};
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.269 -0400", hash_original_method = "EEC311F1C8E6E4405BF9A97AEC3D11BF", hash_generated_method = "520953992AC5A249510B32B3ED87792C")
         public synchronized V get(K key) {
             addTaint(key.getTaint());
 V var97156AACD411ADC83FECC30C065B5B0C_1130226788 =             map.get(key);
             var97156AACD411ADC83FECC30C065B5B0C_1130226788.addTaint(taint);
             return var97156AACD411ADC83FECC30C065B5B0C_1130226788;
-            
-            
+            // ---------- Original Method ----------
+            //return map.get(key);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.269 -0400", hash_original_method = "C4C725598B9694AF1F3D731C0033484D", hash_generated_method = "698C581D6ABEE6803D172CCEA428E1C5")
         public synchronized void put(K key, V value) {
             addTaint(value.getTaint());
             addTaint(key.getTaint());
             map.put(key, value);
-            
-            
+            // ---------- Original Method ----------
+            //map.put(key, value);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.269 -0400", hash_original_method = "145C938C17F7FBD329FF51DDD81E595D", hash_generated_method = "57FAFE10CF84625445BB91462E040F46")
         public synchronized boolean containsKey(K key) {
             addTaint(key.getTaint());
             boolean var1F5C7C829096E4FDB1A63A2E9D4DD6A2_830982600 = (map.containsKey(key));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_807041712 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_807041712;
-            
-            
+            // ---------- Original Method ----------
+            //return map.containsKey(key);
         }
 
         

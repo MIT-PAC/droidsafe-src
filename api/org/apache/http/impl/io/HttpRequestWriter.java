@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class HttpRequestWriter extends AbstractMessageWriter {
         addTaint(params.getTaint());
         addTaint(formatter.getTaint());
         addTaint(buffer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -32,10 +32,10 @@ public class HttpRequestWriter extends AbstractMessageWriter {
         final CharArrayBuffer buffer = lineFormatter.formatRequestLine
             (this.lineBuf, ((HttpRequest) message).getRequestLine());
         this.sessionBuffer.writeLine(buffer);
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //final CharArrayBuffer buffer = lineFormatter.formatRequestLine
+            //(this.lineBuf, ((HttpRequest) message).getRequestLine());
+        //this.sessionBuffer.writeLine(buffer);
     }
 
     

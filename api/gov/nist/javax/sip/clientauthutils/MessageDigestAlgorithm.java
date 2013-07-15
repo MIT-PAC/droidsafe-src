@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.clientauthutils;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class MessageDigestAlgorithm {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.616 -0400", hash_original_method = "867FE15D3C49C82AA29712975204D9D1", hash_generated_method = "867FE15D3C49C82AA29712975204D9D1")
     public MessageDigestAlgorithm ()
     {
-        
+        //Synthesized constructor
     }
 
 

@@ -1,6 +1,6 @@
 package android.graphics;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class PointF implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.801 -0400", hash_original_method = "AC71EBB0EDB844032A48DF20A80FB47B", hash_generated_method = "80B58F578A9E18CAE61877DE29226528")
     public  PointF() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,9 +26,9 @@ public class PointF implements Parcelable {
     public  PointF(float x, float y) {
         this.x = x;
         this.y = y;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.x = x;
+        //this.y = y;
     }
 
     
@@ -36,9 +36,9 @@ public class PointF implements Parcelable {
     public  PointF(Point p) {
         this.x = p.x;
         this.y = p.y;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.x = p.x;
+        //this.y = p.y;
     }
 
     
@@ -46,9 +46,9 @@ public class PointF implements Parcelable {
     public final void set(float x, float y) {
         this.x = x;
         this.y = y;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.x = x;
+        //this.y = y;
     }
 
     
@@ -56,9 +56,9 @@ public class PointF implements Parcelable {
     public final void set(PointF p) {
         this.x = p.x;
         this.y = p.y;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.x = p.x;
+        //this.y = p.y;
     }
 
     
@@ -66,9 +66,9 @@ public class PointF implements Parcelable {
     public final void negate() {
         x = -x;
         y = -y;
-        
-        
-        
+        // ---------- Original Method ----------
+        //x = -x;
+        //y = -y;
     }
 
     
@@ -76,9 +76,9 @@ public class PointF implements Parcelable {
     public final void offset(float dx, float dy) {
         x += dx;
         y += dy;
-        
-        
-        
+        // ---------- Original Method ----------
+        //x += dx;
+        //y += dy;
     }
 
     
@@ -89,8 +89,8 @@ public class PointF implements Parcelable {
         boolean var03A09ADE700DB3B4FF9A4003E8D78D38_1339479362 = (this.x == x && this.y == y);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_171305446 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_171305446;
-        
-        
+        // ---------- Original Method ----------
+        //return this.x == x && this.y == y;
     }
 
     
@@ -99,30 +99,27 @@ public class PointF implements Parcelable {
         float varC11B68AE7548069FC83496CE2CEF8ED0_1464237320 = (length(x, y));
                 float var546ADE640B6EDFBC8A086EF31347E768_1556356642 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1556356642;
-        
-        
+        // ---------- Original Method ----------
+        //return length(x, y);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float length(float x, float y) {
+        public static float length(float x, float y) {
         return FloatMath.sqrt(x * x + y * y);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.813 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "989DACFD5B3BD92DB98229F286E89665")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1685357836 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_12652115 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_12652115;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.813 -0400", hash_original_method = "498F687E010E97B616DAA29FD28A4DFC", hash_generated_method = "A45D20B26148C0903A1696AC7FF266CC")
     @Override
     public void writeToParcel(Parcel out, int flags) {
@@ -130,20 +127,19 @@ public class PointF implements Parcelable {
         addTaint(out.getTaint());
         out.writeFloat(x);
         out.writeFloat(y);
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeFloat(x);
+        //out.writeFloat(y);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.814 -0400", hash_original_method = "1ADDB8AA93A41CBDC98F8DD97BD3942F", hash_generated_method = "0BFCD1D65346AFF3FD9BA0C6DFBDDA42")
     public void readFromParcel(Parcel in) {
         x = in.readFloat();
         y = in.readFloat();
-        
-        
-        
+        // ---------- Original Method ----------
+        //x = in.readFloat();
+        //y = in.readFloat();
     }
 
     
@@ -162,14 +158,14 @@ public class PointF implements Parcelable {
             return new PointF[size];
         }
     };
-    
+    // orphaned legacy method
     public PointF createFromParcel(Parcel in) {
             PointF r = new PointF();
             r.readFromParcel(in);
             return r;
         }
     
-    
+    // orphaned legacy method
     public PointF[] newArray(int size) {
             return new PointF[size];
         }

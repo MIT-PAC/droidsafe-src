@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,17 +53,17 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         mWebView.setHTML5VideoViewProxy(this);
         mNativePointer = nativePtr;
         createWebCoreHandler();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWebView = webView;
+        //mWebView.setHTML5VideoViewProxy(this);
+        //mNativePointer = nativePtr;
+        //createWebCoreHandler();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.384 -0400", hash_original_method = "CDB2DD287D3DEEC004B192544DE39644", hash_generated_method = "3C01D5FD4F9EC7814C8341506F6E8FAE")
     public void onPrepared(MediaPlayer mp) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(mp.getTaint());
         VideoPlayer.onPrepared();
         Message msg = Message.obtain(mWebCoreHandler, PREPARED);
@@ -73,31 +73,31 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         map.put("height", new Integer(mp.getVideoHeight()));
         msg.obj = map;
         mWebCoreHandler.sendMessage(msg);
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //VideoPlayer.onPrepared();
+        //Message msg = Message.obtain(mWebCoreHandler, PREPARED);
+        //Map<String, Object> map = new HashMap<String, Object>();
+        //map.put("dur", new Integer(mp.getDuration()));
+        //map.put("width", new Integer(mp.getVideoWidth()));
+        //map.put("height", new Integer(mp.getVideoHeight()));
+        //msg.obj = map;
+        //mWebCoreHandler.sendMessage(msg);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.384 -0400", hash_original_method = "82FFD8A4379253187C5EBB8D52946D71", hash_generated_method = "3DD19A463AEB4719CBD153EC4246BF18")
     public void onCompletion(MediaPlayer mp) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(mp.getTaint());
         sendMessage(obtainMessage(ENDED, 1, 0));
-        
-        
+        // ---------- Original Method ----------
+        //sendMessage(obtainMessage(ENDED, 1, 0));
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.385 -0400", hash_original_method = "655E6549044B32921535D006F146EAB8", hash_generated_method = "07ACCB385D45580C7E3D7DA9756921ED")
     public boolean onError(MediaPlayer mp, int what, int extra) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(extra);
         addTaint(what);
         addTaint(mp.getTaint());
@@ -105,9 +105,9 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
         boolean var68934A3E9455FA72420237EB05902327_1897293754 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_741726529 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_741726529;
-        
-        
-        
+        // ---------- Original Method ----------
+        //sendMessage(obtainMessage(ERROR));
+        //return false;
     }
 
     
@@ -115,9 +115,9 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
     public void dispatchOnEnded() {
         Message msg = Message.obtain(mWebCoreHandler, ENDED);
         mWebCoreHandler.sendMessage(msg);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain(mWebCoreHandler, ENDED);
+        //mWebCoreHandler.sendMessage(msg);
     }
 
     
@@ -125,9 +125,9 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
     public void dispatchOnPaused() {
         Message msg = Message.obtain(mWebCoreHandler, PAUSED);
         mWebCoreHandler.sendMessage(msg);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain(mWebCoreHandler, PAUSED);
+        //mWebCoreHandler.sendMessage(msg);
     }
 
     
@@ -135,33 +135,32 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
     public void dispatchOnStopFullScreen() {
         Message msg = Message.obtain(mWebCoreHandler, STOPFULLSCREEN);
         mWebCoreHandler.sendMessage(msg);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain(mWebCoreHandler, STOPFULLSCREEN);
+        //mWebCoreHandler.sendMessage(msg);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.386 -0400", hash_original_method = "C11D465DE26E4E34CC2ED3EA3C5CA265", hash_generated_method = "C4D6A72BC32251196FAB8B8FF9FCA05A")
     public void onTimeupdate() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         sendMessage(obtainMessage(TIMEUPDATE));
-        
-        
+        // ---------- Original Method ----------
+        //sendMessage(obtainMessage(TIMEUPDATE));
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.386 -0400", hash_original_method = "BC25893B84FEC7EF5FFFF0FB0B5B6C05", hash_generated_method = "F70F47E4576D5C4AC85E967BA51C2C29")
     @Override
     public void onFrameAvailable(SurfaceTexture surfaceTexture) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(surfaceTexture.getTaint());
         mWebView.invalidate();
-        
-        
+        // ---------- Original Method ----------
+        //mWebView.invalidate();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.387 -0400", hash_original_method = "A79112D38F42B48A9F0E0FABCCDF1611", hash_generated_method = "78AD7D2E1CD464E06384A9780B46F474")
     @Override
     public void handleMessage(Message msg) {
@@ -175,21 +174,21 @@ switch(msg.what){
     if(client != null)            
             {
                 VideoPlayer.play(url, mSeekPosition, this, client, videoLayerID);
-            } 
+            } //End block
             break;
-        } 
+        } //End block
         case SEEK:
         {
             Integer time = (Integer) msg.obj;
             mSeekPosition = time;
             VideoPlayer.seek(mSeekPosition, this);
             break;
-        } 
+        } //End block
         case PAUSE:
         {
             VideoPlayer.pause(this);
             break;
-        } 
+        } //End block
         case ENDED:
     if(msg.arg1 == 1)        
         VideoPlayer.isVideoSelfEnded = true;
@@ -201,47 +200,46 @@ switch(msg.what){
     if(client != null)            
             {
                 client.onHideCustomView();
-            } 
+            } //End block
             break;
-        } 
+        } //End block
         case LOAD_DEFAULT_POSTER:
         {
             WebChromeClient client = mWebView.getWebChromeClient();
     if(client != null)            
             {
                 doSetPoster(client.getDefaultVideoPoster());
-            } 
+            } //End block
             break;
-        } 
+        } //End block
         case TIMEUPDATE:
         {
     if(VideoPlayer.isPlaying(this))            
             {
                 sendTimeupdate();
-            } 
+            } //End block
             break;
-        } 
+        } //End block
         case BUFFERING_START:
         {
             VideoPlayer.setPlayerBuffering(true);
             break;
-        } 
+        } //End block
         case BUFFERING_END:
         {
             VideoPlayer.setPlayerBuffering(false);
             break;
-        } 
+        } //End block
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.389 -0400", hash_original_method = "1A016E6492F3E166AEDA862A5517C526", hash_generated_method = "33018A9ACDFEDC13B4E98D7147E35B5E")
     private void createWebCoreHandler() {
         mWebCoreHandler = new Handler() {        
-        @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.388 -0400", hash_original_method = "B10F0183A0FABB1F34A9FD1B81A4AF54", hash_generated_method = "F46A2FD336346BBE5803EEA110CD196E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.388 -0400", hash_original_method = "B10F0183A0FABB1F34A9FD1B81A4AF54", hash_generated_method = "F46A2FD336346BBE5803EEA110CD196E")
         @Override
         public void handleMessage(Message msg) {
             addTaint(msg.getTaint());
@@ -255,7 +253,7 @@ switch(msg.what){
                 nativeOnPrepared(duration.intValue(), width.intValue(),
                                 height.intValue(), mNativePointer);
                 break;
-            } 
+            } //End block
             case ENDED:
             mSeekPosition = 0;
             nativeOnEnded(mNativePointer);
@@ -274,34 +272,33 @@ switch(msg.what){
             nativeOnStopFullscreen(mNativePointer);
             break;
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 };
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.389 -0400", hash_original_method = "76142FB417205DB77C8AC002D1DDBF45", hash_generated_method = "89565AADB4E3B107EE3105852519D2CD")
     private void doSetPoster(Bitmap poster) {
     if(poster == null)        
         {
             return;
-        } 
+        } //End block
         mPoster = poster;
         Message msg = Message.obtain(mWebCoreHandler, POSTER_FETCHED);
         msg.obj = poster;
         mWebCoreHandler.sendMessage(msg);
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (poster == null) {
+            //return;
+        //}
+        //mPoster = poster;
+        //Message msg = Message.obtain(mWebCoreHandler, POSTER_FETCHED);
+        //msg.obj = poster;
+        //mWebCoreHandler.sendMessage(msg);
     }
 
     
@@ -310,10 +307,10 @@ switch(msg.what){
         Message msg = Message.obtain(mWebCoreHandler, TIMEUPDATE);
         msg.arg1 = VideoPlayer.getCurrentPosition();
         mWebCoreHandler.sendMessage(msg);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = Message.obtain(mWebCoreHandler, TIMEUPDATE);
+        //msg.arg1 = VideoPlayer.getCurrentPosition();
+        //mWebCoreHandler.sendMessage(msg);
     }
 
     
@@ -322,12 +319,11 @@ switch(msg.what){
 Context var7A9501759E8A898311CFF24F0CB70875_105356594 =         mWebView.getContext();
         var7A9501759E8A898311CFF24F0CB70875_105356594.addTaint(taint);
         return var7A9501759E8A898311CFF24F0CB70875_105356594;
-        
-        
+        // ---------- Original Method ----------
+        //return mWebView.getContext();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.390 -0400", hash_original_method = "93A8BD8C1053222363E314544DFAB05A", hash_generated_method = "85209CAF16C03CC08C3BCC7AAC35EA0E")
     public void play(String url, int position, int videoLayerID) {
         addTaint(videoLayerID);
@@ -336,26 +332,26 @@ Context var7A9501759E8A898311CFF24F0CB70875_105356594 =         mWebView.getCont
     if(url == null)        
         {
             return;
-        } 
+        } //End block
     if(position > 0)        
         {
             seek(position);
-        } 
+        } //End block
         Message message = obtainMessage(PLAY);
         message.arg1 = videoLayerID;
         message.obj = url;
         sendMessage(message);
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (url == null) {
+            //return;
+        //}
+        //if (position > 0) {
+            //seek(position);
+        //}
+        //Message message = obtainMessage(PLAY);
+        //message.arg1 = videoLayerID;
+        //message.obj = url;
+        //sendMessage(message);
     }
 
     
@@ -365,10 +361,10 @@ Context var7A9501759E8A898311CFF24F0CB70875_105356594 =         mWebView.getCont
         Message message = obtainMessage(SEEK);
         message.obj = new Integer(time);
         sendMessage(message);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message message = obtainMessage(SEEK);
+        //message.obj = new Integer(time);
+        //sendMessage(message);
     }
 
     
@@ -376,25 +372,24 @@ Context var7A9501759E8A898311CFF24F0CB70875_105356594 =         mWebView.getCont
     public void pause() {
         Message message = obtainMessage(PAUSE);
         sendMessage(message);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message message = obtainMessage(PAUSE);
+        //sendMessage(message);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.391 -0400", hash_original_method = "9E02A818380AAE8C95423CA4DF6BB0F2", hash_generated_method = "C45124B7728B878B2EC099BAE52C9F8C")
     public void teardown() {
     if(mPosterDownloader != null)        
         {
             mPosterDownloader.cancelAndReleaseQueue();
-        } 
+        } //End block
         mNativePointer = 0;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mPosterDownloader != null) {
+            //mPosterDownloader.cancelAndReleaseQueue();
+        //}
+        //mNativePointer = 0;
     }
 
     
@@ -405,24 +400,24 @@ Context var7A9501759E8A898311CFF24F0CB70875_105356594 =         mWebView.getCont
             Message message = obtainMessage(LOAD_DEFAULT_POSTER);
             sendMessage(message);
             return;
-        } 
+        } //End block
     if(mPosterDownloader != null)        
         {
             mPosterDownloader.cancelAndReleaseQueue();
-        } 
+        } //End block
         mPosterDownloader = new PosterDownloader(url, this);
         mPosterDownloader.start();
-        
-        
-            
-            
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (url == null) {
+            //Message message = obtainMessage(LOAD_DEFAULT_POSTER);
+            //sendMessage(message);
+            //return;
+        //}
+        //if (mPosterDownloader != null) {
+            //mPosterDownloader.cancelAndReleaseQueue();
+        //}
+        //mPosterDownloader = new PosterDownloader(url, this);
+        //mPosterDownloader.start();
     }
 
     
@@ -430,16 +425,16 @@ Context var7A9501759E8A898311CFF24F0CB70875_105356594 =         mWebView.getCont
     public void setBaseLayer(int layer) {
         addTaint(layer);
         VideoPlayer.setBaseLayer(layer);
-        
-        
+        // ---------- Original Method ----------
+        //VideoPlayer.setBaseLayer(layer);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.392 -0400", hash_original_method = "6A592A0539FD41CAB4A89EA53CE8C509", hash_generated_method = "74BD114EA9D2C02C1D31A902EB31DAE1")
     public void pauseAndDispatch() {
         VideoPlayer.pauseAndDispatch();
-        
-        
+        // ---------- Original Method ----------
+        //VideoPlayer.pauseAndDispatch();
     }
 
     
@@ -448,8 +443,8 @@ Context var7A9501759E8A898311CFF24F0CB70875_105356594 =         mWebView.getCont
         addTaint(url.getTaint());
         addTaint(layerId);
         VideoPlayer.enterFullScreenVideo(layerId, url, this, mWebView);
-        
-        
+        // ---------- Original Method ----------
+        //VideoPlayer.enterFullScreenVideo(layerId, url, this, mWebView);
     }
 
     
@@ -458,48 +453,41 @@ Context var7A9501759E8A898311CFF24F0CB70875_105356594 =         mWebView.getCont
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.393 -0400", hash_original_method = "D61E1D458239E8CEF9B36F4B5C04FED9", hash_generated_method = "1617FAF5D70123B4B36FDB44F5A3EBE5")
      WebView getWebView() {
 WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
         var09F63D9C996D86988FC60D7EA82D7F85_1169938834.addTaint(taint);
         return var09F63D9C996D86988FC60D7EA82D7F85_1169938834;
-        
-        
+        // ---------- Original Method ----------
+        //return mWebView;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.394 -0400", hash_original_method = "450372CEC4ACF74D667E8FE30D4758C3", hash_generated_method = "4F553D58F082C1728E8C193907AAEE2A")
     private void nativeOnPrepared(int duration, int width, int height, int nativePointer) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.394 -0400", hash_original_method = "69439EE53B1C4D974D568FFBF0847B4A", hash_generated_method = "606701CDB9ADB798998660283F8BB0CA")
     private void nativeOnEnded(int nativePointer) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.394 -0400", hash_original_method = "A4A54DE61D62E407521E72B4C5FDD860", hash_generated_method = "FCF75D98885EFEC14C33BE0CD19DDC1D")
     private void nativeOnPaused(int nativePointer) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.394 -0400", hash_original_method = "84652220F84E924B202B7575A6B0DB08", hash_generated_method = "244F590E15C6B3F7B8C744921F972E2E")
     private void nativeOnPosterFetched(Bitmap poster, int nativePointer) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.394 -0400", hash_original_method = "40EE80299CDDB294EE4D171341428EFD", hash_generated_method = "04ABF3516A1C313065D46866A8B341C6")
     private void nativeOnTimeupdate(int position, int nativePointer) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.395 -0400", hash_original_method = "73782D526ACC6162F582FA042F7A8C14", hash_generated_method = "1DA2104914209C6F0AED0256CC37B268")
     private void nativeOnStopFullscreen(int nativePointer) {
     }
@@ -517,29 +505,29 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.396 -0400", hash_original_method = "F17ABD2D26205A567E8F07C068E86E0A", hash_generated_method = "FDA7A90B83ACBE39D39FAFFB14C728B3")
     @Override
     public boolean onInfo(MediaPlayer mp, int what, int extra) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(extra);
         addTaint(what);
         addTaint(mp.getTaint());
     if(what == MediaPlayer.MEDIA_INFO_BUFFERING_START)        
         {
             sendMessage(obtainMessage(BUFFERING_START, what, extra));
-        } 
+        } //End block
         else
     if(what == MediaPlayer.MEDIA_INFO_BUFFERING_END)        
         {
             sendMessage(obtainMessage(BUFFERING_END, what, extra));
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1981064847 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1413632588 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1413632588;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (what == MediaPlayer.MEDIA_INFO_BUFFERING_START) {
+            //sendMessage(obtainMessage(BUFFERING_START, what, extra));
+        //} else if (what == MediaPlayer.MEDIA_INFO_BUFFERING_END) {
+            //sendMessage(obtainMessage(BUFFERING_END, what, extra));
+        //}
+        //return false;
     }
 
     
@@ -548,7 +536,7 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.396 -0400", hash_original_method = "9A68A6C42721A074DDF281539068301A", hash_generated_method = "9A68A6C42721A074DDF281539068301A")
         public VideoPlayer ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -582,8 +570,7 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static void pauseAndDispatch() {
+                public static void pauseAndDispatch() {
             if (mHTML5VideoView != null) {
                 mHTML5VideoView.pauseAndDispatch(mCurrentProxy);
                 setBaseLayer(mBaseLayer);
@@ -611,8 +598,7 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static void play(String url, int time, HTML5VideoViewProxy proxy,
+                public static void play(String url, int time, HTML5VideoViewProxy proxy,
                 WebChromeClient client, int videoLayerId) {
             int currentVideoLayerId = -1;
             boolean backFromFullScreenMode = false;
@@ -673,9 +659,8 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static void onPrepared() {
-            
+                public static void onPrepared() {
+            //DSFIXME:  CODE0009: Possible callback target function detected
             if (!mHTML5VideoView.isFullScreenMode() || mHTML5VideoView.getAutostart()) {
                 mHTML5VideoView.start();
             }
@@ -740,21 +725,21 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
             try 
             {
                 mUrl = new URL(url);
-            } 
+            } //End block
             catch (MalformedURLException e)
             {
                 mUrl = null;
-            } 
+            } //End block
             mProxy = proxy;
             mHandler = new Handler();
-            
-            
-                
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //try {
+                //mUrl = new URL(url);
+            //} catch (MalformedURLException e) {
+                //mUrl = null;
+            //}
+            //mProxy = proxy;
+            //mHandler = new Handler();
         }
 
         
@@ -764,23 +749,23 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
     if(mUrl == null)            
             {
                 return;
-            } 
+            } //End block
             String protocol = mUrl.getProtocol();
     if("http".equals(protocol) || "https".equals(protocol))            
             {
                 mRequestHandle = mRequestQueue.queueRequest(mUrl.toString(), "GET", null,
                         this, null, 0);
-            } 
-            
-            
-            
-                
-            
-            
-            
-                
-                        
-            
+            } //End block
+            // ---------- Original Method ----------
+            //retainQueue();
+            //if (mUrl == null) {
+                //return;
+            //}
+            //String protocol = mUrl.getProtocol();
+            //if ("http".equals(protocol) || "https".equals(protocol)) {
+                //mRequestHandle = mRequestQueue.queueRequest(mUrl.toString(), "GET", null,
+                        //this, null, 0);
+            //}
         }
 
         
@@ -790,18 +775,17 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
             {
                 mRequestHandle.cancel();
                 mRequestHandle = null;
-            } 
+            } //End block
             releaseQueue();
-            
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mRequestHandle != null) {
+                //mRequestHandle.cancel();
+                //mRequestHandle = null;
+            //}
+            //releaseQueue();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.400 -0400", hash_original_method = "3D0957D11B46ABCB01980155EE173252", hash_generated_method = "42980D93BA2A43E7DE94A7AE6CE8083D")
         public void status(int major_version,
                 int minor_version,
@@ -811,17 +795,16 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
             addTaint(minor_version);
             addTaint(major_version);
             mStatusCode = code;
-            
-            
+            // ---------- Original Method ----------
+            //mStatusCode = code;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.400 -0400", hash_original_method = "BF40C4FA5E162E01EBED02AABC1482F3", hash_generated_method = "E45FA39053CF44926A6AA06D774A1F7D")
         public void headers(Headers headers) {
             mHeaders = headers;
-            
-            
+            // ---------- Original Method ----------
+            //mHeaders = headers;
         }
 
         
@@ -832,13 +815,13 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
     if(mPosterBytes == null)            
             {
                 mPosterBytes = new ByteArrayOutputStream();
-            } 
+            } //End block
             mPosterBytes.write(data, 0, len);
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mPosterBytes == null) {
+                //mPosterBytes = new ByteArrayOutputStream();
+            //}
+            //mPosterBytes.write(data, 0, len);
         }
 
         
@@ -851,20 +834,20 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
                     Bitmap poster = BitmapFactory.decodeByteArray(
                             mPosterBytes.toByteArray(), 0, mPosterBytes.size());
                     mProxy.doSetPoster(poster);
-                } 
+                } //End block
                 cleanup();
-            } 
+            } //End block
             else
     if(mStatusCode >= 300 && mStatusCode < 400)            
             {
                 try 
                 {
                     mUrl = new URL(mHeaders.getLocation());
-                } 
+                } //End block
                 catch (MalformedURLException e)
                 {
                     mUrl = null;
-                } 
+                } //End block
     if(mUrl != null)                
                 {
                     mHandler.post(new Runnable() {            
@@ -874,26 +857,25 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
                 {
                     mRequestHandle.setupRedirect(mUrl.toString(), mStatusCode,
                                        new HashMap<String, String>());
-                } 
-                
-                
-                               
-                                       
-                           
+                } //End block
+                // ---------- Original Method ----------
+                //if (mRequestHandle != null) {
+                               //mRequestHandle.setupRedirect(mUrl.toString(), mStatusCode,
+                                       //new HashMap<String, String>());
+                           //}
             }
 });
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.401 -0400", hash_original_method = "1CF1F157C74C81DF70E7D72EFED2A778", hash_generated_method = "BA975D17C2A9DCB3141CC03D45651106")
         public void certificate(SslCertificate certificate) {
             addTaint(certificate.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -902,20 +884,19 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
             addTaint(description.getTaint());
             addTaint(id);
             cleanup();
-            
-            
+            // ---------- Original Method ----------
+            //cleanup();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.401 -0400", hash_original_method = "4CC585D4993857C36C3ADB32AB66A34A", hash_generated_method = "DBACB75771EA64E62A61555CFD5FF233")
         public boolean handleSslErrorRequest(SslError error) {
             addTaint(error.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_2022800534 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1116757756 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1116757756;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
@@ -926,24 +907,24 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
                 try 
                 {
                     mPosterBytes.close();
-                } 
+                } //End block
                 catch (IOException ignored)
                 {
-                } 
+                } //End block
                 finally 
                 {
                     mPosterBytes = null;
-                } 
-            } 
-            
-            
-                
-                    
-                
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //if (mPosterBytes != null) {
+                //try {
+                    //mPosterBytes.close();
+                //} catch (IOException ignored) {
+                //} finally {
+                    //mPosterBytes = null;
+                //}
+            //}
         }
 
         
@@ -952,13 +933,13 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
     if(mRequestQueue == null)            
             {
                 mRequestQueue = new RequestQueue(mProxy.getContext());
-            } 
+            } //End block
             mQueueRefCount++;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mRequestQueue == null) {
+                //mRequestQueue = new RequestQueue(mProxy.getContext());
+            //}
+            //mQueueRefCount++;
         }
 
         
@@ -967,20 +948,20 @@ WebView var09F63D9C996D86988FC60D7EA82D7F85_1169938834 =         mWebView;
     if(mQueueRefCount == 0)            
             {
                 return;
-            } 
+            } //End block
     if(--mQueueRefCount == 0)            
             {
                 mRequestQueue.shutdown();
                 mRequestQueue = null;
-            } 
-            
-            
-                
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mQueueRefCount == 0) {
+                //return;
+            //}
+            //if (--mQueueRefCount == 0) {
+                //mRequestQueue.shutdown();
+                //mRequestQueue = null;
+            //}
         }
 
         

@@ -1,6 +1,6 @@
 package android.appwidget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -69,7 +69,7 @@ public class AppWidgetHostView extends FrameLayout {
     public  AppWidgetHostView(Context context) {
         this(context, android.R.anim.fade_in, android.R.anim.fade_out);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -81,9 +81,9 @@ public class AppWidgetHostView extends FrameLayout {
         addTaint(animationIn);
         mContext = context;
         setIsRootNamespace(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //setIsRootNamespace(true);
     }
 
     
@@ -95,14 +95,14 @@ public class AppWidgetHostView extends FrameLayout {
         {
             Rect padding = getDefaultPaddingForWidget(mContext, info.provider, null);
             setPadding(padding.left, padding.top, padding.right, padding.bottom);
-        } 
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mAppWidgetId = appWidgetId;
+        //mInfo = info;
+        //if (info != null) {
+            //Rect padding = getDefaultPaddingForWidget(mContext, info.provider, null);
+            //setPadding(padding.left, padding.top, padding.right, padding.bottom);
+        //}
     }
 
     
@@ -135,25 +135,23 @@ public class AppWidgetHostView extends FrameLayout {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.535 -0400", hash_original_method = "523EC9820CA9D9B6EC1AAD0F0C3D4C58", hash_generated_method = "7D4617D75530B0050584F0EA3C734CE7")
     public int getAppWidgetId() {
         int var905A4BBD5E07D0C7A80D7BBC86A773FE_939149883 = (mAppWidgetId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_231492696 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_231492696;
-        
-        
+        // ---------- Original Method ----------
+        //return mAppWidgetId;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.535 -0400", hash_original_method = "FF9792E81F5B9850F94285F82FEF7EB6", hash_generated_method = "BADF6804EA53F3ECA51CD22FA7BBD143")
     public AppWidgetProviderInfo getAppWidgetInfo() {
 AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1253630836 =         mInfo;
         var3A968EAC93D51342CCDD9EFE8723F737_1253630836.addTaint(taint);
         return var3A968EAC93D51342CCDD9EFE8723F737_1253630836;
-        
-        
+        // ---------- Original Method ----------
+        //return mInfo;
     }
 
     
@@ -164,10 +162,10 @@ AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1253630836 =         m
         final ParcelableSparseArray jail = new ParcelableSparseArray();
         super.dispatchSaveInstanceState(jail);
         container.put(generateId(), jail);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final ParcelableSparseArray jail = new ParcelableSparseArray();
+        //super.dispatchSaveInstanceState(jail);
+        //container.put(generateId(), jail);
     }
 
     
@@ -177,9 +175,9 @@ AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1253630836 =         m
         int var0FB59648925A7BC6C876D2505B11EFEF_605558589 = (id == View.NO_ID ? mAppWidgetId : id);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024359106 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024359106;
-        
-        
-        
+        // ---------- Original Method ----------
+        //final int id = getId();
+        //return id == View.NO_ID ? mAppWidgetId : id;
     }
 
     
@@ -192,18 +190,18 @@ AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1253630836 =         m
     if(parcelable != null && parcelable instanceof ParcelableSparseArray)        
         {
             jail = (ParcelableSparseArray) parcelable;
-        } 
+        } //End block
     if(jail == null)        
         jail = new ParcelableSparseArray();
         super.dispatchRestoreInstanceState(jail);
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //final Parcelable parcelable = container.get(generateId());
+        //ParcelableSparseArray jail = null;
+        //if (parcelable != null && parcelable instanceof ParcelableSparseArray) {
+            //jail = (ParcelableSparseArray) parcelable;
+        //}
+        //if (jail == null) jail = new ParcelableSparseArray();
+        //super.dispatchRestoreInstanceState(jail);
     }
 
     
@@ -215,9 +213,9 @@ AppWidgetProviderInfo var3A968EAC93D51342CCDD9EFE8723F737_1253630836 =         m
 LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_2113820677 =         new FrameLayout.LayoutParams(context, attrs);
         var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_2113820677.addTaint(taint);
         return var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_2113820677;
-        
-        
-        
+        // ---------- Original Method ----------
+        //final Context context = mRemoteContext != null ? mRemoteContext : mContext;
+        //return new FrameLayout.LayoutParams(context, attrs);
     }
 
     
@@ -226,10 +224,10 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_2113820677 =         new FrameL
         mInfo = info;
         mViewMode = VIEW_MODE_NOINIT;
         updateAppWidget(null);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mInfo = info;
+        //mViewMode = VIEW_MODE_NOINIT;
+        //updateAppWidget(null);
     }
 
     
@@ -251,27 +249,27 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_2113820677 =         new FrameL
                     try 
                     {
                         mOld = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-                    } 
+                    } //End block
                     catch (OutOfMemoryError e)
                     {
                         mOld = null;
-                    } 
+                    } //End block
     if(mOld != null)                    
                     {
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
     if(remoteViews == null)        
         {
     if(mViewMode == VIEW_MODE_DEFAULT)            
             {
                 return;
-            } 
+            } //End block
             content = getDefaultView();
             mLayoutId = -1;
             mViewMode = VIEW_MODE_DEFAULT;
-        } 
+        } //End block
         else
         {
             mRemoteContext = getRemoteContext(remoteViews);
@@ -285,12 +283,12 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_2113820677 =         new FrameL
                     recycled = true;
     if(LOGD)                    
                     Log.d(TAG, "was able to recycled existing layout");
-                } 
+                } //End block
                 catch (RuntimeException e)
                 {
                     exception = e;
-                } 
-            } 
+                } //End block
+            } //End block
     if(content == null)            
             {
                 try 
@@ -298,44 +296,44 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_2113820677 =         new FrameL
                     content = remoteViews.apply(mContext, this);
     if(LOGD)                    
                     Log.d(TAG, "had to inflate new layout");
-                } 
+                } //End block
                 catch (RuntimeException e)
                 {
                     exception = e;
-                } 
-            } 
+                } //End block
+            } //End block
             mLayoutId = layoutId;
             mViewMode = VIEW_MODE_CONTENT;
-        } 
+        } //End block
     if(content == null)        
         {
     if(mViewMode == VIEW_MODE_ERROR)            
             {
                 return;
-            } 
+            } //End block
             content = getErrorView();
             mViewMode = VIEW_MODE_ERROR;
-        } 
+        } //End block
     if(!recycled)        
         {
             prepareView(content);
             addView(content);
-        } 
+        } //End block
     if(mView != content)        
         {
             removeView(mView);
             mView = content;
-        } 
+        } //End block
     if(CROSSFADE)        
         {
     if(mFadeStartTime < 0)            
             {
                 mFadeStartTime = SystemClock.uptimeMillis();
                 invalidate();
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -351,25 +349,25 @@ LayoutParams var5C12F614BCDAD79DFD6ABD0FDD1B1EC9_2113820677 =         new FrameL
             {
                 BaseAdapter baseAdapter = (BaseAdapter) adapter;
                 baseAdapter.notifyDataSetChanged();
-            } 
+            } //End block
             else
     if(adapter == null && adapterView instanceof RemoteAdapterConnectionCallback)            
             {
                 ((RemoteAdapterConnectionCallback) adapterView).deferNotifyDataSetChanged();
-            } 
-        } 
-        
-        
-        
-            
-            
-            
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //View v = findViewById(viewId);
+        //if ((v != null) && (v instanceof AdapterView<?>)) {
+            //AdapterView<?> adapterView = (AdapterView<?>) v;
+            //Adapter adapter = adapterView.getAdapter();
+            //if (adapter instanceof BaseAdapter) {
+                //BaseAdapter baseAdapter = (BaseAdapter) adapter;
+                //baseAdapter.notifyDataSetChanged();
+            //}  else if (adapter == null && adapterView instanceof RemoteAdapterConnectionCallback) {
+                //((RemoteAdapterConnectionCallback) adapterView).deferNotifyDataSetChanged();
+            //}
+        //}
     }
 
     
@@ -388,22 +386,22 @@ Context var178E2AD52D6FBBB503F908168856B574_1953035098 =         mContext;
 Context var15FE925204C6995BDC4863C2BEBDC967_304072381 =             mContext.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
             var15FE925204C6995BDC4863C2BEBDC967_304072381.addTaint(taint);
             return var15FE925204C6995BDC4863C2BEBDC967_304072381;
-        } 
+        } //End block
         catch (NameNotFoundException e)
         {
 Context var178E2AD52D6FBBB503F908168856B574_204667550 =             mContext;
             var178E2AD52D6FBBB503F908168856B574_204667550.addTaint(taint);
             return var178E2AD52D6FBBB503F908168856B574_204667550;
-        } 
-        
-        
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final String packageName = views.getPackage();
+        //if (packageName == null) return mContext;
+        //try {
+            //return mContext.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
+        //} catch (NameNotFoundException e) {
+            //Log.e(TAG, "Package name " + packageName + " not found");
+            //return mContext;
+        //}
     }
 
     
@@ -424,18 +422,18 @@ Context var178E2AD52D6FBBB503F908168856B574_204667550 =             mContext;
     if(alpha > 255)                
                 {
                     alpha = 255;
-                } 
+                } //End block
                 Log.d(TAG, "drawChild alpha=" + alpha + " l=" + l + " t=" + t
                         + " w=" + child.getWidth());
     if(alpha != 255 && mOld != null)                
                 {
                     mOldPaint.setAlpha(255-alpha);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 alpha = 255;
-            } 
+            } //End block
             int restoreTo = canvas.saveLayerAlpha(l, t, child.getWidth(), child.getHeight(), alpha,
                     Canvas.HAS_ALPHA_LAYER_SAVE_FLAG | Canvas.CLIP_TO_LAYER_SAVE_FLAG);
             boolean rv = super.drawChild(canvas, child, drawingTime);
@@ -443,7 +441,7 @@ Context var178E2AD52D6FBBB503F908168856B574_204667550 =             mContext;
     if(alpha < 255)            
             {
                 invalidate();
-            } 
+            } //End block
             else
             {
                 mFadeStartTime = -1;
@@ -451,20 +449,20 @@ Context var178E2AD52D6FBBB503F908168856B574_204667550 =             mContext;
                 {
                     mOld.recycle();
                     mOld = null;
-                } 
-            } 
+                } //End block
+            } //End block
             boolean var108BC7B6961E71B2E770387A378CBC10_1540086321 = (rv);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1322798008 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1322798008;
-        } 
+        } //End block
         else
         {
             boolean varC1CAB5F89F7BBD877DB44D454088FF65_991653318 = (super.drawChild(canvas, child, drawingTime));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_63131998 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_63131998;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -476,17 +474,17 @@ Context var178E2AD52D6FBBB503F908168856B574_204667550 =             mContext;
         {
             requested = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
                     LayoutParams.MATCH_PARENT);
-        } 
+        } //End block
         requested.gravity = Gravity.CENTER;
         view.setLayoutParams(requested);
-        
-        
-        
-            
-                    
-        
-        
-        
+        // ---------- Original Method ----------
+        //FrameLayout.LayoutParams requested = (FrameLayout.LayoutParams)view.getLayoutParams();
+        //if (requested == null) {
+            //requested = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
+                    //LayoutParams.MATCH_PARENT);
+        //}
+        //requested.gravity = Gravity.CENTER;
+        //view.setLayoutParams(requested);
     }
 
     
@@ -495,7 +493,7 @@ Context var178E2AD52D6FBBB503F908168856B574_204667550 =             mContext;
     if(LOGD)        
         {
             Log.d(TAG, "getDefaultView");
-        } 
+        } //End block
         View defaultView = null;
         Exception exception = null;
         try 
@@ -510,33 +508,33 @@ Context var178E2AD52D6FBBB503F908168856B574_204667550 =             mContext;
                 inflater = inflater.cloneInContext(theirContext);
                 inflater.setFilter(sInflaterFilter);
                 defaultView = inflater.inflate(mInfo.initialLayout, this, false);
-            } 
+            } //End block
             else
             {
-            } 
-        } 
+            } //End block
+        } //End block
         catch (PackageManager.NameNotFoundException e)
         {
             exception = e;
-        } 
+        } //End block
         catch (RuntimeException e)
         {
             exception = e;
-        } 
+        } //End block
     if(exception != null)        
         {
-        } 
+        } //End block
     if(defaultView == null)        
         {
     if(LOGD)            
             Log.d(TAG, "getDefaultView couldn't find any view, so inflating error");
             defaultView = getErrorView();
-        } 
+        } //End block
 View varDA032537A4C8F9680067866F46EBAF02_626481441 =         defaultView;
         varDA032537A4C8F9680067866F46EBAF02_626481441.addTaint(taint);
         return varDA032537A4C8F9680067866F46EBAF02_626481441;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -548,11 +546,11 @@ View varDA032537A4C8F9680067866F46EBAF02_626481441 =         defaultView;
 View var8BB2C09B3FFE775E9F9FBFEC00A28511_97562639 =         tv;
         var8BB2C09B3FFE775E9F9FBFEC00A28511_97562639.addTaint(taint);
         return var8BB2C09B3FFE775E9F9FBFEC00A28511_97562639;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //TextView tv = new TextView(mContext);
+        //tv.setText(com.android.internal.R.string.gadget_host_error_inflating);
+        //tv.setBackgroundColor(Color.argb(127, 0, 0, 0));
+        //return tv;
     }
 
     
@@ -561,18 +559,17 @@ View var8BB2C09B3FFE775E9F9FBFEC00A28511_97562639 =         tv;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.555 -0400", hash_original_method = "545E9F4FFC3CA9F22ED723B298F0D3D0", hash_generated_method = "545E9F4FFC3CA9F22ED723B298F0D3D0")
         public ParcelableSparseArray ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.556 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AB0373EB2A308473D3F242711BA504DD")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1844620329 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906652406 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906652406;
-            
-            
+            // ---------- Original Method ----------
+            //return 0;
         }
 
         
@@ -586,14 +583,14 @@ for(int i = 0;i < count;i++)
             {
                 dest.writeInt(keyAt(i));
                 dest.writeParcelable(valueAt(i), 0);
-            } 
-            
-            
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //final int count = size();
+            //dest.writeInt(count);
+            //for (int i = 0; i < count; i++) {
+                //dest.writeInt(keyAt(i));
+                //dest.writeParcelable(valueAt(i), 0);
+            //}
         }
 
         
@@ -615,7 +612,7 @@ for(int i = 0;i < count;i++)
                         return new ParcelableSparseArray[size];
                     }
                 };
-        
+        // orphaned legacy method
         public ParcelableSparseArray createFromParcel(Parcel source) {
                         final ParcelableSparseArray array = new ParcelableSparseArray();
                         final ClassLoader loader = array.getClass().getClassLoader();
@@ -626,7 +623,7 @@ for(int i = 0;i < count;i++)
                         return array;
                     }
         
-        
+        // orphaned legacy method
         public ParcelableSparseArray[] newArray(int size) {
                         return new ParcelableSparseArray[size];
                     }

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class UnsupportedParser extends HeaderParser {
     public  UnsupportedParser(String unsupported) {
         super(unsupported);
         addTaint(unsupported.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class UnsupportedParser extends HeaderParser {
     protected  UnsupportedParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -56,19 +56,19 @@ public class UnsupportedParser extends HeaderParser {
                     unsupported.setOptionTag(token.getTokenValue());
                     this.lexer.SPorHT();
                     unsupportedList.add(unsupported);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("UnsupportedParser.parse");
-        } 
+        } //End block
 SIPHeader var0D178A71459F746090513430AFB4C58D_352697426 =         unsupportedList;
         var0D178A71459F746090513430AFB4C58D_352697426.addTaint(taint);
         return var0D178A71459F746090513430AFB4C58D_352697426;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

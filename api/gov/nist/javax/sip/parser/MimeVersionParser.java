@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class MimeVersionParser extends HeaderParser {
     public  MimeVersionParser(String mimeVersion) {
         super(mimeVersion);
         addTaint(mimeVersion.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class MimeVersionParser extends HeaderParser {
     protected  MimeVersionParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,26 +42,26 @@ public class MimeVersionParser extends HeaderParser {
                 this.lexer.match('.');
                 String minorVersion = this.lexer.number();
                 mimeVersion.setMinorVersion(Integer.parseInt(minorVersion));
-            } 
+            } //End block
             catch (InvalidArgumentException ex)
             {
                 java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_213284106 = createParseException(ex.getMessage());
                 varB8C80F72F95BF6A850D07F4EC5726C09_213284106.addTaint(taint);
                 throw varB8C80F72F95BF6A850D07F4EC5726C09_213284106;
-            } 
+            } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
 SIPHeader var1D087FC59F135838A55A37D08589B761_429799429 =             mimeVersion;
             var1D087FC59F135838A55A37D08589B761_429799429.addTaint(taint);
             return var1D087FC59F135838A55A37D08589B761_429799429;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("MimeVersionParser.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

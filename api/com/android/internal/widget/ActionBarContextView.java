@@ -1,6 +1,6 @@
 package com.android.internal.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -72,7 +72,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     public  ActionBarContextView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -81,7 +81,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         this(context, attrs, com.android.internal.R.attr.actionModeStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -103,39 +103,38 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         mSplitBackground = a.getDrawable(
                 com.android.internal.R.styleable.ActionMode_backgroundSplit);
         a.recycle();
-        
-        
-        
-                
-        
-                
-        
-                
-        
-                
-        
-                
-        
+        // ---------- Original Method ----------
+        //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ActionMode, defStyle, 0);
+        //setBackgroundDrawable(a.getDrawable(
+                //com.android.internal.R.styleable.ActionMode_background));
+        //mTitleStyleRes = a.getResourceId(
+                //com.android.internal.R.styleable.ActionMode_titleTextStyle, 0);
+        //mSubtitleStyleRes = a.getResourceId(
+                //com.android.internal.R.styleable.ActionMode_subtitleTextStyle, 0);
+        //mContentHeight = a.getLayoutDimension(
+                //com.android.internal.R.styleable.ActionMode_height, 0);
+        //mSplitBackground = a.getDrawable(
+                //com.android.internal.R.styleable.ActionMode_backgroundSplit);
+        //a.recycle();
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.706 -0400", hash_original_method = "B72CC99F1AE7F170915B2F32514E502E", hash_generated_method = "6EA6D69ABCECA05459E9BD91FFC1CC0C")
     @Override
     public void onDetachedFromWindow() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDetachedFromWindow();
     if(mActionMenuPresenter != null)        
         {
             mActionMenuPresenter.hideOverflowMenu();
             mActionMenuPresenter.hideSubMenus();
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onDetachedFromWindow();
+        //if (mActionMenuPresenter != null) {
+            //mActionMenuPresenter.hideOverflowMenu();
+            //mActionMenuPresenter.hideSubMenus();
+        //}
     }
 
     
@@ -157,7 +156,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     if(oldParent != null)                    
                     oldParent.removeView(mMenuView);
                     addView(mMenuView, layoutParams);
-                } 
+                } //End block
                 else
                 {
                     mActionMenuPresenter.setWidthLimit(
@@ -171,100 +170,94 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     if(oldParent != null)                    
                     oldParent.removeView(mMenuView);
                     mSplitView.addView(mMenuView, layoutParams);
-                } 
-            } 
+                } //End block
+            } //End block
             super.setSplitActionBar(split);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.708 -0400", hash_original_method = "2AF53FC77EF46E1AB46FFEE70D9B4BD3", hash_generated_method = "85FA25C5E13013EF4DA8CDE2B89AEA08")
     public void setContentHeight(int height) {
         addTaint(height);
         mContentHeight = height;
-        
-        
+        // ---------- Original Method ----------
+        //mContentHeight = height;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.708 -0400", hash_original_method = "BF35621F736CEABB1B31AE57D0749737", hash_generated_method = "D56A77774B7BE854EE8AF246CB3E6B0D")
     public void setCustomView(View view) {
     if(mCustomView != null)        
         {
             removeView(mCustomView);
-        } 
+        } //End block
         mCustomView = view;
     if(mTitleLayout != null)        
         {
             removeView(mTitleLayout);
             mTitleLayout = null;
-        } 
+        } //End block
     if(view != null)        
         {
             addView(view);
-        } 
+        } //End block
         requestLayout();
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mCustomView != null) {
+            //removeView(mCustomView);
+        //}
+        //mCustomView = view;
+        //if (mTitleLayout != null) {
+            //removeView(mTitleLayout);
+            //mTitleLayout = null;
+        //}
+        //if (view != null) {
+            //addView(view);
+        //}
+        //requestLayout();
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.708 -0400", hash_original_method = "211EB79F55FBE601162C52B7DDCEAE29", hash_generated_method = "3068752903ECBB84927D6D1A0EFBCED0")
     public void setTitle(CharSequence title) {
         mTitle = title;
         initTitle();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mTitle = title;
+        //initTitle();
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.709 -0400", hash_original_method = "7D9357B6D11390EB60D28E00C6F28FA8", hash_generated_method = "B14BABC7DBB2EABEF924921B7507BA92")
     public void setSubtitle(CharSequence subtitle) {
         mSubtitle = subtitle;
         initTitle();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mSubtitle = subtitle;
+        //initTitle();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.709 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "1D99492135EC7C21FE15C39E45B0F986")
     public CharSequence getTitle() {
 CharSequence var4FE0D95ADE4B4BDFA36D55D8B62A6C49_2041842331 =         mTitle;
         var4FE0D95ADE4B4BDFA36D55D8B62A6C49_2041842331.addTaint(taint);
         return var4FE0D95ADE4B4BDFA36D55D8B62A6C49_2041842331;
-        
-        
+        // ---------- Original Method ----------
+        //return mTitle;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.709 -0400", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "969B24DB4A61A96F0FCDD9911B3A47BB")
     public CharSequence getSubtitle() {
 CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
         varB3753FC770C7D70B94AC4A298F41B100_553180510.addTaint(taint);
         return varB3753FC770C7D70B94AC4A298F41B100_553180510;
-        
-        
+        // ---------- Original Method ----------
+        //return mSubtitle;
     }
 
     
@@ -280,12 +273,12 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
     if(mTitleStyleRes != 0)            
             {
                 mTitleView.setTextAppearance(mContext, mTitleStyleRes);
-            } 
+            } //End block
     if(mSubtitleStyleRes != 0)            
             {
                 mSubtitleView.setTextAppearance(mContext, mSubtitleStyleRes);
-            } 
-        } 
+            } //End block
+        } //End block
         mTitleView.setText(mTitle);
         mSubtitleView.setText(mSubtitle);
         final boolean hasTitle = !TextUtils.isEmpty(mTitle);
@@ -295,9 +288,9 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
     if(mTitleLayout.getParent() == null)        
         {
             addView(mTitleLayout);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -309,28 +302,28 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
             LayoutInflater inflater = LayoutInflater.from(mContext);
             mClose = inflater.inflate(R.layout.action_mode_close_item, this, false);
             addView(mClose);
-        } 
+        } //End block
         else
     if(mClose.getParent() == null)        
         {
             addView(mClose);
-        } 
+        } //End block
         View closeButton = mClose.findViewById(R.id.action_mode_close_button);
         closeButton.setOnClickListener(new OnClickListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.711 -0400", hash_original_method = "67B70578F0892507CE1943EF7ED1845C", hash_generated_method = "7FD471FBA5EFC7F8931EB5607ABE258B")
         public void onClick(View v) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(v.getTaint());
             mode.finish();
-            
-            
+            // ---------- Original Method ----------
+            //mode.finish();
         }
 });
         final MenuBuilder menu = (MenuBuilder) mode.getMenu();
     if(mActionMenuPresenter != null)        
         {
             mActionMenuPresenter.dismissPopupMenus();
-        } 
+        } //End block
         mActionMenuPresenter = new ActionMenuPresenter(mContext);
         mActionMenuPresenter.setReserveOverflow(true);
         final LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
@@ -341,7 +334,7 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
             mMenuView = (ActionMenuView) mActionMenuPresenter.getMenuView(this);
             mMenuView.setBackgroundDrawable(null);
             addView(mMenuView, layoutParams);
-        } 
+        } //End block
         else
         {
             mActionMenuPresenter.setWidthLimit(
@@ -353,45 +346,43 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
             mMenuView = (ActionMenuView) mActionMenuPresenter.getMenuView(this);
             mMenuView.setBackgroundDrawable(mSplitBackground);
             mSplitView.addView(mMenuView, layoutParams);
-        } 
+        } //End block
         mAnimateInOnLayout = true;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.712 -0400", hash_original_method = "45A4BF13DB4610A7D54223CBAAD97337", hash_generated_method = "F40F6DF06CC44895351C09776DEB92CD")
     public void closeMode() {
     if(mAnimationMode == ANIMATE_OUT)        
         {
             return;
-        } 
+        } //End block
     if(mClose == null)        
         {
             killMode();
             return;
-        } 
+        } //End block
         finishAnimation();
         mAnimationMode = ANIMATE_OUT;
         mCurrentAnimation = makeOutAnimation();
         mCurrentAnimation.start();
-        
-        
-            
-        
-        
-            
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mAnimationMode == ANIMATE_OUT) {
+            //return;
+        //}
+        //if (mClose == null) {
+            //killMode();
+            //return;
+        //}
+        //finishAnimation();
+        //mAnimationMode = ANIMATE_OUT;
+        //mCurrentAnimation = makeOutAnimation();
+        //mCurrentAnimation.start();
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.713 -0400", hash_original_method = "A219535592712D030952E62AEE6B3C28", hash_generated_method = "8CBB2A0382B52CD1AD9C6470C0BE330D")
     private void finishAnimation() {
         final Animator a = mCurrentAnimation;
@@ -399,17 +390,16 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
         {
             mCurrentAnimation = null;
             a.end();
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final Animator a = mCurrentAnimation;
+        //if (a != null) {
+            //mCurrentAnimation = null;
+            //a.end();
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.713 -0400", hash_original_method = "2B49C690F775A4BD526B81BD0C8494DB", hash_generated_method = "DBEC42C8FD1604880E9C5F3213306446")
     public void killMode() {
         finishAnimation();
@@ -417,23 +407,22 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
     if(mSplitView != null)        
         {
             mSplitView.removeView(mMenuView);
-        } 
+        } //End block
         mCustomView = null;
         mMenuView = null;
         mAnimateInOnLayout = false;
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //finishAnimation();
+        //removeAllViews();
+        //if (mSplitView != null) {
+            //mSplitView.removeView(mMenuView);
+        //}
+        //mCustomView = null;
+        //mMenuView = null;
+        //mAnimateInOnLayout = false;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.713 -0400", hash_original_method = "6ECDD9C0917165AAFEF87E5E5EC8B474", hash_generated_method = "E0FDF9B2EB446D8097794CE877CBC723")
     @Override
     public boolean showOverflowMenu() {
@@ -442,19 +431,18 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
             boolean varBFC2B6A46330B4A2C0833A7CFFCAD0E6_725679944 = (mActionMenuPresenter.showOverflowMenu());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1699533592 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1699533592;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1713616644 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1671644660 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1671644660;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mActionMenuPresenter != null) {
+            //return mActionMenuPresenter.showOverflowMenu();
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.714 -0400", hash_original_method = "5D05982F33AF24415676BD0317DE2206", hash_generated_method = "54732FE68CB2A2F5CE6F0037AB89E921")
     @Override
     public boolean hideOverflowMenu() {
@@ -463,19 +451,18 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
             boolean var5C0D979EB15917E48FF5FEE985A01770_1873970016 = (mActionMenuPresenter.hideOverflowMenu());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1937853088 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1937853088;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_390623365 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1434370108 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1434370108;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mActionMenuPresenter != null) {
+            //return mActionMenuPresenter.hideOverflowMenu();
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.714 -0400", hash_original_method = "2F838D8CBDDC91E04D7A8F0F52ABF2C8", hash_generated_method = "D4E517CC99713747AD03DFF01E207654")
     @Override
     public boolean isOverflowMenuShowing() {
@@ -484,15 +471,15 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
             boolean varAED510BBF3E16C2B886300C9FBDF94E1_943213256 = (mActionMenuPresenter.isOverflowMenuShowing());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_440382634 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_440382634;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_905146443 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_639091321 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_639091321;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mActionMenuPresenter != null) {
+            //return mActionMenuPresenter.isOverflowMenuShowing();
+        //}
+        //return false;
     }
 
     
@@ -502,8 +489,8 @@ CharSequence varB3753FC770C7D70B94AC4A298F41B100_553180510 =         mSubtitle;
 ViewGroup.LayoutParams var4490FB16A7D525B3F5943EA644263D71_252616285 =         new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         var4490FB16A7D525B3F5943EA644263D71_252616285.addTaint(taint);
         return var4490FB16A7D525B3F5943EA644263D71_252616285;
-        
-        
+        // ---------- Original Method ----------
+        //return new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
     
@@ -514,16 +501,15 @@ ViewGroup.LayoutParams var4490FB16A7D525B3F5943EA644263D71_252616285 =         n
 ViewGroup.LayoutParams varF0A7E2F39E7E9E98E9F37F1089A0BE0D_1794925957 =         new MarginLayoutParams(getContext(), attrs);
         varF0A7E2F39E7E9E98E9F37F1089A0BE0D_1794925957.addTaint(taint);
         return varF0A7E2F39E7E9E98E9F37F1089A0BE0D_1794925957;
-        
-        
+        // ---------- Original Method ----------
+        //return new MarginLayoutParams(getContext(), attrs);
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.716 -0400", hash_original_method = "ADE259D11B02655AAFB5EBCEC641AC5E", hash_generated_method = "4CDC1EE6C1664393DFE4D171366C5AAB")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
@@ -533,7 +519,7 @@ ViewGroup.LayoutParams varF0A7E2F39E7E9E98E9F37F1089A0BE0D_1794925957 =         
                     "with android:layout_width=\"match_parent\" (or fill_parent)");
             var0078FEAADAE205F1DDF3953FFCC7DD03_1891228857.addTaint(taint);
             throw var0078FEAADAE205F1DDF3953FFCC7DD03_1891228857;
-        } 
+        } //End block
         final int heightMode = MeasureSpec.getMode(heightMeasureSpec);
     if(heightMode == MeasureSpec.UNSPECIFIED)        
         {
@@ -541,7 +527,7 @@ ViewGroup.LayoutParams varF0A7E2F39E7E9E98E9F37F1089A0BE0D_1794925957 =         
                     "with android:layout_height=\"wrap_content\"");
             var2F6FC63DCF083FE3E3F7F2BC6369EDB9_1237104829.addTaint(taint);
             throw var2F6FC63DCF083FE3E3F7F2BC6369EDB9_1237104829;
-        } 
+        } //End block
         final int contentWidth = MeasureSpec.getSize(widthMeasureSpec);
         int maxHeight = mContentHeight > 0 ?
                 mContentHeight : MeasureSpec.getSize(heightMeasureSpec);
@@ -554,16 +540,16 @@ ViewGroup.LayoutParams varF0A7E2F39E7E9E98E9F37F1089A0BE0D_1794925957 =         
             availableWidth = measureChildView(mClose, availableWidth, childSpecHeight, 0);
             MarginLayoutParams lp = (MarginLayoutParams) mClose.getLayoutParams();
             availableWidth -= lp.leftMargin + lp.rightMargin;
-        } 
+        } //End block
     if(mMenuView != null && mMenuView.getParent() == this)        
         {
             availableWidth = measureChildView(mMenuView, availableWidth,
                     childSpecHeight, 0);
-        } 
+        } //End block
     if(mTitleLayout != null && mCustomView == null)        
         {
             availableWidth = measureChildView(mTitleLayout, availableWidth, childSpecHeight, 0);
-        } 
+        } //End block
     if(mCustomView != null)        
         {
             ViewGroup.LayoutParams lp = mCustomView.getLayoutParams();
@@ -577,7 +563,7 @@ ViewGroup.LayoutParams varF0A7E2F39E7E9E98E9F37F1089A0BE0D_1794925957 =         
                     Math.min(lp.height, height) : height;
             mCustomView.measure(MeasureSpec.makeMeasureSpec(customWidth, customWidthMode),
                     MeasureSpec.makeMeasureSpec(customHeight, customHeightMode));
-        } 
+        } //End block
     if(mContentHeight <= 0)        
         {
             int measuredHeight = 0;
@@ -589,16 +575,16 @@ for(int i = 0;i < count;i++)
     if(paddedViewHeight > measuredHeight)                
                 {
                     measuredHeight = paddedViewHeight;
-                } 
-            } 
+                } //End block
+            } //End block
             setMeasuredDimension(contentWidth, measuredHeight);
-        } 
+        } //End block
         else
         {
             setMeasuredDimension(contentWidth, maxHeight);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -625,14 +611,14 @@ for(int i = count - 1, j = 0;i >= 0;i--,j++)
                     a.setDuration(100);
                     a.setStartDelay(j * 70);
                     b.with(a);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Animator varD2D4612E029977363A9BBEBD4F0339C0_889883095 =         set;
         varD2D4612E029977363A9BBEBD4F0339C0_889883095.addTaint(taint);
         return varD2D4612E029977363A9BBEBD4F0339C0_889883095;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -658,21 +644,21 @@ for(int i = 0;i < 0;i++)
                     a.setDuration(100);
                     a.setStartDelay(i * 70);
                     b.with(a);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Animator varD2D4612E029977363A9BBEBD4F0339C0_2077319040 =         set;
         varD2D4612E029977363A9BBEBD4F0339C0_2077319040.addTaint(taint);
         return varD2D4612E029977363A9BBEBD4F0339C0_2077319040;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.720 -0400", hash_original_method = "EAC754957749E93A677F7BF2F54929F7", hash_generated_method = "E6B7479EC970840FE45F87B94031E6A2")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(b);
         addTaint(r);
         addTaint(t);
@@ -693,91 +679,86 @@ Animator varD2D4612E029977363A9BBEBD4F0339C0_2077319040 =         set;
                 mCurrentAnimation = makeInAnimation();
                 mCurrentAnimation.start();
                 mAnimateInOnLayout = false;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mTitleLayout != null && mCustomView == null)        
         {
             x += positionChild(mTitleLayout, x, y, contentHeight);
-        } 
+        } //End block
     if(mCustomView != null)        
         {
             x += positionChild(mCustomView, x, y, contentHeight);
-        } 
+        } //End block
         x = r - l - getPaddingRight();
     if(mMenuView != null)        
         {
             x -= positionChildInverse(mMenuView, x, y, contentHeight);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.720 -0400", hash_original_method = "B990D1A680B01C8A5486D22741D7E96B", hash_generated_method = "B2B2A92B36E552BECB72262238AEF578")
     @Override
     public void onAnimationStart(Animator animation) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(animation.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.720 -0400", hash_original_method = "5DF138862D9EBBC48B8DDB31E593969C", hash_generated_method = "C5CC1F87C1E87F656ABAAB8F28BE50CA")
     @Override
     public void onAnimationEnd(Animator animation) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(animation.getTaint());
     if(mAnimationMode == ANIMATE_OUT)        
         {
             killMode();
-        } 
+        } //End block
         mAnimationMode = ANIMATE_IDLE;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mAnimationMode == ANIMATE_OUT) {
+            //killMode();
+        //}
+        //mAnimationMode = ANIMATE_IDLE;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.721 -0400", hash_original_method = "16FF962612CA0CC38B4765F38064800C", hash_generated_method = "87B148FBA6A6D3270D8BD7F9EEB4C6C1")
     @Override
     public void onAnimationCancel(Animator animation) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(animation.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.721 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
     @Override
     public void onAnimationRepeat(Animator animation) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(animation.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.721 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "195CC6D228CCCE4E7DC53ABD77AAD3C8")
     @Override
     public boolean shouldDelayChildPressedState() {
         boolean var68934A3E9455FA72420237EB05902327_711302083 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1385043730 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1385043730;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.721 -0400", hash_original_method = "237F1A60A9E9685B4EADEDCFF21B9A19", hash_generated_method = "496B961F7C884FE8DE8F8D81E2BF7357")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
     if(event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED)        
         {
@@ -785,20 +766,20 @@ Animator varD2D4612E029977363A9BBEBD4F0339C0_2077319040 =         set;
             event.setClassName(getClass().getName());
             event.setPackageName(getContext().getPackageName());
             event.setContentDescription(mTitle);
-        } 
+        } //End block
         else
         {
             super.onInitializeAccessibilityEvent(event);
-        } 
-        
-        
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+            //event.setSource(this);
+            //event.setClassName(getClass().getName());
+            //event.setPackageName(getContext().getPackageName());
+            //event.setContentDescription(mTitle);
+        //} else {
+            //super.onInitializeAccessibilityEvent(event);
+        //}
     }
 
     

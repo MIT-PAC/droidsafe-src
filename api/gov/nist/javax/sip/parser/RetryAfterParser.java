@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class RetryAfterParser extends HeaderParser {
     public  RetryAfterParser(String retryAfter) {
         super(retryAfter);
         addTaint(retryAfter.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,7 +23,7 @@ public class RetryAfterParser extends HeaderParser {
     protected  RetryAfterParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -40,25 +40,25 @@ public class RetryAfterParser extends HeaderParser {
             {
                 int ds = Integer.parseInt(value);
                 retryAfter.setRetryAfter(ds);
-            } 
+            } //End block
             catch (NumberFormatException ex)
             {
                 java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1264435284 = createParseException(ex.getMessage());
                 varB8C80F72F95BF6A850D07F4EC5726C09_1264435284.addTaint(taint);
                 throw varB8C80F72F95BF6A850D07F4EC5726C09_1264435284;
-            } 
+            } //End block
             catch (InvalidArgumentException ex)
             {
                 java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_934448330 = createParseException(ex.getMessage());
                 varB8C80F72F95BF6A850D07F4EC5726C09_934448330.addTaint(taint);
                 throw varB8C80F72F95BF6A850D07F4EC5726C09_934448330;
-            } 
+            } //End block
             this.lexer.SPorHT();
     if(lexer.lookAhead(0) == '(')            
             {
                 String comment = this.lexer.comment();
                 retryAfter.setComment(comment);
-            } 
+            } //End block
             this.lexer.SPorHT();
             while
 (lexer.lookAhead(0) == ';')            
@@ -77,20 +77,20 @@ public class RetryAfterParser extends HeaderParser {
                     {
                         int duration = Integer.parseInt(value);
                         retryAfter.setDuration(duration);
-                    } 
+                    } //End block
                     catch (NumberFormatException ex)
                     {
                         java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_898829180 = createParseException(ex.getMessage());
                         varB8C80F72F95BF6A850D07F4EC5726C09_898829180.addTaint(taint);
                         throw varB8C80F72F95BF6A850D07F4EC5726C09_898829180;
-                    } 
+                    } //End block
                     catch (InvalidArgumentException ex)
                     {
                         java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1919688188 = createParseException(ex.getMessage());
                         varB8C80F72F95BF6A850D07F4EC5726C09_1919688188.addTaint(taint);
                         throw varB8C80F72F95BF6A850D07F4EC5726C09_1919688188;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     this.lexer.SPorHT();
@@ -100,20 +100,20 @@ public class RetryAfterParser extends HeaderParser {
                     Token secondToken = lexer.getNextToken();
                     String secondValue = secondToken.getTokenValue();
                     retryAfter.setParameter(value, secondValue);
-                } 
+                } //End block
                 this.lexer.SPorHT();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("RetryAfterParser.parse");
-        } 
+        } //End block
 SIPHeader varAD44033E7D0A11FB481AB3B243C3F908_889360824 =         retryAfter;
         varAD44033E7D0A11FB481AB3B243C3F908_889360824.addTaint(taint);
         return varAD44033E7D0A11FB481AB3B243C3F908_889360824;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,9 +27,9 @@ public final class MemoryMappedFile implements AutoCloseable {
     public  MemoryMappedFile(long address, long size) {
         this.address = address;
         this.size = size;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.address = address;
+        //this.size = size;
     }
 
     
@@ -48,12 +48,12 @@ public final class MemoryMappedFile implements AutoCloseable {
         {
             Libcore.os.munmap(address, size);
             address = 0;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (address != 0) {
+            //Libcore.os.munmap(address, size);
+            //address = 0;
+        //}
     }
 
     
@@ -62,8 +62,8 @@ public final class MemoryMappedFile implements AutoCloseable {
 BufferIterator varB4EC9D0E062809A0704546019BCC988B_505650062 =         new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN);
         varB4EC9D0E062809A0704546019BCC988B_505650062.addTaint(taint);
         return varB4EC9D0E062809A0704546019BCC988B_505650062;
-        
-        
+        // ---------- Original Method ----------
+        //return new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN);
     }
 
     
@@ -72,19 +72,18 @@ BufferIterator varB4EC9D0E062809A0704546019BCC988B_505650062 =         new NioBu
 BufferIterator var8816B5A8C55B4007EB0ABFE9767037E6_553419223 =         new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.LITTLE_ENDIAN);
         var8816B5A8C55B4007EB0ABFE9767037E6_553419223.addTaint(taint);
         return var8816B5A8C55B4007EB0ABFE9767037E6_553419223;
-        
-        
+        // ---------- Original Method ----------
+        //return new NioBufferIterator((int) address, (int) size, ByteOrder.nativeOrder() != ByteOrder.LITTLE_ENDIAN);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.728 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "D3247D815F5371A3E33C4345469EB940")
     public long size() {
         long varF7BD60B75B29D79B660A2859395C1A24_2136677933 = (size);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1117965246 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1117965246;
-        
-        
+        // ---------- Original Method ----------
+        //return size;
     }
 
     

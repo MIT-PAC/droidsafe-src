@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,13 +11,13 @@ public class InvalidAlgorithmParameterException extends GeneralSecurityException
     public  InvalidAlgorithmParameterException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.960 -0400", hash_original_method = "6854FBA50B4775039731A07DEA1BCECF", hash_generated_method = "9CE5C221DF499F19CAD3BCCBE65A63A1")
     public  InvalidAlgorithmParameterException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,7 +26,7 @@ public class InvalidAlgorithmParameterException extends GeneralSecurityException
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,7 +34,7 @@ public class InvalidAlgorithmParameterException extends GeneralSecurityException
     public  InvalidAlgorithmParameterException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

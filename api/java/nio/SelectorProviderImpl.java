@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public final class SelectorProviderImpl extends SelectorProvider {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.285 -0400", hash_original_method = "0FAD76CB1DA362BA4B44B65B1490E94B", hash_generated_method = "0FAD76CB1DA362BA4B44B65B1490E94B")
     public SelectorProviderImpl ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -26,8 +26,8 @@ public final class SelectorProviderImpl extends SelectorProvider {
 DatagramChannel varAF3335D755E3351CD64D95455619BEA7_325145162 =         new DatagramChannelImpl(this);
         varAF3335D755E3351CD64D95455619BEA7_325145162.addTaint(taint);
         return varAF3335D755E3351CD64D95455619BEA7_325145162;
-        
-        
+        // ---------- Original Method ----------
+        //return new DatagramChannelImpl(this);
     }
 
     
@@ -36,8 +36,8 @@ DatagramChannel varAF3335D755E3351CD64D95455619BEA7_325145162 =         new Data
 Pipe varB1A7AB7499256E51DCEBE9E405C1F09B_305416229 =         new PipeImpl();
         varB1A7AB7499256E51DCEBE9E405C1F09B_305416229.addTaint(taint);
         return varB1A7AB7499256E51DCEBE9E405C1F09B_305416229;
-        
-        
+        // ---------- Original Method ----------
+        //return new PipeImpl();
     }
 
     
@@ -46,8 +46,8 @@ Pipe varB1A7AB7499256E51DCEBE9E405C1F09B_305416229 =         new PipeImpl();
 AbstractSelector varD6153CA6D598C06006942B13CC2A7E1A_1335777011 =         new SelectorImpl(this);
         varD6153CA6D598C06006942B13CC2A7E1A_1335777011.addTaint(taint);
         return varD6153CA6D598C06006942B13CC2A7E1A_1335777011;
-        
-        
+        // ---------- Original Method ----------
+        //return new SelectorImpl(this);
     }
 
     
@@ -56,8 +56,8 @@ AbstractSelector varD6153CA6D598C06006942B13CC2A7E1A_1335777011 =         new Se
 ServerSocketChannel var4DCD84F5EA5722C3E1DDA85169A11769_743416157 =         new ServerSocketChannelImpl(this);
         var4DCD84F5EA5722C3E1DDA85169A11769_743416157.addTaint(taint);
         return var4DCD84F5EA5722C3E1DDA85169A11769_743416157;
-        
-        
+        // ---------- Original Method ----------
+        //return new ServerSocketChannelImpl(this);
     }
 
     
@@ -66,8 +66,8 @@ ServerSocketChannel var4DCD84F5EA5722C3E1DDA85169A11769_743416157 =         new 
 SocketChannel var9A4D98B5539519F42FDA225F92D65D54_1273951250 =         new SocketChannelImpl(this);
         var9A4D98B5539519F42FDA225F92D65D54_1273951250.addTaint(taint);
         return var9A4D98B5539519F42FDA225F92D65D54_1273951250;
-        
-        
+        // ---------- Original Method ----------
+        //return new SocketChannelImpl(this);
     }
 
     

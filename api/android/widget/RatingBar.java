@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,40 +38,40 @@ public class RatingBar extends AbsSeekBar {
     if(numStars > 0 && numStars != mNumStars)        
         {
             setNumStars(numStars);
-        } 
+        } //End block
     if(stepSize >= 0)        
         {
             setStepSize(stepSize);
-        } 
+        } //End block
         else
         {
             setStepSize(0.5f);
-        } 
+        } //End block
     if(rating >= 0)        
         {
             setRating(rating);
-        } 
+        } //End block
         mTouchProgressOffset = 1.1f;
-        
-        
-                
-        
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RatingBar,
+                //defStyle, 0);
+        //final int numStars = a.getInt(R.styleable.RatingBar_numStars, mNumStars);
+        //setIsIndicator(a.getBoolean(R.styleable.RatingBar_isIndicator, !mIsUserSeekable));
+        //final float rating = a.getFloat(R.styleable.RatingBar_rating, -1);
+        //final float stepSize = a.getFloat(R.styleable.RatingBar_stepSize, -1);
+        //a.recycle();
+        //if (numStars > 0 && numStars != mNumStars) {
+            //setNumStars(numStars);            
+        //}
+        //if (stepSize >= 0) {
+            //setStepSize(stepSize);
+        //} else {
+            //setStepSize(0.5f);
+        //}
+        //if (rating >= 0) {
+            //setRating(rating);
+        //}
+        //mTouchProgressOffset = 1.1f;
     }
 
     
@@ -80,7 +80,7 @@ public class RatingBar extends AbsSeekBar {
         this(context, attrs, com.android.internal.R.attr.ratingBarStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -88,27 +88,25 @@ public class RatingBar extends AbsSeekBar {
     public  RatingBar(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.195 -0400", hash_original_method = "CB44A4D2B638D14CC961BB9C350C60D5", hash_generated_method = "0C38E6D8F5DE50714CF4743825B12928")
     public void setOnRatingBarChangeListener(OnRatingBarChangeListener listener) {
         mOnRatingBarChangeListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnRatingBarChangeListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.195 -0400", hash_original_method = "695CB7B11E4FD58B096410402E370F4D", hash_generated_method = "661F8BA377C7887CC6DD0D895AE8B5BD")
     public OnRatingBarChangeListener getOnRatingBarChangeListener() {
 OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =         mOnRatingBarChangeListener;
         varFABA60AF3E094144B7F538EC93E33703_1414489260.addTaint(taint);
         return varFABA60AF3E094144B7F538EC93E33703_1414489260;
-        
-        
+        // ---------- Original Method ----------
+        //return mOnRatingBarChangeListener;
     }
 
     
@@ -117,20 +115,19 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
         addTaint(isIndicator);
         mIsUserSeekable = !isIndicator;
         setFocusable(!isIndicator);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mIsUserSeekable = !isIndicator;
+        //setFocusable(!isIndicator);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.196 -0400", hash_original_method = "874639FDA9C4F98AD3BF38D7B6BE89CD", hash_generated_method = "7E2326106C273FEC87A9B6B66B907BC8")
     public boolean isIndicator() {
         boolean varC6A597318EF09C03CCEF65798B9CBD4E_1871615935 = (!mIsUserSeekable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1293095689 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1293095689;
-        
-        
+        // ---------- Original Method ----------
+        //return !mIsUserSeekable;
     }
 
     
@@ -139,26 +136,25 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
     if(numStars <= 0)        
         {
             return;
-        } 
+        } //End block
         mNumStars = numStars;
         requestLayout();
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (numStars <= 0) {
+            //return;
+        //}
+        //mNumStars = numStars;
+        //requestLayout();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.197 -0400", hash_original_method = "D4C4902F9D646F6CD3B3EB2FB6EFDC13", hash_generated_method = "33B13D36A6962A78623A84FCA19C8A9A")
     public int getNumStars() {
         int var040414DF8719A630C798855CE8016CFC_1161246750 = (mNumStars);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1333971914 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1333971914;
-        
-        
+        // ---------- Original Method ----------
+        //return mNumStars;
     }
 
     
@@ -166,8 +162,8 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
     public void setRating(float rating) {
         addTaint(rating);
         setProgress(Math.round(rating * getProgressPerStar()));
-        
-        
+        // ---------- Original Method ----------
+        //setProgress(Math.round(rating * getProgressPerStar()));
     }
 
     
@@ -176,8 +172,8 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
         float varEBD1E63F546D0DD2F475ED0F89839FB7_599889313 = (getProgress() / getProgressPerStar());
                 float var546ADE640B6EDFBC8A086EF31347E768_1617625267 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1617625267;
-        
-        
+        // ---------- Original Method ----------
+        //return getProgress() / getProgressPerStar();
     }
 
     
@@ -187,19 +183,19 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
     if(stepSize <= 0)        
         {
             return;
-        } 
+        } //End block
         final float newMax = mNumStars / stepSize;
         final int newProgress = (int) (newMax / getMax() * getProgress());
         setMax((int) newMax);
         setProgress(newProgress);
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (stepSize <= 0) {
+            //return;
+        //}
+        //final float newMax = mNumStars / stepSize;
+        //final int newProgress = (int) (newMax / getMax() * getProgress());
+        //setMax((int) newMax);
+        //setProgress(newProgress);
     }
 
     
@@ -208,8 +204,8 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
         float var12A311619CA29E033C872452AE0D62E8_1823386985 = ((float) getNumStars() / getMax());
                 float var546ADE640B6EDFBC8A086EF31347E768_1308812518 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1308812518;
-        
-        
+        // ---------- Original Method ----------
+        //return (float) getNumStars() / getMax();
     }
 
     
@@ -220,19 +216,19 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
             float var90BBA35586B272EB97143C6DB36B5B39_1245693672 = (1f * getMax() / mNumStars);
                         float var546ADE640B6EDFBC8A086EF31347E768_403337325 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_403337325;
-        } 
+        } //End block
         else
         {
             float varC4CA4238A0B923820DCC509A6F75849B_1561466867 = (1);
                         float var546ADE640B6EDFBC8A086EF31347E768_153153948 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_153153948;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mNumStars > 0) {
+            //return 1f * getMax() / mNumStars;
+        //} else {
+            //return 1;
+        //}
     }
 
     
@@ -242,15 +238,15 @@ OnRatingBarChangeListener varFABA60AF3E094144B7F538EC93E33703_1414489260 =      
 Shape varFD572D5AD6370B39B60D854340119E95_2088619985 =         new RectShape();
         varFD572D5AD6370B39B60D854340119E95_2088619985.addTaint(taint);
         return varFD572D5AD6370B39B60D854340119E95_2088619985;
-        
-        
+        // ---------- Original Method ----------
+        //return new RectShape();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.201 -0400", hash_original_method = "9369317EE923D808BCA8DA286976E63F", hash_generated_method = "39BBDA924FDDE1F87615758333DFE2C9")
     @Override
      void onProgressRefresh(float scale, boolean fromUser) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(fromUser);
         addTaint(scale);
         super.onProgressRefresh(scale, fromUser);
@@ -258,13 +254,13 @@ Shape varFD572D5AD6370B39B60D854340119E95_2088619985 =         new RectShape();
     if(!fromUser)        
         {
             dispatchRatingChange(false);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onProgressRefresh(scale, fromUser);
+        //updateSecondaryProgress(getProgress());
+        //if (!fromUser) {
+            //dispatchRatingChange(false);
+        //}
     }
 
     
@@ -277,21 +273,21 @@ Shape varFD572D5AD6370B39B60D854340119E95_2088619985 =         new RectShape();
             final float progressInStars = progress / ratio;
             final int secondaryProgress = (int) (Math.ceil(progressInStars) * ratio);
             setSecondaryProgress(secondaryProgress);
-        } 
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final float ratio = getProgressPerStar();
+        //if (ratio > 0) {
+            //final float progressInStars = progress / ratio;
+            //final int secondaryProgress = (int) (Math.ceil(progressInStars) * ratio);
+            //setSecondaryProgress(secondaryProgress);
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.202 -0400", hash_original_method = "A52B21EAEA0ABEA842DCABF14BA9A11D", hash_generated_method = "67DB17559D1E74C39015499BDC5A5A68")
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -300,55 +296,55 @@ Shape varFD572D5AD6370B39B60D854340119E95_2088619985 =         new RectShape();
             final int width = mSampleTile.getWidth() * mNumStars;
             setMeasuredDimension(resolveSizeAndState(width, widthMeasureSpec, 0),
                     getMeasuredHeight());
-        } 
-        
-        
-        
-            
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        //if (mSampleTile != null) {
+            //final int width = mSampleTile.getWidth() * mNumStars;
+            //setMeasuredDimension(resolveSizeAndState(width, widthMeasureSpec, 0),
+                    //getMeasuredHeight());
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.203 -0400", hash_original_method = "226C4EA3B37AD5190041539897D2C6DD", hash_generated_method = "D46B39EED2C3FCB544AE1F9ECD553F30")
     @Override
      void onStartTrackingTouch() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         mProgressOnStartTracking = getProgress();
         super.onStartTrackingTouch();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mProgressOnStartTracking = getProgress();
+        //super.onStartTrackingTouch();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.203 -0400", hash_original_method = "6235EE5490022867BAEF4FF5BA6A4578", hash_generated_method = "D6C3487AA022ECAA17D432F9D9179C29")
     @Override
      void onStopTrackingTouch() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onStopTrackingTouch();
     if(getProgress() != mProgressOnStartTracking)        
         {
             dispatchRatingChange(true);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onStopTrackingTouch();
+        //if (getProgress() != mProgressOnStartTracking) {
+            //dispatchRatingChange(true);
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.203 -0400", hash_original_method = "90A55B8149F7E0DE715F35412D64649C", hash_generated_method = "7BA0FC9D64756D08AFC36F4673AD7D4C")
     @Override
      void onKeyChange() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onKeyChange();
         dispatchRatingChange(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onKeyChange();
+        //dispatchRatingChange(true);
     }
 
     
@@ -359,12 +355,12 @@ Shape varFD572D5AD6370B39B60D854340119E95_2088619985 =         new RectShape();
         {
             mOnRatingBarChangeListener.onRatingChanged(this, getRating(),
                     fromUser);
-        } 
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mOnRatingBarChangeListener != null) {
+            //mOnRatingBarChangeListener.onRatingChanged(this, getRating(),
+                    //fromUser);
+        //}
     }
 
     
@@ -375,13 +371,13 @@ Shape varFD572D5AD6370B39B60D854340119E95_2088619985 =         new RectShape();
     if(max <= 0)        
         {
             return;
-        } 
+        } //End block
         super.setMax(max);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (max <= 0) {
+            //return;
+        //}
+        //super.setMax(max);
     }
 
     

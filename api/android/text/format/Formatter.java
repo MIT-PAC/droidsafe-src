@@ -1,6 +1,6 @@
 package android.text.format;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,24 +12,21 @@ public final class Formatter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.158 -0400", hash_original_method = "161EB95286E2D4F6FBD55DBF919180AE", hash_generated_method = "161EB95286E2D4F6FBD55DBF919180AE")
     public Formatter ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static String formatFileSize(Context context, long number) {
+        public static String formatFileSize(Context context, long number) {
         return formatFileSize(context, number, false);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String formatShortFileSize(Context context, long number) {
+        public static String formatShortFileSize(Context context, long number) {
         return formatFileSize(context, number, true);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static String formatFileSize(Context context, long number, boolean shorter) {
+        private static String formatFileSize(Context context, long number, boolean shorter) {
         if (context == null) {
             return "";
         }
@@ -79,8 +76,7 @@ public final class Formatter {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static String formatIpAddress(int ipv4Address) {
         return NetworkUtils.intToInetAddress(ipv4Address).getHostAddress();
     }

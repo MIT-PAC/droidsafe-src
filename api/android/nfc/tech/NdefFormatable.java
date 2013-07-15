@@ -1,6 +1,6 @@
 package android.nfc.tech;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public final class NdefFormatable extends BasicTagTechnology {
     public  NdefFormatable(Tag tag) throws RemoteException {
         super(tag, TagTechnology.NDEF_FORMATABLE);
         addTaint(tag.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,8 +39,8 @@ public final class NdefFormatable extends BasicTagTechnology {
     public void format(NdefMessage firstMessage) throws IOException, FormatException {
         addTaint(firstMessage.getTaint());
         format(firstMessage, false);
-        
-        
+        // ---------- Original Method ----------
+        //format(firstMessage, false);
     }
 
     
@@ -48,8 +48,8 @@ public final class NdefFormatable extends BasicTagTechnology {
     public void formatReadOnly(NdefMessage firstMessage) throws IOException, FormatException {
         addTaint(firstMessage.getTaint());
         format(firstMessage, true);
-        
-        
+        // ---------- Original Method ----------
+        //format(firstMessage, true);
     }
 
     
@@ -98,13 +98,13 @@ switch(errorCode){
                 var1508E3FDF27FD56D4E1051DB16DE1816_1818783462.addTaint(taint);
                 throw var1508E3FDF27FD56D4E1051DB16DE1816_1818783462;
 }
-            } 
+            } //End block
             else
             {
                 IOException var1508E3FDF27FD56D4E1051DB16DE1816_1739840073 = new IOException();
                 var1508E3FDF27FD56D4E1051DB16DE1816_1739840073.addTaint(taint);
                 throw var1508E3FDF27FD56D4E1051DB16DE1816_1739840073;
-            } 
+            } //End block
     if(makeReadOnly)            
             {
                 errorCode = tagService.ndefMakeReadOnly(serviceHandle);
@@ -124,13 +124,13 @@ switch(errorCode){
                 var1508E3FDF27FD56D4E1051DB16DE1816_1955983011.addTaint(taint);
                 throw var1508E3FDF27FD56D4E1051DB16DE1816_1955983011;
 }
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

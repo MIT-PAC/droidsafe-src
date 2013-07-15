@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,58 +25,54 @@ class GLES20TextureLayer extends GLES20Layer {
         {
             mTexture = layerInfo[0];
             mFinalizer = new Finalizer(mLayer);
-        } 
+        } //End block
         else
         {
             mFinalizer = null;
-        } 
-        
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int[] layerInfo = new int[2];
+        //mLayer = GLES20Canvas.nCreateTextureLayer(isOpaque, layerInfo);
+        //if (mLayer != 0) {
+            //mTexture = layerInfo[0];
+            //mFinalizer = new Finalizer(mLayer);
+        //} else {
+            //mFinalizer = null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.062 -0400", hash_original_method = "11B63BDC356D1B06476790C8BA000825", hash_generated_method = "788BF34EFA073F966653A1ECA357025E")
     @Override
      boolean isValid() {
         boolean var973306D035EAA8A637CD75F15ED5A181_605535242 = (mLayer != 0 && mTexture != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_285924468 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_285924468;
-        
-        
+        // ---------- Original Method ----------
+        //return mLayer != 0 && mTexture != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.062 -0400", hash_original_method = "E6D4E5987C63DC0417A704140ED92009", hash_generated_method = "48F23F144C9F629B3B3DC10A41EAD21C")
     @Override
      void resize(int width, int height) {
         addTaint(height);
         addTaint(width);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.062 -0400", hash_original_method = "FE3F18C4DF5FFEAAB94B6C71D2FF4AC1", hash_generated_method = "DA20176F629420E5B1E5C27A10E882CF")
     @Override
      HardwareCanvas getCanvas() {
 HardwareCanvas var540C13E9E156B687226421B24F2DF178_1540423803 =         null;
         var540C13E9E156B687226421B24F2DF178_1540423803.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1540423803;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.063 -0400", hash_original_method = "2311903AB2BF759F2AF64EC85ECFCD74", hash_generated_method = "D6C3AAC7467322209F5461AD752C2C2B")
     @Override
      HardwareCanvas start(Canvas currentCanvas) {
@@ -84,17 +80,16 @@ HardwareCanvas var540C13E9E156B687226421B24F2DF178_1540423803 =         null;
 HardwareCanvas var540C13E9E156B687226421B24F2DF178_2098844255 =         null;
         var540C13E9E156B687226421B24F2DF178_2098844255.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2098844255;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.063 -0400", hash_original_method = "8A4AD7636F89A9F2F6FF510EF4082BAC", hash_generated_method = "99E4F141B60ED953D3D1624851C86C2F")
     @Override
      void end(Canvas currentCanvas) {
         addTaint(currentCanvas.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -103,15 +98,15 @@ HardwareCanvas var540C13E9E156B687226421B24F2DF178_2098844255 =         null;
     if(mSurface == null)        
         {
             mSurface = new SurfaceTexture(mTexture, false);
-        } 
+        } //End block
 SurfaceTexture varB7C98568942B156EFD367CE054011CDA_312063055 =         mSurface;
         varB7C98568942B156EFD367CE054011CDA_312063055.addTaint(taint);
         return varB7C98568942B156EFD367CE054011CDA_312063055;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mSurface == null) {
+            //mSurface = new SurfaceTexture(mTexture, false);
+        //}
+        //return mSurface;
     }
 
     
@@ -123,9 +118,9 @@ SurfaceTexture varB7C98568942B156EFD367CE054011CDA_312063055 =         mSurface;
         addTaint(width);
         super.update(width, height, isOpaque);
         GLES20Canvas.nUpdateTextureLayer(mLayer, width, height, isOpaque, mSurface);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.update(width, height, isOpaque);
+        //GLES20Canvas.nUpdateTextureLayer(mLayer, width, height, isOpaque, mSurface);
     }
 
     
@@ -134,8 +129,8 @@ SurfaceTexture varB7C98568942B156EFD367CE054011CDA_312063055 =         mSurface;
      void setTransform(Matrix matrix) {
         addTaint(matrix.getTaint());
         GLES20Canvas.nSetTextureLayerTransform(mLayer, matrix.native_instance);
-        
-        
+        // ---------- Original Method ----------
+        //GLES20Canvas.nSetTextureLayerTransform(mLayer, matrix.native_instance);
     }
 
     

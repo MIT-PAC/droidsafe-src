@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,10 +24,10 @@ public class Item implements Parcelable {
         this.id = id;
         this.text = text;
         this.icon = null;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.id = id;
+        //this.text = text;
+        //this.icon = null;
     }
 
     
@@ -36,21 +36,20 @@ public class Item implements Parcelable {
         id = in.readInt();
         text = in.readString();
         icon = in.readParcelable(null);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //id = in.readInt();
+        //text = in.readString();
+        //icon = in.readParcelable(null);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.328 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B260B2A63DFA7D3D4A7B3D30EEA06A68")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1719698586 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844748300 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844748300;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -61,21 +60,20 @@ public class Item implements Parcelable {
         dest.writeInt(id);
         dest.writeString(text);
         dest.writeParcelable(icon, flags);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeInt(id);
+        //dest.writeString(text);
+        //dest.writeParcelable(icon, flags);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.330 -0400", hash_original_method = "D77DEAB1CC7B5FDE4A537F56E3011951", hash_generated_method = "ABCE4975655EE57665269EE903277312")
     public String toString() {
 String var79CC641C1148018540A26F7ADC424893_1697698746 =         text;
         var79CC641C1148018540A26F7ADC424893_1697698746.addTaint(taint);
         return var79CC641C1148018540A26F7ADC424893_1697698746;
-        
-        
+        // ---------- Original Method ----------
+        //return text;
     }
 
     
@@ -90,12 +88,12 @@ String var79CC641C1148018540A26F7ADC424893_1697698746 =         text;
             return new Item[size];
         }
     };
-    
+    // orphaned legacy method
     public Item createFromParcel(Parcel in) {
             return new Item(in);
         }
     
-    
+    // orphaned legacy method
     public Item[] newArray(int size) {
             return new Item[size];
         }

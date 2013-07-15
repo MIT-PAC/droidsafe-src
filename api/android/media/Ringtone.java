@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,9 +48,9 @@ public class Ringtone {
       Ringtone(Context context) {
         mContext = context;
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
     }
 
     
@@ -62,31 +62,30 @@ public class Ringtone {
             try 
             {
                 openMediaPlayer();
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //mStreamType = streamType;
+        //if (mAudio != null) {
+            //try {
+                //openMediaPlayer();
+            //} catch (IOException e) {
+                //Log.w(TAG, "Couldn't set the stream type", e);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.588 -0400", hash_original_method = "216E9F6C8E5136791318AC3D24F88326", hash_generated_method = "710C3B13AF8327A887699CA3A281AB64")
     public int getStreamType() {
         int var783FA5525F6B978FF64D8BA5B67966D9_1012808579 = (mStreamType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242008449 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242008449;
-        
-        
+        // ---------- Original Method ----------
+        //return mStreamType;
     }
 
     
@@ -101,14 +100,13 @@ String var4FE0D95ADE4B4BDFA36D55D8B62A6C49_1971714670 =         mTitle;
 String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle(context, mUri, true);
         varD044B7BC8179EF64E9AD64248361B60E_417355270.addTaint(taint);
         return varD044B7BC8179EF64E9AD64248361B60E_417355270;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mTitle != null) return mTitle;
+        //return mTitle = getTitle(context, mUri, true);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static String getTitle(Context context, Uri uri, boolean followSettingsUri) {
+        private static String getTitle(Context context, Uri uri, boolean followSettingsUri) {
         Cursor cursor = null;
         ContentResolver res = context.getContentResolver();
         String title = null;
@@ -158,41 +156,41 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
     if(mAudio != null)        
         {
             mAudio.release();
-        } 
+        } //End block
         mAudio = new MediaPlayer();
     if(mUri != null)        
         {
             mAudio.setDataSource(mContext, mUri);
-        } 
+        } //End block
         else
     if(mFileDescriptor != null)        
         {
             mAudio.setDataSource(mFileDescriptor);
-        } 
+        } //End block
         else
     if(mAssetFileDescriptor != null)        
         {
     if(mAssetFileDescriptor.getDeclaredLength() < 0)            
             {
                 mAudio.setDataSource(mAssetFileDescriptor.getFileDescriptor());
-            } 
+            } //End block
             else
             {
                 mAudio.setDataSource(mAssetFileDescriptor.getFileDescriptor(),
                         mAssetFileDescriptor.getStartOffset(),
                         mAssetFileDescriptor.getDeclaredLength());
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             IOException var05ADE79C1C912CC1630305AC8B172C70_27938703 = new IOException("No data source set.");
             var05ADE79C1C912CC1630305AC8B172C70_27938703.addTaint(taint);
             throw var05ADE79C1C912CC1630305AC8B172C70_27938703;
-        } 
+        } //End block
         mAudio.setAudioStreamType(mStreamType);
         mAudio.prepare();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -200,9 +198,9 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
      void open(FileDescriptor fd) throws IOException {
         mFileDescriptor = fd;
         openMediaPlayer();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFileDescriptor = fd;
+        //openMediaPlayer();
     }
 
     
@@ -210,20 +208,19 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
      void open(AssetFileDescriptor fd) throws IOException {
         mAssetFileDescriptor = fd;
         openMediaPlayer();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mAssetFileDescriptor = fd;
+        //openMediaPlayer();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.593 -0400", hash_original_method = "B6A9AEC7559EAFEEA670C63D280E78C6", hash_generated_method = "CC871095B008BACC4821A90FC2E0903B")
      void open(Uri uri) throws IOException {
         mUri = uri;
         openMediaPlayer();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mUri = uri;
+        //openMediaPlayer();
     }
 
     
@@ -234,33 +231,33 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
             try 
             {
                 openMediaPlayer();
-            } 
+            } //End block
             catch (Exception ex)
             {
                 mAudio = null;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mAudio != null)        
         {
     if(mAudioManager.getStreamVolume(mStreamType) != 0)            
             {
                 mAudio.start();
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-                
-            
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAudio == null) {
+            //try {
+                //openMediaPlayer();
+            //} catch (Exception ex) {
+                //Log.e(TAG, "play() caught ", ex);
+                //mAudio = null;
+            //}
+        //}
+        //if (mAudio != null) {
+            //if (mAudioManager.getStreamVolume(mStreamType) != 0) {
+                //mAudio.start();
+            //}
+        //}
     }
 
     
@@ -271,13 +268,13 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
             mAudio.reset();
             mAudio.release();
             mAudio = null;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAudio != null) {
+            //mAudio.reset();
+            //mAudio.release();
+            //mAudio = null;
+        //}
     }
 
     
@@ -286,17 +283,16 @@ String varD044B7BC8179EF64E9AD64248361B60E_417355270 =         mTitle = getTitle
         boolean var9F7141D2644A06BB137EBA742B0EA563_1744200801 = (mAudio != null && mAudio.isPlaying());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1274209529 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1274209529;
-        
-        
+        // ---------- Original Method ----------
+        //return mAudio != null && mAudio.isPlaying();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.594 -0400", hash_original_method = "A4C423176AB11C87E288F89C31FDE32A", hash_generated_method = "AE61B60E95D4F73DC4620FEAE2B8EF54")
      void setTitle(String title) {
         mTitle = title;
-        
-        
+        // ---------- Original Method ----------
+        //mTitle = title;
     }
 
     

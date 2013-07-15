@@ -1,6 +1,6 @@
 package libcore.net.url;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -84,37 +84,37 @@ public class FtpURLConnection extends URLConnection {
             {
                 username = parse.substring(0, split);
                 password = parse.substring(split + 1);
-            } 
+            } //End block
             else
             {
                 username = parse;
-            } 
-        } 
+            } //End block
+        } //End block
         uri = null;
         try 
         {
             uri = url.toURI();
-        } 
+        } //End block
         catch (URISyntaxException e)
         {
-        } 
-        
-        
-        
-        
-            
-            
-                
-                
-            
-                
-            
-        
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //hostName = url.getHost();
+        //String parse = url.getUserInfo();
+        //if (parse != null) {
+            //int split = parse.indexOf(':');
+            //if (split >= 0) {
+                //username = parse.substring(0, split);
+                //password = parse.substring(split + 1);
+            //} else {
+                //username = parse;
+            //}
+        //}
+        //uri = null;
+        //try {
+            //uri = url.toURI();
+        //} catch (URISyntaxException e) {
+        //}
     }
 
     
@@ -123,12 +123,11 @@ public class FtpURLConnection extends URLConnection {
         this(url);
         addTaint(url.getTaint());
         this.proxy = proxy;
-        
-        
+        // ---------- Original Method ----------
+        //this.proxy = proxy;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.986 -0400", hash_original_method = "2BDEB44F3F77270286A692320830ED18", hash_generated_method = "9B40E4C47CDE36CF92B5E26F821BE980")
     private void cd() throws IOException {
         int idx = url.getFile().lastIndexOf('/');
@@ -141,32 +140,31 @@ public class FtpURLConnection extends URLConnection {
             {
                 write("CWD " + dir.substring(1) + "\r\n");
                 reply = getReply();
-            } 
+            } //End block
     if(reply != FTP_FILEOK)            
             {
                 IOException var2B16AC0ABAC6AC9EF53A24879E6ED4F3_1168773469 = new IOException("Unable to change directories");
                 var2B16AC0ABAC6AC9EF53A24879E6ED4F3_1168773469.addTaint(taint);
                 throw var2B16AC0ABAC6AC9EF53A24879E6ED4F3_1168773469;
-            } 
-        } 
-        
-        
-        
-            
-            
-            
-            
-                
-                
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int idx = url.getFile().lastIndexOf('/');
+        //if (idx > 0) {
+            //String dir = url.getFile().substring(0, idx);
+            //write("CWD " + dir + "\r\n");
+            //int reply = getReply();
+            //if (reply != FTP_FILEOK && dir.length() > 0 && dir.charAt(0) == '/') {
+                //write("CWD " + dir.substring(1) + "\r\n");
+                //reply = getReply();
+            //}
+            //if (reply != FTP_FILEOK) {
+                //throw new IOException("Unable to change directories");
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.987 -0400", hash_original_method = "1FC662ADE026A6EC6E72DFD849EB4C0C", hash_generated_method = "B3AC9FCFF6E14E5809976F739C4FF18D")
     @Override
     public void connect() throws IOException {
@@ -175,20 +173,20 @@ public class FtpURLConnection extends URLConnection {
         {
             proxyList = new ArrayList<Proxy>(1);
             proxyList.add(proxy);
-        } 
+        } //End block
         else
         {
             ProxySelector selector = ProxySelector.getDefault();
     if(selector != null)            
             {
                 proxyList = selector.select(uri);
-            } 
-        } 
+            } //End block
+        } //End block
     if(proxyList == null)        
         {
             currentProxy = null;
             connectInternal();
-        } 
+        } //End block
         else
         {
             ProxySelector selector = ProxySelector.getDefault();
@@ -203,29 +201,28 @@ public class FtpURLConnection extends URLConnection {
                 {
                     connectInternal();
                     connectOK = true;
-                } 
+                } //End block
                 catch (IOException ioe)
                 {
                     failureReason = ioe.getLocalizedMessage();
     if(selector != null && Proxy.NO_PROXY != currentProxy)                    
                     {
                         selector.connectFailed(uri, currentProxy.address(), ioe);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(!connectOK)            
             {
                 IOException var6FF1E3D5F7F4A5C4E06A890F61313DD7_1485747097 = new IOException("Unable to connect to server: " + failureReason);
                 var6FF1E3D5F7F4A5C4E06A890F61313DD7_1485747097.addTaint(taint);
                 throw var6FF1E3D5F7F4A5C4E06A890F61313DD7_1485747097;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.990 -0400", hash_original_method = "C4AF18B7DC35179EB8C42F6F6880E61F", hash_generated_method = "EB35FF8EE97947721E210B28E7B981FA")
     private void connectInternal() throws IOException {
         int port = url.getPort();
@@ -233,15 +230,15 @@ public class FtpURLConnection extends URLConnection {
     if(port <= 0)        
         {
             port = FTP_PORT;
-        } 
+        } //End block
     if(currentProxy == null || Proxy.Type.HTTP == currentProxy.type())        
         {
             controlSocket = new Socket();
-        } 
+        } //End block
         else
         {
             controlSocket = new Socket(currentProxy);
-        } 
+        } //End block
         InetSocketAddress addr = new InetSocketAddress(hostName, port);
         controlSocket.connect(addr, connectTimeout);
         connected = true;
@@ -252,7 +249,7 @@ public class FtpURLConnection extends URLConnection {
     if(!getDoInput())        
         {
             cd();
-        } 
+        } //End block
         try 
         {
             acceptSocket = new ServerSocket(0);
@@ -261,37 +258,36 @@ public class FtpURLConnection extends URLConnection {
     if(connectTimeout == 0)            
             {
                 connectTimeout = 3000;
-            } 
+            } //End block
             acceptSocket.setSoTimeout(getConnectTimeout());
     if(getDoInput())            
             {
                 getFile();
-            } 
+            } //End block
             else
             {
                 sendFile();
-            } 
+            } //End block
             dataSocket = acceptSocket.accept();
             dataSocket.setSoTimeout(getReadTimeout());
             acceptSocket.close();
-        } 
+        } //End block
         catch (InterruptedIOException e)
         {
             IOException var3585C91A7767F5A85FF949A5E6C1352F_435140528 = new IOException("Could not establish data connection");
             var3585C91A7767F5A85FF949A5E6C1352F_435140528.addTaint(taint);
             throw var3585C91A7767F5A85FF949A5E6C1352F_435140528;
-        } 
+        } //End block
     if(getDoInput())        
         {
             inputStream = new FtpURLInputStream(
                     new BufferedInputStream(dataSocket.getInputStream()), controlSocket);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.990 -0400", hash_original_method = "EC8528293B0BAB1F2E4332771D0B26FB", hash_generated_method = "44E0ACBCABDD08E2B2D39730232C7741")
     @Override
     public String getContentType() {
@@ -301,16 +297,16 @@ public class FtpURLConnection extends URLConnection {
 String var74BE35FB698BCBEC5E595F7D368A5F61_1977038457 =             "content/unknown";
             var74BE35FB698BCBEC5E595F7D368A5F61_1977038457.addTaint(taint);
             return var74BE35FB698BCBEC5E595F7D368A5F61_1977038457;
-        } 
+        } //End block
 String varDC838461EE2FA0CA4C9BBB70A15456B0_1619883761 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1619883761.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1619883761;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String result = guessContentTypeFromName(url.getFile());
+        //if (result == null) {
+            //return "content/unknown";
+        //}
+        //return result;
     }
 
     
@@ -324,25 +320,25 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1619883761 =         result;
         {
             write("RETR " + file.substring(1) + "\r\n");
             reply = getReply();
-        } 
+        } //End block
     if(!(reply == FTP_OPENDATA || reply == FTP_TRANSFEROK))        
         {
             FileNotFoundException var5BC1C4162C10F95FF88804124F8CEA46_1820973746 = new FileNotFoundException("Unable to retrieve file: " + reply);
             var5BC1C4162C10F95FF88804124F8CEA46_1820973746.addTaint(taint);
             throw var5BC1C4162C10F95FF88804124F8CEA46_1820973746;
-        } 
-        
-        
-        
-        
-        
-        
-            
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int reply;
+        //String file = url.getFile();
+        //write("RETR " + file + "\r\n");
+        //reply = getReply();
+        //if (reply == FTP_NOTFOUND && file.length() > 0 && file.charAt(0) == '/') {
+            //write("RETR " + file.substring(1) + "\r\n");
+            //reply = getReply();
+        //}
+        //if (!(reply == FTP_OPENDATA || reply == FTP_TRANSFEROK)) {
+            //throw new FileNotFoundException("Unable to retrieve file: " + reply);
+        //}
     }
 
     
@@ -352,15 +348,15 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_1619883761 =         result;
     if(!connected)        
         {
             connect();
-        } 
+        } //End block
 InputStream var6D6AA0B6E97941129A02DB042FF8CF68_1130508034 =         inputStream;
         var6D6AA0B6E97941129A02DB042FF8CF68_1130508034.addTaint(taint);
         return var6D6AA0B6E97941129A02DB042FF8CF68_1130508034;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!connected) {
+            //connect();
+        //}
+        //return inputStream;
     }
 
     
@@ -371,16 +367,16 @@ InputStream var6D6AA0B6E97941129A02DB042FF8CF68_1130508034 =         inputStream
     if(port <= 0)        
         {
             port = FTP_PORT;
-        } 
+        } //End block
 Permission varFD00CEEA44FE42A489C211D128AF0313_301835870 =         new SocketPermission(hostName + ":" + port, "connect, resolve");
         varFD00CEEA44FE42A489C211D128AF0313_301835870.addTaint(taint);
         return varFD00CEEA44FE42A489C211D128AF0313_301835870;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int port = url.getPort();
+        //if (port <= 0) {
+            //port = FTP_PORT;
+        //}
+        //return new SocketPermission(hostName + ":" + port, "connect, resolve");
     }
 
     
@@ -390,15 +386,15 @@ Permission varFD00CEEA44FE42A489C211D128AF0313_301835870 =         new SocketPer
     if(!connected)        
         {
             connect();
-        } 
+        } //End block
 OutputStream var0A60C763AC2C950C297DA7D4666CB315_1759116766 =         dataSocket.getOutputStream();
         var0A60C763AC2C950C297DA7D4666CB315_1759116766.addTaint(taint);
         return var0A60C763AC2C950C297DA7D4666CB315_1759116766;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!connected) {
+            //connect();
+        //}
+        //return dataSocket.getOutputStream();
     }
 
     
@@ -413,59 +409,59 @@ for(int i = 0;i < code.length;i++)
                 EOFException var0239D63DB748BB20D119EB36D6D1C384_1459036042 = new EOFException();
                 var0239D63DB748BB20D119EB36D6D1C384_1459036042.addTaint(taint);
                 throw var0239D63DB748BB20D119EB36D6D1C384_1459036042;
-            } 
+            } //End block
             code[i] = (byte) tmp;
-        } 
+        } //End block
         replyCode = new String(code, 0, code.length, Charsets.ISO_8859_1);
         boolean multiline = false;
     if(ctrlInput.read() == '-')        
         {
             multiline = true;
-        } 
+        } //End block
         readLine();
     if(multiline)        
         {
             while
 (readMultiLine())            
             {
-            } 
-        } 
+            } //End block
+        } //End block
         try 
         {
             int varDCD90A1B3EB71A94D6F6EAFB426EFA3D_179471297 = (Integer.parseInt(replyCode));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1633696573 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1633696573;
-        } 
+        } //End block
         catch (NumberFormatException e)
         {
             IOException varD1C4CFA7C2E4ECCD4958BF07FA7AE1A8_2107071385 = (IOException)(new IOException("reply code is invalid").initCause(e));
             varD1C4CFA7C2E4ECCD4958BF07FA7AE1A8_2107071385.addTaint(taint);
             throw varD1C4CFA7C2E4ECCD4958BF07FA7AE1A8_2107071385;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-        
-        
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //byte[] code = new byte[3];
+        //for (int i = 0; i < code.length; i++) {
+            //final int tmp = ctrlInput.read();
+            //if (tmp == -1) {
+                //throw new EOFException();
+            //}
+            //code[i] = (byte) tmp;
+        //}
+        //replyCode = new String(code, 0, code.length, Charsets.ISO_8859_1);
+        //boolean multiline = false;
+        //if (ctrlInput.read() == '-') {
+            //multiline = true;
+        //}
+        //readLine();
+        //if (multiline) {
+            //while (readMultiLine()) {
+            //}
+        //}
+        //try {
+            //return Integer.parseInt(replyCode);
+        //} catch (NumberFormatException e) {
+            //throw (IOException)(new IOException("reply code is invalid").initCause(e));
+        //}
     }
 
     
@@ -475,24 +471,24 @@ for(int i = 0;i < code.length;i++)
         reply = getReply();
     if(reply == FTP_USERREADY)        
         {
-        } 
+        } //End block
         else
         {
             IOException var03DF6E7FC2C301784478F401927F6843_1689473803 = new IOException("Unable to connect to server: " + url.getHost());
             var03DF6E7FC2C301784478F401927F6843_1689473803.addTaint(taint);
             throw var03DF6E7FC2C301784478F401927F6843_1689473803;
-        } 
+        } //End block
         write("USER " + username + "\r\n");
         reply = getReply();
     if(reply == FTP_PASWD || reply == FTP_LOGGEDIN)        
         {
-        } 
+        } //End block
         else
         {
             IOException var3A61407F2FEFCFD47C505A8BB15C4033_1451036999 = new IOException("Unable to log in to server (USER): " + url.getHost());
             var3A61407F2FEFCFD47C505A8BB15C4033_1451036999.addTaint(taint);
             throw var3A61407F2FEFCFD47C505A8BB15C4033_1451036999;
-        } 
+        } //End block
     if(reply == FTP_PASWD)        
         {
             write("PASS " + password + "\r\n");
@@ -502,28 +498,28 @@ for(int i = 0;i < code.length;i++)
                 IOException varFADFF05B927A409609217B1CB6F2B71A_879033196 = new IOException("Unable to log in to server (PASS): " + url.getHost());
                 varFADFF05B927A409609217B1CB6F2B71A_879033196.addTaint(taint);
                 throw varFADFF05B927A409609217B1CB6F2B71A_879033196;
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int reply;
+        //reply = getReply();
+        //if (reply == FTP_USERREADY) {
+        //} else {
+            //throw new IOException("Unable to connect to server: " + url.getHost());
+        //}
+        //write("USER " + username + "\r\n");
+        //reply = getReply();
+        //if (reply == FTP_PASWD || reply == FTP_LOGGEDIN) {
+        //} else {
+            //throw new IOException("Unable to log in to server (USER): " + url.getHost());
+        //}
+        //if (reply == FTP_PASWD) {
+            //write("PASS " + password + "\r\n");
+            //reply = getReply();
+            //if (!(reply == FTP_OK || reply == FTP_USERREADY || reply == FTP_LOGGEDIN)) {
+                //throw new IOException("Unable to log in to server (PASS): " + url.getHost());
+            //}
+        //}
     }
 
     
@@ -539,16 +535,16 @@ for(int i = 0;i < code.length;i++)
             IOException varB6807CA2CD675B71037F439C7D45962C_1862482280 = new IOException("Unable to configure data port");
             varB6807CA2CD675B71037F439C7D45962C_1862482280.addTaint(taint);
             throw varB6807CA2CD675B71037F439C7D45962C_1862482280;
-        } 
-        
-        
-                
-                        
-                
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //write("PORT "
+                //+ controlSocket.getLocalAddress().getHostAddress().replace('.',
+                        //',') + ',' + (dataPort >> 8) + ','
+                //+ (dataPort & 255)
+                //+ "\r\n");
+        //if (getReply() != FTP_OK) {
+            //throw new IOException("Unable to configure data port");
+        //}
     }
 
     
@@ -560,17 +556,17 @@ for(int i = 0;i < code.length;i++)
 ((c = ctrlInput.read()) != '\n')        
         {
             sb.append((char) c);
-        } 
+        } //End block
 String var2460B846747F8B22185AD8BE722266A5_1647751950 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1647751950.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1647751950;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder();
+        //int c;
+        //while ((c = ctrlInput.read()) != '\n') {
+            //sb.append((char) c);
+        //}
+        //return sb.toString();
     }
 
     
@@ -582,27 +578,27 @@ String var2460B846747F8B22185AD8BE722266A5_1647751950 =         sb.toString();
             boolean varB326B5062B2F0E69046810717534CB09_185782318 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2133786247 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2133786247;
-        } 
+        } //End block
     if(line.substring(0, 3).equals(replyCode)
                 && (line.charAt(3) == (char) 32))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1796945899 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_808435390 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_808435390;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_284972689 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_976703095 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_976703095;
-        
-        
-        
-            
-        
-        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //String line = readLine();
+        //if (line.length() < 4) {
+            //return true;
+        //}
+        //if (line.substring(0, 3).equals(replyCode)
+                //&& (line.charAt(3) == (char) 32)) {
+            //return false;
+        //}
+        //return true;
     }
 
     
@@ -618,16 +614,16 @@ String var2460B846747F8B22185AD8BE722266A5_1647751950 =         sb.toString();
             IOException var894DFDA9C92BEB23CD395D049428B72E_330928244 = new IOException("Unable to store file");
             var894DFDA9C92BEB23CD395D049428B72E_330928244.addTaint(taint);
             throw var894DFDA9C92BEB23CD395D049428B72E_330928244;
-        } 
-        
-        
-        
-                
-                        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int reply;
+        //write("STOR "
+                //+ url.getFile().substring(url.getFile().lastIndexOf('/') + 1,
+                        //url.getFile().length()) + "\r\n");
+        //reply = getReply();
+        //if (!(reply == FTP_OPENDATA || reply == FTP_OK || reply == FTP_DATAOPEN)) {
+            //throw new IOException("Unable to store file");
+        //}
     }
 
     
@@ -640,15 +636,15 @@ String var2460B846747F8B22185AD8BE722266A5_1647751950 =         sb.toString();
             IllegalAccessError var5521B3494B44914EF7ACFE5EEBCF057A_855933208 = new IllegalAccessError();
             var5521B3494B44914EF7ACFE5EEBCF057A_855933208.addTaint(taint);
             throw var5521B3494B44914EF7ACFE5EEBCF057A_855933208;
-        } 
+        } //End block
         this.doInput = newValue;
         this.doOutput = !newValue;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (connected) {
+            //throw new IllegalAccessError();
+        //}
+        //this.doInput = newValue;
+        //this.doOutput = !newValue;
     }
 
     
@@ -661,15 +657,15 @@ String var2460B846747F8B22185AD8BE722266A5_1647751950 =         sb.toString();
             IllegalAccessError var5521B3494B44914EF7ACFE5EEBCF057A_1270178954 = new IllegalAccessError();
             var5521B3494B44914EF7ACFE5EEBCF057A_1270178954.addTaint(taint);
             throw var5521B3494B44914EF7ACFE5EEBCF057A_1270178954;
-        } 
+        } //End block
         this.doOutput = newValue;
         this.doInput = !newValue;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (connected) {
+            //throw new IllegalAccessError();
+        //}
+        //this.doOutput = newValue;
+        //this.doInput = !newValue;
     }
 
     
@@ -681,12 +677,12 @@ String var2460B846747F8B22185AD8BE722266A5_1647751950 =         sb.toString();
             IOException varD7E718C01C1753C890AA0684E190142D_314507833 = new IOException("Unable to set transfer type");
             varD7E718C01C1753C890AA0684E190142D_314507833.addTaint(taint);
             throw varD7E718C01C1753C890AA0684E190142D_314507833;
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //write("TYPE I\r\n");
+        //if (getReply() != FTP_OK) {
+            //throw new IOException("Unable to set transfer type");
+        //}
     }
 
     
@@ -694,8 +690,8 @@ String var2460B846747F8B22185AD8BE722266A5_1647751950 =         sb.toString();
     private void write(String command) throws IOException {
         addTaint(command.getTaint());
         ctrlOutput.write(command.getBytes(Charsets.ISO_8859_1));
-        
-        
+        // ---------- Original Method ----------
+        //ctrlOutput.write(command.getBytes(Charsets.ISO_8859_1));
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,7 +50,7 @@ public class AttributeCertificateInfo extends ASN1Encodable {
             IllegalArgumentException varA2072CF614C7B8C7696DD5A02DBCCE9C_1340008969 = new IllegalArgumentException("Bad sequence size: " + seq.size());
             varA2072CF614C7B8C7696DD5A02DBCCE9C_1340008969.addTaint(taint);
             throw varA2072CF614C7B8C7696DD5A02DBCCE9C_1340008969;
-        } 
+        } //End block
         this.version = DERInteger.getInstance(seq.getObjectAt(0));
         this.holder = Holder.getInstance(seq.getObjectAt(1));
         this.issuer = AttCertIssuer.getInstance(seq.getObjectAt(2));
@@ -64,15 +64,15 @@ for(int i = 7;i < seq.size();i++)
     if(obj instanceof DERBitString)            
             {
                 this.issuerUniqueID = DERBitString.getInstance(seq.getObjectAt(i));
-            } 
+            } //End block
             else
     if(obj instanceof ASN1Sequence || obj instanceof X509Extensions)            
             {
                 this.extensions = X509Extensions.getInstance(seq.getObjectAt(i));
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -97,102 +97,93 @@ for(int i = 7;i < seq.size();i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.989 -0400", hash_original_method = "C14C6949EA2D9724014BC15AB24B85D9", hash_generated_method = "04123366E5F65598B9D69A91C400A9BB")
     public DERInteger getVersion() {
 DERInteger varE87BEFBC04DA371DFA5B07C77A4407CB_592705055 =         version;
         varE87BEFBC04DA371DFA5B07C77A4407CB_592705055.addTaint(taint);
         return varE87BEFBC04DA371DFA5B07C77A4407CB_592705055;
-        
-        
+        // ---------- Original Method ----------
+        //return version;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.989 -0400", hash_original_method = "31AEFB5A2FC3B890A5A042FC24D98031", hash_generated_method = "69B9751A5246B391070F58B40E2FDFD5")
     public Holder getHolder() {
 Holder varFB58939ED56E085B5946FF7BF43F5A8C_273424686 =         holder;
         varFB58939ED56E085B5946FF7BF43F5A8C_273424686.addTaint(taint);
         return varFB58939ED56E085B5946FF7BF43F5A8C_273424686;
-        
-        
+        // ---------- Original Method ----------
+        //return holder;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.990 -0400", hash_original_method = "CDB27E7EA4A3B5B10C6A056E131798BE", hash_generated_method = "95B1484B7A19848A21C7B9D6259B134F")
     public AttCertIssuer getIssuer() {
 AttCertIssuer var8EF52627413B91AB97DB59853805E979_593086153 =         issuer;
         var8EF52627413B91AB97DB59853805E979_593086153.addTaint(taint);
         return var8EF52627413B91AB97DB59853805E979_593086153;
-        
-        
+        // ---------- Original Method ----------
+        //return issuer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.990 -0400", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "6FA7B6F48FFCC596AEF0BBE3AB705490")
     public AlgorithmIdentifier getSignature() {
 AlgorithmIdentifier varCDF7DED6F053AD37D069B3F1993A6032_498902918 =         signature;
         varCDF7DED6F053AD37D069B3F1993A6032_498902918.addTaint(taint);
         return varCDF7DED6F053AD37D069B3F1993A6032_498902918;
-        
-        
+        // ---------- Original Method ----------
+        //return signature;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.991 -0400", hash_original_method = "FB637D35FB72ECF5302334390BEEB5AC", hash_generated_method = "2AD1AD36F1CD1F75E62035744E363D9C")
     public DERInteger getSerialNumber() {
 DERInteger varC5241B523DA06FB03F5998149659C655_1854587428 =         serialNumber;
         varC5241B523DA06FB03F5998149659C655_1854587428.addTaint(taint);
         return varC5241B523DA06FB03F5998149659C655_1854587428;
-        
-        
+        // ---------- Original Method ----------
+        //return serialNumber;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.991 -0400", hash_original_method = "3C65423907176C9088B2D87B8798CFAE", hash_generated_method = "049F8886362C23BAB1AB7097335CD6F3")
     public AttCertValidityPeriod getAttrCertValidityPeriod() {
 AttCertValidityPeriod varA11F88F9C254C07EAFA8E62902024875_1260746383 =         attrCertValidityPeriod;
         varA11F88F9C254C07EAFA8E62902024875_1260746383.addTaint(taint);
         return varA11F88F9C254C07EAFA8E62902024875_1260746383;
-        
-        
+        // ---------- Original Method ----------
+        //return attrCertValidityPeriod;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.991 -0400", hash_original_method = "936A2581CBB919961CE40AAE721BB5BA", hash_generated_method = "64018BE543CA9F0973D098E4D6056298")
     public ASN1Sequence getAttributes() {
 ASN1Sequence var4BBC8979DB64A9C3E2328AA1E06CDBB3_884643972 =         attributes;
         var4BBC8979DB64A9C3E2328AA1E06CDBB3_884643972.addTaint(taint);
         return var4BBC8979DB64A9C3E2328AA1E06CDBB3_884643972;
-        
-        
+        // ---------- Original Method ----------
+        //return attributes;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.992 -0400", hash_original_method = "2F58C5477BC934C0C5DF4943197A2496", hash_generated_method = "5C61F1C19BB33FFA93E58DCA080C5AEB")
     public DERBitString getIssuerUniqueID() {
 DERBitString varC3F52AB7D2771DF0D802AC3A97EE5387_641511557 =         issuerUniqueID;
         varC3F52AB7D2771DF0D802AC3A97EE5387_641511557.addTaint(taint);
         return varC3F52AB7D2771DF0D802AC3A97EE5387_641511557;
-        
-        
+        // ---------- Original Method ----------
+        //return issuerUniqueID;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.992 -0400", hash_original_method = "0A664DE086A2ED08A47FCC7544F0D12E", hash_generated_method = "1D622C3CCC1CF2692012F8E6AFFEF18C")
     public X509Extensions getExtensions() {
 X509Extensions varD5DA799FFC3665A23EF170042DC373AD_432745922 =         extensions;
         varD5DA799FFC3665A23EF170042DC373AD_432745922.addTaint(taint);
         return varD5DA799FFC3665A23EF170042DC373AD_432745922;
-        
-        
+        // ---------- Original Method ----------
+        //return extensions;
     }
 
     
@@ -209,32 +200,32 @@ X509Extensions varD5DA799FFC3665A23EF170042DC373AD_432745922 =         extension
     if(issuerUniqueID != null)        
         {
             v.add(issuerUniqueID);
-        } 
+        } //End block
     if(extensions != null)        
         {
             v.add(extensions);
-        } 
+        } //End block
 DERObject var0B338F106E3279986C87B595B0F4A439_392824238 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_392824238.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_392824238;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector  v = new ASN1EncodableVector();
+        //v.add(version);
+        //v.add(holder);
+        //v.add(issuer);
+        //v.add(signature);
+        //v.add(serialNumber);
+        //v.add(attrCertValidityPeriod);
+        //v.add(attributes);
+        //if (issuerUniqueID != null)
+        //{
+            //v.add(issuerUniqueID);
+        //}
+        //if (extensions != null)
+        //{
+            //v.add(extensions);
+        //}
+        //return new DERSequence(v);
     }
 
     

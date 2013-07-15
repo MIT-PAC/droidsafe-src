@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,38 +39,37 @@ public abstract class AbstractPoolEntry {
             IllegalArgumentException var77D8C168DB874D3F429F1A2BBEABDD03_2069505036 = new IllegalArgumentException("Connection operator may not be null");
             var77D8C168DB874D3F429F1A2BBEABDD03_2069505036.addTaint(taint);
             throw var77D8C168DB874D3F429F1A2BBEABDD03_2069505036;
-        } 
+        } //End block
         this.connOperator = connOperator;
         this.connection = connOperator.createConnection();
         this.route = route;
         this.tracker = null;
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (connOperator == null) {
+            //throw new IllegalArgumentException("Connection operator may not be null");
+        //}
+        //this.connOperator = connOperator;
+        //this.connection = connOperator.createConnection();
+        //this.route = route;
+        //this.tracker = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.736 -0400", hash_original_method = "079ECF1B585CB82D2480C2A65F324FB6", hash_generated_method = "A85759C94F4A635E14952D976AAAA7F1")
     public Object getState() {
 Object var37C56C9D63C623261861C16DCFB73F6D_1856145489 =         state;
         var37C56C9D63C623261861C16DCFB73F6D_1856145489.addTaint(taint);
         return var37C56C9D63C623261861C16DCFB73F6D_1856145489;
-        
-        
+        // ---------- Original Method ----------
+        //return state;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.736 -0400", hash_original_method = "9D16F7D7F90D43454808FD39B427C300", hash_generated_method = "B09AF06B0499DA01F80DB609204967D6")
     public void setState(final Object state) {
         this.state = state;
-        
-        
+        // ---------- Original Method ----------
+        //this.state = state;
     }
 
     
@@ -85,20 +84,20 @@ Object var37C56C9D63C623261861C16DCFB73F6D_1856145489 =         state;
                 ("Route must not be null.");
             var9D1E04CAB225D0E33B73D3F7F4C9F93A_1253613512.addTaint(taint);
             throw var9D1E04CAB225D0E33B73D3F7F4C9F93A_1253613512;
-        } 
+        } //End block
     if(params == null)        
         {
             IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_159619154 = new IllegalArgumentException
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_159619154.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_159619154;
-        } 
+        } //End block
     if((this.tracker != null) && this.tracker.isConnected())        
         {
             IllegalStateException var9EFA0E3F95B3C927C86C9A5F3C3B0F44_353655019 = new IllegalStateException("Connection already open.");
             var9EFA0E3F95B3C927C86C9A5F3C3B0F44_353655019.addTaint(taint);
             throw var9EFA0E3F95B3C927C86C9A5F3C3B0F44_353655019;
-        } 
+        } //End block
         this.tracker = new RouteTracker(route);
         final HttpHost proxy = route.getProxyHost();
         connOperator.openConnection
@@ -112,17 +111,17 @@ Object var37C56C9D63C623261861C16DCFB73F6D_1856145489 =         state;
             IOException var19DC2E435233885AF69F964030F77E39_566306936 = new IOException("Request aborted");
             var19DC2E435233885AF69F964030F77E39_566306936.addTaint(taint);
             throw var19DC2E435233885AF69F964030F77E39_566306936;
-        } 
+        } //End block
     if(proxy == null)        
         {
             localTracker.connectTarget(this.connection.isSecure());
-        } 
+        } //End block
         else
         {
             localTracker.connectProxy(proxy, this.connection.isSecure());
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -136,38 +135,38 @@ Object var37C56C9D63C623261861C16DCFB73F6D_1856145489 =         state;
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_619625960.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_619625960;
-        } 
+        } //End block
     if((this.tracker == null) || !this.tracker.isConnected())        
         {
             IllegalStateException var2C3BAE8D9D400EBC69A876F87FDE68FA_1118141597 = new IllegalStateException("Connection not open.");
             var2C3BAE8D9D400EBC69A876F87FDE68FA_1118141597.addTaint(taint);
             throw var2C3BAE8D9D400EBC69A876F87FDE68FA_1118141597;
-        } 
+        } //End block
     if(this.tracker.isTunnelled())        
         {
             IllegalStateException var285AA9BEE39E730EC5B246C53E146516_1973492799 = new IllegalStateException
                 ("Connection is already tunnelled.");
             var285AA9BEE39E730EC5B246C53E146516_1973492799.addTaint(taint);
             throw var285AA9BEE39E730EC5B246C53E146516_1973492799;
-        } 
+        } //End block
         this.connection.update(null, tracker.getTargetHost(),
                                secure, params);
         this.tracker.tunnelTarget(secure);
-        
-        
-            
-                
-        
-        
-            
-        
-        
-            
-                
-        
-        
-                               
-        
+        // ---------- Original Method ----------
+        //if (params == null) {
+            //throw new IllegalArgumentException
+                //("Parameters must not be null.");
+        //}
+        //if ((this.tracker == null) || !this.tracker.isConnected()) {
+            //throw new IllegalStateException("Connection not open.");
+        //}
+        //if (this.tracker.isTunnelled()) {
+            //throw new IllegalStateException
+                //("Connection is already tunnelled.");
+        //}
+        //this.connection.update(null, tracker.getTargetHost(),
+                               //secure, params);
+        //this.tracker.tunnelTarget(secure);
     }
 
     
@@ -182,36 +181,36 @@ Object var37C56C9D63C623261861C16DCFB73F6D_1856145489 =         state;
                 ("Next proxy must not be null.");
             var22F25C656A749620C460C47C1D4C9160_1333413719.addTaint(taint);
             throw var22F25C656A749620C460C47C1D4C9160_1333413719;
-        } 
+        } //End block
     if(params == null)        
         {
             IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_515166308 = new IllegalArgumentException
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_515166308.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_515166308;
-        } 
+        } //End block
     if((this.tracker == null) || !this.tracker.isConnected())        
         {
             IllegalStateException var2C3BAE8D9D400EBC69A876F87FDE68FA_131684598 = new IllegalStateException("Connection not open.");
             var2C3BAE8D9D400EBC69A876F87FDE68FA_131684598.addTaint(taint);
             throw var2C3BAE8D9D400EBC69A876F87FDE68FA_131684598;
-        } 
+        } //End block
         this.connection.update(null, next, secure, params);
         this.tracker.tunnelProxy(next, secure);
-        
-        
-            
-                
-        
-        
-            
-                
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (next == null) {
+            //throw new IllegalArgumentException
+                //("Next proxy must not be null.");
+        //}
+        //if (params == null) {
+            //throw new IllegalArgumentException
+                //("Parameters must not be null.");
+        //}
+        //if ((this.tracker == null) || !this.tracker.isConnected()) {
+            //throw new IllegalStateException("Connection not open.");
+        //}
+        //this.connection.update(null, next, secure, params);
+        //this.tracker.tunnelProxy(next, secure);
     }
 
     
@@ -225,42 +224,41 @@ Object var37C56C9D63C623261861C16DCFB73F6D_1856145489 =         state;
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_1767607655.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_1767607655;
-        } 
+        } //End block
     if((this.tracker == null) || !this.tracker.isConnected())        
         {
             IllegalStateException var2C3BAE8D9D400EBC69A876F87FDE68FA_1118022101 = new IllegalStateException("Connection not open.");
             var2C3BAE8D9D400EBC69A876F87FDE68FA_1118022101.addTaint(taint);
             throw var2C3BAE8D9D400EBC69A876F87FDE68FA_1118022101;
-        } 
+        } //End block
     if(!this.tracker.isTunnelled())        
         {
             IllegalStateException var50364EE758C5DA761F7054170B5DFB2B_891108638 = new IllegalStateException
                 ("Protocol layering without a tunnel not supported.");
             var50364EE758C5DA761F7054170B5DFB2B_891108638.addTaint(taint);
             throw var50364EE758C5DA761F7054170B5DFB2B_891108638;
-        } 
+        } //End block
     if(this.tracker.isLayered())        
         {
             IllegalStateException var6283407F3902AE9CD97120F27705909E_838635037 = new IllegalStateException
                 ("Multiple protocol layering not supported.");
             var6283407F3902AE9CD97120F27705909E_838635037.addTaint(taint);
             throw var6283407F3902AE9CD97120F27705909E_838635037;
-        } 
+        } //End block
         final HttpHost target = tracker.getTargetHost();
         connOperator.updateSecureConnection(this.connection, target,
                                              context, params);
         this.tracker.layerProtocol(this.connection.isSecure());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.741 -0400", hash_original_method = "9A8AC70CC76BCE1A1C90EAA4BDE4B23E", hash_generated_method = "B91CAD5B2338FFE73AC3E521D4481C73")
     protected void shutdownEntry() {
         tracker = null;
-        
-        
+        // ---------- Original Method ----------
+        //tracker = null;
     }
 
     

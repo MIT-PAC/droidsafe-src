@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ public class CharArrayWriter extends Writer {
     public  CharArrayWriter() {
         buf = new char[32];
         lock = buf;
-        
-        
-        
+        // ---------- Original Method ----------
+        //buf = new char[32];
+        //lock = buf;
     }
 
     
@@ -31,23 +31,22 @@ public class CharArrayWriter extends Writer {
             IllegalArgumentException var2382BBC2482763F398967EC587DEA9AE_787272896 = new IllegalArgumentException("size < 0");
             var2382BBC2482763F398967EC587DEA9AE_787272896.addTaint(taint);
             throw var2382BBC2482763F398967EC587DEA9AE_787272896;
-        } 
+        } //End block
         buf = new char[initialSize];
         lock = buf;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (initialSize < 0) {
+            //throw new IllegalArgumentException("size < 0");
+        //}
+        //buf = new char[initialSize];
+        //lock = buf;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.000 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -57,45 +56,42 @@ public class CharArrayWriter extends Writer {
     if(count + i <= buf.length)        
         {
             return;
-        } 
+        } //End block
         int newLen = Math.max(2 * buf.length, count + i);
         char[] newbuf = new char[newLen];
         System.arraycopy(buf, 0, newbuf, 0, count);
         buf = newbuf;
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (count + i <= buf.length) {
+            //return;
+        //}
+        //int newLen = Math.max(2 * buf.length, count + i);
+        //char[] newbuf = new char[newLen];
+        //System.arraycopy(buf, 0, newbuf, 0, count);
+        //buf = newbuf;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.001 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
     @Override
     public void flush() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.001 -0400", hash_original_method = "41854ED78018FCB86E06DA2ADE584B53", hash_generated_method = "EF66D3120D8A5048C78C67480E598644")
     public void reset() {
         synchronized
 (lock)        {
             count = 0;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //count = 0;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:47.001 -0400", hash_original_method = "796F2451CF9DC3EF411446EADA3F03C7", hash_generated_method = "E11B9201B31DD88C4FE18B1B5A8CB402")
     public int size() {
         synchronized
@@ -103,11 +99,11 @@ public class CharArrayWriter extends Writer {
             int varE2942A04780E223B215EB8B663CF5353_1197815318 = (count);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1959360624 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1959360624;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //return count;
+        //}
     }
 
     
@@ -120,13 +116,13 @@ public class CharArrayWriter extends Writer {
             char[] varB4A88417B3D0170D754C647C30B7216A_1522200617 = (result);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_926094329 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_926094329;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //char[] result = new char[count];
+            //System.arraycopy(buf, 0, result, 0, count);
+            //return result;
+        //}
     }
 
     
@@ -138,11 +134,11 @@ public class CharArrayWriter extends Writer {
 String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(buf, 0, count);
             var284A4624AC5D82C1992013009E0FB870_561904108.addTaint(taint);
             return var284A4624AC5D82C1992013009E0FB870_561904108;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //return new String(buf, 0, count);
+        //}
     }
 
     
@@ -157,14 +153,14 @@ String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(bu
             expand(len);
             System.arraycopy(buffer, offset, this.buf, this.count, len);
             this.count += len;
-        } 
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(buffer.length, offset, len);
+        //synchronized (lock) {
+            //expand(len);
+            //System.arraycopy(buffer, offset, this.buf, this.count, len);
+            //this.count += len;
+        //}
     }
 
     
@@ -175,12 +171,12 @@ String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(bu
 (lock)        {
             expand(1);
             buf[count++] = (char) oneChar;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //expand(1);
+            //buf[count++] = (char) oneChar;
+        //}
     }
 
     
@@ -194,31 +190,31 @@ String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(bu
             NullPointerException varBAAB5D2ADD4C016ACB92A2133697155C_1969382345 = new NullPointerException("str == null");
             varBAAB5D2ADD4C016ACB92A2133697155C_1969382345.addTaint(taint);
             throw varBAAB5D2ADD4C016ACB92A2133697155C_1969382345;
-        } 
+        } //End block
     if((offset | count) < 0 || offset > str.length() - count)        
         {
             StringIndexOutOfBoundsException varDD6466A465572C8C2EC4C6C733FC9AF8_1232426152 = new StringIndexOutOfBoundsException(str, offset, count);
             varDD6466A465572C8C2EC4C6C733FC9AF8_1232426152.addTaint(taint);
             throw varDD6466A465572C8C2EC4C6C733FC9AF8_1232426152;
-        } 
+        } //End block
         synchronized
 (lock)        {
             expand(count);
             str.getChars(offset, offset + count, buf, this.count);
             this.count += count;
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (str == null) {
+            //throw new NullPointerException("str == null");
+        //}
+        //if ((offset | count) < 0 || offset > str.length() - count) {
+            //throw new StringIndexOutOfBoundsException(str, offset, count);
+        //}
+        //synchronized (lock) {
+            //expand(count);
+            //str.getChars(offset, offset + count, buf, this.count);
+            //this.count += count;
+        //}
     }
 
     
@@ -228,11 +224,11 @@ String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(bu
         synchronized
 (lock)        {
             out.write(buf, 0, count);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //out.write(buf, 0, count);
+        //}
     }
 
     
@@ -244,9 +240,9 @@ String var284A4624AC5D82C1992013009E0FB870_561904108 =             new String(bu
 CharArrayWriter var72A74007B2BE62B849F475C7BDA4658B_497974827 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_497974827.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_497974827;
-        
-        
-        
+        // ---------- Original Method ----------
+        //write(c);
+        //return this;
     }
 
     
@@ -257,17 +253,17 @@ CharArrayWriter var72A74007B2BE62B849F475C7BDA4658B_497974827 =         this;
     if(csq == null)        
         {
             csq = "null";
-        } 
+        } //End block
         append(csq, 0, csq.length());
 CharArrayWriter var72A74007B2BE62B849F475C7BDA4658B_342348197 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_342348197.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_342348197;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (csq == null) {
+            //csq = "null";
+        //}
+        //append(csq, 0, csq.length());
+        //return this;
     }
 
     
@@ -280,19 +276,19 @@ CharArrayWriter var72A74007B2BE62B849F475C7BDA4658B_342348197 =         this;
     if(csq == null)        
         {
             csq = "null";
-        } 
+        } //End block
         String output = csq.subSequence(start, end).toString();
         write(output, 0, output.length());
 CharArrayWriter var72A74007B2BE62B849F475C7BDA4658B_1761652228 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1761652228.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1761652228;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (csq == null) {
+            //csq = "null";
+        //}
+        //String output = csq.subSequence(start, end).toString();
+        //write(output, 0, output.length());
+        //return this;
     }
 
     

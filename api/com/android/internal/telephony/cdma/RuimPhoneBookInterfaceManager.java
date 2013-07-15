@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,16 +16,16 @@ public class RuimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager 
         super(phone);
         addTaint(phone.getTaint());
         adnCache = phone.mIccRecords.getAdnCache();
-        
-        
+        // ---------- Original Method ----------
+        //adnCache = phone.mIccRecords.getAdnCache();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.066 -0400", hash_original_method = "9B378D368B78D2E2F938DA57C729E6B5", hash_generated_method = "9A4F77B4E25F9CFE2D71D8AC605A621B")
     public void dispose() {
         super.dispose();
-        
-        
+        // ---------- Original Method ----------
+        //super.dispose();
     }
 
     
@@ -34,19 +34,19 @@ public class RuimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager 
         try 
         {
             super.finalize();
-        } 
+        } //End block
         catch (Throwable throwable)
         {
-        } 
+        } //End block
     if(DBG)        
         Log.d(LOG_TAG, "RuimPhoneBookInterfaceManager finalized");
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //super.finalize();
+        //} catch (Throwable throwable) {
+            //Log.e(LOG_TAG, "Error while finalizing:", throwable);
+        //}
+        //if(DBG) Log.d(LOG_TAG, "RuimPhoneBookInterfaceManager finalized");
     }
 
     
@@ -63,21 +63,21 @@ public class RuimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager 
             Message response = mBaseHandler.obtainMessage(EVENT_GET_SIZE_DONE, status);
             phone.getIccFileHandler().getEFLinearRecordSize(efid, response);
             waitForResult(status);
-        } 
+        } //End block
         int[] var5BF8005FBC54CBD8FD3B1DD07A722DAC_1122640019 = (recordSize);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_63635415 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_63635415;
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) logd("getAdnRecordsSize: efid=" + efid);
+        //synchronized(mLock) {
+            //checkThread();
+            //recordSize = new int[3];
+            //AtomicBoolean status = new AtomicBoolean(false);
+            //Message response = mBaseHandler.obtainMessage(EVENT_GET_SIZE_DONE, status);
+            //phone.getIccFileHandler().getEFLinearRecordSize(efid, response);
+            //waitForResult(status);
+        //}
+        //return recordSize;
     }
 
     
@@ -85,16 +85,16 @@ public class RuimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager 
     protected void logd(String msg) {
         addTaint(msg.getTaint());
         Log.d(LOG_TAG, "[RuimPbInterfaceManager] " + msg);
-        
-        
+        // ---------- Original Method ----------
+        //Log.d(LOG_TAG, "[RuimPbInterfaceManager] " + msg);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.068 -0400", hash_original_method = "87C4CA182A2FF633172C99DE636527CD", hash_generated_method = "4823C001B774DC70663F87F1BACCD1E4")
     protected void loge(String msg) {
         addTaint(msg.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        //Log.e(LOG_TAG, "[RuimPbInterfaceManager] " + msg);
     }
 
     

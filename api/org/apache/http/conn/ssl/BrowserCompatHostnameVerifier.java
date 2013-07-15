@@ -1,6 +1,6 @@
 package org.apache.http.conn.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class BrowserCompatHostnameVerifier extends AbstractVerifier {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.718 -0400", hash_original_method = "F97EE270780B41C0EF5EF7526675E0EC", hash_generated_method = "F97EE270780B41C0EF5EF7526675E0EC")
     public BrowserCompatHostnameVerifier ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -24,8 +24,8 @@ public class BrowserCompatHostnameVerifier extends AbstractVerifier {
         addTaint(cns[0].getTaint());
         addTaint(host.getTaint());
         verify(host, cns, subjectAlts, false);
-        
-        
+        // ---------- Original Method ----------
+        //verify(host, cns, subjectAlts, false);
     }
 
     
@@ -35,8 +35,8 @@ public class BrowserCompatHostnameVerifier extends AbstractVerifier {
 String var93D67A1E1EEEED16843593CFCB51A602_832153230 =         "BROWSER_COMPATIBLE";
         var93D67A1E1EEEED16843593CFCB51A602_832153230.addTaint(taint);
         return var93D67A1E1EEEED16843593CFCB51A602_832153230;
-        
-        
+        // ---------- Original Method ----------
+        //return "BROWSER_COMPATIBLE";
     }
 
     

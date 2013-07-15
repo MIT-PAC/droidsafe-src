@@ -1,6 +1,6 @@
 package android.hardware;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -80,44 +80,42 @@ public class Camera {
     if((looper = Looper.myLooper()) != null)        
         {
             mEventHandler = new EventHandler(this, looper);
-        } 
+        } //End block
         else
     if((looper = Looper.getMainLooper()) != null)        
         {
             mEventHandler = new EventHandler(this, looper);
-        } 
+        } //End block
         else
         {
             mEventHandler = null;
-        } 
+        } //End block
         native_setup(new WeakReference<Camera>(this), cameraId);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //mShutterCallback = null;
+        //mRawImageCallback = null;
+        //mJpegCallback = null;
+        //mPreviewCallback = null;
+        //mPostviewCallback = null;
+        //mZoomListener = null;
+        //Looper looper;
+        //if ((looper = Looper.myLooper()) != null) {
+            //mEventHandler = new EventHandler(this, looper);
+        //} else if ((looper = Looper.getMainLooper()) != null) {
+            //mEventHandler = new EventHandler(this, looper);
+        //} else {
+            //mEventHandler = null;
+        //}
+        //native_setup(new WeakReference<Camera>(this), cameraId);
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static int getNumberOfCameras() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962180813 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962180813;
     }
 
     
-    @DSModeled(DSC.SAFE)
     public static void getCameraInfo(int cameraId, CameraInfo cameraInfo) {
     }
 
@@ -143,8 +141,8 @@ public class Camera {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.228 -0400", hash_original_method = "52F53B59AD091F99DC7C4D49031A27E5", hash_generated_method = "8FAC9FF85A1EF0848C18BB309D51EC09")
     protected void finalize() {
         release();
-        
-        
+        // ---------- Original Method ----------
+        //release();
     }
 
     
@@ -162,9 +160,9 @@ public class Camera {
     public final void release() {
         native_release();
         mFaceDetectionRunning = false;
-        
-        
-        
+        // ---------- Original Method ----------
+        //native_release();
+        //mFaceDetectionRunning = false;
     }
 
     
@@ -189,17 +187,17 @@ public class Camera {
     if(holder != null)        
         {
             setPreviewDisplay(holder.getSurface());
-        } 
+        } //End block
         else
         {
             setPreviewDisplay((Surface)null);
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (holder != null) {
+            //setPreviewDisplay(holder.getSurface());
+        //} else {
+            //setPreviewDisplay((Surface)null);
+        //}
     }
 
     
@@ -227,14 +225,14 @@ public class Camera {
         mPostviewCallback = null;
         mJpegCallback = null;
         mAutoFocusCallback = null;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //_stopPreview();
+        //mFaceDetectionRunning = false;
+        //mShutterCallback = null;
+        //mRawImageCallback = null;
+        //mPostviewCallback = null;
+        //mJpegCallback = null;
+        //mAutoFocusCallback = null;
     }
 
     
@@ -256,11 +254,11 @@ public class Camera {
         mOneShot = false;
         mWithBuffer = false;
         setHasPreviewCallback(cb != null, false);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPreviewCallback = cb;
+        //mOneShot = false;
+        //mWithBuffer = false;
+        //setHasPreviewCallback(cb != null, false);
     }
 
     
@@ -270,11 +268,11 @@ public class Camera {
         mOneShot = true;
         mWithBuffer = false;
         setHasPreviewCallback(cb != null, false);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPreviewCallback = cb;
+        //mOneShot = true;
+        //mWithBuffer = false;
+        //setHasPreviewCallback(cb != null, false);
     }
 
     
@@ -289,11 +287,11 @@ public class Camera {
         mOneShot = false;
         mWithBuffer = true;
         setHasPreviewCallback(cb != null, true);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPreviewCallback = cb;
+        //mOneShot = false;
+        //mWithBuffer = true;
+        //setHasPreviewCallback(cb != null, true);
     }
 
     
@@ -301,8 +299,8 @@ public class Camera {
     public final void addCallbackBuffer(byte[] callbackBuffer) {
         addTaint(callbackBuffer[0]);
         _addCallbackBuffer(callbackBuffer, CAMERA_MSG_PREVIEW_FRAME);
-        
-        
+        // ---------- Original Method ----------
+        //_addCallbackBuffer(callbackBuffer, CAMERA_MSG_PREVIEW_FRAME);
     }
 
     
@@ -310,8 +308,8 @@ public class Camera {
     public final void addRawImageCallbackBuffer(byte[] callbackBuffer) {
         addTaint(callbackBuffer[0]);
         addCallbackBuffer(callbackBuffer, CAMERA_MSG_RAW_IMAGE);
-        
-        
+        // ---------- Original Method ----------
+        //addCallbackBuffer(callbackBuffer, CAMERA_MSG_RAW_IMAGE);
     }
 
     
@@ -326,15 +324,15 @@ public class Camera {
                             "Unsupported message type: " + msgType);
             var86C76D973BD473D74ED5177C71996BC1_553546041.addTaint(taint);
             throw var86C76D973BD473D74ED5177C71996BC1_553546041;
-        } 
+        } //End block
         _addCallbackBuffer(callbackBuffer, msgType);
-        
-        
-            
-            
-                            
-        
-        
+        // ---------- Original Method ----------
+        //if (msgType != CAMERA_MSG_PREVIEW_FRAME &&
+            //msgType != CAMERA_MSG_RAW_IMAGE) {
+            //throw new IllegalArgumentException(
+                            //"Unsupported message type: " + msgType);
+        //}
+        //_addCallbackBuffer(callbackBuffer, msgType);
     }
 
     
@@ -360,9 +358,9 @@ public class Camera {
     public final void autoFocus(AutoFocusCallback cb) {
         mAutoFocusCallback = cb;
         native_autoFocus();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mAutoFocusCallback = cb;
+        //native_autoFocus();
     }
 
     
@@ -375,9 +373,9 @@ public class Camera {
     public final void cancelAutoFocus() {
         mAutoFocusCallback = null;
         native_cancelAutoFocus();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mAutoFocusCallback = null;
+        //native_cancelAutoFocus();
     }
 
     
@@ -393,8 +391,8 @@ public class Camera {
         addTaint(raw.getTaint());
         addTaint(shutter.getTaint());
         takePicture(shutter, raw, null, jpeg);
-        
-        
+        // ---------- Original Method ----------
+        //takePicture(shutter, raw, null, jpeg);
     }
 
     
@@ -414,39 +412,39 @@ public class Camera {
     if(mShutterCallback != null)        
         {
             msgType |= CAMERA_MSG_SHUTTER;
-        } 
+        } //End block
     if(mRawImageCallback != null)        
         {
             msgType |= CAMERA_MSG_RAW_IMAGE;
-        } 
+        } //End block
     if(mPostviewCallback != null)        
         {
             msgType |= CAMERA_MSG_POSTVIEW_FRAME;
-        } 
+        } //End block
     if(mJpegCallback != null)        
         {
             msgType |= CAMERA_MSG_COMPRESSED_IMAGE;
-        } 
+        } //End block
         native_takePicture(msgType);
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //mShutterCallback = shutter;
+        //mRawImageCallback = raw;
+        //mPostviewCallback = postview;
+        //mJpegCallback = jpeg;
+        //int msgType = 0;
+        //if (mShutterCallback != null) {
+            //msgType |= CAMERA_MSG_SHUTTER;
+        //}
+        //if (mRawImageCallback != null) {
+            //msgType |= CAMERA_MSG_RAW_IMAGE;
+        //}
+        //if (mPostviewCallback != null) {
+            //msgType |= CAMERA_MSG_POSTVIEW_FRAME;
+        //}
+        //if (mJpegCallback != null) {
+            //msgType |= CAMERA_MSG_COMPRESSED_IMAGE;
+        //}
+        //native_takePicture(msgType);
     }
 
     
@@ -468,16 +466,16 @@ public class Camera {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.242 -0400", hash_original_method = "6480531FCD656465921BBC33792E6355", hash_generated_method = "B412D3AC937FF3C3E1CA348431559085")
     public final void setZoomChangeListener(OnZoomChangeListener listener) {
         mZoomListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mZoomListener = listener;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.243 -0400", hash_original_method = "72125974AAC05BF0DED9497DD0672E75", hash_generated_method = "7CC0F5FEC0100DF2CE46B4097D204789")
     public final void setFaceDetectionListener(FaceDetectionListener listener) {
         mFaceListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mFaceListener = listener;
     }
 
     
@@ -488,15 +486,15 @@ public class Camera {
             RuntimeException varC861A025B7DB4E0FEBBAA55D1A196985_368037840 = new RuntimeException("Face detection is already running");
             varC861A025B7DB4E0FEBBAA55D1A196985_368037840.addTaint(taint);
             throw varC861A025B7DB4E0FEBBAA55D1A196985_368037840;
-        } 
+        } //End block
         _startFaceDetection(CAMERA_FACE_DETECTION_HW);
         mFaceDetectionRunning = true;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mFaceDetectionRunning) {
+            //throw new RuntimeException("Face detection is already running");
+        //}
+        //_startFaceDetection(CAMERA_FACE_DETECTION_HW);
+        //mFaceDetectionRunning = true;
     }
 
     
@@ -504,9 +502,9 @@ public class Camera {
     public final void stopFaceDetection() {
         _stopFaceDetection();
         mFaceDetectionRunning = false;
-        
-        
-        
+        // ---------- Original Method ----------
+        //_stopFaceDetection();
+        //mFaceDetectionRunning = false;
     }
 
     
@@ -523,8 +521,8 @@ public class Camera {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.245 -0400", hash_original_method = "BE99CE61E82474B676C6D48791CDF52E", hash_generated_method = "E63A5FF66AB2916340CBB5CA49FBE157")
     public final void setErrorCallback(ErrorCallback cb) {
         mErrorCallback = cb;
-        
-        
+        // ---------- Original Method ----------
+        //mErrorCallback = cb;
     }
 
     
@@ -545,8 +543,8 @@ public class Camera {
     public void setParameters(Parameters params) {
         addTaint(params.getTaint());
         native_setParameters(params.flatten());
-        
-        
+        // ---------- Original Method ----------
+        //native_setParameters(params.flatten());
     }
 
     
@@ -558,11 +556,11 @@ public class Camera {
 Parameters var74E4690D9F2A026504928C017944E149_1083043458 =         p;
         var74E4690D9F2A026504928C017944E149_1083043458.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_1083043458;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parameters p = new Parameters();
+        //String s = native_getParameters();
+        //p.unflatten(s);
+        //return p;
     }
 
     
@@ -577,7 +575,7 @@ Parameters var74E4690D9F2A026504928C017944E149_1083043458 =         p;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.246 -0400", hash_original_method = "53549141AB7280F9D01DADAF7B2BE301", hash_generated_method = "53549141AB7280F9D01DADAF7B2BE301")
         public CameraInfo ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -601,8 +599,8 @@ Parameters var74E4690D9F2A026504928C017944E149_1083043458 =         p;
             super(looper);
             addTaint(looper.getTaint());
             mCamera = c;
-            
-            
+            // ---------- Original Method ----------
+            //mCamera = c;
         }
 
         
@@ -615,19 +613,19 @@ switch(msg.what){
     if(mShutterCallback != null)            
             {
                 mShutterCallback.onShutter();
-            } 
+            } //End block
             return;
             case CAMERA_MSG_RAW_IMAGE:
     if(mRawImageCallback != null)            
             {
                 mRawImageCallback.onPictureTaken((byte[])msg.obj, mCamera);
-            } 
+            } //End block
             return;
             case CAMERA_MSG_COMPRESSED_IMAGE:
     if(mJpegCallback != null)            
             {
                 mJpegCallback.onPictureTaken((byte[])msg.obj, mCamera);
-            } 
+            } //End block
             return;
             case CAMERA_MSG_PREVIEW_FRAME:
     if(mPreviewCallback != null)            
@@ -636,50 +634,50 @@ switch(msg.what){
     if(mOneShot)                
                 {
                     mPreviewCallback = null;
-                } 
+                } //End block
                 else
     if(!mWithBuffer)                
                 {
                     setHasPreviewCallback(true, false);
-                } 
+                } //End block
                 cb.onPreviewFrame((byte[])msg.obj, mCamera);
-            } 
+            } //End block
             return;
             case CAMERA_MSG_POSTVIEW_FRAME:
     if(mPostviewCallback != null)            
             {
                 mPostviewCallback.onPictureTaken((byte[])msg.obj, mCamera);
-            } 
+            } //End block
             return;
             case CAMERA_MSG_FOCUS:
     if(mAutoFocusCallback != null)            
             {
                 mAutoFocusCallback.onAutoFocus(msg.arg1 == 0 ? false : true, mCamera);
-            } 
+            } //End block
             return;
             case CAMERA_MSG_ZOOM:
     if(mZoomListener != null)            
             {
                 mZoomListener.onZoomChange(msg.arg1, msg.arg2 != 0, mCamera);
-            } 
+            } //End block
             return;
             case CAMERA_MSG_PREVIEW_METADATA:
     if(mFaceListener != null)            
             {
                 mFaceListener.onFaceDetection((Face[])msg.obj, mCamera);
-            } 
+            } //End block
             return;
             case CAMERA_MSG_ERROR :
     if(mErrorCallback != null)            
             {
                 mErrorCallback.onError(msg.arg1, mCamera);
-            } 
+            } //End block
             return;
             default:
             return;
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -709,7 +707,7 @@ switch(msg.what){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.248 -0400", hash_original_method = "AEF29885362690B7E7A5098C2C347237", hash_generated_method = "0DF9184788C0A0AD5CEBB07DA8C829FC")
         public  Face() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -729,13 +727,12 @@ switch(msg.what){
         public  Size(int w, int h) {
             width = w;
             height = h;
-            
-            
-            
+            // ---------- Original Method ----------
+            //width = w;
+            //height = h;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.249 -0400", hash_original_method = "C0E6580734A50AA28FE29C092058ED66", hash_generated_method = "2C20E038FA77344D75A01434C1F869B5")
         @Override
         public boolean equals(Object obj) {
@@ -745,29 +742,28 @@ switch(msg.what){
                 boolean var68934A3E9455FA72420237EB05902327_276613685 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_811787110 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_811787110;
-            } 
+            } //End block
             Size s = (Size) obj;
             boolean var1EBE203A85A934681C2C3B951EFEBD35_1883206644 = (width == s.width && height == s.height);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1123983458 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1123983458;
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (!(obj instanceof Size)) {
+                //return false;
+            //}
+            //Size s = (Size) obj;
+            //return width == s.width && height == s.height;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.250 -0400", hash_original_method = "B5BC5866A74569F21D19CEA2ED84BAAB", hash_generated_method = "3D7BF84CDA72096B7218C04B119F611B")
         @Override
         public int hashCode() {
             int var3CDE4CC1D496387B11F295C85E8985FD_833524101 = (width * 32713 + height);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769571669 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769571669;
-            
-            
+            // ---------- Original Method ----------
+            //return width * 32713 + height;
         }
 
         
@@ -787,9 +783,9 @@ switch(msg.what){
         public  Area(Rect rect, int weight) {
             this.rect = rect;
             this.weight = weight;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.rect = rect;
+            //this.weight = weight;
         }
 
         
@@ -802,7 +798,7 @@ switch(msg.what){
                 boolean var68934A3E9455FA72420237EB05902327_136960182 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1041000235 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1041000235;
-            } 
+            } //End block
             Area a = (Area) obj;
     if(rect == null)            
             {
@@ -812,7 +808,7 @@ switch(msg.what){
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_588072743 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_588072743;
                 }
-            } 
+            } //End block
             else
             {
     if(!rect.equals(a.rect))                
@@ -821,21 +817,21 @@ switch(msg.what){
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1851446050 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1851446050;
                 }
-            } 
+            } //End block
             boolean varC0E5FA79E201CD48FE736B452141D39C_419316832 = (weight == a.weight);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1517240497 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1517240497;
-            
-            
-                
-            
-            
-            
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (!(obj instanceof Area)) {
+                //return false;
+            //}
+            //Area a = (Area) obj;
+            //if (rect == null) {
+                //if (a.rect != null) return false;
+            //} else {
+                //if (!rect.equals(a.rect)) return false;
+            //}
+            //return weight == a.weight;
         }
 
         
@@ -851,8 +847,8 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.254 -0400", hash_original_method = "4F2FCD993800C5D9B02C3E73A4276618", hash_generated_method = "9E43DE2A4307A690FF8F265C4E4CD891")
         private  Parameters() {
             mMap = new HashMap<String, String>();
-            
-            
+            // ---------- Original Method ----------
+            //mMap = new HashMap<String, String>();
         }
 
         
@@ -860,12 +856,12 @@ switch(msg.what){
         public void dump() {
 for(String k : mMap.keySet())
             {
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //Log.e(TAG, "dump: size=" + mMap.size());
+            //for (String k : mMap.keySet()) {
+                //Log.e(TAG, "dump: " + k + "=" + mMap.get(k));
+            //}
         }
 
         
@@ -878,21 +874,21 @@ for(String k : mMap.keySet())
                 flattened.append("=");
                 flattened.append(mMap.get(k));
                 flattened.append(";");
-            } 
+            } //End block
             flattened.deleteCharAt(flattened.length()-1);
 String var9557D146B68D5206BC412EBE575062A0_276144634 =             flattened.toString();
             var9557D146B68D5206BC412EBE575062A0_276144634.addTaint(taint);
             return var9557D146B68D5206BC412EBE575062A0_276144634;
-            
-            
-            
-                
-                
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //StringBuilder flattened = new StringBuilder();
+            //for (String k : mMap.keySet()) {
+                //flattened.append(k);
+                //flattened.append("=");
+                //flattened.append(mMap.get(k));
+                //flattened.append(";");
+            //}
+            //flattened.deleteCharAt(flattened.length()-1);
+            //return flattened.toString();
         }
 
         
@@ -909,24 +905,24 @@ String var9557D146B68D5206BC412EBE575062A0_276144634 =             flattened.toS
     if(pos == -1)                
                 {
                     continue;
-                } 
+                } //End block
                 String k = kv.substring(0, pos);
                 String v = kv.substring(pos + 1);
                 mMap.put(k, v);
-            } 
-            
-            
-            
-            
-                
-                
-                
-                    
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mMap.clear();
+            //StringTokenizer tokenizer = new StringTokenizer(flattened, ";");
+            //while (tokenizer.hasMoreElements()) {
+                //String kv = tokenizer.nextToken();
+                //int pos = kv.indexOf('=');
+                //if (pos == -1) {
+                    //continue;
+                //}
+                //String k = kv.substring(0, pos);
+                //String v = kv.substring(pos + 1);
+                //mMap.put(k, v);
+            //}
         }
 
         
@@ -934,8 +930,8 @@ String var9557D146B68D5206BC412EBE575062A0_276144634 =             flattened.toS
         public void remove(String key) {
             addTaint(key.getTaint());
             mMap.remove(key);
-            
-            
+            // ---------- Original Method ----------
+            //mMap.remove(key);
         }
 
         
@@ -946,22 +942,22 @@ String var9557D146B68D5206BC412EBE575062A0_276144634 =             flattened.toS
     if(key.indexOf('=') != -1 || key.indexOf(';') != -1)            
             {
                 return;
-            } 
+            } //End block
     if(value.indexOf('=') != -1 || value.indexOf(';') != -1)            
             {
                 return;
-            } 
+            } //End block
             mMap.put(key, value);
-            
-            
-                
-                
-            
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (key.indexOf('=') != -1 || key.indexOf(';') != -1) {
+                //Log.e(TAG, "Key \"" + key + "\" contains invalid character (= or ;)");
+                //return;
+            //}
+            //if (value.indexOf('=') != -1 || value.indexOf(';') != -1) {
+                //Log.e(TAG, "Value \"" + value + "\" contains invalid character (= or ;)");
+                //return;
+            //}
+            //mMap.put(key, value);
         }
 
         
@@ -970,8 +966,8 @@ String var9557D146B68D5206BC412EBE575062A0_276144634 =             flattened.toS
             addTaint(value);
             addTaint(key.getTaint());
             mMap.put(key, Integer.toString(value));
-            
-            
+            // ---------- Original Method ----------
+            //mMap.put(key, Integer.toString(value));
         }
 
         
@@ -982,7 +978,7 @@ String var9557D146B68D5206BC412EBE575062A0_276144634 =             flattened.toS
     if(areas == null)            
             {
                 set(key, "(0,0,0,0,0)");
-            } 
+            } //End block
             else
             {
                 StringBuilder buffer = new StringBuilder();
@@ -1003,11 +999,11 @@ for(int i = 0;i < areas.size();i++)
                     buffer.append(')');
     if(i != areas.size() - 1)                    
                     buffer.append(',');
-                } 
+                } //End block
                 set(key, buffer.toString());
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1017,8 +1013,8 @@ for(int i = 0;i < areas.size();i++)
 String var854B7A61C03CF753466A11AD5A6F683C_2035508482 =             mMap.get(key);
             var854B7A61C03CF753466A11AD5A6F683C_2035508482.addTaint(taint);
             return var854B7A61C03CF753466A11AD5A6F683C_2035508482;
-            
-            
+            // ---------- Original Method ----------
+            //return mMap.get(key);
         }
 
         
@@ -1028,8 +1024,8 @@ String var854B7A61C03CF753466A11AD5A6F683C_2035508482 =             mMap.get(key
             int var065A0EC7C05D7BFA29A33E9C4D5F409A_1945143983 = (Integer.parseInt(mMap.get(key)));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080355152 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080355152;
-            
-            
+            // ---------- Original Method ----------
+            //return Integer.parseInt(mMap.get(key));
         }
 
         
@@ -1039,9 +1035,9 @@ String var854B7A61C03CF753466A11AD5A6F683C_2035508482 =             mMap.get(key
             addTaint(width);
             String v = Integer.toString(width) + "x" + Integer.toString(height);
             set(KEY_PREVIEW_SIZE, v);
-            
-            
-            
+            // ---------- Original Method ----------
+            //String v = Integer.toString(width) + "x" + Integer.toString(height);
+            //set(KEY_PREVIEW_SIZE, v);
         }
 
         
@@ -1051,9 +1047,9 @@ String var854B7A61C03CF753466A11AD5A6F683C_2035508482 =             mMap.get(key
 Size var0F26D7FD907B045F9ED53A530D120DCD_692238938 =             strToSize(pair);
             var0F26D7FD907B045F9ED53A530D120DCD_692238938.addTaint(taint);
             return var0F26D7FD907B045F9ED53A530D120DCD_692238938;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String pair = get(KEY_PREVIEW_SIZE);
+            //return strToSize(pair);
         }
 
         
@@ -1063,9 +1059,9 @@ Size var0F26D7FD907B045F9ED53A530D120DCD_692238938 =             strToSize(pair)
 List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1741494790 =             splitSize(str);
             var2BF79BBAE173763A0E8792E86A8D3BC4_1741494790.addTaint(taint);
             return var2BF79BBAE173763A0E8792E86A8D3BC4_1741494790;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_PREVIEW_SIZE + SUPPORTED_VALUES_SUFFIX);
+            //return splitSize(str);
         }
 
         
@@ -1075,9 +1071,9 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1741494790 =             splitSiz
 List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1724067622 =             splitSize(str);
             var2BF79BBAE173763A0E8792E86A8D3BC4_1724067622.addTaint(taint);
             return var2BF79BBAE173763A0E8792E86A8D3BC4_1724067622;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_VIDEO_SIZE + SUPPORTED_VALUES_SUFFIX);
+            //return splitSize(str);
         }
 
         
@@ -1087,9 +1083,9 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1724067622 =             splitSiz
 Size var0F26D7FD907B045F9ED53A530D120DCD_2058747595 =             strToSize(pair);
             var0F26D7FD907B045F9ED53A530D120DCD_2058747595.addTaint(taint);
             return var0F26D7FD907B045F9ED53A530D120DCD_2058747595;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String pair = get(KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO);
+            //return strToSize(pair);
         }
 
         
@@ -1099,9 +1095,9 @@ Size var0F26D7FD907B045F9ED53A530D120DCD_2058747595 =             strToSize(pair
             addTaint(width);
             set(KEY_JPEG_THUMBNAIL_WIDTH, width);
             set(KEY_JPEG_THUMBNAIL_HEIGHT, height);
-            
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_JPEG_THUMBNAIL_WIDTH, width);
+            //set(KEY_JPEG_THUMBNAIL_HEIGHT, height);
         }
 
         
@@ -1111,9 +1107,9 @@ Size varDC26E918812CA4BF8A54557A2D24C424_1958122033 =             new Size(getIn
                             getInt(KEY_JPEG_THUMBNAIL_HEIGHT));
             varDC26E918812CA4BF8A54557A2D24C424_1958122033.addTaint(taint);
             return varDC26E918812CA4BF8A54557A2D24C424_1958122033;
-            
-            
-                            
+            // ---------- Original Method ----------
+            //return new Size(getInt(KEY_JPEG_THUMBNAIL_WIDTH),
+                            //getInt(KEY_JPEG_THUMBNAIL_HEIGHT));
         }
 
         
@@ -1123,9 +1119,9 @@ Size varDC26E918812CA4BF8A54557A2D24C424_1958122033 =             new Size(getIn
 List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778 =             splitSize(str);
             var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778.addTaint(taint);
             return var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_JPEG_THUMBNAIL_SIZE + SUPPORTED_VALUES_SUFFIX);
+            //return splitSize(str);
         }
 
         
@@ -1133,8 +1129,8 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778 =             splitSiz
         public void setJpegThumbnailQuality(int quality) {
             addTaint(quality);
             set(KEY_JPEG_THUMBNAIL_QUALITY, quality);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_JPEG_THUMBNAIL_QUALITY, quality);
         }
 
         
@@ -1143,8 +1139,8 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778 =             splitSiz
             int var7EAC6CC1F1D15EE179944D3E2FCC47D8_616642563 = (getInt(KEY_JPEG_THUMBNAIL_QUALITY));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1320056136 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1320056136;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_JPEG_THUMBNAIL_QUALITY);
         }
 
         
@@ -1152,8 +1148,8 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778 =             splitSiz
         public void setJpegQuality(int quality) {
             addTaint(quality);
             set(KEY_JPEG_QUALITY, quality);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_JPEG_QUALITY, quality);
         }
 
         
@@ -1162,8 +1158,8 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778 =             splitSiz
             int var61E1B4CA5ADD581AE121E7C25D7F36BB_1268084184 = (getInt(KEY_JPEG_QUALITY));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831258727 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831258727;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_JPEG_QUALITY);
         }
 
         
@@ -1172,8 +1168,8 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778 =             splitSiz
         public void setPreviewFrameRate(int fps) {
             addTaint(fps);
             set(KEY_PREVIEW_FRAME_RATE, fps);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_PREVIEW_FRAME_RATE, fps);
         }
 
         
@@ -1183,8 +1179,8 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778 =             splitSiz
             int varBAD8E256AFD0DBD8F9FEBF1E5505BEE7_1570547661 = (getInt(KEY_PREVIEW_FRAME_RATE));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889313037 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889313037;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_PREVIEW_FRAME_RATE);
         }
 
         
@@ -1195,9 +1191,9 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1900811778 =             splitSiz
 List<Integer> varE282670370ED9B453B08E507F538F35D_1876495700 =             splitInt(str);
             varE282670370ED9B453B08E507F538F35D_1876495700.addTaint(taint);
             return varE282670370ED9B453B08E507F538F35D_1876495700;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_PREVIEW_FRAME_RATE + SUPPORTED_VALUES_SUFFIX);
+            //return splitInt(str);
         }
 
         
@@ -1206,8 +1202,8 @@ List<Integer> varE282670370ED9B453B08E507F538F35D_1876495700 =             split
             addTaint(max);
             addTaint(min);
             set(KEY_PREVIEW_FPS_RANGE, "" + min + "," + max);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_PREVIEW_FPS_RANGE, "" + min + "," + max);
         }
 
         
@@ -1220,14 +1216,14 @@ List<Integer> varE282670370ED9B453B08E507F538F35D_1876495700 =             split
                         "range must be an array with two elements.");
                 var5C42CE534AB1FAE6D875D7353A31C74F_256853233.addTaint(taint);
                 throw var5C42CE534AB1FAE6D875D7353A31C74F_256853233;
-            } 
+            } //End block
             splitInt(get(KEY_PREVIEW_FPS_RANGE), range);
-            
-            
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //if (range == null || range.length != 2) {
+                //throw new IllegalArgumentException(
+                        //"range must be an array with two elements.");
+            //}
+            //splitInt(get(KEY_PREVIEW_FPS_RANGE), range);
         }
 
         
@@ -1237,9 +1233,9 @@ List<Integer> varE282670370ED9B453B08E507F538F35D_1876495700 =             split
 List<int[]> var4A6C832A566C4A15D5702E9355FC60D9_827990729 =             splitRange(str);
             var4A6C832A566C4A15D5702E9355FC60D9_827990729.addTaint(taint);
             return var4A6C832A566C4A15D5702E9355FC60D9_827990729;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_PREVIEW_FPS_RANGE + SUPPORTED_VALUES_SUFFIX);
+            //return splitRange(str);
         }
 
         
@@ -1253,15 +1249,15 @@ List<int[]> var4A6C832A566C4A15D5702E9355FC60D9_827990729 =             splitRan
                         "Invalid pixel_format=" + pixel_format);
                 var3ACC6B0DBFEC010305006879F93977BD_1751238650.addTaint(taint);
                 throw var3ACC6B0DBFEC010305006879F93977BD_1751238650;
-            } 
+            } //End block
             set(KEY_PREVIEW_FORMAT, s);
-            
-            
-            
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //String s = cameraFormatForPixelFormat(pixel_format);
+            //if (s == null) {
+                //throw new IllegalArgumentException(
+                        //"Invalid pixel_format=" + pixel_format);
+            //}
+            //set(KEY_PREVIEW_FORMAT, s);
         }
 
         
@@ -1270,8 +1266,8 @@ List<int[]> var4A6C832A566C4A15D5702E9355FC60D9_827990729 =             splitRan
             int varC553DE502D5E91F715898211C4467B01_696122013 = (pixelFormatForCameraFormat(get(KEY_PREVIEW_FORMAT)));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086577848 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086577848;
-            
-            
+            // ---------- Original Method ----------
+            //return pixelFormatForCameraFormat(get(KEY_PREVIEW_FORMAT));
         }
 
         
@@ -1285,19 +1281,19 @@ for(String s : split(str))
     if(f == ImageFormat.UNKNOWN)                
                 continue;
                 formats.add(f);
-            } 
+            } //End block
 List<Integer> varA6C147B71359DA5475968801A9984115_685143207 =             formats;
             varA6C147B71359DA5475968801A9984115_685143207.addTaint(taint);
             return varA6C147B71359DA5475968801A9984115_685143207;
-            
-            
-            
-            
-                
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_PREVIEW_FORMAT + SUPPORTED_VALUES_SUFFIX);
+            //ArrayList<Integer> formats = new ArrayList<Integer>();
+            //for (String s : split(str)) {
+                //int f = pixelFormatForCameraFormat(s);
+                //if (f == ImageFormat.UNKNOWN) continue;
+                //formats.add(f);
+            //}
+            //return formats;
         }
 
         
@@ -1307,9 +1303,9 @@ List<Integer> varA6C147B71359DA5475968801A9984115_685143207 =             format
             addTaint(width);
             String v = Integer.toString(width) + "x" + Integer.toString(height);
             set(KEY_PICTURE_SIZE, v);
-            
-            
-            
+            // ---------- Original Method ----------
+            //String v = Integer.toString(width) + "x" + Integer.toString(height);
+            //set(KEY_PICTURE_SIZE, v);
         }
 
         
@@ -1319,9 +1315,9 @@ List<Integer> varA6C147B71359DA5475968801A9984115_685143207 =             format
 Size var0F26D7FD907B045F9ED53A530D120DCD_1401907979 =             strToSize(pair);
             var0F26D7FD907B045F9ED53A530D120DCD_1401907979.addTaint(taint);
             return var0F26D7FD907B045F9ED53A530D120DCD_1401907979;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String pair = get(KEY_PICTURE_SIZE);
+            //return strToSize(pair);
         }
 
         
@@ -1331,9 +1327,9 @@ Size var0F26D7FD907B045F9ED53A530D120DCD_1401907979 =             strToSize(pair
 List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1255052406 =             splitSize(str);
             var2BF79BBAE173763A0E8792E86A8D3BC4_1255052406.addTaint(taint);
             return var2BF79BBAE173763A0E8792E86A8D3BC4_1255052406;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_PICTURE_SIZE + SUPPORTED_VALUES_SUFFIX);
+            //return splitSize(str);
         }
 
         
@@ -1347,15 +1343,15 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1255052406 =             splitSiz
                         "Invalid pixel_format=" + pixel_format);
                 var3ACC6B0DBFEC010305006879F93977BD_866777965.addTaint(taint);
                 throw var3ACC6B0DBFEC010305006879F93977BD_866777965;
-            } 
+            } //End block
             set(KEY_PICTURE_FORMAT, s);
-            
-            
-            
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //String s = cameraFormatForPixelFormat(pixel_format);
+            //if (s == null) {
+                //throw new IllegalArgumentException(
+                        //"Invalid pixel_format=" + pixel_format);
+            //}
+            //set(KEY_PICTURE_FORMAT, s);
         }
 
         
@@ -1364,8 +1360,8 @@ List<Size> var2BF79BBAE173763A0E8792E86A8D3BC4_1255052406 =             splitSiz
             int var3925C55973D3676FB3D6D9AA10B68E59_1031215885 = (pixelFormatForCameraFormat(get(KEY_PICTURE_FORMAT)));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124369418 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124369418;
-            
-            
+            // ---------- Original Method ----------
+            //return pixelFormatForCameraFormat(get(KEY_PICTURE_FORMAT));
         }
 
         
@@ -1379,23 +1375,22 @@ for(String s : split(str))
     if(f == ImageFormat.UNKNOWN)                
                 continue;
                 formats.add(f);
-            } 
+            } //End block
 List<Integer> varA6C147B71359DA5475968801A9984115_2068856042 =             formats;
             varA6C147B71359DA5475968801A9984115_2068856042.addTaint(taint);
             return varA6C147B71359DA5475968801A9984115_2068856042;
-            
-            
-            
-            
-                
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_PICTURE_FORMAT + SUPPORTED_VALUES_SUFFIX);
+            //ArrayList<Integer> formats = new ArrayList<Integer>();
+            //for (String s : split(str)) {
+                //int f = pixelFormatForCameraFormat(s);
+                //if (f == ImageFormat.UNKNOWN) continue;
+                //formats.add(f);
+            //}
+            //return formats;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.266 -0400", hash_original_method = "0D21EA7C9C6F68B56031C051598A724A", hash_generated_method = "B7F187A420227170303CE71F94A8D99A")
         private String cameraFormatForPixelFormat(int pixel_format) {
             addTaint(pixel_format);
@@ -1433,17 +1428,17 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
             var540C13E9E156B687226421B24F2DF178_1265620360.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1265620360;
 }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //switch(pixel_format) {
+            //case ImageFormat.NV16:      return PIXEL_FORMAT_YUV422SP;
+            //case ImageFormat.NV21:      return PIXEL_FORMAT_YUV420SP;
+            //case ImageFormat.YUY2:      return PIXEL_FORMAT_YUV422I;
+            //case ImageFormat.YV12:      return PIXEL_FORMAT_YUV420P;
+            //case ImageFormat.RGB_565:   return PIXEL_FORMAT_RGB565;
+            //case ImageFormat.JPEG:      return PIXEL_FORMAT_JPEG;
+            //case ImageFormat.BAYER_RGGB: return PIXEL_FORMAT_BAYER_RGGB;
+            //default:                    return null;
+            //}
         }
 
         
@@ -1495,22 +1490,22 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
             int var4A587B014D93EFAF8B09D309C03708AA_1127303025 = (ImageFormat.UNKNOWN);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_41727142 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_41727142;
-            
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
+            // ---------- Original Method ----------
+            //if (format == null)
+                //return ImageFormat.UNKNOWN;
+            //if (format.equals(PIXEL_FORMAT_YUV422SP))
+                //return ImageFormat.NV16;
+            //if (format.equals(PIXEL_FORMAT_YUV420SP))
+                //return ImageFormat.NV21;
+            //if (format.equals(PIXEL_FORMAT_YUV422I))
+                //return ImageFormat.YUY2;
+            //if (format.equals(PIXEL_FORMAT_YUV420P))
+                //return ImageFormat.YV12;
+            //if (format.equals(PIXEL_FORMAT_RGB565))
+                //return ImageFormat.RGB_565;
+            //if (format.equals(PIXEL_FORMAT_JPEG))
+                //return ImageFormat.JPEG;
+            //return ImageFormat.UNKNOWN;
         }
 
         
@@ -1521,22 +1516,22 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
                     || rotation == 270)            
             {
                 set(KEY_ROTATION, Integer.toString(rotation));
-            } 
+            } //End block
             else
             {
                 IllegalArgumentException var8FBCDCFF7DB4524B9C1CC780FDC2BA5C_1176081018 = new IllegalArgumentException(
                         "Invalid rotation=" + rotation);
                 var8FBCDCFF7DB4524B9C1CC780FDC2BA5C_1176081018.addTaint(taint);
                 throw var8FBCDCFF7DB4524B9C1CC780FDC2BA5C_1176081018;
-            } 
-            
-            
-                    
-                
-            
-                
-                        
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (rotation == 0 || rotation == 90 || rotation == 180
+                    //|| rotation == 270) {
+                //set(KEY_ROTATION, Integer.toString(rotation));
+            //} else {
+                //throw new IllegalArgumentException(
+                        //"Invalid rotation=" + rotation);
+            //}
         }
 
         
@@ -1544,8 +1539,8 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
         public void setGpsLatitude(double latitude) {
             addTaint(latitude);
             set(KEY_GPS_LATITUDE, Double.toString(latitude));
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_GPS_LATITUDE, Double.toString(latitude));
         }
 
         
@@ -1553,8 +1548,8 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
         public void setGpsLongitude(double longitude) {
             addTaint(longitude);
             set(KEY_GPS_LONGITUDE, Double.toString(longitude));
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_GPS_LONGITUDE, Double.toString(longitude));
         }
 
         
@@ -1562,8 +1557,8 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
         public void setGpsAltitude(double altitude) {
             addTaint(altitude);
             set(KEY_GPS_ALTITUDE, Double.toString(altitude));
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_GPS_ALTITUDE, Double.toString(altitude));
         }
 
         
@@ -1571,8 +1566,8 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
         public void setGpsTimestamp(long timestamp) {
             addTaint(timestamp);
             set(KEY_GPS_TIMESTAMP, Long.toString(timestamp));
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_GPS_TIMESTAMP, Long.toString(timestamp));
         }
 
         
@@ -1580,8 +1575,8 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
         public void setGpsProcessingMethod(String processing_method) {
             addTaint(processing_method.getTaint());
             set(KEY_GPS_PROCESSING_METHOD, processing_method);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_GPS_PROCESSING_METHOD, processing_method);
         }
 
         
@@ -1592,12 +1587,12 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
             remove(KEY_GPS_ALTITUDE);
             remove(KEY_GPS_TIMESTAMP);
             remove(KEY_GPS_PROCESSING_METHOD);
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //remove(KEY_GPS_LATITUDE);
+            //remove(KEY_GPS_LONGITUDE);
+            //remove(KEY_GPS_ALTITUDE);
+            //remove(KEY_GPS_TIMESTAMP);
+            //remove(KEY_GPS_PROCESSING_METHOD);
         }
 
         
@@ -1606,8 +1601,8 @@ String var540C13E9E156B687226421B24F2DF178_1265620360 =             null;
 String var162FDB752A2DCFC7BB9979E380308C6A_1723174366 =             get(KEY_WHITE_BALANCE);
             var162FDB752A2DCFC7BB9979E380308C6A_1723174366.addTaint(taint);
             return var162FDB752A2DCFC7BB9979E380308C6A_1723174366;
-            
-            
+            // ---------- Original Method ----------
+            //return get(KEY_WHITE_BALANCE);
         }
 
         
@@ -1619,11 +1614,11 @@ String var162FDB752A2DCFC7BB9979E380308C6A_1723174366 =             get(KEY_WHIT
             return;
             set(KEY_WHITE_BALANCE, value);
             set(KEY_AUTO_WHITEBALANCE_LOCK, FALSE);
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //String oldValue = get(KEY_WHITE_BALANCE);
+            //if (same(value, oldValue)) return;
+            //set(KEY_WHITE_BALANCE, value);
+            //set(KEY_AUTO_WHITEBALANCE_LOCK, FALSE);
         }
 
         
@@ -1633,9 +1628,9 @@ String var162FDB752A2DCFC7BB9979E380308C6A_1723174366 =             get(KEY_WHIT
 List<String> varC955949883608661A3A13ACB6D16DDF1_928949368 =             split(str);
             varC955949883608661A3A13ACB6D16DDF1_928949368.addTaint(taint);
             return varC955949883608661A3A13ACB6D16DDF1_928949368;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_WHITE_BALANCE + SUPPORTED_VALUES_SUFFIX);
+            //return split(str);
         }
 
         
@@ -1644,8 +1639,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_928949368 =             split(s
 String var65843531F47CE0B77B7A873D32DD3BE3_809958851 =             get(KEY_EFFECT);
             var65843531F47CE0B77B7A873D32DD3BE3_809958851.addTaint(taint);
             return var65843531F47CE0B77B7A873D32DD3BE3_809958851;
-            
-            
+            // ---------- Original Method ----------
+            //return get(KEY_EFFECT);
         }
 
         
@@ -1653,8 +1648,8 @@ String var65843531F47CE0B77B7A873D32DD3BE3_809958851 =             get(KEY_EFFEC
         public void setColorEffect(String value) {
             addTaint(value.getTaint());
             set(KEY_EFFECT, value);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_EFFECT, value);
         }
 
         
@@ -1664,9 +1659,9 @@ String var65843531F47CE0B77B7A873D32DD3BE3_809958851 =             get(KEY_EFFEC
 List<String> varC955949883608661A3A13ACB6D16DDF1_1955536546 =             split(str);
             varC955949883608661A3A13ACB6D16DDF1_1955536546.addTaint(taint);
             return varC955949883608661A3A13ACB6D16DDF1_1955536546;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_EFFECT + SUPPORTED_VALUES_SUFFIX);
+            //return split(str);
         }
 
         
@@ -1675,8 +1670,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_1955536546 =             split(
 String varA462095878216C7A9E438AABF75860C4_1892393455 =             get(KEY_ANTIBANDING);
             varA462095878216C7A9E438AABF75860C4_1892393455.addTaint(taint);
             return varA462095878216C7A9E438AABF75860C4_1892393455;
-            
-            
+            // ---------- Original Method ----------
+            //return get(KEY_ANTIBANDING);
         }
 
         
@@ -1684,8 +1679,8 @@ String varA462095878216C7A9E438AABF75860C4_1892393455 =             get(KEY_ANTI
         public void setAntibanding(String antibanding) {
             addTaint(antibanding.getTaint());
             set(KEY_ANTIBANDING, antibanding);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_ANTIBANDING, antibanding);
         }
 
         
@@ -1695,9 +1690,9 @@ String varA462095878216C7A9E438AABF75860C4_1892393455 =             get(KEY_ANTI
 List<String> varC955949883608661A3A13ACB6D16DDF1_1217999912 =             split(str);
             varC955949883608661A3A13ACB6D16DDF1_1217999912.addTaint(taint);
             return varC955949883608661A3A13ACB6D16DDF1_1217999912;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_ANTIBANDING + SUPPORTED_VALUES_SUFFIX);
+            //return split(str);
         }
 
         
@@ -1706,8 +1701,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_1217999912 =             split(
 String varD3E1C982A4F0598916971CC6D80CBF43_872303368 =             get(KEY_SCENE_MODE);
             varD3E1C982A4F0598916971CC6D80CBF43_872303368.addTaint(taint);
             return varD3E1C982A4F0598916971CC6D80CBF43_872303368;
-            
-            
+            // ---------- Original Method ----------
+            //return get(KEY_SCENE_MODE);
         }
 
         
@@ -1715,8 +1710,8 @@ String varD3E1C982A4F0598916971CC6D80CBF43_872303368 =             get(KEY_SCENE
         public void setSceneMode(String value) {
             addTaint(value.getTaint());
             set(KEY_SCENE_MODE, value);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_SCENE_MODE, value);
         }
 
         
@@ -1726,9 +1721,9 @@ String varD3E1C982A4F0598916971CC6D80CBF43_872303368 =             get(KEY_SCENE
 List<String> varC955949883608661A3A13ACB6D16DDF1_407665531 =             split(str);
             varC955949883608661A3A13ACB6D16DDF1_407665531.addTaint(taint);
             return varC955949883608661A3A13ACB6D16DDF1_407665531;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_SCENE_MODE + SUPPORTED_VALUES_SUFFIX);
+            //return split(str);
         }
 
         
@@ -1737,8 +1732,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_407665531 =             split(s
 String var61D441CA751E53F2847CE8BE75431A6E_1950669089 =             get(KEY_FLASH_MODE);
             var61D441CA751E53F2847CE8BE75431A6E_1950669089.addTaint(taint);
             return var61D441CA751E53F2847CE8BE75431A6E_1950669089;
-            
-            
+            // ---------- Original Method ----------
+            //return get(KEY_FLASH_MODE);
         }
 
         
@@ -1746,8 +1741,8 @@ String var61D441CA751E53F2847CE8BE75431A6E_1950669089 =             get(KEY_FLAS
         public void setFlashMode(String value) {
             addTaint(value.getTaint());
             set(KEY_FLASH_MODE, value);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_FLASH_MODE, value);
         }
 
         
@@ -1757,9 +1752,9 @@ String var61D441CA751E53F2847CE8BE75431A6E_1950669089 =             get(KEY_FLAS
 List<String> varC955949883608661A3A13ACB6D16DDF1_497461257 =             split(str);
             varC955949883608661A3A13ACB6D16DDF1_497461257.addTaint(taint);
             return varC955949883608661A3A13ACB6D16DDF1_497461257;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_FLASH_MODE + SUPPORTED_VALUES_SUFFIX);
+            //return split(str);
         }
 
         
@@ -1768,8 +1763,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_497461257 =             split(s
 String var2FF80F6BB95EAF11398DF7E074C52CD5_1600275202 =             get(KEY_FOCUS_MODE);
             var2FF80F6BB95EAF11398DF7E074C52CD5_1600275202.addTaint(taint);
             return var2FF80F6BB95EAF11398DF7E074C52CD5_1600275202;
-            
-            
+            // ---------- Original Method ----------
+            //return get(KEY_FOCUS_MODE);
         }
 
         
@@ -1777,8 +1772,8 @@ String var2FF80F6BB95EAF11398DF7E074C52CD5_1600275202 =             get(KEY_FOCU
         public void setFocusMode(String value) {
             addTaint(value.getTaint());
             set(KEY_FOCUS_MODE, value);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_FOCUS_MODE, value);
         }
 
         
@@ -1788,9 +1783,9 @@ String var2FF80F6BB95EAF11398DF7E074C52CD5_1600275202 =             get(KEY_FOCU
 List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(str);
             varC955949883608661A3A13ACB6D16DDF1_100233098.addTaint(taint);
             return varC955949883608661A3A13ACB6D16DDF1_100233098;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_FOCUS_MODE + SUPPORTED_VALUES_SUFFIX);
+            //return split(str);
         }
 
         
@@ -1799,8 +1794,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             float var9AF59BC54DFEEC3D27B5CAEE9A7711FC_1788144428 = (Float.parseFloat(get(KEY_FOCAL_LENGTH)));
                         float var546ADE640B6EDFBC8A086EF31347E768_202119985 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_202119985;
-            
-            
+            // ---------- Original Method ----------
+            //return Float.parseFloat(get(KEY_FOCAL_LENGTH));
         }
 
         
@@ -1809,8 +1804,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             float var4776DC17A20BEE60E22B4FBB3AF30D1D_1458731585 = (Float.parseFloat(get(KEY_HORIZONTAL_VIEW_ANGLE)));
                         float var546ADE640B6EDFBC8A086EF31347E768_1402437543 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1402437543;
-            
-            
+            // ---------- Original Method ----------
+            //return Float.parseFloat(get(KEY_HORIZONTAL_VIEW_ANGLE));
         }
 
         
@@ -1819,8 +1814,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             float var993558305157555D80BBC32814E96751_2040761473 = (Float.parseFloat(get(KEY_VERTICAL_VIEW_ANGLE)));
                         float var546ADE640B6EDFBC8A086EF31347E768_946072157 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_946072157;
-            
-            
+            // ---------- Original Method ----------
+            //return Float.parseFloat(get(KEY_VERTICAL_VIEW_ANGLE));
         }
 
         
@@ -1829,8 +1824,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             int var2F36DF993F69D423B4A4D8A4CC086A44_594204674 = (getInt(KEY_EXPOSURE_COMPENSATION, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_607893539 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_607893539;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_EXPOSURE_COMPENSATION, 0);
         }
 
         
@@ -1838,8 +1833,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
         public void setExposureCompensation(int value) {
             addTaint(value);
             set(KEY_EXPOSURE_COMPENSATION, value);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_EXPOSURE_COMPENSATION, value);
         }
 
         
@@ -1848,8 +1843,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             int var5580EA1EF51FF4ACBFB9866486EAABFC_1907269402 = (getInt(KEY_MAX_EXPOSURE_COMPENSATION, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_299626831 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_299626831;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_MAX_EXPOSURE_COMPENSATION, 0);
         }
 
         
@@ -1858,8 +1853,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             int var15452B3016748F670AB1D8431279E8B1_2080116362 = (getInt(KEY_MIN_EXPOSURE_COMPENSATION, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_964564668 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_964564668;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_MIN_EXPOSURE_COMPENSATION, 0);
         }
 
         
@@ -1868,8 +1863,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             float var9707E11E3A752DE22ADAA6CFB38C9F26_483376840 = (getFloat(KEY_EXPOSURE_COMPENSATION_STEP, 0));
                         float var546ADE640B6EDFBC8A086EF31347E768_197519405 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_197519405;
-            
-            
+            // ---------- Original Method ----------
+            //return getFloat(KEY_EXPOSURE_COMPENSATION_STEP, 0);
         }
 
         
@@ -1877,8 +1872,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
         public void setAutoExposureLock(boolean toggle) {
             addTaint(toggle);
             set(KEY_AUTO_EXPOSURE_LOCK, toggle ? TRUE : FALSE);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_AUTO_EXPOSURE_LOCK, toggle ? TRUE : FALSE);
         }
 
         
@@ -1888,9 +1883,9 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             boolean varFA87CDAED7021F7E68E32E30368B61C6_1568383970 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1659415726 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1659415726;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_AUTO_EXPOSURE_LOCK);
+            //return TRUE.equals(str);
         }
 
         
@@ -1900,9 +1895,9 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             boolean varFA87CDAED7021F7E68E32E30368B61C6_967618182 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1725871087 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1725871087;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_AUTO_EXPOSURE_LOCK_SUPPORTED);
+            //return TRUE.equals(str);
         }
 
         
@@ -1910,8 +1905,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
         public void setAutoWhiteBalanceLock(boolean toggle) {
             addTaint(toggle);
             set(KEY_AUTO_WHITEBALANCE_LOCK, toggle ? TRUE : FALSE);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_AUTO_WHITEBALANCE_LOCK, toggle ? TRUE : FALSE);
         }
 
         
@@ -1921,9 +1916,9 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             boolean varFA87CDAED7021F7E68E32E30368B61C6_1437060763 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_951829669 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_951829669;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_AUTO_WHITEBALANCE_LOCK);
+            //return TRUE.equals(str);
         }
 
         
@@ -1933,9 +1928,9 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             boolean varFA87CDAED7021F7E68E32E30368B61C6_1509663250 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1141921237 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1141921237;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_AUTO_WHITEBALANCE_LOCK_SUPPORTED);
+            //return TRUE.equals(str);
         }
 
         
@@ -1944,8 +1939,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             int var97E1F5E4E13A918691C935EE7835BCD0_1836486667 = (getInt(KEY_ZOOM, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2001289460 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2001289460;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_ZOOM, 0);
         }
 
         
@@ -1953,8 +1948,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
         public void setZoom(int value) {
             addTaint(value);
             set(KEY_ZOOM, value);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_ZOOM, value);
         }
 
         
@@ -1964,9 +1959,9 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             boolean varFA87CDAED7021F7E68E32E30368B61C6_2007370904 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_564690922 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_564690922;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_ZOOM_SUPPORTED);
+            //return TRUE.equals(str);
         }
 
         
@@ -1975,8 +1970,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
             int var38488DDE37E3757F52939BD8115E6C88_1331821939 = (getInt(KEY_MAX_ZOOM, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1606450185 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1606450185;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_MAX_ZOOM, 0);
         }
 
         
@@ -1985,8 +1980,8 @@ List<String> varC955949883608661A3A13ACB6D16DDF1_100233098 =             split(s
 List<Integer> var277071CC198676A413FE15E1C36BE02C_1767475697 =             splitInt(get(KEY_ZOOM_RATIOS));
             var277071CC198676A413FE15E1C36BE02C_1767475697.addTaint(taint);
             return var277071CC198676A413FE15E1C36BE02C_1767475697;
-            
-            
+            // ---------- Original Method ----------
+            //return splitInt(get(KEY_ZOOM_RATIOS));
         }
 
         
@@ -1996,9 +1991,9 @@ List<Integer> var277071CC198676A413FE15E1C36BE02C_1767475697 =             split
             boolean varFA87CDAED7021F7E68E32E30368B61C6_247908485 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_776865202 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_776865202;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_SMOOTH_ZOOM_SUPPORTED);
+            //return TRUE.equals(str);
         }
 
         
@@ -2011,14 +2006,14 @@ List<Integer> var277071CC198676A413FE15E1C36BE02C_1767475697 =             split
                         "output must be an float array with three elements.");
                 var36B50C462E18C2116145E4065674987D_1802809155.addTaint(taint);
                 throw var36B50C462E18C2116145E4065674987D_1802809155;
-            } 
+            } //End block
             splitFloat(get(KEY_FOCUS_DISTANCES), output);
-            
-            
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //if (output == null || output.length != 3) {
+                //throw new IllegalArgumentException(
+                        //"output must be an float array with three elements.");
+            //}
+            //splitFloat(get(KEY_FOCUS_DISTANCES), output);
         }
 
         
@@ -2027,8 +2022,8 @@ List<Integer> var277071CC198676A413FE15E1C36BE02C_1767475697 =             split
             int varA30074CD5351368C4CD5F278BC57D3AD_1631344028 = (getInt(KEY_MAX_NUM_FOCUS_AREAS, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_141062880 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_141062880;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_MAX_NUM_FOCUS_AREAS, 0);
         }
 
         
@@ -2037,8 +2032,8 @@ List<Integer> var277071CC198676A413FE15E1C36BE02C_1767475697 =             split
 List<Area> var9D78619BA378A541FE659CA695E6A871_284574242 =             splitArea(get(KEY_FOCUS_AREAS));
             var9D78619BA378A541FE659CA695E6A871_284574242.addTaint(taint);
             return var9D78619BA378A541FE659CA695E6A871_284574242;
-            
-            
+            // ---------- Original Method ----------
+            //return splitArea(get(KEY_FOCUS_AREAS));
         }
 
         
@@ -2046,8 +2041,8 @@ List<Area> var9D78619BA378A541FE659CA695E6A871_284574242 =             splitArea
         public void setFocusAreas(List<Area> focusAreas) {
             addTaint(focusAreas.getTaint());
             set(KEY_FOCUS_AREAS, focusAreas);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_FOCUS_AREAS, focusAreas);
         }
 
         
@@ -2056,8 +2051,8 @@ List<Area> var9D78619BA378A541FE659CA695E6A871_284574242 =             splitArea
             int var420D3296D03562E6D48DF7BF51B21EC7_1779180805 = (getInt(KEY_MAX_NUM_METERING_AREAS, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519605685 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519605685;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_MAX_NUM_METERING_AREAS, 0);
         }
 
         
@@ -2066,8 +2061,8 @@ List<Area> var9D78619BA378A541FE659CA695E6A871_284574242 =             splitArea
 List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471 =             splitArea(get(KEY_METERING_AREAS));
             varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471.addTaint(taint);
             return varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471;
-            
-            
+            // ---------- Original Method ----------
+            //return splitArea(get(KEY_METERING_AREAS));
         }
 
         
@@ -2075,8 +2070,8 @@ List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471 =             splitAre
         public void setMeteringAreas(List<Area> meteringAreas) {
             addTaint(meteringAreas.getTaint());
             set(KEY_METERING_AREAS, meteringAreas);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_METERING_AREAS, meteringAreas);
         }
 
         
@@ -2085,8 +2080,8 @@ List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471 =             splitAre
             int varE7F2EFD40AA609FDF21E8692EDB8B6AD_1007641768 = (getInt(KEY_MAX_NUM_DETECTED_FACES_HW, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831883779 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831883779;
-            
-            
+            // ---------- Original Method ----------
+            //return getInt(KEY_MAX_NUM_DETECTED_FACES_HW, 0);
         }
 
         
@@ -2094,8 +2089,8 @@ List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471 =             splitAre
         public void setRecordingHint(boolean hint) {
             addTaint(hint);
             set(KEY_RECORDING_HINT, hint ? TRUE : FALSE);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_RECORDING_HINT, hint ? TRUE : FALSE);
         }
 
         
@@ -2105,9 +2100,9 @@ List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471 =             splitAre
             boolean varFA87CDAED7021F7E68E32E30368B61C6_206922677 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1829256246 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1829256246;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_VIDEO_SNAPSHOT_SUPPORTED);
+            //return TRUE.equals(str);
         }
 
         
@@ -2115,8 +2110,8 @@ List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471 =             splitAre
         public void setVideoStabilization(boolean toggle) {
             addTaint(toggle);
             set(KEY_VIDEO_STABILIZATION, toggle ? TRUE : FALSE);
-            
-            
+            // ---------- Original Method ----------
+            //set(KEY_VIDEO_STABILIZATION, toggle ? TRUE : FALSE);
         }
 
         
@@ -2126,9 +2121,9 @@ List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471 =             splitAre
             boolean varFA87CDAED7021F7E68E32E30368B61C6_1747061795 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_624458532 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_624458532;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_VIDEO_STABILIZATION);
+            //return TRUE.equals(str);
         }
 
         
@@ -2138,9 +2133,9 @@ List<Area> varBC04EAEB3D8321B0BA2D46492A405A0B_1011834471 =             splitAre
             boolean varFA87CDAED7021F7E68E32E30368B61C6_750636630 = (TRUE.equals(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1740444296 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1740444296;
-            
-            
-            
+            // ---------- Original Method ----------
+            //String str = get(KEY_VIDEO_STABILIZATION_SUPPORTED);
+            //return TRUE.equals(str);
         }
 
         
@@ -2159,18 +2154,18 @@ ArrayList<String> var540C13E9E156B687226421B24F2DF178_451736139 =             nu
 (tokenizer.hasMoreElements())            
             {
                 substrings.add(tokenizer.nextToken());
-            } 
+            } //End block
 ArrayList<String> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1955398408 =             substrings;
             varF0ABD9677D3E9B56568CE72C8E5EBEE5_1955398408.addTaint(taint);
             return varF0ABD9677D3E9B56568CE72C8E5EBEE5_1955398408;
-            
-            
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (str == null) return null;
+            //StringTokenizer tokenizer = new StringTokenizer(str, ",");
+            //ArrayList<String> substrings = new ArrayList<String>();
+            //while (tokenizer.hasMoreElements()) {
+                //substrings.add(tokenizer.nextToken());
+            //}
+            //return substrings;
         }
 
         
@@ -2190,7 +2185,7 @@ ArrayList<Integer> var540C13E9E156B687226421B24F2DF178_73398169 =             nu
             {
                 String token = tokenizer.nextToken();
                 substrings.add(Integer.parseInt(token));
-            } 
+            } //End block
     if(substrings.size() == 0)            
             {
 ArrayList<Integer> var540C13E9E156B687226421B24F2DF178_1567392804 =             null;
@@ -2200,16 +2195,16 @@ ArrayList<Integer> var540C13E9E156B687226421B24F2DF178_1567392804 =             
 ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1105228748 =             substrings;
             varF0ABD9677D3E9B56568CE72C8E5EBEE5_1105228748.addTaint(taint);
             return varF0ABD9677D3E9B56568CE72C8E5EBEE5_1105228748;
-            
-            
-            
-            
-            
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (str == null) return null;
+            //StringTokenizer tokenizer = new StringTokenizer(str, ",");
+            //ArrayList<Integer> substrings = new ArrayList<Integer>();
+            //while (tokenizer.hasMoreElements()) {
+                //String token = tokenizer.nextToken();
+                //substrings.add(Integer.parseInt(token));
+            //}
+            //if (substrings.size() == 0) return null;
+            //return substrings;
         }
 
         
@@ -2226,15 +2221,15 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1105228748 =             
             {
                 String token = tokenizer.nextToken();
                 output[index++] = Integer.parseInt(token);
-            } 
-            
-            
-            
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (str == null) return;
+            //StringTokenizer tokenizer = new StringTokenizer(str, ",");
+            //int index = 0;
+            //while (tokenizer.hasMoreElements()) {
+                //String token = tokenizer.nextToken();
+                //output[index++] = Integer.parseInt(token);
+            //}
         }
 
         
@@ -2251,15 +2246,15 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1105228748 =             
             {
                 String token = tokenizer.nextToken();
                 output[index++] = Float.parseFloat(token);
-            } 
-            
-            
-            
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (str == null) return;
+            //StringTokenizer tokenizer = new StringTokenizer(str, ",");
+            //int index = 0;
+            //while (tokenizer.hasMoreElements()) {
+                //String token = tokenizer.nextToken();
+                //output[index++] = Float.parseFloat(token);
+            //}
         }
 
         
@@ -2272,19 +2267,19 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1105228748 =             
                 float var2FE0D90AC1B13160EB180E1A53D1D9F1_151104044 = (Float.parseFloat(mMap.get(key)));
                                 float var546ADE640B6EDFBC8A086EF31347E768_547026389 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_547026389;
-            } 
+            } //End block
             catch (NumberFormatException ex)
             {
                 float var16830A58E1E33A4163524366BA7B701B_2024787622 = (defaultValue);
                                 float var546ADE640B6EDFBC8A086EF31347E768_1499216859 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_1499216859;
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //return Float.parseFloat(mMap.get(key));
+            //} catch (NumberFormatException ex) {
+                //return defaultValue;
+            //}
         }
 
         
@@ -2297,19 +2292,19 @@ ArrayList<Integer> varF0ABD9677D3E9B56568CE72C8E5EBEE5_1105228748 =             
                 int var065A0EC7C05D7BFA29A33E9C4D5F409A_253321687 = (Integer.parseInt(mMap.get(key)));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1540610550 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1540610550;
-            } 
+            } //End block
             catch (NumberFormatException ex)
             {
                 int var16830A58E1E33A4163524366BA7B701B_1419117064 = (defaultValue);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108821171 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108821171;
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //return Integer.parseInt(mMap.get(key));
+            //} catch (NumberFormatException ex) {
+                //return defaultValue;
+            //}
         }
 
         
@@ -2330,7 +2325,7 @@ ArrayList<Size> var540C13E9E156B687226421B24F2DF178_1766545059 =             nul
                 Size size = strToSize(tokenizer.nextToken());
     if(size != null)                
                 sizeList.add(size);
-            } 
+            } //End block
     if(sizeList.size() == 0)            
             {
 ArrayList<Size> var540C13E9E156B687226421B24F2DF178_854329344 =             null;
@@ -2340,16 +2335,16 @@ ArrayList<Size> var540C13E9E156B687226421B24F2DF178_854329344 =             null
 ArrayList<Size> var0109ED1127796FF3F24C24AF57D9DD4A_768482516 =             sizeList;
             var0109ED1127796FF3F24C24AF57D9DD4A_768482516.addTaint(taint);
             return var0109ED1127796FF3F24C24AF57D9DD4A_768482516;
-            
-            
-            
-            
-            
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (str == null) return null;
+            //StringTokenizer tokenizer = new StringTokenizer(str, ",");
+            //ArrayList<Size> sizeList = new ArrayList<Size>();
+            //while (tokenizer.hasMoreElements()) {
+                //Size size = strToSize(tokenizer.nextToken());
+                //if (size != null) sizeList.add(size);
+            //}
+            //if (sizeList.size() == 0) return null;
+            //return sizeList;
         }
 
         
@@ -2371,21 +2366,21 @@ Size varF1A431BF4DE48CB2CAB419C60122AB11_1584421377 =                 new Size(I
                                 Integer.parseInt(height));
                 varF1A431BF4DE48CB2CAB419C60122AB11_1584421377.addTaint(taint);
                 return varF1A431BF4DE48CB2CAB419C60122AB11_1584421377;
-            } 
+            } //End block
 Size var540C13E9E156B687226421B24F2DF178_497317448 =             null;
             var540C13E9E156B687226421B24F2DF178_497317448.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_497317448;
-            
-            
-            
-            
-                
-                
-                
-                                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (str == null) return null;
+            //int pos = str.indexOf('x');
+            //if (pos != -1) {
+                //String width = str.substring(0, pos);
+                //String height = str.substring(pos + 1);
+                //return new Size(Integer.parseInt(width),
+                                //Integer.parseInt(height));
+            //}
+            //Log.e(TAG, "Invalid size parameter string=" + str);
+            //return null;
         }
 
         
@@ -2398,7 +2393,7 @@ Size var540C13E9E156B687226421B24F2DF178_497317448 =             null;
 ArrayList<int[]> var540C13E9E156B687226421B24F2DF178_327587449 =                 null;
                 var540C13E9E156B687226421B24F2DF178_327587449.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_327587449;
-            } 
+            } //End block
             ArrayList<int[]> rangeList = new ArrayList<int[]>();
             int endIndex;
             int fromIndex = 1;
@@ -2411,7 +2406,7 @@ ArrayList<int[]> var540C13E9E156B687226421B24F2DF178_327587449 =                
                     splitInt(str.substring(fromIndex, endIndex), range);
                     rangeList.add(range);
                     fromIndex = endIndex + 3;
-                } 
+                } //End block
 } while (endIndex != str.length() - 1);
     if(rangeList.size() == 0)            
             {
@@ -2422,24 +2417,24 @@ ArrayList<int[]> var540C13E9E156B687226421B24F2DF178_1990345141 =             nu
 ArrayList<int[]> var747F178C24DED81A7324DAF447AA8FF7_342790327 =             rangeList;
             var747F178C24DED81A7324DAF447AA8FF7_342790327.addTaint(taint);
             return var747F178C24DED81A7324DAF447AA8FF7_342790327;
-            
-            
-                    
-                
-                
-            
-            
-            
-            
-                
-                
-                
-                
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (str == null || str.charAt(0) != '('
+                    //|| str.charAt(str.length() - 1) != ')') {
+                //Log.e(TAG, "Invalid range list string=" + str);
+                //return null;
+            //}
+            //ArrayList<int[]> rangeList = new ArrayList<int[]>();
+            //int endIndex, fromIndex = 1;
+            //do {
+                //int[] range = new int[2];
+                //endIndex = str.indexOf("),(", fromIndex);
+                //if (endIndex == -1) endIndex = str.length() - 1;
+                //splitInt(str.substring(fromIndex, endIndex), range);
+                //rangeList.add(range);
+                //fromIndex = endIndex + 3;
+            //} while (endIndex != str.length() - 1);
+            //if (rangeList.size() == 0) return null;
+            //return rangeList;
         }
 
         
@@ -2452,7 +2447,7 @@ ArrayList<int[]> var747F178C24DED81A7324DAF447AA8FF7_342790327 =             ran
 ArrayList<Area> var540C13E9E156B687226421B24F2DF178_1274261486 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1274261486.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1274261486;
-            } 
+            } //End block
             ArrayList<Area> result = new ArrayList<Area>();
             int endIndex;
             int fromIndex = 1;
@@ -2466,7 +2461,7 @@ ArrayList<Area> var540C13E9E156B687226421B24F2DF178_1274261486 =                
                     Rect rect = new Rect(array[0], array[1], array[2], array[3]);
                     result.add(new Area(rect, array[4]));
                     fromIndex = endIndex + 3;
-                } 
+                } //End block
 } while (endIndex != str.length() - 1);
     if(result.size() == 0)            
             {
@@ -2484,13 +2479,13 @@ ArrayList<Area> var540C13E9E156B687226421B24F2DF178_1082813706 =             nul
 ArrayList<Area> var540C13E9E156B687226421B24F2DF178_530720404 =                     null;
                     var540C13E9E156B687226421B24F2DF178_530720404.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_530720404;
-                } 
-            } 
+                } //End block
+            } //End block
 ArrayList<Area> varDC838461EE2FA0CA4C9BBB70A15456B0_1117339067 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1117339067.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1117339067;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -2513,10 +2508,10 @@ ArrayList<Area> varDC838461EE2FA0CA4C9BBB70A15456B0_1117339067 =             res
             boolean var68934A3E9455FA72420237EB05902327_294649296 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1966247305 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1966247305;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (s1 == null && s2 == null) return true;
+            //if (s1 != null && s1.equals(s2)) return true;
+            //return false;
         }
 
         

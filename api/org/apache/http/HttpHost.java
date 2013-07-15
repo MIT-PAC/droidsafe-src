@@ -1,6 +1,6 @@
 package org.apache.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,30 +30,30 @@ public final class HttpHost implements Cloneable {
             IllegalArgumentException varA4A44E13AE8A327B609868CAE518C1E0_66423103 = new IllegalArgumentException("Host name may not be null");
             varA4A44E13AE8A327B609868CAE518C1E0_66423103.addTaint(taint);
             throw varA4A44E13AE8A327B609868CAE518C1E0_66423103;
-        } 
+        } //End block
         this.hostname   = hostname;
         this.lcHostname = hostname.toLowerCase(Locale.ENGLISH);
     if(scheme != null)        
         {
             this.schemeName = scheme.toLowerCase(Locale.ENGLISH);
-        } 
+        } //End block
         else
         {
             this.schemeName = DEFAULT_SCHEME_NAME;
-        } 
+        } //End block
         this.port = port;
-        
-        
-            
-        
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (hostname == null) {
+            //throw new IllegalArgumentException("Host name may not be null");
+        //}
+        //this.hostname   = hostname;
+        //this.lcHostname = hostname.toLowerCase(Locale.ENGLISH);
+        //if (scheme != null) {
+            //this.schemeName = scheme.toLowerCase(Locale.ENGLISH);
+        //} else {
+            //this.schemeName = DEFAULT_SCHEME_NAME;
+        //}
+        //this.port = port;
     }
 
     
@@ -62,7 +62,7 @@ public final class HttpHost implements Cloneable {
         this(hostname, port, null);
         addTaint(port);
         addTaint(hostname.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -70,7 +70,7 @@ public final class HttpHost implements Cloneable {
     public  HttpHost(final String hostname) {
         this(hostname, -1, null);
         addTaint(hostname.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -78,40 +78,37 @@ public final class HttpHost implements Cloneable {
     public  HttpHost(final HttpHost httphost) {
         this(httphost.hostname, httphost.port, httphost.schemeName);
         addTaint(httphost.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.895 -0400", hash_original_method = "FF0006634ABBE2C97788D559B23C884A", hash_generated_method = "AF9301A742341A04B15C0824D8E44ADC")
     public String getHostName() {
 String varC616FC847D53CB735DD2A7C146C68762_1084382416 =         this.hostname;
         varC616FC847D53CB735DD2A7C146C68762_1084382416.addTaint(taint);
         return varC616FC847D53CB735DD2A7C146C68762_1084382416;
-        
-        
+        // ---------- Original Method ----------
+        //return this.hostname;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.895 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "92F9DDBAFC6650DBAE3CED4AB3D9D34A")
     public int getPort() {
         int var02075052AFB1BA5EC4413B52BC401B14_1001654610 = (this.port);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304265239 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1304265239;
-        
-        
+        // ---------- Original Method ----------
+        //return this.port;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.896 -0400", hash_original_method = "C6F0B2E3DB0F6FEAB7513E486FF6DA80", hash_generated_method = "C94BB49750BE2EFDB871FD4B4E682988")
     public String getSchemeName() {
 String var8E0819DAE5908F45AA8F092100A40C0A_852489329 =         this.schemeName;
         var8E0819DAE5908F45AA8F092100A40C0A_852489329.addTaint(taint);
         return var8E0819DAE5908F45AA8F092100A40C0A_852489329;
-        
-        
+        // ---------- Original Method ----------
+        //return this.schemeName;
     }
 
     
@@ -125,20 +122,20 @@ String var8E0819DAE5908F45AA8F092100A40C0A_852489329 =         this.schemeName;
         {
             buffer.append(':');
             buffer.append(Integer.toString(this.port));
-        } 
+        } //End block
 String varD03843288D33B9E1D3062E25339ECF6D_2077678530 =         buffer.toString();
         varD03843288D33B9E1D3062E25339ECF6D_2077678530.addTaint(taint);
         return varD03843288D33B9E1D3062E25339ECF6D_2077678530;
-        
-        
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //CharArrayBuffer buffer = new CharArrayBuffer(32);
+        //buffer.append(this.schemeName);
+        //buffer.append("://");
+        //buffer.append(this.hostname);
+        //if (this.port != -1) {
+            //buffer.append(':');
+            //buffer.append(Integer.toString(this.port));
+        //}
+        //return buffer.toString();
     }
 
     
@@ -150,18 +147,18 @@ String varD03843288D33B9E1D3062E25339ECF6D_2077678530 =         buffer.toString(
         {
             buffer.append(':');
             buffer.append(Integer.toString(this.port));
-        } 
+        } //End block
 String varD03843288D33B9E1D3062E25339ECF6D_1629783776 =         buffer.toString();
         varD03843288D33B9E1D3062E25339ECF6D_1629783776.addTaint(taint);
         return varD03843288D33B9E1D3062E25339ECF6D_1629783776;
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //CharArrayBuffer buffer = new CharArrayBuffer(32);
+        //buffer.append(this.hostname);
+        //if (this.port != -1) {
+            //buffer.append(':');
+            //buffer.append(Integer.toString(this.port));
+        //}
+        //return buffer.toString();
     }
 
     
@@ -170,8 +167,8 @@ String varD03843288D33B9E1D3062E25339ECF6D_1629783776 =         buffer.toString(
 String var0A55F081974ADC5A13D4B31BB63BD3D0_1029765884 =         toURI();
         var0A55F081974ADC5A13D4B31BB63BD3D0_1029765884.addTaint(taint);
         return var0A55F081974ADC5A13D4B31BB63BD3D0_1029765884;
-        
-        
+        // ---------- Original Method ----------
+        //return toURI();
     }
 
     
@@ -198,24 +195,24 @@ String var0A55F081974ADC5A13D4B31BB63BD3D0_1029765884 =         toURI();
                 && this.schemeName.equals(that.schemeName));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1206694416 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1206694416;
-        } 
+        } //End block
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_539735113 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_514199139 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_514199139;
-        } 
-        
-        
-        
-        
-            
-            
-                
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (obj == null) return false;
+        //if (this == obj) return true;
+        //if (obj instanceof HttpHost) {
+            //HttpHost that = (HttpHost) obj;
+            //return this.lcHostname.equals(that.lcHostname) 
+                //&& this.port == that.port
+                //&& this.schemeName.equals(that.schemeName);
+        //} else {
+            //return false;
+        //}
     }
 
     
@@ -228,12 +225,12 @@ String var0A55F081974ADC5A13D4B31BB63BD3D0_1029765884 =         toURI();
         int var0800FC577294C34E0B28AD2839435945_1543395323 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_862012253 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_862012253;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int hash = LangUtils.HASH_SEED;
+        //hash = LangUtils.hashCode(hash, this.lcHostname);
+        //hash = LangUtils.hashCode(hash, this.port);
+        //hash = LangUtils.hashCode(hash, this.schemeName);
+        //return hash;
     }
 
     
@@ -242,8 +239,8 @@ String var0A55F081974ADC5A13D4B31BB63BD3D0_1029765884 =         toURI();
 Object var46F3A0D86742C1D6E099C2B166941A33_675103916 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_675103916.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_675103916;
-        
-        
+        // ---------- Original Method ----------
+        //return super.clone();
     }
 
     

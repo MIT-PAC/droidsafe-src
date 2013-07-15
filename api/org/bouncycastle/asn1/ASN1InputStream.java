@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
         InputStream is) {
         this(is, findLimit(is));
         addTaint(is.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -33,7 +33,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
         byte[] input) {
         this(new ByteArrayInputStream(input), input.length);
         addTaint(input[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -44,7 +44,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
         this(new ByteArrayInputStream(input), input.length, lazyEvaluate);
         addTaint(lazyEvaluate);
         addTaint(input[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -55,7 +55,7 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
         this(input, limit, false);
         addTaint(limit);
         addTaint(input.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -68,9 +68,9 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
         addTaint(input.getTaint());
         this.limit = limit;
         this.lazyEvaluate = lazyEvaluate;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.limit = limit;
+        //this.lazyEvaluate = lazyEvaluate;
     }
 
     
@@ -92,8 +92,8 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
         int varC80E0DC01831B644FC078B296E30DF0A_1961414191 = (readLength(this, limit));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1980160309 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1980160309;
-        
-        
+        // ---------- Original Method ----------
+        //return readLength(this, limit);
     }
 
     
@@ -106,12 +106,12 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
             EOFException var21E10E3FDE2F28CF052B18FD81B49AC0_119149516 = new EOFException("EOF encountered in middle of object");
             var21E10E3FDE2F28CF052B18FD81B49AC0_119149516.addTaint(taint);
             throw var21E10E3FDE2F28CF052B18FD81B49AC0_119149516;
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (Streams.readFully(this, bytes) != bytes.length)
+        //{
+            //throw new EOFException("EOF encountered in middle of object");
+        //}
     }
 
     
@@ -130,13 +130,13 @@ public class ASN1InputStream extends FilterInputStream implements DERTags {
 DERObject varE34C51A9354A8B1A118F6CDDBBAC7679_1678896436 =             new DERApplicationSpecific(isConstructed, tagNo, defIn.toByteArray());
             varE34C51A9354A8B1A118F6CDDBBAC7679_1678896436.addTaint(taint);
             return varE34C51A9354A8B1A118F6CDDBBAC7679_1678896436;
-        } 
+        } //End block
     if((tag & TAGGED) != 0)        
         {
 DERObject var0ADBEA0CD0E4A395AB6A8BDE5DB1DF52_1149072953 =             new ASN1StreamParser(defIn).readTaggedObject(isConstructed, tagNo);
             var0ADBEA0CD0E4A395AB6A8BDE5DB1DF52_1149072953.addTaint(taint);
             return var0ADBEA0CD0E4A395AB6A8BDE5DB1DF52_1149072953;
-        } 
+        } //End block
     if(isConstructed)        
         {
 switch(tagNo){
@@ -150,13 +150,13 @@ DERObject var77EA9382029402B6AF3BACBAF60EF53A_521394516 =             new BERCon
 DERObject var7F7029B27A36368CD96B97187ADE8F74_1620410938 =                 new LazyDERSequence(defIn.toByteArray());
                 var7F7029B27A36368CD96B97187ADE8F74_1620410938.addTaint(taint);
                 return var7F7029B27A36368CD96B97187ADE8F74_1620410938;
-            } 
+            } //End block
             else
             {
 DERObject varB72ABBB4CF7C46F2BE0CB5E0449050FD_1056110220 =                 DERFactory.createSequence(buildDEREncodableVector(defIn));
                 varB72ABBB4CF7C46F2BE0CB5E0449050FD_1056110220.addTaint(taint);
                 return varB72ABBB4CF7C46F2BE0CB5E0449050FD_1056110220;
-            } 
+            } //End block
             case SET:
 DERObject var9629FC4803A172D4CC1867B424C1D57F_1750936597 =             DERFactory.createSet(buildDEREncodableVector(defIn), false);
             var9629FC4803A172D4CC1867B424C1D57F_1750936597.addTaint(taint);
@@ -170,12 +170,12 @@ DERObject varD10C2E8D563A110A48696C7D62447036_2056409078 =             new DERUn
             varD10C2E8D563A110A48696C7D62447036_2056409078.addTaint(taint);
             return varD10C2E8D563A110A48696C7D62447036_2056409078;
 }
-        } 
+        } //End block
 DERObject var72557301F4134763D6B451D02E18155C_430264010 =         createPrimitiveDERObject(tagNo, defIn.toByteArray());
         var72557301F4134763D6B451D02E18155C_430264010.addTaint(taint);
         return var72557301F4134763D6B451D02E18155C_430264010;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -187,18 +187,18 @@ DERObject var72557301F4134763D6B451D02E18155C_430264010 =         createPrimitiv
 ((o = readObject()) != null)        
         {
             v.add(o);
-        } 
+        } //End block
 ASN1EncodableVector var6DC76BC51820DD65E8396280E884AA78_1952765405 =         v;
         var6DC76BC51820DD65E8396280E884AA78_1952765405.addTaint(taint);
         return var6DC76BC51820DD65E8396280E884AA78_1952765405;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //DERObject o;
+        //while ((o = readObject()) != null)
+        //{
+            //v.add(o);
+        //}
+        //return v;
     }
 
     
@@ -209,8 +209,8 @@ ASN1EncodableVector var6DC76BC51820DD65E8396280E884AA78_1952765405 =         v;
 ASN1EncodableVector var705FA4AEB2BCFF47B76DA61F226F7E26_673347615 =         new ASN1InputStream(dIn).buildEncodableVector();
         var705FA4AEB2BCFF47B76DA61F226F7E26_673347615.addTaint(taint);
         return var705FA4AEB2BCFF47B76DA61F226F7E26_673347615;
-        
-        
+        // ---------- Original Method ----------
+        //return new ASN1InputStream(dIn).buildEncodableVector();
     }
 
     
@@ -224,11 +224,11 @@ ASN1EncodableVector var705FA4AEB2BCFF47B76DA61F226F7E26_673347615 =         new 
                 IOException var5C9B7C12641D8A4D21001643E6417EC5_750767469 = new IOException("unexpected end-of-contents marker");
                 var5C9B7C12641D8A4D21001643E6417EC5_750767469.addTaint(taint);
                 throw var5C9B7C12641D8A4D21001643E6417EC5_750767469;
-            } 
+            } //End block
 DERObject var540C13E9E156B687226421B24F2DF178_1667800654 =             null;
             var540C13E9E156B687226421B24F2DF178_1667800654.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1667800654;
-        } 
+        } //End block
         int tagNo = readTagNumber(this, tag);
         boolean isConstructed = (tag & CONSTRUCTED) != 0;
         int length = readLength();
@@ -239,7 +239,7 @@ DERObject var540C13E9E156B687226421B24F2DF178_1667800654 =             null;
                 IOException var0055B29725078D64828DFE2C61240180_155221928 = new IOException("indefinite length primitive encoding encountered");
                 var0055B29725078D64828DFE2C61240180_155221928.addTaint(taint);
                 throw var0055B29725078D64828DFE2C61240180_155221928;
-            } 
+            } //End block
             IndefiniteLengthInputStream indIn = new IndefiniteLengthInputStream(this, limit);
             ASN1StreamParser sp = new ASN1StreamParser(indIn, limit);
     if((tag & APPLICATION) != 0)            
@@ -247,13 +247,13 @@ DERObject var540C13E9E156B687226421B24F2DF178_1667800654 =             null;
 DERObject var693ABAC9A9FF779289639FF2A3D198F6_161753164 =                 new BERApplicationSpecificParser(tagNo, sp).getLoadedObject();
                 var693ABAC9A9FF779289639FF2A3D198F6_161753164.addTaint(taint);
                 return var693ABAC9A9FF779289639FF2A3D198F6_161753164;
-            } 
+            } //End block
     if((tag & TAGGED) != 0)            
             {
 DERObject var97EFBFC0B8A4F08549BDB35729FA95AE_460518983 =                 new BERTaggedObjectParser(true, tagNo, sp).getLoadedObject();
                 var97EFBFC0B8A4F08549BDB35729FA95AE_460518983.addTaint(taint);
                 return var97EFBFC0B8A4F08549BDB35729FA95AE_460518983;
-            } 
+            } //End block
 switch(tagNo){
             case OCTET_STRING:
 DERObject var2A744DACCC077923A0D7916B60B7B4B8_302620611 =             new BEROctetStringParser(sp).getLoadedObject();
@@ -276,7 +276,7 @@ DERObject var3518CBDB4D24245AB7060EECA43E77E7_1917977714 =             new DEREx
             var7CA3C00DE0F222C95CF1D61190C120F3_232736425.addTaint(taint);
             throw var7CA3C00DE0F222C95CF1D61190C120F3_232736425;
 }
-        } 
+        } //End block
         else
         {
             try 
@@ -284,16 +284,16 @@ DERObject var3518CBDB4D24245AB7060EECA43E77E7_1917977714 =             new DEREx
 DERObject var9F04FABE8EE077714A8CD9610888B3CA_233540059 =                 buildObject(tag, tagNo, length);
                 var9F04FABE8EE077714A8CD9610888B3CA_233540059.addTaint(taint);
                 return var9F04FABE8EE077714A8CD9610888B3CA_233540059;
-            } 
+            } //End block
             catch (IllegalArgumentException e)
             {
                 ASN1Exception var30FC1394D6DD5B9F39A6694742A3F039_1751999198 = new ASN1Exception("corrupted stream detected", e);
                 var30FC1394D6DD5B9F39A6694742A3F039_1751999198.addTaint(taint);
                 throw var30FC1394D6DD5B9F39A6694742A3F039_1751999198;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

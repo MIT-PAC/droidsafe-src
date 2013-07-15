@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.651 -0400", hash_original_method = "134796BB126CC075543A5858F980D0FB", hash_generated_method = "6A27F38CD958D23D87075149EA9DFC8C")
     protected  SelectableChannel() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,8 +42,8 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
 SelectionKey var5876B2AC1310ED80B9A3C6592446A1F8_969957845 =         register(selector, operations, null);
         var5876B2AC1310ED80B9A3C6592446A1F8_969957845.addTaint(taint);
         return var5876B2AC1310ED80B9A3C6592446A1F8_969957845;
-        
-        
+        // ---------- Original Method ----------
+        //return register(selector, operations, null);
     }
 
     

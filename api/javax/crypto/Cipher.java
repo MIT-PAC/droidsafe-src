@@ -1,6 +1,6 @@
 package javax.crypto;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,26 +44,26 @@ public class Cipher {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1208034160 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1208034160.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1208034160;
-        } 
+        } //End block
     if(!(cipherSpi instanceof NullCipherSpi) && provider == null)        
         {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1752296705 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1752296705.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1752296705;
-        } 
+        } //End block
         this.provider = provider;
         this.transformation = transformation;
         this.spiImpl = cipherSpi;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (cipherSpi == null) {
+            //throw new NullPointerException();
+        //}
+        //if (!(cipherSpi instanceof NullCipherSpi) && provider == null) {
+            //throw new NullPointerException();
+        //}
+        //this.provider = provider;
+        //this.transformation = transformation;
+        //this.spiImpl = cipherSpi;
     }
 
     
@@ -203,8 +203,8 @@ public class Cipher {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_870250706 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_870250706.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_870250706;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
@@ -213,8 +213,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_870250706 =         provider;
 String var6472AF3EC4810156446ED9616CC1EE8E_1430654408 =         transformation;
         var6472AF3EC4810156446ED9616CC1EE8E_1430654408.addTaint(taint);
         return var6472AF3EC4810156446ED9616CC1EE8E_1430654408;
-        
-        
+        // ---------- Original Method ----------
+        //return transformation;
     }
 
     
@@ -223,8 +223,8 @@ String var6472AF3EC4810156446ED9616CC1EE8E_1430654408 =         transformation;
         int var45465D5DC9BEC9FECC52A032FA1F16D6_1953227954 = (spiImpl.engineGetBlockSize());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_290150075 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_290150075;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetBlockSize();
     }
 
     
@@ -236,15 +236,15 @@ String var6472AF3EC4810156446ED9616CC1EE8E_1430654408 =         transformation;
             IllegalStateException var63B7668973C20A74990D779B455ADF9E_1056819155 = new IllegalStateException("Cipher has not yet been initialized");
             var63B7668973C20A74990D779B455ADF9E_1056819155.addTaint(taint);
             throw var63B7668973C20A74990D779B455ADF9E_1056819155;
-        } 
+        } //End block
         int var32BCD9DDCCA7AD94E055443B55C28727_383822703 = (spiImpl.engineGetOutputSize(inputLen));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1402630537 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1402630537;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode == 0) {
+            //throw new IllegalStateException("Cipher has not yet been initialized");
+        //}
+        //return spiImpl.engineGetOutputSize(inputLen);
     }
 
     
@@ -253,8 +253,8 @@ String var6472AF3EC4810156446ED9616CC1EE8E_1430654408 =         transformation;
         byte[] varE5F6887C529E3E0CA3FBCCADA885FC6B_2082425022 = (spiImpl.engineGetIV());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_977775641 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_977775641;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetIV();
     }
 
     
@@ -263,8 +263,8 @@ String var6472AF3EC4810156446ED9616CC1EE8E_1430654408 =         transformation;
 AlgorithmParameters varDDF010DE7E5B16986942A6D470695726_1937417346 =         spiImpl.engineGetParameters();
         varDDF010DE7E5B16986942A6D470695726_1937417346.addTaint(taint);
         return varDDF010DE7E5B16986942A6D470695726_1937417346;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetParameters();
     }
 
     
@@ -273,8 +273,8 @@ AlgorithmParameters varDDF010DE7E5B16986942A6D470695726_1937417346 =         spi
 ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
         var540C13E9E156B687226421B24F2DF178_683962539.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_683962539;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
@@ -285,13 +285,13 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
     if(secureRandom == null)        
         {
             secureRandom = new SecureRandom();
-        } 
+        } //End block
         init(opmode, key, secureRandom);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (secureRandom == null) {
+            //secureRandom = new SecureRandom();
+        //}
+        //init(opmode, key, secureRandom);
     }
 
     
@@ -302,10 +302,10 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
         checkMode(opmode);
         spiImpl.engineInit(opmode, key, random);
         mode = opmode;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkMode(opmode);
+        //spiImpl.engineInit(opmode, key, random);
+        //mode = opmode;
     }
 
     
@@ -318,12 +318,12 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
             InvalidParameterException varDEB5BE7797F8E1BF880BE2B8FD8FE549_286682554 = new InvalidParameterException("Invalid mode: " + mode);
             varDEB5BE7797F8E1BF880BE2B8FD8FE549_286682554.addTaint(taint);
             throw varDEB5BE7797F8E1BF880BE2B8FD8FE549_286682554;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE
+            //&& mode != UNWRAP_MODE && mode != WRAP_MODE) {
+            //throw new InvalidParameterException("Invalid mode: " + mode);
+        //}
     }
 
     
@@ -335,13 +335,13 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
     if(secureRandom == null)        
         {
             secureRandom = new SecureRandom();
-        } 
+        } //End block
         init(opmode, key, params, secureRandom);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (secureRandom == null) {
+            //secureRandom = new SecureRandom();
+        //}
+        //init(opmode, key, params, secureRandom);
     }
 
     
@@ -355,10 +355,10 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
         checkMode(opmode);
         spiImpl.engineInit(opmode, key, params, random);
         mode = opmode;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkMode(opmode);
+        //spiImpl.engineInit(opmode, key, params, random);
+        //mode = opmode;
     }
 
     
@@ -370,13 +370,13 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
     if(secureRandom == null)        
         {
             secureRandom = new SecureRandom();
-        } 
+        } //End block
         init(opmode, key, params, secureRandom);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (secureRandom == null) {
+            //secureRandom = new SecureRandom();
+        //}
+        //init(opmode, key, params, secureRandom);
     }
 
     
@@ -390,10 +390,10 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
         checkMode(opmode);
         spiImpl.engineInit(opmode, key, params, random);
         mode = opmode;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkMode(opmode);
+        //spiImpl.engineInit(opmode, key, params, random);
+        //mode = opmode;
     }
 
     
@@ -404,13 +404,13 @@ ExemptionMechanism var540C13E9E156B687226421B24F2DF178_683962539 =         null;
     if(secureRandom == null)        
         {
             secureRandom = new SecureRandom();
-        } 
+        } //End block
         init(opmode, certificate, secureRandom);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (secureRandom == null) {
+            //secureRandom = new SecureRandom();
+        //}
+        //init(opmode, certificate, secureRandom);
     }
 
     
@@ -432,8 +432,8 @@ for(String oid : ce)
                     {
                         critical = true;
                         break;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(critical)                
                 {
                     boolean[] keyUsage = ((X509Certificate) certificate).getKeyUsage();
@@ -445,7 +445,7 @@ for(String oid : ce)
                                                           + "cannot be used for ENCRYPT_MODE");
                             var040E9AA63F9F9A7EEA10CEA0460B066B_1826856115.addTaint(taint);
                             throw var040E9AA63F9F9A7EEA10CEA0460B066B_1826856115;
-                        } 
+                        } //End block
                         else
     if(opmode == WRAP_MODE && !keyUsage[2])                        
                         {
@@ -453,15 +453,15 @@ for(String oid : ce)
                                                           + "cannot be used for WRAP_MODE");
                             varEB0A13E1EB418B6FEABA11D803D913CE_548478605.addTaint(taint);
                             throw varEB0A13E1EB418B6FEABA11D803D913CE_548478605;
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         spiImpl.engineInit(opmode, certificate.getPublicKey(), random);
         mode = opmode;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -473,33 +473,33 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1250790638 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1250790638.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1250790638;
-        } 
+        } //End block
     if(input == null)        
         {
             IllegalArgumentException var6A6A965F33A186280ACCE222064E6554_2147409131 = new IllegalArgumentException("input == null");
             var6A6A965F33A186280ACCE222064E6554_2147409131.addTaint(taint);
             throw var6A6A965F33A186280ACCE222064E6554_2147409131;
-        } 
+        } //End block
     if(input.length == 0)        
         {
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1647050273 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1856053938 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1856053938;
-        } 
+        } //End block
         byte[] varDA67C3FAA98CA9A45AAA97F8952BE025_1252999215 = (spiImpl.engineUpdate(input, 0, input.length));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_106575668 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_106575668;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //if (input == null) {
+            //throw new IllegalArgumentException("input == null");
+        //}
+        //if (input.length == 0) {
+            //return null;
+        //}
+        //return spiImpl.engineUpdate(input, 0, input.length);
     }
 
     
@@ -513,13 +513,13 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1575793870 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1575793870.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1575793870;
-        } 
+        } //End block
     if(input == null)        
         {
             IllegalArgumentException var6A6A965F33A186280ACCE222064E6554_1798689155 = new IllegalArgumentException("input == null");
             var6A6A965F33A186280ACCE222064E6554_1798689155.addTaint(taint);
             throw var6A6A965F33A186280ACCE222064E6554_1798689155;
-        } 
+        } //End block
     if(inputOffset < 0 || inputLen < 0
                 || inputLen > input.length
                 || inputOffset > input.length - inputLen)        
@@ -527,32 +527,32 @@ for(String oid : ce)
             IllegalArgumentException var8D88AA69DB0B0050C18F770ADD29E39C_921184750 = new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
             var8D88AA69DB0B0050C18F770ADD29E39C_921184750.addTaint(taint);
             throw var8D88AA69DB0B0050C18F770ADD29E39C_921184750;
-        } 
+        } //End block
     if(input.length == 0)        
         {
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1364754644 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_875205047 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_875205047;
-        } 
+        } //End block
         byte[] var637ED6DD448CEA157C3754C258BF9614_1590526228 = (spiImpl.engineUpdate(input, inputOffset, inputLen));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_464706450 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_464706450;
-        
-        
-            
-        
-        
-            
-        
-        
-                
-                
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //if (input == null) {
+            //throw new IllegalArgumentException("input == null");
+        //}
+        //if (inputOffset < 0 || inputLen < 0
+                //|| inputLen > input.length
+                //|| inputOffset > input.length - inputLen) {
+            //throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
+        //}
+        //if (input.length == 0) {
+            //return null;
+        //}
+        //return spiImpl.engineUpdate(input, inputOffset, inputLen);
     }
 
     
@@ -566,8 +566,8 @@ for(String oid : ce)
         int varCB57096FBEC0B5F352A49F77111BD15F_842195711 = (update(input, inputOffset, inputLen, output, 0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_761046438 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_761046438;
-        
-        
+        // ---------- Original Method ----------
+        //return update(input, inputOffset, inputLen, output, 0);
     }
 
     
@@ -584,44 +584,44 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1808314691 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1808314691.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1808314691;
-        } 
+        } //End block
     if(input == null)        
         {
             IllegalArgumentException var6A6A965F33A186280ACCE222064E6554_28238467 = new IllegalArgumentException("input == null");
             var6A6A965F33A186280ACCE222064E6554_28238467.addTaint(taint);
             throw var6A6A965F33A186280ACCE222064E6554_28238467;
-        } 
+        } //End block
     if(output == null)        
         {
             IllegalArgumentException varE2E2E512F186311F8B8ACD08AE4ED992_1817312350 = new IllegalArgumentException("output == null");
             varE2E2E512F186311F8B8ACD08AE4ED992_1817312350.addTaint(taint);
             throw varE2E2E512F186311F8B8ACD08AE4ED992_1817312350;
-        } 
+        } //End block
     if(outputOffset < 0)        
         {
             IllegalArgumentException var21183C0BDC0AF003F4254A7DAD271601_968204678 = new IllegalArgumentException("outputOffset < 0");
             var21183C0BDC0AF003F4254A7DAD271601_968204678.addTaint(taint);
             throw var21183C0BDC0AF003F4254A7DAD271601_968204678;
-        } 
+        } //End block
     if(inputOffset < 0 || inputLen < 0 || inputLen > input.length
                 || inputOffset > input.length - inputLen)        
         {
             IllegalArgumentException var8D88AA69DB0B0050C18F770ADD29E39C_956782233 = new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
             var8D88AA69DB0B0050C18F770ADD29E39C_956782233.addTaint(taint);
             throw var8D88AA69DB0B0050C18F770ADD29E39C_956782233;
-        } 
+        } //End block
     if(input.length == 0)        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1022808022 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309200367 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309200367;
-        } 
+        } //End block
         int varD49C6E8598952D969CED8A4EE6F031C5_1705370130 = (spiImpl.engineUpdate(input, inputOffset, inputLen, output,
                 outputOffset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1853324115 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1853324115;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -634,24 +634,24 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1717694951 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1717694951.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1717694951;
-        } 
+        } //End block
     if(input == output)        
         {
             IllegalArgumentException varA372822B3F25D725E890875C1B7E8BFD_2057735864 = new IllegalArgumentException("input == output");
             varA372822B3F25D725E890875C1B7E8BFD_2057735864.addTaint(taint);
             throw varA372822B3F25D725E890875C1B7E8BFD_2057735864;
-        } 
+        } //End block
         int var97C267E877EC34DE88324DEA51029B0C_430153619 = (spiImpl.engineUpdate(input, output));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_323660296 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_323660296;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //if (input == output) {
+            //throw new IllegalArgumentException("input == output");
+        //}
+        //return spiImpl.engineUpdate(input, output);
     }
 
     
@@ -663,15 +663,15 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_113852814 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_113852814.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_113852814;
-        } 
+        } //End block
         byte[] var37526BA79DFA833A8CB3F446DDFFED36_1982001340 = (spiImpl.engineDoFinal(null, 0, 0));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_408993542 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_408993542;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //return spiImpl.engineDoFinal(null, 0, 0);
     }
 
     
@@ -685,24 +685,24 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_745389131 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_745389131.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_745389131;
-        } 
+        } //End block
     if(outputOffset < 0)        
         {
             IllegalArgumentException var21183C0BDC0AF003F4254A7DAD271601_445814938 = new IllegalArgumentException("outputOffset < 0");
             var21183C0BDC0AF003F4254A7DAD271601_445814938.addTaint(taint);
             throw var21183C0BDC0AF003F4254A7DAD271601_445814938;
-        } 
+        } //End block
         int varCCF29067D03302088FD8BBB1A4F77C11_1042014590 = (spiImpl.engineDoFinal(null, 0, 0, output, outputOffset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1486601024 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1486601024;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //if (outputOffset < 0) {
+            //throw new IllegalArgumentException("outputOffset < 0");
+        //}
+        //return spiImpl.engineDoFinal(null, 0, 0, output, outputOffset);
     }
 
     
@@ -715,15 +715,15 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1525328484 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1525328484.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1525328484;
-        } 
+        } //End block
         byte[] var4BE13A72907243DA5D8667F49DD22F06_2114199805 = (spiImpl.engineDoFinal(input, 0, input.length));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1690474960 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1690474960;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //return spiImpl.engineDoFinal(input, 0, input.length);
     }
 
     
@@ -737,24 +737,24 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1723704450 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1723704450.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1723704450;
-        } 
+        } //End block
     if(inputOffset < 0 || inputLen < 0 || inputOffset + inputLen > input.length)        
         {
             IllegalArgumentException var8D88AA69DB0B0050C18F770ADD29E39C_1294999130 = new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
             var8D88AA69DB0B0050C18F770ADD29E39C_1294999130.addTaint(taint);
             throw var8D88AA69DB0B0050C18F770ADD29E39C_1294999130;
-        } 
+        } //End block
         byte[] varE827FDEF2F46F6B70D7BD27A6AD2B8CE_1778239953 = (spiImpl.engineDoFinal(input, inputOffset, inputLen));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2141353561 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2141353561;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //if (inputOffset < 0 || inputLen < 0 || inputOffset + inputLen > input.length) {
+            //throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
+        //}
+        //return spiImpl.engineDoFinal(input, inputOffset, inputLen);
     }
 
     
@@ -769,8 +769,8 @@ for(String oid : ce)
         int var9A0BAA71182E0DEE846F1118D09157AA_1963454389 = (doFinal(input, inputOffset, inputLen, output, 0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_307564781 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_307564781;
-        
-        
+        // ---------- Original Method ----------
+        //return doFinal(input, inputOffset, inputLen, output, 0);
     }
 
     
@@ -788,26 +788,26 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_930608830 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_930608830.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_930608830;
-        } 
+        } //End block
     if(inputOffset < 0 || inputLen < 0 || inputOffset + inputLen > input.length)        
         {
             IllegalArgumentException var8D88AA69DB0B0050C18F770ADD29E39C_387916018 = new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
             var8D88AA69DB0B0050C18F770ADD29E39C_387916018.addTaint(taint);
             throw var8D88AA69DB0B0050C18F770ADD29E39C_387916018;
-        } 
+        } //End block
         int varCF0102AC5B34095775BBAB7062A69632_328342233 = (spiImpl.engineDoFinal(input, inputOffset, inputLen, output,
                 outputOffset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1115486270 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1115486270;
-        
-        
-            
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //if (inputOffset < 0 || inputLen < 0 || inputOffset + inputLen > input.length) {
+            //throw new IllegalArgumentException("Incorrect inputOffset/inputLen parameters");
+        //}
+        //return spiImpl.engineDoFinal(input, inputOffset, inputLen, output,
+                //outputOffset);
     }
 
     
@@ -821,24 +821,24 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_148790770 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_148790770.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_148790770;
-        } 
+        } //End block
     if(input == output)        
         {
             IllegalArgumentException varA372822B3F25D725E890875C1B7E8BFD_2028730276 = new IllegalArgumentException("input == output");
             varA372822B3F25D725E890875C1B7E8BFD_2028730276.addTaint(taint);
             throw varA372822B3F25D725E890875C1B7E8BFD_2028730276;
-        } 
+        } //End block
         int var422C9A7C90052BEBB58E92C22B3137E8_1920452786 = (spiImpl.engineDoFinal(input, output));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1004983130 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1004983130;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != ENCRYPT_MODE && mode != DECRYPT_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //if (input == output) {
+            //throw new IllegalArgumentException("input == output");
+        //}
+        //return spiImpl.engineDoFinal(input, output);
     }
 
     
@@ -851,15 +851,15 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_528663739 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_528663739.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_528663739;
-        } 
+        } //End block
         byte[] var74535699818625C1CFD1ABCF21043391_240166313 = (spiImpl.engineWrap(key));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_997056540 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_997056540;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mode != WRAP_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //return spiImpl.engineWrap(key);
     }
 
     
@@ -875,17 +875,17 @@ for(String oid : ce)
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_2011788968 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_2011788968.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_2011788968;
-        } 
+        } //End block
 Key var3B6EEF5A41015CBF2E819B3EDDAF7B55_540510363 =         spiImpl.engineUnwrap(wrappedKey, wrappedKeyAlgorithm,
                 wrappedKeyType);
         var3B6EEF5A41015CBF2E819B3EDDAF7B55_540510363.addTaint(taint);
         return var3B6EEF5A41015CBF2E819B3EDDAF7B55_540510363;
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (mode != UNWRAP_MODE) {
+            //throw new IllegalStateException();
+        //}
+        //return spiImpl.engineUnwrap(wrappedKey, wrappedKeyAlgorithm,
+                //wrappedKeyType);
     }
 
     

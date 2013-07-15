@@ -1,6 +1,6 @@
 package android.text.method;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,20 +51,19 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
         mOptions = options;
         mInsert = insert;
         mInflater = LayoutInflater.from(context);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mView = view;
+        //mText = text;
+        //mOptions = options;
+        //mInsert = insert;
+        //mInflater = LayoutInflater.from(context);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.446 -0400", hash_original_method = "E0AAB102B3ED3AF261F94C84219E8ECE", hash_generated_method = "1E82034CB2BEE30118EE08B066C35E97")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(savedInstanceState.getTaint());
         super.onCreate(savedInstanceState);
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -77,38 +76,36 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
         grid.setOnItemClickListener(this);
         mCancelButton = (Button) findViewById(R.id.cancel);
         mCancelButton.setOnClickListener(this);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onCreate(savedInstanceState);
+        //WindowManager.LayoutParams params = getWindow().getAttributes();
+        //params.token = mView.getApplicationWindowToken();
+        //params.type = params.TYPE_APPLICATION_ATTACHED_DIALOG;
+        //params.flags = params.flags | Window.FEATURE_NO_TITLE;
+        //setContentView(R.layout.character_picker);
+        //GridView grid = (GridView) findViewById(R.id.characterPicker);
+        //grid.setAdapter(new OptionsAdapter(getContext()));
+        //grid.setOnItemClickListener(this);
+        //mCancelButton = (Button) findViewById(R.id.cancel);
+        //mCancelButton.setOnClickListener(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.446 -0400", hash_original_method = "EEFA1E961CDBB58662ABBCDF41F1AD2A", hash_generated_method = "170B01C4C4FF962B5E92C6E55F29F411")
     public void onItemClick(AdapterView parent, View view, int position, long id) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(id);
         addTaint(position);
         addTaint(view.getTaint());
         addTaint(parent.getTaint());
         String result = String.valueOf(mOptions.charAt(position));
         replaceCharacterAndClose(result);
-        
-        
-        
+        // ---------- Original Method ----------
+        //String result = String.valueOf(mOptions.charAt(position));
+        //replaceCharacterAndClose(result);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.447 -0400", hash_original_method = "889637D7E351CCF8A657470FC2914F00", hash_generated_method = "2C0F226862C0876664AAF28FB22531CB")
     private void replaceCharacterAndClose(CharSequence replace) {
         addTaint(replace.getTaint());
@@ -116,45 +113,44 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
     if(mInsert || selEnd == 0)        
         {
             mText.insert(selEnd, replace);
-        } 
+        } //End block
         else
         {
             mText.replace(selEnd - 1, selEnd, replace);
-        } 
+        } //End block
         dismiss();
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int selEnd = Selection.getSelectionEnd(mText);
+        //if (mInsert || selEnd == 0) {
+            //mText.insert(selEnd, replace);
+        //} else {
+            //mText.replace(selEnd - 1, selEnd, replace);
+        //}
+        //dismiss();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.448 -0400", hash_original_method = "3104127334A31B48E0F0795A4514B3FB", hash_generated_method = "53A278E2106857ED38FA4656E65A914A")
     public void onClick(View v) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(v.getTaint());
     if(v == mCancelButton)        
         {
             dismiss();
-        } 
+        } //End block
         else
     if(v instanceof Button)        
         {
             CharSequence result = ((Button) v).getText();
             replaceCharacterAndClose(result);
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (v == mCancelButton) {
+            //dismiss();
+        //} else if (v instanceof Button) {
+            //CharSequence result = ((Button) v).getText();
+            //replaceCharacterAndClose(result);
+        //}
     }
 
     
@@ -164,7 +160,7 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
         public  OptionsAdapter(Context context) {
             super();
             addTaint(context.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -180,12 +176,12 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
 View var73F89FAC8F369DF0913D10C37C1E0EA1_2142933024 =             b;
             var73F89FAC8F369DF0913D10C37C1E0EA1_2142933024.addTaint(taint);
             return var73F89FAC8F369DF0913D10C37C1E0EA1_2142933024;
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //Button b = (Button)
+                //mInflater.inflate(R.layout.character_picker_button, null);
+            //b.setText(String.valueOf(mOptions.charAt(position)));
+            //b.setOnClickListener(CharacterPickerDialog.this);
+            //return b;
         }
 
         
@@ -194,8 +190,8 @@ View var73F89FAC8F369DF0913D10C37C1E0EA1_2142933024 =             b;
             int varEA81FFBB75952D26DCB258293ABA8690_23201128 = (mOptions.length());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1303889787 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1303889787;
-            
-            
+            // ---------- Original Method ----------
+            //return mOptions.length();
         }
 
         
@@ -205,8 +201,8 @@ View var73F89FAC8F369DF0913D10C37C1E0EA1_2142933024 =             b;
 Object var87AE1E24DC46164AD61DEEB89268C372_1828847814 =             String.valueOf(mOptions.charAt(position));
             var87AE1E24DC46164AD61DEEB89268C372_1828847814.addTaint(taint);
             return var87AE1E24DC46164AD61DEEB89268C372_1828847814;
-            
-            
+            // ---------- Original Method ----------
+            //return String.valueOf(mOptions.charAt(position));
         }
 
         
@@ -216,8 +212,8 @@ Object var87AE1E24DC46164AD61DEEB89268C372_1828847814 =             String.value
             long var4757FE07FD492A8BE0EA6A760D683D6E_608946199 = (position);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_589757558 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_589757558;
-            
-            
+            // ---------- Original Method ----------
+            //return position;
         }
 
         

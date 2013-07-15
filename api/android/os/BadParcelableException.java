@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class BadParcelableException extends AndroidRuntimeException {
     public  BadParcelableException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -20,7 +20,7 @@ public class BadParcelableException extends AndroidRuntimeException {
     public  BadParcelableException(Exception cause) {
         super(cause);
         addTaint(cause.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

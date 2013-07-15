@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,12 +36,12 @@ class RilMessageDecoder extends StateMachine {
         setInitialState(mStateStart);
         mCaller = caller;
         mCmdParamsFactory = CommandParamsFactory.getInstance(this, fh);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //addState(mStateStart);
+        //addState(mStateCmdParamsReady);
+        //setInitialState(mStateStart);
+        //mCaller = caller;
+        //mCmdParamsFactory = CommandParamsFactory.getInstance(this, fh);
     }
 
     
@@ -60,10 +60,10 @@ class RilMessageDecoder extends StateMachine {
         Message msg = obtainMessage(CMD_START);
         msg.obj = rilMsg;
         sendMessage(msg);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = obtainMessage(CMD_START);
+        //msg.obj = rilMsg;
+        //sendMessage(msg);
     }
 
     
@@ -75,11 +75,11 @@ class RilMessageDecoder extends StateMachine {
         msg.arg1 = resCode.value();
         msg.obj = cmdParams;
         sendMessage(msg);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = obtainMessage(RilMessageDecoder.CMD_PARAMS_READY);
+        //msg.arg1 = resCode.value();
+        //msg.obj = cmdParams;
+        //sendMessage(msg);
     }
 
     
@@ -89,10 +89,10 @@ class RilMessageDecoder extends StateMachine {
         Message msg = mCaller.obtainMessage(CatService.MSG_ID_RIL_MSG_DECODED,
                 new RilMessage(rilMsg));
         msg.sendToTarget();
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //Message msg = mCaller.obtainMessage(CatService.MSG_ID_RIL_MSG_DECODED,
+                //new RilMessage(rilMsg));
+        //msg.sendToTarget();
     }
 
     
@@ -114,24 +114,24 @@ switch(rilMsg.mId){
         try 
         {
             rawData = IccUtils.hexStringToBytes((String) rilMsg.mData);
-        } 
+        } //End block
         catch (Exception e)
         {
             CatLog.d(this, "decodeMessageParams dropping zombie messages");
             decodingStarted = false;
             break;
-        } 
+        } //End block
         try 
         {
             mCmdParamsFactory.make(BerTlv.decode(rawData));
             decodingStarted = true;
-        } 
+        } //End block
         catch (ResultException e)
         {
             mCurrentRilMessage.mResCode = e.result();
             sendCmdForExecution(mCurrentRilMessage);
             decodingStarted = false;
-        } 
+        } //End block
         break;
         default:
         decodingStarted = false;
@@ -139,8 +139,8 @@ switch(rilMsg.mId){
 }        boolean var6D17ABC339EAFE96290A43067C1AF649_11352305 = (decodingStarted);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1890350850 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1890350850;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -149,7 +149,7 @@ switch(rilMsg.mId){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.471 -0400", hash_original_method = "C10CD2CE94A1CED10886036D2E1F3CE9", hash_generated_method = "C10CD2CE94A1CED10886036D2E1F3CE9")
         public StateStart ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -162,26 +162,26 @@ switch(rilMsg.mId){
     if(decodeMessageParams((RilMessage)msg.obj))                
                 {
                     transitionTo(mStateCmdParamsReady);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 CatLog.d(this, "StateStart unexpected expecting START=" +
                          CMD_START + " got " + msg.what);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_58699211 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_914771966 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_914771966;
-            
-            
-                
-                    
-                
-            
-                
-                         
-            
-            
+            // ---------- Original Method ----------
+            //if (msg.what == CMD_START) {
+                //if (decodeMessageParams((RilMessage)msg.obj)) {
+                    //transitionTo(mStateCmdParamsReady);
+                //}
+            //} else {
+                //CatLog.d(this, "StateStart unexpected expecting START=" +
+                         //CMD_START + " got " + msg.what);
+            //}
+            //return true;
         }
 
         
@@ -194,7 +194,7 @@ switch(rilMsg.mId){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.472 -0400", hash_original_method = "B99964FB7C360B547C7ED4636595450B", hash_generated_method = "B99964FB7C360B547C7ED4636595450B")
         public StateCmdParamsReady ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -208,28 +208,28 @@ switch(rilMsg.mId){
                 mCurrentRilMessage.mData = msg.obj;
                 sendCmdForExecution(mCurrentRilMessage);
                 transitionTo(mStateStart);
-            } 
+            } //End block
             else
             {
                 CatLog.d(this, "StateCmdParamsReady expecting CMD_PARAMS_READY="
                          + CMD_PARAMS_READY + " got " + msg.what);
                 deferMessage(msg);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_158497232 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1553632504 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1553632504;
-            
-            
-                
-                
-                
-                
-            
-                
-                         
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (msg.what == CMD_PARAMS_READY) {
+                //mCurrentRilMessage.mResCode = ResultCode.fromInt(msg.arg1);
+                //mCurrentRilMessage.mData = msg.obj;
+                //sendCmdForExecution(mCurrentRilMessage);
+                //transitionTo(mStateStart);
+            //} else {
+                //CatLog.d(this, "StateCmdParamsReady expecting CMD_PARAMS_READY="
+                         //+ CMD_PARAMS_READY + " got " + msg.what);
+                //deferMessage(msg);
+            //}
+            //return true;
         }
 
         

@@ -1,6 +1,6 @@
 package javax.xml.transform;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,8 +13,8 @@ public class TransformerFactoryConfigurationError extends Error {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.080 -0400", hash_original_method = "B5236C2B50936EBB19164E0470E786D0", hash_generated_method = "4FA1D40EBB8466CB6249FD2FE24764E4")
     public  TransformerFactoryConfigurationError() {
         this.exception = null;
-        
-        
+        // ---------- Original Method ----------
+        //this.exception = null;
     }
 
     
@@ -23,8 +23,8 @@ public class TransformerFactoryConfigurationError extends Error {
         super(msg);
         addTaint(msg.getTaint());
         this.exception = null;
-        
-        
+        // ---------- Original Method ----------
+        //this.exception = null;
     }
 
     
@@ -32,8 +32,8 @@ public class TransformerFactoryConfigurationError extends Error {
     public  TransformerFactoryConfigurationError(Exception e) {
         super(e.toString());
         this.exception = e;
-        
-        
+        // ---------- Original Method ----------
+        //this.exception = e;
     }
 
     
@@ -42,8 +42,8 @@ public class TransformerFactoryConfigurationError extends Error {
         super(msg);
         addTaint(msg.getTaint());
         this.exception = e;
-        
-        
+        // ---------- Original Method ----------
+        //this.exception = e;
     }
 
     
@@ -55,27 +55,26 @@ public class TransformerFactoryConfigurationError extends Error {
 String var56A9A9C4DE0617B8FC85BA86A88F5292_1097530725 =             exception.getMessage();
             var56A9A9C4DE0617B8FC85BA86A88F5292_1097530725.addTaint(taint);
             return var56A9A9C4DE0617B8FC85BA86A88F5292_1097530725;
-        } 
+        } //End block
 String varFD182D7074F3848E773A38B067BBB880_357021919 =         message;
         varFD182D7074F3848E773A38B067BBB880_357021919.addTaint(taint);
         return varFD182D7074F3848E773A38B067BBB880_357021919;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String message = super.getMessage();
+        //if ((message == null) && (exception != null)) {
+            //return exception.getMessage();
+        //}
+        //return message;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.083 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "FCC4CBAA80A02950527E83B03A6EBE10")
     public Exception getException() {
 Exception varB0A8CAD4B1C89FFC19A72F5757E92C21_1430152313 =         exception;
         varB0A8CAD4B1C89FFC19A72F5757E92C21_1430152313.addTaint(taint);
         return varB0A8CAD4B1C89FFC19A72F5757E92C21_1430152313;
-        
-        
+        // ---------- Original Method ----------
+        //return exception;
     }
 
     

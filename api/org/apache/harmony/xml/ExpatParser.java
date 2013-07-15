@@ -1,6 +1,6 @@
 package org.apache.harmony.xml;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -64,15 +64,15 @@ class ExpatParser {
             this.encoding,
             processNamespaces
         );
-        
-        
-        
-        
-        
-        
-            
-            
-        
+        // ---------- Original Method ----------
+        //this.publicId = publicId;
+        //this.systemId = systemId;
+        //this.xmlReader = xmlReader;
+        //this.encoding = encoding == null ? DEFAULT_ENCODING : encoding;
+        //this.pointer = initialize(
+            //this.encoding,
+            //processNamespaces
+        //);
     }
 
     
@@ -84,16 +84,15 @@ class ExpatParser {
         this.pointer = pointer;
         this.systemId = systemId;
         this.publicId = publicId;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.encoding = encoding;
+        //this.xmlReader = xmlReader;
+        //this.pointer = pointer;
+        //this.systemId = systemId;
+        //this.publicId = publicId;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.937 -0400", hash_original_method = "650F081790BC185B19FA56BA8A79A45A", hash_generated_method = "9CE0A0CCED5D97504D911EB3DABE69D7")
     private int initialize(String encoding, boolean namespacesEnabled) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_413621417 = getTaintInt();
@@ -111,7 +110,7 @@ class ExpatParser {
     if(contentHandler == null)        
         {
             return;
-        } 
+        } //End block
         try 
         {
             inStartElement = true;
@@ -119,29 +118,29 @@ class ExpatParser {
             this.attributeCount = attributeCount;
             contentHandler.startElement(
                     uri, localName, qName, this.attributes);
-        } 
+        } //End block
         finally 
         {
             inStartElement = false;
             this.attributeCount = -1;
             this.attributePointer = 0;
-        } 
-        
-        
-        
-            
-        
-        
-            
-            
-            
-            
-                    
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ContentHandler contentHandler = xmlReader.contentHandler;
+        //if (contentHandler == null) {
+            //return;
+        //}
+        //try {
+            //inStartElement = true;
+            //this.attributePointer = attributePointer;
+            //this.attributeCount = attributeCount;
+            //contentHandler.startElement(
+                    //uri, localName, qName, this.attributes);
+        //} finally {
+            //inStartElement = false;
+            //this.attributeCount = -1;
+            //this.attributePointer = 0;
+        //}
     }
 
     
@@ -154,12 +153,12 @@ class ExpatParser {
     if(contentHandler != null)        
         {
             contentHandler.endElement(uri, localName, qName);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ContentHandler contentHandler = xmlReader.contentHandler;
+        //if (contentHandler != null) {
+            //contentHandler.endElement(uri, localName, qName);
+        //}
     }
 
     
@@ -171,12 +170,12 @@ class ExpatParser {
     if(contentHandler != null)        
         {
             contentHandler.characters(text, 0, length);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ContentHandler contentHandler = xmlReader.contentHandler;
+        //if (contentHandler != null) {
+            //contentHandler.characters(text, 0, length);
+        //}
     }
 
     
@@ -188,12 +187,12 @@ class ExpatParser {
     if(lexicalHandler != null)        
         {
             lexicalHandler.comment(text, 0, length);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
+        //if (lexicalHandler != null) {
+            //lexicalHandler.comment(text, 0, length);
+        //}
     }
 
     
@@ -203,12 +202,12 @@ class ExpatParser {
     if(lexicalHandler != null)        
         {
             lexicalHandler.startCDATA();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
+        //if (lexicalHandler != null) {
+            //lexicalHandler.startCDATA();
+        //}
     }
 
     
@@ -218,12 +217,12 @@ class ExpatParser {
     if(lexicalHandler != null)        
         {
             lexicalHandler.endCDATA();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
+        //if (lexicalHandler != null) {
+            //lexicalHandler.endCDATA();
+        //}
     }
 
     
@@ -235,12 +234,12 @@ class ExpatParser {
     if(contentHandler != null)        
         {
             contentHandler.startPrefixMapping(prefix, uri);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ContentHandler contentHandler = xmlReader.contentHandler;
+        //if (contentHandler != null) {
+            //contentHandler.startPrefixMapping(prefix, uri);
+        //}
     }
 
     
@@ -251,12 +250,12 @@ class ExpatParser {
     if(contentHandler != null)        
         {
             contentHandler.endPrefixMapping(prefix);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ContentHandler contentHandler = xmlReader.contentHandler;
+        //if (contentHandler != null) {
+            //contentHandler.endPrefixMapping(prefix);
+        //}
     }
 
     
@@ -269,12 +268,12 @@ class ExpatParser {
     if(lexicalHandler != null)        
         {
             lexicalHandler.startDTD(name, publicId, systemId);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
+        //if (lexicalHandler != null) {
+            //lexicalHandler.startDTD(name, publicId, systemId);
+        //}
     }
 
     
@@ -284,12 +283,12 @@ class ExpatParser {
     if(lexicalHandler != null)        
         {
             lexicalHandler.endDTD();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //LexicalHandler lexicalHandler = xmlReader.lexicalHandler;
+        //if (lexicalHandler != null) {
+            //lexicalHandler.endDTD();
+        //}
     }
 
     
@@ -301,12 +300,12 @@ class ExpatParser {
     if(contentHandler != null)        
         {
             contentHandler.processingInstruction(target, data);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ContentHandler contentHandler = xmlReader.contentHandler;
+        //if (contentHandler != null) {
+            //contentHandler.processingInstruction(target, data);
+        //}
     }
 
     
@@ -319,12 +318,12 @@ class ExpatParser {
     if(dtdHandler != null)        
         {
             dtdHandler.notationDecl(name, publicId, systemId);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //DTDHandler dtdHandler = xmlReader.dtdHandler;
+        //if (dtdHandler != null) {
+            //dtdHandler.notationDecl(name, publicId, systemId);
+        //}
     }
 
     
@@ -338,12 +337,12 @@ class ExpatParser {
     if(dtdHandler != null)        
         {
             dtdHandler.unparsedEntityDecl(name, publicId, systemId, notationName);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //DTDHandler dtdHandler = xmlReader.dtdHandler;
+        //if (dtdHandler != null) {
+            //dtdHandler.unparsedEntityDecl(name, publicId, systemId, notationName);
+        //}
     }
 
     
@@ -356,7 +355,7 @@ class ExpatParser {
     if(entityResolver == null)        
         {
             return;
-        } 
+        } //End block
     if(this.systemId != null)        
         {
             try 
@@ -367,20 +366,20 @@ class ExpatParser {
                     URI baseUri = new URI(this.systemId);
                     systemUri = baseUri.resolve(systemUri);
                     systemId = systemUri.toString();
-                } 
-            } 
+                } //End block
+            } //End block
             catch (Exception e)
             {
                 System.logI("Could not resolve '" + systemId + "' relative to"
                         + " '" + this.systemId + "' at " + locator, e);
-            } 
-        } 
+            } //End block
+        } //End block
         InputSource inputSource = entityResolver.resolveEntity(
                 publicId, systemId);
     if(inputSource == null)        
         {
             return;
-        } 
+        } //End block
         String encoding = pickEncoding(inputSource);
         int pointer = createEntityParser(this.pointer, context);
         try 
@@ -389,13 +388,13 @@ class ExpatParser {
                     pointer, inputSource.getPublicId(),
                     inputSource.getSystemId());
             parseExternalEntity(entityParser, inputSource);
-        } 
+        } //End block
         finally 
         {
             releaseParser(pointer);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -408,18 +407,18 @@ class ExpatParser {
 String varE5E4C40030DC8296471A4093D98EB493_963449037 =             CHARACTER_ENCODING;
             varE5E4C40030DC8296471A4093D98EB493_963449037.addTaint(taint);
             return varE5E4C40030DC8296471A4093D98EB493_963449037;
-        } 
+        } //End block
         String encoding = inputSource.getEncoding();
 String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null ? DEFAULT_ENCODING : encoding;
         var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706.addTaint(taint);
         return var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Reader reader = inputSource.getCharacterStream();
+        //if (reader != null) {
+            //return CHARACTER_ENCODING;
+        //}
+        //String encoding = inputSource.getEncoding();
+        //return encoding == null ? DEFAULT_ENCODING : encoding;
     }
 
     
@@ -436,13 +435,13 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
                 entityParser.append("<externalEntity>");
                 entityParser.parseFragment(reader);
                 entityParser.append("</externalEntity>");
-            } 
+            } //End block
             finally 
             {
                 IoUtils.closeQuietly(reader);
-            } 
+            } //End block
             return;
-        } 
+        } //End block
         InputStream in = inputSource.getByteStream();
     if(in != null)        
         {
@@ -453,20 +452,20 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
                 entityParser.parseFragment(in);
                 entityParser.append("</externalEntity>"
                         .getBytes(entityParser.encoding));
-            } 
+            } //End block
             finally 
             {
                 IoUtils.closeQuietly(in);
-            } 
+            } //End block
             return;
-        } 
+        } //End block
         String systemId = inputSource.getSystemId();
     if(systemId == null)        
         {
             ParseException varC1AF1074593A63025EF38A6A32C8B37B_1136053295 = new ParseException("No input specified.", locator);
             varC1AF1074593A63025EF38A6A32C8B37B_1136053295.addTaint(taint);
             throw varC1AF1074593A63025EF38A6A32C8B37B_1136053295;
-        } 
+        } //End block
         in = openUrl(systemId);
         try 
         {
@@ -475,13 +474,13 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
             entityParser.parseFragment(in);
             entityParser.append("</externalEntity>"
                     .getBytes(entityParser.encoding));
-        } 
+        } //End block
         finally 
         {
             IoUtils.closeQuietly(in);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -497,23 +496,22 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         try 
         {
             appendString(this.pointer, xml, false);
-        } 
+        } //End block
         catch (ExpatException e)
         {
             ParseException var5874124DE183BF3C29151AAB74946606_677013104 = new ParseException(e.getMessage(), this.locator);
             var5874124DE183BF3C29151AAB74946606_677013104.addTaint(taint);
             throw var5874124DE183BF3C29151AAB74946606_677013104;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //appendString(this.pointer, xml, false);
+        //} catch (ExpatException e) {
+            //throw new ParseException(e.getMessage(), this.locator);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.947 -0400", hash_original_method = "9EF978047B32CC4B7F73DD218F12B5B2", hash_generated_method = "0CB3CD0452C02B8947B440EA2E3A4CB7")
     private void appendString(int pointer, String xml, boolean isFinal) throws SAXException, ExpatException {
     }
@@ -527,23 +525,22 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         try 
         {
             appendChars(this.pointer, xml, offset, length);
-        } 
+        } //End block
         catch (ExpatException e)
         {
             ParseException var5874124DE183BF3C29151AAB74946606_1182327950 = new ParseException(e.getMessage(), this.locator);
             var5874124DE183BF3C29151AAB74946606_1182327950.addTaint(taint);
             throw var5874124DE183BF3C29151AAB74946606_1182327950;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //appendChars(this.pointer, xml, offset, length);
+        //} catch (ExpatException e) {
+            //throw new ParseException(e.getMessage(), this.locator);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.948 -0400", hash_original_method = "49A4641A93DAB70A1876B4EB02B18B5D", hash_generated_method = "B6F7ED5CE0B1C737647F06F2C3F6738B")
     private void appendChars(int pointer, char[] xml, int offset,
             int length) throws SAXException, ExpatException {
@@ -554,8 +551,8 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
      void append(byte[] xml) throws SAXException {
         addTaint(xml[0]);
         append(xml, 0, xml.length);
-        
-        
+        // ---------- Original Method ----------
+        //append(xml, 0, xml.length);
     }
 
     
@@ -567,23 +564,22 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         try 
         {
             appendBytes(this.pointer, xml, offset, length);
-        } 
+        } //End block
         catch (ExpatException e)
         {
             ParseException var5874124DE183BF3C29151AAB74946606_416254978 = new ParseException(e.getMessage(), this.locator);
             var5874124DE183BF3C29151AAB74946606_416254978.addTaint(taint);
             throw var5874124DE183BF3C29151AAB74946606_416254978;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //appendBytes(this.pointer, xml, offset, length);
+        //} catch (ExpatException e) {
+            //throw new ParseException(e.getMessage(), this.locator);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.948 -0400", hash_original_method = "F0951DAA750D508CD972B921A6749C41", hash_generated_method = "5BC4C72BC665C8EA47A950E46B17C0AF")
     private void appendBytes(int pointer, byte[] xml, int offset,
             int length) throws SAXException, ExpatException {
@@ -598,11 +594,11 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         parseFragment(in);
         finish();
         endDocument();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //startDocument();
+        //parseFragment(in);
+        //finish();
+        //endDocument();
     }
 
     
@@ -613,11 +609,11 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         parseFragment(in);
         finish();
         endDocument();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //startDocument();
+        //parseFragment(in);
+        //finish();
+        //endDocument();
     }
 
     
@@ -632,24 +628,24 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
             try 
             {
                 appendChars(this.pointer, buffer, 0, length);
-            } 
+            } //End block
             catch (ExpatException e)
             {
                 ParseException var8F95C304B462C82240A1207A1D04123E_106895822 = new ParseException(e.getMessage(), locator);
                 var8F95C304B462C82240A1207A1D04123E_106895822.addTaint(taint);
                 throw var8F95C304B462C82240A1207A1D04123E_106895822;
-            } 
-        } 
-        
-        
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //char[] buffer = new char[BUFFER_SIZE / 2];
+        //int length;
+        //while ((length = in.read(buffer)) != -1) {
+            //try {
+                //appendChars(this.pointer, buffer, 0, length);
+            //} catch (ExpatException e) {
+                //throw new ParseException(e.getMessage(), locator);
+            //}
+        //}
     }
 
     
@@ -664,24 +660,24 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
             try 
             {
                 appendBytes(this.pointer, buffer, 0, length);
-            } 
+            } //End block
             catch (ExpatException e)
             {
                 ParseException var5874124DE183BF3C29151AAB74946606_704171939 = new ParseException(e.getMessage(), this.locator);
                 var5874124DE183BF3C29151AAB74946606_704171939.addTaint(taint);
                 throw var5874124DE183BF3C29151AAB74946606_704171939;
-            } 
-        } 
-        
-        
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //byte[] buffer = new byte[BUFFER_SIZE];
+        //int length;
+        //while ((length = in.read(buffer)) != -1) {
+            //try {
+                //appendBytes(this.pointer, buffer, 0, length);
+            //} catch (ExpatException e) {
+                //throw new ParseException(e.getMessage(), this.locator);
+            //}
+        //}
     }
 
     
@@ -692,13 +688,13 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         {
             contentHandler.setDocumentLocator(this.locator);
             contentHandler.startDocument();
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ContentHandler contentHandler = xmlReader.contentHandler;
+        //if (contentHandler != null) {
+            //contentHandler.setDocumentLocator(this.locator);
+            //contentHandler.startDocument();
+        //}
     }
 
     
@@ -709,13 +705,13 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
     if(contentHandler != null)        
         {
             contentHandler.endDocument();
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ContentHandler contentHandler;
+        //contentHandler = xmlReader.contentHandler;
+        //if (contentHandler != null) {
+            //contentHandler.endDocument();
+        //}
     }
 
     
@@ -724,19 +720,19 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         try 
         {
             appendString(this.pointer, "", true);
-        } 
+        } //End block
         catch (ExpatException e)
         {
             ParseException var5874124DE183BF3C29151AAB74946606_427803643 = new ParseException(e.getMessage(), this.locator);
             var5874124DE183BF3C29151AAB74946606_427803643.addTaint(taint);
             throw var5874124DE183BF3C29151AAB74946606_427803643;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //appendString(this.pointer, "", true);
+        //} catch (ExpatException e) {
+            //throw new ParseException(e.getMessage(), this.locator);
+        //}
     }
 
     
@@ -749,25 +745,24 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
             {
                 release(this.pointer);
                 this.pointer = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (this.pointer != 0) {
+                //release(this.pointer);
+                //this.pointer = 0;
+            //}
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.950 -0400", hash_original_method = "B8FAFDCBEF6ED1DBF49858CA951E344D", hash_generated_method = "FD20D872DD983AFC02175B6A41CA789F")
     private void release(int pointer) {
     }
@@ -788,8 +783,8 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         int var2CF1EB87B15DEA47CFCC310700ADEDDC_298144702 = (line(this.pointer));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077819702 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077819702;
-        
-        
+        // ---------- Original Method ----------
+        //return line(this.pointer);
     }
 
     
@@ -804,8 +799,8 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
         int varA078BC8EBE234197D458536C795E9041_823110758 = (column(this.pointer));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1124776718 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1124776718;
-        
-        
+        // ---------- Original Method ----------
+        //return column(this.pointer);
     }
 
     
@@ -822,27 +817,27 @@ String var63AB6DEE6A7CCCFF82CECD1524ECBA7B_2146857706 =         encoding == null
             IllegalStateException var3A070C66A81B187C37978C67B8B6D132_827832931 = new IllegalStateException(OUTSIDE_START_ELEMENT);
             var3A070C66A81B187C37978C67B8B6D132_827832931.addTaint(taint);
             throw var3A070C66A81B187C37978C67B8B6D132_827832931;
-        } 
+        } //End block
     if(attributeCount == 0)        
         {
 Attributes varF7DAA48B31E0CFA1B3B6BE9B1E4E7C5D_1430994432 =             ClonedAttributes.EMPTY;
             varF7DAA48B31E0CFA1B3B6BE9B1E4E7C5D_1430994432.addTaint(taint);
             return varF7DAA48B31E0CFA1B3B6BE9B1E4E7C5D_1430994432;
-        } 
+        } //End block
         int clonePointer = cloneAttributes(this.attributePointer, this.attributeCount);
 Attributes varAB62AE6AE1553E675DECC258C6F54114_571399245 =         new ClonedAttributes(pointer, clonePointer, attributeCount);
         varAB62AE6AE1553E675DECC258C6F54114_571399245.addTaint(taint);
         return varAB62AE6AE1553E675DECC258C6F54114_571399245;
-        
-        
-            
-        
-        
-            
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //if (!inStartElement) {
+            //throw new IllegalStateException(OUTSIDE_START_ELEMENT);
+        //}
+        //if (attributeCount == 0) {
+            //return ClonedAttributes.EMPTY;
+        //}
+        //int clonePointer
+                //= cloneAttributes(this.attributePointer, this.attributeCount);
+        //return new ClonedAttributes(pointer, clonePointer, attributeCount);
     }
 
     
@@ -884,46 +879,43 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_571399245 =         new ClonedAtt
             this.parserPointer = parserPointer;
             this.pointer = pointer;
             this.length = length;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.parserPointer = parserPointer;
+            //this.pointer = pointer;
+            //this.length = length;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.952 -0400", hash_original_method = "81345E38E6C55A28DE606E0BCA6E5F93", hash_generated_method = "EC8D7AF00F2E5FF0026A8A010704B5F4")
         @Override
         public int getParserPointer() {
             int var9AA1C37CDAA556499B7A2E2FBA882768_2132522743 = (this.parserPointer);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422252702 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422252702;
-            
-            
+            // ---------- Original Method ----------
+            //return this.parserPointer;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.952 -0400", hash_original_method = "8BF0A90E7356097362ADB7AB9898D2BC", hash_generated_method = "9CAB4A1BCB3438414EC6957E0DB0F5E2")
         @Override
         public int getPointer() {
             int varCCAC8A66D468E2522611BE86933CC0D9_1013945056 = (pointer);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117000297 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117000297;
-            
-            
+            // ---------- Original Method ----------
+            //return pointer;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.952 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "3A3B4CF36FFB9288A1F75BD1422E8C42")
         @Override
         public int getLength() {
             int var2FA47F7C65FEC19CC163B195725E3844_844362409 = (length);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814181448 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814181448;
-            
-            
+            // ---------- Original Method ----------
+            //return length;
         }
 
         
@@ -936,21 +928,21 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_571399245 =         new ClonedAtt
                 {
                     freeAttributes(pointer);
                     pointer = 0;
-                } 
-            } 
+                } //End block
+            } //End block
             finally 
             {
                 super.finalize();
-            } 
-            
-            
-                
-                    
-                    
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //if (pointer != 0) {
+                    //freeAttributes(pointer);
+                    //pointer = 0;
+                //}
+            //} finally {
+                //super.finalize();
+            //}
         }
 
         
@@ -966,7 +958,7 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_571399245 =         new ClonedAtt
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.952 -0400", hash_original_method = "64DD51F37170009BB48F8E01805F6CAF", hash_generated_method = "64DD51F37170009BB48F8E01805F6CAF")
         public ExpatLocator ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -975,8 +967,8 @@ Attributes varAB62AE6AE1553E675DECC258C6F54114_571399245 =         new ClonedAtt
 String var76991CCBEF027A0871CF61642EBA53AB_1532967467 =             publicId;
             var76991CCBEF027A0871CF61642EBA53AB_1532967467.addTaint(taint);
             return var76991CCBEF027A0871CF61642EBA53AB_1532967467;
-            
-            
+            // ---------- Original Method ----------
+            //return publicId;
         }
 
         
@@ -985,8 +977,8 @@ String var76991CCBEF027A0871CF61642EBA53AB_1532967467 =             publicId;
 String varB7D0727ACC7388EA86587212DD1C6E9F_1621354621 =             systemId;
             varB7D0727ACC7388EA86587212DD1C6E9F_1621354621.addTaint(taint);
             return varB7D0727ACC7388EA86587212DD1C6E9F_1621354621;
-            
-            
+            // ---------- Original Method ----------
+            //return systemId;
         }
 
         
@@ -995,8 +987,8 @@ String varB7D0727ACC7388EA86587212DD1C6E9F_1621354621 =             systemId;
             int var0AA04E944161FE3CFAF27BB80AE27E09_1054484296 = (line());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1832956288 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1832956288;
-            
-            
+            // ---------- Original Method ----------
+            //return line();
         }
 
         
@@ -1005,8 +997,8 @@ String varB7D0727ACC7388EA86587212DD1C6E9F_1621354621 =             systemId;
             int varB8C8ADC9B3962016014C4E201BD65129_1284327812 = (column());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799809435 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799809435;
-            
-            
+            // ---------- Original Method ----------
+            //return column();
         }
 
         
@@ -1018,10 +1010,10 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
                 + ", column: " + getColumnNumber() + "]";
             varA2481285DD560B3E99E863747DEB930A_1362308630.addTaint(taint);
             return varA2481285DD560B3E99E863747DEB930A_1362308630;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "Locator[publicId: " + publicId + ", systemId: " + systemId
+                //+ ", line: " + getLineNumber()
+                //+ ", column: " + getColumnNumber() + "]";
         }
 
         
@@ -1034,7 +1026,7 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.953 -0400", hash_original_method = "ACF7E0CCF646D645B704B296EF29F814", hash_generated_method = "ACF7E0CCF646D645B704B296EF29F814")
         public CurrentAttributes ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1044,8 +1036,8 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
             int varCCAC8A66D468E2522611BE86933CC0D9_441343659 = (pointer);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851212485 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851212485;
-            
-            
+            // ---------- Original Method ----------
+            //return pointer;
         }
 
         
@@ -1057,15 +1049,15 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
                 IllegalStateException var3A070C66A81B187C37978C67B8B6D132_1281414535 = new IllegalStateException(OUTSIDE_START_ELEMENT);
                 var3A070C66A81B187C37978C67B8B6D132_1281414535.addTaint(taint);
                 throw var3A070C66A81B187C37978C67B8B6D132_1281414535;
-            } 
+            } //End block
             int var1264B9C21D560E7989A32741BC858885_1685967995 = (attributePointer);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_451924480 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_451924480;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (!inStartElement) {
+                //throw new IllegalStateException(OUTSIDE_START_ELEMENT);
+            //}
+            //return attributePointer;
         }
 
         
@@ -1077,15 +1069,15 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
                 IllegalStateException var3A070C66A81B187C37978C67B8B6D132_1635009534 = new IllegalStateException(OUTSIDE_START_ELEMENT);
                 var3A070C66A81B187C37978C67B8B6D132_1635009534.addTaint(taint);
                 throw var3A070C66A81B187C37978C67B8B6D132_1635009534;
-            } 
+            } //End block
             int varBB16AB716A8B7609C0ECC6FB65BADCBC_2066467583 = (attributeCount);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1252251257 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1252251257;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (!inStartElement) {
+                //throw new IllegalStateException(OUTSIDE_START_ELEMENT);
+            //}
+            //return attributeCount;
         }
 
         
@@ -1100,7 +1092,7 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
             super(makeMessage(message, locator), locator);
             addTaint(locator.getTaint());
             addTaint(message.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -1135,7 +1127,7 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
             addTaint(pointer);
             addTaint(xmlReader.getTaint());
             addTaint(encoding.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -1152,12 +1144,12 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
             {
                 super.startElement(uri, localName, qName, attributePointer,
                         attributeCount);
-            } 
-            
-            
-                
-                        
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (depth++ > 0) {
+                //super.startElement(uri, localName, qName, attributePointer,
+                        //attributeCount);
+            //}
         }
 
         
@@ -1170,20 +1162,19 @@ String varA2481285DD560B3E99E863747DEB930A_1362308630 =             "Locator[pub
     if(--depth > 0)            
             {
                 super.endElement(uri, localName, qName);
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (--depth > 0) {
+                //super.endElement(uri, localName, qName);
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.954 -0400", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "A2D881C6AFC253ADFFDC806313520307")
         @Override
         @SuppressWarnings("FinalizeDoesntCallSuperFinalize")
         protected synchronized void finalize() throws Throwable {
-            
+            // ---------- Original Method ----------
         }
 
         

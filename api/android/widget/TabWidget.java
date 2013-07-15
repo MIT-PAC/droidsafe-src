@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,7 +51,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     public  TabWidget(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -60,7 +60,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
         this(context, attrs, com.android.internal.R.attr.tabWidgetStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -77,34 +77,33 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
         setRightStripDrawable(a.getDrawable(R.styleable.TabWidget_tabStripRight));
         a.recycle();
         initTabWidget();
-        
-        
-                
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final TypedArray a = context.obtainStyledAttributes(
+                //attrs, com.android.internal.R.styleable.TabWidget, defStyle, 0);
+        //setStripEnabled(a.getBoolean(R.styleable.TabWidget_tabStripEnabled, true));
+        //setLeftStripDrawable(a.getDrawable(R.styleable.TabWidget_tabStripLeft));
+        //setRightStripDrawable(a.getDrawable(R.styleable.TabWidget_tabStripRight));
+        //a.recycle();
+        //initTabWidget();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.188 -0400", hash_original_method = "D47B983401A0131B570217343158B99A", hash_generated_method = "8F2226E3253CFE95C847F8BCE75ECD4E")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(oldh);
         addTaint(oldw);
         addTaint(h);
         addTaint(w);
         mStripMoved = true;
         super.onSizeChanged(w, h, oldw, oldh);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStripMoved = true;
+        //super.onSizeChanged(w, h, oldw, oldh);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.188 -0400", hash_original_method = "6DB375E1DD97C7DB4A0C01A394FBBB39", hash_generated_method = "7403CC6CDDC154A69278F616FD88D037")
     @Override
     protected int getChildDrawingOrder(int childCount, int i) {
@@ -115,7 +114,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
             int var865C0C0B4AB0E063E5CAA3387C1A8741_398286463 = (i);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_151668780 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_151668780;
-        } 
+        } //End block
         else
         {
     if(i == childCount - 1)            
@@ -123,33 +122,33 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
                 int var7AB2B74DF2A193B0C68E51A8508488A0_1874502379 = (mSelectedTab);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1717703138 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1717703138;
-            } 
+            } //End block
             else
     if(i >= mSelectedTab)            
             {
                 int var11C19633C6D7B85EEC5EFAFDD655392D_2006771246 = (i + 1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1283006505 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1283006505;
-            } 
+            } //End block
             else
             {
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_1680034602 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_168879492 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_168879492;
-            } 
-        } 
-        
-        
-            
-        
-            
-                
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mSelectedTab == -1) {
+            //return i;
+        //} else {
+            //if (i == childCount - 1) {
+                //return mSelectedTab;
+            //} else if (i >= mSelectedTab) {
+                //return i + 1;
+            //} else {
+                //return i;
+            //}
+        //}
     }
 
     
@@ -164,30 +163,30 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
             {
                 mLeftStrip = resources.getDrawable(
                         com.android.internal.R.drawable.tab_bottom_left_v4);
-            } 
+            } //End block
     if(mRightStrip == null)            
             {
                 mRightStrip = resources.getDrawable(
                         com.android.internal.R.drawable.tab_bottom_right_v4);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(mLeftStrip == null)            
             {
                 mLeftStrip = resources.getDrawable(
                         com.android.internal.R.drawable.tab_bottom_left);
-            } 
+            } //End block
     if(mRightStrip == null)            
             {
                 mRightStrip = resources.getDrawable(
                         com.android.internal.R.drawable.tab_bottom_right);
-            } 
-        } 
+            } //End block
+        } //End block
         setFocusable(true);
         setOnFocusChangeListener(this);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -208,18 +207,18 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
                     totalWidth + mImposedTabWidths[childIndex], MeasureSpec.EXACTLY);
             heightMeasureSpec = MeasureSpec.makeMeasureSpec(mImposedTabsHeight,
                     MeasureSpec.EXACTLY);
-        } 
+        } //End block
         super.measureChildBeforeLayout(child, childIndex,
                 widthMeasureSpec, totalWidth, heightMeasureSpec, totalHeight);
-        
-        
-            
-                    
-            
-                    
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (!isMeasureWithLargestChildEnabled() && mImposedTabsHeight >= 0) {
+            //widthMeasureSpec = MeasureSpec.makeMeasureSpec(
+                    //totalWidth + mImposedTabWidths[childIndex], MeasureSpec.EXACTLY);
+            //heightMeasureSpec = MeasureSpec.makeMeasureSpec(mImposedTabsHeight,
+                    //MeasureSpec.EXACTLY);
+        //}
+        //super.measureChildBeforeLayout(child, childIndex,
+                //widthMeasureSpec, totalWidth, heightMeasureSpec, totalHeight);
     }
 
     
@@ -232,7 +231,7 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
         {
             super.measureHorizontal(widthMeasureSpec, heightMeasureSpec);
             return;
-        } 
+        } //End block
         final int unspecifiedWidth = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
         mImposedTabsHeight = -1;
         super.measureHorizontal(unspecifiedWidth, heightMeasureSpec);
@@ -247,13 +246,13 @@ for(int i = 0;i < count;i++)
     if(child.getVisibility() == GONE)                
                 continue;
                 childCount++;
-            } 
+            } //End block
     if(childCount > 0)            
             {
     if(mImposedTabWidths == null || mImposedTabWidths.length != count)                
                 {
                     mImposedTabWidths = new int[count];
-                } 
+                } //End block
 for(int i = 0;i < count;i++)
                 {
                     final View child = getChildAt(i);
@@ -266,12 +265,12 @@ for(int i = 0;i < count;i++)
                     extraWidth -= childWidth - newWidth;
                     childCount--;
                     mImposedTabsHeight = Math.max(mImposedTabsHeight, child.getMeasuredHeight());
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         super.measureHorizontal(widthMeasureSpec, heightMeasureSpec);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -281,8 +280,8 @@ for(int i = 0;i < count;i++)
 View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
         varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532.addTaint(taint);
         return varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532;
-        
-        
+        // ---------- Original Method ----------
+        //return getChildAt(index);
     }
 
     
@@ -291,8 +290,8 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
         int var9B10B38940134F290E8A5D1B402D3360_746936129 = (getChildCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_516843105 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_516843105;
-        
-        
+        // ---------- Original Method ----------
+        //return getChildCount();
     }
 
     
@@ -301,8 +300,8 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     public void setDividerDrawable(Drawable drawable) {
         addTaint(drawable.getTaint());
         super.setDividerDrawable(drawable);
-        
-        
+        // ---------- Original Method ----------
+        //super.setDividerDrawable(drawable);
     }
 
     
@@ -310,8 +309,8 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     public void setDividerDrawable(int resId) {
         addTaint(resId);
         setDividerDrawable(getResources().getDrawable(resId));
-        
-        
+        // ---------- Original Method ----------
+        //setDividerDrawable(getResources().getDrawable(resId));
     }
 
     
@@ -320,10 +319,10 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
         mLeftStrip = drawable;
         requestLayout();
         invalidate();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLeftStrip = drawable;
+        //requestLayout();
+        //invalidate();
     }
 
     
@@ -331,8 +330,8 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     public void setLeftStripDrawable(int resId) {
         addTaint(resId);
         setLeftStripDrawable(getResources().getDrawable(resId));
-        
-        
+        // ---------- Original Method ----------
+        //setLeftStripDrawable(getResources().getDrawable(resId));
     }
 
     
@@ -341,10 +340,10 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
         mRightStrip = drawable;
         requestLayout();
         invalidate();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mRightStrip = drawable;
+        //requestLayout();
+        //invalidate();
     }
 
     
@@ -352,8 +351,8 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     public void setRightStripDrawable(int resId) {
         addTaint(resId);
         setRightStripDrawable(getResources().getDrawable(resId));
-        
-        
+        // ---------- Original Method ----------
+        //setRightStripDrawable(getResources().getDrawable(resId));
     }
 
     
@@ -361,20 +360,19 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     public void setStripEnabled(boolean stripEnabled) {
         mDrawBottomStrips = stripEnabled;
         invalidate();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDrawBottomStrips = stripEnabled;
+        //invalidate();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.194 -0400", hash_original_method = "187389676AA1F9CD7B5348DE6F614EB0", hash_generated_method = "DB3A1F1964942DD9CDD96D113467511E")
     public boolean isStripEnabled() {
         boolean var552556C0EC7ACE1827AD74246AF9A657_1955349185 = (mDrawBottomStrips);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_953755903 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_953755903;
-        
-        
+        // ---------- Original Method ----------
+        //return mDrawBottomStrips;
     }
 
     
@@ -385,13 +383,13 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     if(getTabCount() > 0 && child == getChildTabViewAt(mSelectedTab))        
         {
             invalidate();
-        } 
+        } //End block
         super.childDrawableStateChanged(child);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getTabCount() > 0 && child == getChildTabViewAt(mSelectedTab)) {
+            //invalidate();
+        //}
+        //super.childDrawableStateChanged(child);
     }
 
     
@@ -405,7 +403,7 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     if(!mDrawBottomStrips)        
         {
             return;
-        } 
+        } //End block
         final View selectedChild = getChildTabViewAt(mSelectedTab);
         final Drawable leftStrip = mLeftStrip;
         final Drawable rightStrip = mRightStrip;
@@ -422,11 +420,11 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
             rightStrip.setBounds(bounds.right, myHeight - rightStrip.getIntrinsicHeight(),
                     Math.max(getWidth(), bounds.right + rightStrip.getIntrinsicWidth()), myHeight);
             mStripMoved = false;
-        } 
+        } //End block
         leftStrip.draw(canvas);
         rightStrip.draw(canvas);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -435,31 +433,31 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     if(index < 0 || index >= getTabCount() || index == mSelectedTab)        
         {
             return;
-        } 
+        } //End block
     if(mSelectedTab != -1)        
         {
             getChildTabViewAt(mSelectedTab).setSelected(false);
-        } 
+        } //End block
         mSelectedTab = index;
         getChildTabViewAt(mSelectedTab).setSelected(true);
         mStripMoved = true;
     if(isShown())        
         {
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (index < 0 || index >= getTabCount() || index == mSelectedTab) {
+            //return;
+        //}
+        //if (mSelectedTab != -1) {
+            //getChildTabViewAt(mSelectedTab).setSelected(false);
+        //}
+        //mSelectedTab = index;
+        //getChildTabViewAt(mSelectedTab).setSelected(true);
+        //mStripMoved = true;
+        //if (isShown()) {
+            //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
+        //}
     }
 
     
@@ -476,35 +474,35 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
                 boolean var4325B44A7852CB9C6B053CB6EDF92C60_555352315 = (tabView.dispatchPopulateAccessibilityEvent(event));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1361399858 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1361399858;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_733093789 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2030413879 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2030413879;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //onPopulateAccessibilityEvent(event);
+        //if (mSelectedTab != -1) {
+            //View tabView = getChildTabViewAt(mSelectedTab);
+            //if (tabView != null && tabView.getVisibility() == VISIBLE) {
+                //return tabView.dispatchPopulateAccessibilityEvent(event);
+            //}
+        //}
+        //return false;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.196 -0400", hash_original_method = "5B381D25FD53DF8B1C9131304346B258", hash_generated_method = "F7F86676E3B27D07BF33F02FB9B9E769")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         super.onInitializeAccessibilityEvent(event);
         event.setItemCount(getTabCount());
         event.setCurrentItemIndex(mSelectedTab);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onInitializeAccessibilityEvent(event);
+        //event.setItemCount(getTabCount());
+        //event.setCurrentItemIndex(mSelectedTab);
     }
 
     
@@ -516,13 +514,13 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_887673532 =         getChildAt(index);
     if(oldTab != index)        
         {
             getChildTabViewAt(index).requestFocus();
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int oldTab = mSelectedTab;
+        //setCurrentTab(index);
+        //if (oldTab != index) {
+            //getChildTabViewAt(index).requestFocus();
+        //}
     }
 
     
@@ -536,14 +534,14 @@ for(int i = 0;i < count;i++)
         {
             View child = getChildTabViewAt(i);
             child.setEnabled(enabled);
-        } 
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.setEnabled(enabled);
+        //final int count = getTabCount();
+        //for (int i = 0; i < count; i++) {
+            //View child = getChildTabViewAt(i);
+            //child.setEnabled(enabled);
+        //}
     }
 
     
@@ -558,25 +556,25 @@ for(int i = 0;i < count;i++)
                     ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
             lp.setMargins(0, 0, 0, 0);
             child.setLayoutParams(lp);
-        } 
+        } //End block
         child.setFocusable(true);
         child.setClickable(true);
         super.addView(child);
         child.setOnClickListener(new TabClickListener(getTabCount() - 1));
         child.setOnFocusChangeListener(this);
-        
-        
-            
-                    
-                    
-            
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (child.getLayoutParams() == null) {
+            //final LinearLayout.LayoutParams lp = new LayoutParams(
+                    //0,
+                    //ViewGroup.LayoutParams.MATCH_PARENT, 1.0f);
+            //lp.setMargins(0, 0, 0, 0);
+            //child.setLayoutParams(lp);
+        //}
+        //child.setFocusable(true);
+        //child.setClickable(true);
+        //super.addView(child);
+        //child.setOnClickListener(new TabClickListener(getTabCount() - 1));
+        //child.setOnFocusChangeListener(this);
     }
 
     
@@ -585,9 +583,9 @@ for(int i = 0;i < count;i++)
     public void removeAllViews() {
         super.removeAllViews();
         mSelectedTab = -1;
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.removeAllViews();
+        //mSelectedTab = -1;
     }
 
     
@@ -599,36 +597,35 @@ for(int i = 0;i < count;i++)
         {
             event.recycle();
             return;
-        } 
+        } //End block
         super.sendAccessibilityEventUnchecked(event);
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_FOCUSED && isFocused()) {
+            //event.recycle();
+            //return;
+        //}
+        //super.sendAccessibilityEventUnchecked(event);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.199 -0400", hash_original_method = "417165650412A4BD506B46A43D5F7416", hash_generated_method = "7FB911669829C940F00979E3196D854C")
      void setTabSelectionListener(OnTabSelectionChanged listener) {
         mSelectionChangedListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mSelectionChangedListener = listener;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.199 -0400", hash_original_method = "4E088FBB30D7470D105CC06A4CB02903", hash_generated_method = "750D1062EF6BF8F1209EF16538201C0E")
     public void onFocusChange(View v, boolean hasFocus) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(hasFocus);
         addTaint(v.getTaint());
     if(v == this && hasFocus && getTabCount() > 0)        
         {
             getChildTabViewAt(mSelectedTab).requestFocus();
             return;
-        } 
+        } //End block
     if(hasFocus)        
         {
             int i = 0;
@@ -643,32 +640,32 @@ for(int i = 0;i < count;i++)
     if(isShown())                    
                     {
                         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED);
-                    } 
+                    } //End block
                     break;
-                } 
+                } //End block
                 i++;
-            } 
-        } 
-        
-        
-            
-            
-        
-        
-            
-            
-            
-                
-                    
-                    
-                    
-                        
-                    
-                    
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (v == this && hasFocus && getTabCount() > 0) {
+            //getChildTabViewAt(mSelectedTab).requestFocus();
+            //return;
+        //}
+        //if (hasFocus) {
+            //int i = 0;
+            //int numTabs = getTabCount();
+            //while (i < numTabs) {
+                //if (getChildTabViewAt(i) == v) {
+                    //setCurrentTab(i);
+                    //mSelectionChangedListener.onTabSelectionChanged(i, false);
+                    //if (isShown()) {
+                        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED);
+                    //}
+                    //break;
+                //}
+                //i++;
+            //}
+        //}
     }
 
     
@@ -680,18 +677,18 @@ for(int i = 0;i < count;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.201 -0400", hash_original_method = "D6AF06C429F8FB8C9AE0E71F34F47DE0", hash_generated_method = "1617D57AD98005A88EF56C0EA197663B")
         private  TabClickListener(int tabIndex) {
             mTabIndex = tabIndex;
-            
-            
+            // ---------- Original Method ----------
+            //mTabIndex = tabIndex;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.201 -0400", hash_original_method = "28066710625DA4D2083757F8679E5933", hash_generated_method = "30D97969D5BC4554E52315D2BB7FC89B")
         public void onClick(View v) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(v.getTaint());
             mSelectionChangedListener.onTabSelectionChanged(mTabIndex, true);
-            
-            
+            // ---------- Original Method ----------
+            //mSelectionChangedListener.onTabSelectionChanged(mTabIndex, true);
         }
 
         

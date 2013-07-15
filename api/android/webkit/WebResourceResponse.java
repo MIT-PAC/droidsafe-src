@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,70 +24,64 @@ public class WebResourceResponse {
         mMimeType = mimeType;
         mEncoding = encoding;
         mInputStream = data;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMimeType = mimeType;
+        //mEncoding = encoding;
+        //mInputStream = data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.502 -0400", hash_original_method = "1165C88EB0307FF1DFDA0D499F11D5AA", hash_generated_method = "C8A7435C68C155A5CFE8D0848286F857")
     public void setMimeType(String mimeType) {
         mMimeType = mimeType;
-        
-        
+        // ---------- Original Method ----------
+        //mMimeType = mimeType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.503 -0400", hash_original_method = "FA5F1755E5361266828E073C873270CA", hash_generated_method = "FD22FE5430709C75081989E27D725F60")
     public String getMimeType() {
 String varBE38DA462B031CDCB7789EAC19C3FD2D_368149675 =         mMimeType;
         varBE38DA462B031CDCB7789EAC19C3FD2D_368149675.addTaint(taint);
         return varBE38DA462B031CDCB7789EAC19C3FD2D_368149675;
-        
-        
+        // ---------- Original Method ----------
+        //return mMimeType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.503 -0400", hash_original_method = "6642C41BC98D7E1BDACAB67A1DFBBC4B", hash_generated_method = "A8BE31D3863194E0609EC5C066013D56")
     public void setEncoding(String encoding) {
         mEncoding = encoding;
-        
-        
+        // ---------- Original Method ----------
+        //mEncoding = encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.503 -0400", hash_original_method = "2712105DF2D5EC1ED27B9462D6F15E3A", hash_generated_method = "F039559464580489BD934FF85BB785FC")
     public String getEncoding() {
 String varD11A7DF5C4874207C4AF6345DC7F5843_498297577 =         mEncoding;
         varD11A7DF5C4874207C4AF6345DC7F5843_498297577.addTaint(taint);
         return varD11A7DF5C4874207C4AF6345DC7F5843_498297577;
-        
-        
+        // ---------- Original Method ----------
+        //return mEncoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.504 -0400", hash_original_method = "C26148C30E5EF65B476B7B323E30AB3C", hash_generated_method = "AECC74294CA1A9AFB603B72E07B7B0E9")
     public void setData(InputStream data) {
         mInputStream = data;
-        
-        
+        // ---------- Original Method ----------
+        //mInputStream = data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.504 -0400", hash_original_method = "70FED193DE86C029473917F94AE9B4C4", hash_generated_method = "85839984A12567192D17322C21C4671D")
     public InputStream getData() {
 InputStream var2E675DC7F4D82075BA9D940E3D1423A3_843420246 =         mInputStream;
         var2E675DC7F4D82075BA9D940E3D1423A3_843420246.addTaint(taint);
         return var2E675DC7F4D82075BA9D940E3D1423A3_843420246;
-        
-        
+        // ---------- Original Method ----------
+        //return mInputStream;
     }
 
     
@@ -97,8 +91,8 @@ InputStream var2E675DC7F4D82075BA9D940E3D1423A3_843420246 =         mInputStream
 StreamLoader var5DB7DBF28A0F4B000D588BFE2242F8C3_149641328 =         new Loader(listener);
         var5DB7DBF28A0F4B000D588BFE2242F8C3_149641328.addTaint(taint);
         return var5DB7DBF28A0F4B000D588BFE2242F8C3_149641328;
-        
-        
+        // ---------- Original Method ----------
+        //return new Loader(listener);
     }
 
     
@@ -109,8 +103,8 @@ StreamLoader var5DB7DBF28A0F4B000D588BFE2242F8C3_149641328 =         new Loader(
             super(loadListener);
             addTaint(loadListener.getTaint());
             mDataStream = mInputStream;
-            
-            
+            // ---------- Original Method ----------
+            //mDataStream = mInputStream;
         }
 
         
@@ -121,9 +115,9 @@ StreamLoader var5DB7DBF28A0F4B000D588BFE2242F8C3_149641328 =         new Loader(
             boolean varB326B5062B2F0E69046810717534CB09_729398557 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_195805061 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_195805061;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mLoadListener.status(1, 1, mDataStream != null ? 200 : 404, "");
+            //return true;
         }
 
         
@@ -133,9 +127,9 @@ StreamLoader var5DB7DBF28A0F4B000D588BFE2242F8C3_149641328 =         new Loader(
             addTaint(headers.getTaint());
             headers.setContentType(mMimeType);
             headers.setContentEncoding(mEncoding);
-            
-            
-            
+            // ---------- Original Method ----------
+            //headers.setContentType(mMimeType);
+            //headers.setContentEncoding(mEncoding);
         }
 
         

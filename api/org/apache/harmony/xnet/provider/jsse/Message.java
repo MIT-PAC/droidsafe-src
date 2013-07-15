@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,21 +15,20 @@ public abstract class Message {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.504 -0400", hash_original_method = "1320821CB7E319AA2006FCB6CC079C6F", hash_generated_method = "1320821CB7E319AA2006FCB6CC079C6F")
     public Message ()
     {
-        
+        //Synthesized constructor
     }
 
 
     abstract int getType();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.505 -0400", hash_original_method = "A95929A9D1E422E13DF7B6BE29D62093", hash_generated_method = "10C8C93898B328E36AEAD1AE97E3208C")
     public int length() {
         int var2FA47F7C65FEC19CC163B195725E3844_1945838412 = (length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439895760 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439895760;
-        
-        
+        // ---------- Original Method ----------
+        //return length;
     }
 
     
@@ -43,8 +42,8 @@ public abstract class Message {
         AlertException var799552F05CBB23D97AC6FE1EE17DC122_64980677 = new AlertException(description, new SSLHandshakeException(reason));
         var799552F05CBB23D97AC6FE1EE17DC122_64980677.addTaint(taint);
         throw var799552F05CBB23D97AC6FE1EE17DC122_64980677;
-        
-        
+        // ---------- Original Method ----------
+        //throw new AlertException(description, new SSLHandshakeException(reason));
     }
 
     
@@ -56,8 +55,8 @@ public abstract class Message {
         AlertException varAB600E5C2470883884CE64C72AED6B37_1621126044 = new AlertException(description, new SSLException(reason, cause));
         varAB600E5C2470883884CE64C72AED6B37_1621126044.addTaint(taint);
         throw varAB600E5C2470883884CE64C72AED6B37_1621126044;
-        
-        
+        // ---------- Original Method ----------
+        //throw new AlertException(description, new SSLException(reason, cause));
     }
 
     

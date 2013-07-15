@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -85,7 +85,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     public  AutoCompleteTextView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -94,7 +94,7 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
         this(context, attrs, com.android.internal.R.attr.autoCompleteTextViewStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -133,14 +133,14 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
         {
             inputType |= EditorInfo.TYPE_TEXT_FLAG_AUTO_COMPLETE;
             setRawInputType(inputType);
-        } 
+        } //End block
         a.recycle();
         setFocusable(true);
         addTextChangedListener(new MyWatcher());
         mPassThroughClickListener = new PassThroughClickListener();
         super.setOnClickListener(mPassThroughClickListener);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -148,8 +148,8 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     @Override
     public void setOnClickListener(OnClickListener listener) {
         mPassThroughClickListener.mWrapped = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mPassThroughClickListener.mWrapped = listener;
     }
 
     
@@ -158,11 +158,11 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     if(isPopupShowing())        
         {
             ensureImeVisible(true);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (isPopupShowing()) {
+            //ensureImeVisible(true);
+        //}
     }
 
     
@@ -178,33 +178,33 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
                 hintView.setText(mHintText);
                 mHintView = hintView;
                 mPopup.setPromptView(hintView);
-            } 
+            } //End block
             else
             {
                 mHintView.setText(hint);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             mPopup.setPromptView(null);
             mHintView = null;
-        } 
-        
-        
-        
-            
-                
-                        
-                
-                
-                
-            
-                
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mHintText = hint;
+        //if (hint != null) {
+            //if (mHintView == null) {
+                //final TextView hintView = (TextView) LayoutInflater.from(getContext()).inflate(
+                        //mHintResource, null).findViewById(com.android.internal.R.id.text1);
+                //hintView.setText(mHintText);
+                //mHintView = hintView;
+                //mPopup.setPromptView(hintView);
+            //} else {
+                //mHintView.setText(hint);
+            //}
+        //} else {
+            //mPopup.setPromptView(null);
+            //mHintView = null;
+        //}
     }
 
     
@@ -213,8 +213,8 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
         int var6ACF8E0E97C75E88C1848D73A7CD5C00_1327733509 = (mPopup.getWidth());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_186904726 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_186904726;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getWidth();
     }
 
     
@@ -222,8 +222,8 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     public void setDropDownWidth(int width) {
         addTaint(width);
         mPopup.setWidth(width);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setWidth(width);
     }
 
     
@@ -232,8 +232,8 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
         int var53DB8DBAC9CF6169329C2D2133A018EE_1809061556 = (mPopup.getHeight());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_262953339 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_262953339;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getHeight();
     }
 
     
@@ -241,19 +241,18 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     public void setDropDownHeight(int height) {
         addTaint(height);
         mPopup.setHeight(height);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setHeight(height);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.544 -0400", hash_original_method = "983C379A49D6519E05BB04A2322E89F2", hash_generated_method = "3C612C33B65AC543FE6E4D94E92DA009")
     public int getDropDownAnchor() {
         int var903BD9B69A445B253D97DFE9C11F5514_815888971 = (mDropDownAnchorId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896816958 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896816958;
-        
-        
+        // ---------- Original Method ----------
+        //return mDropDownAnchorId;
     }
 
     
@@ -261,9 +260,9 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     public void setDropDownAnchor(int id) {
         mDropDownAnchorId = id;
         mPopup.setAnchorView(null);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDropDownAnchorId = id;
+        //mPopup.setAnchorView(null);
     }
 
     
@@ -272,8 +271,8 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
 Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBackground();
         var7BDA07CC732F6A99E383B1984680564C_1407362389.addTaint(taint);
         return var7BDA07CC732F6A99E383B1984680564C_1407362389;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getBackground();
     }
 
     
@@ -281,8 +280,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
     public void setDropDownBackgroundDrawable(Drawable d) {
         addTaint(d.getTaint());
         mPopup.setBackgroundDrawable(d);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setBackgroundDrawable(d);
     }
 
     
@@ -290,8 +289,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
     public void setDropDownBackgroundResource(int id) {
         addTaint(id);
         mPopup.setBackgroundDrawable(getResources().getDrawable(id));
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setBackgroundDrawable(getResources().getDrawable(id));
     }
 
     
@@ -299,8 +298,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
     public void setDropDownVerticalOffset(int offset) {
         addTaint(offset);
         mPopup.setVerticalOffset(offset);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setVerticalOffset(offset);
     }
 
     
@@ -309,8 +308,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
         int var31401D924AC0898C93CCD25EA9B41C31_1356601759 = (mPopup.getVerticalOffset());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857044823 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857044823;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getVerticalOffset();
     }
 
     
@@ -318,8 +317,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
     public void setDropDownHorizontalOffset(int offset) {
         addTaint(offset);
         mPopup.setHorizontalOffset(offset);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setHorizontalOffset(offset);
     }
 
     
@@ -328,8 +327,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
         int var159CC1985722BBD4B37A689973EEA1E1_594510318 = (mPopup.getHorizontalOffset());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1424974799 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1424974799;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getHorizontalOffset();
     }
 
     
@@ -337,8 +336,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
     public void setDropDownAnimationStyle(int animationStyle) {
         addTaint(animationStyle);
         mPopup.setAnimationStyle(animationStyle);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setAnimationStyle(animationStyle);
     }
 
     
@@ -347,8 +346,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
         int var816B0EC48DB4C372BCF76D1AAEC8966A_258589100 = (mPopup.getAnimationStyle());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_97773949 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_97773949;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getAnimationStyle();
     }
 
     
@@ -357,8 +356,8 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
         boolean var02A603F69D53C1BA03CBBFB8B5937DA3_263104546 = (mPopup.isDropDownAlwaysVisible());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1049254306 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1049254306;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.isDropDownAlwaysVisible();
     }
 
     
@@ -366,130 +365,119 @@ Drawable var7BDA07CC732F6A99E383B1984680564C_1407362389 =         mPopup.getBack
     public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
         addTaint(dropDownAlwaysVisible);
         mPopup.setDropDownAlwaysVisible(dropDownAlwaysVisible);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setDropDownAlwaysVisible(dropDownAlwaysVisible);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.547 -0400", hash_original_method = "5251E63145860B08CE1AA76BBDDDD070", hash_generated_method = "77F0A76EE86C49633AE5CD3531CADB87")
     public boolean isDropDownDismissedOnCompletion() {
         boolean var136ABDC94A753EA99E787B313DCAB6C7_2138508787 = (mDropDownDismissedOnCompletion);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1534292066 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1534292066;
-        
-        
+        // ---------- Original Method ----------
+        //return mDropDownDismissedOnCompletion;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.547 -0400", hash_original_method = "87D4B20D86EF98CE5F9B2DCFB12777AB", hash_generated_method = "60B8689EC6F3BBAD668A4B2923A0BC91")
     public void setDropDownDismissedOnCompletion(boolean dropDownDismissedOnCompletion) {
         mDropDownDismissedOnCompletion = dropDownDismissedOnCompletion;
-        
-        
+        // ---------- Original Method ----------
+        //mDropDownDismissedOnCompletion = dropDownDismissedOnCompletion;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.548 -0400", hash_original_method = "D355B3B251BB91FAED293791929579AC", hash_generated_method = "00A2F5C08CEE440E51B3AAC65A954743")
     public int getThreshold() {
         int var3C3C53D359DFC0BF874C1D7D1521B140_1863875475 = (mThreshold);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365798305 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365798305;
-        
-        
+        // ---------- Original Method ----------
+        //return mThreshold;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.548 -0400", hash_original_method = "E80EC39EC531963E159919926C4979B9", hash_generated_method = "A38F733A6E1873D0A8C2D8A5F0056964")
     public void setThreshold(int threshold) {
     if(threshold <= 0)        
         {
             threshold = 1;
-        } 
+        } //End block
         mThreshold = threshold;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (threshold <= 0) {
+            //threshold = 1;
+        //}
+        //mThreshold = threshold;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.549 -0400", hash_original_method = "B69DF6D8B348285F7F509DAAD23C3372", hash_generated_method = "25CD98E2A8A27C201F3F3F3C7D972CAC")
     public void setOnItemClickListener(AdapterView.OnItemClickListener l) {
         mItemClickListener = l;
-        
-        
+        // ---------- Original Method ----------
+        //mItemClickListener = l;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.550 -0400", hash_original_method = "48F24F393448111E92CC5CFF766C1584", hash_generated_method = "B7A11EA05B947A6361BE0A6FEA1488E9")
     public void setOnItemSelectedListener(AdapterView.OnItemSelectedListener l) {
         mItemSelectedListener = l;
-        
-        
+        // ---------- Original Method ----------
+        //mItemSelectedListener = l;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.551 -0400", hash_original_method = "0AE6D510B9C16F8D52FF49376A7BF6A4", hash_generated_method = "4D85C0EE964B2D477C96BD11F3A06303")
     @Deprecated
     public AdapterView.OnItemClickListener getItemClickListener() {
 AdapterView.OnItemClickListener var63013AF3E02932658F997B57B5405EA0_137703115 =         mItemClickListener;
         var63013AF3E02932658F997B57B5405EA0_137703115.addTaint(taint);
         return var63013AF3E02932658F997B57B5405EA0_137703115;
-        
-        
+        // ---------- Original Method ----------
+        //return mItemClickListener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.551 -0400", hash_original_method = "2A86C7E057A0C403AB649B0ED567456D", hash_generated_method = "1C95B01372657AC3AA8C25079B5390DF")
     @Deprecated
     public AdapterView.OnItemSelectedListener getItemSelectedListener() {
 AdapterView.OnItemSelectedListener var5A4BC6A387706AABAC34DDF7CE11D2B3_561887398 =         mItemSelectedListener;
         var5A4BC6A387706AABAC34DDF7CE11D2B3_561887398.addTaint(taint);
         return var5A4BC6A387706AABAC34DDF7CE11D2B3_561887398;
-        
-        
+        // ---------- Original Method ----------
+        //return mItemSelectedListener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.551 -0400", hash_original_method = "CC34C836A582B2E0B6660928CDDA2E79", hash_generated_method = "05BE12DD0B80B6E96E22CB88D844861F")
     public AdapterView.OnItemClickListener getOnItemClickListener() {
 AdapterView.OnItemClickListener var63013AF3E02932658F997B57B5405EA0_810710190 =         mItemClickListener;
         var63013AF3E02932658F997B57B5405EA0_810710190.addTaint(taint);
         return var63013AF3E02932658F997B57B5405EA0_810710190;
-        
-        
+        // ---------- Original Method ----------
+        //return mItemClickListener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.552 -0400", hash_original_method = "CA4C95C3D87D9F2B4999807B4A5E6086", hash_generated_method = "9576F7BE8252CD49927125443B3897DD")
     public AdapterView.OnItemSelectedListener getOnItemSelectedListener() {
 AdapterView.OnItemSelectedListener var5A4BC6A387706AABAC34DDF7CE11D2B3_1970334333 =         mItemSelectedListener;
         var5A4BC6A387706AABAC34DDF7CE11D2B3_1970334333.addTaint(taint);
         return var5A4BC6A387706AABAC34DDF7CE11D2B3_1970334333;
-        
-        
+        // ---------- Original Method ----------
+        //return mItemSelectedListener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.552 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "4D494F38AB666035FA59CD562A5D567C")
     public ListAdapter getAdapter() {
 ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_735805071 =         mAdapter;
         varD72668EDE5E63ADF9340F3D8A19FD205_735805071.addTaint(taint);
         return varD72668EDE5E63ADF9340F3D8A19FD205_735805071;
-        
-        
+        // ---------- Original Method ----------
+        //return mAdapter;
     }
 
     
@@ -498,44 +486,44 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_735805071 =         mAdapter;
     if(mObserver == null)        
         {
             mObserver = new PopupDataSetObserver();
-        } 
+        } //End block
         else
     if(mAdapter != null)        
         {
             mAdapter.unregisterDataSetObserver(mObserver);
-        } 
+        } //End block
         mAdapter = adapter;
     if(mAdapter != null)        
         {
             mFilter = ((Filterable) mAdapter).getFilter();
             adapter.registerDataSetObserver(mObserver);
-        } 
+        } //End block
         else
         {
             mFilter = null;
-        } 
+        } //End block
         mPopup.setAdapter(mAdapter);
-        
-        
-            
-        
-            
-        
-        
-        
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mObserver == null) {
+            //mObserver = new PopupDataSetObserver();
+        //} else if (mAdapter != null) {
+            //mAdapter.unregisterDataSetObserver(mObserver);
+        //}
+        //mAdapter = adapter;
+        //if (mAdapter != null) {
+            //mFilter = ((Filterable) mAdapter).getFilter();
+            //adapter.registerDataSetObserver(mObserver);
+        //} else {
+            //mFilter = null;
+        //}
+        //mPopup.setAdapter(mAdapter);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.555 -0400", hash_original_method = "1E2534A3F57B1DBFCDE49E1B48E26A0E", hash_generated_method = "6AD2152E881CDF9AEF46C1148DA8ABD1")
     @Override
     public boolean onKeyPreIme(int keyCode, KeyEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(keyCode);
     if(keyCode == KeyEvent.KEYCODE_BACK && isPopupShowing()
@@ -547,11 +535,11 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_735805071 =         mAdapter;
     if(state != null)                
                 {
                     state.startTracking(event, this);
-                } 
+                } //End block
                 boolean varB326B5062B2F0E69046810717534CB09_2038234243 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_597290925 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_597290925;
-            } 
+            } //End block
             else
     if(event.getAction() == KeyEvent.ACTION_UP)            
             {
@@ -559,28 +547,28 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_735805071 =         mAdapter;
     if(state != null)                
                 {
                     state.handleUpEvent(event);
-                } 
+                } //End block
     if(event.isTracking() && !event.isCanceled())                
                 {
                     dismissDropDown();
                     boolean varB326B5062B2F0E69046810717534CB09_1538647855 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1347919507 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1347919507;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean varD211DC142BF75E7E3C7CE1C752BD391A_1047391816 = (super.onKeyPreIme(keyCode, event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1370153646 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1370153646;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.556 -0400", hash_original_method = "A5021B9859EF1208F776ED0647DC53F8", hash_generated_method = "C9D0672A5DD2B32458BE54BB802E7863")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(keyCode);
         boolean consumed = mPopup.onKeyUp(keyCode, event);
@@ -593,54 +581,54 @@ switch(keyCode){
     if(event.hasNoModifiers())            
             {
                 performCompletion();
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1825181171 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1539827931 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1539827931;
 }
-        } 
+        } //End block
     if(isPopupShowing() && keyCode == KeyEvent.KEYCODE_TAB && event.hasNoModifiers())        
         {
             performCompletion();
             boolean varB326B5062B2F0E69046810717534CB09_121168493 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1950136773 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1950136773;
-        } 
+        } //End block
         boolean varAD33E8F21A74B923C1A24761EAF2F4A9_918107263 = (super.onKeyUp(keyCode, event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1762559397 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1762559397;
-        
-        
-        
-            
-            
-            
-            
-                
-                    
-                
-                
-            
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean consumed = mPopup.onKeyUp(keyCode, event);
+        //if (consumed) {
+            //switch (keyCode) {
+            //case KeyEvent.KEYCODE_ENTER:
+            //case KeyEvent.KEYCODE_DPAD_CENTER:
+            //case KeyEvent.KEYCODE_TAB:
+                //if (event.hasNoModifiers()) {
+                    //performCompletion();
+                //}
+                //return true;
+            //}
+        //}
+        //if (isPopupShowing() && keyCode == KeyEvent.KEYCODE_TAB && event.hasNoModifiers()) {
+            //performCompletion();
+            //return true;
+        //}
+        //return super.onKeyUp(keyCode, event);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.557 -0400", hash_original_method = "7D38CCD4A21A1817640875450034C5D6", hash_generated_method = "72EDDACECFDF3487054AB5789676146C")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
     if(mPopup.onKeyDown(keyCode, event))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1725567326 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1529671663 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1529671663;
-        } 
+        } //End block
     if(!isPopupShowing())        
         {
 switch(keyCode){
@@ -648,47 +636,47 @@ switch(keyCode){
     if(event.hasNoModifiers())            
             {
                 performValidation();
-            } 
+            } //End block
 }
-        } 
+        } //End block
     if(isPopupShowing() && keyCode == KeyEvent.KEYCODE_TAB && event.hasNoModifiers())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_90652522 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1338541009 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1338541009;
-        } 
+        } //End block
         mLastKeyCode = keyCode;
         boolean handled = super.onKeyDown(keyCode, event);
         mLastKeyCode = KeyEvent.KEYCODE_UNKNOWN;
     if(handled && isPopupShowing())        
         {
             clearListSelection();
-        } 
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_1116252682 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_353020234 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_353020234;
-        
-        
-            
-        
-        
-            
-            
-                
-                    
-                
-            
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mPopup.onKeyDown(keyCode, event)) {
+            //return true;
+        //}
+        //if (!isPopupShowing()) {
+            //switch(keyCode) {
+            //case KeyEvent.KEYCODE_DPAD_DOWN:
+                //if (event.hasNoModifiers()) {
+                    //performValidation();
+                //}
+            //}
+        //}
+        //if (isPopupShowing() && keyCode == KeyEvent.KEYCODE_TAB && event.hasNoModifiers()) {
+            //return true;
+        //}
+        //mLastKeyCode = keyCode;
+        //boolean handled = super.onKeyDown(keyCode, event);
+        //mLastKeyCode = KeyEvent.KEYCODE_UNKNOWN;
+        //if (handled && isPopupShowing()) {
+            //clearListSelection();
+        //}
+        //return handled;
     }
 
     
@@ -697,10 +685,10 @@ switch(keyCode){
     if(DEBUG){ }        boolean var7E8D24952212A6B4F15AC00CF49898E8_600847771 = (getText().length() >= mThreshold);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1294955385 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1294955385;
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "Enough to filter: len=" + getText().length()
+                //+ " threshold=" + mThreshold);
+        //return getText().length() >= mThreshold;
     }
 
     
@@ -710,10 +698,10 @@ switch(keyCode){
         return;
         mOpenBefore = isPopupShowing();
     if(DEBUG){ }
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mBlockCompletion) return;
+        //mOpenBefore = isPopupShowing();
+        //if (DEBUG) Log.v(TAG, "before text changed: open=" + mOpenBefore);
     }
 
     
@@ -724,46 +712,46 @@ switch(keyCode){
     if(DEBUG){ }    if(mOpenBefore && !isPopupShowing())        
         {
             return;
-        } 
+        } //End block
     if(enoughToFilter())        
         {
     if(mFilter != null)            
             {
                 mPopupCanBeUpdated = true;
                 performFiltering(getText(), mLastKeyCode);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(!mPopup.isDropDownAlwaysVisible())            
             {
                 dismissDropDown();
-            } 
+            } //End block
     if(mFilter != null)            
             {
                 mFilter.filter(null);
-            } 
-        } 
-        
-        
-        
-                
-        
-            
-        
-        
-            
-                
-                
-            
-        
-            
-                
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mBlockCompletion) return;
+        //if (DEBUG) Log.v(TAG, "after text changed: openBefore=" + mOpenBefore
+                //+ " open=" + isPopupShowing());
+        //if (mOpenBefore && !isPopupShowing()) {
+            //return;
+        //}
+        //if (enoughToFilter()) {
+            //if (mFilter != null) {
+                //mPopupCanBeUpdated = true;
+                //performFiltering(getText(), mLastKeyCode);
+            //}
+        //} else {
+            //if (!mPopup.isDropDownAlwaysVisible()) {
+                //dismissDropDown();
+            //}
+            //if (mFilter != null) {
+                //mFilter.filter(null);
+            //}
+        //}
     }
 
     
@@ -772,8 +760,8 @@ switch(keyCode){
         boolean var85306F04F495AA80A9692FCC104D9D40_1312882986 = (mPopup.isShowing());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1219363286 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1219363286;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.isShowing();
     }
 
     
@@ -783,16 +771,16 @@ switch(keyCode){
 CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.convertResultToString(selectedItem);
         varAF827B06EB9498287FA55CEAE7AD5953_2096193934.addTaint(taint);
         return varAF827B06EB9498287FA55CEAE7AD5953_2096193934;
-        
-        
+        // ---------- Original Method ----------
+        //return mFilter.convertResultToString(selectedItem);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.559 -0400", hash_original_method = "7623D1558693BF470F22C595BECC6733", hash_generated_method = "8B3C8ABD4877B8477A9502489B2E9EE7")
     public void clearListSelection() {
         mPopup.clearListSelection();
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.clearListSelection();
     }
 
     
@@ -800,8 +788,8 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.co
     public void setListSelection(int position) {
         addTaint(position);
         mPopup.setSelection(position);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setSelection(position);
     }
 
     
@@ -810,8 +798,8 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.co
         int varC888F4F4BE85ABF5A33D518B7D405315_645733853 = (mPopup.getSelectedItemPosition());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_244246865 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_244246865;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getSelectedItemPosition();
     }
 
     
@@ -821,32 +809,32 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.co
         addTaint(keyCode);
         addTaint(text.getTaint());
         mFilter.filter(text, this);
-        
-        
+        // ---------- Original Method ----------
+        //mFilter.filter(text, this);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.560 -0400", hash_original_method = "F704ACEA98F83F3E1219E92B20BE03DA", hash_generated_method = "A721540EC82B1346CA97B5580BF1819C")
     public void performCompletion() {
         performCompletion(null, -1, -1);
-        
-        
+        // ---------- Original Method ----------
+        //performCompletion(null, -1, -1);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.560 -0400", hash_original_method = "4C402F357E20A5DEEC78C01A554F2E74", hash_generated_method = "14CA78410D2108E448E52272D64884E2")
     @Override
     public void onCommitCompletion(CompletionInfo completion) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(completion.getTaint());
     if(isPopupShowing())        
         {
             mPopup.performItemClick(completion.getPosition());
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (isPopupShowing()) {
+            //mPopup.performItemClick(completion.getPosition());
+        //}
     }
 
     
@@ -861,15 +849,15 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.co
     if(position < 0)            
             {
                 selectedItem = mPopup.getSelectedItem();
-            } 
+            } //End block
             else
             {
                 selectedItem = mAdapter.getItem(position);
-            } 
+            } //End block
     if(selectedItem == null)            
             {
                 return;
-            } 
+            } //End block
             mBlockCompletion = true;
             replaceText(convertSelectionToString(selectedItem));
             mBlockCompletion = false;
@@ -881,27 +869,26 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.co
                     selectedView = list.getSelectedView();
                     position = list.getSelectedItemPosition();
                     id = list.getSelectedItemId();
-                } 
+                } //End block
                 mItemClickListener.onItemClick(list.getListView(), selectedView, position, id);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mDropDownDismissedOnCompletion && !mPopup.isDropDownAlwaysVisible())        
         {
             dismissDropDown();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.562 -0400", hash_original_method = "01D38330C874C1244C7D1EF978D11C36", hash_generated_method = "80363480CCD6E3DCE9B7CFDE220F1673")
     public boolean isPerformingCompletion() {
         boolean varFFA1B57EE05E9FF9A47A264C76446CB7_1359823951 = (mBlockCompletion);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_766896457 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_766896457;
-        
-        
+        // ---------- Original Method ----------
+        //return mBlockCompletion;
     }
 
     
@@ -912,21 +899,21 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.co
     if(filter)        
         {
             setText(text);
-        } 
+        } //End block
         else
         {
             mBlockCompletion = true;
             setText(text);
             mBlockCompletion = false;
-        } 
-        
-        
-            
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (filter) {
+            //setText(text);
+        //} else {
+            //mBlockCompletion = true;
+            //setText(text);
+            //mBlockCompletion = false;
+        //}
     }
 
     
@@ -937,21 +924,21 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.co
         setText(text);
         Editable spannable = getText();
         Selection.setSelection(spannable, spannable.length());
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //clearComposingText();
+        //setText(text);
+        //Editable spannable = getText();
+        //Selection.setSelection(spannable, spannable.length());
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.563 -0400", hash_original_method = "65C6B6A3B92536D4DF6F13E8CB596A16", hash_generated_method = "101B997E74F395C01333B0250263A6F9")
     public void onFilterComplete(int count) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(count);
         updateDropDownForFilter(count);
-        
-        
+        // ---------- Original Method ----------
+        //updateDropDownForFilter(count);
     }
 
     
@@ -967,51 +954,51 @@ CharSequence varAF827B06EB9498287FA55CEAE7AD5953_2096193934 =         mFilter.co
     if(hasFocus() && hasWindowFocus() && mPopupCanBeUpdated)            
             {
                 showDropDown();
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(!dropDownAlwaysVisible && isPopupShowing())        
         {
             dismissDropDown();
             mPopupCanBeUpdated = true;
-        } 
-        
-        
-        
-        
-        
-            
-                
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (getWindowVisibility() == View.GONE) return;
+        //final boolean dropDownAlwaysVisible = mPopup.isDropDownAlwaysVisible();
+        //final boolean enoughToFilter = enoughToFilter();
+        //if ((count > 0 || dropDownAlwaysVisible) && enoughToFilter) {
+            //if (hasFocus() && hasWindowFocus() && mPopupCanBeUpdated) {
+                //showDropDown();
+            //}
+        //} else if (!dropDownAlwaysVisible && isPopupShowing()) {
+            //dismissDropDown();
+            //mPopupCanBeUpdated = true;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.564 -0400", hash_original_method = "2BBFCFB03CA88D4E4428D247CF9B4D7A", hash_generated_method = "419E5AB1B85DD44104CE527A82C564F1")
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(hasWindowFocus);
         super.onWindowFocusChanged(hasWindowFocus);
     if(!hasWindowFocus && !mPopup.isDropDownAlwaysVisible())        
         {
             dismissDropDown();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onWindowFocusChanged(hasWindowFocus);
+        //if (!hasWindowFocus && !mPopup.isDropDownAlwaysVisible()) {
+            //dismissDropDown();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.564 -0400", hash_original_method = "42E246C35216D3D5148B04B4E2B23F4A", hash_generated_method = "9EEAB759C38126E1DF37DB6985B22710")
     @Override
     protected void onDisplayHint(int hint) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(hint);
         super.onDisplayHint(hint);
 switch(hint){
@@ -1019,25 +1006,25 @@ switch(hint){
     if(!mPopup.isDropDownAlwaysVisible())        
         {
             dismissDropDown();
-        } 
+        } //End block
         break;
 }
-        
-        
-        
-            
-                
-                    
-                
-                
-        
+        // ---------- Original Method ----------
+        //super.onDisplayHint(hint);
+        //switch (hint) {
+            //case INVISIBLE:
+                //if (!mPopup.isDropDownAlwaysVisible()) {
+                    //dismissDropDown();
+                //}
+                //break;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.564 -0400", hash_original_method = "28987A1F68AF8291400818B9FA8A6C7A", hash_generated_method = "EF0295E476FF7952BCC10A6EC62B3F06")
     @Override
     protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(previouslyFocusedRect.getTaint());
         addTaint(direction);
         addTaint(focused);
@@ -1045,41 +1032,41 @@ switch(hint){
     if(!focused)        
         {
             performValidation();
-        } 
+        } //End block
     if(!focused && !mPopup.isDropDownAlwaysVisible())        
         {
             dismissDropDown();
-        } 
-        
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onFocusChanged(focused, direction, previouslyFocusedRect);
+        //if (!focused) {
+            //performValidation();
+        //}
+        //if (!focused && !mPopup.isDropDownAlwaysVisible()) {
+            //dismissDropDown();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.564 -0400", hash_original_method = "7A2D6EDAA0E5981DC60C5747420510C2", hash_generated_method = "00FC054FE7DDC1542F03A4EEE8C79AC6")
     @Override
     protected void onAttachedToWindow() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onAttachedToWindow();
-        
-        
+        // ---------- Original Method ----------
+        //super.onAttachedToWindow();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.565 -0400", hash_original_method = "DD8C719D50846B220D8C588E856246EC", hash_generated_method = "3B133B89A062F2ACA8F9A841C10030DC")
     @Override
     protected void onDetachedFromWindow() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         dismissDropDown();
         super.onDetachedFromWindow();
-        
-        
-        
+        // ---------- Original Method ----------
+        //dismissDropDown();
+        //super.onDetachedFromWindow();
     }
 
     
@@ -1089,16 +1076,16 @@ switch(hint){
     if(imm != null)        
         {
             imm.displayCompletions(this, null);
-        } 
+        } //End block
         mPopup.dismiss();
         mPopupCanBeUpdated = false;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //InputMethodManager imm = InputMethodManager.peekInstance();
+        //if (imm != null) {
+            //imm.displayCompletions(this, null);
+        //}
+        //mPopup.dismiss();
+        //mPopupCanBeUpdated = false;
     }
 
     
@@ -1113,24 +1100,24 @@ switch(hint){
     if(isPopupShowing())        
         {
             showDropDown();
-        } 
+        } //End block
         boolean varB4A88417B3D0170D754C647C30B7216A_48281428 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011220552 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011220552;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean result = super.setFrame(l, t, r, b);
+        //if (isPopupShowing()) {
+            //showDropDown();
+        //}
+        //return result;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.565 -0400", hash_original_method = "E5B4D0CB7911E0BF332298A12D86AD4A", hash_generated_method = "A9417F64F27E0248C39106ECDBA36D11")
     public void showDropDownAfterLayout() {
         mPopup.postShow();
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.postShow();
     }
 
     
@@ -1140,10 +1127,10 @@ switch(hint){
         mPopup.setInputMethodMode(visible
                 ? ListPopupWindow.INPUT_METHOD_NEEDED : ListPopupWindow.INPUT_METHOD_NOT_NEEDED);
         showDropDown();
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //mPopup.setInputMethodMode(visible
+                //? ListPopupWindow.INPUT_METHOD_NEEDED : ListPopupWindow.INPUT_METHOD_NOT_NEEDED);
+        //showDropDown();
     }
 
     
@@ -1152,8 +1139,8 @@ switch(hint){
         boolean var597C2240CA1A3462E67A3E88FFFF4617_705842862 = (mPopup.getInputMethodMode() == ListPopupWindow.INPUT_METHOD_NOT_NEEDED);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345847738 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_345847738;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getInputMethodMode() == ListPopupWindow.INPUT_METHOD_NOT_NEEDED;
     }
 
     
@@ -1165,34 +1152,34 @@ switch(hint){
     if(mDropDownAnchorId != View.NO_ID)            
             {
                 mPopup.setAnchorView(getRootView().findViewById(mDropDownAnchorId));
-            } 
+            } //End block
             else
             {
                 mPopup.setAnchorView(this);
-            } 
-        } 
+            } //End block
+        } //End block
     if(!isPopupShowing())        
         {
             mPopup.setInputMethodMode(ListPopupWindow.INPUT_METHOD_NEEDED);
             mPopup.setListItemExpandMax(EXPAND_MAX);
-        } 
+        } //End block
         mPopup.show();
         mPopup.getListView().setOverScrollMode(View.OVER_SCROLL_ALWAYS);
-        
-        
-        
-            
-                
-            
-                
-            
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //buildImeCompletions();
+        //if (mPopup.getAnchorView() == null) {
+            //if (mDropDownAnchorId != View.NO_ID) {
+                //mPopup.setAnchorView(getRootView().findViewById(mDropDownAnchorId));
+            //} else {
+                //mPopup.setAnchorView(this);
+            //}
+        //}
+        //if (!isPopupShowing()) {
+            //mPopup.setInputMethodMode(ListPopupWindow.INPUT_METHOD_NEEDED);
+            //mPopup.setListItemExpandMax(EXPAND_MAX);
+        //}
+        //mPopup.show();
+        //mPopup.getListView().setOverScrollMode(View.OVER_SCROLL_ALWAYS);
     }
 
     
@@ -1200,8 +1187,8 @@ switch(hint){
     public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
         addTaint(forceIgnoreOutsideTouch);
         mPopup.setForceIgnoreOutsideTouch(forceIgnoreOutsideTouch);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setForceIgnoreOutsideTouch(forceIgnoreOutsideTouch);
     }
 
     
@@ -1224,39 +1211,37 @@ for(int i = 0;i < count;i++)
                         Object item = adapter.getItem(i);
                         long id = adapter.getItemId(i);
                         completions[i] = new CompletionInfo(id, i, convertSelectionToString(item));
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(realCount != count)                
                 {
                     CompletionInfo[] tmp = new CompletionInfo[realCount];
                     System.arraycopy(completions, 0, tmp, 0, realCount);
                     completions = tmp;
-                } 
+                } //End block
                 imm.displayCompletions(this, completions);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.567 -0400", hash_original_method = "19381912498DA3D1F08FF4D2E33BF7A7", hash_generated_method = "6329C8E47F79ED3E974714DEACCABB5F")
     public void setValidator(Validator validator) {
         mValidator = validator;
-        
-        
+        // ---------- Original Method ----------
+        //mValidator = validator;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.568 -0400", hash_original_method = "E2B844337B4F2E764213661E3DB17BC8", hash_generated_method = "649AC324C7D2EC146E0DCC2EC683246E")
     public Validator getValidator() {
 Validator varA82B8BDD631A19AD77E1590146D034EB_2045523026 =         mValidator;
         varA82B8BDD631A19AD77E1590146D034EB_2045523026.addTaint(taint);
         return varA82B8BDD631A19AD77E1590146D034EB_2045523026;
-        
-        
+        // ---------- Original Method ----------
+        //return mValidator;
     }
 
     
@@ -1268,24 +1253,23 @@ Validator varA82B8BDD631A19AD77E1590146D034EB_2045523026 =         mValidator;
     if(!TextUtils.isEmpty(text) && !mValidator.isValid(text))        
         {
             setText(mValidator.fixText(text));
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mValidator == null) return;
+        //CharSequence text = getText();
+        //if (!TextUtils.isEmpty(text) && !mValidator.isValid(text)) {
+            //setText(mValidator.fixText(text));
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.568 -0400", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "84DDA0ABBCB975918DCD797B8F6AD3EF")
     protected Filter getFilter() {
 Filter var6104E4BD549FCD2640641D136DD683A6_2135325127 =         mFilter;
         var6104E4BD549FCD2640641D136DD683A6_2135325127.addTaint(taint);
         return var6104E4BD549FCD2640641D136DD683A6_2135325127;
-        
-        
+        // ---------- Original Method ----------
+        //return mFilter;
     }
 
     
@@ -1294,7 +1278,7 @@ Filter var6104E4BD549FCD2640641D136DD683A6_2135325127 =         mFilter;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.568 -0400", hash_original_method = "25E4BE534CF40240061ABF020C9D68F0", hash_generated_method = "25E4BE534CF40240061ABF020C9D68F0")
         public MyWatcher ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1302,8 +1286,8 @@ Filter var6104E4BD549FCD2640641D136DD683A6_2135325127 =         mFilter;
         public void afterTextChanged(Editable s) {
             addTaint(s.getTaint());
             doAfterTextChanged();
-            
-            
+            // ---------- Original Method ----------
+            //doAfterTextChanged();
         }
 
         
@@ -1314,20 +1298,19 @@ Filter var6104E4BD549FCD2640641D136DD683A6_2135325127 =         mFilter;
             addTaint(start);
             addTaint(s.getTaint());
             doBeforeTextChanged();
-            
-            
+            // ---------- Original Method ----------
+            //doBeforeTextChanged();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.569 -0400", hash_original_method = "65C508C8ABB6ACC44B70A081DD077416", hash_generated_method = "A21233C596673F70242F69FE5FA27133")
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(count);
             addTaint(before);
             addTaint(start);
             addTaint(s.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -1340,20 +1323,20 @@ Filter var6104E4BD549FCD2640641D136DD683A6_2135325127 =         mFilter;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.569 -0400", hash_original_method = "8B63FBEE4316EEB2311D787C7564687C", hash_generated_method = "8B63FBEE4316EEB2311D787C7564687C")
         public DropDownItemClickListener ()
         {
-            
+            //Synthesized constructor
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.570 -0400", hash_original_method = "4F7C82DB77A3FEF0D877BA2AB4932B41", hash_generated_method = "ED5B0C046944C5FF7A457F07C3A0A6CB")
         public void onItemClick(AdapterView parent, View v, int position, long id) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(id);
             addTaint(position);
             addTaint(v.getTaint());
             addTaint(parent.getTaint());
             performCompletion(v, position, id);
-            
-            
+            // ---------- Original Method ----------
+            //performCompletion(v, position, id);
         }
 
         
@@ -1369,20 +1352,20 @@ Filter var6104E4BD549FCD2640641D136DD683A6_2135325127 =         mFilter;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.570 -0400", hash_original_method = "DBB7AAAD00FA07F6102A2DD0869EFBF7", hash_generated_method = "DBB7AAAD00FA07F6102A2DD0869EFBF7")
         public PassThroughClickListener ()
         {
-            
+            //Synthesized constructor
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.570 -0400", hash_original_method = "E3F762E6FD76D99B402BD097AF1F93E6", hash_generated_method = "1BD340F73188B85578EB1A140C1C4DFD")
         public void onClick(View v) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(v.getTaint());
             onClickImpl();
     if(mWrapped != null)            
             mWrapped.onClick(v);
-            
-            
-            
+            // ---------- Original Method ----------
+            //onClickImpl();
+            //if (mWrapped != null) mWrapped.onClick(v);
         }
 
         
@@ -1395,14 +1378,14 @@ Filter var6104E4BD549FCD2640641D136DD683A6_2135325127 =         mFilter;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.570 -0400", hash_original_method = "2B87497157622859499FF49FBED7C822", hash_generated_method = "2B87497157622859499FF49FBED7C822")
         public PopupDataSetObserver ()
         {
-            
+            //Synthesized constructor
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.571 -0400", hash_original_method = "E1ADD1CC7F155CD4BE00BE335F96E1E6", hash_generated_method = "A7B37CA3969AD4BC520235BEFD2156EB")
         @Override
         public void onChanged() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
     if(mAdapter != null)            
             {
                 post(new Runnable() {            
@@ -1412,26 +1395,26 @@ Filter var6104E4BD549FCD2640641D136DD683A6_2135325127 =         mFilter;
     if(adapter != null)                
                 {
                     updateDropDownForFilter(adapter.getCount());
-                } 
-                
-                
-                
-                            
-                        
+                } //End block
+                // ---------- Original Method ----------
+                //final ListAdapter adapter = mAdapter;
+                //if (adapter != null) {
+                            //updateDropDownForFilter(adapter.getCount());
+                        //}
             }
 });
-            } 
-            
-            
-                
-                    
-                        
-                        
-                            
-                        
-                    
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mAdapter != null) {
+                //post(new Runnable() {
+                    //public void run() {
+                        //final ListAdapter adapter = mAdapter;
+                        //if (adapter != null) {
+                            //updateDropDownForFilter(adapter.getCount());
+                        //}
+                    //}
+                //});
+            //}
         }
 
         

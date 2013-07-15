@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -56,7 +56,7 @@ public class DataCallState {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.235 -0400", hash_original_method = "F9C84E8FBBA5D2B599538814C0144DA0", hash_generated_method = "F9C84E8FBBA5D2B599538814C0144DA0")
     public DataCallState ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -77,7 +77,7 @@ for(String addr : addresses)
         {
             sb.append(addr);
             sb.append(",");
-        } 
+        } //End block
     if(addresses.length > 0)        
         sb.deleteCharAt(sb.length()-1);
         sb.append("] dnses=[");
@@ -85,7 +85,7 @@ for(String addr : dnses)
         {
             sb.append(addr);
             sb.append(",");
-        } 
+        } //End block
     if(dnses.length > 0)        
         sb.deleteCharAt(sb.length()-1);
         sb.append("] gateways=[");
@@ -93,19 +93,18 @@ for(String addr : gateways)
         {
             sb.append(addr);
             sb.append(",");
-        } 
+        } //End block
     if(gateways.length > 0)        
         sb.deleteCharAt(sb.length()-1);
         sb.append("]}");
 String var2460B846747F8B22185AD8BE722266A5_1899049508 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1899049508.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1899049508;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.240 -0400", hash_original_method = "D215C550B13153D48FB1E7191C982EAA", hash_generated_method = "3E546E6D95562AC743C363C1CC44E897")
     public SetupResult setLinkProperties(LinkProperties linkProperties,
             boolean okToUseSystemPropertyDns) {
@@ -136,41 +135,41 @@ for(String addr : addresses)
                         {
                             addr = ap[0];
                             addrPrefixLen = Integer.parseInt(ap[1]);
-                        } 
+                        } //End block
                         else
                         {
                             addrPrefixLen = 0;
-                        } 
+                        } //End block
                         InetAddress ia;
                         try 
                         {
                             ia = NetworkUtils.numericToInetAddress(addr);
-                        } 
+                        } //End block
                         catch (IllegalArgumentException e)
                         {
                             UnknownHostException varA863B3F84BD56088AAA8F44EFF6E49F6_1800039004 = new UnknownHostException("Non-numeric ip addr=" + addr);
                             varA863B3F84BD56088AAA8F44EFF6E49F6_1800039004.addTaint(taint);
                             throw varA863B3F84BD56088AAA8F44EFF6E49F6_1800039004;
-                        } 
+                        } //End block
     if(! ia.isAnyLocalAddress())                        
                         {
     if(addrPrefixLen == 0)                            
                             {
                                 addrPrefixLen = (ia instanceof Inet4Address) ? 32 : 128;
-                            } 
+                            } //End block
     if(DBG)                            
                             Log.d(LOG_TAG, "addr/pl=" + addr + "/" + addrPrefixLen);
                             la = new LinkAddress(ia, addrPrefixLen);
                             linkProperties.addLinkAddress(la);
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     UnknownHostException var8830AF8A7DDFCDD36201D20B007C6E34_44180512 = new UnknownHostException("no address for ifname=" + ifname);
                     var8830AF8A7DDFCDD36201D20B007C6E34_44180512.addTaint(taint);
                     throw var8830AF8A7DDFCDD36201D20B007C6E34_44180512;
-                } 
+                } //End block
     if(dnses != null && dnses.length > 0)                
                 {
 for(String addr : dnses)
@@ -182,19 +181,19 @@ for(String addr : dnses)
                         try 
                         {
                             ia = NetworkUtils.numericToInetAddress(addr);
-                        } 
+                        } //End block
                         catch (IllegalArgumentException e)
                         {
                             UnknownHostException varD0095A75DA8702AE4D4D3B78CCC5B0CB_1170799569 = new UnknownHostException("Non-numeric dns addr=" + addr);
                             varD0095A75DA8702AE4D4D3B78CCC5B0CB_1170799569.addTaint(taint);
                             throw varD0095A75DA8702AE4D4D3B78CCC5B0CB_1170799569;
-                        } 
+                        } //End block
     if(! ia.isAnyLocalAddress())                        
                         {
                             linkProperties.addDns(ia);
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
     if(okToUseSystemPropertyDns)                
                 {
@@ -210,37 +209,37 @@ for(String dnsAddr : dnsServers)
                         try 
                         {
                             ia = NetworkUtils.numericToInetAddress(dnsAddr);
-                        } 
+                        } //End block
                         catch (IllegalArgumentException e)
                         {
                             UnknownHostException varE41797D41F7C89C430CA771BCC2B0728_145583884 = new UnknownHostException("Non-numeric dns addr=" + dnsAddr);
                             varE41797D41F7C89C430CA771BCC2B0728_145583884.addTaint(taint);
                             throw varE41797D41F7C89C430CA771BCC2B0728_145583884;
-                        } 
+                        } //End block
     if(! ia.isAnyLocalAddress())                        
                         {
                             linkProperties.addDns(ia);
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     UnknownHostException var0835286BE85D052BDAD1CAB9A5069C3F_585028363 = new UnknownHostException("Empty dns response and no system default dns");
                     var0835286BE85D052BDAD1CAB9A5069C3F_585028363.addTaint(taint);
                     throw var0835286BE85D052BDAD1CAB9A5069C3F_585028363;
-                } 
+                } //End block
     if((gateways == null) || (gateways.length == 0))                
                 {
                     String sysGateways = SystemProperties.get(propertyPrefix + "gw");
     if(sysGateways != null)                    
                     {
                         gateways = sysGateways.split(" ");
-                    } 
+                    } //End block
                     else
                     {
                         gateways = new String[0];
-                    } 
-                } 
+                    } //End block
+                } //End block
 for(String addr : gateways)
                 {
                     addr = addr.trim();
@@ -250,52 +249,52 @@ for(String addr : gateways)
                     try 
                     {
                         ia = NetworkUtils.numericToInetAddress(addr);
-                    } 
+                    } //End block
                     catch (IllegalArgumentException e)
                     {
                         UnknownHostException var5D525328A510081430DE4D78C09B2CC0_1745697797 = new UnknownHostException("Non-numeric gateway addr=" + addr);
                         var5D525328A510081430DE4D78C09B2CC0_1745697797.addTaint(taint);
                         throw var5D525328A510081430DE4D78C09B2CC0_1745697797;
-                    } 
+                    } //End block
     if(! ia.isAnyLocalAddress())                    
                     {
                         linkProperties.addRoute(new RouteInfo(ia));
-                    } 
-                } 
+                    } //End block
+                } //End block
                 result = SetupResult.SUCCESS;
-            } 
+            } //End block
             catch (UnknownHostException e)
             {
                 Log.d(LOG_TAG, "setLinkProperties: UnknownHostException " + e);
                 e.printStackTrace();
                 result = SetupResult.ERR_UnacceptableParameter;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(version < 4)            
             {
                 result = SetupResult.ERR_GetLastErrorFromRil;
-            } 
+            } //End block
             else
             {
                 result = SetupResult.ERR_RilError;
-            } 
-        } 
+            } //End block
+        } //End block
     if(result != SetupResult.SUCCESS)        
         {
     if(DBG)            
             {
                 Log.d(LOG_TAG, "setLinkProperties: error clearing LinkProperties " +
                         "status=" + status + " result=" + result);
-            } 
+            } //End block
             linkProperties.clear();
-        } 
+        } //End block
 SetupResult varDC838461EE2FA0CA4C9BBB70A15456B0_2087173888 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_2087173888.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_2087173888;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,11 +30,11 @@ public class SyncInfo implements Parcelable {
         this.account = account;
         this.authority = authority;
         this.startTime = startTime;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.authorityId = authorityId;
+        //this.account = account;
+        //this.authority = authority;
+        //this.startTime = startTime;
     }
 
     
@@ -44,26 +44,24 @@ public class SyncInfo implements Parcelable {
         account = new Account(parcel);
         authority = parcel.readString();
         startTime = parcel.readLong();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //authorityId = parcel.readInt();
+        //account = new Account(parcel);
+        //authority = parcel.readString();
+        //startTime = parcel.readLong();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.438 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "52B8B122713C58AB697584E38ABC0360")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_859157093 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1287623772 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1287623772;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.440 -0400", hash_original_method = "1C5B91DE7E7E8D04DC252E4EE5F1DBAA", hash_generated_method = "3A08AB990C036BE215594BA3B7F9A0CC")
     public void writeToParcel(Parcel parcel, int flags) {
         addTaint(flags);
@@ -72,11 +70,11 @@ public class SyncInfo implements Parcelable {
         account.writeToParcel(parcel, 0);
         parcel.writeString(authority);
         parcel.writeLong(startTime);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //parcel.writeInt(authorityId);
+        //account.writeToParcel(parcel, 0);
+        //parcel.writeString(authority);
+        //parcel.writeLong(startTime);
     }
 
     
@@ -91,12 +89,12 @@ public class SyncInfo implements Parcelable {
             return new SyncInfo[size];
         }
     };
-    
+    // orphaned legacy method
     public SyncInfo createFromParcel(Parcel in) {
             return new SyncInfo(in);
         }
     
-    
+    // orphaned legacy method
     public SyncInfo[] newArray(int size) {
             return new SyncInfo[size];
         }

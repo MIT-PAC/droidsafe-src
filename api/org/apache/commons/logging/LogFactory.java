@@ -1,6 +1,6 @@
 package org.apache.commons.logging;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public abstract class LogFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:27.999 -0400", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "A8E7489E7B239B2C7DA374E4667D6148")
     protected  LogFactory() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -254,8 +254,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static void release(ClassLoader classLoader) {
+        public static void release(ClassLoader classLoader) {
         if (isDiagnosticsEnabled()) {
             logDiagnostic("Releasing factory for classloader " + objectId(classLoader));
         }
@@ -295,8 +294,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    protected static ClassLoader getClassLoader(Class clazz) {
+        protected static ClassLoader getClassLoader(Class clazz) {
         try {
             return clazz.getClassLoader();
         } catch(SecurityException ex) {
@@ -310,8 +308,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    protected static ClassLoader getContextClassLoader() throws LogConfigurationException {
+        protected static ClassLoader getContextClassLoader() throws LogConfigurationException {
         return (ClassLoader)AccessController.doPrivileged(
             new PrivilegedAction() {
                 public Object run() {
@@ -321,8 +318,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    protected static ClassLoader directGetContextClassLoader() throws LogConfigurationException {
+        protected static ClassLoader directGetContextClassLoader() throws LogConfigurationException {
         ClassLoader classLoader = null;
         try {
             Method method = Thread.class.getMethod("getContextClassLoader", 
@@ -348,8 +344,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    private static LogFactory getCachedFactory(ClassLoader contextClassLoader) {
+        private static LogFactory getCachedFactory(ClassLoader contextClassLoader) {
         LogFactory factory = null;
         if (contextClassLoader == null) {
             factory = nullClassLoaderFactory;
@@ -360,8 +355,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    private static void cacheFactory(ClassLoader classLoader, LogFactory factory) {
+        private static void cacheFactory(ClassLoader classLoader, LogFactory factory) {
         if (factory != null) {
             if (classLoader == null) {
                 nullClassLoaderFactory = factory;
@@ -405,8 +399,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    protected static Object createFactory(String factoryClass, ClassLoader classLoader) {
+        protected static Object createFactory(String factoryClass, ClassLoader classLoader) {
         Class logFactoryClass = null;
         try {
             if (classLoader != null) {
@@ -716,8 +709,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static boolean isDiagnosticsEnabled() {
+        protected static boolean isDiagnosticsEnabled() {
         return diagnosticsStream != null;
     }
 
@@ -765,8 +757,7 @@ public abstract class LogFactory {
     }
 
     
-        @DSModeled(DSC.BAN)
-    private static void logHierarchy(String prefix, ClassLoader classLoader) {
+        private static void logHierarchy(String prefix, ClassLoader classLoader) {
         if (!isDiagnosticsEnabled()) {
             return;
         }

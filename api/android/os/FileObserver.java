@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public abstract class FileObserver {
     public  FileObserver(String path) {
         this(path, ALL_EVENTS);
         addTaint(path.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,18 +34,18 @@ public abstract class FileObserver {
         m_path = path;
         m_mask = mask;
         m_descriptor = -1;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //m_path = path;
+        //m_mask = mask;
+        //m_descriptor = -1;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.255 -0400", hash_original_method = "C06680780DBA5951A3829CD335D202E8", hash_generated_method = "54389441D361A9D47ADD493BC8B0D77A")
     protected void finalize() {
         stopWatching();
-        
-        
+        // ---------- Original Method ----------
+        //stopWatching();
     }
 
     
@@ -54,11 +54,11 @@ public abstract class FileObserver {
     if(m_descriptor < 0)        
         {
             m_descriptor = s_observerThread.startWatching(m_path, m_mask, this);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (m_descriptor < 0) {
+            //m_descriptor = s_observerThread.startWatching(m_path, m_mask, this);
+        //}
     }
 
     
@@ -68,12 +68,12 @@ public abstract class FileObserver {
         {
             s_observerThread.stopWatching(m_descriptor);
             m_descriptor = -1;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (m_descriptor >= 0) {
+            //s_observerThread.stopWatching(m_descriptor);
+            //m_descriptor = -1;
+        //}
     }
 
     
@@ -92,16 +92,16 @@ public abstract class FileObserver {
         public  ObserverThread() {
             super("FileObserver");
             m_fd = init();
-            
-            
+            // ---------- Original Method ----------
+            //m_fd = init();
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.257 -0400", hash_original_method = "1D431AF3E47E4C831FAF412598272832", hash_generated_method = "1AC225FF31C20B65F9280920FBE577FF")
         public void run() {
             observe(m_fd);
-            
-            
+            // ---------- Original Method ----------
+            //observe(m_fd);
         }
 
         
@@ -117,20 +117,20 @@ public abstract class FileObserver {
                 synchronized
 (m_observers)                {
                     m_observers.put(i, new WeakReference(observer));
-                } 
-            } 
+                } //End block
+            } //End block
             int var865C0C0B4AB0E063E5CAA3387C1A8741_902347559 = (i);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_302064167 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_302064167;
-            
-            
-            
-            
-                
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //int wfd = startWatching(m_fd, path, mask);
+            //Integer i = new Integer(wfd);
+            //if (wfd >= 0) {
+                //synchronized (m_observers) {
+                    //m_observers.put(i, new WeakReference(observer));
+                //}
+            //}
+            //return i;
         }
 
         
@@ -138,14 +138,14 @@ public abstract class FileObserver {
         public void stopWatching(int descriptor) {
             addTaint(descriptor);
             stopWatching(m_fd, descriptor);
-            
-            
+            // ---------- Original Method ----------
+            //stopWatching(m_fd, descriptor);
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "E3F4B34F65574690D606354D21ACF2F8", hash_generated_method = "43B249D50E1708E7BF7B631043593B2C")
         public void onEvent(int wfd, int mask, String path) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(path.getTaint());
             addTaint(mask);
             addTaint(wfd);
@@ -159,42 +159,41 @@ public abstract class FileObserver {
     if(observer == null)                    
                     {
                         m_observers.remove(wfd);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(observer != null)            
             {
                 try 
                 {
                     observer.onEvent(mask, path);
-                } 
+                } //End block
                 catch (Throwable throwable)
                 {
                     Log.wtf(LOG_TAG, "Unhandled exception in FileObserver " + observer, throwable);
-                } 
-            } 
-            
-            
-            
-                
-                
-                    
-                    
-                        
-                    
-                
-            
-            
-                
-                    
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //FileObserver observer = null;
+            //synchronized (m_observers) {
+                //WeakReference weak = m_observers.get(wfd);
+                //if (weak != null) {  
+                    //observer = (FileObserver) weak.get();
+                    //if (observer == null) {
+                        //m_observers.remove(wfd);
+                    //}
+                //}
+            //}
+            //if (observer != null) {
+                //try {
+                    //observer.onEvent(mask, path);
+                //} catch (Throwable throwable) {
+                    //Log.wtf(LOG_TAG, "Unhandled exception in FileObserver " + observer, throwable);
+                //}
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "778044715AD29D56156139197CF7ACD4", hash_generated_method = "C4D44BF8B162500A5B4780D8EFD643A3")
         private int init() {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723056411 = getTaintInt();
@@ -202,13 +201,11 @@ public abstract class FileObserver {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "30BDAF8579403E1F75F26C57B59EB8F1", hash_generated_method = "67FB347A4347839EF365C019547DE29A")
         private void observe(int fd) {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "CA1E769B93F82C6A5E8C249942B2D7CE", hash_generated_method = "3F2FD3876C468B061E94CD95BCE057D9")
         private int startWatching(int fd, String path, int mask) {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_148441960 = getTaintInt();
@@ -216,7 +213,6 @@ public abstract class FileObserver {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.258 -0400", hash_original_method = "78CD10B29FCA91AF1BF9DCB391BC5AA9", hash_generated_method = "AA52DA03EE07FAC57937E1E11154B48F")
         private void stopWatching(int fd, int wfd) {
         }

@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,12 +31,12 @@ class DatabaseConnectionPool {
     if(Log.isLoggable(TAG, Log.DEBUG))        
         {
             Log.d(TAG, "Max Pool Size: " + mMaxPoolSize);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.mParentDbObj = db;
+        //if (Log.isLoggable(TAG, Log.DEBUG)) {
+            //Log.d(TAG, "Max Pool Size: " + mMaxPoolSize);
+        //}
     }
 
     
@@ -45,20 +45,20 @@ class DatabaseConnectionPool {
     if(Log.isLoggable(TAG, Log.DEBUG))        
         {
             Log.d(TAG, "Closing the connection pool on " + mParentDbObj.getPath() + toString());
-        } 
+        } //End block
 for(int i = mPool.size() - 1;i >= 0;i--)
         {
             mPool.get(i).mDb.close();
-        } 
+        } //End block
         mPool.clear();
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (Log.isLoggable(TAG, Log.DEBUG)) {
+            //Log.d(TAG, "Closing the connection pool on " + mParentDbObj.getPath() + toString());
+        //}
+        //for (int i = mPool.size() - 1; i >= 0; i--) {
+            //mPool.get(i).mDb.close();
+        //}
+        //mPool.clear();
     }
 
     
@@ -71,7 +71,7 @@ for(int i = mPool.size() - 1;i >= 0;i--)
     if(Log.isLoggable(TAG, Log.DEBUG))        
         {
             doAsserts();
-        } 
+        } //End block
     if(getFreePoolSize() == 0)        
         {
     if(mMaxPoolSize == poolSize)            
@@ -79,7 +79,7 @@ for(int i = mPool.size() - 1;i >= 0;i--)
     if(mMaxPoolSize == 1)                
                 {
                     poolObj = mPool.get(0);
-                } 
+                } //End block
                 else
                 {
 for(int i = 0;i < mMaxPoolSize;i++)
@@ -88,26 +88,26 @@ for(int i = 0;i < mMaxPoolSize;i++)
                         {
                             poolObj = mPool.get(i);
                             break;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
     if(poolObj == null)                    
                     {
     if(rand == null)                        
                         {
                             rand = new Random(SystemClock.elapsedRealtime());
-                        } 
+                        } //End block
                         poolObj = mPool.get(rand.nextInt(mMaxPoolSize));
-                    } 
-                } 
+                    } //End block
+                } //End block
                 db = poolObj.mDb;
-            } 
+            } //End block
             else
             {
                 db = mParentDbObj.createPoolConnection((short)(poolSize + 1));
                 poolObj = new PoolObj(db);
                 mPool.add(poolSize, poolObj);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
 for(int i = 0;i < poolSize;i++)
@@ -116,8 +116,8 @@ for(int i = 0;i < poolSize;i++)
                 {
                     poolObj = mPool.get(i);
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(poolObj == null)            
             {
 for(int i = 0;i < poolSize;i++)
@@ -126,21 +126,21 @@ for(int i = 0;i < poolSize;i++)
                     {
                         poolObj = mPool.get(i);
                         break;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             db = poolObj.mDb;
-        } 
+        } //End block
         poolObj.acquire();
     if(Log.isLoggable(TAG, Log.DEBUG))        
         {
             Log.d(TAG, "END get-connection: " + toString() + poolObj.toString());
-        } 
+        } //End block
 SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_1383749560 =         db;
         var2F732BA7E0C8A6B94C1D7B25B6A078BE_1383749560.addTaint(taint);
         return var2F732BA7E0C8A6B94C1D7B25B6A078BE_1383749560;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -150,42 +150,42 @@ SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_1383749560 =         db;
     if(Log.isLoggable(TAG, Log.DEBUG))        
         {
             doAsserts();
-        } 
+        } //End block
         PoolObj poolObj = mPool.get(db.mConnectionNum - 1);
     if(Log.isLoggable(TAG, Log.DEBUG))        
         {
             Log.d(TAG, "BEGIN release-conn: " + toString() + poolObj.toString());
-        } 
+        } //End block
     if(poolObj.isFree())        
         {
             IllegalStateException var86AA019ED02B9EB1FB277029C6C2821D_886277038 = new IllegalStateException("Releasing object already freed: " +
                     db.mConnectionNum);
             var86AA019ED02B9EB1FB277029C6C2821D_886277038.addTaint(taint);
             throw var86AA019ED02B9EB1FB277029C6C2821D_886277038;
-        } 
+        } //End block
         poolObj.release();
     if(Log.isLoggable(TAG, Log.DEBUG))        
         {
             Log.d(TAG, "END release-conn: " + toString() + poolObj.toString());
-        } 
-        
-        
-            
-            
-            
-        
-        
-        
-            
-        
-        
-            
-                    
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (Log.isLoggable(TAG, Log.DEBUG)) {
+            //assert db.mConnectionNum > 0;
+            //doAsserts();
+            //assert mPool.get(db.mConnectionNum - 1).mDb == db;
+        //}
+        //PoolObj poolObj = mPool.get(db.mConnectionNum - 1);
+        //if (Log.isLoggable(TAG, Log.DEBUG)) {
+            //Log.d(TAG, "BEGIN release-conn: " + toString() + poolObj.toString());
+        //}
+        //if (poolObj.isFree()) {
+            //throw new IllegalStateException("Releasing object already freed: " +
+                    //db.mConnectionNum);
+        //}
+        //poolObj.release();
+        //if (Log.isLoggable(TAG, Log.DEBUG)) {
+            //Log.d(TAG, "END release-conn: " + toString() + poolObj.toString());
+        //}
     }
 
     
@@ -195,16 +195,16 @@ SQLiteDatabase var2F732BA7E0C8A6B94C1D7B25B6A078BE_1383749560 =         db;
 for(int i = mPool.size() - 1;i >= 0;i--)
         {
             list.add(mPool.get(i).mDb);
-        } 
+        } //End block
 ArrayList<SQLiteDatabase> varED12C351C2E8CA4F85F097DDC7E77B4D_1175185348 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_1175185348.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_1175185348;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<SQLiteDatabase> list = new ArrayList<SQLiteDatabase>();
+        //for (int i = mPool.size() - 1; i >= 0; i--) {
+            //list.add(mPool.get(i).mDb);
+        //}
+        //return list;
     }
 
     
@@ -216,19 +216,19 @@ for(int i = mPool.size() - 1;i >= 0;i--)
     if(mPool.get(i).isFree())            
             {
                 count++;
-            } 
-        } 
+            } //End block
+        } //End block
         int varD676675D81EFB6DCF67814B2BE42B3B8_735896168 = (count++);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1294146656 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1294146656;
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = 0;
+        //for (int i = mPool.size() - 1; i >= 0; i--) {
+            //if (mPool.get(i).isFree()) {
+                //count++;
+            //}
+        //}
+        //return count++;
     }
 
     
@@ -237,8 +237,8 @@ for(int i = mPool.size() - 1;i >= 0;i--)
 ArrayList<PoolObj> varB4506CA02789EEFE1322E696990510A4_356372886 =         mPool;
         varB4506CA02789EEFE1322E696990510A4_356372886.addTaint(taint);
         return varB4506CA02789EEFE1322E696990510A4_356372886;
-        
-        
+        // ---------- Original Method ----------
+        //return mPool;
     }
 
     
@@ -258,25 +258,25 @@ for(PoolObj p : mPool)
         {
             buff.append("\n");
             buff.append(p.toString());
-        } 
+        } //End block
 String varA8F8BFF7B1F2F52B225C2C2411606CA3_1879728431 =         buff.toString();
         varA8F8BFF7B1F2F52B225C2C2411606CA3_1879728431.addTaint(taint);
         return varA8F8BFF7B1F2F52B225C2C2411606CA3_1879728431;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buff = new StringBuilder();
+        //buff.append("db: ");
+        //buff.append(mParentDbObj.getPath());
+        //buff.append(", totalsize = ");
+        //buff.append(mPool.size());
+        //buff.append(", #free = ");
+        //buff.append(getFreePoolSize());
+        //buff.append(", maxpoolsize = ");
+        //buff.append(mMaxPoolSize);
+        //for (PoolObj p : mPool) {
+            //buff.append("\n");
+            //buff.append(p.toString());
+        //}
+        //return buff.toString();
     }
 
     
@@ -285,32 +285,30 @@ String varA8F8BFF7B1F2F52B225C2C2411606CA3_1879728431 =         buff.toString();
 for(int i = 0;i < mPool.size();i++)
         {
             mPool.get(i).verify();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = 0; i < mPool.size(); i++) {
+            //mPool.get(i).verify();
+            //assert mPool.get(i).mDb.mConnectionNum == (i + 1);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.503 -0400", hash_original_method = "96488BAB5A39A9E992D6669775E5CBE2", hash_generated_method = "9D4509CE641891DA5CEC26B706A255AF")
     synchronized void setMaxPoolSize(int size) {
         mMaxPoolSize = size;
-        
-        
+        // ---------- Original Method ----------
+        //mMaxPoolSize = size;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.503 -0400", hash_original_method = "A46AC3F11215B4A1E1FF85A064F0CFC1", hash_generated_method = "8C08D29D84A7CFF8EC0937BBAEBDC02E")
     synchronized int getMaxPoolSize() {
         int varE09C7B9591348137B71BF1DB7F072E31_1041805989 = (mMaxPoolSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_465160818 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_465160818;
-        
-        
+        // ---------- Original Method ----------
+        //return mMaxPoolSize;
     }
 
     
@@ -320,8 +318,8 @@ for(int i = 0;i < mPool.size();i++)
         boolean var5DEA20A71EE431AD3C1F2E172820BE06_679130918 = (mPool.get(db.mConnectionNum - 1).isFree());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_605098328 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_605098328;
-        
-        
+        // ---------- Original Method ----------
+        //return mPool.get(db.mConnectionNum - 1).isFree();
     }
 
     
@@ -330,8 +328,8 @@ for(int i = 0;i < mPool.size();i++)
         int var945EC9F080E24881B59692063D2865DE_1795394994 = (mPool.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_239547287 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_239547287;
-        
-        
+        // ---------- Original Method ----------
+        //return mPool.size();
     }
 
     
@@ -352,8 +350,8 @@ for(int i = 0;i < mPool.size();i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.506 -0400", hash_original_method = "DC316C09CB4059B013C925E31D9707E2", hash_generated_method = "C727BF994E820394181F7F366C811F68")
         public  PoolObj(SQLiteDatabase db) {
             mDb = db;
-            
-            
+            // ---------- Original Method ----------
+            //mDb = db;
         }
 
         
@@ -363,18 +361,18 @@ for(int i = 0;i < mPool.size();i++)
             {
                 long id = Thread.currentThread().getId();
                 mHolderIds.add(id);
-            } 
+            } //End block
             mNumHolders++;
             mFreeBusyFlag = BUSY;
-            
-            
-                
-                
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (Log.isLoggable(TAG, Log.DEBUG)) {
+                //assert isFree();
+                //long id = Thread.currentThread().getId();
+                //assert !mHolderIds.contains(id);
+                //mHolderIds.add(id);
+            //}
+            //mNumHolders++;
+            //mFreeBusyFlag = BUSY;
         }
 
         
@@ -384,23 +382,23 @@ for(int i = 0;i < mPool.size();i++)
             {
                 long id = Thread.currentThread().getId();
                 mHolderIds.remove(id);
-            } 
+            } //End block
             mNumHolders--;
     if(mNumHolders == 0)            
             {
                 mFreeBusyFlag = FREE;
-            } 
-            
-            
-                
-                
-                
-                
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (Log.isLoggable(TAG, Log.DEBUG)) {
+                //long id = Thread.currentThread().getId();
+                //assert mHolderIds.size() == mNumHolders;
+                //assert mHolderIds.contains(id);
+                //mHolderIds.remove(id);
+            //}
+            //mNumHolders--;
+            //if (mNumHolders == 0) {
+                //mFreeBusyFlag = FREE;
+            //}
         }
 
         
@@ -409,15 +407,15 @@ for(int i = 0;i < mPool.size();i++)
     if(Log.isLoggable(TAG, Log.DEBUG))            
             {
                 verify();
-            } 
+            } //End block
             boolean varCBA7543F51647F6046E3FFE5E58A1CA5_780330515 = ((mFreeBusyFlag == FREE));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_145993013 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_145993013;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (Log.isLoggable(TAG, Log.DEBUG)) {
+                //verify();
+            //}
+            //return (mFreeBusyFlag == FREE);
         }
 
         
@@ -425,27 +423,26 @@ for(int i = 0;i < mPool.size();i++)
         private synchronized void verify() {
     if(mFreeBusyFlag == FREE)            
             {
-            } 
+            } //End block
             else
             {
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mFreeBusyFlag == FREE) {
+                //assert mNumHolders == 0;
+            //} else {
+                //assert mNumHolders > 0;
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.509 -0400", hash_original_method = "16D989C7D844FEE29812B797BE2CFCD6", hash_generated_method = "B6E4944986E8B7AAB2ED33686B1B47B9")
         synchronized int getNumHolders() {
             int varB8F40214A10D489952B71239BFD4B30C_1652291736 = (mNumHolders);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350795377 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350795377;
-            
-            
+            // ---------- Original Method ----------
+            //return mNumHolders;
         }
 
         
@@ -464,25 +461,25 @@ for(int i = 0;i < mPool.size();i++)
 for(Long l : mHolderIds)
                 {
                     buff.append(", id = " + l);
-                } 
-            } 
+                } //End block
+            } //End block
 String varA8F8BFF7B1F2F52B225C2C2411606CA3_1563277102 =             buff.toString();
             varA8F8BFF7B1F2F52B225C2C2411606CA3_1563277102.addTaint(taint);
             return varA8F8BFF7B1F2F52B225C2C2411606CA3_1563277102;
-            
-            
-            
-            
-            
-            
-                
-                
-                
-                
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //StringBuilder buff = new StringBuilder();
+            //buff.append(", conn # ");
+            //buff.append(mDb.mConnectionNum);
+            //buff.append(", mCountHolders = ");
+            //synchronized(this) {
+                //buff.append(mNumHolders);
+                //buff.append(", freeBusyFlag = ");
+                //buff.append(mFreeBusyFlag);
+                //for (Long l : mHolderIds) {
+                    //buff.append(", id = " + l);
+                //}
+            //}
+            //return buff.toString();
         }
 
         

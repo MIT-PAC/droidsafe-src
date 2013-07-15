@@ -1,6 +1,6 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,7 +51,7 @@ public class SslCertificate {
         addTaint(validNotBefore.getTaint());
         addTaint(issuedBy.getTaint());
         addTaint(issuedTo.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -64,7 +64,7 @@ public class SslCertificate {
         addTaint(validNotBefore.getTaint());
         addTaint(issuedBy.getTaint());
         addTaint(issuedTo.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -76,7 +76,7 @@ public class SslCertificate {
              certificate.getNotAfter(),
              certificate);
         addTaint(certificate.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -90,12 +90,12 @@ public class SslCertificate {
         mValidNotBefore = cloneDate(validNotBefore);
         mValidNotAfter  = cloneDate(validNotAfter);
         mX509Certificate = x509Certificate;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mIssuedTo = new DName(issuedTo);
+        //mIssuedBy = new DName(issuedBy);
+        //mValidNotBefore = cloneDate(validNotBefore);
+        //mValidNotAfter  = cloneDate(validNotAfter);
+        //mX509Certificate = x509Certificate;
     }
 
     
@@ -149,8 +149,8 @@ public class SslCertificate {
 Date var888124D2AF52A13A16838979247477EF_1513703382 =         cloneDate(mValidNotBefore);
         var888124D2AF52A13A16838979247477EF_1513703382.addTaint(taint);
         return var888124D2AF52A13A16838979247477EF_1513703382;
-        
-        
+        // ---------- Original Method ----------
+        //return cloneDate(mValidNotBefore);
     }
 
     
@@ -160,8 +160,8 @@ Date var888124D2AF52A13A16838979247477EF_1513703382 =         cloneDate(mValidNo
 String var8EA6787CA3942732667A1A413F7D73D2_1425383408 =         formatDate(mValidNotBefore);
         var8EA6787CA3942732667A1A413F7D73D2_1425383408.addTaint(taint);
         return var8EA6787CA3942732667A1A413F7D73D2_1425383408;
-        
-        
+        // ---------- Original Method ----------
+        //return formatDate(mValidNotBefore);
     }
 
     
@@ -170,8 +170,8 @@ String var8EA6787CA3942732667A1A413F7D73D2_1425383408 =         formatDate(mVali
 Date var5B80FBA32B2E5EDCBD83079545420CD6_1934583069 =         cloneDate(mValidNotAfter);
         var5B80FBA32B2E5EDCBD83079545420CD6_1934583069.addTaint(taint);
         return var5B80FBA32B2E5EDCBD83079545420CD6_1934583069;
-        
-        
+        // ---------- Original Method ----------
+        //return cloneDate(mValidNotAfter);
     }
 
     
@@ -181,30 +181,28 @@ Date var5B80FBA32B2E5EDCBD83079545420CD6_1934583069 =         cloneDate(mValidNo
 String var5E03B79E55F41967AD2659800720A8BE_1003736052 =         formatDate(mValidNotAfter);
         var5E03B79E55F41967AD2659800720A8BE_1003736052.addTaint(taint);
         return var5E03B79E55F41967AD2659800720A8BE_1003736052;
-        
-        
+        // ---------- Original Method ----------
+        //return formatDate(mValidNotAfter);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.784 -0400", hash_original_method = "2E4F61534C62139557AB31E5631377F2", hash_generated_method = "A4CC84E28A4911E3BE1AD85FADFB16EF")
     public DName getIssuedTo() {
 DName var78BC96B113155E7EF78A0F7019405602_987725191 =         mIssuedTo;
         var78BC96B113155E7EF78A0F7019405602_987725191.addTaint(taint);
         return var78BC96B113155E7EF78A0F7019405602_987725191;
-        
-        
+        // ---------- Original Method ----------
+        //return mIssuedTo;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.784 -0400", hash_original_method = "82F93F0D2EB1DC97DAB6C30DC54F99BE", hash_generated_method = "482B59BDBA79F551342F4EC380D64F96")
     public DName getIssuedBy() {
 DName var9A957C3D1EADCF1F564E726204D0B108_603163724 =         mIssuedBy;
         var9A957C3D1EADCF1F564E726204D0B108_603163724.addTaint(taint);
         return var9A957C3D1EADCF1F564E726204D0B108_603163724;
-        
-        
+        // ---------- Original Method ----------
+        //return mIssuedBy;
     }
 
     
@@ -259,9 +257,9 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_203155277 =         ("Issued to: " + 
                 + "Issued by: " + mIssuedBy.getDName() + ";\n");
         var5BB6BFF63AB3DCE39B416D031BC3D7D9_203155277.addTaint(taint);
         return var5BB6BFF63AB3DCE39B416D031BC3D7D9_203155277;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return ("Issued to: " + mIssuedTo.getDName() + ";\n"
+                //+ "Issued by: " + mIssuedBy.getDName() + ";\n");
     }
 
     
@@ -290,7 +288,6 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_203155277 =         ("Issued to: " + 
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.787 -0400", hash_original_method = "D583B5DA5B2EDF3475293874A3D5A1D5", hash_generated_method = "4AD848247F2296CEC381A27AB8613FE7")
     public View inflateCertificateView(Context context) {
         addTaint(context.getTaint());
@@ -306,7 +303,7 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_203155277 =         ("Issued to: " + 
                     .setText(issuedTo.getOName());
             ((TextView) certificateView.findViewById(com.android.internal.R.id.to_org_unit))
                     .setText(issuedTo.getUName());
-        } 
+        } //End block
         ((TextView) certificateView.findViewById(com.android.internal.R.id.serial_number))
                 .setText(getSerialNumber(mX509Certificate));
         SslCertificate.DName issuedBy = getIssuedBy();
@@ -318,7 +315,7 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_203155277 =         ("Issued to: " + 
                     .setText(issuedBy.getOName());
             ((TextView) certificateView.findViewById(com.android.internal.R.id.by_org_unit))
                     .setText(issuedBy.getUName());
-        } 
+        } //End block
         String issuedOn = formatCertificateDate(context, getValidNotBeforeDate());
         ((TextView) certificateView.findViewById(com.android.internal.R.id.issued_on))
                 .setText(issuedOn);
@@ -332,8 +329,8 @@ String var5BB6BFF63AB3DCE39B416D031BC3D7D9_203155277 =         ("Issued to: " + 
 View varFC33B9A8916B0D6941F38F3EDB46A4C6_556232357 =         certificateView;
         varFC33B9A8916B0D6941F38F3EDB46A4C6_556232357.addTaint(taint);
         return varFC33B9A8916B0D6941F38F3EDB46A4C6_556232357;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -346,15 +343,15 @@ View varFC33B9A8916B0D6941F38F3EDB46A4C6_556232357 =         certificateView;
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_424782333 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_424782333.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_424782333;
-        } 
+        } //End block
 String var6BA2A45151073C97041D6DB255D79206_168644433 =         DateFormat.getDateFormat(context).format(certificateDate);
         var6BA2A45151073C97041D6DB255D79206_168644433.addTaint(taint);
         return var6BA2A45151073C97041D6DB255D79206_168644433;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (certificateDate == null) {
+            //return "";
+        //}
+        //return DateFormat.getDateFormat(context).format(certificateDate);
     }
 
     
@@ -388,69 +385,65 @@ for(int i = 0;i < oid.size();i++)
                         {
                             mCName = (String) val.elementAt(i);
                             continue;
-                        } 
+                        } //End block
     if(oid.elementAt(i).equals(X509Name.O))                        
                         {
                             mOName = (String) val.elementAt(i);
                             continue;
-                        } 
+                        } //End block
     if(oid.elementAt(i).equals(X509Name.OU))                        
                         {
                             mUName = (String) val.elementAt(i);
                             continue;
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 catch (IllegalArgumentException ex)
                 {
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.789 -0400", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "DD028F0111C59D49187E3A0779EADEDE")
         public String getDName() {
 String var0E412BB8426FC857F1D98F5ADB1C1FE8_1059973149 =             mDName != null ? mDName : "";
             var0E412BB8426FC857F1D98F5ADB1C1FE8_1059973149.addTaint(taint);
             return var0E412BB8426FC857F1D98F5ADB1C1FE8_1059973149;
-            
-            
+            // ---------- Original Method ----------
+            //return mDName != null ? mDName : "";
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.789 -0400", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "1942BA29E6A2EE97A07B6275BE2EE3CE")
         public String getCName() {
 String var41CD0A3353DF8C88F8F9C93A3283E0F6_175207629 =             mCName != null ? mCName : "";
             var41CD0A3353DF8C88F8F9C93A3283E0F6_175207629.addTaint(taint);
             return var41CD0A3353DF8C88F8F9C93A3283E0F6_175207629;
-            
-            
+            // ---------- Original Method ----------
+            //return mCName != null ? mCName : "";
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.790 -0400", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "69D1DCFC01D5B5105EE260E58B552CC3")
         public String getOName() {
 String var967E7ADD7E55EBF6EE5F55E7DF597DB1_707789021 =             mOName != null ? mOName : "";
             var967E7ADD7E55EBF6EE5F55E7DF597DB1_707789021.addTaint(taint);
             return var967E7ADD7E55EBF6EE5F55E7DF597DB1_707789021;
-            
-            
+            // ---------- Original Method ----------
+            //return mOName != null ? mOName : "";
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.790 -0400", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "BA6EA4EE9D23B324ADF56E00DB814E28")
         public String getUName() {
 String var3435F5434D6FC903E03BAEAFBF2E316F_403315749 =             mUName != null ? mUName : "";
             var3435F5434D6FC903E03BAEAFBF2E316F_403315749.addTaint(taint);
             return var3435F5434D6FC903E03BAEAFBF2E316F_403315749;
-            
-            
+            // ---------- Original Method ----------
+            //return mUName != null ? mUName : "";
         }
 
         

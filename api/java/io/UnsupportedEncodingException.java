@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class UnsupportedEncodingException extends IOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.073 -0400", hash_original_method = "120B741722292072F71D190D9178D3DA", hash_generated_method = "7FBF0CFE4EECE294CF78ED69B3643DFF")
     public  UnsupportedEncodingException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class UnsupportedEncodingException extends IOException {
     public  UnsupportedEncodingException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

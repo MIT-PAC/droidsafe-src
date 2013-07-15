@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,13 +24,13 @@ public class IdentityOutputStream extends OutputStream {
             IllegalArgumentException var37F5C066C9D0ECEEAAAFE6FBC9B24E18_954898588 = new IllegalArgumentException("Session output buffer may not be null");
             var37F5C066C9D0ECEEAAAFE6FBC9B24E18_954898588.addTaint(taint);
             throw var37F5C066C9D0ECEEAAAFE6FBC9B24E18_954898588;
-        } 
+        } //End block
         this.out = out;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (out == null) {
+            //throw new IllegalArgumentException("Session output buffer may not be null");
+        //}
+        //this.out = out;
     }
 
     
@@ -40,20 +40,20 @@ public class IdentityOutputStream extends OutputStream {
         {
             this.closed = true;
             this.out.flush();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!this.closed) {
+            //this.closed = true;
+            //this.out.flush();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.237 -0400", hash_original_method = "A5A452E28D931563D6707491621FFBE7", hash_generated_method = "659F5DF70DF5E6C77EDF97533C3E99AE")
     public void flush() throws IOException {
         this.out.flush();
-        
-        
+        // ---------- Original Method ----------
+        //this.out.flush();
     }
 
     
@@ -67,13 +67,13 @@ public class IdentityOutputStream extends OutputStream {
             IOException varB052DBEEB15E0A31B3EDC9E0CDC85E32_2022823807 = new IOException("Attempted write to closed stream.");
             varB052DBEEB15E0A31B3EDC9E0CDC85E32_2022823807.addTaint(taint);
             throw varB052DBEEB15E0A31B3EDC9E0CDC85E32_2022823807;
-        } 
+        } //End block
         this.out.write(b, off, len);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.closed) {
+            //throw new IOException("Attempted write to closed stream.");
+        //}
+        //this.out.write(b, off, len);
     }
 
     
@@ -81,8 +81,8 @@ public class IdentityOutputStream extends OutputStream {
     public void write(byte[] b) throws IOException {
         addTaint(b[0]);
         write(b, 0, b.length);
-        
-        
+        // ---------- Original Method ----------
+        //write(b, 0, b.length);
     }
 
     
@@ -94,13 +94,13 @@ public class IdentityOutputStream extends OutputStream {
             IOException varB052DBEEB15E0A31B3EDC9E0CDC85E32_250655237 = new IOException("Attempted write to closed stream.");
             varB052DBEEB15E0A31B3EDC9E0CDC85E32_250655237.addTaint(taint);
             throw varB052DBEEB15E0A31B3EDC9E0CDC85E32_250655237;
-        } 
+        } //End block
         this.out.write(b);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.closed) {
+            //throw new IOException("Attempted write to closed stream.");
+        //}
+        //this.out.write(b);
     }
 
     

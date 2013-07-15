@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,25 +27,25 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
         try 
         {
             sslParametersLocal = SSLParametersImpl.getDefault();
-        } 
+        } //End block
         catch (KeyManagementException e)
         {
             instantiationExceptionLocal = new IOException("Delayed instantiation exception:");
             instantiationExceptionLocal.initCause(e);
-        } 
+        } //End block
         this.sslParameters = sslParametersLocal;
         this.instantiationException = instantiationExceptionLocal;
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //SSLParametersImpl sslParametersLocal = null;
+        //IOException instantiationExceptionLocal = null;
+        //try {
+            //sslParametersLocal = SSLParametersImpl.getDefault();
+        //} catch (KeyManagementException e) {
+            //instantiationExceptionLocal = new IOException("Delayed instantiation exception:");
+            //instantiationExceptionLocal.initCause(e);
+        //}
+        //this.sslParameters = sslParametersLocal;
+        //this.instantiationException = instantiationExceptionLocal;
     }
 
     
@@ -53,9 +53,9 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
     protected  SSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
         this.sslParameters = sslParameters;
         this.instantiationException = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.sslParameters = sslParameters;
+        //this.instantiationException = null;
     }
 
     
@@ -67,15 +67,15 @@ public class SSLSocketFactoryImpl extends SSLSocketFactory {
 String[] var46F61E348BE3BFB8B0571B04F2FE2C80_1655124283 =             EmptyArray.STRING;
             var46F61E348BE3BFB8B0571B04F2FE2C80_1655124283.addTaint(taint);
             return var46F61E348BE3BFB8B0571B04F2FE2C80_1655124283;
-        } 
+        } //End block
 String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_840457193 =         sslParameters.getEnabledCipherSuites();
         varE73CF5FBDF510EEFDF00C7E4AF85C310_840457193.addTaint(taint);
         return varE73CF5FBDF510EEFDF00C7E4AF85C310_840457193;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (instantiationException != null) {
+            //return EmptyArray.STRING;
+        //}
+        //return sslParameters.getEnabledCipherSuites();
     }
 
     
@@ -87,19 +87,18 @@ String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_840457193 =         sslParameters.g
 String[] var46F61E348BE3BFB8B0571B04F2FE2C80_932232329 =             EmptyArray.STRING;
             var46F61E348BE3BFB8B0571B04F2FE2C80_932232329.addTaint(taint);
             return var46F61E348BE3BFB8B0571B04F2FE2C80_932232329;
-        } 
+        } //End block
 String[] varF6F3ABBB205DDE294417F777EFDFB1AB_1156446204 =         CipherSuite.getSupportedCipherSuiteNames();
         varF6F3ABBB205DDE294417F777EFDFB1AB_1156446204.addTaint(taint);
         return varF6F3ABBB205DDE294417F777EFDFB1AB_1156446204;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (instantiationException != null) {
+            //return EmptyArray.STRING;
+        //}
+        //return CipherSuite.getSupportedCipherSuiteNames();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.326 -0400", hash_original_method = "770FADDB251D7948083EF0D02F3938EE", hash_generated_method = "DF563A4AED76E78CD4165C2FB7C375B4")
     @Override
     public Socket createSocket(Socket s, String host, int port,
@@ -112,21 +111,20 @@ String[] varF6F3ABBB205DDE294417F777EFDFB1AB_1156446204 =         CipherSuite.ge
         {
             instantiationException.addTaint(taint);
             throw instantiationException;
-        } 
+        } //End block
 Socket varB60F6C18128D67E2AF7DE4C05556D019_1592116102 =         new SSLSocketWrapper(s, autoClose, (SSLParametersImpl) sslParameters
                 .clone());
         varB60F6C18128D67E2AF7DE4C05556D019_1592116102.addTaint(taint);
         return varB60F6C18128D67E2AF7DE4C05556D019_1592116102;
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (instantiationException != null) {
+            //throw instantiationException;
+        //}
+        //return new SSLSocketWrapper(s, autoClose, (SSLParametersImpl) sslParameters
+                //.clone());
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.327 -0400", hash_original_method = "0CDA18BD18854D909AC84115F509C8F0", hash_generated_method = "AF3C7A512DCE4DC2A667818FA1C0CE96")
     @Override
     public Socket createSocket() throws IOException {
@@ -134,19 +132,18 @@ Socket varB60F6C18128D67E2AF7DE4C05556D019_1592116102 =         new SSLSocketWra
         {
             instantiationException.addTaint(taint);
             throw instantiationException;
-        } 
+        } //End block
 Socket varF585F5C913EA0A8BB66CFC025ED67026_1795044047 =         new SSLSocketImpl((SSLParametersImpl) sslParameters.clone());
         varF585F5C913EA0A8BB66CFC025ED67026_1795044047.addTaint(taint);
         return varF585F5C913EA0A8BB66CFC025ED67026_1795044047;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (instantiationException != null) {
+            //throw instantiationException;
+        //}
+        //return new SSLSocketImpl((SSLParametersImpl) sslParameters.clone());
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.327 -0400", hash_original_method = "F68AAAAA9B8D61B174802E7029AF7953", hash_generated_method = "3FB2689D42ECFDD9559C469A5AEE0950")
     @Override
     public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
@@ -156,21 +153,20 @@ Socket varF585F5C913EA0A8BB66CFC025ED67026_1795044047 =         new SSLSocketImp
         {
             instantiationException.addTaint(taint);
             throw instantiationException;
-        } 
+        } //End block
 Socket varF099F73103E10DCDA254E6178668F26C_74346862 =         new SSLSocketImpl(host, port,
                 (SSLParametersImpl) sslParameters.clone());
         varF099F73103E10DCDA254E6178668F26C_74346862.addTaint(taint);
         return varF099F73103E10DCDA254E6178668F26C_74346862;
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (instantiationException != null) {
+            //throw instantiationException;
+        //}
+        //return new SSLSocketImpl(host, port,
+                //(SSLParametersImpl) sslParameters.clone());
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.328 -0400", hash_original_method = "53A1989EA3FBEE45809A2C11EADE957A", hash_generated_method = "C38D2CCE35F3CED70E94800B3BF86B7A")
     @Override
     public Socket createSocket(String host, int port,
@@ -184,21 +180,20 @@ Socket varF099F73103E10DCDA254E6178668F26C_74346862 =         new SSLSocketImpl(
         {
             instantiationException.addTaint(taint);
             throw instantiationException;
-        } 
+        } //End block
 Socket var8B2D508D0A0F4CCB24C221E5F50135E3_839209242 =         new SSLSocketImpl(host, port, localHost, localPort,
                 (SSLParametersImpl) sslParameters.clone());
         var8B2D508D0A0F4CCB24C221E5F50135E3_839209242.addTaint(taint);
         return var8B2D508D0A0F4CCB24C221E5F50135E3_839209242;
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (instantiationException != null) {
+            //throw instantiationException;
+        //}
+        //return new SSLSocketImpl(host, port, localHost, localPort,
+                //(SSLParametersImpl) sslParameters.clone());
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.329 -0400", hash_original_method = "FD8C4D4ADA3C87BB97218603199064D4", hash_generated_method = "851A1900725C02B57FF1C04F50F9CCEF")
     @Override
     public Socket createSocket(InetAddress host, int port) throws IOException {
@@ -208,21 +203,20 @@ Socket var8B2D508D0A0F4CCB24C221E5F50135E3_839209242 =         new SSLSocketImpl
         {
             instantiationException.addTaint(taint);
             throw instantiationException;
-        } 
+        } //End block
 Socket varF099F73103E10DCDA254E6178668F26C_1736983658 =         new SSLSocketImpl(host, port,
                 (SSLParametersImpl) sslParameters.clone());
         varF099F73103E10DCDA254E6178668F26C_1736983658.addTaint(taint);
         return varF099F73103E10DCDA254E6178668F26C_1736983658;
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (instantiationException != null) {
+            //throw instantiationException;
+        //}
+        //return new SSLSocketImpl(host, port,
+                //(SSLParametersImpl) sslParameters.clone());
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.330 -0400", hash_original_method = "3B16D41EDAC8F54354185F57BF630F58", hash_generated_method = "5231ABB94FA1FE57F0E12059B7AF12FE")
     @Override
     public Socket createSocket(InetAddress address, int port,
@@ -235,17 +229,17 @@ Socket varF099F73103E10DCDA254E6178668F26C_1736983658 =         new SSLSocketImp
         {
             instantiationException.addTaint(taint);
             throw instantiationException;
-        } 
+        } //End block
 Socket var4B4C81437B56F909D5F0BC85698458C8_705844878 =         new SSLSocketImpl(address, port, localAddress, localPort,
                 (SSLParametersImpl) sslParameters.clone());
         var4B4C81437B56F909D5F0BC85698458C8_705844878.addTaint(taint);
         return var4B4C81437B56F909D5F0BC85698458C8_705844878;
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (instantiationException != null) {
+            //throw instantiationException;
+        //}
+        //return new SSLSocketImpl(address, port, localAddress, localPort,
+                //(SSLParametersImpl) sslParameters.clone());
     }
 
     

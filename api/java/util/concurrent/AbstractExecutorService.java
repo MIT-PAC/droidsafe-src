@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public abstract class AbstractExecutorService implements ExecutorService {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.358 -0400", hash_original_method = "3052CE934B3A3FC619D77CE90023EF56", hash_generated_method = "3052CE934B3A3FC619D77CE90023EF56")
     public AbstractExecutorService ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -22,8 +22,8 @@ public abstract class AbstractExecutorService implements ExecutorService {
 RunnableFuture<T> var8D1A6CD94DD5BAFD6D53EB96DC760D01_561779218 =         new FutureTask<T>(runnable, value);
         var8D1A6CD94DD5BAFD6D53EB96DC760D01_561779218.addTaint(taint);
         return var8D1A6CD94DD5BAFD6D53EB96DC760D01_561779218;
-        
-        
+        // ---------- Original Method ----------
+        //return new FutureTask<T>(runnable, value);
     }
 
     
@@ -33,8 +33,8 @@ RunnableFuture<T> var8D1A6CD94DD5BAFD6D53EB96DC760D01_561779218 =         new Fu
 RunnableFuture<T> varBEF434F9B24D8E8523500F630F54EF1C_1286377909 =         new FutureTask<T>(callable);
         varBEF434F9B24D8E8523500F630F54EF1C_1286377909.addTaint(taint);
         return varBEF434F9B24D8E8523500F630F54EF1C_1286377909;
-        
-        
+        // ---------- Original Method ----------
+        //return new FutureTask<T>(callable);
     }
 
     
@@ -52,11 +52,11 @@ RunnableFuture<T> varBEF434F9B24D8E8523500F630F54EF1C_1286377909 =         new F
 Future<?> var1A47BEF10A35E08D71A10703CE70AAF7_1948198647 =         ftask;
         var1A47BEF10A35E08D71A10703CE70AAF7_1948198647.addTaint(taint);
         return var1A47BEF10A35E08D71A10703CE70AAF7_1948198647;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (task == null) throw new NullPointerException();
+        //RunnableFuture<Void> ftask = newTaskFor(task, null);
+        //execute(ftask);
+        //return ftask;
     }
 
     
@@ -75,11 +75,11 @@ Future<?> var1A47BEF10A35E08D71A10703CE70AAF7_1948198647 =         ftask;
 Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_173272081 =         ftask;
         var1A47BEF10A35E08D71A10703CE70AAF7_173272081.addTaint(taint);
         return var1A47BEF10A35E08D71A10703CE70AAF7_173272081;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (task == null) throw new NullPointerException();
+        //RunnableFuture<T> ftask = newTaskFor(task, result);
+        //execute(ftask);
+        //return ftask;
     }
 
     
@@ -97,11 +97,11 @@ Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_173272081 =         ftask;
 Future<T> var1A47BEF10A35E08D71A10703CE70AAF7_490269529 =         ftask;
         var1A47BEF10A35E08D71A10703CE70AAF7_490269529.addTaint(taint);
         return var1A47BEF10A35E08D71A10703CE70AAF7_490269529;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (task == null) throw new NullPointerException();
+        //RunnableFuture<T> ftask = newTaskFor(task);
+        //execute(ftask);
+        //return ftask;
     }
 
     
@@ -144,7 +144,7 @@ for(;;)
                         --ntasks;
                         futures.add(ecs.submit(it.next()));
                         ++active;
-                    } 
+                    } //End block
                     else
     if(active == 0)                    
                     break;
@@ -161,10 +161,10 @@ for(;;)
                         long now = System.nanoTime();
                         nanos -= now - lastTime;
                         lastTime = now;
-                    } 
+                    } //End block
                     else
                     f = ecs.take();
-                } 
+                } //End block
     if(f != null)                
                 {
                     --active;
@@ -173,29 +173,29 @@ for(;;)
 T var62EE18F85D765480227B4F97C873CDE0_1904041555 =                         f.get();
                         var62EE18F85D765480227B4F97C873CDE0_1904041555.addTaint(taint);
                         return var62EE18F85D765480227B4F97C873CDE0_1904041555;
-                    } 
+                    } //End block
                     catch (ExecutionException eex)
                     {
                         ee = eex;
-                    } 
+                    } //End block
                     catch (RuntimeException rex)
                     {
                         ee = new ExecutionException(rex);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(ee == null)            
             ee = new ExecutionException();
             ee.addTaint(taint);
             throw ee;
-        } 
+        } //End block
         finally 
         {
 for(Future<T> f : futures)
             f.cancel(true);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -207,20 +207,20 @@ for(Future<T> f : futures)
 T var0D831F06EB35AD75173571A2A7D5F832_1124143597 =             doInvokeAny(tasks, false, 0);
             var0D831F06EB35AD75173571A2A7D5F832_1124143597.addTaint(taint);
             return var0D831F06EB35AD75173571A2A7D5F832_1124143597;
-        } 
+        } //End block
         catch (TimeoutException cannotHappen)
         {
 T var540C13E9E156B687226421B24F2DF178_1052539697 =             null;
             var540C13E9E156B687226421B24F2DF178_1052539697.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1052539697;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return doInvokeAny(tasks, false, 0);
+        //} catch (TimeoutException cannotHappen) {
+            //assert false;
+            //return null;
+        //}
     }
 
     
@@ -233,8 +233,8 @@ T var540C13E9E156B687226421B24F2DF178_1052539697 =             null;
 T varDB8B1C04F589A22E27B8623D8C9F7420_994719580 =         doInvokeAny(tasks, true, unit.toNanos(timeout));
         varDB8B1C04F589A22E27B8623D8C9F7420_994719580.addTaint(taint);
         return varDB8B1C04F589A22E27B8623D8C9F7420_994719580;
-        
-        
+        // ---------- Original Method ----------
+        //return doInvokeAny(tasks, true, unit.toNanos(timeout));
     }
 
     
@@ -256,7 +256,7 @@ for(Callable<T> t : tasks)
                 RunnableFuture<T> f = newTaskFor(t);
                 futures.add(f);
                 execute(f);
-            } 
+            } //End block
 for(Future<T> f : futures)
             {
     if(!f.isDone())                
@@ -264,28 +264,28 @@ for(Future<T> f : futures)
                     try 
                     {
                         f.get();
-                    } 
+                    } //End block
                     catch (CancellationException ignore)
                     {
-                    } 
+                    } //End block
                     catch (ExecutionException ignore)
                     {
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             done = true;
 List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1025703883 =             futures;
             var7DD305F66D87C2DBA38D1F4FEAB104D5_1025703883.addTaint(taint);
             return var7DD305F66D87C2DBA38D1F4FEAB104D5_1025703883;
-        } 
+        } //End block
         finally 
         {
     if(!done)            
 for(Future<T> f : futures)
             f.cancel(true);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -323,7 +323,7 @@ List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1401820161 =                
                 var7DD305F66D87C2DBA38D1F4FEAB104D5_1401820161.addTaint(taint);
                 return var7DD305F66D87C2DBA38D1F4FEAB104D5_1401820161;
                 }
-            } 
+            } //End block
 for(Future<T> f : futures)
             {
     if(!f.isDone())                
@@ -337,37 +337,37 @@ List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_420276100 =                 
                     try 
                     {
                         f.get(nanos, TimeUnit.NANOSECONDS);
-                    } 
+                    } //End block
                     catch (CancellationException ignore)
                     {
-                    } 
+                    } //End block
                     catch (ExecutionException ignore)
                     {
-                    } 
+                    } //End block
                     catch (TimeoutException toe)
                     {
 List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_1641515248 =                         futures;
                         var7DD305F66D87C2DBA38D1F4FEAB104D5_1641515248.addTaint(taint);
                         return var7DD305F66D87C2DBA38D1F4FEAB104D5_1641515248;
-                    } 
+                    } //End block
                     long now = System.nanoTime();
                     nanos -= now - lastTime;
                     lastTime = now;
-                } 
-            } 
+                } //End block
+            } //End block
             done = true;
 List<Future<T>> var7DD305F66D87C2DBA38D1F4FEAB104D5_406988959 =             futures;
             var7DD305F66D87C2DBA38D1F4FEAB104D5_406988959.addTaint(taint);
             return var7DD305F66D87C2DBA38D1F4FEAB104D5_406988959;
-        } 
+        } //End block
         finally 
         {
     if(!done)            
 for(Future<T> f : futures)
             f.cancel(true);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,8 +28,8 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.748 -0400", hash_original_method = "E357703A48348C8EEE9667190E563C6C", hash_generated_method = "B97966364BBED793B94DBEEDDFBF1B8C")
     public  CopyOnWriteArrayList() {
         elements = EmptyArray.OBJECT;
-        
-        
+        // ---------- Original Method ----------
+        //elements = EmptyArray.OBJECT;
     }
 
     
@@ -38,19 +38,18 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
     public  CopyOnWriteArrayList(Collection<? extends E> collection) {
         this((E[]) collection.toArray());
         addTaint(collection.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.748 -0400", hash_original_method = "51C6AA63C04D903DC2F19EE7270C9A87", hash_generated_method = "5F0DE0F3745CDDE56CD0A00206594245")
     public  CopyOnWriteArrayList(E[] array) {
         this.elements = Arrays.copyOf(array, array.length, Object[].class);
-        
-        
+        // ---------- Original Method ----------
+        //this.elements = Arrays.copyOf(array, array.length, Object[].class);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.749 -0400", hash_original_method = "FF2ED4DF1B70DABD1A45F755E1952592", hash_generated_method = "E7A3661A418DEAAE1787B639284CDBDF")
     @Override
     public Object clone() {
@@ -61,32 +60,31 @@ public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_600136168 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_600136168.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_600136168;
-        } 
+        } //End block
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_2056351122 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_2056351122.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_2056351122;
-        } 
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //CopyOnWriteArrayList result = (CopyOnWriteArrayList) super.clone();
+            //result.elements = result.elements.clone();
+            //return result;
+        //} catch (CloneNotSupportedException e) {
+            //throw new AssertionError(e);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.749 -0400", hash_original_method = "68DC52534F60D1A5138253A79B12E67C", hash_generated_method = "4537BF7FC78BD7AE125AEE59230F1917")
     public int size() {
         int varAE49AB49014B731648486670DE162663_990068678 = (elements.length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859175336 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859175336;
-        
-        
+        // ---------- Original Method ----------
+        //return elements.length;
     }
 
     
@@ -97,20 +95,19 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_600136168 =             result;
 E var2A6ABA17AD43FE10CBD134001BC14638_393597513 =         (E) elements[index];
         var2A6ABA17AD43FE10CBD134001BC14638_393597513.addTaint(taint);
         return var2A6ABA17AD43FE10CBD134001BC14638_393597513;
-        
-        
+        // ---------- Original Method ----------
+        //return (E) elements[index];
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.750 -0400", hash_original_method = "1274BF0858E749C3D9852E86C4A99C22", hash_generated_method = "A05F0D250A471880705C8A20BE6D6988")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
         boolean var9E9DDEFF9866AE959FD0A2B53DF201E0_1944236453 = (indexOf(o) != -1);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1490841752 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1490841752;
-        
-        
+        // ---------- Original Method ----------
+        //return indexOf(o) != -1;
     }
 
     
@@ -121,9 +118,9 @@ E var2A6ABA17AD43FE10CBD134001BC14638_393597513 =         (E) elements[index];
         boolean var9D412987724755E82DFDD399EA7E3A3A_685263635 = (containsAll(collection, snapshot, 0, snapshot.length));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_926529031 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_926529031;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //return containsAll(collection, snapshot, 0, snapshot.length);
     }
 
     
@@ -145,13 +142,12 @@ E var2A6ABA17AD43FE10CBD134001BC14638_393597513 =         (E) elements[index];
         int varB7A00A018338BCC7D4E51BCB3CBE6033_225937781 = (indexOf(object, snapshot, from, snapshot.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801148821 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801148821;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //return indexOf(object, snapshot, from, snapshot.length);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.751 -0400", hash_original_method = "3333011450759BE4404CA7231EDCF09F", hash_generated_method = "16655A43948A88827B05DC06422119C8")
     public int indexOf(Object object) {
         addTaint(object.getTaint());
@@ -159,9 +155,9 @@ E var2A6ABA17AD43FE10CBD134001BC14638_393597513 =         (E) elements[index];
         int var3CBF07B54E6A1592BB3D02D6D28E9355_1230276923 = (indexOf(object, snapshot, 0, snapshot.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_444308798 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_444308798;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //return indexOf(object, snapshot, 0, snapshot.length);
     }
 
     
@@ -173,13 +169,12 @@ E var2A6ABA17AD43FE10CBD134001BC14638_393597513 =         (E) elements[index];
         int var67C15C856C09C9A9358B7B2AF649D425_205505833 = (lastIndexOf(object, snapshot, 0, to));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1231299518 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1231299518;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //return lastIndexOf(object, snapshot, 0, to);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.752 -0400", hash_original_method = "D45902A72D19AFDC170F4A4D129ABA97", hash_generated_method = "9A85F0E704FD15BFCEE12CDE10B4C188")
     public int lastIndexOf(Object object) {
         addTaint(object.getTaint());
@@ -187,20 +182,19 @@ E var2A6ABA17AD43FE10CBD134001BC14638_393597513 =         (E) elements[index];
         int var3DE8457CEEFA0D8E494B41960D9124A0_172230080 = (lastIndexOf(object, snapshot, 0, snapshot.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1120320619 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1120320619;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //return lastIndexOf(object, snapshot, 0, snapshot.length);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.752 -0400", hash_original_method = "E13DA7C33D486C9539B3B38ADEEDBA9D", hash_generated_method = "9BEDCDC571305680E70BFF78A2BBC01F")
     public boolean isEmpty() {
         boolean var9F65D801E660F56EE6F47DFF6068BDAE_1954800729 = (elements.length == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1007824843 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1007824843;
-        
-        
+        // ---------- Original Method ----------
+        //return elements.length == 0;
     }
 
     
@@ -210,9 +204,9 @@ E var2A6ABA17AD43FE10CBD134001BC14638_393597513 =         (E) elements[index];
 Iterator<E> var81CF040A91E509D0554A7335D657FB7C_475645191 =         new CowIterator<E>(snapshot, 0, snapshot.length);
         var81CF040A91E509D0554A7335D657FB7C_475645191.addTaint(taint);
         return var81CF040A91E509D0554A7335D657FB7C_475645191;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //return new CowIterator<E>(snapshot, 0, snapshot.length);
     }
 
     
@@ -225,20 +219,20 @@ Iterator<E> var81CF040A91E509D0554A7335D657FB7C_475645191 =         new CowItera
             IndexOutOfBoundsException var25B69E582540A8AF0F0764B2DCCC2F38_1445129769 = new IndexOutOfBoundsException("index=" + index + ", length=" + snapshot.length);
             var25B69E582540A8AF0F0764B2DCCC2F38_1445129769.addTaint(taint);
             throw var25B69E582540A8AF0F0764B2DCCC2F38_1445129769;
-        } 
+        } //End block
         CowIterator<E> result = new CowIterator<E>(snapshot, 0, snapshot.length);
         result.index = index;
 ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1771465818 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1771465818.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1771465818;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //if (index < 0 || index > snapshot.length) {
+            //throw new IndexOutOfBoundsException("index=" + index + ", length=" + snapshot.length);
+        //}
+        //CowIterator<E> result = new CowIterator<E>(snapshot, 0, snapshot.length);
+        //result.index = index;
+        //return result;
     }
 
     
@@ -248,9 +242,9 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1771465818 =         result;
 ListIterator<E> var81CF040A91E509D0554A7335D657FB7C_1315876428 =         new CowIterator<E>(snapshot, 0, snapshot.length);
         var81CF040A91E509D0554A7335D657FB7C_1315876428.addTaint(taint);
         return var81CF040A91E509D0554A7335D657FB7C_1315876428;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //return new CowIterator<E>(snapshot, 0, snapshot.length);
     }
 
     
@@ -265,28 +259,27 @@ ListIterator<E> var81CF040A91E509D0554A7335D657FB7C_1315876428 =         new Cow
                     ", list size=" + snapshot.length);
             var812ECD7DEADC1977F9B113077E20F372_1120437616.addTaint(taint);
             throw var812ECD7DEADC1977F9B113077E20F372_1120437616;
-        } 
+        } //End block
 List<E> varBE3DE481AAAE587804C0D7FB37293CD4_1061920400 =         new CowSubList(snapshot, from, to);
         varBE3DE481AAAE587804C0D7FB37293CD4_1061920400.addTaint(taint);
         return varBE3DE481AAAE587804C0D7FB37293CD4_1061920400;
-        
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //if (from < 0 || from > to || to > snapshot.length) {
+            //throw new IndexOutOfBoundsException("from=" + from + ", to=" + to +
+                    //", list size=" + snapshot.length);
+        //}
+        //return new CowSubList(snapshot, from, to);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.754 -0400", hash_original_method = "49659221AAE3F1C0ECCE830D1E5CE8D1", hash_generated_method = "FE3D43AD1F78B8611F18D599AE118066")
     public Object[] toArray() {
 Object[] varE697C115FF5B77FC06FD6603F76A9CB8_2050309368 =         elements.clone();
         varE697C115FF5B77FC06FD6603F76A9CB8_2050309368.addTaint(taint);
         return varE697C115FF5B77FC06FD6603F76A9CB8_2050309368;
-        
-        
+        // ---------- Original Method ----------
+        //return elements.clone();
     }
 
     
@@ -300,29 +293,28 @@ Object[] varE697C115FF5B77FC06FD6603F76A9CB8_2050309368 =         elements.clone
 T[] varAA242AD64FBF22E93B9DE930C2395AE0_1880090400 =             (T[]) Arrays.copyOf(snapshot, snapshot.length, contents.getClass());
             varAA242AD64FBF22E93B9DE930C2395AE0_1880090400.addTaint(taint);
             return varAA242AD64FBF22E93B9DE930C2395AE0_1880090400;
-        } 
+        } //End block
         System.arraycopy(snapshot, 0, contents, 0, snapshot.length);
     if(snapshot.length < contents.length)        
         {
             contents[snapshot.length] = null;
-        } 
+        } //End block
 T[] var5DC9C33EDB9F81CF1216538024B770BE_220677532 =         contents;
         var5DC9C33EDB9F81CF1216538024B770BE_220677532.addTaint(taint);
         return var5DC9C33EDB9F81CF1216538024B770BE_220677532;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //if (snapshot.length > contents.length) {
+            //return (T[]) Arrays.copyOf(snapshot, snapshot.length, contents.getClass());
+        //}
+        //System.arraycopy(snapshot, 0, contents, 0, snapshot.length);
+        //if (snapshot.length < contents.length) {
+            //contents[snapshot.length] = null;
+        //}
+        //return contents;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.755 -0400", hash_original_method = "6010CBD888F6152118D77E36B5616E02", hash_generated_method = "434DA2ACEB6BD320761CFEF0C988CECD")
     @Override
     public boolean equals(Object other) {
@@ -333,7 +325,7 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_220677532 =         contents;
                     || Arrays.equals(elements, ((CopyOnWriteArrayList<?>) other).elements));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_207551586 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_207551586;
-        } 
+        } //End block
         else
     if(other instanceof List)        
         {
@@ -346,58 +338,56 @@ for(Object o : snapshot)
                     boolean var68934A3E9455FA72420237EB05902327_867751741 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_302299591 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_302299591;
-                } 
-            } 
+                } //End block
+            } //End block
             boolean var14D448EEE775306B2C46DAFF55575642_456471491 = (!i.hasNext());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1283535259 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1283535259;
-        } 
+        } //End block
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_2093738020 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_213188644 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_213188644;
-        } 
-        
-        
-            
-                    
-        
-            
-            
-            
-                
-                    
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (other instanceof CopyOnWriteArrayList) {
+            //return this == other
+                    //|| Arrays.equals(elements, ((CopyOnWriteArrayList<?>) other).elements);
+        //} else if (other instanceof List) {
+            //Object[] snapshot = elements;
+            //Iterator<?> i = ((List<?>) other).iterator();
+            //for (Object o : snapshot) {
+                //if (!i.hasNext() || !Objects.equal(o, i.next())) {
+                    //return false;
+                //}
+            //}
+            //return !i.hasNext();
+        //} else {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.755 -0400", hash_original_method = "5CBAD38024C40A34FCDA1A3FF083FDEC", hash_generated_method = "3C1175CDCFC4CA7DA44D2ECFE9811FD8")
     @Override
     public int hashCode() {
         int var9C53E0AE96A6FDAE21E83839DEA921C2_335428243 = (Arrays.hashCode(elements));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_885011747 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_885011747;
-        
-        
+        // ---------- Original Method ----------
+        //return Arrays.hashCode(elements);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.755 -0400", hash_original_method = "D569C6F4ED8C88274D5F2CC2C9F6FBD2", hash_generated_method = "B1138B41262DE030E80C4128AF651A5F")
     @Override
     public String toString() {
 String var3A98C504B2574DFE89DE6D5E8597BC7E_452593898 =         Arrays.toString(elements);
         var3A98C504B2574DFE89DE6D5E8597BC7E_452593898.addTaint(taint);
         return var3A98C504B2574DFE89DE6D5E8597BC7E_452593898;
-        
-        
+        // ---------- Original Method ----------
+        //return Arrays.toString(elements);
     }
 
     
@@ -410,12 +400,12 @@ String var3A98C504B2574DFE89DE6D5E8597BC7E_452593898 =         Arrays.toString(e
         boolean varB326B5062B2F0E69046810717534CB09_1192168604 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_467637044 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_467637044;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] newElements = new Object[elements.length + 1];
+        //System.arraycopy(elements, 0, newElements, 0, elements.length);
+        //newElements[elements.length] = e;
+        //elements = newElements;
+        //return true;
     }
 
     
@@ -428,12 +418,12 @@ String var3A98C504B2574DFE89DE6D5E8597BC7E_452593898 =         Arrays.toString(e
         newElements[index] = e;
         System.arraycopy(elements, index, newElements, index + 1, elements.length - index);
         elements = newElements;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] newElements = new Object[elements.length + 1];
+        //System.arraycopy(elements, 0, newElements, 0, index);
+        //newElements[index] = e;
+        //System.arraycopy(elements, index, newElements, index + 1, elements.length - index);
+        //elements = newElements;
     }
 
     
@@ -443,8 +433,8 @@ String var3A98C504B2574DFE89DE6D5E8597BC7E_452593898 =         Arrays.toString(e
         boolean varF655D9D969A25B4637B33D24E2D52F1F_2139297945 = (addAll(elements.length, collection));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1443487931 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1443487931;
-        
-        
+        // ---------- Original Method ----------
+        //return addAll(elements.length, collection);
     }
 
     
@@ -462,15 +452,15 @@ String var3A98C504B2574DFE89DE6D5E8597BC7E_452593898 =         Arrays.toString(e
         boolean var7161E601A2396808253FEEB1F951010E_2005858944 = (toAdd.length > 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_25517284 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_25517284;
-        
-        
-        
-        
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //Object[] toAdd = collection.toArray();
+        //Object[] newElements = new Object[elements.length + toAdd.length];
+        //System.arraycopy(elements, 0, newElements, 0, index);
+        //System.arraycopy(toAdd, 0, newElements, index, toAdd.length);
+        //System.arraycopy(elements, index,
+                //newElements, index + toAdd.length, elements.length - index);
+        //elements = newElements;
+        //return toAdd.length > 0;
     }
 
     
@@ -486,33 +476,33 @@ for(Object o : toAdd)
     if(indexOf(o, newElements, 0, elements.length + addedCount) == -1)            
             {
                 newElements[elements.length + addedCount++] = o;
-            } 
-        } 
+            } //End block
+        } //End block
     if(addedCount < toAdd.length)        
         {
             newElements = Arrays.copyOfRange(
                     newElements, 0, elements.length + addedCount);
-        } 
+        } //End block
         elements = newElements;
         int var1D9A618194A6A4CE04E0DF6178CE920E_1205422171 = (addedCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_550472037 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_550472037;
-        
-        
-        
-        
-        
-        
-            
-                
-            
-        
-        
-            
-                    
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] toAdd = collection.toArray();
+        //Object[] newElements = new Object[elements.length + toAdd.length];
+        //System.arraycopy(elements, 0, newElements, 0, elements.length);
+        //int addedCount = 0;
+        //for (Object o : toAdd) {
+            //if (indexOf(o, newElements, 0, elements.length + addedCount) == -1) {
+                //newElements[elements.length + addedCount++] = o;
+            //}
+        //}
+        //if (addedCount < toAdd.length) {
+            //newElements = Arrays.copyOfRange(
+                    //newElements, 0, elements.length + addedCount); 
+        //}
+        //elements = newElements;
+        //return addedCount;
     }
 
     
@@ -524,27 +514,26 @@ for(Object o : toAdd)
             boolean var68934A3E9455FA72420237EB05902327_669776120 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1675271500 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1675271500;
-        } 
+        } //End block
         add(object);
         boolean varB326B5062B2F0E69046810717534CB09_1713885959 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1704711118 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1704711118;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (contains(object)) {
+            //return false;
+        //}
+        //add(object);
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.759 -0400", hash_original_method = "343DE0C64B38A0F7CE33FC0930F8B1CE", hash_generated_method = "0DD0CCA634A11D0B8559FCC328E0AB07")
     @Override
     public synchronized void clear() {
         elements = EmptyArray.OBJECT;
-        
-        
+        // ---------- Original Method ----------
+        //elements = EmptyArray.OBJECT;
     }
 
     
@@ -556,15 +545,14 @@ for(Object o : toAdd)
 E varC4DDDE029445DEB25112BA9AAF990086_917687187 =         removed;
         varC4DDDE029445DEB25112BA9AAF990086_917687187.addTaint(taint);
         return varC4DDDE029445DEB25112BA9AAF990086_917687187;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //@SuppressWarnings("unchecked")
+        //E removed = (E) elements[index];
+        //removeRange(index, index + 1);
+        //return removed;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.759 -0400", hash_original_method = "4348B5D441F5A12C585788ED2765C3A4", hash_generated_method = "BB18260AEA44B34E03DDD10C3E59FB97")
     public synchronized boolean remove(Object o) {
         addTaint(o.getTaint());
@@ -574,18 +562,18 @@ E varC4DDDE029445DEB25112BA9AAF990086_917687187 =         removed;
             boolean var68934A3E9455FA72420237EB05902327_944364268 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_369814241 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_369814241;
-        } 
+        } //End block
         remove(index);
         boolean varB326B5062B2F0E69046810717534CB09_1677168393 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1114988712 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1114988712;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int index = indexOf(o);
+        //if (index == -1) {
+            //return false;
+        //}
+        //remove(index);
+        //return true;
     }
 
     
@@ -595,8 +583,8 @@ E varC4DDDE029445DEB25112BA9AAF990086_917687187 =         removed;
         boolean var604D45ED73B68F4E75B327E8EC5D6D61_1141637383 = (removeOrRetain(collection, false, 0, elements.length) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_224308424 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_224308424;
-        
-        
+        // ---------- Original Method ----------
+        //return removeOrRetain(collection, false, 0, elements.length) != 0;
     }
 
     
@@ -606,8 +594,8 @@ E varC4DDDE029445DEB25112BA9AAF990086_917687187 =         removed;
         boolean var10D8D61177A91438869ADD2607974C6E_2097492316 = (removeOrRetain(collection, true, 0, elements.length) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1642544908 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1642544908;
-        
-        
+        // ---------- Original Method ----------
+        //return removeOrRetain(collection, true, 0, elements.length) != 0;
     }
 
     
@@ -622,7 +610,7 @@ for(int i = from;i < to;i++)
     if(collection.contains(elements[i]) == retain)            
             {
                 continue;
-            } 
+            } //End block
             Object[] newElements = new Object[elements.length - 1];
             System.arraycopy(elements, 0, newElements, 0, i);
             int newSize = i;
@@ -631,25 +619,25 @@ for(int j = i + 1;j < to;j++)
     if(collection.contains(elements[j]) == retain)                
                 {
                     newElements[newSize++] = elements[j];
-                } 
-            } 
+                } //End block
+            } //End block
             System.arraycopy(elements, to, newElements, newSize, elements.length - to);
             newSize += (elements.length - to);
     if(newSize < newElements.length)            
             {
                 newElements = Arrays.copyOfRange(newElements, 0, newSize);
-            } 
+            } //End block
             int removed = elements.length - newElements.length;
             elements = newElements;
             int varB07286EBBB5BC7AA91CC3EAA8BC19711_1972707717 = (removed);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33888152 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33888152;
-        } 
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_2081495804 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408171090 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408171090;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -664,17 +652,16 @@ for(int j = i + 1;j < to;j++)
 E varDC838461EE2FA0CA4C9BBB70A15456B0_220112057 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_220112057.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_220112057;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] newElements = elements.clone();
+        //@SuppressWarnings("unchecked")
+        //E result = (E) newElements[index];
+        //newElements[index] = e;
+        //elements = newElements;
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.762 -0400", hash_original_method = "3E2723924788C644A99252EDEC8904D6", hash_generated_method = "3127D5EEF913DFBDCB5E1AAADE61DFEE")
     private void removeRange(int from, int to) {
         addTaint(to);
@@ -683,16 +670,15 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_220112057 =         result;
         System.arraycopy(elements, 0, newElements, 0, from);
         System.arraycopy(elements, to, newElements, from, elements.length - to);
         elements = newElements;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] newElements = new Object[elements.length - (to - from)];
+        //System.arraycopy(elements, 0, newElements, 0, from);
+        //System.arraycopy(elements, to, newElements, from, elements.length - to);
+        //elements = newElements;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static int lastIndexOf(Object o, Object[] data, int from, int to) {
+        static int lastIndexOf(Object o, Object[] data, int from, int to) {
         if (o == null) {
             for (int i = to - 1; i >= from; i--) {
                 if (data[i] == null) {
@@ -710,8 +696,7 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_220112057 =         result;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static int indexOf(Object o, Object[] data, int from, int to) {
+        static int indexOf(Object o, Object[] data, int from, int to) {
         if (o == null) {
             for (int i = from; i < to; i++) {
                 if (data[i] == null) {
@@ -734,12 +719,11 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_220112057 =         result;
 Object[] varC7DFD266FBF449A638EA2377E8678BA1_213696440 =         elements;
         varC7DFD266FBF449A638EA2377E8678BA1_213696440.addTaint(taint);
         return varC7DFD266FBF449A638EA2377E8678BA1_213696440;
-        
-        
+        // ---------- Original Method ----------
+        //return elements;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.763 -0400", hash_original_method = "53FDF52EC3502469838FF7FC9C3722C1", hash_generated_method = "1BF6924BD29F36A9F5A749D0BE94EBD2")
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
@@ -749,18 +733,17 @@ Object[] varC7DFD266FBF449A638EA2377E8678BA1_213696440 =         elements;
 for(Object o : snapshot)
         {
             out.writeObject(o);
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Object[] snapshot = elements;
+        //out.defaultWriteObject();
+        //out.writeInt(snapshot.length);
+        //for (Object o : snapshot) {
+            //out.writeObject(o);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.764 -0400", hash_original_method = "5D8878D7111BA02D76F457F9A02251F1", hash_generated_method = "D3977299908449FF088C13F12491A6B1")
     private synchronized void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         addTaint(in.getTaint());
@@ -769,15 +752,15 @@ for(Object o : snapshot)
 for(int i = 0;i < snapshot.length;i++)
         {
             snapshot[i] = in.readObject();
-        } 
+        } //End block
         elements = snapshot;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //in.defaultReadObject();
+        //Object[] snapshot = new Object[in.readInt()];
+        //for (int i = 0; i < snapshot.length; i++) {
+            //snapshot[i] = in.readObject();
+        //}
+        //elements = snapshot;
     }
 
     
@@ -789,8 +772,8 @@ for(int i = 0;i < snapshot.length;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.764 -0400", hash_original_method = "19F9B6A2C098797122B64953C4557260", hash_generated_method = "5B199B3E4B2B392A5F281C0027899513")
         public  CowSubList(Object[] expectedElements, int from, int to) {
             this.slice = new Slice(expectedElements, from, to);
-            
-            
+            // ---------- Original Method ----------
+            //this.slice = new Slice(expectedElements, from, to);
         }
 
         
@@ -801,9 +784,9 @@ for(int i = 0;i < snapshot.length;i++)
             int varCBF1451EEE5D06561D698F5233E34276_1814698889 = (slice.to - slice.from);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025311015 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025311015;
-            
-            
-            
+            // ---------- Original Method ----------
+            //Slice slice = this.slice;
+            //return slice.to - slice.from;
         }
 
         
@@ -814,9 +797,9 @@ for(int i = 0;i < snapshot.length;i++)
             boolean var259B0B64C722EA33F62907B92894126D_741670322 = (slice.from == slice.to);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1066745507 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1066745507;
-            
-            
-            
+            // ---------- Original Method ----------
+            //Slice slice = this.slice;
+            //return slice.from == slice.to;
         }
 
         
@@ -832,12 +815,12 @@ for(int i = 0;i < snapshot.length;i++)
 E var40A28188D2E19E47CC35F4DCF74FECB2_903487371 =             (E) snapshot[index + slice.from];
             var40A28188D2E19E47CC35F4DCF74FECB2_903487371.addTaint(taint);
             return var40A28188D2E19E47CC35F4DCF74FECB2_903487371;
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //Slice slice = this.slice;
+            //Object[] snapshot = elements;
+            //slice.checkElementIndex(index);
+            //slice.checkConcurrentModification(snapshot);
+            //return (E) snapshot[index + slice.from];
         }
 
         
@@ -847,8 +830,8 @@ E var40A28188D2E19E47CC35F4DCF74FECB2_903487371 =             (E) snapshot[index
 Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_1940075304 =             listIterator(0);
             var68247D54D1DDB9E66659394CC1668C3F_1940075304.addTaint(taint);
             return var68247D54D1DDB9E66659394CC1668C3F_1940075304;
-            
-            
+            // ---------- Original Method ----------
+            //return listIterator(0);
         }
 
         
@@ -858,8 +841,8 @@ Iterator<E> var68247D54D1DDB9E66659394CC1668C3F_1940075304 =             listIte
 ListIterator<E> var68247D54D1DDB9E66659394CC1668C3F_366732122 =             listIterator(0);
             var68247D54D1DDB9E66659394CC1668C3F_366732122.addTaint(taint);
             return var68247D54D1DDB9E66659394CC1668C3F_366732122;
-            
-            
+            // ---------- Original Method ----------
+            //return listIterator(0);
         }
 
         
@@ -876,14 +859,14 @@ ListIterator<E> var68247D54D1DDB9E66659394CC1668C3F_366732122 =             list
 ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1535132576 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1535132576.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1535132576;
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //Slice slice = this.slice;
+            //Object[] snapshot = elements;
+            //slice.checkPositionIndex(index);
+            //slice.checkConcurrentModification(snapshot);
+            //CowIterator<E> result = new CowIterator<E>(snapshot, slice.from, slice.to);
+            //result.index = slice.from + index;
+            //return result;
         }
 
         
@@ -898,12 +881,12 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1535132576 =             res
             int varF67EC9B38489A8516C83CEC4C4EFD979_999622812 = ((result != -1) ? (result - slice.from) : -1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_23622329 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_23622329;
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //Slice slice = this.slice;
+            //Object[] snapshot = elements;
+            //slice.checkConcurrentModification(snapshot);
+            //int result = CopyOnWriteArrayList.indexOf(object, snapshot, slice.from, slice.to);
+            //return (result != -1) ? (result - slice.from) : -1;
         }
 
         
@@ -918,12 +901,12 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1535132576 =             res
             int varF67EC9B38489A8516C83CEC4C4EFD979_1062858397 = ((result != -1) ? (result - slice.from) : -1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814207264 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814207264;
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //Slice slice = this.slice;
+            //Object[] snapshot = elements;
+            //slice.checkConcurrentModification(snapshot);
+            //int result = CopyOnWriteArrayList.lastIndexOf(object, snapshot, slice.from, slice.to);
+            //return (result != -1) ? (result - slice.from) : -1;
         }
 
         
@@ -934,8 +917,8 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1535132576 =             res
             boolean var81AF353AE5075728FC255155CF6F4BD5_891938473 = (indexOf(object) != -1);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1180575993 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1180575993;
-            
-            
+            // ---------- Original Method ----------
+            //return indexOf(object) != -1;
         }
 
         
@@ -949,11 +932,11 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1535132576 =             res
             boolean var109FB52A6DC6FFE4632FCD23336EF4AA_688013583 = (CopyOnWriteArrayList.containsAll(collection, snapshot, slice.from, slice.to));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1288468873 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1288468873;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //Slice slice = this.slice;
+            //Object[] snapshot = elements;
+            //slice.checkConcurrentModification(snapshot);
+            //return CopyOnWriteArrayList.containsAll(collection, snapshot, slice.from, slice.to);
         }
 
         
@@ -969,17 +952,17 @@ ListIterator<E> varDC838461EE2FA0CA4C9BBB70A15456B0_1535132576 =             res
                         ", list size=" + size());
                 varEB6DABBE3F8E9660DAF79FB099ACF2A6_687434283.addTaint(taint);
                 throw varEB6DABBE3F8E9660DAF79FB099ACF2A6_687434283;
-            } 
+            } //End block
 List<E> var286563A107CA67FF157789C051305F4F_1073558117 =             new CowSubList(slice.expectedElements, slice.from + from, slice.from + to);
             var286563A107CA67FF157789C051305F4F_1073558117.addTaint(taint);
             return var286563A107CA67FF157789C051305F4F_1073558117;
-            
-            
-            
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //Slice slice = this.slice;
+            //if (from < 0 || from > to || to > size()) {
+                //throw new IndexOutOfBoundsException("from=" + from + ", to=" + to +
+                        //", list size=" + size());
+            //}
+            //return new CowSubList(slice.expectedElements, slice.from + from, slice.from + to);
         }
 
         
@@ -996,15 +979,15 @@ List<E> var286563A107CA67FF157789C051305F4F_1073558117 =             new CowSubL
 E varC4DDDE029445DEB25112BA9AAF990086_1938115452 =                 removed;
                 varC4DDDE029445DEB25112BA9AAF990086_1938115452.addTaint(taint);
                 return varC4DDDE029445DEB25112BA9AAF990086_1938115452;
-            } 
-            
-            
-                
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //slice.checkElementIndex(index);
+                //slice.checkConcurrentModification(elements);
+                //E removed = CopyOnWriteArrayList.this.remove(slice.from + index);
+                //slice = new Slice(elements, slice.from, slice.to - 1);
+                //return removed;
+            //}
         }
 
         
@@ -1016,13 +999,13 @@ E varC4DDDE029445DEB25112BA9AAF990086_1938115452 =                 removed;
                 slice.checkConcurrentModification(elements);
                 CopyOnWriteArrayList.this.removeRange(slice.from, slice.to);
                 slice = new Slice(elements, slice.from, slice.from);
-            } 
-            
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //slice.checkConcurrentModification(elements);
+                //CopyOnWriteArrayList.this.removeRange(slice.from, slice.to);
+                //slice = new Slice(elements, slice.from, slice.from);
+            //}
         }
 
         
@@ -1037,14 +1020,14 @@ E varC4DDDE029445DEB25112BA9AAF990086_1938115452 =                 removed;
                 slice.checkConcurrentModification(elements);
                 CopyOnWriteArrayList.this.add(index + slice.from, object);
                 slice = new Slice(elements, slice.from, slice.to + 1);
-            } 
-            
-            
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //slice.checkPositionIndex(index);
+                //slice.checkConcurrentModification(elements);
+                //CopyOnWriteArrayList.this.add(index + slice.from, object);
+                //slice = new Slice(elements, slice.from, slice.to + 1);
+            //}
         }
 
         
@@ -1058,12 +1041,12 @@ E varC4DDDE029445DEB25112BA9AAF990086_1938115452 =                 removed;
                 boolean varB326B5062B2F0E69046810717534CB09_1568839035 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_546737131 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_546737131;
-            } 
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //add(slice.to - slice.from, object);
+                //return true;
+            //}
         }
 
         
@@ -1082,16 +1065,16 @@ E varC4DDDE029445DEB25112BA9AAF990086_1938115452 =                 removed;
                 boolean varB4A88417B3D0170D754C647C30B7216A_1073404850 = (result);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1870960957 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1870960957;
-            } 
-            
-            
-                
-                
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //slice.checkPositionIndex(index);
+                //slice.checkConcurrentModification(elements);
+                //int oldSize = elements.length;
+                //boolean result = CopyOnWriteArrayList.this.addAll(index + slice.from, collection);
+                //slice = new Slice(elements, slice.from, slice.to + (elements.length - oldSize));
+                //return result;
+            //}
         }
 
         
@@ -1104,11 +1087,11 @@ E varC4DDDE029445DEB25112BA9AAF990086_1938115452 =                 removed;
                 boolean var4FB93A56A9FC44DB5D2E343F5484EB74_1215537330 = (addAll(size(), collection));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_602100875 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_602100875;
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //return addAll(size(), collection);
+            //}
         }
 
         
@@ -1126,15 +1109,15 @@ E varC4DDDE029445DEB25112BA9AAF990086_1938115452 =                 removed;
 E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
                 varDC838461EE2FA0CA4C9BBB70A15456B0_239440636.addTaint(taint);
                 return varDC838461EE2FA0CA4C9BBB70A15456B0_239440636;
-            } 
-            
-            
-                
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //slice.checkElementIndex(index);
+                //slice.checkConcurrentModification(elements);
+                //E result = CopyOnWriteArrayList.this.set(index + slice.from, object);
+                //slice = new Slice(elements, slice.from, slice.to);
+                //return result;
+            //}
         }
 
         
@@ -1150,21 +1133,21 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
                     boolean var68934A3E9455FA72420237EB05902327_113752483 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543157846 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_543157846;
-                } 
+                } //End block
                 remove(index);
                 boolean varB326B5062B2F0E69046810717534CB09_1209519267 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_610922848 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_610922848;
-            } 
-            
-            
-                
-                
-                    
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //int index = indexOf(object);
+                //if (index == -1) {
+                    //return false;
+                //}
+                //remove(index);
+                //return true;
+            //}
         }
 
         
@@ -1180,14 +1163,14 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
                 boolean var4095B3DC23D4A1D71AE5CEF59B4D1878_723888701 = (removed != 0);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229781361 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_229781361;
-            } 
-            
-            
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //slice.checkConcurrentModification(elements);
+                //int removed = removeOrRetain(collection, false, slice.from, slice.to);
+                //slice = new Slice(elements, slice.from, slice.to - removed);
+                //return removed != 0;
+            //}
         }
 
         
@@ -1203,14 +1186,14 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
                 boolean var4095B3DC23D4A1D71AE5CEF59B4D1878_2114996496 = (removed != 0);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1749449990 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1749449990;
-            } 
-            
-            
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (CopyOnWriteArrayList.this) {
+                //slice.checkConcurrentModification(elements);
+                //int removed = removeOrRetain(collection, true, slice.from, slice.to);
+                //slice = new Slice(elements, slice.from, slice.to - removed);
+                //return removed != 0;
+            //}
         }
 
         
@@ -1234,10 +1217,10 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
             this.expectedElements = expectedElements;
             this.from = from;
             this.to = to;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.expectedElements = expectedElements;
+            //this.from = from;
+            //this.to = to;
         }
 
         
@@ -1249,11 +1232,11 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
                 IndexOutOfBoundsException var1BEE62377EDA5CB718B2828E0388A841_1573875039 = new IndexOutOfBoundsException("index=" + index + ", size=" + (to - from));
                 var1BEE62377EDA5CB718B2828E0388A841_1573875039.addTaint(taint);
                 throw var1BEE62377EDA5CB718B2828E0388A841_1573875039;
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (index < 0 || index >= to - from) {
+                //throw new IndexOutOfBoundsException("index=" + index + ", size=" + (to - from));
+            //}
         }
 
         
@@ -1265,11 +1248,11 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
                 IndexOutOfBoundsException var1BEE62377EDA5CB718B2828E0388A841_2145093170 = new IndexOutOfBoundsException("index=" + index + ", size=" + (to - from));
                 var1BEE62377EDA5CB718B2828E0388A841_2145093170.addTaint(taint);
                 throw var1BEE62377EDA5CB718B2828E0388A841_2145093170;
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (index < 0 || index > to - from) {
+                //throw new IndexOutOfBoundsException("index=" + index + ", size=" + (to - from));
+            //}
         }
 
         
@@ -1281,11 +1264,11 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_559122372 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_559122372.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_559122372;
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (expectedElements != snapshot) {
+                //throw new ConcurrentModificationException();
+            //}
         }
 
         
@@ -1313,11 +1296,11 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
             this.from = from;
             this.to = to;
             this.index = from;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.snapshot = snapshot;
+            //this.from = from;
+            //this.to = to;
+            //this.index = from;
         }
 
         
@@ -1327,30 +1310,28 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_343382577 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_343382577.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_343382577;
-            
-            
+            // ---------- Original Method ----------
+            //throw new UnsupportedOperationException();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.776 -0400", hash_original_method = "D639D4E7D9CD50DE4105991F3953FD80", hash_generated_method = "959172862DEB9816443AD55F9FB9E67A")
         public boolean hasNext() {
             boolean var2EF6B62A76FA757E17C835E0C6F11672_1476724629 = (index < to);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1812565894 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1812565894;
-            
-            
+            // ---------- Original Method ----------
+            //return index < to;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.776 -0400", hash_original_method = "EC30B2CF9A7B23E69047D11D06EFA3CA", hash_generated_method = "1E36DBF5A8A219A2905AB30EF4EB1832")
         public boolean hasPrevious() {
             boolean var2880A9037E6C3E2785453FB1178B5F1D_943665263 = (index > from);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1417158648 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1417158648;
-            
-            
+            // ---------- Original Method ----------
+            //return index > from;
         }
 
         
@@ -1362,30 +1343,29 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_239440636 =                 result;
 E var63B8DFAA98A88E2191B566527D626B20_1188188283 =                 (E) snapshot[index++];
                 var63B8DFAA98A88E2191B566527D626B20_1188188283.addTaint(taint);
                 return var63B8DFAA98A88E2191B566527D626B20_1188188283;
-            } 
+            } //End block
             else
             {
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_1883606815 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_1883606815.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_1883606815;
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (index < to) {
+                //return (E) snapshot[index++];
+            //} else {
+                //throw new NoSuchElementException();
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.776 -0400", hash_original_method = "B3E96A2468FAF72FDE35394237D3EDCC", hash_generated_method = "2CC32FF2867B0487628B727AB5CFFE0B")
         public int nextIndex() {
             int var6A992D5529F459A44FEE58C733255E86_1066924286 = (index);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1815421526 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1815421526;
-            
-            
+            // ---------- Original Method ----------
+            //return index;
         }
 
         
@@ -1397,30 +1377,29 @@ E var63B8DFAA98A88E2191B566527D626B20_1188188283 =                 (E) snapshot[
 E var38F79E4AE1344E378A39E154F031E53F_173410984 =                 (E) snapshot[--index];
                 var38F79E4AE1344E378A39E154F031E53F_173410984.addTaint(taint);
                 return var38F79E4AE1344E378A39E154F031E53F_173410984;
-            } 
+            } //End block
             else
             {
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_1663758800 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_1663758800.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_1663758800;
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (index > from) {
+                //return (E) snapshot[--index];
+            //} else {
+                //throw new NoSuchElementException();
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:15.777 -0400", hash_original_method = "30EF9C1C05880C206BCB89722B1108E9", hash_generated_method = "4F09092AD2D887943D3507C663692ACB")
         public int previousIndex() {
             int var5B425087CC12462F0B4B4AB7BD6777B5_28672216 = (index - 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218662279 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218662279;
-            
-            
+            // ---------- Original Method ----------
+            //return index - 1;
         }
 
         
@@ -1429,8 +1408,8 @@ E var38F79E4AE1344E378A39E154F031E53F_173410984 =                 (E) snapshot[-
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_717754403 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_717754403.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_717754403;
-            
-            
+            // ---------- Original Method ----------
+            //throw new UnsupportedOperationException();
         }
 
         
@@ -1440,8 +1419,8 @@ E var38F79E4AE1344E378A39E154F031E53F_173410984 =                 (E) snapshot[-
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1982772755 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_1982772755.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_1982772755;
-            
-            
+            // ---------- Original Method ----------
+            //throw new UnsupportedOperationException();
         }
 
         

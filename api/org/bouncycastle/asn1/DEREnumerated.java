@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,8 +17,8 @@ public class DEREnumerated extends ASN1Object {
     public  DEREnumerated(
         int         value) {
         bytes = BigInteger.valueOf(value).toByteArray();
-        
-        
+        // ---------- Original Method ----------
+        //bytes = BigInteger.valueOf(value).toByteArray();
     }
 
     
@@ -26,8 +26,8 @@ public class DEREnumerated extends ASN1Object {
     public  DEREnumerated(
         BigInteger   value) {
         bytes = value.toByteArray();
-        
-        
+        // ---------- Original Method ----------
+        //bytes = value.toByteArray();
     }
 
     
@@ -35,8 +35,8 @@ public class DEREnumerated extends ASN1Object {
     public  DEREnumerated(
         byte[]   bytes) {
         this.bytes = bytes;
-        
-        
+        // ---------- Original Method ----------
+        //this.bytes = bytes;
     }
 
     
@@ -70,8 +70,8 @@ public class DEREnumerated extends ASN1Object {
 BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1377010264 =         new BigInteger(bytes);
         varE4C146659CDD6B837AD2066CCD33EC90_1377010264.addTaint(taint);
         return varE4C146659CDD6B837AD2066CCD33EC90_1377010264;
-        
-        
+        // ---------- Original Method ----------
+        //return new BigInteger(bytes);
     }
 
     
@@ -80,8 +80,8 @@ BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1377010264 =         new BigInteg
         DEROutputStream out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(ENUMERATED, bytes);
-        
-        
+        // ---------- Original Method ----------
+        //out.writeEncoded(ENUMERATED, bytes);
     }
 
     
@@ -94,18 +94,18 @@ BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1377010264 =         new BigInteg
             boolean var68934A3E9455FA72420237EB05902327_1807978119 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423728790 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_423728790;
-        } 
+        } //End block
         DEREnumerated other = (DEREnumerated)o;
         boolean varBE5FAAF65272FB3F96FDABF4701C5209_1161858566 = (Arrays.areEqual(this.bytes, other.bytes));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1237701903 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1237701903;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!(o instanceof DEREnumerated))
+        //{
+            //return false;
+        //}
+        //DEREnumerated other = (DEREnumerated)o;
+        //return Arrays.areEqual(this.bytes, other.bytes);
     }
 
     
@@ -114,8 +114,8 @@ BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1377010264 =         new BigInteg
         int var2CDE289E7BF5766320CC430660AA476C_1900769476 = (Arrays.hashCode(bytes));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_432540203 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_432540203;
-        
-        
+        // ---------- Original Method ----------
+        //return Arrays.hashCode(bytes);
     }
 
     

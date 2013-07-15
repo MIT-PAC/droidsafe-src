@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,12 +34,12 @@ public final class Certificate {
         this.signatureValue = new byte[signatureValue.length];
         System.arraycopy(signatureValue, 0, this.signatureValue, 0,
                                                     signatureValue.length);
-        
-        
-        
-        
-        
-                                                    
+        // ---------- Original Method ----------
+        //this.tbsCertificate = tbsCertificate;
+        //this.signatureAlgorithm = signatureAlgorithm;
+        //this.signatureValue = new byte[signatureValue.length];
+        //System.arraycopy(signatureValue, 0, this.signatureValue, 0,
+                                                    //signatureValue.length);
     }
 
     
@@ -52,34 +52,31 @@ public final class Certificate {
         addTaint(signatureAlgorithm.getTaint());
         addTaint(tbsCertificate.getTaint());
         this.encoding = encoding;
-        
-        
+        // ---------- Original Method ----------
+        //this.encoding = encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.727 -0400", hash_original_method = "FF2C12E3D498720C4C6A280928F0E345", hash_generated_method = "302F2B894EE6F2488E9D086F40059DAB")
     public TBSCertificate getTbsCertificate() {
 TBSCertificate var1857F9BA3F27C149AD964AF4EA223803_563352471 =         tbsCertificate;
         var1857F9BA3F27C149AD964AF4EA223803_563352471.addTaint(taint);
         return var1857F9BA3F27C149AD964AF4EA223803_563352471;
-        
-        
+        // ---------- Original Method ----------
+        //return tbsCertificate;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.727 -0400", hash_original_method = "8722C62E4FA981F57078A28963CBFC5B", hash_generated_method = "238F50C45B458510F0CDF673432AA32F")
     public byte[] getSignatureValue() {
         byte[] varB5FB8CAD04B397AF118846FC12B421DC_1761925505 = (signatureValue.clone());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_143567972 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_143567972;
-        
-        
+        // ---------- Original Method ----------
+        //return signatureValue.clone();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.728 -0400", hash_original_method = "AB851A8A0A531CFA5FA89690A5B67B6A", hash_generated_method = "5D7BEC20C9646996446D0CB2B791E31D")
     @Override
     public String toString() {
@@ -95,35 +92,34 @@ TBSCertificate var1857F9BA3F27C149AD964AF4EA223803_563352471 =         tbsCertif
 String varE65B3A02759122992CB82C0E651AD408_676307960 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_676307960.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_676307960;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder result = new StringBuilder();
+        //result.append("X.509 Certificate:\n[\n");
+        //tbsCertificate.dumpValue(result);
+        //result.append("\n  Algorithm: [");
+        //signatureAlgorithm.dumpValue(result);
+        //result.append(']');
+        //result.append("\n  Signature Value:\n");
+        //result.append(Array.toString(signatureValue, ""));
+        //result.append(']');
+        //return result.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.728 -0400", hash_original_method = "40E68AC9D0BBD7DBB7B922A2DC357EC3", hash_generated_method = "FEA4137395A42777D7B63D2696AEA9B1")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = Certificate.ASN1.encode(this);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_811763806 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_585276303 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_585276303;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = Certificate.ASN1.encode(this);
+        //}
+        //return encoding;
     }
 
     

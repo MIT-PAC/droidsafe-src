@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,8 +31,8 @@ public class RetryManager {
     public  RetryManager() {
     if(DBG)        
         log("constructor");
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("constructor");
     }
 
     
@@ -48,19 +48,19 @@ public class RetryManager {
             boolean var68934A3E9455FA72420237EB05902327_2082447126 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1655585080 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1655585080;
-        } 
+        } //End block
     if(!validateNonNegativeInt("retryTime", retryTime))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1205824292 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_270420506 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_270420506;
-        } 
+        } //End block
     if(!validateNonNegativeInt("randomizationTime", randomizationTime))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1183848097 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_811156974 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_811156974;
-        } 
+        } //End block
         mMaxRetryCount = maxRetryCount;
         resetRetryCount();
         mRetryArray.clear();
@@ -68,23 +68,23 @@ public class RetryManager {
         boolean varB326B5062B2F0E69046810717534CB09_1636828291 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_210204427 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_210204427;
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Pair<Boolean, Integer> value;
+        //if (DBG) log("configure: " + maxRetryCount + ", " + retryTime + "," + randomizationTime);
+        //if (!validateNonNegativeInt("maxRetryCount", maxRetryCount)) {
+            //return false;
+        //}
+        //if (!validateNonNegativeInt("retryTime", retryTime)) {
+            //return false;
+        //}
+        //if (!validateNonNegativeInt("randomizationTime", randomizationTime)) {
+            //return false;
+        //}
+        //mMaxRetryCount = maxRetryCount;
+        //resetRetryCount();
+        //mRetryArray.clear();
+        //mRetryArray.add(new RetryRec(retryTime, randomizationTime));
+        //return true;
     }
 
     
@@ -94,7 +94,7 @@ public class RetryManager {
     if((configStr.startsWith("\"") && configStr.endsWith("\"")))        
         {
             configStr = configStr.substring(1, configStr.length()-1);
-        } 
+        } //End block
     if(DBG)        
         log("configure: '" + configStr + "'");
     if(!TextUtils.isEmpty(configStr))        
@@ -130,14 +130,14 @@ for(int i = 0;i < strArray.length;i++)
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1419906883;
                         }
                         defaultRandomization = value.second;
-                    } 
+                    } //End block
                     else
     if(TextUtils.equals(splitStr[0], "max_retries"))                    
                     {
     if(TextUtils.equals("infinite",splitStr[1]))                        
                         {
                             mRetryForever = true;
-                        } 
+                        } //End block
                         else
                         {
                             value = parseNonNegativeInt(splitStr[0], splitStr[1]);
@@ -148,15 +148,15 @@ for(int i = 0;i < strArray.length;i++)
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1256476863;
                             }
                             mMaxRetryCount = value.second;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
                     {
                         boolean var68934A3E9455FA72420237EB05902327_190545445 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835577109 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1835577109;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     splitStr = strArray[i].split(":", 2);
@@ -183,26 +183,26 @@ for(int i = 0;i < strArray.length;i++)
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_879971651;
                         }
                         rr.mRandomizationTime = value.second;
-                    } 
+                    } //End block
                     else
                     {
                         rr.mRandomizationTime = defaultRandomization;
-                    } 
+                    } //End block
                     mRetryArray.add(rr);
-                } 
-            } 
+                } //End block
+            } //End block
     if(mRetryArray.size() > mMaxRetryCount)            
             {
                 mMaxRetryCount = mRetryArray.size();
     if(DBG)                
                 log("configure: setting mMaxRetryCount=" + mMaxRetryCount);
-            } 
+            } //End block
     if(DBG)            
             log("configure: true");
             boolean varB326B5062B2F0E69046810717534CB09_339464329 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2070564824 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2070564824;
-        } 
+        } //End block
         else
         {
     if(DBG)            
@@ -210,13 +210,12 @@ for(int i = 0;i < strArray.length;i++)
             boolean var68934A3E9455FA72420237EB05902327_1828099056 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1925900038 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1925900038;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.061 -0400", hash_original_method = "74B9CFC0074F7A248036F63581582633", hash_generated_method = "9D305FDB184DCC81936A5772588F61E5")
     public boolean isRetryNeeded() {
         boolean retVal = mRetryForever || (mRetryCount < mMaxRetryCount);
@@ -225,10 +224,10 @@ for(int i = 0;i < strArray.length;i++)
         boolean var1E6151782509B2C92750CFF962B742CD_1107730238 = (retVal);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1045926532 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1045926532;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean retVal = mRetryForever || (mRetryCount < mMaxRetryCount);
+        //if (DBG) log("isRetryNeeded: " + retVal);
+        //return retVal;
     }
 
     
@@ -238,44 +237,43 @@ for(int i = 0;i < strArray.length;i++)
     if(mRetryCount < mRetryArray.size())        
         {
             index = mRetryCount;
-        } 
+        } //End block
         else
         {
             index = mRetryArray.size() - 1;
-        } 
+        } //End block
         int retVal;
     if((index >= 0) && (index < mRetryArray.size()))        
         {
             retVal = mRetryArray.get(index).mDelayTime + nextRandomizationTime(index);
-        } 
+        } //End block
         else
         {
             retVal = 0;
-        } 
+        } //End block
     if(DBG)        
         log("getRetryTimer: " + retVal);
         int var1E6151782509B2C92750CFF962B742CD_1877567086 = (retVal);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819506045 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819506045;
-        
-        
-        
-            
-        
-            
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int index;
+        //if (mRetryCount < mRetryArray.size()) {
+            //index = mRetryCount;
+        //} else {
+            //index = mRetryArray.size() - 1;
+        //}
+        //int retVal;
+        //if ((index >= 0) && (index < mRetryArray.size())) {
+            //retVal = mRetryArray.get(index).mDelayTime + nextRandomizationTime(index);
+        //} else {
+            //retVal = 0;
+        //}
+        //if (DBG) log("getRetryTimer: " + retVal);
+        //return retVal;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.062 -0400", hash_original_method = "7864A3188C49B1562B5127F41B9781EB", hash_generated_method = "06795BF4146A93153EC577B50E1F9663")
     public int getRetryCount() {
     if(DBG)        
@@ -283,86 +281,81 @@ for(int i = 0;i < strArray.length;i++)
         int var4487E295EC45E6A32AAF433A1E157001_1003190437 = (mRetryCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799229910 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799229910;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("getRetryCount: " + mRetryCount);
+        //return mRetryCount;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.062 -0400", hash_original_method = "BFFEAAE12F87E8C46DFE1D4E07480604", hash_generated_method = "974F315906E5ADCC7ABF2C3C9C5657C1")
     public void increaseRetryCount() {
         mRetryCount++;
     if(mRetryCount > mMaxRetryCount)        
         {
             mRetryCount = mMaxRetryCount;
-        } 
+        } //End block
     if(DBG)        
         log("increaseRetryCount: " + mRetryCount);
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //mRetryCount++;
+        //if (mRetryCount > mMaxRetryCount) {
+            //mRetryCount = mMaxRetryCount;
+        //}
+        //if (DBG) log("increaseRetryCount: " + mRetryCount);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.063 -0400", hash_original_method = "A052AF31F22F35CA9E6DDD61D99CA6EF", hash_generated_method = "7DE42C7DA7113CBBEBADB0E25395BD76")
     public void setRetryCount(int count) {
         mRetryCount = count;
     if(mRetryCount > mMaxRetryCount)        
         {
             mRetryCount = mMaxRetryCount;
-        } 
+        } //End block
     if(mRetryCount < 0)        
         {
             mRetryCount = 0;
-        } 
+        } //End block
         mRetryForever = false;
     if(DBG)        
         log("setRetryCount: " + mRetryCount);
-        
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //mRetryCount = count;
+        //if (mRetryCount > mMaxRetryCount) {
+            //mRetryCount = mMaxRetryCount;
+        //}
+        //if (mRetryCount < 0) {
+            //mRetryCount = 0;
+        //}
+        //mRetryForever = false;
+        //if (DBG) log("setRetryCount: " + mRetryCount);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.063 -0400", hash_original_method = "17739E86F508FAF2AC931D73653ADB87", hash_generated_method = "D36F3260FDC760F7AD5172F592EFFFD9")
     public void resetRetryCount() {
         mRetryCount = 0;
     if(DBG)        
         log("resetRetryCount: " + mRetryCount);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mRetryCount = 0;
+        //if (DBG) log("resetRetryCount: " + mRetryCount);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.063 -0400", hash_original_method = "28FA3A141006A5A6B2A507757230F8F2", hash_generated_method = "58E62390435641786CCC4B6740F6DE8A")
     public void retryForeverUsingLastTimeout() {
         mRetryCount = mMaxRetryCount;
         mRetryForever = true;
     if(DBG)        
         log("retryForeverUsingLastTimeout: " + mRetryForever + ", " + mRetryCount);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mRetryCount = mMaxRetryCount;
+        //mRetryForever = true;
+        //if (DBG) log("retryForeverUsingLastTimeout: " + mRetryForever + ", " + mRetryCount);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.064 -0400", hash_original_method = "A096FCFC79F5CC1E2EDA08CBC5F004E8", hash_generated_method = "D45EA95DFD634FE46733F852226AFAFC")
     public boolean isRetryForever() {
     if(DBG)        
@@ -370,9 +363,9 @@ for(int i = 0;i < strArray.length;i++)
         boolean varD57A5D2E2BB4C619441FBAA4CD14BD93_78815858 = (mRetryForever);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_855939548 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_855939548;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("isRetryForever: " + mRetryForever);
+        //return mRetryForever;
     }
 
     
@@ -386,30 +379,30 @@ for(int i = 0;i < strArray.length;i++)
         {
             value = Integer.parseInt(stringValue);
             retVal = new Pair<Boolean, Integer>(validateNonNegativeInt(name, value), value);
-        } 
+        } //End block
         catch (NumberFormatException e)
         {
             retVal = new Pair<Boolean, Integer>(false, 0);
-        } 
+        } //End block
     if(DBG)        
         log("parseNonNetativeInt: " + name + ", " + stringValue + ", "
                     + retVal.first + ", " + retVal.second);
 Pair<Boolean, Integer> var906583DF257E5B26DD99AC8582D137B0_737535008 =         retVal;
         var906583DF257E5B26DD99AC8582D137B0_737535008.addTaint(taint);
         return var906583DF257E5B26DD99AC8582D137B0_737535008;
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-        
-                    
-        
+        // ---------- Original Method ----------
+        //int value;
+        //Pair<Boolean, Integer> retVal;
+        //try {
+            //value = Integer.parseInt(stringValue);
+            //retVal = new Pair<Boolean, Integer>(validateNonNegativeInt(name, value), value);
+        //} catch (NumberFormatException e) {
+            //Log.e(LOG_TAG, name + " bad value: " + stringValue, e);
+            //retVal = new Pair<Boolean, Integer>(false, 0);
+        //}
+        //if (DBG) log("parseNonNetativeInt: " + name + ", " + stringValue + ", "
+                    //+ retVal.first + ", " + retVal.second);
+        //return retVal;
     }
 
     
@@ -421,26 +414,26 @@ Pair<Boolean, Integer> var906583DF257E5B26DD99AC8582D137B0_737535008 =         r
     if(value < 0)        
         {
             retVal = false;
-        } 
+        } //End block
         else
         {
             retVal = true;
-        } 
+        } //End block
     if(DBG)        
         log("validateNonNegative: " + name + ", " + value + ", " + retVal);
         boolean var1E6151782509B2C92750CFF962B742CD_776859223 = (retVal);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2015252237 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2015252237;
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean retVal;
+        //if (value < 0) {
+            //Log.e(LOG_TAG, name + " bad value: is < 0");
+            //retVal = false;
+        //} else {
+            //retVal = true;
+        //}
+        //if (DBG) log("validateNonNegative: " + name + ", " + value + ", " + retVal);
+        //return retVal;
     }
 
     
@@ -453,20 +446,20 @@ Pair<Boolean, Integer> var906583DF257E5B26DD99AC8582D137B0_737535008 =         r
             int varCFCD208495D565EF66E7DFF9F98764DA_1581476894 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_49681871 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_49681871;
-        } 
+        } //End block
         else
         {
             int varEAA8242B5954B27B82F0D6D703D89F8A_897126278 = (rng.nextInt(randomTime));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1605637910 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1605637910;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int randomTime = mRetryArray.get(index).mRandomizationTime;
+        //if (randomTime == 0) {
+            //return 0;
+        //} else {
+            //return rng.nextInt(randomTime);
+        //}
     }
 
     
@@ -474,8 +467,8 @@ Pair<Boolean, Integer> var906583DF257E5B26DD99AC8582D137B0_737535008 =         r
     private void log(String s) {
         addTaint(s.getTaint());
         Log.d(LOG_TAG, s);
-        
-        
+        // ---------- Original Method ----------
+        //Log.d(LOG_TAG, s);
     }
 
     
@@ -491,9 +484,9 @@ Pair<Boolean, Integer> var906583DF257E5B26DD99AC8582D137B0_737535008 =         r
           RetryRec(int delayTime, int randomizationTime) {
             mDelayTime = delayTime;
             mRandomizationTime = randomizationTime;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mDelayTime = delayTime;
+            //mRandomizationTime = randomizationTime;
         }
 
         

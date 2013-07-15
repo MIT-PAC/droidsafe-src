@@ -1,6 +1,6 @@
 package org.xml.sax.helpers;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,8 +27,8 @@ public class NamespaceSupport {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.445 -0400", hash_original_method = "1F62AD2938072A93E19EAFFCDA555D07", hash_generated_method = "5851AF68D843BB425B4FF66193756222")
     public  NamespaceSupport() {
         reset();
-        
-        
+        // ---------- Original Method ----------
+        //reset();
     }
 
     
@@ -39,12 +39,12 @@ public class NamespaceSupport {
         contextPos = 0;
         contexts[contextPos] = currentContext = new Context();
         currentContext.declarePrefix("xml", XMLNS);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //contexts = new Context[32];
+        //namespaceDeclUris = false;
+        //contextPos = 0;
+        //contexts[contextPos] = currentContext = new Context();
+        //currentContext.declarePrefix("xml", XMLNS);
     }
 
     
@@ -59,33 +59,33 @@ public class NamespaceSupport {
             System.arraycopy(contexts, 0, newContexts, 0, max);
             max *= 2;
             contexts = newContexts;
-        } 
+        } //End block
         currentContext = contexts[contextPos];
     if(currentContext == null)        
         {
             contexts[contextPos] = currentContext = new Context();
-        } 
+        } //End block
     if(contextPos > 0)        
         {
             currentContext.setParent(contexts[contextPos - 1]);
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-    
-        
-        
-    
+        } //End block
+        // ---------- Original Method ----------
+        //int max = contexts.length;
+        //contexts [contextPos].declsOK = false;
+        //contextPos++;
+        //if (contextPos >= max) {
+        //Context newContexts[] = new Context[max*2];
+        //System.arraycopy(contexts, 0, newContexts, 0, max);
+        //max *= 2;
+        //contexts = newContexts;
+    //}
+        //currentContext = contexts[contextPos];
+        //if (currentContext == null) {
+        //contexts[contextPos] = currentContext = new Context();
+    //}
+        //if (contextPos > 0) {
+        //currentContext.setParent(contexts[contextPos - 1]);
+    //}
     }
 
     
@@ -98,15 +98,15 @@ public class NamespaceSupport {
             EmptyStackException varD2F310AAC69D0B44FED139E8A8976F2D_473927112 = new EmptyStackException();
             varD2F310AAC69D0B44FED139E8A8976F2D_473927112.addTaint(taint);
             throw varD2F310AAC69D0B44FED139E8A8976F2D_473927112;
-        } 
+        } //End block
         currentContext = contexts[contextPos];
-        
-        
-        
-        
-        
-    
-        
+        // ---------- Original Method ----------
+        //contexts[contextPos].clear();
+        //contextPos--;
+        //if (contextPos < 0) {
+        //throw new EmptyStackException();
+    //}
+        //currentContext = contexts[contextPos];
     }
 
     
@@ -119,21 +119,21 @@ public class NamespaceSupport {
             boolean var68934A3E9455FA72420237EB05902327_984568944 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_832291445 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_832291445;
-        } 
+        } //End block
         else
         {
             currentContext.declarePrefix(prefix, uri);
             boolean varB326B5062B2F0E69046810717534CB09_674935115 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_863674180 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_863674180;
-        } 
-        
-        
-        
-    
-        
-        
-    
+        } //End block
+        // ---------- Original Method ----------
+        //if (prefix.equals("xml") || prefix.equals("xmlns")) {
+        //return false;
+    //} else {
+        //currentContext.declarePrefix(prefix, uri);
+        //return true;
+    //}
     }
 
     
@@ -149,7 +149,7 @@ public class NamespaceSupport {
 String [] var540C13E9E156B687226421B24F2DF178_142857790 =             null;
             var540C13E9E156B687226421B24F2DF178_142857790.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_142857790;
-        } 
+        } //End block
         else
         {
             parts[0] = myParts[0];
@@ -158,17 +158,17 @@ String [] var540C13E9E156B687226421B24F2DF178_142857790 =             null;
 String [] var6651EAC2994005EE903B8D00ACB7442E_2053651687 =             parts;
             var6651EAC2994005EE903B8D00ACB7442E_2053651687.addTaint(taint);
             return var6651EAC2994005EE903B8D00ACB7442E_2053651687;
-        } 
-        
-        
-        
-        
-    
-        
-        
-        
-        
-    
+        } //End block
+        // ---------- Original Method ----------
+        //String myParts[] = currentContext.processName(qName, isAttribute);
+        //if (myParts == null) {
+        //return null;
+    //} else {
+        //parts[0] = myParts[0];
+        //parts[1] = myParts[1];
+        //parts[2] = myParts[2];
+        //return parts;
+    //}
     }
 
     
@@ -178,8 +178,8 @@ String [] var6651EAC2994005EE903B8D00ACB7442E_2053651687 =             parts;
 String varD3CF03DF424233A5E957366D467BAD2C_1816095142 =         currentContext.getURI(prefix);
         varD3CF03DF424233A5E957366D467BAD2C_1816095142.addTaint(taint);
         return varD3CF03DF424233A5E957366D467BAD2C_1816095142;
-        
-        
+        // ---------- Original Method ----------
+        //return currentContext.getURI(prefix);
     }
 
     
@@ -188,8 +188,8 @@ String varD3CF03DF424233A5E957366D467BAD2C_1816095142 =         currentContext.g
 Enumeration var3CA484C1F7A55DC8EC9DBC77D6F685ED_896987217 =         currentContext.getPrefixes();
         var3CA484C1F7A55DC8EC9DBC77D6F685ED_896987217.addTaint(taint);
         return var3CA484C1F7A55DC8EC9DBC77D6F685ED_896987217;
-        
-        
+        // ---------- Original Method ----------
+        //return currentContext.getPrefixes();
     }
 
     
@@ -199,8 +199,8 @@ Enumeration var3CA484C1F7A55DC8EC9DBC77D6F685ED_896987217 =         currentConte
 String varE7C2CB7CEAA80FA05F8C25692B7C653A_68227346 =         currentContext.getPrefix(uri);
         varE7C2CB7CEAA80FA05F8C25692B7C653A_68227346.addTaint(taint);
         return varE7C2CB7CEAA80FA05F8C25692B7C653A_68227346;
-        
-        
+        // ---------- Original Method ----------
+        //return currentContext.getPrefix(uri);
     }
 
     
@@ -216,21 +216,21 @@ String varE7C2CB7CEAA80FA05F8C25692B7C653A_68227346 =         currentContext.get
     if(uri.equals(getURI(prefix)))            
             {
                 prefixes.add(prefix);
-            } 
-        } 
+            } //End block
+        } //End block
 Enumeration var5FC42751E2C21DAF9B65440664E8FC85_811166772 =         Collections.enumeration(prefixes);
         var5FC42751E2C21DAF9B65440664E8FC85_811166772.addTaint(taint);
         return var5FC42751E2C21DAF9B65440664E8FC85_811166772;
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<String> prefixes = new ArrayList<String>();
+        //Enumeration allPrefixes = getPrefixes();
+        //while (allPrefixes.hasMoreElements()) {
+            //String prefix = (String) allPrefixes.nextElement();
+            //if (uri.equals(getURI(prefix))) {
+                //prefixes.add(prefix);
+            //}
+        //}
+        //return Collections.enumeration(prefixes);
     }
 
     
@@ -239,8 +239,8 @@ Enumeration var5FC42751E2C21DAF9B65440664E8FC85_811166772 =         Collections.
 Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentContext.getDeclaredPrefixes();
         varA9270AE0813CF099F45329C62E1BFAD9_248812930.addTaint(taint);
         return varA9270AE0813CF099F45329C62E1BFAD9_248812930;
-        
-        
+        // ---------- Original Method ----------
+        //return currentContext.getDeclaredPrefixes();
     }
 
     
@@ -261,30 +261,29 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
         {
             contexts[contextPos] = currentContext = new Context();
             currentContext.declarePrefix("xml", XMLNS);
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-    
+        } //End block
+        // ---------- Original Method ----------
+        //if (contextPos != 0)
+        //throw new IllegalStateException ();
+        //if (value == namespaceDeclUris)
+        //return;
+        //namespaceDeclUris = value;
+        //if (value)
+        //currentContext.declarePrefix ("xmlns", NSDECL);
+    //else {
+        //contexts[contextPos] = currentContext = new Context();
+        //currentContext.declarePrefix("xml", XMLNS);
+    //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.455 -0400", hash_original_method = "704394E46FC1A63E6F1F5F09E7A57B00", hash_generated_method = "746739353838227EF4E1E7CCE13C91B5")
     public boolean isNamespaceDeclUris() {
         boolean var1B0E32CE3D1C65D78D4D87360D96EF74_2138014273 = (namespaceDeclUris);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_791866524 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_791866524;
-        
-        
+        // ---------- Original Method ----------
+        //return namespaceDeclUris;
     }
 
     
@@ -320,12 +319,11 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.456 -0400", hash_original_method = "CD5C82C799E78C74801FDB521CEE7324", hash_generated_method = "D7F93DBD3C237D58A202C82545BE75D2")
           Context() {
             copyTables();
-            
-            
+            // ---------- Original Method ----------
+            //copyTables();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.458 -0400", hash_original_method = "E1D3B844E1B48DBC46153D5E5632428F", hash_generated_method = "F6B9FE4E8E2EA47CF3F793A45547CC1D")
          void setParent(Context parent) {
             this.parent = parent;
@@ -337,20 +335,19 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
             defaultNS = parent.defaultNS;
             declSeen = false;
             declsOK = true;
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.parent = parent;
+            //declarations = null;
+            //prefixTable = parent.prefixTable;
+            //uriTable = parent.uriTable;
+            //elementNameTable = parent.elementNameTable;
+            //attributeNameTable = parent.attributeNameTable;
+            //defaultNS = parent.defaultNS;
+            //declSeen = false;
+            //declsOK = true;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.461 -0400", hash_original_method = "9488BC4AFF7634EA1262BEB181C9541E", hash_generated_method = "B008A6AC94D4B276D1CE38273E644999")
          void clear() {
             parent = null;
@@ -359,13 +356,13 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
             elementNameTable = null;
             attributeNameTable = null;
             defaultNS = null;
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //parent = null;
+            //prefixTable = null;
+            //uriTable = null;
+            //elementNameTable = null;
+            //attributeNameTable = null;
+            //defaultNS = null;
         }
 
         
@@ -377,15 +374,15 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
                 IllegalStateException var1E7B469211DA15CFDAAE3CA89DA13BE1_497351274 = new IllegalStateException ("can't declare any more prefixes in this context");
                 var1E7B469211DA15CFDAAE3CA89DA13BE1_497351274.addTaint(taint);
                 throw var1E7B469211DA15CFDAAE3CA89DA13BE1_497351274;
-            } 
+            } //End block
     if(!declSeen)            
             {
                 copyTables();
-            } 
+            } //End block
     if(declarations == null)            
             {
                 declarations = new ArrayList<String>();
-            } 
+            } //End block
             prefix = prefix.intern();
             uri = uri.intern();
     if("".equals(prefix))            
@@ -393,41 +390,41 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
     if("".equals(uri))                
                 {
                     defaultNS = null;
-                } 
+                } //End block
                 else
                 {
                     defaultNS = uri;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 prefixTable.put(prefix, uri);
                 uriTable.put(uri, prefix);
-            } 
+            } //End block
             declarations.add(prefix);
-            
-            
-            
-        
-            
-            
-        
-            
-            
-        
-            
-            
-            
-            
-                
-            
-                
-            
-        
-            
-            
-        
-            
+            // ---------- Original Method ----------
+            //if (!declsOK) {
+            //throw new IllegalStateException ("can't declare any more prefixes in this context");
+        //}
+            //if (!declSeen) {
+            //copyTables();
+        //}
+            //if (declarations == null) {
+            //declarations = new ArrayList<String>();
+        //}
+            //prefix = prefix.intern();
+            //uri = uri.intern();
+            //if ("".equals(prefix)) {
+            //if ("".equals(uri)) {
+                //defaultNS = null;
+            //} else {
+                //defaultNS = uri;
+            //}
+        //} else {
+            //prefixTable.put(prefix, uri);
+            //uriTable.put(uri, prefix); 
+        //}
+            //declarations.add(prefix);
         }
 
         
@@ -441,18 +438,18 @@ Enumeration varA9270AE0813CF099F45329C62E1BFAD9_248812930 =         currentConte
     if(isAttribute)            
             {
                 table = attributeNameTable;
-            } 
+            } //End block
             else
             {
                 table = elementNameTable;
-            } 
+            } //End block
             name = (String[])table.get(qName);
     if(name != null)            
             {
 String [] varB017984728AC60AD1F0BF8734F33F15C_724744092 =                 name;
                 varB017984728AC60AD1F0BF8734F33F15C_724744092.addTaint(taint);
                 return varB017984728AC60AD1F0BF8734F33F15C_724744092;
-            } 
+            } //End block
             name = new String[3];
             name[2] = qName.intern();
             int index = qName.indexOf(':');
@@ -464,18 +461,18 @@ String [] varB017984728AC60AD1F0BF8734F33F15C_724744092 =                 name;
                     name[0] = NSDECL;
                     else
                     name[0] = "";
-                } 
+                } //End block
                 else
     if(defaultNS == null)                
                 {
                     name[0] = "";
-                } 
+                } //End block
                 else
                 {
                     name[0] = defaultNS;
-                } 
+                } //End block
                 name[1] = name[2];
-            } 
+            } //End block
             else
             {
                 String prefix = qName.substring(0, index);
@@ -484,27 +481,27 @@ String [] varB017984728AC60AD1F0BF8734F33F15C_724744092 =                 name;
     if("".equals(prefix))                
                 {
                     uri = defaultNS;
-                } 
+                } //End block
                 else
                 {
                     uri = (String)prefixTable.get(prefix);
-                } 
+                } //End block
     if(uri == null
             || (!isAttribute && "xmlns".equals (prefix)))                
                 {
 String [] var540C13E9E156B687226421B24F2DF178_313198878 =                     null;
                     var540C13E9E156B687226421B24F2DF178_313198878.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_313198878;
-                } 
+                } //End block
                 name[0] = uri;
                 name[1] = local.intern();
-            } 
+            } //End block
             table.put(name[2], name);
 String [] varB017984728AC60AD1F0BF8734F33F15C_141970397 =             name;
             varB017984728AC60AD1F0BF8734F33F15C_141970397.addTaint(taint);
             return varB017984728AC60AD1F0BF8734F33F15C_141970397;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -516,28 +513,28 @@ String [] varB017984728AC60AD1F0BF8734F33F15C_141970397 =             name;
 String varFCE0B69A9C44C483F2D75E6F31B4A5C1_1490539059 =                 defaultNS;
                 varFCE0B69A9C44C483F2D75E6F31B4A5C1_1490539059.addTaint(taint);
                 return varFCE0B69A9C44C483F2D75E6F31B4A5C1_1490539059;
-            } 
+            } //End block
             else
     if(prefixTable == null)            
             {
 String var540C13E9E156B687226421B24F2DF178_1494214353 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1494214353.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1494214353;
-            } 
+            } //End block
             else
             {
 String var4ADD76D79BB28EDB1A2636B311F90B44_1063791693 =                 (String)prefixTable.get(prefix);
                 var4ADD76D79BB28EDB1A2636B311F90B44_1063791693.addTaint(taint);
                 return var4ADD76D79BB28EDB1A2636B311F90B44_1063791693;
-            } 
-            
-            
-        
-        
-        
-        
-        
-        
+            } //End block
+            // ---------- Original Method ----------
+            //if ("".equals(prefix)) {
+        //return defaultNS;
+        //} else if (prefixTable == null) {
+        //return null;
+        //} else {
+        //return (String)prefixTable.get(prefix);
+        //}
         }
 
         
@@ -549,19 +546,19 @@ String var4ADD76D79BB28EDB1A2636B311F90B44_1063791693 =                 (String)
 String var540C13E9E156B687226421B24F2DF178_296176240 =                 null;
                 var540C13E9E156B687226421B24F2DF178_296176240.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_296176240;
-            } 
+            } //End block
             else
             {
 String varD66BEA98E2A9549F3CCA4F534E7D70AE_1200326035 =                 (String)uriTable.get(uri);
                 varD66BEA98E2A9549F3CCA4F534E7D70AE_1200326035.addTaint(taint);
                 return varD66BEA98E2A9549F3CCA4F534E7D70AE_1200326035;
-            } 
-            
-            
-        
-        
-        
-        
+            } //End block
+            // ---------- Original Method ----------
+            //if (uriTable == null) {
+        //return null;
+        //} else {
+        //return (String)uriTable.get(uri);
+        //}
         }
 
         
@@ -570,8 +567,8 @@ String varD66BEA98E2A9549F3CCA4F534E7D70AE_1200326035 =                 (String)
 Enumeration var6D101BA062498AE3A785D3901BC4F2E7_1649917791 =             (declarations == null) ? EMPTY_ENUMERATION : Collections.enumeration(declarations);
             var6D101BA062498AE3A785D3901BC4F2E7_1649917791.addTaint(taint);
             return var6D101BA062498AE3A785D3901BC4F2E7_1649917791;
-            
-            
+            // ---------- Original Method ----------
+            //return (declarations == null) ? EMPTY_ENUMERATION : Collections.enumeration(declarations);
         }
 
         
@@ -582,19 +579,19 @@ Enumeration var6D101BA062498AE3A785D3901BC4F2E7_1649917791 =             (declar
 Enumeration var03B3C703BC5375AB3A8C9B9127FB0C4D_1806466133 =                 EMPTY_ENUMERATION;
                 var03B3C703BC5375AB3A8C9B9127FB0C4D_1806466133.addTaint(taint);
                 return var03B3C703BC5375AB3A8C9B9127FB0C4D_1806466133;
-            } 
+            } //End block
             else
             {
 Enumeration varBFCD16886F1317652E333795EE580297_1752172125 =                 prefixTable.keys();
                 varBFCD16886F1317652E333795EE580297_1752172125.addTaint(taint);
                 return varBFCD16886F1317652E333795EE580297_1752172125;
-            } 
-            
-            
-        
-        
-        
-        
+            } //End block
+            // ---------- Original Method ----------
+            //if (prefixTable == null) {
+        //return EMPTY_ENUMERATION;
+        //} else {
+        //return prefixTable.keys();
+        //}
         }
 
         
@@ -603,36 +600,36 @@ Enumeration varBFCD16886F1317652E333795EE580297_1752172125 =                 pre
     if(prefixTable != null)            
             {
                 prefixTable = (Hashtable)prefixTable.clone();
-            } 
+            } //End block
             else
             {
                 prefixTable = new Hashtable();
-            } 
+            } //End block
     if(uriTable != null)            
             {
                 uriTable = (Hashtable)uriTable.clone();
-            } 
+            } //End block
             else
             {
                 uriTable = new Hashtable();
-            } 
+            } //End block
             elementNameTable = new Hashtable();
             attributeNameTable = new Hashtable();
             declSeen = true;
-            
-            
-        
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (prefixTable != null) {
+        //prefixTable = (Hashtable)prefixTable.clone();
+        //} else {
+        //prefixTable = new Hashtable();
+        //}
+            //if (uriTable != null) {
+        //uriTable = (Hashtable)uriTable.clone();
+        //} else {
+        //uriTable = new Hashtable();
+        //}
+            //elementNameTable = new Hashtable();
+            //attributeNameTable = new Hashtable();
+            //declSeen = true;
         }
 
         

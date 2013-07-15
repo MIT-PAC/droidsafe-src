@@ -1,6 +1,6 @@
 package android.test;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,11 +29,11 @@ public class ClassPathPackageInfo {
         this.packageName = packageName;
         this.subpackageNames = Collections.unmodifiableSet(subpackageNames);
         this.topLevelClasses = Collections.unmodifiableSet(topLevelClasses);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.source = source;
+        //this.packageName = packageName;
+        //this.subpackageNames = Collections.unmodifiableSet(subpackageNames);
+        //this.topLevelClasses = Collections.unmodifiableSet(topLevelClasses);
     }
 
     
@@ -43,16 +43,16 @@ public class ClassPathPackageInfo {
 for(String name : subpackageNames)
         {
             info.add(source.getPackageInfo(name));
-        } 
+        } //End block
 Set<ClassPathPackageInfo> var43CF3338FDBA93597A9562D3166E9DC4_187823201 =         info;
         var43CF3338FDBA93597A9562D3166E9DC4_187823201.addTaint(taint);
         return var43CF3338FDBA93597A9562D3166E9DC4_187823201;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Set<ClassPathPackageInfo> info = Sets.newHashSet();
+        //for (String name : subpackageNames) {
+            //info.add(source.getPackageInfo(name));
+        //}
+        //return info;
     }
 
     
@@ -63,10 +63,10 @@ Set<ClassPathPackageInfo> var43CF3338FDBA93597A9562D3166E9DC4_187823201 =       
 Set<Class<?>> varD2D4612E029977363A9BBEBD4F0339C0_953481393 =         set;
         varD2D4612E029977363A9BBEBD4F0339C0_953481393.addTaint(taint);
         return varD2D4612E029977363A9BBEBD4F0339C0_953481393;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Set<Class<?>> set = Sets.newHashSet();
+        //addTopLevelClassesTo(set);
+        //return set;
     }
 
     
@@ -77,12 +77,12 @@ Set<Class<?>> varD2D4612E029977363A9BBEBD4F0339C0_953481393 =         set;
 for(ClassPathPackageInfo info : getSubpackages())
         {
             info.addTopLevelClassesTo(set);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //set.addAll(topLevelClasses);
+        //for (ClassPathPackageInfo info : getSubpackages()) {
+            //info.addTopLevelClassesTo(set);
+        //}
     }
 
     
@@ -96,16 +96,16 @@ for(ClassPathPackageInfo info : getSubpackages())
             boolean var5E0080B4A99534A09F796FC574CD1748_1933625569 = ((this.packageName).equals(that.packageName));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1748830139 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1748830139;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1469457406 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949583094 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_949583094;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (obj instanceof ClassPathPackageInfo) {
+            //ClassPathPackageInfo that = (ClassPathPackageInfo) obj;
+            //return (this.packageName).equals(that.packageName);
+        //}
+        //return false;
     }
 
     
@@ -115,8 +115,8 @@ for(ClassPathPackageInfo info : getSubpackages())
         int var38876AF18AE7BA34925A37FE98024E05_807766188 = (packageName.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2131976627 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2131976627;
-        
-        
+        // ---------- Original Method ----------
+        //return packageName.hashCode();
     }
 
     

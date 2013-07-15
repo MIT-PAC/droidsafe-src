@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,15 +18,15 @@ public class DERT61String extends ASN1Object implements DERString {
 for(int i = 0;i != cs.length;i++)
         {
             cs[i] = (char)(string[i] & 0xff);
-        } 
+        } //End block
         this.string = new String(cs);
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //char[]  cs = new char[string.length];
+        //for (int i = 0; i != cs.length; i++)
+        //{
+            //cs[i] = (char)(string[i] & 0xff);
+        //}
+        //this.string = new String(cs);
     }
 
     
@@ -34,8 +34,8 @@ for(int i = 0;i != cs.length;i++)
     public  DERT61String(
         String   string) {
         this.string = string;
-        
-        
+        // ---------- Original Method ----------
+        //this.string = string;
     }
 
     
@@ -64,25 +64,23 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.201 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "25FC0345AFE56FE42466DBBA3D9B945F")
     public String getString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_225691824 =         string;
         varDCF8A90B03379D9C1C8BF337A3879E0C_225691824.addTaint(taint);
         return varDCF8A90B03379D9C1C8BF337A3879E0C_225691824;
-        
-        
+        // ---------- Original Method ----------
+        //return string;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.201 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "5BA4B1856AE288930A90A17AE975D4E1")
     public String toString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_1511161753 =         string;
         varDCF8A90B03379D9C1C8BF337A3879E0C_1511161753.addTaint(taint);
         return varDCF8A90B03379D9C1C8BF337A3879E0C_1511161753;
-        
-        
+        // ---------- Original Method ----------
+        //return string;
     }
 
     
@@ -91,8 +89,8 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_1511161753 =         string;
         DEROutputStream  out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(T61_STRING, this.getOctets());
-        
-        
+        // ---------- Original Method ----------
+        //out.writeEncoded(T61_STRING, this.getOctets());
     }
 
     
@@ -103,18 +101,18 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_1511161753 =         string;
 for(int i = 0;i != cs.length;i++)
         {
             bs[i] = (byte)cs[i];
-        } 
+        } //End block
         byte[] var7C9DF801238ABE28CAE2675FD3166A1A_415263026 = (bs);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_262388843 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_262388843;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //char[]  cs = string.toCharArray();
+        //byte[]  bs = new byte[cs.length];
+        //for (int i = 0; i != cs.length; i++)
+        //{
+            //bs[i] = (byte)cs[i];
+        //}
+        //return bs;
     }
 
     
@@ -127,16 +125,16 @@ for(int i = 0;i != cs.length;i++)
             boolean var68934A3E9455FA72420237EB05902327_200198298 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1772130626 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1772130626;
-        } 
+        } //End block
         boolean varF41DB2B225EB98F19BC025680F6574E9_384539335 = (this.getString().equals(((DERT61String)o).getString()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_694145808 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_694145808;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!(o instanceof DERT61String))
+        //{
+            //return false;
+        //}
+        //return this.getString().equals(((DERT61String)o).getString());
     }
 
     
@@ -145,8 +143,8 @@ for(int i = 0;i != cs.length;i++)
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_1895745617 = (this.getString().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_653275046 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_653275046;
-        
-        
+        // ---------- Original Method ----------
+        //return this.getString().hashCode();
     }
 
     

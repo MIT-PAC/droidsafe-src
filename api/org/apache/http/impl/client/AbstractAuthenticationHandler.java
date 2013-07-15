@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,7 +32,7 @@ public abstract class AbstractAuthenticationHandler implements AuthenticationHan
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.246 -0400", hash_original_method = "E0C989328AEDF63A6A5F2E03C11F9A89", hash_generated_method = "3C9B9AA4DECDD14BF6F40DFCFEDAF1CD")
     public  AbstractAuthenticationHandler() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -49,7 +49,7 @@ for(Header header : headers)
             {
                 buffer = ((FormattedHeader) header).getBuffer();
                 pos = ((FormattedHeader) header).getValuePos();
-            } 
+            } //End block
             else
             {
                 String s = header.getValue();
@@ -58,31 +58,31 @@ for(Header header : headers)
                     MalformedChallengeException var7F2BB44ACA42A76F5E79899908E75392_1025710112 = new MalformedChallengeException("Header value is null");
                     var7F2BB44ACA42A76F5E79899908E75392_1025710112.addTaint(taint);
                     throw var7F2BB44ACA42A76F5E79899908E75392_1025710112;
-                } 
+                } //End block
                 buffer = new CharArrayBuffer(s.length());
                 buffer.append(s);
                 pos = 0;
-            } 
+            } //End block
             while
 (pos < buffer.length() && HTTP.isWhitespace(buffer.charAt(pos)))            
             {
                 pos++;
-            } 
+            } //End block
             int beginIndex = pos;
             while
 (pos < buffer.length() && !HTTP.isWhitespace(buffer.charAt(pos)))            
             {
                 pos++;
-            } 
+            } //End block
             int endIndex = pos;
             String s = buffer.substring(beginIndex, endIndex);
             map.put(s.toLowerCase(Locale.ENGLISH), header);
-        } 
+        } //End block
 Map<String, Header> var16A0D6FA6CCA40A72F4213E7169FA153_1631838458 =         map;
         var16A0D6FA6CCA40A72F4213E7169FA153_1631838458.addTaint(taint);
         return var16A0D6FA6CCA40A72F4213E7169FA153_1631838458;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -91,8 +91,8 @@ Map<String, Header> var16A0D6FA6CCA40A72F4213E7169FA153_1631838458 =         map
 List<String> var2B9683BFFB8A6468D0E659E64C20929F_1506952061 =         DEFAULT_SCHEME_PRIORITY;
         var2B9683BFFB8A6468D0E659E64C20929F_1506952061.addTaint(taint);
         return var2B9683BFFB8A6468D0E659E64C20929F_1506952061;
-        
-        
+        // ---------- Original Method ----------
+        //return DEFAULT_SCHEME_PRIORITY;
     }
 
     
@@ -111,18 +111,18 @@ List<String> var2B9683BFFB8A6468D0E659E64C20929F_1506952061 =         DEFAULT_SC
             IllegalStateException var19021B1761D2A004A1BD3BFCE4096EE3_1063956146 = new IllegalStateException("AuthScheme registry not set in HTTP context");
             var19021B1761D2A004A1BD3BFCE4096EE3_1063956146.addTaint(taint);
             throw var19021B1761D2A004A1BD3BFCE4096EE3_1063956146;
-        } 
+        } //End block
         List<?> authPrefs = (List<?>) context.getAttribute(
                 ClientContext.AUTH_SCHEME_PREF);
     if(authPrefs == null)        
         {
             authPrefs = getAuthPreferences();
-        } 
+        } //End block
     if(this.log.isDebugEnabled())        
         {
             this.log.debug("Authentication schemes in the order of preference: " 
                 + authPrefs);
-        } 
+        } //End block
         AuthScheme authScheme = null;
 for(int i = 0;i < authPrefs.size();i++)
         {
@@ -133,28 +133,28 @@ for(int i = 0;i < authPrefs.size();i++)
     if(this.log.isDebugEnabled())                
                 {
                     this.log.debug(id + " authentication scheme selected");
-                } 
+                } //End block
                 try 
                 {
                     authScheme = registry.getAuthScheme(id, response.getParams());
                     break;
-                } 
+                } //End block
                 catch (IllegalStateException e)
                 {
     if(this.log.isWarnEnabled())                    
                     {
                         this.log.warn("Authentication scheme " + id + " not supported");
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             else
             {
     if(this.log.isDebugEnabled())                
                 {
                     this.log.debug("Challenge for " + id + " authentication scheme not available");
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(authScheme == null)        
         {
             AuthenticationException var34DCC811AB7511BBAC3E049E65DF97C8_515185239 = new AuthenticationException(
@@ -162,12 +162,12 @@ for(int i = 0;i < authPrefs.size();i++)
                     + challenges);
             var34DCC811AB7511BBAC3E049E65DF97C8_515185239.addTaint(taint);
             throw var34DCC811AB7511BBAC3E049E65DF97C8_515185239;
-        } 
+        } //End block
 AuthScheme var2B462B7DF158CE6CFBB29C41135FC249_2046656897 =         authScheme;
         var2B462B7DF158CE6CFBB29C41135FC249_2046656897.addTaint(taint);
         return var2B462B7DF158CE6CFBB29C41135FC249_2046656897;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

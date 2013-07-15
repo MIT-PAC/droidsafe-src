@@ -1,6 +1,6 @@
 package android.graphics;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,17 +17,16 @@ public class AvoidXfermode extends Xfermode {
             IllegalArgumentException var1055A444EADED692008EF1EEFB985FCC_986623807 = new IllegalArgumentException("tolerance must be 0..255");
             var1055A444EADED692008EF1EEFB985FCC_986623807.addTaint(taint);
             throw var1055A444EADED692008EF1EEFB985FCC_986623807;
-        } 
+        } //End block
         native_instance = nativeCreate(opColor, tolerance, mode.nativeInt);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (tolerance < 0 || tolerance > 255) {
+            //throw new IllegalArgumentException("tolerance must be 0..255");
+        //}
+        //native_instance = nativeCreate(opColor, tolerance, mode.nativeInt);
     }
 
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate(int opColor, int tolerance,
                                            int nativeMode) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613288083 = DSUtils.UNKNOWN_INT;

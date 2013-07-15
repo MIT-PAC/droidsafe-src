@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,7 +31,7 @@ public class PerformanceCollector {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.285 -0400", hash_original_method = "405D2609A0193176D2AFC5D34E96663C", hash_generated_method = "3B2002EB63933A95B11D5472AF645642")
     public  PerformanceCollector() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,17 +39,16 @@ public class PerformanceCollector {
     public  PerformanceCollector(PerformanceResultsWriter writer) {
         addTaint(writer.getTaint());
         setPerformanceResultsWriter(writer);
-        
-        
+        // ---------- Original Method ----------
+        //setPerformanceResultsWriter(writer);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.287 -0400", hash_original_method = "37F3C4CB00E2065177941F440A1EB96E", hash_generated_method = "B9C8894AFEBF94656C66FAA8B38F355F")
     public void setPerformanceResultsWriter(PerformanceResultsWriter writer) {
         mPerfWriter = writer;
-        
-        
+        // ---------- Original Method ----------
+        //mPerfWriter = writer;
     }
 
     
@@ -59,10 +58,10 @@ public class PerformanceCollector {
     if(mPerfWriter != null)        
         mPerfWriter.writeBeginSnapshot(label);
         startPerformanceSnapshot();
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (mPerfWriter != null)
+            //mPerfWriter.writeBeginSnapshot(label);
+        //startPerformanceSnapshot();
     }
 
     
@@ -74,11 +73,11 @@ public class PerformanceCollector {
 Bundle varCE781A758371831B9860AA2A5A37F4B9_264044659 =         mPerfSnapshot;
         varCE781A758371831B9860AA2A5A37F4B9_264044659.addTaint(taint);
         return varCE781A758371831B9860AA2A5A37F4B9_264044659;
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //endPerformanceSnapshot();
+        //if (mPerfWriter != null)
+            //mPerfWriter.writeEndSnapshot(mPerfSnapshot);
+        //return mPerfSnapshot;
     }
 
     
@@ -92,14 +91,14 @@ Bundle varCE781A758371831B9860AA2A5A37F4B9_264044659 =         mPerfSnapshot;
                 METRIC_KEY_ITERATIONS, new ArrayList<Parcelable>());
         mExecTime = SystemClock.uptimeMillis();
         mCpuTime = Process.getElapsedCpuTime();
-        
-        
-            
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (mPerfWriter != null)
+            //mPerfWriter.writeStartTiming(label);
+        //mPerfMeasurement = new Bundle();
+        //mPerfMeasurement.putParcelableArrayList(
+                //METRIC_KEY_ITERATIONS, new ArrayList<Parcelable>());
+        //mExecTime = SystemClock.uptimeMillis();
+        //mCpuTime = Process.getElapsedCpuTime();
     }
 
     
@@ -118,17 +117,17 @@ Bundle varCE781A758371831B9860AA2A5A37F4B9_264044659 =         mPerfSnapshot;
 Bundle var1F1251EE0E95B5641430DD7B54973C8F_1478948253 =         iteration;
         var1F1251EE0E95B5641430DD7B54973C8F_1478948253.addTaint(taint);
         return var1F1251EE0E95B5641430DD7B54973C8F_1478948253;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mCpuTime = Process.getElapsedCpuTime() - mCpuTime;
+        //mExecTime = SystemClock.uptimeMillis() - mExecTime;
+        //Bundle iteration = new Bundle();
+        //iteration.putString(METRIC_KEY_LABEL, label);
+        //iteration.putLong(METRIC_KEY_EXECUTION_TIME, mExecTime);
+        //iteration.putLong(METRIC_KEY_CPU_TIME, mCpuTime);
+        //mPerfMeasurement.getParcelableArrayList(METRIC_KEY_ITERATIONS).add(iteration);
+        //mExecTime = SystemClock.uptimeMillis();
+        //mCpuTime = Process.getElapsedCpuTime();
+        //return iteration;
     }
 
     
@@ -141,11 +140,11 @@ Bundle var1F1251EE0E95B5641430DD7B54973C8F_1478948253 =         iteration;
 Bundle var7A67D04CE06B73A2030582AAED59B33A_1277286760 =         mPerfMeasurement;
         var7A67D04CE06B73A2030582AAED59B33A_1277286760.addTaint(taint);
         return var7A67D04CE06B73A2030582AAED59B33A_1277286760;
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //addIteration(label);
+        //if (mPerfWriter != null)
+            //mPerfWriter.writeStopTiming(mPerfMeasurement);
+        //return mPerfMeasurement;
     }
 
     
@@ -155,9 +154,9 @@ Bundle var7A67D04CE06B73A2030582AAED59B33A_1277286760 =         mPerfMeasurement
         addTaint(label.getTaint());
     if(mPerfWriter != null)        
         mPerfWriter.writeMeasurement(label, value);
-        
-        
-            
+        // ---------- Original Method ----------
+        //if (mPerfWriter != null)
+            //mPerfWriter.writeMeasurement(label, value);
     }
 
     
@@ -167,9 +166,9 @@ Bundle var7A67D04CE06B73A2030582AAED59B33A_1277286760 =         mPerfMeasurement
         addTaint(label.getTaint());
     if(mPerfWriter != null)        
         mPerfWriter.writeMeasurement(label, value);
-        
-        
-            
+        // ---------- Original Method ----------
+        //if (mPerfWriter != null)
+            //mPerfWriter.writeMeasurement(label, value);
     }
 
     
@@ -179,9 +178,9 @@ Bundle var7A67D04CE06B73A2030582AAED59B33A_1277286760 =         mPerfMeasurement
         addTaint(label.getTaint());
     if(mPerfWriter != null)        
         mPerfWriter.writeMeasurement(label, value);
-        
-        
-            
+        // ---------- Original Method ----------
+        //if (mPerfWriter != null)
+            //mPerfWriter.writeMeasurement(label, value);
     }
 
     
@@ -192,19 +191,19 @@ Bundle var7A67D04CE06B73A2030582AAED59B33A_1277286760 =         mPerfMeasurement
 for(String key : binderCounts.keySet())
         {
             mPerfSnapshot.putLong("pre_" + key, binderCounts.getLong(key));
-        } 
+        } //End block
         startAllocCounting();
         mSnapshotExecTime = SystemClock.uptimeMillis();
         mSnapshotCpuTime = Process.getElapsedCpuTime();
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPerfSnapshot = new Bundle();
+        //Bundle binderCounts = getBinderCounts();
+        //for (String key : binderCounts.keySet()) {
+            //mPerfSnapshot.putLong("pre_" + key, binderCounts.getLong(key));
+        //}
+        //startAllocCounting();
+        //mSnapshotExecTime = SystemClock.uptimeMillis();
+        //mSnapshotCpuTime = Process.getElapsedCpuTime();
     }
 
     
@@ -226,12 +225,12 @@ for(String key : binderCounts.keySet())
 for(String key : binderCounts.keySet())
         {
             mPerfSnapshot.putLong(key, binderCounts.getLong(key));
-        } 
+        } //End block
         Bundle allocCounts = getAllocCounts();
 for(String key : allocCounts.keySet())
         {
             mPerfSnapshot.putLong(key, allocCounts.getLong(key));
-        } 
+        } //End block
         mPerfSnapshot.putLong(METRIC_KEY_EXECUTION_TIME, mSnapshotExecTime);
         mPerfSnapshot.putLong(METRIC_KEY_CPU_TIME, mSnapshotCpuTime);
         mPerfSnapshot.putLong(METRIC_KEY_NATIVE_SIZE, nativeMax);
@@ -249,8 +248,8 @@ for(String key : allocCounts.keySet())
         mPerfSnapshot.putLong(METRIC_KEY_OTHER_PSS, memInfo.otherPss);
         mPerfSnapshot.putLong(METRIC_KEY_OTHER_PRIVATE_DIRTY, memInfo.otherPrivateDirty);
         mPerfSnapshot.putLong(METRIC_KEY_OTHER_SHARED_DIRTY, memInfo.otherSharedDirty);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

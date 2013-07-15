@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class MinExpiresParser extends HeaderParser {
     public  MinExpiresParser(String minExpires) {
         super(minExpires);
         addTaint(minExpires.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class MinExpiresParser extends HeaderParser {
     protected  MinExpiresParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,44 +39,44 @@ public class MinExpiresParser extends HeaderParser {
             try 
             {
                 minExpires.setExpires(Integer.parseInt(number));
-            } 
+            } //End block
             catch (InvalidArgumentException ex)
             {
                 java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_2101885360 = createParseException(ex.getMessage());
                 varB8C80F72F95BF6A850D07F4EC5726C09_2101885360.addTaint(taint);
                 throw varB8C80F72F95BF6A850D07F4EC5726C09_2101885360;
-            } 
+            } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
 SIPHeader var2CB14E4BC396AF8EC6AB3AF46B79F099_829334163 =             minExpires;
             var2CB14E4BC396AF8EC6AB3AF46B79F099_829334163.addTaint(taint);
             return var2CB14E4BC396AF8EC6AB3AF46B79F099_829334163;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("MinExpiresParser.parse");
-        } 
-        
-        
-            
-        
-        
-            
-            
-            
-            
-                
-            
-                
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("MinExpiresParser.parse");
+        //MinExpires minExpires = new MinExpires();
+        //try {
+            //headerName(TokenTypes.MIN_EXPIRES);
+            //minExpires.setHeaderName(SIPHeaderNames.MIN_EXPIRES);
+            //String number = this.lexer.number();
+            //try {
+                //minExpires.setExpires(Integer.parseInt(number));
+            //} catch (InvalidArgumentException ex) {
+                //throw createParseException(ex.getMessage());
+            //}
+            //this.lexer.SPorHT();
+            //this.lexer.match('\n');
+            //return minExpires;
+        //} finally {
+            //if (debug)
+                //dbg_leave("MinExpiresParser.parse");
+        //}
     }
 
     

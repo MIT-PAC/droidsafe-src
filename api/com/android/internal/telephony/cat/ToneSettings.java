@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,10 +23,10 @@ public class ToneSettings implements Parcelable {
         this.duration = duration;
         this.tone = tone;
         this.vibrate = vibrate;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.duration = duration;
+        //this.tone = tone;
+        //this.vibrate = vibrate;
     }
 
     
@@ -35,21 +35,20 @@ public class ToneSettings implements Parcelable {
         duration = in.readParcelable(null);
         tone = in.readParcelable(null);
         vibrate = in.readInt() == 1;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //duration = in.readParcelable(null);
+        //tone = in.readParcelable(null);
+        //vibrate = in.readInt() == 1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.538 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7D29F61C3801CD6D321136D1D19FA810")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_112880545 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1913581804 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1913581804;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -60,10 +59,10 @@ public class ToneSettings implements Parcelable {
         dest.writeParcelable(duration, 0);
         dest.writeParcelable(tone, 0);
         dest.writeInt(vibrate ? 1 : 0);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeParcelable(duration, 0);
+        //dest.writeParcelable(tone, 0);
+        //dest.writeInt(vibrate ? 1 : 0);
     }
 
     
@@ -78,12 +77,12 @@ public class ToneSettings implements Parcelable {
             return new ToneSettings[size];
         }
     };
-    
+    // orphaned legacy method
     public ToneSettings createFromParcel(Parcel in) {
             return new ToneSettings(in);
         }
     
-    
+    // orphaned legacy method
     public ToneSettings[] newArray(int size) {
             return new ToneSettings[size];
         }

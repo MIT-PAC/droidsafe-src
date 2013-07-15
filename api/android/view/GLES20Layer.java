@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ abstract class GLES20Layer extends HardwareLayer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.983 -0400", hash_original_method = "FA1FFA78F6EB5DB42F3E3C14749B8FCB", hash_generated_method = "1255CD39DEDE49D084B5750E6B9EDE73")
       GLES20Layer() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,18 +26,17 @@ abstract class GLES20Layer extends HardwareLayer {
         addTaint(opaque);
         addTaint(height);
         addTaint(width);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.983 -0400", hash_original_method = "1433CF09BAF49EB0158C4CBA390321AC", hash_generated_method = "82085099D0E6A4B13361E56187376929")
     public int getLayer() {
         int var005B4338173753DA1B50DCC47C3EC00C_156292498 = (mLayer);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_333326400 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_333326400;
-        
-        
+        // ---------- Original Method ----------
+        //return mLayer;
     }
 
     
@@ -48,8 +47,8 @@ abstract class GLES20Layer extends HardwareLayer {
         boolean varCBDFBDC0E0B084E5B0498EB09AFEF4D8_187234751 = (GLES20Canvas.nCopyLayer(mLayer, bitmap.mNativeBitmap));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1916324556 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1916324556;
-        
-        
+        // ---------- Original Method ----------
+        //return GLES20Canvas.nCopyLayer(mLayer, bitmap.mNativeBitmap);
     }
 
     
@@ -60,8 +59,8 @@ abstract class GLES20Layer extends HardwareLayer {
         addTaint(height);
         addTaint(width);
         super.update(width, height, isOpaque);
-        
-        
+        // ---------- Original Method ----------
+        //super.update(width, height, isOpaque);
     }
 
     
@@ -72,14 +71,14 @@ abstract class GLES20Layer extends HardwareLayer {
         {
             mFinalizer.destroy();
             mFinalizer = null;
-        } 
+        } //End block
         mLayer = 0;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mFinalizer != null) {
+            //mFinalizer.destroy();
+            //mFinalizer = null;
+        //}
+        //mLayer = 0;
     }
 
     
@@ -91,8 +90,8 @@ abstract class GLES20Layer extends HardwareLayer {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.985 -0400", hash_original_method = "9B571A83D1A9A17FB8274187B13F16F6", hash_generated_method = "E484AED4E3A97A093A8B77A02284ED4A")
         public  Finalizer(int layerId) {
             mLayerId = layerId;
-            
-            
+            // ---------- Original Method ----------
+            //mLayerId = layerId;
         }
 
         
@@ -104,20 +103,20 @@ abstract class GLES20Layer extends HardwareLayer {
     if(mLayerId != 0)                
                 {
                     GLES20Canvas.nDestroyLayerDeferred(mLayerId);
-                } 
-            } 
+                } //End block
+            } //End block
             finally 
             {
                 super.finalize();
-            } 
-            
-            
-                
-                    
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //if (mLayerId != 0) {
+                    //GLES20Canvas.nDestroyLayerDeferred(mLayerId);
+                //}
+            //} finally {
+                //super.finalize();
+            //}
         }
 
         
@@ -125,9 +124,9 @@ abstract class GLES20Layer extends HardwareLayer {
          void destroy() {
             GLES20Canvas.nDestroyLayer(mLayerId);
             mLayerId = 0;
-            
-            
-            
+            // ---------- Original Method ----------
+            //GLES20Canvas.nDestroyLayer(mLayerId);
+            //mLayerId = 0;
         }
 
         

@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.dom;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public abstract class InnerNodeImpl extends LeafNodeImpl {
     protected  InnerNodeImpl(DocumentImpl document) {
         super(document);
         addTaint(document.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -31,8 +31,8 @@ public abstract class InnerNodeImpl extends LeafNodeImpl {
 Node var4CB1E8A00542B0F7DC36A9DD411590EE_2031676871 =         insertChildAt(newChild, children.size());
         var4CB1E8A00542B0F7DC36A9DD411590EE_2031676871.addTaint(taint);
         return var4CB1E8A00542B0F7DC36A9DD411590EE_2031676871;
-        
-        
+        // ---------- Original Method ----------
+        //return insertChildAt(newChild, children.size());
     }
 
     
@@ -42,16 +42,16 @@ Node var4CB1E8A00542B0F7DC36A9DD411590EE_2031676871 =         insertChildAt(newC
 for(NodeImpl node : children)
         {
             list.add(node);
-        } 
+        } //End block
 NodeList varED12C351C2E8CA4F85F097DDC7E77B4D_1348232676 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_1348232676.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_1348232676;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //NodeListImpl list = new NodeListImpl();
+        //for (NodeImpl node : children) {
+            //list.add(node);
+        //}
+        //return list;
     }
 
     
@@ -60,8 +60,8 @@ NodeList varED12C351C2E8CA4F85F097DDC7E77B4D_1348232676 =         list;
 Node var211369CA7A87CE4D90A908226EA35128_920892501 =         (!children.isEmpty() ? children.get(0) : null);
         var211369CA7A87CE4D90A908226EA35128_920892501.addTaint(taint);
         return var211369CA7A87CE4D90A908226EA35128_920892501;
-        
-        
+        // ---------- Original Method ----------
+        //return (!children.isEmpty() ? children.get(0) : null);
     }
 
     
@@ -70,8 +70,8 @@ Node var211369CA7A87CE4D90A908226EA35128_920892501 =         (!children.isEmpty(
 Node var291C8A7910E5657FE27007C3CE5E035B_851923607 =         (!children.isEmpty() ? children.get(children.size() - 1) : null);
         var291C8A7910E5657FE27007C3CE5E035B_851923607.addTaint(taint);
         return var291C8A7910E5657FE27007C3CE5E035B_851923607;
-        
-        
+        // ---------- Original Method ----------
+        //return (!children.isEmpty() ? children.get(children.size() - 1) : null);
     }
 
     
@@ -82,15 +82,15 @@ Node var291C8A7910E5657FE27007C3CE5E035B_851923607 =         (!children.isEmpty(
 Node var540C13E9E156B687226421B24F2DF178_482052337 =             null;
             var540C13E9E156B687226421B24F2DF178_482052337.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_482052337;
-        } 
+        } //End block
 Node varCAF2121A40A40843AD59F9E2CDF911E5_1184139360 =         parent.children.get(index + 1);
         varCAF2121A40A40843AD59F9E2CDF911E5_1184139360.addTaint(taint);
         return varCAF2121A40A40843AD59F9E2CDF911E5_1184139360;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (parent == null || index + 1 >= parent.children.size()) {
+            //return null;
+        //}
+        //return parent.children.get(index + 1);
     }
 
     
@@ -99,8 +99,8 @@ Node varCAF2121A40A40843AD59F9E2CDF911E5_1184139360 =         parent.children.ge
         boolean var13BDCCF740AD270748E63B1C649E3359_2113013065 = (children.size() != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2072762172 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2072762172;
-        
-        
+        // ---------- Original Method ----------
+        //return children.size() != 0;
     }
 
     
@@ -114,25 +114,25 @@ Node varCAF2121A40A40843AD59F9E2CDF911E5_1184139360 =         parent.children.ge
             DOMException varA328C7C3947948BA7A5CD8E93B74AC3F_1505880049 = new DOMException(DOMException.WRONG_DOCUMENT_ERR, null);
             varA328C7C3947948BA7A5CD8E93B74AC3F_1505880049.addTaint(taint);
             throw varA328C7C3947948BA7A5CD8E93B74AC3F_1505880049;
-        } 
+        } //End block
     if(refChildImpl.parent != this)        
         {
             DOMException varB08FA5F9049CD84DC42B7238D3D303A7_488836014 = new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
             varB08FA5F9049CD84DC42B7238D3D303A7_488836014.addTaint(taint);
             throw varB08FA5F9049CD84DC42B7238D3D303A7_488836014;
-        } 
+        } //End block
 Node varF2F52C5D5B9224A092E2EE27351786CF_259825320 =         insertChildAt(newChild, refChildImpl.index);
         varF2F52C5D5B9224A092E2EE27351786CF_259825320.addTaint(taint);
         return varF2F52C5D5B9224A092E2EE27351786CF_259825320;
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //LeafNodeImpl refChildImpl = (LeafNodeImpl) refChild;
+        //if (refChildImpl.document != document) {
+            //throw new DOMException(DOMException.WRONG_DOCUMENT_ERR, null);
+        //}
+        //if (refChildImpl.parent != this) {
+            //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
+        //}
+        //return insertChildAt(newChild, refChildImpl.index);
     }
 
     
@@ -146,42 +146,41 @@ Node varF2F52C5D5B9224A092E2EE27351786CF_259825320 =         insertChildAt(newCh
 for(int i = 0;i < toAdd.getLength();i++)
             {
                 insertChildAt(toAdd.item(i), index + i);
-            } 
+            } //End block
 Node var27D66BDD904EAAAD70983474F8274FA5_769578320 =             newChild;
             var27D66BDD904EAAAD70983474F8274FA5_769578320.addTaint(taint);
             return var27D66BDD904EAAAD70983474F8274FA5_769578320;
-        } 
+        } //End block
         LeafNodeImpl toInsert = (LeafNodeImpl) newChild;
     if(toInsert.document != null && document != null && toInsert.document != document)        
         {
             DOMException varA328C7C3947948BA7A5CD8E93B74AC3F_733765092 = new DOMException(DOMException.WRONG_DOCUMENT_ERR, null);
             varA328C7C3947948BA7A5CD8E93B74AC3F_733765092.addTaint(taint);
             throw varA328C7C3947948BA7A5CD8E93B74AC3F_733765092;
-        } 
+        } //End block
     if(toInsert.isParentOf(this))        
         {
             DOMException varB08FA5F9049CD84DC42B7238D3D303A7_652783548 = new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
             varB08FA5F9049CD84DC42B7238D3D303A7_652783548.addTaint(taint);
             throw varB08FA5F9049CD84DC42B7238D3D303A7_652783548;
-        } 
+        } //End block
     if(toInsert.parent != null)        
         {
             int oldIndex = toInsert.index;
             toInsert.parent.children.remove(oldIndex);
             toInsert.parent.refreshIndices(oldIndex);
-        } 
+        } //End block
         children.add(index, toInsert);
         toInsert.parent = this;
         refreshIndices(index);
 Node var27D66BDD904EAAAD70983474F8274FA5_478543656 =         newChild;
         var27D66BDD904EAAAD70983474F8274FA5_478543656.addTaint(taint);
         return var27D66BDD904EAAAD70983474F8274FA5_478543656;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.765 -0400", hash_original_method = "EAC92D1975EC52765900D3EB8DB15DFE", hash_generated_method = "6D3AD9C50CFE1B966B72C2296AAB5573")
     public boolean isParentOf(Node node) {
         addTaint(node.getTaint());
@@ -194,21 +193,21 @@ Node var27D66BDD904EAAAD70983474F8274FA5_478543656 =         newChild;
                 boolean varB326B5062B2F0E69046810717534CB09_1906422303 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_85019894 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_85019894;
-            } 
+            } //End block
             nodeImpl = nodeImpl.parent;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1304647133 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1176383013 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1176383013;
-        
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //LeafNodeImpl nodeImpl = (LeafNodeImpl) node;
+        //while (nodeImpl != null) {
+            //if (nodeImpl == this) {
+                //return true;
+            //}
+            //nodeImpl = nodeImpl.parent;
+        //}
+        //return false;
     }
 
     
@@ -223,17 +222,17 @@ for(Node node = getFirstChild();node != null;node = next)
     if(node.getNodeType() == Node.TEXT_NODE)            
             {
                 ((TextImpl) node).minimize();
-            } 
-        } 
-        
-        
-        
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //Node next;
+        //for (Node node = getFirstChild(); node != null; node = next) {
+            //next = node.getNextSibling();
+            //node.normalize();
+            //if (node.getNodeType() == Node.TEXT_NODE) {
+                //((TextImpl) node).minimize();
+            //}
+        //}
     }
 
     
@@ -243,11 +242,11 @@ for(Node node = getFirstChild();node != null;node = next)
 for(int i = fromIndex;i < children.size();i++)
         {
             children.get(i).index = i;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = fromIndex; i < children.size(); i++) {
+            //children.get(i).index = i;
+        //}
     }
 
     
@@ -260,13 +259,13 @@ for(int i = fromIndex;i < children.size();i++)
             DOMException varA328C7C3947948BA7A5CD8E93B74AC3F_995384870 = new DOMException(DOMException.WRONG_DOCUMENT_ERR, null);
             varA328C7C3947948BA7A5CD8E93B74AC3F_995384870.addTaint(taint);
             throw varA328C7C3947948BA7A5CD8E93B74AC3F_995384870;
-        } 
+        } //End block
     if(oldChildImpl.parent != this)        
         {
             DOMException varB08FA5F9049CD84DC42B7238D3D303A7_1864918061 = new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
             varB08FA5F9049CD84DC42B7238D3D303A7_1864918061.addTaint(taint);
             throw varB08FA5F9049CD84DC42B7238D3D303A7_1864918061;
-        } 
+        } //End block
         int index = oldChildImpl.index;
         children.remove(index);
         oldChildImpl.parent = null;
@@ -274,19 +273,19 @@ for(int i = fromIndex;i < children.size();i++)
 Node var21D2FEAF038767ED878631E3A660594F_2030763784 =         oldChild;
         var21D2FEAF038767ED878631E3A660594F_2030763784.addTaint(taint);
         return var21D2FEAF038767ED878631E3A660594F_2030763784;
-        
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //LeafNodeImpl oldChildImpl = (LeafNodeImpl) oldChild;
+        //if (oldChildImpl.document != document) {
+            //throw new DOMException(DOMException.WRONG_DOCUMENT_ERR, null);
+        //}
+        //if (oldChildImpl.parent != this) {
+            //throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
+        //}
+        //int index = oldChildImpl.index;
+        //children.remove(index);
+        //oldChildImpl.parent = null;
+        //refreshIndices(index);
+        //return oldChild;
     }
 
     
@@ -300,11 +299,11 @@ Node var21D2FEAF038767ED878631E3A660594F_2030763784 =         oldChild;
 Node var21D2FEAF038767ED878631E3A660594F_1419846152 =         oldChild;
         var21D2FEAF038767ED878631E3A660594F_1419846152.addTaint(taint);
         return var21D2FEAF038767ED878631E3A660594F_1419846152;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int index = ((LeafNodeImpl) oldChild).index;
+        //removeChild(oldChild);
+        //insertChildAt(newChild, index);
+        //return oldChild;
     }
 
     
@@ -316,31 +315,31 @@ Node var21D2FEAF038767ED878631E3A660594F_1419846152 =         oldChild;
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_305021031 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_305021031.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_305021031;
-        } 
+        } //End block
         Node next = child.getNextSibling();
     if(next == null)        
         {
 String var324EC079A1FB1AE8B38221F99BD2FABE_2036939976 =             hasTextContent(child) ? child.getTextContent() : "";
             var324EC079A1FB1AE8B38221F99BD2FABE_2036939976.addTaint(taint);
             return var324EC079A1FB1AE8B38221F99BD2FABE_2036939976;
-        } 
+        } //End block
         StringBuilder buf = new StringBuilder();
         getTextContent(buf);
 String var4FC680801218E6372BC708D6FA44AE60_1664996555 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_1664996555.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_1664996555;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Node child = getFirstChild();
+        //if (child == null) {
+            //return "";
+        //}
+        //Node next = child.getNextSibling();
+        //if (next == null) {
+            //return hasTextContent(child) ? child.getTextContent() : "";
+        //}
+        //StringBuilder buf = new StringBuilder();
+        //getTextContent(buf);
+        //return buf.toString();
     }
 
     
@@ -354,17 +353,17 @@ String var4FC680801218E6372BC708D6FA44AE60_1664996555 =         buf.toString();
     if(hasTextContent(child))            
             {
                 ((NodeImpl) child).getTextContent(buf);
-            } 
+            } //End block
             child = child.getNextSibling();
-        } 
-        
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Node child = getFirstChild();
+        //while (child != null) {
+            //if (hasTextContent(child)) {
+                //((NodeImpl) child).getTextContent(buf);
+            //}
+            //child = child.getNextSibling();
+        //}
     }
 
     
@@ -375,9 +374,9 @@ String var4FC680801218E6372BC708D6FA44AE60_1664996555 =         buf.toString();
                 && child.getNodeType() != Node.PROCESSING_INSTRUCTION_NODE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1682104534 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1682104534;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return child.getNodeType() != Node.COMMENT_NODE
+                //&& child.getNodeType() != Node.PROCESSING_INSTRUCTION_NODE;
     }
 
     
@@ -393,20 +392,20 @@ for(NodeImpl node : children)
     if(matchesNameOrWildcard(name, element.getNodeName()))                
                 {
                     out.add(element);
-                } 
+                } //End block
                 element.getElementsByTagName(out, name);
-            } 
-        } 
-        
-        
-            
-                
-                
-                    
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (NodeImpl node : children) {
+            //if (node.getNodeType() == Node.ELEMENT_NODE) {
+                //ElementImpl element = (ElementImpl) node;
+                //if (matchesNameOrWildcard(name, element.getNodeName())) {
+                    //out.add(element);
+                //}
+                //element.getElementsByTagName(out, name);
+            //}
+        //}
     }
 
     
@@ -424,21 +423,21 @@ for(NodeImpl node : children)
                         && matchesNameOrWildcard(localName, element.getLocalName()))                
                 {
                     out.add(element);
-                } 
+                } //End block
                 element.getElementsByTagNameNS(out, namespaceURI, localName);
-            } 
-        } 
-        
-        
-            
-                
-                
-                        
-                    
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (NodeImpl node : children) {
+            //if (node.getNodeType() == Node.ELEMENT_NODE) {
+                //ElementImpl element = (ElementImpl) node;
+                //if (matchesNameOrWildcard(namespaceURI, element.getNamespaceURI())
+                        //&& matchesNameOrWildcard(localName, element.getLocalName())) {
+                    //out.add(element);
+                //}
+                //element.getElementsByTagNameNS(out, namespaceURI, localName);
+            //}
+        //}
     }
 
     

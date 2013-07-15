@@ -1,6 +1,6 @@
 package android.text.method;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,12 +17,11 @@ public class Touch {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.054 -0400", hash_original_method = "FF7FAE7578041B972B60FFE115691062", hash_generated_method = "F8174DCCCAA12EC7CD4BEF28AD13D4D4")
     private  Touch() {
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void scrollTo(TextView widget, Layout layout, int x, int y) {
+        public static void scrollTo(TextView widget, Layout layout, int x, int y) {
         final int horizontalPadding = widget.getTotalPaddingLeft() + widget.getTotalPaddingRight();
         final int availableWidth = widget.getWidth() - horizontalPadding;
         final int top = layout.getLineForVertical(y);
@@ -59,10 +58,9 @@ public class Touch {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean onTouchEvent(TextView widget, Spannable buffer,
+        public static boolean onTouchEvent(TextView widget, Spannable buffer,
                                        MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         DragState[] ds;
         switch (event.getActionMasked()) {
         case MotionEvent.ACTION_DOWN:
@@ -132,15 +130,13 @@ public class Touch {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getInitialScrollX(TextView widget, Spannable buffer) {
+        public static int getInitialScrollX(TextView widget, Spannable buffer) {
         DragState[] ds = buffer.getSpans(0, buffer.length(), DragState.class);
         return ds.length > 0 ? ds[0].mScrollX : -1;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getInitialScrollY(TextView widget, Spannable buffer) {
+        public static int getInitialScrollY(TextView widget, Spannable buffer) {
         DragState[] ds = buffer.getSpans(0, buffer.length(), DragState.class);
         return ds.length > 0 ? ds[0].mScrollY : -1;
     }
@@ -172,11 +168,11 @@ public class Touch {
             mY = y;
             mScrollX = scrollX;
             mScrollY = scrollY;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mX = x;
+            //mY = y;
+            //mScrollX = scrollX;
+            //mScrollY = scrollY;
         }
 
         

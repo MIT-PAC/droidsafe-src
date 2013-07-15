@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,59 +25,56 @@ public class GsmSmsAddress extends SmsAddress {
             RuntimeException var6CA3073F7E67558B97FD5C508BD6CFEC_586456060 = new RuntimeException("Invalid TOA - high bit must be set");
             var6CA3073F7E67558B97FD5C508BD6CFEC_586456060.addTaint(taint);
             throw var6CA3073F7E67558B97FD5C508BD6CFEC_586456060;
-        } 
+        } //End block
     if(isAlphanumeric())        
         {
             int countSeptets = addressLength * 4 / 7;
             address = GsmAlphabet.gsm7BitPackedToString(origBytes,
                     OFFSET_ADDRESS_VALUE, countSeptets);
-        } 
+        } //End block
         else
         {
             byte lastByte = origBytes[length - 1];
     if((addressLength & 1) == 1)            
             {
                 origBytes[length - 1] |= 0xf0;
-            } 
+            } //End block
             address = PhoneNumberUtils.calledPartyBCDToString(origBytes,
                     OFFSET_TOA, length - OFFSET_TOA);
             origBytes[length - 1] = lastByte;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.307 -0400", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "560FECE3006E573E593F64156C45FF30")
     public String getAddressString() {
 String var814577DDD37BAFB17E08CBEFDB411BAE_631595472 =         address;
         var814577DDD37BAFB17E08CBEFDB411BAE_631595472.addTaint(taint);
         return var814577DDD37BAFB17E08CBEFDB411BAE_631595472;
-        
-        
+        // ---------- Original Method ----------
+        //return address;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.307 -0400", hash_original_method = "364284D6387231DFE8BEB00860E244AE", hash_generated_method = "A5E9C51C15950749170F70D134EC3732")
     public boolean isAlphanumeric() {
         boolean var8474A011523A2E65AABA589B65056EFA_967030195 = (ton == TON_ALPHANUMERIC);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1907273644 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1907273644;
-        
-        
+        // ---------- Original Method ----------
+        //return ton == TON_ALPHANUMERIC;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.308 -0400", hash_original_method = "9A297062C2D2EDFA0EA27742D0F1F520", hash_generated_method = "058CB8E5B16F04DFFAB7D60E6DC45A3D")
     public boolean isNetworkSpecific() {
         boolean varAC4CC2CBB1E733051BE0F1E272DA0F89_393251627 = (ton == TON_NETWORK);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1873540371 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1873540371;
-        
-        
+        // ---------- Original Method ----------
+        //return ton == TON_NETWORK;
     }
 
     
@@ -87,9 +84,9 @@ String var814577DDD37BAFB17E08CBEFDB411BAE_631595472 =         address;
                 && isAlphanumeric() && (origBytes[OFFSET_TOA] & 0x0f) == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1842950583 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1842950583;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return (origBytes[OFFSET_ADDRESS_LENGTH] & 0xff) == 4
+                //&& isAlphanumeric() && (origBytes[OFFSET_TOA] & 0x0f) == 0;
     }
 
     
@@ -99,9 +96,9 @@ String var814577DDD37BAFB17E08CBEFDB411BAE_631595472 =         address;
                 && (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x11);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_246639254 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_246639254;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return isCphsVoiceMessageIndicatorAddress()
+                //&& (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x11;
     }
 
     
@@ -111,9 +108,9 @@ String var814577DDD37BAFB17E08CBEFDB411BAE_631595472 =         address;
                 && (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x10);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_971939365 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_971939365;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return isCphsVoiceMessageIndicatorAddress()
+                //&& (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x10;
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,13 +24,13 @@ public class IdentityInputStream extends InputStream {
             IllegalArgumentException varB3677395451B18A3F9262E9D7FE254B3_2047274465 = new IllegalArgumentException("Session input buffer may not be null");
             varB3677395451B18A3F9262E9D7FE254B3_2047274465.addTaint(taint);
             throw varB3677395451B18A3F9262E9D7FE254B3_2047274465;
-        } 
+        } //End block
         this.in = in;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (in == null) {
+            //throw new IllegalArgumentException("Session input buffer may not be null");
+        //}
+        //this.in = in;
     }
 
     
@@ -41,28 +41,27 @@ public class IdentityInputStream extends InputStream {
             int varC4CA4238A0B923820DCC509A6F75849B_1819049322 = (1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_602588353 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_602588353;
-        } 
+        } //End block
         else
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1483201162 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_582013960 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_582013960;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!this.closed && this.in.isDataAvailable(10)) {
+            //return 1;
+        //} else {
+            //return 0;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.228 -0400", hash_original_method = "311E5281CF91526FD2B39B7023BBB3B5", hash_generated_method = "189AC125925A0F1BC150A3E99E2798E2")
     public void close() throws IOException {
         this.closed = true;
-        
-        
+        // ---------- Original Method ----------
+        //this.closed = true;
     }
 
     
@@ -73,19 +72,19 @@ public class IdentityInputStream extends InputStream {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1816263114 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_953563219 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_953563219;
-        } 
+        } //End block
         else
         {
             int var4B24E33D3D9F67DD13235F201B80A449_183597870 = (this.in.read());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814857171 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_814857171;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.closed) {
+            //return -1;
+        //} else {
+            //return this.in.read();
+        //}
     }
 
     
@@ -99,19 +98,19 @@ public class IdentityInputStream extends InputStream {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1120751677 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453391619 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453391619;
-        } 
+        } //End block
         else
         {
             int varCFE585846710E20F72A2243C249191D6_149455141 = (this.in.read(b, off, len));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1797386016 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1797386016;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.closed) {
+            //return -1;
+        //} else {
+            //return this.in.read(b, off, len);
+        //}
     }
 
     

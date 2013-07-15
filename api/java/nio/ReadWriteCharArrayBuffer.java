@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ final class ReadWriteCharArrayBuffer extends CharArrayBuffer {
       ReadWriteCharArrayBuffer(char[] array) {
         super(array);
         addTaint(array[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -19,7 +19,7 @@ final class ReadWriteCharArrayBuffer extends CharArrayBuffer {
       ReadWriteCharArrayBuffer(int capacity) {
         super(capacity);
         addTaint(capacity);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,7 +29,7 @@ final class ReadWriteCharArrayBuffer extends CharArrayBuffer {
         addTaint(arrayOffset);
         addTaint(backingArray[0]);
         addTaint(capacity);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -49,8 +49,8 @@ final class ReadWriteCharArrayBuffer extends CharArrayBuffer {
 CharBuffer var1FDEA19A7947A41FF37E5A6C10133CE4_694001805 =         ReadOnlyCharArrayBuffer.copy(this, mark);
         var1FDEA19A7947A41FF37E5A6C10133CE4_694001805.addTaint(taint);
         return var1FDEA19A7947A41FF37E5A6C10133CE4_694001805;
-        
-        
+        // ---------- Original Method ----------
+        //return ReadOnlyCharArrayBuffer.copy(this, mark);
     }
 
     
@@ -64,12 +64,12 @@ CharBuffer var1FDEA19A7947A41FF37E5A6C10133CE4_694001805 =         ReadOnlyCharA
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_414485207 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_414485207.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_414485207;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //System.arraycopy(backingArray, position + offset, backingArray, offset, remaining());
+        //position = limit - position;
+        //limit = capacity;
+        //mark = UNSET_MARK;
+        //return this;
     }
 
     
@@ -79,56 +79,52 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_414485207 =         this;
 CharBuffer var6ED4708F04CD11720ECFFDBFD927116F_24490191 =         copy(this, mark);
         var6ED4708F04CD11720ECFFDBFD927116F_24490191.addTaint(taint);
         return var6ED4708F04CD11720ECFFDBFD927116F_24490191;
-        
-        
+        // ---------- Original Method ----------
+        //return copy(this, mark);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.050 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "A6AE8ABF98109ECBF125AF64201FAA19")
     @Override
     public boolean isReadOnly() {
         boolean var68934A3E9455FA72420237EB05902327_1252908079 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1553709766 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1553709766;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.050 -0400", hash_original_method = "6989B404B9CBE6C8C0C27A3F3280C746", hash_generated_method = "132FE0371E1186A06192F1CD1F277EE1")
     @Override
     protected char[] protectedArray() {
         char[] var8D50CD27AA8B6BEC65C484FFCC5B2334_1929018979 = (backingArray);
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_24187107 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_24187107;
-        
-        
+        // ---------- Original Method ----------
+        //return backingArray;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.051 -0400", hash_original_method = "F848F07A68FC53238B1B56C46C388C04", hash_generated_method = "E53B5128DECFF76EC5A049EBC005FA7B")
     @Override
     protected int protectedArrayOffset() {
         int var7A86C157EE9713C34FBD7A1EE40F0C5A_1109555707 = (offset);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003470541 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003470541;
-        
-        
+        // ---------- Original Method ----------
+        //return offset;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.051 -0400", hash_original_method = "504D4244F3E9BA0CFC7CEE21DED3336C", hash_generated_method = "57D7E368D43A8C873526C40F560A9169")
     @Override
     protected boolean protectedHasArray() {
         boolean varB326B5062B2F0E69046810717534CB09_1227266485 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_623700126 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_623700126;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -141,17 +137,17 @@ CharBuffer var6ED4708F04CD11720ECFFDBFD927116F_24490191 =         copy(this, mar
             BufferOverflowException var773478A23217201B18B531915D367F31_1217293846 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_1217293846.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_1217293846;
-        } 
+        } //End block
         backingArray[offset + position++] = c;
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1150390973 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1150390973.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1150390973;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (position == limit) {
+            //throw new BufferOverflowException();
+        //}
+        //backingArray[offset + position++] = c;
+        //return this;
     }
 
     
@@ -165,10 +161,10 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1150390973 =         this;
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2014034208 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2014034208.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2014034208;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkIndex(index);
+        //backingArray[offset + index] = c;
+        //return this;
     }
 
     
@@ -183,19 +179,19 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2014034208 =         this;
             BufferOverflowException var773478A23217201B18B531915D367F31_69191246 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_69191246.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_69191246;
-        } 
+        } //End block
         System.arraycopy(src, srcOffset, backingArray, offset + position, charCount);
         position += charCount;
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1445053319 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1445053319.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1445053319;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (charCount > remaining()) {
+            //throw new BufferOverflowException();
+        //}
+        //System.arraycopy(src, srcOffset, backingArray, offset + position, charCount);
+        //position += charCount;
+        //return this;
     }
 
     
@@ -205,8 +201,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1445053319 =         this;
 CharBuffer varC34068456FDE00F3BAE48CF56A0D70CB_887031893 =         new ReadWriteCharArrayBuffer(remaining(), backingArray, offset + position);
         varC34068456FDE00F3BAE48CF56A0D70CB_887031893.addTaint(taint);
         return varC34068456FDE00F3BAE48CF56A0D70CB_887031893;
-        
-        
+        // ---------- Original Method ----------
+        //return new ReadWriteCharArrayBuffer(remaining(), backingArray, offset + position);
     }
 
     

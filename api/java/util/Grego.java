@@ -1,6 +1,6 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ class Grego {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:10.166 -0400", hash_original_method = "C0174AAA570C46558C7AC4376248DE88", hash_generated_method = "C0174AAA570C46558C7AC4376248DE88")
     public Grego ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -100,16 +100,14 @@ class Grego {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long floorDivide(long numerator, long denominator) {
+        public static long floorDivide(long numerator, long denominator) {
         return (numerator >= 0) ?
             numerator / denominator :
             ((numerator + 1) / denominator) - 1;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long floorDivide(long numerator, long denominator, long[] remainder) {
+        private static long floorDivide(long numerator, long denominator, long[] remainder) {
         if (numerator >= 0) {
             remainder[0] = numerator % denominator;
             return numerator / denominator;

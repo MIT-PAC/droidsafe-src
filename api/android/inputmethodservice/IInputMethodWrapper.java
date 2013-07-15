@@ -1,6 +1,6 @@
 package android.inputmethodservice;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,11 +51,11 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
         mCaller = new HandlerCaller(context.getApplicationContext(), this);
         mInputMethod = new WeakReference<InputMethod>(inputMethod);
         mTargetSdkVersion = context.getApplicationInfo().targetSdkVersion;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mTarget = new WeakReference<AbstractInputMethodService>(context);
+        //mCaller = new HandlerCaller(context.getApplicationContext(), this);
+        //mInputMethod = new WeakReference<InputMethod>(inputMethod);
+        //mTargetSdkVersion = context.getApplicationInfo().targetSdkVersion;
     }
 
     
@@ -64,8 +64,8 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
 InputMethod var68ED14805F4A474C688994B0C0607ED3_858613010 =         mInputMethod.get();
         var68ED14805F4A474C688994B0C0607ED3_858613010.addTaint(taint);
         return var68ED14805F4A474C688994B0C0607ED3_858613010;
-        
-        
+        // ---------- Original Method ----------
+        //return mInputMethod.get();
     }
 
     
@@ -76,7 +76,7 @@ InputMethod var68ED14805F4A474C688994B0C0607ED3_858613010 =         mInputMethod
     if(inputMethod == null && msg.what != DO_DUMP)        
         {
             return;
-        } 
+        } //End block
 switch(msg.what){
         case DO_DUMP:
         {
@@ -84,33 +84,33 @@ switch(msg.what){
     if(target == null)            
             {
                 return;
-            } 
+            } //End block
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
             try 
             {
                 target.dump((FileDescriptor)args.arg1,
                             (PrintWriter)args.arg2, (String[])args.arg3);
-            } 
+            } //End block
             catch (RuntimeException e)
             {
                 ((PrintWriter)args.arg2).println("Exception: " + e);
-            } 
+            } //End block
             synchronized
 (args.arg4)            {
                 ((CountDownLatch)args.arg4).countDown();
-            } 
+            } //End block
             return;
-        } 
+        } //End block
         case DO_ATTACH_TOKEN:
         {
             inputMethod.attachToken((IBinder)msg.obj);
             return;
-        } 
+        } //End block
         case DO_SET_INPUT_CONTEXT:
         {
             inputMethod.bindInput((InputBinding)msg.obj);
             return;
-        } 
+        } //End block
         case DO_UNSET_INPUT_CONTEXT:
         inputMethod.unbindInput();
         return;
@@ -124,7 +124,7 @@ switch(msg.what){
             info.makeCompatible(mTargetSdkVersion);
             inputMethod.startInput(ic, info);
             return;
-        } 
+        } //End block
         case DO_RESTART_INPUT:
         {
             HandlerCaller.SomeArgs args = (HandlerCaller.SomeArgs)msg.obj;
@@ -135,13 +135,13 @@ switch(msg.what){
             info.makeCompatible(mTargetSdkVersion);
             inputMethod.restartInput(ic, info);
             return;
-        } 
+        } //End block
         case DO_CREATE_SESSION:
         {
             inputMethod.createSession(new InputMethodSessionCallbackWrapper(
                         mCaller.mContext, (IInputMethodCallback)msg.obj));
             return;
-        } 
+        } //End block
         case DO_SET_SESSION_ENABLED:
         inputMethod.setSessionEnabled((InputMethodSession)msg.obj,
                         msg.arg1 != 0);
@@ -159,8 +159,8 @@ switch(msg.what){
         inputMethod.changeInputMethodSubtype((InputMethodSubtype)msg.obj);
         return;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -174,7 +174,7 @@ switch(msg.what){
     if(target == null)        
         {
             return;
-        } 
+        } //End block
     if(target.checkCallingOrSelfPermission(android.Manifest.permission.DUMP)
                 != PackageManager.PERMISSION_GRANTED)        
         {
@@ -182,7 +182,7 @@ switch(msg.what){
                     + Binder.getCallingPid()
                     + ", uid=" + Binder.getCallingUid());
             return;
-        } 
+        } //End block
         CountDownLatch latch = new CountDownLatch(1);
         mCaller.executeOrSendMessage(mCaller.obtainMessageOOOO(DO_DUMP,
                 fd, fout, args, latch));
@@ -191,14 +191,14 @@ switch(msg.what){
     if(!latch.await(5, TimeUnit.SECONDS))            
             {
                 fout.println("Timeout waiting for dump");
-            } 
-        } 
+            } //End block
+        } //End block
         catch (InterruptedException e)
         {
             fout.println("Interrupted waiting for dump");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -206,8 +206,8 @@ switch(msg.what){
     public void attachToken(IBinder token) {
         addTaint(token.getTaint());
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_ATTACH_TOKEN, token));
-        
-        
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_ATTACH_TOKEN, token));
     }
 
     
@@ -218,19 +218,19 @@ switch(msg.what){
                 IInputContext.Stub.asInterface(binding.getConnectionToken()));
         InputBinding nu = new InputBinding(ic, binding);
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_SET_INPUT_CONTEXT, nu));
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //InputConnection ic = new InputConnectionWrapper(
+                //IInputContext.Stub.asInterface(binding.getConnectionToken()));
+        //InputBinding nu = new InputBinding(ic, binding);
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_SET_INPUT_CONTEXT, nu));
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.199 -0400", hash_original_method = "40DD339E1316D187A0FAAB1DCDDB6E26", hash_generated_method = "30B4AF1F3E124873ADD5722DC7A8FD28")
     public void unbindInput() {
         mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_UNSET_INPUT_CONTEXT));
-        
-        
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessage(DO_UNSET_INPUT_CONTEXT));
     }
 
     
@@ -240,9 +240,9 @@ switch(msg.what){
         addTaint(inputContext.getTaint());
         mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_START_INPUT,
                 inputContext, attribute));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_START_INPUT,
+                //inputContext, attribute));
     }
 
     
@@ -252,9 +252,9 @@ switch(msg.what){
         addTaint(inputContext.getTaint());
         mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_RESTART_INPUT,
                 inputContext, attribute));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageOO(DO_RESTART_INPUT,
+                //inputContext, attribute));
     }
 
     
@@ -262,8 +262,8 @@ switch(msg.what){
     public void createSession(IInputMethodCallback callback) {
         addTaint(callback.getTaint());
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_CREATE_SESSION, callback));
-        
-        
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_CREATE_SESSION, callback));
     }
 
     
@@ -277,19 +277,19 @@ switch(msg.what){
                     session).getInternalInputMethodSession();
             mCaller.executeOrSendMessage(mCaller.obtainMessageIO(
                     DO_SET_SESSION_ENABLED, enabled ? 1 : 0, ls));
-        } 
+        } //End block
         catch (ClassCastException e)
         {
-        } 
-        
-        
-            
-                    
-            
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //InputMethodSession ls = ((IInputMethodSessionWrapper)
+                    //session).getInternalInputMethodSession();
+            //mCaller.executeOrSendMessage(mCaller.obtainMessageIO(
+                    //DO_SET_SESSION_ENABLED, enabled ? 1 : 0, ls));
+        //} catch (ClassCastException e) {
+            //Log.w(TAG, "Incoming session not of correct type: " + session, e);
+        //}
     }
 
     
@@ -301,18 +301,18 @@ switch(msg.what){
             InputMethodSession ls = ((IInputMethodSessionWrapper)
                     session).getInternalInputMethodSession();
             mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_REVOKE_SESSION, ls));
-        } 
+        } //End block
         catch (ClassCastException e)
         {
-        } 
-        
-        
-            
-                    
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //InputMethodSession ls = ((IInputMethodSessionWrapper)
+                    //session).getInternalInputMethodSession();
+            //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_REVOKE_SESSION, ls));
+        //} catch (ClassCastException e) {
+            //Log.w(TAG, "Incoming session not of correct type: " + session, e);
+        //}
     }
 
     
@@ -322,9 +322,9 @@ switch(msg.what){
         addTaint(flags);
         mCaller.executeOrSendMessage(mCaller.obtainMessageIO(DO_SHOW_SOFT_INPUT,
                 flags, resultReceiver));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageIO(DO_SHOW_SOFT_INPUT,
+                //flags, resultReceiver));
     }
 
     
@@ -334,9 +334,9 @@ switch(msg.what){
         addTaint(flags);
         mCaller.executeOrSendMessage(mCaller.obtainMessageIO(DO_HIDE_SOFT_INPUT,
                 flags, resultReceiver));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageIO(DO_HIDE_SOFT_INPUT,
+                //flags, resultReceiver));
     }
 
     
@@ -345,9 +345,9 @@ switch(msg.what){
         addTaint(subtype.getTaint());
         mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_CHANGE_INPUTMETHOD_SUBTYPE,
                 subtype));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mCaller.executeOrSendMessage(mCaller.obtainMessageO(DO_CHANGE_INPUTMETHOD_SUBTYPE,
+                //subtype));
     }
 
     
@@ -359,7 +359,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.203 -0400", hash_original_method = "55E10D988B76888B9ACFA8C6EB5966C6", hash_generated_method = "55E10D988B76888B9ACFA8C6EB5966C6")
         public Notifier ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -379,9 +379,9 @@ switch(msg.what){
           InputMethodSessionCallbackWrapper(Context context, IInputMethodCallback cb) {
             mContext = context;
             mCb = cb;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mContext = context;
+            //mCb = cb;
         }
 
         
@@ -394,26 +394,26 @@ switch(msg.what){
                 {
                     IInputMethodSessionWrapper wrap = new IInputMethodSessionWrapper(mContext, session);
                     mCb.sessionCreated(wrap);
-                } 
+                } //End block
                 else
                 {
                     mCb.sessionCreated(null);
-                } 
-            } 
+                } //End block
+            } //End block
             catch (RemoteException e)
             {
-            } 
-            
-            
-                
-                    
-                            
-                    
-                
-                    
-                
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //if (session != null) {
+                    //IInputMethodSessionWrapper wrap =
+                            //new IInputMethodSessionWrapper(mContext, session);
+                    //mCb.sessionCreated(wrap);
+                //} else {
+                    //mCb.sessionCreated(null);
+                //}
+            //} catch (RemoteException e) {
+            //}
         }
 
         

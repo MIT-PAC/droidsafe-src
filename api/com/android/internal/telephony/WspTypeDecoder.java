@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,8 +26,8 @@ public class WspTypeDecoder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.639 -0400", hash_original_method = "5272930664D9B8230407C0BE43B28A37", hash_generated_method = "64FBC31D7C3F545B7475044B7FFE92E1")
     public  WspTypeDecoder(byte[] pdu) {
         wspData = pdu;
-        
-        
+        // ---------- Original Method ----------
+        //wspData = pdu;
     }
 
     
@@ -38,31 +38,31 @@ public class WspTypeDecoder {
 (wspData[index] != 0)        
         {
             index++;
-        } 
+        } //End block
         dataLength = index - startIndex + 1;
     if(wspData[startIndex] == 127)        
         {
             stringValue = new String(wspData, startIndex + 1, dataLength - 2);
-        } 
+        } //End block
         else
         {
             stringValue = new String(wspData, startIndex, dataLength - 1);
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_426664246 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030907961 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030907961;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int index = startIndex;
+        //while (wspData[index] != 0) {
+            //index++;
+        //}
+        //dataLength = index - startIndex + 1;
+        //if (wspData[startIndex] == 127) {
+            //stringValue = new String(wspData, startIndex + 1, dataLength - 2);
+        //} else {
+            //stringValue = new String(wspData, startIndex, dataLength - 1);
+        //}
+        //return true;
     }
 
     
@@ -73,24 +73,23 @@ public class WspTypeDecoder {
 (wspData[index] != 0)        
         {
             index++;
-        } 
+        } //End block
         dataLength = index - startIndex + 1;
         stringValue = new String(wspData, startIndex, dataLength - 1);
         boolean varB326B5062B2F0E69046810717534CB09_1048885085 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327197728 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327197728;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int index = startIndex;
+        //while (wspData[index] != 0) {
+            //index++;
+        //}
+        //dataLength = index - startIndex + 1;
+        //stringValue = new String(wspData, startIndex, dataLength - 1);
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.645 -0400", hash_original_method = "83D32C5BCB0549BFFFB2F2ED18850933", hash_generated_method = "CEE9E8839587FD2310E87221E966A4D6")
     public boolean decodeShortInteger(int startIndex) {
     if((wspData[startIndex] & 0x80) == 0)        
@@ -98,23 +97,22 @@ public class WspTypeDecoder {
             boolean var68934A3E9455FA72420237EB05902327_713694302 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2048137600 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2048137600;
-        } 
+        } //End block
         unsigned32bit = wspData[startIndex] & 0x7f;
         dataLength = 1;
         boolean varB326B5062B2F0E69046810717534CB09_572290256 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2030139958 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2030139958;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if ((wspData[startIndex] & 0x80) == 0) {
+            //return false;
+        //}
+        //unsigned32bit = wspData[startIndex] & 0x7f;
+        //dataLength = 1;
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.646 -0400", hash_original_method = "B3FA7CC1597D63764316082CF6F63FFB", hash_generated_method = "CED7773DD501D2C367BAD49CB4BAC4F5")
     public boolean decodeLongInteger(int startIndex) {
         int lengthMultiOctet = wspData[startIndex] & 0xff;
@@ -123,27 +121,27 @@ public class WspTypeDecoder {
             boolean var68934A3E9455FA72420237EB05902327_1587477810 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1624930904 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1624930904;
-        } 
+        } //End block
         unsigned32bit = 0;
 for(int i = 1;i <= lengthMultiOctet;i++)
         {
             unsigned32bit = (unsigned32bit << 8) | (wspData[startIndex + i] & 0xff);
-        } 
+        } //End block
         dataLength = 1 + lengthMultiOctet;
         boolean varB326B5062B2F0E69046810717534CB09_1533109847 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_626129501 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_626129501;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int lengthMultiOctet = wspData[startIndex] & 0xff;
+        //if (lengthMultiOctet > WAP_PDU_SHORT_LENGTH_MAX) {
+            //return false;
+        //}
+        //unsigned32bit = 0;
+        //for (int i = 1; i <= lengthMultiOctet; i++) {
+            //unsigned32bit = (unsigned32bit << 8) | (wspData[startIndex + i] & 0xff);
+        //}
+        //dataLength = 1 + lengthMultiOctet;
+        //return true;
     }
 
     
@@ -155,19 +153,18 @@ for(int i = 1;i <= lengthMultiOctet;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1946311993 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_171889408 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_171889408;
-        } 
+        } //End block
         boolean var8033954622ED2C7C3E6DF63209C71DC8_1182103365 = (decodeLongInteger(startIndex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692744010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_692744010;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (decodeShortInteger(startIndex) == true) {
+            //return true;
+        //}
+        //return decodeLongInteger(startIndex);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.649 -0400", hash_original_method = "C4B929220DC6CCE2C4298A937E6A511E", hash_generated_method = "55CB7CFAECD20ABE4BA8462782C9F242")
     public boolean decodeUintvarInteger(int startIndex) {
         int index = startIndex;
@@ -180,28 +177,28 @@ for(int i = 1;i <= lengthMultiOctet;i++)
                 boolean var68934A3E9455FA72420237EB05902327_693244764 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2112498349 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2112498349;
-            } 
+            } //End block
             unsigned32bit = (unsigned32bit << 7) | (wspData[index] & 0x7f);
             index++;
-        } 
+        } //End block
         unsigned32bit = (unsigned32bit << 7) | (wspData[index] & 0x7f);
         dataLength = index - startIndex + 1;
         boolean varB326B5062B2F0E69046810717534CB09_654078509 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467367605 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467367605;
-        
-        
-        
-        
-            
-                
-            
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int index = startIndex;
+        //unsigned32bit = 0;
+        //while ((wspData[index] & 0x80) != 0) {
+            //if ((index - startIndex) >= 4) {
+                //return false;
+            //}
+            //unsigned32bit = (unsigned32bit << 7) | (wspData[index] & 0x7f);
+            //index++;
+        //}
+        //unsigned32bit = (unsigned32bit << 7) | (wspData[index] & 0x7f);
+        //dataLength = index - startIndex + 1;
+        //return true;
     }
 
     
@@ -212,32 +209,32 @@ for(int i = 1;i <= lengthMultiOctet;i++)
             boolean var68934A3E9455FA72420237EB05902327_1442205699 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084998103 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084998103;
-        } 
+        } //End block
     if(wspData[startIndex] < WAP_PDU_LENGTH_QUOTE)        
         {
             unsigned32bit = wspData[startIndex];
             dataLength = 1;
-        } 
+        } //End block
         else
         {
             decodeUintvarInteger(startIndex + 1);
             dataLength++;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_582658556 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167419133 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167419133;
-        
-        
-            
-        
-        
-            
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((wspData[startIndex] & 0xff) > WAP_PDU_LENGTH_QUOTE) {
+            //return false;
+        //}
+        //if (wspData[startIndex] < WAP_PDU_LENGTH_QUOTE) {
+            //unsigned32bit = wspData[startIndex];
+            //dataLength = 1;
+        //} else {
+            //decodeUintvarInteger(startIndex + 1);
+            //dataLength++;
+        //}
+        //return true;
     }
 
     
@@ -252,24 +249,24 @@ for(int i = 1;i <= lengthMultiOctet;i++)
 (index < length && wspData[index] != 0)        
         {
             index++;
-        } 
+        } //End block
         dataLength = index - startIndex + 1;
         stringValue = new String(wspData, startIndex, dataLength - 1);
         boolean varD5E08F13445DBE37781C555C27C687A1_323134789 = (rtrn);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_15617277 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_15617277;
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int index = startIndex;
+        //dataLength = 0;
+        //stringValue = null;
+        //int length = wspData.length;
+        //boolean rtrn = index < length;
+        //while (index < length && wspData[index] != 0) {
+            //index++;
+        //}
+        //dataLength = index - startIndex + 1;
+        //stringValue = new String(wspData, startIndex, dataLength - 1);
+        //return rtrn;
     }
 
     
@@ -282,16 +279,16 @@ for(int i = 1;i <= lengthMultiOctet;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1964324943 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1599374506 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1599374506;
-        } 
+        } //End block
         boolean var8BC14E9D2A2004401925017CFD06D048_2015025356 = (decodeExtensionMedia(startIndex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1652324400 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1652324400;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (decodeShortInteger(startIndex) == true) {
+            //stringValue = null;
+            //return true;
+        //}
+        //return decodeExtensionMedia(startIndex);
     }
 
     
@@ -308,11 +305,11 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     if(found)                
                 {
                     expandWellKnownMimeType();
-                } 
+                } //End block
                 boolean var6CFE61694EE1BB13AE719D47C2F80B7A_943571450 = (found);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1919277299 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1919277299;
-            } 
+            } //End block
             int headersLength = (int) unsigned32bit;
             mediaPrefixLength = getDecodedDataLength();
     if(decodeIntegerValue(startIndex + mediaPrefixLength) == true)            
@@ -332,11 +329,11 @@ for(int i = 1;i <= lengthMultiOctet;i++)
                     boolean varB326B5062B2F0E69046810717534CB09_58480283 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1338617524 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1338617524;
-                } 
+                } //End block
                 boolean var68934A3E9455FA72420237EB05902327_1248637526 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1133694092 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1133694092;
-            } 
+            } //End block
     if(decodeExtensionMedia(startIndex + mediaPrefixLength) == true)            
             {
                 dataLength += mediaPrefixLength;
@@ -353,20 +350,20 @@ for(int i = 1;i <= lengthMultiOctet;i++)
                     boolean varB326B5062B2F0E69046810717534CB09_472830233 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984975659 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984975659;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1938725128 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_40822219 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_40822219;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1916086410 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2097860313 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2097860313;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -385,7 +382,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
                 decodeTokenText(startIndex);
                 param = stringValue;
                 totalRead += dataLength;
-            } 
+            } //End block
             else
             {
     if(decodeIntegerValue(startIndex))                
@@ -396,7 +393,7 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     if(param == null)                    
                     {
                         param = "unassigned/0x" + Long.toHexString(wellKnownParameterValue);
-                    } 
+                    } //End block
     if(wellKnownParameterValue == Q_VALUE)                    
                     {
     if(decodeUintvarInteger(startIndex + totalRead))                        
@@ -408,27 +405,27 @@ for(int i = 1;i <= lengthMultiOctet;i++)
                                                             - totalRead, accumulator + totalRead));
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_623016326 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_623016326;
-                        } 
+                        } //End block
                         else
                         {
                             boolean var68934A3E9455FA72420237EB05902327_342934115 = (false);
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_943079000 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_943079000;
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     boolean var68934A3E9455FA72420237EB05902327_820040636 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1590922324 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1590922324;
-                } 
-            } 
+                } //End block
+            } //End block
     if(decodeNoValue(startIndex + totalRead))            
             {
                 totalRead += dataLength;
                 value = null;
-            } 
+            } //End block
             else
     if(decodeIntegerValue(startIndex + totalRead))            
             {
@@ -437,12 +434,12 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     if(intValue == 0)                
                 {
                     value = "";
-                } 
+                } //End block
                 else
                 {
                     value = String.valueOf(intValue);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 decodeTokenText(startIndex + totalRead);
@@ -451,27 +448,26 @@ for(int i = 1;i <= lengthMultiOctet;i++)
     if(value.startsWith("\""))                
                 {
                     value = value.substring(1);
-                } 
-            } 
+                } //End block
+            } //End block
             contentParameters.put(param, value);
             boolean var3FE1C4D8D7EFFA1D4DF50EE46AADF783_202914955 = (readContentParameters(startIndex + totalRead, leftToRead - totalRead,
                                             accumulator + totalRead));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_616521885 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_616521885;
-        } 
+        } //End block
         else
         {
             dataLength = accumulator;
             boolean varB326B5062B2F0E69046810717534CB09_1885224664 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57018823 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_57018823;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.657 -0400", hash_original_method = "7291D1B6F4C3ED0E6F576F289818668E", hash_generated_method = "286976349CCC597E8945E6562D62BE5D")
     private boolean decodeNoValue(int startIndex) {
         addTaint(startIndex);
@@ -481,20 +477,20 @@ for(int i = 1;i <= lengthMultiOctet;i++)
             boolean varB326B5062B2F0E69046810717534CB09_471953558 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1095578410 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1095578410;
-        } 
+        } //End block
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_774670448 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_608322213 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_608322213;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (wspData[startIndex] == 0) {
+            //dataLength = 1;
+            //return true;
+        //} else {
+            //return false;
+        //}
     }
 
     
@@ -504,18 +500,18 @@ for(int i = 1;i <= lengthMultiOctet;i++)
         {
             int binaryContentType = (int) unsigned32bit;
             stringValue = WELL_KNOWN_MIME_TYPES.get(binaryContentType);
-        } 
+        } //End block
         else
         {
             unsigned32bit = -1;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (stringValue == null) {
+            //int binaryContentType = (int) unsigned32bit;
+            //stringValue = WELL_KNOWN_MIME_TYPES.get(binaryContentType);
+        //} else {
+            //unsigned32bit = -1;
+        //}
     }
 
     
@@ -525,8 +521,8 @@ for(int i = 1;i <= lengthMultiOctet;i++)
         boolean var08FAF2B09D4897B60CA982086268C257_851822721 = (decodeIntegerValue(startIndex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2061470284 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2061470284;
-        
-        
+        // ---------- Original Method ----------
+        //return decodeIntegerValue(startIndex);
     }
 
     
@@ -536,8 +532,8 @@ for(int i = 1;i <= lengthMultiOctet;i++)
         boolean varD0063709730E2936081256DB7CE2954A_1645170 = (decodeTextString(startIndex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1686208330 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1686208330;
-        
-        
+        // ---------- Original Method ----------
+        //return decodeTextString(startIndex);
     }
 
     
@@ -550,16 +546,16 @@ for(int i = 1;i <= lengthMultiOctet;i++)
             boolean varB326B5062B2F0E69046810717534CB09_656591724 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_553310711 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_553310711;
-        } 
+        } //End block
         boolean varD0063709730E2936081256DB7CE2954A_1194921595 = (decodeTextString(startIndex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1817540047 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1817540047;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (decodeIntegerValue(startIndex) == true) {
+            //stringValue = null;
+            //return true;
+        //}
+        //return decodeTextString(startIndex);
     }
 
     
@@ -581,8 +577,8 @@ for(index = startIndex;index <= endIndex;)
                         boolean varB326B5062B2F0E69046810717534CB09_1257495473 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1530079974 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1530079974;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
     if(!decodeTextString(index))                    
@@ -591,7 +587,7 @@ for(index = startIndex;index <= endIndex;)
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687382422 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_687382422;
                     }
-                } 
+                } //End block
                 index += getDecodedDataLength();
     if(index > endIndex)                
                 {
@@ -603,7 +599,7 @@ for(index = startIndex;index <= endIndex;)
     if(0 <= val && val <= WAP_PDU_SHORT_LENGTH_MAX)                
                 {
                     index += wspData[index] + 1;
-                } 
+                } //End block
                 else
     if(val == WAP_PDU_LENGTH_QUOTE)                
                 {
@@ -621,7 +617,7 @@ for(index = startIndex;index <= endIndex;)
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2131190776;
                     }
                     index += getDecodedDataLength();
-                } 
+                } //End block
                 else
     if(WAP_PDU_LENGTH_QUOTE < val && val <= 127)                
                 {
@@ -632,24 +628,24 @@ for(index = startIndex;index <= endIndex;)
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687527663;
                     }
                     index += getDecodedDataLength();
-                } 
+                } //End block
                 else
                 {
                     index++;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (ArrayIndexOutOfBoundsException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_382133964 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_37933931 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_37933931;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_7262654 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543081949 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_543081949;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -659,8 +655,8 @@ for(index = startIndex;index <= endIndex;)
         boolean varD0063709730E2936081256DB7CE2954A_857728771 = (decodeTextString(startIndex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1662478898 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1662478898;
-        
-        
+        // ---------- Original Method ----------
+        //return decodeTextString(startIndex);
     }
 
     
@@ -670,41 +666,38 @@ for(index = startIndex;index <= endIndex;)
         boolean varD0063709730E2936081256DB7CE2954A_253369548 = (decodeTextString(startIndex));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2063622901 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2063622901;
-        
-        
+        // ---------- Original Method ----------
+        //return decodeTextString(startIndex);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.662 -0400", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "5B8BF74906ECD66C686376D6CB106436")
     public int getDecodedDataLength() {
         int var8099F621661FD70FB137BCB82175502F_2025364773 = (dataLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144785066 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144785066;
-        
-        
+        // ---------- Original Method ----------
+        //return dataLength;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.662 -0400", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "80D2A15BF6DDC6F175A6CEEC71284B40")
     public long getValue32() {
         long var7AD31D85AAE2172A581FDA7D1EAB5B0A_1522708344 = (unsigned32bit);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_445996299 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_445996299;
-        
-        
+        // ---------- Original Method ----------
+        //return unsigned32bit;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.662 -0400", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "6D140BBAFA69B812C1F02741705B7323")
     public String getValueString() {
 String varFF91E0F0881095C075E75F0EB79E58BA_515678672 =         stringValue;
         varFF91E0F0881095C075E75F0EB79E58BA_515678672.addTaint(taint);
         return varFF91E0F0881095C075E75F0EB79E58BA_515678672;
-        
-        
+        // ---------- Original Method ----------
+        //return stringValue;
     }
 
     
@@ -713,8 +706,8 @@ String varFF91E0F0881095C075E75F0EB79E58BA_515678672 =         stringValue;
 HashMap<String, String> varC17DA6B8CB924FDB4B9347F320DA03D2_1670621884 =         contentParameters;
         varC17DA6B8CB924FDB4B9347F320DA03D2_1670621884.addTaint(taint);
         return varC17DA6B8CB924FDB4B9347F320DA03D2_1670621884;
-        
-        
+        // ---------- Original Method ----------
+        //return contentParameters;
     }
 
     

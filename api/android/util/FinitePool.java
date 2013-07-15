@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,10 +27,10 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
         mManager = manager;
         mLimit = 0;
         mInfinite = true;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mManager = manager;
+        //mLimit = 0;
+        //mInfinite = true;
     }
 
     
@@ -45,11 +45,11 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
         mManager = manager;
         mLimit = limit;
         mInfinite = false;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (limit <= 0) throw new IllegalArgumentException("The pool limit must be > 0");
+        //mManager = manager;
+        //mLimit = limit;
+        //mInfinite = false;
     }
 
     
@@ -61,35 +61,35 @@ class FinitePool<T extends Poolable<T>> implements Pool<T> {
             element = mRoot;
             mRoot = element.getNextPoolable();
             mPoolCount--;
-        } 
+        } //End block
         else
         {
             element = mManager.newInstance();
-        } 
+        } //End block
     if(element != null)        
         {
             element.setNextPoolable(null);
             element.setPooled(false);
             mManager.onAcquired(element);
-        } 
+        } //End block
 T var24D05606CDD4BC4C89F2F5A15C16F343_662853403 =         element;
         var24D05606CDD4BC4C89F2F5A15C16F343_662853403.addTaint(taint);
         return var24D05606CDD4BC4C89F2F5A15C16F343_662853403;
-        
-        
-        
-            
-            
-            
-        
-            
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //T element;
+        //if (mRoot != null) {
+            //element = mRoot;
+            //mRoot = element.getNextPoolable();
+            //mPoolCount--;
+        //} else {
+            //element = mManager.newInstance();
+        //}
+        //if (element != null) {
+            //element.setNextPoolable(null);
+            //element.setPooled(false);
+            //mManager.onAcquired(element);            
+        //}
+        //return element;
     }
 
     
@@ -103,24 +103,24 @@ T var24D05606CDD4BC4C89F2F5A15C16F343_662853403 =         element;
                 element.setNextPoolable(mRoot);
                 element.setPooled(true);
                 mRoot = element;
-            } 
+            } //End block
             mManager.onReleased(element);
-        } 
+        } //End block
         else
         {
-        } 
-        
-        
-            
-                
-                
-                
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!element.isPooled()) {
+            //if (mInfinite || mPoolCount < mLimit) {
+                //mPoolCount++;
+                //element.setNextPoolable(mRoot);
+                //element.setPooled(true);
+                //mRoot = element;
+            //}
+            //mManager.onReleased(element);
+        //} else {
+            //Log.w(LOG_TAG, "Element is already in pool: " + element);
+        //}
     }
 
     

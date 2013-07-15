@@ -1,6 +1,6 @@
 package javax.crypto;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,10 +32,10 @@ public class KeyAgreement {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = keyAgreeSpi;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.provider = provider;
+        //this.algorithm = algorithm;
+        //this.spiImpl = keyAgreeSpi;
     }
 
     
@@ -44,8 +44,8 @@ public class KeyAgreement {
 String var44A46B4003FC81ACB0223385BA1FA818_2047602715 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_2047602715.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_2047602715;
-        
-        
+        // ---------- Original Method ----------
+        //return algorithm;
     }
 
     
@@ -54,8 +54,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_2047602715 =         algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_90401056 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_90401056.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_90401056;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
@@ -99,8 +99,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_90401056 =         provider;
     public final void init(Key key) throws InvalidKeyException {
         addTaint(key.getTaint());
         spiImpl.engineInit(key, RANDOM);
-        
-        
+        // ---------- Original Method ----------
+        //spiImpl.engineInit(key, RANDOM);
     }
 
     
@@ -109,8 +109,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_90401056 =         provider;
         addTaint(random.getTaint());
         addTaint(key.getTaint());
         spiImpl.engineInit(key, random);
-        
-        
+        // ---------- Original Method ----------
+        //spiImpl.engineInit(key, random);
     }
 
     
@@ -119,8 +119,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_90401056 =         provider;
         addTaint(params.getTaint());
         addTaint(key.getTaint());
         spiImpl.engineInit(key, params, RANDOM);
-        
-        
+        // ---------- Original Method ----------
+        //spiImpl.engineInit(key, params, RANDOM);
     }
 
     
@@ -132,8 +132,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_90401056 =         provider;
         addTaint(params.getTaint());
         addTaint(key.getTaint());
         spiImpl.engineInit(key, params, random);
-        
-        
+        // ---------- Original Method ----------
+        //spiImpl.engineInit(key, params, random);
     }
 
     
@@ -144,8 +144,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_90401056 =         provider;
 Key varB62898BED1697BBBFDF7E5E5CA1F56DF_583509897 =         spiImpl.engineDoPhase(key, lastPhase);
         varB62898BED1697BBBFDF7E5E5CA1F56DF_583509897.addTaint(taint);
         return varB62898BED1697BBBFDF7E5E5CA1F56DF_583509897;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineDoPhase(key, lastPhase);
     }
 
     
@@ -154,8 +154,8 @@ Key varB62898BED1697BBBFDF7E5E5CA1F56DF_583509897 =         spiImpl.engineDoPhas
         byte[] varD6D437FCE0CD160B5DC1C3574E8E0598_1686309490 = (spiImpl.engineGenerateSecret());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1853890696 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1853890696;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGenerateSecret();
     }
 
     
@@ -166,8 +166,8 @@ Key varB62898BED1697BBBFDF7E5E5CA1F56DF_583509897 =         spiImpl.engineDoPhas
         int varC3C648AD799297422873F27AADD5E7D3_518337889 = (spiImpl.engineGenerateSecret(sharedSecret, offset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002518901 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002518901;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGenerateSecret(sharedSecret, offset);
     }
 
     
@@ -178,8 +178,8 @@ Key varB62898BED1697BBBFDF7E5E5CA1F56DF_583509897 =         spiImpl.engineDoPhas
 SecretKey var17EFC49D73EE8712B77591CBAACDA6A4_430375718 =         spiImpl.engineGenerateSecret(algorithm);
         var17EFC49D73EE8712B77591CBAACDA6A4_430375718.addTaint(taint);
         return var17EFC49D73EE8712B77591CBAACDA6A4_430375718;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGenerateSecret(algorithm);
     }
 
     

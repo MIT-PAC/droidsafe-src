@@ -1,6 +1,6 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ class BitLevel {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.959 -0400", hash_original_method = "128537E4DA15C667DA21928E26685CE7", hash_generated_method = "8EBB079821786F638DB2E6786CCDDD62")
     private  BitLevel() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -59,8 +59,7 @@ class BitLevel {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
+        static boolean nonZeroDroppedBits(int numberOfBits, int[] digits) {
         int intCount = numberOfBits >> 5;
         int bitCount = numberOfBits & 31;
         int i;
@@ -71,8 +70,7 @@ class BitLevel {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static void shiftLeftOneBit(int[] result, int[] source, int srcLen) {
+        static void shiftLeftOneBit(int[] result, int[] source, int srcLen) {
         int carry = 0;
         for (int i = 0; i < srcLen; i++) {
             int val = source[i];

@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ final class ReadOnlyHeapByteBuffer extends HeapByteBuffer {
         addTaint(arrayOffset);
         addTaint(capacity);
         addTaint(backingArray[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -33,8 +33,8 @@ final class ReadOnlyHeapByteBuffer extends HeapByteBuffer {
 ByteBuffer varCA612679CD85B02158BA6D776D286658_618817504 =         ReadOnlyHeapByteBuffer.copy(this, mark);
         varCA612679CD85B02158BA6D776D286658_618817504.addTaint(taint);
         return varCA612679CD85B02158BA6D776D286658_618817504;
-        
-        
+        // ---------- Original Method ----------
+        //return ReadOnlyHeapByteBuffer.copy(this, mark);
     }
 
     
@@ -44,8 +44,8 @@ ByteBuffer varCA612679CD85B02158BA6D776D286658_618817504 =         ReadOnlyHeapB
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_625874900 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_625874900.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_625874900;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -55,20 +55,19 @@ ByteBuffer varCA612679CD85B02158BA6D776D286658_618817504 =         ReadOnlyHeapB
 ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, mark);
         var6ED4708F04CD11720ECFFDBFD927116F_1073320571.addTaint(taint);
         return var6ED4708F04CD11720ECFFDBFD927116F_1073320571;
-        
-        
+        // ---------- Original Method ----------
+        //return copy(this, mark);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.987 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "53E69673D3059AD94111388B72AAC256")
     @Override
     public boolean isReadOnly() {
         boolean varB326B5062B2F0E69046810717534CB09_1107175462 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_189810966 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_189810966;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -78,8 +77,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1737841614 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1737841614.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1737841614;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -89,20 +88,19 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1111860052 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1111860052.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1111860052;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.988 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "BDE56401CF801E67E08C9666D573C21A")
     @Override
     protected boolean protectedHasArray() {
         boolean var68934A3E9455FA72420237EB05902327_357334968 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1361137963 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1361137963;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -113,8 +111,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_432160019 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_432160019.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_432160019;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -126,8 +124,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_2067986576 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_2067986576.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_2067986576;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -140,8 +138,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_661343888 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_661343888.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_661343888;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -152,8 +150,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1486599937 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1486599937.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1486599937;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -165,8 +163,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1392456147 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1392456147.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1392456147;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -177,8 +175,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1477955871 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1477955871.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1477955871;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -190,8 +188,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1531502675 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1531502675.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1531502675;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -202,8 +200,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_537475062 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_537475062.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_537475062;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -215,8 +213,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_841344990 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_841344990.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_841344990;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -228,8 +226,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_2132700737 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_2132700737.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_2132700737;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -240,8 +238,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_380392116 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_380392116.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_380392116;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -253,8 +251,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1874475338 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1874475338.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1874475338;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -265,8 +263,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1404155018 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1404155018.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1404155018;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -277,8 +275,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1403018952 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1403018952.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1403018952;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ReadOnlyBufferException();
     }
 
     
@@ -288,8 +286,8 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_1073320571 =         copy(this, m
 ByteBuffer varEAEC2CB07F6584710EFB1E4523BCE8EA_916057738 =         new ReadOnlyHeapByteBuffer(backingArray, remaining(), offset + position);
         varEAEC2CB07F6584710EFB1E4523BCE8EA_916057738.addTaint(taint);
         return varEAEC2CB07F6584710EFB1E4523BCE8EA_916057738;
-        
-        
+        // ---------- Original Method ----------
+        //return new ReadOnlyHeapByteBuffer(backingArray, remaining(), offset + position);
     }
 
     

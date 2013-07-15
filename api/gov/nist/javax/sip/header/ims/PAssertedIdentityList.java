@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class PAssertedIdentityList extends SIPHeaderList<PAssertedIdentity> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.864 -0400", hash_original_method = "7B547E5D989DEE32A91F605E4D8F2A3B", hash_generated_method = "73CBFC9BA880055E577FD55BB3BE4139")
     public  PAssertedIdentityList() {
         super(PAssertedIdentity.class, PAssertedIdentityHeader.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,9 +21,9 @@ public class PAssertedIdentityList extends SIPHeaderList<PAssertedIdentity> {
 Object varF627329B9209466293A1BF71D9AF7B2B_1393323109 =         retval.clonehlist(this.hlist);
         varF627329B9209466293A1BF71D9AF7B2B_1393323109.addTaint(taint);
         return varF627329B9209466293A1BF71D9AF7B2B_1393323109;
-        
-        
-        
+        // ---------- Original Method ----------
+        //PAssertedIdentityList retval = new PAssertedIdentityList();
+        //return retval.clonehlist(this.hlist);
     }
 
     

@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class SSLServerSocketFactory extends ServerSocketFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.776 -0400", hash_original_method = "BC3ACB83646E5282AC0839BB4C043770", hash_generated_method = "84A6B101064020819BA93021BE097E95")
     protected  SSLServerSocketFactory() {
-        
+        // ---------- Original Method ----------
     }
 
     

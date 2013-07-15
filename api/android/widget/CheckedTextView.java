@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,7 +39,7 @@ public class CheckedTextView extends TextView implements Checkable {
     public  CheckedTextView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -48,7 +48,7 @@ public class CheckedTextView extends TextView implements Checkable {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -64,40 +64,39 @@ public class CheckedTextView extends TextView implements Checkable {
     if(d != null)        
         {
             setCheckMarkDrawable(d);
-        } 
+        } //End block
         boolean checked = a.getBoolean(R.styleable.CheckedTextView_checked, false);
         setChecked(checked);
         a.recycle();
-        
-        
-                
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //TypedArray a = context.obtainStyledAttributes(attrs,
+                //R.styleable.CheckedTextView, defStyle, 0);
+        //Drawable d = a.getDrawable(R.styleable.CheckedTextView_checkMark);
+        //if (d != null) {
+            //setCheckMarkDrawable(d);
+        //}
+        //boolean checked = a.getBoolean(R.styleable.CheckedTextView_checked, false);
+        //setChecked(checked);
+        //a.recycle();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.831 -0400", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "3679ED1F891BEC88079198707411C40A")
     public void toggle() {
         setChecked(!mChecked);
-        
-        
+        // ---------- Original Method ----------
+        //setChecked(!mChecked);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.831 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "8F026E2DF8494E0AA5BE7F09FD61AAAA")
     @ViewDebug.ExportedProperty
     public boolean isChecked() {
         boolean varB7985199D35C1155A55567C458443B15_40722358 = (mChecked);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1531585886 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1531585886;
-        
-        
+        // ---------- Original Method ----------
+        //return mChecked;
     }
 
     
@@ -107,12 +106,12 @@ public class CheckedTextView extends TextView implements Checkable {
         {
             mChecked = checked;
             refreshDrawableState();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mChecked != checked) {
+            //mChecked = checked;
+            //refreshDrawableState();
+        //}
     }
 
     
@@ -121,24 +120,24 @@ public class CheckedTextView extends TextView implements Checkable {
     if(resid != 0 && resid == mCheckMarkResource)        
         {
             return;
-        } 
+        } //End block
         mCheckMarkResource = resid;
         Drawable d = null;
     if(mCheckMarkResource != 0)        
         {
             d = getResources().getDrawable(mCheckMarkResource);
-        } 
+        } //End block
         setCheckMarkDrawable(d);
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (resid != 0 && resid == mCheckMarkResource) {
+            //return;
+        //}
+        //mCheckMarkResource = resid;
+        //Drawable d = null;
+        //if (mCheckMarkResource != 0) {
+            //d = getResources().getDrawable(mCheckMarkResource);
+        //}
+        //setCheckMarkDrawable(d);
     }
 
     
@@ -148,7 +147,7 @@ public class CheckedTextView extends TextView implements Checkable {
         {
             mCheckMarkDrawable.setCallback(null);
             unscheduleDrawable(mCheckMarkDrawable);
-        } 
+        } //End block
         mNeedRequestlayout = (d != mCheckMarkDrawable);
     if(d != null)        
         {
@@ -158,31 +157,31 @@ public class CheckedTextView extends TextView implements Checkable {
             setMinHeight(d.getIntrinsicHeight());
             mCheckMarkWidth = d.getIntrinsicWidth();
             d.setState(getDrawableState());
-        } 
+        } //End block
         else
         {
             mCheckMarkWidth = 0;
-        } 
+        } //End block
         mCheckMarkDrawable = d;
         resolvePadding();
-        
-        
-            
-            
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mCheckMarkDrawable != null) {
+            //mCheckMarkDrawable.setCallback(null);
+            //unscheduleDrawable(mCheckMarkDrawable);
+        //}
+        //mNeedRequestlayout = (d != mCheckMarkDrawable);
+        //if (d != null) {
+            //d.setCallback(this);
+            //d.setVisible(getVisibility() == VISIBLE, false);
+            //d.setState(CHECKED_STATE_SET);
+            //setMinHeight(d.getIntrinsicHeight());
+            //mCheckMarkWidth = d.getIntrinsicWidth();
+            //d.setState(getDrawableState());
+        //} else {
+            //mCheckMarkWidth = 0;
+        //}
+        //mCheckMarkDrawable = d;
+        //resolvePadding();
     }
 
     
@@ -198,17 +197,17 @@ public class CheckedTextView extends TextView implements Checkable {
         {
             requestLayout();
             mNeedRequestlayout = false;
-        } 
-        
-        
-        
-                
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.resolvePadding();
+        //int newPadding = (mCheckMarkDrawable != null) ?
+                //mCheckMarkWidth + mBasePadding : mBasePadding;
+        //mNeedRequestlayout |= (mPaddingRight != newPadding);
+        //mPaddingRight = newPadding;
+        //if (mNeedRequestlayout) {
+            //requestLayout();
+            //mNeedRequestlayout = false;
+        //}
     }
 
     
@@ -221,16 +220,16 @@ public class CheckedTextView extends TextView implements Checkable {
         addTaint(left);
         super.setPadding(left, top, right, bottom);
         mBasePadding = mPaddingRight;
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.setPadding(left, top, right, bottom);
+        //mBasePadding = mPaddingRight;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.836 -0400", hash_original_method = "B19E130BF4CF411642FF2978EAC8260B", hash_generated_method = "7D9A3EA4312B917F17ABCCC5C9172471")
     @Override
     protected void onDraw(Canvas canvas) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(canvas.getTaint());
         super.onDraw(canvas);
         final Drawable checkMarkDrawable = mCheckMarkDrawable;
@@ -253,31 +252,31 @@ switch(verticalGravity){
                     right - mPaddingRight + mCheckMarkWidth,
                     y + height);
             checkMarkDrawable.draw(canvas);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.836 -0400", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "ABACCEAB9CF3123385F14A3E4FF9B4EA")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(extraSpace);
         final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
     if(isChecked())        
         {
             mergeDrawableStates(drawableState, CHECKED_STATE_SET);
-        } 
+        } //End block
         int[] var7A12E87773589D809FD51F1A26B9BDA9_1414725791 = (drawableState);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_793729741 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_793729741;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
+        //if (isChecked()) {
+            //mergeDrawableStates(drawableState, CHECKED_STATE_SET);
+        //}
+        //return drawableState;
     }
 
     
@@ -290,64 +289,64 @@ switch(verticalGravity){
             int[] myDrawableState = getDrawableState();
             mCheckMarkDrawable.setState(myDrawableState);
             invalidate();
-        } 
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.drawableStateChanged();
+        //if (mCheckMarkDrawable != null) {
+            //int[] myDrawableState = getDrawableState();
+            //mCheckMarkDrawable.setState(myDrawableState);
+            //invalidate();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.837 -0400", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "76E27B80562C985CD49B030FF046F855")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         super.onInitializeAccessibilityEvent(event);
         event.setChecked(mChecked);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onInitializeAccessibilityEvent(event);
+        //event.setChecked(mChecked);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.837 -0400", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "1777866A2F27E2BFC3BE9BB817580974")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         super.onPopulateAccessibilityEvent(event);
     if(isChecked())        
         {
             event.getText().add(mContext.getString(R.string.radiobutton_selected));
-        } 
+        } //End block
         else
         {
             event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onPopulateAccessibilityEvent(event);
+        //if (isChecked()) {
+            //event.getText().add(mContext.getString(R.string.radiobutton_selected));
+        //} else {
+            //event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.838 -0400", hash_original_method = "31E71954214D2E567F10971C83F42BE3", hash_generated_method = "6A4DDE45A6761BAEDFBB2581417F861E")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(info.getTaint());
         super.onInitializeAccessibilityNodeInfo(info);
         info.setChecked(mChecked);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onInitializeAccessibilityNodeInfo(info);
+        //info.setChecked(mChecked);
     }
 
     

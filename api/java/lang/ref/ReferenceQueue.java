@@ -1,6 +1,6 @@
 package java.lang.ref;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class ReferenceQueue<T> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.848 -0400", hash_original_method = "74975F7A6AFB5E81CCF3457B53FB8A14", hash_generated_method = "77FCC81AFA085C6B3B372539AC2D673F")
     public  ReferenceQueue() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -24,34 +24,34 @@ public class ReferenceQueue<T> {
 Reference<? extends T> var540C13E9E156B687226421B24F2DF178_1027415800 =             null;
             var540C13E9E156B687226421B24F2DF178_1027415800.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1027415800;
-        } 
+        } //End block
         Reference<? extends T> ret;
         ret = head;
     if(head == head.queueNext)        
         {
             head = null;
-        } 
+        } //End block
         else
         {
             head = head.queueNext;
-        } 
+        } //End block
         ret.queueNext = null;
 Reference<? extends T> varEDFF4FBBF053B5DC2B444ADFA049EE0F_30853424 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_30853424.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_30853424;
-        
-        
-            
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (head == null) {
+            //return null;
+        //}
+        //Reference<? extends T> ret;
+        //ret = head;
+        //if (head == head.queueNext) {
+            //head = null;
+        //} else {
+            //head = head.queueNext;
+        //}
+        //ret.queueNext = null;
+        //return ret;
     }
 
     
@@ -60,8 +60,8 @@ Reference<? extends T> varEDFF4FBBF053B5DC2B444ADFA049EE0F_30853424 =         re
 Reference<? extends T> varE6CD9C3CBCBF3FEE243975EEDE7D6FE2_335026396 =         remove(0L);
         varE6CD9C3CBCBF3FEE243975EEDE7D6FE2_335026396.addTaint(taint);
         return varE6CD9C3CBCBF3FEE243975EEDE7D6FE2_335026396;
-        
-        
+        // ---------- Original Method ----------
+        //return remove(0L);
     }
 
     
@@ -73,24 +73,24 @@ Reference<? extends T> varE6CD9C3CBCBF3FEE243975EEDE7D6FE2_335026396 =         r
             IllegalArgumentException varBF8C762F323E587BBBD4D39227A95BAA_935921828 = new IllegalArgumentException("timeout < 0: " + timeoutMillis);
             varBF8C762F323E587BBBD4D39227A95BAA_935921828.addTaint(taint);
             throw varBF8C762F323E587BBBD4D39227A95BAA_935921828;
-        } 
+        } //End block
     if(head != null)        
         {
 Reference<? extends T> varC10671BA8D668DFB8A785023F8120AFE_552516576 =             poll();
             varC10671BA8D668DFB8A785023F8120AFE_552516576.addTaint(taint);
             return varC10671BA8D668DFB8A785023F8120AFE_552516576;
-        } 
+        } //End block
     if(timeoutMillis == 0 || (timeoutMillis > Long.MAX_VALUE / NANOS_PER_MILLI))        
         {
             do {
                 {
                     wait(0);
-                } 
+                } //End block
 } while (head == null);
 Reference<? extends T> varC10671BA8D668DFB8A785023F8120AFE_1677807151 =             poll();
             varC10671BA8D668DFB8A785023F8120AFE_1677807151.addTaint(taint);
             return varC10671BA8D668DFB8A785023F8120AFE_1677807151;
-        } 
+        } //End block
         long nanosToWait = timeoutMillis * NANOS_PER_MILLI;
         int timeoutNanos = 0;
         long startTime = System.nanoTime();
@@ -101,21 +101,21 @@ Reference<? extends T> varC10671BA8D668DFB8A785023F8120AFE_1677807151 =         
     if(head != null)            
             {
                 break;
-            } 
+            } //End block
             long nanosElapsed = System.nanoTime() - startTime;
             long nanosRemaining = nanosToWait - nanosElapsed;
     if(nanosRemaining <= 0)            
             {
                 break;
-            } 
+            } //End block
             timeoutMillis = nanosRemaining / NANOS_PER_MILLI;
             timeoutNanos = (int) (nanosRemaining - timeoutMillis * NANOS_PER_MILLI);
-        } 
+        } //End block
 Reference<? extends T> varC10671BA8D668DFB8A785023F8120AFE_1471148072 =         poll();
         varC10671BA8D668DFB8A785023F8120AFE_1471148072.addTaint(taint);
         return varC10671BA8D668DFB8A785023F8120AFE_1471148072;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -124,21 +124,21 @@ Reference<? extends T> varC10671BA8D668DFB8A785023F8120AFE_1471148072 =         
     if(head == null)        
         {
             reference.queueNext = reference;
-        } 
+        } //End block
         else
         {
             reference.queueNext = head;
-        } 
+        } //End block
         head = reference;
         notify();
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (head == null) {
+            //reference.queueNext = reference;
+        //} else {
+            //reference.queueNext = head;
+        //}
+        //head = reference;
+        //notify();
     }
 
     

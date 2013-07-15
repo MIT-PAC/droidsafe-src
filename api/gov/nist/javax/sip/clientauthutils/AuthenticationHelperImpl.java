@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.clientauthutils;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -57,11 +57,11 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
         this.headerFactory = headerFactory;
         this.sipStack = sipStack;
         this.cachedCredentials = new CredentialsCache(((SIPTransactionStack) sipStack).getTimer());
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.accountManager = accountManager;
+        //this.headerFactory = headerFactory;
+        //this.sipStack = sipStack;
+        //this.cachedCredentials = new CredentialsCache(((SIPTransactionStack) sipStack).getTimer());
     }
 
     
@@ -72,11 +72,11 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
         this.headerFactory = headerFactory;
         this.sipStack = sipStack;
         this.cachedCredentials = new CredentialsCache(((SIPTransactionStack) sipStack).getTimer());
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.accountManager = accountManager;
+        //this.headerFactory = headerFactory;
+        //this.sipStack = sipStack;
+        //this.cachedCredentials = new CredentialsCache(((SIPTransactionStack) sipStack).getTimer());
     }
 
     
@@ -92,7 +92,7 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug("handleChallenge: " + challenge);
-            } 
+            } //End block
             SIPRequest challengedRequest = ((SIPRequest) challengedTransaction.getRequest());
             Request reoriginatedRequest = null;
     if(challengedRequest.getToTag() != null  ||
@@ -100,7 +100,7 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
                     challengedTransaction.getDialog().getState() != DialogState.CONFIRMED)            
             {
                 reoriginatedRequest = (Request) challengedRequest.clone();
-            } 
+            } //End block
             else
             {
                 reoriginatedRequest =
@@ -117,54 +117,54 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
 (iterator.hasNext())                        
                         {
                             reoriginatedRequest.addHeader(iterator.next());
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             removeBranchID(reoriginatedRequest);
     if(challenge == null || reoriginatedRequest == null)            
             {
                 NullPointerException var96AE484122920EF0F496DF5CF25A9C99_882779837 = new NullPointerException("A null argument was passed to handle challenge.");
                 var96AE484122920EF0F496DF5CF25A9C99_882779837.addTaint(taint);
                 throw var96AE484122920EF0F496DF5CF25A9C99_882779837;
-            } 
+            } //End block
             ListIterator authHeaders = null;
     if(challenge.getStatusCode() == Response.UNAUTHORIZED)            
             {
                 authHeaders = challenge.getHeaders(WWWAuthenticateHeader.NAME);
-            } 
+            } //End block
             else
     if(challenge.getStatusCode() == Response.PROXY_AUTHENTICATION_REQUIRED)            
             {
                 authHeaders = challenge.getHeaders(ProxyAuthenticateHeader.NAME);
-            } 
+            } //End block
             else
             {
                 IllegalArgumentException var4B7EC1EF21A4DA6270AF6945CAACE17E_1471207055 = new IllegalArgumentException("Unexpected status code ");
                 var4B7EC1EF21A4DA6270AF6945CAACE17E_1471207055.addTaint(taint);
                 throw var4B7EC1EF21A4DA6270AF6945CAACE17E_1471207055;
-            } 
+            } //End block
     if(authHeaders == null)            
             {
                 IllegalArgumentException var1E208C1F7B8D9E636C17AFCC8E1F1619_1938376857 = new IllegalArgumentException(
                         "Could not find WWWAuthenticate or ProxyAuthenticate headers");
                 var1E208C1F7B8D9E636C17AFCC8E1F1619_1938376857.addTaint(taint);
                 throw var1E208C1F7B8D9E636C17AFCC8E1F1619_1938376857;
-            } 
+            } //End block
             reoriginatedRequest.removeHeader(AuthorizationHeader.NAME);
             reoriginatedRequest.removeHeader(ProxyAuthorizationHeader.NAME);
             CSeqHeader cSeq = (CSeqHeader) reoriginatedRequest.getHeader((CSeqHeader.NAME));
             try 
             {
                 cSeq.setSeqNumber(cSeq.getSeqNumber() + 1l);
-            } 
+            } //End block
             catch (InvalidArgumentException ex)
             {
                 SipException varF9C8340A70DD6D297A4E06531564AD95_995063690 = new SipException("Invalid CSeq -- could not increment : "
                         + cSeq.getSeqNumber());
                 varF9C8340A70DD6D297A4E06531564AD95_995063690.addTaint(taint);
                 throw varF9C8340A70DD6D297A4E06531564AD95_995063690;
-            } 
+            } //End block
     if(challengedRequest.getRouteHeaders() == null)            
             {
                 Hop hop = ((SIPClientTransaction) challengedTransaction).getNextHop();
@@ -174,7 +174,7 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
                 sipUri.setMAddrParam(hop.getHost());
     if(hop.getPort() != -1)                
                 sipUri.setPort(hop.getPort());
-            } 
+            } //End block
             ClientTransaction retryTran = transactionCreator
             .getNewClientTransaction(reoriginatedRequest);
             WWWAuthenticateHeader authHeader = null;
@@ -195,7 +195,7 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
                             .getMethod(), uri.toString(),
                             (reoriginatedRequest.getContent() == null) ? "" : new String(
                             reoriginatedRequest.getRawContent()), authHeader, credHash);
-                } 
+                } //End block
                 else
                 {
                     UserCredentials userCreds = ((AccountManager) this.accountManager).getCredentials(challengedTransaction, realm);
@@ -211,7 +211,7 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
                                 .getMethod(), reoriginatedRequest.getRequestURI().toString(),
                                 (reoriginatedRequest.getContent() == null) ? "" : new String(
                                 reoriginatedRequest.getRawContent()), authHeader, userCreds);
-                } 
+                } //End block
     if(sipStack.isLoggingEnabled())                
                 sipStack.getStackLogger().logDebug(
                         "Created authorization header: " + authorization.toString());
@@ -219,30 +219,30 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
                 cachedCredentials.cacheAuthorizationHeader(sipDomain,
                             authorization, cacheTime);
                 reoriginatedRequest.addHeader(authorization);
-            } 
+            } //End block
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug(
                         "Returning authorization transaction." + retryTran);
-            } 
+            } //End block
 ClientTransaction var6D5F25C6C85A276C275EA81740691138_1727073606 =             retryTran;
             var6D5F25C6C85A276C275EA81740691138_1727073606.addTaint(taint);
             return var6D5F25C6C85A276C275EA81740691138_1727073606;
-        } 
+        } //End block
         catch (SipException ex)
         {
             ex.addTaint(taint);
             throw ex;
-        } 
+        } //End block
         catch (Exception ex)
         {
             sipStack.getStackLogger().logError("Unexpected exception ", ex);
             SipException var1A4662A0F3A987419E1A097573C62349_694727371 = new SipException("Unexpected exception ", ex);
             var1A4662A0F3A987419E1A097573C62349_694727371.addTaint(taint);
             throw var1A4662A0F3A987419E1A097573C62349_694727371;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -271,11 +271,11 @@ ClientTransaction var6D5F25C6C85A276C275EA81740691138_1727073606 =             r
             {
                 authorization = headerFactory.createProxyAuthorizationHeader(authHeader
                         .getScheme());
-            } 
+            } //End block
             else
             {
                 authorization = headerFactory.createAuthorizationHeader(authHeader.getScheme());
-            } 
+            } //End block
             authorization.setUsername(userCredentials.getUserName());
             authorization.setRealm(authHeader.getRealm());
             authorization.setNonce(authHeader.getNonce());
@@ -284,30 +284,30 @@ ClientTransaction var6D5F25C6C85A276C275EA81740691138_1727073606 =             r
     if(authHeader.getAlgorithm() != null)            
             {
                 authorization.setAlgorithm(authHeader.getAlgorithm());
-            } 
+            } //End block
     if(authHeader.getOpaque() != null)            
             {
                 authorization.setOpaque(authHeader.getOpaque());
-            } 
+            } //End block
     if(qop != null)            
             {
                 authorization.setQop(qop);
                 authorization.setCNonce(cnonce);
                 authorization.setNonceCount(Integer.parseInt(nc_value));
-            } 
+            } //End block
             authorization.setResponse(response);
-        } 
+        } //End block
         catch (ParseException ex)
         {
             RuntimeException var6EBD9670529156F76A0E9D60BC2193CF_2091826617 = new RuntimeException("Failed to create an authorization header!");
             var6EBD9670529156F76A0E9D60BC2193CF_2091826617.addTaint(taint);
             throw var6EBD9670529156F76A0E9D60BC2193CF_2091826617;
-        } 
+        } //End block
 AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_95792551 =         authorization;
         var5359E7C10DEDB97213426417D84B7B29_95792551.addTaint(taint);
         return var5359E7C10DEDB97213426417D84B7B29_95792551;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -335,11 +335,11 @@ AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_95792551 =         autho
             {
                 authorization = headerFactory.createProxyAuthorizationHeader(authHeader
                         .getScheme());
-            } 
+            } //End block
             else
             {
                 authorization = headerFactory.createAuthorizationHeader(authHeader.getScheme());
-            } 
+            } //End block
             authorization.setUsername(userCredentials.getUserName());
             authorization.setRealm(authHeader.getRealm());
             authorization.setNonce(authHeader.getNonce());
@@ -348,30 +348,30 @@ AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_95792551 =         autho
     if(authHeader.getAlgorithm() != null)            
             {
                 authorization.setAlgorithm(authHeader.getAlgorithm());
-            } 
+            } //End block
     if(authHeader.getOpaque() != null)            
             {
                 authorization.setOpaque(authHeader.getOpaque());
-            } 
+            } //End block
     if(qop != null)            
             {
                 authorization.setQop(qop);
                 authorization.setCNonce(cnonce);
                 authorization.setNonceCount(Integer.parseInt(nc_value));
-            } 
+            } //End block
             authorization.setResponse(response);
-        } 
+        } //End block
         catch (ParseException ex)
         {
             RuntimeException var6EBD9670529156F76A0E9D60BC2193CF_658234411 = new RuntimeException("Failed to create an authorization header!");
             var6EBD9670529156F76A0E9D60BC2193CF_658234411.addTaint(taint);
             throw var6EBD9670529156F76A0E9D60BC2193CF_658234411;
-        } 
+        } //End block
 AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_2097883263 =         authorization;
         var5359E7C10DEDB97213426417D84B7B29_2097883263.addTaint(taint);
         return var5359E7C10DEDB97213426417D84B7B29_2097883263;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -380,9 +380,9 @@ AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_2097883263 =         aut
         addTaint(request.getTaint());
         ViaHeader viaHeader = (ViaHeader) request.getHeader(ViaHeader.NAME);
         viaHeader.removeParameter("branch");
-        
-        
-        
+        // ---------- Original Method ----------
+        //ViaHeader viaHeader = (ViaHeader) request.getHeader(ViaHeader.NAME);
+        //viaHeader.removeParameter("branch");
     }
 
     
@@ -400,26 +400,26 @@ AuthorizationHeader var5359E7C10DEDB97213426417D84B7B29_2097883263 =         aut
             sipStack.getStackLogger().logDebug(
                     "Could not find authentication headers for " + callId);
             return;
-        } 
+        } //End block
 for(AuthorizationHeader authHeader : authHeaders)
         {
             request.addHeader(authHeader);
-        } 
-        
-        
-        
-        
-        
-                
-        
-        	
-        		
-                    
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SIPRequest sipRequest = (SIPRequest) request;
+        //String callId = sipRequest.getCallId().getCallId();
+        //request.removeHeader(AuthorizationHeader.NAME);
+        //Collection<AuthorizationHeader> authHeaders = this.cachedCredentials
+                //.getCachedAuthorizationHeaders(callId);
+        //if (authHeaders == null) {
+        	//if (sipStack.isLoggingEnabled())
+        		//sipStack.getStackLogger().logDebug(
+                    //"Could not find authentication headers for " + callId);
+            //return;
+        //}
+        //for (AuthorizationHeader authHeader : authHeaders) {
+            //request.addHeader(authHeader);
+        //}
     }
 
     
@@ -433,10 +433,10 @@ for(AuthorizationHeader authHeader : authHeaders)
         throw varEE4C7E2F41CCA4133A072328FE355159_905149199;
         }
         this.cachedCredentials.removeAuthenticationHeader(callId);
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (callId == null)
+            //throw new NullPointerException("Null callId argument ");
+        //this.cachedCredentials.removeAuthenticationHeader(callId);
     }
 
     

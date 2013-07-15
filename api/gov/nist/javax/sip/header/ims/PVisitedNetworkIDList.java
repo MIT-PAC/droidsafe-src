@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class PVisitedNetworkIDList extends SIPHeaderList<PVisitedNetworkID> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.107 -0400", hash_original_method = "755748D1B1A32FE22452F6E783BD15E2", hash_generated_method = "0F82AF3A13009C31F1061E0FD71C3D3E")
     public  PVisitedNetworkIDList() {
         super(PVisitedNetworkID.class, PVisitedNetworkIDHeader.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,9 +22,9 @@ public class PVisitedNetworkIDList extends SIPHeaderList<PVisitedNetworkID> {
 Object varF627329B9209466293A1BF71D9AF7B2B_726021438 =         retval.clonehlist(this.hlist);
         varF627329B9209466293A1BF71D9AF7B2B_726021438.addTaint(taint);
         return varF627329B9209466293A1BF71D9AF7B2B_726021438;
-        
-        
-        
+        // ---------- Original Method ----------
+        //PVisitedNetworkIDList retval = new PVisitedNetworkIDList();
+        //return retval.clonehlist(this.hlist);
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,7 +45,7 @@ public class ASN1Dump {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.675 -0400", hash_original_method = "3C39DC3F42F8284331A1E50F07E6A630", hash_generated_method = "3C39DC3F42F8284331A1E50F07E6A630")
     public ASN1Dump ()
     {
-        
+        //Synthesized constructor
     }
 
 

@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,24 +38,24 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
             IllegalArgumentException varBEFA7A18EC202E1D1144D23F3DE83F4E_2047066772 = new IllegalArgumentException("Header iterator may not be null");
             varBEFA7A18EC202E1D1144D23F3DE83F4E_2047066772.addTaint(taint);
             throw varBEFA7A18EC202E1D1144D23F3DE83F4E_2047066772;
-        } 
+        } //End block
     if(parser == null)        
         {
             IllegalArgumentException var14D150EE6E3BCA2C18082D0609BEEAAF_2031666432 = new IllegalArgumentException("Parser may not be null");
             var14D150EE6E3BCA2C18082D0609BEEAAF_2031666432.addTaint(taint);
             throw var14D150EE6E3BCA2C18082D0609BEEAAF_2031666432;
-        } 
+        } //End block
         this.headerIt = headerIterator;
         this.parser = parser;
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (headerIterator == null) {
+            //throw new IllegalArgumentException("Header iterator may not be null");
+        //}
+        //if (parser == null) {
+            //throw new IllegalArgumentException("Parser may not be null");
+        //}
+        //this.headerIt = headerIterator;
+        //this.parser = parser;
     }
 
     
@@ -63,7 +63,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     public  BasicHeaderElementIterator(final HeaderIterator headerIterator) {
         this(headerIterator, BasicHeaderValueParser.DEFAULT);
         addTaint(headerIterator.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -81,7 +81,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
                 this.cursor = new ParserCursor(0, this.buffer.length());
                 this.cursor.updatePos(((FormattedHeader) h).getValuePos());
                 break;
-            } 
+            } //End block
             else
             {
                 String value = h.getValue();
@@ -91,29 +91,29 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
                     this.buffer.append(value);
                     this.cursor = new ParserCursor(0, this.buffer.length());
                     break;
-                } 
-            } 
-        } 
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                
-            
-                
-                
-                    
-                    
-                    
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //this.cursor = null;
+        //this.buffer = null;
+        //while (this.headerIt.hasNext()) {
+            //Header h = this.headerIt.nextHeader();
+            //if (h instanceof FormattedHeader) {
+                //this.buffer = ((FormattedHeader) h).getBuffer();
+                //this.cursor = new ParserCursor(0, this.buffer.length());
+                //this.cursor.updatePos(((FormattedHeader) h).getValuePos());
+                //break;
+            //} else {
+                //String value = h.getValue();
+                //if (value != null) {
+                    //this.buffer = new CharArrayBuffer(value.length());
+                    //this.buffer.append(value);
+                    //this.cursor = new ParserCursor(0, this.buffer.length());
+                    //break;
+                //}
+            //}
+        //}
     }
 
     
@@ -125,7 +125,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     if(this.cursor == null || this.cursor.atEnd())            
             {
                 bufferHeaderValue();
-            } 
+            } //End block
     if(this.cursor != null)            
             {
                 while
@@ -136,17 +136,17 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
                     {
                         this.currentElement = e;
                         return;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(this.cursor.atEnd())                
                 {
                     this.cursor = null;
                     this.buffer = null;
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -155,15 +155,15 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     if(this.currentElement == null)        
         {
             parseNextElement();
-        } 
+        } //End block
         boolean var8FA0504B047C7AA9CA16481B72E9DEF7_788278663 = (this.currentElement != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_778760716 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_778760716;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.currentElement == null) {
+            //parseNextElement();
+        //}
+        //return this.currentElement != null;
     }
 
     
@@ -172,28 +172,28 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     if(this.currentElement == null)        
         {
             parseNextElement();
-        } 
+        } //End block
     if(this.currentElement == null)        
         {
             NoSuchElementException varDE1843757D2EC12D80CCBE908797CE14_555231623 = new NoSuchElementException("No more header elements available");
             varDE1843757D2EC12D80CCBE908797CE14_555231623.addTaint(taint);
             throw varDE1843757D2EC12D80CCBE908797CE14_555231623;
-        } 
+        } //End block
         HeaderElement element = this.currentElement;
         this.currentElement = null;
 HeaderElement var24D05606CDD4BC4C89F2F5A15C16F343_728648506 =         element;
         var24D05606CDD4BC4C89F2F5A15C16F343_728648506.addTaint(taint);
         return var24D05606CDD4BC4C89F2F5A15C16F343_728648506;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (this.currentElement == null) {
+            //parseNextElement();
+        //}
+        //if (this.currentElement == null) {
+            //throw new NoSuchElementException("No more header elements available");
+        //}
+        //HeaderElement element = this.currentElement;
+        //this.currentElement = null;
+        //return element;
     }
 
     
@@ -202,8 +202,8 @@ HeaderElement var24D05606CDD4BC4C89F2F5A15C16F343_728648506 =         element;
 Object var459972DE48CB4C82E82E2DC06B4F9E84_1597016524 =         nextElement();
         var459972DE48CB4C82E82E2DC06B4F9E84_1597016524.addTaint(taint);
         return var459972DE48CB4C82E82E2DC06B4F9E84_1597016524;
-        
-        
+        // ---------- Original Method ----------
+        //return nextElement();
     }
 
     
@@ -212,8 +212,8 @@ Object var459972DE48CB4C82E82E2DC06B4F9E84_1597016524 =         nextElement();
         UnsupportedOperationException var0A4F5E88BC35FF75AA97A772F04412A3_658237494 = new UnsupportedOperationException("Remove not supported");
         var0A4F5E88BC35FF75AA97A772F04412A3_658237494.addTaint(taint);
         throw var0A4F5E88BC35FF75AA97A772F04412A3_658237494;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException("Remove not supported");
     }
 
     

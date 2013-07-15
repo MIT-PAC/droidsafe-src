@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -56,14 +56,13 @@ class IconLoader extends Handler {
         addTaint(looper.getTaint());
         mSimFH = fh;
         mIconsCache = new HashMap<Integer, Bitmap>(50);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mSimFH = fh;
+        //mIconsCache = new HashMap<Integer, Bitmap>(50);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static IconLoader getInstance(Handler caller, IccFileHandler fh) {
+        static IconLoader getInstance(Handler caller, IccFileHandler fh) {
         if (sLoader != null) {
             return sLoader;
         }
@@ -76,50 +75,48 @@ class IconLoader extends Handler {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.193 -0400", hash_original_method = "E56E284105F777D8A6CAB7DB3EDAC84F", hash_generated_method = "366D817B943C28FEDAF48B0DA787E620")
      void loadIcons(int[] recordNumbers, Message msg) {
     if(recordNumbers == null || recordNumbers.length == 0 || msg == null)        
         {
             return;
-        } 
+        } //End block
         mEndMsg = msg;
         mIcons = new Bitmap[recordNumbers.length];
         mRecordNumbers = recordNumbers;
         mCurrentRecordIndex = 0;
         mState = STATE_MULTI_ICONS;
         startLoadingIcon(recordNumbers[0]);
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (recordNumbers == null || recordNumbers.length == 0 || msg == null) {
+            //return;
+        //}
+        //mEndMsg = msg;
+        //mIcons = new Bitmap[recordNumbers.length];
+        //mRecordNumbers = recordNumbers;
+        //mCurrentRecordIndex = 0;
+        //mState = STATE_MULTI_ICONS;
+        //startLoadingIcon(recordNumbers[0]);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.194 -0400", hash_original_method = "328A1F48C7F5C3C618F7E134C6DE5C8B", hash_generated_method = "DC9147FD0D3487453C0D3B4FF12F8609")
      void loadIcon(int recordNumber, Message msg) {
         addTaint(recordNumber);
     if(msg == null)        
         {
             return;
-        } 
+        } //End block
         mEndMsg = msg;
         mState = STATE_SINGLE_ICON;
         startLoadingIcon(recordNumber);
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (msg == null) {
+            //return;
+        //}
+        //mEndMsg = msg;
+        //mState = STATE_SINGLE_ICON;
+        //startLoadingIcon(recordNumber);
     }
 
     
@@ -134,23 +131,22 @@ class IconLoader extends Handler {
             mCurrentIcon = mIconsCache.get(recordNumber);
             postIcon();
             return;
-        } 
+        } //End block
         readId();
-        
-        
-        
-        
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //mId = null;
+        //mIconData = null;
+        //mCurrentIcon = null;
+        //mRecordNumber = recordNumber;
+        //if (mIconsCache.containsKey(recordNumber)) {
+            //mCurrentIcon = mIconsCache.get(recordNumber);
+            //postIcon();
+            //return;
+        //}
+        //readId();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.196 -0400", hash_original_method = "E1BF715B9C953843C5BFB563C24D3B0D", hash_generated_method = "04A1056295C65BF311F12AAF31AFB5FF")
     @Override
     public void handleMessage(Message msg) {
@@ -164,13 +160,13 @@ switch(msg.what){
     if(handleImageDescriptor((byte[]) ar.result))            
             {
                 readIconData();
-            } 
+            } //End block
             else
             {
                 Exception varFF39F41735BB44AEDC373AC97158EC6E_1165273913 = new Exception("Unable to parse image descriptor");
                 varFF39F41735BB44AEDC373AC97158EC6E_1165273913.addTaint(taint);
                 throw varFF39F41735BB44AEDC373AC97158EC6E_1165273913;
-            } 
+            } //End block
             break;
             case EVENT_READ_ICON_DONE:
             ar = (AsyncResult) msg.obj;
@@ -180,13 +176,13 @@ switch(msg.what){
                 mCurrentIcon = parseToBnW(rawData, rawData.length);
                 mIconsCache.put(mRecordNumber, mCurrentIcon);
                 postIcon();
-            } 
+            } //End block
             else
     if(mId.codingScheme == ImageDescriptor.CODING_SCHEME_COLOUR)            
             {
                 mIconData = rawData;
                 readClut();
-            } 
+            } //End block
             break;
             case EVENT_READ_CLUT_DONE:
             ar = (AsyncResult) msg.obj;
@@ -197,18 +193,17 @@ switch(msg.what){
             postIcon();
             break;
 }
-        } 
+        } //End block
         catch (Exception e)
         {
             CatLog.d(this, "Icon load failed");
             postIcon();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.197 -0400", hash_original_method = "57AAD79E24539ED69C4A9588C1A4DBA1", hash_generated_method = "C144466BB40FAA04745D3099808A801F")
     private boolean handleImageDescriptor(byte[] rawData) {
         mId = ImageDescriptor.parse(rawData, 1);
@@ -217,20 +212,19 @@ switch(msg.what){
             boolean var68934A3E9455FA72420237EB05902327_360061462 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_474996927 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_474996927;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1690384367 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_262931768 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_262931768;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //mId = ImageDescriptor.parse(rawData, 1);
+        //if (mId == null) {
+            //return false;
+        //}
+        //return true;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.197 -0400", hash_original_method = "78AA98F6413EBAF06D9D3065D89FA10B", hash_generated_method = "B3A123CBAF95CDF1AAC90C96EAD2F3C8")
     private void readClut() {
         int length = mIconData[3] * CLUT_ENTRY_SIZE;
@@ -238,16 +232,15 @@ switch(msg.what){
         mSimFH.loadEFImgTransparent(mId.imageId,
                 mIconData[CLUT_LOCATION_OFFSET],
                 mIconData[CLUT_LOCATION_OFFSET + 1], length, msg);
-        
-        
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //int length = mIconData[3] * CLUT_ENTRY_SIZE;
+        //Message msg = this.obtainMessage(EVENT_READ_CLUT_DONE);
+        //mSimFH.loadEFImgTransparent(mId.imageId,
+                //mIconData[CLUT_LOCATION_OFFSET],
+                //mIconData[CLUT_LOCATION_OFFSET + 1], length, msg);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.198 -0400", hash_original_method = "9B2E1F9D86B0BE7AA9984F6F6998AD1A", hash_generated_method = "420BE97C4C48E7D6BEA19A7BEC200754")
     private void readId() {
     if(mRecordNumber < 0)        
@@ -255,39 +248,37 @@ switch(msg.what){
             mCurrentIcon = null;
             postIcon();
             return;
-        } 
+        } //End block
         Message msg = this.obtainMessage(EVENT_READ_EF_IMG_RECOED_DONE);
         mSimFH.loadEFImgLinearFixed(mRecordNumber, msg);
-        
-        
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mRecordNumber < 0) {
+            //mCurrentIcon = null;
+            //postIcon();
+            //return;
+        //}
+        //Message msg = this.obtainMessage(EVENT_READ_EF_IMG_RECOED_DONE);
+        //mSimFH.loadEFImgLinearFixed(mRecordNumber, msg);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.198 -0400", hash_original_method = "E5FF0727F4A23FBA52C74807E31F642C", hash_generated_method = "35743DA67D5D7862E0114E3AE4CC1E79")
     private void readIconData() {
         Message msg = this.obtainMessage(EVENT_READ_ICON_DONE);
         mSimFH.loadEFImgTransparent(mId.imageId, 0, 0, mId.length ,msg);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = this.obtainMessage(EVENT_READ_ICON_DONE);
+        //mSimFH.loadEFImgTransparent(mId.imageId, 0, 0, mId.length ,msg);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.199 -0400", hash_original_method = "2C2351D604337717A113511ACF501262", hash_generated_method = "F1DB21F67C09B0D4A77A3140EDF8A3B7")
     private void postIcon() {
     if(mState == STATE_SINGLE_ICON)        
         {
             mEndMsg.obj = mCurrentIcon;
             mEndMsg.sendToTarget();
-        } 
+        } //End block
         else
     if(mState == STATE_MULTI_ICONS)        
         {
@@ -295,26 +286,26 @@ switch(msg.what){
     if(mCurrentRecordIndex < mRecordNumbers.length)            
             {
                 startLoadingIcon(mRecordNumbers[mCurrentRecordIndex]);
-            } 
+            } //End block
             else
             {
                 mEndMsg.obj = mIcons;
                 mEndMsg.sendToTarget();
-            } 
-        } 
-        
-        
-            
-            
-        
-            
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mState == STATE_SINGLE_ICON) {
+            //mEndMsg.obj = mCurrentIcon;
+            //mEndMsg.sendToTarget();
+        //} else if (mState == STATE_MULTI_ICONS) {
+            //mIcons[mCurrentRecordIndex++] = mCurrentIcon;
+            //if (mCurrentRecordIndex < mRecordNumbers.length) {
+                //startLoadingIcon(mRecordNumbers[mCurrentRecordIndex]);
+            //} else {
+                //mEndMsg.obj = mIcons;
+                //mEndMsg.sendToTarget();
+            //}
+        //}
     }
 
     
@@ -341,8 +332,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int bitToBnW(int bit) {
+        private static int bitToBnW(int bit) {
         if(bit == 1){
             return Color.WHITE;
         } else {
@@ -386,8 +376,7 @@ switch(msg.what){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int getMask(int numOfBits) {
+        private static int getMask(int numOfBits) {
         int mask = 0x00;
         switch (numOfBits) {
         case 1:

@@ -1,6 +1,6 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -49,7 +49,7 @@ public class RequestQueue implements RequestFeeder {
     public  RequestQueue(Context context) {
         this(context, CONNECTION_COUNT);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -61,13 +61,13 @@ public class RequestQueue implements RequestFeeder {
         mActivePool.startup();
         mConnectivityManager = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        
-        
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mPending = new LinkedHashMap<HttpHost, LinkedList<Request>>(32);
+        //mActivePool = new ActivePool(connectionCount);
+        //mActivePool.startup();
+        //mConnectivityManager = (ConnectivityManager)
+                //context.getSystemService(Context.CONNECTIVITY_SERVICE);
     }
 
     
@@ -82,32 +82,32 @@ public class RequestQueue implements RequestFeeder {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.677 -0400", hash_original_method = "3CB2B7FAEA507C11972A385D868E1E52", hash_generated_method = "39B2053AFDC104DA6EED7A6360A4419B")
         @Override
         public void onReceive(Context ctx, Intent intent) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(intent.getTaint());
             addTaint(ctx.getTaint());
             setProxyConfig();
-            
-            
+            // ---------- Original Method ----------
+            //setProxyConfig();
         }
 };
             mContext.registerReceiver(mProxyChangeReceiver,
                                       new IntentFilter(Proxy.PROXY_CHANGE_ACTION));
-        } 
+        } //End block
         setProxyConfig();
-        
-        
-        
-            
-                    
-                        
-                        
-                            
-                        
-                    
-            
-                                      
-        
-        
+        // ---------- Original Method ----------
+        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.enablePlatformNotifications() network");
+        //if (mProxyChangeReceiver == null) {
+            //mProxyChangeReceiver =
+                    //new BroadcastReceiver() {
+                        //@Override
+                        //public void onReceive(Context ctx, Intent intent) {
+                            //setProxyConfig();
+                        //}
+                    //};
+            //mContext.registerReceiver(mProxyChangeReceiver,
+                                      //new IntentFilter(Proxy.PROXY_CHANGE_ACTION));
+        //}
+        //setProxyConfig();
     }
 
     
@@ -119,13 +119,13 @@ public class RequestQueue implements RequestFeeder {
         {
             mContext.unregisterReceiver(mProxyChangeReceiver);
             mProxyChangeReceiver = null;
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.disablePlatformNotifications() network");
+        //if (mProxyChangeReceiver != null) {
+            //mContext.unregisterReceiver(mProxyChangeReceiver);
+            //mProxyChangeReceiver = null;
+        //}
     }
 
     
@@ -135,7 +135,7 @@ public class RequestQueue implements RequestFeeder {
     if(info != null && info.getType() == ConnectivityManager.TYPE_WIFI)        
         {
             mProxyHost = null;
-        } 
+        } //End block
         else
         {
             String host = Proxy.getHost(mContext);
@@ -144,38 +144,37 @@ public class RequestQueue implements RequestFeeder {
     if(host == null)            
             {
                 mProxyHost = null;
-            } 
+            } //End block
             else
             {
                 mActivePool.disablePersistence();
                 mProxyHost = new HttpHost(host, Proxy.getPort(mContext), "http");
-            } 
-        } 
-        
-        
-        
-            
-        
-            
-            
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //NetworkInfo info = mConnectivityManager.getActiveNetworkInfo();
+        //if (info != null && info.getType() == ConnectivityManager.TYPE_WIFI) {
+            //mProxyHost = null;
+        //} else {
+            //String host = Proxy.getHost(mContext);
+            //if (HttpLog.LOGV) HttpLog.v("RequestQueue.setProxyConfig " + host);
+            //if (host == null) {
+                //mProxyHost = null;
+            //} else {
+                //mActivePool.disablePersistence();
+                //mProxyHost = new HttpHost(host, Proxy.getPort(mContext), "http");
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.678 -0400", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "084372DFE7CA0B56BF0EB5EF203AD846")
     public HttpHost getProxyHost() {
 HttpHost var15255B0340E21149253E1579997EBD34_359031802 =         mProxyHost;
         var15255B0340E21149253E1579997EBD34_359031802.addTaint(taint);
         return var15255B0340E21149253E1579997EBD34_359031802;
-        
-        
+        // ---------- Original Method ----------
+        //return mProxyHost;
     }
 
     
@@ -195,10 +194,10 @@ RequestHandle varDB478C081515AED8AECC176C7F352B76_1695290928 =         queueRequ
                             bodyProvider, bodyLength);
         varDB478C081515AED8AECC176C7F352B76_1695290928.addTaint(taint);
         return varDB478C081515AED8AECC176C7F352B76_1695290928;
-        
-        
-        
-                            
+        // ---------- Original Method ----------
+        //WebAddress uri = new WebAddress(url);
+        //return queueRequest(url, uri, method, headers, eventHandler,
+                            //bodyProvider, bodyLength);
     }
 
     
@@ -219,7 +218,7 @@ RequestHandle varDB478C081515AED8AECC176C7F352B76_1695290928 =         queueRequ
     if(eventHandler == null)        
         {
             eventHandler = new LoggingEventHandler();
-        } 
+        } //End block
         Request req;
         HttpHost httpHost = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
         req = new Request(method, httpHost, mProxyHost, uri.getPath(), bodyProvider,
@@ -232,21 +231,21 @@ RequestHandle var8559CD00D8E4603D5FEA793C2784B90A_534343132 =         new Reques
                 req);
         var8559CD00D8E4603D5FEA793C2784B90A_534343132.addTaint(taint);
         return var8559CD00D8E4603D5FEA793C2784B90A_534343132;
-        
-        
-        
-            
-        
-        
-        
-        
-                          
-        
-        
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.queueRequest " + uri);
+        //if (eventHandler == null) {
+            //eventHandler = new LoggingEventHandler();
+        //}
+        //Request req;
+        //HttpHost httpHost = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
+        //req = new Request(method, httpHost, mProxyHost, uri.getPath(), bodyProvider,
+                          //bodyLength, eventHandler, headers);
+        //queueRequest(req, false);
+        //mActivePool.mTotalRequest++;
+        //mActivePool.startConnectionThread();
+        //return new RequestHandle(
+                //this, url, uri, method, headers, bodyProvider, bodyLength,
+                //req);
     }
 
     
@@ -265,7 +264,7 @@ RequestHandle var8559CD00D8E4603D5FEA793C2784B90A_534343132 =         new Reques
     if(HttpLog.LOGV)        
         {
             HttpLog.v("RequestQueue.dispatchSynchronousRequest " + uri);
-        } 
+        } //End block
         HttpHost host = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
         Request req = new Request(method, host, mProxyHost, uri.getPath(),
                 bodyProvider, bodyLength, eventHandler, headers);
@@ -276,18 +275,18 @@ RequestHandle var918025ACFB3D287C100E8BF8D8B74BBF_1357878958 =         new Reque
                 bodyLength, req, conn);
         var918025ACFB3D287C100E8BF8D8B74BBF_1357878958.addTaint(taint);
         return var918025ACFB3D287C100E8BF8D8B74BBF_1357878958;
-        
-        
-            
-        
-        
-        
-                
-        
-        
-                
-        
-                
+        // ---------- Original Method ----------
+        //if (HttpLog.LOGV) {
+            //HttpLog.v("RequestQueue.dispatchSynchronousRequest " + uri);
+        //}
+        //HttpHost host = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
+        //Request req = new Request(method, host, mProxyHost, uri.getPath(),
+                //bodyProvider, bodyLength, eventHandler, headers);
+        //host = determineHost(host);
+        //Connection conn = Connection.getConnection(mContext, host, mProxyHost,
+                //new SyncFeeder());
+        //return new RequestHandle(this, url, uri, method, headers, bodyProvider,
+                //bodyLength, req, conn);
     }
 
     
@@ -298,9 +297,9 @@ HttpHost var19C0EEEDCED1F1045F88B2BB828B81A8_2131477199 =         (mProxyHost ==
                 ? host : mProxyHost;
         var19C0EEEDCED1F1045F88B2BB828B81A8_2131477199.addTaint(taint);
         return var19C0EEEDCED1F1045F88B2BB828B81A8_2131477199;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return (mProxyHost == null || "https".equals(host.getSchemeName()))
+                //? host : mProxyHost;
     }
 
     
@@ -309,8 +308,8 @@ HttpHost var19C0EEEDCED1F1045F88B2BB828B81A8_2131477199 =         (mProxyHost ==
         boolean var2603AB3951DAB26BE16828FF1AEB90D2_1368849489 = (!mPending.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_450051394 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_450051394;
-        
-        
+        // ---------- Original Method ----------
+        //return !mPending.isEmpty();
     }
 
     
@@ -336,14 +335,14 @@ HttpHost var19C0EEEDCED1F1045F88B2BB828B81A8_2131477199 =         (mProxyHost ==
                 {
                     Request request = (Request)iter.next();
                     line.append(request + " ");
-                } 
+                } //End block
                 dump.append(line);
                 dump.append("\n");
-            } 
-        } 
+            } //End block
+        } //End block
         HttpLog.v(dump.toString());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -353,19 +352,19 @@ HttpHost var19C0EEEDCED1F1045F88B2BB828B81A8_2131477199 =         (mProxyHost ==
     if(!mPending.isEmpty())        
         {
             ret = removeFirst(mPending);
-        } 
+        } //End block
     if(HttpLog.LOGV)        
         HttpLog.v("RequestQueue.getRequest() => " + ret);
 Request varEDFF4FBBF053B5DC2B444ADFA049EE0F_726015460 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_726015460.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_726015460;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Request ret = null;
+        //if (!mPending.isEmpty()) {
+            //ret = removeFirst(mPending);
+        //}
+        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.getRequest() => " + ret);
+        //return ret;
     }
 
     
@@ -380,24 +379,24 @@ Request varEDFF4FBBF053B5DC2B444ADFA049EE0F_726015460 =         ret;
     if(reqList.isEmpty())            
             {
                 mPending.remove(host);
-            } 
-        } 
+            } //End block
+        } //End block
     if(HttpLog.LOGV)        
         HttpLog.v("RequestQueue.getRequest(" + host + ") => " + ret);
 Request varEDFF4FBBF053B5DC2B444ADFA049EE0F_972052173 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_972052173.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_972052173;
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Request ret = null;
+        //if (mPending.containsKey(host)) {
+            //LinkedList<Request> reqList = mPending.get(host);
+            //ret = reqList.removeFirst();
+            //if (reqList.isEmpty()) {
+                //mPending.remove(host);
+            //}
+        //}
+        //if (HttpLog.LOGV) HttpLog.v("RequestQueue.getRequest(" + host + ") => " + ret);
+        //return ret;
     }
 
     
@@ -407,8 +406,8 @@ Request varEDFF4FBBF053B5DC2B444ADFA049EE0F_972052173 =         ret;
         boolean varDAB11781A1423E90151BB1EE3CA90568_612466762 = (mPending.containsKey(host));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_499743903 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_499743903;
-        
-        
+        // ---------- Original Method ----------
+        //return mPending.containsKey(host);
     }
 
     
@@ -416,16 +415,16 @@ Request varEDFF4FBBF053B5DC2B444ADFA049EE0F_972052173 =         ret;
     public void requeueRequest(Request request) {
         addTaint(request.getTaint());
         queueRequest(request, true);
-        
-        
+        // ---------- Original Method ----------
+        //queueRequest(request, true);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.683 -0400", hash_original_method = "36DEBCDEC4EFDB8CF8346CFD81066CDA", hash_generated_method = "305FCD4CBF7749B7023C16A68C3F0EFC")
     public void shutdown() {
         mActivePool.shutdown();
-        
-        
+        // ---------- Original Method ----------
+        //mActivePool.shutdown();
     }
 
     
@@ -438,50 +437,50 @@ Request varEDFF4FBBF053B5DC2B444ADFA049EE0F_972052173 =         ret;
     if(mPending.containsKey(host))        
         {
             reqList = mPending.get(host);
-        } 
+        } //End block
         else
         {
             reqList = new LinkedList<Request>();
             mPending.put(host, reqList);
-        } 
+        } //End block
     if(head)        
         {
             reqList.addFirst(request);
-        } 
+        } //End block
         else
         {
             reqList.add(request);
-        } 
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //HttpHost host = request.mProxyHost == null ? request.mHost : request.mProxyHost;
+        //LinkedList<Request> reqList;
+        //if (mPending.containsKey(host)) {
+            //reqList = mPending.get(host);
+        //} else {
+            //reqList = new LinkedList<Request>();
+            //mPending.put(host, reqList);
+        //}
+        //if (head) {
+            //reqList.addFirst(request);
+        //} else {
+            //reqList.add(request);
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.684 -0400", hash_original_method = "D615BD22372BF27837008A0B674B3672", hash_generated_method = "68F8461F4FB60C27086B594BAC5A2D5C")
     public void startTiming() {
         mActivePool.startTiming();
-        
-        
+        // ---------- Original Method ----------
+        //mActivePool.startTiming();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.684 -0400", hash_original_method = "93BD6698DCB4A99EC2C52A706270C860", hash_generated_method = "79A321F150AAF5DF19960FC8264B094B")
     public void stopTiming() {
         mActivePool.stopTiming();
-        
-        
+        // ---------- Original Method ----------
+        //mActivePool.stopTiming();
     }
 
     
@@ -498,23 +497,23 @@ Request varEDFF4FBBF053B5DC2B444ADFA049EE0F_972052173 =         ret;
     if(reqList.isEmpty())            
             {
                 requestQueue.remove(entry.getKey());
-            } 
-        } 
+            } //End block
+        } //End block
 Request varEDFF4FBBF053B5DC2B444ADFA049EE0F_688352929 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_688352929.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_688352929;
-        
-        
-        
-        
-            
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Request ret = null;
+        //Iterator<Map.Entry<HttpHost, LinkedList<Request>>> iter = requestQueue.entrySet().iterator();
+        //if (iter.hasNext()) {
+            //Map.Entry<HttpHost, LinkedList<Request>> entry = iter.next();
+            //LinkedList<Request> reqList = entry.getValue();
+            //ret = reqList.removeFirst();
+            //if (reqList.isEmpty()) {
+                //requestQueue.remove(entry.getKey());
+            //}
+        //}
+        //return ret;
     }
 
     
@@ -544,15 +543,15 @@ for(int i = 0;i < mConnectionCount;i++)
             {
                 mThreads[i] = new ConnectionThread(
                         mContext, i, this, RequestQueue.this);
-            } 
-            
-            
-            
-            
-            
-                
-                        
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mIdleCache = new IdleCache();
+            //mConnectionCount = connectionCount;
+            //mThreads = new ConnectionThread[mConnectionCount];
+            //for (int i = 0; i < mConnectionCount; i++) {
+                //mThreads[i] = new ConnectionThread(
+                        //mContext, i, this, RequestQueue.this);
+            //}
         }
 
         
@@ -561,11 +560,11 @@ for(int i = 0;i < mConnectionCount;i++)
 for(int i = 0;i < mConnectionCount;i++)
             {
                 mThreads[i].start();
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //for (int i = 0; i < mConnectionCount; i++) {
+                //mThreads[i].start();
+            //}
         }
 
         
@@ -574,11 +573,11 @@ for(int i = 0;i < mConnectionCount;i++)
 for(int i = 0;i < mConnectionCount;i++)
             {
                 mThreads[i].requestStop();
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //for (int i = 0; i < mConnectionCount; i++) {
+                //mThreads[i].requestStop();
+            //}
         }
 
         
@@ -587,15 +586,14 @@ for(int i = 0;i < mConnectionCount;i++)
             synchronized
 (RequestQueue.this)            {
                 RequestQueue.this.notify();
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (RequestQueue.this) {
+                //RequestQueue.this.notify();
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.688 -0400", hash_original_method = "D2A094DDB6185336258EAA22554B8B48", hash_generated_method = "21E13D9D80F5B8BB04A4D522CD6332C3")
         public void startTiming() {
 for(int i = 0;i < mConnectionCount;i++)
@@ -603,17 +601,17 @@ for(int i = 0;i < mConnectionCount;i++)
                 ConnectionThread rt = mThreads[i];
                 rt.mCurrentThreadTime = -1;
                 rt.mTotalThreadTime = 0;
-            } 
+            } //End block
             mTotalRequest = 0;
             mTotalConnection = 0;
-            
-            
-                
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //for (int i = 0; i < mConnectionCount; i++) {
+                //ConnectionThread rt = mThreads[i];
+                //rt.mCurrentThreadTime = -1;
+                //rt.mTotalThreadTime = 0;
+            //}
+            //mTotalRequest = 0;
+            //mTotalConnection = 0;
         }
 
         
@@ -626,24 +624,24 @@ for(int i = 0;i < mConnectionCount;i++)
     if(rt.mCurrentThreadTime != -1)                
                 {
                     totalTime += rt.mTotalThreadTime;
-                } 
+                } //End block
                 rt.mCurrentThreadTime = 0;
-            } 
+            } //End block
             Log.d("Http", "Http thread used " + totalTime + " ms " + " for "
                     + mTotalRequest + " requests and " + mTotalConnection
                     + " new connections");
-            
-            
-            
-                
-                
-                    
-                
-                
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //int totalTime = 0;
+            //for (int i = 0; i < mConnectionCount; i++) {
+                //ConnectionThread rt = mThreads[i];
+                //if (rt.mCurrentThreadTime != -1) {
+                    //totalTime += rt.mTotalThreadTime;
+                //}
+                //rt.mCurrentThreadTime = 0;
+            //}
+            //Log.d("Http", "Http thread used " + totalTime + " ms " + " for "
+                    //+ mTotalRequest + " requests and " + mTotalConnection
+                    //+ " new connections");
         }
 
         
@@ -653,14 +651,14 @@ for(int i = 0;i < mConnectionCount;i++)
 for(int i = 0;i < mConnectionCount;i++)
             {
                 dump.append(mThreads[i] + "\n");
-            } 
+            } //End block
             HttpLog.v(dump.toString());
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //StringBuilder dump = new StringBuilder();
+            //for (int i = 0; i < mConnectionCount; i++) {
+                //dump.append(mThreads[i] + "\n");
+            //}
+            //HttpLog.v(dump.toString());
         }
 
         
@@ -669,8 +667,8 @@ for(int i = 0;i < mConnectionCount;i++)
 HttpHost var15255B0340E21149253E1579997EBD34_822075218 =             mProxyHost;
             var15255B0340E21149253E1579997EBD34_822075218.addTaint(taint);
             return var15255B0340E21149253E1579997EBD34_822075218;
-            
-            
+            // ---------- Original Method ----------
+            //return mProxyHost;
         }
 
         
@@ -681,14 +679,14 @@ for(int i = 0;i < mConnectionCount;i++)
                 Connection connection = mThreads[i].mConnection;
     if(connection != null)                
                 connection.setCanPersist(false);
-            } 
+            } //End block
             mIdleCache.clear();
-            
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //for (int i = 0; i < mConnectionCount; i++) {
+                //Connection connection = mThreads[i].mConnection;
+                //if (connection != null) connection.setCanPersist(false);
+            //}
+            //mIdleCache.clear();
         }
 
         
@@ -706,23 +704,23 @@ for(int i = 0;i < mThreads.length;i++)
 ConnectionThread varB6CBF65560612EA4D10B4B8A9201976F_1750286351 =                         ct;
                         varB6CBF65560612EA4D10B4B8A9201976F_1750286351.addTaint(taint);
                         return varB6CBF65560612EA4D10B4B8A9201976F_1750286351;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
 ConnectionThread var540C13E9E156B687226421B24F2DF178_541950288 =             null;
             var540C13E9E156B687226421B24F2DF178_541950288.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_541950288;
-            
-            
-                
-                    
-                    
-                    
-                        
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //synchronized(RequestQueue.this) {
+                //for (int i = 0; i < mThreads.length; i++) {
+                    //ConnectionThread ct = mThreads[i];
+                    //Connection connection = ct.mConnection;
+                    //if (connection != null && connection.mHost.equals(host)) {
+                        //return ct;
+                    //}
+                //}
+            //}
+            //return null;
         }
 
         
@@ -737,19 +735,19 @@ ConnectionThread var540C13E9E156B687226421B24F2DF178_541950288 =             nul
                 mTotalConnection++;
                 con = Connection.getConnection(mContext, host, mProxyHost,
                         RequestQueue.this);
-            } 
+            } //End block
 Connection var8C72E06494C6F3A2714DD6C271334307_874088963 =             con;
             var8C72E06494C6F3A2714DD6C271334307_874088963.addTaint(taint);
             return var8C72E06494C6F3A2714DD6C271334307_874088963;
-            
-            
-            
-            
-                
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //host = RequestQueue.this.determineHost(host);
+            //Connection con = mIdleCache.getConnection(host);
+            //if (con == null) {
+                //mTotalConnection++;
+                //con = Connection.getConnection(mContext, host, mProxyHost,
+                        //RequestQueue.this);
+            //}
+            //return con;
         }
 
         
@@ -759,8 +757,8 @@ Connection var8C72E06494C6F3A2714DD6C271334307_874088963 =             con;
             boolean varAB7EA3F212DBB7905E700DE869E9E595_1110766092 = (mIdleCache.cacheConnection(connection.getHost(), connection));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1386837899 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1386837899;
-            
-            
+            // ---------- Original Method ----------
+            //return mIdleCache.cacheConnection(connection.getHost(), connection);
         }
 
         
@@ -775,11 +773,10 @@ Connection var8C72E06494C6F3A2714DD6C271334307_874088963 =             con;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.692 -0400", hash_original_method = "4463F8298E503AEAFD22486DF3099826", hash_generated_method = "E6A6A8CDE9B9C9FF0F1FF74192A505FE")
           SyncFeeder() {
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.692 -0400", hash_original_method = "E0C38BA5AF5E9B7363BEA9E204F697F3", hash_generated_method = "676C8F60B0B045163F3733919BDC1C5F")
         public Request getRequest() {
             Request r = mRequest;
@@ -787,10 +784,10 @@ Connection var8C72E06494C6F3A2714DD6C271334307_874088963 =             con;
 Request var4C1F3C86A0E56B6E375080F5F710547E_882872732 =             r;
             var4C1F3C86A0E56B6E375080F5F710547E_882872732.addTaint(taint);
             return var4C1F3C86A0E56B6E375080F5F710547E_882872732;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //Request r = mRequest;
+            //mRequest = null;
+            //return r;
         }
 
         
@@ -800,29 +797,27 @@ Request var4C1F3C86A0E56B6E375080F5F710547E_882872732 =             r;
 Request var01ADE12A033EFEF3CBB95891FA1C0137_1970911134 =             getRequest();
             var01ADE12A033EFEF3CBB95891FA1C0137_1970911134.addTaint(taint);
             return var01ADE12A033EFEF3CBB95891FA1C0137_1970911134;
-            
-            
+            // ---------- Original Method ----------
+            //return getRequest();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.693 -0400", hash_original_method = "30BE3F23DCE5F30BFE4C540BF8AE4D20", hash_generated_method = "581B1602D239DBAC3822C08DA8D66ECC")
         public boolean haveRequest(HttpHost host) {
             addTaint(host.getTaint());
             boolean var0CCCD6C8160146A28E0277A86C41082D_298210427 = (mRequest != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_263856405 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_263856405;
-            
-            
+            // ---------- Original Method ----------
+            //return mRequest != null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.693 -0400", hash_original_method = "D0AA652C1F1A28EE12BADC892C348224", hash_generated_method = "0490D711BBE9F89E677FF31CE7FA801F")
         public void requeueRequest(Request r) {
             mRequest = r;
-            
-            
+            // ---------- Original Method ----------
+            //mRequest = r;
         }
 
         

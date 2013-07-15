@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class JsPromptResult extends JsResult {
       JsPromptResult(CallbackProxy proxy) {
         super(proxy,  false);
         addTaint(proxy.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,20 +22,19 @@ public class JsPromptResult extends JsResult {
     public void confirm(String result) {
         mStringResult = result;
         confirm();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStringResult = result;
+        //confirm();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.494 -0400", hash_original_method = "A6887DA895C48DFEB95F5B019D028B73", hash_generated_method = "72F442EBAA5383ABB72F74D8DA4AD11D")
      String getStringResult() {
 String var86F3C154467D7E7BC817481671B1E976_2117422115 =         mStringResult;
         var86F3C154467D7E7BC817481671B1E976_2117422115.addTaint(taint);
         return var86F3C154467D7E7BC817481671B1E976_2117422115;
-        
-        
+        // ---------- Original Method ----------
+        //return mStringResult;
     }
 
     
@@ -44,9 +43,9 @@ String var86F3C154467D7E7BC817481671B1E976_2117422115 =         mStringResult;
      void handleDefault() {
         mStringResult = null;
         super.handleDefault();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mStringResult = null;
+        //super.handleDefault();
     }
 
     

@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,9 +17,9 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     public  SynchronizedPool(Pool<T> pool) {
         mPool = pool;
         mLock = this;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPool = pool;
+        //mLock = this;
     }
 
     
@@ -27,9 +27,9 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     public  SynchronizedPool(Pool<T> pool, Object lock) {
         mPool = pool;
         mLock = lock;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPool = pool;
+        //mLock = lock;
     }
 
     
@@ -40,11 +40,11 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
 T varEDF53E778C1F13B11764E360D72D35D7_1079152317 =             mPool.acquire();
             varEDF53E778C1F13B11764E360D72D35D7_1079152317.addTaint(taint);
             return varEDF53E778C1F13B11764E360D72D35D7_1079152317;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //return mPool.acquire();
+        //}
     }
 
     
@@ -54,11 +54,11 @@ T varEDF53E778C1F13B11764E360D72D35D7_1079152317 =             mPool.acquire();
         synchronized
 (mLock)        {
             mPool.release(element);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //mPool.release(element);
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package libcore.net.url;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public final class UrlUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.084 -0400", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "C53F924364698517C893492550830BCA")
     private  UrlUtils() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -60,8 +60,7 @@ public final class UrlUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String getSchemePrefix(String spec) {
+        public static String getSchemePrefix(String spec) {
         int colon = spec.indexOf(':');
         if (colon < 1) {
             return null;
@@ -76,8 +75,7 @@ public final class UrlUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isValidSchemeChar(int index, char c) {
+        public static boolean isValidSchemeChar(int index, char c) {
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             return true;
         }

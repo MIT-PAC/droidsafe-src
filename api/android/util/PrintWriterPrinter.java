@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public class PrintWriterPrinter implements Printer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.158 -0400", hash_original_method = "156210EF12921D469085B715E31A16AD", hash_generated_method = "5BD9FACD9BB576FC7B4D8B53A94EB0CB")
     public  PrintWriterPrinter(PrintWriter pw) {
         mPW = pw;
-        
-        
+        // ---------- Original Method ----------
+        //mPW = pw;
     }
 
     
@@ -23,8 +23,8 @@ public class PrintWriterPrinter implements Printer {
     public void println(String x) {
         addTaint(x.getTaint());
         mPW.println(x);
-        
-        
+        // ---------- Original Method ----------
+        //mPW.println(x);
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public class OverScroller {
     public  OverScroller(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,7 +42,7 @@ public class OverScroller {
         this(context, interpolator, true);
         addTaint(interpolator.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -54,12 +54,12 @@ public class OverScroller {
         mScrollerX = new SplineOverScroller();
         mScrollerY = new SplineOverScroller();
         SplineOverScroller.initFromContext(context);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mInterpolator = interpolator;
+        //mFlywheel = flywheel;
+        //mScrollerX = new SplineOverScroller();
+        //mScrollerY = new SplineOverScroller();
+        //SplineOverScroller.initFromContext(context);
     }
 
     
@@ -71,7 +71,7 @@ public class OverScroller {
         addTaint(bounceCoefficientX);
         addTaint(interpolator.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -84,7 +84,7 @@ public class OverScroller {
         addTaint(bounceCoefficientX);
         addTaint(interpolator.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -93,9 +93,9 @@ public class OverScroller {
         addTaint(friction);
         mScrollerX.setFriction(friction);
         mScrollerY.setFriction(friction);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mScrollerX.setFriction(friction);
+        //mScrollerY.setFriction(friction);
     }
 
     
@@ -104,16 +104,16 @@ public class OverScroller {
         boolean var0DB3E8C2664749C2162B19E4B34C7E33_335384967 = (mScrollerX.mFinished && mScrollerY.mFinished);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_757156549 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_757156549;
-        
-        
+        // ---------- Original Method ----------
+        //return mScrollerX.mFinished && mScrollerY.mFinished;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.707 -0400", hash_original_method = "530BF62F40D21F1D1C05E22ECA085B25", hash_generated_method = "9E50CA69CA03FFBAA94AC2B7585A2958")
     public final void forceFinished(boolean finished) {
         mScrollerX.mFinished = mScrollerY.mFinished = finished;
-        
-        
+        // ---------- Original Method ----------
+        //mScrollerX.mFinished = mScrollerY.mFinished = finished;
     }
 
     
@@ -122,8 +122,8 @@ public class OverScroller {
         int varE75ACE107022639662FD371651D0ECD4_713174610 = (mScrollerX.mCurrentPosition);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989967846 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1989967846;
-        
-        
+        // ---------- Original Method ----------
+        //return mScrollerX.mCurrentPosition;
     }
 
     
@@ -132,8 +132,8 @@ public class OverScroller {
         int varEEB998B463EDBD97DFFC5C9DD5E23B8C_220078511 = (mScrollerY.mCurrentPosition);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409984584 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409984584;
-        
-        
+        // ---------- Original Method ----------
+        //return mScrollerY.mCurrentPosition;
     }
 
     
@@ -144,10 +144,10 @@ public class OverScroller {
         float var0D3EE44E7D58B2E51656DE42409E7E5B_1386952104 = (FloatMath.sqrt(squaredNorm));
                 float var546ADE640B6EDFBC8A086EF31347E768_642437897 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_642437897;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //float squaredNorm = mScrollerX.mCurrVelocity * mScrollerX.mCurrVelocity;
+        //squaredNorm += mScrollerY.mCurrVelocity * mScrollerY.mCurrVelocity;
+        //return FloatMath.sqrt(squaredNorm);
     }
 
     
@@ -156,8 +156,8 @@ public class OverScroller {
         int varC1EC4CC35CCC1E65284382B0A8D20B69_1889386319 = (mScrollerX.mStart);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1441654516 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1441654516;
-        
-        
+        // ---------- Original Method ----------
+        //return mScrollerX.mStart;
     }
 
     
@@ -166,8 +166,8 @@ public class OverScroller {
         int var12006AA0EEBE106A7C70A4B89A5E77F1_707526296 = (mScrollerY.mStart);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1121573783 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1121573783;
-        
-        
+        // ---------- Original Method ----------
+        //return mScrollerY.mStart;
     }
 
     
@@ -176,8 +176,8 @@ public class OverScroller {
         int varED7C18F876C06D7AE5954809EE1DB0C2_1114585178 = (mScrollerX.mFinal);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337321715 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337321715;
-        
-        
+        // ---------- Original Method ----------
+        //return mScrollerX.mFinal;
     }
 
     
@@ -186,8 +186,8 @@ public class OverScroller {
         int var7F5919007196DB74ACF1C481429A74C3_57093733 = (mScrollerY.mFinal);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714985772 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714985772;
-        
-        
+        // ---------- Original Method ----------
+        //return mScrollerY.mFinal;
     }
 
     
@@ -197,8 +197,8 @@ public class OverScroller {
         int var05ECFC23DD853D79411811CEBAF78CA7_1766647343 = (Math.max(mScrollerX.mDuration, mScrollerY.mDuration));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1402556202 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1402556202;
-        
-        
+        // ---------- Original Method ----------
+        //return Math.max(mScrollerX.mDuration, mScrollerY.mDuration);
     }
 
     
@@ -208,9 +208,9 @@ public class OverScroller {
         addTaint(extend);
         mScrollerX.extendDuration(extend);
         mScrollerY.extendDuration(extend);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mScrollerX.extendDuration(extend);
+        //mScrollerY.extendDuration(extend);
     }
 
     
@@ -219,8 +219,8 @@ public class OverScroller {
     public void setFinalX(int newX) {
         addTaint(newX);
         mScrollerX.setFinalPosition(newX);
-        
-        
+        // ---------- Original Method ----------
+        //mScrollerX.setFinalPosition(newX);
     }
 
     
@@ -229,8 +229,8 @@ public class OverScroller {
     public void setFinalY(int newY) {
         addTaint(newY);
         mScrollerY.setFinalPosition(newY);
-        
-        
+        // ---------- Original Method ----------
+        //mScrollerY.setFinalPosition(newY);
     }
 
     
@@ -241,7 +241,7 @@ public class OverScroller {
             boolean var68934A3E9455FA72420237EB05902327_956840900 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1442166863 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1442166863;
-        } 
+        } //End block
 switch(mMode){
         case SCROLL_MODE:
         long time = AnimationUtils.currentAnimationTimeMillis();
@@ -253,18 +253,18 @@ switch(mMode){
     if(mInterpolator == null)            
             {
                 q = Scroller.viscousFluid(q);
-            } 
+            } //End block
             else
             {
                 q = mInterpolator.getInterpolation(q);
-            } 
+            } //End block
             mScrollerX.updateScroll(q);
             mScrollerY.updateScroll(q);
-        } 
+        } //End block
         else
         {
             abortAnimation();
-        } 
+        } //End block
         break;
         case FLING_MODE:
     if(!mScrollerX.mFinished)        
@@ -274,9 +274,9 @@ switch(mMode){
     if(!mScrollerX.continueWhenFinished())                
                 {
                     mScrollerX.finish();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(!mScrollerY.mFinished)        
         {
     if(!mScrollerY.update())            
@@ -284,15 +284,15 @@ switch(mMode){
     if(!mScrollerY.continueWhenFinished())                
                 {
                     mScrollerY.finish();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         break;
 }        boolean varB326B5062B2F0E69046810717534CB09_559788482 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_213961644 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_213961644;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -303,8 +303,8 @@ switch(mMode){
         addTaint(startY);
         addTaint(startX);
         startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
-        
-        
+        // ---------- Original Method ----------
+        //startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
     }
 
     
@@ -318,10 +318,10 @@ switch(mMode){
         mMode = SCROLL_MODE;
         mScrollerX.startScroll(startX, dx, duration);
         mScrollerY.startScroll(startY, dy, duration);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMode = SCROLL_MODE;
+        //mScrollerX.startScroll(startX, dx, duration);
+        //mScrollerY.startScroll(startY, dy, duration);
     }
 
     
@@ -339,11 +339,11 @@ switch(mMode){
         boolean varC1ED648D2E61098796875DC470ABF9DE_1119038789 = (spingbackX || spingbackY);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_393811690 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_393811690;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMode = FLING_MODE;
+        //final boolean spingbackX = mScrollerX.springback(startX, minX, maxX);
+        //final boolean spingbackY = mScrollerY.springback(startY, minY, maxY);
+        //return spingbackX || spingbackY;
     }
 
     
@@ -359,8 +359,8 @@ switch(mMode){
         addTaint(startY);
         addTaint(startX);
         fling(startX, startY, velocityX, velocityY, minX, maxX, minY, maxY, 0, 0);
-        
-        
+        // ---------- Original Method ----------
+        //fling(startX, startY, velocityX, velocityY, minX, maxX, minY, maxY, 0, 0);
     }
 
     
@@ -386,24 +386,24 @@ switch(mMode){
             {
                 velocityX += oldVelocityX;
                 velocityY += oldVelocityY;
-            } 
-        } 
+            } //End block
+        } //End block
         mMode = FLING_MODE;
         mScrollerX.fling(startX, velocityX, minX, maxX, overX);
         mScrollerY.fling(startY, velocityY, minY, maxY, overY);
-        
-        
-            
-            
-            
-                    
-                
-                
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mFlywheel && !isFinished()) {
+            //float oldVelocityX = mScrollerX.mCurrVelocity;
+            //float oldVelocityY = mScrollerY.mCurrVelocity;
+            //if (Math.signum(velocityX) == Math.signum(oldVelocityX) &&
+                    //Math.signum(velocityY) == Math.signum(oldVelocityY)) {
+                //velocityX += oldVelocityX;
+                //velocityY += oldVelocityY;
+            //}
+        //}
+        //mMode = FLING_MODE;
+        //mScrollerX.fling(startX, velocityX, minX, maxX, overX);
+        //mScrollerY.fling(startY, velocityY, minY, maxY, overY);
     }
 
     
@@ -413,8 +413,8 @@ switch(mMode){
         addTaint(finalX);
         addTaint(startX);
         mScrollerX.notifyEdgeReached(startX, finalX, overX);
-        
-        
+        // ---------- Original Method ----------
+        //mScrollerX.notifyEdgeReached(startX, finalX, overX);
     }
 
     
@@ -424,8 +424,8 @@ switch(mMode){
         addTaint(finalY);
         addTaint(startY);
         mScrollerY.notifyEdgeReached(startY, finalY, overY);
-        
-        
+        // ---------- Original Method ----------
+        //mScrollerY.notifyEdgeReached(startY, finalY, overY);
     }
 
     
@@ -437,11 +437,11 @@ switch(mMode){
                         mScrollerY.mState != SplineOverScroller.SPLINE)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_363584635 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_363584635;
-        
-        
-                
-                
-                        
+        // ---------- Original Method ----------
+        //return ((!mScrollerX.mFinished &&
+                //mScrollerX.mState != SplineOverScroller.SPLINE) ||
+                //(!mScrollerY.mFinished &&
+                        //mScrollerY.mState != SplineOverScroller.SPLINE));
     }
 
     
@@ -449,9 +449,9 @@ switch(mMode){
     public void abortAnimation() {
         mScrollerX.finish();
         mScrollerY.finish();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mScrollerX.finish();
+        //mScrollerY.finish();
     }
 
     
@@ -462,10 +462,10 @@ switch(mMode){
         int var35863F92DD27E0007B82481C3D494F55_2122668850 = ((int) (time - startTime));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_228812551 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_228812551;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final long time = AnimationUtils.currentAnimationTimeMillis();
+        //final long startTime = Math.min(mScrollerX.mStartTime, mScrollerY.mStartTime);
+        //return (int) (time - startTime);
     }
 
     
@@ -479,11 +479,11 @@ switch(mMode){
                 Math.signum(yvel) == Math.signum(dy));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1336491135 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1336491135;
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //final int dx = mScrollerX.mFinal - mScrollerX.mStart;
+        //final int dy = mScrollerY.mFinal - mScrollerY.mStart;
+        //return !isFinished() && Math.signum(xvel) == Math.signum(dx) &&
+                //Math.signum(yvel) == Math.signum(dy);
     }
 
     
@@ -534,8 +534,8 @@ switch(mMode){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.711 -0400", hash_original_method = "D0177E162854BD0B51587B46D28F0B6A", hash_generated_method = "8DA67F7E3849D2B57321066409F02625")
           SplineOverScroller() {
             mFinished = true;
-            
-            
+            // ---------- Original Method ----------
+            //mFinished = true;
         }
 
         
@@ -548,25 +548,23 @@ switch(mMode){
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.711 -0400", hash_original_method = "9532D02E94E4EAFA434C124BD0A8F760", hash_generated_method = "9C1BF5881133CE15D3AD6937E2102C77")
          void setFriction(float friction) {
             mFlingFriction = friction;
-            
-            
+            // ---------- Original Method ----------
+            //mFlingFriction = friction;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.711 -0400", hash_original_method = "64F0298C66739A6C01CABFBC1A2B2075", hash_generated_method = "8D0066CC0B7F2B3783E5F9BC60951860")
          void updateScroll(float q) {
             mCurrentPosition = mStart + Math.round(q * (mFinal - mStart));
-            
-            
+            // ---------- Original Method ----------
+            //mCurrentPosition = mStart + Math.round(q * (mFinal - mStart));
         }
 
         
-                @DSModeled(DSC.SAFE)
-        static private float getDeceleration(int velocity) {
+                static private float getDeceleration(int velocity) {
             return velocity > 0 ? -GRAVITY : GRAVITY;
         }
 
@@ -588,20 +586,20 @@ switch(mMode){
                 final float t_sup = SPLINE_TIME[index + 1];
                 final float timeCoef = t_inf + (x - x_inf) / (x_sup - x_inf) * (t_sup - t_inf);
                 mDuration *= timeCoef;
-            } 
-            
-            
-            
-            
-            
-            
-                
-                
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //final int oldDistance = oldFinal - start;
+            //final int newDistance = newFinal - start;
+            //final float x = Math.abs((float) newDistance / oldDistance);
+            //final int index = (int) (NB_SAMPLES * x);
+            //if (index < NB_SAMPLES) {
+                //final float x_inf = (float) index / NB_SAMPLES;
+                //final float x_sup = (float) (index + 1) / NB_SAMPLES;
+                //final float t_inf = SPLINE_TIME[index];
+                //final float t_sup = SPLINE_TIME[index + 1];
+                //final float timeCoef = t_inf + (x - x_inf) / (x_sup - x_inf) * (t_sup - t_inf);
+                //mDuration *= timeCoef;
+            //}
         }
 
         
@@ -614,36 +612,34 @@ switch(mMode){
             mDuration = duration;
             mDeceleration = 0.0f;
             mVelocity = 0;
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mFinished = false;
+            //mStart = start;
+            //mFinal = start + distance;
+            //mStartTime = AnimationUtils.currentAnimationTimeMillis();
+            //mDuration = duration;
+            //mDeceleration = 0.0f;
+            //mVelocity = 0;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.712 -0400", hash_original_method = "435B8A6291C462C3A88DC285D8A7A1BB", hash_generated_method = "E81E47C77DE0F2409607E7F653A93387")
          void finish() {
             mCurrentPosition = mFinal;
             mFinished = true;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mCurrentPosition = mFinal;
+            //mFinished = true;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.712 -0400", hash_original_method = "0F10BE4F5BE9DF7795DBE421341ADDA6", hash_generated_method = "AD197AA15C3F2929E140667F0D116CA7")
          void setFinalPosition(int position) {
             mFinal = position;
             mFinished = false;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mFinal = position;
+            //mFinished = false;
         }
 
         
@@ -653,11 +649,11 @@ switch(mMode){
             final int elapsedTime = (int) (time - mStartTime);
             mDuration = elapsedTime + extend;
             mFinished = false;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //final long time = AnimationUtils.currentAnimationTimeMillis();
+            //final int elapsedTime = (int) (time - mStartTime);
+            //mDuration = elapsedTime + extend;
+            //mFinished = false;
         }
 
         
@@ -673,27 +669,27 @@ switch(mMode){
     if(start < min)            
             {
                 startSpringback(start, min, 0);
-            } 
+            } //End block
             else
     if(start > max)            
             {
                 startSpringback(start, max, 0);
-            } 
+            } //End block
             boolean varBA1DFB924614110F73DA701F03C6D8E5_1338681146 = (!mFinished);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_135080680 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_135080680;
-            
-            
-            
-            
-            
-            
-            
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //mFinished = true;
+            //mStart = mFinal = start;
+            //mVelocity = 0;
+            //mStartTime = AnimationUtils.currentAnimationTimeMillis();
+            //mDuration = 0;
+            //if (start < min) {
+                //startSpringback(start, min, 0);
+            //} else if (start > max) {
+                //startSpringback(start, max, 0);
+            //}
+            //return !mFinished;
         }
 
         
@@ -709,16 +705,16 @@ switch(mMode){
             mVelocity = -delta;
             mOver = Math.abs(delta);
             mDuration = (int) (1000.0 * Math.sqrt(-2.0 * delta / mDeceleration));
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mFinished = false;
+            //mState = CUBIC;
+            //mStart = start;
+            //mFinal = end;
+            //final int delta = start - end;
+            //mDeceleration = getDeceleration(delta);
+            //mVelocity = -delta;
+            //mOver = Math.abs(delta);
+            //mDuration = (int) (1000.0 * Math.sqrt(-2.0 * delta / mDeceleration));
         }
 
         
@@ -734,28 +730,28 @@ switch(mMode){
             {
                 startAfterEdge(start, min, max, velocity);
                 return;
-            } 
+            } //End block
             mState = SPLINE;
             double totalDistance = 0.0;
     if(velocity != 0)            
             {
                 mDuration = mSplineDuration = getSplineFlingDuration(velocity);
                 totalDistance = getSplineFlingDistance(velocity);
-            } 
+            } //End block
             mSplineDistance = (int) (totalDistance * Math.signum(velocity));
             mFinal = start + mSplineDistance;
     if(mFinal < min)            
             {
                 adjustDuration(mStart, mFinal, min);
                 mFinal = min;
-            } 
+            } //End block
     if(mFinal > max)            
             {
                 adjustDuration(mStart, mFinal, max);
                 mFinal = max;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -765,8 +761,8 @@ switch(mMode){
             double varD1B1C69D973DAA983C2D5D5F3D37A7A8_1815057466 = (Math.log(INFLEXION * Math.abs(velocity) / (mFlingFriction * PHYSICAL_COEF)));
                         double varE8CD7DA078A86726031AD64F35F5A6C0_1322202813 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1322202813;
-            
-            
+            // ---------- Original Method ----------
+            //return Math.log(INFLEXION * Math.abs(velocity) / (mFlingFriction * PHYSICAL_COEF));
         }
 
         
@@ -778,10 +774,10 @@ switch(mMode){
             double var06250AFF64F4FEEA8997F33C732E31AB_1025690956 = (mFlingFriction * PHYSICAL_COEF * Math.exp(DECELERATION_RATE / decelMinusOne * l));
                         double varE8CD7DA078A86726031AD64F35F5A6C0_1740711968 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1740711968;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //final double l = getSplineDeceleration(velocity);
+            //final double decelMinusOne = DECELERATION_RATE - 1.0;
+            //return mFlingFriction * PHYSICAL_COEF * Math.exp(DECELERATION_RATE / decelMinusOne * l);
         }
 
         
@@ -793,10 +789,10 @@ switch(mMode){
             int varD3A1E5768EC189059450180A81FF7CB5_711153397 = ((int) (1000.0 * Math.exp(l / decelMinusOne)));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750131435 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750131435;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //final double l = getSplineDeceleration(velocity);
+            //final double decelMinusOne = DECELERATION_RATE - 1.0;
+            //return (int) (1000.0 * Math.exp(l / decelMinusOne));
         }
 
         
@@ -812,15 +808,15 @@ switch(mMode){
             mStartTime -= (int) (1000.0f * (totalDuration - durationToApex));
             mStart = end;
             mVelocity = (int) (- mDeceleration * totalDuration);
-            
-            
-            
-            
-            
-                    
-            
-            
-            
+            // ---------- Original Method ----------
+            //final float durationToApex = - velocity / mDeceleration;
+            //final float distanceToApex = velocity * velocity / 2.0f / Math.abs(mDeceleration);
+            //final float distanceToEdge = Math.abs(end - start);
+            //final float totalDuration = (float) Math.sqrt(
+                    //2.0 * (distanceToApex + distanceToEdge) / Math.abs(mDeceleration));
+            //mStartTime -= (int) (1000.0f * (totalDuration - durationToApex));
+            //mStart = end;
+            //mVelocity = (int) (- mDeceleration * totalDuration);
         }
 
         
@@ -829,10 +825,10 @@ switch(mMode){
             mDeceleration = getDeceleration(velocity == 0 ? start - end : velocity);
             fitOnBounceCurve(start, end, velocity);
             onEdgeReached();
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mDeceleration = getDeceleration(velocity == 0 ? start - end : velocity);
+            //fitOnBounceCurve(start, end, velocity);
+            //onEdgeReached();
         }
 
         
@@ -846,7 +842,7 @@ switch(mMode){
             {
                 mFinished = true;
                 return;
-            } 
+            } //End block
             final boolean positive = start > max;
             final int edge = positive ? max : min;
             final int overDistance = start - edge;
@@ -854,21 +850,21 @@ switch(mMode){
     if(keepIncreasing)            
             {
                 startBounceAfterEdge(start, edge, velocity);
-            } 
+            } //End block
             else
             {
                 final double totalDistance = getSplineFlingDistance(velocity);
     if(totalDistance > Math.abs(overDistance))                
                 {
                     fling(start, velocity, positive ? min : start, positive ? start : max, mOver);
-                } 
+                } //End block
                 else
                 {
                     startSpringback(start, edge, velocity);
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -881,13 +877,13 @@ switch(mMode){
                 mOver = over;
                 mStartTime = AnimationUtils.currentAnimationTimeMillis();
                 startAfterEdge(start, end, end, (int) mCurrVelocity);
-            } 
-            
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mState == SPLINE) {
+                //mOver = over;
+                //mStartTime = AnimationUtils.currentAnimationTimeMillis();
+                //startAfterEdge(start, end, end, (int) mCurrVelocity);
+            //}
         }
 
         
@@ -899,22 +895,22 @@ switch(mMode){
             {
                 mDeceleration = - sign * mVelocity * mVelocity / (2.0f * mOver);
                 distance = mOver;
-            } 
+            } //End block
             mOver = (int) distance;
             mState = BALLISTIC;
             mFinal = mStart + (int) (mVelocity > 0 ? distance : -distance);
             mDuration = - (int) (1000.0f * mVelocity / mDeceleration);
-            
-            
-            
-            
-                 
-                 
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //float distance = mVelocity * mVelocity / (2.0f * Math.abs(mDeceleration));
+            //final float sign = Math.signum(mVelocity);
+            //if (distance > mOver) {
+                 //mDeceleration = - sign * mVelocity * mVelocity / (2.0f * mOver);
+                 //distance = mOver;
+            //}
+            //mOver = (int) distance;
+            //mState = BALLISTIC;
+            //mFinal = mStart + (int) (mVelocity > 0 ? distance : -distance);
+            //mDuration = - (int) (1000.0f * mVelocity / mDeceleration);
         }
 
         
@@ -929,13 +925,13 @@ switch(mState){
                 mDeceleration = getDeceleration(mVelocity);
                 mStartTime += mDuration;
                 onEdgeReached();
-            } 
+            } //End block
             else
             {
                 boolean var68934A3E9455FA72420237EB05902327_907954124 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1887977260 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1887977260;
-            } 
+            } //End block
             break;
             case BALLISTIC:
             mStartTime += mDuration;
@@ -949,8 +945,8 @@ switch(mState){
             boolean varB326B5062B2F0E69046810717534CB09_1125919498 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1710753718 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1710753718;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -963,7 +959,7 @@ switch(mState){
                 boolean var68934A3E9455FA72420237EB05902327_863684547 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2019017628 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2019017628;
-            } 
+            } //End block
             double distance = 0.0;
 switch(mState){
             case SPLINE:
@@ -980,18 +976,18 @@ switch(mState){
                     final float d_sup = SPLINE_POSITION[index + 1];
                     velocityCoef = (d_sup - d_inf) / (t_sup - t_inf);
                     distanceCoef = d_inf + (t - t_inf) * velocityCoef;
-                } 
+                } //End block
                 distance = distanceCoef * mSplineDistance;
                 mCurrVelocity = velocityCoef * mSplineDistance / mSplineDuration * 1000.0f;
                 break;
-            } 
+            } //End block
             case BALLISTIC:
             {
                 final float t = currentTime / 1000.0f;
                 mCurrVelocity = mVelocity + mDeceleration * t;
                 distance = mVelocity * t + mDeceleration * t * t / 2.0f;
                 break;
-            } 
+            } //End block
             case CUBIC:
             {
                 final float t = (float) (currentTime) / mDuration;
@@ -1000,13 +996,13 @@ switch(mState){
                 distance = sign * mOver * (3.0f * t2 - 2.0f * t * t2);
                 mCurrVelocity = sign * mOver * 6.0f * (- t + t2);
                 break;
-            } 
+            } //End block
 }            mCurrentPosition = mStart + (int) Math.round(distance);
             boolean varB326B5062B2F0E69046810717534CB09_456606586 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_65024279 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_65024279;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

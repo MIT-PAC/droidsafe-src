@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ public abstract class Reader implements Readable, Closeable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.949 -0400", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "34ED878B44B0872C50C8F22A6EAAAA08")
     protected  Reader() {
         lock = this;
-        
-        
+        // ---------- Original Method ----------
+        //lock = this;
     }
 
     
@@ -27,13 +27,13 @@ public abstract class Reader implements Readable, Closeable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1150829133 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1150829133.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1150829133;
-        } 
+        } //End block
         this.lock = lock;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (lock == null) {
+            //throw new NullPointerException();
+        //}
+        //this.lock = lock;
     }
 
     
@@ -46,19 +46,18 @@ public abstract class Reader implements Readable, Closeable {
         IOException var1508E3FDF27FD56D4E1051DB16DE1816_1484499688 = new IOException();
         var1508E3FDF27FD56D4E1051DB16DE1816_1484499688.addTaint(taint);
         throw var1508E3FDF27FD56D4E1051DB16DE1816_1484499688;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IOException();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.952 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "21350C4434B8A868B793E9D1839A10B7")
     public boolean markSupported() {
         boolean var68934A3E9455FA72420237EB05902327_1854795426 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1704195219 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1704195219;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -72,19 +71,19 @@ public abstract class Reader implements Readable, Closeable {
                 int var5B6AEFF299C84706C52041B8081F3370_996353476 = (charArray[0]);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_743812444 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_743812444;
-            } 
+            } //End block
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1519234335 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_587878656 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_587878656;
-        } 
-        
-        
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //char[] charArray = new char[1];
+            //if (read(charArray, 0, 1) != -1) {
+                //return charArray[0];
+            //}
+            //return -1;
+        //}
     }
 
     
@@ -94,22 +93,21 @@ public abstract class Reader implements Readable, Closeable {
         int var4828354AC0CD4A28CE476D719F00E912_434255972 = (read(buf, 0, buf.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1817486076 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1817486076;
-        
-        
+        // ---------- Original Method ----------
+        //return read(buf, 0, buf.length);
     }
 
     
     public abstract int read(char[] buf, int offset, int count) throws IOException;
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.954 -0400", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "55B049812EF39A97B075B6B848028795")
     public boolean ready() throws IOException {
         boolean var68934A3E9455FA72420237EB05902327_1271823751 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_567673433 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_567673433;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -118,8 +116,8 @@ public abstract class Reader implements Readable, Closeable {
         IOException var1508E3FDF27FD56D4E1051DB16DE1816_934754458 = new IOException();
         var1508E3FDF27FD56D4E1051DB16DE1816_934754458.addTaint(taint);
         throw var1508E3FDF27FD56D4E1051DB16DE1816_934754458;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IOException();
     }
 
     
@@ -131,7 +129,7 @@ public abstract class Reader implements Readable, Closeable {
             IllegalArgumentException var1938519F99623D8B8D1D15216863BFAB_1496935932 = new IllegalArgumentException("charCount < 0: " + charCount);
             var1938519F99623D8B8D1D15216863BFAB_1496935932.addTaint(taint);
             throw var1938519F99623D8B8D1D15216863BFAB_1496935932;
-        } 
+        } //End block
         synchronized
 (lock)        {
             long skipped = 0;
@@ -146,46 +144,46 @@ public abstract class Reader implements Readable, Closeable {
                     long varE52E279299E912838F689D4380C81F4A_636336101 = (skipped);
                                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1122761774 = getTaintLong();
                     return var0F5264038205EDFB1AC05FBB0E8C5E94_1122761774;
-                } 
+                } //End block
                 skipped += read;
     if(read < toRead)                
                 {
                     long varE52E279299E912838F689D4380C81F4A_171669530 = (skipped);
                                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1734272223 = getTaintLong();
                     return var0F5264038205EDFB1AC05FBB0E8C5E94_1734272223;
-                } 
+                } //End block
     if(charCount - skipped < toRead)                
                 {
                     toRead = (int) (charCount - skipped);
-                } 
-            } 
+                } //End block
+            } //End block
             long varE52E279299E912838F689D4380C81F4A_1045370425 = (skipped);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1259375588 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1259375588;
-        } 
-        
-        
-            
-        
-        
-            
-            
-            
-            
-                
-                
-                    
-                
-                
-                
-                    
-                
-                
-                    
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (charCount < 0) {
+            //throw new IllegalArgumentException("charCount < 0: " + charCount);
+        //}
+        //synchronized (lock) {
+            //long skipped = 0;
+            //int toRead = charCount < 512 ? (int) charCount : 512;
+            //char[] charsSkipped = new char[toRead];
+            //while (skipped < charCount) {
+                //int read = read(charsSkipped, 0, toRead);
+                //if (read == -1) {
+                    //return skipped;
+                //}
+                //skipped += read;
+                //if (read < toRead) {
+                    //return skipped;
+                //}
+                //if (charCount - skipped < toRead) {
+                    //toRead = (int) (charCount - skipped);
+                //}
+            //}
+            //return skipped;
+        //}
     }
 
     
@@ -198,18 +196,18 @@ public abstract class Reader implements Readable, Closeable {
     if(length > 0)        
         {
             target.put(buf, 0, length);
-        } 
+        } //End block
         int var2FA47F7C65FEC19CC163B195725E3844_467464825 = (length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_248864896 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_248864896;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int length = target.length();
+        //char[] buf = new char[length];
+        //length = Math.min(length, read(buf));
+        //if (length > 0) {
+            //target.put(buf, 0, length);
+        //}
+        //return length;
     }
 
     

@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,7 +39,7 @@ for(int i=0;i<N;i++)
     if(syncAdapterInfo == null)            
             {
                 continue;
-            } 
+            } //End block
             SyncOperation syncOperation = new SyncOperation(
                     op.account, op.syncSource, op.authority, op.extras, 0 ,
                     backoff != null ? backoff.first : 0,
@@ -48,21 +48,20 @@ for(int i=0;i<N;i++)
             syncOperation.expedited = op.expedited;
             syncOperation.pendingOperation = op;
             add(syncOperation, op);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.194 -0400", hash_original_method = "D3ED8DB5FFE6F89C719EB4A464B29556", hash_generated_method = "8BCEF1C13E3FA08C4B39C688E713F110")
     public boolean add(SyncOperation operation) {
         addTaint(operation.getTaint());
         boolean varFB6EE1A151E02B1C11EEEE2877F018BF_882129843 = (add(operation, null ));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_876467981 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_876467981;
-        
-        
+        // ---------- Original Method ----------
+        //return add(operation, null );
     }
 
     
@@ -83,20 +82,20 @@ for(int i=0;i<N;i++)
                 {
                     existingOperation.earliestRunTime = newRunTime;
                     changed = true;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(operation.expedited)                
                 {
                     existingOperation.expedited = true;
                     changed = true;
-                } 
-            } 
+                } //End block
+            } //End block
             boolean var8977DFAC2F8E04CB96E66882235F5ABA_1986715432 = (changed);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1041773820 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1041773820;
-        } 
+        } //End block
         operation.pendingOperation = pop;
     if(operation.pendingOperation == null)        
         {
@@ -110,15 +109,15 @@ for(int i=0;i<N;i++)
                         + operation);
                 varD66D786C7717C91FDE59B1DD7234185B_1578734763.addTaint(taint);
                 throw varD66D786C7717C91FDE59B1DD7234185B_1578734763;
-            } 
+            } //End block
             operation.pendingOperation = pop;
-        } 
+        } //End block
         mOperationsMap.put(operationKey, operation);
         boolean varB326B5062B2F0E69046810717534CB09_950322273 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1629299750 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1629299750;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -129,26 +128,26 @@ for(int i=0;i<N;i++)
     if(operationToRemove == null)        
         {
             return;
-        } 
+        } //End block
     if(!mSyncStorageEngine.deleteFromPending(operationToRemove.pendingOperation))        
         {
             final String errorMessage = "unable to find pending row for " + operationToRemove;
-        } 
-        
-        
-        
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SyncOperation operationToRemove = mOperationsMap.remove(operation.key);
+        //if (operationToRemove == null) {
+            //return;
+        //}
+        //if (!mSyncStorageEngine.deleteFromPending(operationToRemove.pendingOperation)) {
+            //final String errorMessage = "unable to find pending row for " + operationToRemove;
+            //Log.e(TAG, errorMessage, new IllegalStateException(errorMessage));
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.196 -0400", hash_original_method = "B31E7F9449B862015CEE60B6F703FDEF", hash_generated_method = "5D21943CC08F55C3F4F9C2EEE2A953CF")
     public void onBackoffChanged(Account account, String providerName, long backoff) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(backoff);
         addTaint(providerName.getTaint());
         addTaint(account.getTaint());
@@ -158,21 +157,21 @@ for(SyncOperation op : mOperationsMap.values())
             {
                 op.backoff = backoff;
                 op.updateEffectiveRunTime();
-            } 
-        } 
-        
-        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (SyncOperation op : mOperationsMap.values()) {
+            //if (op.account.equals(account) && op.authority.equals(providerName)) {
+                //op.backoff = backoff;
+                //op.updateEffectiveRunTime();
+            //}
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.197 -0400", hash_original_method = "B5F16B587E82C75B14DBD47F35BFF547", hash_generated_method = "44E99ECA27160FAF896105BD87F9BFBA")
     public void onDelayUntilTimeChanged(Account account, String providerName, long delayUntil) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(delayUntil);
         addTaint(providerName.getTaint());
         addTaint(account.getTaint());
@@ -182,15 +181,15 @@ for(SyncOperation op : mOperationsMap.values())
             {
                 op.delayUntil = delayUntil;
                 op.updateEffectiveRunTime();
-            } 
-        } 
-        
-        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (SyncOperation op : mOperationsMap.values()) {
+            //if (op.account.equals(account) && op.authority.equals(providerName)) {
+                //op.delayUntil = delayUntil;
+                //op.updateEffectiveRunTime();
+            //}
+        //}
     }
 
     
@@ -207,19 +206,19 @@ for(SyncOperation op : mOperationsMap.values())
     if(account != null && !syncOperation.account.equals(account))            
             {
                 continue;
-            } 
+            } //End block
     if(authority != null && !syncOperation.authority.equals(authority))            
             {
                 continue;
-            } 
+            } //End block
             entries.remove();
     if(!mSyncStorageEngine.deleteFromPending(syncOperation.pendingOperation))            
             {
                 final String errorMessage = "unable to find pending row for " + syncOperation;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -234,27 +233,27 @@ for(SyncOperation operation : mOperationsMap.values())
     if(operation.effectiveRunTime <= now)            
             {
                 sb.append("READY");
-            } 
+            } //End block
             else
             {
                 sb.append(DateUtils.formatElapsedTime((operation.effectiveRunTime - now) / 1000));
-            } 
+            } //End block
             sb.append(" - ");
             sb.append(operation.dump(false)).append("\n");
-        } 
-        
-        
-        
-        
-            
-            
-                
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final long now = SystemClock.elapsedRealtime();
+        //sb.append("SyncQueue: ").append(mOperationsMap.size()).append(" operation(s)\n");
+        //for (SyncOperation operation : mOperationsMap.values()) {
+            //sb.append("  ");
+            //if (operation.effectiveRunTime <= now) {
+                //sb.append("READY");
+            //} else {
+                //sb.append(DateUtils.formatElapsedTime((operation.effectiveRunTime - now) / 1000));
+            //}
+            //sb.append(" - ");
+            //sb.append(operation.dump(false)).append("\n");
+        //}
     }
 
     

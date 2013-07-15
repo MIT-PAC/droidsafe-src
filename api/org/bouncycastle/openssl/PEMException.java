@@ -1,6 +1,6 @@
 package org.bouncycastle.openssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class PEMException extends IOException {
         String    message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,30 +27,28 @@ public class PEMException extends IOException {
         super(message);
         addTaint(message.getTaint());
         this.underlying = underlying;
-        
-        
+        // ---------- Original Method ----------
+        //this.underlying = underlying;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.222 -0400", hash_original_method = "8D4B98C08FC53F956480CC6A65685E20", hash_generated_method = "1B93EF2BA42B83A8797D34C142E642FF")
     public Exception getUnderlyingException() {
 Exception var77A55F525D35035B29E3829296BB2E65_1803845219 =         underlying;
         var77A55F525D35035B29E3829296BB2E65_1803845219.addTaint(taint);
         return var77A55F525D35035B29E3829296BB2E65_1803845219;
-        
-        
+        // ---------- Original Method ----------
+        //return underlying;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.223 -0400", hash_original_method = "F2813220852B09056C9C149C0538BE80", hash_generated_method = "86DE7EBA85AF42BB9207CD69EC402079")
     public Throwable getCause() {
 Throwable var77A55F525D35035B29E3829296BB2E65_676516243 =         underlying;
         var77A55F525D35035B29E3829296BB2E65_676516243.addTaint(taint);
         return var77A55F525D35035B29E3829296BB2E65_676516243;
-        
-        
+        // ---------- Original Method ----------
+        //return underlying;
     }
 
     

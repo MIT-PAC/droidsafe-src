@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma.sms;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public class CdmaSmsAddress extends SmsAddress {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.520 -0400", hash_original_method = "C14D3E49998397C1BAE29B9693261AA4", hash_generated_method = "D0B7A6B483495AD2F861F207E5EE1740")
     public  CdmaSmsAddress() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -45,18 +45,18 @@ public class CdmaSmsAddress extends SmsAddress {
 String varF4CF030572656354ACFDF83FEE21D7A6_404243725 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_404243725.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_404243725;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder builder = new StringBuilder();
+        //builder.append("CdmaSmsAddress ");
+        //builder.append("{ digitMode=" + digitMode);
+        //builder.append(", numberMode=" + numberMode);
+        //builder.append(", numberPlan=" + numberPlan);
+        //builder.append(", numberOfDigits=" + numberOfDigits);
+        //builder.append(", ton=" + ton);
+        //builder.append(", address=\"" + address + "\"");
+        //builder.append(", origBytes=" + HexDump.toHexString(origBytes));
+        //builder.append(" }");
+        //return builder.toString();
     }
 
     
@@ -91,8 +91,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_404243725 =         builder.toString(
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static String filterWhitespace(String address) {
+        private static String filterWhitespace(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();
         for (int i = 0; i < len; i++) {

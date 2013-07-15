@@ -1,6 +1,6 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class CursorIndexOutOfBoundsException extends IndexOutOfBoundsException {
         super("Index " + index + " requested, with a size of " + size);
         addTaint(size);
         addTaint(index);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -20,7 +20,7 @@ public class CursorIndexOutOfBoundsException extends IndexOutOfBoundsException {
     public  CursorIndexOutOfBoundsException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

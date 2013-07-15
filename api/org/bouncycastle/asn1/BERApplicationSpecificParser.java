@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ public class BERApplicationSpecificParser implements ASN1ApplicationSpecificPars
       BERApplicationSpecificParser(int tag, ASN1StreamParser parser) {
         this.tag = tag;
         this.parser = parser;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.tag = tag;
+        //this.parser = parser;
     }
 
     
@@ -29,8 +29,8 @@ public class BERApplicationSpecificParser implements ASN1ApplicationSpecificPars
 DEREncodable var09F4702C04B163043983FE2F5378920C_2076986905 =         parser.readObject();
         var09F4702C04B163043983FE2F5378920C_2076986905.addTaint(taint);
         return var09F4702C04B163043983FE2F5378920C_2076986905;
-        
-        
+        // ---------- Original Method ----------
+        //return parser.readObject();
     }
 
     
@@ -39,8 +39,8 @@ DEREncodable var09F4702C04B163043983FE2F5378920C_2076986905 =         parser.rea
 DERObject var49C379AB737313FF79147B13CD4AA097_87601318 =         new BERApplicationSpecific(tag, parser.readVector());
         var49C379AB737313FF79147B13CD4AA097_87601318.addTaint(taint);
         return var49C379AB737313FF79147B13CD4AA097_87601318;
-        
-        
+        // ---------- Original Method ----------
+        //return new BERApplicationSpecific(tag, parser.readVector());
     }
 
     
@@ -51,22 +51,22 @@ DERObject var49C379AB737313FF79147B13CD4AA097_87601318 =         new BERApplicat
 DERObject var7CA8C38BF885E63AD9395CA9CA98D912_1927673384 =             getLoadedObject();
             var7CA8C38BF885E63AD9395CA9CA98D912_1927673384.addTaint(taint);
             return var7CA8C38BF885E63AD9395CA9CA98D912_1927673384;
-        } 
+        } //End block
         catch (IOException e)
         {
             ASN1ParsingException var2B5ADF01A3F8BD267A883C161A3838C1_587686333 = new ASN1ParsingException(e.getMessage(), e);
             var2B5ADF01A3F8BD267A883C161A3838C1_587686333.addTaint(taint);
             throw var2B5ADF01A3F8BD267A883C161A3838C1_587686333;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return getLoadedObject();
+        //}
+        //catch (IOException e)
+        //{
+            //throw new ASN1ParsingException(e.getMessage(), e);
+        //}
     }
 
     

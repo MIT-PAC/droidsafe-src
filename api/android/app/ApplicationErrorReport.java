@@ -1,6 +1,6 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,7 +53,7 @@ public class ApplicationErrorReport implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.258 -0400", hash_original_method = "6CC6117712C6457F9E284742535D4C3A", hash_generated_method = "A32824C33E3DAEF3E43183F720B0B2CF")
     public  ApplicationErrorReport() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -61,8 +61,8 @@ public class ApplicationErrorReport implements Parcelable {
       ApplicationErrorReport(Parcel in) {
         addTaint(in.getTaint());
         readFromParcel(in);
-        
-        
+        // ---------- Original Method ----------
+        //readFromParcel(in);
     }
 
     
@@ -91,8 +91,7 @@ public class ApplicationErrorReport implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static ComponentName getErrorReportReceiver(PackageManager pm, String errorPackage,
+        static ComponentName getErrorReportReceiver(PackageManager pm, String errorPackage,
             String receiverPackage) {
         if (receiverPackage == null || receiverPackage.length() == 0) {
             return null;
@@ -134,27 +133,27 @@ switch(type){
         runningServiceInfo.writeToParcel(dest, flags);
         break;
 }
-        
-        
-        
-        
-        
-        
-        
-        
-            
-                
-                
-            
-                
-                
-            
-                
-                
-            
-                
-                
-        
+        // ---------- Original Method ----------
+        //dest.writeInt(type);
+        //dest.writeString(packageName);
+        //dest.writeString(installerPackageName);
+        //dest.writeString(processName);
+        //dest.writeLong(time);
+        //dest.writeInt(systemApp ? 1 : 0);
+        //switch (type) {
+            //case TYPE_CRASH:
+                //crashInfo.writeToParcel(dest, flags);
+                //break;
+            //case TYPE_ANR:
+                //anrInfo.writeToParcel(dest, flags);
+                //break;
+            //case TYPE_BATTERY:
+                //batteryInfo.writeToParcel(dest, flags);
+                //break;
+            //case TYPE_RUNNING_SERVICE:
+                //runningServiceInfo.writeToParcel(dest, flags);
+                //break;
+        //}
     }
 
     
@@ -192,19 +191,18 @@ switch(type){
         runningServiceInfo = new RunningServiceInfo(in);
         break;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.268 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C95013ADA7C7FDC51CFB396FFCC56EE0")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_763390036 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_34879704 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_34879704;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -232,27 +230,27 @@ switch(type){
         runningServiceInfo.dump(pw, prefix);
         break;
 }
-        
-        
-        
-        
-        
-        
-        
-        
-            
-                
-                
-            
-                
-                
-            
-                
-                
-            
-                
-                
-        
+        // ---------- Original Method ----------
+        //pw.println(prefix + "type: " + type);
+        //pw.println(prefix + "packageName: " + packageName);
+        //pw.println(prefix + "installerPackageName: " + installerPackageName);
+        //pw.println(prefix + "processName: " + processName);
+        //pw.println(prefix + "time: " + time);
+        //pw.println(prefix + "systemApp: " + systemApp);
+        //switch (type) {
+            //case TYPE_CRASH:
+                //crashInfo.dump(pw, prefix);
+                //break;
+            //case TYPE_ANR:
+                //anrInfo.dump(pw, prefix);
+                //break;
+            //case TYPE_BATTERY:
+                //batteryInfo.dump(pw, prefix);
+                //break;
+            //case TYPE_RUNNING_SERVICE:
+                //runningServiceInfo.dump(pw, prefix);
+                //break;
+        //}
     }
 
     
@@ -281,7 +279,7 @@ switch(type){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.276 -0400", hash_original_method = "A5C69B6119C4811D45501C8F0E46959E", hash_generated_method = "8F2057BAD303C22C04121A18F120A112")
         public  CrashInfo() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -299,13 +297,13 @@ switch(type){
     if(tr.getStackTrace() != null && tr.getStackTrace().length > 0)                
                 {
                     rootTr = tr;
-                } 
+                } //End block
                 String msg = tr.getMessage();
     if(msg != null && msg.length() > 0)                
                 {
                     exceptionMessage = msg;
-                } 
-            } 
+                } //End block
+            } //End block
             exceptionClassName = rootTr.getClass().getName();
     if(rootTr.getStackTrace().length > 0)            
             {
@@ -314,16 +312,16 @@ switch(type){
                 throwClassName = trace.getClassName();
                 throwMethodName = trace.getMethodName();
                 throwLineNumber = trace.getLineNumber();
-            } 
+            } //End block
             else
             {
                 throwFileName = "unknown";
                 throwClassName = "unknown";
                 throwMethodName = "unknown";
                 throwLineNumber = 0;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -336,14 +334,14 @@ switch(type){
             throwMethodName = in.readString();
             throwLineNumber = in.readInt();
             stackTrace = in.readString();
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //exceptionClassName = in.readString();
+            //exceptionMessage = in.readString();
+            //throwFileName = in.readString();
+            //throwClassName = in.readString();
+            //throwMethodName = in.readString();
+            //throwLineNumber = in.readInt();
+            //stackTrace = in.readString();
         }
 
         
@@ -358,14 +356,14 @@ switch(type){
             dest.writeString(throwMethodName);
             dest.writeInt(throwLineNumber);
             dest.writeString(stackTrace);
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //dest.writeString(exceptionClassName);
+            //dest.writeString(exceptionMessage);
+            //dest.writeString(throwFileName);
+            //dest.writeString(throwClassName);
+            //dest.writeString(throwMethodName);
+            //dest.writeInt(throwLineNumber);
+            //dest.writeString(stackTrace);
         }
 
         
@@ -380,14 +378,14 @@ switch(type){
             pw.println(prefix + "throwMethodName: " + throwMethodName);
             pw.println(prefix + "throwLineNumber: " + throwLineNumber);
             pw.println(prefix + "stackTrace: " + stackTrace);
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //pw.println(prefix + "exceptionClassName: " + exceptionClassName);
+            //pw.println(prefix + "exceptionMessage: " + exceptionMessage);
+            //pw.println(prefix + "throwFileName: " + throwFileName);
+            //pw.println(prefix + "throwClassName: " + throwClassName);
+            //pw.println(prefix + "throwMethodName: " + throwMethodName);
+            //pw.println(prefix + "throwLineNumber: " + throwLineNumber);
+            //pw.println(prefix + "stackTrace: " + stackTrace);
         }
 
         
@@ -408,7 +406,7 @@ switch(type){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.286 -0400", hash_original_method = "76183B88EF41C33999366984D15A43B8", hash_generated_method = "97ECD60A9856E55398AB9A94F8B3E0EF")
         public  AnrInfo() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -417,10 +415,10 @@ switch(type){
             activity = in.readString();
             cause = in.readString();
             info = in.readString();
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //activity = in.readString();
+            //cause = in.readString();
+            //info = in.readString();
         }
 
         
@@ -431,10 +429,10 @@ switch(type){
             dest.writeString(activity);
             dest.writeString(cause);
             dest.writeString(info);
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //dest.writeString(activity);
+            //dest.writeString(cause);
+            //dest.writeString(info);
         }
 
         
@@ -445,10 +443,10 @@ switch(type){
             pw.println(prefix + "activity: " + activity);
             pw.println(prefix + "cause: " + cause);
             pw.println(prefix + "info: " + info);
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //pw.println(prefix + "activity: " + activity);
+            //pw.println(prefix + "cause: " + cause);
+            //pw.println(prefix + "info: " + info);
         }
 
         
@@ -472,7 +470,7 @@ switch(type){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.293 -0400", hash_original_method = "D2192429514F02BB97F8B55205CB5D4D", hash_generated_method = "50D456E6A7890D787C7F0F99F1A3C64A")
         public  BatteryInfo() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -482,11 +480,11 @@ switch(type){
             durationMicros = in.readLong();
             usageDetails = in.readString();
             checkinDetails = in.readString();
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //usagePercent = in.readInt();
+            //durationMicros = in.readLong();
+            //usageDetails = in.readString();
+            //checkinDetails = in.readString();
         }
 
         
@@ -498,11 +496,11 @@ switch(type){
             dest.writeLong(durationMicros);
             dest.writeString(usageDetails);
             dest.writeString(checkinDetails);
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //dest.writeInt(usagePercent);
+            //dest.writeLong(durationMicros);
+            //dest.writeString(usageDetails);
+            //dest.writeString(checkinDetails);
         }
 
         
@@ -514,11 +512,11 @@ switch(type){
             pw.println(prefix + "durationMicros: " + durationMicros);
             pw.println(prefix + "usageDetails: " + usageDetails);
             pw.println(prefix + "checkinDetails: " + checkinDetails);
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //pw.println(prefix + "usagePercent: " + usagePercent);
+            //pw.println(prefix + "durationMicros: " + durationMicros);
+            //pw.println(prefix + "usageDetails: " + usageDetails);
+            //pw.println(prefix + "checkinDetails: " + checkinDetails);
         }
 
         
@@ -536,7 +534,7 @@ switch(type){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.301 -0400", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "822CEFC1BD8FA9077CAB00884D317765")
         public  RunningServiceInfo() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -544,9 +542,9 @@ switch(type){
         public  RunningServiceInfo(Parcel in) {
             durationMillis = in.readLong();
             serviceDetails = in.readString();
-            
-            
-            
+            // ---------- Original Method ----------
+            //durationMillis = in.readLong();
+            //serviceDetails = in.readString();
         }
 
         
@@ -556,9 +554,9 @@ switch(type){
             addTaint(dest.getTaint());
             dest.writeLong(durationMillis);
             dest.writeString(serviceDetails);
-            
-            
-            
+            // ---------- Original Method ----------
+            //dest.writeLong(durationMillis);
+            //dest.writeString(serviceDetails);
         }
 
         
@@ -568,9 +566,9 @@ switch(type){
             addTaint(pw.getTaint());
             pw.println(prefix + "durationMillis: " + durationMillis);
             pw.println(prefix + "serviceDetails: " + serviceDetails);
-            
-            
-            
+            // ---------- Original Method ----------
+            //pw.println(prefix + "durationMillis: " + durationMillis);
+            //pw.println(prefix + "serviceDetails: " + serviceDetails);
         }
 
         
@@ -611,12 +609,12 @@ switch(type){
             return new ApplicationErrorReport[size];
         }
     };
-    
+    // orphaned legacy method
     public ApplicationErrorReport createFromParcel(Parcel source) {
             return new ApplicationErrorReport(source);
         }
     
-    
+    // orphaned legacy method
     public ApplicationErrorReport[] newArray(int size) {
             return new ApplicationErrorReport[size];
         }

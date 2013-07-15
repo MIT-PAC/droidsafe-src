@@ -1,6 +1,6 @@
 package android.accounts;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -67,10 +67,10 @@ public class AccountManager {
         mContext = context;
         mService = service;
         mMainHandler = new Handler(mContext.getMainLooper());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mService = service;
+        //mMainHandler = new Handler(mContext.getMainLooper());
     }
 
     
@@ -79,10 +79,10 @@ public class AccountManager {
         mContext = context;
         mService = service;
         mMainHandler = handler;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mService = service;
+        //mMainHandler = handler;
     }
 
     
@@ -119,20 +119,20 @@ public class AccountManager {
 String varF265DC2FF2F4422603F1281D744D04FC_1548957977 =             mService.getPassword(account);
             varF265DC2FF2F4422603F1281D744D04FC_1548957977.addTaint(taint);
             return varF265DC2FF2F4422603F1281D744D04FC_1548957977;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1779434178 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1779434178.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1779434178;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //try {
+            //return mService.getPassword(account);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -157,21 +157,21 @@ String varF265DC2FF2F4422603F1281D744D04FC_1548957977 =             mService.get
 String varB6E12DC381BC7D4C78B95DD144A437FD_385111316 =             mService.getUserData(account, key);
             varB6E12DC381BC7D4C78B95DD144A437FD_385111316.addTaint(taint);
             return varB6E12DC381BC7D4C78B95DD144A437FD_385111316;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_677880990 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_677880990.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_677880990;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //if (key == null) throw new IllegalArgumentException("key is null");
+        //try {
+            //return mService.getUserData(account, key);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -182,19 +182,19 @@ String varB6E12DC381BC7D4C78B95DD144A437FD_385111316 =             mService.getU
 AuthenticatorDescription[] var72B248AAB2E560F9BE7F0C8BB51E605E_1638562930 =             mService.getAuthenticatorTypes();
             var72B248AAB2E560F9BE7F0C8BB51E605E_1638562930.addTaint(taint);
             return var72B248AAB2E560F9BE7F0C8BB51E605E_1638562930;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1057503490 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1057503490.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1057503490;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getAuthenticatorTypes();
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -205,19 +205,19 @@ AuthenticatorDescription[] var72B248AAB2E560F9BE7F0C8BB51E605E_1638562930 =     
 Account[] varC591FC5C8C08716D5E3035B51846A437_1588134773 =             mService.getAccounts(null);
             varC591FC5C8C08716D5E3035B51846A437_1588134773.addTaint(taint);
             return varC591FC5C8C08716D5E3035B51846A437_1588134773;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_24230390 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_24230390.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_24230390;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getAccounts(null);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -229,19 +229,19 @@ Account[] varC591FC5C8C08716D5E3035B51846A437_1588134773 =             mService.
 Account[] var374F02E84765AA530519BBC2335DB4D9_400354232 =             mService.getAccounts(type);
             var374F02E84765AA530519BBC2335DB4D9_400354232.addTaint(taint);
             return var374F02E84765AA530519BBC2335DB4D9_400354232;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1599445926 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1599445926.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1599445926;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getAccounts(type);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -269,8 +269,8 @@ AccountManagerFuture<Boolean> varDFF33794F9650E111BD6F4FC4D492A46_1234219541 =  
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.591 -0400", hash_original_method = "FFBFF398261B5CC044E2A91B7E73D5E3", hash_generated_method = "89205067D73CE89B6B97941EBFF4C904")
         public void doWork() throws RemoteException {
             mService.hasFeatures(mResponse, account, features);
-            
-            
+            // ---------- Original Method ----------
+            //mService.hasFeatures(mResponse, account, features);
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.593 -0400", hash_original_method = "EE3E978FB5F7BB3B094FBC48A926EAB2", hash_generated_method = "B710DB09C6A1BD4906ABF8903B844E2D")
         public Boolean bundleToResult(Bundle bundle) throws AuthenticatorException {
@@ -280,33 +280,33 @@ AccountManagerFuture<Boolean> varDFF33794F9650E111BD6F4FC4D492A46_1234219541 =  
                 AuthenticatorException varF12691AEB1A4C0781851C7555271DC34_455455121 = new AuthenticatorException("no result in response");
                 varF12691AEB1A4C0781851C7555271DC34_455455121.addTaint(taint);
                 throw varF12691AEB1A4C0781851C7555271DC34_455455121;
-            } 
+            } //End block
 Boolean varE5CA5297BFAF8C89D32D5EF2EF2432F6_130940871 =             bundle.getBoolean(KEY_BOOLEAN_RESULT);
             varE5CA5297BFAF8C89D32D5EF2EF2432F6_130940871.addTaint(taint);
             return varE5CA5297BFAF8C89D32D5EF2EF2432F6_130940871;
-            
-            
-                    
-                
-            
+            // ---------- Original Method ----------
+            //if (!bundle.containsKey(KEY_BOOLEAN_RESULT)) {
+                    //throw new AuthenticatorException("no result in response");
+                //}
+            //return bundle.getBoolean(KEY_BOOLEAN_RESULT);
         }
 }.start();
         varDFF33794F9650E111BD6F4FC4D492A46_1234219541.addTaint(taint);
         return varDFF33794F9650E111BD6F4FC4D492A46_1234219541;
-        
-        
-        
-        
-            
-                
-            
-            
-                
-                    
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //if (features == null) throw new IllegalArgumentException("features is null");
+        //return new Future2Task<Boolean>(handler, callback) {
+            //public void doWork() throws RemoteException {
+                //mService.hasFeatures(mResponse, account, features);
+            //}
+            //public Boolean bundleToResult(Bundle bundle) throws AuthenticatorException {
+                //if (!bundle.containsKey(KEY_BOOLEAN_RESULT)) {
+                    //throw new AuthenticatorException("no result in response");
+                //}
+                //return bundle.getBoolean(KEY_BOOLEAN_RESULT);
+            //}
+        //}.start();
     }
 
     
@@ -328,8 +328,8 @@ AccountManagerFuture<Account[]> var32592741EE7D1B027B3439F04859A07A_1210515705 =
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.604 -0400", hash_original_method = "73AB820A1E98A1765445367AD9245309", hash_generated_method = "E4EFF5B2612046AA05CA36509915F542")
         public void doWork() throws RemoteException {
             mService.getAccountsByFeatures(mResponse, type, features);
-            
-            
+            // ---------- Original Method ----------
+            //mService.getAccountsByFeatures(mResponse, type, features);
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.610 -0400", hash_original_method = "4E01F2C268DC2C127E06F0E054062427", hash_generated_method = "44B9893563C3E059D34562E22A0362CC")
         public Account[] bundleToResult(Bundle bundle) throws AuthenticatorException {
@@ -339,32 +339,32 @@ AccountManagerFuture<Account[]> var32592741EE7D1B027B3439F04859A07A_1210515705 =
                 AuthenticatorException varF12691AEB1A4C0781851C7555271DC34_2124084311 = new AuthenticatorException("no result in response");
                 varF12691AEB1A4C0781851C7555271DC34_2124084311.addTaint(taint);
                 throw varF12691AEB1A4C0781851C7555271DC34_2124084311;
-            } 
+            } //End block
             final Parcelable[] parcelables = bundle.getParcelableArray(KEY_ACCOUNTS);
             Account[] descs = new Account[parcelables.length];
 for(int i = 0;i < parcelables.length;i++)
             {
                 descs[i] = (Account) parcelables[i];
-            } 
+            } //End block
 Account[] var8AFC8F239FAF32249C1DA5BD5D6C508A_1224790146 =             descs;
             var8AFC8F239FAF32249C1DA5BD5D6C508A_1224790146.addTaint(taint);
             return var8AFC8F239FAF32249C1DA5BD5D6C508A_1224790146;
-            
-            
-                    
-                
-            
-            
-            
-                    
-                
-            
+            // ---------- Original Method ----------
+            //if (!bundle.containsKey(KEY_ACCOUNTS)) {
+                    //throw new AuthenticatorException("no result in response");
+                //}
+            //final Parcelable[] parcelables = bundle.getParcelableArray(KEY_ACCOUNTS);
+            //Account[] descs = new Account[parcelables.length];
+            //for (int i = 0; i < parcelables.length; i++) {
+                    //descs[i] = (Account) parcelables[i];
+                //}
+            //return descs;
         }
 }.start();
         var32592741EE7D1B027B3439F04859A07A_1210515705.addTaint(taint);
         return var32592741EE7D1B027B3439F04859A07A_1210515705;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -384,20 +384,20 @@ Account[] var8AFC8F239FAF32249C1DA5BD5D6C508A_1224790146 =             descs;
             boolean varB8116F6C3347DBB4478ABC1827CF1BC9_916545448 = (mService.addAccount(account, password, userdata));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1146298586 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1146298586;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1380259214 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1380259214.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1380259214;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //try {
+            //return mService.addAccount(account, password, userdata);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -417,8 +417,8 @@ AccountManagerFuture<Boolean> var4A4ADA264DA1FB81D3FF82DCFC2D4A40_1273839238 =  
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.622 -0400", hash_original_method = "008B2E3F52D7383A94B933DA4159D4A7", hash_generated_method = "81AD4A0CB256A6E863BA4C31FFEB45E7")
         public void doWork() throws RemoteException {
             mService.removeAccount(mResponse, account);
-            
-            
+            // ---------- Original Method ----------
+            //mService.removeAccount(mResponse, account);
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.624 -0400", hash_original_method = "EE3E978FB5F7BB3B094FBC48A926EAB2", hash_generated_method = "E042EE42E2024E5DE520FA024DB73AE3")
         public Boolean bundleToResult(Bundle bundle) throws AuthenticatorException {
@@ -428,32 +428,32 @@ AccountManagerFuture<Boolean> var4A4ADA264DA1FB81D3FF82DCFC2D4A40_1273839238 =  
                 AuthenticatorException varF12691AEB1A4C0781851C7555271DC34_153822610 = new AuthenticatorException("no result in response");
                 varF12691AEB1A4C0781851C7555271DC34_153822610.addTaint(taint);
                 throw varF12691AEB1A4C0781851C7555271DC34_153822610;
-            } 
+            } //End block
 Boolean varE5CA5297BFAF8C89D32D5EF2EF2432F6_930537952 =             bundle.getBoolean(KEY_BOOLEAN_RESULT);
             varE5CA5297BFAF8C89D32D5EF2EF2432F6_930537952.addTaint(taint);
             return varE5CA5297BFAF8C89D32D5EF2EF2432F6_930537952;
-            
-            
-                    
-                
-            
+            // ---------- Original Method ----------
+            //if (!bundle.containsKey(KEY_BOOLEAN_RESULT)) {
+                    //throw new AuthenticatorException("no result in response");
+                //}
+            //return bundle.getBoolean(KEY_BOOLEAN_RESULT);
         }
 }.start();
         var4A4ADA264DA1FB81D3FF82DCFC2D4A40_1273839238.addTaint(taint);
         return var4A4ADA264DA1FB81D3FF82DCFC2D4A40_1273839238;
-        
-        
-        
-            
-                
-            
-            
-                
-                    
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //return new Future2Task<Boolean>(handler, callback) {
+            //public void doWork() throws RemoteException {
+                //mService.removeAccount(mResponse, account);
+            //}
+            //public Boolean bundleToResult(Bundle bundle) throws AuthenticatorException {
+                //if (!bundle.containsKey(KEY_BOOLEAN_RESULT)) {
+                    //throw new AuthenticatorException("no result in response");
+                //}
+                //return bundle.getBoolean(KEY_BOOLEAN_RESULT);
+            //}
+        //}.start();
     }
 
     
@@ -472,23 +472,23 @@ Boolean varE5CA5297BFAF8C89D32D5EF2EF2432F6_930537952 =             bundle.getBo
     if(authToken != null)            
             {
                 mService.invalidateAuthToken(accountType, authToken);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_268205070 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_268205070.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_268205070;
-        } 
-        
-        
-        
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (accountType == null) throw new IllegalArgumentException("accountType is null");
+        //try {
+            //if (authToken != null) {
+                //mService.invalidateAuthToken(accountType, authToken);
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -513,21 +513,21 @@ Boolean varE5CA5297BFAF8C89D32D5EF2EF2432F6_930537952 =             bundle.getBo
 String var57F2B5CDC8AC908E5586F36AB9127795_1245763142 =             mService.peekAuthToken(account, authTokenType);
             var57F2B5CDC8AC908E5586F36AB9127795_1245763142.addTaint(taint);
             return var57F2B5CDC8AC908E5586F36AB9127795_1245763142;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1422738947 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1422738947.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1422738947;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
+        //try {
+            //return mService.peekAuthToken(account, authTokenType);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -544,20 +544,20 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1245763142 =             mService.pee
         try 
         {
             mService.setPassword(account, password);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_27401491 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_27401491.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_27401491;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //try {
+            //mService.setPassword(account, password);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -573,20 +573,20 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1245763142 =             mService.pee
         try 
         {
             mService.clearPassword(account);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1663104225 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1663104225.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1663104225;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //try {
+            //mService.clearPassword(account);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -610,21 +610,21 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1245763142 =             mService.pee
         try 
         {
             mService.setUserData(account, key, value);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1660125779 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1660125779.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1660125779;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //if (key == null) throw new IllegalArgumentException("key is null");
+        //try {
+            //mService.setUserData(account, key, value);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -648,21 +648,21 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1245763142 =             mService.pee
         try 
         {
             mService.setAuthToken(account, authTokenType, authToken);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1128556058 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1128556058.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1128556058;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
+        //try {
+            //mService.setAuthToken(account, authTokenType, authToken);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException(e);
+        //}
     }
 
     
@@ -691,21 +691,21 @@ String var57F2B5CDC8AC908E5586F36AB9127795_1245763142 =             mService.pee
 String var540C13E9E156B687226421B24F2DF178_445410957 =             null;
             var540C13E9E156B687226421B24F2DF178_445410957.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_445410957;
-        } 
+        } //End block
 String var3A2B6A9F8F72674C0701F55FC46307ED_1931925551 =         bundle.getString(KEY_AUTHTOKEN);
         var3A2B6A9F8F72674C0701F55FC46307ED_1931925551.addTaint(taint);
         return var3A2B6A9F8F72674C0701F55FC46307ED_1931925551;
-        
-        
-        
-        
-                
-        
-            
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
+        //Bundle bundle = getAuthToken(account, authTokenType, notifyAuthFailure, null ,
+                //null ).getResult();
+        //if (bundle == null) {
+            //Log.e(TAG, "blockingGetAuthToken: null was returned from getResult() for "
+                    //+ account + ", authTokenType " + authTokenType);
+            //return null;
+        //}
+        //return bundle.getString(KEY_AUTHTOKEN);
     }
 
     
@@ -735,7 +735,7 @@ String var3A2B6A9F8F72674C0701F55FC46307ED_1931925551 =         bundle.getString
     if(options != null)        
         {
             optionsIn.putAll(options);
-        } 
+        } //End block
         optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
 AccountManagerFuture<Bundle> var0C15B41E283DF0F7CE7BDD58718BC504_811985606 =         new AmsTask(activity, handler, callback) {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.665 -0400", hash_original_method = "DB27CC533E1EBFD8DDE03170C9D7E426", hash_generated_method = "914FB93966B313E8F64C04FDBCE1D8BE")
@@ -743,29 +743,29 @@ AccountManagerFuture<Bundle> var0C15B41E283DF0F7CE7BDD58718BC504_811985606 =    
             mService.getAuthToken(mResponse, account, authTokenType,
                         false , true ,
                         optionsIn);
-            
-            
-                        
-                        
+            // ---------- Original Method ----------
+            //mService.getAuthToken(mResponse, account, authTokenType,
+                        //false , true ,
+                        //optionsIn);
         }
 }.start();
         var0C15B41E283DF0F7CE7BDD58718BC504_811985606.addTaint(taint);
         return var0C15B41E283DF0F7CE7BDD58718BC504_811985606;
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-                
-                        
-                        
-            
-        
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
+        //final Bundle optionsIn = new Bundle();
+        //if (options != null) {
+            //optionsIn.putAll(options);
+        //}
+        //optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
+        //return new AmsTask(activity, handler, callback) {
+            //public void doWork() throws RemoteException {
+                //mService.getAuthToken(mResponse, account, authTokenType,
+                        //false , true ,
+                        //optionsIn);
+            //}
+        //}.start();
     }
 
     
@@ -784,9 +784,9 @@ AccountManagerFuture<Bundle> varE53CBB2E6EE67C2A88DB98EB051FE1C4_1918235774 =   
                 handler);
         varE53CBB2E6EE67C2A88DB98EB051FE1C4_1918235774.addTaint(taint);
         return varE53CBB2E6EE67C2A88DB98EB051FE1C4_1918235774;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return getAuthToken(account, authTokenType, null, notifyAuthFailure, callback, 
+                //handler);
     }
 
     
@@ -817,34 +817,34 @@ AccountManagerFuture<Bundle> varE53CBB2E6EE67C2A88DB98EB051FE1C4_1918235774 =   
     if(options != null)        
         {
             optionsIn.putAll(options);
-        } 
+        } //End block
         optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
 AccountManagerFuture<Bundle> varD0E43CD18B7614D621DC6D506B386ABB_305724419 =         new AmsTask(null, handler, callback) {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.682 -0400", hash_original_method = "4D806FE924DCA4BD633F9FEEB108BD63", hash_generated_method = "22E63FDD6EFBDF9C79B3AB87B647FECC")
         public void doWork() throws RemoteException {
             mService.getAuthToken(mResponse, account, authTokenType,
                         notifyAuthFailure, false , optionsIn);
-            
-            
-                        
+            // ---------- Original Method ----------
+            //mService.getAuthToken(mResponse, account, authTokenType,
+                        //notifyAuthFailure, false , optionsIn);
         }
 }.start();
         varD0E43CD18B7614D621DC6D506B386ABB_305724419.addTaint(taint);
         return varD0E43CD18B7614D621DC6D506B386ABB_305724419;
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-                
-                        
-            
-        
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
+        //final Bundle optionsIn = new Bundle();
+        //if (options != null) {
+            //optionsIn.putAll(options);
+        //}
+        //optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
+        //return new AmsTask(null, handler, callback) {
+            //public void doWork() throws RemoteException {
+                //mService.getAuthToken(mResponse, account, authTokenType,
+                        //notifyAuthFailure, false , optionsIn);
+            //}
+        //}.start();
     }
 
     
@@ -870,33 +870,33 @@ AccountManagerFuture<Bundle> varD0E43CD18B7614D621DC6D506B386ABB_305724419 =    
     if(addAccountOptions != null)        
         {
             optionsIn.putAll(addAccountOptions);
-        } 
+        } //End block
         optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
 AccountManagerFuture<Bundle> varD8CFA3F11091A5A788758BA8176211E1_522445388 =         new AmsTask(activity, handler, callback) {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.691 -0400", hash_original_method = "8125D1B63E005C814CD2B9CB30309226", hash_generated_method = "8F2127E03570576B47D9FA13D331F1D9")
         public void doWork() throws RemoteException {
             mService.addAcount(mResponse, accountType, authTokenType,
                         requiredFeatures, activity != null, optionsIn);
-            
-            
-                        
+            // ---------- Original Method ----------
+            //mService.addAcount(mResponse, accountType, authTokenType,
+                        //requiredFeatures, activity != null, optionsIn);
         }
 }.start();
         varD8CFA3F11091A5A788758BA8176211E1_522445388.addTaint(taint);
         return varD8CFA3F11091A5A788758BA8176211E1_522445388;
-        
-        
-        
-        
-            
-        
-        
-        
-            
-                
-                        
-            
-        
+        // ---------- Original Method ----------
+        //if (accountType == null) throw new IllegalArgumentException("accountType is null");
+        //final Bundle optionsIn = new Bundle();
+        //if (addAccountOptions != null) {
+            //optionsIn.putAll(addAccountOptions);
+        //}
+        //optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, mContext.getPackageName());
+        //return new AmsTask(activity, handler, callback) {
+            //public void doWork() throws RemoteException {
+                //mService.addAcount(mResponse, accountType, authTokenType,
+                        //requiredFeatures, activity != null, optionsIn);
+            //}
+        //}.start();
     }
 
     
@@ -921,19 +921,19 @@ AccountManagerFuture<Bundle> varAF4F8503C14478A49D1D8937CDFAB658_1642465362 =   
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.698 -0400", hash_original_method = "352D9086D40AE796E81956BBA2D0E5D4", hash_generated_method = "3F77048E922E80B6C7C6633D1C3CBAEF")
         public void doWork() throws RemoteException {
             mService.confirmCredentials(mResponse, account, options, activity != null);
-            
-            
+            // ---------- Original Method ----------
+            //mService.confirmCredentials(mResponse, account, options, activity != null);
         }
 }.start();
         varAF4F8503C14478A49D1D8937CDFAB658_1642465362.addTaint(taint);
         return varAF4F8503C14478A49D1D8937CDFAB658_1642465362;
-        
-        
-        
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //return new AmsTask(activity, handler, callback) {
+            //public void doWork() throws RemoteException {
+                //mService.confirmCredentials(mResponse, account, options, activity != null);
+            //}
+        //}.start();
     }
 
     
@@ -960,21 +960,21 @@ AccountManagerFuture<Bundle> varFD1B4C0E8EE2C772594596D209598B34_2125954392 =   
         public void doWork() throws RemoteException {
             mService.updateCredentials(mResponse, account, authTokenType, activity != null,
                         options);
-            
-            
-                        
+            // ---------- Original Method ----------
+            //mService.updateCredentials(mResponse, account, authTokenType, activity != null,
+                        //options);
         }
 }.start();
         varFD1B4C0E8EE2C772594596D209598B34_2125954392.addTaint(taint);
         return varFD1B4C0E8EE2C772594596D209598B34_2125954392;
-        
-        
-        
-            
-                
-                        
-            
-        
+        // ---------- Original Method ----------
+        //if (account == null) throw new IllegalArgumentException("account is null");
+        //return new AmsTask(activity, handler, callback) {
+            //public void doWork() throws RemoteException {
+                //mService.updateCredentials(mResponse, account, authTokenType, activity != null,
+                        //options);
+            //}
+        //}.start();
     }
 
     
@@ -996,19 +996,19 @@ AccountManagerFuture<Bundle> varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_1863436515 =   
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.710 -0400", hash_original_method = "04B8B0735D1CA277ED91C00D79F33B2D", hash_generated_method = "1D34C9364A966EE79E020E27C5A65409")
         public void doWork() throws RemoteException {
             mService.editProperties(mResponse, accountType, activity != null);
-            
-            
+            // ---------- Original Method ----------
+            //mService.editProperties(mResponse, accountType, activity != null);
         }
 }.start();
         varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_1863436515.addTaint(taint);
         return varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_1863436515;
-        
-        
-        
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //if (accountType == null) throw new IllegalArgumentException("accountType is null");
+        //return new AmsTask(activity, handler, callback) {
+            //public void doWork() throws RemoteException {
+                //mService.editProperties(mResponse, accountType, activity != null);
+            //}
+        //}.start();
     }
 
     
@@ -1023,19 +1023,19 @@ AccountManagerFuture<Bundle> varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_1863436515 =   
             {
                 exception.addTaint(taint);
                 throw exception;
-            } 
-        } 
-        
-        
-        
-            
-                    
-            
-                    
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //final Looper looper = Looper.myLooper();
+        //if (looper != null && looper == mContext.getMainLooper()) {
+            //final IllegalStateException exception = new IllegalStateException(
+                    //"calling this from your main thread can lead to deadlock");
+            //Log.e(TAG, "calling this from your main thread can lead to deadlock and/or ANRs",
+                    //exception);
+            //if (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.FROYO) {
+                //throw exception;
+            //}
+        //}
     }
 
     
@@ -1050,17 +1050,17 @@ AccountManagerFuture<Bundle> varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_1863436515 =   
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.741 -0400", hash_original_method = "BDBA0E8ABF21CCC323F7A43F04981195", hash_generated_method = "0CA3FE6CFE2D535345F3115B21FF729A")
         public void run() {
             callback.run(future);
-            
-            
+            // ---------- Original Method ----------
+            //callback.run(future);
         }
 });
-        
-        
-        
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //handler = handler == null ? mMainHandler : handler;
+        //handler.post(new Runnable() {
+            //public void run() {
+                //callback.run(future);
+            //}
+        //});
     }
 
     
@@ -1079,31 +1079,31 @@ AccountManagerFuture<Bundle> varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_1863436515 =   
             try 
             {
                 listener.onAccountsUpdated(accountsCopy);
-            } 
+            } //End block
             catch (SQLException e)
             {
-            } 
-            
-            
-                    
-                
-                    
-                
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                    //listener.onAccountsUpdated(accountsCopy);
+                //} catch (SQLException e) {
+                    //Log.e(TAG, "Can't update accounts", e);
+                //}
         }
 });
-        
-        
-        
-        
-        
-            
-                
-                    
-                
-                    
-                
-            
-        
+        // ---------- Original Method ----------
+        //final Account[] accountsCopy = new Account[accounts.length];
+        //System.arraycopy(accounts, 0, accountsCopy, 0, accountsCopy.length);
+        //handler = (handler == null) ? mMainHandler : handler;
+        //handler.post(new Runnable() {
+            //public void run() {
+                //try {
+                    //listener.onAccountsUpdated(accountsCopy);
+                //} catch (SQLException e) {
+                    //Log.e(TAG, "Can't update accounts", e);
+                //}
+            //}
+        //});
     }
 
     
@@ -1116,42 +1116,42 @@ AccountManagerFuture<Bundle> varB99B0F3BC6F6C2150AAD6BA17DB7DE1F_1863436515 =   
 Exception varD49BA77971BE8FFE69DAEADCD296A867_1923000397 =             new IOException(message);
             varD49BA77971BE8FFE69DAEADCD296A867_1923000397.addTaint(taint);
             return varD49BA77971BE8FFE69DAEADCD296A867_1923000397;
-        } 
+        } //End block
     if(code == ERROR_CODE_UNSUPPORTED_OPERATION)        
         {
 Exception var84C15D5A27C7BF62148868CF27DC7C0B_1647720242 =             new UnsupportedOperationException(message);
             var84C15D5A27C7BF62148868CF27DC7C0B_1647720242.addTaint(taint);
             return var84C15D5A27C7BF62148868CF27DC7C0B_1647720242;
-        } 
+        } //End block
     if(code == ERROR_CODE_INVALID_RESPONSE)        
         {
 Exception varB112E87B12E2B59F9C53CCF508EEEC4A_2035352076 =             new AuthenticatorException(message);
             varB112E87B12E2B59F9C53CCF508EEEC4A_2035352076.addTaint(taint);
             return varB112E87B12E2B59F9C53CCF508EEEC4A_2035352076;
-        } 
+        } //End block
     if(code == ERROR_CODE_BAD_ARGUMENTS)        
         {
 Exception varBA95164A78C837CF35BB1C0FF86E66FF_2115014559 =             new IllegalArgumentException(message);
             varBA95164A78C837CF35BB1C0FF86E66FF_2115014559.addTaint(taint);
             return varBA95164A78C837CF35BB1C0FF86E66FF_2115014559;
-        } 
+        } //End block
 Exception varB112E87B12E2B59F9C53CCF508EEEC4A_448462697 =         new AuthenticatorException(message);
         varB112E87B12E2B59F9C53CCF508EEEC4A_448462697.addTaint(taint);
         return varB112E87B12E2B59F9C53CCF508EEEC4A_448462697;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (code == ERROR_CODE_NETWORK_ERROR) {
+            //return new IOException(message);
+        //}
+        //if (code == ERROR_CODE_UNSUPPORTED_OPERATION) {
+            //return new UnsupportedOperationException(message);
+        //}
+        //if (code == ERROR_CODE_INVALID_RESPONSE) {
+            //return new AuthenticatorException(message);
+        //}
+        //if (code == ERROR_CODE_BAD_ARGUMENTS) {
+            //return new IllegalArgumentException(message);
+        //}
+        //return new AuthenticatorException(message);
     }
 
     
@@ -1187,14 +1187,14 @@ Exception varB112E87B12E2B59F9C53CCF508EEEC4A_448462697 =         new Authentica
 AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_580541244 =         task;
         varE3FBC805688C6CF32CF252D3CB460B3C_580541244.addTaint(taint);
         return varE3FBC805688C6CF32CF252D3CB460B3C_580541244;
-        
-        
-        
-        
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (accountType == null) throw new IllegalArgumentException("account type is null");
+        //if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
+        //final GetAuthTokenByTypeAndFeaturesTask task =
+                //new GetAuthTokenByTypeAndFeaturesTask(accountType, authTokenType, features,
+                //activity, addAccountOptions, getAuthTokenOptions, callback, handler);
+        //task.start();
+        //return task;
     }
 
     
@@ -1239,7 +1239,7 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_580541244 =    
             IllegalArgumentException var27C26F8F826117C9E6C7C46F036A0E78_274849928 = new IllegalArgumentException("the listener is null");
             var27C26F8F826117C9E6C7C46F036A0E78_274849928.addTaint(taint);
             throw var27C26F8F826117C9E6C7C46F036A0E78_274849928;
-        } 
+        } //End block
         synchronized
 (mAccountsUpdatedListeners)        {
     if(mAccountsUpdatedListeners.containsKey(listener))            
@@ -1247,7 +1247,7 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_580541244 =    
                 IllegalStateException var73DDD708B9F638937AEEA3A1722B32DA_1211041596 = new IllegalStateException("this listener is already added");
                 var73DDD708B9F638937AEEA3A1722B32DA_1211041596.addTaint(taint);
                 throw var73DDD708B9F638937AEEA3A1722B32DA_1211041596;
-            } 
+            } //End block
             final boolean wasEmpty = mAccountsUpdatedListeners.isEmpty();
             mAccountsUpdatedListeners.put(listener, handler);
     if(wasEmpty)            
@@ -1256,14 +1256,14 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_580541244 =    
                 intentFilter.addAction(LOGIN_ACCOUNTS_CHANGED_ACTION);
                 intentFilter.addAction(Intent.ACTION_DEVICE_STORAGE_OK);
                 mContext.registerReceiver(mAccountsChangedBroadcastReceiver, intentFilter);
-            } 
-        } 
+            } //End block
+        } //End block
     if(updateImmediately)        
         {
             postToHandler(handler, listener, getAccounts());
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1281,25 +1281,25 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_580541244 =    
     if(!mAccountsUpdatedListeners.containsKey(listener))            
             {
                 return;
-            } 
+            } //End block
             mAccountsUpdatedListeners.remove(listener);
     if(mAccountsUpdatedListeners.isEmpty())            
             {
                 mContext.unregisterReceiver(mAccountsChangedBroadcastReceiver);
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (listener == null) throw new IllegalArgumentException("listener is null");
+        //synchronized (mAccountsUpdatedListeners) {
+            //if (!mAccountsUpdatedListeners.containsKey(listener)) {
+                //Log.e(TAG, "Listener was not previously added");
+                //return;
+            //}
+            //mAccountsUpdatedListeners.remove(listener);
+            //if (mAccountsUpdatedListeners.isEmpty()) {
+                //mContext.unregisterReceiver(mAccountsChangedBroadcastReceiver);
+            //}
+        //}
     }
 
     
@@ -1328,11 +1328,11 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_580541244 =    
             mCallback = callback;
             mActivity = activity;
             mResponse = new Response();
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mHandler = handler;
+            //mCallback = callback;
+            //mActivity = activity;
+            //mResponse = new Response();
         }
 
         
@@ -1341,21 +1341,21 @@ AccountManagerFuture<Bundle> varE3FBC805688C6CF32CF252D3CB460B3C_580541244 =    
             try 
             {
                 doWork();
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 setException(e);
-            } 
+            } //End block
 AccountManagerFuture<Bundle> var72A74007B2BE62B849F475C7BDA4658B_2452932 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_2452932.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_2452932;
-            
-            
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //try {
+                //doWork();
+            //} catch (RemoteException e) {
+                //setException(e);
+            //}
+            //return this;
         }
 
         
@@ -1364,13 +1364,13 @@ AccountManagerFuture<Bundle> var72A74007B2BE62B849F475C7BDA4658B_2452932 =      
             addTaint(bundle.getTaint());
     if(bundle == null)            
             {
-            } 
+            } //End block
             super.set(bundle);
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (bundle == null) {
+                //Log.e(TAG, "the bundle must not be null", new Exception());
+            //}
+            //super.set(bundle);
         }
 
         
@@ -1384,7 +1384,7 @@ AccountManagerFuture<Bundle> var72A74007B2BE62B849F475C7BDA4658B_2452932 =      
     if(!isDone())            
             {
                 ensureNotOnMainThread();
-            } 
+            } //End block
             try 
             {
     if(timeout == null)                
@@ -1392,26 +1392,26 @@ AccountManagerFuture<Bundle> var72A74007B2BE62B849F475C7BDA4658B_2452932 =      
 Bundle varE05826B33CE3BB3E950704304F321003_1095367844 =                     get();
                     varE05826B33CE3BB3E950704304F321003_1095367844.addTaint(taint);
                     return varE05826B33CE3BB3E950704304F321003_1095367844;
-                } 
+                } //End block
                 else
                 {
 Bundle varC29A4AA05E7B4279C36345837ED71E88_1657265014 =                     get(timeout, unit);
                     varC29A4AA05E7B4279C36345837ED71E88_1657265014.addTaint(taint);
                     return varC29A4AA05E7B4279C36345837ED71E88_1657265014;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (CancellationException e)
             {
                 OperationCanceledException var489A2CB176387ED788C84D313A8E80A8_1098897427 = new OperationCanceledException();
                 var489A2CB176387ED788C84D313A8E80A8_1098897427.addTaint(taint);
                 throw var489A2CB176387ED788C84D313A8E80A8_1098897427;
-            } 
+            } //End block
             catch (TimeoutException e)
             {
-            } 
+            } //End block
             catch (InterruptedException e)
             {
-            } 
+            } //End block
             catch (ExecutionException e)
             {
                 final Throwable cause = e.getCause();
@@ -1420,51 +1420,51 @@ Bundle varC29A4AA05E7B4279C36345837ED71E88_1657265014 =                     get(
                     IOException varA8CE4520913DFE6D323B16DA5398FDBA_1807557430 = (IOException) cause;
                     varA8CE4520913DFE6D323B16DA5398FDBA_1807557430.addTaint(taint);
                     throw varA8CE4520913DFE6D323B16DA5398FDBA_1807557430;
-                } 
+                } //End block
                 else
     if(cause instanceof UnsupportedOperationException)                
                 {
                     AuthenticatorException var29FD6CBF16AA9C29D6E479E7DACCE852_137435967 = new AuthenticatorException(cause);
                     var29FD6CBF16AA9C29D6E479E7DACCE852_137435967.addTaint(taint);
                     throw var29FD6CBF16AA9C29D6E479E7DACCE852_137435967;
-                } 
+                } //End block
                 else
     if(cause instanceof AuthenticatorException)                
                 {
                     AuthenticatorException varB43496F9EDC051E222D6D5AA8F1E1D9B_334445590 = (AuthenticatorException) cause;
                     varB43496F9EDC051E222D6D5AA8F1E1D9B_334445590.addTaint(taint);
                     throw varB43496F9EDC051E222D6D5AA8F1E1D9B_334445590;
-                } 
+                } //End block
                 else
     if(cause instanceof RuntimeException)                
                 {
                     RuntimeException var2BEB6EF3D41E44EED5E35024D3C50335_335870077 = (RuntimeException) cause;
                     var2BEB6EF3D41E44EED5E35024D3C50335_335870077.addTaint(taint);
                     throw var2BEB6EF3D41E44EED5E35024D3C50335_335870077;
-                } 
+                } //End block
                 else
     if(cause instanceof Error)                
                 {
                     Error varF690D0FEA4496CAA0F487E9481A0D919_1371058148 = (Error) cause;
                     varF690D0FEA4496CAA0F487E9481A0D919_1371058148.addTaint(taint);
                     throw varF690D0FEA4496CAA0F487E9481A0D919_1371058148;
-                } 
+                } //End block
                 else
                 {
                     IllegalStateException varF60D9E53AC195769C06EA2A79A7E7653_217128367 = new IllegalStateException(cause);
                     varF60D9E53AC195769C06EA2A79A7E7653_217128367.addTaint(taint);
                     throw varF60D9E53AC195769C06EA2A79A7E7653_217128367;
-                } 
-            } 
+                } //End block
+            } //End block
             finally 
             {
                 cancel(true );
-            } 
+            } //End block
             OperationCanceledException var489A2CB176387ED788C84D313A8E80A8_2146262055 = new OperationCanceledException();
             var489A2CB176387ED788C84D313A8E80A8_2146262055.addTaint(taint);
             throw var489A2CB176387ED788C84D313A8E80A8_2146262055;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1473,8 +1473,8 @@ Bundle varC29A4AA05E7B4279C36345837ED71E88_1657265014 =                     get(
 Bundle var6DB880D2F96BCDB0DB0C5333CAB0CBD0_992400263 =             internalGetResult(null, null);
             var6DB880D2F96BCDB0DB0C5333CAB0CBD0_992400263.addTaint(taint);
             return var6DB880D2F96BCDB0DB0C5333CAB0CBD0_992400263;
-            
-            
+            // ---------- Original Method ----------
+            //return internalGetResult(null, null);
         }
 
         
@@ -1485,8 +1485,8 @@ Bundle var6DB880D2F96BCDB0DB0C5333CAB0CBD0_992400263 =             internalGetRe
 Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetResult(timeout, unit);
             var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342.addTaint(taint);
             return var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342;
-            
-            
+            // ---------- Original Method ----------
+            //return internalGetResult(timeout, unit);
         }
 
         
@@ -1495,11 +1495,11 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
     if(mCallback != null)            
             {
                 postToHandler(mHandler, mCallback, this);
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mCallback != null) {
+                //postToHandler(mHandler, mCallback, this);
+            //}
         }
 
         
@@ -1508,66 +1508,66 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.865 -0400", hash_original_method = "1C91C9705FD3BE3D2A4F4357891D41FD", hash_generated_method = "1C91C9705FD3BE3D2A4F4357891D41FD")
             public Response ()
             {
-                
+                //Synthesized constructor
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.868 -0400", hash_original_method = "BC11F9A6ED106794CC5C9152E9BD3B43", hash_generated_method = "AE0DC4BB71B6E644FCD2CC26FB83E610")
             public void onResult(Bundle bundle) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(bundle.getTaint());
                 Intent intent = bundle.getParcelable(KEY_INTENT);
     if(intent != null && mActivity != null)                
                 {
                     mActivity.startActivity(intent);
-                } 
+                } //End block
                 else
     if(bundle.getBoolean("retry"))                
                 {
                     try 
                     {
                         doWork();
-                    } 
+                    } //End block
                     catch (RemoteException e)
                     {
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     set(bundle);
-                } 
-                
-                
-                
-                    
-                
-                    
-                        
-                    
-                    
-                
-                    
-                
+                } //End block
+                // ---------- Original Method ----------
+                //Intent intent = bundle.getParcelable(KEY_INTENT);
+                //if (intent != null && mActivity != null) {
+                    //mActivity.startActivity(intent);
+                //} else if (bundle.getBoolean("retry")) {
+                    //try {
+                        //doWork();
+                    //} catch (RemoteException e) {
+                    //}
+                //} else {
+                    //set(bundle);
+                //}
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.872 -0400", hash_original_method = "DD61FDBEB518045420249589A7AE75D2", hash_generated_method = "32D16F6FE7CC45BC71A427F58177EA53")
             public void onError(int code, String message) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(message.getTaint());
                 addTaint(code);
     if(code == ERROR_CODE_CANCELED)                
                 {
                     cancel(true );
                     return;
-                } 
+                } //End block
                 setException(convertErrorToException(code, message));
-                
-                
-                    
-                    
-                
-                
+                // ---------- Original Method ----------
+                //if (code == ERROR_CODE_CANCELED) {
+                    //cancel(true );
+                    //return;
+                //}
+                //setException(convertErrorToException(code, message));
             }
 
             
@@ -1596,9 +1596,9 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
             });
             mHandler = handler;
             mResponse = new Response();
-            
-            
-            
+            // ---------- Original Method ----------
+            //mHandler = handler;
+            //mResponse = new Response();
         }
 
         
@@ -1613,9 +1613,9 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
             addTaint(runnable.getTaint());
             Handler handler = (mHandler == null) ? mMainHandler : mHandler;
             handler.post(runnable);
-            
-            
-            
+            // ---------- Original Method ----------
+            //Handler handler = (mHandler == null) ? mMainHandler : mHandler;
+            //handler.post(runnable);
         }
 
         
@@ -1624,17 +1624,17 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
             try 
             {
                 doWork();
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 setException(e);
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //doWork();
+            //} catch (RemoteException e) {
+                //setException(e);
+            //}
         }
 
         
@@ -1643,13 +1643,13 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.893 -0400", hash_original_method = "1C91C9705FD3BE3D2A4F4357891D41FD", hash_generated_method = "1C91C9705FD3BE3D2A4F4357891D41FD")
             public Response ()
             {
-                
+                //Synthesized constructor
             }
 
 
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.895 -0400", hash_original_method = "B8AEC5DE9AFE3040461BEFA9E791EE34", hash_generated_method = "5907B2238C51B69B98935E09B5E833A9")
             public void onResult(Bundle bundle) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(bundle.getTaint());
                 try 
                 {
@@ -1657,49 +1657,49 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
     if(result == null)                    
                     {
                         return;
-                    } 
+                    } //End block
                     set(result);
                     return;
-                } 
+                } //End block
                 catch (ClassCastException e)
                 {
-                } 
+                } //End block
                 catch (AuthenticatorException e)
                 {
-                } 
+                } //End block
                 onError(ERROR_CODE_INVALID_RESPONSE, "no result in response");
-                
-                
-                    
-                    
-                        
-                    
-                    
-                    
-                
-                
-                
-                
+                // ---------- Original Method ----------
+                //try {
+                    //T result = bundleToResult(bundle);
+                    //if (result == null) {
+                        //return;
+                    //}
+                    //set(result);
+                    //return;
+                //} catch (ClassCastException e) {
+                //} catch (AuthenticatorException e) {
+                //}
+                //onError(ERROR_CODE_INVALID_RESPONSE, "no result in response");
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.899 -0400", hash_original_method = "DD61FDBEB518045420249589A7AE75D2", hash_generated_method = "32D16F6FE7CC45BC71A427F58177EA53")
             public void onError(int code, String message) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(message.getTaint());
                 addTaint(code);
     if(code == ERROR_CODE_CANCELED)                
                 {
                     cancel(true );
                     return;
-                } 
+                } //End block
                 setException(convertErrorToException(code, message));
-                
-                
-                    
-                    
-                
-                
+                // ---------- Original Method ----------
+                //if (code == ERROR_CODE_CANCELED) {
+                    //cancel(true );
+                    //return;
+                //}
+                //setException(convertErrorToException(code, message));
             }
 
             
@@ -1721,8 +1721,8 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
             super(handler);
             addTaint(handler.getTaint());
             mCallback = callback;
-            
-            
+            // ---------- Original Method ----------
+            //mCallback = callback;
         }
 
         
@@ -1734,19 +1734,19 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.906 -0400", hash_original_method = "0F70B80A50B592CBF5F504B35808D596", hash_generated_method = "7101081B29B4523A9AECBBD0EF73571E")
             public void run() {
                 mCallback.run(Future2Task.this);
-                
-                
+                // ---------- Original Method ----------
+                //mCallback.run(Future2Task.this);
             }
 });
-            } 
-            
-            
-                
-                    
-                        
-                    
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mCallback != null) {
+                //postRunnableToHandler(new Runnable() {
+                    //public void run() {
+                        //mCallback.run(Future2Task.this);
+                    //}
+                //});
+            //}
         }
 
         
@@ -1756,9 +1756,9 @@ Bundle var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_2109153342 =             internalGetR
 Future2Task<T> var72A74007B2BE62B849F475C7BDA4658B_52011875 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_52011875.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_52011875;
-            
-            
-            
+            // ---------- Original Method ----------
+            //startTask();
+            //return this;
         }
 
         
@@ -1769,7 +1769,7 @@ Future2Task<T> var72A74007B2BE62B849F475C7BDA4658B_52011875 =             this;
     if(!isDone())            
             {
                 ensureNotOnMainThread();
-            } 
+            } //End block
             try 
             {
     if(timeout == null)                
@@ -1777,23 +1777,23 @@ Future2Task<T> var72A74007B2BE62B849F475C7BDA4658B_52011875 =             this;
 T varE05826B33CE3BB3E950704304F321003_273522558 =                     get();
                     varE05826B33CE3BB3E950704304F321003_273522558.addTaint(taint);
                     return varE05826B33CE3BB3E950704304F321003_273522558;
-                } 
+                } //End block
                 else
                 {
 T varC29A4AA05E7B4279C36345837ED71E88_287289073 =                     get(timeout, unit);
                     varC29A4AA05E7B4279C36345837ED71E88_287289073.addTaint(taint);
                     return varC29A4AA05E7B4279C36345837ED71E88_287289073;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (InterruptedException e)
             {
-            } 
+            } //End block
             catch (TimeoutException e)
             {
-            } 
+            } //End block
             catch (CancellationException e)
             {
-            } 
+            } //End block
             catch (ExecutionException e)
             {
                 final Throwable cause = e.getCause();
@@ -1802,51 +1802,51 @@ T varC29A4AA05E7B4279C36345837ED71E88_287289073 =                     get(timeou
                     IOException varA8CE4520913DFE6D323B16DA5398FDBA_603947162 = (IOException) cause;
                     varA8CE4520913DFE6D323B16DA5398FDBA_603947162.addTaint(taint);
                     throw varA8CE4520913DFE6D323B16DA5398FDBA_603947162;
-                } 
+                } //End block
                 else
     if(cause instanceof UnsupportedOperationException)                
                 {
                     AuthenticatorException var29FD6CBF16AA9C29D6E479E7DACCE852_1160646 = new AuthenticatorException(cause);
                     var29FD6CBF16AA9C29D6E479E7DACCE852_1160646.addTaint(taint);
                     throw var29FD6CBF16AA9C29D6E479E7DACCE852_1160646;
-                } 
+                } //End block
                 else
     if(cause instanceof AuthenticatorException)                
                 {
                     AuthenticatorException varB43496F9EDC051E222D6D5AA8F1E1D9B_1263465159 = (AuthenticatorException) cause;
                     varB43496F9EDC051E222D6D5AA8F1E1D9B_1263465159.addTaint(taint);
                     throw varB43496F9EDC051E222D6D5AA8F1E1D9B_1263465159;
-                } 
+                } //End block
                 else
     if(cause instanceof RuntimeException)                
                 {
                     RuntimeException var2BEB6EF3D41E44EED5E35024D3C50335_1155887051 = (RuntimeException) cause;
                     var2BEB6EF3D41E44EED5E35024D3C50335_1155887051.addTaint(taint);
                     throw var2BEB6EF3D41E44EED5E35024D3C50335_1155887051;
-                } 
+                } //End block
                 else
     if(cause instanceof Error)                
                 {
                     Error varF690D0FEA4496CAA0F487E9481A0D919_1410717912 = (Error) cause;
                     varF690D0FEA4496CAA0F487E9481A0D919_1410717912.addTaint(taint);
                     throw varF690D0FEA4496CAA0F487E9481A0D919_1410717912;
-                } 
+                } //End block
                 else
                 {
                     IllegalStateException varF60D9E53AC195769C06EA2A79A7E7653_1533534191 = new IllegalStateException(cause);
                     varF60D9E53AC195769C06EA2A79A7E7653_1533534191.addTaint(taint);
                     throw varF60D9E53AC195769C06EA2A79A7E7653_1533534191;
-                } 
-            } 
+                } //End block
+            } //End block
             finally 
             {
                 cancel(true );
-            } 
+            } //End block
             OperationCanceledException var489A2CB176387ED788C84D313A8E80A8_983454876 = new OperationCanceledException();
             var489A2CB176387ED788C84D313A8E80A8_983454876.addTaint(taint);
             throw var489A2CB176387ED788C84D313A8E80A8_983454876;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1855,8 +1855,8 @@ T varC29A4AA05E7B4279C36345837ED71E88_287289073 =                     get(timeou
 T var6DB880D2F96BCDB0DB0C5333CAB0CBD0_1100941273 =             internalGetResult(null, null);
             var6DB880D2F96BCDB0DB0C5333CAB0CBD0_1100941273.addTaint(taint);
             return var6DB880D2F96BCDB0DB0C5333CAB0CBD0_1100941273;
-            
-            
+            // ---------- Original Method ----------
+            //return internalGetResult(null, null);
         }
 
         
@@ -1867,8 +1867,8 @@ T var6DB880D2F96BCDB0DB0C5333CAB0CBD0_1100941273 =             internalGetResult
 T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(timeout, unit);
             var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571.addTaint(taint);
             return var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571;
-            
-            
+            // ---------- Original Method ----------
+            //return internalGetResult(timeout, unit);
         }
 
         
@@ -1923,14 +1923,14 @@ T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(
             mAddAccountOptions = addAccountOptions;
             mLoginOptions = loginOptions;
             mMyCallback = this;
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (accountType == null) throw new IllegalArgumentException("account type is null");
+            //mAccountType = accountType;
+            //mAuthTokenType = authTokenType;
+            //mFeatures = features;
+            //mAddAccountOptions = addAccountOptions;
+            //mLoginOptions = loginOptions;
+            //mMyCallback = this;
         }
 
         
@@ -1945,22 +1945,22 @@ T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(
                 try 
                 {
                     accounts = future.getResult();
-                } 
+                } //End block
                 catch (OperationCanceledException e)
                 {
                     setException(e);
                     return;
-                } 
+                } //End block
                 catch (IOException e)
                 {
                     setException(e);
                     return;
-                } 
+                } //End block
                 catch (AuthenticatorException e)
                 {
                     setException(e);
                     return;
-                } 
+                } //End block
                 mNumAccounts = accounts.length;
     if(accounts.length == 0)                
                 {
@@ -1968,7 +1968,7 @@ T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(
                     {
                         mFuture = addAccount(mAccountType, mAuthTokenType, mFeatures,
                                             mAddAccountOptions, mActivity, mMyCallback, mHandler);
-                    } 
+                    } //End block
                     else
                     {
                         Bundle result = new Bundle();
@@ -1978,12 +1978,12 @@ T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(
                         try 
                         {
                             mResponse.onResult(result);
-                        } 
+                        } //End block
                         catch (RemoteException e)
                         {
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
     if(accounts.length == 1)                
                 {
@@ -1991,14 +1991,14 @@ T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(
                     {
                         mFuture = getAuthToken(accounts[0], mAuthTokenType,
                                             false , mMyCallback, mHandler);
-                    } 
+                    } //End block
                     else
                     {
                         mFuture = getAuthToken(accounts[0],
                                             mAuthTokenType, mLoginOptions,
                                             mActivity, mMyCallback, mHandler);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
     if(mActivity != null)                    
@@ -2023,7 +2023,7 @@ T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(
                         intent.putExtra(KEY_ACCOUNT_MANAGER_RESPONSE,
                                             new AccountManagerResponse(chooseResponse));
                         mActivity.startActivity(intent);
-                    } 
+                    } //End block
                     else
                     {
                         Bundle result = new Bundle();
@@ -2031,18 +2031,18 @@ T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(
                         try 
                         {
                             mResponse.onResult(result);
-                        } 
+                        } //End block
                         catch (RemoteException e)
                         {
-                        } 
-                    } 
-                } 
-                
-                
+                        } //End block
+                    } //End block
+                } //End block
+                // ---------- Original Method ----------
+                // Original Method Too Long, Refer to Original Implementation
             }
 }, mHandler);
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -2060,29 +2060,29 @@ T var9D01E8DE3D6E1C2C2386B1AD0AD3C5EC_202315571 =             internalGetResult(
                     {
                         setException(new AuthenticatorException("account not in result"));
                         return;
-                    } 
+                    } //End block
                     final Account account = new Account(accountName, accountType);
                     mNumAccounts = 1;
                     getAuthToken(account, mAuthTokenType, null , mActivity,
                             mMyCallback, mHandler);
                     return;
-                } 
+                } //End block
                 set(result);
-            } 
+            } //End block
             catch (OperationCanceledException e)
             {
                 cancel(true );
-            } 
+            } //End block
             catch (IOException e)
             {
                 setException(e);
-            } 
+            } //End block
             catch (AuthenticatorException e)
             {
                 setException(e);
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

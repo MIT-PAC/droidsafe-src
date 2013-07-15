@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,12 +39,12 @@ public class MediaScannerConnection implements ServiceConnection {
     if(client != null)            
             {
                 client.onScanCompleted(path, uri);
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //MediaScannerConnectionClient client = mClient;
+            //if (client != null) {
+                //client.onScanCompleted(path, uri);
+            //}
         }
 
         
@@ -54,9 +54,9 @@ public class MediaScannerConnection implements ServiceConnection {
     public  MediaScannerConnection(Context context, MediaScannerConnectionClient client) {
         mContext = context;
         mClient = client;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mClient = client;
     }
 
     
@@ -69,16 +69,16 @@ public class MediaScannerConnection implements ServiceConnection {
                 Intent intent = new Intent(IMediaScannerService.class.getName());
                 mContext.bindService(intent, this, Context.BIND_AUTO_CREATE);
                 mConnected = true;
-            } 
-        } 
-        
-        
-            
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (!mConnected) {
+                //Intent intent = new Intent(IMediaScannerService.class.getName());
+                //mContext.bindService(intent, this, Context.BIND_AUTO_CREATE);
+                //mConnected = true;
+            //}
+        //}
     }
 
     
@@ -90,47 +90,46 @@ public class MediaScannerConnection implements ServiceConnection {
             {
     if(false)                
                 {
-                } 
+                } //End block
                 try 
                 {
                     mContext.unbindService(this);
-                } 
+                } //End block
                 catch (IllegalArgumentException ex)
                 {
     if(false)                    
                     {
-                    } 
-                } 
+                    } //End block
+                } //End block
                 mConnected = false;
-            } 
-        } 
-        
-        
-            
-                
-                    
-                
-                
-                    
-                
-                    
-                        
-                    
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (mConnected) {
+                //if (false) {
+                    //Log.v(TAG, "Disconnecting from Media Scanner");
+                //}
+                //try {
+                    //mContext.unbindService(this);
+                //} catch (IllegalArgumentException ex) {
+                    //if (false) {
+                        //Log.v(TAG, "disconnect failed: " + ex);
+                    //}
+                //}
+                //mConnected = false;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.413 -0400", hash_original_method = "585F124B91F8E6FD252A74E28C966933", hash_generated_method = "FC7569132AF813C5B7B1AB92AD564AEE")
     public synchronized boolean isConnected() {
         boolean varF28274E44CC48E20133A298DADA33A06_1247704271 = ((mService != null && mConnected));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1325781399 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1325781399;
-        
-        
+        // ---------- Original Method ----------
+        //return (mService != null && mConnected);
     }
 
     
@@ -145,38 +144,38 @@ public class MediaScannerConnection implements ServiceConnection {
                 IllegalStateException var0773A7F613C6A1E4982B7A142442A13C_1322225579 = new IllegalStateException("not connected to MediaScannerService");
                 var0773A7F613C6A1E4982B7A142442A13C_1322225579.addTaint(taint);
                 throw var0773A7F613C6A1E4982B7A142442A13C_1322225579;
-            } 
+            } //End block
             try 
             {
     if(false)                
                 {
-                } 
+                } //End block
                 mService.requestScanFile(path, mimeType, mListener);
-            } 
+            } //End block
             catch (RemoteException e)
             {
     if(false)                
                 {
                     Log.d(TAG, "Failed to scan file " + path);
-                } 
-            } 
-        } 
-        
-        
-            
-                
-            
-            
-                
-                    
-                
-                
-            
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //if (mService == null || !mConnected) {
+                //throw new IllegalStateException("not connected to MediaScannerService");
+            //}
+            //try {
+                //if (false) {
+                    //Log.v(TAG, "Scanning file " + path);
+                //}
+                //mService.requestScanFile(path, mimeType, mListener);
+            //} catch (RemoteException e) {
+                //if (false) {
+                    //Log.d(TAG, "Failed to scan file " + path);
+                //}
+            //}
+        //}
     }
 
     
@@ -191,51 +190,50 @@ public class MediaScannerConnection implements ServiceConnection {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.415 -0400", hash_original_method = "7C78D6E78099891228F7F6E86F5F98DF", hash_generated_method = "73ACE3BFCEA417A2F3698B588C8C2BEC")
     public void onServiceConnected(ComponentName className, IBinder service) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(className.getTaint());
     if(false)        
         {
-        } 
+        } //End block
         synchronized
 (this)        {
             mService = IMediaScannerService.Stub.asInterface(service);
     if(mService != null && mClient != null)            
             {
                 mClient.onMediaScannerConnected();
-            } 
-        } 
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (false) {
+            //Log.v(TAG, "Connected to Media Scanner");
+        //}
+        //synchronized (this) {
+            //mService = IMediaScannerService.Stub.asInterface(service);
+            //if (mService != null && mClient != null) {
+                //mClient.onMediaScannerConnected();
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.415 -0400", hash_original_method = "95A47EFDF43A33BA0DC593830BA12E50", hash_generated_method = "7041D897E0D3AF354A42B1654CDF21A7")
     public void onServiceDisconnected(ComponentName className) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(className.getTaint());
     if(false)        
         {
-        } 
+        } //End block
         synchronized
 (this)        {
             mService = null;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (false) {
+            //Log.v(TAG, "Disconnected from Media Scanner");
+        //}
+        //synchronized (this) {
+            //mService = null;
+        //}
     }
 
     
@@ -261,38 +259,37 @@ public class MediaScannerConnection implements ServiceConnection {
             mPaths = paths;
             mMimeTypes = mimeTypes;
             mClient = client;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mPaths = paths;
+            //mMimeTypes = mimeTypes;
+            //mClient = client;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.417 -0400", hash_original_method = "8C081453672AFB7A10A4B295346319E3", hash_generated_method = "2311342DD82275E9D1DDF78BD0209CBB")
         public void onMediaScannerConnected() {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             scanNextPath();
-            
-            
+            // ---------- Original Method ----------
+            //scanNextPath();
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.418 -0400", hash_original_method = "D5B152CD911B45918F84440EF851975F", hash_generated_method = "C1AC9A5AC48E28F380E86F736EA6C9FA")
         public void onScanCompleted(String path, Uri uri) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(uri.getTaint());
             addTaint(path.getTaint());
     if(mClient != null)            
             {
                 mClient.onScanCompleted(path, uri);
-            } 
+            } //End block
             scanNextPath();
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mClient != null) {
+                //mClient.onScanCompleted(path, uri);
+            //}
+            //scanNextPath();
         }
 
         
@@ -302,18 +299,18 @@ public class MediaScannerConnection implements ServiceConnection {
             {
                 mConnection.disconnect();
                 return;
-            } 
+            } //End block
             String mimeType = mMimeTypes != null ? mMimeTypes[mNextPath] : null;
             mConnection.scanFile(mPaths[mNextPath], mimeType);
             mNextPath++;
-            
-            
-                
-                
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mNextPath >= mPaths.length) {
+                //mConnection.disconnect();
+                //return;
+            //}
+            //String mimeType = mMimeTypes != null ? mMimeTypes[mNextPath] : null;
+            //mConnection.scanFile(mPaths[mNextPath], mimeType);
+            //mNextPath++;
         }
 
         

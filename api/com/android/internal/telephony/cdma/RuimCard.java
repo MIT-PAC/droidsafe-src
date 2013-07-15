@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,11 +18,11 @@ public final class RuimCard extends IccCard {
         mPhone.mCM.registerForOffOrNotAvailable(mHandler, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
         mPhone.mCM.registerForRUIMReady(mHandler, EVENT_ICC_READY, null);
         updateStateProperty();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPhone.mCM.registerForRUIMLockedOrAbsent(mHandler, EVENT_ICC_LOCKED_OR_ABSENT, null);
+        //mPhone.mCM.registerForOffOrNotAvailable(mHandler, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
+        //mPhone.mCM.registerForRUIMReady(mHandler, EVENT_ICC_READY, null);
+        //updateStateProperty();
     }
 
     
@@ -33,11 +33,11 @@ public final class RuimCard extends IccCard {
         mPhone.mCM.unregisterForRUIMLockedOrAbsent(mHandler);
         mPhone.mCM.unregisterForOffOrNotAvailable(mHandler);
         mPhone.mCM.unregisterForRUIMReady(mHandler);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.dispose();
+        //mPhone.mCM.unregisterForRUIMLockedOrAbsent(mHandler);
+        //mPhone.mCM.unregisterForOffOrNotAvailable(mHandler);
+        //mPhone.mCM.unregisterForRUIMReady(mHandler);
     }
 
     
@@ -47,8 +47,8 @@ public final class RuimCard extends IccCard {
 String var7F74CA4F27DBD97ED17E538302BDEBEB_450164764 =         mPhone.mIccRecords.getServiceProviderName();
         var7F74CA4F27DBD97ED17E538302BDEBEB_450164764.addTaint(taint);
         return var7F74CA4F27DBD97ED17E538302BDEBEB_450164764;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhone.mIccRecords.getServiceProviderName();
     }
 
     

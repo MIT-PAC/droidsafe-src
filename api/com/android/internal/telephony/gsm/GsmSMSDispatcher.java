@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,11 +51,11 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         mCm.setOnNewGsmSms(this, EVENT_NEW_SMS, null);
         mCm.setOnSmsStatus(this, EVENT_NEW_SMS_STATUS_REPORT, null);
         mCm.setOnNewGsmBroadcastSms(this, EVENT_NEW_BROADCAST_SMS, null);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDataDownloadHandler = new UsimDataDownloadHandler(mCm);
+        //mCm.setOnNewGsmSms(this, EVENT_NEW_SMS, null);
+        //mCm.setOnSmsStatus(this, EVENT_NEW_SMS_STATUS_REPORT, null);
+        //mCm.setOnNewGsmBroadcastSms(this, EVENT_NEW_BROADCAST_SMS, null);
     }
 
     
@@ -65,22 +65,21 @@ public final class GsmSMSDispatcher extends SMSDispatcher {
         mCm.unSetOnNewGsmSms(this);
         mCm.unSetOnSmsStatus(this);
         mCm.unSetOnNewGsmBroadcastSms(this);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mCm.unSetOnNewGsmSms(this);
+        //mCm.unSetOnSmsStatus(this);
+        //mCm.unSetOnNewGsmBroadcastSms(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.999 -0400", hash_original_method = "1D516C6BB697A8ECCBFC751AA141CC3E", hash_generated_method = "47E2313715E89937FF7E5BFF3D79C168")
     @Override
     protected String getFormat() {
 String varC345C9016D68CE4F646C76C73C4A46BE_1917115336 =         android.telephony.SmsMessage.FORMAT_3GPP;
         varC345C9016D68CE4F646C76C73C4A46BE_1917115336.addTaint(taint);
         return varC345C9016D68CE4F646C76C73C4A46BE_1917115336;
-        
-        
+        // ---------- Original Method ----------
+        //return android.telephony.SmsMessage.FORMAT_3GPP;
     }
 
     
@@ -101,19 +100,19 @@ switch(msg.what){
         {
             Log.d(TAG, "Successfully wrote SMS-PP message to UICC");
             mCm.acknowledgeLastIncomingGsmSms(true, 0, null);
-        } 
+        } //End block
         else
         {
             Log.d(TAG, "Failed to write SMS-PP message to UICC", ar.exception);
             mCm.acknowledgeLastIncomingGsmSms(false,
                         CommandsInterface.GSM_SMS_FAIL_CAUSE_UNSPECIFIED_ERROR, null);
-        } 
+        } //End block
         break;
         default:
         super.handleMessage(msg);
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -134,7 +133,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     if(tpStatus >= Sms.STATUS_FAILED || tpStatus < Sms.STATUS_PENDING)                    
                     {
                         deliveryPendingList.remove(i);
-                    } 
+                    } //End block
                     PendingIntent intent = tracker.mDeliveryIntent;
                     Intent fillIn = new Intent();
                     fillIn.putExtra("pdu", IccUtils.hexStringToBytes(pduString));
@@ -142,17 +141,17 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
                     try 
                     {
                         intent.send(mContext, Activity.RESULT_OK, fillIn);
-                    } 
+                    } //End block
                     catch (CanceledException ex)
                     {
-                    } 
+                    } //End block
                     break;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         acknowledgeLastIncomingSms(true, Intents.RESULT_SMS_HANDLED, null);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -165,7 +164,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
             int varFCC16322707A95E5743FED9CA64177EC_164020293 = (Intents.RESULT_SMS_GENERIC_ERROR);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1435234781 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1435234781;
-        } 
+        } //End block
         SmsMessage sms = (SmsMessage) smsb;
     if(sms.isTypeZero())        
         {
@@ -173,7 +172,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
             int var0A0A6D68560CC5EF46A3B9603DD175AA_2124817462 = (Intents.RESULT_SMS_HANDLED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735750381 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_735750381;
-        } 
+        } //End block
     if(sms.isUsimDataDownload())        
         {
             UsimServiceTable ust = mPhone.getUsimServiceTable();
@@ -184,7 +183,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
                 int var774733FE609D84F3433163F1EAC3E5C9_851920629 = (mDataDownloadHandler.startDataDownload(sms));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1943662699 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1943662699;
-            } 
+            } //End block
             else
             {
                 Log.d(TAG, "DATA_DL_VIA_SMS_PP service not available, storing message to UICC.");
@@ -197,8 +196,8 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
                 int var4C0737507AD994723C875A6D0646D112_1033477923 = (Activity.RESULT_OK);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627881364 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627881364;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mSmsReceiveDisabled)        
         {
             Log.d(TAG, "Received short message on device which doesn't support "
@@ -206,7 +205,7 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
             int var0A0A6D68560CC5EF46A3B9603DD175AA_1579564956 = (Intents.RESULT_SMS_HANDLED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719023837 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719023837;
-        } 
+        } //End block
         boolean handled = false;
     if(sms.isMWISetMessage())        
         {
@@ -215,8 +214,8 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     if(false)            
             {
                 Log.d(TAG, "Received voice mail indicator set SMS shouldStore=" + !handled);
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(sms.isMWIClearMessage())        
         {
@@ -225,30 +224,29 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     if(false)            
             {
                 Log.d(TAG, "Received voice mail indicator clear SMS shouldStore=" + !handled);
-            } 
-        } 
+            } //End block
+        } //End block
     if(handled)        
         {
             int var0A0A6D68560CC5EF46A3B9603DD175AA_619036582 = (Intents.RESULT_SMS_HANDLED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404985351 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404985351;
-        } 
+        } //End block
     if(!mStorageMonitor.isStorageAvailable() &&
                 sms.getMessageClass() != MessageClass.CLASS_0)        
         {
             int varDEFBF0C406E78C33F6A54AB9BC317484_1744373468 = (Intents.RESULT_SMS_OUT_OF_MEMORY);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897186467 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897186467;
-        } 
+        } //End block
         int var346A9897E2392234AEC3F85CEF1CB0D4_1346826259 = (dispatchNormalMessage(smsb));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767817248 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767817248;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.004 -0400", hash_original_method = "3D7E3502DD1585858E097F3A6DC759F7", hash_generated_method = "657A9AE8C30AD049265B3E48C19D719A")
     @Override
     protected void sendData(String destAddr, String scAddr, int destPort,
@@ -264,22 +262,21 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     if(pdu != null)        
         {
             sendRawPdu(pdu.encodedScAddress, pdu.encodedMessage, sentIntent, deliveryIntent);
-        } 
+        } //End block
         else
         {
-        } 
-        
-        
-                
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SmsMessage.SubmitPdu pdu = SmsMessage.getSubmitPdu(
+                //scAddr, destAddr, destPort, data, (deliveryIntent != null));
+        //if (pdu != null) {
+            //sendRawPdu(pdu.encodedScAddress, pdu.encodedMessage, sentIntent, deliveryIntent);
+        //} else {
+            //Log.e(TAG, "GsmSMSDispatcher.sendData(): getSubmitPdu() returned null");
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.005 -0400", hash_original_method = "5889D931B0AF2BA9EF13AED6A1D3F698", hash_generated_method = "D6BE9A1035E985E74A7C36E539639EE3")
     @Override
     protected void sendText(String destAddr, String scAddr, String text,
@@ -294,22 +291,21 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
     if(pdu != null)        
         {
             sendRawPdu(pdu.encodedScAddress, pdu.encodedMessage, sentIntent, deliveryIntent);
-        } 
+        } //End block
         else
         {
-        } 
-        
-        
-                
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SmsMessage.SubmitPdu pdu = SmsMessage.getSubmitPdu(
+                //scAddr, destAddr, text, (deliveryIntent != null));
+        //if (pdu != null) {
+            //sendRawPdu(pdu.encodedScAddress, pdu.encodedMessage, sentIntent, deliveryIntent);
+        //} else {
+            //Log.e(TAG, "GsmSMSDispatcher.sendText(): getSubmitPdu() returned null");
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.005 -0400", hash_original_method = "9DEF445F0373354182FDA1EF238BF843", hash_generated_method = "402FD05A94810B44645C7D9F1FC67681")
     @Override
     protected TextEncodingDetails calculateLength(CharSequence messageBody,
@@ -319,12 +315,11 @@ for(int i = 0, count = deliveryPendingList.size();i < count;i++)
 TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsMessage.calculateLength(messageBody, use7bitOnly);
         var9473932D319F0FA2CD84167FDAB5206A_763475263.addTaint(taint);
         return var9473932D319F0FA2CD84167FDAB5206A_763475263;
-        
-        
+        // ---------- Original Method ----------
+        //return SmsMessage.calculateLength(messageBody, use7bitOnly);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.006 -0400", hash_original_method = "D46F86683A1628DBA1448E14FF571355", hash_generated_method = "C11DE1ED6E4AAC2528E1745135F45B91")
     @Override
     protected void sendNewSubmitPdu(String destinationAddress, String scAddress,
@@ -344,23 +339,22 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
     if(pdu != null)        
         {
             sendRawPdu(pdu.encodedScAddress, pdu.encodedMessage, sentIntent, deliveryIntent);
-        } 
+        } //End block
         else
         {
-        } 
-        
-        
-                
-                
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //SmsMessage.SubmitPdu pdu = SmsMessage.getSubmitPdu(scAddress, destinationAddress,
+                //message, deliveryIntent != null, SmsHeader.toByteArray(smsHeader),
+                //encoding, smsHeader.languageTable, smsHeader.languageShiftTable);
+        //if (pdu != null) {
+            //sendRawPdu(pdu.encodedScAddress, pdu.encodedMessage, sentIntent, deliveryIntent);
+        //} else {
+            //Log.e(TAG, "GsmSMSDispatcher.sendNewSubmitPdu(): getSubmitPdu() returned null");
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.006 -0400", hash_original_method = "FF8E1B494DDC1956B0825172C230EA31", hash_generated_method = "48B236C7123669EC9654E19A333E965F")
     @Override
     protected void sendSms(SmsTracker tracker) {
@@ -370,16 +364,15 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
         byte pdu[] = (byte[]) map.get("pdu");
         Message reply = obtainMessage(EVENT_SEND_SMS_COMPLETE, tracker);
         mCm.sendSMS(IccUtils.bytesToHexString(smsc), IccUtils.bytesToHexString(pdu), reply);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //HashMap<String, Object> map = tracker.mData;
+        //byte smsc[] = (byte[]) map.get("smsc");
+        //byte pdu[] = (byte[]) map.get("pdu");
+        //Message reply = obtainMessage(EVENT_SEND_SMS_COMPLETE, tracker);
+        //mCm.sendSMS(IccUtils.bytesToHexString(smsc), IccUtils.bytesToHexString(pdu), reply);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.006 -0400", hash_original_method = "72A464580F37288F468EE51C88A0917A", hash_generated_method = "E5F61C674358B06759CD39C4B9208A98")
     @Override
     protected void acknowledgeLastIncomingSms(boolean success, int result, Message response) {
@@ -387,13 +380,12 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
         addTaint(result);
         addTaint(success);
         mCm.acknowledgeLastIncomingGsmSms(success, resultToCause(result), response);
-        
-        
+        // ---------- Original Method ----------
+        //mCm.acknowledgeLastIncomingGsmSms(success, resultToCause(result), response);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int resultToCause(int rc) {
+        private static int resultToCause(int rc) {
         switch (rc) {
             case Activity.RESULT_OK:
             case Intents.RESULT_SMS_HANDLED:
@@ -407,7 +399,6 @@ TextEncodingDetails var9473932D319F0FA2CD84167FDAB5206A_763475263 =         SmsM
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.008 -0400", hash_original_method = "4513E8DEDD790BB664A98AD56B29A135", hash_generated_method = "CDC955E6ACC4186F2A822E4F427C0839")
     private void handleBroadcastSms(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -425,12 +416,12 @@ for(int j = i;j < i + 8 && j < receivedPdu.length;j++)
     if(b < 0x10)                        
                         {
                             sb.append('0');
-                        } 
+                        } //End block
                         sb.append(Integer.toHexString(b)).append(' ');
-                    } 
+                    } //End block
                     Log.d(TAG, sb.toString());
-                } 
-            } 
+                } //End block
+            } //End block
             SmsCbHeader header = new SmsCbHeader(receivedPdu);
             String plmn = SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_NUMERIC);
             GsmCellLocation cellLocation = (GsmCellLocation) mPhone.getCellLocation();
@@ -445,22 +436,22 @@ for(int j = i;j < i + 8 && j < receivedPdu.length;j++)
                 {
                     pdus = new byte[header.nrOfPages][];
                     mSmsCbPageMap.put(concatInfo, pdus);
-                } 
+                } //End block
                 pdus[header.pageIndex - 1] = receivedPdu;
 for(int i = 0;i < pdus.length;i++)
                 {
     if(pdus[i] == null)                    
                     {
                         return;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 mSmsCbPageMap.remove(concatInfo);
-            } 
+            } //End block
             else
             {
                 pdus = new byte[1][];
                 pdus[0] = receivedPdu;
-            } 
+            } //End block
             boolean isEmergencyMessage = SmsCbHeader.isEmergencyMessage(header.messageIdentifier);
             dispatchBroadcastPdus(pdus, isEmergencyMessage);
             Iterator<SmsCbConcatInfo> iter = mSmsCbPageMap.keySet().iterator();
@@ -471,14 +462,14 @@ for(int i = 0;i < pdus.length;i++)
     if(!info.matchesLocation(plmn, lac, cid))                
                 {
                     iter.remove();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (RuntimeException e)
         {
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -502,27 +493,25 @@ for(int i = 0;i < pdus.length;i++)
             mPlmn = plmn;
             mLac = lac;
             mCid = cid;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mHeader = header;
+            //mPlmn = plmn;
+            //mLac = lac;
+            //mCid = cid;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.010 -0400", hash_original_method = "EE152888A937A1561BADC909DEBD7300", hash_generated_method = "36DB82663BA28F6585709DD83912E190")
         @Override
         public int hashCode() {
             int var4563B0F6CA63C6FAA6D7B6D620DED75E_1988262861 = (mHeader.messageIdentifier * 31 + mHeader.updateNumber);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227015323 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227015323;
-            
-            
+            // ---------- Original Method ----------
+            //return mHeader.messageIdentifier * 31 + mHeader.updateNumber;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.010 -0400", hash_original_method = "A4665EFAF0A95C2E46EAC850D0E6C5D5", hash_generated_method = "E54C2D2EE56E297E38A474FA949D91F3")
         @Override
         public boolean equals(Object obj) {
@@ -540,24 +529,24 @@ for(int i = 0;i < pdus.length;i++)
                     boolean varA276C239EB60C56998195C02A9962CD2_216627653 = (matchesLocation(other.mPlmn, other.mLac, other.mCid));
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1003180440 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1003180440;
-                } 
-            } 
+                } //End block
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_2072627692 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_451474833 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_451474833;
-            
-            
-                
-                
-                        
-                        
-                        
-                        
-                        
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (obj instanceof SmsCbConcatInfo) {
+                //SmsCbConcatInfo other = (SmsCbConcatInfo)obj;
+                //if (mHeader.geographicalScope == other.mHeader.geographicalScope
+                        //&& mHeader.messageCode == other.mHeader.messageCode
+                        //&& mHeader.updateNumber == other.mHeader.updateNumber
+                        //&& mHeader.messageIdentifier == other.mHeader.messageIdentifier
+                        //&& mHeader.dataCodingScheme == other.mHeader.dataCodingScheme
+                        //&& mHeader.nrOfPages == other.mHeader.nrOfPages) {
+                    //return matchesLocation(other.mPlmn, other.mLac, other.mCid);
+                //}
+            //}
+            //return false;
         }
 
         
@@ -574,14 +563,14 @@ switch(mHeader.geographicalScope){
                 boolean var68934A3E9455FA72420237EB05902327_1565777263 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_97816693 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_97816693;
-            } 
+            } //End block
             case SmsCbMessage.GEOGRAPHICAL_SCOPE_LA_WIDE:
     if(mLac != lac)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_1373379758 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1654282670 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1654282670;
-            } 
+            } //End block
             case SmsCbMessage.GEOGRAPHICAL_SCOPE_PLMN_WIDE:
             boolean varAD08EA8BCD8D2D5BB3151EE959048571_1878296971 = (mPlmn != null && mPlmn.equals(plmn));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_531541730 = getTaintBoolean();
@@ -589,21 +578,21 @@ switch(mHeader.geographicalScope){
 }            boolean var68934A3E9455FA72420237EB05902327_1698642997 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1953928410 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1953928410;
-            
-            
-                
-                
-                    
-                        
-                    
-                
-                    
-                        
-                    
-                
-                    
-            
-            
+            // ---------- Original Method ----------
+            //switch (mHeader.geographicalScope) {
+                //case SmsCbMessage.GEOGRAPHICAL_SCOPE_CELL_WIDE:
+                //case SmsCbMessage.GEOGRAPHICAL_SCOPE_CELL_WIDE_IMMEDIATE:
+                    //if (mCid != cid) {
+                        //return false;
+                    //}
+                //case SmsCbMessage.GEOGRAPHICAL_SCOPE_LA_WIDE:
+                    //if (mLac != lac) {
+                        //return false;
+                    //}
+                //case SmsCbMessage.GEOGRAPHICAL_SCOPE_PLMN_WIDE:
+                    //return mPlmn != null && mPlmn.equals(plmn);
+            //}
+            //return false;
         }
 
         

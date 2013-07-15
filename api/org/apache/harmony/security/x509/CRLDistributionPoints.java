@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,44 +26,41 @@ public final class CRLDistributionPoints extends ExtensionValue {
             IllegalArgumentException var1B9AD9E6F5E79754D67F06E5D8208F1D_29090467 = new IllegalArgumentException("distributionPoints are empty");
             var1B9AD9E6F5E79754D67F06E5D8208F1D_29090467.addTaint(taint);
             throw var1B9AD9E6F5E79754D67F06E5D8208F1D_29090467;
-        } 
+        } //End block
         this.distributionPoints = distributionPoints;
         this.encoding = encoding;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if ((distributionPoints == null) || (distributionPoints.size() == 0)) {
+            //throw new IllegalArgumentException("distributionPoints are empty");
+        //}
+        //this.distributionPoints = distributionPoints;
+        //this.encoding = encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.712 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "AF8B399C2358A249AEF447C3C2E54D54")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_961307500 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1378213013 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1378213013;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = ASN1.encode(this);
+        //}
+        //return encoding;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
+        public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
         return (CRLDistributionPoints) ASN1.decode(encoding);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.712 -0400", hash_original_method = "B23CB95A086DE744F33B5369D34A5985", hash_generated_method = "6058F2EA7A2DC16CC83419DF3C0D4730")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -75,16 +72,16 @@ for(DistributionPoint distributionPoint : distributionPoints)
         {
             sb.append(prefix).append("  [").append(++number).append("]\n");
             distributionPoint.dumpValue(sb, prefix + "  ");
-        } 
+        } //End block
         sb.append(prefix).append("]\n");
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //sb.append(prefix).append("CRL Distribution Points: [\n");
+        //int number = 0;
+        //for (DistributionPoint distributionPoint : distributionPoints) {
+            //sb.append(prefix).append("  [").append(++number).append("]\n");
+            //distributionPoint.dumpValue(sb, prefix + "  ");
+        //}
+        //sb.append(prefix).append("]\n");
     }
 
     

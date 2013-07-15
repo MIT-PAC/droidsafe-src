@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class FromParser extends AddressParametersParser {
     public  FromParser(String from) {
         super(from);
         addTaint(from.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,11 +22,10 @@ public class FromParser extends AddressParametersParser {
     protected  FromParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.511 -0400", hash_original_method = "090BCBCCA2A0D46A805C56D0690187FF", hash_generated_method = "63692B7CFEFFF2645F37C539CD0DADBB")
     public SIPHeader parse() throws ParseException {
         From from = new From();
@@ -39,15 +38,15 @@ public class FromParser extends AddressParametersParser {
 SIPHeader var48A496C0AD319E4CFD66279C8D5D42FE_208373002 =         from;
         var48A496C0AD319E4CFD66279C8D5D42FE_208373002.addTaint(taint);
         return var48A496C0AD319E4CFD66279C8D5D42FE_208373002;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //From from = new From();
+        //this.lexer.match(TokenTypes.FROM);
+        //this.lexer.SPorHT();
+        //this.lexer.match(':');
+        //this.lexer.SPorHT();
+        //super.parse(from);
+        //this.lexer.match('\n');
+        //return from;
     }
 
     

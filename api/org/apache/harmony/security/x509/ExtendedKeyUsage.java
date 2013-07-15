@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,48 +22,45 @@ public final class ExtendedKeyUsage extends ExtensionValue {
     public  ExtendedKeyUsage(byte[] encoding) {
         super(encoding);
         addTaint(encoding[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.871 -0400", hash_original_method = "EC4A736D051BE2AF82868DFFF88ACC79", hash_generated_method = "F6B4DE9D4F2046EB17641A4FF6B0DE11")
     public List<String> getExtendedKeyUsage() throws IOException {
     if(keys == null)        
         {
             keys = (List<String>) ASN1.decode(getEncoded());
-        } 
+        } //End block
 List<String> varB14736CAAF1705D7B3CD66C22C8D3EBC_1931646150 =         keys;
         varB14736CAAF1705D7B3CD66C22C8D3EBC_1931646150.addTaint(taint);
         return varB14736CAAF1705D7B3CD66C22C8D3EBC_1931646150;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (keys == null) {
+            //keys = (List<String>) ASN1.decode(getEncoded());
+        //}
+        //return keys;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.872 -0400", hash_original_method = "63AFE39A4816AB8A1F7656BFDDDB680C", hash_generated_method = "47FFB0930AD3A116970797A19FEBF648")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(keys);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1949131910 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2065786954 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2065786954;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = ASN1.encode(keys);
+        //}
+        //return encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.873 -0400", hash_original_method = "4F87579E7E9CA4B1B17B20CD410B3E10", hash_generated_method = "D89135C7521E619869D7B4974467F11E")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -75,13 +72,13 @@ List<String> varB14736CAAF1705D7B3CD66C22C8D3EBC_1931646150 =         keys;
             try 
             {
                 keys = getExtendedKeyUsage();
-            } 
+            } //End block
             catch (IOException e)
             {
                 super.dumpValue(sb);
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
         sb.append('[');
 for(Iterator<?> it = keys.iterator();it.hasNext();)
         {
@@ -89,27 +86,27 @@ for(Iterator<?> it = keys.iterator();it.hasNext();)
     if(it.hasNext())            
             {
                 sb.append(',');
-            } 
-        } 
+            } //End block
+        } //End block
         sb.append(" ]\n");
-        
-        
-        
-            
-                
-            
-                
-                
-            
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //sb.append(prefix).append("Extended Key Usage: ");
+        //if (keys == null) {
+            //try {
+                //keys = getExtendedKeyUsage();
+            //} catch (IOException e) {
+                //super.dumpValue(sb);
+                //return;
+            //}
+        //}
+        //sb.append('[');
+        //for (Iterator<?> it = keys.iterator(); it.hasNext();) {
+            //sb.append(" \"").append(it.next()).append('"');
+            //if (it.hasNext()) {
+                //sb.append(',');
+            //}
+        //}
+        //sb.append(" ]\n");
     }
 
     

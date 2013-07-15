@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class CheckBox extends CompoundButton {
     public  CheckBox(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -24,7 +24,7 @@ public class CheckBox extends CompoundButton {
         this(context, attrs, com.android.internal.R.attr.checkboxStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,31 +34,31 @@ public class CheckBox extends CompoundButton {
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.808 -0400", hash_original_method = "270C42284D505CD6CA182328DD88ED30", hash_generated_method = "33B1C9AD6A033C3BD2091B162CBC8505")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         super.onPopulateAccessibilityEvent(event);
     if(isChecked())        
         {
             event.getText().add(mContext.getString(R.string.checkbox_checked));
-        } 
+        } //End block
         else
         {
             event.getText().add(mContext.getString(R.string.checkbox_not_checked));
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onPopulateAccessibilityEvent(event);
+        //if (isChecked()) {
+            //event.getText().add(mContext.getString(R.string.checkbox_checked));
+        //} else {
+            //event.getText().add(mContext.getString(R.string.checkbox_not_checked));
+        //}
     }
 
     

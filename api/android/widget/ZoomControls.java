@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public class ZoomControls extends LinearLayout {
     public  ZoomControls(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -41,14 +41,14 @@ public class ZoomControls extends LinearLayout {
                 true);
         mZoomIn = (ZoomButton) findViewById(R.id.zoomIn);
         mZoomOut = (ZoomButton) findViewById(R.id.zoomOut);
-        
-        
-        
-                
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //setFocusable(false);
+        //LayoutInflater inflater = (LayoutInflater) context
+                //.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //inflater.inflate(R.layout.zoom_controls, this, 
+                //true);
+        //mZoomIn = (ZoomButton) findViewById(R.id.zoomIn);
+        //mZoomOut = (ZoomButton) findViewById(R.id.zoomOut);
     }
 
     
@@ -56,8 +56,8 @@ public class ZoomControls extends LinearLayout {
     public void setOnZoomInClickListener(OnClickListener listener) {
         addTaint(listener.getTaint());
         mZoomIn.setOnClickListener(listener);
-        
-        
+        // ---------- Original Method ----------
+        //mZoomIn.setOnClickListener(listener);
     }
 
     
@@ -65,8 +65,8 @@ public class ZoomControls extends LinearLayout {
     public void setOnZoomOutClickListener(OnClickListener listener) {
         addTaint(listener.getTaint());
         mZoomOut.setOnClickListener(listener);
-        
-        
+        // ---------- Original Method ----------
+        //mZoomOut.setOnClickListener(listener);
     }
 
     
@@ -75,39 +75,38 @@ public class ZoomControls extends LinearLayout {
         addTaint(speed);
         mZoomIn.setZoomSpeed(speed);
         mZoomOut.setZoomSpeed(speed);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mZoomIn.setZoomSpeed(speed);
+        //mZoomOut.setZoomSpeed(speed);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.235 -0400", hash_original_method = "D87B32C51AD302A4F9341AA86337AE33", hash_generated_method = "5CF2570229A96077D9C2C9E38FD7B1B8")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         boolean varB326B5062B2F0E69046810717534CB09_1631706577 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1241483450 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1241483450;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.235 -0400", hash_original_method = "C11451C1AB4E567449CD07B5E594E725", hash_generated_method = "2A34B6A5D8BCEC0514353FD815FCBC82")
     public void show() {
         fade(View.VISIBLE, 0.0f, 1.0f);
-        
-        
+        // ---------- Original Method ----------
+        //fade(View.VISIBLE, 0.0f, 1.0f);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.236 -0400", hash_original_method = "E5A5304131EA7BA6BF2FB03B8454E0A2", hash_generated_method = "1763705770489D0C249161FFFC62FF0D")
     public void hide() {
         fade(View.GONE, 1.0f, 0.0f);
-        
-        
+        // ---------- Original Method ----------
+        //fade(View.GONE, 1.0f, 0.0f);
     }
 
     
@@ -120,11 +119,11 @@ public class ZoomControls extends LinearLayout {
         anim.setDuration(500);
         startAnimation(anim);
         setVisibility(visibility);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //AlphaAnimation anim = new AlphaAnimation(startAlpha, endAlpha);
+        //anim.setDuration(500);
+        //startAnimation(anim);
+        //setVisibility(visibility);
     }
 
     
@@ -132,8 +131,8 @@ public class ZoomControls extends LinearLayout {
     public void setIsZoomInEnabled(boolean isEnabled) {
         addTaint(isEnabled);
         mZoomIn.setEnabled(isEnabled);
-        
-        
+        // ---------- Original Method ----------
+        //mZoomIn.setEnabled(isEnabled);
     }
 
     
@@ -141,8 +140,8 @@ public class ZoomControls extends LinearLayout {
     public void setIsZoomOutEnabled(boolean isEnabled) {
         addTaint(isEnabled);
         mZoomOut.setEnabled(isEnabled);
-        
-        
+        // ---------- Original Method ----------
+        //mZoomOut.setEnabled(isEnabled);
     }
 
     
@@ -152,8 +151,8 @@ public class ZoomControls extends LinearLayout {
         boolean varA7700542A5CF594E0CC0101E1DA4F0D0_61653799 = (mZoomIn.hasFocus() || mZoomOut.hasFocus());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_289430824 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_289430824;
-        
-        
+        // ---------- Original Method ----------
+        //return mZoomIn.hasFocus() || mZoomOut.hasFocus();
     }
 
     

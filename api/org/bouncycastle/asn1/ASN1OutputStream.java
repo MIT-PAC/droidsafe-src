@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ASN1OutputStream extends DEROutputStream {
         OutputStream    os) {
         super(os);
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,40 +25,40 @@ public class ASN1OutputStream extends DEROutputStream {
     if(obj == null)        
         {
             writeNull();
-        } 
+        } //End block
         else
     if(obj instanceof DERObject)        
         {
             ((DERObject)obj).encode(this);
-        } 
+        } //End block
         else
     if(obj instanceof DEREncodable)        
         {
             ((DEREncodable)obj).getDERObject().encode(this);
-        } 
+        } //End block
         else
         {
             IOException var4B2854F72E86283DC406E84332783267_670944944 = new IOException("object not ASN1Encodable");
             var4B2854F72E86283DC406E84332783267_670944944.addTaint(taint);
             throw var4B2854F72E86283DC406E84332783267_670944944;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (obj == null)
+        //{
+            //writeNull();
+        //}
+        //else if (obj instanceof DERObject)
+        //{
+            //((DERObject)obj).encode(this);
+        //}
+        //else if (obj instanceof DEREncodable)
+        //{
+            //((DEREncodable)obj).getDERObject().encode(this);
+        //}
+        //else
+        //{
+            //throw new IOException("object not ASN1Encodable");
+        //}
     }
 
     

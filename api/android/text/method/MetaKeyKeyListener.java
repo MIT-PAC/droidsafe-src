@@ -1,6 +1,6 @@
 package android.text.method;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,12 +17,11 @@ public abstract class MetaKeyKeyListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.640 -0400", hash_original_method = "50168EE5CC1513DB2EA8BA89DC077CDF", hash_generated_method = "50168EE5CC1513DB2EA8BA89DC077CDF")
     public MetaKeyKeyListener ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static void resetMetaState(Spannable text) {
+        public static void resetMetaState(Spannable text) {
         text.removeSpan(CAP);
         text.removeSpan(ALT);
         text.removeSpan(SYM);
@@ -54,8 +53,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int getActive(CharSequence text, Object meta,
+        private static int getActive(CharSequence text, Object meta,
                                  int on, int lock) {
         if (!(text instanceof Spanned)) {
             return 0;
@@ -72,29 +70,25 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void adjustMetaAfterKeypress(Spannable content) {
+        public static void adjustMetaAfterKeypress(Spannable content) {
         adjust(content, CAP);
         adjust(content, ALT);
         adjust(content, SYM);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isMetaTracker(CharSequence text, Object what) {
+        public static boolean isMetaTracker(CharSequence text, Object what) {
         return what == CAP || what == ALT || what == SYM ||
                what == SELECTING;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isSelectingMetaTracker(CharSequence text, Object what) {
+        public static boolean isSelectingMetaTracker(CharSequence text, Object what) {
         return what == SELECTING;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void adjust(Spannable content, Object what) {
+        private static void adjust(Spannable content, Object what) {
         int current = content.getSpanFlags(what);
         if (current == PRESSED)
             content.setSpan(what, 0, 0, USED);
@@ -103,8 +97,7 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static void resetLockedMeta(Spannable content) {
+        protected static void resetLockedMeta(Spannable content) {
         resetLock(content, CAP);
         resetLock(content, ALT);
         resetLock(content, SYM);
@@ -112,18 +105,16 @@ public abstract class MetaKeyKeyListener {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void resetLock(Spannable content, Object what) {
+        private static void resetLock(Spannable content, Object what) {
         int current = content.getSpanFlags(what);
         if (current == LOCKED)
             content.removeSpan(what);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.642 -0400", hash_original_method = "624DA77F613D89E75494C45A9B699A03", hash_generated_method = "4C7C0990E55343FAD7A6BE3A53419234")
     public boolean onKeyDown(View view, Editable content, int keyCode, KeyEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(keyCode);
         addTaint(content.getTaint());
@@ -134,7 +125,7 @@ public abstract class MetaKeyKeyListener {
             boolean varB326B5062B2F0E69046810717534CB09_324633354 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_367542477 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_367542477;
-        } 
+        } //End block
     if(keyCode == KeyEvent.KEYCODE_ALT_LEFT || keyCode == KeyEvent.KEYCODE_ALT_RIGHT
                 || keyCode == KeyEvent.KEYCODE_NUM)        
         {
@@ -142,36 +133,35 @@ public abstract class MetaKeyKeyListener {
             boolean varB326B5062B2F0E69046810717534CB09_815734807 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2011063943 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011063943;
-        } 
+        } //End block
     if(keyCode == KeyEvent.KEYCODE_SYM)        
         {
             press(content, SYM);
             boolean varB326B5062B2F0E69046810717534CB09_328547337 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_269260378 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_269260378;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_192156373 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_263750558 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_263750558;
-        
-        
-            
-            
-        
-        
-                
-            
-            
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
+            //press(content, CAP);
+            //return true;
+        //}
+        //if (keyCode == KeyEvent.KEYCODE_ALT_LEFT || keyCode == KeyEvent.KEYCODE_ALT_RIGHT
+                //|| keyCode == KeyEvent.KEYCODE_NUM) {
+            //press(content, ALT);
+            //return true;
+        //}
+        //if (keyCode == KeyEvent.KEYCODE_SYM) {
+            //press(content, SYM);
+            //return true;
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.643 -0400", hash_original_method = "04CA7F5473BAF6356CB45A56F068D921", hash_generated_method = "90F2F54E066A3BB680F858093C9AE39D")
     private void press(Editable content, Object what) {
         addTaint(what.getTaint());
@@ -190,37 +180,34 @@ public abstract class MetaKeyKeyListener {
         content.removeSpan(what);
         else
         content.setSpan(what, 0, 0, PRESSED);
-        
-        
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //int state = content.getSpanFlags(what);
+        //if (state == PRESSED)
+            //; 
+        //else if (state == RELEASED)
+            //content.setSpan(what, 0, 0, LOCKED);
+        //else if (state == USED)
+            //; 
+        //else if (state == LOCKED)
+            //content.removeSpan(what);
+        //else
+            //content.setSpan(what, 0, 0, PRESSED);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void startSelecting(View view, Spannable content) {
+        public static void startSelecting(View view, Spannable content) {
         content.setSpan(SELECTING, 0, 0, PRESSED);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void stopSelecting(View view, Spannable content) {
+        public static void stopSelecting(View view, Spannable content) {
         content.removeSpan(SELECTING);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.643 -0400", hash_original_method = "B6764DC3BD8B6ED5267E5A941E3F8260", hash_generated_method = "1F30C11DF49D55B56E4E75F77DAD267A")
     public boolean onKeyUp(View view, Editable content, int keyCode, KeyEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(keyCode);
         addTaint(content.getTaint());
@@ -231,7 +218,7 @@ public abstract class MetaKeyKeyListener {
             boolean varB326B5062B2F0E69046810717534CB09_263497268 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1431766492 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1431766492;
-        } 
+        } //End block
     if(keyCode == KeyEvent.KEYCODE_ALT_LEFT || keyCode == KeyEvent.KEYCODE_ALT_RIGHT
                 || keyCode == KeyEvent.KEYCODE_NUM)        
         {
@@ -239,36 +226,35 @@ public abstract class MetaKeyKeyListener {
             boolean varB326B5062B2F0E69046810717534CB09_855919836 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1148775638 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1148775638;
-        } 
+        } //End block
     if(keyCode == KeyEvent.KEYCODE_SYM)        
         {
             release(content, SYM, event);
             boolean varB326B5062B2F0E69046810717534CB09_1854817641 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_198494877 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_198494877;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_976250360 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1243257687 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1243257687;
-        
-        
-            
-            
-        
-        
-                
-            
-            
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
+            //release(content, CAP, event);
+            //return true;
+        //}
+        //if (keyCode == KeyEvent.KEYCODE_ALT_LEFT || keyCode == KeyEvent.KEYCODE_ALT_RIGHT
+                //|| keyCode == KeyEvent.KEYCODE_NUM) {
+            //release(content, ALT, event);
+            //return true;
+        //}
+        //if (keyCode == KeyEvent.KEYCODE_SYM) {
+            //release(content, SYM, event);
+            //return true;
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.644 -0400", hash_original_method = "E71400F62D0FFB0C9763693B0DBF0337", hash_generated_method = "48292083C49046879120B0511977B05C")
     private void release(Editable content, Object what, KeyEvent event) {
         addTaint(event.getTaint());
@@ -287,36 +273,34 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
         content.removeSpan(what);
         break;
 }
-        
-        
-        
-            
-                
-                    
-                
-                    
-                
-            
-                
-                
-        
+        // ---------- Original Method ----------
+        //int current = content.getSpanFlags(what);
+        //switch (event.getKeyCharacterMap().getModifierBehavior()) {
+            //case KeyCharacterMap.MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED:
+                //if (current == USED)
+                    //content.removeSpan(what);
+                //else if (current == PRESSED)
+                    //content.setSpan(what, 0, 0, RELEASED);
+                //break;
+            //default:
+                //content.removeSpan(what);
+                //break;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.644 -0400", hash_original_method = "A6CA9AE4F5FD679B652E94F0868BFDE8", hash_generated_method = "3D3A7671C18F1779763FBEA2600DA0C9")
     public void clearMetaKeyState(View view, Editable content, int states) {
         addTaint(states);
         addTaint(content.getTaint());
         addTaint(view.getTaint());
         clearMetaKeyState(content, states);
-        
-        
+        // ---------- Original Method ----------
+        //clearMetaKeyState(content, states);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void clearMetaKeyState(Editable content, int states) {
+        public static void clearMetaKeyState(Editable content, int states) {
         if ((states&META_SHIFT_ON) != 0) content.removeSpan(CAP);
         if ((states&META_ALT_ON) != 0) content.removeSpan(ALT);
         if ((states&META_SYM_ON) != 0) content.removeSpan(SYM);
@@ -324,8 +308,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long resetLockedMeta(long state) {
+        public static long resetLockedMeta(long state) {
         if ((state & META_CAP_LOCKED) != 0) {
             state &= ~META_SHIFT_MASK;
         }
@@ -380,8 +363,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long adjustMetaAfterKeypress(long state) {
+        public static long adjustMetaAfterKeypress(long state) {
         if ((state & META_CAP_PRESSED) != 0) {
             state = (state & ~META_SHIFT_MASK) | META_SHIFT_ON | META_CAP_USED;
         } else if ((state & META_CAP_RELEASED) != 0) {
@@ -401,8 +383,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long handleKeyDown(long state, int keyCode, KeyEvent event) {
+        public static long handleKeyDown(long state, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
             return press(state, META_SHIFT_ON, META_SHIFT_MASK,
                     META_CAP_LOCKED, META_CAP_PRESSED, META_CAP_RELEASED, META_CAP_USED);
@@ -420,8 +401,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long press(long state, int what, long mask,
+        private static long press(long state, int what, long mask,
             long locked, long pressed, long released, long used) {
         if ((state & pressed) != 0) {
         } else if ((state & released) != 0) {
@@ -436,8 +416,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long handleKeyUp(long state, int keyCode, KeyEvent event) {
+        public static long handleKeyUp(long state, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT) {
             return release(state, META_SHIFT_ON, META_SHIFT_MASK,
                     META_CAP_PRESSED, META_CAP_RELEASED, META_CAP_USED, event);
@@ -455,8 +434,7 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long release(long state, int what, long mask,
+        private static long release(long state, int what, long mask,
             long pressed, long released, long used, KeyEvent event) {
         switch (event.getKeyCharacterMap().getModifierBehavior()) {
             case KeyCharacterMap.MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED:
@@ -474,7 +452,6 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.645 -0400", hash_original_method = "DB6E28AB316658FAB51CA26FDC440ADD", hash_generated_method = "C67C049D164160F6D202F335D42CBC75")
     public long clearMetaKeyState(long state, int which) {
         addTaint(which);
@@ -482,29 +459,29 @@ switch(event.getKeyCharacterMap().getModifierBehavior()){
     if((which & META_SHIFT_ON) != 0 && (state & META_CAP_LOCKED) != 0)        
         {
             state &= ~META_SHIFT_MASK;
-        } 
+        } //End block
     if((which & META_ALT_ON) != 0 && (state & META_ALT_LOCKED) != 0)        
         {
             state &= ~META_ALT_MASK;
-        } 
+        } //End block
     if((which & META_SYM_ON) != 0 && (state & META_SYM_LOCKED) != 0)        
         {
             state &= ~META_SYM_MASK;
-        } 
+        } //End block
         long var9ED39E2EA931586B6A985A6942EF573E_1943623517 = (state);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_386311657 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_386311657;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((which & META_SHIFT_ON) != 0 && (state & META_CAP_LOCKED) != 0) {
+            //state &= ~META_SHIFT_MASK;
+        //}
+        //if ((which & META_ALT_ON) != 0 && (state & META_ALT_LOCKED) != 0) {
+            //state &= ~META_ALT_MASK;
+        //}
+        //if ((which & META_SYM_ON) != 0 && (state & META_SYM_LOCKED) != 0) {
+            //state &= ~META_SYM_MASK;
+        //}
+        //return state;
     }
 
     

@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
         addTaint(httpEngine.getTaint());
         addTaint(cacheRequest.getTaint());
         addTaint(is.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,7 +42,7 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_789934542 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_192360201 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_192360201;
-        } 
+        } //End block
     if(bytesRemainingInChunk == 0 || bytesRemainingInChunk == NO_CHUNK_YET)        
         {
             readChunkSize();
@@ -51,8 +51,8 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1251313437 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1357201512 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1357201512;
-            } 
-        } 
+            } //End block
+        } //End block
         int read = in.read(buffer, offset, Math.min(count, bytesRemainingInChunk));
     if(read == -1)        
         {
@@ -60,39 +60,39 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
             IOException var9FCEBBA092763F5F75BC70A376D097E6_702977330 = new IOException("unexpected end of stream");
             var9FCEBBA092763F5F75BC70A376D097E6_702977330.addTaint(taint);
             throw var9FCEBBA092763F5F75BC70A376D097E6_702977330;
-        } 
+        } //End block
         bytesRemainingInChunk -= read;
         cacheWrite(buffer, offset, read);
     if(bytesRemainingInChunk == 0 && in.available() >= MIN_LAST_CHUNK_LENGTH)        
         {
             readChunkSize();
-        } 
+        } //End block
         int varECAE13117D6F0584C25A9DA6C8F8415E_329592011 = (read);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415193929 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415193929;
-        
-        
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
-        
-        
-            
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
+        //checkNotClosed();
+        //if (!hasMoreChunks) {
+            //return -1;
+        //}
+        //if (bytesRemainingInChunk == 0 || bytesRemainingInChunk == NO_CHUNK_YET) {
+            //readChunkSize();
+            //if (!hasMoreChunks) {
+                //return -1;
+            //}
+        //}
+        //int read = in.read(buffer, offset, Math.min(count, bytesRemainingInChunk));
+        //if (read == -1) {
+            //unexpectedEndOfInput(); 
+            //throw new IOException("unexpected end of stream");
+        //}
+        //bytesRemainingInChunk -= read;
+        //cacheWrite(buffer, offset, read);
+        //if (bytesRemainingInChunk == 0 && in.available() >= MIN_LAST_CHUNK_LENGTH) {
+            //readChunkSize();
+        //}
+        //return read;
     }
 
     
@@ -101,48 +101,48 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
     if(bytesRemainingInChunk != NO_CHUNK_YET)        
         {
             Streams.readAsciiLine(in);
-        } 
+        } //End block
         String chunkSizeString = Streams.readAsciiLine(in);
         int index = chunkSizeString.indexOf(";");
     if(index != -1)        
         {
             chunkSizeString = chunkSizeString.substring(0, index);
-        } 
+        } //End block
         try 
         {
             bytesRemainingInChunk = Integer.parseInt(chunkSizeString.trim(), 16);
-        } 
+        } //End block
         catch (NumberFormatException e)
         {
             IOException var012098BF550B7327769772BC6B0C1846_1650610492 = new IOException("Expected a hex chunk size, but was " + chunkSizeString);
             var012098BF550B7327769772BC6B0C1846_1650610492.addTaint(taint);
             throw var012098BF550B7327769772BC6B0C1846_1650610492;
-        } 
+        } //End block
     if(bytesRemainingInChunk == 0)        
         {
             hasMoreChunks = false;
             httpEngine.readTrailers();
             endOfInput(true);
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (bytesRemainingInChunk != NO_CHUNK_YET) {
+            //Streams.readAsciiLine(in);
+        //}
+        //String chunkSizeString = Streams.readAsciiLine(in);
+        //int index = chunkSizeString.indexOf(";");
+        //if (index != -1) {
+            //chunkSizeString = chunkSizeString.substring(0, index);
+        //}
+        //try {
+            //bytesRemainingInChunk = Integer.parseInt(chunkSizeString.trim(), 16);
+        //} catch (NumberFormatException e) {
+            //throw new IOException("Expected a hex chunk size, but was " + chunkSizeString);
+        //}
+        //if (bytesRemainingInChunk == 0) {
+            //hasMoreChunks = false;
+            //httpEngine.readTrailers();
+            //endOfInput(true);
+        //}
     }
 
     
@@ -155,16 +155,16 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
             int varCFCD208495D565EF66E7DFF9F98764DA_942365459 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144021749 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144021749;
-        } 
+        } //End block
         int var79C497F3E0FA13A85FD80EA6E8DD7183_648540219 = (Math.min(in.available(), bytesRemainingInChunk));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_424409751 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_424409751;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //checkNotClosed();
+        //if (!hasMoreChunks || bytesRemainingInChunk == NO_CHUNK_YET) {
+            //return 0;
+        //}
+        //return Math.min(in.available(), bytesRemainingInChunk);
     }
 
     
@@ -174,20 +174,20 @@ final class ChunkedInputStream extends AbstractHttpInputStream {
     if(closed)        
         {
             return;
-        } 
+        } //End block
         closed = true;
     if(hasMoreChunks)        
         {
             unexpectedEndOfInput();
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (closed) {
+            //return;
+        //}
+        //closed = true;
+        //if (hasMoreChunks) {
+            //unexpectedEndOfInput();
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package android.content.res;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -81,8 +81,8 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.022 -0400", hash_original_method = "7E58BC7E066573DB3913F9DCCD9EE638", hash_generated_method = "91F3585416146E7055FAB87D152FFB0B")
     public  Configuration() {
         setToDefaults();
-        
-        
+        // ---------- Original Method ----------
+        //setToDefaults();
     }
 
     
@@ -90,8 +90,8 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     public  Configuration(Configuration o) {
         addTaint(o.getTaint());
         setTo(o);
-        
-        
+        // ---------- Original Method ----------
+        //setTo(o);
     }
 
     
@@ -99,12 +99,11 @@ public final class Configuration implements Parcelable, Comparable<Configuration
     private  Configuration(Parcel source) {
         addTaint(source.getTaint());
         readFromParcel(source);
-        
-        
+        // ---------- Original Method ----------
+        //readFromParcel(source);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.025 -0400", hash_original_method = "7CF138C6ADBDA7579D8D5CA6B783C43E", hash_generated_method = "E7D38C200CC864903EA426877693103F")
     public boolean isLayoutSizeAtLeast(int size) {
         addTaint(size);
@@ -118,10 +117,10 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         boolean var065731C7DFC81339172CE5134E1B8183_635859284 = (cur >= size);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_340666854 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_340666854;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int cur = screenLayout&SCREENLAYOUT_SIZE_MASK;
+        //if (cur == SCREENLAYOUT_SIZE_UNDEFINED) return false;
+        //return cur >= size;
     }
 
     
@@ -134,7 +133,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         {
             locale = (Locale) o.locale.clone();
             textLayoutDirection = o.textLayoutDirection;
-        } 
+        } //End block
         userSetLocale = o.userSetLocale;
         touchscreen = o.touchscreen;
         keyboard = o.keyboard;
@@ -152,8 +151,8 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         compatScreenHeightDp = o.compatScreenHeightDp;
         compatSmallestScreenWidthDp = o.compatSmallestScreenWidthDp;
         seq = o.seq;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -171,11 +170,11 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         {
             sb.append(" ");
             sb.append(locale);
-        } 
+        } //End block
         else
         {
             sb.append(" (no locale)");
-        } 
+        } //End block
 switch(textLayoutDirection){
         case LocaleUtil.TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE:
         sb.append(" rtl");
@@ -189,31 +188,31 @@ switch(textLayoutDirection){
             sb.append(" sw");
             sb.append(smallestScreenWidthDp);
             sb.append("dp");
-        } 
+        } //End block
         else
         {
             sb.append(" ?swdp");
-        } 
+        } //End block
     if(screenWidthDp != SCREEN_WIDTH_DP_UNDEFINED)        
         {
             sb.append(" w");
             sb.append(screenWidthDp);
             sb.append("dp");
-        } 
+        } //End block
         else
         {
             sb.append(" ?wdp");
-        } 
+        } //End block
     if(screenHeightDp != SCREEN_HEIGHT_DP_UNDEFINED)        
         {
             sb.append(" h");
             sb.append(screenHeightDp);
             sb.append("dp");
-        } 
+        } //End block
         else
         {
             sb.append(" ?hdp");
-        } 
+        } //End block
 switch((screenLayout&SCREENLAYOUT_SIZE_MASK)){
         case SCREENLAYOUT_SIZE_UNDEFINED:
         sb.append(" ?lsize");
@@ -396,17 +395,16 @@ switch((screenLayout&SCREENLAYOUT_SIZE_MASK)){
         {
             sb.append(" s.");
             sb.append(seq);
-        } 
+        } //End block
         sb.append('}');
 String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1582227453.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1582227453;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.036 -0400", hash_original_method = "147ACC888212AB34BF4DFBA0C89EE45F", hash_generated_method = "C9CB6755A580929C7AAF213990A1EEFA")
     public void setToDefaults() {
         fontScale = 1;
@@ -427,8 +425,8 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         smallestScreenWidthDp = compatSmallestScreenWidthDp = SMALLEST_SCREEN_WIDTH_DP_UNDEFINED;
         textLayoutDirection = LocaleUtil.TEXT_LAYOUT_DIRECTION_LTR_DO_NOT_USE;
         seq = 0;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -436,8 +434,8 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
     @Deprecated
     public void makeDefault() {
         setToDefaults();
-        
-        
+        // ---------- Original Method ----------
+        //setToDefaults();
     }
 
     
@@ -448,17 +446,17 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         {
             changed |= ActivityInfo.CONFIG_FONT_SCALE;
             fontScale = delta.fontScale;
-        } 
+        } //End block
     if(delta.mcc != 0 && mcc != delta.mcc)        
         {
             changed |= ActivityInfo.CONFIG_MCC;
             mcc = delta.mcc;
-        } 
+        } //End block
     if(delta.mnc != 0 && mnc != delta.mnc)        
         {
             changed |= ActivityInfo.CONFIG_MNC;
             mnc = delta.mnc;
-        } 
+        } //End block
     if(delta.locale != null
                 && (locale == null || !locale.equals(delta.locale)))        
         {
@@ -466,60 +464,60 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
             locale = delta.locale != null
                     ? (Locale) delta.locale.clone() : null;
             textLayoutDirection = LocaleUtil.getLayoutDirectionFromLocale(locale);
-        } 
+        } //End block
     if(delta.userSetLocale && (!userSetLocale || ((changed & ActivityInfo.CONFIG_LOCALE) != 0)))        
         {
             userSetLocale = true;
             changed |= ActivityInfo.CONFIG_LOCALE;
-        } 
+        } //End block
     if(delta.touchscreen != TOUCHSCREEN_UNDEFINED
                 && touchscreen != delta.touchscreen)        
         {
             changed |= ActivityInfo.CONFIG_TOUCHSCREEN;
             touchscreen = delta.touchscreen;
-        } 
+        } //End block
     if(delta.keyboard != KEYBOARD_UNDEFINED
                 && keyboard != delta.keyboard)        
         {
             changed |= ActivityInfo.CONFIG_KEYBOARD;
             keyboard = delta.keyboard;
-        } 
+        } //End block
     if(delta.keyboardHidden != KEYBOARDHIDDEN_UNDEFINED
                 && keyboardHidden != delta.keyboardHidden)        
         {
             changed |= ActivityInfo.CONFIG_KEYBOARD_HIDDEN;
             keyboardHidden = delta.keyboardHidden;
-        } 
+        } //End block
     if(delta.hardKeyboardHidden != HARDKEYBOARDHIDDEN_UNDEFINED
                 && hardKeyboardHidden != delta.hardKeyboardHidden)        
         {
             changed |= ActivityInfo.CONFIG_KEYBOARD_HIDDEN;
             hardKeyboardHidden = delta.hardKeyboardHidden;
-        } 
+        } //End block
     if(delta.navigation != NAVIGATION_UNDEFINED
                 && navigation != delta.navigation)        
         {
             changed |= ActivityInfo.CONFIG_NAVIGATION;
             navigation = delta.navigation;
-        } 
+        } //End block
     if(delta.navigationHidden != NAVIGATIONHIDDEN_UNDEFINED
                 && navigationHidden != delta.navigationHidden)        
         {
             changed |= ActivityInfo.CONFIG_KEYBOARD_HIDDEN;
             navigationHidden = delta.navigationHidden;
-        } 
+        } //End block
     if(delta.orientation != ORIENTATION_UNDEFINED
                 && orientation != delta.orientation)        
         {
             changed |= ActivityInfo.CONFIG_ORIENTATION;
             orientation = delta.orientation;
-        } 
+        } //End block
     if(delta.screenLayout != SCREENLAYOUT_SIZE_UNDEFINED
                 && screenLayout != delta.screenLayout)        
         {
             changed |= ActivityInfo.CONFIG_SCREEN_LAYOUT;
             screenLayout = delta.screenLayout;
-        } 
+        } //End block
     if(delta.uiMode != (UI_MODE_TYPE_UNDEFINED|UI_MODE_NIGHT_UNDEFINED)
                 && uiMode != delta.uiMode)        
         {
@@ -528,50 +526,50 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
             {
                 uiMode = (uiMode&~UI_MODE_TYPE_MASK)
                         | (delta.uiMode&UI_MODE_TYPE_MASK);
-            } 
+            } //End block
     if((delta.uiMode&UI_MODE_NIGHT_MASK) != UI_MODE_NIGHT_UNDEFINED)            
             {
                 uiMode = (uiMode&~UI_MODE_NIGHT_MASK)
                         | (delta.uiMode&UI_MODE_NIGHT_MASK);
-            } 
-        } 
+            } //End block
+        } //End block
     if(delta.screenWidthDp != SCREEN_WIDTH_DP_UNDEFINED
                 && screenWidthDp != delta.screenWidthDp)        
         {
             changed |= ActivityInfo.CONFIG_SCREEN_SIZE;
             screenWidthDp = delta.screenWidthDp;
-        } 
+        } //End block
     if(delta.screenHeightDp != SCREEN_HEIGHT_DP_UNDEFINED
                 && screenHeightDp != delta.screenHeightDp)        
         {
             changed |= ActivityInfo.CONFIG_SCREEN_SIZE;
             screenHeightDp = delta.screenHeightDp;
-        } 
+        } //End block
     if(delta.smallestScreenWidthDp != SMALLEST_SCREEN_WIDTH_DP_UNDEFINED)        
         {
             smallestScreenWidthDp = delta.smallestScreenWidthDp;
-        } 
+        } //End block
     if(delta.compatScreenWidthDp != SCREEN_WIDTH_DP_UNDEFINED)        
         {
             compatScreenWidthDp = delta.compatScreenWidthDp;
-        } 
+        } //End block
     if(delta.compatScreenHeightDp != SCREEN_HEIGHT_DP_UNDEFINED)        
         {
             compatScreenHeightDp = delta.compatScreenHeightDp;
-        } 
+        } //End block
     if(delta.compatSmallestScreenWidthDp != SMALLEST_SCREEN_WIDTH_DP_UNDEFINED)        
         {
             compatSmallestScreenWidthDp = delta.compatSmallestScreenWidthDp;
-        } 
+        } //End block
     if(delta.seq != 0)        
         {
             seq = delta.seq;
-        } 
+        } //End block
         int var8977DFAC2F8E04CB96E66882235F5ABA_2127228983 = (changed);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_358332009 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_358332009;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -582,95 +580,93 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
     if(delta.fontScale > 0 && fontScale != delta.fontScale)        
         {
             changed |= ActivityInfo.CONFIG_FONT_SCALE;
-        } 
+        } //End block
     if(delta.mcc != 0 && mcc != delta.mcc)        
         {
             changed |= ActivityInfo.CONFIG_MCC;
-        } 
+        } //End block
     if(delta.mnc != 0 && mnc != delta.mnc)        
         {
             changed |= ActivityInfo.CONFIG_MNC;
-        } 
+        } //End block
     if(delta.locale != null
                 && (locale == null || !locale.equals(delta.locale)))        
         {
             changed |= ActivityInfo.CONFIG_LOCALE;
-        } 
+        } //End block
     if(delta.touchscreen != TOUCHSCREEN_UNDEFINED
                 && touchscreen != delta.touchscreen)        
         {
             changed |= ActivityInfo.CONFIG_TOUCHSCREEN;
-        } 
+        } //End block
     if(delta.keyboard != KEYBOARD_UNDEFINED
                 && keyboard != delta.keyboard)        
         {
             changed |= ActivityInfo.CONFIG_KEYBOARD;
-        } 
+        } //End block
     if(delta.keyboardHidden != KEYBOARDHIDDEN_UNDEFINED
                 && keyboardHidden != delta.keyboardHidden)        
         {
             changed |= ActivityInfo.CONFIG_KEYBOARD_HIDDEN;
-        } 
+        } //End block
     if(delta.hardKeyboardHidden != HARDKEYBOARDHIDDEN_UNDEFINED
                 && hardKeyboardHidden != delta.hardKeyboardHidden)        
         {
             changed |= ActivityInfo.CONFIG_KEYBOARD_HIDDEN;
-        } 
+        } //End block
     if(delta.navigation != NAVIGATION_UNDEFINED
                 && navigation != delta.navigation)        
         {
             changed |= ActivityInfo.CONFIG_NAVIGATION;
-        } 
+        } //End block
     if(delta.navigationHidden != NAVIGATIONHIDDEN_UNDEFINED
                 && navigationHidden != delta.navigationHidden)        
         {
             changed |= ActivityInfo.CONFIG_KEYBOARD_HIDDEN;
-        } 
+        } //End block
     if(delta.orientation != ORIENTATION_UNDEFINED
                 && orientation != delta.orientation)        
         {
             changed |= ActivityInfo.CONFIG_ORIENTATION;
-        } 
+        } //End block
     if(delta.screenLayout != SCREENLAYOUT_SIZE_UNDEFINED
                 && screenLayout != delta.screenLayout)        
         {
             changed |= ActivityInfo.CONFIG_SCREEN_LAYOUT;
-        } 
+        } //End block
     if(delta.uiMode != (UI_MODE_TYPE_UNDEFINED|UI_MODE_NIGHT_UNDEFINED)
                 && uiMode != delta.uiMode)        
         {
             changed |= ActivityInfo.CONFIG_UI_MODE;
-        } 
+        } //End block
     if(delta.screenWidthDp != SCREEN_WIDTH_DP_UNDEFINED
                 && screenWidthDp != delta.screenWidthDp)        
         {
             changed |= ActivityInfo.CONFIG_SCREEN_SIZE;
-        } 
+        } //End block
     if(delta.screenHeightDp != SCREEN_HEIGHT_DP_UNDEFINED
                 && screenHeightDp != delta.screenHeightDp)        
         {
             changed |= ActivityInfo.CONFIG_SCREEN_SIZE;
-        } 
+        } //End block
     if(delta.smallestScreenWidthDp != SMALLEST_SCREEN_WIDTH_DP_UNDEFINED
                 && smallestScreenWidthDp != delta.smallestScreenWidthDp)        
         {
             changed |= ActivityInfo.CONFIG_SMALLEST_SCREEN_SIZE;
-        } 
+        } //End block
         int var8977DFAC2F8E04CB96E66882235F5ABA_1990639021 = (changed);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670432426 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670432426;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean needNewResources(int configChanges, int interestingChanges) {
+        public static boolean needNewResources(int configChanges, int interestingChanges) {
         return (configChanges & (interestingChanges|ActivityInfo.CONFIG_FONT_SCALE)) != 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.047 -0400", hash_original_method = "B2BFCC713F7EA940A38F0F416218BA87", hash_generated_method = "851564873C6D05CA92154A23E59DD1BA")
     public boolean isOtherSeqNewer(Configuration other) {
         addTaint(other.getTaint());
@@ -679,55 +675,54 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
             boolean var68934A3E9455FA72420237EB05902327_522514671 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_4295165 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_4295165;
-        } 
+        } //End block
     if(other.seq == 0)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_369139565 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1828398626 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1828398626;
-        } 
+        } //End block
     if(seq == 0)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1747249269 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1616536803 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1616536803;
-        } 
+        } //End block
         int diff = other.seq - seq;
     if(diff > 0x10000)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1730447581 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_73689926 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_73689926;
-        } 
+        } //End block
         boolean varEFFB5D19B04F7534A3A8E9A4CF0AF001_784919314 = (diff > 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_704303243 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_704303243;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (other == null) {
+            //return false;
+        //}
+        //if (other.seq == 0) {
+            //return true;
+        //}
+        //if (seq == 0) {
+            //return true;
+        //}
+        //int diff = other.seq - seq;
+        //if (diff > 0x10000) {
+            //return false;
+        //}
+        //return diff > 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.047 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4783F8532CB6BA9690F4374A810722F7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1680038283 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022429608 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022429608;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -741,22 +736,22 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
     if(locale == null)        
         {
             dest.writeInt(0);
-        } 
+        } //End block
         else
         {
             dest.writeInt(1);
             dest.writeString(locale.getLanguage());
             dest.writeString(locale.getCountry());
             dest.writeString(locale.getVariant());
-        } 
+        } //End block
     if(userSetLocale)        
         {
             dest.writeInt(1);
-        } 
+        } //End block
         else
         {
             dest.writeInt(0);
-        } 
+        } //End block
         dest.writeInt(touchscreen);
         dest.writeInt(keyboard);
         dest.writeInt(keyboardHidden);
@@ -774,8 +769,8 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         dest.writeInt(compatSmallestScreenWidthDp);
         dest.writeInt(textLayoutDirection);
         dest.writeInt(seq);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -788,7 +783,7 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         {
             locale = new Locale(source.readString(), source.readString(),
                     source.readString());
-        } 
+        } //End block
         userSetLocale = (source.readInt()==1);
         touchscreen = source.readInt();
         keyboard = source.readInt();
@@ -807,8 +802,8 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         compatSmallestScreenWidthDp = source.readInt();
         textLayoutDirection = source.readInt();
         seq = source.readInt();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -852,14 +847,14 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314246235 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314246235;
             }
-        } 
+        } //End block
         else
     if(that.locale == null)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1431036905 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1185814268 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1185814268;
-        } 
+        } //End block
         else
         {
             n = this.locale.getLanguage().compareTo(that.locale.getLanguage());
@@ -883,7 +878,7 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1001649719 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1001649719;
             }
-        } 
+        } //End block
         n = this.touchscreen - that.touchscreen;
     if(n != 0)        
         {
@@ -965,8 +960,8 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         int var7B8B965AD4BCA0E41AB51DE7B31363A1_1285333416 = (n);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548756201 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548756201;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -988,10 +983,10 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         boolean var8A7DAE091C0F0EFA9F5A39CB28E39AF5_704863860 = (this.compareTo(that) == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2110486949 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2110486949;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (that == null) return false;
+        //if (that == this) return true;
+        //return this.compareTo(that) == 0;
     }
 
     
@@ -1003,19 +998,19 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
             boolean var6174FC6209DF30970AF9799E8424A13C_1270979069 = (equals((Configuration)that));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_657485127 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_657485127;
-        } 
+        } //End block
         catch (ClassCastException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1124590900 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321913322 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_321913322;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return equals((Configuration)that);
+        //} catch (ClassCastException e) {
+        //}
+        //return false;
     }
 
     
@@ -1041,25 +1036,25 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
         int varB4A88417B3D0170D754C647C30B7216A_40395104 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1847953557 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1847953557;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int result = 17;
+        //result = 31 * result + Float.floatToIntBits(fontScale);
+        //result = 31 * result + mcc;
+        //result = 31 * result + mnc;
+        //result = 31 * result + (locale != null ? locale.hashCode() : 0);
+        //result = 31 * result + touchscreen;
+        //result = 31 * result + keyboard;
+        //result = 31 * result + keyboardHidden;
+        //result = 31 * result + hardKeyboardHidden;
+        //result = 31 * result + navigation;
+        //result = 31 * result + navigationHidden;
+        //result = 31 * result + orientation;
+        //result = 31 * result + screenLayout;
+        //result = 31 * result + uiMode;
+        //result = 31 * result + screenWidthDp;
+        //result = 31 * result + screenHeightDp;
+        //result = 31 * result + smallestScreenWidthDp;
+        //return result;
     }
 
     
@@ -1228,12 +1223,12 @@ String var2460B846747F8B22185AD8BE722266A5_1582227453 =         sb.toString();
             return new Configuration[size];
         }
     };
-    
+    // orphaned legacy method
     public Configuration createFromParcel(Parcel source) {
             return new Configuration(source);
         }
     
-    
+    // orphaned legacy method
     public Configuration[] newArray(int size) {
             return new Configuration[size];
         }

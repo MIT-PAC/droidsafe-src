@@ -1,6 +1,6 @@
 package java.lang.reflect;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class InvocationTargetException extends Exception {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.033 -0400", hash_original_method = "5EBB00A3899F4B7F5118F6E64DAF6A94", hash_generated_method = "A58F4D7E6437E4A4D86A792387D5EDF3")
     protected  InvocationTargetException() {
         super((Throwable) null);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,8 +21,8 @@ public class InvocationTargetException extends Exception {
     public  InvocationTargetException(Throwable exception) {
         super(null, exception);
         target = exception;
-        
-        
+        // ---------- Original Method ----------
+        //target = exception;
     }
 
     
@@ -31,31 +31,29 @@ public class InvocationTargetException extends Exception {
         super(detailMessage, exception);
         addTaint(detailMessage.getTaint());
         target = exception;
-        
-        
+        // ---------- Original Method ----------
+        //target = exception;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.034 -0400", hash_original_method = "F1F2316177C546F546EA483459CFF30B", hash_generated_method = "B854DCED79A159284BB50F0C213C70FC")
     public Throwable getTargetException() {
 Throwable varA7DD35DE8EDE4A2FCAF77CE202E687B3_1816186895 =         target;
         varA7DD35DE8EDE4A2FCAF77CE202E687B3_1816186895.addTaint(taint);
         return varA7DD35DE8EDE4A2FCAF77CE202E687B3_1816186895;
-        
-        
+        // ---------- Original Method ----------
+        //return target;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.034 -0400", hash_original_method = "D8C22D14C73496EF517FF8FC6C6B2CD8", hash_generated_method = "F8E191E97468CBFED2E9B1817CE7D670")
     @Override
     public Throwable getCause() {
 Throwable varA7DD35DE8EDE4A2FCAF77CE202E687B3_1159268336 =         target;
         varA7DD35DE8EDE4A2FCAF77CE202E687B3_1159268336.addTaint(taint);
         return varA7DD35DE8EDE4A2FCAF77CE202E687B3_1159268336;
-        
-        
+        // ---------- Original Method ----------
+        //return target;
     }
 
     

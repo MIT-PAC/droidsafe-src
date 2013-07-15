@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.parsers;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.687 -0400", hash_original_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A", hash_generated_method = "BB7DD052856C5F48FEF96C6EA9CF9D9A")
     public SAXParserFactoryImpl ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -32,24 +32,24 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1024040227 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1024040227.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1024040227;
-        } 
+        } //End block
     if(!name.startsWith("http://xml.org/sax/features/"))        
         {
             SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_450926000 = new SAXNotRecognizedException(name);
             var5FC954F6CCADD58BC8498AD6F3DB9EC4_450926000.addTaint(taint);
             throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_450926000;
-        } 
+        } //End block
         boolean var88BA011B209A52DCABE538CA75B2D11A_203097058 = (Boolean.TRUE.equals(features.get(name)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057682338 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057682338;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new NullPointerException();
+        //}
+        //if (!name.startsWith("http://xml.org/sax/features/")) {
+            //throw new SAXNotRecognizedException(name);
+        //}
+        //return Boolean.TRUE.equals(features.get(name));
     }
 
     
@@ -61,19 +61,19 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
             boolean varA85D5027A8BF86F9880028EE82799B8C_668635403 = (getFeature(NAMESPACES));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_875986083 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_875986083;
-        } 
+        } //End block
         catch (SAXNotRecognizedException ex)
         {
             AssertionError var856F93FDE0E323DC56DBDD84445E8491_209011503 = new AssertionError(ex);
             var856F93FDE0E323DC56DBDD84445E8491_209011503.addTaint(taint);
             throw var856F93FDE0E323DC56DBDD84445E8491_209011503;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getFeature(NAMESPACES);
+        //} catch (SAXNotRecognizedException ex) {
+            //throw new AssertionError(ex);
+        //}
     }
 
     
@@ -85,19 +85,19 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
             boolean var8C62165CDF43988EF5B0DB9142FB8CE1_2124854732 = (getFeature(VALIDATION));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_136155682 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_136155682;
-        } 
+        } //End block
         catch (SAXNotRecognizedException ex)
         {
             AssertionError var856F93FDE0E323DC56DBDD84445E8491_471994217 = new AssertionError(ex);
             var856F93FDE0E323DC56DBDD84445E8491_471994217.addTaint(taint);
             throw var856F93FDE0E323DC56DBDD84445E8491_471994217;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getFeature(VALIDATION);
+        //} catch (SAXNotRecognizedException ex) {
+            //throw new AssertionError(ex);
+        //}
     }
 
     
@@ -110,29 +110,29 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
                     "No validating SAXParser implementation available");
             var3EE88861DE2349AF63FE4F2DF1665BA3_391879814.addTaint(taint);
             throw var3EE88861DE2349AF63FE4F2DF1665BA3_391879814;
-        } 
+        } //End block
         try 
         {
 SAXParser var97136CDAC6E5068137219CC84BCFD745_1724644726 =             new SAXParserImpl(features);
             var97136CDAC6E5068137219CC84BCFD745_1724644726.addTaint(taint);
             return var97136CDAC6E5068137219CC84BCFD745_1724644726;
-        } 
+        } //End block
         catch (Exception ex)
         {
             ParserConfigurationException var80352B97CDB95532FB2C18BFAB046C8B_1838149224 = new ParserConfigurationException(ex.toString());
             var80352B97CDB95532FB2C18BFAB046C8B_1838149224.addTaint(taint);
             throw var80352B97CDB95532FB2C18BFAB046C8B_1838149224;
-        } 
-        
-        
-            
-                    
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (isValidating()) {
+            //throw new ParserConfigurationException(
+                    //"No validating SAXParser implementation available");
+        //}
+        //try {
+            //return new SAXParserImpl(features);
+        //} catch (Exception ex) {
+            //throw new ParserConfigurationException(ex.toString());
+        //}
     }
 
     
@@ -146,33 +146,33 @@ SAXParser var97136CDAC6E5068137219CC84BCFD745_1724644726 =             new SAXPa
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_167065894 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_167065894.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_167065894;
-        } 
+        } //End block
     if(!name.startsWith("http://xml.org/sax/features/"))        
         {
             SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_602437636 = new SAXNotRecognizedException(name);
             var5FC954F6CCADD58BC8498AD6F3DB9EC4_602437636.addTaint(taint);
             throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_602437636;
-        } 
+        } //End block
     if(value)        
         {
             features.put(name, Boolean.TRUE);
-        } 
+        } //End block
         else
         {
             features.put(name, Boolean.FALSE);
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new NullPointerException();
+        //}
+        //if (!name.startsWith("http://xml.org/sax/features/")) {
+            //throw new SAXNotRecognizedException(name);
+        //}
+        //if (value) {
+            //features.put(name, Boolean.TRUE);
+        //} else {
+            //features.put(name, Boolean.FALSE);
+        //}
     }
 
     
@@ -183,19 +183,19 @@ SAXParser var97136CDAC6E5068137219CC84BCFD745_1724644726 =             new SAXPa
         try 
         {
             setFeature(NAMESPACES, value);
-        } 
+        } //End block
         catch (SAXNotRecognizedException ex)
         {
             AssertionError var856F93FDE0E323DC56DBDD84445E8491_1954221752 = new AssertionError(ex);
             var856F93FDE0E323DC56DBDD84445E8491_1954221752.addTaint(taint);
             throw var856F93FDE0E323DC56DBDD84445E8491_1954221752;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //setFeature(NAMESPACES, value);
+        //} catch (SAXNotRecognizedException ex) {
+            //throw new AssertionError(ex);
+        //}
     }
 
     
@@ -206,19 +206,19 @@ SAXParser var97136CDAC6E5068137219CC84BCFD745_1724644726 =             new SAXPa
         try 
         {
             setFeature(VALIDATION, value);
-        } 
+        } //End block
         catch (SAXNotRecognizedException ex)
         {
             AssertionError var856F93FDE0E323DC56DBDD84445E8491_1837602682 = new AssertionError(ex);
             var856F93FDE0E323DC56DBDD84445E8491_1837602682.addTaint(taint);
             throw var856F93FDE0E323DC56DBDD84445E8491_1837602682;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //setFeature(VALIDATION, value);
+        //} catch (SAXNotRecognizedException ex) {
+            //throw new AssertionError(ex);
+        //}
     }
 
     

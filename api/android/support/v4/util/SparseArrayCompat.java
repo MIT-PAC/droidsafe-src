@@ -1,6 +1,6 @@
 package android.support.v4.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class SparseArrayCompat<E> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.598 -0400", hash_original_method = "852197A14CD77BDEC27A8A7AFA07662E", hash_generated_method = "FC5CCB1F58FC6EAA98D5C9D204348719")
     public  SparseArrayCompat() {
         this(10);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -32,11 +32,11 @@ public class SparseArrayCompat<E> {
         mKeys = new int[initialCapacity];
         mValues = new Object[initialCapacity];
         mSize = 0;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //initialCapacity = idealIntArraySize(initialCapacity);
+        //mKeys = new int[initialCapacity];
+        //mValues = new Object[initialCapacity];
+        //mSize = 0;
     }
 
     
@@ -46,8 +46,8 @@ public class SparseArrayCompat<E> {
 E varB73A11C4827B454321D868D4D1819714_1426584779 =         get(key, null);
         varB73A11C4827B454321D868D4D1819714_1426584779.addTaint(taint);
         return varB73A11C4827B454321D868D4D1819714_1426584779;
-        
-        
+        // ---------- Original Method ----------
+        //return get(key, null);
     }
 
     
@@ -61,20 +61,20 @@ E varB73A11C4827B454321D868D4D1819714_1426584779 =         get(key, null);
 E var71321CF999B39AD93438E8ED59522752_788795810 =             valueIfKeyNotFound;
             var71321CF999B39AD93438E8ED59522752_788795810.addTaint(taint);
             return var71321CF999B39AD93438E8ED59522752_788795810;
-        } 
+        } //End block
         else
         {
 E var9A906597833C8E11199C8E4BAC361563_1134367384 =             (E) mValues[i];
             var9A906597833C8E11199C8E4BAC361563_1134367384.addTaint(taint);
             return var9A906597833C8E11199C8E4BAC361563_1134367384;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int i = binarySearch(mKeys, 0, mSize, key);
+        //if (i < 0 || mValues[i] == DELETED) {
+            //return valueIfKeyNotFound;
+        //} else {
+            //return (E) mValues[i];
+        //}
     }
 
     
@@ -88,16 +88,16 @@ E var9A906597833C8E11199C8E4BAC361563_1134367384 =             (E) mValues[i];
             {
                 mValues[i] = DELETED;
                 mGarbage = true;
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //int i = binarySearch(mKeys, 0, mSize, key);
+        //if (i >= 0) {
+            //if (mValues[i] != DELETED) {
+                //mValues[i] = DELETED;
+                //mGarbage = true;
+            //}
+        //}
     }
 
     
@@ -105,8 +105,8 @@ E var9A906597833C8E11199C8E4BAC361563_1134367384 =             (E) mValues[i];
     public void remove(int key) {
         addTaint(key);
         delete(key);
-        
-        
+        // ---------- Original Method ----------
+        //delete(key);
     }
 
     
@@ -116,12 +116,12 @@ E var9A906597833C8E11199C8E4BAC361563_1134367384 =             (E) mValues[i];
         {
             mValues[index] = DELETED;
             mGarbage = true;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mValues[index] != DELETED) {
+            //mValues[index] = DELETED;
+            //mGarbage = true;
+        //}
     }
 
     
@@ -133,12 +133,12 @@ E var9A906597833C8E11199C8E4BAC361563_1134367384 =             (E) mValues[i];
 for(int i = index;i < end;i++)
         {
             removeAt(i);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final int end = Math.min(mSize, index + size);
+        //for (int i = index; i < end; i++) {
+            //removeAt(i);
+        //}
     }
 
     
@@ -157,29 +157,29 @@ for(int i = 0;i < n;i++)
                 {
                     keys[o] = keys[i];
                     values[o] = val;
-                } 
+                } //End block
                 o++;
-            } 
-        } 
+            } //End block
+        } //End block
         mGarbage = false;
         mSize = o;
-        
-        
-        
-        
-        
-        
-            
-            
-                
-                    
-                    
-                
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int n = mSize;
+        //int o = 0;
+        //int[] keys = mKeys;
+        //Object[] values = mValues;
+        //for (int i = 0; i < n; i++) {
+            //Object val = values[i];
+            //if (val != DELETED) {
+                //if (i != o) {
+                    //keys[o] = keys[i];
+                    //values[o] = val;
+                //}
+                //o++;
+            //}
+        //}
+        //mGarbage = false;
+        //mSize = o;
     }
 
     
@@ -189,7 +189,7 @@ for(int i = 0;i < n;i++)
     if(i >= 0)        
         {
             mValues[i] = value;
-        } 
+        } //End block
         else
         {
             i = ~i;
@@ -198,12 +198,12 @@ for(int i = 0;i < n;i++)
                 mKeys[i] = key;
                 mValues[i] = value;
                 return;
-            } 
+            } //End block
     if(mGarbage && mSize >= mKeys.length)            
             {
                 gc();
                 i = ~binarySearch(mKeys, 0, mSize, key);
-            } 
+            } //End block
     if(mSize >= mKeys.length)            
             {
                 int n = idealIntArraySize(mSize + 1);
@@ -213,18 +213,18 @@ for(int i = 0;i < n;i++)
                 System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
                 mKeys = nkeys;
                 mValues = nvalues;
-            } 
+            } //End block
     if(mSize - i != 0)            
             {
                 System.arraycopy(mKeys, i, mKeys, i + 1, mSize - i);
                 System.arraycopy(mValues, i, mValues, i + 1, mSize - i);
-            } 
+            } //End block
             mKeys[i] = key;
             mValues[i] = value;
             mSize++;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -233,15 +233,15 @@ for(int i = 0;i < n;i++)
     if(mGarbage)        
         {
             gc();
-        } 
+        } //End block
         int var27DFA0EFE73BCB065533443A05E9DEE4_284295029 = (mSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_739579232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_739579232;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mGarbage) {
+            //gc();
+        //}
+        //return mSize;
     }
 
     
@@ -251,15 +251,15 @@ for(int i = 0;i < n;i++)
     if(mGarbage)        
         {
             gc();
-        } 
+        } //End block
         int var3A009E05729778D41B3FA1B029E6698B_1255317914 = (mKeys[index]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_773875747 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_773875747;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mGarbage) {
+            //gc();
+        //}
+        //return mKeys[index];
     }
 
     
@@ -269,15 +269,15 @@ for(int i = 0;i < n;i++)
     if(mGarbage)        
         {
             gc();
-        } 
+        } //End block
 E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1278431279 =         (E) mValues[index];
         varFD8FAAC0C3572ACBC73A56817ABFB8BB_1278431279.addTaint(taint);
         return varFD8FAAC0C3572ACBC73A56817ABFB8BB_1278431279;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mGarbage) {
+            //gc();
+        //}
+        //return (E) mValues[index];
     }
 
     
@@ -286,13 +286,13 @@ E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1278431279 =         (E) mValues[index];
     if(mGarbage)        
         {
             gc();
-        } 
+        } //End block
         mValues[index] = value;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mGarbage) {
+            //gc();
+        //}
+        //mValues[index] = value;
     }
 
     
@@ -302,15 +302,15 @@ E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1278431279 =         (E) mValues[index];
     if(mGarbage)        
         {
             gc();
-        } 
+        } //End block
         int var3C05684F465B8C390E8426D688C55DF4_290528070 = (binarySearch(mKeys, 0, mSize, key));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356712123 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356712123;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mGarbage) {
+            //gc();
+        //}
+        //return binarySearch(mKeys, 0, mSize, key);
     }
 
     
@@ -320,7 +320,7 @@ E varFD8FAAC0C3572ACBC73A56817ABFB8BB_1278431279 =         (E) mValues[index];
     if(mGarbage)        
         {
             gc();
-        } 
+        } //End block
 for(int i = 0;i < mSize;i++)
     if(mValues[i] == value)        
         {
@@ -331,14 +331,14 @@ for(int i = 0;i < mSize;i++)
         int var6BB61E3B7BCE0931DA574D19D1D82C88_978723591 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_85068144 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_85068144;
-        
-        
-            
-        
-        
-            
-                
-        
+        // ---------- Original Method ----------
+        //if (mGarbage) {
+            //gc();
+        //}
+        //for (int i = 0; i < mSize; i++)
+            //if (mValues[i] == value)
+                //return i;
+        //return -1;
     }
 
     
@@ -349,17 +349,17 @@ for(int i = 0;i < mSize;i++)
 for(int i = 0;i < n;i++)
         {
             values[i] = null;
-        } 
+        } //End block
         mSize = 0;
         mGarbage = false;
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int n = mSize;
+        //Object[] values = mValues;
+        //for (int i = 0; i < n; i++) {
+            //values[i] = null;
+        //}
+        //mSize = 0;
+        //mGarbage = false;
     }
 
     
@@ -369,11 +369,11 @@ for(int i = 0;i < n;i++)
         {
             put(key, value);
             return;
-        } 
+        } //End block
     if(mGarbage && mSize >= mKeys.length)        
         {
             gc();
-        } 
+        } //End block
         int pos = mSize;
     if(pos >= mKeys.length)        
         {
@@ -384,31 +384,31 @@ for(int i = 0;i < n;i++)
             System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
             mKeys = nkeys;
             mValues = nvalues;
-        } 
+        } //End block
         mKeys[pos] = key;
         mValues[pos] = value;
         mSize = pos + 1;
-        
-        
-            
-            
-        
-        
-            
-        
-        
-        
-            
-            
-            
-            
-            
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mSize != 0 && key <= mKeys[mSize - 1]) {
+            //put(key, value);
+            //return;
+        //}
+        //if (mGarbage && mSize >= mKeys.length) {
+            //gc();
+        //}
+        //int pos = mSize;
+        //if (pos >= mKeys.length) {
+            //int n = idealIntArraySize(pos + 1);
+            //int[] nkeys = new int[n];
+            //Object[] nvalues = new Object[n];
+            //System.arraycopy(mKeys, 0, nkeys, 0, mKeys.length);
+            //System.arraycopy(mValues, 0, nvalues, 0, mValues.length);
+            //mKeys = nkeys;
+            //mValues = nvalues;
+        //}
+        //mKeys[pos] = key;
+        //mValues[pos] = value;
+        //mSize = pos + 1;
     }
 
     

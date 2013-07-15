@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,24 +14,21 @@ class ActivityCompatHoneycomb {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.704 -0400", hash_original_method = "EDEF3A05A858D56A3B74BD91E5B0357B", hash_generated_method = "EDEF3A05A858D56A3B74BD91E5B0357B")
     public ActivityCompatHoneycomb ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
-    static void invalidateOptionsMenu(Activity activity) {
+        static void invalidateOptionsMenu(Activity activity) {
         activity.invalidateOptionsMenu();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static void startActivities(Activity activity, Intent[] intents) {
+        static void startActivities(Activity activity, Intent[] intents) {
         activity.startActivities(intents);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static void dump(Activity activity, String prefix, FileDescriptor fd,
+        static void dump(Activity activity, String prefix, FileDescriptor fd,
             PrintWriter writer, String[] args) {
         activity.dump(prefix, fd, writer, args);
     }

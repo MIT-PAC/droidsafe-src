@@ -1,6 +1,6 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -74,11 +74,11 @@ public final class AndroidHttpClient implements HttpClient {
 BasicHttpProcessor varCB22DE2E9E1B163F22CB9A856393418B_1389425308 =             processor;
             varCB22DE2E9E1B163F22CB9A856393418B_1389425308.addTaint(taint);
             return varCB22DE2E9E1B163F22CB9A856393418B_1389425308;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //BasicHttpProcessor processor = super.createHttpProcessor();
+            //processor.addRequestInterceptor(sThreadCheckInterceptor);
+            //processor.addRequestInterceptor(new CurlLogger());
+            //return processor;
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.850 -0400", hash_original_method = "C49D4F976490FCA93E48C6E59F8BCE3A", hash_generated_method = "459FE3F9B5375D764345AE54E2470F60")
         @Override
@@ -96,22 +96,22 @@ BasicHttpProcessor varCB22DE2E9E1B163F22CB9A856393418B_1389425308 =             
 HttpContext var4C2DD4015CB4BB3F876A587F79816595_1631897573 =             context;
             var4C2DD4015CB4BB3F876A587F79816595_1631897573.addTaint(taint);
             return var4C2DD4015CB4BB3F876A587F79816595_1631897573;
-            
-            
-            
-                        
-                        
-            
-                        
-                        
-            
-                        
-                        
-            
+            // ---------- Original Method ----------
+            //HttpContext context = new BasicHttpContext();
+            //context.setAttribute(
+                        //ClientContext.AUTHSCHEME_REGISTRY,
+                        //getAuthSchemes());
+            //context.setAttribute(
+                        //ClientContext.COOKIESPEC_REGISTRY,
+                        //getCookieSpecs());
+            //context.setAttribute(
+                        //ClientContext.CREDS_PROVIDER,
+                        //getCredentialsProvider());
+            //return context;
         }
 };
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -148,13 +148,13 @@ HttpContext var4C2DD4015CB4BB3F876A587F79816595_1631897573 =             context
     if(mLeakedException != null)        
         {
             mLeakedException = null;
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.finalize();
+        //if (mLeakedException != null) {
+            //Log.e(TAG, "Leak found", mLeakedException);
+            //mLeakedException = null;
+        //}
     }
 
     
@@ -182,12 +182,12 @@ HttpContext var4C2DD4015CB4BB3F876A587F79816595_1631897573 =             context
         {
             getConnectionManager().shutdown();
             mLeakedException = null;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mLeakedException != null) {
+            //getConnectionManager().shutdown();
+            //mLeakedException = null;
+        //}
     }
 
     
@@ -196,8 +196,8 @@ HttpContext var4C2DD4015CB4BB3F876A587F79816595_1631897573 =             context
 HttpParams var58F71D00F7895AFF9FAD07E21D27F5D7_1068935582 =         delegate.getParams();
         var58F71D00F7895AFF9FAD07E21D27F5D7_1068935582.addTaint(taint);
         return var58F71D00F7895AFF9FAD07E21D27F5D7_1068935582;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.getParams();
     }
 
     
@@ -206,8 +206,8 @@ HttpParams var58F71D00F7895AFF9FAD07E21D27F5D7_1068935582 =         delegate.get
 ClientConnectionManager var4BE3268C1364FD1BD22646583095ACC4_1930482091 =         delegate.getConnectionManager();
         var4BE3268C1364FD1BD22646583095ACC4_1930482091.addTaint(taint);
         return var4BE3268C1364FD1BD22646583095ACC4_1930482091;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.getConnectionManager();
     }
 
     
@@ -217,8 +217,8 @@ ClientConnectionManager var4BE3268C1364FD1BD22646583095ACC4_1930482091 =        
 HttpResponse varB4CF8B99FC3CD6EEC90F3B07385C4C7D_80493851 =         delegate.execute(request);
         varB4CF8B99FC3CD6EEC90F3B07385C4C7D_80493851.addTaint(taint);
         return varB4CF8B99FC3CD6EEC90F3B07385C4C7D_80493851;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.execute(request);
     }
 
     
@@ -229,8 +229,8 @@ HttpResponse varB4CF8B99FC3CD6EEC90F3B07385C4C7D_80493851 =         delegate.exe
 HttpResponse var8F3F36BC19AF3E29944BBBAB74EC28BC_1356023 =         delegate.execute(request, context);
         var8F3F36BC19AF3E29944BBBAB74EC28BC_1356023.addTaint(taint);
         return var8F3F36BC19AF3E29944BBBAB74EC28BC_1356023;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.execute(request, context);
     }
 
     
@@ -241,8 +241,8 @@ HttpResponse var8F3F36BC19AF3E29944BBBAB74EC28BC_1356023 =         delegate.exec
 HttpResponse varD1BCB4F56C6C466E27A382C951D3B30E_386024781 =         delegate.execute(target, request);
         varD1BCB4F56C6C466E27A382C951D3B30E_386024781.addTaint(taint);
         return varD1BCB4F56C6C466E27A382C951D3B30E_386024781;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.execute(target, request);
     }
 
     
@@ -255,8 +255,8 @@ HttpResponse varD1BCB4F56C6C466E27A382C951D3B30E_386024781 =         delegate.ex
 HttpResponse var4A5520C67A1D4012A605006600ED3E5E_1660579970 =         delegate.execute(target, request, context);
         var4A5520C67A1D4012A605006600ED3E5E_1660579970.addTaint(taint);
         return var4A5520C67A1D4012A605006600ED3E5E_1660579970;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.execute(target, request, context);
     }
 
     
@@ -268,8 +268,8 @@ HttpResponse var4A5520C67A1D4012A605006600ED3E5E_1660579970 =         delegate.e
 T var36E49463A8C0D597D04C307A302D4311_514412043 =         delegate.execute(request, responseHandler);
         var36E49463A8C0D597D04C307A302D4311_514412043.addTaint(taint);
         return var36E49463A8C0D597D04C307A302D4311_514412043;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.execute(request, responseHandler);
     }
 
     
@@ -282,8 +282,8 @@ T var36E49463A8C0D597D04C307A302D4311_514412043 =         delegate.execute(reque
 T var4C992D413ECABA26DC3DF2FE56905C2B_320641339 =         delegate.execute(request, responseHandler, context);
         var4C992D413ECABA26DC3DF2FE56905C2B_320641339.addTaint(taint);
         return var4C992D413ECABA26DC3DF2FE56905C2B_320641339;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.execute(request, responseHandler, context);
     }
 
     
@@ -297,8 +297,8 @@ T var4C992D413ECABA26DC3DF2FE56905C2B_320641339 =         delegate.execute(reque
 T var1B6735C657E1CD3BC52AB580BBCBDB6A_1141384865 =         delegate.execute(target, request, responseHandler);
         var1B6735C657E1CD3BC52AB580BBCBDB6A_1141384865.addTaint(taint);
         return var1B6735C657E1CD3BC52AB580BBCBDB6A_1141384865;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.execute(target, request, responseHandler);
     }
 
     
@@ -312,8 +312,8 @@ T var1B6735C657E1CD3BC52AB580BBCBDB6A_1141384865 =         delegate.execute(targ
 T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(target, request, responseHandler, context);
         var88CD165110419B2B8C92D3A1E57DA7B1_926421714.addTaint(taint);
         return var88CD165110419B2B8C92D3A1E57DA7B1_926421714;
-        
-        
+        // ---------- Original Method ----------
+        //return delegate.execute(target, request, responseHandler, context);
     }
 
     
@@ -333,8 +333,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long getMinGzipSize(ContentResolver resolver) {
+        public static long getMinGzipSize(ContentResolver resolver) {
         return DEFAULT_SYNC_MIN_GZIP_BYTES;
     }
 
@@ -346,33 +345,32 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
             NullPointerException var9AD8310F6B4E990AB41E4395C382A591_412947043 = new NullPointerException("name");
             var9AD8310F6B4E990AB41E4395C382A591_412947043.addTaint(taint);
             throw var9AD8310F6B4E990AB41E4395C382A591_412947043;
-        } 
+        } //End block
     if(level < Log.VERBOSE || level > Log.ASSERT)        
         {
             IllegalArgumentException var1D44EB966F584D11C789FD2B0005F40D_483824472 = new IllegalArgumentException("Level is out of range ["
                 + Log.VERBOSE + ".." + Log.ASSERT + "]");
             var1D44EB966F584D11C789FD2B0005F40D_483824472.addTaint(taint);
             throw var1D44EB966F584D11C789FD2B0005F40D_483824472;
-        } 
+        } //End block
         curlConfiguration = new LoggingConfiguration(name, level);
-        
-        
-            
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new NullPointerException("name");
+        //}
+        //if (level < Log.VERBOSE || level > Log.ASSERT) {
+            //throw new IllegalArgumentException("Level is out of range ["
+                //+ Log.VERBOSE + ".." + Log.ASSERT + "]");
+        //}
+        //curlConfiguration = new LoggingConfiguration(name, level);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.857 -0400", hash_original_method = "ACD8C6EB71D9F6C325AF8CC21E8A00EF", hash_generated_method = "C4593E5AA16D43E72F368F7DD199C333")
     public void disableCurlLogging() {
         curlConfiguration = null;
-        
-        
+        // ---------- Original Method ----------
+        //curlConfiguration = null;
     }
 
     
@@ -467,9 +465,9 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
         private  LoggingConfiguration(String tag, int level) {
             this.tag = tag;
             this.level = level;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.tag = tag;
+            //this.level = level;
         }
 
         
@@ -478,8 +476,8 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
             boolean varF6071C9114C968C92D018274AD7D4F3F_1434162461 = (Log.isLoggable(tag, level));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1900660760 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1900660760;
-            
-            
+            // ---------- Original Method ----------
+            //return Log.isLoggable(tag, level);
         }
 
         
@@ -487,8 +485,8 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
         private void println(String message) {
             addTaint(message.getTaint());
             Log.println(level, tag, message);
-            
-            
+            // ---------- Original Method ----------
+            //Log.println(level, tag, message);
         }
 
         
@@ -501,7 +499,7 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.859 -0400", hash_original_method = "031D6A607DADA24E6C6F491D807252DF", hash_generated_method = "031D6A607DADA24E6C6F491D807252DF")
         public CurlLogger ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -515,14 +513,14 @@ T var88CD165110419B2B8C92D3A1E57DA7B1_926421714 =         delegate.execute(targe
                     && request instanceof HttpUriRequest)            
             {
                 configuration.println(toCurl((HttpUriRequest) request, false));
-            } 
-            
-            
-            
-                    
-                    
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //LoggingConfiguration configuration = curlConfiguration;
+            //if (configuration != null
+                    //&& configuration.isLoggable()
+                    //&& request instanceof HttpUriRequest) {
+                //configuration.println(toCurl((HttpUriRequest) request, false));
+            //}
         }
 
         

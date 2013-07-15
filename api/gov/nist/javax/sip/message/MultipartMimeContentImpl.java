@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,9 +32,9 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     public  MultipartMimeContentImpl(ContentTypeHeader contentTypeHeader) {
         this.multipartMimeContentTypeHeader = contentTypeHeader;
         this.boundary = contentTypeHeader.getParameter(BOUNDARY);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.multipartMimeContentTypeHeader = contentTypeHeader;
+        //this.boundary = contentTypeHeader.getParameter(BOUNDARY);
     }
 
     
@@ -44,19 +44,18 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
         boolean var008040580DEC4A70AAD8694F2220AB74_1925222194 = (contentList.add((ContentImpl) content));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1067273829 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1067273829;
-        
-        
+        // ---------- Original Method ----------
+        //return contentList.add((ContentImpl) content);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.731 -0400", hash_original_method = "4590DD0C77A768FED1E8ACE7CF0313E8", hash_generated_method = "B7DC8B85CDB6C8C569586889D4A8694A")
     public ContentTypeHeader getContentTypeHeader() {
 ContentTypeHeader varB0AA2702CAE096DD9EF25111BD0D4CE0_1362556418 =         multipartMimeContentTypeHeader;
         varB0AA2702CAE096DD9EF25111BD0D4CE0_1362556418.addTaint(taint);
         return varB0AA2702CAE096DD9EF25111BD0D4CE0_1362556418;
-        
-        
+        // ---------- Original Method ----------
+        //return multipartMimeContentTypeHeader;
     }
 
     
@@ -67,20 +66,19 @@ ContentTypeHeader varB0AA2702CAE096DD9EF25111BD0D4CE0_1362556418 =         multi
 for(Content content : this.contentList)
         {
             stringBuffer.append(content.toString());
-        } 
+        } //End block
 String varAF2C4DDBAB4CE8345BFD016271B18ED0_1640941662 =         stringBuffer.toString();
         varAF2C4DDBAB4CE8345BFD016271B18ED0_1640941662.addTaint(taint);
         return varAF2C4DDBAB4CE8345BFD016271B18ED0_1640941662;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuffer stringBuffer = new StringBuffer();
+        //for (Content content : this.contentList) {
+            //stringBuffer.append(content.toString());
+        //}
+        //return stringBuffer.toString();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.735 -0400", hash_original_method = "968D057F7853F8246DB89EBE38C4B30E", hash_generated_method = "5B737CF4F78BF66244DB1710F06AA72E")
     public void createContentList(String body) throws ParseException {
         addTaint(body.getTaint());
@@ -95,14 +93,14 @@ String varAF2C4DDBAB4CE8345BFD016271B18ED0_1640941662 =         stringBuffer.toS
                 content.setContentTypeHeader(this.getContentTypeHeader());
                 this.contentList.add(content);
                 return;
-            } 
+            } //End block
             String[] fragments = body.split("--" + delimiter + "\r\n");
 for(String nextPart : fragments)
             {
     if(nextPart == null)                
                 {
                     return;
-                } 
+                } //End block
                 StringBuffer strbuf = new StringBuffer(nextPart);
                 while
 (strbuf.length() > 0
@@ -117,7 +115,7 @@ for(String nextPart : fragments)
                 {
                     position = nextPart.indexOf("\n");
                     off = 2;
-                } 
+                } //End block
     if(position == -1)                
                 {
                 ParseException var4EEEC391A6F6CE8B3ECCA7A616B8304F_1244123632 = new ParseException("no content type header found in " + nextPart, 0);
@@ -140,30 +138,30 @@ for(String hdr : headerArray)
     if(header instanceof ContentTypeHeader)                    
                     {
                         content.setContentTypeHeader((ContentTypeHeader) header);
-                    } 
+                    } //End block
                     else
     if(header instanceof ContentDispositionHeader)                    
                     {
                         content.setContentDispositionHeader((ContentDispositionHeader) header);
-                    } 
+                    } //End block
                     else
                     {
                         ParseException var533A03E41F65A189FCB9F0D4FEAD24DB_1282857133 = new ParseException("Unexpected header type " + header.getName(), 0);
                         var533A03E41F65A189FCB9F0D4FEAD24DB_1282857133.addTaint(taint);
                         throw var533A03E41F65A189FCB9F0D4FEAD24DB_1282857133;
-                    } 
+                    } //End block
                     contentList.add(content);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (StringIndexOutOfBoundsException ex)
         {
             ParseException var6C204A8A75769374AA63FAA548D3EB60_286090951 = new ParseException("Invalid Multipart mime format", 0);
             var6C204A8A75769374AA63FAA548D3EB60_286090951.addTaint(taint);
             throw var6C204A8A75769374AA63FAA548D3EB60_286090951;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -186,24 +184,24 @@ for(Content content : contentList)
             {
                 retval = content;
                 break;
-            } 
-        } 
+            } //End block
+        } //End block
 Content varF9E19AD6135C970F387F77C6F3DE4477_2132627438 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_2132627438.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_2132627438;
-        
-        
-        
-            
-        
-            
-                    
-                            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Content retval = null;
+        //if (contentList == null)
+            //return null;
+        //for (Content content : contentList) {
+            //if (content.getContentTypeHeader().getContentType().equalsIgnoreCase(contentType)
+                    //&& content.getContentTypeHeader().getContentSubType().equalsIgnoreCase(
+                            //contentSubtype)) {
+                //retval = content;
+                //break;
+            //}
+        //}
+        //return retval;
     }
 
     
@@ -211,8 +209,8 @@ Content varF9E19AD6135C970F387F77C6F3DE4477_2132627438 =         retval;
     public void addContent(Content content) {
         addTaint(content.getTaint());
         this.add(content);
-        
-        
+        // ---------- Original Method ----------
+        //this.add(content);
     }
 
     
@@ -221,8 +219,8 @@ Content varF9E19AD6135C970F387F77C6F3DE4477_2132627438 =         retval;
 Iterator<Content> var78005D39F9311C6A323E697692687A79_1736806214 =         this.contentList.iterator();
         var78005D39F9311C6A323E697692687A79_1736806214.addTaint(taint);
         return var78005D39F9311C6A323E697692687A79_1736806214;
-        
-        
+        // ---------- Original Method ----------
+        //return this.contentList.iterator();
     }
 
     
@@ -231,8 +229,8 @@ Iterator<Content> var78005D39F9311C6A323E697692687A79_1736806214 =         this.
         int var793568623107BB2DF4FE5C24C7E1A820_355036479 = (this.contentList.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248531766 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248531766;
-        
-        
+        // ---------- Original Method ----------
+        //return this.contentList.size();
     }
 
     

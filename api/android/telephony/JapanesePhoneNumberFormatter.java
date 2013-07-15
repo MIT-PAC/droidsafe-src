@@ -1,6 +1,6 @@
 package android.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,12 +11,11 @@ class JapanesePhoneNumberFormatter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.620 -0400", hash_original_method = "8633AFAAB867BB1617201EF2E839378D", hash_generated_method = "8633AFAAB867BB1617201EF2E839378D")
     public JapanesePhoneNumberFormatter ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static void format(Editable text) {
+        public static void format(Editable text) {
         int rootIndex = 1;
         int length = text.length();
         if (length > 3

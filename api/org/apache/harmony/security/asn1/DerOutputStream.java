@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,17 +27,16 @@ public final class DerOutputStream extends BerOutputStream {
         encoded = new byte[asn1.getEncodedLength(this)];
         index = 0;
         asn1.encodeASN(this);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //content = object;
+        //index = -1;
+        //asn1.setEncodingContent(this);
+        //encoded = new byte[asn1.getEncodedLength(this)];
+        //index = 0;
+        //asn1.encodeASN(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.018 -0400", hash_original_method = "D1F3147530CD958A60FC9468EBA6E51B", hash_generated_method = "057BAFA8F7674F33D82362BD074FB9B5")
     @Override
     public void encodeChoice(ASN1Choice choice) {
@@ -46,15 +45,14 @@ public final class DerOutputStream extends BerOutputStream {
         content = val[index][1];
         index++;
         type.encodeASN(this);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1Type type = (ASN1Type) val[index][0];
+        //content = val[index][1];
+        //index++;
+        //type.encodeASN(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.018 -0400", hash_original_method = "659D44CC0DC855D6C68F3262E359E7DB", hash_generated_method = "316F7A823F3543AAEDA49A53DBE3685F")
     @Override
     public void encodeExplicit(ASN1Explicit explicit) {
@@ -63,15 +61,14 @@ public final class DerOutputStream extends BerOutputStream {
         length = len[index][0];
         index++;
         explicit.type.encodeASN(this);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //content = val[index][0];
+        //length = len[index][0];
+        //index++;
+        //explicit.type.encodeASN(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.019 -0400", hash_original_method = "DFC8E4A859D25CD29437C3A3C9B5952F", hash_generated_method = "49813B4A8F80CD85A5AC3B0984F82F24")
     @Override
     public void encodeSequence(ASN1Sequence sequence) {
@@ -85,50 +82,47 @@ for(int i = 0;i < type.length;i++)
     if(values[i] == null)            
             {
                 continue;
-            } 
+            } //End block
             content = values[i];
             length = compLens[i];
             type[i].encodeASN(this);
-        } 
-        
-        
-        
-        
-        
-        
-            
-                
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ASN1Type[] type = sequence.type;
+        //Object[] values = val[index];
+        //int[] compLens = len[index];
+        //index++;
+        //for (int i = 0; i < type.length; i++) {
+            //if (values[i] == null) {
+                //continue;
+            //}
+            //content = values[i];
+            //length = compLens[i];
+            //type[i].encodeASN(this);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.019 -0400", hash_original_method = "BF7126E0FE9EAA56B88F61BC0650EC8C", hash_generated_method = "979E147F629ADF383FDE475846DC758A")
     @Override
     public void encodeSequenceOf(ASN1SequenceOf sequenceOf) {
         addTaint(sequenceOf.getTaint());
         encodeValueCollection(sequenceOf);
-        
-        
+        // ---------- Original Method ----------
+        //encodeValueCollection(sequenceOf);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.020 -0400", hash_original_method = "71BF5F5BDE90DADFEA034715FD60B59D", hash_generated_method = "2885DF32A551EC4E1446E5D56C5818AF")
     @Override
     public void encodeSetOf(ASN1SetOf setOf) {
         addTaint(setOf.getTaint());
         encodeValueCollection(setOf);
-        
-        
+        // ---------- Original Method ----------
+        //encodeValueCollection(setOf);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.020 -0400", hash_original_method = "633BE494EAD83DB36EAB8BCAACE55EAA", hash_generated_method = "95EA7F631AADF71E3FABCAEF5941F4B0")
     private void encodeValueCollection(ASN1ValueCollection collection) {
         addTaint(collection.getTaint());
@@ -140,20 +134,19 @@ for(int i = 0;i < values.length;i++)
             content = values[i];
             length = compLens[i];
             collection.type.encodeASN(this);
-        } 
-        
-        
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Object[] values = val[index];
+        //int[] compLens = len[index];
+        //index++;
+        //for (int i = 0; i < values.length; i++) {
+            //content = values[i];
+            //length = compLens[i];
+            //collection.type.encodeASN(this);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.021 -0400", hash_original_method = "4D1A9BCC2A43E189556FAAB3E35CA849", hash_generated_method = "F1071627A0104779CCFA0A0C19C0D01C")
     private void push(int[] lengths, Object[] values) {
         index++;
@@ -165,21 +158,21 @@ for(int i = 0;i < values.length;i++)
             Object[][] newVal = new Object[val.length * 2][];
             System.arraycopy(val, 0, newVal, 0, val.length);
             val = newVal;
-        } 
+        } //End block
         len[index] = lengths;
         val[index] = values;
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //index++;
+        //if (index == val.length) {
+            //int[][] newLen = new int[val.length * 2][];
+            //System.arraycopy(len, 0, newLen, 0, val.length);
+            //len = newLen;
+            //Object[][] newVal = new Object[val.length * 2][];
+            //System.arraycopy(val, 0, newVal, 0, val.length);
+            //val = newVal;
+        //}
+        //len[index] = lengths;
+        //val[index] = values;
     }
 
     
@@ -193,13 +186,13 @@ for(int i = 0;i < values.length;i++)
         push(null, values);
         choice.type[i].setEncodingContent(this);
         values[1] = content;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int i = choice.getIndex(content);
+        //content = choice.getObjectToEncode(content);
+        //Object[] values = new Object[] { choice.type[i], content };
+        //push(null, values);
+        //choice.type[i].setEncodingContent(this);
+        //values[1] = content;
     }
 
     
@@ -215,15 +208,15 @@ for(int i = 0;i < values.length;i++)
         values[0] = content;
         compLens[0] = length;
         length = explicit.type.getEncodedLength(this);
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object[] values = new Object[1];
+        //int[] compLens = new int[1];
+        //values[0] = content;
+        //push(compLens, values);
+        //explicit.type.setEncodingContent(this);
+        //values[0] = content;
+        //compLens[0] = length;
+        //length = explicit.type.getEncodedLength(this);
     }
 
     
@@ -244,50 +237,48 @@ for(int i = 0;i < type.length;i++)
     if(sequence.OPTIONAL[i])                
                 {
                     continue;
-                } 
+                } //End block
                 else
                 {
                     RuntimeException varF1484B21EF4EE84F790184975238945B_2044569226 = new RuntimeException();
                     varF1484B21EF4EE84F790184975238945B_2044569226.addTaint(taint);
                     throw varF1484B21EF4EE84F790184975238945B_2044569226;
-                } 
-            } 
+                } //End block
+            } //End block
     if(Objects.equal(sequence.DEFAULT[i], values[i]))            
             {
                 values[i] = null;
                 continue;
-            } 
+            } //End block
             content = values[i];
             type[i].setEncodingContent(this);
             compLens[i] = length;
             values[i] = content;
             seqLen += type[i].getEncodedLength(this);
-        } 
+        } //End block
         length = seqLen;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.024 -0400", hash_original_method = "61F1CA8B8AAFA23BA003E1AA8F8AE7F2", hash_generated_method = "6D3E3BBC23E25F11897075F7BB9361EC")
     @Override
     public void getSequenceOfLength(ASN1SequenceOf sequence) {
         addTaint(sequence.getTaint());
         getValueOfLength(sequence);
-        
-        
+        // ---------- Original Method ----------
+        //getValueOfLength(sequence);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.024 -0400", hash_original_method = "59131DE1B6C7BF8D5BB2AE6524AB4AAF", hash_generated_method = "6D98F2A1A66A3AAFFCB5501C4A781E25")
     @Override
     public void getSetOfLength(ASN1SetOf setOf) {
         addTaint(setOf.getTaint());
         getValueOfLength(setOf);
-        
-        
+        // ---------- Original Method ----------
+        //getValueOfLength(setOf);
     }
 
     
@@ -306,22 +297,22 @@ for(int i = 0;i < values.length;i++)
             compLens[i] = length;
             values[i] = content;
             seqLen += collection.type.getEncodedLength(this);
-        } 
+        } //End block
         length = seqLen;
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //Object[] cv = collection.getValues(content).toArray();
+        //Object[] values = new Object[cv.length];
+        //int[] compLens = new int[values.length];
+        //push(compLens, values);
+        //int seqLen = 0;
+        //for (int i = 0; i < values.length; i++) {
+            //content = cv[i];
+            //collection.type.setEncodingContent(this);
+            //compLens[i] = length;
+            //values[i] = content;
+            //seqLen += collection.type.getEncodedLength(this);
+        //}
+        //length = seqLen;
     }
 
     

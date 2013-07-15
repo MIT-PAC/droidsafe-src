@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class EventLog {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.877 -0400", hash_original_method = "F2F67500BFF17861178525A826A9D5EF", hash_generated_method = "53C7EDD75DD3FA6552B96F6BC591B81D")
     public  EventLog() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -108,9 +108,9 @@ public class EventLog {
           Event(byte[] data) {
             mBuffer = ByteBuffer.wrap(data);
             mBuffer.order(ByteOrder.nativeOrder());
-            
-            
-            
+            // ---------- Original Method ----------
+            //mBuffer = ByteBuffer.wrap(data);
+            //mBuffer.order(ByteOrder.nativeOrder());
         }
 
         
@@ -119,8 +119,8 @@ public class EventLog {
             int varE5BDF26D5BDA069AB1ECCFE58110E720_968189890 = (mBuffer.getInt(PROCESS_OFFSET));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1596687517 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1596687517;
-            
-            
+            // ---------- Original Method ----------
+            //return mBuffer.getInt(PROCESS_OFFSET);
         }
 
         
@@ -129,8 +129,8 @@ public class EventLog {
             int var693E03F6BC7B2854576A3ADA8F53460F_1606806963 = (mBuffer.getInt(THREAD_OFFSET));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1773544235 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1773544235;
-            
-            
+            // ---------- Original Method ----------
+            //return mBuffer.getInt(THREAD_OFFSET);
         }
 
         
@@ -140,9 +140,9 @@ public class EventLog {
                     + mBuffer.getInt(NANOSECONDS_OFFSET));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1671439322 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1671439322;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return mBuffer.getInt(SECONDS_OFFSET) * 1000000000l
+                    //+ mBuffer.getInt(NANOSECONDS_OFFSET);
         }
 
         
@@ -151,8 +151,8 @@ public class EventLog {
             int var0C2BC9A382DDE4B2CD1B5995D056DA3E_402241332 = (mBuffer.getInt(TAG_OFFSET));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_837832367 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_837832367;
-            
-            
+            // ---------- Original Method ----------
+            //return mBuffer.getInt(TAG_OFFSET);
         }
 
         
@@ -165,33 +165,33 @@ public class EventLog {
 Object var200DCF6B57C33B90CFB2E2B0C611CB16_1175919321 =                 decodeObject();
                 var200DCF6B57C33B90CFB2E2B0C611CB16_1175919321.addTaint(taint);
                 return var200DCF6B57C33B90CFB2E2B0C611CB16_1175919321;
-            } 
+            } //End block
             catch (IllegalArgumentException e)
             {
                 Log.wtf(TAG, "Illegal entry payload: tag=" + getTag(), e);
 Object var540C13E9E156B687226421B24F2DF178_1841992071 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1841992071.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1841992071;
-            } 
+            } //End block
             catch (BufferUnderflowException e)
             {
                 Log.wtf(TAG, "Truncated entry payload: tag=" + getTag(), e);
 Object var540C13E9E156B687226421B24F2DF178_708004844 =                 null;
                 var540C13E9E156B687226421B24F2DF178_708004844.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_708004844;
-            } 
-            
-            
-                
-                
-                
-            
-                
-                
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //mBuffer.limit(PAYLOAD_START + mBuffer.getShort(LENGTH_OFFSET));
+                //mBuffer.position(DATA_START);  
+                //return decodeObject();
+            //} catch (IllegalArgumentException e) {
+                //Log.wtf(TAG, "Illegal entry payload: tag=" + getTag(), e);
+                //return null;
+            //} catch (BufferUnderflowException e) {
+                //Log.wtf(TAG, "Truncated entry payload: tag=" + getTag(), e);
+                //return null;
+            //}
         }
 
         
@@ -216,14 +216,14 @@ Object var24995843EE1457161A5135063B2E1063_712844025 =             (Long) mBuffe
 Object var268C3B094C9624CEC74759AC77B85BA3_537807992 =                 new String(mBuffer.array(), start, length, "UTF-8");
                 var268C3B094C9624CEC74759AC77B85BA3_537807992.addTaint(taint);
                 return var268C3B094C9624CEC74759AC77B85BA3_537807992;
-            } 
+            } //End block
             catch (UnsupportedEncodingException e)
             {
                 Log.wtf(TAG, "UTF-8 is not supported", e);
 Object var540C13E9E156B687226421B24F2DF178_477500895 =                 null;
                 var540C13E9E156B687226421B24F2DF178_477500895.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_477500895;
-            } 
+            } //End block
             case LIST_TYPE:
             int length = mBuffer.get();
     if(length < 0)            
@@ -239,8 +239,8 @@ Object var1270D5B74B756F17D644A15D775499D9_1355481255 =             array;
             var36A186BC9217B3DBA11D382022030084_765296387.addTaint(taint);
             throw var36A186BC9217B3DBA11D382022030084_765296387;
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

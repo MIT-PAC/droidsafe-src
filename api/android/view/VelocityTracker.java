@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,8 +23,8 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.959 -0400", hash_original_method = "F7334C8DF7CFD0702F8B319FC0AAEBEC", hash_generated_method = "D85E3DAABC499710A355B9A59E327BBA")
     private  VelocityTracker() {
         mPtr = nativeInitialize();
-        
-        
+        // ---------- Original Method ----------
+        //mPtr = nativeInitialize();
     }
 
     
@@ -81,48 +81,44 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.962 -0400", hash_original_method = "E0F67E3C99A5EE80DA0668A59C0EFAE4", hash_generated_method = "0846A8ED2E43BFFDC09D1A7A77AFC8B7")
     public void recycle() {
         sPool.release(this);
-        
-        
+        // ---------- Original Method ----------
+        //sPool.release(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.963 -0400", hash_original_method = "2CC1A1BE49EC62DFF418BB32459396A9", hash_generated_method = "74AE9F16F0DD1BBCC61D5A9BA8889C0C")
     public void setNextPoolable(VelocityTracker element) {
         mNext = element;
-        
-        
+        // ---------- Original Method ----------
+        //mNext = element;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.963 -0400", hash_original_method = "DEA3C3D2ED346DE60DC91CC9918022D0", hash_generated_method = "A09AD0BA965BF064861887CAB82F3194")
     public VelocityTracker getNextPoolable() {
 VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
         varA29C6A1F0F29A0F3732076BE541D5DCD_488863880.addTaint(taint);
         return varA29C6A1F0F29A0F3732076BE541D5DCD_488863880;
-        
-        
+        // ---------- Original Method ----------
+        //return mNext;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.964 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "77272E194749156C77211BEA59A74CFE")
     public boolean isPooled() {
         boolean var224D05F4261498DA1D9DF38424832532_651633496 = (mIsPooled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_932136750 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_932136750;
-        
-        
+        // ---------- Original Method ----------
+        //return mIsPooled;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.965 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
     public void setPooled(boolean isPooled) {
         mIsPooled = isPooled;
-        
-        
+        // ---------- Original Method ----------
+        //mIsPooled = isPooled;
     }
 
     
@@ -135,29 +131,29 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
             {
                 nativeDispose(mPtr);
                 mPtr = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (mPtr != 0) {
+                //nativeDispose(mPtr);
+                //mPtr = 0;
+            //}
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.966 -0400", hash_original_method = "3EB8DC396E0D228312A300339405C305", hash_generated_method = "E72C8D02D6D5031CDDA2CF440FD3B4C9")
     public void clear() {
         nativeClear(mPtr);
-        
-        
+        // ---------- Original Method ----------
+        //nativeClear(mPtr);
     }
 
     
@@ -169,13 +165,13 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
             IllegalArgumentException var3920A277CD7F529F4F356CA2BB30C0CA_839083986 = new IllegalArgumentException("event must not be null");
             var3920A277CD7F529F4F356CA2BB30C0CA_839083986.addTaint(taint);
             throw var3920A277CD7F529F4F356CA2BB30C0CA_839083986;
-        } 
+        } //End block
         nativeAddMovement(mPtr, event);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (event == null) {
+            //throw new IllegalArgumentException("event must not be null");
+        //}
+        //nativeAddMovement(mPtr, event);
     }
 
     
@@ -183,8 +179,8 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
     public void computeCurrentVelocity(int units) {
         addTaint(units);
         nativeComputeCurrentVelocity(mPtr, units, Float.MAX_VALUE);
-        
-        
+        // ---------- Original Method ----------
+        //nativeComputeCurrentVelocity(mPtr, units, Float.MAX_VALUE);
     }
 
     
@@ -193,8 +189,8 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
         addTaint(maxVelocity);
         addTaint(units);
         nativeComputeCurrentVelocity(mPtr, units, maxVelocity);
-        
-        
+        // ---------- Original Method ----------
+        //nativeComputeCurrentVelocity(mPtr, units, maxVelocity);
     }
 
     
@@ -203,8 +199,8 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
         float var1F3A8E958A4C92A70937DB1AC04434E8_1358704620 = (nativeGetXVelocity(mPtr, ACTIVE_POINTER_ID));
                 float var546ADE640B6EDFBC8A086EF31347E768_971592470 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_971592470;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetXVelocity(mPtr, ACTIVE_POINTER_ID);
     }
 
     
@@ -213,8 +209,8 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
         float var901305552139D9C59B978FB160946120_1768815958 = (nativeGetYVelocity(mPtr, ACTIVE_POINTER_ID));
                 float var546ADE640B6EDFBC8A086EF31347E768_216581153 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_216581153;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetYVelocity(mPtr, ACTIVE_POINTER_ID);
     }
 
     
@@ -224,8 +220,8 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
         float var3E6C2E1F412411771F1C26F88E9C5428_377407553 = (nativeGetXVelocity(mPtr, id));
                 float var546ADE640B6EDFBC8A086EF31347E768_704218175 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_704218175;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetXVelocity(mPtr, id);
     }
 
     
@@ -235,8 +231,8 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
         float var8690B61C933BB7DCEEF44DD34DB6E5F7_1838234516 = (nativeGetYVelocity(mPtr, id));
                 float var546ADE640B6EDFBC8A086EF31347E768_1015464059 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1015464059;
-        
-        
+        // ---------- Original Method ----------
+        //return nativeGetYVelocity(mPtr, id);
     }
 
     
@@ -251,15 +247,15 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
             IllegalArgumentException var7729680BD01F210BDAE467823B75DEFF_605746202 = new IllegalArgumentException("outEstimator must not be null");
             var7729680BD01F210BDAE467823B75DEFF_605746202.addTaint(taint);
             throw var7729680BD01F210BDAE467823B75DEFF_605746202;
-        } 
+        } //End block
         boolean varC992AEF59FE90C4936A5F7B111BF1929_717017837 = (nativeGetEstimator(mPtr, id, degree, horizonMillis, outEstimator));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692420609 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_692420609;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (outEstimator == null) {
+            //throw new IllegalArgumentException("outEstimator must not be null");
+        //}
+        //return nativeGetEstimator(mPtr, id, degree, horizonMillis, outEstimator);
     }
 
     
@@ -280,7 +276,7 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.969 -0400", hash_original_method = "3C04CD9D0E5CF8A244AF16BC346C84B6", hash_generated_method = "3C04CD9D0E5CF8A244AF16BC346C84B6")
         public Estimator ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -290,8 +286,8 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
             float var11437C0E100EAF34BB6AD8A0E1B2CFF3_1982728012 = (estimate(time, xCoeff));
                         float var546ADE640B6EDFBC8A086EF31347E768_1561482744 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1561482744;
-            
-            
+            // ---------- Original Method ----------
+            //return estimate(time, xCoeff);
         }
 
         
@@ -301,12 +297,11 @@ VelocityTracker varA29C6A1F0F29A0F3732076BE541D5DCD_488863880 =         mNext;
             float var44F180C001ADBDFDB0826BBD6FA6109D_973601787 = (estimate(time, yCoeff));
                         float var546ADE640B6EDFBC8A086EF31347E768_1339029621 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1339029621;
-            
-            
+            // ---------- Original Method ----------
+            //return estimate(time, yCoeff);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.970 -0400", hash_original_method = "17E8AE405780B4520E14D05EC083CF07", hash_generated_method = "A30968E91F5D697DE452CBCDCEAED8BD")
         private float estimate(float time, float[] c) {
             addTaint(c[0]);
@@ -317,18 +312,18 @@ for(int i = 0;i <= degree;i++)
             {
                 a += c[i] * scale;
                 scale *= time;
-            } 
+            } //End block
             float var0CC175B9C0F1B6A831C399E269772661_887684543 = (a);
                         float var546ADE640B6EDFBC8A086EF31347E768_786175840 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_786175840;
-            
-            
-            
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //float a = 0;
+            //float scale = 1;
+            //for (int i = 0; i <= degree; i++) {
+                //a += c[i] * scale;
+                //scale *= time;
+            //}
+            //return a;
         }
 
         
@@ -357,16 +352,16 @@ for(int i = 0;i <= degree;i++)
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.971 -0400", hash_original_field = "B23005BED9309443B0ABD014F4C6507F", hash_generated_field = "FF8FF6E56B8D783C306CE7F0923B38D1")
 
     private static final int ACTIVE_POINTER_ID = -1;
-    
+    // orphaned legacy method
     public void onAcquired(VelocityTracker element) {
                 }
     
-    
+    // orphaned legacy method
     public VelocityTracker newInstance() {
                     return new VelocityTracker();
                 }
     
-    
+    // orphaned legacy method
     public void onReleased(VelocityTracker element) {
                     element.clear();
                 }

@@ -1,6 +1,6 @@
 package android.view.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,28 +47,28 @@ public class LayoutAnimationController {
     if(resource > 0)        
         {
             setAnimation(context, resource);
-        } 
+        } //End block
         resource = a.getResourceId(com.android.internal.R.styleable.LayoutAnimation_interpolator, 0);
     if(resource > 0)        
         {
             setInterpolator(context, resource);
-        } 
+        } //End block
         a.recycle();
-        
-        
-        
-                
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.LayoutAnimation);
+        //Animation.Description d = Animation.Description.parseValue(
+                //a.peekValue(com.android.internal.R.styleable.LayoutAnimation_delay));
+        //mDelay = d.value;
+        //mOrder = a.getInt(com.android.internal.R.styleable.LayoutAnimation_animationOrder, ORDER_NORMAL);
+        //int resource = a.getResourceId(com.android.internal.R.styleable.LayoutAnimation_animation, 0);
+        //if (resource > 0) {
+            //setAnimation(context, resource);
+        //}
+        //resource = a.getResourceId(com.android.internal.R.styleable.LayoutAnimation_interpolator, 0);
+        //if (resource > 0) {
+            //setInterpolator(context, resource);
+        //}
+        //a.recycle();
     }
 
     
@@ -76,7 +76,7 @@ public class LayoutAnimationController {
     public  LayoutAnimationController(Animation animation) {
         this(animation, 0.5f);
         addTaint(animation.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -85,29 +85,27 @@ public class LayoutAnimationController {
         addTaint(animation.getTaint());
         mDelay = delay;
         setAnimation(animation);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDelay = delay;
+        //setAnimation(animation);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.878 -0400", hash_original_method = "BE8C43C510B8AF8546FEBBAA3EF0F0B1", hash_generated_method = "60E59B06B163141A53B4BB73EE00D08E")
     public int getOrder() {
         int var6D112D2229BB97D14E6F55D683775A63_369650835 = (mOrder);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193311010 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193311010;
-        
-        
+        // ---------- Original Method ----------
+        //return mOrder;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.879 -0400", hash_original_method = "648C96BEF511A58A69E168C40D059B54", hash_generated_method = "23B5E85A7019C72C38679E0BA3B78B0E")
     public void setOrder(int order) {
         mOrder = order;
-        
-        
+        // ---------- Original Method ----------
+        //mOrder = order;
     }
 
     
@@ -116,8 +114,8 @@ public class LayoutAnimationController {
         addTaint(resourceID);
         addTaint(context.getTaint());
         setAnimation(AnimationUtils.loadAnimation(context, resourceID));
-        
-        
+        // ---------- Original Method ----------
+        //setAnimation(AnimationUtils.loadAnimation(context, resourceID));
     }
 
     
@@ -125,20 +123,19 @@ public class LayoutAnimationController {
     public void setAnimation(Animation animation) {
         mAnimation = animation;
         mAnimation.setFillBefore(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mAnimation = animation;
+        //mAnimation.setFillBefore(true);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.880 -0400", hash_original_method = "DAC4606AD5070B4B7D220BEE34A17978", hash_generated_method = "0FB888DAA280209450A5A10A27E0E0D7")
     public Animation getAnimation() {
 Animation var267087685D2F38DE7EECB639921105B0_400424183 =         mAnimation;
         var267087685D2F38DE7EECB639921105B0_400424183.addTaint(taint);
         return var267087685D2F38DE7EECB639921105B0_400424183;
-        
-        
+        // ---------- Original Method ----------
+        //return mAnimation;
     }
 
     
@@ -147,59 +144,54 @@ Animation var267087685D2F38DE7EECB639921105B0_400424183 =         mAnimation;
         addTaint(resourceID);
         addTaint(context.getTaint());
         setInterpolator(AnimationUtils.loadInterpolator(context, resourceID));
-        
-        
+        // ---------- Original Method ----------
+        //setInterpolator(AnimationUtils.loadInterpolator(context, resourceID));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.881 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "305B3174980281AD6A6C4213980CE615")
     public void setInterpolator(Interpolator interpolator) {
         mInterpolator = interpolator;
-        
-        
+        // ---------- Original Method ----------
+        //mInterpolator = interpolator;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.881 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "1FC139C56071CFB6B0409DAB5F28ADE2")
     public Interpolator getInterpolator() {
 Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1917899020 =         mInterpolator;
         var9FA301F6AF154FEBBB2C7439D021F894_1917899020.addTaint(taint);
         return var9FA301F6AF154FEBBB2C7439D021F894_1917899020;
-        
-        
+        // ---------- Original Method ----------
+        //return mInterpolator;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.881 -0400", hash_original_method = "55CD68136127075BB4939DEA602DB451", hash_generated_method = "24937C0691A5AA7DA191F9CD3C50F113")
     public float getDelay() {
         float var4A07FB752767B90A168D4F2A331D5C36_113157544 = (mDelay);
                 float var546ADE640B6EDFBC8A086EF31347E768_1398009532 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1398009532;
-        
-        
+        // ---------- Original Method ----------
+        //return mDelay;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.887 -0400", hash_original_method = "66A46BCEB9C76B70A4A3D1129198A613", hash_generated_method = "68B321DC0C555672B92725ED9120FBBD")
     public void setDelay(float delay) {
         mDelay = delay;
-        
-        
+        // ---------- Original Method ----------
+        //mDelay = delay;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.887 -0400", hash_original_method = "C391ED719773BAF357B5BB149771DE74", hash_generated_method = "360C0D0F22B14C3E6BB0796ADCED730F")
     public boolean willOverlap() {
         boolean var02C5090F3AD9B37500835DCA56FD4C36_163660839 = (mDelay < 1.0f);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_14378241 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_14378241;
-        
-        
+        // ---------- Original Method ----------
+        //return mDelay < 1.0f;
     }
 
     
@@ -208,10 +200,10 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1917899020 =         mInterpola
         mDuration = mAnimation.getDuration();
         mMaxDelay = Long.MIN_VALUE;
         mAnimation.setStartTime(-1);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDuration = mAnimation.getDuration();
+        //mMaxDelay = Long.MIN_VALUE;
+        //mAnimation.setStartTime(-1);
     }
 
     
@@ -227,23 +219,23 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_1917899020 =         mInterpola
 Animation var1D3E9F798E82851E6201AD690FEA4543_2134671378 =             animation;
             var1D3E9F798E82851E6201AD690FEA4543_2134671378.addTaint(taint);
             return var1D3E9F798E82851E6201AD690FEA4543_2134671378;
-        } 
+        } //End block
         catch (CloneNotSupportedException e)
         {
 Animation var540C13E9E156B687226421B24F2DF178_1235608902 =             null;
             var540C13E9E156B687226421B24F2DF178_1235608902.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1235608902;
-        } 
-        
-        
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final long delay = getDelayForView(view) + mAnimation.getStartOffset();
+        //mMaxDelay = Math.max(mMaxDelay, delay);
+        //try {
+            //final Animation animation = mAnimation.clone();
+            //animation.setStartOffset(delay);
+            //return animation;
+        //} catch (CloneNotSupportedException e) {
+            //return null;
+        //}
     }
 
     
@@ -253,9 +245,9 @@ Animation var540C13E9E156B687226421B24F2DF178_1235608902 =             null;
                 mAnimation.getStartTime() + mMaxDelay + mDuration);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2127875273 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2127875273;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return AnimationUtils.currentAnimationTimeMillis() >
+                //mAnimation.getStartTime() + mMaxDelay + mDuration;
     }
 
     
@@ -269,34 +261,34 @@ Animation var540C13E9E156B687226421B24F2DF178_1235608902 =             null;
             long varCFCD208495D565EF66E7DFF9F98764DA_1937719135 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_425148132 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_425148132;
-        } 
+        } //End block
         final float delay = mDelay * mAnimation.getDuration();
         final long viewDelay = (long) (getTransformedIndex(params) * delay);
         final float totalDelay = delay * params.count;
     if(mInterpolator == null)        
         {
             mInterpolator = new LinearInterpolator();
-        } 
+        } //End block
         float normalizedDelay = viewDelay / totalDelay;
         normalizedDelay = mInterpolator.getInterpolation(normalizedDelay);
         long varE65571F221469C7C9AAECA50B46EA242_2108098203 = ((long) (normalizedDelay * totalDelay));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_370192991 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_370192991;
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ViewGroup.LayoutParams lp = view.getLayoutParams();
+        //AnimationParameters params = lp.layoutAnimationParameters;
+        //if (params == null) {
+            //return 0;
+        //}
+        //final float delay = mDelay * mAnimation.getDuration();
+        //final long viewDelay = (long) (getTransformedIndex(params) * delay);
+        //final float totalDelay = delay * params.count;
+        //if (mInterpolator == null) {
+            //mInterpolator = new LinearInterpolator();
+        //}
+        //float normalizedDelay = viewDelay / totalDelay;
+        //normalizedDelay = mInterpolator.getInterpolation(normalizedDelay);
+        //return (long) (normalizedDelay * totalDelay);
     }
 
     
@@ -312,7 +304,7 @@ switch(getOrder()){
     if(mRandomizer == null)        
         {
             mRandomizer = new Random();
-        } 
+        } //End block
         int var44B54535E1AB5BF3A610EAF6468B6A2A_1010593800 = ((int) (params.count * mRandomizer.nextFloat()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651383237 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651383237;
@@ -322,19 +314,19 @@ switch(getOrder()){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1744513836 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1744513836;
 }
-        
-        
-            
-                
-            
-                
-                    
-                
-                
-            
-            
-                
-        
+        // ---------- Original Method ----------
+        //switch (getOrder()) {
+            //case ORDER_REVERSE:
+                //return params.count - 1 - params.index;
+            //case ORDER_RANDOM:
+                //if (mRandomizer == null) {
+                    //mRandomizer = new Random();
+                //}
+                //return (int) (params.count * mRandomizer.nextFloat());
+            //case ORDER_NORMAL:
+            //default:
+                //return params.index;
+        //}
     }
 
     
@@ -349,7 +341,7 @@ switch(getOrder()){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.891 -0400", hash_original_method = "838D907A76D7295751639A8A84C023C1", hash_generated_method = "838D907A76D7295751639A8A84C023C1")
         public AnimationParameters ()
         {
-            
+            //Synthesized constructor
         }
 
 

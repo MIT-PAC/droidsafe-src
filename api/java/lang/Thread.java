@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -64,8 +64,8 @@ public class Thread implements Runnable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.487 -0400", hash_original_method = "A2846A412942D9A4A6734B659C3C08EA", hash_generated_method = "FC648266C8623CAE59D46FDD8401EFDA")
     public  Thread() {
         create(null, null, null, 0);
-        
-        
+        // ---------- Original Method ----------
+        //create(null, null, null, 0);
     }
 
     
@@ -73,8 +73,8 @@ public class Thread implements Runnable {
     public  Thread(Runnable runnable) {
         addTaint(runnable.getTaint());
         create(null, runnable, null, 0);
-        
-        
+        // ---------- Original Method ----------
+        //create(null, runnable, null, 0);
     }
 
     
@@ -87,13 +87,13 @@ public class Thread implements Runnable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_739860335 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_739860335.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_739860335;
-        } 
+        } //End block
         create(null, runnable, threadName, 0);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (threadName == null) {
+            //throw new NullPointerException();
+        //}
+        //create(null, runnable, threadName, 0);
     }
 
     
@@ -105,13 +105,13 @@ public class Thread implements Runnable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1365240904 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1365240904.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1365240904;
-        } 
+        } //End block
         create(null, null, threadName, 0);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (threadName == null) {
+            //throw new NullPointerException();
+        //}
+        //create(null, null, threadName, 0);
     }
 
     
@@ -120,8 +120,8 @@ public class Thread implements Runnable {
         addTaint(runnable.getTaint());
         addTaint(group.getTaint());
         create(group, runnable, null, 0);
-        
-        
+        // ---------- Original Method ----------
+        //create(group, runnable, null, 0);
     }
 
     
@@ -135,13 +135,13 @@ public class Thread implements Runnable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1489618643 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1489618643.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1489618643;
-        } 
+        } //End block
         create(group, runnable, threadName, 0);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (threadName == null) {
+            //throw new NullPointerException();
+        //}
+        //create(group, runnable, threadName, 0);
     }
 
     
@@ -154,13 +154,13 @@ public class Thread implements Runnable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_890149603 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_890149603.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_890149603;
-        } 
+        } //End block
         create(group, null, threadName, 0);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (threadName == null) {
+            //throw new NullPointerException();
+        //}
+        //create(group, null, threadName, 0);
     }
 
     
@@ -175,13 +175,13 @@ public class Thread implements Runnable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1652810951 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1652810951.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1652810951;
-        } 
+        } //End block
         create(group, runnable, threadName, stackSize);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (threadName == null) {
+            //throw new NullPointerException();
+        //}
+        //create(group, runnable, threadName, stackSize);
     }
 
     
@@ -190,75 +190,74 @@ public class Thread implements Runnable {
         synchronized
 (Thread.class)        {
             id = ++Thread.count;
-        } 
+        } //End block
     if(name == null)        
         {
             this.name = "Thread-" + id;
-        } 
+        } //End block
         else
         {
             this.name = name;
-        } 
+        } //End block
     if(group == null)        
         {
             InternalError var9120CCB88F897215235B0E8DBA5319D5_388258184 = new InternalError("group not specified");
             var9120CCB88F897215235B0E8DBA5319D5_388258184.addTaint(taint);
             throw var9120CCB88F897215235B0E8DBA5319D5_388258184;
-        } 
+        } //End block
         this.group = group;
         this.target = null;
         this.stackSize = 0;
         this.priority = priority;
         this.daemon = daemon;
         this.group.addThread(this);
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (Thread.class) {
+            //id = ++Thread.count;
+        //}
+        //if (name == null) {
+            //this.name = "Thread-" + id;
+        //} else {
+            //this.name = name;
+        //}
+        //if (group == null) {
+            //throw new InternalError("group not specified");
+        //}
+        //this.group = group;
+        //this.target = null;
+        //this.stackSize = 0;
+        //this.priority = priority;
+        //this.daemon = daemon;
+        //this.group.addThread(this);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.496 -0400", hash_original_method = "B7E7B76C5A1CA256325AA2280577DF6E", hash_generated_method = "8CD03064E9444E26FE9E865D699EF5D9")
     private void create(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
         Thread currentThread = Thread.currentThread();
     if(group == null)        
         {
             group = currentThread.getThreadGroup();
-        } 
+        } //End block
     if(group.isDestroyed())        
         {
             IllegalThreadStateException varC058BA3B80F847C4D37109956EBCEA2A_1017812460 = new IllegalThreadStateException("Group already destroyed");
             varC058BA3B80F847C4D37109956EBCEA2A_1017812460.addTaint(taint);
             throw varC058BA3B80F847C4D37109956EBCEA2A_1017812460;
-        } 
+        } //End block
         this.group = group;
         synchronized
 (Thread.class)        {
             id = ++Thread.count;
-        } 
+        } //End block
     if(threadName == null)        
         {
             this.name = "Thread-" + id;
-        } 
+        } //End block
         else
         {
             this.name = threadName;
-        } 
+        } //End block
         this.target = runnable;
         this.stackSize = stackSize;
         this.priority = currentThread.getPriority();
@@ -266,63 +265,57 @@ public class Thread implements Runnable {
     if(currentThread.inheritableValues != null)        
         {
             inheritableValues = new ThreadLocal.Values(currentThread.inheritableValues);
-        } 
+        } //End block
         this.group.addThread(this);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int activeCount() {
+        public static int activeCount() {
         return currentThread().getThreadGroup().activeCount();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.497 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "58C0335FEF548999868CED53D4078AEE")
     public final void checkAccess() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.498 -0400", hash_original_method = "6B880F3A25E0C40C35D8EAA702DA9116", hash_generated_method = "674EBD876BA068F6148E932C6EEB7966")
     @Deprecated
     public int countStackFrames() {
         int varE7DCDEAB275966ADC28F03E09ECA3812_1017389547 = (getStackTrace().length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548036177 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548036177;
-        
-        
+        // ---------- Original Method ----------
+        //return getStackTrace().length;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Thread currentThread() {
+        public static Thread currentThread() {
         return VMThread.currentThread();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.498 -0400", hash_original_method = "E295DBEBB7624DABB0FA2D3E0377892B", hash_generated_method = "AAC50DEFEEDD4BF3E7AF73E5FDF67A8E")
     @Deprecated
     public void destroy() {
         NoSuchMethodError varEC935BC28734C445C690AFF68B3FA782_1112292980 = new NoSuchMethodError("Thread.destroy()");
         varEC935BC28734C445C690AFF68B3FA782_1112292980.addTaint(taint);
         throw varEC935BC28734C445C690AFF68B3FA782_1112292980;
-        
-        
+        // ---------- Original Method ----------
+        //throw new NoSuchMethodError("Thread.destroy()");
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void dumpStack() {
+        public static void dumpStack() {
         new Throwable("stack dump").printStackTrace();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int enumerate(Thread[] threads) {
+        public static int enumerate(Thread[] threads) {
         Thread thread = Thread.currentThread();
         return thread.getThreadGroup().enumerate(threads);
     }
@@ -340,31 +333,28 @@ public class Thread implements Runnable {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.500 -0400", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "F858D604933D6354BAA79FB8133F71C7")
     public ClassLoader getContextClassLoader() {
 ClassLoader varCDB6A46B81C356659A30478714667CAA_2000297776 =         contextClassLoader;
         varCDB6A46B81C356659A30478714667CAA_2000297776.addTaint(taint);
         return varCDB6A46B81C356659A30478714667CAA_2000297776;
-        
-        
+        // ---------- Original Method ----------
+        //return contextClassLoader;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
+        public static UncaughtExceptionHandler getDefaultUncaughtExceptionHandler() {
         return defaultUncaughtHandler;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.500 -0400", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "65042993FB88CFA38ADBE0B317C8AE60")
     public long getId() {
         long varB80BB7740288FDA1F201890375A60C8F_308727485 = (id);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1604225939 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1604225939;
-        
-        
+        // ---------- Original Method ----------
+        //return id;
     }
 
     
@@ -373,8 +363,8 @@ ClassLoader varCDB6A46B81C356659A30478714667CAA_2000297776 =         contextClas
 String varB017984728AC60AD1F0BF8734F33F15C_1548546710 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_1548546710.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_1548546710;
-        
-        
+        // ---------- Original Method ----------
+        //return name;
     }
 
     
@@ -383,25 +373,23 @@ String varB017984728AC60AD1F0BF8734F33F15C_1548546710 =         name;
         int varB988295C268025B49DFB3DF26171DDC3_468655963 = (priority);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_457481528 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_457481528;
-        
-        
+        // ---------- Original Method ----------
+        //return priority;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.501 -0400", hash_original_method = "105ECA4B48BD428C2A4BFADC722280E4", hash_generated_method = "6956B779EF327367D8D65669EF396C24")
     public StackTraceElement[] getStackTrace() {
         StackTraceElement ste[] = VMStack.getThreadStackTrace(this);
 StackTraceElement[] var4BE632EBE6A3388F93FE2D88ACD3A469_360630139 =         ste != null ? ste : EmptyArray.STACK_TRACE_ELEMENT;
         var4BE632EBE6A3388F93FE2D88ACD3A469_360630139.addTaint(taint);
         return var4BE632EBE6A3388F93FE2D88ACD3A469_360630139;
-        
-        
-        
+        // ---------- Original Method ----------
+        //StackTraceElement ste[] = VMStack.getThreadStackTrace(this);
+        //return ste != null ? ste : EmptyArray.STACK_TRACE_ELEMENT;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.502 -0400", hash_original_method = "07EB6E55BA9633DD05ED126331098808", hash_generated_method = "FCE4420724D8E1329F48763FF17239D5")
     public State getState() {
         VMThread vmt = this.vmThread;
@@ -414,21 +402,21 @@ StackTraceElement[] var4BE632EBE6A3388F93FE2D88ACD3A469_360630139 =         ste 
 State var2D991B4F3C5F46C730CE990DC46EDE7F_1265777311 =                 VMThread.STATE_MAP[state];
                 var2D991B4F3C5F46C730CE990DC46EDE7F_1265777311.addTaint(taint);
                 return var2D991B4F3C5F46C730CE990DC46EDE7F_1265777311;
-            } 
-        } 
+            } //End block
+        } //End block
 State varFFFA24361953E87A22A606CCE4DC911E_1156697228 =         hasBeenStarted ? Thread.State.TERMINATED : Thread.State.NEW;
         varFFFA24361953E87A22A606CCE4DC911E_1156697228.addTaint(taint);
         return varFFFA24361953E87A22A606CCE4DC911E_1156697228;
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //VMThread vmt = this.vmThread;
+        //VMThread thread = vmThread;
+        //if (thread != null) {
+            //int state = thread.getStatus();
+            //if(state != -1) {
+                //return VMThread.STATE_MAP[state];
+            //}
+        //}
+        //return hasBeenStarted ? Thread.State.TERMINATED : Thread.State.NEW;
     }
 
     
@@ -439,23 +427,22 @@ State varFFFA24361953E87A22A606CCE4DC911E_1156697228 =         hasBeenStarted ? 
 ThreadGroup var540C13E9E156B687226421B24F2DF178_559793405 =             null;
             var540C13E9E156B687226421B24F2DF178_559793405.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_559793405;
-        } 
+        } //End block
         else
         {
 ThreadGroup varD15A27BD67EB0D670CD5C298FF20B74F_1202712973 =             group;
             varD15A27BD67EB0D670CD5C298FF20B74F_1202712973.addTaint(taint);
             return varD15A27BD67EB0D670CD5C298FF20B74F_1202712973;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (getState() == Thread.State.TERMINATED) {
+            //return null;
+        //} else {
+            //return group;
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.503 -0400", hash_original_method = "5CF1F81DC91E6D2E78C73116F661ED4D", hash_generated_method = "8F2423F23787477B292CB4C3CC81965A")
     public UncaughtExceptionHandler getUncaughtExceptionHandler() {
     if(uncaughtHandler != null)        
@@ -470,15 +457,14 @@ UncaughtExceptionHandler varD15A27BD67EB0D670CD5C298FF20B74F_1697957473 =       
         varD15A27BD67EB0D670CD5C298FF20B74F_1697957473.addTaint(taint);
         return varD15A27BD67EB0D670CD5C298FF20B74F_1697957473;
         }
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (uncaughtHandler != null)
+            //return uncaughtHandler;
+        //else
+            //return group;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.503 -0400", hash_original_method = "17DDF3808A6EBB129363B48719FB5512", hash_generated_method = "60E0257AEA965A5EAB759BF80F11520F")
     public void interrupt() {
         synchronized
@@ -486,28 +472,27 @@ UncaughtExceptionHandler varD15A27BD67EB0D670CD5C298FF20B74F_1697957473 =       
 for(int i = interruptActions.size() - 1;i >= 0;i--)
             {
                 interruptActions.get(i).run();
-            } 
-        } 
+            } //End block
+        } //End block
         VMThread vmt = this.vmThread;
     if(vmt != null)        
         {
             vmt.interrupt();
-        } 
-        
-        
-            
-                
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (interruptActions) {
+            //for (int i = interruptActions.size() - 1; i >= 0; i--) {
+                //interruptActions.get(i).run();
+            //}
+        //}
+        //VMThread vmt = this.vmThread;
+        //if (vmt != null) {
+            //vmt.interrupt();
+        //}
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean interrupted() {
+        public static boolean interrupted() {
         return VMThread.interrupted();
     }
 
@@ -517,8 +502,8 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
         boolean varBF620006D854D991F5BE4CB9FA6C4736_649991361 = ((vmThread != null));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_841418456 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_841418456;
-        
-        
+        // ---------- Original Method ----------
+        //return (vmThread != null);
     }
 
     
@@ -527,12 +512,11 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
         boolean var1F15FCF5421EECD6CA1B61337C319495_1426034229 = (daemon);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_320678750 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_320678750;
-        
-        
+        // ---------- Original Method ----------
+        //return daemon;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.506 -0400", hash_original_method = "8001B196EB7A1BAE7873C2E86818FA5F", hash_generated_method = "BDA1D2999F71127D46869ED0DB05E0E8")
     public boolean isInterrupted() {
         VMThread vmt = this.vmThread;
@@ -541,16 +525,16 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
             boolean var8D3E00D03D9130B23E4006313C659A91_1511686786 = (vmt.isInterrupted());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2106976696 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2106976696;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_445579861 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1424236662 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1424236662;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //VMThread vmt = this.vmThread;
+        //if (vmt != null) {
+            //return vmt.isInterrupted();
+        //}
+        //return false;
     }
 
     
@@ -560,25 +544,25 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     if(t == null)        
         {
             return;
-        } 
+        } //End block
         synchronized
 (t)        {
             while
 (isAlive())            
             {
                 t.wait();
-            } 
-        } 
-        
-        
-        
-            
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //VMThread t = vmThread;
+        //if (t == null) {
+            //return;
+        //}
+        //synchronized (t) {
+            //while (isAlive()) {
+                //t.wait();
+            //}
+        //}
     }
 
     
@@ -586,8 +570,8 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     public final void join(long millis) throws InterruptedException {
         addTaint(millis);
         join(millis, 0);
-        
-        
+        // ---------- Original Method ----------
+        //join(millis, 0);
     }
 
     
@@ -600,25 +584,25 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1643759484 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1643759484.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1643759484;
-        } 
+        } //End block
         boolean overflow = millis >= (Long.MAX_VALUE - nanos) / NANOS_PER_MILLI;
         boolean forever = (millis | nanos) == 0;
     if(forever | overflow)        
         {
             join();
             return;
-        } 
+        } //End block
         VMThread t = vmThread;
     if(t == null)        
         {
             return;
-        } 
+        } //End block
         synchronized
 (t)        {
     if(!isAlive())            
             {
                 return;
-            } 
+            } //End block
             long nanosToWait = millis * NANOS_PER_MILLI + nanos;
             long start = System.nanoTime();
             while
@@ -628,19 +612,19 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     if(!isAlive())                
                 {
                     break;
-                } 
+                } //End block
                 long nanosElapsed = System.nanoTime() - start;
                 long nanosRemaining = nanosToWait - nanosElapsed;
     if(nanosRemaining <= 0)                
                 {
                     break;
-                } 
+                } //End block
                 millis = nanosRemaining / NANOS_PER_MILLI;
                 nanos = (int) (nanosRemaining - millis * NANOS_PER_MILLI);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -650,31 +634,29 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_599175939 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_599175939.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_599175939;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.511 -0400", hash_original_method = "74F6289977938D08C5FBC2624A0DC216", hash_generated_method = "03477583C250A36BA8909E553E5BD078")
     public void run() {
     if(target != null)        
         {
             target.run();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (target != null) {
+            //target.run();
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.511 -0400", hash_original_method = "93EFC46ED375C1C54A6285C5204CF25C", hash_generated_method = "3571A2A1E3CF85993D3F0CF0F870AA51")
     public void setContextClassLoader(ClassLoader cl) {
         contextClassLoader = cl;
-        
-        
+        // ---------- Original Method ----------
+        //contextClassLoader = cl;
     }
 
     
@@ -685,23 +667,22 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
             IllegalThreadStateException varA31FBD69B89BA6449A6CAE96E199797D_198689741 = new IllegalThreadStateException("Thread already started.");
             varA31FBD69B89BA6449A6CAE96E199797D_198689741.addTaint(taint);
             throw varA31FBD69B89BA6449A6CAE96E199797D_198689741;
-        } 
+        } //End block
     if(vmThread == null)        
         {
             daemon = isDaemon;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (hasBeenStarted) {
+            //throw new IllegalThreadStateException("Thread already started."); 
+        //}
+        //if (vmThread == null) {
+            //daemon = isDaemon;
+        //}
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
+        public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         Thread.defaultUncaughtHandler = handler;
     }
 
@@ -712,18 +693,18 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
         synchronized
 (interruptActions)        {
             interruptActions.add(interruptAction);
-        } 
+        } //End block
     if(interruptAction != null && isInterrupted())        
         {
             interruptAction.run();
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (interruptActions) {
+            //interruptActions.add(interruptAction);
+        //}
+        //if (interruptAction != null && isInterrupted()) {
+            //interruptAction.run();
+        //}
     }
 
     
@@ -739,16 +720,16 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
                         "Expected " + interruptAction + " but was " + removed);
                 varFEBB606D192EB5964085A7D78E6E6F26_1384542223.addTaint(taint);
                 throw varFEBB606D192EB5964085A7D78E6E6F26_1384542223;
-            } 
-        } 
-        
-        
-            
-            
-                
-                        
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (interruptActions) {
+            //Runnable removed = interruptActions.remove(interruptActions.size() - 1);
+            //if (interruptAction != removed) {
+                //throw new IllegalArgumentException(
+                        //"Expected " + interruptAction + " but was " + removed);
+            //}
+        //}
     }
 
     
@@ -759,22 +740,22 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1687299846 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1687299846.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1687299846;
-        } 
+        } //End block
         name = threadName;
         VMThread vmt = this.vmThread;
     if(vmt != null)        
         {
             vmt.nameChanged(threadName);
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (threadName == null) {
+            //throw new NullPointerException();
+        //}
+        //name = threadName;
+        //VMThread vmt = this.vmThread;
+        //if (vmt != null) {
+            //vmt.nameChanged(threadName);
+        //}
     }
 
     
@@ -785,54 +766,50 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
             IllegalArgumentException varEECC002C8BC5156BE3BE7CDCADFB2390_1645951958 = new IllegalArgumentException("Priority out of range");
             varEECC002C8BC5156BE3BE7CDCADFB2390_1645951958.addTaint(taint);
             throw varEECC002C8BC5156BE3BE7CDCADFB2390_1645951958;
-        } 
+        } //End block
     if(priority > group.getMaxPriority())        
         {
             priority = group.getMaxPriority();
-        } 
+        } //End block
         this.priority = priority;
         VMThread vmt = this.vmThread;
     if(vmt != null)        
         {
             vmt.setPriority(priority);
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (priority < Thread.MIN_PRIORITY || priority > Thread.MAX_PRIORITY) {
+            //throw new IllegalArgumentException("Priority out of range"); 
+        //}
+        //if (priority > group.getMaxPriority()) {
+            //priority = group.getMaxPriority();
+        //}
+        //this.priority = priority;
+        //VMThread vmt = this.vmThread;
+        //if (vmt != null) {
+            //vmt.setPriority(priority);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.518 -0400", hash_original_method = "D58D250923779D2B2016D80FC2081BA1", hash_generated_method = "32052A607317B2CF4FD95D37AFA858D8")
     public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
         uncaughtHandler = handler;
-        
-        
+        // ---------- Original Method ----------
+        //uncaughtHandler = handler;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void sleep(long time) throws InterruptedException {
+        public static void sleep(long time) throws InterruptedException {
         Thread.sleep(time, 0);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void sleep(long millis, int nanos) throws InterruptedException {
+        public static void sleep(long millis, int nanos) throws InterruptedException {
         VMThread.sleep(millis, nanos);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.520 -0400", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "E54725B4A6D8EBCC5C0D04CDE0B199CE")
     public synchronized void start() {
     if(hasBeenStarted)        
@@ -840,15 +817,15 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
             IllegalThreadStateException varA31FBD69B89BA6449A6CAE96E199797D_1692122863 = new IllegalThreadStateException("Thread already started.");
             varA31FBD69B89BA6449A6CAE96E199797D_1692122863.addTaint(taint);
             throw varA31FBD69B89BA6449A6CAE96E199797D_1692122863;
-        } 
+        } //End block
         hasBeenStarted = true;
         VMThread.create(this, stackSize);
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (hasBeenStarted) {
+            //throw new IllegalThreadStateException("Thread already started."); 
+        //}
+        //hasBeenStarted = true;
+        //VMThread.create(this, stackSize);
     }
 
     
@@ -856,8 +833,8 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
     @Deprecated
     public final void stop() {
         stop(new ThreadDeath());
-        
-        
+        // ---------- Original Method ----------
+        //stop(new ThreadDeath());
     }
 
     
@@ -868,8 +845,8 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_205471894 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_205471894.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_205471894;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -879,36 +856,32 @@ for(int i = interruptActions.size() - 1;i >= 0;i--)
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1378427027 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1378427027.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1378427027;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.523 -0400", hash_original_method = "E21D755A7854968438B35D363D61DC14", hash_generated_method = "4506463D9D79CBDFD7D1C89AC5834DF9")
     @Override
     public String toString() {
 String varBD9870DFC52F401CAC874F07B86030A0_338731243 =         "Thread[" + name + "," + priority + "," + group.getName() + "]";
         varBD9870DFC52F401CAC874F07B86030A0_338731243.addTaint(taint);
         return varBD9870DFC52F401CAC874F07B86030A0_338731243;
-        
-        
+        // ---------- Original Method ----------
+        //return "Thread[" + name + "," + priority + "," + group.getName() + "]";
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void yield() {
+        public static void yield() {
         VMThread.yield();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean holdsLock(Object object) {
+        public static boolean holdsLock(Object object) {
         return currentThread().vmThread.holdsLock(object);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.525 -0400", hash_original_method = "A23472E398F1697320641EE9BCE07378", hash_generated_method = "43F89B373C1350806380D74769796ED0")
     public void unpark() {
         VMThread vmt = vmThread;
@@ -916,53 +889,52 @@ String varBD9870DFC52F401CAC874F07B86030A0_338731243 =         "Thread[" + name 
         {
             parkState = ParkState.PREEMPTIVELY_UNPARKED;
             return;
-        } 
+        } //End block
         synchronized
 (vmt)        {
 switch(parkState){
             case ParkState.PREEMPTIVELY_UNPARKED:
             {
                 break;
-            } 
+            } //End block
             case ParkState.UNPARKED:
             {
                 parkState = ParkState.PREEMPTIVELY_UNPARKED;
                 break;
-            } 
+            } //End block
             default :
             {
                 parkState = ParkState.UNPARKED;
                 vmt.notifyAll();
                 break;
-            } 
+            } //End block
 }
-        } 
-        
-        
-        
-            
-            
-        
-        
-            
-                
-                    
-                
-                
-                    
-                    
-                
-                
-                    
-                    
-                    
-                
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //VMThread vmt = vmThread;
+        //if (vmt == null) {
+            //parkState = ParkState.PREEMPTIVELY_UNPARKED;
+            //return;
+        //}
+        //synchronized (vmt) {
+            //switch (parkState) {
+                //case ParkState.PREEMPTIVELY_UNPARKED: {
+                    //break;
+                //}
+                //case ParkState.UNPARKED: {
+                    //parkState = ParkState.PREEMPTIVELY_UNPARKED;
+                    //break;
+                //}
+                //default : {
+                    //parkState = ParkState.UNPARKED;
+                    //vmt.notifyAll();
+                    //break;
+                //}
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.526 -0400", hash_original_method = "25C50086F373F8B2A1357A67BAD56EA4", hash_generated_method = "96FD6AD1269350685F94EA0B2B3D5E6E")
     public void parkFor(long nanos) {
         addTaint(nanos);
@@ -972,7 +944,7 @@ switch(parkState){
             AssertionError varA81442E36297E737EB908877E58260E8_1207288659 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_1207288659.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_1207288659;
-        } 
+        } //End block
         synchronized
 (vmt)        {
 switch(parkState){
@@ -980,7 +952,7 @@ switch(parkState){
             {
                 parkState = ParkState.UNPARKED;
                 break;
-            } 
+            } //End block
             case ParkState.UNPARKED:
             {
                 long millis = nanos / NANOS_PER_MILLI;
@@ -989,35 +961,34 @@ switch(parkState){
                 try 
                 {
                     vmt.wait(millis, (int) nanos);
-                } 
+                } //End block
                 catch (InterruptedException ex)
                 {
                     interrupt();
-                } 
+                } //End block
                 finally 
                 {
     if(parkState == ParkState.PARKED)                    
                     {
                         parkState = ParkState.UNPARKED;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 break;
-            } 
+            } //End block
             default :
             {
                 AssertionError varDD3C9D6B0CD003A7EA6BF1335F8817D2_813540893 = new AssertionError(
                             "shouldn't happen: attempt to repark");
                 varDD3C9D6B0CD003A7EA6BF1335F8817D2_813540893.addTaint(taint);
                 throw varDD3C9D6B0CD003A7EA6BF1335F8817D2_813540893;
-            } 
+            } //End block
 }
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.527 -0400", hash_original_method = "98F10CBBB26C44644E065EAD29E052AC", hash_generated_method = "2EC7DFE54C9CE6CBACF8CCBCCC252B01")
     public void parkUntil(long time) {
         addTaint(time);
@@ -1027,32 +998,32 @@ switch(parkState){
             AssertionError varA81442E36297E737EB908877E58260E8_312693345 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_312693345.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_312693345;
-        } 
+        } //End block
         synchronized
 (vmt)        {
             long delayMillis = time - System.currentTimeMillis();
     if(delayMillis <= 0)            
             {
                 parkState = ParkState.UNPARKED;
-            } 
+            } //End block
             else
             {
                 parkFor(delayMillis * NANOS_PER_MILLI);
-            } 
-        } 
-        
-        
-        
-            
-        
-        
-            
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //VMThread vmt = vmThread;
+        //if (vmt == null) {
+            //throw new AssertionError();
+        //}
+        //synchronized (vmt) {
+            //long delayMillis = time - System.currentTimeMillis();
+            //if (delayMillis <= 0) {
+                //parkState = ParkState.UNPARKED;
+            //} else {
+                //parkFor(delayMillis * NANOS_PER_MILLI);
+            //}
+        //}
     }
 
     
@@ -1061,7 +1032,7 @@ switch(parkState){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.528 -0400", hash_original_method = "13ABD2C1475A75B421FFE7ADB6CF97D6", hash_generated_method = "13ABD2C1475A75B421FFE7ADB6CF97D6")
         public ParkState ()
         {
-            
+            //Synthesized constructor
         }
 
 

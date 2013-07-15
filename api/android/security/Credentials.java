@@ -1,6 +1,6 @@
 package android.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class Credentials {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.952 -0400", hash_original_method = "1F7275C8DACF289F4D2AEA7102114D3A", hash_generated_method = "1F7275C8DACF289F4D2AEA7102114D3A")
     public Credentials ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -57,8 +57,7 @@ public class Credentials {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static Credentials getInstance() {
+        public static Credentials getInstance() {
         if (singleton == null) {
             singleton = new Credentials();
         }
@@ -73,17 +72,17 @@ public class Credentials {
         {
             Intent intent = new Intent(UNLOCK_ACTION);
             context.startActivity(intent);
-        } 
+        } //End block
         catch (ActivityNotFoundException e)
         {
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Intent intent = new Intent(UNLOCK_ACTION);
+            //context.startActivity(intent);
+        //} catch (ActivityNotFoundException e) {
+            //Log.w(LOGTAG, e.toString());
+        //}
     }
 
     
@@ -94,17 +93,17 @@ public class Credentials {
         {
             Intent intent = KeyChain.createInstallIntent();
             context.startActivity(intent);
-        } 
+        } //End block
         catch (ActivityNotFoundException e)
         {
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Intent intent = KeyChain.createInstallIntent();
+            //context.startActivity(intent);
+        //} catch (ActivityNotFoundException e) {
+            //Log.w(LOGTAG, e.toString());
+        //}
     }
 
     
@@ -118,23 +117,22 @@ public class Credentials {
             intent.putExtra(EXTRA_PRIVATE_KEY, pair.getPrivate().getEncoded());
             intent.putExtra(EXTRA_PUBLIC_KEY, pair.getPublic().getEncoded());
             context.startActivity(intent);
-        } 
+        } //End block
         catch (ActivityNotFoundException e)
         {
-        } 
-        
-        
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Intent intent = KeyChain.createInstallIntent();
+            //intent.putExtra(EXTRA_PRIVATE_KEY, pair.getPrivate().getEncoded());
+            //intent.putExtra(EXTRA_PUBLIC_KEY, pair.getPublic().getEncoded());
+            //context.startActivity(intent);
+        //} catch (ActivityNotFoundException e) {
+            //Log.w(LOGTAG, e.toString());
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.955 -0400", hash_original_method = "CC15ACCAB16387C45A58B01F639D7908", hash_generated_method = "95818ACAC06CC229F691306D0D70550A")
     public void install(Context context, String type, byte[] value) {
         addTaint(value[0]);
@@ -145,18 +143,18 @@ public class Credentials {
             Intent intent = KeyChain.createInstallIntent();
             intent.putExtra(type, value);
             context.startActivity(intent);
-        } 
+        } //End block
         catch (ActivityNotFoundException e)
         {
-        } 
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Intent intent = KeyChain.createInstallIntent();
+            //intent.putExtra(type, value);
+            //context.startActivity(intent);
+        //} catch (ActivityNotFoundException e) {
+            //Log.w(LOGTAG, e.toString());
+        //}
     }
 
     

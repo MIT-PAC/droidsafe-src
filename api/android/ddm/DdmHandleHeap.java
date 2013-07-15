@@ -1,6 +1,6 @@
 package android.ddm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class DdmHandleHeap extends ChunkHandler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.329 -0400", hash_original_method = "236E8F4E2F7DDA83D2B39E117A0E950F", hash_generated_method = "81842FAD8AC8408A0CA4E2FFE4F623DF")
     private  DdmHandleHeap() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,17 +34,15 @@ public class DdmHandleHeap extends ChunkHandler {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.329 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
     public void connected() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.330 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
     public void disconnected() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -57,72 +55,72 @@ public class DdmHandleHeap extends ChunkHandler {
 Chunk var507C28C650720AB8AB098F5E6CC9252D_534347962 =             handleHPIF(request);
             var507C28C650720AB8AB098F5E6CC9252D_534347962.addTaint(taint);
             return var507C28C650720AB8AB098F5E6CC9252D_534347962;
-        } 
+        } //End block
         else
     if(type == CHUNK_HPSG)        
         {
 Chunk var15468615A56ED6898585EB8EBE92B8C9_111196512 =             handleHPSGNHSG(request, false);
             var15468615A56ED6898585EB8EBE92B8C9_111196512.addTaint(taint);
             return var15468615A56ED6898585EB8EBE92B8C9_111196512;
-        } 
+        } //End block
         else
     if(type == CHUNK_HPDU)        
         {
 Chunk var36FEE34DA4864238209E222778A0525B_1556915582 =             handleHPDU(request);
             var36FEE34DA4864238209E222778A0525B_1556915582.addTaint(taint);
             return var36FEE34DA4864238209E222778A0525B_1556915582;
-        } 
+        } //End block
         else
     if(type == CHUNK_HPDS)        
         {
 Chunk varA573BA562AE48603900019E1752B86AA_85866218 =             handleHPDS(request);
             varA573BA562AE48603900019E1752B86AA_85866218.addTaint(taint);
             return varA573BA562AE48603900019E1752B86AA_85866218;
-        } 
+        } //End block
         else
     if(type == CHUNK_NHSG)        
         {
 Chunk var6A27A47C08E60C0724795EBF9540E597_444593612 =             handleHPSGNHSG(request, true);
             var6A27A47C08E60C0724795EBF9540E597_444593612.addTaint(taint);
             return var6A27A47C08E60C0724795EBF9540E597_444593612;
-        } 
+        } //End block
         else
     if(type == CHUNK_HPGC)        
         {
 Chunk var191DCB83DCDCFF8846E6D6F23DBBED00_1970324689 =             handleHPGC(request);
             var191DCB83DCDCFF8846E6D6F23DBBED00_1970324689.addTaint(taint);
             return var191DCB83DCDCFF8846E6D6F23DBBED00_1970324689;
-        } 
+        } //End block
         else
     if(type == CHUNK_REAE)        
         {
 Chunk var92D91D3C20F148B1B2FC3B0F6F026D80_943901448 =             handleREAE(request);
             var92D91D3C20F148B1B2FC3B0F6F026D80_943901448.addTaint(taint);
             return var92D91D3C20F148B1B2FC3B0F6F026D80_943901448;
-        } 
+        } //End block
         else
     if(type == CHUNK_REAQ)        
         {
 Chunk var2A5B2934F5E7FF08D77FD810C2087D5D_1301390437 =             handleREAQ(request);
             var2A5B2934F5E7FF08D77FD810C2087D5D_1301390437.addTaint(taint);
             return var2A5B2934F5E7FF08D77FD810C2087D5D_1301390437;
-        } 
+        } //End block
         else
     if(type == CHUNK_REAL)        
         {
 Chunk var3C20A4609E2BAEC2C58361F49A9C8F7C_1582987011 =             handleREAL(request);
             var3C20A4609E2BAEC2C58361F49A9C8F7C_1582987011.addTaint(taint);
             return var3C20A4609E2BAEC2C58361F49A9C8F7C_1582987011;
-        } 
+        } //End block
         else
         {
             RuntimeException var87CCC2E1E27D81731A9B6FB9950FC20F_2087491200 = new RuntimeException("Unknown packet "
                 + ChunkHandler.name(type));
             var87CCC2E1E27D81731A9B6FB9950FC20F_2087491200.addTaint(taint);
             throw var87CCC2E1E27D81731A9B6FB9950FC20F_2087491200;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -137,24 +135,24 @@ Chunk var3C20A4609E2BAEC2C58361F49A9C8F7C_1582987011 =             handleREAL(re
 Chunk var873AC430B8903268F5CD07959196B78A_46324647 =             createFailChunk(1, "Unsupported HPIF what");
             var873AC430B8903268F5CD07959196B78A_46324647.addTaint(taint);
             return var873AC430B8903268F5CD07959196B78A_46324647;
-        } 
+        } //End block
         else
         {
 Chunk var540C13E9E156B687226421B24F2DF178_1854654097 =             null;
             var540C13E9E156B687226421B24F2DF178_1854654097.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1854654097;
-        } 
-        
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ByteBuffer in = wrapChunk(request);
+        //int when = in.get();
+        //if (false)
+            //Log.v("ddm-heap", "Heap segment enable: when=" + when);
+        //boolean ok = DdmVmInternal.heapInfoNotify(when);
+        //if (!ok) {
+            //return createFailChunk(1, "Unsupported HPIF what");
+        //} else {
+            //return null;        
+        //}
     }
 
     
@@ -171,26 +169,26 @@ Chunk var540C13E9E156B687226421B24F2DF178_1854654097 =             null;
 Chunk varC240AEF29521E6BA435BD666D35E414D_837119648 =             createFailChunk(1, "Unsupported HPSG what/when");
             varC240AEF29521E6BA435BD666D35E414D_837119648.addTaint(taint);
             return varC240AEF29521E6BA435BD666D35E414D_837119648;
-        } 
+        } //End block
         else
         {
 Chunk var540C13E9E156B687226421B24F2DF178_1232126291 =             null;
             var540C13E9E156B687226421B24F2DF178_1232126291.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1232126291;
-        } 
-        
-        
-        
-        
-        
-            
-                
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ByteBuffer in = wrapChunk(request);
+        //int when = in.get();
+        //int what = in.get();
+        //if (false)
+            //Log.v("ddm-heap", "Heap segment enable: when=" + when
+                //+ ", what=" + what + ", isNative=" + isNative);
+        //boolean ok = DdmVmInternal.heapSegmentNotify(when, what, isNative);
+        //if (!ok) {
+            //return createFailChunk(1, "Unsupported HPSG what/when");
+        //} else {
+            //return null;        
+        //}
     }
 
     
@@ -207,43 +205,43 @@ Chunk var540C13E9E156B687226421B24F2DF178_1232126291 =             null;
         {
             Debug.dumpHprofData(fileName);
             result = 0;
-        } 
+        } //End block
         catch (UnsupportedOperationException uoe)
         {
             result = -1;
-        } 
+        } //End block
         catch (IOException ioe)
         {
             result = -1;
-        } 
+        } //End block
         catch (RuntimeException re)
         {
             result = -1;
-        } 
+        } //End block
         byte[] reply = { result };
 Chunk var75564E282821E05102CC43D870C8A28C_1166382639 =         new Chunk(CHUNK_HPDU, reply, 0, reply.length);
         var75564E282821E05102CC43D870C8A28C_1166382639.addTaint(taint);
         return var75564E282821E05102CC43D870C8A28C_1166382639;
-        
-        
-        
-        
-        
-        
-            
-        
-            
-            
-        
-            
-            
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //ByteBuffer in = wrapChunk(request);
+        //byte result;
+        //int len = in.getInt();
+        //String fileName = getString(in, len);
+        //if (false)
+            //Log.d("ddm-heap", "Heap dump: file='" + fileName + "'");
+        //try {
+            //Debug.dumpHprofData(fileName);
+            //result = 0;
+        //} catch (UnsupportedOperationException uoe) {
+            //Log.w("ddm-heap", "hprof dumps not supported in this VM");
+            //result = -1;
+        //} catch (IOException ioe) {
+            //result = -1;
+        //} catch (RuntimeException re) {
+            //result = -1;
+        //}
+        //byte[] reply = { result };
+        //return new Chunk(CHUNK_HPDU, reply, 0, reply.length);
     }
 
     
@@ -258,46 +256,46 @@ Chunk var75564E282821E05102CC43D870C8A28C_1166382639 =         new Chunk(CHUNK_H
         try 
         {
             Debug.dumpHprofDataDdms();
-        } 
+        } //End block
         catch (UnsupportedOperationException uoe)
         {
             failMsg = "hprof dumps not supported in this VM";
-        } 
+        } //End block
         catch (RuntimeException re)
         {
             failMsg = "Exception: " + re.getMessage();
-        } 
+        } //End block
     if(failMsg != null)        
         {
 Chunk varF1E25A8E8DCA43ADCE409B073A9D9752_1992867133 =             createFailChunk(1, failMsg);
             varF1E25A8E8DCA43ADCE409B073A9D9752_1992867133.addTaint(taint);
             return varF1E25A8E8DCA43ADCE409B073A9D9752_1992867133;
-        } 
+        } //End block
         else
         {
 Chunk var540C13E9E156B687226421B24F2DF178_111801717 =             null;
             var540C13E9E156B687226421B24F2DF178_111801717.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_111801717;
-        } 
-        
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
-            
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ByteBuffer in = wrapChunk(request);
+        //byte result;
+        //if (false)
+            //Log.d("ddm-heap", "Heap dump: [DDMS]");
+        //String failMsg = null;
+        //try {
+            //Debug.dumpHprofDataDdms();
+        //} catch (UnsupportedOperationException uoe) {
+            //failMsg = "hprof dumps not supported in this VM";
+        //} catch (RuntimeException re) {
+            //failMsg = "Exception: " + re.getMessage();
+        //}
+        //if (failMsg != null) {
+            //Log.w("ddm-heap", failMsg);
+            //return createFailChunk(1, failMsg);
+        //} else {
+            //return null;
+        //}
     }
 
     
@@ -310,11 +308,11 @@ Chunk var540C13E9E156B687226421B24F2DF178_111801717 =             null;
 Chunk var540C13E9E156B687226421B24F2DF178_613919103 =         null;
         var540C13E9E156B687226421B24F2DF178_613919103.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_613919103;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (false)
+            //Log.d("ddm-heap", "Heap GC request");
+        //System.gc();
+        //return null;
     }
 
     
@@ -330,14 +328,14 @@ Chunk var540C13E9E156B687226421B24F2DF178_613919103 =         null;
 Chunk var540C13E9E156B687226421B24F2DF178_645653735 =         null;
         var540C13E9E156B687226421B24F2DF178_645653735.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_645653735;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ByteBuffer in = wrapChunk(request);
+        //boolean enable;
+        //enable = (in.get() != 0);
+        //if (false)
+            //Log.d("ddm-heap", "Recent allocation enable request: " + enable);
+        //DdmVmInternal.enableRecentAllocations(enable);
+        //return null;
     }
 
     
@@ -349,10 +347,10 @@ Chunk var540C13E9E156B687226421B24F2DF178_645653735 =         null;
 Chunk var3C84717D4949F40EA85D8C58F4D81EF2_449048762 =         new Chunk(CHUNK_REAQ, reply, 0, reply.length);
         var3C84717D4949F40EA85D8C58F4D81EF2_449048762.addTaint(taint);
         return var3C84717D4949F40EA85D8C58F4D81EF2_449048762;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] reply = new byte[1];
+        //reply[0] = DdmVmInternal.getRecentAllocationStatus() ? (byte)1 :(byte)0;
+        //return new Chunk(CHUNK_REAQ, reply, 0, reply.length);
     }
 
     
@@ -365,11 +363,11 @@ Chunk var3C84717D4949F40EA85D8C58F4D81EF2_449048762 =         new Chunk(CHUNK_RE
 Chunk varA8E3078214ACAD76145467E844E0C4F1_1332132437 =         new Chunk(CHUNK_REAL, reply, 0, reply.length);
         varA8E3078214ACAD76145467E844E0C4F1_1332132437.addTaint(taint);
         return varA8E3078214ACAD76145467E844E0C4F1_1332132437;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (false)
+            //Log.d("ddm-heap", "Recent allocations request");
+        //byte[] reply = DdmVmInternal.getRecentAllocations();
+        //return new Chunk(CHUNK_REAL, reply, 0, reply.length);
     }
 
     

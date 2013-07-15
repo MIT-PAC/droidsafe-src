@@ -1,6 +1,6 @@
 package android.view.inputmethod;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,11 +25,10 @@ public class ExtractedTextRequest implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.263 -0400", hash_original_method = "8B43E5E3CB5CAEC30CB660AE9DA9D566", hash_generated_method = "8B43E5E3CB5CAEC30CB660AE9DA9D566")
     public ExtractedTextRequest ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.264 -0400", hash_original_method = "86DA45F615C261383D752E615DE3B691", hash_generated_method = "7AA16D444AD1A93CB1DE944C2DFCC1F5")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -38,22 +37,21 @@ public class ExtractedTextRequest implements Parcelable {
         dest.writeInt(this.flags);
         dest.writeInt(hintMaxLines);
         dest.writeInt(hintMaxChars);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeInt(token);
+        //dest.writeInt(this.flags);
+        //dest.writeInt(hintMaxLines);
+        //dest.writeInt(hintMaxChars);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.265 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4FEB778D82D5DE16B25C884AE3AA0448")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2035285052 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1581686100 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1581686100;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -74,7 +72,7 @@ public class ExtractedTextRequest implements Parcelable {
             return new ExtractedTextRequest[size];
         }
     };
-    
+    // orphaned legacy method
     public ExtractedTextRequest createFromParcel(Parcel source) {
             ExtractedTextRequest res = new ExtractedTextRequest();
             res.token = source.readInt();
@@ -84,7 +82,7 @@ public class ExtractedTextRequest implements Parcelable {
             return res;
         }
     
-    
+    // orphaned legacy method
     public ExtractedTextRequest[] newArray(int size) {
             return new ExtractedTextRequest[size];
         }

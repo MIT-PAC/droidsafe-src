@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class MemInfoReader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.752 -0400", hash_original_method = "0A3FF658B31652AA0351B8E33261A030", hash_generated_method = "0A3FF658B31652AA0351B8E33261A030")
     public MemInfoReader ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -39,7 +39,7 @@ public class MemInfoReader {
             boolean var68934A3E9455FA72420237EB05902327_1991628014 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2145113688 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2145113688;
-        } 
+        } //End block
 for(int i=0;i<N;i++)
         {
     if(buffer[index+i] != text.charAt(i))            
@@ -47,22 +47,22 @@ for(int i=0;i<N;i++)
                 boolean var68934A3E9455FA72420237EB05902327_84417235 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1340880819 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1340880819;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_2034905585 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2080335854 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2080335854;
-        
-        
-        
-            
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int N = text.length();
+        //if ((index+N) >= buffer.length) {
+            //return false;
+        //}
+        //for (int i=0; i<N; i++) {
+            //if (buffer[index+i] != text.charAt(i)) {
+                //return false;
+            //}
+        //}
+        //return true;
     }
 
     
@@ -82,32 +82,32 @@ for(int i=0;i<N;i++)
                     && buffer[index] <= '9')                
                 {
                     index++;
-                } 
+                } //End block
                 String str = new String(buffer, 0, start, index-start);
                 long var757A25024648D172453F1B679709E510_2015979120 = (((long)Integer.parseInt(str)) * 1024);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_892000162 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_892000162;
-            } 
+            } //End block
             index++;
-        } 
+        } //End block
         long varCFCD208495D565EF66E7DFF9F98764DA_2038587244 = (0);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1651413956 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1651413956;
-        
-        
-            
-                
-                
-                
-                    
-                    
-                
-                
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //while (index < buffer.length && buffer[index] != '\n') {
+            //if (buffer[index] >= '0' && buffer[index] <= '9') {
+                //int start = index;
+                //index++;
+                //while (index < buffer.length && buffer[index] >= '0'
+                    //&& buffer[index] <= '9') {
+                    //index++;
+                //}
+                //String str = new String(buffer, 0, start, index-start);
+                //return ((long)Integer.parseInt(str)) * 1024;
+            //}
+            //index++;
+        //}
+        //return 0;
     }
 
     
@@ -131,73 +131,70 @@ for(int i=0;i<len && count < 3;i++)
                     i += 8;
                     mTotalSize = extractMemValue(mBuffer, i);
                     count++;
-                } 
+                } //End block
                 else
     if(matchText(mBuffer, i, "MemFree"))                
                 {
                     i += 7;
                     mFreeSize = extractMemValue(mBuffer, i);
                     count++;
-                } 
+                } //End block
                 else
     if(matchText(mBuffer, i, "Cached"))                
                 {
                     i += 6;
                     mCachedSize = extractMemValue(mBuffer, i);
                     count++;
-                } 
+                } //End block
                 while
 (i < BUFLEN && mBuffer[i] != '\n')                
                 {
                     i++;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (java.io.FileNotFoundException e)
         {
-        } 
+        } //End block
         catch (java.io.IOException e)
         {
-        } 
+        } //End block
         finally 
         {
             StrictMode.setThreadPolicy(savedPolicy);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.756 -0400", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "90885A48EA5E7B01097968173B9C24D5")
     public long getTotalSize() {
         long varF186B07246F1198E09E61F10F37B5A17_1458136315 = (mTotalSize);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_863028386 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_863028386;
-        
-        
+        // ---------- Original Method ----------
+        //return mTotalSize;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.757 -0400", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "85B895ED113E7E1806EF743DAE690BCA")
     public long getFreeSize() {
         long var869BB521FA1BF2D70B737238BCDB46CA_932176374 = (mFreeSize);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1382707644 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1382707644;
-        
-        
+        // ---------- Original Method ----------
+        //return mFreeSize;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.757 -0400", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "25ABAABE5746BFB9989452DA93AE1E6F")
     public long getCachedSize() {
         long var309F6866C44A3EB7FB1C2356E4701E1A_420177332 = (mCachedSize);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_335594321 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_335594321;
-        
-        
+        // ---------- Original Method ----------
+        //return mCachedSize;
     }
 
     

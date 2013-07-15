@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,11 +12,10 @@ public final class ContentLanguageList extends SIPHeaderList<ContentLanguage> {
     public  ContentLanguageList() {
         super(ContentLanguage.class,
             ContentLanguageHeader.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.274 -0400", hash_original_method = "7F1D883A3CFE2424D76B8075C1055DCD", hash_generated_method = "191FDB9F79AAE38FF0A80A3EC2E0AF4D")
     public Object clone() {
         ContentLanguageList retval = new ContentLanguageList();
@@ -24,10 +23,10 @@ public final class ContentLanguageList extends SIPHeaderList<ContentLanguage> {
 Object varF9E19AD6135C970F387F77C6F3DE4477_751627956 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_751627956.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_751627956;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ContentLanguageList retval = new ContentLanguageList();
+        //retval.clonehlist(this.hlist);
+        //return retval;
     }
 
     

@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -71,13 +71,13 @@ public class TimedText {
             IllegalArgumentException varEDA0C29D002C2E6C68B5ACC851095771_1446107349 = new IllegalArgumentException("parseParcel() fails");
             varEDA0C29D002C2E6C68B5ACC851095771_1446107349.addTaint(taint);
             throw varEDA0C29D002C2E6C68B5ACC851095771_1446107349;
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mParcel.unmarshall(obj, 0, obj.length);
+        //if (!parseParcel()) {
+            //mKeyObjectMap.clear();
+            //throw new IllegalArgumentException("parseParcel() fails");
+        //}
     }
 
     
@@ -89,7 +89,7 @@ public class TimedText {
             boolean var68934A3E9455FA72420237EB05902327_923999524 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_157806041 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_157806041;
-        } 
+        } //End block
         int type = mParcel.readInt();
     if(type == KEY_LOCAL_SETTING)        
         {
@@ -99,7 +99,7 @@ public class TimedText {
                 boolean var68934A3E9455FA72420237EB05902327_133659809 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_673577280 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_673577280;
-            } 
+            } //End block
             int mStartTimeMs = mParcel.readInt();
             mKeyObjectMap.put(type, mStartTimeMs);
             type = mParcel.readInt();
@@ -108,19 +108,19 @@ public class TimedText {
                 boolean var68934A3E9455FA72420237EB05902327_420545636 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_405955974 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_405955974;
-            } 
+            } //End block
             mTextStruct = new Text();
             mTextStruct.textLen = mParcel.readInt();
             mTextStruct.text = mParcel.createByteArray();
             mKeyObjectMap.put(type, mTextStruct);
-        } 
+        } //End block
         else
     if(type != KEY_GLOBAL_SETTING)        
         {
             boolean var68934A3E9455FA72420237EB05902327_344339488 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_838061532 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_838061532;
-        } 
+        } //End block
         while
 (mParcel.dataAvail() > 0)        
         {
@@ -130,7 +130,7 @@ public class TimedText {
                 boolean var68934A3E9455FA72420237EB05902327_1429215215 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435368019 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_435368019;
-            } 
+            } //End block
             Object object = null;
 switch(key){
             case KEY_STRUCT_STYLE_LIST:
@@ -138,55 +138,55 @@ switch(key){
                 readStyle();
                 object = mStyleList;
                 break;
-            } 
+            } //End block
             case KEY_STRUCT_FONT_LIST:
             {
                 readFont();
                 object = mFontList;
                 break;
-            } 
+            } //End block
             case KEY_STRUCT_HIGHLIGHT_LIST:
             {
                 readHighlight();
                 object = mHighlightPosList;
                 break;
-            } 
+            } //End block
             case KEY_STRUCT_KARAOKE_LIST:
             {
                 readKaraoke();
                 object = mKaraokeList;
                 break;
-            } 
+            } //End block
             case KEY_STRUCT_HYPER_TEXT_LIST:
             {
                 readHyperText();
                 object = mHyperTextList;
                 break;
-            } 
+            } //End block
             case KEY_STRUCT_BLINKING_TEXT_LIST:
             {
                 readBlinkingText();
                 object = mBlinkingPosList;
                 break;
-            } 
+            } //End block
             case KEY_WRAP_TEXT:
             {
                 mWrapText = mParcel.readInt();
                 object = mWrapText;
                 break;
-            } 
+            } //End block
             case KEY_HIGHLIGHT_COLOR_RGBA:
             {
                 mHighlightColorRGBA = mParcel.readInt();
                 object = mHighlightColorRGBA;
                 break;
-            } 
+            } //End block
             case KEY_DISPLAY_FLAGS:
             {
                 mDisplayFlags = mParcel.readInt();
                 object = mDisplayFlags;
                 break;
-            } 
+            } //End block
             case KEY_STRUCT_JUSTIFICATION:
             {
                 mJustification = new Justification();
@@ -194,13 +194,13 @@ switch(key){
                 mJustification.verticalJustification = mParcel.readInt();
                 object = mJustification;
                 break;
-            } 
+            } //End block
             case KEY_BACKGROUND_COLOR_RGBA:
             {
                 mBackgroundColorRGBA = mParcel.readInt();
                 object = mBackgroundColorRGBA;
                 break;
-            } 
+            } //End block
             case KEY_STRUCT_TEXT_POS:
             {
                 mTextPos = new TextPos();
@@ -210,32 +210,32 @@ switch(key){
                 mTextPos.right = mParcel.readInt();
                 object = mTextPos;
                 break;
-            } 
+            } //End block
             case KEY_SCROLL_DELAY:
             {
                 mScrollDelay = mParcel.readInt();
                 object = mScrollDelay;
                 break;
-            } 
+            } //End block
             default:
             {
                 break;
-            } 
+            } //End block
 }    if(object != null)            
             {
     if(mKeyObjectMap.containsKey(key))                
                 {
                     mKeyObjectMap.remove(key);
-                } 
+                } //End block
                 mKeyObjectMap.put(key, object);
-            } 
-        } 
+            } //End block
+        } //End block
         mParcel.recycle();
         boolean varB326B5062B2F0E69046810717534CB09_273808462 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1429679526 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1429679526;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -252,17 +252,17 @@ switch(key){
             {
                 style.startChar = mParcel.readInt();
                 break;
-            } 
+            } //End block
             case KEY_END_CHAR:
             {
                 style.endChar = mParcel.readInt();
                 break;
-            } 
+            } //End block
             case KEY_FONT_ID:
             {
                 style.fontID = mParcel.readInt();
                 break;
-            } 
+            } //End block
             case KEY_STYLE_FLAGS:
             {
                 int flags = mParcel.readInt();
@@ -270,32 +270,32 @@ switch(key){
                 style.isItalic = ((flags % 4) >= 2);
                 style.isUnderlined = ((flags / 4) == 1);
                 break;
-            } 
+            } //End block
             case KEY_FONT_SIZE:
             {
                 style.fontSize = mParcel.readInt();
                 break;
-            } 
+            } //End block
             case KEY_TEXT_COLOR_RGBA:
             {
                 style.colorRGBA = mParcel.readInt();
                 break;
-            } 
+            } //End block
             default:
             {
                 mParcel.setDataPosition(mParcel.dataPosition() - 4);
                 endOfStyle = true;
                 break;
-            } 
+            } //End block
 }
-        } 
+        } //End block
     if(mStyleList == null)        
         {
             mStyleList = new ArrayList<Style>();
-        } 
+        } //End block
         mStyleList.add(style);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -312,22 +312,22 @@ for(int i = 0;i < entryCount;i++)
     if(mFontList == null)            
             {
                 mFontList = new ArrayList<Font>();
-            } 
+            } //End block
             mFontList.add(font);
-        } 
-        
-        
-        
-            
-            
-            
-            
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int entryCount = mParcel.readInt();
+        //for (int i = 0; i < entryCount; i++) {
+            //Font font = new Font();
+            //font.ID = mParcel.readInt();
+            //int nameLen = mParcel.readInt();
+            //byte[] text = mParcel.createByteArray();
+            //font.name = new String(text, 0, nameLen);
+            //if (mFontList == null) {
+                //mFontList = new ArrayList<Font>();
+            //}
+            //mFontList.add(font);
+        //}
     }
 
     
@@ -339,16 +339,16 @@ for(int i = 0;i < entryCount;i++)
     if(mHighlightPosList == null)        
         {
             mHighlightPosList = new ArrayList<CharPos>();
-        } 
+        } //End block
         mHighlightPosList.add(pos);
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //CharPos pos = new CharPos();
+        //pos.startChar = mParcel.readInt();
+        //pos.endChar = mParcel.readInt();
+        //if (mHighlightPosList == null) {
+            //mHighlightPosList = new ArrayList<CharPos>();
+        //}
+        //mHighlightPosList.add(pos);
     }
 
     
@@ -365,22 +365,22 @@ for(int i = 0;i < entryCount;i++)
     if(mKaraokeList == null)            
             {
                 mKaraokeList = new ArrayList<Karaoke>();
-            } 
+            } //End block
             mKaraokeList.add(kara);
-        } 
-        
-        
-        
-            
-            
-            
-            
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int entryCount = mParcel.readInt();
+        //for (int i = 0; i < entryCount; i++) {
+            //Karaoke kara = new Karaoke();
+            //kara.startTimeMs = mParcel.readInt();
+            //kara.endTimeMs = mParcel.readInt();
+            //kara.startChar = mParcel.readInt();
+            //kara.endChar = mParcel.readInt();
+            //if (mKaraokeList == null) {
+                //mKaraokeList = new ArrayList<Karaoke>();
+            //}
+            //mKaraokeList.add(kara);
+        //}
     }
 
     
@@ -398,22 +398,22 @@ for(int i = 0;i < entryCount;i++)
     if(mHyperTextList == null)        
         {
             mHyperTextList = new ArrayList<HyperText>();
-        } 
+        } //End block
         mHyperTextList.add(hyperText);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //HyperText hyperText = new HyperText();
+        //hyperText.startChar = mParcel.readInt();
+        //hyperText.endChar = mParcel.readInt();
+        //int len = mParcel.readInt();
+        //byte[] url = mParcel.createByteArray();
+        //hyperText.URL = new String(url, 0, len);
+        //len = mParcel.readInt();
+        //byte[] alt = mParcel.createByteArray();
+        //hyperText.altString = new String(alt, 0, len);
+        //if (mHyperTextList == null) {
+            //mHyperTextList = new ArrayList<HyperText>();
+        //}
+        //mHyperTextList.add(hyperText);
     }
 
     
@@ -425,16 +425,16 @@ for(int i = 0;i < entryCount;i++)
     if(mBlinkingPosList == null)        
         {
             mBlinkingPosList = new ArrayList<CharPos>();
-        } 
+        } //End block
         mBlinkingPosList.add(blinkingPos);
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //CharPos blinkingPos = new CharPos();
+        //blinkingPos.startChar = mParcel.readInt();
+        //blinkingPos.endChar = mParcel.readInt();
+        //if (mBlinkingPosList == null) {
+            //mBlinkingPosList = new ArrayList<CharPos>();
+        //}
+        //mBlinkingPosList.add(blinkingPos);
     }
 
     
@@ -447,16 +447,16 @@ for(int i = 0;i < entryCount;i++)
             boolean var68934A3E9455FA72420237EB05902327_1483482328 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1017520846 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1017520846;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_734933952 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1072181742 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1072181742;
-        
-        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!((key >= FIRST_PUBLIC_KEY) && (key <= LAST_PUBLIC_KEY))
+                //&& !((key >= FIRST_PRIVATE_KEY) && (key <= LAST_PRIVATE_KEY))) {
+            //return false;
+        //}
+        //return true;
     }
 
     
@@ -468,15 +468,15 @@ for(int i = 0;i < entryCount;i++)
             boolean varB326B5062B2F0E69046810717534CB09_864525185 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1674998538 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1674998538;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_555940110 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_804384854 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_804384854;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isValidKey(key) && mKeyObjectMap.containsKey(key)) {
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -485,8 +485,8 @@ for(int i = 0;i < entryCount;i++)
 Set varBBC4C0AAD9644B71B43DA8509843FD46_381286862 =         mKeyObjectMap.keySet();
         varBBC4C0AAD9644B71B43DA8509843FD46_381286862.addTaint(taint);
         return varBBC4C0AAD9644B71B43DA8509843FD46_381286862;
-        
-        
+        // ---------- Original Method ----------
+        //return mKeyObjectMap.keySet();
     }
 
     
@@ -498,19 +498,19 @@ Set varBBC4C0AAD9644B71B43DA8509843FD46_381286862 =         mKeyObjectMap.keySet
 Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap.get(key);
             var4F2B18D07722BAF49FA9B258E4A072EC_993769734.addTaint(taint);
             return var4F2B18D07722BAF49FA9B258E4A072EC_993769734;
-        } 
+        } //End block
         else
         {
             IllegalArgumentException var745A41FEF26C5745B86797818E5AD378_1742816211 = new IllegalArgumentException("Invalid key: " + key);
             var745A41FEF26C5745B86797818E5AD378_1742816211.addTaint(taint);
             throw var745A41FEF26C5745B86797818E5AD378_1742816211;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (containsKey(key)) {
+            //return mKeyObjectMap.get(key);
+        //} else {
+            //throw new IllegalArgumentException("Invalid key: " + key);
+        //}
     }
 
     
@@ -524,7 +524,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.836 -0400", hash_original_method = "3E1AB979E39DEC5F091AD71588A6931C", hash_generated_method = "922FB99CB23AA4250B8765DF5A1FEC0F")
         public  Text() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -542,7 +542,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.836 -0400", hash_original_method = "B16942A4D6AA45C219307E42B3F01C5E", hash_generated_method = "F71D3E39F8F9FA0E1A28D452EF3FE562")
         public  CharPos() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -566,7 +566,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.837 -0400", hash_original_method = "533CD86BF5A1B326154330F052078462", hash_generated_method = "3152B4C699CD5F269C29FE4769308AF8")
         public  TextPos() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -584,7 +584,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.837 -0400", hash_original_method = "9DE1082C41237E4CAACC983D55330CCE", hash_generated_method = "26C09D2F4C5000E014367858AB5DB8E2")
         public  Justification() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -620,7 +620,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.839 -0400", hash_original_method = "A73FFEA889FA48444DBD29C5B6A4F060", hash_generated_method = "0FF6A793A759E36F2F6633297C092FE3")
         public  Style() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -638,7 +638,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.839 -0400", hash_original_method = "9DB8E4889CA776938A054F1FA406F93D", hash_generated_method = "42C8369941244D1B2850DE898FCFF61F")
         public  Font() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -662,7 +662,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.840 -0400", hash_original_method = "20387F8DBBE28B02B4D4A333BCD1DC01", hash_generated_method = "ECDF11726A4CDE2B715F6BEE4C8BE9B0")
         public  Karaoke() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -686,7 +686,7 @@ Object var4F2B18D07722BAF49FA9B258E4A072EC_993769734 =             mKeyObjectMap
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.841 -0400", hash_original_method = "B6B5545C3ABD1F1E6601A7A1C2669923", hash_generated_method = "E874923A6E6E7A9905BA6F463A66E5CE")
         public  HyperText() {
-            
+            // ---------- Original Method ----------
         }
 
         

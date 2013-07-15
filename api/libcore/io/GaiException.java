@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public final class GaiException extends RuntimeException {
     public  GaiException(String functionName, int error) {
         this.functionName = functionName;
         this.error = error;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.functionName = functionName;
+        //this.error = error;
     }
 
     
@@ -31,9 +31,9 @@ public final class GaiException extends RuntimeException {
         addTaint(cause.getTaint());
         this.functionName = functionName;
         this.error = error;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.functionName = functionName;
+        //this.error = error;
     }
 
     
@@ -44,18 +44,18 @@ public final class GaiException extends RuntimeException {
     if(gaiName == null)        
         {
             gaiName = "GAI_ error " + error;
-        } 
+        } //End block
         String description = Libcore.os.gai_strerror(error);
 String var701BE8BF919F58E6C9A5E8912E1F0ED7_1425765131 =         functionName + " failed: " + gaiName + " (" + description + ")";
         var701BE8BF919F58E6C9A5E8912E1F0ED7_1425765131.addTaint(taint);
         return var701BE8BF919F58E6C9A5E8912E1F0ED7_1425765131;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //String gaiName = OsConstants.gaiName(error);
+        //if (gaiName == null) {
+            //gaiName = "GAI_ error " + error;
+        //}
+        //String description = Libcore.os.gai_strerror(error);
+        //return functionName + " failed: " + gaiName + " (" + description + ")";
     }
 
     
@@ -66,10 +66,10 @@ String var701BE8BF919F58E6C9A5E8912E1F0ED7_1425765131 =         functionName + "
         newException.initCause(this);
         newException.addTaint(taint);
         throw newException;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //UnknownHostException newException = new UnknownHostException(detailMessage);
+        //newException.initCause(this);
+        //throw newException;
     }
 
     
@@ -78,8 +78,8 @@ String var701BE8BF919F58E6C9A5E8912E1F0ED7_1425765131 =         functionName + "
         java.net.UnknownHostException var5F7B19AF1BB87D36470BEC0E68B99E1A_1500317859 = rethrowAsUnknownHostException(getMessage());
         var5F7B19AF1BB87D36470BEC0E68B99E1A_1500317859.addTaint(taint);
         throw var5F7B19AF1BB87D36470BEC0E68B99E1A_1500317859;
-        
-        
+        // ---------- Original Method ----------
+        //throw rethrowAsUnknownHostException(getMessage());
     }
 
     

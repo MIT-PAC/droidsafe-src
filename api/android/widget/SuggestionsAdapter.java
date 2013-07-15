@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -109,61 +109,58 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
             long var7243F8BE75253AFBADF7477867021F8B_1152233358 = (delay);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1778623744 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1778623744;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (constraint == null) return 0;
+            //long delay = constraint.length() < mPreviousLength ? DELETE_KEY_POST_DELAY : 0;
+            //mPreviousLength = constraint.length();
+            //return delay;
         }
 });
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                
-            
-        
+        // ---------- Original Method ----------
+        //mSearchManager = (SearchManager) mContext.getSystemService(Context.SEARCH_SERVICE);
+        //mSearchView = searchView;
+        //mSearchable = searchable;
+        //Context activityContext = mSearchable.getActivityContext(mContext);
+        //mProviderContext = mSearchable.getProviderContext(mContext, activityContext);
+        //mOutsideDrawablesCache = outsideDrawablesCache;
+        //getFilter().setDelayer(new Filter.Delayer() {
+            //private int mPreviousLength = 0;
+            //public long getPostingDelay(CharSequence constraint) {
+                //if (constraint == null) return 0;
+                //long delay = constraint.length() < mPreviousLength ? DELETE_KEY_POST_DELAY : 0;
+                //mPreviousLength = constraint.length();
+                //return delay;
+            //}
+        //});
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.046 -0400", hash_original_method = "7E34E1FAECF41C65A10194A4E061AD6D", hash_generated_method = "C864B094F1586B649248412EF85B9AC7")
     public void setQueryRefinement(int refineWhat) {
         mQueryRefinement = refineWhat;
-        
-        
+        // ---------- Original Method ----------
+        //mQueryRefinement = refineWhat;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.046 -0400", hash_original_method = "986E9EFF340372ED6B6AF1389D87F9A0", hash_generated_method = "F62C1A0AB1D1BC8E01589B9A316AA2BA")
     public int getQueryRefinement() {
         int var69EE6C3CFA8048276879EF4C552B5C72_1709759019 = (mQueryRefinement);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1666821903 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1666821903;
-        
-        
+        // ---------- Original Method ----------
+        //return mQueryRefinement;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.046 -0400", hash_original_method = "715CB29FF3CEE320E11EC1BD997C9D63", hash_generated_method = "BCA3C05031B289DD8B941C6F84AB4214")
     @Override
     public boolean hasStableIds() {
         boolean var68934A3E9455FA72420237EB05902327_1173776803 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_967696843 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_967696843;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -181,7 +178,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListene
 Cursor var540C13E9E156B687226421B24F2DF178_1566889160 =             null;
             var540C13E9E156B687226421B24F2DF178_1566889160.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1566889160;
-        } 
+        } //End block
         try 
         {
             cursor = mSearchManager.getSuggestions(mSearchable, query, QUERY_LIMIT);
@@ -191,32 +188,32 @@ Cursor var540C13E9E156B687226421B24F2DF178_1566889160 =             null;
 Cursor varADA3C208DF1628BA935498FB38A6BBD3_1966560363 =                 cursor;
                 varADA3C208DF1628BA935498FB38A6BBD3_1966560363.addTaint(taint);
                 return varADA3C208DF1628BA935498FB38A6BBD3_1966560363;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RuntimeException e)
         {
-        } 
+        } //End block
 Cursor var540C13E9E156B687226421B24F2DF178_1907145473 =         null;
         var540C13E9E156B687226421B24F2DF178_1907145473.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1907145473;
-        
-        
-        
-        
-        
-                
-            
-        
-        
-            
-            
-                
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) Log.d(LOG_TAG, "runQueryOnBackgroundThread(" + constraint + ")");
+        //String query = (constraint == null) ? "" : constraint.toString();
+        //Cursor cursor = null;
+        //if (mSearchView.getVisibility() != View.VISIBLE
+                //|| mSearchView.getWindowVisibility() != View.VISIBLE) {
+            //return null;
+        //}
+        //try {
+            //cursor = mSearchManager.getSuggestions(mSearchable, query, QUERY_LIMIT);
+            //if (cursor != null) {
+                //cursor.getCount();
+                //return cursor;
+            //}
+        //} catch (RuntimeException e) {
+            //Log.w(LOG_TAG, "Search suggestions query threw an exception.", e);
+        //}
+        //return null;
     }
 
     
@@ -226,10 +223,10 @@ Cursor var540C13E9E156B687226421B24F2DF178_1907145473 =         null;
         Log.d(LOG_TAG, "close()");
         changeCursor(null);
         mClosed = true;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) Log.d(LOG_TAG, "close()");
+        //changeCursor(null);
+        //mClosed = true;
     }
 
     
@@ -240,10 +237,10 @@ Cursor var540C13E9E156B687226421B24F2DF178_1907145473 =         null;
         Log.d(LOG_TAG, "notifyDataSetChanged");
         super.notifyDataSetChanged();
         updateSpinnerState(getCursor());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) Log.d(LOG_TAG, "notifyDataSetChanged");
+        //super.notifyDataSetChanged();
+        //updateSpinnerState(getCursor());
     }
 
     
@@ -254,14 +251,13 @@ Cursor var540C13E9E156B687226421B24F2DF178_1907145473 =         null;
         Log.d(LOG_TAG, "notifyDataSetInvalidated");
         super.notifyDataSetInvalidated();
         updateSpinnerState(getCursor());
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) Log.d(LOG_TAG, "notifyDataSetInvalidated");
+        //super.notifyDataSetInvalidated();
+        //updateSpinnerState(getCursor());
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.048 -0400", hash_original_method = "1E3B20B61BE1D7016BA8A5BF351CC500", hash_generated_method = "3B81606B76B9DF50C7642E7AC9A946F0")
     private void updateSpinnerState(Cursor cursor) {
         addTaint(cursor.getTaint());
@@ -272,24 +268,24 @@ Cursor var540C13E9E156B687226421B24F2DF178_1907145473 =         null;
                 + (extras != null
                         ? extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS)
                         : null));
-        } 
+        } //End block
     if(extras != null
                 && extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS))        
         {
             return;
-        } 
-        
-        
-        
-            
-                
-                        
-                        
-        
-        
-                
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Bundle extras = cursor != null ? cursor.getExtras() : null;
+        //if (DBG) {
+            //Log.d(LOG_TAG, "updateSpinnerState - extra = "
+                //+ (extras != null
+                        //? extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS)
+                        //: null));
+        //}
+        //if (extras != null
+                //&& extras.getBoolean(SearchManager.CURSOR_EXTRA_KEY_IN_PROGRESS)) {
+            //return;
+        //}
     }
 
     
@@ -303,7 +299,7 @@ Cursor var540C13E9E156B687226421B24F2DF178_1907145473 =         null;
     if(c != null)            
             c.close();
             return;
-        } 
+        } //End block
         try 
         {
             super.changeCursor(c);
@@ -315,13 +311,13 @@ Cursor var540C13E9E156B687226421B24F2DF178_1907145473 =         null;
                 mIconName1Col = c.getColumnIndex(SearchManager.SUGGEST_COLUMN_ICON_1);
                 mIconName2Col = c.getColumnIndex(SearchManager.SUGGEST_COLUMN_ICON_2);
                 mFlagsCol = c.getColumnIndex(SearchManager.SUGGEST_COLUMN_FLAGS);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (Exception e)
         {
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -336,14 +332,13 @@ Cursor var540C13E9E156B687226421B24F2DF178_1907145473 =         null;
 View var6DC76BC51820DD65E8396280E884AA78_2003599373 =         v;
         var6DC76BC51820DD65E8396280E884AA78_2003599373.addTaint(taint);
         return var6DC76BC51820DD65E8396280E884AA78_2003599373;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //View v = super.newView(context, cursor, parent);
+        //v.setTag(new ChildViewCache(v));
+        //return v;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.050 -0400", hash_original_method = "9ABFACDD3FE80D43883DC10EAA51920C", hash_generated_method = "0A7BE312F39E680EDC31CD4427555A05")
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
@@ -355,49 +350,49 @@ View var6DC76BC51820DD65E8396280E884AA78_2003599373 =         v;
     if(mFlagsCol != INVALID_INDEX)        
         {
             flags = cursor.getInt(mFlagsCol);
-        } 
+        } //End block
     if(views.mText1 != null)        
         {
             String text1 = getStringOrNull(cursor, mText1Col);
             setViewText(views.mText1, text1);
-        } 
+        } //End block
     if(views.mText2 != null)        
         {
             CharSequence text2 = getStringOrNull(cursor, mText2UrlCol);
     if(text2 != null)            
             {
                 text2 = formatUrl(text2);
-            } 
+            } //End block
             else
             {
                 text2 = getStringOrNull(cursor, mText2Col);
-            } 
+            } //End block
     if(TextUtils.isEmpty(text2))            
             {
     if(views.mText1 != null)                
                 {
                     views.mText1.setSingleLine(false);
                     views.mText1.setMaxLines(2);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(views.mText1 != null)                
                 {
                     views.mText1.setSingleLine(true);
                     views.mText1.setMaxLines(1);
-                } 
-            } 
+                } //End block
+            } //End block
             setViewText(views.mText2, text2);
-        } 
+        } //End block
     if(views.mIcon1 != null)        
         {
             setViewDrawable(views.mIcon1, getIcon1(cursor), View.INVISIBLE);
-        } 
+        } //End block
     if(views.mIcon2 != null)        
         {
             setViewDrawable(views.mIcon2, getIcon2(cursor), View.GONE);
-        } 
+        } //End block
     if(mQueryRefinement == REFINE_ALL
                 || (mQueryRefinement == REFINE_BY_ENTRY
                         && (flags & SearchManager.FLAG_QUERY_REFINEMENT) != 0))        
@@ -405,30 +400,30 @@ View var6DC76BC51820DD65E8396280E884AA78_2003599373 =         v;
             views.mIconRefine.setVisibility(View.VISIBLE);
             views.mIconRefine.setTag(views.mText1.getText());
             views.mIconRefine.setOnClickListener(this);
-        } 
+        } //End block
         else
         {
             views.mIconRefine.setVisibility(View.GONE);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.051 -0400", hash_original_method = "21562F430356DF0ADAE2AB54659D8C55", hash_generated_method = "24C6BF93E21392757D9A5CFF397D7472")
     public void onClick(View v) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(v.getTaint());
         Object tag = v.getTag();
     if(tag instanceof CharSequence)        
         {
             mSearchView.onQueryRefine((CharSequence) tag);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Object tag = v.getTag();
+        //if (tag instanceof CharSequence) {
+            //mSearchView.onQueryRefine((CharSequence) tag);
+        //}
     }
 
     
@@ -440,7 +435,7 @@ View var6DC76BC51820DD65E8396280E884AA78_2003599373 =         v;
             TypedValue colorValue = new TypedValue();
             mContext.getTheme().resolveAttribute(R.attr.textColorSearchUrl, colorValue, true);
             mUrlColor = mContext.getResources().getColorStateList(colorValue.resourceId);
-        } 
+        } //End block
         SpannableString text = new SpannableString(url);
         text.setSpan(new TextAppearanceSpan(null, 0, 0, mUrlColor, null),
                 0, url.length(),
@@ -448,21 +443,20 @@ View var6DC76BC51820DD65E8396280E884AA78_2003599373 =         v;
 CharSequence var79CC641C1148018540A26F7ADC424893_1628546606 =         text;
         var79CC641C1148018540A26F7ADC424893_1628546606.addTaint(taint);
         return var79CC641C1148018540A26F7ADC424893_1628546606;
-        
-        
-            
-            
-            
-        
-        
-        
-                
-                
-        
+        // ---------- Original Method ----------
+        //if (mUrlColor == null) {
+            //TypedValue colorValue = new TypedValue();
+            //mContext.getTheme().resolveAttribute(R.attr.textColorSearchUrl, colorValue, true);
+            //mUrlColor = mContext.getResources().getColorStateList(colorValue.resourceId);
+        //}
+        //SpannableString text = new SpannableString(url);
+        //text.setSpan(new TextAppearanceSpan(null, 0, 0, mUrlColor, null),
+                //0, url.length(),
+                //Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //return text;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.052 -0400", hash_original_method = "8F61D57F1A865E44B5C7D5D6842EB2D0", hash_generated_method = "1EE7B4E83A027311122972C4C17378C9")
     private void setViewText(TextView v, CharSequence text) {
         addTaint(text.getTaint());
@@ -471,18 +465,18 @@ CharSequence var79CC641C1148018540A26F7ADC424893_1628546606 =         text;
     if(TextUtils.isEmpty(text))        
         {
             v.setVisibility(View.GONE);
-        } 
+        } //End block
         else
         {
             v.setVisibility(View.VISIBLE);
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //v.setText(text);
+        //if (TextUtils.isEmpty(text)) {
+            //v.setVisibility(View.GONE);
+        //} else {
+            //v.setVisibility(View.VISIBLE);
+        //}
     }
 
     
@@ -494,7 +488,7 @@ CharSequence var79CC641C1148018540A26F7ADC424893_1628546606 =         text;
 Drawable var540C13E9E156B687226421B24F2DF178_459729869 =             null;
             var540C13E9E156B687226421B24F2DF178_459729869.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_459729869;
-        } 
+        } //End block
         String value = cursor.getString(mIconName1Col);
         Drawable drawable = getDrawableFromResourceValue(value);
     if(drawable != null)        
@@ -502,20 +496,20 @@ Drawable var540C13E9E156B687226421B24F2DF178_459729869 =             null;
 Drawable varA22A26D75522826F9AEFA195DDDFD365_1860366243 =             drawable;
             varA22A26D75522826F9AEFA195DDDFD365_1860366243.addTaint(taint);
             return varA22A26D75522826F9AEFA195DDDFD365_1860366243;
-        } 
+        } //End block
 Drawable var9AD4BC204A3D1826DA00D930D2EBEF08_1308217895 =         getDefaultIcon1(cursor);
         var9AD4BC204A3D1826DA00D930D2EBEF08_1308217895.addTaint(taint);
         return var9AD4BC204A3D1826DA00D930D2EBEF08_1308217895;
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mIconName1Col == INVALID_INDEX) {
+            //return null;
+        //}
+        //String value = cursor.getString(mIconName1Col);
+        //Drawable drawable = getDrawableFromResourceValue(value);
+        //if (drawable != null) {
+            //return drawable;
+        //}
+        //return getDefaultIcon1(cursor);
     }
 
     
@@ -527,21 +521,20 @@ Drawable var9AD4BC204A3D1826DA00D930D2EBEF08_1308217895 =         getDefaultIcon
 Drawable var540C13E9E156B687226421B24F2DF178_100527729 =             null;
             var540C13E9E156B687226421B24F2DF178_100527729.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_100527729;
-        } 
+        } //End block
         String value = cursor.getString(mIconName2Col);
 Drawable var21E893F1882DA73BDFBFEC7A588465D9_1395666636 =         getDrawableFromResourceValue(value);
         var21E893F1882DA73BDFBFEC7A588465D9_1395666636.addTaint(taint);
         return var21E893F1882DA73BDFBFEC7A588465D9_1395666636;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mIconName2Col == INVALID_INDEX) {
+            //return null;
+        //}
+        //String value = cursor.getString(mIconName2Col);
+        //return getDrawableFromResourceValue(value);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.053 -0400", hash_original_method = "DC13C6A1012A85758DE954F51DF05728", hash_generated_method = "91260607F5AAE82FFA64605A4EF8FACC")
     private void setViewDrawable(ImageView v, Drawable drawable, int nullVisibility) {
         addTaint(nullVisibility);
@@ -551,22 +544,22 @@ Drawable var21E893F1882DA73BDFBFEC7A588465D9_1395666636 =         getDrawableFro
     if(drawable == null)        
         {
             v.setVisibility(nullVisibility);
-        } 
+        } //End block
         else
         {
             v.setVisibility(View.VISIBLE);
             drawable.setVisible(false, false);
             drawable.setVisible(true, false);
-        } 
-        
-        
-        
-            
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //v.setImageDrawable(drawable);
+        //if (drawable == null) {
+            //v.setVisibility(nullVisibility);
+        //} else {
+            //v.setVisibility(View.VISIBLE);
+            //drawable.setVisible(false, false);
+            //drawable.setVisible(true, false);
+        //}
     }
 
     
@@ -579,14 +572,14 @@ Drawable var21E893F1882DA73BDFBFEC7A588465D9_1395666636 =         getDrawableFro
 CharSequence var540C13E9E156B687226421B24F2DF178_1149185148 =             null;
             var540C13E9E156B687226421B24F2DF178_1149185148.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1149185148;
-        } 
+        } //End block
         String query = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_QUERY);
     if(query != null)        
         {
 CharSequence varA8A0683638E4CE91D85122D8CD8F3BAC_12115603 =             query;
             varA8A0683638E4CE91D85122D8CD8F3BAC_12115603.addTaint(taint);
             return varA8A0683638E4CE91D85122D8CD8F3BAC_12115603;
-        } 
+        } //End block
     if(mSearchable.shouldRewriteQueryFromData())        
         {
             String data = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_DATA);
@@ -595,8 +588,8 @@ CharSequence varA8A0683638E4CE91D85122D8CD8F3BAC_12115603 =             query;
 CharSequence var0C8B2C9585EB05DD9CD70726CF8CBC07_1187662008 =                 data;
                 var0C8B2C9585EB05DD9CD70726CF8CBC07_1187662008.addTaint(taint);
                 return var0C8B2C9585EB05DD9CD70726CF8CBC07_1187662008;
-            } 
-        } 
+            } //End block
+        } //End block
     if(mSearchable.shouldRewriteQueryFromText())        
         {
             String text1 = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_TEXT_1);
@@ -605,32 +598,32 @@ CharSequence var0C8B2C9585EB05DD9CD70726CF8CBC07_1187662008 =                 da
 CharSequence var92708E91138455D7FA3ABE9A0C00859C_1076637444 =                 text1;
                 var92708E91138455D7FA3ABE9A0C00859C_1076637444.addTaint(taint);
                 return var92708E91138455D7FA3ABE9A0C00859C_1076637444;
-            } 
-        } 
+            } //End block
+        } //End block
 CharSequence var540C13E9E156B687226421B24F2DF178_1185130622 =         null;
         var540C13E9E156B687226421B24F2DF178_1185130622.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1185130622;
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (cursor == null) {
+            //return null;
+        //}
+        //String query = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_QUERY);
+        //if (query != null) {
+            //return query;
+        //}
+        //if (mSearchable.shouldRewriteQueryFromData()) {
+            //String data = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_DATA);
+            //if (data != null) {
+                //return data;
+            //}
+        //}
+        //if (mSearchable.shouldRewriteQueryFromText()) {
+            //String text1 = getColumnString(cursor, SearchManager.SUGGEST_COLUMN_TEXT_1);
+            //if (text1 != null) {
+                //return text1;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -645,7 +638,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1185130622 =         null;
 View var40DAE67EE1EF47D285D200B6C4BB0B69_544793786 =             super.getView(position, convertView, parent);
             var40DAE67EE1EF47D285D200B6C4BB0B69_544793786.addTaint(taint);
             return var40DAE67EE1EF47D285D200B6C4BB0B69_544793786;
-        } 
+        } //End block
         catch (RuntimeException e)
         {
             View v = newView(mContext, mCursor, parent);
@@ -654,24 +647,24 @@ View var40DAE67EE1EF47D285D200B6C4BB0B69_544793786 =             super.getView(p
                 ChildViewCache views = (ChildViewCache) v.getTag();
                 TextView tv = views.mText1;
                 tv.setText(e.toString());
-            } 
+            } //End block
 View var6DC76BC51820DD65E8396280E884AA78_1578910674 =             v;
             var6DC76BC51820DD65E8396280E884AA78_1578910674.addTaint(taint);
             return var6DC76BC51820DD65E8396280E884AA78_1578910674;
-        } 
-        
-        
-            
-        
-            
-            
-            
-                
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return super.getView(position, convertView, parent);
+        //} catch (RuntimeException e) {
+            //Log.w(LOG_TAG, "Search suggestions cursor threw exception.", e);
+            //View v = newView(mContext, mCursor, parent);
+            //if (v != null) {
+                //ChildViewCache views = (ChildViewCache) v.getTag();
+                //TextView tv = views.mText1;
+                //tv.setText(e.toString());
+            //}
+            //return v;
+        //}
     }
 
     
@@ -683,7 +676,7 @@ View var6DC76BC51820DD65E8396280E884AA78_1578910674 =             v;
 Drawable var540C13E9E156B687226421B24F2DF178_712252129 =             null;
             var540C13E9E156B687226421B24F2DF178_712252129.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_712252129;
-        } 
+        } //End block
         try 
         {
             int resourceId = Integer.parseInt(drawableId);
@@ -695,13 +688,13 @@ Drawable var540C13E9E156B687226421B24F2DF178_712252129 =             null;
 Drawable varA22A26D75522826F9AEFA195DDDFD365_546144106 =                 drawable;
                 varA22A26D75522826F9AEFA195DDDFD365_546144106.addTaint(taint);
                 return varA22A26D75522826F9AEFA195DDDFD365_546144106;
-            } 
+            } //End block
             drawable = mProviderContext.getResources().getDrawable(resourceId);
             storeInIconCache(drawableUri, drawable);
 Drawable varA22A26D75522826F9AEFA195DDDFD365_848275884 =             drawable;
             varA22A26D75522826F9AEFA195DDDFD365_848275884.addTaint(taint);
             return varA22A26D75522826F9AEFA195DDDFD365_848275884;
-        } 
+        } //End block
         catch (NumberFormatException nfe)
         {
             Drawable drawable = checkIconCache(drawableId);
@@ -710,26 +703,25 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_848275884 =             drawable;
 Drawable varA22A26D75522826F9AEFA195DDDFD365_458642068 =                 drawable;
                 varA22A26D75522826F9AEFA195DDDFD365_458642068.addTaint(taint);
                 return varA22A26D75522826F9AEFA195DDDFD365_458642068;
-            } 
+            } //End block
             Uri uri = Uri.parse(drawableId);
             drawable = getDrawable(uri);
             storeInIconCache(drawableId, drawable);
 Drawable varA22A26D75522826F9AEFA195DDDFD365_295806574 =             drawable;
             varA22A26D75522826F9AEFA195DDDFD365_295806574.addTaint(taint);
             return varA22A26D75522826F9AEFA195DDDFD365_295806574;
-        } 
+        } //End block
         catch (Resources.NotFoundException nfe)
         {
 Drawable var540C13E9E156B687226421B24F2DF178_1988520960 =             null;
             var540C13E9E156B687226421B24F2DF178_1988520960.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1988520960;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.057 -0400", hash_original_method = "3801EEB25227B54F215AA02CEF91B89D", hash_generated_method = "910C6DD4842385272C09EC26F7E61ADF")
     private Drawable getDrawable(Uri uri) {
         addTaint(uri.getTaint());
@@ -744,14 +736,14 @@ Drawable var540C13E9E156B687226421B24F2DF178_1988520960 =             null;
 Drawable var904041F6B8957BF138F5DE81B3D0AB54_1287290136 =                     r.r.getDrawable(r.id);
                     var904041F6B8957BF138F5DE81B3D0AB54_1287290136.addTaint(taint);
                     return var904041F6B8957BF138F5DE81B3D0AB54_1287290136;
-                } 
+                } //End block
                 catch (Resources.NotFoundException ex)
                 {
                     FileNotFoundException varE8810E522D8B98FEF67E48EC052E3409_982363956 = new FileNotFoundException("Resource does not exist: " + uri);
                     varE8810E522D8B98FEF67E48EC052E3409_982363956.addTaint(taint);
                     throw varE8810E522D8B98FEF67E48EC052E3409_982363956;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 InputStream stream = mProviderContext.getContentResolver().openInputStream(uri);
@@ -760,33 +752,33 @@ Drawable var904041F6B8957BF138F5DE81B3D0AB54_1287290136 =                     r.
                     FileNotFoundException varDE4D719CE1671073F3A4D227BFEB8CF1_1844751830 = new FileNotFoundException("Failed to open " + uri);
                     varDE4D719CE1671073F3A4D227BFEB8CF1_1844751830.addTaint(taint);
                     throw varDE4D719CE1671073F3A4D227BFEB8CF1_1844751830;
-                } 
+                } //End block
                 try 
                 {
 Drawable varACE85D619589350B701D976031D7200E_813070799 =                     Drawable.createFromStream(stream, null);
                     varACE85D619589350B701D976031D7200E_813070799.addTaint(taint);
                     return varACE85D619589350B701D976031D7200E_813070799;
-                } 
+                } //End block
                 finally 
                 {
                     try 
                     {
                         stream.close();
-                    } 
+                    } //End block
                     catch (IOException ex)
                     {
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         catch (FileNotFoundException fnfe)
         {
 Drawable var540C13E9E156B687226421B24F2DF178_238464618 =             null;
             var540C13E9E156B687226421B24F2DF178_238464618.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_238464618;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -799,19 +791,19 @@ Drawable var540C13E9E156B687226421B24F2DF178_238464618 =             null;
 Drawable var540C13E9E156B687226421B24F2DF178_11577485 =             null;
             var540C13E9E156B687226421B24F2DF178_11577485.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_11577485;
-        } 
+        } //End block
     if(DBG)        
         Log.d(LOG_TAG, "Found icon in cache: " + resourceUri);
 Drawable varC166530EF056087EC0119B98D4606244_1107624884 =         cached.newDrawable();
         varC166530EF056087EC0119B98D4606244_1107624884.addTaint(taint);
         return varC166530EF056087EC0119B98D4606244_1107624884;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Drawable.ConstantState cached = mOutsideDrawablesCache.get(resourceUri);
+        //if (cached == null) {
+            //return null;
+        //}
+        //if (DBG) Log.d(LOG_TAG, "Found icon in cache: " + resourceUri);
+        //return cached.newDrawable();
     }
 
     
@@ -822,15 +814,14 @@ Drawable varC166530EF056087EC0119B98D4606244_1107624884 =         cached.newDraw
     if(drawable != null)        
         {
             mOutsideDrawablesCache.put(resourceUri, drawable.getConstantState());
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (drawable != null) {
+            //mOutsideDrawablesCache.put(resourceUri, drawable.getConstantState());
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.058 -0400", hash_original_method = "24C6C5F14DA2AC5DBA34633E0C5BC43B", hash_generated_method = "920940F72819192AA292A82C998D6B3E")
     private Drawable getDefaultIcon1(Cursor cursor) {
         addTaint(cursor.getTaint());
@@ -840,16 +831,16 @@ Drawable varC166530EF056087EC0119B98D4606244_1107624884 =         cached.newDraw
 Drawable varA22A26D75522826F9AEFA195DDDFD365_480444240 =             drawable;
             varA22A26D75522826F9AEFA195DDDFD365_480444240.addTaint(taint);
             return varA22A26D75522826F9AEFA195DDDFD365_480444240;
-        } 
+        } //End block
 Drawable varBD2C8D7E3D6418B04EE42992C4465182_154424656 =         mContext.getPackageManager().getDefaultActivityIcon();
         varBD2C8D7E3D6418B04EE42992C4465182_154424656.addTaint(taint);
         return varBD2C8D7E3D6418B04EE42992C4465182_154424656;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Drawable drawable = getActivityIconWithCache(mSearchable.getSearchActivity());
+        //if (drawable != null) {
+            //return drawable;
+        //}
+        //return mContext.getPackageManager().getDefaultActivityIcon();
     }
 
     
@@ -863,27 +854,26 @@ Drawable varBD2C8D7E3D6418B04EE42992C4465182_154424656 =         mContext.getPac
 Drawable var62EA6A16E3DF534870B2EB7B647793F5_1605545800 =             cached == null ? null : cached.newDrawable(mProviderContext.getResources());
             var62EA6A16E3DF534870B2EB7B647793F5_1605545800.addTaint(taint);
             return var62EA6A16E3DF534870B2EB7B647793F5_1605545800;
-        } 
+        } //End block
         Drawable drawable = getActivityIcon(component);
         Drawable.ConstantState toCache = drawable == null ? null : drawable.getConstantState();
         mOutsideDrawablesCache.put(componentIconKey, toCache);
 Drawable varA22A26D75522826F9AEFA195DDDFD365_515857471 =         drawable;
         varA22A26D75522826F9AEFA195DDDFD365_515857471.addTaint(taint);
         return varA22A26D75522826F9AEFA195DDDFD365_515857471;
-        
-        
-        
-            
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //String componentIconKey = component.flattenToShortString();
+        //if (mOutsideDrawablesCache.containsKey(componentIconKey)) {
+            //Drawable.ConstantState cached = mOutsideDrawablesCache.get(componentIconKey);
+            //return cached == null ? null : cached.newDrawable(mProviderContext.getResources());
+        //}
+        //Drawable drawable = getActivityIcon(component);
+        //Drawable.ConstantState toCache = drawable == null ? null : drawable.getConstantState();
+        //mOutsideDrawablesCache.put(componentIconKey, toCache);
+        //return drawable;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.059 -0400", hash_original_method = "62EED478ECA0AB495E91A21A2EB22E87", hash_generated_method = "B8FEEC2519D1F78A3EF3CFFBFE2F9453")
     private Drawable getActivityIcon(ComponentName component) {
         addTaint(component.getTaint());
@@ -892,13 +882,13 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_515857471 =         drawable;
         try 
         {
             activityInfo = pm.getActivityInfo(component, PackageManager.GET_META_DATA);
-        } 
+        } //End block
         catch (NameNotFoundException ex)
         {
 Drawable var540C13E9E156B687226421B24F2DF178_1785528348 =             null;
             var540C13E9E156B687226421B24F2DF178_1785528348.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1785528348;
-        } 
+        } //End block
         int iconId = activityInfo.getIconResource();
     if(iconId == 0)        
         {
@@ -913,29 +903,29 @@ Drawable var540C13E9E156B687226421B24F2DF178_86145998 =         null;
 Drawable var540C13E9E156B687226421B24F2DF178_762681499 =             null;
             var540C13E9E156B687226421B24F2DF178_762681499.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_762681499;
-        } 
+        } //End block
 Drawable varA22A26D75522826F9AEFA195DDDFD365_1540808744 =         drawable;
         varA22A26D75522826F9AEFA195DDDFD365_1540808744.addTaint(taint);
         return varA22A26D75522826F9AEFA195DDDFD365_1540808744;
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-        
-        
-        
-        
-            
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //PackageManager pm = mContext.getPackageManager();
+        //final ActivityInfo activityInfo;
+        //try {
+            //activityInfo = pm.getActivityInfo(component, PackageManager.GET_META_DATA);
+        //} catch (NameNotFoundException ex) {
+            //Log.w(LOG_TAG, ex.toString());
+            //return null;
+        //}
+        //int iconId = activityInfo.getIconResource();
+        //if (iconId == 0) return null;
+        //String pkg = component.getPackageName();
+        //Drawable drawable = pm.getDrawable(pkg, iconId, activityInfo.applicationInfo);
+        //if (drawable == null) {
+            //Log.w(LOG_TAG, "Invalid icon resource " + iconId + " for "
+                    //+ component.flattenToShortString());
+            //return null;
+        //}
+        //return drawable;
     }
 
     
@@ -984,12 +974,12 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_1540808744 =         drawable;
             mIcon1 = (ImageView) v.findViewById(com.android.internal.R.id.icon1);
             mIcon2 = (ImageView) v.findViewById(com.android.internal.R.id.icon2);
             mIconRefine = (ImageView) v.findViewById(com.android.internal.R.id.edit_query);
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mText1 = (TextView) v.findViewById(com.android.internal.R.id.text1);
+            //mText2 = (TextView) v.findViewById(com.android.internal.R.id.text2);
+            //mIcon1 = (ImageView) v.findViewById(com.android.internal.R.id.icon1);
+            //mIcon2 = (ImageView) v.findViewById(com.android.internal.R.id.icon2);
+            //mIconRefine = (ImageView) v.findViewById(com.android.internal.R.id.edit_query);
         }
 
         

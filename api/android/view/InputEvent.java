@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public abstract class InputEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.844 -0400", hash_original_method = "5E30BC92EB346FB6C373466BBBDCD9C6", hash_generated_method = "4C32157640739D892888BF135F5DE17B")
       InputEvent() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,8 +23,8 @@ public abstract class InputEvent implements Parcelable {
 InputDevice var6CAF134A410F580D974FCD91E6F3C893_1278464903 =         InputDevice.getDevice(getDeviceId());
         var6CAF134A410F580D974FCD91E6F3C893_1278464903.addTaint(taint);
         return var6CAF134A410F580D974FCD91E6F3C893_1278464903;
-        
-        
+        // ---------- Original Method ----------
+        //return InputDevice.getDevice(getDeviceId());
     }
 
     
@@ -49,14 +49,13 @@ InputDevice var6CAF134A410F580D974FCD91E6F3C893_1278464903 =         InputDevice
     public abstract long getEventTimeNano();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.845 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F9C9269EB841FC58029A536B61F02A8D")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1863099920 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376219471 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376219471;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -85,7 +84,7 @@ InputDevice var6CAF134A410F580D974FCD91E6F3C893_1278464903 =         InputDevice
             return new InputEvent[size];
         }
     };
-    
+    // orphaned legacy method
     public InputEvent createFromParcel(Parcel in) {
             int token = in.readInt();
             if (token == PARCEL_TOKEN_KEY_EVENT) {
@@ -97,7 +96,7 @@ InputDevice var6CAF134A410F580D974FCD91E6F3C893_1278464903 =         InputDevice
             }
         }
     
-    
+    // orphaned legacy method
     public InputEvent[] newArray(int size) {
             return new InputEvent[size];
         }

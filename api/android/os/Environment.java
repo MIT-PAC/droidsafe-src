@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class Environment {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.231 -0400", hash_original_method = "241E3402842314122858FA6ADB8EF111", hash_generated_method = "241E3402842314122858FA6ADB8EF111")
     public Environment ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -38,8 +38,7 @@ public class Environment {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static File getRootDirectory() {
+        public static File getRootDirectory() {
         return ROOT_DIRECTORY;
     }
 
@@ -67,14 +66,12 @@ public class Environment {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static File getDataDirectory() {
+        public static File getDataDirectory() {
         return DATA_DIRECTORY;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static File getExternalStorageDirectory() {
+        public static File getExternalStorageDirectory() {
         return EXTERNAL_STORAGE_DIRECTORY;
     }
 
@@ -84,8 +81,7 @@ public class Environment {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static File getExternalStorageAndroidDataDir() {
+        public static File getExternalStorageAndroidDataDir() {
         return EXTERNAL_STORAGE_ANDROID_DATA_DIRECTORY;
     }
 
@@ -117,8 +113,7 @@ public class Environment {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static File getDownloadCacheDirectory() {
+        public static File getDownloadCacheDirectory() {
         return DOWNLOAD_CACHE_DIRECTORY;
     }
 

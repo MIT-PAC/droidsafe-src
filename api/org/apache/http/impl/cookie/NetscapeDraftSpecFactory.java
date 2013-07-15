@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class NetscapeDraftSpecFactory implements CookieSpecFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.658 -0400", hash_original_method = "E0E1E20239023582A4617467D7E49523", hash_generated_method = "E0E1E20239023582A4617467D7E49523")
     public NetscapeDraftSpecFactory ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -27,20 +27,20 @@ CookieSpec var96CBEA9474E54B876F43D0D6639FD283_238549182 =             new Netsc
                     (String []) params.getParameter(CookieSpecPNames.DATE_PATTERNS));
             var96CBEA9474E54B876F43D0D6639FD283_238549182.addTaint(taint);
             return var96CBEA9474E54B876F43D0D6639FD283_238549182;
-        } 
+        } //End block
         else
         {
 CookieSpec var453FBAFF3F71B66A1C01DE3710331CA9_1232223221 =             new NetscapeDraftSpec();
             var453FBAFF3F71B66A1C01DE3710331CA9_1232223221.addTaint(taint);
             return var453FBAFF3F71B66A1C01DE3710331CA9_1232223221;
-        } 
-        
-        
-            
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (params != null) {
+            //return new NetscapeDraftSpec(
+                    //(String []) params.getParameter(CookieSpecPNames.DATE_PATTERNS));
+        //} else {
+            //return new NetscapeDraftSpec();
+        //}
     }
 
     

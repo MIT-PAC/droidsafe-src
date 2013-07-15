@@ -1,6 +1,6 @@
 package java.lang.ref;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public abstract class Reference<T> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.838 -0400", hash_original_method = "6CD3D0843AA30F3B07C5B27C93AA8456", hash_generated_method = "D75FE998C2119926819E778AB344D99C")
       Reference() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,18 +29,17 @@ public abstract class Reference<T> {
       Reference(T r, ReferenceQueue q) {
         referent = r;
         queue = q;
-        
-        
-        
+        // ---------- Original Method ----------
+        //referent = r;
+        //queue = q;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.839 -0400", hash_original_method = "0AFD16A0602732B7092274BEFFE68A69", hash_generated_method = "3CA142A05BF69F5A64895A936ECBE10C")
     public void clear() {
         referent = null;
-        
-        
+        // ---------- Original Method ----------
+        //referent = null;
     }
 
     
@@ -53,28 +52,27 @@ public abstract class Reference<T> {
             boolean varB326B5062B2F0E69046810717534CB09_1101586338 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_845912030 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_845912030;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1791114262 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_841095696 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_841095696;
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (queue != null && queueNext == null) {
+            //queue.enqueue(this);
+            //queue = null;
+            //return true;
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.840 -0400", hash_original_method = "D897CF322202613DC6CC465308B391E4", hash_generated_method = "633A343AE28DA58A0EA1001C4BDB6440")
     public boolean enqueue() {
         boolean var2A596B0A93E26B39C6F48A0231BE12D9_656920003 = (enqueueInternal());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1228953730 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1228953730;
-        
-        
+        // ---------- Original Method ----------
+        //return enqueueInternal();
     }
 
     
@@ -83,19 +81,18 @@ public abstract class Reference<T> {
 T var759DD485E78D2D3BF7BBC0941CAE41CB_1242956865 =         referent;
         var759DD485E78D2D3BF7BBC0941CAE41CB_1242956865.addTaint(taint);
         return var759DD485E78D2D3BF7BBC0941CAE41CB_1242956865;
-        
-        
+        // ---------- Original Method ----------
+        //return referent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.840 -0400", hash_original_method = "22F3CCC310074C277F932626BFB7DCB6", hash_generated_method = "340A3032D708504C8B370243E68EF288")
     public boolean isEnqueued() {
         boolean varF8F380FE3C977ED15D3C774688222A9E_468566791 = (queueNext != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_198167174 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_198167174;
-        
-        
+        // ---------- Original Method ----------
+        //return queueNext != null;
     }
 
     

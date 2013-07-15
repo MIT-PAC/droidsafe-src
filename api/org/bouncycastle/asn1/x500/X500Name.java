@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x500;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,9 +34,9 @@ public class X500Name extends ASN1Encodable implements ASN1Choice {
     public  X500Name(X500NameStyle style, X500Name name) {
         this.rdns = name.rdns;
         this.style = style;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.rdns = name.rdns;
+        //this.style = style;
     }
 
     
@@ -45,7 +45,7 @@ public class X500Name extends ASN1Encodable implements ASN1Choice {
         ASN1Sequence  seq) {
         this(defaultStyle, seq);
         addTaint(seq.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -59,15 +59,15 @@ public class X500Name extends ASN1Encodable implements ASN1Choice {
 for(Enumeration e = seq.getObjects();e.hasMoreElements();)
         {
             rdns[index++] = RDN.getInstance(e.nextElement());
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.style = style;
+        //this.rdns = new RDN[seq.size()];
+        //int index = 0;
+        //for (Enumeration e = seq.getObjects(); e.hasMoreElements();)
+        //{
+            //rdns[index++] = RDN.getInstance(e.nextElement());
+        //}
     }
 
     
@@ -76,7 +76,7 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
         RDN[] rDNs) {
         this(defaultStyle, rDNs);
         addTaint(rDNs[0].getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -86,9 +86,9 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
         RDN[]         rDNs) {
         this.rdns = rDNs;
         this.style = style;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.rdns = rDNs;
+        //this.style = style;
     }
 
     
@@ -97,7 +97,7 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
         String dirName) {
         this(defaultStyle, dirName);
         addTaint(dirName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -108,8 +108,8 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
         this(style.fromString(dirName));
         addTaint(dirName.getTaint());
         this.style = style;
-        
-        
+        // ---------- Original Method ----------
+        //this.style = style;
     }
 
     
@@ -145,10 +145,10 @@ for(Enumeration e = seq.getObjects();e.hasMoreElements();)
 RDN[] var3F12A0424932F6B5155AA6C49B63FE6E_1137994310 =         tmp;
         var3F12A0424932F6B5155AA6C49B63FE6E_1137994310.addTaint(taint);
         return var3F12A0424932F6B5155AA6C49B63FE6E_1137994310;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RDN[] tmp = new RDN[this.rdns.length];
+        //System.arraycopy(rdns, 0, tmp, 0, tmp.length);
+        //return tmp;
     }
 
     
@@ -169,24 +169,24 @@ for(int j = 0;j != attr.length;j++)
                     {
                         res[count++] = rdn;
                         break;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             else
             {
     if(rdn.getFirst().getType().equals(oid))                
                 {
                     res[count++] = rdn;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         RDN[] tmp = new RDN[count];
         System.arraycopy(res, 0, tmp, 0, tmp.length);
 RDN[] var3F12A0424932F6B5155AA6C49B63FE6E_1123839864 =         tmp;
         var3F12A0424932F6B5155AA6C49B63FE6E_1123839864.addTaint(taint);
         return var3F12A0424932F6B5155AA6C49B63FE6E_1123839864;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -195,8 +195,8 @@ RDN[] var3F12A0424932F6B5155AA6C49B63FE6E_1123839864 =         tmp;
 DERObject varC9775E03431426A026E62F2D736073FB_1531193550 =         new DERSequence(rdns);
         varC9775E03431426A026E62F2D736073FB_1531193550.addTaint(taint);
         return varC9775E03431426A026E62F2D736073FB_1531193550;
-        
-        
+        // ---------- Original Method ----------
+        //return new DERSequence(rdns);
     }
 
     
@@ -207,20 +207,20 @@ DERObject varC9775E03431426A026E62F2D736073FB_1531193550 =         new DERSequen
             int var4D002D69417019F289C8061B82207DD2_303956965 = (hashCodeValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1012473123 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1012473123;
-        } 
+        } //End block
         isHashCodeCalculated = true;
         hashCodeValue = style.calculateHashCode(this);
         int var4D002D69417019F289C8061B82207DD2_1383544502 = (hashCodeValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_410688707 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_410688707;
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (isHashCodeCalculated)
+        //{
+            //return hashCodeValue;
+        //}
+        //isHashCodeCalculated = true;
+        //hashCodeValue = style.calculateHashCode(this);
+        //return hashCodeValue;
     }
 
     
@@ -232,54 +232,54 @@ DERObject varC9775E03431426A026E62F2D736073FB_1531193550 =         new DERSequen
             boolean varB326B5062B2F0E69046810717534CB09_647986282 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1849596163 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1849596163;
-        } 
+        } //End block
     if(!(obj instanceof X500Name || obj instanceof ASN1Sequence))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1394216918 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1448085834 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1448085834;
-        } 
+        } //End block
         DERObject derO = ((DEREncodable)obj).getDERObject();
     if(this.getDERObject().equals(derO))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1261781127 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_55143610 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_55143610;
-        } 
+        } //End block
         try 
         {
             boolean var7F5984DD2F8FCC1B66FD236DC3257198_504047385 = (style.areEqual(this, new X500Name(ASN1Sequence.getInstance(((DEREncodable)obj).getDERObject()))));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_942441439 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_942441439;
-        } 
+        } //End block
         catch (Exception e)
         {
             boolean var68934A3E9455FA72420237EB05902327_700407708 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_524349420 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_524349420;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (obj == this)
+        //{
+            //return true;
+        //}
+        //if (!(obj instanceof X500Name || obj instanceof ASN1Sequence))
+        //{
+            //return false;
+        //}
+        //DERObject derO = ((DEREncodable)obj).getDERObject();
+        //if (this.getDERObject().equals(derO))
+        //{
+            //return true;
+        //}
+        //try
+        //{
+            //return style.areEqual(this, new X500Name(ASN1Sequence.getInstance(((DEREncodable)obj).getDERObject())));
+        //}
+        //catch (Exception e)
+        //{
+            //return false;
+        //}
     }
 
     
@@ -288,8 +288,8 @@ DERObject varC9775E03431426A026E62F2D736073FB_1531193550 =         new DERSequen
 String var5C06B59BC1D23B5BBA16F9412A6A7844_1588339791 =         style.toString(this);
         var5C06B59BC1D23B5BBA16F9412A6A7844_1588339791.addTaint(taint);
         return var5C06B59BC1D23B5BBA16F9412A6A7844_1588339791;
-        
-        
+        // ---------- Original Method ----------
+        //return style.toString(this);
     }
 
     
@@ -302,8 +302,7 @@ String var5C06B59BC1D23B5BBA16F9412A6A7844_1588339791 =         style.toString(t
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static X500NameStyle getDefaultStyle() {
+        public static X500NameStyle getDefaultStyle() {
         return defaultStyle;
     }
 

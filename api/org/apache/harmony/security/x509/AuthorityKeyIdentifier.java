@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,41 +32,38 @@ public final class AuthorityKeyIdentifier extends ExtensionValue {
         this.keyIdentifier = keyIdentifier;
         this.authorityCertIssuer = authorityCertIssuer;
         this.authorityCertSerialNumber = authorityCertSerialNumber;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.keyIdentifier = keyIdentifier;
+        //this.authorityCertIssuer = authorityCertIssuer;
+        //this.authorityCertSerialNumber = authorityCertSerialNumber;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static AuthorityKeyIdentifier decode(byte[] encoding) throws IOException {
+        public static AuthorityKeyIdentifier decode(byte[] encoding) throws IOException {
         AuthorityKeyIdentifier aki = (AuthorityKeyIdentifier) ASN1.decode(encoding);
         aki.encoding = encoding;
         return aki;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.695 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "403C4003C0C66D7CC58413CA92F04042")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_2093402963 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1654576466 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1654576466;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = ASN1.encode(this);
+        //}
+        //return encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.695 -0400", hash_original_method = "8E2FBEC1389F8AD5C10937DA32053F15", hash_generated_method = "837728F7EE4D5A0D0FCD5C67A7236EC6")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -77,35 +74,35 @@ public final class AuthorityKeyIdentifier extends ExtensionValue {
         {
             sb.append(prefix).append("  keyIdentifier:\n");
             sb.append(Array.toString(keyIdentifier, prefix + "    "));
-        } 
+        } //End block
     if(authorityCertIssuer != null)        
         {
             sb.append(prefix).append("  authorityCertIssuer: [\n");
             authorityCertIssuer.dumpValue(sb, prefix + "    ");
             sb.append(prefix).append("  ]\n");
-        } 
+        } //End block
     if(authorityCertSerialNumber != null)        
         {
             sb.append(prefix).append("  authorityCertSerialNumber: ");
             sb.append(authorityCertSerialNumber).append('\n');
-        } 
+        } //End block
         sb.append(prefix).append("]\n");
-        
-        
-        
-            
-            
-        
-        
-            
-            
-            
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //sb.append(prefix).append("AuthorityKeyIdentifier [\n");
+        //if (keyIdentifier != null) {
+            //sb.append(prefix).append("  keyIdentifier:\n");
+            //sb.append(Array.toString(keyIdentifier, prefix + "    "));
+        //}
+        //if (authorityCertIssuer != null) {
+            //sb.append(prefix).append("  authorityCertIssuer: [\n");
+            //authorityCertIssuer.dumpValue(sb, prefix + "    ");
+            //sb.append(prefix).append("  ]\n");
+        //}
+        //if (authorityCertSerialNumber != null) {
+            //sb.append(prefix).append("  authorityCertSerialNumber: ");
+            //sb.append(authorityCertSerialNumber).append('\n');
+        //}
+        //sb.append(prefix).append("]\n");
     }
 
     

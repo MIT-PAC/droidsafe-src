@@ -1,6 +1,6 @@
 package android.net.rtp;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,10 +22,10 @@ public class AudioCodec {
         this.type = type;
         this.rtpmap = rtpmap;
         this.fmtp = fmtp;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.type = type;
+        //this.rtpmap = rtpmap;
+        //this.fmtp = fmtp;
     }
 
     

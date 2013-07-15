@@ -1,6 +1,6 @@
 package android.content.res;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,56 +41,52 @@ public class TypedArray {
         mData = data;
         mIndices = indices;
         mLength = len;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mResources = resources;
+        //mData = data;
+        //mIndices = indices;
+        //mLength = len;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.693 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "339E3E5DAFF848E35C2FE2F7C23E257D")
     public int length() {
         int var429F431E8CD8AC287AA27460675EAEFE_1384299439 = (mLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92674839 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92674839;
-        
-        
+        // ---------- Original Method ----------
+        //return mLength;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.693 -0400", hash_original_method = "E11A0D9421BCBF5642F2B23C8115E006", hash_generated_method = "9FECEAFC8ECC1A4C6198ABD3E6FAF6A4")
     public int getIndexCount() {
         int varCBCFD99B62F4085DE81B9C51AEF99317_1678511388 = (mIndices[0]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2077411590 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2077411590;
-        
-        
+        // ---------- Original Method ----------
+        //return mIndices[0];
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.694 -0400", hash_original_method = "757B3D64706707A79AF98EFF90D4FA5D", hash_generated_method = "1268861A5FB745CFC1FCC11EAE9DB90C")
     public int getIndex(int at) {
         addTaint(at);
         int var6A0A6F300283CFEE125F1300DD149243_744285628 = (mIndices[1+at]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905750004 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905750004;
-        
-        
+        // ---------- Original Method ----------
+        //return mIndices[1+at];
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.694 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "5268A35CD79309A892F5BE570F6F694E")
     public Resources getResources() {
 Resources var346B953D96D762F7FED561E83C1656CA_1086665936 =         mResources;
         var346B953D96D762F7FED561E83C1656CA_1086665936.addTaint(taint);
         return var346B953D96D762F7FED561E83C1656CA_1086665936;
-        
-        
+        // ---------- Original Method ----------
+        //return mResources;
     }
 
     
@@ -105,41 +101,41 @@ Resources var346B953D96D762F7FED561E83C1656CA_1086665936 =         mResources;
 CharSequence var540C13E9E156B687226421B24F2DF178_557612171 =             null;
             var540C13E9E156B687226421B24F2DF178_557612171.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_557612171;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_STRING)        
         {
 CharSequence varFE71F37E0231268B2ED63AD36D2E0D73_1794209829 =             loadStringValueAt(index);
             varFE71F37E0231268B2ED63AD36D2E0D73_1794209829.addTaint(taint);
             return varFE71F37E0231268B2ED63AD36D2E0D73_1794209829;
-        } 
+        } //End block
         TypedValue v = mValue;
     if(getValueAt(index, v))        
         {
 CharSequence var2C8E21343D2B0A4401FE2DCD0A0846DE_1219433951 =             v.coerceToString();
             var2C8E21343D2B0A4401FE2DCD0A0846DE_1219433951.addTaint(taint);
             return var2C8E21343D2B0A4401FE2DCD0A0846DE_1219433951;
-        } 
+        } //End block
 CharSequence var540C13E9E156B687226421B24F2DF178_1045508302 =         null;
         var540C13E9E156B687226421B24F2DF178_1045508302.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1045508302;
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
-            
-            
-        
-        
-              
-        
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return null;
+        //} else if (type == TypedValue.TYPE_STRING) {
+            //return loadStringValueAt(index);
+        //}
+        //TypedValue v = mValue;
+        //if (getValueAt(index, v)) {
+            //Log.w(Resources.TAG, "Converting to string: " + v);
+            //return v.coerceToString();
+        //}
+        //Log.w(Resources.TAG, "getString of bad type: 0x"
+              //+ Integer.toHexString(type));
+        //return null;
     }
 
     
@@ -154,14 +150,14 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1045508302 =         null;
 String var540C13E9E156B687226421B24F2DF178_1738622276 =             null;
             var540C13E9E156B687226421B24F2DF178_1738622276.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1738622276;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_STRING)        
         {
 String var64A041B790F9314358723EB5F60631DA_1290507739 =             loadStringValueAt(index).toString();
             var64A041B790F9314358723EB5F60631DA_1290507739.addTaint(taint);
             return var64A041B790F9314358723EB5F60631DA_1290507739;
-        } 
+        } //End block
         TypedValue v = mValue;
     if(getValueAt(index, v))        
         {
@@ -169,28 +165,28 @@ String var64A041B790F9314358723EB5F60631DA_1290507739 =             loadStringVa
 String var48C761D210B750355CBC7ACAC2081BD2_89565136 =             cs != null ? cs.toString() : null;
             var48C761D210B750355CBC7ACAC2081BD2_89565136.addTaint(taint);
             return var48C761D210B750355CBC7ACAC2081BD2_89565136;
-        } 
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_116365074 =         null;
         var540C13E9E156B687226421B24F2DF178_116365074.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_116365074;
-        
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
-            
-            
-            
-        
-        
-              
-        
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return null;
+        //} else if (type == TypedValue.TYPE_STRING) {
+            //return loadStringValueAt(index).toString();
+        //}
+        //TypedValue v = mValue;
+        //if (getValueAt(index, v)) {
+            //Log.w(Resources.TAG, "Converting to string: " + v);
+            //CharSequence cs = v.coerceToString();
+            //return cs != null ? cs.toString() : null;
+        //}
+        //Log.w(Resources.TAG, "getString of bad type: 0x"
+              //+ Integer.toHexString(type));
+        //return null;
     }
 
     
@@ -209,23 +205,23 @@ String varB9449F2AA54F253D8A562BA43198C02C_1802089509 =                 mXml.get
                     data[index+AssetManager.STYLE_DATA]).toString();
                 varB9449F2AA54F253D8A562BA43198C02C_1802089509.addTaint(taint);
                 return varB9449F2AA54F253D8A562BA43198C02C_1802089509;
-            } 
-        } 
+            } //End block
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_44763598 =         null;
         var540C13E9E156B687226421B24F2DF178_44763598.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_44763598;
-        
-        
-        
-        
-        
-            
-            
-                
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_STRING) {
+            //final int cookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
+            //if (cookie < 0) {
+                //return mXml.getPooledString(
+                    //data[index+AssetManager.STYLE_DATA]).toString();
+            //}
+        //}
+        //return null;
     }
 
     
@@ -241,20 +237,20 @@ String var540C13E9E156B687226421B24F2DF178_44763598 =         null;
 String var540C13E9E156B687226421B24F2DF178_1348867894 =             null;
             var540C13E9E156B687226421B24F2DF178_1348867894.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1348867894;
-        } 
+        } //End block
     if(type == TypedValue.TYPE_NULL)        
         {
 String var540C13E9E156B687226421B24F2DF178_1797425493 =             null;
             var540C13E9E156B687226421B24F2DF178_1797425493.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1797425493;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_STRING)        
         {
 String var64A041B790F9314358723EB5F60631DA_448625258 =             loadStringValueAt(index).toString();
             var64A041B790F9314358723EB5F60631DA_448625258.addTaint(taint);
             return var64A041B790F9314358723EB5F60631DA_448625258;
-        } 
+        } //End block
         TypedValue v = mValue;
     if(getValueAt(index, v))        
         {
@@ -262,12 +258,12 @@ String var64A041B790F9314358723EB5F60631DA_448625258 =             loadStringVal
 String var48C761D210B750355CBC7ACAC2081BD2_406654713 =             cs != null ? cs.toString() : null;
             var48C761D210B750355CBC7ACAC2081BD2_406654713.addTaint(taint);
             return var48C761D210B750355CBC7ACAC2081BD2_406654713;
-        } 
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
         var540C13E9E156B687226421B24F2DF178_915011578.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_915011578;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -283,7 +279,7 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
             boolean var0C005749B1246DFDB5F6909C34026193_1373940264 = (defValue);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1739129037 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1739129037;
-        } 
+        } //End block
         else
     if(type >= TypedValue.TYPE_FIRST_INT
             && type <= TypedValue.TYPE_LAST_INT)        
@@ -291,7 +287,7 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
             boolean var0CE8B984FD52D0D9D4884EBD54C45C32_1772918139 = (data[index+AssetManager.STYLE_DATA] != 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_323321367 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_323321367;
-        } 
+        } //End block
         TypedValue v = mValue;
     if(getValueAt(index, v))        
         {
@@ -299,29 +295,29 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
                 v.coerceToString(), defValue));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432657887 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432657887;
-        } 
+        } //End block
         boolean var0C005749B1246DFDB5F6909C34026193_166663975 = (defValue);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1450833324 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1450833324;
-        
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-        
-            
-            
-                
-        
-        
-              
-        
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type >= TypedValue.TYPE_FIRST_INT
+            //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA] != 0;
+        //}
+        //TypedValue v = mValue;
+        //if (getValueAt(index, v)) {
+            //Log.w(Resources.TAG, "Converting to boolean: " + v);
+            //return XmlUtils.convertValueToBoolean(
+                //v.coerceToString(), defValue);
+        //}
+        //Log.w(Resources.TAG, "getBoolean of bad type: 0x"
+              //+ Integer.toHexString(type));
+        //return defValue;
     }
 
     
@@ -337,7 +333,7 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
             int var0C005749B1246DFDB5F6909C34026193_1075288056 = (defValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2059963583 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2059963583;
-        } 
+        } //End block
         else
     if(type >= TypedValue.TYPE_FIRST_INT
             && type <= TypedValue.TYPE_LAST_INT)        
@@ -345,7 +341,7 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
             int varFDFFC91BD3522FF60D6A3BB8827668A7_2111406464 = (data[index+AssetManager.STYLE_DATA]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055912274 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055912274;
-        } 
+        } //End block
         TypedValue v = mValue;
     if(getValueAt(index, v))        
         {
@@ -353,29 +349,29 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
                 v.coerceToString(), defValue));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875379980 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875379980;
-        } 
+        } //End block
         int var0C005749B1246DFDB5F6909C34026193_1591891459 = (defValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624895252 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1624895252;
-        
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-        
-            
-            
-                
-        
-        
-              
-        
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type >= TypedValue.TYPE_FIRST_INT
+            //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA];
+        //}
+        //TypedValue v = mValue;
+        //if (getValueAt(index, v)) {
+            //Log.w(Resources.TAG, "Converting to int: " + v);
+            //return XmlUtils.convertValueToInt(
+                //v.coerceToString(), defValue);
+        //}
+        //Log.w(Resources.TAG, "getInt of bad type: 0x"
+              //+ Integer.toHexString(type));
+        //return defValue;
     }
 
     
@@ -391,14 +387,14 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
             float var0C005749B1246DFDB5F6909C34026193_1330309162 = (defValue);
                         float var546ADE640B6EDFBC8A086EF31347E768_1655132645 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1655132645;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_FLOAT)        
         {
             float varA40169C04CC424FE29909E57764E1240_1368191697 = (Float.intBitsToFloat(data[index+AssetManager.STYLE_DATA]));
                         float var546ADE640B6EDFBC8A086EF31347E768_1264190988 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1264190988;
-        } 
+        } //End block
         else
     if(type >= TypedValue.TYPE_FIRST_INT
             && type <= TypedValue.TYPE_LAST_INT)        
@@ -406,7 +402,7 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
             float varFDFFC91BD3522FF60D6A3BB8827668A7_1309732580 = (data[index+AssetManager.STYLE_DATA]);
                         float var546ADE640B6EDFBC8A086EF31347E768_1914167758 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1914167758;
-        } 
+        } //End block
         TypedValue v = mValue;
     if(getValueAt(index, v))        
         {
@@ -416,13 +412,13 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
                 float var7262E3EE64C63FD62BA0CAE0EA220541_275365929 = (Float.parseFloat(str.toString()));
                                 float var546ADE640B6EDFBC8A086EF31347E768_1871706499 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_1871706499;
-            } 
-        } 
+            } //End block
+        } //End block
         float var0C005749B1246DFDB5F6909C34026193_643107852 = (defValue);
                 float var546ADE640B6EDFBC8A086EF31347E768_926986163 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_926986163;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -438,7 +434,7 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
             int var0C005749B1246DFDB5F6909C34026193_78749979 = (defValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177695803 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177695803;
-        } 
+        } //End block
         else
     if(type >= TypedValue.TYPE_FIRST_INT
             && type <= TypedValue.TYPE_LAST_INT)        
@@ -446,7 +442,7 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
             int varFDFFC91BD3522FF60D6A3BB8827668A7_1184527912 = (data[index+AssetManager.STYLE_DATA]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439973622 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1439973622;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_STRING)        
         {
@@ -458,17 +454,17 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
                 int var90DA607A89399855C664ACB81336CEB7_777874496 = (csl.getDefaultColor());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635790147 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635790147;
-            } 
+            } //End block
             int var0C005749B1246DFDB5F6909C34026193_965854290 = (defValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2017345169 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2017345169;
-        } 
+        } //End block
         UnsupportedOperationException var71470B063586A7B6099980B20674FC5B_1833430522 = new UnsupportedOperationException("Can't convert to color: type=0x"
                 + Integer.toHexString(type));
         var71470B063586A7B6099980B20674FC5B_1833430522.addTaint(taint);
         throw var71470B063586A7B6099980B20674FC5B_1833430522;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -481,16 +477,16 @@ String var540C13E9E156B687226421B24F2DF178_915011578 =         null;
 ColorStateList var7C9C7C605F72EFD6C3AEEFB96F806FB5_1109317845 =             mResources.loadColorStateList(value, value.resourceId);
             var7C9C7C605F72EFD6C3AEEFB96F806FB5_1109317845.addTaint(taint);
             return var7C9C7C605F72EFD6C3AEEFB96F806FB5_1109317845;
-        } 
+        } //End block
 ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
         var540C13E9E156B687226421B24F2DF178_586706768.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_586706768;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //final TypedValue value = mValue;
+        //if (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value)) {
+            //return mResources.loadColorStateList(value, value.resourceId);
+        //}
+        //return null;
     }
 
     
@@ -506,7 +502,7 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
             int var0C005749B1246DFDB5F6909C34026193_2019616056 = (defValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328708922 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328708922;
-        } 
+        } //End block
         else
     if(type >= TypedValue.TYPE_FIRST_INT
             && type <= TypedValue.TYPE_LAST_INT)        
@@ -514,23 +510,23 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
             int varFDFFC91BD3522FF60D6A3BB8827668A7_799028881 = (data[index+AssetManager.STYLE_DATA]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762498537 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_762498537;
-        } 
+        } //End block
         UnsupportedOperationException var8C8AB64BD80FA7B626E771A9DDA3439B_895694037 = new UnsupportedOperationException("Can't convert to integer: type=0x"
                 + Integer.toHexString(type));
         var8C8AB64BD80FA7B626E771A9DDA3439B_895694037.addTaint(taint);
         throw var8C8AB64BD80FA7B626E771A9DDA3439B_895694037;
-        
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type >= TypedValue.TYPE_FIRST_INT
+            //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA];
+        //}
+        //throw new UnsupportedOperationException("Can't convert to integer: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
@@ -546,7 +542,7 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
             float var0C005749B1246DFDB5F6909C34026193_522378277 = (defValue);
                         float var546ADE640B6EDFBC8A086EF31347E768_388218885 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_388218885;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_DIMENSION)        
         {
@@ -554,23 +550,23 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
                         float var546ADE640B6EDFBC8A086EF31347E768_603785348 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_603785348;
-        } 
+        } //End block
         UnsupportedOperationException var60E90C7265C27F9135089FD1FAE1F298_2073365260 = new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
         var60E90C7265C27F9135089FD1FAE1F298_2073365260.addTaint(taint);
         throw var60E90C7265C27F9135089FD1FAE1F298_2073365260;
-        
-        
-        
-        
-        
-            
-        
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimension(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
@@ -586,7 +582,7 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
             int var0C005749B1246DFDB5F6909C34026193_1439705831 = (defValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052386866 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052386866;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_DIMENSION)        
         {
@@ -594,23 +590,23 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503121637 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503121637;
-        } 
+        } //End block
         UnsupportedOperationException var60E90C7265C27F9135089FD1FAE1F298_1128566817 = new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
         var60E90C7265C27F9135089FD1FAE1F298_1128566817.addTaint(taint);
         throw var60E90C7265C27F9135089FD1FAE1F298_1128566817;
-        
-        
-        
-        
-        
-            
-        
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimensionPixelOffset(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
@@ -626,7 +622,7 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
             int var0C005749B1246DFDB5F6909C34026193_437539535 = (defValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627016767 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627016767;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_DIMENSION)        
         {
@@ -634,23 +630,23 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1640138413 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1640138413;
-        } 
+        } //End block
         UnsupportedOperationException var60E90C7265C27F9135089FD1FAE1F298_888784543 = new UnsupportedOperationException("Can't convert to dimension: type=0x"
                 + Integer.toHexString(type));
         var60E90C7265C27F9135089FD1FAE1F298_888784543.addTaint(taint);
         throw var60E90C7265C27F9135089FD1FAE1F298_888784543;
-        
-        
-        
-        
-        
-            
-        
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimensionPixelSize(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //throw new UnsupportedOperationException("Can't convert to dimension: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
@@ -667,7 +663,7 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
             int varFDFFC91BD3522FF60D6A3BB8827668A7_717683612 = (data[index+AssetManager.STYLE_DATA]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_692684802 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_692684802;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_DIMENSION)        
         {
@@ -675,24 +671,24 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1612759390 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1612759390;
-        } 
+        } //End block
         RuntimeException var51FA9FB57E57B0746BFCE79AEF53EEAE_311218485 = new RuntimeException(getPositionDescription()
                 + ": You must supply a " + name + " attribute.");
         var51FA9FB57E57B0746BFCE79AEF53EEAE_311218485.addTaint(taint);
         throw var51FA9FB57E57B0746BFCE79AEF53EEAE_311218485;
-        
-        
-        
-        
-        
-                
-            
-        
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type >= TypedValue.TYPE_FIRST_INT
+                //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA];
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimensionPixelSize(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //throw new RuntimeException(getPositionDescription()
+                //+ ": You must supply a " + name + " attribute.");
     }
 
     
@@ -709,7 +705,7 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
             int varFDFFC91BD3522FF60D6A3BB8827668A7_489746039 = (data[index+AssetManager.STYLE_DATA]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736818953 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736818953;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_DIMENSION)        
         {
@@ -717,22 +713,22 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
                 data[index+AssetManager.STYLE_DATA], mResources.mMetrics));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222050305 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222050305;
-        } 
+        } //End block
         int var0C005749B1246DFDB5F6909C34026193_547175916 = (defValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1474628389 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1474628389;
-        
-        
-        
-        
-        
-                
-            
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type >= TypedValue.TYPE_FIRST_INT
+                //&& type <= TypedValue.TYPE_LAST_INT) {
+            //return data[index+AssetManager.STYLE_DATA];
+        //} else if (type == TypedValue.TYPE_DIMENSION) {
+            //return TypedValue.complexToDimensionPixelSize(
+                //data[index+AssetManager.STYLE_DATA], mResources.mMetrics);
+        //}
+        //return defValue;
     }
 
     
@@ -750,7 +746,7 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
             float var0C005749B1246DFDB5F6909C34026193_1331880292 = (defValue);
                         float var546ADE640B6EDFBC8A086EF31347E768_1576880914 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1576880914;
-        } 
+        } //End block
         else
     if(type == TypedValue.TYPE_FRACTION)        
         {
@@ -758,27 +754,26 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
                 data[index+AssetManager.STYLE_DATA], base, pbase));
                         float var546ADE640B6EDFBC8A086EF31347E768_1441441671 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1441441671;
-        } 
+        } //End block
         UnsupportedOperationException varCF896F22EB53276BC9ADA3E6A43FC9FA_606060900 = new UnsupportedOperationException("Can't convert to fraction: type=0x"
                 + Integer.toHexString(type));
         varCF896F22EB53276BC9ADA3E6A43FC9FA_606060900.addTaint(taint);
         throw varCF896F22EB53276BC9ADA3E6A43FC9FA_606060900;
-        
-        
-        
-        
-        
-            
-        
-            
-                
-        
-        
-                
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return defValue;
+        //} else if (type == TypedValue.TYPE_FRACTION) {
+            //return TypedValue.complexToFraction(
+                //data[index+AssetManager.STYLE_DATA], base, pbase);
+        //}
+        //throw new UnsupportedOperationException("Can't convert to fraction: type=0x"
+                //+ Integer.toHexString(type));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.711 -0400", hash_original_method = "DF47714E2511EE2CB8E5736FC0D36FFE", hash_generated_method = "663937278DC662A10D210FF72DFD7377")
     public int getResourceId(int index, int defValue) {
         addTaint(defValue);
@@ -793,21 +788,21 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
                 int var9C5DC71F9C3AB4FEBAA17E7B42553A5B_812925222 = (resid);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_608147271 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_608147271;
-            } 
-        } 
+            } //End block
+        } //End block
         int var0C005749B1246DFDB5F6909C34026193_550507397 = (defValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799886684 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1799886684;
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //if (data[index+AssetManager.STYLE_TYPE] != TypedValue.TYPE_NULL) {
+            //final int resid = data[index+AssetManager.STYLE_RESOURCE_ID];
+            //if (resid != 0) {
+                //return resid;
+            //}
+        //}
+        //return defValue;
     }
 
     
@@ -826,29 +821,29 @@ ColorStateList var540C13E9E156B687226421B24F2DF178_586706768 =         null;
                                    + " int=0x" + Integer.toHexString(value.data)
                                    + " cookie=" + value.assetCookie);
                 System.out.println("******************************************************************");
-            } 
+            } //End block
 Drawable var9CD9F2C7F5CF532C97D6207826992225_997814796 =             mResources.loadDrawable(value, value.resourceId);
             var9CD9F2C7F5CF532C97D6207826992225_997814796.addTaint(taint);
             return var9CD9F2C7F5CF532C97D6207826992225_997814796;
-        } 
+        } //End block
 Drawable var540C13E9E156B687226421B24F2DF178_199963215 =         null;
         var540C13E9E156B687226421B24F2DF178_199963215.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_199963215;
-        
-        
-        
-            
-                
-                
-                                   
-                                   
-                                   
-                                   
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //final TypedValue value = mValue;
+        //if (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value)) {
+            //if (false) {
+                //System.out.println("******************************************************************");
+                //System.out.println("Got drawable resource: type="
+                                   //+ value.type
+                                   //+ " str=" + value.string
+                                   //+ " int=0x" + Integer.toHexString(value.data)
+                                   //+ " cookie=" + value.assetCookie);
+                //System.out.println("******************************************************************");
+            //}
+            //return mResources.loadDrawable(value, value.resourceId);
+        //}
+        //return null;
     }
 
     
@@ -867,29 +862,29 @@ Drawable var540C13E9E156B687226421B24F2DF178_199963215 =         null;
                                    + " int=0x" + Integer.toHexString(value.data)
                                    + " cookie=" + value.assetCookie);
                 System.out.println("******************************************************************");
-            } 
+            } //End block
 CharSequence[] var9B185D6E2C129A747CB021868828E1FB_1422932018 =             mResources.getTextArray(value.resourceId);
             var9B185D6E2C129A747CB021868828E1FB_1422932018.addTaint(taint);
             return var9B185D6E2C129A747CB021868828E1FB_1422932018;
-        } 
+        } //End block
 CharSequence[] var540C13E9E156B687226421B24F2DF178_712422274 =         null;
         var540C13E9E156B687226421B24F2DF178_712422274.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_712422274;
-        
-        
-        
-            
-                
-                
-                                   
-                                   
-                                   
-                                   
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //final TypedValue value = mValue;
+        //if (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value)) {
+            //if (false) {
+                //System.out.println("******************************************************************");
+                //System.out.println("Got drawable resource: type="
+                                   //+ value.type
+                                   //+ " str=" + value.string
+                                   //+ " int=0x" + Integer.toHexString(value.data)
+                                   //+ " cookie=" + value.assetCookie);
+                //System.out.println("******************************************************************");
+            //}
+            //return mResources.getTextArray(value.resourceId);
+        //}
+        //return null;
     }
 
     
@@ -900,12 +895,11 @@ CharSequence[] var540C13E9E156B687226421B24F2DF178_712422274 =         null;
         boolean var22F6889BB5F70FB4653E25BBBCB03D57_1657321985 = (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687830874 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687830874;
-        
-        
+        // ---------- Original Method ----------
+        //return getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.714 -0400", hash_original_method = "0EF762AB49E40F4FF6959DF2595733A2", hash_generated_method = "EB4E6201FFC3FA3C784A4190BB714692")
     public boolean hasValue(int index) {
         addTaint(index);
@@ -915,11 +909,11 @@ CharSequence[] var540C13E9E156B687226421B24F2DF178_712422274 =         null;
         boolean var8F37846CC3DB18B76C036D1B7DA857FE_1936973446 = (type != TypedValue.TYPE_NULL);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1867190933 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1867190933;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //index *= AssetManager.STYLE_NUM_ENTRIES;
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //return type != TypedValue.TYPE_NULL;
     }
 
     
@@ -932,16 +926,16 @@ CharSequence[] var540C13E9E156B687226421B24F2DF178_712422274 =         null;
 TypedValue varAF280DA2BC37D8BE783D8499160168DE_1506727484 =             value;
             varAF280DA2BC37D8BE783D8499160168DE_1506727484.addTaint(taint);
             return varAF280DA2BC37D8BE783D8499160168DE_1506727484;
-        } 
+        } //End block
 TypedValue var540C13E9E156B687226421B24F2DF178_334138567 =         null;
         var540C13E9E156B687226421B24F2DF178_334138567.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_334138567;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //final TypedValue value = mValue;
+        //if (getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, value)) {
+            //return value;
+        //}
+        //return null;
     }
 
     
@@ -950,12 +944,11 @@ TypedValue var540C13E9E156B687226421B24F2DF178_334138567 =         null;
 String var71429891338B1C00981D47483975D6BA_1856794583 =         mXml != null ? mXml.getPositionDescription() : "<internal>";
         var71429891338B1C00981D47483975D6BA_1856794583.addTaint(taint);
         return var71429891338B1C00981D47483975D6BA_1856794583;
-        
-        
+        // ---------- Original Method ----------
+        //return mXml != null ? mXml.getPositionDescription() : "<internal>";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.718 -0400", hash_original_method = "A1E6C58584B412829C21C498310464D0", hash_generated_method = "E2D95A3B760CCDC32B6CA5663CCFF342")
     public void recycle() {
         synchronized
@@ -965,16 +958,16 @@ String var71429891338B1C00981D47483975D6BA_1856794583 =         mXml != null ? m
             {
                 mXml = null;
                 mResources.mCachedStyledAttributes = this;
-            } 
-        } 
-        
-        
-            
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mResources.mTmpValue) {
+            //TypedArray cached = mResources.mCachedStyledAttributes;
+            //if (cached == null || cached.mData.length < mData.length) {
+                //mXml = null;
+                //mResources.mCachedStyledAttributes = this;
+            //}
+        //}
     }
 
     
@@ -989,7 +982,7 @@ String var71429891338B1C00981D47483975D6BA_1856794583 =         mXml != null ? m
             boolean var68934A3E9455FA72420237EB05902327_1815362009 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1881617096 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1881617096;
-        } 
+        } //End block
         outValue.type = type;
         outValue.data = data[index+AssetManager.STYLE_DATA];
         outValue.assetCookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
@@ -1000,20 +993,20 @@ String var71429891338B1C00981D47483975D6BA_1856794583 =         mXml != null ? m
         boolean varB326B5062B2F0E69046810717534CB09_325892382 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_905745811 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_905745811;
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final int[] data = mData;
+        //final int type = data[index+AssetManager.STYLE_TYPE];
+        //if (type == TypedValue.TYPE_NULL) {
+            //return false;
+        //}
+        //outValue.type = type;
+        //outValue.data = data[index+AssetManager.STYLE_DATA];
+        //outValue.assetCookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
+        //outValue.resourceId = data[index+AssetManager.STYLE_RESOURCE_ID];
+        //outValue.changingConfigurations = data[index+AssetManager.STYLE_CHANGING_CONFIGURATIONS];
+        //outValue.density = data[index+AssetManager.STYLE_DENSITY];
+        //outValue.string = (type == TypedValue.TYPE_STRING) ? loadStringValueAt(index) : null;
+        //return true;
     }
 
     
@@ -1030,27 +1023,27 @@ CharSequence var1909CA0A0B5F4C1B88AD901A4800961A_1446956895 =                 mX
                     data[index+AssetManager.STYLE_DATA]);
                 var1909CA0A0B5F4C1B88AD901A4800961A_1446956895.addTaint(taint);
                 return var1909CA0A0B5F4C1B88AD901A4800961A_1446956895;
-            } 
+            } //End block
 CharSequence var540C13E9E156B687226421B24F2DF178_2016971983 =             null;
             var540C13E9E156B687226421B24F2DF178_2016971983.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2016971983;
-        } 
+        } //End block
 CharSequence var13AA805861FD730A1B588C60D1E7C7D9_942308515 =         mResources.mAssets.getPooledString(
             cookie, data[index+AssetManager.STYLE_DATA]);
         var13AA805861FD730A1B588C60D1E7C7D9_942308515.addTaint(taint);
         return var13AA805861FD730A1B588C60D1E7C7D9_942308515;
-        
-        
-        
-        
-            
-                
-                    
-            
-            
-        
-        
-            
+        // ---------- Original Method ----------
+        //final int[] data = mData;
+        //final int cookie = data[index+AssetManager.STYLE_ASSET_COOKIE];
+        //if (cookie < 0) {
+            //if (mXml != null) {
+                //return mXml.getPooledString(
+                    //data[index+AssetManager.STYLE_DATA]);
+            //}
+            //return null;
+        //}
+        //return mResources.mAssets.getPooledString(
+            //cookie, data[index+AssetManager.STYLE_DATA]);
     }
 
     
@@ -1059,8 +1052,8 @@ CharSequence var13AA805861FD730A1B588C60D1E7C7D9_942308515 =         mResources.
 String var4F18F58D2FA16042CB301516796544BC_778451210 =         Arrays.toString(mData);
         var4F18F58D2FA16042CB301516796544BC_778451210.addTaint(taint);
         return var4F18F58D2FA16042CB301516796544BC_778451210;
-        
-        
+        // ---------- Original Method ----------
+        //return Arrays.toString(mData);
     }
 
     

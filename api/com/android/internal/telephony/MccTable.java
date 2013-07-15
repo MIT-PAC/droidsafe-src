@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,12 +23,11 @@ public final class MccTable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.958 -0400", hash_original_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED", hash_generated_method = "5AF4A6124D6CCA09BBC7BDEB9FD835ED")
     public MccTable ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.BAN)
-    private static MccEntry entryForMcc(int mcc) {
+        private static MccEntry entryForMcc(int mcc) {
         int index;
         MccEntry m;
         m = new MccEntry(mcc, null, 0);
@@ -179,7 +178,7 @@ public final class MccTable {
             addTaint(smallestDigitsMCC);
             addTaint(iso.getTaint());
             addTaint(mnc);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -189,23 +188,22 @@ public final class MccTable {
             this.iso = iso;
             this.smallestDigitsMnc = smallestDigitsMCC;
             this.language = language;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.mcc = mnc;
+            //this.iso = iso;
+            //this.smallestDigitsMnc = smallestDigitsMCC;
+            //this.language = language;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.963 -0400", hash_original_method = "A9AC63D31BDD3C9311D3D9491FFA185B", hash_generated_method = "4710AD228BDBB906352845FF57EE73C9")
         public int compareTo(MccEntry o) {
             addTaint(o.getTaint());
             int var3798234E9F48084519D364BF82FFC80A_800246975 = (mcc - o.mcc);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418452007 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418452007;
-            
-            
+            // ---------- Original Method ----------
+            //return mcc - o.mcc;
         }
 
         

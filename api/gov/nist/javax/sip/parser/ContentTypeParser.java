@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ContentTypeParser extends ParametersParser {
     public  ContentTypeParser(String contentType) {
         super(contentType);
         addTaint(contentType.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,11 +22,10 @@ public class ContentTypeParser extends ParametersParser {
     protected  ContentTypeParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.356 -0400", hash_original_method = "8AB392911FDE1F0164CFD7A5CB623621", hash_generated_method = "B957E99D42FD3C29A0C7ABF27B960EB1")
     public SIPHeader parse() throws ParseException {
         ContentType contentType = new ContentType();
@@ -46,17 +45,17 @@ public class ContentTypeParser extends ParametersParser {
             contentType.setContentSubType(subType.getTokenValue());
             super.parse(contentType);
             this.lexer.match('\n');
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("ContentTypeParser.parse");
-        } 
+        } //End block
 SIPHeader var1F9BE0A83D9F0F30EFF7E238CEE615C0_1606729253 =         contentType;
         var1F9BE0A83D9F0F30EFF7E238CEE615C0_1606729253.addTaint(taint);
         return var1F9BE0A83D9F0F30EFF7E238CEE615C0_1606729253;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

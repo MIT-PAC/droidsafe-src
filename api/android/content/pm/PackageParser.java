@@ -1,6 +1,6 @@
 package android.content.pm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -78,26 +78,24 @@ public class PackageParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.778 -0400", hash_original_method = "DDBED2CCEF7CE747A37B4CF69A21D51E", hash_generated_method = "E69DDF97EF9C8A4CD053936837CFE800")
     public  PackageParser(String archiveSourcePath) {
         mArchiveSourcePath = archiveSourcePath;
-        
-        
+        // ---------- Original Method ----------
+        //mArchiveSourcePath = archiveSourcePath;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.778 -0400", hash_original_method = "65A62D9388B66A4D9595CDAEE2873A09", hash_generated_method = "103DD5B4DFB0483919E33AB133A239C0")
     public void setSeparateProcesses(String[] procs) {
         mSeparateProcesses = procs;
-        
-        
+        // ---------- Original Method ----------
+        //mSeparateProcesses = procs;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.779 -0400", hash_original_method = "14C9699FDDD05F8B9AF1818DB0942037", hash_generated_method = "109C581621376AE52DD74733E1366244")
     public void setOnlyCoreApps(boolean onlyCoreApps) {
         mOnlyCoreApps = onlyCoreApps;
-        
-        
+        // ---------- Original Method ----------
+        //mOnlyCoreApps = onlyCoreApps;
     }
 
     
@@ -254,7 +252,6 @@ public class PackageParser {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.780 -0400", hash_original_method = "83F32E741E7740326FB3ACF1CABD2263", hash_generated_method = "4D76A33CFAEF1A6AE977A33C7D39B347")
     private Certificate[] loadCertificates(JarFile jarFile, JarEntry je,
             byte[] readBuffer) {
@@ -267,51 +264,49 @@ public class PackageParser {
             while
 (is.read(readBuffer, 0, readBuffer.length) != -1)            
             {
-            } 
+            } //End block
             is.close();
 Certificate[] var19FA6D40133C822F7DDD1762B8931907_167540359 =             je != null ? je.getCertificates() : null;
             var19FA6D40133C822F7DDD1762B8931907_167540359.addTaint(taint);
             return var19FA6D40133C822F7DDD1762B8931907_167540359;
-        } 
+        } //End block
         catch (IOException e)
         {
-        } 
+        } //End block
         catch (RuntimeException e)
         {
-        } 
+        } //End block
 Certificate[] var540C13E9E156B687226421B24F2DF178_369261181 =         null;
         var540C13E9E156B687226421B24F2DF178_369261181.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_369261181;
-        
-        
-            
-            
-            
-            
-            
-        
-            
-                    
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //InputStream is = new BufferedInputStream(jarFile.getInputStream(je));
+            //while (is.read(readBuffer, 0, readBuffer.length) != -1) {
+            //}
+            //is.close();
+            //return je != null ? je.getCertificates() : null;
+        //} catch (IOException e) {
+            //Slog.w(TAG, "Exception reading " + je.getName() + " in "
+                    //+ jarFile.getName(), e);
+        //} catch (RuntimeException e) {
+            //Slog.w(TAG, "Exception reading " + je.getName() + " in "
+                    //+ jarFile.getName(), e);
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.780 -0400", hash_original_method = "043AC7F11A9C5FD11FB43AEF955AD87D", hash_generated_method = "4A36D9E05BA82521182DC07DC88C5B58")
     public int getParseError() {
         int varBDCAA77B0CE7BEBD0AAD5ADCACBCBA88_1350698324 = (mParseError);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218220143 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218220143;
-        
-        
+        // ---------- Original Method ----------
+        //return mParseError;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.781 -0400", hash_original_method = "F8C0CFF9FE003FD5724E792D5942913B", hash_generated_method = "350C88704AFBE2F5657B3DD42DD64192")
     public Package parsePackage(File sourceFile, String destCodePath,
             DisplayMetrics metrics, int flags) {
@@ -326,18 +321,18 @@ Certificate[] var540C13E9E156B687226421B24F2DF178_369261181 =         null;
 Package var540C13E9E156B687226421B24F2DF178_1983176669 =             null;
             var540C13E9E156B687226421B24F2DF178_1983176669.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1983176669;
-        } 
+        } //End block
     if(!isPackageFilename(sourceFile.getName())
                 && (flags&PARSE_MUST_BE_APK) != 0)        
         {
     if((flags&PARSE_IS_SYSTEM) == 0)            
             {
-            } 
+            } //End block
             mParseError = PackageManager.INSTALL_PARSE_FAILED_NOT_APK;
 Package var540C13E9E156B687226421B24F2DF178_122320184 =             null;
             var540C13E9E156B687226421B24F2DF178_122320184.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_122320184;
-        } 
+        } //End block
     if(DEBUG_JAR)        
         Slog.d(TAG, "Scanning package: " + mArchiveSourcePath);
         XmlResourceParser parser = null;
@@ -355,14 +350,14 @@ Package var540C13E9E156B687226421B24F2DF178_122320184 =             null;
                         Build.VERSION.RESOURCES_SDK_INT);
                 parser = assmgr.openXmlResourceParser(cookie, ANDROID_MANIFEST_FILENAME);
                 assetError = false;
-            } 
+            } //End block
             else
             {
-            } 
-        } 
+            } //End block
+        } //End block
         catch (Exception e)
         {
-        } 
+        } //End block
     if(assetError)        
         {
     if(assmgr != null)            
@@ -371,40 +366,40 @@ Package var540C13E9E156B687226421B24F2DF178_122320184 =             null;
 Package var540C13E9E156B687226421B24F2DF178_1321971136 =             null;
             var540C13E9E156B687226421B24F2DF178_1321971136.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1321971136;
-        } 
+        } //End block
         String[] errorText = new String[1];
         Package pkg = null;
         Exception errorException = null;
         try 
         {
             pkg = parsePackage(res, parser, flags, errorText);
-        } 
+        } //End block
         catch (Exception e)
         {
             errorException = e;
             mParseError = PackageManager.INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION;
-        } 
+        } //End block
     if(pkg == null)        
         {
     if(!mOnlyCoreApps || mParseError != PackageManager.INSTALL_SUCCEEDED)            
             {
     if(errorException != null)                
                 {
-                } 
+                } //End block
                 else
                 {
-                } 
+                } //End block
     if(mParseError == PackageManager.INSTALL_SUCCEEDED)                
                 {
                     mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_MALFORMED;
-                } 
-            } 
+                } //End block
+            } //End block
             parser.close();
             assmgr.close();
 Package var540C13E9E156B687226421B24F2DF178_1402990364 =             null;
             var540C13E9E156B687226421B24F2DF178_1402990364.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1402990364;
-        } 
+        } //End block
         parser.close();
         assmgr.close();
         pkg.mPath = destCodePath;
@@ -413,12 +408,11 @@ Package var540C13E9E156B687226421B24F2DF178_1402990364 =             null;
 Package varED674789E18B51C56C5496E452A560E9_1037120164 =         pkg;
         varED674789E18B51C56C5496E452A560E9_1037120164.addTaint(taint);
         return varED674789E18B51C56C5496E452A560E9_1037120164;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.782 -0400", hash_original_method = "19D0E628AA10FC207BA0D548739FDEDB", hash_generated_method = "046B09EF9B8CF476481E97C3243AAF66")
     public boolean collectCertificates(Package pkg, int flags) {
         addTaint(flags);
@@ -433,13 +427,13 @@ Package varED674789E18B51C56C5496E452A560E9_1037120164 =         pkg;
             {
                 mReadBuffer = null;
                 readBuffer = readBufferRef.get();
-            } 
+            } //End block
     if(readBuffer == null)            
             {
                 readBuffer = new byte[8192];
                 readBufferRef = new WeakReference<byte[]>(readBuffer);
-            } 
-        } 
+            } //End block
+        } //End block
         try 
         {
             JarFile jarFile = new JarFile(mArchiveSourcePath);
@@ -455,7 +449,7 @@ Package varED674789E18B51C56C5496E452A560E9_1037120164 =         pkg;
                     boolean var68934A3E9455FA72420237EB05902327_1529809558 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355279960 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355279960;
-                } 
+                } //End block
     if(DEBUG_JAR)                
                 {
     if(certs != null)                    
@@ -463,10 +457,10 @@ Package varED674789E18B51C56C5496E452A560E9_1037120164 =         pkg;
                         final int N = certs.length;
 for(int i=0;i<N;i++)
                         {
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             else
             {
                 Enumeration<JarEntry> entries = jarFile.entries();
@@ -484,11 +478,11 @@ for(int i=0;i<N;i++)
                     {
                         final Attributes attributes = manifest.getAttributes(name);
                         pkg.manifestDigest = ManifestDigest.fromAttributes(attributes);
-                    } 
+                    } //End block
                     final Certificate[] localCerts = loadCertificates(jarFile, je, readBuffer);
     if(DEBUG_JAR)                    
                     {
-                    } 
+                    } //End block
     if(localCerts == null)                    
                     {
                         jarFile.close();
@@ -496,12 +490,12 @@ for(int i=0;i<N;i++)
                         boolean var68934A3E9455FA72420237EB05902327_292303230 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2067471995 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2067471995;
-                    } 
+                    } //End block
                     else
     if(certs == null)                    
                     {
                         certs = localCerts;
-                    } 
+                    } //End block
                     else
                     {
 for(int i=0;i<certs.length;i++)
@@ -514,8 +508,8 @@ for(int j=0;j<localCerts.length;j++)
                                 {
                                     found = true;
                                     break;
-                                } 
-                            } 
+                                } //End block
+                            } //End block
     if(!found || certs.length != localCerts.length)                            
                             {
                                 jarFile.close();
@@ -523,16 +517,16 @@ for(int j=0;j<localCerts.length;j++)
                                 boolean var68934A3E9455FA72420237EB05902327_726929772 = (false);
                                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1068085643 = getTaintBoolean();
                                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1068085643;
-                            } 
-                        } 
-                    } 
-                } 
-            } 
+                            } //End block
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             jarFile.close();
             synchronized
 (mSync)            {
                 mReadBuffer = readBufferRef;
-            } 
+            } //End block
     if(certs != null && certs.length > 0)            
             {
                 final int N = certs.length;
@@ -541,42 +535,42 @@ for(int i=0;i<N;i++)
                 {
                     pkg.mSignatures[i] = new Signature(
                             certs[i].getEncoded());
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 mParseError = PackageManager.INSTALL_PARSE_FAILED_NO_CERTIFICATES;
                 boolean var68934A3E9455FA72420237EB05902327_408304262 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1321370669 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1321370669;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (CertificateEncodingException e)
         {
             mParseError = PackageManager.INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING;
             boolean var68934A3E9455FA72420237EB05902327_991693074 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1801905371 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1801905371;
-        } 
+        } //End block
         catch (IOException e)
         {
             mParseError = PackageManager.INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING;
             boolean var68934A3E9455FA72420237EB05902327_1140561376 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_681875733 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_681875733;
-        } 
+        } //End block
         catch (RuntimeException e)
         {
             mParseError = PackageManager.INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION;
             boolean var68934A3E9455FA72420237EB05902327_1885448913 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1521836643 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1521836643;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_660167296 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1772952008 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1772952008;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -682,8 +676,7 @@ for(int i=0;i<N;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static PackageLite parsePackageLite(Resources res, XmlPullParser parser,
+        private static PackageLite parsePackageLite(Resources res, XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws IOException,
             XmlPullParserException {
         int type;
@@ -768,7 +761,7 @@ for(int i=0;i<N;i++)
 Package var540C13E9E156B687226421B24F2DF178_221115009 =             null;
             var540C13E9E156B687226421B24F2DF178_221115009.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_221115009;
-        } 
+        } //End block
         int type;
     if(mOnlyCoreApps)        
         {
@@ -779,8 +772,8 @@ Package var540C13E9E156B687226421B24F2DF178_221115009 =             null;
 Package var540C13E9E156B687226421B24F2DF178_554533814 =                 null;
                 var540C13E9E156B687226421B24F2DF178_554533814.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_554533814;
-            } 
-        } 
+            } //End block
+        } //End block
         final Package pkg = new Package(pkgName);
         boolean foundApp = false;
         TypedArray sa = res.obtainAttributes(attrs,
@@ -792,7 +785,7 @@ Package var540C13E9E156B687226421B24F2DF178_554533814 =                 null;
     if(pkg.mVersionName != null)        
         {
             pkg.mVersionName = pkg.mVersionName.intern();
-        } 
+        } //End block
         String str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifest_sharedUserId, 0);
     if(str != null && str.length() > 0)        
@@ -806,11 +799,11 @@ Package var540C13E9E156B687226421B24F2DF178_554533814 =                 null;
 Package var540C13E9E156B687226421B24F2DF178_693094063 =                 null;
                 var540C13E9E156B687226421B24F2DF178_693094063.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_693094063;
-            } 
+            } //End block
             pkg.mSharedUserId = str.intern();
             pkg.mSharedUserLabel = sa.getResourceId(
                     com.android.internal.R.styleable.AndroidManifest_sharedUserLabel, 0);
-        } 
+        } //End block
         sa.recycle();
         pkg.installLocation = sa.getInteger(
                 com.android.internal.R.styleable.AndroidManifest_installLocation,
@@ -830,7 +823,7 @@ Package var540C13E9E156B687226421B24F2DF178_693094063 =                 null;
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } 
+            } //End block
             String tagName = parser.getName();
     if(tagName.equals("application"))            
             {
@@ -843,21 +836,21 @@ Package var540C13E9E156B687226421B24F2DF178_693094063 =                 null;
 Package var540C13E9E156B687226421B24F2DF178_2071508791 =                         null;
                         var540C13E9E156B687226421B24F2DF178_2071508791.addTaint(taint);
                         return var540C13E9E156B687226421B24F2DF178_2071508791;
-                    } 
+                    } //End block
                     else
                     {
                         XmlUtils.skipCurrentTag(parser);
                         continue;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 foundApp = true;
     if(!parseApplication(pkg, res, parser, attrs, flags, outError))                
                 {
 Package var540C13E9E156B687226421B24F2DF178_902591118 =                     null;
                     var540C13E9E156B687226421B24F2DF178_902591118.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_902591118;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(tagName.equals("permission-group"))            
             {
@@ -866,8 +859,8 @@ Package var540C13E9E156B687226421B24F2DF178_902591118 =                     null
 Package var540C13E9E156B687226421B24F2DF178_830985548 =                     null;
                     var540C13E9E156B687226421B24F2DF178_830985548.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_830985548;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(tagName.equals("permission"))            
             {
@@ -876,8 +869,8 @@ Package var540C13E9E156B687226421B24F2DF178_830985548 =                     null
 Package var540C13E9E156B687226421B24F2DF178_477420098 =                     null;
                     var540C13E9E156B687226421B24F2DF178_477420098.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_477420098;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(tagName.equals("permission-tree"))            
             {
@@ -886,8 +879,8 @@ Package var540C13E9E156B687226421B24F2DF178_477420098 =                     null
 Package var540C13E9E156B687226421B24F2DF178_1875453118 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1875453118.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1875453118;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(tagName.equals("uses-permission"))            
             {
@@ -899,9 +892,9 @@ Package var540C13E9E156B687226421B24F2DF178_1875453118 =                     nul
     if(name != null && !pkg.requestedPermissions.contains(name))                
                 {
                     pkg.requestedPermissions.add(name.intern());
-                } 
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("uses-configuration"))            
             {
@@ -919,7 +912,7 @@ Package var540C13E9E156B687226421B24F2DF178_1875453118 =                     nul
                         false))                
                 {
                     cPref.reqInputFeatures |= ConfigurationInfo.INPUT_FEATURE_HARD_KEYBOARD;
-                } 
+                } //End block
                 cPref.reqNavigation = sa.getInt(
                         com.android.internal.R.styleable.AndroidManifestUsesConfiguration_reqNavigation,
                         Configuration.NAVIGATION_UNDEFINED);
@@ -928,11 +921,11 @@ Package var540C13E9E156B687226421B24F2DF178_1875453118 =                     nul
                         false))                
                 {
                     cPref.reqInputFeatures |= ConfigurationInfo.INPUT_FEATURE_FIVE_WAY_NAV;
-                } 
+                } //End block
                 sa.recycle();
                 pkg.configPreferences.add(cPref);
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("uses-feature"))            
             {
@@ -946,27 +939,27 @@ Package var540C13E9E156B687226421B24F2DF178_1875453118 =                     nul
                     fi.reqGlEsVersion = sa.getInt(
                             com.android.internal.R.styleable.AndroidManifestUsesFeature_glEsVersion,
                             FeatureInfo.GL_ES_VERSION_UNDEFINED);
-                } 
+                } //End block
     if(sa.getBoolean(
                         com.android.internal.R.styleable.AndroidManifestUsesFeature_required,
                         true))                
                 {
                     fi.flags |= FeatureInfo.FLAG_REQUIRED;
-                } 
+                } //End block
                 sa.recycle();
     if(pkg.reqFeatures == null)                
                 {
                     pkg.reqFeatures = new ArrayList<FeatureInfo>();
-                } 
+                } //End block
                 pkg.reqFeatures.add(fi);
     if(fi.name == null)                
                 {
                     ConfigurationInfo cPref = new ConfigurationInfo();
                     cPref.reqGlEsVersion = fi.reqGlEsVersion;
                     pkg.configPreferences.add(cPref);
-                } 
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("uses-sdk"))            
             {
@@ -985,12 +978,12 @@ Package var540C13E9E156B687226421B24F2DF178_1875453118 =                     nul
     if(val.type == TypedValue.TYPE_STRING && val.string != null)                        
                         {
                             targetCode = minCode = val.string.toString();
-                        } 
+                        } //End block
                         else
                         {
                             targetVers = minVers = val.data;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     val = sa.peekValue(
                             com.android.internal.R.styleable.AndroidManifestUsesSdk_targetSdkVersion);
     if(val != null)                    
@@ -998,12 +991,12 @@ Package var540C13E9E156B687226421B24F2DF178_1875453118 =                     nul
     if(val.type == TypedValue.TYPE_STRING && val.string != null)                        
                         {
                             targetCode = minCode = val.string.toString();
-                        } 
+                        } //End block
                         else
                         {
                             targetVers = val.data;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     sa.recycle();
     if(minCode != null)                    
                     {
@@ -1013,18 +1006,18 @@ Package var540C13E9E156B687226421B24F2DF178_1875453118 =                     nul
                             {
                                 outError[0] = "Requires development platform " + minCode
                                         + " (current platform is " + SDK_CODENAME + ")";
-                            } 
+                            } //End block
                             else
                             {
                                 outError[0] = "Requires development platform " + minCode
                                         + " but this is a release platform.";
-                            } 
+                            } //End block
                             mParseError = PackageManager.INSTALL_FAILED_OLDER_SDK;
 Package var540C13E9E156B687226421B24F2DF178_1918358415 =                             null;
                             var540C13E9E156B687226421B24F2DF178_1918358415.addTaint(taint);
                             return var540C13E9E156B687226421B24F2DF178_1918358415;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
     if(minVers > SDK_VERSION)                    
                     {
@@ -1034,7 +1027,7 @@ Package var540C13E9E156B687226421B24F2DF178_1918358415 =                        
 Package var540C13E9E156B687226421B24F2DF178_1694132395 =                         null;
                         var540C13E9E156B687226421B24F2DF178_1694132395.addTaint(taint);
                         return var540C13E9E156B687226421B24F2DF178_1694132395;
-                    } 
+                    } //End block
     if(targetCode != null)                    
                     {
     if(!targetCode.equals(SDK_CODENAME))                        
@@ -1043,27 +1036,27 @@ Package var540C13E9E156B687226421B24F2DF178_1694132395 =                        
                             {
                                 outError[0] = "Requires development platform " + targetCode
                                         + " (current platform is " + SDK_CODENAME + ")";
-                            } 
+                            } //End block
                             else
                             {
                                 outError[0] = "Requires development platform " + targetCode
                                         + " but this is a release platform.";
-                            } 
+                            } //End block
                             mParseError = PackageManager.INSTALL_FAILED_OLDER_SDK;
 Package var540C13E9E156B687226421B24F2DF178_258851647 =                             null;
                             var540C13E9E156B687226421B24F2DF178_258851647.addTaint(taint);
                             return var540C13E9E156B687226421B24F2DF178_258851647;
-                        } 
+                        } //End block
                         pkg.applicationInfo.targetSdkVersion
                                 = android.os.Build.VERSION_CODES.CUR_DEVELOPMENT;
-                    } 
+                    } //End block
                     else
                     {
                         pkg.applicationInfo.targetSdkVersion = targetVers;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("supports-screens"))            
             {
@@ -1098,7 +1091,7 @@ Package var540C13E9E156B687226421B24F2DF178_258851647 =                         
                         anyDensity);
                 sa.recycle();
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("protected-broadcast"))            
             {
@@ -1112,14 +1105,14 @@ Package var540C13E9E156B687226421B24F2DF178_258851647 =                         
     if(pkg.protectedBroadcasts == null)                    
                     {
                         pkg.protectedBroadcasts = new ArrayList<String>();
-                    } 
+                    } //End block
     if(!pkg.protectedBroadcasts.contains(name))                    
                     {
                         pkg.protectedBroadcasts.add(name.intern());
-                    } 
-                } 
+                    } //End block
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("instrumentation"))            
             {
@@ -1128,8 +1121,8 @@ Package var540C13E9E156B687226421B24F2DF178_258851647 =                         
 Package var540C13E9E156B687226421B24F2DF178_1595365894 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1595365894.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1595365894;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(tagName.equals("original-package"))            
             {
@@ -1143,12 +1136,12 @@ Package var540C13E9E156B687226421B24F2DF178_1595365894 =                     nul
                     {
                         pkg.mOriginalPackages = new ArrayList<String>();
                         pkg.mRealPackage = pkg.packageName;
-                    } 
+                    } //End block
                     pkg.mOriginalPackages.add(orig);
-                } 
+                } //End block
                 sa.recycle();
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("adopt-permissions"))            
             {
@@ -1162,29 +1155,29 @@ Package var540C13E9E156B687226421B24F2DF178_1595365894 =                     nul
     if(pkg.mAdoptPermissions == null)                    
                     {
                         pkg.mAdoptPermissions = new ArrayList<String>();
-                    } 
+                    } //End block
                     pkg.mAdoptPermissions.add(name);
-                } 
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("uses-gl-texture"))            
             {
                 XmlUtils.skipCurrentTag(parser);
                 continue;
-            } 
+            } //End block
             else
     if(tagName.equals("compatible-screens"))            
             {
                 XmlUtils.skipCurrentTag(parser);
                 continue;
-            } 
+            } //End block
             else
     if(tagName.equals("eat-comment"))            
             {
                 XmlUtils.skipCurrentTag(parser);
                 continue;
-            } 
+            } //End block
             else
     if(RIGID_PARSER)            
             {
@@ -1194,18 +1187,18 @@ Package var540C13E9E156B687226421B24F2DF178_1595365894 =                     nul
 Package var540C13E9E156B687226421B24F2DF178_1720734016 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1720734016.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1720734016;
-            } 
+            } //End block
             else
             {
                 XmlUtils.skipCurrentTag(parser);
                 continue;
-            } 
-        } 
+            } //End block
+        } //End block
     if(!foundApp && pkg.instrumentation.size() == 0)        
         {
             outError[0] = "<manifest> does not contain an <application> or <instrumentation>";
             mParseError = PackageManager.INSTALL_PARSE_FAILED_MANIFEST_EMPTY;
-        } 
+        } //End block
         final int NP = PackageParser.NEW_PERMISSIONS.length;
         StringBuilder implicitPerms = null;
 for(int ip=0;ip<NP;ip++)
@@ -1214,7 +1207,7 @@ for(int ip=0;ip<NP;ip++)
     if(pkg.applicationInfo.targetSdkVersion >= npi.sdkVersion)            
             {
                 break;
-            } 
+            } //End block
     if(!pkg.requestedPermissions.contains(npi.name))            
             {
     if(implicitPerms == null)                
@@ -1222,57 +1215,57 @@ for(int ip=0;ip<NP;ip++)
                     implicitPerms = new StringBuilder(128);
                     implicitPerms.append(pkg.packageName);
                     implicitPerms.append(": compat added ");
-                } 
+                } //End block
                 else
                 {
                     implicitPerms.append(' ');
-                } 
+                } //End block
                 implicitPerms.append(npi.name);
                 pkg.requestedPermissions.add(npi.name);
-            } 
-        } 
+            } //End block
+        } //End block
     if(implicitPerms != null)        
         {
-        } 
+        } //End block
     if(supportsSmallScreens < 0 || (supportsSmallScreens > 0
                 && pkg.applicationInfo.targetSdkVersion
                         >= android.os.Build.VERSION_CODES.DONUT))        
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_SMALL_SCREENS;
-        } 
+        } //End block
     if(supportsNormalScreens != 0)        
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_NORMAL_SCREENS;
-        } 
+        } //End block
     if(supportsLargeScreens < 0 || (supportsLargeScreens > 0
                 && pkg.applicationInfo.targetSdkVersion
                         >= android.os.Build.VERSION_CODES.DONUT))        
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_LARGE_SCREENS;
-        } 
+        } //End block
     if(supportsXLargeScreens < 0 || (supportsXLargeScreens > 0
                 && pkg.applicationInfo.targetSdkVersion
                         >= android.os.Build.VERSION_CODES.GINGERBREAD))        
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_XLARGE_SCREENS;
-        } 
+        } //End block
     if(resizeable < 0 || (resizeable > 0
                 && pkg.applicationInfo.targetSdkVersion
                         >= android.os.Build.VERSION_CODES.DONUT))        
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_RESIZEABLE_FOR_SCREENS;
-        } 
+        } //End block
     if(anyDensity < 0 || (anyDensity > 0
                 && pkg.applicationInfo.targetSdkVersion
                         >= android.os.Build.VERSION_CODES.DONUT))        
         {
             pkg.applicationInfo.flags |= ApplicationInfo.FLAG_SUPPORTS_SCREEN_DENSITIES;
-        } 
+        } //End block
 Package varED674789E18B51C56C5496E452A560E9_79968263 =         pkg;
         varED674789E18B51C56C5496E452A560E9_79968263.addTaint(taint);
         return varED674789E18B51C56C5496E452A560E9_79968263;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1386,7 +1379,7 @@ Package varED674789E18B51C56C5496E452A560E9_79968263 =         pkg;
 PermissionGroup var540C13E9E156B687226421B24F2DF178_470489847 =             null;
             var540C13E9E156B687226421B24F2DF178_470489847.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_470489847;
-        } 
+        } //End block
         perm.info.descriptionRes = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestPermissionGroup_description,
                 0);
@@ -1398,13 +1391,13 @@ PermissionGroup var540C13E9E156B687226421B24F2DF178_470489847 =             null
 PermissionGroup var540C13E9E156B687226421B24F2DF178_2053019295 =             null;
             var540C13E9E156B687226421B24F2DF178_2053019295.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2053019295;
-        } 
+        } //End block
         owner.permissionGroups.add(perm);
 PermissionGroup var768916ECB5B80042EF41FFF6B22D9A06_433656976 =         perm;
         var768916ECB5B80042EF41FFF6B22D9A06_433656976.addTaint(taint);
         return var768916ECB5B80042EF41FFF6B22D9A06_433656976;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1431,13 +1424,13 @@ PermissionGroup var768916ECB5B80042EF41FFF6B22D9A06_433656976 =         perm;
 Permission var540C13E9E156B687226421B24F2DF178_1075866625 =             null;
             var540C13E9E156B687226421B24F2DF178_1075866625.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1075866625;
-        } 
+        } //End block
         perm.info.group = sa.getNonResourceString(
                 com.android.internal.R.styleable.AndroidManifestPermission_permissionGroup);
     if(perm.info.group != null)        
         {
             perm.info.group = perm.info.group.intern();
-        } 
+        } //End block
         perm.info.descriptionRes = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestPermission_description,
                 0);
@@ -1452,7 +1445,7 @@ Permission var540C13E9E156B687226421B24F2DF178_1075866625 =             null;
 Permission var540C13E9E156B687226421B24F2DF178_1108046687 =             null;
             var540C13E9E156B687226421B24F2DF178_1108046687.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1108046687;
-        } 
+        } //End block
     if(!parseAllMetaData(res, parser, attrs, "<permission>", perm,
                 outError))        
         {
@@ -1460,13 +1453,13 @@ Permission var540C13E9E156B687226421B24F2DF178_1108046687 =             null;
 Permission var540C13E9E156B687226421B24F2DF178_1430244887 =             null;
             var540C13E9E156B687226421B24F2DF178_1430244887.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1430244887;
-        } 
+        } //End block
         owner.permissions.add(perm);
 Permission var768916ECB5B80042EF41FFF6B22D9A06_2080377328 =         perm;
         var768916ECB5B80042EF41FFF6B22D9A06_2080377328.addTaint(taint);
         return var768916ECB5B80042EF41FFF6B22D9A06_2080377328;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1493,13 +1486,13 @@ Permission var768916ECB5B80042EF41FFF6B22D9A06_2080377328 =         perm;
 Permission var540C13E9E156B687226421B24F2DF178_2135241275 =             null;
             var540C13E9E156B687226421B24F2DF178_2135241275.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2135241275;
-        } 
+        } //End block
         sa.recycle();
         int index = perm.info.name.indexOf('.');
     if(index > 0)        
         {
             index = perm.info.name.indexOf('.', index+1);
-        } 
+        } //End block
     if(index < 0)        
         {
             outError[0] = "<permission-tree> name has less than three segments: "
@@ -1508,7 +1501,7 @@ Permission var540C13E9E156B687226421B24F2DF178_2135241275 =             null;
 Permission var540C13E9E156B687226421B24F2DF178_1160507543 =             null;
             var540C13E9E156B687226421B24F2DF178_1160507543.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1160507543;
-        } 
+        } //End block
         perm.info.descriptionRes = 0;
         perm.info.protectionLevel = PermissionInfo.PROTECTION_NORMAL;
         perm.tree = true;
@@ -1519,13 +1512,13 @@ Permission var540C13E9E156B687226421B24F2DF178_1160507543 =             null;
 Permission var540C13E9E156B687226421B24F2DF178_766313697 =             null;
             var540C13E9E156B687226421B24F2DF178_766313697.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_766313697;
-        } 
+        } //End block
         owner.permissions.add(perm);
 Permission var768916ECB5B80042EF41FFF6B22D9A06_308791802 =         perm;
         var768916ECB5B80042EF41FFF6B22D9A06_308791802.addTaint(taint);
         return var768916ECB5B80042EF41FFF6B22D9A06_308791802;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1545,7 +1538,7 @@ Permission var768916ECB5B80042EF41FFF6B22D9A06_308791802 =         perm;
                     com.android.internal.R.styleable.AndroidManifestInstrumentation_icon,
                     com.android.internal.R.styleable.AndroidManifestInstrumentation_logo);
             mParseInstrumentationArgs.tag = "<instrumentation>";
-        } 
+        } //End block
         mParseInstrumentationArgs.sa = sa;
         Instrumentation a = new Instrumentation(mParseInstrumentationArgs,
                 new InstrumentationInfo());
@@ -1556,7 +1549,7 @@ Permission var768916ECB5B80042EF41FFF6B22D9A06_308791802 =         perm;
 Instrumentation var540C13E9E156B687226421B24F2DF178_1238346414 =             null;
             var540C13E9E156B687226421B24F2DF178_1238346414.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1238346414;
-        } 
+        } //End block
         String str;
         str = sa.getNonResourceString(
                 com.android.internal.R.styleable.AndroidManifestInstrumentation_targetPackage);
@@ -1575,7 +1568,7 @@ Instrumentation var540C13E9E156B687226421B24F2DF178_1238346414 =             nul
 Instrumentation var540C13E9E156B687226421B24F2DF178_1419583779 =             null;
             var540C13E9E156B687226421B24F2DF178_1419583779.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1419583779;
-        } 
+        } //End block
     if(!parseAllMetaData(res, parser, attrs, "<instrumentation>", a,
                 outError))        
         {
@@ -1583,13 +1576,13 @@ Instrumentation var540C13E9E156B687226421B24F2DF178_1419583779 =             nul
 Instrumentation var540C13E9E156B687226421B24F2DF178_790062820 =             null;
             var540C13E9E156B687226421B24F2DF178_790062820.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_790062820;
-        } 
+        } //End block
         owner.instrumentation.add(a);
 Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
         var3F5343BF1D849954A73F0BB303805FFD_490662632.addTaint(taint);
         return var3F5343BF1D849954A73F0BB303805FFD_490662632;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1618,15 +1611,15 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                 boolean var68934A3E9455FA72420237EB05902327_1642736578 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1830556337 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1830556337;
-            } 
-        } 
+            } //End block
+        } //End block
         String manageSpaceActivity = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestApplication_manageSpaceActivity, 0);
     if(manageSpaceActivity != null)        
         {
             ai.manageSpaceActivityName = buildClassName(pkgName, manageSpaceActivity,
                     outError);
-        } 
+        } //End block
         boolean allowBackup = sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_allowBackup, true);
     if(allowBackup)        
@@ -1639,27 +1632,27 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                 ai.backupAgentName = buildClassName(pkgName, backupAgent, outError);
     if(DEBUG_BACKUP)                
                 {
-                } 
+                } //End block
     if(sa.getBoolean(
                         com.android.internal.R.styleable.AndroidManifestApplication_killAfterRestore,
                         true))                
                 {
                     ai.flags |= ApplicationInfo.FLAG_KILL_AFTER_RESTORE;
-                } 
+                } //End block
     if(sa.getBoolean(
                         com.android.internal.R.styleable.AndroidManifestApplication_restoreAnyVersion,
                         false))                
                 {
                     ai.flags |= ApplicationInfo.FLAG_RESTORE_ANY_VERSION;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         TypedValue v = sa.peekValue(
                 com.android.internal.R.styleable.AndroidManifestApplication_label);
     if(v != null && (ai.labelRes=v.resourceId) == 0)        
         {
             ai.nonLocalizedLabel = v.coerceToString();
-        } 
+        } //End block
         ai.icon = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestApplication_icon, 0);
         ai.logo = sa.getResourceId(
@@ -1675,28 +1668,28 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     false))            
             {
                 ai.flags |= ApplicationInfo.FLAG_PERSISTENT;
-            } 
-        } 
+            } //End block
+        } //End block
     if((flags & PARSE_FORWARD_LOCK) != 0)        
         {
             ai.flags |= ApplicationInfo.FLAG_FORWARD_LOCK;
-        } 
+        } //End block
     if((flags & PARSE_ON_SDCARD) != 0)        
         {
             ai.flags |= ApplicationInfo.FLAG_EXTERNAL_STORAGE;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_debuggable,
                 false))        
         {
             ai.flags |= ApplicationInfo.FLAG_DEBUGGABLE;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_vmSafeMode,
                 false))        
         {
             ai.flags |= ApplicationInfo.FLAG_VM_SAFE_MODE;
-        } 
+        } //End block
         boolean hardwareAccelerated = sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_hardwareAccelerated,
                 owner.applicationInfo.targetSdkVersion >= Build.VERSION_CODES.ICE_CREAM_SANDWICH);
@@ -1705,31 +1698,31 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                 true))        
         {
             ai.flags |= ApplicationInfo.FLAG_HAS_CODE;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_allowTaskReparenting,
                 false))        
         {
             ai.flags |= ApplicationInfo.FLAG_ALLOW_TASK_REPARENTING;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_allowClearUserData,
                 true))        
         {
             ai.flags |= ApplicationInfo.FLAG_ALLOW_CLEAR_USER_DATA;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_testOnly,
                 false))        
         {
             ai.flags |= ApplicationInfo.FLAG_TEST_ONLY;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestApplication_largeHeap,
                 false))        
         {
             ai.flags |= ApplicationInfo.FLAG_LARGE_HEAP;
-        } 
+        } //End block
         String str;
         str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestApplication_permission, 0);
@@ -1738,12 +1731,12 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
         {
             str = sa.getNonConfigurationString(
                     com.android.internal.R.styleable.AndroidManifestApplication_taskAffinity, 0);
-        } 
+        } //End block
         else
         {
             str = sa.getNonResourceString(
                     com.android.internal.R.styleable.AndroidManifestApplication_taskAffinity);
-        } 
+        } //End block
         ai.taskAffinity = buildTaskAffinityName(ai.packageName, ai.packageName,
                 str, outError);
     if(outError[0] == null)        
@@ -1753,12 +1746,12 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
             {
                 pname = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestApplication_process, 0);
-            } 
+            } //End block
             else
             {
                 pname = sa.getNonResourceString(
                         com.android.internal.R.styleable.AndroidManifestApplication_process);
-            } 
+            } //End block
             ai.processName = buildProcessName(ai.packageName, null, pname,
                     flags, mSeparateProcesses, outError);
             ai.enabled = sa.getBoolean(
@@ -1773,10 +1766,10 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
     if(ai.processName != null && ai.processName != ai.packageName)                    
                     {
                         outError[0] = "cantSaveState applications can not use custom processes";
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         ai.uiOptions = sa.getInt(
                 com.android.internal.R.styleable.AndroidManifestApplication_uiOptions, 0);
         sa.recycle();
@@ -1786,7 +1779,7 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
             boolean var68934A3E9455FA72420237EB05902327_590835755 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1423665946 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1423665946;
-        } 
+        } //End block
         final int innerDepth = parser.getDepth();
         int type;
         while
@@ -1796,7 +1789,7 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } 
+            } //End block
             String tagName = parser.getName();
     if(tagName.equals("activity"))            
             {
@@ -1808,9 +1801,9 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     boolean var68934A3E9455FA72420237EB05902327_358890885 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1349412813 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1349412813;
-                } 
+                } //End block
                 owner.activities.add(a);
-            } 
+            } //End block
             else
     if(tagName.equals("receiver"))            
             {
@@ -1821,9 +1814,9 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     boolean var68934A3E9455FA72420237EB05902327_1848385775 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1208217718 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1208217718;
-                } 
+                } //End block
                 owner.receivers.add(a);
-            } 
+            } //End block
             else
     if(tagName.equals("service"))            
             {
@@ -1834,9 +1827,9 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     boolean var68934A3E9455FA72420237EB05902327_282064541 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_149760160 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_149760160;
-                } 
+                } //End block
                 owner.services.add(s);
-            } 
+            } //End block
             else
     if(tagName.equals("provider"))            
             {
@@ -1847,9 +1840,9 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     boolean var68934A3E9455FA72420237EB05902327_205599591 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_570813549 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_570813549;
-                } 
+                } //End block
                 owner.providers.add(p);
-            } 
+            } //End block
             else
     if(tagName.equals("activity-alias"))            
             {
@@ -1860,9 +1853,9 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     boolean var68934A3E9455FA72420237EB05902327_1905393097 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_3345380 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_3345380;
-                } 
+                } //End block
                 owner.activities.add(a);
-            } 
+            } //End block
             else
     if(parser.getName().equals("meta-data"))            
             {
@@ -1873,8 +1866,8 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     boolean var68934A3E9455FA72420237EB05902327_938143112 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_794585047 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_794585047;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(tagName.equals("uses-library"))            
             {
@@ -1893,38 +1886,38 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
     if(owner.usesLibraries == null)                        
                         {
                             owner.usesLibraries = new ArrayList<String>();
-                        } 
+                        } //End block
     if(!owner.usesLibraries.contains(lname))                        
                         {
                             owner.usesLibraries.add(lname.intern());
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
                     {
     if(owner.usesOptionalLibraries == null)                        
                         {
                             owner.usesOptionalLibraries = new ArrayList<String>();
-                        } 
+                        } //End block
     if(!owner.usesOptionalLibraries.contains(lname))                        
                         {
                             owner.usesOptionalLibraries.add(lname.intern());
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(tagName.equals("uses-package"))            
             {
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
             {
     if(!RIGID_PARSER)                
                 {
                     XmlUtils.skipCurrentTag(parser);
                     continue;
-                } 
+                } //End block
                 else
                 {
                     outError[0] = "Bad element under <application>: " + tagName;
@@ -1932,14 +1925,14 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     boolean var68934A3E9455FA72420237EB05902327_1852613039 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1817918543 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1817918543;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1681124715 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_256500195 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_256500195;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1963,7 +1956,7 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
             boolean var68934A3E9455FA72420237EB05902327_1500799448 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192984983 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_192984983;
-        } 
+        } //End block
         outInfo.name
             = buildClassName(owner.applicationInfo.packageName, name, outError);
     if(outInfo.name == null)        
@@ -1971,33 +1964,32 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
             boolean var68934A3E9455FA72420237EB05902327_106704161 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1481519082 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1481519082;
-        } 
+        } //End block
         int iconVal = sa.getResourceId(iconRes, 0);
     if(iconVal != 0)        
         {
             outInfo.icon = iconVal;
             outInfo.nonLocalizedLabel = null;
-        } 
+        } //End block
         int logoVal = sa.getResourceId(logoRes, 0);
     if(logoVal != 0)        
         {
             outInfo.logo = logoVal;
-        } 
+        } //End block
         TypedValue v = sa.peekValue(labelRes);
     if(v != null && (outInfo.labelRes=v.resourceId) == 0)        
         {
             outInfo.nonLocalizedLabel = v.coerceToString();
-        } 
+        } //End block
         outInfo.packageName = owner.packageName;
         boolean varB326B5062B2F0E69046810717534CB09_227062359 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1161766325 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1161766325;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.837 -0400", hash_original_method = "5541C23C630FF3AC70030479982C4C1F", hash_generated_method = "F4E7D588DEB7FCD4987B1F21BA95278F")
     private Activity parseActivity(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError,
@@ -2019,7 +2011,7 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
                     com.android.internal.R.styleable.AndroidManifestActivity_process,
                     com.android.internal.R.styleable.AndroidManifestActivity_description,
                     com.android.internal.R.styleable.AndroidManifestActivity_enabled);
-        } 
+        } //End block
         mParseActivityArgs.tag = receiver ? "<receiver>" : "<activity>";
         mParseActivityArgs.sa = sa;
         mParseActivityArgs.flags = flags;
@@ -2030,14 +2022,14 @@ Instrumentation var3F5343BF1D849954A73F0BB303805FFD_490662632 =         a;
 Activity var540C13E9E156B687226421B24F2DF178_1260586753 =             null;
             var540C13E9E156B687226421B24F2DF178_1260586753.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1260586753;
-        } 
+        } //End block
         final boolean setExported = sa.hasValue(
                 com.android.internal.R.styleable.AndroidManifestActivity_exported);
     if(setExported)        
         {
             a.info.exported = sa.getBoolean(
                     com.android.internal.R.styleable.AndroidManifestActivity_exported, false);
-        } 
+        } //End block
         a.info.theme = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestActivity_theme, 0);
         a.info.uiOptions = sa.getInt(
@@ -2049,11 +2041,11 @@ Activity var540C13E9E156B687226421B24F2DF178_1260586753 =             null;
     if(str == null)        
         {
             a.info.permission = owner.applicationInfo.permission;
-        } 
+        } //End block
         else
         {
             a.info.permission = str.length() > 0 ? str.toString().intern() : null;
-        } 
+        } //End block
         str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestActivity_taskAffinity, 0);
         a.info.taskAffinity = buildTaskAffinityName(owner.applicationInfo.packageName,
@@ -2064,61 +2056,61 @@ Activity var540C13E9E156B687226421B24F2DF178_1260586753 =             null;
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_MULTIPROCESS;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_finishOnTaskLaunch,
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_FINISH_ON_TASK_LAUNCH;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_clearTaskOnLaunch,
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_CLEAR_TASK_ON_LAUNCH;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_noHistory,
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_NO_HISTORY;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_alwaysRetainTaskState,
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_ALWAYS_RETAIN_TASK_STATE;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_stateNotNeeded,
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_STATE_NOT_NEEDED;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_excludeFromRecents,
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_EXCLUDE_FROM_RECENTS;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_allowTaskReparenting,
                 (owner.applicationInfo.flags&ApplicationInfo.FLAG_ALLOW_TASK_REPARENTING) != 0))        
         {
             a.info.flags |= ActivityInfo.FLAG_ALLOW_TASK_REPARENTING;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_finishOnCloseSystemDialogs,
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS;
-        } 
+        } //End block
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestActivity_immersive,
                 false))        
         {
             a.info.flags |= ActivityInfo.FLAG_IMMERSIVE;
-        } 
+        } //End block
     if(!receiver)        
         {
     if(sa.getBoolean(
@@ -2126,7 +2118,7 @@ Activity var540C13E9E156B687226421B24F2DF178_1260586753 =             null;
                     hardwareAccelerated))            
             {
                 a.info.flags |= ActivityInfo.FLAG_HARDWARE_ACCELERATED;
-            } 
+            } //End block
             a.info.launchMode = sa.getInt(
                     com.android.internal.R.styleable.AndroidManifestActivity_launchMode,
                     ActivityInfo.LAUNCH_MULTIPLE);
@@ -2139,26 +2131,26 @@ Activity var540C13E9E156B687226421B24F2DF178_1260586753 =             null;
             a.info.softInputMode = sa.getInt(
                     com.android.internal.R.styleable.AndroidManifestActivity_windowSoftInputMode,
                     0);
-        } 
+        } //End block
         else
         {
             a.info.launchMode = ActivityInfo.LAUNCH_MULTIPLE;
             a.info.configChanges = 0;
-        } 
+        } //End block
         sa.recycle();
     if(receiver && (owner.applicationInfo.flags&ApplicationInfo.FLAG_CANT_SAVE_STATE) != 0)        
         {
     if(a.info.processName == owner.packageName)            
             {
                 outError[0] = "Heavy-weight applications can not have receivers in main process";
-            } 
-        } 
+            } //End block
+        } //End block
     if(outError[0] != null)        
         {
 Activity var540C13E9E156B687226421B24F2DF178_922146339 =             null;
             var540C13E9E156B687226421B24F2DF178_922146339.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_922146339;
-        } 
+        } //End block
         int outerDepth = parser.getDepth();
         int type;
         while
@@ -2169,7 +2161,7 @@ Activity var540C13E9E156B687226421B24F2DF178_922146339 =             null;
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } 
+            } //End block
     if(parser.getName().equals("intent-filter"))            
             {
                 ActivityIntentInfo intent = new ActivityIntentInfo(a);
@@ -2178,15 +2170,15 @@ Activity var540C13E9E156B687226421B24F2DF178_922146339 =             null;
 Activity var540C13E9E156B687226421B24F2DF178_1658520572 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1658520572.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1658520572;
-                } 
+                } //End block
     if(intent.countActions() == 0)                
                 {
-                } 
+                } //End block
                 else
                 {
                     a.intents.add(intent);
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(parser.getName().equals("meta-data"))            
             {
@@ -2196,46 +2188,46 @@ Activity var540C13E9E156B687226421B24F2DF178_1658520572 =                     nu
 Activity var540C13E9E156B687226421B24F2DF178_212556903 =                     null;
                     var540C13E9E156B687226421B24F2DF178_212556903.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_212556903;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(!RIGID_PARSER)                
                 {
     if(receiver)                    
                     {
-                    } 
+                    } //End block
                     else
                     {
-                    } 
+                    } //End block
                     XmlUtils.skipCurrentTag(parser);
                     continue;
-                } 
+                } //End block
                 else
                 {
     if(receiver)                    
                     {
                         outError[0] = "Bad element under <receiver>: " + parser.getName();
-                    } 
+                    } //End block
                     else
                     {
                         outError[0] = "Bad element under <activity>: " + parser.getName();
-                    } 
+                    } //End block
 Activity var540C13E9E156B687226421B24F2DF178_1798899961 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1798899961.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1798899961;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(!setExported)        
         {
             a.info.exported = a.intents.size() > 0;
-        } 
+        } //End block
 Activity var3F5343BF1D849954A73F0BB303805FFD_1660692612 =         a;
         var3F5343BF1D849954A73F0BB303805FFD_1660692612.addTaint(taint);
         return var3F5343BF1D849954A73F0BB303805FFD_1660692612;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2256,7 +2248,7 @@ Activity var3F5343BF1D849954A73F0BB303805FFD_1660692612 =         a;
 Activity var540C13E9E156B687226421B24F2DF178_1802968054 =             null;
             var540C13E9E156B687226421B24F2DF178_1802968054.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1802968054;
-        } 
+        } //End block
         targetActivity = buildClassName(owner.applicationInfo.packageName,
                 targetActivity, outError);
     if(targetActivity == null)        
@@ -2265,7 +2257,7 @@ Activity var540C13E9E156B687226421B24F2DF178_1802968054 =             null;
 Activity var540C13E9E156B687226421B24F2DF178_1748716930 =             null;
             var540C13E9E156B687226421B24F2DF178_1748716930.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1748716930;
-        } 
+        } //End block
     if(mParseActivityAliasArgs == null)        
         {
             mParseActivityAliasArgs = new ParseComponentArgs(owner, outError,
@@ -2278,7 +2270,7 @@ Activity var540C13E9E156B687226421B24F2DF178_1748716930 =             null;
                     com.android.internal.R.styleable.AndroidManifestActivityAlias_description,
                     com.android.internal.R.styleable.AndroidManifestActivityAlias_enabled);
             mParseActivityAliasArgs.tag = "<activity-alias>";
-        } 
+        } //End block
         mParseActivityAliasArgs.sa = sa;
         mParseActivityAliasArgs.flags = flags;
         Activity target = null;
@@ -2290,8 +2282,8 @@ for(int i=0;i<NA;i++)
             {
                 target = t;
                 break;
-            } 
-        } 
+            } //End block
+        } //End block
     if(target == null)        
         {
             outError[0] = "<activity-alias> target activity " + targetActivity
@@ -2300,7 +2292,7 @@ for(int i=0;i<NA;i++)
 Activity var540C13E9E156B687226421B24F2DF178_263324761 =             null;
             var540C13E9E156B687226421B24F2DF178_263324761.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_263324761;
-        } 
+        } //End block
         ActivityInfo info = new ActivityInfo();
         info.targetActivity = targetActivity;
         info.configChanges = target.info.configChanges;
@@ -2314,7 +2306,7 @@ Activity var540C13E9E156B687226421B24F2DF178_263324761 =             null;
     if(info.descriptionRes == 0)        
         {
             info.descriptionRes = target.info.descriptionRes;
-        } 
+        } //End block
         info.screenOrientation = target.info.screenOrientation;
         info.taskAffinity = target.info.taskAffinity;
         info.theme = target.info.theme;
@@ -2327,28 +2319,28 @@ Activity var540C13E9E156B687226421B24F2DF178_263324761 =             null;
 Activity var540C13E9E156B687226421B24F2DF178_105987031 =             null;
             var540C13E9E156B687226421B24F2DF178_105987031.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_105987031;
-        } 
+        } //End block
         final boolean setExported = sa.hasValue(
                 com.android.internal.R.styleable.AndroidManifestActivityAlias_exported);
     if(setExported)        
         {
             a.info.exported = sa.getBoolean(
                     com.android.internal.R.styleable.AndroidManifestActivityAlias_exported, false);
-        } 
+        } //End block
         String str;
         str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestActivityAlias_permission, 0);
     if(str != null)        
         {
             a.info.permission = str.length() > 0 ? str.toString().intern() : null;
-        } 
+        } //End block
         sa.recycle();
     if(outError[0] != null)        
         {
 Activity var540C13E9E156B687226421B24F2DF178_631715722 =             null;
             var540C13E9E156B687226421B24F2DF178_631715722.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_631715722;
-        } 
+        } //End block
         int outerDepth = parser.getDepth();
         int type;
         while
@@ -2359,7 +2351,7 @@ Activity var540C13E9E156B687226421B24F2DF178_631715722 =             null;
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } 
+            } //End block
     if(parser.getName().equals("intent-filter"))            
             {
                 ActivityIntentInfo intent = new ActivityIntentInfo(a);
@@ -2368,15 +2360,15 @@ Activity var540C13E9E156B687226421B24F2DF178_631715722 =             null;
 Activity var540C13E9E156B687226421B24F2DF178_1422812564 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1422812564.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1422812564;
-                } 
+                } //End block
     if(intent.countActions() == 0)                
                 {
-                } 
+                } //End block
                 else
                 {
                     a.intents.add(intent);
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(parser.getName().equals("meta-data"))            
             {
@@ -2386,37 +2378,36 @@ Activity var540C13E9E156B687226421B24F2DF178_1422812564 =                     nu
 Activity var540C13E9E156B687226421B24F2DF178_989633138 =                     null;
                     var540C13E9E156B687226421B24F2DF178_989633138.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_989633138;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(!RIGID_PARSER)                
                 {
                     XmlUtils.skipCurrentTag(parser);
                     continue;
-                } 
+                } //End block
                 else
                 {
                     outError[0] = "Bad element under <activity-alias>: " + parser.getName();
 Activity var540C13E9E156B687226421B24F2DF178_1528060256 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1528060256.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1528060256;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(!setExported)        
         {
             a.info.exported = a.intents.size() > 0;
-        } 
+        } //End block
 Activity var3F5343BF1D849954A73F0BB303805FFD_758615889 =         a;
         var3F5343BF1D849954A73F0BB303805FFD_758615889.addTaint(taint);
         return var3F5343BF1D849954A73F0BB303805FFD_758615889;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.858 -0400", hash_original_method = "CC761DF5515ACB2817B0A6BEDC12031E", hash_generated_method = "15854B163A4687FE6318402B76170892")
     private Provider parseProvider(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
@@ -2437,7 +2428,7 @@ Activity var3F5343BF1D849954A73F0BB303805FFD_758615889 =         a;
                     com.android.internal.R.styleable.AndroidManifestProvider_description,
                     com.android.internal.R.styleable.AndroidManifestProvider_enabled);
             mParseProviderArgs.tag = "<provider>";
-        } 
+        } //End block
         mParseProviderArgs.sa = sa;
         mParseProviderArgs.flags = flags;
         Provider p = new Provider(mParseProviderArgs, new ProviderInfo());
@@ -2447,7 +2438,7 @@ Activity var3F5343BF1D849954A73F0BB303805FFD_758615889 =         a;
 Provider var540C13E9E156B687226421B24F2DF178_1427369105 =             null;
             var540C13E9E156B687226421B24F2DF178_1427369105.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1427369105;
-        } 
+        } //End block
         p.info.exported = sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestProvider_exported, true);
         String cpname = sa.getNonConfigurationString(
@@ -2462,31 +2453,31 @@ Provider var540C13E9E156B687226421B24F2DF178_1427369105 =             null;
     if(str == null)        
         {
             str = permission;
-        } 
+        } //End block
     if(str == null)        
         {
             p.info.readPermission = owner.applicationInfo.permission;
-        } 
+        } //End block
         else
         {
             p.info.readPermission =
                 str.length() > 0 ? str.toString().intern() : null;
-        } 
+        } //End block
         str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestProvider_writePermission, 0);
     if(str == null)        
         {
             str = permission;
-        } 
+        } //End block
     if(str == null)        
         {
             p.info.writePermission = owner.applicationInfo.permission;
-        } 
+        } //End block
         else
         {
             p.info.writePermission =
                 str.length() > 0 ? str.toString().intern() : null;
-        } 
+        } //End block
         p.info.grantUriPermissions = sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestProvider_grantUriPermissions,
                 false);
@@ -2505,27 +2496,27 @@ Provider var540C13E9E156B687226421B24F2DF178_1427369105 =             null;
 Provider var540C13E9E156B687226421B24F2DF178_1464106000 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1464106000.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1464106000;
-            } 
-        } 
+            } //End block
+        } //End block
     if(cpname == null)        
         {
             outError[0] = "<provider> does not incude authorities attribute";
 Provider var540C13E9E156B687226421B24F2DF178_697624727 =             null;
             var540C13E9E156B687226421B24F2DF178_697624727.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_697624727;
-        } 
+        } //End block
         p.info.authority = cpname.intern();
     if(!parseProviderTags(res, parser, attrs, p, outError))        
         {
 Provider var540C13E9E156B687226421B24F2DF178_78160104 =             null;
             var540C13E9E156B687226421B24F2DF178_78160104.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_78160104;
-        } 
+        } //End block
 Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
         var74E4690D9F2A026504928C017944E149_853853160.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_853853160;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2548,7 +2539,7 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } 
+            } //End block
     if(parser.getName().equals("meta-data"))            
             {
     if((outInfo.metaData=parseMetaData(res, parser, attrs,
@@ -2557,8 +2548,8 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
                     boolean var68934A3E9455FA72420237EB05902327_583832101 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1098842886 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1098842886;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(parser.getName().equals("grant-uri-permission"))            
             {
@@ -2570,19 +2561,19 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
     if(str != null)                
                 {
                     pa = new PatternMatcher(str, PatternMatcher.PATTERN_LITERAL);
-                } 
+                } //End block
                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestGrantUriPermission_pathPrefix, 0);
     if(str != null)                
                 {
                     pa = new PatternMatcher(str, PatternMatcher.PATTERN_PREFIX);
-                } 
+                } //End block
                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestGrantUriPermission_pathPattern, 0);
     if(str != null)                
                 {
                     pa = new PatternMatcher(str, PatternMatcher.PATTERN_SIMPLE_GLOB);
-                } 
+                } //End block
                 sa.recycle();
     if(pa != null)                
                 {
@@ -2590,7 +2581,7 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
                     {
                         outInfo.info.uriPermissionPatterns = new PatternMatcher[1];
                         outInfo.info.uriPermissionPatterns[0] = pa;
-                    } 
+                    } //End block
                     else
                     {
                         final int N = outInfo.info.uriPermissionPatterns.length;
@@ -2598,26 +2589,26 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
                         System.arraycopy(outInfo.info.uriPermissionPatterns, 0, newp, 0, N);
                         newp[N] = pa;
                         outInfo.info.uriPermissionPatterns = newp;
-                    } 
+                    } //End block
                     outInfo.info.grantUriPermissions = true;
-                } 
+                } //End block
                 else
                 {
     if(!RIGID_PARSER)                    
                     {
                         XmlUtils.skipCurrentTag(parser);
                         continue;
-                    } 
+                    } //End block
                     else
                     {
                         outError[0] = "No path, pathPrefix, or pathPattern for <path-permission>";
                         boolean var68934A3E9455FA72420237EB05902327_770422858 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1709156900 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1709156900;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(parser.getName().equals("path-permission"))            
             {
@@ -2631,60 +2622,60 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
     if(readPermission == null)                
                 {
                     readPermission = permission;
-                } 
+                } //End block
                 String writePermission = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestPathPermission_writePermission, 0);
     if(writePermission == null)                
                 {
                     writePermission = permission;
-                } 
+                } //End block
                 boolean havePerm = false;
     if(readPermission != null)                
                 {
                     readPermission = readPermission.intern();
                     havePerm = true;
-                } 
+                } //End block
     if(writePermission != null)                
                 {
                     writePermission = writePermission.intern();
                     havePerm = true;
-                } 
+                } //End block
     if(!havePerm)                
                 {
     if(!RIGID_PARSER)                    
                     {
                         XmlUtils.skipCurrentTag(parser);
                         continue;
-                    } 
+                    } //End block
                     else
                     {
                         outError[0] = "No readPermission or writePermssion for <path-permission>";
                         boolean var68934A3E9455FA72420237EB05902327_1350803293 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_196112024 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_196112024;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 String path = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestPathPermission_path, 0);
     if(path != null)                
                 {
                     pa = new PathPermission(path,
                             PatternMatcher.PATTERN_LITERAL, readPermission, writePermission);
-                } 
+                } //End block
                 path = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestPathPermission_pathPrefix, 0);
     if(path != null)                
                 {
                     pa = new PathPermission(path,
                             PatternMatcher.PATTERN_PREFIX, readPermission, writePermission);
-                } 
+                } //End block
                 path = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestPathPermission_pathPattern, 0);
     if(path != null)                
                 {
                     pa = new PathPermission(path,
                             PatternMatcher.PATTERN_SIMPLE_GLOB, readPermission, writePermission);
-                } 
+                } //End block
                 sa.recycle();
     if(pa != null)                
                 {
@@ -2692,7 +2683,7 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
                     {
                         outInfo.info.pathPermissions = new PathPermission[1];
                         outInfo.info.pathPermissions[0] = pa;
-                    } 
+                    } //End block
                     else
                     {
                         final int N = outInfo.info.pathPermissions.length;
@@ -2700,47 +2691,46 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
                         System.arraycopy(outInfo.info.pathPermissions, 0, newp, 0, N);
                         newp[N] = pa;
                         outInfo.info.pathPermissions = newp;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
     if(!RIGID_PARSER)                    
                     {
                         XmlUtils.skipCurrentTag(parser);
                         continue;
-                    } 
+                    } //End block
                     outError[0] = "No path, pathPrefix, or pathPattern for <path-permission>";
                     boolean var68934A3E9455FA72420237EB05902327_647793723 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1492039053 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1492039053;
-                } 
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
             {
     if(!RIGID_PARSER)                
                 {
                     XmlUtils.skipCurrentTag(parser);
                     continue;
-                } 
+                } //End block
                 else
                 {
                     outError[0] = "Bad element under <provider>: " + parser.getName();
                     boolean var68934A3E9455FA72420237EB05902327_1542329873 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_496020474 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_496020474;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1038914264 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_755747416 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_755747416;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.870 -0400", hash_original_method = "1B6E257916FE773842F0B213D728DC29", hash_generated_method = "2F3A1F4DDA44084DAA6B2FE00C8101F4")
     private Service parseService(Package owner, Resources res,
             XmlPullParser parser, AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException, IOException {
@@ -2761,7 +2751,7 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
                     com.android.internal.R.styleable.AndroidManifestService_description,
                     com.android.internal.R.styleable.AndroidManifestService_enabled);
             mParseServiceArgs.tag = "<service>";
-        } 
+        } //End block
         mParseServiceArgs.sa = sa;
         mParseServiceArgs.flags = flags;
         Service s = new Service(mParseServiceArgs, new ServiceInfo());
@@ -2771,31 +2761,31 @@ Provider var74E4690D9F2A026504928C017944E149_853853160 =         p;
 Service var540C13E9E156B687226421B24F2DF178_1287875578 =             null;
             var540C13E9E156B687226421B24F2DF178_1287875578.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1287875578;
-        } 
+        } //End block
         final boolean setExported = sa.hasValue(
                 com.android.internal.R.styleable.AndroidManifestService_exported);
     if(setExported)        
         {
             s.info.exported = sa.getBoolean(
                     com.android.internal.R.styleable.AndroidManifestService_exported, false);
-        } 
+        } //End block
         String str = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestService_permission, 0);
     if(str == null)        
         {
             s.info.permission = owner.applicationInfo.permission;
-        } 
+        } //End block
         else
         {
             s.info.permission = str.length() > 0 ? str.toString().intern() : null;
-        } 
+        } //End block
         s.info.flags = 0;
     if(sa.getBoolean(
                 com.android.internal.R.styleable.AndroidManifestService_stopWithTask,
                 false))        
         {
             s.info.flags |= ServiceInfo.FLAG_STOP_WITH_TASK;
-        } 
+        } //End block
         sa.recycle();
     if((owner.applicationInfo.flags&ApplicationInfo.FLAG_CANT_SAVE_STATE) != 0)        
         {
@@ -2805,8 +2795,8 @@ Service var540C13E9E156B687226421B24F2DF178_1287875578 =             null;
 Service var540C13E9E156B687226421B24F2DF178_926966333 =                 null;
                 var540C13E9E156B687226421B24F2DF178_926966333.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_926966333;
-            } 
-        } 
+            } //End block
+        } //End block
         int outerDepth = parser.getDepth();
         int type;
         while
@@ -2817,7 +2807,7 @@ Service var540C13E9E156B687226421B24F2DF178_926966333 =                 null;
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } 
+            } //End block
     if(parser.getName().equals("intent-filter"))            
             {
                 ServiceIntentInfo intent = new ServiceIntentInfo(s);
@@ -2826,9 +2816,9 @@ Service var540C13E9E156B687226421B24F2DF178_926966333 =                 null;
 Service var540C13E9E156B687226421B24F2DF178_2007182218 =                     null;
                     var540C13E9E156B687226421B24F2DF178_2007182218.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_2007182218;
-                } 
+                } //End block
                 s.intents.add(intent);
-            } 
+            } //End block
             else
     if(parser.getName().equals("meta-data"))            
             {
@@ -2838,33 +2828,33 @@ Service var540C13E9E156B687226421B24F2DF178_2007182218 =                     nul
 Service var540C13E9E156B687226421B24F2DF178_1022833416 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1022833416.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1022833416;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(!RIGID_PARSER)                
                 {
                     XmlUtils.skipCurrentTag(parser);
                     continue;
-                } 
+                } //End block
                 else
                 {
                     outError[0] = "Bad element under <service>: " + parser.getName();
 Service var540C13E9E156B687226421B24F2DF178_1611148244 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1611148244.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1611148244;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(!setExported)        
         {
             s.info.exported = s.intents.size() > 0;
-        } 
+        } //End block
 Service var0478718F0636FB61899C13801CE9FE09_661151075 =         s;
         var0478718F0636FB61899C13801CE9FE09_661151075.addTaint(taint);
         return var0478718F0636FB61899C13801CE9FE09_661151075;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2888,7 +2878,7 @@ Service var0478718F0636FB61899C13801CE9FE09_661151075 =         s;
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } 
+            } //End block
     if(parser.getName().equals("meta-data"))            
             {
     if((outInfo.metaData=parseMetaData(res, parser, attrs,
@@ -2897,29 +2887,29 @@ Service var0478718F0636FB61899C13801CE9FE09_661151075 =         s;
                     boolean var68934A3E9455FA72420237EB05902327_1120176977 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579326791 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579326791;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(!RIGID_PARSER)                
                 {
                     XmlUtils.skipCurrentTag(parser);
                     continue;
-                } 
+                } //End block
                 else
                 {
                     outError[0] = "Bad element under " + tag + ": " + parser.getName();
                     boolean var68934A3E9455FA72420237EB05902327_231285403 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1716686418 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1716686418;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_534726277 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_772885827 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_772885827;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2937,7 +2927,7 @@ Service var0478718F0636FB61899C13801CE9FE09_661151075 =         s;
     if(data == null)        
         {
             data = new Bundle();
-        } 
+        } //End block
         String name = sa.getNonConfigurationString(
                 com.android.internal.R.styleable.AndroidManifestMetaData_name, 0);
     if(name == null)        
@@ -2947,14 +2937,14 @@ Service var0478718F0636FB61899C13801CE9FE09_661151075 =         s;
 Bundle var540C13E9E156B687226421B24F2DF178_114593980 =             null;
             var540C13E9E156B687226421B24F2DF178_114593980.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_114593980;
-        } 
+        } //End block
         name = name.intern();
         TypedValue v = sa.peekValue(
                 com.android.internal.R.styleable.AndroidManifestMetaData_resource);
     if(v != null && v.resourceId != 0)        
         {
             data.putInt(name, v.resourceId);
-        } 
+        } //End block
         else
         {
             v = sa.peekValue(
@@ -2965,53 +2955,52 @@ Bundle var540C13E9E156B687226421B24F2DF178_114593980 =             null;
                 {
                     CharSequence cs = v.coerceToString();
                     data.putString(name, cs != null ? cs.toString().intern() : null);
-                } 
+                } //End block
                 else
     if(v.type == TypedValue.TYPE_INT_BOOLEAN)                
                 {
                     data.putBoolean(name, v.data != 0);
-                } 
+                } //End block
                 else
     if(v.type >= TypedValue.TYPE_FIRST_INT
                         && v.type <= TypedValue.TYPE_LAST_INT)                
                 {
                     data.putInt(name, v.data);
-                } 
+                } //End block
                 else
     if(v.type == TypedValue.TYPE_FLOAT)                
                 {
                     data.putFloat(name, v.getFloat());
-                } 
+                } //End block
                 else
                 {
     if(!RIGID_PARSER)                    
                     {
-                    } 
+                    } //End block
                     else
                     {
                         outError[0] = "<meta-data> only supports string, integer, float, color, boolean, and resource reference types";
                         data = null;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             else
             {
                 outError[0] = "<meta-data> requires an android:value or android:resource attribute";
                 data = null;
-            } 
-        } 
+            } //End block
+        } //End block
         sa.recycle();
         XmlUtils.skipCurrentTag(parser);
 Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
         var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705.addTaint(taint);
         return var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static VerifierInfo parseVerifier(Resources res, XmlPullParser parser,
+        private static VerifierInfo parseVerifier(Resources res, XmlPullParser parser,
             AttributeSet attrs, int flags, String[] outError) throws XmlPullParserException,
             IOException {
         final TypedArray sa = res.obtainAttributes(attrs,
@@ -3078,7 +3067,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
     if(v != null && (outInfo.labelRes=v.resourceId) == 0)        
         {
             outInfo.nonLocalizedLabel = v.coerceToString();
-        } 
+        } //End block
         outInfo.icon = sa.getResourceId(
                 com.android.internal.R.styleable.AndroidManifestIntentFilter_icon, 0);
         outInfo.logo = sa.getResourceId(
@@ -3093,7 +3082,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } 
+            } //End block
             String nodeName = parser.getName();
     if(nodeName.equals("action"))            
             {
@@ -3105,10 +3094,10 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
                     boolean var68934A3E9455FA72420237EB05902327_1290685624 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253803912 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1253803912;
-                } 
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
                 outInfo.addAction(value);
-            } 
+            } //End block
             else
     if(nodeName.equals("category"))            
             {
@@ -3120,10 +3109,10 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
                     boolean var68934A3E9455FA72420237EB05902327_324349083 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253107294 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1253107294;
-                } 
+                } //End block
                 XmlUtils.skipCurrentTag(parser);
                 outInfo.addCategory(value);
-            } 
+            } //End block
             else
     if(nodeName.equals("data"))            
             {
@@ -3136,7 +3125,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
                     try 
                     {
                         outInfo.addDataType(str);
-                    } 
+                    } //End block
                     catch (IntentFilter.MalformedMimeTypeException e)
                     {
                         outError[0] = e.toString();
@@ -3144,14 +3133,14 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
                         boolean var68934A3E9455FA72420237EB05902327_889092864 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064853905 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1064853905;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_scheme, 0);
     if(str != null)                
                 {
                     outInfo.addDataScheme(str);
-                } 
+                } //End block
                 String host = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_host, 0);
                 String port = sa.getNonConfigurationString(
@@ -3159,41 +3148,41 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
     if(host != null)                
                 {
                     outInfo.addDataAuthority(host, port);
-                } 
+                } //End block
                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_path, 0);
     if(str != null)                
                 {
                     outInfo.addDataPath(str, PatternMatcher.PATTERN_LITERAL);
-                } 
+                } //End block
                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_pathPrefix, 0);
     if(str != null)                
                 {
                     outInfo.addDataPath(str, PatternMatcher.PATTERN_PREFIX);
-                } 
+                } //End block
                 str = sa.getNonConfigurationString(
                         com.android.internal.R.styleable.AndroidManifestData_pathPattern, 0);
     if(str != null)                
                 {
                     outInfo.addDataPath(str, PatternMatcher.PATTERN_SIMPLE_GLOB);
-                } 
+                } //End block
                 sa.recycle();
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
     if(!RIGID_PARSER)            
             {
                 XmlUtils.skipCurrentTag(parser);
-            } 
+            } //End block
             else
             {
                 outError[0] = "Bad element under <intent-filter>: " + parser.getName();
                 boolean var68934A3E9455FA72420237EB05902327_124828457 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_383192252 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_383192252;
-            } 
-        } 
+            } //End block
+        } //End block
         outInfo.hasDefault = outInfo.hasCategory(Intent.CATEGORY_DEFAULT);
     if(DEBUG_PARSER)        
         {
@@ -3208,20 +3197,19 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
                 {
                     cats.append(' ');
                     cats.append(it.next());
-                } 
-            } 
+                } //End block
+            } //End block
             Slog.d(TAG, cats.toString());
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1358661453 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1111321170 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1111321170;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean copyNeeded(int flags, Package p, Bundle metaData) {
+        private static boolean copyNeeded(int flags, Package p, Bundle metaData) {
         if (p.mSetEnabled != PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
             boolean enabled = p.mSetEnabled == PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
             if (p.applicationInfo.enabled != enabled) {
@@ -3240,8 +3228,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static ApplicationInfo generateApplicationInfo(Package p, int flags) {
+        public static ApplicationInfo generateApplicationInfo(Package p, int flags) {
         if (p == null) return null;
         if (!copyNeeded(flags, p, null)) {
             if (!sCompatibilityModeEnabled) {
@@ -3359,8 +3346,7 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled) {
+        public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled) {
         sCompatibilityModeEnabled = compatibilityModeEnabled;
     }
 
@@ -3381,10 +3367,10 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
             this.name = name;
             this.sdkVersion = sdkVersion;
             this.fileVersion = fileVersion;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.name = name;
+            //this.sdkVersion = sdkVersion;
+            //this.fileVersion = fileVersion;
         }
 
         
@@ -3427,13 +3413,13 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
             labelRes = _labelRes;
             iconRes = _iconRes;
             logoRes = _logoRes;
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //owner = _owner;
+            //outError = _outError;
+            //nameRes = _nameRes;
+            //labelRes = _labelRes;
+            //iconRes = _iconRes;
+            //logoRes = _logoRes;
         }
 
         
@@ -3474,11 +3460,11 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
             processRes = _processRes;
             descriptionRes = _descriptionRes;
             enabledRes = _enabledRes;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //sepProcesses = _sepProcesses;
+            //processRes = _processRes;
+            //descriptionRes = _descriptionRes;
+            //enabledRes = _enabledRes;
         }
 
         
@@ -3502,10 +3488,10 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
             this.packageName = packageName;
             this.installLocation = installLocation;
             this.verifiers = verifiers.toArray(new VerifierInfo[verifiers.size()]);
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.packageName = packageName;
+            //this.installLocation = installLocation;
+            //this.verifiers = verifiers.toArray(new VerifierInfo[verifiers.size()]);
         }
 
         
@@ -3625,10 +3611,10 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
             packageName = _name;
             applicationInfo.packageName = _name;
             applicationInfo.uid = -1;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //packageName = _name;
+            //applicationInfo.packageName = _name;
+            //applicationInfo.uid = -1;
         }
 
         
@@ -3639,33 +3625,33 @@ Bundle var0C8B2C9585EB05DD9CD70726CF8CBC07_124163705 =         data;
 for(int i=permissions.size()-1;i>=0;i--)
             {
                 permissions.get(i).setPackageName(newName);
-            } 
+            } //End block
 for(int i=permissionGroups.size()-1;i>=0;i--)
             {
                 permissionGroups.get(i).setPackageName(newName);
-            } 
+            } //End block
 for(int i=activities.size()-1;i>=0;i--)
             {
                 activities.get(i).setPackageName(newName);
-            } 
+            } //End block
 for(int i=receivers.size()-1;i>=0;i--)
             {
                 receivers.get(i).setPackageName(newName);
-            } 
+            } //End block
 for(int i=providers.size()-1;i>=0;i--)
             {
                 providers.get(i).setPackageName(newName);
-            } 
+            } //End block
 for(int i=services.size()-1;i>=0;i--)
             {
                 services.get(i).setPackageName(newName);
-            } 
+            } //End block
 for(int i=instrumentation.size()-1;i>=0;i--)
             {
                 instrumentation.get(i).setPackageName(newName);
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -3676,10 +3662,10 @@ String var7225B3CC8914DF65BB421A6F179F031C_1823178289 =             "Package{"
                 + " " + packageName + "}";
             var7225B3CC8914DF65BB421A6F179F031C_1823178289.addTaint(taint);
             return var7225B3CC8914DF65BB421A6F179F031C_1823178289;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "Package{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + packageName + "}";
         }
 
         
@@ -3712,10 +3698,10 @@ String var7225B3CC8914DF65BB421A6F179F031C_1823178289 =             "Package{"
             owner = _owner;
             intents = null;
             className = null;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //owner = _owner;
+            //intents = null;
+            //className = null;
         }
 
         
@@ -3729,7 +3715,7 @@ String var7225B3CC8914DF65BB421A6F179F031C_1823178289 =             "Package{"
                 className = null;
                 args.outError[0] = args.tag + " does not specify android:name";
                 return;
-            } 
+            } //End block
             outInfo.name
                 = buildClassName(owner.applicationInfo.packageName, name, args.outError);
     if(outInfo.name == null)            
@@ -3737,27 +3723,27 @@ String var7225B3CC8914DF65BB421A6F179F031C_1823178289 =             "Package{"
                 className = null;
                 args.outError[0] = args.tag + " does not have valid android:name";
                 return;
-            } 
+            } //End block
             className = outInfo.name;
             int iconVal = args.sa.getResourceId(args.iconRes, 0);
     if(iconVal != 0)            
             {
                 outInfo.icon = iconVal;
                 outInfo.nonLocalizedLabel = null;
-            } 
+            } //End block
             int logoVal = args.sa.getResourceId(args.logoRes, 0);
     if(logoVal != 0)            
             {
                 outInfo.logo = logoVal;
-            } 
+            } //End block
             TypedValue v = args.sa.peekValue(args.labelRes);
     if(v != null && (outInfo.labelRes=v.resourceId) == 0)            
             {
                 outInfo.nonLocalizedLabel = v.coerceToString();
-            } 
+            } //End block
             outInfo.packageName = owner.packageName;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -3769,29 +3755,29 @@ String var7225B3CC8914DF65BB421A6F179F031C_1823178289 =             "Package{"
     if(args.outError[0] != null)            
             {
                 return;
-            } 
+            } //End block
     if(args.processRes != 0)            
             {
                 CharSequence pname;
     if(owner.applicationInfo.targetSdkVersion >= Build.VERSION_CODES.FROYO)                
                 {
                     pname = args.sa.getNonConfigurationString(args.processRes, 0);
-                } 
+                } //End block
                 else
                 {
                     pname = args.sa.getNonResourceString(args.processRes);
-                } 
+                } //End block
                 outInfo.processName = buildProcessName(owner.applicationInfo.packageName,
                         owner.applicationInfo.processName, pname,
                         args.flags, args.sepProcesses, args.outError);
-            } 
+            } //End block
     if(args.descriptionRes != 0)            
             {
                 outInfo.descriptionRes = args.sa.getResourceId(args.descriptionRes, 0);
-            } 
+            } //End block
             outInfo.enabled = args.sa.getBoolean(args.enabledRes, true);
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -3802,12 +3788,12 @@ String var7225B3CC8914DF65BB421A6F179F031C_1823178289 =             "Package{"
             className = clone.className;
             componentName = clone.componentName;
             componentShortName = clone.componentShortName;
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //owner = clone.owner;
+            //intents = clone.intents;
+            //className = clone.className;
+            //componentName = clone.componentName;
+            //componentShortName = clone.componentShortName;
         }
 
         
@@ -3818,24 +3804,24 @@ String var7225B3CC8914DF65BB421A6F179F031C_1823178289 =             "Package{"
 ComponentName var7B6CF3BE908806ACB1532BFAD7EBF1F3_1171413687 =                 componentName;
                 var7B6CF3BE908806ACB1532BFAD7EBF1F3_1171413687.addTaint(taint);
                 return var7B6CF3BE908806ACB1532BFAD7EBF1F3_1171413687;
-            } 
+            } //End block
     if(className != null)            
             {
                 componentName = new ComponentName(owner.applicationInfo.packageName,
                         className);
-            } 
+            } //End block
 ComponentName var7B6CF3BE908806ACB1532BFAD7EBF1F3_1755401823 =             componentName;
             var7B6CF3BE908806ACB1532BFAD7EBF1F3_1755401823.addTaint(taint);
             return var7B6CF3BE908806ACB1532BFAD7EBF1F3_1755401823;
-            
-            
-                
-            
-            
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //if (componentName != null) {
+                //return componentName;
+            //}
+            //if (className != null) {
+                //componentName = new ComponentName(owner.applicationInfo.packageName,
+                        //className);
+            //}
+            //return componentName;
         }
 
         
@@ -3846,36 +3832,35 @@ ComponentName var7B6CF3BE908806ACB1532BFAD7EBF1F3_1755401823 =             compo
 String varFA3F4C9635F1476C20031AA38480ED2D_418635972 =                 componentShortName;
                 varFA3F4C9635F1476C20031AA38480ED2D_418635972.addTaint(taint);
                 return varFA3F4C9635F1476C20031AA38480ED2D_418635972;
-            } 
+            } //End block
             ComponentName component = getComponentName();
     if(component != null)            
             {
                 componentShortName = component.flattenToShortString();
-            } 
+            } //End block
 String varFA3F4C9635F1476C20031AA38480ED2D_36651301 =             componentShortName;
             varFA3F4C9635F1476C20031AA38480ED2D_36651301.addTaint(taint);
             return varFA3F4C9635F1476C20031AA38480ED2D_36651301;
-            
-            
-                
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (componentShortName != null) {
+                //return componentShortName;
+            //}
+            //ComponentName component = getComponentName();
+            //if (component != null) {
+                //componentShortName = component.flattenToShortString();
+            //}
+            //return componentShortName;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.898 -0400", hash_original_method = "AFFE8B7215C15E45738BCB365FA520F8", hash_generated_method = "ED0B38A266C1BF393A5AE5820021118A")
         public void setPackageName(String packageName) {
             addTaint(packageName.getTaint());
             componentName = null;
             componentShortName = null;
-            
-            
-            
+            // ---------- Original Method ----------
+            //componentName = null;
+            //componentShortName = null;
         }
 
         
@@ -3899,8 +3884,8 @@ String varFA3F4C9635F1476C20031AA38480ED2D_36651301 =             componentShort
             super(_owner);
             addTaint(_owner.getTaint());
             info = new PermissionInfo();
-            
-            
+            // ---------- Original Method ----------
+            //info = new PermissionInfo();
         }
 
         
@@ -3909,8 +3894,8 @@ String varFA3F4C9635F1476C20031AA38480ED2D_36651301 =             componentShort
             super(_owner);
             addTaint(_owner.getTaint());
             info = _info;
-            
-            
+            // ---------- Original Method ----------
+            //info = _info;
         }
 
         
@@ -3918,9 +3903,9 @@ String varFA3F4C9635F1476C20031AA38480ED2D_36651301 =             componentShort
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setPackageName(packageName);
+            //info.packageName = packageName;
         }
 
         
@@ -3931,10 +3916,10 @@ String varA4B73F78D64437A97BC4CB3FE2F19AAD_1729829481 =             "Permission{
                 + " " + info.name + "}";
             varA4B73F78D64437A97BC4CB3FE2F19AAD_1729829481.addTaint(taint);
             return varA4B73F78D64437A97BC4CB3FE2F19AAD_1729829481;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "Permission{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + info.name + "}";
         }
 
         
@@ -3952,8 +3937,8 @@ String varA4B73F78D64437A97BC4CB3FE2F19AAD_1729829481 =             "Permission{
             super(_owner);
             addTaint(_owner.getTaint());
             info = new PermissionGroupInfo();
-            
-            
+            // ---------- Original Method ----------
+            //info = new PermissionGroupInfo();
         }
 
         
@@ -3962,8 +3947,8 @@ String varA4B73F78D64437A97BC4CB3FE2F19AAD_1729829481 =             "Permission{
             super(_owner);
             addTaint(_owner.getTaint());
             info = _info;
-            
-            
+            // ---------- Original Method ----------
+            //info = _info;
         }
 
         
@@ -3971,9 +3956,9 @@ String varA4B73F78D64437A97BC4CB3FE2F19AAD_1729829481 =             "Permission{
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setPackageName(packageName);
+            //info.packageName = packageName;
         }
 
         
@@ -3984,10 +3969,10 @@ String var230D88132BCDB5C1EFFF3FA52025C2F5_1799364640 =             "PermissionG
                 + " " + info.name + "}";
             var230D88132BCDB5C1EFFF3FA52025C2F5_1799364640.addTaint(taint);
             return var230D88132BCDB5C1EFFF3FA52025C2F5_1799364640;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "PermissionGroup{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + info.name + "}";
         }
 
         
@@ -4005,9 +3990,9 @@ String var230D88132BCDB5C1EFFF3FA52025C2F5_1799364640 =             "PermissionG
             super(args, _info);
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
-            
-            
-            
+            // ---------- Original Method ----------
+            //info = _info;
+            //info.applicationInfo = args.owner.applicationInfo;
         }
 
         
@@ -4015,9 +4000,9 @@ String var230D88132BCDB5C1EFFF3FA52025C2F5_1799364640 =             "PermissionG
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setPackageName(packageName);
+            //info.packageName = packageName;
         }
 
         
@@ -4028,10 +4013,10 @@ String var7349656C7BD58594155B01DB7429F0FA_2050031672 =             "Activity{"
                 + " " + getComponentShortName() + "}";
             var7349656C7BD58594155B01DB7429F0FA_2050031672.addTaint(taint);
             return var7349656C7BD58594155B01DB7429F0FA_2050031672;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "Activity{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + getComponentShortName() + "}";
         }
 
         
@@ -4049,9 +4034,9 @@ String var7349656C7BD58594155B01DB7429F0FA_2050031672 =             "Activity{"
             super(args, _info);
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
-            
-            
-            
+            // ---------- Original Method ----------
+            //info = _info;
+            //info.applicationInfo = args.owner.applicationInfo;
         }
 
         
@@ -4059,9 +4044,9 @@ String var7349656C7BD58594155B01DB7429F0FA_2050031672 =             "Activity{"
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setPackageName(packageName);
+            //info.packageName = packageName;
         }
 
         
@@ -4072,10 +4057,10 @@ String varE0BB0FB3650D73E43E1F3BF4E654C95D_1417534924 =             "Service{"
                 + " " + getComponentShortName() + "}";
             varE0BB0FB3650D73E43E1F3BF4E654C95D_1417534924.addTaint(taint);
             return varE0BB0FB3650D73E43E1F3BF4E654C95D_1417534924;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "Service{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + getComponentShortName() + "}";
         }
 
         
@@ -4097,10 +4082,10 @@ String varE0BB0FB3650D73E43E1F3BF4E654C95D_1417534924 =             "Service{"
             info = _info;
             info.applicationInfo = args.owner.applicationInfo;
             syncable = false;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //info = _info;
+            //info.applicationInfo = args.owner.applicationInfo;
+            //syncable = false;
         }
 
         
@@ -4109,9 +4094,9 @@ String varE0BB0FB3650D73E43E1F3BF4E654C95D_1417534924 =             "Service{"
             super(existingProvider);
             this.info = existingProvider.info;
             this.syncable = existingProvider.syncable;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.info = existingProvider.info;
+            //this.syncable = existingProvider.syncable;
         }
 
         
@@ -4119,9 +4104,9 @@ String varE0BB0FB3650D73E43E1F3BF4E654C95D_1417534924 =             "Service{"
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setPackageName(packageName);
+            //info.packageName = packageName;
         }
 
         
@@ -4132,10 +4117,10 @@ String var57150B0931FFC28ACB80176BA213B66A_124666187 =             "Provider{"
                 + " " + info.name + "}";
             var57150B0931FFC28ACB80176BA213B66A_124666187.addTaint(taint);
             return var57150B0931FFC28ACB80176BA213B66A_124666187;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "Provider{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + info.name + "}";
         }
 
         
@@ -4153,8 +4138,8 @@ String var57150B0931FFC28ACB80176BA213B66A_124666187 =             "Provider{"
             super(args, _info);
             addTaint(args.getTaint());
             info = _info;
-            
-            
+            // ---------- Original Method ----------
+            //info = _info;
         }
 
         
@@ -4162,9 +4147,9 @@ String var57150B0931FFC28ACB80176BA213B66A_124666187 =             "Provider{"
         public void setPackageName(String packageName) {
             super.setPackageName(packageName);
             info.packageName = packageName;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setPackageName(packageName);
+            //info.packageName = packageName;
         }
 
         
@@ -4175,10 +4160,10 @@ String varB0CB4174C45C34ACD15551F9B93A3408_1127556197 =             "Instrumenta
                 + " " + getComponentShortName() + "}";
             varB0CB4174C45C34ACD15551F9B93A3408_1127556197.addTaint(taint);
             return varB0CB4174C45C34ACD15551F9B93A3408_1127556197;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "Instrumentation{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + getComponentShortName() + "}";
         }
 
         
@@ -4206,7 +4191,7 @@ String varB0CB4174C45C34ACD15551F9B93A3408_1127556197 =             "Instrumenta
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.908 -0400", hash_original_method = "351B7321F95DEA4A1F6C5D218D4A2DB8", hash_generated_method = "351B7321F95DEA4A1F6C5D218D4A2DB8")
         public IntentInfo ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -4222,8 +4207,8 @@ String varB0CB4174C45C34ACD15551F9B93A3408_1127556197 =             "Instrumenta
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.908 -0400", hash_original_method = "4F41670063BD951D72DDB0235971893F", hash_generated_method = "0462B156AB73AD83F3A7439B178E9A79")
         public  ActivityIntentInfo(Activity _activity) {
             activity = _activity;
-            
-            
+            // ---------- Original Method ----------
+            //activity = _activity;
         }
 
         
@@ -4234,10 +4219,10 @@ String var8C912E976DD3A09E794833615D8D03AB_1123383047 =             "ActivityInt
                 + " " + activity.info.name + "}";
             var8C912E976DD3A09E794833615D8D03AB_1123383047.addTaint(taint);
             return var8C912E976DD3A09E794833615D8D03AB_1123383047;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "ActivityIntentInfo{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + activity.info.name + "}";
         }
 
         
@@ -4253,8 +4238,8 @@ String var8C912E976DD3A09E794833615D8D03AB_1123383047 =             "ActivityInt
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.909 -0400", hash_original_method = "2C256432D4530E0F15F4AED85D9A44A0", hash_generated_method = "61FE60C3F8E05F8F2F3135BC3B31D794")
         public  ServiceIntentInfo(Service _service) {
             service = _service;
-            
-            
+            // ---------- Original Method ----------
+            //service = _service;
         }
 
         
@@ -4265,10 +4250,10 @@ String var9772429D16BD47DBA31528978466C827_1420370459 =             "ServiceInte
                 + " " + service.info.name + "}";
             var9772429D16BD47DBA31528978466C827_1420370459.addTaint(taint);
             return var9772429D16BD47DBA31528978466C827_1420370459;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return "ServiceIntentInfo{"
+                //+ Integer.toHexString(System.identityHashCode(this))
+                //+ " " + service.info.name + "}";
         }
 
         

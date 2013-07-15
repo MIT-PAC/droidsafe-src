@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -90,7 +90,7 @@ public class DatePicker extends FrameLayout {
     public  DatePicker(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -99,7 +99,7 @@ public class DatePicker extends FrameLayout {
         this(context, attrs, R.attr.datePickerStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -165,7 +165,7 @@ public class DatePicker extends FrameLayout {
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.026 -0400", hash_original_method = "8EC92A24243B88F9F674F29B26D1EE2F", hash_generated_method = "73ADFB7B2A0BEADBD73A1C6D29AC64D4")
         public void onSelectedDayChange(CalendarView view, int year, int month, int monthDay) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(monthDay);
             addTaint(month);
             addTaint(year);
@@ -173,10 +173,10 @@ public class DatePicker extends FrameLayout {
             setDate(year, month, monthDay);
             updateSpinners();
             notifyDateChanged();
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //setDate(year, month, monthDay);
+            //updateSpinners();
+            //notifyDateChanged();
         }
 });
         mDaySpinner = (NumberPicker) findViewById(R.id.day);
@@ -198,24 +198,24 @@ public class DatePicker extends FrameLayout {
     if(!spinnersShown && !calendarViewShown)        
         {
             setSpinnersShown(true);
-        } 
+        } //End block
         else
         {
             setSpinnersShown(spinnersShown);
             setCalendarViewShown(calendarViewShown);
-        } 
+        } //End block
         mTempDate.clear();
     if(!TextUtils.isEmpty(minDate))        
         {
     if(!parseDate(minDate, mTempDate))            
             {
                 mTempDate.set(startYear, 0, 1);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             mTempDate.set(startYear, 0, 1);
-        } 
+        } //End block
         setMinDate(mTempDate.getTimeInMillis());
         mTempDate.clear();
     if(!TextUtils.isEmpty(maxDate))        
@@ -223,12 +223,12 @@ public class DatePicker extends FrameLayout {
     if(!parseDate(maxDate, mTempDate))            
             {
                 mTempDate.set(endYear, 11, 31);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             mTempDate.set(endYear, 11, 31);
-        } 
+        } //End block
         setMaxDate(mTempDate.getTimeInMillis());
         mCurrentDate.setTimeInMillis(System.currentTimeMillis());
         init(mCurrentDate.get(Calendar.YEAR), mCurrentDate.get(Calendar.MONTH), mCurrentDate
@@ -237,9 +237,9 @@ public class DatePicker extends FrameLayout {
     if(AccessibilityManager.getInstance(mContext).isEnabled())        
         {
             setContentDescriptions();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -248,8 +248,8 @@ public class DatePicker extends FrameLayout {
         long varBEC14540AC9FDEE199DA8EE34E55F5D3_1626258098 = (mCalendarView.getMinDate());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_763019251 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_763019251;
-        
-        
+        // ---------- Original Method ----------
+        //return mCalendarView.getMinDate();
     }
 
     
@@ -261,28 +261,28 @@ public class DatePicker extends FrameLayout {
                 && mTempDate.get(Calendar.DAY_OF_YEAR) != mMinDate.get(Calendar.DAY_OF_YEAR))        
         {
             return;
-        } 
+        } //End block
         mMinDate.setTimeInMillis(minDate);
         mCalendarView.setMinDate(minDate);
     if(mCurrentDate.before(mMinDate))        
         {
             mCurrentDate.setTimeInMillis(mMinDate.getTimeInMillis());
             updateCalendarView();
-        } 
+        } //End block
         updateSpinners();
-        
-        
-        
-                
-            
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //mTempDate.setTimeInMillis(minDate);
+        //if (mTempDate.get(Calendar.YEAR) == mMinDate.get(Calendar.YEAR)
+                //&& mTempDate.get(Calendar.DAY_OF_YEAR) != mMinDate.get(Calendar.DAY_OF_YEAR)) {
+            //return;
+        //}
+        //mMinDate.setTimeInMillis(minDate);
+        //mCalendarView.setMinDate(minDate);
+        //if (mCurrentDate.before(mMinDate)) {
+            //mCurrentDate.setTimeInMillis(mMinDate.getTimeInMillis());
+            //updateCalendarView();
+        //}
+        //updateSpinners();
     }
 
     
@@ -291,8 +291,8 @@ public class DatePicker extends FrameLayout {
         long varCF64B4B8F0B88C3BB8692AD803285BA0_1082199328 = (mCalendarView.getMaxDate());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_461876151 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_461876151;
-        
-        
+        // ---------- Original Method ----------
+        //return mCalendarView.getMaxDate();
     }
 
     
@@ -304,28 +304,28 @@ public class DatePicker extends FrameLayout {
                 && mTempDate.get(Calendar.DAY_OF_YEAR) != mMaxDate.get(Calendar.DAY_OF_YEAR))        
         {
             return;
-        } 
+        } //End block
         mMaxDate.setTimeInMillis(maxDate);
         mCalendarView.setMaxDate(maxDate);
     if(mCurrentDate.after(mMaxDate))        
         {
             mCurrentDate.setTimeInMillis(mMaxDate.getTimeInMillis());
             updateCalendarView();
-        } 
+        } //End block
         updateSpinners();
-        
-        
-        
-                
-            
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //mTempDate.setTimeInMillis(maxDate);
+        //if (mTempDate.get(Calendar.YEAR) == mMaxDate.get(Calendar.YEAR)
+                //&& mTempDate.get(Calendar.DAY_OF_YEAR) != mMaxDate.get(Calendar.DAY_OF_YEAR)) {
+            //return;
+        //}
+        //mMaxDate.setTimeInMillis(maxDate);
+        //mCalendarView.setMaxDate(maxDate);
+        //if (mCurrentDate.after(mMaxDate)) {
+            //mCurrentDate.setTimeInMillis(mMaxDate.getTimeInMillis());
+            //updateCalendarView();
+        //}
+        //updateSpinners();
     }
 
     
@@ -335,35 +335,34 @@ public class DatePicker extends FrameLayout {
     if(mIsEnabled == enabled)        
         {
             return;
-        } 
+        } //End block
         super.setEnabled(enabled);
         mDaySpinner.setEnabled(enabled);
         mMonthSpinner.setEnabled(enabled);
         mYearSpinner.setEnabled(enabled);
         mCalendarView.setEnabled(enabled);
         mIsEnabled = enabled;
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mIsEnabled == enabled) {
+            //return;
+        //}
+        //super.setEnabled(enabled);
+        //mDaySpinner.setEnabled(enabled);
+        //mMonthSpinner.setEnabled(enabled);
+        //mYearSpinner.setEnabled(enabled);
+        //mCalendarView.setEnabled(enabled);
+        //mIsEnabled = enabled;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.033 -0400", hash_original_method = "FE60B57F2ECB259E877433DACC7AAC95", hash_generated_method = "56A148A33360E996D8641CCF5F084BF7")
     @Override
     public boolean isEnabled() {
         boolean var1D09076915F0C1B535F8F7A6899A12CD_1669073861 = (mIsEnabled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1517476700 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1517476700;
-        
-        
+        // ---------- Original Method ----------
+        //return mIsEnabled;
     }
 
     
@@ -375,41 +374,41 @@ public class DatePicker extends FrameLayout {
         boolean varB326B5062B2F0E69046810717534CB09_1460341727 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1303150273 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1303150273;
-        
-        
-        
+        // ---------- Original Method ----------
+        //onPopulateAccessibilityEvent(event);
+        //return true;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.034 -0400", hash_original_method = "C41A760D3D0D618DC4D1C9DC2EF8ACD9", hash_generated_method = "C8A148DCA8E161687C4799AA7B348C61")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         super.onPopulateAccessibilityEvent(event);
         final int flags = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR;
         String selectedDateUtterance = DateUtils.formatDateTime(mContext,
                 mCurrentDate.getTimeInMillis(), flags);
         event.getText().add(selectedDateUtterance);
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //super.onPopulateAccessibilityEvent(event);
+        //final int flags = DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR;
+        //String selectedDateUtterance = DateUtils.formatDateTime(mContext,
+                //mCurrentDate.getTimeInMillis(), flags);
+        //event.getText().add(selectedDateUtterance);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.034 -0400", hash_original_method = "C452430AEDBDDD78DF8F4D12B9175E89", hash_generated_method = "127AACDA90D8DF77911A68D85F6663CF")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newConfig.getTaint());
         super.onConfigurationChanged(newConfig);
         setCurrentLocale(newConfig.locale);
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onConfigurationChanged(newConfig);
+        //setCurrentLocale(newConfig.locale);
     }
 
     
@@ -418,19 +417,18 @@ public class DatePicker extends FrameLayout {
         boolean varF0BBC98082A69B1C2E662B1900398359_1703243570 = (mCalendarView.isShown());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_233121661 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_233121661;
-        
-        
+        // ---------- Original Method ----------
+        //return mCalendarView.isShown();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.034 -0400", hash_original_method = "E5E91372452D81D0FC87710458852870", hash_generated_method = "322E83A93BAC67867D6091CF6097204B")
     public CalendarView getCalendarView() {
 CalendarView varC46E21775E2EA6ACA4FD7340AD5EC654_895597547 =         mCalendarView;
         varC46E21775E2EA6ACA4FD7340AD5EC654_895597547.addTaint(taint);
         return varC46E21775E2EA6ACA4FD7340AD5EC654_895597547;
-        
-        
+        // ---------- Original Method ----------
+        //return mCalendarView;
     }
 
     
@@ -438,8 +436,8 @@ CalendarView varC46E21775E2EA6ACA4FD7340AD5EC654_895597547 =         mCalendarVi
     public void setCalendarViewShown(boolean shown) {
         addTaint(shown);
         mCalendarView.setVisibility(shown ? VISIBLE : GONE);
-        
-        
+        // ---------- Original Method ----------
+        //mCalendarView.setVisibility(shown ? VISIBLE : GONE);
     }
 
     
@@ -448,8 +446,8 @@ CalendarView varC46E21775E2EA6ACA4FD7340AD5EC654_895597547 =         mCalendarVi
         boolean var08417A54551B1E0BF25ECE2FE2E6B82F_950676927 = (mSpinners.isShown());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1912430783 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1912430783;
-        
-        
+        // ---------- Original Method ----------
+        //return mSpinners.isShown();
     }
 
     
@@ -457,8 +455,8 @@ CalendarView varC46E21775E2EA6ACA4FD7340AD5EC654_895597547 =         mCalendarVi
     public void setSpinnersShown(boolean shown) {
         addTaint(shown);
         mSpinners.setVisibility(shown ? VISIBLE : GONE);
-        
-        
+        // ---------- Original Method ----------
+        //mSpinners.setVisibility(shown ? VISIBLE : GONE);
     }
 
     
@@ -467,7 +465,7 @@ CalendarView varC46E21775E2EA6ACA4FD7340AD5EC654_895597547 =         mCalendarVi
     if(locale.equals(mCurrentLocale))        
         {
             return;
-        } 
+        } //End block
         mCurrentLocale = locale;
         mTempDate = getCalendarForLocale(mTempDate, locale);
         mMinDate = getCalendarForLocale(mMinDate, locale);
@@ -479,22 +477,22 @@ for(int i = 0;i < mNumberOfMonths;i++)
         {
             mShortMonths[i] = DateUtils.getMonthString(Calendar.JANUARY + i,
                     DateUtils.LENGTH_MEDIUM);
-        } 
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (locale.equals(mCurrentLocale)) {
+            //return;
+        //}
+        //mCurrentLocale = locale;
+        //mTempDate = getCalendarForLocale(mTempDate, locale);
+        //mMinDate = getCalendarForLocale(mMinDate, locale);
+        //mMaxDate = getCalendarForLocale(mMaxDate, locale);
+        //mCurrentDate = getCalendarForLocale(mCurrentDate, locale);
+        //mNumberOfMonths = mTempDate.getActualMaximum(Calendar.MONTH) + 1;
+        //mShortMonths = new String[mNumberOfMonths];
+        //for (int i = 0; i < mNumberOfMonths; i++) {
+            //mShortMonths[i] = DateUtils.getMonthString(Calendar.JANUARY + i,
+                    //DateUtils.LENGTH_MEDIUM);
+        //}
     }
 
     
@@ -507,7 +505,7 @@ for(int i = 0;i < mNumberOfMonths;i++)
 Calendar varAF9F889F6AAD514FC782043E6832D0EC_2132299205 =             Calendar.getInstance(locale);
             varAF9F889F6AAD514FC782043E6832D0EC_2132299205.addTaint(taint);
             return varAF9F889F6AAD514FC782043E6832D0EC_2132299205;
-        } 
+        } //End block
         else
         {
             final long currentTimeMillis = oldCalendar.getTimeInMillis();
@@ -516,16 +514,16 @@ Calendar varAF9F889F6AAD514FC782043E6832D0EC_2132299205 =             Calendar.g
 Calendar var7F1C6FE82B6466987740139940995C7D_264686163 =             newCalendar;
             var7F1C6FE82B6466987740139940995C7D_264686163.addTaint(taint);
             return var7F1C6FE82B6466987740139940995C7D_264686163;
-        } 
-        
-        
-            
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (oldCalendar == null) {
+            //return Calendar.getInstance(locale);
+        //} else {
+            //final long currentTimeMillis = oldCalendar.getTimeInMillis();
+            //Calendar newCalendar = Calendar.getInstance(locale);
+            //newCalendar.setTimeInMillis(currentTimeMillis);
+            //return newCalendar;
+        //}
     }
 
     
@@ -554,9 +552,9 @@ switch(order[i]){
             var5783EF97022AA508B74A1E3EA38534AF_26927036.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_26927036;
 }
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -568,19 +566,19 @@ switch(order[i]){
     if(!isNewDate(year, month, dayOfMonth))        
         {
             return;
-        } 
+        } //End block
         setDate(year, month, dayOfMonth);
         updateSpinners();
         updateCalendarView();
         notifyDateChanged();
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!isNewDate(year, month, dayOfMonth)) {
+            //return;
+        //}
+        //setDate(year, month, dayOfMonth);
+        //updateSpinners();
+        //updateCalendarView();
+        //notifyDateChanged();
     }
 
     
@@ -589,41 +587,41 @@ switch(order[i]){
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
         addTaint(container.getTaint());
         dispatchThawSelfOnly(container);
-        
-        
+        // ---------- Original Method ----------
+        //dispatchThawSelfOnly(container);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.039 -0400", hash_original_method = "5DB0198ABA6176C6419BBD5D6E2C0EE9", hash_generated_method = "27242F993117A56CB3C8B3AF75907756")
     @Override
     protected Parcelable onSaveInstanceState() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         Parcelable superState = super.onSaveInstanceState();
 Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedState(superState, getYear(), getMonth(), getDayOfMonth());
         var0D586CC5BD129F440CEF1D4046358DB7_1098452272.addTaint(taint);
         return var0D586CC5BD129F440CEF1D4046358DB7_1098452272;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcelable superState = super.onSaveInstanceState();
+        //return new SavedState(superState, getYear(), getMonth(), getDayOfMonth());
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.039 -0400", hash_original_method = "7BB26B54419EB3FE0435D4F561876035", hash_generated_method = "C82D16D9C1A79E7CC585ADB82C108C72")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(state.getTaint());
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         setDate(ss.mYear, ss.mMonth, ss.mDay);
         updateSpinners();
         updateCalendarView();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //SavedState ss = (SavedState) state;
+        //super.onRestoreInstanceState(ss.getSuperState());
+        //setDate(ss.mYear, ss.mMonth, ss.mDay);
+        //updateSpinners();
+        //updateCalendarView();
     }
 
     
@@ -637,11 +635,11 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
         updateSpinners();
         updateCalendarView();
         mOnDateChangedListener = onDateChangedListener;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //setDate(year, monthOfYear, dayOfMonth);
+        //updateSpinners();
+        //updateCalendarView();
+        //mOnDateChangedListener = onDateChangedListener;
     }
 
     
@@ -655,21 +653,21 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
             boolean varB326B5062B2F0E69046810717534CB09_1470785049 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_772211124 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_772211124;
-        } 
+        } //End block
         catch (ParseException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1921675668 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1890506154 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1890506154;
-        } 
-        
-        
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //outDate.setTime(mDateFormat.parse(date));
+            //return true;
+        //} catch (ParseException e) {
+            //Log.w(LOG_TAG, "Date: " + date + " not in format: " + DATE_FORMAT);
+            //return false;
+        //}
     }
 
     
@@ -683,10 +681,10 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
                 || mCurrentDate.get(Calendar.DAY_OF_MONTH) != month));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_477458078 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_477458078;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return (mCurrentDate.get(Calendar.YEAR) != year
+                //|| mCurrentDate.get(Calendar.MONTH) != dayOfMonth
+                //|| mCurrentDate.get(Calendar.DAY_OF_MONTH) != month);
     }
 
     
@@ -699,19 +697,19 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
     if(mCurrentDate.before(mMinDate))        
         {
             mCurrentDate.setTimeInMillis(mMinDate.getTimeInMillis());
-        } 
+        } //End block
         else
     if(mCurrentDate.after(mMaxDate))        
         {
             mCurrentDate.setTimeInMillis(mMaxDate.getTimeInMillis());
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mCurrentDate.set(year, month, dayOfMonth);
+        //if (mCurrentDate.before(mMinDate)) {
+            //mCurrentDate.setTimeInMillis(mMinDate.getTimeInMillis());
+        //} else if (mCurrentDate.after(mMaxDate)) {
+            //mCurrentDate.setTimeInMillis(mMaxDate.getTimeInMillis());
+        //}
     }
 
     
@@ -726,7 +724,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
             mMonthSpinner.setMinValue(mCurrentDate.get(Calendar.MONTH));
             mMonthSpinner.setMaxValue(mCurrentDate.getActualMaximum(Calendar.MONTH));
             mMonthSpinner.setWrapSelectorWheel(false);
-        } 
+        } //End block
         else
     if(mCurrentDate.equals(mMaxDate))        
         {
@@ -737,7 +735,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
             mMonthSpinner.setMinValue(mCurrentDate.getActualMinimum(Calendar.MONTH));
             mMonthSpinner.setMaxValue(mCurrentDate.get(Calendar.MONTH));
             mMonthSpinner.setWrapSelectorWheel(false);
-        } 
+        } //End block
         else
         {
             mDaySpinner.setMinValue(1);
@@ -747,7 +745,7 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
             mMonthSpinner.setMinValue(0);
             mMonthSpinner.setMaxValue(11);
             mMonthSpinner.setWrapSelectorWheel(true);
-        } 
+        } //End block
         String[] displayedValues = Arrays.copyOfRange(mShortMonths,
                 mMonthSpinner.getMinValue(), mMonthSpinner.getMaxValue() + 1);
         mMonthSpinner.setDisplayedValues(displayedValues);
@@ -757,16 +755,16 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
         mYearSpinner.setValue(mCurrentDate.get(Calendar.YEAR));
         mMonthSpinner.setValue(mCurrentDate.get(Calendar.MONTH));
         mDaySpinner.setValue(mCurrentDate.get(Calendar.DAY_OF_MONTH));
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.042 -0400", hash_original_method = "FCBFFA03953049B21025A6ECF65DCE7B", hash_generated_method = "1374E2CB7A57CFB36E9738E5446FFEF5")
     private void updateCalendarView() {
         mCalendarView.setDate(mCurrentDate.getTimeInMillis(), false, false);
-        
-        
+        // ---------- Original Method ----------
+        //mCalendarView.setDate(mCurrentDate.getTimeInMillis(), false, false);
     }
 
     
@@ -775,8 +773,8 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
         int varB351B299D55CF645E77E341D083AD08E_1086421447 = (mCurrentDate.get(Calendar.YEAR));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_35424548 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_35424548;
-        
-        
+        // ---------- Original Method ----------
+        //return mCurrentDate.get(Calendar.YEAR);
     }
 
     
@@ -785,8 +783,8 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
         int varAFBFC70C4685CAC22170677B852626C4_170363359 = (mCurrentDate.get(Calendar.MONTH));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2016109687 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2016109687;
-        
-        
+        // ---------- Original Method ----------
+        //return mCurrentDate.get(Calendar.MONTH);
     }
 
     
@@ -795,8 +793,8 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
         int var047F4BAAB24777018B0F7C120930514E_1029950064 = (mCurrentDate.get(Calendar.DAY_OF_MONTH));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_300695828 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_300695828;
-        
-        
+        // ---------- Original Method ----------
+        //return mCurrentDate.get(Calendar.DAY_OF_MONTH);
     }
 
     
@@ -806,12 +804,12 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
     if(mOnDateChangedListener != null)        
         {
             mOnDateChangedListener.onDateChanged(this, getYear(), getMonth(), getDayOfMonth());
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
+        //if (mOnDateChangedListener != null) {
+            //mOnDateChangedListener.onDateChanged(this, getYear(), getMonth(), getDayOfMonth());
+        //}
     }
 
     
@@ -824,22 +822,22 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
     if(spinnerIndex < spinnerCount - 1)        
         {
             imeOptions = EditorInfo.IME_ACTION_NEXT;
-        } 
+        } //End block
         else
         {
             imeOptions = EditorInfo.IME_ACTION_DONE;
-        } 
+        } //End block
         TextView input = (TextView) spinner.findViewById(R.id.numberpicker_input);
         input.setImeOptions(imeOptions);
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //final int imeOptions;
+        //if (spinnerIndex < spinnerCount - 1) {
+            //imeOptions = EditorInfo.IME_ACTION_NEXT;
+        //} else {
+            //imeOptions = EditorInfo.IME_ACTION_DONE;
+        //}
+        //TextView input = (TextView) spinner.findViewById(R.id.numberpicker_input);
+        //input.setImeOptions(imeOptions);
     }
 
     
@@ -857,8 +855,8 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
         mYearSpinner.findViewById(R.id.increment).setContentDescription(text);
         text = mContext.getString(R.string.date_picker_decrement_year_button);
         mYearSpinner.findViewById(R.id.decrement).setContentDescription(text);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -871,34 +869,34 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
             {
                 mYearSpinnerInput.clearFocus();
                 inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            } 
+            } //End block
             else
     if(inputMethodManager.isActive(mMonthSpinnerInput))            
             {
                 mMonthSpinnerInput.clearFocus();
                 inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            } 
+            } //End block
             else
     if(inputMethodManager.isActive(mDaySpinnerInput))            
             {
                 mDaySpinnerInput.clearFocus();
                 inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-            
-                
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
+        //if (inputMethodManager != null) {
+            //if (inputMethodManager.isActive(mYearSpinnerInput)) {
+                //mYearSpinnerInput.clearFocus();
+                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
+            //} else if (inputMethodManager.isActive(mMonthSpinnerInput)) {
+                //mMonthSpinnerInput.clearFocus();
+                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
+            //} else if (inputMethodManager.isActive(mDaySpinnerInput)) {
+                //mDaySpinnerInput.clearFocus();
+                //inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
+            //}
+        //}
     }
 
     
@@ -920,10 +918,10 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
             mYear = year;
             mMonth = month;
             mDay = day;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mYear = year;
+            //mMonth = month;
+            //mDay = day;
         }
 
         
@@ -933,10 +931,10 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
             mYear = in.readInt();
             mMonth = in.readInt();
             mDay = in.readInt();
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mYear = in.readInt();
+            //mMonth = in.readInt();
+            //mDay = in.readInt();
         }
 
         
@@ -949,11 +947,11 @@ Parcelable var0D586CC5BD129F440CEF1D4046358DB7_1098452272 =         new SavedSta
             dest.writeInt(mYear);
             dest.writeInt(mMonth);
             dest.writeInt(mDay);
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.writeToParcel(dest, flags);
+            //dest.writeInt(mYear);
+            //dest.writeInt(mMonth);
+            //dest.writeInt(mDay);
         }
 
         

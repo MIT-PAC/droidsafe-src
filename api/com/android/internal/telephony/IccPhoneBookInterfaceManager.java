@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -106,23 +106,22 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.589 -0400", hash_original_method = "A61AB5A9E61C78C524F0A299EDDA8B31", hash_generated_method = "F8239CE1F53CC35117D554BE23C34DE0")
     public  IccPhoneBookInterfaceManager(PhoneBase phone) {
         this.phone = phone;
-        
-        
+        // ---------- Original Method ----------
+        //this.phone = phone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.589 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.589 -0400", hash_original_method = "96914FA697D4DDB9AE25582FAB4A6818", hash_generated_method = "1E7A9ED6D1CCD6DE353231DD77EAE9D8")
     protected void publish() {
         ServiceManager.addService("simphonebook", this);
-        
-        
+        // ---------- Original Method ----------
+        //ServiceManager.addService("simphonebook", this);
     }
 
     
@@ -150,7 +149,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                     "Requires android.permission.WRITE_CONTACTS permission");
             var2F274855F73158EABBE7DB894471DCBD_63812545.addTaint(taint);
             throw var2F274855F73158EABBE7DB894471DCBD_63812545;
-        } 
+        } //End block
     if(DBG)        
         logd("updateAdnRecordsInEfBySearch: efid=" + efid +
                 " ("+ oldTag + "," + oldPhoneNumber + ")"+ "==>" +
@@ -166,12 +165,12 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             AdnRecord newAdn = new AdnRecord(newTag, newPhoneNumber);
             adnCache.updateAdnBySearch(efid, oldAdn, newAdn, pin2, response);
             waitForResult(status);
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_1546724994 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1599805915 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1599805915;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -191,7 +190,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                     "Requires android.permission.WRITE_CONTACTS permission");
             var2F274855F73158EABBE7DB894471DCBD_1492090365.addTaint(taint);
             throw var2F274855F73158EABBE7DB894471DCBD_1492090365;
-        } 
+        } //End block
     if(DBG)        
         logd("updateAdnRecordsInEfByIndex: efid=" + efid +
                 " Index=" + index + " ==> " +
@@ -205,12 +204,12 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             AdnRecord newAdn = new AdnRecord(newTag, newPhoneNumber);
             adnCache.updateAdnByIndex(efid, newAdn, index, pin2, response);
             waitForResult(status);
-        } 
+        } //End block
         boolean var260CA9DD8A4577FC00B7BD5810298076_514485009 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_912647433 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_912647433;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -228,7 +227,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                     "Requires android.permission.READ_CONTACTS permission");
             var27FDED624B787859A52BDA309D93217B_2008805073.addTaint(taint);
             throw var27FDED624B787859A52BDA309D93217B_2008805073;
-        } 
+        } //End block
         efid = updateEfForIccType(efid);
     if(DBG)        
         logd("getAdnRecordsInEF: efid=" + efid);
@@ -239,27 +238,27 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             Message response = mBaseHandler.obtainMessage(EVENT_LOAD_DONE, status);
             adnCache.requestLoadAllAdnLike(efid, adnCache.extensionEfForEf(efid), response);
             waitForResult(status);
-        } 
+        } //End block
 List<AdnRecord> varFE65894448998F2F8382F47C41BDE1F8_959461885 =         records;
         varFE65894448998F2F8382F47C41BDE1F8_959461885.addTaint(taint);
         return varFE65894448998F2F8382F47C41BDE1F8_959461885;
-        
-        
-                
-                
-            
-                    
-        
-        
-        
-        
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (phone.getContext().checkCallingOrSelfPermission(
+                //android.Manifest.permission.READ_CONTACTS)
+                //!= PackageManager.PERMISSION_GRANTED) {
+            //throw new SecurityException(
+                    //"Requires android.permission.READ_CONTACTS permission");
+        //}
+        //efid = updateEfForIccType(efid);
+        //if (DBG) logd("getAdnRecordsInEF: efid=" + efid);
+        //synchronized(mLock) {
+            //checkThread();
+            //AtomicBoolean status = new AtomicBoolean(false);
+            //Message response = mBaseHandler.obtainMessage(EVENT_LOAD_DONE, status);
+            //adnCache.requestLoadAllAdnLike(efid, adnCache.extensionEfForEf(efid), response);
+            //waitForResult(status);
+        //}
+        //return records;
     }
 
     
@@ -274,16 +273,16 @@ List<AdnRecord> varFE65894448998F2F8382F47C41BDE1F8_959461885 =         records;
                         "You cannot call query on this provder from the main UI thread.");
                 varAE50B6EACDFF2EBC625ABE87BD6C1EBE_403194215.addTaint(taint);
                 throw varAE50B6EACDFF2EBC625ABE87BD6C1EBE_403194215;
-            } 
-        } 
-        
-        
-            
-                
-                
-                        
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (!ALLOW_SIM_OP_IN_UI_THREAD) {
+            //if (mBaseHandler.getLooper().equals(Looper.myLooper())) {
+                //loge("query() called on the main UI thread!");
+                //throw new IllegalStateException(
+                        //"You cannot call query on this provder from the main UI thread.");
+            //}
+        //}
     }
 
     
@@ -296,20 +295,20 @@ List<AdnRecord> varFE65894448998F2F8382F47C41BDE1F8_959461885 =         records;
             try 
             {
                 mLock.wait();
-            } 
+            } //End block
             catch (InterruptedException e)
             {
                 logd("interrupted while trying to update by search");
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //while (!status.get()) {
+            //try {
+                //mLock.wait();
+            //} catch (InterruptedException e) {
+                //logd("interrupted while trying to update by search");
+            //}
+        //}
     }
 
     
@@ -323,18 +322,18 @@ List<AdnRecord> varFE65894448998F2F8382F47C41BDE1F8_959461885 =         records;
                 int var33F5C4CE294383953D111A51DF9A19CE_483860857 = (IccConstants.EF_PBR);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431875774 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431875774;
-            } 
-        } 
+            } //End block
+        } //End block
         int var1E3235258D1AA505A2572AF2B7877EBF_284421124 = (efid);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546792126 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546792126;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (efid == IccConstants.EF_ADN) {
+            //if (phone.getIccCard().isApplicationOnIcc(IccCardApplication.AppType.APPTYPE_USIM)) {
+                //return IccConstants.EF_PBR;
+            //}
+        //}
+        //return efid;
     }
 
     

@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -59,7 +59,7 @@ public class NetworkStatsHistory implements Parcelable {
     public  NetworkStatsHistory(long bucketDuration) {
         this(bucketDuration, 10, FIELD_ALL);
         addTaint(bucketDuration);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -68,7 +68,7 @@ public class NetworkStatsHistory implements Parcelable {
         this(bucketDuration, initialSize, FIELD_ALL);
         addTaint(initialSize);
         addTaint(bucketDuration);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -90,16 +90,16 @@ public class NetworkStatsHistory implements Parcelable {
     if((fields & FIELD_OPERATIONS) != 0)        
         operations = new long[initialSize];
         bucketCount = 0;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.bucketDuration = bucketDuration;
+        //bucketStart = new long[initialSize];
+        //if ((fields & FIELD_ACTIVE_TIME) != 0) activeTime = new long[initialSize];
+        //if ((fields & FIELD_RX_BYTES) != 0) rxBytes = new long[initialSize];
+        //if ((fields & FIELD_RX_PACKETS) != 0) rxPackets = new long[initialSize];
+        //if ((fields & FIELD_TX_BYTES) != 0) txBytes = new long[initialSize];
+        //if ((fields & FIELD_TX_PACKETS) != 0) txPackets = new long[initialSize];
+        //if ((fields & FIELD_OPERATIONS) != 0) operations = new long[initialSize];
+        //bucketCount = 0;
     }
 
     
@@ -114,16 +114,16 @@ public class NetworkStatsHistory implements Parcelable {
         txPackets = readLongArray(in);
         operations = readLongArray(in);
         bucketCount = bucketStart.length;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //bucketDuration = in.readLong();
+        //bucketStart = readLongArray(in);
+        //activeTime = readLongArray(in);
+        //rxBytes = readLongArray(in);
+        //rxPackets = readLongArray(in);
+        //txBytes = readLongArray(in);
+        //txPackets = readLongArray(in);
+        //operations = readLongArray(in);
+        //bucketCount = bucketStart.length;
     }
 
     
@@ -142,7 +142,7 @@ switch(version){
             operations = new long[bucketStart.length];
             bucketCount = bucketStart.length;
             break;
-        } 
+        } //End block
         case VERSION_ADD_PACKETS:
         case VERSION_ADD_ACTIVE:
         {
@@ -157,16 +157,16 @@ switch(version){
             operations = readVarLongArray(in);
             bucketCount = bucketStart.length;
             break;
-        } 
+        } //End block
         default:
         {
             ProtocolException varFF51C94CF6B40EBCA9506CC5E444F13D_272956359 = new ProtocolException("unexpected version: " + version);
             varFF51C94CF6B40EBCA9506CC5E444F13D_272956359.addTaint(taint);
             throw varFF51C94CF6B40EBCA9506CC5E444F13D_272956359;
-        } 
+        } //End block
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -182,15 +182,15 @@ switch(version){
         writeLongArray(out, txBytes, bucketCount);
         writeLongArray(out, txPackets, bucketCount);
         writeLongArray(out, operations, bucketCount);
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeLong(bucketDuration);
+        //writeLongArray(out, bucketStart, bucketCount);
+        //writeLongArray(out, activeTime, bucketCount);
+        //writeLongArray(out, rxBytes, bucketCount);
+        //writeLongArray(out, rxPackets, bucketCount);
+        //writeLongArray(out, txBytes, bucketCount);
+        //writeLongArray(out, txPackets, bucketCount);
+        //writeLongArray(out, operations, bucketCount);
     }
 
     
@@ -206,53 +206,49 @@ switch(version){
         writeVarLongArray(out, txBytes, bucketCount);
         writeVarLongArray(out, txPackets, bucketCount);
         writeVarLongArray(out, operations, bucketCount);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeInt(VERSION_ADD_ACTIVE);
+        //out.writeLong(bucketDuration);
+        //writeVarLongArray(out, bucketStart, bucketCount);
+        //writeVarLongArray(out, activeTime, bucketCount);
+        //writeVarLongArray(out, rxBytes, bucketCount);
+        //writeVarLongArray(out, rxPackets, bucketCount);
+        //writeVarLongArray(out, txBytes, bucketCount);
+        //writeVarLongArray(out, txPackets, bucketCount);
+        //writeVarLongArray(out, operations, bucketCount);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.199 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0D744969D616078E42F6ADD139CE9DD7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1628472853 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578942832 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_578942832;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.199 -0400", hash_original_method = "3E2D8D04EF3E8C4BDF56D4CFDD864A04", hash_generated_method = "F10DD82FDA70911B61AA20015A0CA0D3")
     public int size() {
         int var3ED54E5E8C85283782F9EFF085B93E51_9862181 = (bucketCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1266027684 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1266027684;
-        
-        
+        // ---------- Original Method ----------
+        //return bucketCount;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.199 -0400", hash_original_method = "D0E743773F77C0F20C1DE2E3BE48F30B", hash_generated_method = "5A263F4B294B345CEBC0A8887561903A")
     public long getBucketDuration() {
         long var12D6496AFB9546FF78CE1A9D7D8F4BFC_1273294319 = (bucketDuration);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1586692687 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1586692687;
-        
-        
+        // ---------- Original Method ----------
+        //return bucketDuration;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.199 -0400", hash_original_method = "0DA78BB7B3F99E1543E4DC9DFD2BD9F4", hash_generated_method = "2B94A79BEC39FA5AD2E3485B3566B130")
     public long getStart() {
     if(bucketCount > 0)        
@@ -260,23 +256,22 @@ switch(version){
             long varBEBB54E1E5B7CDFF42B1F53B88CBEB77_295626707 = (bucketStart[0]);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_160830908 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_160830908;
-        } 
+        } //End block
         else
         {
             long var85712C72209F40438E81734FCEEB0717_1705058542 = (Long.MAX_VALUE);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1622793855 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1622793855;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (bucketCount > 0) {
+            //return bucketStart[0];
+        //} else {
+            //return Long.MAX_VALUE;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.200 -0400", hash_original_method = "D4476AE88A84FACA51BF4BF1E3EE2F8D", hash_generated_method = "0016A7958693FBC2603528606C849C57")
     public long getEnd() {
     if(bucketCount > 0)        
@@ -284,19 +279,19 @@ switch(version){
             long var7FE60DA6D8934AF20B992FBB0E8381BA_520692325 = (bucketStart[bucketCount - 1] + bucketDuration);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_248711923 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_248711923;
-        } 
+        } //End block
         else
         {
             long var3C8E60A5FA3722D6B0A8842B383A1743_2012936202 = (Long.MIN_VALUE);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_622580483 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_622580483;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (bucketCount > 0) {
+            //return bucketStart[bucketCount - 1] + bucketDuration;
+        //} else {
+            //return Long.MIN_VALUE;
+        //}
     }
 
     
@@ -307,22 +302,22 @@ switch(version){
     if(index < 0)        
         {
             index = (~index) - 1;
-        } 
+        } //End block
         else
         {
             index -= 1;
-        } 
+        } //End block
         int var55A07FD4FB3AE34C1752A9F53745E123_392824321 = (MathUtils.constrain(index, 0, bucketCount - 1));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145147610 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145147610;
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int index = Arrays.binarySearch(bucketStart, 0, bucketCount, time);
+        //if (index < 0) {
+            //index = (~index) - 1;
+        //} else {
+            //index -= 1;
+        //}
+        //return MathUtils.constrain(index, 0, bucketCount - 1);
     }
 
     
@@ -333,22 +328,22 @@ switch(version){
     if(index < 0)        
         {
             index = ~index;
-        } 
+        } //End block
         else
         {
             index += 1;
-        } 
+        } //End block
         int var55A07FD4FB3AE34C1752A9F53745E123_1213018686 = (MathUtils.constrain(index, 0, bucketCount - 1));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006523155 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006523155;
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int index = Arrays.binarySearch(bucketStart, 0, bucketCount, time);
+        //if (index < 0) {
+            //index = ~index;
+        //} else {
+            //index += 1;
+        //}
+        //return MathUtils.constrain(index, 0, bucketCount - 1);
     }
 
     
@@ -367,17 +362,17 @@ switch(version){
 Entry varF26DBE38545460D6F6AE1D948FF53869_1585244177 =         entry;
         varF26DBE38545460D6F6AE1D948FF53869_1585244177.addTaint(taint);
         return varF26DBE38545460D6F6AE1D948FF53869_1585244177;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final Entry entry = recycle != null ? recycle : new Entry();
+        //entry.bucketStart = bucketStart[i];
+        //entry.bucketDuration = bucketDuration;
+        //entry.activeTime = getLong(activeTime, i, UNKNOWN);
+        //entry.rxBytes = getLong(rxBytes, i, UNKNOWN);
+        //entry.rxPackets = getLong(rxPackets, i, UNKNOWN);
+        //entry.txBytes = getLong(txBytes, i, UNKNOWN);
+        //entry.txPackets = getLong(txPackets, i, UNKNOWN);
+        //entry.operations = getLong(operations, i, UNKNOWN);
+        //return entry;
     }
 
     
@@ -390,9 +385,9 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1585244177 =         entry;
         addTaint(start);
         recordData(start, end, new NetworkStats.Entry(
                 IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, 0L, txBytes, 0L, 0L));
-        
-        
-                
+        // ---------- Original Method ----------
+        //recordData(start, end, new NetworkStats.Entry(
+                //IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, 0L, txBytes, 0L, 0L));
     }
 
     
@@ -406,12 +401,12 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1585244177 =         entry;
             IllegalArgumentException var767165DF19C4A354431816EBCFE68C5C_1124509455 = new IllegalArgumentException("tried recording negative data");
             var767165DF19C4A354431816EBCFE68C5C_1124509455.addTaint(taint);
             throw var767165DF19C4A354431816EBCFE68C5C_1124509455;
-        } 
+        } //End block
     if(entry.rxBytes == 0 && entry.rxPackets == 0 && entry.txBytes == 0 && entry.txPackets == 0
                 && entry.operations == 0)        
         {
             return;
-        } 
+        } //End block
         ensureBuckets(start, end);
         long duration = end - start;
         final int startIndex = getIndexAfter(end);
@@ -443,9 +438,9 @@ for(int i = startIndex;i >= 0;i--)
             addLong(operations, i, fracOperations);
             entry.operations -= fracOperations;
             duration -= overlap;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -463,20 +458,20 @@ for(int i = 0;i < input.bucketCount;i++)
             entry.txPackets = getLong(input.txPackets, i, 0L);
             entry.operations = getLong(input.operations, i, 0L);
             recordData(start, end, entry);
-        } 
-        
-        
-                
-        
-            
-            
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final NetworkStats.Entry entry = new NetworkStats.Entry(
+                //IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, 0L, 0L, 0L, 0L, 0L);
+        //for (int i = 0; i < input.bucketCount; i++) {
+            //final long start = input.bucketStart[i];
+            //final long end = start + input.bucketDuration;
+            //entry.rxBytes = getLong(input.rxBytes, i, 0L);
+            //entry.rxPackets = getLong(input.rxPackets, i, 0L);
+            //entry.txBytes = getLong(input.txBytes, i, 0L);
+            //entry.txPackets = getLong(input.txPackets, i, 0L);
+            //entry.operations = getLong(input.operations, i, 0L);
+            //recordData(start, end, entry);
+        //}
     }
 
     
@@ -492,17 +487,17 @@ for(long now = start;now < end;now += bucketDuration)
     if(index < 0)            
             {
                 insertBucket(~index, now);
-            } 
-        } 
-        
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //start -= start % bucketDuration;
+        //end += (bucketDuration - (end % bucketDuration)) % bucketDuration;
+        //for (long now = start; now < end; now += bucketDuration) {
+            //final int index = Arrays.binarySearch(bucketStart, 0, bucketCount, now);
+            //if (index < 0) {
+                //insertBucket(~index, now);
+            //}
+        //}
     }
 
     
@@ -524,7 +519,7 @@ for(long now = start;now < end;now += bucketDuration)
             txPackets = Arrays.copyOf(txPackets, newLength);
     if(operations != null)            
             operations = Arrays.copyOf(operations, newLength);
-        } 
+        } //End block
     if(index < bucketCount)        
         {
             final int dstPos = index + 1;
@@ -542,7 +537,7 @@ for(long now = start;now < end;now += bucketDuration)
             System.arraycopy(txPackets, index, txPackets, dstPos, length);
     if(operations != null)            
             System.arraycopy(operations, index, operations, dstPos, length);
-        } 
+        } //End block
         bucketStart[index] = start;
         setLong(activeTime, index, 0L);
         setLong(rxBytes, index, 0L);
@@ -551,8 +546,8 @@ for(long now = start;now < end;now += bucketDuration)
         setLong(txPackets, index, 0L);
         setLong(operations, index, 0L);
         bucketCount++;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -566,7 +561,7 @@ for(i = 0;i < bucketCount;i++)
             final long curEnd = curStart + bucketDuration;
     if(curEnd > cutoff)            
             break;
-        } 
+        } //End block
     if(i > 0)        
         {
             final int length = bucketStart.length;
@@ -584,9 +579,9 @@ for(i = 0;i < bucketCount;i++)
     if(operations != null)            
             operations = Arrays.copyOfRange(operations, i, length);
             bucketCount -= i;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -598,8 +593,8 @@ for(i = 0;i < bucketCount;i++)
 Entry var97A7A04E7119C9643CC72A9B8A7C83C4_170277126 =         getValues(start, end, Long.MAX_VALUE, recycle);
         var97A7A04E7119C9643CC72A9B8A7C83C4_170277126.addTaint(taint);
         return var97A7A04E7119C9643CC72A9B8A7C83C4_170277126;
-        
-        
+        // ---------- Original Method ----------
+        //return getValues(start, end, Long.MAX_VALUE, recycle);
     }
 
     
@@ -630,13 +625,13 @@ for(int i = startIndex;i >= 0;i--)
     if(activeBucket)            
             {
                 overlap = bucketDuration;
-            } 
+            } //End block
             else
             {
                 final long overlapEnd = curEnd < end ? curEnd : end;
                 final long overlapStart = curStart > start ? curStart : start;
                 overlap = overlapEnd - overlapStart;
-            } 
+            } //End block
     if(overlap <= 0)            
             continue;
     if(activeTime != null)            
@@ -651,12 +646,12 @@ for(int i = startIndex;i >= 0;i--)
             entry.txPackets += txPackets[i] * overlap / bucketDuration;
     if(operations != null)            
             entry.operations += operations[i] * overlap / bucketDuration;
-        } 
+        } //End block
 Entry varF26DBE38545460D6F6AE1D948FF53869_1861057595 =         entry;
         varF26DBE38545460D6F6AE1D948FF53869_1861057595.addTaint(taint);
         return varF26DBE38545460D6F6AE1D948FF53869_1861057595;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -674,15 +669,15 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1861057595 =         entry;
         final long txPackets = txBytes / 1024;
         final long operations = rxBytes / 2048;
         generateRandom(start, end, rxBytes, rxPackets, txBytes, txPackets, operations, r);
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final Random r = new Random();
+        //final float fractionRx = r.nextFloat();
+        //final long rxBytes = (long) (bytes * fractionRx);
+        //final long txBytes = (long) (bytes * (1 - fractionRx));
+        //final long rxPackets = rxBytes / 1024;
+        //final long txPackets = txBytes / 1024;
+        //final long operations = rxBytes / 2048;
+        //generateRandom(start, end, rxBytes, rxPackets, txBytes, txPackets, operations, r);
     }
 
     
@@ -712,9 +707,9 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1861057595 =         entry;
             txPackets -= entry.txPackets;
             operations -= entry.operations;
             recordData(curStart, curEnd, entry);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -738,7 +733,7 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1861057595 =         entry;
             pw.print("  (omitting ");
             pw.print(start);
             pw.println(" buckets)");
-        } 
+        } //End block
 for(int i = start;i < bucketCount;i++)
         {
             pw.print(prefix);
@@ -748,36 +743,36 @@ for(int i = start;i < bucketCount;i++)
             {
                 pw.print(" activeTime=");
                 pw.print(activeTime[i]);
-            } 
+            } //End block
     if(rxBytes != null)            
             {
                 pw.print(" rxBytes=");
                 pw.print(rxBytes[i]);
-            } 
+            } //End block
     if(rxPackets != null)            
             {
                 pw.print(" rxPackets=");
                 pw.print(rxPackets[i]);
-            } 
+            } //End block
     if(txBytes != null)            
             {
                 pw.print(" txBytes=");
                 pw.print(txBytes[i]);
-            } 
+            } //End block
     if(txPackets != null)            
             {
                 pw.print(" txPackets=");
                 pw.print(txPackets[i]);
-            } 
+            } //End block
     if(operations != null)            
             {
                 pw.print(" operations=");
                 pw.print(operations[i]);
-            } 
+            } //End block
             pw.println();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -789,27 +784,24 @@ for(int i = start;i < bucketCount;i++)
 String varEF986DCEFABA18330D92CD8C42EF636E_1564160533 =         writer.toString();
         varEF986DCEFABA18330D92CD8C42EF636E_1564160533.addTaint(taint);
         return varEF986DCEFABA18330D92CD8C42EF636E_1564160533;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //final CharArrayWriter writer = new CharArrayWriter();
+        //dump("", new PrintWriter(writer), false);
+        //return writer.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long getLong(long[] array, int i, long value) {
+        private static long getLong(long[] array, int i, long value) {
         return array != null ? array[i] : value;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void setLong(long[] array, int i, long value) {
+        private static void setLong(long[] array, int i, long value) {
         if (array != null) array[i] = value;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void addLong(long[] array, int i, long value) {
+        private static void addLong(long[] array, int i, long value) {
         if (array != null) array[i] += value;
     }
 
@@ -843,7 +835,7 @@ String varEF986DCEFABA18330D92CD8C42EF636E_1564160533 =         writer.toString(
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.214 -0400", hash_original_method = "629F4A8E90A91F8ECA92C26A9EB219B2", hash_generated_method = "629F4A8E90A91F8ECA92C26A9EB219B2")
         public Entry ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -859,7 +851,7 @@ String varEF986DCEFABA18330D92CD8C42EF636E_1564160533 =         writer.toString(
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.214 -0400", hash_original_method = "19FEB3F8DC1B5C5DFE6BAC6ABFB6225F", hash_generated_method = "19FEB3F8DC1B5C5DFE6BAC6ABFB6225F")
         public DataStreamUtils ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -936,7 +928,7 @@ String varEF986DCEFABA18330D92CD8C42EF636E_1564160533 =         writer.toString(
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.216 -0400", hash_original_method = "B81D28E36C3A9E7E89F9825844B173D9", hash_generated_method = "B81D28E36C3A9E7E89F9825844B173D9")
         public ParcelUtils ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1011,12 +1003,12 @@ String varEF986DCEFABA18330D92CD8C42EF636E_1564160533 =         writer.toString(
             return new NetworkStatsHistory[size];
         }
     };
-    
+    // orphaned legacy method
     public NetworkStatsHistory createFromParcel(Parcel in) {
             return new NetworkStatsHistory(in);
         }
     
-    
+    // orphaned legacy method
     public NetworkStatsHistory[] newArray(int size) {
             return new NetworkStatsHistory[size];
         }

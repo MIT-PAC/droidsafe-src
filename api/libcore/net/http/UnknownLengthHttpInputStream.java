@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
         addTaint(httpEngine.getTaint());
         addTaint(cacheRequest.getTaint());
         addTaint(is.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -38,7 +38,7 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1898389723 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_304400190 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_304400190;
-        } 
+        } //End block
         int read = in.read(buffer, offset, count);
     if(read == -1)        
         {
@@ -47,25 +47,25 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_981094533 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_219184974 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_219184974;
-        } 
+        } //End block
         cacheWrite(buffer, offset, read);
         int varECAE13117D6F0584C25A9DA6C8F8415E_35737196 = (read);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260904472 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260904472;
-        
-        
-        
-        
-            
-        
-        
-        
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
+        //checkNotClosed();
+        //if (in == null || inputExhausted) {
+            //return -1;
+        //}
+        //int read = in.read(buffer, offset, count);
+        //if (read == -1) {
+            //inputExhausted = true;
+            //endOfInput(false);
+            //return -1;
+        //}
+        //cacheWrite(buffer, offset, read);
+        //return read;
     }
 
     
@@ -76,9 +76,9 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
         int var02A4B89D1E17AA2B50FB5759CFA6C54D_1827404640 = (in == null ? 0 : in.available());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_704413103 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_704413103;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkNotClosed();
+        //return in == null ? 0 : in.available();
     }
 
     
@@ -88,20 +88,20 @@ final class UnknownLengthHttpInputStream extends AbstractHttpInputStream {
     if(closed)        
         {
             return;
-        } 
+        } //End block
         closed = true;
     if(!inputExhausted)        
         {
             unexpectedEndOfInput();
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (closed) {
+            //return;
+        //}
+        //closed = true;
+        //if (!inputExhausted) {
+            //unexpectedEndOfInput();
+        //}
     }
 
     

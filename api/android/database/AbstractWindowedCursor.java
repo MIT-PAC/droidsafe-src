@@ -1,6 +1,6 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.913 -0400", hash_original_method = "45FA808929D52C3FF25B9987C9B4DFA0", hash_generated_method = "45FA808929D52C3FF25B9987C9B4DFA0")
     public AbstractWindowedCursor ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -25,9 +25,9 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         byte[] var9FD2B9A55B3FDEC958C8AB6027815BB5_1179400582 = (mWindow.getBlob(mPos, columnIndex));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1178422835 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1178422835;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getBlob(mPos, columnIndex);
     }
 
     
@@ -39,9 +39,9 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
 String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(mPos, columnIndex);
         var40A8596F3179C0E714867EBE523A53EA_49173144.addTaint(taint);
         return var40A8596F3179C0E714867EBE523A53EA_49173144;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getString(mPos, columnIndex);
     }
 
     
@@ -52,9 +52,9 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         addTaint(columnIndex);
         checkPosition();
         mWindow.copyStringToBuffer(mPos, columnIndex, buffer);
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //mWindow.copyStringToBuffer(mPos, columnIndex, buffer);
     }
 
     
@@ -66,9 +66,9 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         short var3306429051E1A16869D45F516DC45653_1570553134 = (mWindow.getShort(mPos, columnIndex));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1856437600 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1856437600;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getShort(mPos, columnIndex);
     }
 
     
@@ -80,9 +80,9 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         int varE21E2155C11C9B1871BF69B5C144000B_10581835 = (mWindow.getInt(mPos, columnIndex));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1629447832 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1629447832;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getInt(mPos, columnIndex);
     }
 
     
@@ -94,9 +94,9 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         long var5AF4672D1A6A4DC06469C0A1800FCA1B_1202256416 = (mWindow.getLong(mPos, columnIndex));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_700811754 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_700811754;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getLong(mPos, columnIndex);
     }
 
     
@@ -108,9 +108,9 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         float var5404B8E23489FD4E89DEC36D2E49461D_2042463569 = (mWindow.getFloat(mPos, columnIndex));
                 float var546ADE640B6EDFBC8A086EF31347E768_1929955424 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1929955424;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getFloat(mPos, columnIndex);
     }
 
     
@@ -122,9 +122,9 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         double varA82C10BBC45A43EE148D106ADEF5DB67_539386094 = (mWindow.getDouble(mPos, columnIndex));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1804893200 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1804893200;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getDouble(mPos, columnIndex);
     }
 
     
@@ -136,9 +136,9 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         boolean var14EEE1B35255300486FF56051C9F8187_1502739485 = (mWindow.getType(mPos, columnIndex) == Cursor.FIELD_TYPE_NULL);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1630781329 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1630781329;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getType(mPos, columnIndex) == Cursor.FIELD_TYPE_NULL;
     }
 
     
@@ -149,8 +149,8 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         boolean var23CC87B5BACE008168EEE4FDA3187FEB_19065238 = (getType(columnIndex) == Cursor.FIELD_TYPE_BLOB);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1369090182 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1369090182;
-        
-        
+        // ---------- Original Method ----------
+        //return getType(columnIndex) == Cursor.FIELD_TYPE_BLOB;
     }
 
     
@@ -161,8 +161,8 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         boolean varF31CAFEC42A62120925122D9CD690071_1138949865 = (getType(columnIndex) == Cursor.FIELD_TYPE_STRING);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_386713540 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_386713540;
-        
-        
+        // ---------- Original Method ----------
+        //return getType(columnIndex) == Cursor.FIELD_TYPE_STRING;
     }
 
     
@@ -173,8 +173,8 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         boolean varBB39C526DEC36DF73B64BDBDBCE5EB16_1337389418 = (getType(columnIndex) == Cursor.FIELD_TYPE_INTEGER);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_875853103 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_875853103;
-        
-        
+        // ---------- Original Method ----------
+        //return getType(columnIndex) == Cursor.FIELD_TYPE_INTEGER;
     }
 
     
@@ -185,8 +185,8 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         boolean var53A154F70D90ADECA84F77DF03305194_1467861402 = (getType(columnIndex) == Cursor.FIELD_TYPE_FLOAT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1697562224 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1697562224;
-        
-        
+        // ---------- Original Method ----------
+        //return getType(columnIndex) == Cursor.FIELD_TYPE_FLOAT;
     }
 
     
@@ -198,9 +198,9 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
         int varD2999FC5F8BA0280AFE4B53985F7ADDD_672960886 = (mWindow.getType(mPos, columnIndex));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1557606850 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1557606850;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPosition();
+        //return mWindow.getType(mPos, columnIndex);
     }
 
     
@@ -214,25 +214,24 @@ String var40A8596F3179C0E714867EBE523A53EA_49173144 =         mWindow.getString(
                     "Most probable cause: cursor is deactivated prior to calling this method.");
             var1C5A4A13B7788E921673AB6289B9A7A5_405056679.addTaint(taint);
             throw var1C5A4A13B7788E921673AB6289B9A7A5_405056679;
-        } 
-        
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.checkPosition();
+        //if (mWindow == null) {
+            //throw new StaleDataException("Attempting to access a closed CursorWindow." +
+                    //"Most probable cause: cursor is deactivated prior to calling this method.");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.925 -0400", hash_original_method = "1266B4A96CD75271FEBF68638404515E", hash_generated_method = "9AEA790E6562D4B25672835461187558")
     @Override
     public CursorWindow getWindow() {
 CursorWindow var125511BCCBD4CDF7BDF315F5AA8A1CE3_218997043 =         mWindow;
         var125511BCCBD4CDF7BDF315F5AA8A1CE3_218997043.addTaint(taint);
         return var125511BCCBD4CDF7BDF315F5AA8A1CE3_218997043;
-        
-        
+        // ---------- Original Method ----------
+        //return mWindow;
     }
 
     
@@ -242,23 +241,22 @@ CursorWindow var125511BCCBD4CDF7BDF315F5AA8A1CE3_218997043 =         mWindow;
         {
             closeWindow();
             mWindow = window;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (window != mWindow) {
+            //closeWindow();
+            //mWindow = window;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.926 -0400", hash_original_method = "CE7634279B030B3367B24B82DE682EB0", hash_generated_method = "7767F3905CAD770048AA1A89484A3FDC")
     public boolean hasWindow() {
         boolean var0855AC450DF2010BCC62E60CEF96871E_1095282332 = (mWindow != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_425583798 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_425583798;
-        
-        
+        // ---------- Original Method ----------
+        //return mWindow != null;
     }
 
     
@@ -268,12 +266,12 @@ CursorWindow var125511BCCBD4CDF7BDF315F5AA8A1CE3_218997043 =         mWindow;
         {
             mWindow.close();
             mWindow = null;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mWindow != null) {
+            //mWindow.close();
+            //mWindow = null;
+        //}
     }
 
     
@@ -282,29 +280,29 @@ CursorWindow var125511BCCBD4CDF7BDF315F5AA8A1CE3_218997043 =         mWindow;
     if(mWindow == null)        
         {
             mWindow = new CursorWindow(name);
-        } 
+        } //End block
         else
         {
             mWindow.clear();
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mWindow == null) {
+            //mWindow = new CursorWindow(name);
+        //} else {
+            //mWindow.clear();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.929 -0400", hash_original_method = "C8847040621704A6986D97364F312269", hash_generated_method = "6CD575C7E400F361AFC0582D59EEEF79")
     @Override
     protected void onDeactivateOrClose() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDeactivateOrClose();
         closeWindow();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onDeactivateOrClose();
+        //closeWindow();
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -84,7 +84,7 @@ public class Scroller {
     public  Scroller(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -94,7 +94,7 @@ public class Scroller {
                 context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB);
         addTaint(interpolator.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -105,24 +105,23 @@ public class Scroller {
         mPpi = context.getResources().getDisplayMetrics().density * 160.0f;
         mDeceleration = computeDeceleration(ViewConfiguration.getScrollFriction());
         mFlywheel = flywheel;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFinished = true;
+        //mInterpolator = interpolator;
+        //mPpi = context.getResources().getDisplayMetrics().density * 160.0f;
+        //mDeceleration = computeDeceleration(ViewConfiguration.getScrollFriction());
+        //mFlywheel = flywheel;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.217 -0400", hash_original_method = "7DBB574AF8BCDDD777C332A70FF88B50", hash_generated_method = "C44A601CD635F484BC869D788997D666")
     public final void setFriction(float friction) {
         mDeceleration = computeDeceleration(friction);
-        
-        
+        // ---------- Original Method ----------
+        //mDeceleration = computeDeceleration(friction);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.217 -0400", hash_original_method = "B6D5379ECD830F8ABC23D18179CF1E64", hash_generated_method = "717BC576018DEAEFA0809961CD23495A")
     private float computeDeceleration(float friction) {
         addTaint(friction);
@@ -132,11 +131,11 @@ public class Scroller {
                       * friction);
                 float var546ADE640B6EDFBC8A086EF31347E768_1916700497 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1916700497;
-        
-        
-                      
-                      
-                      
+        // ---------- Original Method ----------
+        //return SensorManager.GRAVITY_EARTH   
+                      //* 39.37f               
+                      //* mPpi                 
+                      //* friction;
     }
 
     
@@ -145,16 +144,16 @@ public class Scroller {
         boolean varBB077E6B2FCDFA3F0EF71EB099A18F49_2113210479 = (mFinished);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_212874628 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_212874628;
-        
-        
+        // ---------- Original Method ----------
+        //return mFinished;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.218 -0400", hash_original_method = "D2A5F5698F1FC9281D0C68AF0BDE844E", hash_generated_method = "D6C7C127B9A2DD566E1703BC4B7A58DD")
     public final void forceFinished(boolean finished) {
         mFinished = finished;
-        
-        
+        // ---------- Original Method ----------
+        //mFinished = finished;
     }
 
     
@@ -163,8 +162,8 @@ public class Scroller {
         int var25395741BFE51A7D136A5C7109AAD2D8_539196984 = (mDuration);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_322003881 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_322003881;
-        
-        
+        // ---------- Original Method ----------
+        //return mDuration;
     }
 
     
@@ -173,8 +172,8 @@ public class Scroller {
         int var6BD2791CD07D2430F146D6C23A460588_430654273 = (mCurrX);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2128363812 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2128363812;
-        
-        
+        // ---------- Original Method ----------
+        //return mCurrX;
     }
 
     
@@ -183,8 +182,8 @@ public class Scroller {
         int var09D2830408454AE5F3DC6A19638B48BC_1505384630 = (mCurrY);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1542134845 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1542134845;
-        
-        
+        // ---------- Original Method ----------
+        //return mCurrY;
     }
 
     
@@ -193,8 +192,8 @@ public class Scroller {
         float var71AD6C62DE88F3704D3F0CB1692E44A0_524459098 = (mVelocity - mDeceleration * timePassed() / 2000.0f);
                 float var546ADE640B6EDFBC8A086EF31347E768_1501584549 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1501584549;
-        
-        
+        // ---------- Original Method ----------
+        //return mVelocity - mDeceleration * timePassed() / 2000.0f;
     }
 
     
@@ -203,8 +202,8 @@ public class Scroller {
         int var9801264300876A677AA3DC64764E3FC2_2069810412 = (mStartX);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1865489997 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1865489997;
-        
-        
+        // ---------- Original Method ----------
+        //return mStartX;
     }
 
     
@@ -213,8 +212,8 @@ public class Scroller {
         int varD2D722716779C955F0ECDDD867837AC9_1643644839 = (mStartY);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_340559978 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_340559978;
-        
-        
+        // ---------- Original Method ----------
+        //return mStartY;
     }
 
     
@@ -223,8 +222,8 @@ public class Scroller {
         int var0290041E535A652B7A5D076F92AD8748_1971480344 = (mFinalX);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166724635 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166724635;
-        
-        
+        // ---------- Original Method ----------
+        //return mFinalX;
     }
 
     
@@ -233,8 +232,8 @@ public class Scroller {
         int varE945BD36FB44D6509A1812FCFC09A99C_1698672933 = (mFinalY);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202102291 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_202102291;
-        
-        
+        // ---------- Original Method ----------
+        //return mFinalY;
     }
 
     
@@ -245,7 +244,7 @@ public class Scroller {
             boolean var68934A3E9455FA72420237EB05902327_1010869156 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_959859925 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_959859925;
-        } 
+        } //End block
         int timePassed = (int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime);
     if(timePassed < mDuration)        
         {
@@ -276,21 +275,21 @@ switch(mMode){
     if(mCurrX == mFinalX && mCurrY == mFinalY)            
             {
                 mFinished = true;
-            } 
+            } //End block
             break;
 }
-        } 
+        } //End block
         else
         {
             mCurrX = mFinalX;
             mCurrY = mFinalY;
             mFinished = true;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_303219634 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_744290761 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_744290761;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -301,8 +300,8 @@ switch(mMode){
         addTaint(startY);
         addTaint(startX);
         startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
-        
-        
+        // ---------- Original Method ----------
+        //startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
     }
 
     
@@ -319,18 +318,18 @@ switch(mMode){
         mDeltaX = dx;
         mDeltaY = dy;
         mDurationReciprocal = 1.0f / (float) mDuration;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMode = SCROLL_MODE;
+        //mFinished = false;
+        //mDuration = duration;
+        //mStartTime = AnimationUtils.currentAnimationTimeMillis();
+        //mStartX = startX;
+        //mStartY = startY;
+        //mFinalX = startX + dx;
+        //mFinalY = startY + dy;
+        //mDeltaX = dx;
+        //mDeltaY = dy;
+        //mDurationReciprocal = 1.0f / (float) mDuration;
     }
 
     
@@ -354,8 +353,8 @@ switch(mMode){
             {
                 velocityX += oldVelocityX;
                 velocityY += oldVelocityY;
-            } 
-        } 
+            } //End block
+        } //End block
         mMode = FLING_MODE;
         mFinished = false;
         float velocity = FloatMath.sqrt(velocityX * velocityX + velocityY * velocityY);
@@ -378,8 +377,8 @@ switch(mMode){
         mFinalY = startY + Math.round(totalDistance * coeffY);
         mFinalY = Math.min(mFinalY, mMaxY);
         mFinalY = Math.max(mFinalY, mMinY);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -397,16 +396,15 @@ switch(mMode){
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.227 -0400", hash_original_method = "685B5069D17FA4EA234CACB4808C2E58", hash_generated_method = "3080BC0F4CADDDC7981DD8286E6C232A")
     public void abortAnimation() {
         mCurrX = mFinalX;
         mCurrY = mFinalY;
         mFinished = true;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mCurrX = mFinalX;
+        //mCurrY = mFinalY;
+        //mFinished = true;
     }
 
     
@@ -416,48 +414,45 @@ switch(mMode){
         mDuration = passed + extend;
         mDurationReciprocal = 1.0f / mDuration;
         mFinished = false;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int passed = timePassed();
+        //mDuration = passed + extend;
+        //mDurationReciprocal = 1.0f / mDuration;
+        //mFinished = false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.229 -0400", hash_original_method = "2E2DDE91830A97E8B4307DB61F63C9CC", hash_generated_method = "37BA3FE8AA8C40550B42F26BC1A645D6")
     public int timePassed() {
         int var8BC71A871FB53CCEC5CBB2277EB0DE39_1285284300 = ((int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417164321 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417164321;
-        
-        
+        // ---------- Original Method ----------
+        //return (int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.229 -0400", hash_original_method = "EE7294042EF8679A239A5BDA33848B52", hash_generated_method = "21EC3B2014C84C3EE583448EE5BD5FA3")
     public void setFinalX(int newX) {
         mFinalX = newX;
         mDeltaX = mFinalX - mStartX;
         mFinished = false;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFinalX = newX;
+        //mDeltaX = mFinalX - mStartX;
+        //mFinished = false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.230 -0400", hash_original_method = "E7F00F8A662510F71298FE30A619B84A", hash_generated_method = "695711FF07897043DCFF9272D8CE7BA1")
     public void setFinalY(int newY) {
         mFinalY = newY;
         mDeltaY = mFinalY - mStartY;
         mFinished = false;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFinalY = newY;
+        //mDeltaY = mFinalY - mStartY;
+        //mFinished = false;
     }
 
     
@@ -469,9 +464,9 @@ switch(mMode){
                 Math.signum(yvel) == Math.signum(mFinalY - mStartY));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1654703922 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1654703922;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return !mFinished && Math.signum(xvel) == Math.signum(mFinalX - mStartX) &&
+                //Math.signum(yvel) == Math.signum(mFinalY - mStartY);
     }
 
     

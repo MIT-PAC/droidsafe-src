@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -166,9 +166,9 @@ class FastScroller {
         addTaint(context.getTaint());
         mList = listView;
         init(context);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mList = listView;
+        //init(context);
     }
 
     
@@ -179,31 +179,30 @@ class FastScroller {
         {
             mHandler.removeCallbacks(mScrollFade);
             setState(STATE_VISIBLE);
-        } 
+        } //End block
         else
     if(mState == STATE_VISIBLE)        
         {
             mHandler.postDelayed(mScrollFade, FADE_TIMEOUT);
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mAlwaysShow = alwaysShow;
+        //if (alwaysShow) {
+            //mHandler.removeCallbacks(mScrollFade);
+            //setState(STATE_VISIBLE);
+        //} else if (mState == STATE_VISIBLE) {
+            //mHandler.postDelayed(mScrollFade, FADE_TIMEOUT);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.572 -0400", hash_original_method = "FE4F6BFF00D7A9534103DEC6DDA5B37C", hash_generated_method = "414118CB8C38B5858722D8735F8D5143")
     public boolean isAlwaysShowEnabled() {
         boolean varD8301B9D37BE0AB158BABDD736CFE57D_445732875 = (mAlwaysShow);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1752433558 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1752433558;
-        
-        
+        // ---------- Original Method ----------
+        //return mAlwaysShow;
     }
 
     
@@ -213,23 +212,22 @@ class FastScroller {
     if(mThumbDrawable != null && mThumbDrawable.isStateful())        
         {
             mThumbDrawable.setState(state);
-        } 
+        } //End block
     if(mTrackDrawable != null && mTrackDrawable.isStateful())        
         {
             mTrackDrawable.setState(state);
-        } 
-        
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int[] state = mState == STATE_DRAGGING ? PRESSED_STATES : DEFAULT_STATES;
+        //if (mThumbDrawable != null && mThumbDrawable.isStateful()) {
+            //mThumbDrawable.setState(state);
+        //}
+        //if (mTrackDrawable != null && mTrackDrawable.isStateful()) {
+            //mTrackDrawable.setState(state);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.573 -0400", hash_original_method = "4A2BCFB2C4534D1665C92142AF186787", hash_generated_method = "07B056C0210F9EEF558E4805B7F55C32")
     public void setScrollbarPosition(int position) {
         mPosition = position;
@@ -243,29 +241,28 @@ switch(position){
         mOverlayDrawable = mOverlayDrawableLeft;
         break;
 }
-        
-        
-        
-            
-            
-            
-                
-                
-            
-                
-                
-        
+        // ---------- Original Method ----------
+        //mPosition = position;
+        //switch (position) {
+            //default:
+            //case View.SCROLLBAR_POSITION_DEFAULT:
+            //case View.SCROLLBAR_POSITION_RIGHT:
+                //mOverlayDrawable = mOverlayDrawableRight;
+                //break;
+            //case View.SCROLLBAR_POSITION_LEFT:
+                //mOverlayDrawable = mOverlayDrawableLeft;
+                //break;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.573 -0400", hash_original_method = "B47561E95C2F1E64B16085B75AB60280", hash_generated_method = "7D3FB1E9E2EEB34C02E1CD7F8C135C92")
     public int getWidth() {
         int varEF5497FDB3AFB7DB29B7861C625072A7_2117054271 = (mThumbW);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_655660516 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_655660516;
-        
-        
+        // ---------- Original Method ----------
+        //return mThumbW;
     }
 
     
@@ -280,7 +277,7 @@ switch(state){
     if(mState != STATE_VISIBLE)        
         {
             resetThumbPos();
-        } 
+        } //End block
         case STATE_DRAGGING:
         mHandler.removeCallbacks(mScrollFade);
         break;
@@ -290,37 +287,36 @@ switch(state){
         break;
 }        mState = state;
         refreshDrawableState();
-        
-        
-            
-                
-                
-                
-            
-                
-                    
-                
-            
-                
-                
-            
-                
-                
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //switch (state) {
+            //case STATE_NONE:
+                //mHandler.removeCallbacks(mScrollFade);
+                //mList.invalidate();
+                //break;
+            //case STATE_VISIBLE:
+                //if (mState != STATE_VISIBLE) { 
+                    //resetThumbPos();
+                //}
+            //case STATE_DRAGGING:
+                //mHandler.removeCallbacks(mScrollFade);
+                //break;
+            //case STATE_EXIT:
+                //int viewWidth = mList.getWidth();
+                //mList.invalidate(viewWidth - mThumbW, mThumbY, viewWidth, mThumbY + mThumbH);
+                //break;
+        //}
+        //mState = state;
+        //refreshDrawableState();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.574 -0400", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "B00CC0079AC94EEFE6C69DD32C8D2751")
     public int getState() {
         int var48A902C1D749B47EBC75C77370D5A1F0_423196799 = (mState);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2055019805 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2055019805;
-        
-        
+        // ---------- Original Method ----------
+        //return mState;
     }
 
     
@@ -336,22 +332,21 @@ switch(mPosition){
         mThumbDrawable.setBounds(0, 0, mThumbW, mThumbH);
         break;
 }        mThumbDrawable.setAlpha(ScrollFade.ALPHA_MAX);
-        
-        
-        
-            
-            
-                
-                
-            
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //final int viewWidth = mList.getWidth();
+        //switch (mPosition) {
+            //case View.SCROLLBAR_POSITION_DEFAULT:
+            //case View.SCROLLBAR_POSITION_RIGHT:
+                //mThumbDrawable.setBounds(viewWidth - mThumbW, 0, viewWidth, mThumbH);
+                //break;
+            //case View.SCROLLBAR_POSITION_LEFT:
+                //mThumbDrawable.setBounds(0, 0, mThumbW, mThumbH);
+                //break;
+        //}
+        //mThumbDrawable.setAlpha(ScrollFade.ALPHA_MAX);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.575 -0400", hash_original_method = "5C6D13F417D5AA8E0A1553C57F0CD3F0", hash_generated_method = "1586DA41E264BEF8F098FBE82F888BAD")
     private void useThumbDrawable(Context context, Drawable drawable) {
         mThumbDrawable = drawable;
@@ -361,25 +356,25 @@ switch(mPosition){
                     com.android.internal.R.dimen.fastscroll_thumb_width);
             mThumbH = context.getResources().getDimensionPixelSize(
                     com.android.internal.R.dimen.fastscroll_thumb_height);
-        } 
+        } //End block
         else
         {
             mThumbW = drawable.getIntrinsicWidth();
             mThumbH = drawable.getIntrinsicHeight();
-        } 
+        } //End block
         mChangedBounds = true;
-        
-        
-        
-            
-                    
-            
-                    
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //mThumbDrawable = drawable;
+        //if (drawable instanceof NinePatchDrawable) {
+            //mThumbW = context.getResources().getDimensionPixelSize(
+                    //com.android.internal.R.dimen.fastscroll_thumb_width);
+            //mThumbH = context.getResources().getDimensionPixelSize(
+                    //com.android.internal.R.dimen.fastscroll_thumb_height);
+        //} else {
+            //mThumbW = drawable.getIntrinsicWidth();
+            //mThumbH = drawable.getIntrinsicHeight();
+        //}
+        //mChangedBounds = true;
     }
 
     
@@ -408,7 +403,7 @@ switch(mPosition){
     if(mList.getWidth() > 0 && mList.getHeight() > 0)        
         {
             onSizeChanged(mList.getWidth(), mList.getHeight(), 0, 0);
-        } 
+        } //End block
         mState = STATE_NONE;
         refreshDrawableState();
         ta.recycle();
@@ -416,27 +411,26 @@ switch(mPosition){
         mMatchDragPosition = context.getApplicationInfo().targetSdkVersion >=
                 android.os.Build.VERSION_CODES.HONEYCOMB;
         setScrollbarPosition(mList.getVerticalScrollbarPosition());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.577 -0400", hash_original_method = "056243A841F0EC691D28BA5422CDF65B", hash_generated_method = "CFE1ED30A07D3814D31EDD1FE0EF553E")
      void stop() {
         setState(STATE_NONE);
-        
-        
+        // ---------- Original Method ----------
+        //setState(STATE_NONE);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.578 -0400", hash_original_method = "DC69F15A6278F37206902D3451EB4A27", hash_generated_method = "13D31C151CEF689EA2C778D1BFDDF4D4")
      boolean isVisible() {
         boolean var0DDEEBD624D90EE5951F15D57317E182_423236349 = (!(mState == STATE_NONE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1349383521 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1349383521;
-        
-        
+        // ---------- Original Method ----------
+        //return !(mState == STATE_NONE);
     }
 
     
@@ -446,7 +440,7 @@ switch(mPosition){
     if(mState == STATE_NONE)        
         {
             return;
-        } 
+        } //End block
         final int y = mThumbY;
         final int viewWidth = mList.getWidth();
         final FastScroller.ScrollFade scrollFade = mScrollFade;
@@ -457,7 +451,7 @@ switch(mPosition){
     if(alpha < ScrollFade.ALPHA_MAX / 2)            
             {
                 mThumbDrawable.setAlpha(alpha * 2);
-            } 
+            } //End block
             int left = 0;
 switch(mPosition){
             case View.SCROLLBAR_POSITION_DEFAULT:
@@ -469,7 +463,7 @@ switch(mPosition){
             break;
 }            mThumbDrawable.setBounds(left, 0, left + mThumbW, mThumbH);
             mChangedBounds = true;
-        } 
+        } //End block
     if(mTrackDrawable != null)        
         {
             final Rect thumbBounds = mThumbDrawable.getBounds();
@@ -480,7 +474,7 @@ switch(mPosition){
             mTrackDrawable.setBounds(trackLeft, halfThumbHeight,
                     trackLeft + trackWidth, mList.getHeight() - halfThumbHeight);
             mTrackDrawable.draw(canvas);
-        } 
+        } //End block
         canvas.translate(0, y);
         mThumbDrawable.draw(canvas);
         canvas.translate(0, -y);
@@ -511,8 +505,8 @@ switch(mPosition){
                 {
                     mOverlayDrawable.setBounds((int) pos.left, (int) pos.top,
                             (int) pos.right, (int) pos.bottom);
-                } 
-            } 
+                } //End block
+            } //End block
             mOverlayDrawable.draw(canvas);
             final Paint paint = mPaint;
             float descent = paint.descent();
@@ -524,32 +518,32 @@ switch(mPosition){
             canvas.drawText(mSectionText, (int) (rectF.left + rectF.right) / 2 - hOff,
                     (int) (rectF.bottom + rectF.top) / 2 + mOverlaySize / 4 - descent - vOff,
                     paint);
-        } 
+        } //End block
         else
     if(mState == STATE_EXIT)        
         {
     if(alpha == 0)            
             {
                 setState(STATE_NONE);
-            } 
+            } //End block
             else
     if(mTrackDrawable != null)            
             {
                 mList.invalidate(viewWidth - mThumbW, 0, viewWidth, mList.getHeight());
-            } 
+            } //End block
             else
             {
                 mList.invalidate(viewWidth - mThumbW, y, viewWidth, y + mThumbH);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.582 -0400", hash_original_method = "E295B7FC2E9560F481D5875AE2ECD038", hash_generated_method = "3C069F5AB31197439F88C1B76E1C5CD7")
      void onSizeChanged(int w, int h, int oldw, int oldh) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(oldh);
         addTaint(oldw);
         addTaint(h);
@@ -566,7 +560,7 @@ switch(mPosition){
             mThumbDrawable.setBounds(0, 0, mThumbW, mThumbH);
             break;
 }
-        } 
+        } //End block
     if(mOverlayPosition == OVERLAY_FLOATING)        
         {
             final RectF pos = mOverlayPos;
@@ -578,52 +572,51 @@ switch(mPosition){
             {
                 mOverlayDrawable.setBounds((int) pos.left, (int) pos.top,
                         (int) pos.right, (int) pos.bottom);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.582 -0400", hash_original_method = "33CBCEE809BB980D8FD69134B46323D0", hash_generated_method = "4D77060341FDD8F9F27379D21A230BA9")
      void onItemCountChanged(int oldCount, int newCount) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newCount);
         addTaint(oldCount);
     if(mAlwaysShow)        
         {
             mLongList = true;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mAlwaysShow) {
+            //mLongList = true;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.584 -0400", hash_original_method = "E5B6E6440A22D0800FAD70BDC783A6AE", hash_generated_method = "77AD552676F0C247788EB74A8B12115C")
      void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, 
             int totalItemCount) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(view.getTaint());
     if(mItemCount != totalItemCount && visibleItemCount > 0)        
         {
             mItemCount = totalItemCount;
             mLongList = mItemCount / visibleItemCount >= MIN_PAGES;
-        } 
+        } //End block
     if(mAlwaysShow)        
         {
             mLongList = true;
-        } 
+        } //End block
     if(!mLongList)        
         {
     if(mState != STATE_NONE)            
             {
                 setState(STATE_NONE);
-            } 
+            } //End block
             return;
-        } 
+        } //End block
     if(totalItemCount - visibleItemCount > 0 && mState != STATE_DRAGGING)        
         {
             mThumbY = getThumbPositionForListPosition(firstVisibleItem, visibleItemCount,
@@ -632,13 +625,13 @@ switch(mPosition){
             {
                 resetThumbPos();
                 mChangedBounds = false;
-            } 
-        } 
+            } //End block
+        } //End block
         mScrollCompleted = true;
     if(firstVisibleItem == mVisibleItem)        
         {
             return;
-        } 
+        } //End block
         mVisibleItem = firstVisibleItem;
     if(mState != STATE_DRAGGING)        
         {
@@ -646,21 +639,20 @@ switch(mPosition){
     if(!mAlwaysShow)            
             {
                 mHandler.postDelayed(mScrollFade, FADE_TIMEOUT);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.585 -0400", hash_original_method = "AD42D97439FFEC71F76D9E9B9EF1920A", hash_generated_method = "E8F050F76124C1B61041C62A78425BDA")
      SectionIndexer getSectionIndexer() {
 SectionIndexer var2661E5C5004D8E16E116544E6D9A6497_2036728793 =         mSectionIndexer;
         var2661E5C5004D8E16E116544E6D9A6497_2036728793.addTaint(taint);
         return var2661E5C5004D8E16E116544E6D9A6497_2036728793;
-        
-        
+        // ---------- Original Method ----------
+        //return mSectionIndexer;
     }
 
     
@@ -669,19 +661,18 @@ SectionIndexer var2661E5C5004D8E16E116544E6D9A6497_2036728793 =         mSection
     if(mListAdapter == null && mList != null)        
         {
             getSectionsFromIndexer();
-        } 
+        } //End block
 Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
         var74695998C3A4540DE9BA60486A777555_949884066.addTaint(taint);
         return var74695998C3A4540DE9BA60486A777555_949884066;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mListAdapter == null && mList != null) {
+            //getSectionsFromIndexer();
+        //}
+        //return mSections;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.587 -0400", hash_original_method = "800EB68723F3F3F4CE4E1BDE2BD8DC58", hash_generated_method = "3B628F4ADF7445B58B93AC7445A9BC59")
      void getSectionsFromIndexer() {
         Adapter adapter = mList.getAdapter();
@@ -690,7 +681,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
         {
             mListOffset = ((HeaderViewListAdapter)adapter).getHeadersCount();
             adapter = ((HeaderViewListAdapter)adapter).getWrappedAdapter();
-        } 
+        } //End block
     if(adapter instanceof ExpandableListConnector)        
         {
             ExpandableListAdapter expAdapter = ((ExpandableListConnector)adapter).getAdapter();
@@ -699,8 +690,8 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
                 mSectionIndexer = (SectionIndexer) expAdapter;
                 mListAdapter = (BaseAdapter) adapter;
                 mSections = mSectionIndexer.getSections();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(adapter instanceof SectionIndexer)            
@@ -711,26 +702,25 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     if(mSections == null)                
                 {
                     mSections = new String[] { " " };
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 mListAdapter = (BaseAdapter) adapter;
                 mSections = new String[] { " " };
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.587 -0400", hash_original_method = "B72F5DA2B803BA6E8807DBDDDB2D9463", hash_generated_method = "3DA083163E23080BFCF30DF5DB399931")
     public void onSectionsChanged() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         mListAdapter = null;
-        
-        
+        // ---------- Original Method ----------
+        //mListAdapter = null;
     }
 
     
@@ -749,7 +739,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     if(section >= nSections)            
             {
                 section = nSections - 1;
-            } 
+            } //End block
             int exactSection = section;
             sectionIndex = section;
             int index = mSectionIndexer.getPositionForSection(section);
@@ -760,7 +750,7 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     if(section < nSections - 1)            
             {
                 nextIndex = mSectionIndexer.getPositionForSection(section + 1);
-            } 
+            } //End block
     if(nextIndex == index)            
             {
                 while
@@ -773,15 +763,15 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
                         prevSection = section;
                         sectionIndex = section;
                         break;
-                    } 
+                    } //End block
                     else
     if(section == 0)                    
                     {
                         sectionIndex = 0;
                         break;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             int nextNextSection = nextSection + 1;
             while
 (nextNextSection < nSections &&
@@ -789,18 +779,18 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
             {
                 nextNextSection++;
                 nextSection++;
-            } 
+            } //End block
             float fPrev = (float) prevSection / nSections;
             float fNext = (float) nextSection / nSections;
     if(prevSection == exactSection && position - fPrev < fThreshold)            
             {
                 index = prevIndex;
-            } 
+            } //End block
             else
             {
                 index = prevIndex + (int) ((nextIndex - prevIndex) * (position - fPrev) 
                     / (fNext - fPrev));
-            } 
+            } //End block
     if(index > count - 1)            
             index = count - 1;
     if(mList instanceof ExpandableListView)            
@@ -808,17 +798,17 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
                 ExpandableListView expList = (ExpandableListView) mList;
                 expList.setSelectionFromTop(expList.getFlatListPosition(
                         ExpandableListView.getPackedPositionForGroup(index + mListOffset)), 0);
-            } 
+            } //End block
             else
     if(mList instanceof ListView)            
             {
                 ((ListView)mList).setSelectionFromTop(index + mListOffset, 0);
-            } 
+            } //End block
             else
             {
                 mList.setSelection(index + mListOffset);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             int index = (int) (position * count);
@@ -829,30 +819,30 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
                 ExpandableListView expList = (ExpandableListView) mList;
                 expList.setSelectionFromTop(expList.getFlatListPosition(
                         ExpandableListView.getPackedPositionForGroup(index + mListOffset)), 0);
-            } 
+            } //End block
             else
     if(mList instanceof ListView)            
             {
                 ((ListView)mList).setSelectionFromTop(index + mListOffset, 0);
-            } 
+            } //End block
             else
             {
                 mList.setSelection(index + mListOffset);
-            } 
+            } //End block
             sectionIndex = -1;
-        } 
+        } //End block
     if(sectionIndex >= 0)        
         {
             String text = mSectionText = sections[sectionIndex].toString();
             mDrawOverlay = (text.length() != 1 || text.charAt(0) != ' ') &&
                     sectionIndex < sections.length;
-        } 
+        } //End block
         else
         {
             mDrawOverlay = false;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -865,21 +855,21 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
     if(mSectionIndexer == null || mListAdapter == null)        
         {
             getSectionsFromIndexer();
-        } 
+        } //End block
     if(mSectionIndexer == null || !mMatchDragPosition)        
         {
             int var2027197AEB2941E5DFE087D0656EB209_845673924 = (((mList.getHeight() - mThumbH) * firstVisibleItem)
                     / (totalItemCount - visibleItemCount));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1489088855 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1489088855;
-        } 
+        } //End block
         firstVisibleItem -= mListOffset;
     if(firstVisibleItem < 0)        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_557754162 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142109374 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142109374;
-        } 
+        } //End block
         totalItemCount -= mListOffset;
         final int trackHeight = mList.getHeight() - mThumbH;
         final int section = mSectionIndexer.getSectionForPosition(firstVisibleItem);
@@ -898,12 +888,12 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
             final float lastItemVisible = (float) (mList.getHeight() - mList.getPaddingBottom()
                     - lastChild.getTop()) / lastChild.getHeight();
             result += (trackHeight - result) * lastItemVisible;
-        } 
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_760009593 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1510976422 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1510976422;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -912,10 +902,10 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
         MotionEvent cancelFling = MotionEvent.obtain(0, 0, MotionEvent.ACTION_CANCEL, 0, 0, 0);
         mList.onTouchEvent(cancelFling);
         cancelFling.recycle();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //MotionEvent cancelFling = MotionEvent.obtain(0, 0, MotionEvent.ACTION_CANCEL, 0, 0, 0);
+        //mList.onTouchEvent(cancelFling);
+        //cancelFling.recycle();
     }
 
     
@@ -923,9 +913,9 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
      void cancelPendingDrag() {
         mList.removeCallbacks(mDeferStartDrag);
         mPendingDrag = false;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mList.removeCallbacks(mDeferStartDrag);
+        //mPendingDrag = false;
     }
 
     
@@ -933,43 +923,41 @@ Object[] var74695998C3A4540DE9BA60486A777555_949884066 =         mSections;
      void startPendingDrag() {
         mPendingDrag = true;
         mList.postDelayed(mDeferStartDrag, PENDING_DRAG_DELAY);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPendingDrag = true;
+        //mList.postDelayed(mDeferStartDrag, PENDING_DRAG_DELAY);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.593 -0400", hash_original_method = "12EF9C1930DF387CC333A7C9F1E54726", hash_generated_method = "54E86991FCEBB17870550D0D11749463")
      void beginDrag() {
         setState(STATE_DRAGGING);
     if(mListAdapter == null && mList != null)        
         {
             getSectionsFromIndexer();
-        } 
+        } //End block
     if(mList != null)        
         {
             mList.requestDisallowInterceptTouchEvent(true);
             mList.reportScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
-        } 
+        } //End block
         cancelFling();
-        
-        
-        
-            
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //setState(STATE_DRAGGING);
+        //if (mListAdapter == null && mList != null) {
+            //getSectionsFromIndexer();
+        //}
+        //if (mList != null) {
+            //mList.requestDisallowInterceptTouchEvent(true);
+            //mList.reportScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
+        //}
+        //cancelFling();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.594 -0400", hash_original_method = "D950A8D9B3AA1D87B11E428662FC0A13", hash_generated_method = "AFB45ECC786188C851F38D547E215FF5")
      boolean onInterceptTouchEvent(MotionEvent ev) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
 switch(ev.getActionMasked()){
         case MotionEvent.ACTION_DOWN:
     if(mState > STATE_NONE && isPointInside(ev.getX(), ev.getY()))        
@@ -980,10 +968,10 @@ switch(ev.getActionMasked()){
                 boolean varB326B5062B2F0E69046810717534CB09_209684565 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1091303431 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1091303431;
-            } 
+            } //End block
             mInitialTouchY = ev.getY();
             startPendingDrag();
-        } 
+        } //End block
         break;
         case MotionEvent.ACTION_UP:
         case MotionEvent.ACTION_CANCEL:
@@ -992,36 +980,36 @@ switch(ev.getActionMasked()){
 }        boolean var68934A3E9455FA72420237EB05902327_1890689232 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_411761391 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_411761391;
-        
-        
-            
-                
-                    
-                        
-                        
-                    
-                    
-                    
-                
-                
-            
-            
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //switch (ev.getActionMasked()) {
+            //case MotionEvent.ACTION_DOWN:
+                //if (mState > STATE_NONE && isPointInside(ev.getX(), ev.getY())) {
+                    //if (!mList.isInScrollingContainer()) {
+                        //beginDrag();
+                        //return true;
+                    //}
+                    //mInitialTouchY = ev.getY();
+                    //startPendingDrag();
+                //}
+                //break;
+            //case MotionEvent.ACTION_UP:
+            //case MotionEvent.ACTION_CANCEL:
+                //cancelPendingDrag();
+                //break;
+        //}
+        //return false;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.596 -0400", hash_original_method = "891E4A8523ECAE5B8AA3233AF8AC2D21", hash_generated_method = "C3C03D626D1B9C461E084754805C5FDA")
      boolean onTouchEvent(MotionEvent me) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
     if(mState == STATE_NONE)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1176984842 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1484890030 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1484890030;
-        } 
+        } //End block
         final int action = me.getAction();
     if(action == MotionEvent.ACTION_DOWN)        
         {
@@ -1033,11 +1021,11 @@ switch(ev.getActionMasked()){
                     boolean varB326B5062B2F0E69046810717534CB09_175211854 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2074462679 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2074462679;
-                } 
+                } //End block
                 mInitialTouchY = me.getY();
                 startPendingDrag();
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(action == MotionEvent.ACTION_UP)        
         {
@@ -1049,36 +1037,36 @@ switch(ev.getActionMasked()){
     if(newThumbY < 0)                
                 {
                     newThumbY = 0;
-                } 
+                } //End block
                 else
     if(newThumbY + mThumbH > viewHeight)                
                 {
                     newThumbY = viewHeight - mThumbH;
-                } 
+                } //End block
                 mThumbY = newThumbY;
                 scrollTo((float) mThumbY / (viewHeight - mThumbH));
                 cancelPendingDrag();
-            } 
+            } //End block
     if(mState == STATE_DRAGGING)            
             {
     if(mList != null)                
                 {
                     mList.requestDisallowInterceptTouchEvent(false);
                     mList.reportScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-                } 
+                } //End block
                 setState(STATE_VISIBLE);
                 final Handler handler = mHandler;
                 handler.removeCallbacks(mScrollFade);
     if(!mAlwaysShow)                
                 {
                     handler.postDelayed(mScrollFade, 1000);
-                } 
+                } //End block
                 mList.invalidate();
                 boolean varB326B5062B2F0E69046810717534CB09_1065534652 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_106670112 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_106670112;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(action == MotionEvent.ACTION_MOVE)        
         {
@@ -1091,16 +1079,16 @@ switch(ev.getActionMasked()){
     if(mListAdapter == null && mList != null)                    
                     {
                         getSectionsFromIndexer();
-                    } 
+                    } //End block
     if(mList != null)                    
                     {
                         mList.requestDisallowInterceptTouchEvent(true);
                         mList.reportScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
-                    } 
+                    } //End block
                     cancelFling();
                     cancelPendingDrag();
-                } 
-            } 
+                } //End block
+            } //End block
     if(mState == STATE_DRAGGING)            
             {
                 final int viewHeight = mList.getHeight();
@@ -1108,38 +1096,38 @@ switch(ev.getActionMasked()){
     if(newThumbY < 0)                
                 {
                     newThumbY = 0;
-                } 
+                } //End block
                 else
     if(newThumbY + mThumbH > viewHeight)                
                 {
                     newThumbY = viewHeight - mThumbH;
-                } 
+                } //End block
     if(Math.abs(mThumbY - newThumbY) < 2)                
                 {
                     boolean varB326B5062B2F0E69046810717534CB09_32396279 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1261961957 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1261961957;
-                } 
+                } //End block
                 mThumbY = newThumbY;
     if(mScrollCompleted)                
                 {
                     scrollTo((float) mThumbY / (viewHeight - mThumbH));
-                } 
+                } //End block
                 boolean varB326B5062B2F0E69046810717534CB09_1918965851 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1199414457 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1199414457;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(action == MotionEvent.ACTION_CANCEL)        
         {
             cancelPendingDrag();
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1269221612 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_847403996 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_847403996;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1160,19 +1148,19 @@ switch(mPosition){
 }        boolean var78D4C8C6DE94A7301A801F09E322C4A9_1995166851 = (inTrack && (mTrackDrawable != null || y >= mThumbY && y <= mThumbY + mThumbH));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1203903967 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1203903967;
-        
-        
-        
-            
-            
-            
-                
-                
-            
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //boolean inTrack = false;
+        //switch (mPosition) {
+            //default:
+            //case View.SCROLLBAR_POSITION_DEFAULT:
+            //case View.SCROLLBAR_POSITION_RIGHT:
+                //inTrack = x > mList.getWidth() - mThumbW;
+                //break;
+            //case View.SCROLLBAR_POSITION_LEFT:
+                //inTrack = x < mThumbW;
+                //break;
+        //}
+        //return inTrack && (mTrackDrawable != null || y >= mThumbY && y <= mThumbY + mThumbH);
     }
 
     
@@ -1187,7 +1175,7 @@ switch(mPosition){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.598 -0400", hash_original_method = "5D305A44C44DBEE04C6A110139796128", hash_generated_method = "5D305A44C44DBEE04C6A110139796128")
         public ScrollFade ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1196,10 +1184,10 @@ switch(mPosition){
             mFadeDuration = FADE_DURATION;
             mStartTime = SystemClock.uptimeMillis();
             setState(STATE_EXIT);
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mFadeDuration = FADE_DURATION;
+            //mStartTime = SystemClock.uptimeMillis();
+            //setState(STATE_EXIT);
         }
 
         
@@ -1210,61 +1198,60 @@ switch(mPosition){
                 int var772B8CA7D3F546F6022BA5673232F9C9_2069376645 = (ALPHA_MAX);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730489640 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730489640;
-            } 
+            } //End block
             int alpha;
             long now = SystemClock.uptimeMillis();
     if(now > mStartTime + mFadeDuration)            
             {
                 alpha = 0;
-            } 
+            } //End block
             else
             {
                 alpha = (int) (ALPHA_MAX - ((now - mStartTime) * ALPHA_MAX) / mFadeDuration);
-            } 
+            } //End block
             int var2C1743A391305FBF367DF8E4F069F9F9_1636303326 = (alpha);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356217225 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356217225;
-            
-            
-                
-            
-            
-            
-            
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (getState() != STATE_EXIT) {
+                //return ALPHA_MAX;
+            //}
+            //int alpha;
+            //long now = SystemClock.uptimeMillis();
+            //if (now > mStartTime + mFadeDuration) {
+                //alpha = 0;
+            //} else {
+                //alpha = (int) (ALPHA_MAX - ((now - mStartTime) * ALPHA_MAX) / mFadeDuration); 
+            //}
+            //return alpha;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.600 -0400", hash_original_method = "3A2ADC6F19B17BA5C164F36207FFFC0C", hash_generated_method = "7B7CE1C94D1A29A670474515B8D1579D")
         public void run() {
     if(getState() != STATE_EXIT)            
             {
                 startFade();
                 return;
-            } 
+            } //End block
     if(getAlpha() > 0)            
             {
                 mList.invalidate();
-            } 
+            } //End block
             else
             {
                 setState(STATE_NONE);
-            } 
-            
-            
-                
-                
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (getState() != STATE_EXIT) {
+                //startFade();
+                //return;
+            //}
+            //if (getAlpha() > 0) {
+                //mList.invalidate();
+            //} else {
+                //setState(STATE_NONE);
+            //}
         }
 
         

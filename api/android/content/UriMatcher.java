@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,11 +29,11 @@ public class UriMatcher {
         mWhich = -1;
         mChildren = new ArrayList<UriMatcher>();
         mText = null;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mCode = code;
+        //mWhich = -1;
+        //mChildren = new ArrayList<UriMatcher>();
+        //mText = null;
     }
 
     
@@ -43,11 +43,11 @@ public class UriMatcher {
         mWhich = -1;
         mChildren = new ArrayList<UriMatcher>();
         mText = null;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mCode = NO_MATCH;
+        //mWhich = -1;
+        //mChildren = new ArrayList<UriMatcher>();
+        //mText = null;
     }
 
     
@@ -60,7 +60,7 @@ public class UriMatcher {
             IllegalArgumentException varB4F38DAA12C74B1DD5620356BBDA2579_1333213394 = new IllegalArgumentException("code " + code + " is invalid: it must be positive");
             varB4F38DAA12C74B1DD5620356BBDA2579_1333213394.addTaint(taint);
             throw varB4F38DAA12C74B1DD5620356BBDA2579_1333213394;
-        } 
+        } //End block
         String[] tokens = path != null ? PATH_SPLIT_PATTERN.split(path) : null;
         int numTokens = tokens != null ? tokens.length : 0;
         UriMatcher node = this;
@@ -78,36 +78,35 @@ for(j = 0;j < numChildren;j++)
                 {
                     node = child;
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(j == numChildren)            
             {
                 child = new UriMatcher();
     if(token.equals("#"))                
                 {
                     child.mWhich = NUMBER;
-                } 
+                } //End block
                 else
     if(token.equals("*"))                
                 {
                     child.mWhich = TEXT;
-                } 
+                } //End block
                 else
                 {
                     child.mWhich = EXACT;
-                } 
+                } //End block
                 child.mText = token;
                 node.mChildren.add(child);
                 node = child;
-            } 
-        } 
+            } //End block
+        } //End block
         node.mCode = code;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.955 -0400", hash_original_method = "4993091A11603906CAD34405800B45EB", hash_generated_method = "25B3D951889D2DBC7D8457774E7CB590")
     public int match(Uri uri) {
         addTaint(uri.getTaint());
@@ -119,7 +118,7 @@ for(j = 0;j < numChildren;j++)
             int var5E65E465F08FEFCFD940E64EAC6F72FF_1760886939 = (this.mCode);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_589231630 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_589231630;
-        } 
+        } //End block
 for(int i=-1;i<li;i++)
         {
             String u = i < 0 ? uri.getAuthority() : pathSegments.get(i);
@@ -127,7 +126,7 @@ for(int i=-1;i<li;i++)
     if(list == null)            
             {
                 break;
-            } 
+            } //End block
             node = null;
             int lj = list.size();
 for(int j=0;j<lj;j++)
@@ -139,7 +138,7 @@ switch(n.mWhich){
     if(n.mText.equals(u))                
                 {
                     node = n;
-                } 
+                } //End block
                 break;
                 case NUMBER:
                 int lk = u.length();
@@ -149,8 +148,8 @@ for(int k=0;k<lk;k++)
     if(c < '0' || c > '9')                    
                     {
                         break which_switch;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 node = n;
                 break;
                 case TEXT:
@@ -159,20 +158,20 @@ for(int k=0;k<lk;k++)
 }    if(node != null)                
                 {
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(node == null)            
             {
                 int var94935CEF4046D086A88DC70DAE2086CA_165353610 = (NO_MATCH);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_605329903 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_605329903;
-            } 
-        } 
+            } //End block
+        } //End block
         int varB920D46657AFFF269950D156F8BCCDDB_1718399715 = (node.mCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1506858886 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1506858886;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

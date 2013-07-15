@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     public  PChargingFunctionAddressesParser(String charging) {
         super(charging);
         addTaint(charging.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,7 +26,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
     protected  PChargingFunctionAddressesParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -50,25 +50,25 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
                     break;
                     this.lexer.match(';');
                     this.lexer.SPorHT();
-                } 
-            } 
+                } //End block
+            } //End block
             catch (ParseException ex)
             {
                 ex.addTaint(taint);
                 throw ex;
-            } 
+            } //End block
             super.parse(chargingFunctionAddresses);
 SIPHeader var8CFFAD2B1C91656BD84AAB820927BE08_1149912297 =             chargingFunctionAddresses;
             var8CFFAD2B1C91656BD84AAB820927BE08_1149912297.addTaint(taint);
             return var8CFFAD2B1C91656BD84AAB820927BE08_1149912297;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -81,22 +81,22 @@ SIPHeader var8CFFAD2B1C91656BD84AAB820927BE08_1149912297 =             chargingF
         {
             NameValue nv = this.nameValue('=');
             chargingFunctionAddresses.setMultiParameter(nv);
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("parseParameter");
-        } 
-        
-        
-            
-        
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("parseParameter");
+        //try {
+            //NameValue nv = this.nameValue('=');
+            //chargingFunctionAddresses.setMultiParameter(nv);
+        //} finally {
+            //if (debug)
+                //dbg_leave("parseParameter");
+        //}
     }
 
     

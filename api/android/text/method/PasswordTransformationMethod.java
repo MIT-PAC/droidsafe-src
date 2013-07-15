@@ -1,6 +1,6 @@
 package android.text.method;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,11 +24,10 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.754 -0400", hash_original_method = "D8EF6B070A80A550C154BD7630CF21E0", hash_generated_method = "D8EF6B070A80A550C154BD7630CF21E0")
     public PasswordTransformationMethod ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.754 -0400", hash_original_method = "46C31F1840FDB44A1F40EC87B2DB5960", hash_generated_method = "D8AD284EBAC98C26DA502ABF59336302")
     public CharSequence getTransformation(CharSequence source, View view) {
         addTaint(view.getTaint());
@@ -41,32 +40,31 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
 for(int i = 0;i < vr.length;i++)
             {
                 sp.removeSpan(vr[i]);
-            } 
+            } //End block
             removeVisibleSpans(sp);
             sp.setSpan(new ViewReference(view), 0, 0,
                        Spannable.SPAN_POINT_POINT);
-        } 
+        } //End block
 CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new PasswordCharSequence(source);
         var68111183A5880BCEEE402DC0884C3127_181884449.addTaint(taint);
         return var68111183A5880BCEEE402DC0884C3127_181884449;
-        
-        
-            
-            
-                                             
-            
-                
-            
-            
-            
-                       
-        
-        
+        // ---------- Original Method ----------
+        //if (source instanceof Spannable) {
+            //Spannable sp = (Spannable) source;
+            //ViewReference[] vr = sp.getSpans(0, sp.length(),
+                                             //ViewReference.class);
+            //for (int i = 0; i < vr.length; i++) {
+                //sp.removeSpan(vr[i]);
+            //}
+            //removeVisibleSpans(sp);
+            //sp.setSpan(new ViewReference(view), 0, 0,
+                       //Spannable.SPAN_POINT_POINT);
+        //}
+        //return new PasswordCharSequence(source);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static PasswordTransformationMethod getInstance() {
+        public static PasswordTransformationMethod getInstance() {
         if (sInstance != null)
             return sInstance;
         sInstance = new PasswordTransformationMethod();
@@ -74,7 +72,6 @@ CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new Passwor
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.755 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "63445082BCC7E22464CE7B1B497FEB87")
     public void beforeTextChanged(CharSequence s, int start,
                                   int count, int after) {
@@ -82,15 +79,14 @@ CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new Passwor
         addTaint(count);
         addTaint(start);
         addTaint(s.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.756 -0400", hash_original_method = "E9233B27956FDFC70D77F5557A52BB47", hash_generated_method = "4F20B40A16DC180C1EDB2213A1D7D6B5")
     public void onTextChanged(CharSequence s, int start,
                               int before, int count) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(count);
         addTaint(before);
         addTaint(start);
@@ -103,16 +99,16 @@ CharSequence var68111183A5880BCEEE402DC0884C3127_181884449 =         new Passwor
     if(vr.length == 0)            
             {
                 return;
-            } 
+            } //End block
             View v = null;
 for(int i = 0;v == null && i < vr.length;i++)
             {
                 v = vr[i].get();
-            } 
+            } //End block
     if(v == null)            
             {
                 return;
-            } 
+            } //End block
             int pref = TextKeyListener.getInstance().getPrefs(v.getContext());
     if((pref & TextKeyListener.SHOW_PASSWORD) != 0)            
             {
@@ -123,29 +119,27 @@ for(int i = 0;v == null && i < vr.length;i++)
                     {
                         sp.setSpan(new Visible(sp, this), start, start + count,
                                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    } 
-                } 
-            } 
-        } 
-        
-        
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.757 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
     public void afterTextChanged(Editable s) {
         addTaint(s.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.757 -0400", hash_original_method = "D64B8AB73A1F5CA65D62622D3C82E686", hash_generated_method = "FAEAA3C6FC2994A1670F5B504938EEBA")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,
                                Rect previouslyFocusedRect) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(previouslyFocusedRect.getTaint());
         addTaint(direction);
         addTaint(focused);
@@ -157,20 +151,19 @@ for(int i = 0;v == null && i < vr.length;i++)
             {
                 Spannable sp = (Spannable) sourceText;
                 removeVisibleSpans(sp);
-            } 
-        } 
-        
-        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (!focused) {
+            //if (sourceText instanceof Spannable) {
+                //Spannable sp = (Spannable) sourceText;
+                //removeVisibleSpans(sp);
+            //}
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void removeVisibleSpans(Spannable sp) {
+        private static void removeVisibleSpans(Spannable sp) {
         Visible[] old = sp.getSpans(0, sp.length(), Visible.class);
         for (int i = 0; i < old.length; i++) {
             sp.removeSpan(old[i]);
@@ -186,8 +179,8 @@ for(int i = 0;v == null && i < vr.length;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.759 -0400", hash_original_method = "4CDD8381D1031BF5EFE2F94225E565AD", hash_generated_method = "FCA0359EE87C92DA7B42CDF7637C2563")
         public  PasswordCharSequence(CharSequence source) {
             mSource = source;
-            
-            
+            // ---------- Original Method ----------
+            //mSource = source;
         }
 
         
@@ -196,8 +189,8 @@ for(int i = 0;v == null && i < vr.length;i++)
             int var9E844678846AA17EBC2ADB2098AEA729_1145625496 = (mSource.length());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_86101884 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_86101884;
-            
-            
+            // ---------- Original Method ----------
+            //return mSource.length();
         }
 
         
@@ -214,7 +207,7 @@ for(int i = 0;v == null && i < vr.length;i++)
                     char var4AC3226952DDE65F5C401654FB7E1305_1375110594 = (mSource.charAt(i));
                                         char varA87DEB01C5F539E6BDA34829C8EF2368_1666195174 = getTaintChar();
                     return varA87DEB01C5F539E6BDA34829C8EF2368_1666195174;
-                } 
+                } //End block
                 Visible[] visible = sp.getSpans(0, sp.length(), Visible.class);
 for(int a = 0;a < visible.length;a++)
                 {
@@ -227,15 +220,15 @@ for(int a = 0;a < visible.length;a++)
                             char var4AC3226952DDE65F5C401654FB7E1305_834495581 = (mSource.charAt(i));
                                                         char varA87DEB01C5F539E6BDA34829C8EF2368_386554020 = getTaintChar();
                             return varA87DEB01C5F539E6BDA34829C8EF2368_386554020;
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             char var40679521B5DA0954B705341A2859F782_1658298797 = (DOT);
                         char varA87DEB01C5F539E6BDA34829C8EF2368_1456391948 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_1456391948;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -248,10 +241,10 @@ for(int a = 0;a < visible.length;a++)
 CharSequence var5B166C4D1D866639CF85033C2F7318C9_215953242 =             new String(buf);
             var5B166C4D1D866639CF85033C2F7318C9_215953242.addTaint(taint);
             return var5B166C4D1D866639CF85033C2F7318C9_215953242;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //char[] buf = new char[end - start];
+            //getChars(start, end, buf, 0);
+            //return new String(buf);
         }
 
         
@@ -260,8 +253,8 @@ CharSequence var5B166C4D1D866639CF85033C2F7318C9_215953242 =             new Str
 String var2E22F76A1DF5431AD85BD69F1EB550BE_140405703 =             subSequence(0, length()).toString();
             var2E22F76A1DF5431AD85BD69F1EB550BE_140405703.addTaint(taint);
             return var2E22F76A1DF5431AD85BD69F1EB550BE_140405703;
-            
-            
+            // ---------- Original Method ----------
+            //return subSequence(0, length()).toString();
         }
 
         
@@ -292,9 +285,9 @@ for(int i = 0;i < nvisible;i++)
                     {
                         starts[i] = sp.getSpanStart(visible[i]);
                         ends[i] = sp.getSpanEnd(visible[i]);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
 for(int i = start;i < end;i++)
             {
     if(! (i >= st && i < en))                
@@ -306,16 +299,16 @@ for(int a = 0;a < nvisible;a++)
                         {
                             visible = true;
                             break;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
     if(!visible)                    
                     {
                         dest[i - start + off] = DOT;
-                    } 
-                } 
-            } 
-            
-            
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -336,18 +329,18 @@ for(int a = 0;a < nvisible;a++)
             mText = sp;
             mTransformer = ptm;
             postAtTime(this, SystemClock.uptimeMillis() + 1500);
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mText = sp;
+            //mTransformer = ptm;
+            //postAtTime(this, SystemClock.uptimeMillis() + 1500);
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.763 -0400", hash_original_method = "C8775617BEE64680D27DACE05ECB8A14", hash_generated_method = "CA165B97F3ECA7B262668016C7A9F1A7")
         public void run() {
             mText.removeSpan(this);
-            
-            
+            // ---------- Original Method ----------
+            //mText.removeSpan(this);
         }
 
         
@@ -361,7 +354,7 @@ for(int a = 0;a < nvisible;a++)
         public  ViewReference(View v) {
             super(v);
             addTaint(v.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         

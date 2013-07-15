@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public final class Log {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.950 -0400", hash_original_method = "869367D375FC874369E92ACB08C85ECE", hash_generated_method = "A62EB914C3FFD50186C13765FE4CB4E6")
     private  Log() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -143,7 +143,7 @@ public final class Log {
             super(msg, cause);
             addTaint(cause.getTaint());
             addTaint(msg.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         

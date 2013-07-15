@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,8 +18,8 @@ public abstract class MessageDigest extends MessageDigestSpi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.108 -0400", hash_original_method = "DA3220D378CF53A8E8D20808A7040AB6", hash_generated_method = "399C27BF3F6D93A48DF8AFC793FD14ED")
     protected  MessageDigest(String algorithm) {
         this.algorithm = algorithm;
-        
-        
+        // ---------- Original Method ----------
+        //this.algorithm = algorithm;
     }
 
     
@@ -73,8 +73,8 @@ public abstract class MessageDigest extends MessageDigestSpi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.109 -0400", hash_original_method = "E1E123B455D04188508A4B0941F355AE", hash_generated_method = "886270F67B96DDF0DAA56D42A28596B7")
     public void reset() {
         engineReset();
-        
-        
+        // ---------- Original Method ----------
+        //engineReset();
     }
 
     
@@ -82,8 +82,8 @@ public abstract class MessageDigest extends MessageDigestSpi {
     public void update(byte arg0) {
         addTaint(arg0);
         engineUpdate(arg0);
-        
-        
+        // ---------- Original Method ----------
+        //engineUpdate(arg0);
     }
 
     
@@ -98,14 +98,14 @@ public abstract class MessageDigest extends MessageDigestSpi {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1577182722 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1577182722.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1577182722;
-        } 
+        } //End block
         engineUpdate(input, offset, len);
-        
-        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (input == null ||
+                //(long) offset + (long) len > input.length) {
+            //throw new IllegalArgumentException();
+        //}
+        //engineUpdate(input, offset, len);
     }
 
     
@@ -117,13 +117,13 @@ public abstract class MessageDigest extends MessageDigestSpi {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_319358397 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_319358397.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_319358397;
-        } 
+        } //End block
         engineUpdate(input, 0, input.length);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (input == null) {
+            //throw new NullPointerException();
+        //}
+        //engineUpdate(input, 0, input.length);
     }
 
     
@@ -132,8 +132,8 @@ public abstract class MessageDigest extends MessageDigestSpi {
         byte[] varF6CE38F9D4ECC452155A563399B35C32_655279068 = (engineDigest());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1250480899 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1250480899;
-        
-        
+        // ---------- Original Method ----------
+        //return engineDigest();
     }
 
     
@@ -148,16 +148,16 @@ public abstract class MessageDigest extends MessageDigestSpi {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1516118485 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1516118485.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1516118485;
-        } 
+        } //End block
         int varDC0967B96EA0CF8F9C34EA96B19C86E4_768672275 = (engineDigest(buf, offset, len));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724194497 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724194497;
-        
-        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (buf == null ||
+                //(long) offset + (long) len > buf.length) {
+            //throw new IllegalArgumentException();
+        //}
+        //return engineDigest(buf, offset, len);
     }
 
     
@@ -168,9 +168,9 @@ public abstract class MessageDigest extends MessageDigestSpi {
         byte[] varC1BA6528FD289D9ECA4FE44AFEF5877E_1131488566 = (digest());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1216300895 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1216300895;
-        
-        
-        
+        // ---------- Original Method ----------
+        //update(input);
+        //return digest();
     }
 
     
@@ -180,13 +180,12 @@ public abstract class MessageDigest extends MessageDigestSpi {
 String var2DE2B0753514113A12D28ABDDE929C04_814924632 =         "MESSAGE DIGEST " + algorithm;
         var2DE2B0753514113A12D28ABDDE929C04_814924632.addTaint(taint);
         return var2DE2B0753514113A12D28ABDDE929C04_814924632;
-        
-        
+        // ---------- Original Method ----------
+        //return "MESSAGE DIGEST " + algorithm;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isEqual(byte[] digesta, byte[] digestb) {
+        public static boolean isEqual(byte[] digesta, byte[] digestb) {
         if (digesta.length != digestb.length) {
             return false;
         }
@@ -204,8 +203,8 @@ String var2DE2B0753514113A12D28ABDDE929C04_814924632 =         "MESSAGE DIGEST "
 String var44A46B4003FC81ACB0223385BA1FA818_1529771575 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_1529771575.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_1529771575;
-        
-        
+        // ---------- Original Method ----------
+        //return algorithm;
     }
 
     
@@ -214,8 +213,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1529771575 =         algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_291247029 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_291247029.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_291247029;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
@@ -227,40 +226,40 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_291247029 =         provider;
             int var2DB95E8E1A9267B7A1188556B2013B33_1985006322 = (l);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1699155968 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1699155968;
-        } 
+        } //End block
     if(!(this instanceof Cloneable))        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1559553246 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1179234444 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1179234444;
-        } 
+        } //End block
         try 
         {
             MessageDigest md = (MessageDigest) clone();
             int varD47BA43CD6D151F6AF47D7BF0202FE86_1719474480 = (md.digest().length);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788310766 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788310766;
-        } 
+        } //End block
         catch (CloneNotSupportedException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_801254057 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_813782564 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_813782564;
-        } 
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int l = engineGetDigestLength();
+        //if (l != 0) {
+            //return l;
+        //}
+        //if (!(this instanceof Cloneable)) {
+            //return 0;
+        //}
+        //try {
+            //MessageDigest md = (MessageDigest) clone();
+            //return md.digest().length;
+        //} catch (CloneNotSupportedException e) {
+            //return 0;
+        //}
     }
 
     
@@ -272,15 +271,15 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_291247029 =         provider;
 Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone();
             var46F3A0D86742C1D6E099C2B166941A33_497392167.addTaint(taint);
             return var46F3A0D86742C1D6E099C2B166941A33_497392167;
-        } 
+        } //End block
         CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_1392577232 = new CloneNotSupportedException();
         var1615C718FF05C0D800F9FFF876AD8603_1392577232.addTaint(taint);
         throw var1615C718FF05C0D800F9FFF876AD8603_1392577232;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this instanceof Cloneable) {
+            //return super.clone();
+        //}
+        //throw new CloneNotSupportedException();
     }
 
     
@@ -288,8 +287,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone()
     public final void update(ByteBuffer input) {
         addTaint(input.getTaint());
         engineUpdate(input);
-        
-        
+        // ---------- Original Method ----------
+        //engineUpdate(input);
     }
 
     
@@ -306,9 +305,9 @@ Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone()
             addTaint(provider.getTaint());
             super.provider = provider;
             spiImpl = messageDigestSpi;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.provider = provider;
+            //spiImpl = messageDigestSpi;
         }
 
         
@@ -316,8 +315,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone()
         @Override
         protected void engineReset() {
             spiImpl.engineReset();
-            
-            
+            // ---------- Original Method ----------
+            //spiImpl.engineReset();
         }
 
         
@@ -327,8 +326,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone()
             byte[] varCC6F28AE08AAB3B4DDBD0764628594FB_780812219 = (spiImpl.engineDigest());
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1146123562 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1146123562;
-            
-            
+            // ---------- Original Method ----------
+            //return spiImpl.engineDigest();
         }
 
         
@@ -338,8 +337,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone()
             int var667C3D1431B4BE6D4EA8DC2EEB8B31E8_289890551 = (spiImpl.engineGetDigestLength());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2095485760 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2095485760;
-            
-            
+            // ---------- Original Method ----------
+            //return spiImpl.engineGetDigestLength();
         }
 
         
@@ -348,8 +347,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone()
         protected void engineUpdate(byte arg0) {
             addTaint(arg0);
             spiImpl.engineUpdate(arg0);
-            
-            
+            // ---------- Original Method ----------
+            //spiImpl.engineUpdate(arg0);
         }
 
         
@@ -360,8 +359,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone()
             addTaint(arg1);
             addTaint(arg0[0]);
             spiImpl.engineUpdate(arg0, arg1, arg2);
-            
-            
+            // ---------- Original Method ----------
+            //spiImpl.engineUpdate(arg0, arg1, arg2);
         }
 
         
@@ -374,16 +373,16 @@ Object var46F3A0D86742C1D6E099C2B166941A33_497392167 =             super.clone()
 Object var65764E0FFD229951E453537D8A06831A_1675261701 =                 new MessageDigestImpl(spi, getProvider(), getAlgorithm());
                 var65764E0FFD229951E453537D8A06831A_1675261701.addTaint(taint);
                 return var65764E0FFD229951E453537D8A06831A_1675261701;
-            } 
+            } //End block
             CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_36046169 = new CloneNotSupportedException();
             var1615C718FF05C0D800F9FFF876AD8603_36046169.addTaint(taint);
             throw var1615C718FF05C0D800F9FFF876AD8603_36046169;
-            
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (spiImpl instanceof Cloneable) {
+                //MessageDigestSpi spi = (MessageDigestSpi) spiImpl.clone();
+                //return new MessageDigestImpl(spi, getProvider(), getAlgorithm());
+            //}
+            //throw new CloneNotSupportedException();
         }
 
         

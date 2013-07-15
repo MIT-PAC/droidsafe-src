@@ -1,6 +1,6 @@
 package android.support.v4.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ class AccessibilityDelegateCompatIcs {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.688 -0400", hash_original_method = "879A5ED94FFF8E2596509D34ABD5C8D4", hash_generated_method = "879A5ED94FFF8E2596509D34ABD5C8D4")
     public AccessibilityDelegateCompatIcs ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -67,13 +67,13 @@ class AccessibilityDelegateCompatIcs {
     
         public static void onInitializeAccessibilityEvent(Object delegate, View host,
             AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         ((AccessibilityDelegate) delegate).onInitializeAccessibilityEvent(host, event);
     }
 
     
         public static void onInitializeAccessibilityNodeInfo(Object delegate, View host, Object info) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         ((AccessibilityDelegate) delegate).onInitializeAccessibilityNodeInfo(host,
                 (AccessibilityNodeInfo) info);
     }
@@ -81,14 +81,14 @@ class AccessibilityDelegateCompatIcs {
     
         public static void onPopulateAccessibilityEvent(Object delegate, View host,
             AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         ((AccessibilityDelegate) delegate).onPopulateAccessibilityEvent(host, event);
     }
 
     
         public static boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host,
             View child, AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         return ((AccessibilityDelegate) delegate).onRequestSendAccessibilityEvent(host, child,
                 event);
     }

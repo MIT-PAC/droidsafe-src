@@ -1,6 +1,6 @@
 package org.apache.http.client.methods;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class HttpGet extends HttpRequestBase {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.171 -0400", hash_original_method = "5037302FD966B72BDD781660024EF657", hash_generated_method = "8EFE493527A73BE90AE403202B61D198")
     public  HttpGet() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -20,8 +20,8 @@ public class HttpGet extends HttpRequestBase {
         super();
         addTaint(uri.getTaint());
         setURI(uri);
-        
-        
+        // ---------- Original Method ----------
+        //setURI(uri);
     }
 
     
@@ -30,20 +30,19 @@ public class HttpGet extends HttpRequestBase {
         super();
         addTaint(uri.getTaint());
         setURI(URI.create(uri));
-        
-        
+        // ---------- Original Method ----------
+        //setURI(URI.create(uri));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.174 -0400", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "A467123862D94C2D60E3C2B08166AE4F")
     @Override
     public String getMethod() {
 String varADA0547DEAD34D39E77CF79940AB756D_245939213 =         METHOD_NAME;
         varADA0547DEAD34D39E77CF79940AB756D_245939213.addTaint(taint);
         return varADA0547DEAD34D39E77CF79940AB756D_245939213;
-        
-        
+        // ---------- Original Method ----------
+        //return METHOD_NAME;
     }
 
     

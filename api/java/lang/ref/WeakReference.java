@@ -1,6 +1,6 @@
 package java.lang.ref;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class WeakReference<T> extends Reference<T> {
     public  WeakReference(T r) {
         super(r, null);
         addTaint(r.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -20,7 +20,7 @@ public class WeakReference<T> extends Reference<T> {
         super(r, q);
         addTaint(q.getTaint());
         addTaint(r.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

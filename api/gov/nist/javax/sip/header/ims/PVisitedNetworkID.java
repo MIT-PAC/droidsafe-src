@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.096 -0400", hash_original_method = "051A535620162843E1B90678BF3DA49E", hash_generated_method = "3CE366DEE4998CA432B3DC12C1B2E9D5")
     public  PVisitedNetworkID() {
         super(P_VISITED_NETWORK_ID);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,8 +29,8 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
         super(P_VISITED_NETWORK_ID);
         addTaint(networkID.getTaint());
         setVisitedNetworkID(networkID);
-        
-        
+        // ---------- Original Method ----------
+        //setVisitedNetworkID(networkID);
     }
 
     
@@ -39,8 +39,8 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
         super(P_VISITED_NETWORK_ID);
         addTaint(tok.getTaint());
         setVisitedNetworkID(tok.getTokenValue());
-        
-        
+        // ---------- Original Method ----------
+        //setVisitedNetworkID(tok.getTokenValue());
     }
 
     
@@ -53,24 +53,24 @@ public class PVisitedNetworkID extends gov.nist.javax.sip.header.ParametersHeade
             retval.append(DOUBLE_QUOTE + getVisitedNetworkID() + DOUBLE_QUOTE);
             else
             retval.append(getVisitedNetworkID());
-        } 
+        } //End block
     if(!parameters.isEmpty())        
         retval.append(SEMICOLON + this.parameters.encode());
 String var1B324365A764C077A55854483509F4AB_320957795 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_320957795.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_320957795;
-        
-        
-        
-        
-            
-                
-            
-                
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //if (getVisitedNetworkID() != null)
+        //{
+            //if (isQuoted)
+                //retval.append(DOUBLE_QUOTE + getVisitedNetworkID() + DOUBLE_QUOTE);
+            //else
+                //retval.append(getVisitedNetworkID());
+        //}
+        //if (!parameters.isEmpty())
+            //retval.append(SEMICOLON + this.parameters.encode());
+        //return retval.toString();
     }
 
     
@@ -84,11 +84,11 @@ String var1B324365A764C077A55854483509F4AB_320957795 =         retval.toString()
         }
         this.networkID = networkID;
         this.isQuoted = true;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (networkID == null)
+            //throw new NullPointerException(" the networkID parameter is null");
+        //this.networkID = networkID;
+        //this.isQuoted = true;
     }
 
     
@@ -102,22 +102,21 @@ String var1B324365A764C077A55854483509F4AB_320957795 =         retval.toString()
         }
         this.networkID = networkID.getTokenValue();
         this.isQuoted = false;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (networkID == null)
+            //throw new NullPointerException(" the networkID parameter is null");
+        //this.networkID = networkID.getTokenValue();
+        //this.isQuoted = false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.099 -0400", hash_original_method = "C32CBAC6FBA17FDD7866AA432385EFB6", hash_generated_method = "0E7206A61F7DE30DB9D44B0F937A47AB")
     public String getVisitedNetworkID() {
 String var4407FF7AA9ED0126D0C1885DD8BF4B81_234322984 =         networkID;
         var4407FF7AA9ED0126D0C1885DD8BF4B81_234322984.addTaint(taint);
         return var4407FF7AA9ED0126D0C1885DD8BF4B81_234322984;
-        
-        
+        // ---------- Original Method ----------
+        //return networkID;
     }
 
     
@@ -127,8 +126,8 @@ String var4407FF7AA9ED0126D0C1885DD8BF4B81_234322984 =         networkID;
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_611541353 = new ParseException (value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_611541353.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_611541353;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ParseException (value,0);
     }
 
     
@@ -142,18 +141,18 @@ String var4407FF7AA9ED0126D0C1885DD8BF4B81_234322984 =         networkID;
                 && this.equalParameters( (Parameters) o )));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_386614841 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_386614841;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_204474083 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_898164153 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_898164153;
-        
-        
-        
-            
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (other instanceof PVisitedNetworkIDHeader)
+        //{
+            //PVisitedNetworkIDHeader o = (PVisitedNetworkIDHeader) other;
+            //return (this.getVisitedNetworkID().equals( o.getVisitedNetworkID() )
+                //&& this.equalParameters( (Parameters) o ));
+        //}
+        //return false;
     }
 
     
@@ -166,12 +165,12 @@ String var4407FF7AA9ED0126D0C1885DD8BF4B81_234322984 =         networkID;
 Object varF9E19AD6135C970F387F77C6F3DE4477_1955259654 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1955259654.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1955259654;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //PVisitedNetworkID retval = (PVisitedNetworkID) super.clone();
+        //if (this.networkID != null)
+            //retval.networkID = this.networkID;
+        //retval.isQuoted = this.isQuoted;
+        //return retval;
     }
 
     

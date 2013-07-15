@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class BerOutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.956 -0400", hash_original_method = "91962B6D78B996175B89159DB336CF3A", hash_generated_method = "91962B6D78B996175B89159DB336CF3A")
     public BerOutputStream ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -36,7 +36,7 @@ public class BerOutputStream {
 for(;eLen > 0;eLen = eLen >> 8)
             {
                 numOctets++;
-            } 
+            } //End block
             encoded[offset] = (byte) (numOctets | 0x80);
             offset++;
             eLen = length;
@@ -44,32 +44,32 @@ for(;eLen > 0;eLen = eLen >> 8)
 for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
             {
                 encoded[numOffset - i] = (byte) eLen;
-            } 
+            } //End block
             offset += numOctets;
-        } 
+        } //End block
         else
         {
             encoded[offset++] = (byte) length;
-        } 
-        
-        
-        
-            
-            
-            
-                
-            
-            
-            
-            
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //encoded[offset++] = (byte) tag;
+        //if (length > 127) { 
+            //int eLen = length >> 8;
+            //byte numOctets = 1;
+            //for (; eLen > 0; eLen = eLen >> 8) {
+                //numOctets++;
+            //}
+            //encoded[offset] = (byte) (numOctets | 0x80);
+            //offset++;
+            //eLen = length;
+            //int numOffset = offset + numOctets - 1;
+            //for (int i = 0; i < numOctets; i++, eLen = eLen >> 8) {
+                //encoded[numOffset - i] = (byte) eLen; 
+            //}
+            //offset += numOctets;
+        //} else { 
+            //encoded[offset++] = (byte) length;
+        //}
     }
 
     
@@ -77,9 +77,9 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     public void encodeANY() {
         System.arraycopy(content, 0, encoded, offset, length);
         offset += length;
-        
-        
-        
+        // ---------- Original Method ----------
+        //System.arraycopy(content, 0, encoded, offset, length);
+        //offset += length;
     }
 
     
@@ -89,11 +89,11 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
         encoded[offset] = (byte) bStr.unusedBits;
         System.arraycopy(bStr.bytes, 0, encoded, offset + 1, length - 1);
         offset += length;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //BitString bStr = (BitString) content;
+        //encoded[offset] = (byte) bStr.unusedBits;
+        //System.arraycopy(bStr.bytes, 0, encoded, offset + 1, length - 1);
+        //offset += length;
     }
 
     
@@ -102,19 +102,19 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     if((Boolean) content)        
         {
             encoded[offset] = (byte) 0xFF;
-        } 
+        } //End block
         else
         {
             encoded[offset] = 0x00;
-        } 
+        } //End block
         offset++;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((Boolean) content) {
+            //encoded[offset] = (byte) 0xFF;
+        //} else {
+            //encoded[offset] = 0x00;
+        //}
+        //offset++;
     }
 
     
@@ -124,8 +124,8 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_1636959321 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_1636959321.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_1636959321;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -135,8 +135,8 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_812304803 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_812304803.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_812304803;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -144,9 +144,9 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     public void encodeGeneralizedTime() {
         System.arraycopy(content, 0, encoded, offset, length);
         offset += length;
-        
-        
-        
+        // ---------- Original Method ----------
+        //System.arraycopy(content, 0, encoded, offset, length);
+        //offset += length;
     }
 
     
@@ -154,9 +154,9 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     public void encodeUTCTime() {
         System.arraycopy(content, 0, encoded, offset, length);
         offset += length;
-        
-        
-        
+        // ---------- Original Method ----------
+        //System.arraycopy(content, 0, encoded, offset, length);
+        //offset += length;
     }
 
     
@@ -164,9 +164,9 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     public void encodeInteger() {
         System.arraycopy(content, 0, encoded, offset, length);
         offset += length;
-        
-        
-        
+        // ---------- Original Method ----------
+        //System.arraycopy(content, 0, encoded, offset, length);
+        //offset += length;
     }
 
     
@@ -174,13 +174,12 @@ for(int i = 0;i < numOctets;i++,eLen = eLen >> 8)
     public void encodeOctetString() {
         System.arraycopy(content, 0, encoded, offset, length);
         offset += length;
-        
-        
-        
+        // ---------- Original Method ----------
+        //System.arraycopy(content, 0, encoded, offset, length);
+        //offset += length;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.963 -0400", hash_original_method = "51F7D06C1A64E7B90214CEB0BC04A311", hash_generated_method = "96747EF1BD1CF5922850839F6C990C67")
     public void encodeOID() {
         int[] oid = (int[]) content;
@@ -198,13 +197,13 @@ for(;elem > 0;)
                     oidLen--;
                     encoded[offset + oidLen - 1] = (byte) (elem | 0x80);
                     elem = elem >> 7;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 encoded[offset + oidLen - 1] = (byte) elem;
-            } 
-        } 
+            } //End block
+        } //End block
         elem = oid[0] * 40 + oid[1];
     if(elem > 127)        
         {
@@ -215,15 +214,15 @@ for(;elem > 0;)
                 oidLen--;
                 encoded[offset + oidLen - 1] = (byte) (elem | 0x80);
                 elem = elem >> 7;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             encoded[offset + oidLen - 1] = (byte) elem;
-        } 
+        } //End block
         offset += length;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -233,8 +232,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_1051140061 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_1051140061.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_1051140061;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -244,8 +243,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_593969525 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_593969525.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_593969525;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -255,8 +254,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_1461922341 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_1461922341.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_1461922341;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -266,8 +265,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_1687046232 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_1687046232.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_1687046232;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -275,9 +274,9 @@ for(;elem > 0;)
     public void encodeString() {
         System.arraycopy(content, 0, encoded, offset, length);
         offset += length;
-        
-        
-        
+        // ---------- Original Method ----------
+        //System.arraycopy(content, 0, encoded, offset, length);
+        //offset += length;
     }
 
     
@@ -287,8 +286,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_1452908237 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_1452908237.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_1452908237;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -298,8 +297,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_226576975 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_226576975.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_226576975;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -309,8 +308,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_1078084829 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_1078084829.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_1078084829;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -320,8 +319,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_439794172 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_439794172.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_439794172;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -331,8 +330,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_826232436 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_826232436.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_826232436;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     
@@ -342,8 +341,8 @@ for(;elem > 0;)
         RuntimeException varEC59468AD844069CA80571C4AAA98A77_1083654800 = new RuntimeException("Is not implemented yet");
         varEC59468AD844069CA80571C4AAA98A77_1083654800.addTaint(taint);
         throw varEC59468AD844069CA80571C4AAA98A77_1083654800;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("Is not implemented yet");
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,11 +38,11 @@ public class Pipeline extends InputStream {
         this.pipe = pipe;
         buffList = new LinkedList();
         this.readTimeout = readTimeout;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.timer = timer;
+        //this.pipe = pipe;
+        //buffList = new LinkedList();
+        //this.readTimeout = readTimeout;
     }
 
     
@@ -52,11 +52,11 @@ public class Pipeline extends InputStream {
         return;
         this.myTimerTask = new MyTimer(this);
         this.timer.schedule(this.myTimerTask, this.readTimeout);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.readTimeout == -1)
+            //return;
+        //this.myTimerTask = new MyTimer(this);
+        //this.timer.schedule(this.myTimerTask, this.readTimeout);
     }
 
     
@@ -66,11 +66,11 @@ public class Pipeline extends InputStream {
         return;
     if(this.myTimerTask != null)        
         this.myTimerTask.cancel();
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (this.readTimeout == -1)
+            //return;
+        //if (this.myTimerTask != null)
+            //this.myTimerTask.cancel();
     }
 
     
@@ -91,16 +91,16 @@ public class Pipeline extends InputStream {
 (this.buffList)        {
             buffList.add(buff);
             buffList.notifyAll();
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.isClosed)
+            //throw new IOException("Closed!!");
+        //Buffer buff = new Buffer(bytes, length);
+        //buff.ptr = start;
+        //synchronized (this.buffList) {
+            //buffList.add(buff);
+            //buffList.notifyAll();
+        //}
     }
 
     
@@ -118,15 +118,15 @@ public class Pipeline extends InputStream {
 (this.buffList)        {
             buffList.add(buff);
             buffList.notifyAll();
-        } 
-        
-        
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.isClosed)
+            //throw new IOException("Closed!!");
+        //Buffer buff = new Buffer(bytes, bytes.length);
+        //synchronized (this.buffList) {
+            //buffList.add(buff);
+            //buffList.notifyAll();
+        //}
     }
 
     
@@ -136,14 +136,14 @@ public class Pipeline extends InputStream {
         synchronized
 (this.buffList)        {
             this.buffList.notifyAll();
-        } 
+        } //End block
         this.pipe.close();
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //this.isClosed = true;
+        //synchronized (this.buffList) {
+            //this.buffList.notifyAll();
+        //}
+        //this.pipe.close();
     }
 
     
@@ -160,7 +160,7 @@ public class Pipeline extends InputStream {
                 int var020B759ADEF679A47CB9AFE965BB2314_2106012502 = (retval);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461006270 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461006270;
-            } 
+            } //End block
     if(this.isClosed && this.buffList.isEmpty())            
             {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_682622476 = (-1);
@@ -179,7 +179,7 @@ public class Pipeline extends InputStream {
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_455884949 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_455884949;
                     }
-                } 
+                } //End block
                 currentBuffer = (Buffer) this.buffList.removeFirst();
                 int retval = currentBuffer.getNextByte();
     if(currentBuffer.ptr == currentBuffer.length)                
@@ -187,23 +187,23 @@ public class Pipeline extends InputStream {
                 int var020B759ADEF679A47CB9AFE965BB2314_889401809 = (retval);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1196583580 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1196583580;
-            } 
+            } //End block
             catch (InterruptedException ex)
             {
                 IOException var1FC0CF6650AEC5395B2E1C7E06C33B6F_469187220 = new IOException(ex.getMessage());
                 var1FC0CF6650AEC5395B2E1C7E06C33B6F_469187220.addTaint(taint);
                 throw var1FC0CF6650AEC5395B2E1C7E06C33B6F_469187220;
-            } 
+            } //End block
             catch (NoSuchElementException ex)
             {
                 ex.printStackTrace();
                 IOException var1FC0CF6650AEC5395B2E1C7E06C33B6F_415991164 = new IOException(ex.getMessage());
                 var1FC0CF6650AEC5395B2E1C7E06C33B6F_415991164.addTaint(taint);
                 throw var1FC0CF6650AEC5395B2E1C7E06C33B6F_415991164;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -218,8 +218,8 @@ public class Pipeline extends InputStream {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.404 -0400", hash_original_method = "469A54409CE651B527E545FCC2B571E7", hash_generated_method = "1427EA2EBB4B5AD7315253D0FC644C17")
         protected  MyTimer(Pipeline pipeline) {
             this.pipeline = pipeline;
-            
-            
+            // ---------- Original Method ----------
+            //this.pipeline = pipeline;
         }
 
         
@@ -230,19 +230,19 @@ public class Pipeline extends InputStream {
             try 
             {
                 pipeline.close();
-            } 
+            } //End block
             catch (IOException ex)
             {
                 InternalErrorHandler.handleException(ex);
-            } 
-            
-            
-                
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (this.isCancelled)
+                //return;
+            //try {
+                //pipeline.close();
+            //} catch (IOException ex) {
+                //InternalErrorHandler.handleException(ex);
+            //}
         }
 
         
@@ -253,10 +253,10 @@ public class Pipeline extends InputStream {
             boolean var020B759ADEF679A47CB9AFE965BB2314_1355117898 = (retval);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1693291669 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1693291669;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //boolean retval = super.cancel();
+            //this.isCancelled = true;
+            //return retval;
         }
 
         
@@ -280,23 +280,22 @@ public class Pipeline extends InputStream {
             ptr = 0;
             this.length = length;
             this.bytes = bytes;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //ptr = 0;
+            //this.length = length;
+            //this.bytes = bytes;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.407 -0400", hash_original_method = "C5E9FA9D1099E171DFD942E3B525903F", hash_generated_method = "EA3E9230D7D39ABE1BB4B4848CFCAB4B")
         public int getNextByte() {
             int retval = bytes[ptr++] & 0xFF;
             int var020B759ADEF679A47CB9AFE965BB2314_1360795422 = (retval);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_777912917 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_777912917;
-            
-            
-            
+            // ---------- Original Method ----------
+            //int retval = bytes[ptr++] & 0xFF;
+            //return retval;
         }
 
         

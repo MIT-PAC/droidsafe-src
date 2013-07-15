@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,19 +12,19 @@ public abstract class BluetoothHealthCallback {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.205 -0400", hash_original_method = "248F99D825023B041C440E742D314E3D", hash_generated_method = "248F99D825023B041C440E742D314E3D")
     public BluetoothHealthCallback ()
     {
-        
+        //Synthesized constructor
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.206 -0400", hash_original_method = "E5722E3313A7E9ED90B679A7B4C5AF2F", hash_generated_method = "6AA17B8B53A9CF042C811F2746EC24C0")
     public void onHealthAppConfigurationStatusChange(BluetoothHealthAppConfiguration config,
             int status) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(status);
         addTaint(config.getTaint());
         Log.d(TAG, "onHealthAppConfigurationStatusChange: " + config + "Status: " + status);
-        
-        
+        // ---------- Original Method ----------
+        //Log.d(TAG, "onHealthAppConfigurationStatusChange: " + config + "Status: " + status);
     }
 
     
@@ -32,7 +32,7 @@ public abstract class BluetoothHealthCallback {
     public void onHealthChannelStateChange(BluetoothHealthAppConfiguration config,
             BluetoothDevice device, int prevState, int newState, ParcelFileDescriptor fd,
             int channelId) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(channelId);
         addTaint(fd.getTaint());
         addTaint(newState);
@@ -42,10 +42,10 @@ public abstract class BluetoothHealthCallback {
         Log.d(TAG, "onHealthChannelStateChange: " + config + "Device: " + device +
               "prevState:" + prevState + "newState:" + newState + "ParcelFd:" + fd +
               "ChannelId:" + channelId);
-        
-        
-              
-              
+        // ---------- Original Method ----------
+        //Log.d(TAG, "onHealthChannelStateChange: " + config + "Device: " + device +
+              //"prevState:" + prevState + "newState:" + newState + "ParcelFd:" + fd +
+              //"ChannelId:" + channelId);
     }
 
     

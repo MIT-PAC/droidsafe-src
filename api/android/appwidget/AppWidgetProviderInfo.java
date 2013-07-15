@@ -1,6 +1,6 @@
 package android.appwidget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,7 +51,7 @@ public class AppWidgetProviderInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.639 -0400", hash_original_method = "420920366E9BF4F133486E6ABF721531", hash_generated_method = "3BD10E1799DA4EF032CBAC6937E1F518")
     public  AppWidgetProviderInfo() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -60,7 +60,7 @@ public class AppWidgetProviderInfo implements Parcelable {
     if(0 != in.readInt())        
         {
             this.provider = new ComponentName(in);
-        } 
+        } //End block
         this.minWidth = in.readInt();
         this.minHeight = in.readInt();
         this.minResizeWidth = in.readInt();
@@ -70,30 +70,30 @@ public class AppWidgetProviderInfo implements Parcelable {
     if(0 != in.readInt())        
         {
             this.configure = new ComponentName(in);
-        } 
+        } //End block
         this.label = in.readString();
         this.icon = in.readInt();
         this.previewImage = in.readInt();
         this.autoAdvanceViewId = in.readInt();
         this.resizeMode = in.readInt();
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (0 != in.readInt()) {
+            //this.provider = new ComponentName(in);
+        //}
+        //this.minWidth = in.readInt();
+        //this.minHeight = in.readInt();
+        //this.minResizeWidth = in.readInt();
+        //this.minResizeHeight = in.readInt();
+        //this.updatePeriodMillis = in.readInt();
+        //this.initialLayout = in.readInt();
+        //if (0 != in.readInt()) {
+            //this.configure = new ComponentName(in);
+        //}
+        //this.label = in.readString();
+        //this.icon = in.readInt();
+        //this.previewImage = in.readInt();
+        //this.autoAdvanceViewId = in.readInt();
+        //this.resizeMode = in.readInt();
     }
 
     
@@ -105,11 +105,11 @@ public class AppWidgetProviderInfo implements Parcelable {
         {
             out.writeInt(1);
             this.provider.writeToParcel(out, flags);
-        } 
+        } //End block
         else
         {
             out.writeInt(0);
-        } 
+        } //End block
         out.writeInt(this.minWidth);
         out.writeInt(this.minHeight);
         out.writeInt(this.minResizeWidth);
@@ -120,62 +120,60 @@ public class AppWidgetProviderInfo implements Parcelable {
         {
             out.writeInt(1);
             this.configure.writeToParcel(out, flags);
-        } 
+        } //End block
         else
         {
             out.writeInt(0);
-        } 
+        } //End block
         out.writeString(this.label);
         out.writeInt(this.icon);
         out.writeInt(this.previewImage);
         out.writeInt(this.autoAdvanceViewId);
         out.writeInt(this.resizeMode);
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (this.provider != null) {
+            //out.writeInt(1);
+            //this.provider.writeToParcel(out, flags);
+        //} else {
+            //out.writeInt(0);
+        //}
+        //out.writeInt(this.minWidth);
+        //out.writeInt(this.minHeight);
+        //out.writeInt(this.minResizeWidth);
+        //out.writeInt(this.minResizeHeight);
+        //out.writeInt(this.updatePeriodMillis);
+        //out.writeInt(this.initialLayout);
+        //if (this.configure != null) {
+            //out.writeInt(1);
+            //this.configure.writeToParcel(out, flags);
+        //} else {
+            //out.writeInt(0);
+        //}
+        //out.writeString(this.label);
+        //out.writeInt(this.icon);
+        //out.writeInt(this.previewImage);
+        //out.writeInt(this.autoAdvanceViewId);
+        //out.writeInt(this.resizeMode);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.646 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3CFC99A25BFD8F89D32A635E68BEDDD7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1267148957 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_370563938 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_370563938;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.647 -0400", hash_original_method = "53CD7F02665BA9CCD92FD799E19E76A8", hash_generated_method = "E2279406137B37D32736DBDEC2AFCF54")
     public String toString() {
 String var86602826B3CB97BCAACAB7E54F86BD12_241150945 =         "AppWidgetProviderInfo(provider=" + this.provider + ")";
         var86602826B3CB97BCAACAB7E54F86BD12_241150945.addTaint(taint);
         return var86602826B3CB97BCAACAB7E54F86BD12_241150945;
-        
-        
+        // ---------- Original Method ----------
+        //return "AppWidgetProviderInfo(provider=" + this.provider + ")";
     }
 
     
@@ -206,13 +204,13 @@ String var86602826B3CB97BCAACAB7E54F86BD12_241150945 =         "AppWidgetProvide
             return new AppWidgetProviderInfo[size];
         }
     };
-    
+    // orphaned legacy method
     public AppWidgetProviderInfo createFromParcel(Parcel parcel)
         {
             return new AppWidgetProviderInfo(parcel);
         }
     
-    
+    // orphaned legacy method
     public AppWidgetProviderInfo[] newArray(int size)
         {
             return new AppWidgetProviderInfo[size];

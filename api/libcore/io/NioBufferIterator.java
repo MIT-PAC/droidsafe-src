@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,28 +25,26 @@ public final class NioBufferIterator extends BufferIterator {
         this.address = address;
         this.size = size;
         this.swap = swap;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.address = address;
+        //this.size = size;
+        //this.swap = swap;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.734 -0400", hash_original_method = "E36D4B83C08A879BB369FD4BF3E743B5", hash_generated_method = "D66EB936D868E838CC6FBF758BD016A1")
     public void seek(int offset) {
         position = offset;
-        
-        
+        // ---------- Original Method ----------
+        //position = offset;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.735 -0400", hash_original_method = "5C6BD475B81B38C95ED571F8A0E18EDC", hash_generated_method = "940E96887BCB1FBE664555A63C820A3C")
     public void skip(int byteCount) {
         position += byteCount;
-        
-        
+        // ---------- Original Method ----------
+        //position += byteCount;
     }
 
     
@@ -56,9 +54,9 @@ public final class NioBufferIterator extends BufferIterator {
         addTaint(dst[0]);
         Memory.peekByteArray(address + position, dst, dstOffset, byteCount);
         position += byteCount;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekByteArray(address + position, dst, dstOffset, byteCount);
+        //position += byteCount;
     }
 
     
@@ -69,10 +67,10 @@ public final class NioBufferIterator extends BufferIterator {
         byte varB4A88417B3D0170D754C647C30B7216A_1883366273 = (result);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_2041324570 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_2041324570;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte result = Memory.peekByte(address + position);
+        //++position;
+        //return result;
     }
 
     
@@ -83,10 +81,10 @@ public final class NioBufferIterator extends BufferIterator {
         int varB4A88417B3D0170D754C647C30B7216A_880729049 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_197114696 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_197114696;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int result = Memory.peekInt(address + position, swap);
+        //position += SizeOf.INT;
+        //return result;
     }
 
     
@@ -96,9 +94,9 @@ public final class NioBufferIterator extends BufferIterator {
         addTaint(dst[0]);
         Memory.peekIntArray(address + position, dst, dstOffset, intCount, swap);
         position += SizeOf.INT * intCount;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekIntArray(address + position, dst, dstOffset, intCount, swap);
+        //position += SizeOf.INT * intCount;
     }
 
     
@@ -109,10 +107,10 @@ public final class NioBufferIterator extends BufferIterator {
         short varB4A88417B3D0170D754C647C30B7216A_392692790 = (result);
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1770016524 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1770016524;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //short result = Memory.peekShort(address + position, swap);
+        //position += SizeOf.SHORT;
+        //return result;
     }
 
     

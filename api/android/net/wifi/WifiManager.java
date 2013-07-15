@@ -1,6 +1,6 @@
 package android.net.wifi;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,9 +35,9 @@ public class WifiManager {
     public  WifiManager(IWifiManager service, Handler handler) {
         mService = service;
         mHandler = handler;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mService = service;
+        //mHandler = handler;
     }
 
     
@@ -48,19 +48,19 @@ public class WifiManager {
 List<WifiConfiguration> var4F88E0AB1FAFC9504D31144C9834BCBC_302264394 =             mService.getConfiguredNetworks();
             var4F88E0AB1FAFC9504D31144C9834BCBC_302264394.addTaint(taint);
             return var4F88E0AB1FAFC9504D31144C9834BCBC_302264394;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =             null;
             var540C13E9E156B687226421B24F2DF178_1715874205.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1715874205;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getConfiguredNetworks();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -72,17 +72,17 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             int var6BB61E3B7BCE0931DA574D19D1D82C88_2033626626 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679394838 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1679394838;
-        } 
+        } //End block
         config.networkId = -1;
         int varC1C5E035E8D95985B9800E271455F437_1402399803 = (addOrUpdateNetwork(config));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1919242882 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1919242882;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (config == null) {
+            //return -1;
+        //}
+        //config.networkId = -1;
+        //return addOrUpdateNetwork(config);
     }
 
     
@@ -94,15 +94,15 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1001171274 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1784430552 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1784430552;
-        } 
+        } //End block
         int varC1C5E035E8D95985B9800E271455F437_284304172 = (addOrUpdateNetwork(config));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1899158035 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1899158035;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (config == null || config.networkId < 0) {
+            //return -1;
+        //}
+        //return addOrUpdateNetwork(config);
     }
 
     
@@ -114,19 +114,19 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             int varDECE89ACD3A11BE8062E2E75EE60ED08_1405500063 = (mService.addOrUpdateNetwork(config));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1383801022 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1383801022;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_2137686139 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085814065 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085814065;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.addOrUpdateNetwork(config);
+        //} catch (RemoteException e) {
+            //return -1;
+        //}
     }
 
     
@@ -138,19 +138,19 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean var6B07C45DCB6CCB41DCA24C3BC88383F2_2092824274 = (mService.removeNetwork(netId));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_97183058 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_97183058;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1008752708 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682819128 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_682819128;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.removeNetwork(netId);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -163,19 +163,19 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean varA1C31F584B760D1424F1E6692105D579_1889180103 = (mService.enableNetwork(netId, disableOthers));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1098698338 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1098698338;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_517614029 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_214113042 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_214113042;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.enableNetwork(netId, disableOthers);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -187,19 +187,19 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean var1993053558E4FE4C474056782C19D982_2142379502 = (mService.disableNetwork(netId));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1756919505 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1756919505;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1218858869 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1215639012 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1215639012;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.disableNetwork(netId);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -208,8 +208,8 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
         addTaint(reason);
         addTaint(netId);
         mAsyncChannel.sendMessage(CMD_DISABLE_NETWORK, netId, reason);
-        
-        
+        // ---------- Original Method ----------
+        //mAsyncChannel.sendMessage(CMD_DISABLE_NETWORK, netId, reason);
     }
 
     
@@ -221,20 +221,20 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean varB326B5062B2F0E69046810717534CB09_632150731 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1289048000 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1289048000;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1172420148 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1571480090 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1571480090;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.disconnect();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -246,20 +246,20 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean varB326B5062B2F0E69046810717534CB09_1668330561 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_73794861 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_73794861;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_612983378 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_213864427 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_213864427;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.reconnect();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -271,20 +271,20 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean varB326B5062B2F0E69046810717534CB09_871683992 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1883221479 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1883221479;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1250367496 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181814561 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_181814561;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.reassociate();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -301,21 +301,21 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean var2FA21A90D885B88AD93ADB5FDF7246A2_361759339 = (mService.pingSupplicant());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2009945965 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2009945965;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_2025976758 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_450117042 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_450117042;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService == null)
+            //return false;
+        //try {
+            //return mService.pingSupplicant();
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -327,20 +327,20 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean varB326B5062B2F0E69046810717534CB09_320695214 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_896474363 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_896474363;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_735372945 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_302899810 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_302899810;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.startScan(false);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -352,20 +352,20 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
             boolean varB326B5062B2F0E69046810717534CB09_1104433869 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1120814470 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1120814470;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_926839918 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2098532947 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2098532947;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.startScan(true);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -376,19 +376,19 @@ List<WifiConfiguration> var540C13E9E156B687226421B24F2DF178_1715874205 =        
 WifiInfo var5705730BFC480D0E115D28CF547AA341_1300538183 =             mService.getConnectionInfo();
             var5705730BFC480D0E115D28CF547AA341_1300538183.addTaint(taint);
             return var5705730BFC480D0E115D28CF547AA341_1300538183;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 WifiInfo var540C13E9E156B687226421B24F2DF178_1158204716 =             null;
             var540C13E9E156B687226421B24F2DF178_1158204716.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1158204716;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getConnectionInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -399,19 +399,19 @@ WifiInfo var540C13E9E156B687226421B24F2DF178_1158204716 =             null;
 List<ScanResult> varDA562D6FE80BAE8CA65C00F581C14445_1239450207 =             mService.getScanResults();
             varDA562D6FE80BAE8CA65C00F581C14445_1239450207.addTaint(taint);
             return varDA562D6FE80BAE8CA65C00F581C14445_1239450207;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 List<ScanResult> var540C13E9E156B687226421B24F2DF178_1838093116 =             null;
             var540C13E9E156B687226421B24F2DF178_1838093116.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1838093116;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getScanResults();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -422,19 +422,19 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_1838093116 =             nu
             boolean var2C617EC4E42A92E0074105B18F95650E_77679846 = (mService.saveConfiguration());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1329071179 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1329071179;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_256132062 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2066328629 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2066328629;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.saveConfiguration();
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -445,14 +445,14 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_1838093116 =             nu
         try 
         {
             mService.setCountryCode(country, persist);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setCountryCode(country, persist);
+        //} catch (RemoteException e) { }
     }
 
     
@@ -463,14 +463,14 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_1838093116 =             nu
         try 
         {
             mService.setFrequencyBand(band, persist);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setFrequencyBand(band, persist);
+        //} catch (RemoteException e) { }
     }
 
     
@@ -481,19 +481,19 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_1838093116 =             nu
             int var717522526F6DCF9BC53B4B1C7DA1C250_2019927086 = (mService.getFrequencyBand());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362502188 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362502188;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_93022449 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1366535569 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1366535569;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getFrequencyBand();
+        //} catch (RemoteException e) {
+            //return -1;
+        //}
     }
 
     
@@ -504,19 +504,19 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_1838093116 =             nu
             boolean varEAAC367DCCD52A845F65255FF7683621_496716737 = (mService.isDualBandSupported());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_270948246 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_270948246;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_606504089 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_490604137 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_490604137;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.isDualBandSupported();
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -527,19 +527,19 @@ List<ScanResult> var540C13E9E156B687226421B24F2DF178_1838093116 =             nu
 DhcpInfo var7F156C3E06F3DD8F97345C4B0AD9B9CB_1602847910 =             mService.getDhcpInfo();
             var7F156C3E06F3DD8F97345C4B0AD9B9CB_1602847910.addTaint(taint);
             return var7F156C3E06F3DD8F97345C4B0AD9B9CB_1602847910;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
             var540C13E9E156B687226421B24F2DF178_174145401.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_174145401;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getDhcpInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -551,19 +551,19 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
             boolean varBA7F2CCA3EE31C1A94DA0BEE5B8C6AEB_1708039350 = (mService.setWifiEnabled(enabled));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_818531612 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_818531612;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_645287603 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394350691 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394350691;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.setWifiEnabled(enabled);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -574,19 +574,19 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
             int varCD3132D86DB75414323C23431124E8FE_267967746 = (mService.getWifiEnabledState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_897235845 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_897235845;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int var6D01601C9C9E20C43DFDDFE008E5E522_1145945659 = (WIFI_STATE_UNKNOWN);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644043963 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1644043963;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getWifiEnabledState();
+        //} catch (RemoteException e) {
+            //return WIFI_STATE_UNKNOWN;
+        //}
     }
 
     
@@ -595,13 +595,12 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
         boolean varDEB3A887086CF2643222589D79401497_1095941191 = (getWifiState() == WIFI_STATE_ENABLED);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_183913386 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_183913386;
-        
-        
+        // ---------- Original Method ----------
+        //return getWifiState() == WIFI_STATE_ENABLED;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int calculateSignalLevel(int rssi, int numLevels) {
+        public static int calculateSignalLevel(int rssi, int numLevels) {
         if (rssi <= MIN_RSSI) {
             return 0;
         } else if (rssi >= MAX_RSSI) {
@@ -614,8 +613,7 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int compareSignalLevel(int rssiA, int rssiB) {
+        public static int compareSignalLevel(int rssiA, int rssiB) {
         return rssiA - rssiB;
     }
 
@@ -630,20 +628,20 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
             boolean varB326B5062B2F0E69046810717534CB09_831975173 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647413651 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_647413651;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1355345839 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1862184437 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1862184437;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setWifiApEnabled(wifiConfig, enabled);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -654,19 +652,19 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
             int varD8CD85E85B7114B7C946D7366D0D5A87_329839102 = (mService.getWifiApEnabledState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742497914 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742497914;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int var838CE68F82E46116D81DE0525785B96B_1058140732 = (WIFI_AP_STATE_FAILED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378890229 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378890229;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getWifiApEnabledState();
+        //} catch (RemoteException e) {
+            //return WIFI_AP_STATE_FAILED;
+        //}
     }
 
     
@@ -675,8 +673,8 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
         boolean var2AD5E4D3AFB8F4B8AA800AF5E27BBAE9_1544039026 = (getWifiApState() == WIFI_AP_STATE_ENABLED);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_926627675 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_926627675;
-        
-        
+        // ---------- Original Method ----------
+        //return getWifiApState() == WIFI_AP_STATE_ENABLED;
     }
 
     
@@ -687,19 +685,19 @@ DhcpInfo var540C13E9E156B687226421B24F2DF178_174145401 =             null;
 WifiConfiguration var5445B0BDAF6A8DA52A529FEF1AED454F_482759189 =             mService.getWifiApConfiguration();
             var5445B0BDAF6A8DA52A529FEF1AED454F_482759189.addTaint(taint);
             return var5445B0BDAF6A8DA52A529FEF1AED454F_482759189;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             null;
             var540C13E9E156B687226421B24F2DF178_397283688.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_397283688;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getWifiApConfiguration();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -712,20 +710,20 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
             boolean varB326B5062B2F0E69046810717534CB09_985545833 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1333415471 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1333415471;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1862202874 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_4209258 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_4209258;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setWifiApConfiguration(wifiConfig);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -737,20 +735,20 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
             boolean varB326B5062B2F0E69046810717534CB09_191888812 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2062019607 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2062019607;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1940837604 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_632446769 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_632446769;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.startWifi();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -762,20 +760,20 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
             boolean varB326B5062B2F0E69046810717534CB09_1869303276 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1821570390 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1821570390;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_949178681 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1125365920 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1125365920;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.stopWifi();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -788,20 +786,20 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
             boolean varB326B5062B2F0E69046810717534CB09_1425223978 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_704169324 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_704169324;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_799814816 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_439204098 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_439204098;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.addToBlacklist(bssid);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -813,20 +811,20 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
             boolean varB326B5062B2F0E69046810717534CB09_168278345 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_324942412 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_324942412;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_449429851 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2113151166 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2113151166;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.clearBlacklist();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -835,8 +833,8 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
         addTaint(srcHandler.getTaint());
         addTaint(srcContext.getTaint());
         mAsyncChannel.connect(srcContext, srcHandler, getMessenger());
-        
-        
+        // ---------- Original Method ----------
+        //mAsyncChannel.connect(srcContext, srcHandler, getMessenger());
     }
 
     
@@ -846,13 +844,13 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
     if(config == null)        
         {
             return;
-        } 
+        } //End block
         mAsyncChannel.sendMessage(CMD_CONNECT_NETWORK, config);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (config == null) {
+            //return;
+        //}
+        //mAsyncChannel.sendMessage(CMD_CONNECT_NETWORK, config);
     }
 
     
@@ -862,13 +860,13 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
     if(networkId < 0)        
         {
             return;
-        } 
+        } //End block
         mAsyncChannel.sendMessage(CMD_CONNECT_NETWORK, networkId);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (networkId < 0) {
+            //return;
+        //}
+        //mAsyncChannel.sendMessage(CMD_CONNECT_NETWORK, networkId);
     }
 
     
@@ -878,13 +876,13 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
     if(config == null)        
         {
             return;
-        } 
+        } //End block
         mAsyncChannel.sendMessage(CMD_SAVE_NETWORK, config);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (config == null) {
+            //return;
+        //}
+        //mAsyncChannel.sendMessage(CMD_SAVE_NETWORK, config);
     }
 
     
@@ -894,13 +892,13 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
     if(netId < 0)        
         {
             return;
-        } 
+        } //End block
         mAsyncChannel.sendMessage(CMD_FORGET_NETWORK, netId);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (netId < 0) {
+            //return;
+        //}
+        //mAsyncChannel.sendMessage(CMD_FORGET_NETWORK, netId);
     }
 
     
@@ -910,13 +908,13 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
     if(config == null)        
         {
             return;
-        } 
+        } //End block
         mAsyncChannel.sendMessage(CMD_START_WPS, config);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (config == null) {
+            //return;
+        //}
+        //mAsyncChannel.sendMessage(CMD_START_WPS, config);
     }
 
     
@@ -927,19 +925,19 @@ WifiConfiguration var540C13E9E156B687226421B24F2DF178_397283688 =             nu
 Messenger varF7929FC05940900E4513D8262C8E2654_1376102411 =             mService.getMessenger();
             varF7929FC05940900E4513D8262C8E2654_1376102411.addTaint(taint);
             return varF7929FC05940900E4513D8262C8E2654_1376102411;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 Messenger var540C13E9E156B687226421B24F2DF178_500328549 =             null;
             var540C13E9E156B687226421B24F2DF178_500328549.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_500328549;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getMessenger();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -950,19 +948,19 @@ Messenger var540C13E9E156B687226421B24F2DF178_500328549 =             null;
 String varB42BB982F8EC56A555249A2A6B239AC0_1373196259 =             mService.getConfigFile();
             varB42BB982F8EC56A555249A2A6B239AC0_1373196259.addTaint(taint);
             return varB42BB982F8EC56A555249A2A6B239AC0_1373196259;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 String var540C13E9E156B687226421B24F2DF178_531947760 =             null;
             var540C13E9E156B687226421B24F2DF178_531947760.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_531947760;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getConfigFile();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -973,8 +971,8 @@ String var540C13E9E156B687226421B24F2DF178_531947760 =             null;
 WifiLock var780FF626E0BEB022C692CAF9DB88BC6C_1183655991 =         new WifiLock(lockType, tag);
         var780FF626E0BEB022C692CAF9DB88BC6C_1183655991.addTaint(taint);
         return var780FF626E0BEB022C692CAF9DB88BC6C_1183655991;
-        
-        
+        // ---------- Original Method ----------
+        //return new WifiLock(lockType, tag);
     }
 
     
@@ -984,8 +982,8 @@ WifiLock var780FF626E0BEB022C692CAF9DB88BC6C_1183655991 =         new WifiLock(l
 WifiLock var1515066542E695DE079F7D0491648C60_1426440408 =         new WifiLock(WIFI_MODE_FULL, tag);
         var1515066542E695DE079F7D0491648C60_1426440408.addTaint(taint);
         return var1515066542E695DE079F7D0491648C60_1426440408;
-        
-        
+        // ---------- Original Method ----------
+        //return new WifiLock(WIFI_MODE_FULL, tag);
     }
 
     
@@ -995,8 +993,8 @@ WifiLock var1515066542E695DE079F7D0491648C60_1426440408 =         new WifiLock(W
 MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new MulticastLock(tag);
         varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056.addTaint(taint);
         return varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056;
-        
-        
+        // ---------- Original Method ----------
+        //return new MulticastLock(tag);
     }
 
     
@@ -1007,19 +1005,19 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
             boolean varD730F55F40FFB516E40037129275C513_174792012 = (mService.isMulticastEnabled());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57196074 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_57196074;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_778594661 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510094757 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_510094757;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.isMulticastEnabled();
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -1031,20 +1029,20 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
             boolean varB326B5062B2F0E69046810717534CB09_1517252879 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060128363 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060128363;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_986018612 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1357742224 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1357742224;
-        } 
-        
-        
-            
-            
-        
-             
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.initializeMulticastFiltering();
+            //return true;
+        //} catch (RemoteException e) {
+             //return false;
+        //}
     }
 
     
@@ -1079,13 +1077,13 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
             mRefCount = 0;
             mRefCounted = true;
             mHeld = false;
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mTag = tag;
+            //mLockType = lockType;
+            //mBinder = new Binder();
+            //mRefCount = 0;
+            //mRefCounted = true;
+            //mHeld = false;
         }
 
         
@@ -1107,18 +1105,18 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
                                             "Exceeded maximum number of wifi locks");
                                 var6FB6F703E86436697EADCF1E3CEE23D9_297012759.addTaint(taint);
                                 throw var6FB6F703E86436697EADCF1E3CEE23D9_297012759;
-                            } 
+                            } //End block
                             mActiveLockCount++;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (RemoteException ignore)
                     {
-                    } 
+                    } //End block
                     mHeld = true;
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1134,49 +1132,47 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
                         synchronized
 (WifiManager.this)                        {
                             mActiveLockCount--;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (RemoteException ignore)
                     {
-                    } 
+                    } //End block
                     mHeld = false;
-                } 
+                } //End block
     if(mRefCount < 0)                
                 {
                     RuntimeException varC201BD43267ABC9990F7A44596550D06_387457608 = new RuntimeException("WifiLock under-locked " + mTag);
                     varC201BD43267ABC9990F7A44596550D06_387457608.addTaint(taint);
                     throw varC201BD43267ABC9990F7A44596550D06_387457608;
-                } 
-            } 
-            
-            
-                
-                    
-                        
-                        
-                            
-                        
-                    
-                    
-                    
-                
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mBinder) {
+                //if (mRefCounted ? (--mRefCount == 0) : (mHeld)) {
+                    //try {
+                        //mService.releaseWifiLock(mBinder);
+                        //synchronized (WifiManager.this) {
+                            //mActiveLockCount--;
+                        //}
+                    //} catch (RemoteException ignore) {
+                    //}
+                    //mHeld = false;
+                //}
+                //if (mRefCount < 0) {
+                    //throw new RuntimeException("WifiLock under-locked " + mTag);
+                //}
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.067 -0400", hash_original_method = "792BAAC8BC5216CF4F7CAEC0A7A38B7F", hash_generated_method = "91B8A28629F935F303A73D2F07650B69")
         public void setReferenceCounted(boolean refCounted) {
             mRefCounted = refCounted;
-            
-            
+            // ---------- Original Method ----------
+            //mRefCounted = refCounted;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.067 -0400", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "CED683671336ADD60ADF0070EFA84B8B")
         public boolean isHeld() {
             synchronized
@@ -1184,11 +1180,11 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
                 boolean varAD25B113814807D236AFB0F5095B0005_2034488550 = (mHeld);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2089645769 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2089645769;
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mBinder) {
+                //return mHeld;
+            //}
         }
 
         
@@ -1199,39 +1195,39 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
     if(ws != null && ws.size() == 0)                
                 {
                     ws = null;
-                } 
+                } //End block
                 boolean changed = true;
     if(ws == null)                
                 {
                     mWorkSource = null;
-                } 
+                } //End block
                 else
     if(mWorkSource == null)                
                 {
                     changed = mWorkSource != null;
                     mWorkSource = new WorkSource(ws);
-                } 
+                } //End block
                 else
                 {
                     changed = mWorkSource.diff(ws);
     if(changed)                    
                     {
                         mWorkSource.set(ws);
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(changed && mHeld)                
                 {
                     try 
                     {
                         mService.updateWifiLockWorkSource(mBinder, mWorkSource);
-                    } 
+                    } //End block
                     catch (RemoteException e)
                     {
-                    } 
-                } 
-            } 
-            
-            
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1247,27 +1243,27 @@ MulticastLock varF7F0BDC4D2B91B78614D3DAAA6856880_1080501056 =         new Multi
     if(mRefCounted)                
                 {
                     s3 = "refcounted: refcount = " + mRefCount;
-                } 
+                } //End block
                 else
                 {
                     s3 = "not refcounted";
-                } 
+                } //End block
 String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock{ " + s1 + "; " + s2 + s3 + " }";
                 varF6BD25B17478B3615FCC3F9239B0D36D_168058607.addTaint(taint);
                 return varF6BD25B17478B3615FCC3F9239B0D36D_168058607;
-            } 
-            
-            
-            
-                
-                
-                
-                    
-                
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //String s1, s2, s3;
+            //synchronized (mBinder) {
+                //s1 = Integer.toHexString(System.identityHashCode(this));
+                //s2 = mHeld ? "held; " : "";
+                //if (mRefCounted) {
+                    //s3 = "refcounted: refcount = " + mRefCount;
+                //} else {
+                    //s3 = "not refcounted";
+                //}
+                //return "WifiLock{ " + s1 + "; " + s2 + s3 + " }";
+            //}
         }
 
         
@@ -1285,26 +1281,26 @@ String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock
                         synchronized
 (WifiManager.this)                        {
                             mActiveLockCount--;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (RemoteException ignore)
                     {
-                    } 
-                } 
-            } 
-            
-            
-            
-                
-                    
-                        
-                        
-                            
-                        
-                    
-                    
-                
-            
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //super.finalize();
+            //synchronized (mBinder) {
+                //if (mHeld) {
+                    //try {
+                        //mService.releaseWifiLock(mBinder);
+                        //synchronized (WifiManager.this) {
+                            //mActiveLockCount--;
+                        //}
+                    //} catch (RemoteException ignore) {
+                    //}
+                //}
+            //}
         }
 
         
@@ -1336,12 +1332,12 @@ String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock
             mRefCount = 0;
             mRefCounted = true;
             mHeld = false;
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mTag = tag;
+            //mBinder = new Binder();
+            //mRefCount = 0;
+            //mRefCounted = true;
+            //mHeld = false;
         }
 
         
@@ -1363,34 +1359,34 @@ String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock
                                         "Exceeded maximum number of wifi locks");
                                 var6FB6F703E86436697EADCF1E3CEE23D9_89367631.addTaint(taint);
                                 throw var6FB6F703E86436697EADCF1E3CEE23D9_89367631;
-                            } 
+                            } //End block
                             mActiveLockCount++;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (RemoteException ignore)
                     {
-                    } 
+                    } //End block
                     mHeld = true;
-                } 
-            } 
-            
-            
-                
-                    
-                        
-                        
-                            
-                                
-                                
-                                        
-                            
-                            
-                        
-                    
-                    
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mBinder) {
+                //if (mRefCounted ? (++mRefCount > 0) : (!mHeld)) {
+                    //try {
+                        //mService.acquireMulticastLock(mBinder, mTag);
+                        //synchronized (WifiManager.this) {
+                            //if (mActiveLockCount >= MAX_ACTIVE_LOCKS) {
+                                //mService.releaseMulticastLock();
+                                //throw new UnsupportedOperationException(
+                                        //"Exceeded maximum number of wifi locks");
+                            //}
+                            //mActiveLockCount++;
+                        //}
+                    //} catch (RemoteException ignore) {
+                    //}
+                    //mHeld = true;
+                //}
+            //}
         }
 
         
@@ -1406,51 +1402,49 @@ String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock
                         synchronized
 (WifiManager.this)                        {
                             mActiveLockCount--;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (RemoteException ignore)
                     {
-                    } 
+                    } //End block
                     mHeld = false;
-                } 
+                } //End block
     if(mRefCount < 0)                
                 {
                     RuntimeException varBAC7FC4092273E4A09516AB353844518_1876759934 = new RuntimeException("MulticastLock under-locked "
                             + mTag);
                     varBAC7FC4092273E4A09516AB353844518_1876759934.addTaint(taint);
                     throw varBAC7FC4092273E4A09516AB353844518_1876759934;
-                } 
-            } 
-            
-            
-                
-                    
-                        
-                        
-                            
-                        
-                    
-                    
-                    
-                
-                
-                    
-                            
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mBinder) {
+                //if (mRefCounted ? (--mRefCount == 0) : (mHeld)) {
+                    //try {
+                        //mService.releaseMulticastLock();
+                        //synchronized (WifiManager.this) {
+                            //mActiveLockCount--;
+                        //}
+                    //} catch (RemoteException ignore) {
+                    //}
+                    //mHeld = false;
+                //}
+                //if (mRefCount < 0) {
+                    //throw new RuntimeException("MulticastLock under-locked "
+                            //+ mTag);
+                //}
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.072 -0400", hash_original_method = "792BAAC8BC5216CF4F7CAEC0A7A38B7F", hash_generated_method = "91B8A28629F935F303A73D2F07650B69")
         public void setReferenceCounted(boolean refCounted) {
             mRefCounted = refCounted;
-            
-            
+            // ---------- Original Method ----------
+            //mRefCounted = refCounted;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.072 -0400", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "590C0545E5AAADF6EC395A742191F190")
         public boolean isHeld() {
             synchronized
@@ -1458,11 +1452,11 @@ String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock
                 boolean varAD25B113814807D236AFB0F5095B0005_423236792 = (mHeld);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1145976071 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1145976071;
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (mBinder) {
+                //return mHeld;
+            //}
         }
 
         
@@ -1478,27 +1472,27 @@ String varF6BD25B17478B3615FCC3F9239B0D36D_168058607 =                 "WifiLock
     if(mRefCounted)                
                 {
                     s3 = "refcounted: refcount = " + mRefCount;
-                } 
+                } //End block
                 else
                 {
                     s3 = "not refcounted";
-                } 
+                } //End block
 String var1932DB5234F23C2D55EBC21AE51F4029_931917990 =                 "MulticastLock{ " + s1 + "; " + s2 + s3 + " }";
                 var1932DB5234F23C2D55EBC21AE51F4029_931917990.addTaint(taint);
                 return var1932DB5234F23C2D55EBC21AE51F4029_931917990;
-            } 
-            
-            
-            
-                
-                
-                
-                    
-                
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //String s1, s2, s3;
+            //synchronized (mBinder) {
+                //s1 = Integer.toHexString(System.identityHashCode(this));
+                //s2 = mHeld ? "held; " : "";
+                //if (mRefCounted) {
+                    //s3 = "refcounted: refcount = " + mRefCount;
+                //} else {
+                    //s3 = "not refcounted";
+                //}
+                //return "MulticastLock{ " + s1 + "; " + s2 + s3 + " }";
+            //}
         }
 
         
@@ -1508,10 +1502,10 @@ String var1932DB5234F23C2D55EBC21AE51F4029_931917990 =                 "Multicas
             super.finalize();
             setReferenceCounted(false);
             release();
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.finalize();
+            //setReferenceCounted(false);
+            //release();
         }
 
         

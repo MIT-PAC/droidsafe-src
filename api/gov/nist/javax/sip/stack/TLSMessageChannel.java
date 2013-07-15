@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -70,7 +70,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
         {
             sipStack.getStackLogger().logDebug("creating new TLSMessageChannel (incoming)");
             sipStack.getStackLogger().logStackTrace();
-        } 
+        } //End block
         mySock = (SSLSocket) sock;
     if(sock instanceof SSLSocket)        
         {
@@ -79,7 +79,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
             this.handshakeCompletedListener = new HandshakeCompletedListenerImpl(this);
             sslSock.addHandshakeCompletedListener(this.handshakeCompletedListener);
             sslSock.startHandshake();
-        } 
+        } //End block
         peerAddress = mySock.getInetAddress();
         myAddress = msgProcessor.getIpAddress().getHostAddress();
         myClientInputStream = mySock.getInputStream();
@@ -92,8 +92,8 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
         this.peerPort = mySock.getPort();
         super.messageProcessor = msgProcessor;
         mythread.start();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -104,7 +104,7 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
         {
             sipStack.getStackLogger().logDebug("creating new TLSMessageChannel (outgoing)");
             sipStack.getStackLogger().logStackTrace();
-        } 
+        } //End block
         this.peerAddress = inetAddr;
         this.peerPort = port;
         this.myPort = messageProcessor.getPort();
@@ -114,35 +114,33 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
         this.myAddress = messageProcessor.getIpAddress().getHostAddress();
         this.key = MessageChannel.getKey(peerAddress, peerPort, "TLS");
         super.messageProcessor = messageProcessor;
-        
-        
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (sipStack.isLoggingEnabled()) {
+            //sipStack.getStackLogger().logDebug("creating new TLSMessageChannel (outgoing)");
+            //sipStack.getStackLogger().logStackTrace();
+        //}
+        //this.peerAddress = inetAddr;
+        //this.peerPort = port;
+        //this.myPort = messageProcessor.getPort();
+        //this.peerProtocol = "TLS";
+        //this.sipStack = sipStack;
+        //this.tlsMessageProcessor = messageProcessor;
+        //this.myAddress = messageProcessor.getIpAddress().getHostAddress();
+        //this.key = MessageChannel.getKey(peerAddress, peerPort, "TLS");
+        //super.messageProcessor = messageProcessor;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.348 -0400", hash_original_method = "16D0E6CF226A4618D75D1B422CC8FCDF", hash_generated_method = "50B63E8A9125046B754C738DBA9F6C8C")
     public boolean isReliable() {
         boolean varB326B5062B2F0E69046810717534CB09_371540679 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1191584347 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1191584347;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.348 -0400", hash_original_method = "9757D034E975DAF9D22BACDE50FF4335", hash_generated_method = "76776E889B7121D34E819849FCBAB07F")
     public void close() {
         try 
@@ -151,48 +149,45 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
             mySock.close();
     if(sipStack.isLoggingEnabled())            
             sipStack.getStackLogger().logDebug("Closing message Channel " + this);
-        } 
+        } //End block
         catch (IOException ex)
         {
     if(sipStack.isLoggingEnabled())            
             sipStack.getStackLogger().logDebug("Error closing socket " + ex);
-        } 
-        
-        
-            
-                
-            
-                
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (mySock != null)
+                //mySock.close();
+            //if (sipStack.isLoggingEnabled())
+                //sipStack.getStackLogger().logDebug("Closing message Channel " + this);
+        //} catch (IOException ex) {
+            //if (sipStack.isLoggingEnabled())
+                //sipStack.getStackLogger().logDebug("Error closing socket " + ex);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.348 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "4606CD9CFC23A5ED6CF96D8134A9CCA9")
     public SIPTransactionStack getSIPStack() {
 SIPTransactionStack var0FC1F21ED47F4C0C48881B0DAF112A16_413527862 =         sipStack;
         var0FC1F21ED47F4C0C48881B0DAF112A16_413527862.addTaint(taint);
         return var0FC1F21ED47F4C0C48881B0DAF112A16_413527862;
-        
-        
+        // ---------- Original Method ----------
+        //return sipStack;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.348 -0400", hash_original_method = "00B4B3FBB10028B216605159EFB81D52", hash_generated_method = "4D7D1D540B28B099A78E0F6D5EFFE6A2")
     public String getTransport() {
 String varB8D2FCEBAA9B11CA37B9DB1974AA0DF8_735130341 =         "tls";
         varB8D2FCEBAA9B11CA37B9DB1974AA0DF8_735130341.addTaint(taint);
         return varB8D2FCEBAA9B11CA37B9DB1974AA0DF8_735130341;
-        
-        
+        // ---------- Original Method ----------
+        //return "tls";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.349 -0400", hash_original_method = "59CC467573DB54CDCEF540AE63F43735", hash_generated_method = "CD5EF99A68B5B2B26C510CE1718B6E9D")
     public String getPeerAddress() {
     if(peerAddress != null)        
@@ -200,40 +195,38 @@ String varB8D2FCEBAA9B11CA37B9DB1974AA0DF8_735130341 =         "tls";
 String var4D1B58EF74DF31190A62E0DF268BAE94_922776360 =             peerAddress.getHostAddress();
             var4D1B58EF74DF31190A62E0DF268BAE94_922776360.addTaint(taint);
             return var4D1B58EF74DF31190A62E0DF268BAE94_922776360;
-        } 
+        } //End block
         else
         {
 String var5C0621B65E898A3E2061530CDD6F20D5_1119000736 =         getHost();
         var5C0621B65E898A3E2061530CDD6F20D5_1119000736.addTaint(taint);
         return var5C0621B65E898A3E2061530CDD6F20D5_1119000736;
         }
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (peerAddress != null) {
+            //return peerAddress.getHostAddress();
+        //} else
+            //return getHost();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.349 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "F4C91206D82558EB99C5611C3763275E")
     protected InetAddress getPeerInetAddress() {
 InetAddress var73F565C01AAA4A3FCE210191AB87441A_832565165 =         peerAddress;
         var73F565C01AAA4A3FCE210191AB87441A_832565165.addTaint(taint);
         return var73F565C01AAA4A3FCE210191AB87441A_832565165;
-        
-        
+        // ---------- Original Method ----------
+        //return peerAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.349 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "D3BC134F6C498ACE92D839C76276ACFF")
     public String getPeerProtocol() {
 String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol;
         var6B5233BA3C9F99490638F3C0025EA1D3_882244978.addTaint(taint);
         return var6B5233BA3C9F99490638F3C0025EA1D3_882244978;
-        
-        
+        // ---------- Original Method ----------
+        //return this.peerProtocol;
     }
 
     
@@ -250,38 +243,37 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
             {
     if(mySock != null)                
                 mySock.close();
-            } 
+            } //End block
             catch (IOException ex)
             {
-            } 
+            } //End block
             mySock = sock;
             this.myClientInputStream = mySock.getInputStream();
             Thread thread = new Thread(this);
             thread.setDaemon(true);
             thread.setName("TLSMessageChannelThread");
             thread.start();
-        } 
-        
-        
-                
-                
-        
-            
-                
-                    
-            
-            
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Socket sock = this.sipStack.ioHandler.sendBytes(
+                //this.getMessageProcessor().getIpAddress(), this.peerAddress, this.peerPort,
+                //this.peerProtocol, msg, retry,this);
+        //if (sock != mySock && sock != null) {
+            //try {
+                //if (mySock != null)
+                    //mySock.close();
+            //} catch (IOException ex) {
+            //}
+            //mySock = sock;
+            //this.myClientInputStream = mySock.getInputStream();
+            //Thread thread = new Thread(this);
+            //thread.setDaemon(true);
+            //thread.setName("TLSMessageChannelThread");
+            //thread.start();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.350 -0400", hash_original_method = "99193C77E68A5ABE715A7A9AC8040C34", hash_generated_method = "3AFE7FB96641BAB0037F900E9E93B940")
     public void sendMessage(SIPMessage sipMessage) throws IOException {
         addTaint(sipMessage.getTaint());
@@ -290,12 +282,12 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
         this.sendMessage(msg, sipMessage instanceof SIPRequest);
     if(this.sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES))        
         logMessage(sipMessage, peerAddress, peerPort, time);
-        
-        
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //byte[] msg = sipMessage.encodeAsBytes(this.getTransport());
+        //long time = System.currentTimeMillis();
+        //this.sendMessage(msg, sipMessage instanceof SIPRequest);
+        //if (this.sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES))
+            //logMessage(sipMessage, peerAddress, peerPort, time);
     }
 
     
@@ -320,35 +312,35 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
             {
     if(mySock != null)                
                 mySock.close();
-            } 
+            } //End block
             catch (IOException ex)
             {
-            } 
+            } //End block
             mySock = sock;
             this.myClientInputStream = mySock.getInputStream();
             Thread mythread = new Thread(this);
             mythread.setDaemon(true);
             mythread.setName("TLSMessageChannelThread");
             mythread.start();
-        } 
-        
-        
-            
-        
-                
-        
-            
-                
-                    
-            
-            
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (message == null || receiverAddress == null)
+            //throw new IllegalArgumentException("Null argument");
+        //Socket sock = this.sipStack.ioHandler.sendBytes(this.messageProcessor.getIpAddress(),
+                //receiverAddress, receiverPort, "TLS", message, retry, this);
+        //if (sock != mySock && sock != null) {
+            //try {
+                //if (mySock != null)
+                    //mySock.close();
+            //} catch (IOException ex) {
+            //}
+            //mySock = sock;
+            //this.myClientInputStream = mySock.getInputStream();
+            //Thread mythread = new Thread(this);
+            //mythread.setDaemon(true);
+            //mythread.setName("TLSMessageChannelThread");
+            //mythread.start();
+        //}
     }
 
     
@@ -380,35 +372,35 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                     {
                         sipStack.getStackLogger().logDebug("Sending automatic 400 Bad Request:");
                         sipStack.getStackLogger().logDebug(badReqRes);
-                    } 
+                    } //End block
                     try 
                     {
                         this.sendMessage(badReqRes.getBytes(), this.getPeerInetAddress(), this
                                 .getPeerPort(), false);
-                    } 
+                    } //End block
                     catch (IOException e)
                     {
                         this.sipStack.getStackLogger().logException(e);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
     if(sipStack.isLoggingEnabled())                    
                     {
                         sipStack.getStackLogger().logDebug(
                                 "Could not formulate automatic 400 Bad Request");
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             ex.addTaint(taint);
             throw ex;
-        } 
+        } //End block
         else
         {
             sipMessage.addUnparsed(header);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -426,9 +418,9 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                 {
                     sipStack.getStackLogger().logError("bad message " + badmsg);
                     sipStack.getStackLogger().logError(">>> Dropped Bad Msg");
-                } 
+                } //End block
                 return;
-            } 
+            } //End block
             ViaList viaList = sipMessage.getViaHeaders();
     if(sipMessage instanceof SIPRequest)            
             {
@@ -442,21 +434,21 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                             || !hop.getHost().equals(this.peerAddress.getHostAddress()))                    
                     {
                         v.setParameter(Via.RECEIVED, this.peerAddress.getHostAddress());
-                    } 
+                    } //End block
                     v.setParameter(Via.RPORT, Integer.toString(this.peerPort));
-                } 
+                } //End block
                 catch (java.text.ParseException ex)
                 {
                     InternalErrorHandler.handleException(ex);
-                } 
+                } //End block
     if(!this.isCached)                
                 {
                     ((TLSMessageProcessor) this.messageProcessor).cacheMessageChannel(this);
                     this.isCached = true;
                     String key = IOHandler.makeKey(mySock.getInetAddress(), this.peerPort);
                     sipStack.ioHandler.putSocket(key, mySock);
-                } 
-            } 
+                } //End block
+            } //End block
             long receptionTime = System.currentTimeMillis();
     if(sipMessage instanceof SIPRequest)            
             {
@@ -464,13 +456,13 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
     if(sipStack.isLoggingEnabled())                
                 {
                     sipStack.getStackLogger().logDebug("----Processing Message---");
-                } 
+                } //End block
     if(this.sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES))                
                 {
                     sipStack.serverLogger.logMessage(sipMessage, this.getPeerHostPort().toString(),
                             this.messageProcessor.getIpAddress().getHostAddress() + ":"
                                     + this.messageProcessor.getPort(), false, receptionTime);
-                } 
+                } //End block
     if(sipStack.getMaxMessageSize() > 0
                         && sipRequest.getSize()
                                 + (sipRequest.getContentLength() == null ? 0 : sipRequest
@@ -484,7 +476,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                     Exception varDF678B266A68FE82BCEBF8807C609878_82820708 = new Exception("Message size exceeded");
                     varDF678B266A68FE82BCEBF8807C609878_82820708.addTaint(taint);
                     throw varDF678B266A68FE82BCEBF8807C609878_82820708;
-                } 
+                } //End block
                 ServerRequestInterface sipServerRequest = sipStack.newSIPServerRequest(
                         sipRequest, this);
     if(sipServerRequest != null)                
@@ -492,7 +484,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                     try 
                     {
                         sipServerRequest.processRequest(sipRequest, this);
-                    } 
+                    } //End block
                     finally 
                     {
     if(sipServerRequest instanceof SIPTransaction)                        
@@ -500,9 +492,9 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                             SIPServerTransaction sipServerTx = (SIPServerTransaction) sipServerRequest;
     if(!sipServerTx.passToListener())                            
                             ((SIPTransaction) sipServerRequest).releaseSem();
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     SIPResponse response = sipRequest
@@ -513,22 +505,22 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                         retryAfter.setRetryAfter((int) (10 * (Math.random())));
                         response.setHeader(retryAfter);
                         this.sendMessage(response);
-                    } 
+                    } //End block
                     catch (Exception e)
                     {
-                    } 
+                    } //End block
     if(sipStack.isLoggingEnabled())                    
                     sipStack.getStackLogger()
                             .logWarning("Dropping message -- could not acquire semaphore");
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 SIPResponse sipResponse = (SIPResponse) sipMessage;
                 try 
                 {
                     sipResponse.checkHeaders();
-                } 
+                } //End block
                 catch (ParseException ex)
                 {
     if(sipStack.isLoggingEnabled())                    
@@ -536,7 +528,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                                 .logError("Dropping Badly formatted response message >>> "
                                         + sipResponse);
                     return;
-                } 
+                } //End block
     if(sipStack.getMaxMessageSize() > 0
                         && sipResponse.getSize()
                                 + (sipResponse.getContentLength() == null ? 0 : sipResponse
@@ -546,7 +538,7 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
     if(sipStack.isLoggingEnabled())                    
                     this.sipStack.getStackLogger().logDebug("Message size exceeded");
                     return;
-                } 
+                } //End block
                 ServerResponseInterface sipServerResponse = sipStack.newSIPServerResponse(
                         sipResponse, this);
     if(sipServerResponse != null)                
@@ -562,29 +554,29 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                                         .logError("Dropping response message with invalid tag >>> "
                                                 + sipResponse);
                             return;
-                        } 
+                        } //End block
                         sipServerResponse.processResponse(sipResponse, this);
-                    } 
+                    } //End block
                     finally 
                     {
     if(sipServerResponse instanceof SIPTransaction
                                 && !((SIPTransaction) sipServerResponse).passToListener())                        
                         {
                             ((SIPTransaction) sipServerResponse).releaseSem();
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     sipStack.getStackLogger().logWarning("Could not get semaphore... dropping response");
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -618,27 +610,27 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
 (tlsMessageProcessor)                                {
                                     tlsMessageProcessor.nConnections--;
                                     tlsMessageProcessor.notify();
-                                } 
-                            } 
+                                } //End block
+                            } //End block
                             hispipe.close();
                             mySock.close();
-                        } 
+                        } //End block
                         catch (IOException ioex)
                         {
-                        } 
+                        } //End block
                         return;
-                    } 
+                    } //End block
                     hispipe.write(msg, 0, nbytes);
-                } 
+                } //End block
                 catch (IOException ex)
                 {
                     try 
                     {
                         hispipe.write("\r\n\r\n".getBytes("UTF-8"));
-                    } 
+                    } //End block
                     catch (Exception e)
                     {
-                    } 
+                    } //End block
                     try 
                     {
     if(sipStack.isLoggingEnabled())                        
@@ -651,53 +643,51 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
 (tlsMessageProcessor)                                {
                                     tlsMessageProcessor.nConnections--;
                                     tlsMessageProcessor.notify();
-                                } 
-                            } 
+                                } //End block
+                            } //End block
                             mySock.close();
                             hispipe.close();
-                        } 
+                        } //End block
                         catch (IOException ioex)
                         {
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (Exception ex1)
                     {
-                    } 
+                    } //End block
                     return;
-                } 
+                } //End block
                 catch (Exception ex)
                 {
                     InternalErrorHandler.handleException(ex);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         finally 
         {
             this.isRunning = false;
             this.tlsMessageProcessor.remove(this);
             this.tlsMessageProcessor.useCount--;
             this.myParser.close();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.359 -0400", hash_original_method = "C5292C7D09796AA7B556BAA154B95B16", hash_generated_method = "19BD5C548BA646BC51923EE3FA878094")
     protected void uncache() {
     if(isCached && !isRunning)        
         {
             this.tlsMessageProcessor.remove(this);
-        } 
-        
-        
-    		
-    	
+        } //End block
+        // ---------- Original Method ----------
+        //if (isCached && !isRunning) {    	
+    		//this.tlsMessageProcessor.remove(this);
+    	//}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.360 -0400", hash_original_method = "DA67C78A7E91B7C25B2E6DD841A2A96C", hash_generated_method = "F9194830FD9FEA6BC5775DF4AE7AF272")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -722,21 +712,20 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1576307606 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1576307606;
             }
-        } 
-        
-        
-            
-        
-            
-            
-                
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!this.getClass().equals(other.getClass()))
+            //return false;
+        //else {
+            //TLSMessageChannel that = (TLSMessageChannel) other;
+            //if (this.mySock != that.mySock)
+                //return false;
+            //else
+                //return true;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.360 -0400", hash_original_method = "1173AC840F0483E84550BBD280ADF1B8", hash_generated_method = "398DBC9EDBC3A9048140320140BD47A7")
     public String getKey() {
     if(this.key != null)        
@@ -744,108 +733,100 @@ String var6B5233BA3C9F99490638F3C0025EA1D3_882244978 =         this.peerProtocol
 String var28438ADFC1608AABD649C75D36B519BF_225855677 =             this.key;
             var28438ADFC1608AABD649C75D36B519BF_225855677.addTaint(taint);
             return var28438ADFC1608AABD649C75D36B519BF_225855677;
-        } 
+        } //End block
         else
         {
             this.key = MessageChannel.getKey(this.peerAddress, this.peerPort, "TLS");
 String var28438ADFC1608AABD649C75D36B519BF_1118416829 =             this.key;
             var28438ADFC1608AABD649C75D36B519BF_1118416829.addTaint(taint);
             return var28438ADFC1608AABD649C75D36B519BF_1118416829;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.key != null) {
+            //return this.key;
+        //} else {
+            //this.key = MessageChannel.getKey(this.peerAddress, this.peerPort, "TLS");
+            //return this.key;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.360 -0400", hash_original_method = "11E5C6A8F9691D7C5E18B4FE0A22A301", hash_generated_method = "C85676017DFB6D234182607C780B11C6")
     public String getViaHost() {
 String varE7034C1BD80371A3EE602CF085A2802A_350967377 =         myAddress;
         varE7034C1BD80371A3EE602CF085A2802A_350967377.addTaint(taint);
         return varE7034C1BD80371A3EE602CF085A2802A_350967377;
-        
-        
+        // ---------- Original Method ----------
+        //return myAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.361 -0400", hash_original_method = "97574FAF366AF2CA74D034931ECBD71B", hash_generated_method = "23857EA0C1F46280AF7846B1142CA13A")
     public int getViaPort() {
         int varAB99FC537949F4680FB25A11A38B0042_788123074 = (myPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040909475 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040909475;
-        
-        
+        // ---------- Original Method ----------
+        //return myPort;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.361 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "811D164E6E8C798487CC0B69132680C1")
     public int getPeerPort() {
         int varBBD5741C4F9994864582D25DD194C4DE_1916270067 = (peerPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143356902 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143356902;
-        
-        
+        // ---------- Original Method ----------
+        //return peerPort;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.361 -0400", hash_original_method = "B210BD4A713B5B982D229CB138437A53", hash_generated_method = "D780337C1EAA163B37E4DEBE3FABCC3C")
     public int getPeerPacketSourcePort() {
         int var863AF973F56BABC8062C15431981E0EC_1098859910 = (this.peerPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1784956384 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1784956384;
-        
-        
+        // ---------- Original Method ----------
+        //return this.peerPort;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.362 -0400", hash_original_method = "97EAFF51EEE94208DA244D522468157C", hash_generated_method = "F80B3DBD0EFA94BC072950C898988384")
     public InetAddress getPeerPacketSourceAddress() {
 InetAddress varCB519CCE5105BD67F1450F075D5E971F_406420451 =         this.peerAddress;
         varCB519CCE5105BD67F1450F075D5E971F_406420451.addTaint(taint);
         return varCB519CCE5105BD67F1450F075D5E971F_406420451;
-        
-        
+        // ---------- Original Method ----------
+        //return this.peerAddress;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.362 -0400", hash_original_method = "57D47F2F9FCDF87C613C3BEA50BCDEDC", hash_generated_method = "A4AD8C92183587B087FEE93C04F8FA95")
     public boolean isSecure() {
         boolean varB326B5062B2F0E69046810717534CB09_882667647 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_453811120 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_453811120;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.362 -0400", hash_original_method = "17DB109E74C9C419B95A49BDAE918BA7", hash_generated_method = "58C9BB24EBB7523196DDC479C0D53915")
     public void setHandshakeCompletedListener(
             HandshakeCompletedListener handshakeCompletedListenerImpl) {
         this.handshakeCompletedListener = handshakeCompletedListenerImpl;
-        
-        
+        // ---------- Original Method ----------
+        //this.handshakeCompletedListener = handshakeCompletedListenerImpl;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.362 -0400", hash_original_method = "6CFE0616A7B6D8A833DC048924F270CA", hash_generated_method = "454552630A37C942491ACEE947C1F4B7")
     public HandshakeCompletedListenerImpl getHandshakeCompletedListener() {
 HandshakeCompletedListenerImpl var9A2E431CC033EB690CBDC6286A497C3F_1016214848 =         (HandshakeCompletedListenerImpl) handshakeCompletedListener;
         var9A2E431CC033EB690CBDC6286A497C3F_1016214848.addTaint(taint);
         return var9A2E431CC033EB690CBDC6286A497C3F_1016214848;
-        
-        
+        // ---------- Original Method ----------
+        //return (HandshakeCompletedListenerImpl) handshakeCompletedListener;
     }
 
     

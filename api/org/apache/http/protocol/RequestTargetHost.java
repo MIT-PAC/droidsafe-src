@@ -1,6 +1,6 @@
 package org.apache.http.protocol;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class RequestTargetHost implements HttpRequestInterceptor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.007 -0400", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "6517A03037392B0D34A56F3318F3EB95")
     public  RequestTargetHost() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,13 +34,13 @@ public class RequestTargetHost implements HttpRequestInterceptor {
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_2067715678 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_2067715678.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_2067715678;
-        } 
+        } //End block
     if(context == null)        
         {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_1123239893 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_1123239893.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_1123239893;
-        } 
+        } //End block
     if(!request.containsHeader(HTTP.TARGET_HOST))        
         {
             HttpHost targethost = (HttpHost) context
@@ -56,27 +56,27 @@ public class RequestTargetHost implements HttpRequestInterceptor {
     if(address != null)                    
                     {
                         targethost = new HttpHost(address.getHostName(), port);
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(targethost == null)                
                 {
                     ProtocolVersion ver = request.getRequestLine().getProtocolVersion();
     if(ver.lessEquals(HttpVersion.HTTP_1_0))                    
                     {
                         return;
-                    } 
+                    } //End block
                     else
                     {
                         ProtocolException varA557E6481C232D003289F510B5D5329E_1769046764 = new ProtocolException("Target host missing");
                         varA557E6481C232D003289F510B5D5329E_1769046764.addTaint(taint);
                         throw varA557E6481C232D003289F510B5D5329E_1769046764;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             request.addHeader(HTTP.TARGET_HOST, targethost.toHostString());
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

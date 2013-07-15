@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,47 +19,43 @@ public class SIPDuplicateHeaderException extends ParseException {
     public  SIPDuplicateHeaderException(String msg) {
         super(msg, 0);
         addTaint(msg.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.752 -0400", hash_original_method = "33B1FEC769A0D2DAFD3ECF3DA486EB50", hash_generated_method = "FFCEBE49D80EEFC818268ECD3FD448BE")
     public SIPMessage getSIPMessage() {
 SIPMessage var006DC6DF9CC2CC6E46939D16E61A6E31_1729086306 =         sipMessage;
         var006DC6DF9CC2CC6E46939D16E61A6E31_1729086306.addTaint(taint);
         return var006DC6DF9CC2CC6E46939D16E61A6E31_1729086306;
-        
-        
+        // ---------- Original Method ----------
+        //return sipMessage;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.752 -0400", hash_original_method = "41260058ED6F5F8ADF876F4D655653A8", hash_generated_method = "A313C8BA4F9FD8CA71593B42A40F6C4D")
     public SIPHeader getSIPHeader() {
 SIPHeader varB3FE6E532AA276CD9F05CF1EACFB0558_126851899 =         sipHeader;
         varB3FE6E532AA276CD9F05CF1EACFB0558_126851899.addTaint(taint);
         return varB3FE6E532AA276CD9F05CF1EACFB0558_126851899;
-        
-        
+        // ---------- Original Method ----------
+        //return sipHeader;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.753 -0400", hash_original_method = "E64CE5D80349BACB9139631838659CEE", hash_generated_method = "54A8AC61F5E0FDF2C9E9E70D47DD6023")
     public void setSIPHeader(SIPHeader sipHeader) {
         this.sipHeader = sipHeader;
-        
-        
+        // ---------- Original Method ----------
+        //this.sipHeader = sipHeader;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.753 -0400", hash_original_method = "04933E08E06609AAF868A53B1081ADDB", hash_generated_method = "F27364F03913DE15CDB0E9D8906CEC34")
     public void setSIPMessage(SIPMessage sipMessage) {
         this.sipMessage = sipMessage;
-        
-        
+        // ---------- Original Method ----------
+        //this.sipMessage = sipMessage;
     }
 
     

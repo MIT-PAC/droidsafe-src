@@ -1,6 +1,6 @@
 package org.bouncycastle.math.ec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ class Tnaf {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.493 -0400", hash_original_method = "6AFB421B9578CA1EB17678ABFF5836A8", hash_generated_method = "6AFB421B9578CA1EB17678ABFF5836A8")
     public Tnaf ()
     {
-        
+        //Synthesized constructor
     }
 
 

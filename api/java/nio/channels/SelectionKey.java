@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class SelectionKey {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.655 -0400", hash_original_method = "506BAEF14D6E9F731FF32E7686B78589", hash_generated_method = "C9F592136899BF1C8C66719DB1AAC6AF")
     protected  SelectionKey() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,10 +23,10 @@ public abstract class SelectionKey {
 Object var12F0D7B0ACC665DAE79CBE5C1E855DC9_1841057787 =         oldAttachment;
         var12F0D7B0ACC665DAE79CBE5C1E855DC9_1841057787.addTaint(taint);
         return var12F0D7B0ACC665DAE79CBE5C1E855DC9_1841057787;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object oldAttachment = attachment;
+        //attachment = anObject;
+        //return oldAttachment;
     }
 
     
@@ -35,8 +35,8 @@ Object var12F0D7B0ACC665DAE79CBE5C1E855DC9_1841057787 =         oldAttachment;
 Object var654DB21DFA380501361FCD413C8E6A16_1479336359 =         attachment;
         var654DB21DFA380501361FCD413C8E6A16_1479336359.addTaint(taint);
         return var654DB21DFA380501361FCD413C8E6A16_1479336359;
-        
-        
+        // ---------- Original Method ----------
+        //return attachment;
     }
 
     
@@ -57,8 +57,8 @@ Object var654DB21DFA380501361FCD413C8E6A16_1479336359 =         attachment;
         boolean var184BFDC257D997348D948C238F624ED0_800575142 = ((readyOps() & OP_ACCEPT) == OP_ACCEPT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1678541651 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1678541651;
-        
-        
+        // ---------- Original Method ----------
+        //return (readyOps() & OP_ACCEPT) == OP_ACCEPT;
     }
 
     
@@ -67,8 +67,8 @@ Object var654DB21DFA380501361FCD413C8E6A16_1479336359 =         attachment;
         boolean varF330DA86349725C7DD104FDBFF474BC8_679243941 = ((readyOps() & OP_CONNECT) == OP_CONNECT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_88086132 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_88086132;
-        
-        
+        // ---------- Original Method ----------
+        //return (readyOps() & OP_CONNECT) == OP_CONNECT;
     }
 
     
@@ -77,8 +77,8 @@ Object var654DB21DFA380501361FCD413C8E6A16_1479336359 =         attachment;
         boolean var5BCD0D05F92B38BD9369FBE6A9C7F333_2039525941 = ((readyOps() & OP_READ) == OP_READ);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_996025962 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_996025962;
-        
-        
+        // ---------- Original Method ----------
+        //return (readyOps() & OP_READ) == OP_READ;
     }
 
     
@@ -90,8 +90,8 @@ Object var654DB21DFA380501361FCD413C8E6A16_1479336359 =         attachment;
         boolean var3E834C73360B37193989B72021E0B1A0_641413360 = ((readyOps() & OP_WRITE) == OP_WRITE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_661773468 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_661773468;
-        
-        
+        // ---------- Original Method ----------
+        //return (readyOps() & OP_WRITE) == OP_WRITE;
     }
 
     

@@ -1,6 +1,6 @@
 package android.text.method;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,8 +21,8 @@ public class AllCapsTransformationMethod implements TransformationMethod2 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.250 -0400", hash_original_method = "3B95B7992FFC661A96A84916391DF4EA", hash_generated_method = "3EE0716C8BD5BB93DA9729F2D1CDECCC")
     public  AllCapsTransformationMethod(Context context) {
         mLocale = context.getResources().getConfiguration().locale;
-        
-        
+        // ---------- Original Method ----------
+        //mLocale = context.getResources().getConfiguration().locale;
     }
 
     
@@ -36,41 +36,39 @@ public class AllCapsTransformationMethod implements TransformationMethod2 {
 CharSequence varD44AA49AC93BEB4F58E5B4142583FDE2_1731523836 =             source != null ? source.toString().toUpperCase(mLocale) : null;
             varD44AA49AC93BEB4F58E5B4142583FDE2_1731523836.addTaint(taint);
             return varD44AA49AC93BEB4F58E5B4142583FDE2_1731523836;
-        } 
+        } //End block
 CharSequence var87D92E4D22D3928BDE6A72969186AF86_1737606110 =         source;
         var87D92E4D22D3928BDE6A72969186AF86_1737606110.addTaint(taint);
         return var87D92E4D22D3928BDE6A72969186AF86_1737606110;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mEnabled) {
+            //return source != null ? source.toString().toUpperCase(mLocale) : null;
+        //}
+        //Log.w(TAG, "Caller did not enable length changes; not transforming text");
+        //return source;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.251 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "01EA32A40C08E89031D903EDB0FF1C9F")
     @Override
     public void onFocusChanged(View view, CharSequence sourceText, boolean focused, int direction,
             Rect previouslyFocusedRect) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(previouslyFocusedRect.getTaint());
         addTaint(direction);
         addTaint(focused);
         addTaint(sourceText.getTaint());
         addTaint(view.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.251 -0400", hash_original_method = "507549025152D254EA227D255598B5AF", hash_generated_method = "6202744402AD62DFF59CB62A9EF703E9")
     @Override
     public void setLengthChangesAllowed(boolean allowLengthChanges) {
         mEnabled = allowLengthChanges;
-        
-        
+        // ---------- Original Method ----------
+        //mEnabled = allowLengthChanges;
     }
 
     

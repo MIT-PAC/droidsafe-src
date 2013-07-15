@@ -1,6 +1,6 @@
 package org.apache.commons.codec.binary;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,12 +14,11 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:27.870 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
     public Base64 ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    private static boolean isBase64(byte octect) {
+        private static boolean isBase64(byte octect) {
         if (octect == PAD) {
             return true;
         } else if (base64Alphabet[octect] == -1) {
@@ -63,15 +62,15 @@ public class Base64 implements BinaryEncoder, BinaryDecoder {
             DecoderException var8483126434E408A54699166ECDE276A3_649279966 = new DecoderException("Parameter supplied to Base64 decode is not a byte[]");
             var8483126434E408A54699166ECDE276A3_649279966.addTaint(taint);
             throw var8483126434E408A54699166ECDE276A3_649279966;
-        } 
+        } //End block
 Object varF1762E63BC655048A9E66320D228C179_1871582247 =         decode((byte[]) pObject);
         varF1762E63BC655048A9E66320D228C179_1871582247.addTaint(taint);
         return varF1762E63BC655048A9E66320D228C179_1871582247;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!(pObject instanceof byte[])) {
+            //throw new DecoderException("Parameter supplied to Base64 decode is not a byte[]");
+        //}
+        //return decode((byte[]) pObject);
     }
 
     
@@ -81,8 +80,8 @@ Object varF1762E63BC655048A9E66320D228C179_1871582247 =         decode((byte[]) 
         byte[] varEBADEFC7358E85425C8F4A38582C5739_1190838370 = (decodeBase64(pArray));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1468769295 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1468769295;
-        
-        
+        // ---------- Original Method ----------
+        //return decodeBase64(pArray);
     }
 
     
@@ -274,16 +273,16 @@ Object varF1762E63BC655048A9E66320D228C179_1871582247 =         decode((byte[]) 
                 "Parameter supplied to Base64 encode is not a byte[]");
             var822E96D9ED9BFE65E3E895C097F776E4_390648553.addTaint(taint);
             throw var822E96D9ED9BFE65E3E895C097F776E4_390648553;
-        } 
+        } //End block
 Object var130E191B6E071C81E7965AE9B24FBF1F_345531976 =         encode((byte[]) pObject);
         var130E191B6E071C81E7965AE9B24FBF1F_345531976.addTaint(taint);
         return var130E191B6E071C81E7965AE9B24FBF1F_345531976;
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (!(pObject instanceof byte[])) {
+            //throw new EncoderException(
+                //"Parameter supplied to Base64 encode is not a byte[]");
+        //}
+        //return encode((byte[]) pObject);
     }
 
     
@@ -293,8 +292,8 @@ Object var130E191B6E071C81E7965AE9B24FBF1F_345531976 =         encode((byte[]) p
         byte[] var2ACA22DCE6E008FF377734150BF038C7_1993962628 = (encodeBase64(pArray, false));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_567870948 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_567870948;
-        
-        
+        // ---------- Original Method ----------
+        //return encodeBase64(pArray, false);
     }
 
     

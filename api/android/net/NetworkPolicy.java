@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,12 +34,12 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         this.warningBytes = warningBytes;
         this.limitBytes = limitBytes;
         this.lastSnooze = lastSnooze;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.template = checkNotNull(template, "missing NetworkTemplate");
+        //this.cycleDay = cycleDay;
+        //this.warningBytes = warningBytes;
+        //this.limitBytes = limitBytes;
+        //this.lastSnooze = lastSnooze;
     }
 
     
@@ -50,12 +50,12 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         warningBytes = in.readLong();
         limitBytes = in.readLong();
         lastSnooze = in.readLong();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //template = in.readParcelable(null);
+        //cycleDay = in.readInt();
+        //warningBytes = in.readLong();
+        //limitBytes = in.readLong();
+        //lastSnooze = in.readLong();
     }
 
     
@@ -68,27 +68,25 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         dest.writeLong(warningBytes);
         dest.writeLong(limitBytes);
         dest.writeLong(lastSnooze);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeParcelable(template, flags);
+        //dest.writeInt(cycleDay);
+        //dest.writeLong(warningBytes);
+        //dest.writeLong(limitBytes);
+        //dest.writeLong(lastSnooze);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.782 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "895FF5F9E04FDE5E4A058BE4C88BFC74")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_504766619 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685447272 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_685447272;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.782 -0400", hash_original_method = "3B515BD8C18D4AA3426DE2CF748D864D", hash_generated_method = "2119120DFE63885C164BF33BE9281B3B")
     public boolean isOverLimit(long totalBytes) {
         addTaint(totalBytes);
@@ -96,13 +94,12 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         boolean varEA490C1CBDA74BDB3282C7BD10890679_481006378 = (limitBytes != LIMIT_DISABLED && totalBytes >= limitBytes);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1369859271 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1369859271;
-        
-        
-        
+        // ---------- Original Method ----------
+        //totalBytes += 2 * DEFAULT_MTU;
+        //return limitBytes != LIMIT_DISABLED && totalBytes >= limitBytes;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.783 -0400", hash_original_method = "94D3DEEA59ED3BCE504BE8B2D91F1F02", hash_generated_method = "A68A0EEE2F9ECEDA6C599C7969C16465")
     public int compareTo(NetworkPolicy another) {
         addTaint(another.getTaint());
@@ -111,24 +108,24 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_2071778028 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580116606 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580116606;
-        } 
+        } //End block
     if(limitBytes == LIMIT_DISABLED || another.limitBytes < limitBytes)        
         {
             int varC4CA4238A0B923820DCC509A6F75849B_74938454 = (1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416914082 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416914082;
-        } 
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1725346720 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1538434179 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1538434179;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (another == null || another.limitBytes == LIMIT_DISABLED) {
+            //return -1;
+        //}
+        //if (limitBytes == LIMIT_DISABLED || another.limitBytes < limitBytes) {
+            //return 1;
+        //}
+        //return 0;
     }
 
     
@@ -138,8 +135,8 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
         int varBE0E82DDD5A41534CFF412AF1A0E6D18_752298327 = (Objects.hashCode(template, cycleDay, warningBytes, limitBytes, lastSnooze));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1035830767 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1035830767;
-        
-        
+        // ---------- Original Method ----------
+        //return Objects.hashCode(template, cycleDay, warningBytes, limitBytes, lastSnooze);
     }
 
     
@@ -155,18 +152,18 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
                     && lastSnooze == other.lastSnooze);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_297096481 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_297096481;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_954132775 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_17840779 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_17840779;
-        
-        
-            
-            
-                    
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (obj instanceof NetworkPolicy) {
+            //final NetworkPolicy other = (NetworkPolicy) obj;
+            //return Objects.equal(template, other.template) && cycleDay == other.cycleDay
+                    //&& warningBytes == other.warningBytes && limitBytes == other.limitBytes
+                    //&& lastSnooze == other.lastSnooze;
+        //}
+        //return false;
     }
 
     
@@ -177,9 +174,9 @@ String varFA46F86AB5F1A50C4B2CF392C6DDF73C_1547821235 =         "NetworkPolicy["
                 + warningBytes + ", limitBytes=" + limitBytes + ", lastSnooze=" + lastSnooze;
         varFA46F86AB5F1A50C4B2CF392C6DDF73C_1547821235.addTaint(taint);
         return varFA46F86AB5F1A50C4B2CF392C6DDF73C_1547821235;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return "NetworkPolicy[" + template + "]: cycleDay=" + cycleDay + ", warningBytes="
+                //+ warningBytes + ", limitBytes=" + limitBytes + ", lastSnooze=" + lastSnooze;
     }
 
     
@@ -206,12 +203,12 @@ String varFA46F86AB5F1A50C4B2CF392C6DDF73C_1547821235 =         "NetworkPolicy["
             return new NetworkPolicy[size];
         }
     };
-    
+    // orphaned legacy method
     public NetworkPolicy createFromParcel(Parcel in) {
             return new NetworkPolicy(in);
         }
     
-    
+    // orphaned legacy method
     public NetworkPolicy[] newArray(int size) {
             return new NetworkPolicy[size];
         }

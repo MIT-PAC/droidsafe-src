@@ -1,6 +1,6 @@
 package android.graphics;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,25 +25,25 @@ public class ComposeShader extends Shader {
             PorterDuff.Mode pdMode = ((PorterDuffXfermode) mode).mode;
             native_shader = nativePostCreate2(native_instance, shaderA.native_shader,
                     shaderB.native_shader, pdMode != null ? pdMode.nativeInt : 0);
-        } 
+        } //End block
         else
         {
             native_shader = nativePostCreate1(native_instance, shaderA.native_shader,
                     shaderB.native_shader, mode != null ? mode.native_instance : 0);
-        } 
-        
-        
-        
-        
-                
-        
-            
-            
-                    
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mShaderA = shaderA;
+        //mShaderB = shaderB;
+        //native_instance = nativeCreate1(shaderA.native_instance, shaderB.native_instance,
+                //(mode != null) ? mode.native_instance : 0);
+        //if (mode instanceof PorterDuffXfermode) {
+            //PorterDuff.Mode pdMode = ((PorterDuffXfermode) mode).mode;
+            //native_shader = nativePostCreate2(native_instance, shaderA.native_shader,
+                    //shaderB.native_shader, pdMode != null ? pdMode.nativeInt : 0);
+        //} else {
+            //native_shader = nativePostCreate1(native_instance, shaderA.native_shader,
+                    //shaderB.native_shader, mode != null ? mode.native_instance : 0);
+        //}
     }
 
     
@@ -56,13 +56,13 @@ public class ComposeShader extends Shader {
                 mode.nativeInt);
         native_shader = nativePostCreate2(native_instance, shaderA.native_shader,
                 shaderB.native_shader, mode.nativeInt);
-        
-        
-        
-        
-                
-        
-                
+        // ---------- Original Method ----------
+        //mShaderA = shaderA;
+        //mShaderB = shaderB;
+        //native_instance = nativeCreate2(shaderA.native_instance, shaderB.native_instance,
+                //mode.nativeInt);
+        //native_shader = nativePostCreate2(native_instance, shaderA.native_shader,
+                //shaderB.native_shader, mode.nativeInt);
     }
 
     

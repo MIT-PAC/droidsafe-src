@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,18 +33,18 @@ public class TouchDelegate {
         mSlopBounds = new Rect(bounds);
         mSlopBounds.inset(-mSlop, -mSlop);
         mDelegateView = delegateView;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mBounds = bounds;
+        //mSlop = ViewConfiguration.get(delegateView.getContext()).getScaledTouchSlop();
+        //mSlopBounds = new Rect(bounds);
+        //mSlopBounds.inset(-mSlop, -mSlop);
+        //mDelegateView = delegateView;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.939 -0400", hash_original_method = "2299D41C6782643B71D7B9FD20834200", hash_generated_method = "983B4445F2A095AE1E172C852DCD76EB")
     public boolean onTouchEvent(MotionEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         int x = (int)event.getX();
         int y = (int)event.getY();
@@ -58,7 +58,7 @@ switch(event.getAction()){
         {
             mDelegateTargeted = true;
             sendToDelegate = true;
-        } 
+        } //End block
         break;
         case MotionEvent.ACTION_UP:
         case MotionEvent.ACTION_MOVE:
@@ -69,8 +69,8 @@ switch(event.getAction()){
     if(!slopBounds.contains(x, y))            
             {
                 hit = false;
-            } 
-        } 
+            } //End block
+        } //End block
         break;
         case MotionEvent.ACTION_CANCEL:
         sendToDelegate = mDelegateTargeted;
@@ -82,19 +82,19 @@ switch(event.getAction()){
     if(hit)            
             {
                 event.setLocation(delegateView.getWidth() / 2, delegateView.getHeight() / 2);
-            } 
+            } //End block
             else
             {
                 int slop = mSlop;
                 event.setLocation(-(slop * 2), -(slop * 2));
-            } 
+            } //End block
             handled = delegateView.dispatchTouchEvent(event);
-        } 
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_1378268806 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_457106530 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_457106530;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

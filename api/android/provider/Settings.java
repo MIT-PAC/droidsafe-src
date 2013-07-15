@@ -1,6 +1,6 @@
 package android.provider;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public final class Settings {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.607 -0400", hash_original_method = "D105991E634C8DCAFDA0F30054C63045", hash_generated_method = "D105991E634C8DCAFDA0F30054C63045")
     public Settings ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -55,7 +55,7 @@ public final class Settings {
         public  SettingNotFoundException(String msg) {
             super(msg);
             addTaint(msg.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -68,12 +68,11 @@ public final class Settings {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.608 -0400", hash_original_method = "FA7615754860C9050FE125371ADC3B8B", hash_generated_method = "FA7615754860C9050FE125371ADC3B8B")
         public NameValueTable ()
         {
-            
+            //Synthesized constructor
         }
 
 
-                @DSModeled(DSC.SPEC)
-        protected static boolean putString(ContentResolver resolver, Uri uri,
+                protected static boolean putString(ContentResolver resolver, Uri uri,
                 String name, String value) {
             try {
                 ContentValues values = new ContentValues();
@@ -88,8 +87,7 @@ public final class Settings {
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static Uri getUriFor(Uri uri, String name) {
+                public static Uri getUriFor(Uri uri, String name) {
             return Uri.withAppendedPath(uri, name);
         }
 
@@ -129,14 +127,13 @@ public final class Settings {
             mVersionSystemProperty = versionSystemProperty;
             mUri = uri;
             mCallCommand = callCommand;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mVersionSystemProperty = versionSystemProperty;
+            //mUri = uri;
+            //mCallCommand = callCommand;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.611 -0400", hash_original_method = "30813ECB8D9A0346E7379ADA0BD790C8", hash_generated_method = "C6A0FF6DE079B50FA7207E5530F95F6D")
         public String getString(ContentResolver cr, String name) {
             addTaint(name.getTaint());
@@ -148,17 +145,17 @@ public final class Settings {
                 {
     if(LOCAL_LOGV)                    
                     {
-                    } 
+                    } //End block
                     mValues.clear();
                     mValuesVersion = newValuesVersion;
-                } 
+                } //End block
     if(mValues.containsKey(name))                
                 {
 String varC353D578E7CD7DCB6BFA8853817FDDD5_183659554 =                     mValues.get(name);
                     varC353D578E7CD7DCB6BFA8853817FDDD5_183659554.addTaint(taint);
                     return varC353D578E7CD7DCB6BFA8853817FDDD5_183659554;
-                } 
-            } 
+                } //End block
+            } //End block
             IContentProvider cp = null;
             synchronized
 (this)            {
@@ -166,8 +163,8 @@ String varC353D578E7CD7DCB6BFA8853817FDDD5_183659554 =                     mValu
     if(cp == null)                
                 {
                     cp = mContentProvider = cr.acquireProvider(mUri.getAuthority());
-                } 
-            } 
+                } //End block
+            } //End block
     if(mCallCommand != null)            
             {
                 try 
@@ -179,16 +176,16 @@ String varC353D578E7CD7DCB6BFA8853817FDDD5_183659554 =                     mValu
                         synchronized
 (this)                        {
                             mValues.put(name, value);
-                        } 
+                        } //End block
 String varAF280DA2BC37D8BE783D8499160168DE_2057455075 =                         value;
                         varAF280DA2BC37D8BE783D8499160168DE_2057455075.addTaint(taint);
                         return varAF280DA2BC37D8BE783D8499160168DE_2057455075;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
+                } //End block
+            } //End block
             Cursor c = null;
             try 
             {
@@ -199,32 +196,32 @@ String varAF280DA2BC37D8BE783D8499160168DE_2057455075 =                         
 String var540C13E9E156B687226421B24F2DF178_1865044646 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1865044646.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1865044646;
-                } 
+                } //End block
                 String value = c.moveToNext() ? c.getString(0) : null;
                 synchronized
 (this)                {
                     mValues.put(name, value);
-                } 
+                } //End block
     if(LOCAL_LOGV)                
                 {
-                } 
+                } //End block
 String varAF280DA2BC37D8BE783D8499160168DE_1576602058 =                 value;
                 varAF280DA2BC37D8BE783D8499160168DE_1576602058.addTaint(taint);
                 return varAF280DA2BC37D8BE783D8499160168DE_1576602058;
-            } 
+            } //End block
             catch (RemoteException e)
             {
 String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
                 var540C13E9E156B687226421B24F2DF178_354695256.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_354695256;
-            } 
+            } //End block
             finally 
             {
     if(c != null)                
                 c.close();
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -243,12 +240,11 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.614 -0400", hash_original_method = "FCC05FCD4F95F74464895D80CA2398E6", hash_generated_method = "FCC05FCD4F95F74464895D80CA2398E6")
         public System ()
         {
-            
+            //Synthesized constructor
         }
 
 
-                @DSModeled(DSC.SPEC)
-        public synchronized static String getString(ContentResolver resolver, String name) {
+                public synchronized static String getString(ContentResolver resolver, String name) {
             if (MOVED_TO_SECURE.contains(name)) {
                 Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
                         + " to android.provider.Settings.Secure, returning read-only value.");
@@ -272,8 +268,7 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static Uri getUriFor(String name) {
+                public static Uri getUriFor(String name) {
             if (MOVED_TO_SECURE.contains(name)) {
                 Log.w(TAG, "Setting " + name + " has moved from android.provider.Settings.System"
                     + " to android.provider.Settings.Secure, returning Secure URI.");
@@ -363,8 +358,7 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static void getConfiguration(ContentResolver cr, Configuration outConfig) {
+                public static void getConfiguration(ContentResolver cr, Configuration outConfig) {
             outConfig.fontScale = Settings.System.getFloat(
                 cr, FONT_SCALE, outConfig.fontScale);
             if (outConfig.fontScale < 0) {
@@ -373,32 +367,27 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static void clearConfiguration(Configuration inoutConfig) {
+                public static void clearConfiguration(Configuration inoutConfig) {
             inoutConfig.fontScale = 0;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static boolean putConfiguration(ContentResolver cr, Configuration config) {
+                public static boolean putConfiguration(ContentResolver cr, Configuration config) {
             return Settings.System.putFloat(cr, FONT_SCALE, config.fontScale);
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static boolean hasInterestingConfigurationChanges(int changes) {
+                public static boolean hasInterestingConfigurationChanges(int changes) {
             return (changes&ActivityInfo.CONFIG_FONT_SCALE) != 0;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static boolean getShowGTalkServiceStatus(ContentResolver cr) {
+                public static boolean getShowGTalkServiceStatus(ContentResolver cr) {
             return getInt(cr, SHOW_GTALK_SERVICE_STATUS, 0) != 0;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
+                public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
             putInt(cr, SHOW_GTALK_SERVICE_STATUS, flag ? 1 : 0);
         }
 
@@ -1011,12 +1000,11 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.633 -0400", hash_original_method = "73610FEA11960E691F3222B2F82B6F9C", hash_generated_method = "73610FEA11960E691F3222B2F82B6F9C")
         public Secure ()
         {
-            
+            //Synthesized constructor
         }
 
 
-                @DSModeled(DSC.SPEC)
-        public synchronized static String getString(ContentResolver resolver, String name) {
+                public synchronized static String getString(ContentResolver resolver, String name) {
             if (sNameValueCache == null) {
                 sNameValueCache = new NameValueCache(SYS_PROP_SETTING_VERSION, CONTENT_URI,
                                                      CALL_METHOD_GET_SECURE);
@@ -1031,8 +1019,7 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static Uri getUriFor(String name) {
+                public static Uri getUriFor(String name) {
             return getUriFor(CONTENT_URI, name);
         }
 
@@ -1973,12 +1960,11 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.663 -0400", hash_original_method = "BB83E969FD06D277BEC07ACFEA741415", hash_generated_method = "BB83E969FD06D277BEC07ACFEA741415")
         public Bookmarks ()
         {
-            
+            //Synthesized constructor
         }
 
 
-                @DSModeled(DSC.SPEC)
-        public static Intent getIntentForShortcut(ContentResolver cr, char shortcut) {
+                public static Intent getIntentForShortcut(ContentResolver cr, char shortcut) {
             Intent intent = null;
             Cursor c = cr.query(CONTENT_URI,
                     sIntentProjection, sShortcutSelection,
@@ -2000,8 +1986,7 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                @DSModeled(DSC.SPEC)
-        public static Uri add(ContentResolver cr,
+                public static Uri add(ContentResolver cr,
                                            Intent intent,
                                            String title,
                                            String folder,
@@ -2021,8 +2006,7 @@ String var540C13E9E156B687226421B24F2DF178_354695256 =                 null;
         }
 
         
-                @DSModeled(DSC.SAFE)
-        public static CharSequence getLabelForFolder(Resources r, String folder) {
+                public static CharSequence getLabelForFolder(Resources r, String folder) {
             return folder;
         }
 

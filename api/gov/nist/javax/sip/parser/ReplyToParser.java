@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class ReplyToParser extends AddressParametersParser {
     public  ReplyToParser(String replyTo) {
         super(replyTo);
         addTaint(replyTo.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,7 +21,7 @@ public class ReplyToParser extends AddressParametersParser {
     protected  ReplyToParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -38,25 +38,25 @@ public class ReplyToParser extends AddressParametersParser {
 SIPHeader var43C4044FC3C522AE3C13CF309B9542DA_267948682 =             replyTo;
             var43C4044FC3C522AE3C13CF309B9542DA_267948682.addTaint(taint);
             return var43C4044FC3C522AE3C13CF309B9542DA_267948682;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("ReplyTo.parse");
-        } 
-        
-        
-        
-            
-        
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ReplyTo replyTo = new ReplyTo();
+        //if (debug)
+            //dbg_enter("ReplyTo.parse");
+        //try {
+            //headerName(TokenTypes.REPLY_TO);
+            //replyTo.setHeaderName(SIPHeaderNames.REPLY_TO);
+            //super.parse(replyTo);
+            //return replyTo;
+        //} finally {
+            //if (debug)
+                //dbg_leave("ReplyTo.parse");
+        //}
     }
 
     

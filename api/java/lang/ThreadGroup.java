@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     public  ThreadGroup(String name) {
         this(Thread.currentThread().getThreadGroup(), name);
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -51,7 +51,7 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
             NullPointerException varED1EDCABC9DE1352BD636F2377072BDB_1451204676 = new NullPointerException("parent == null");
             varED1EDCABC9DE1352BD636F2377072BDB_1451204676.addTaint(taint);
             throw varED1EDCABC9DE1352BD636F2377072BDB_1451204676;
-        } 
+        } //End block
         this.name = name;
         this.parent = parent;
     if(parent != null)        
@@ -61,21 +61,21 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     if(parent.isDaemon())            
             {
                 this.setDaemon(true);
-            } 
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (parent == null) {
+            //throw new NullPointerException("parent == null");
+        //}
+        //this.name = name;
+        //this.parent = parent;
+        //if (parent != null) {
+            //parent.add(this);
+            //this.setMaxPriority(parent.getMaxPriority());
+            //if (parent.isDaemon()) {
+                //this.setDaemon(true);
+            //}
+        //}
     }
 
     
@@ -83,9 +83,9 @@ public class ThreadGroup implements Thread.UncaughtExceptionHandler {
     private  ThreadGroup() {
         this.name = "system";
         this.parent = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.name = "system";
+        //this.parent = null;
     }
 
     
@@ -99,34 +99,34 @@ for(Thread thread : threads)
     if(thread.isAlive())                
                 {
                     count++;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         synchronized
 (groups)        {
 for(ThreadGroup group : groups)
             {
                 count += group.activeCount();
-            } 
-        } 
+            } //End block
+        } //End block
         int varE2942A04780E223B215EB8B663CF5353_1112600053 = (count);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_324578955 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_324578955;
-        
-        
-        
-            
-                
-                    
-                
-            
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = 0;
+        //synchronized (threadRefs) {
+            //for (Thread thread : threads) {
+                //if (thread.isAlive()) {
+                    //count++;
+                //}
+            //}
+        //}
+        //synchronized (groups) {
+            //for (ThreadGroup group : groups) {
+                //count += group.activeCount();
+            //}
+        //}
+        //return count;
     }
 
     
@@ -138,19 +138,19 @@ for(ThreadGroup group : groups)
 for(ThreadGroup group : groups)
             {
                 count += 1 + group.activeGroupCount();
-            } 
-        } 
+            } //End block
+        } //End block
         int varE2942A04780E223B215EB8B663CF5353_893154841 = (count);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1870623621 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1870623621;
-        
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int count = 0;
+        //synchronized (groups) {
+            //for (ThreadGroup group : groups) {
+                //count += 1 + group.activeGroupCount();
+            //}
+        //}
+        //return count;
     }
 
     
@@ -164,20 +164,19 @@ for(ThreadGroup group : groups)
                 IllegalThreadStateException varA05439E94317FDF813F0A0DCA5B5DD9A_1216488891 = new IllegalThreadStateException();
                 varA05439E94317FDF813F0A0DCA5B5DD9A_1216488891.addTaint(taint);
                 throw varA05439E94317FDF813F0A0DCA5B5DD9A_1216488891;
-            } 
+            } //End block
             groups.add(g);
-        } 
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (groups) {
+            //if (isDestroyed) {
+                //throw new IllegalThreadStateException();
+            //}
+            //groups.add(g);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.602 -0400", hash_original_method = "17B34AC990B7E085858AFAD80E625CEB", hash_generated_method = "8A7D499A5DEE2D74D6BFF11A21DEDCFC")
     @Deprecated
     public boolean allowThreadSuspension(boolean b) {
@@ -185,14 +184,14 @@ for(ThreadGroup group : groups)
         boolean varB326B5062B2F0E69046810717534CB09_448945141 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_969024923 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_969024923;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.602 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "58C0335FEF548999868CED53D4078AEE")
     public final void checkAccess() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -209,7 +208,7 @@ for(ThreadGroup group : groups)
                             + (this.name != null ? this.name : "n/a"));
                     var759515A5611E927EE189DAC60459E163_1903957407.addTaint(taint);
                     throw var759515A5611E927EE189DAC60459E163_1903957407;
-                } 
+                } //End block
     if(threads.iterator().hasNext())                
                 {
                     IllegalThreadStateException varAC568F6EA8E9BD19EC11411DFC787840_720840639 = new IllegalThreadStateException(
@@ -217,21 +216,21 @@ for(ThreadGroup group : groups)
                             + (this.name != null ? this.name : "n/a"));
                     varAC568F6EA8E9BD19EC11411DFC787840_720840639.addTaint(taint);
                     throw varAC568F6EA8E9BD19EC11411DFC787840_720840639;
-                } 
+                } //End block
                 while
 (!groups.isEmpty())                
                 {
                     groups.get(0).destroy();
-                } 
+                } //End block
     if(parent != null)                
                 {
                     parent.remove(this);
-                } 
+                } //End block
                 this.isDestroyed = true;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -246,20 +245,20 @@ for(ThreadGroup group : groups)
     if(groups.isEmpty())                    
                     {
                         destroy();
-                    } 
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                    
-                        
-                    
-                
-            
-        
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (threadRefs) {
+            //if (isDaemon && !isDestroyed && !threads.iterator().hasNext()) {
+                //synchronized (groups) {
+                    //if (groups.isEmpty()) {
+                        //destroy();
+                    //}
+                //}
+            //}
+        //}
     }
 
     
@@ -269,8 +268,8 @@ for(ThreadGroup group : groups)
         int varE88487EA963B1CA4470710FDEEF6150D_2009664692 = (enumerate(threads, true));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_881062264 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_881062264;
-        
-        
+        // ---------- Original Method ----------
+        //return enumerate(threads, true);
     }
 
     
@@ -281,8 +280,8 @@ for(ThreadGroup group : groups)
         int var9F45FC03189A4CDE3A04E26394C27598_2007825829 = (enumerateGeneric(threads, recurse, 0, true));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_338143312 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_338143312;
-        
-        
+        // ---------- Original Method ----------
+        //return enumerateGeneric(threads, recurse, 0, true);
     }
 
     
@@ -292,8 +291,8 @@ for(ThreadGroup group : groups)
         int var67882C778C85CFFFAB178FC90FD4AD6C_660283287 = (enumerate(groups, true));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546741385 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546741385;
-        
-        
+        // ---------- Original Method ----------
+        //return enumerate(groups, true);
     }
 
     
@@ -304,8 +303,8 @@ for(ThreadGroup group : groups)
         int varF80C0934D497350B81BE9A2A2F86F000_61200214 = (enumerateGeneric(groups, recurse, 0, false));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1566215026 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1566215026;
-        
-        
+        // ---------- Original Method ----------
+        //return enumerateGeneric(groups, recurse, 0, false);
     }
 
     
@@ -330,12 +329,12 @@ for(int i = threadRefs.size() - 1;i >= 0;--i)
                             int var4118BA52E9D686B3984C6B39C3013E3A_519968679 = (enumerationIndex);
                                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453798082 = getTaintInt();
                             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453798082;
-                        } 
+                        } //End block
                         enumeration[enumerationIndex++] = thread;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         else
         {
             synchronized
@@ -347,11 +346,11 @@ for(int i = groups.size() - 1;i >= 0;--i)
                         int var4118BA52E9D686B3984C6B39C3013E3A_1824854237 = (enumerationIndex);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_90657593 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_90657593;
-                    } 
+                    } //End block
                     enumeration[enumerationIndex++] = groups.get(i);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(recurse)        
         {
             synchronized
@@ -363,17 +362,17 @@ for(ThreadGroup group : groups)
                         int var4118BA52E9D686B3984C6B39C3013E3A_1350995933 = (enumerationIndex);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1107185412 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1107185412;
-                    } 
+                    } //End block
                     enumerationIndex = group.enumerateGeneric(enumeration, recurse,
                             enumerationIndex, enumeratingThreads);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         int var4118BA52E9D686B3984C6B39C3013E3A_1530450623 = (enumerationIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1599154457 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1599154457;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -382,8 +381,8 @@ for(ThreadGroup group : groups)
         int var605B899CE7517A7E2B487FD888B3B34B_1964125859 = (maxPriority);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145343741 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145343741;
-        
-        
+        // ---------- Original Method ----------
+        //return maxPriority;
     }
 
     
@@ -392,8 +391,8 @@ for(ThreadGroup group : groups)
 String varB017984728AC60AD1F0BF8734F33F15C_231132552 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_231132552.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_231132552;
-        
-        
+        // ---------- Original Method ----------
+        //return name;
     }
 
     
@@ -402,8 +401,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_231132552 =         name;
 ThreadGroup var0F49909EA73F8892C338E4DCA6EB9906_946796590 =         parent;
         var0F49909EA73F8892C338E4DCA6EB9906_946796590.addTaint(taint);
         return var0F49909EA73F8892C338E4DCA6EB9906_946796590;
-        
-        
+        // ---------- Original Method ----------
+        //return parent;
     }
 
     
@@ -414,26 +413,26 @@ ThreadGroup var0F49909EA73F8892C338E4DCA6EB9906_946796590 =         parent;
 for(Thread thread : threads)
             {
                 thread.interrupt();
-            } 
-        } 
+            } //End block
+        } //End block
         synchronized
 (groups)        {
 for(ThreadGroup group : groups)
             {
                 group.interrupt();
-            } 
-        } 
-        
-        
-            
-                
-            
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (threadRefs) {
+            //for (Thread thread : threads) {
+                //thread.interrupt();
+            //}
+        //}
+        //synchronized (groups) {
+            //for (ThreadGroup group : groups) {
+                //group.interrupt();
+            //}
+        //}
     }
 
     
@@ -442,19 +441,18 @@ for(ThreadGroup group : groups)
         boolean var1CFEB9E5381AE97C57DD59616C5FA3B7_968108783 = (isDaemon);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1288915702 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1288915702;
-        
-        
+        // ---------- Original Method ----------
+        //return isDaemon;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.611 -0400", hash_original_method = "B936E1D4B92F105E0DF31A4819E36563", hash_generated_method = "4DA86BF6B1CA6D2CBD791936E13FABF1")
     public synchronized boolean isDestroyed() {
         boolean var090F38A7DDDF192B3BA702F9AFFD747C_1398701969 = (isDestroyed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_379688798 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_379688798;
-        
-        
+        // ---------- Original Method ----------
+        //return isDestroyed;
     }
 
     
@@ -462,9 +460,9 @@ for(ThreadGroup group : groups)
     public void list() {
         System.out.println();
         list(0);
-        
-        
-        
+        // ---------- Original Method ----------
+        //System.out.println();
+        //list(0);
     }
 
     
@@ -480,30 +478,30 @@ for(Thread thread : threads)
             {
                 indent(levels);
                 System.out.println(thread);
-            } 
-        } 
+            } //End block
+        } //End block
         synchronized
 (groups)        {
 for(ThreadGroup group : groups)
             {
                 group.list(levels);
-            } 
-        } 
-        
-        
-        
-        
-        
-            
-                
-                
-            
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //indent(levels);
+        //System.out.println(this.toString());
+        //++levels;
+        //synchronized (threadRefs) {
+            //for (Thread thread : threads) {
+                //indent(levels);
+                //System.out.println(thread);
+            //}
+        //}
+        //synchronized (groups) {
+            //for (ThreadGroup group : groups) {
+                //group.list(levels);
+            //}
+        //}
     }
 
     
@@ -513,11 +511,11 @@ for(ThreadGroup group : groups)
 for(int i = 0;i < levels;i++)
         {
             System.out.print("    ");
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = 0; i < levels; i++) {
+            //System.out.print("    "); 
+        //}
     }
 
     
@@ -532,20 +530,20 @@ for(int i = 0;i < levels;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1681259036 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_104871303 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_104871303;
-            } 
+            } //End block
             g = g.parent;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1805439418 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_772978332 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_772978332;
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //while (g != null) {
+            //if (this == g) {
+                //return true;
+            //}
+            //g = g.parent;
+        //}
+        //return false;
     }
 
     
@@ -561,21 +559,21 @@ for(Iterator<ThreadGroup> i = groups.iterator();i.hasNext();)
                 {
                     i.remove();
                     break;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         destroyIfEmptyDaemon();
-        
-        
-            
-                
-                
-                    
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (groups) {
+            //for (Iterator<ThreadGroup> i = groups.iterator(); i.hasNext(); ) {
+                //ThreadGroup threadGroup = i.next();
+                //if (threadGroup.equals(g)) {
+                    //i.remove();
+                    //break;
+                //}
+            //}
+        //}
+        //destroyIfEmptyDaemon();
     }
 
     
@@ -588,34 +586,34 @@ for(Iterator<ThreadGroup> i = groups.iterator();i.hasNext();)
 for(Thread thread : threads)
             {
                 thread.resume();
-            } 
-        } 
+            } //End block
+        } //End block
         synchronized
 (groups)        {
 for(ThreadGroup group : groups)
             {
                 group.resume();
-            } 
-        } 
-        
-        
-            
-                
-            
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (threadRefs) {
+            //for (Thread thread : threads) {
+                //thread.resume();
+            //}
+        //}
+        //synchronized (groups) {
+            //for (ThreadGroup group : groups) {
+                //group.resume();
+            //}
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.614 -0400", hash_original_method = "8335FAF0BC3ED6B3C58B58617340A520", hash_generated_method = "41930952754EA7B18095BC1B8F27AACA")
     public final void setDaemon(boolean isDaemon) {
         this.isDaemon = isDaemon;
-        
-        
+        // ---------- Original Method ----------
+        //this.isDaemon = isDaemon;
     }
 
     
@@ -626,7 +624,7 @@ for(ThreadGroup group : groups)
     if(newMax < Thread.MIN_PRIORITY)            
             {
                 newMax = Thread.MIN_PRIORITY;
-            } 
+            } //End block
             int parentPriority = parent == null ? newMax : parent.getMaxPriority();
             this.maxPriority = parentPriority <= newMax ? parentPriority : newMax;
             synchronized
@@ -634,22 +632,22 @@ for(ThreadGroup group : groups)
 for(ThreadGroup group : groups)
                 {
                     group.setMaxPriority(newMax);
-                } 
-            } 
-        } 
-        
-        
-            
-                
-            
-            
-            
-            
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (newMax <= this.maxPriority) {
+            //if (newMax < Thread.MIN_PRIORITY) {
+                //newMax = Thread.MIN_PRIORITY;
+            //}
+            //int parentPriority = parent == null ? newMax : parent.getMaxPriority();
+            //this.maxPriority = parentPriority <= newMax ? parentPriority : newMax;
+            //synchronized (groups) {
+                //for (ThreadGroup group : groups) {
+                    //group.setMaxPriority(newMax);
+                //}
+            //}
+        //}
     }
 
     
@@ -660,11 +658,11 @@ for(ThreadGroup group : groups)
     if(stopHelper())        
         {
             Thread.currentThread().stop();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (stopHelper()) {
+            //Thread.currentThread().stop();
+        //}
     }
 
     
@@ -680,41 +678,41 @@ for(Thread thread : threads)
     if(thread == current)                
                 {
                     stopCurrent = true;
-                } 
+                } //End block
                 else
                 {
                     thread.stop();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         synchronized
 (groups)        {
 for(ThreadGroup group : groups)
             {
                 stopCurrent |= group.stopHelper();
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var784B75F63E8CE9D6B35ED439029C6847_1109704643 = (stopCurrent);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_869743217 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_869743217;
-        
-        
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean stopCurrent = false;
+        //synchronized (threadRefs) {
+            //Thread current = Thread.currentThread();
+            //for (Thread thread : threads) {
+                //if (thread == current) {
+                    //stopCurrent = true;
+                //} else {
+                    //thread.stop();
+                //}
+            //}
+        //}
+        //synchronized (groups) {
+            //for (ThreadGroup group : groups) {
+                //stopCurrent |= group.stopHelper();
+            //}
+        //}
+        //return stopCurrent;
     }
 
     
@@ -725,11 +723,11 @@ for(ThreadGroup group : groups)
     if(suspendHelper())        
         {
             Thread.currentThread().suspend();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (suspendHelper()) {
+            //Thread.currentThread().suspend();
+        //}
     }
 
     
@@ -745,41 +743,41 @@ for(Thread thread : threads)
     if(thread == current)                
                 {
                     suspendCurrent = true;
-                } 
+                } //End block
                 else
                 {
                     thread.suspend();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         synchronized
 (groups)        {
 for(ThreadGroup group : groups)
             {
                 suspendCurrent |= group.suspendHelper();
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var78753EFF84E0F2A5BDFA90A5A032233B_1756936088 = (suspendCurrent);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_845086584 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_845086584;
-        
-        
-        
-            
-            
-                
-                    
-                
-                    
-                
-            
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean suspendCurrent = false;
+        //synchronized (threadRefs) {
+            //Thread current = Thread.currentThread();
+            //for (Thread thread : threads) {
+                //if (thread == current) {
+                    //suspendCurrent = true;
+                //} else {
+                    //thread.suspend();
+                //}
+            //}
+        //}
+        //synchronized (groups) {
+            //for (ThreadGroup group : groups) {
+                //suspendCurrent |= group.suspendHelper();
+            //}
+        //}
+        //return suspendCurrent;
     }
 
     
@@ -790,9 +788,9 @@ String var8A8A36D1F5831B81760F8A7B6FB3030F_1223439841 =         getClass().getNa
                 + ",maxPriority=" + getMaxPriority() + "]";
         var8A8A36D1F5831B81760F8A7B6FB3030F_1223439841.addTaint(taint);
         return var8A8A36D1F5831B81760F8A7B6FB3030F_1223439841;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return getClass().getName() + "[name=" + getName()
+                //+ ",maxPriority=" + getMaxPriority() + "]";
     }
 
     
@@ -803,25 +801,25 @@ String var8A8A36D1F5831B81760F8A7B6FB3030F_1223439841 =         getClass().getNa
     if(parent != null)        
         {
             parent.uncaughtException(t, e);
-        } 
+        } //End block
         else
     if(Thread.getDefaultUncaughtExceptionHandler() != null)        
         {
             Thread.getDefaultUncaughtExceptionHandler().uncaughtException(t, e);
-        } 
+        } //End block
         else
     if(!(e instanceof ThreadDeath))        
         {
             e.printStackTrace(System.err);
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (parent != null) {
+            //parent.uncaughtException(t, e);
+        //} else if (Thread.getDefaultUncaughtExceptionHandler() != null) {
+            //Thread.getDefaultUncaughtExceptionHandler().uncaughtException(t, e);
+        //} else if (!(e instanceof ThreadDeath)) {
+            //e.printStackTrace(System.err);
+        //}
     }
 
     
@@ -835,16 +833,16 @@ String var8A8A36D1F5831B81760F8A7B6FB3030F_1223439841 =         getClass().getNa
                 IllegalThreadStateException varA05439E94317FDF813F0A0DCA5B5DD9A_1588258219 = new IllegalThreadStateException();
                 varA05439E94317FDF813F0A0DCA5B5DD9A_1588258219.addTaint(taint);
                 throw varA05439E94317FDF813F0A0DCA5B5DD9A_1588258219;
-            } 
+            } //End block
             threadRefs.add(new WeakReference<Thread>(thread));
-        } 
-        
-        
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (threadRefs) {
+            //if (isDestroyed) {
+                //throw new IllegalThreadStateException();
+            //}
+            //threadRefs.add(new WeakReference<Thread>(thread));
+        //}
     }
 
     
@@ -859,20 +857,20 @@ for(Iterator<Thread> i = threads.iterator();i.hasNext();)
                 {
                     i.remove();
                     break;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         destroyIfEmptyDaemon();
-        
-        
-            
-                
-                    
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (threadRefs) {
+            //for (Iterator<Thread> i = threads.iterator(); i.hasNext(); ) {
+                //if (i.next().equals(thread)) {
+                    //i.remove();
+                    //break;
+                //}
+            //}
+        //}
+        //destroyIfEmptyDaemon();
     }
 
     

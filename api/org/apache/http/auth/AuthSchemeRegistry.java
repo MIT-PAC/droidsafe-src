@@ -1,6 +1,6 @@
 package org.apache.http.auth;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,8 +20,8 @@ public final class AuthSchemeRegistry {
     public  AuthSchemeRegistry() {
         super();
         this.registeredSchemes = new LinkedHashMap<String,AuthSchemeFactory>();
-        
-        
+        // ---------- Original Method ----------
+        //this.registeredSchemes = new LinkedHashMap<String,AuthSchemeFactory>();
     }
 
     
@@ -36,22 +36,22 @@ public final class AuthSchemeRegistry {
             IllegalArgumentException var3C43595648C24A9FD2A1B7AF0D642045_1651626391 = new IllegalArgumentException("Name may not be null");
             var3C43595648C24A9FD2A1B7AF0D642045_1651626391.addTaint(taint);
             throw var3C43595648C24A9FD2A1B7AF0D642045_1651626391;
-        } 
+        } //End block
     if(factory == null)        
         {
             IllegalArgumentException varF9F861B061C3B4B32DA6DA39601728A0_863662942 = new IllegalArgumentException("Authentication scheme factory may not be null");
             varF9F861B061C3B4B32DA6DA39601728A0_863662942.addTaint(taint);
             throw varF9F861B061C3B4B32DA6DA39601728A0_863662942;
-        } 
+        } //End block
         registeredSchemes.put(name.toLowerCase(Locale.ENGLISH), factory);
-        
-        
-             
-         
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+             //throw new IllegalArgumentException("Name may not be null");
+         //}
+        //if (factory == null) {
+            //throw new IllegalArgumentException("Authentication scheme factory may not be null");
+        //}
+        //registeredSchemes.put(name.toLowerCase(Locale.ENGLISH), factory);
     }
 
     
@@ -63,13 +63,13 @@ public final class AuthSchemeRegistry {
             IllegalArgumentException var3C43595648C24A9FD2A1B7AF0D642045_1812020382 = new IllegalArgumentException("Name may not be null");
             var3C43595648C24A9FD2A1B7AF0D642045_1812020382.addTaint(taint);
             throw var3C43595648C24A9FD2A1B7AF0D642045_1812020382;
-        } 
+        } //End block
         registeredSchemes.remove(name.toLowerCase(Locale.ENGLISH));
-        
-        
-             
-         
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+             //throw new IllegalArgumentException("Name may not be null");
+         //}
+        //registeredSchemes.remove(name.toLowerCase(Locale.ENGLISH));
     }
 
     
@@ -82,30 +82,30 @@ public final class AuthSchemeRegistry {
             IllegalArgumentException var3C43595648C24A9FD2A1B7AF0D642045_40070238 = new IllegalArgumentException("Name may not be null");
             var3C43595648C24A9FD2A1B7AF0D642045_40070238.addTaint(taint);
             throw var3C43595648C24A9FD2A1B7AF0D642045_40070238;
-        } 
+        } //End block
         AuthSchemeFactory factory = registeredSchemes.get(name.toLowerCase(Locale.ENGLISH));
     if(factory != null)        
         {
 AuthScheme varB5D01F4327DBBC343676B65A86A05A58_1193263039 =             factory.newInstance(params);
             varB5D01F4327DBBC343676B65A86A05A58_1193263039.addTaint(taint);
             return varB5D01F4327DBBC343676B65A86A05A58_1193263039;
-        } 
+        } //End block
         else
         {
             IllegalStateException var370EF9884C7AE53987ABC6CB85E3AE6C_369933180 = new IllegalStateException("Unsupported authentication scheme: " + name);
             var370EF9884C7AE53987ABC6CB85E3AE6C_369933180.addTaint(taint);
             throw var370EF9884C7AE53987ABC6CB85E3AE6C_369933180;
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new IllegalArgumentException("Name may not be null");
+        //}
+        //AuthSchemeFactory factory = registeredSchemes.get(name.toLowerCase(Locale.ENGLISH));
+        //if (factory != null) {
+            //return factory.newInstance(params);
+        //} else {
+            //throw new IllegalStateException("Unsupported authentication scheme: " + name);
+        //}
     }
 
     
@@ -114,8 +114,8 @@ AuthScheme varB5D01F4327DBBC343676B65A86A05A58_1193263039 =             factory.
 List<String> varAAEC45CC0E27E189B466FC7E198A1AD8_1579106797 =         new ArrayList<String>(registeredSchemes.keySet());
         varAAEC45CC0E27E189B466FC7E198A1AD8_1579106797.addTaint(taint);
         return varAAEC45CC0E27E189B466FC7E198A1AD8_1579106797;
-        
-        
+        // ---------- Original Method ----------
+        //return new ArrayList<String>(registeredSchemes.keySet());
     }
 
     
@@ -125,15 +125,15 @@ List<String> varAAEC45CC0E27E189B466FC7E198A1AD8_1579106797 =         new ArrayL
     if(map == null)        
         {
             return;
-        } 
+        } //End block
         registeredSchemes.clear();
         registeredSchemes.putAll(map);
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (map == null) {
+            //return;
+        //}
+        //registeredSchemes.clear();
+        //registeredSchemes.putAll(map);
     }
 
     

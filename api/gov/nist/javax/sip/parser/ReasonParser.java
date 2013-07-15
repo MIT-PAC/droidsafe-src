@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ReasonParser extends ParametersParser {
     public  ReasonParser(String reason) {
         super(reason);
         addTaint(reason.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class ReasonParser extends ParametersParser {
     protected  ReasonParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -49,21 +49,21 @@ public class ReasonParser extends ParametersParser {
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
-                } 
+                } //End block
                 else
                 this.lexer.SPorHT();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("ReasonParser.parse");
-        } 
+        } //End block
 SIPHeader varBCECBDE203391D642885C62773929FAF_150420032 =         reasonList;
         varBCECBDE203391D642885C62773929FAF_150420032.addTaint(taint);
         return varBCECBDE203391D642885C62773929FAF_150420032;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

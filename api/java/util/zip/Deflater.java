@@ -1,6 +1,6 @@
 package java.util.zip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public class Deflater {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.578 -0400", hash_original_method = "6DBC61BE4FC097F2420F36A015A6138C", hash_generated_method = "9C40E2104F522B79F67B639B9E119058")
     public  Deflater() {
         this(DEFAULT_COMPRESSION, false);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -48,7 +48,7 @@ public class Deflater {
     public  Deflater(int level) {
         this(level, false);
         addTaint(level);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -59,17 +59,17 @@ public class Deflater {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_2112877759 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_2112877759.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_2112877759;
-        } 
+        } //End block
         compressLevel = level;
         streamHandle = createStream(compressLevel, strategy, noHeader);
         guard.open("end");
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (level < DEFAULT_COMPRESSION || level > BEST_COMPRESSION) {
+            //throw new IllegalArgumentException();
+        //}
+        //compressLevel = level;
+        //streamHandle = createStream(compressLevel, strategy, noHeader);
+        //guard.open("end");
     }
 
     
@@ -79,8 +79,8 @@ public class Deflater {
         int varA8F44DDEC9B217F87113F6C0B5BF8DE5_30025206 = (deflate(buf, 0, buf.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_225736556 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_225736556;
-        
-        
+        // ---------- Original Method ----------
+        //return deflate(buf, 0, buf.length);
     }
 
     
@@ -92,8 +92,8 @@ public class Deflater {
         int varA5702F46C8E38B7BDFD7C450700F752B_2023886320 = (deflateImpl(buf, offset, byteCount, flushParm));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_415563731 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_415563731;
-        
-        
+        // ---------- Original Method ----------
+        //return deflateImpl(buf, offset, byteCount, flushParm);
     }
 
     
@@ -108,15 +108,15 @@ public class Deflater {
             IllegalArgumentException varCA1A5F6BE6BDD0C30D9068D7DE94DA43_525685821 = new IllegalArgumentException("Bad flush value: " + flush);
             varCA1A5F6BE6BDD0C30D9068D7DE94DA43_525685821.addTaint(taint);
             throw varCA1A5F6BE6BDD0C30D9068D7DE94DA43_525685821;
-        } 
+        } //End block
         int var281DA5A3D40EC030E887F16FF2C45B2C_1421820237 = (deflateImpl(buf, offset, byteCount, flush));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_150736432 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_150736432;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (flush != NO_FLUSH && flush != SYNC_FLUSH && flush != FULL_FLUSH) {
+            //throw new IllegalArgumentException("Bad flush value: " + flush);
+        //}
+        //return deflateImpl(buf, offset, byteCount, flush);
     }
 
     
@@ -131,21 +131,20 @@ public class Deflater {
     if(inputBuffer == null)        
         {
             setInput(EmptyArray.BYTE);
-        } 
+        } //End block
         int var45514BCF67F8B5276617017342205801_1183393925 = (deflateImpl(buf, offset, byteCount, streamHandle, flush));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19907551 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19907551;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
+        //if (inputBuffer == null) {
+            //setInput(EmptyArray.BYTE);
+        //}
+        //return deflateImpl(buf, offset, byteCount, streamHandle, flush);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.580 -0400", hash_original_method = "54CA80994C94CBB2D32C9857F1640D60", hash_generated_method = "7819D72EA78CD22C1923F3315937464F")
     private int deflateImpl(byte[] buf, int offset, int byteCount, long handle, int flushParm) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_391617758 = getTaintInt();
@@ -157,9 +156,9 @@ public class Deflater {
     public synchronized void end() {
         guard.close();
         endImpl();
-        
-        
-        
+        // ---------- Original Method ----------
+        //guard.close();
+        //endImpl();
     }
 
     
@@ -170,17 +169,16 @@ public class Deflater {
             endImpl(streamHandle);
             inputBuffer = null;
             streamHandle = -1;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (streamHandle != -1) {
+            //endImpl(streamHandle);
+            //inputBuffer = null;
+            //streamHandle = -1;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.580 -0400", hash_original_method = "3E089BB1F2369FD5C4FB6F32377D1DAC", hash_generated_method = "69FF97505E0CE664E4B075F4BA3AB10B")
     private void endImpl(long handle) {
     }
@@ -194,62 +192,60 @@ public class Deflater {
     if(guard != null)            
             {
                 guard.warnIfOpen();
-            } 
+            } //End block
             synchronized
 (this)            {
                 end();
                 endImpl();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             try 
             {
                 super.finalize();
-            } 
+            } //End block
             catch (Throwable t)
             {
                 AssertionError var31F1143F51E5C3306DAC550F61AF5CBA_962484725 = new AssertionError(t);
                 var31F1143F51E5C3306DAC550F61AF5CBA_962484725.addTaint(taint);
                 throw var31F1143F51E5C3306DAC550F61AF5CBA_962484725;
-            } 
-        } 
-        
-        
-            
-                
-            
-            
-                
-                
-            
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (guard != null) {
+                //guard.warnIfOpen();
+            //}
+            //synchronized (this) {
+                //end(); 
+                //endImpl(); 
+            //}
+        //} finally {
+            //try {
+                //super.finalize();
+            //} catch (Throwable t) {
+                //throw new AssertionError(t);
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.580 -0400", hash_original_method = "CE8BB8EC5EB7D8A83BE6D0D952D2FABD", hash_generated_method = "DE0495773E68A9D77614A209FED334FD")
     public synchronized void finish() {
         flushParm = FINISH;
-        
-        
+        // ---------- Original Method ----------
+        //flushParm = FINISH;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.580 -0400", hash_original_method = "AE445D0E75B15DAD06E7B3F2F4342E00", hash_generated_method = "9A2BDCCF07C35776624436B3F4C3DA38")
     public synchronized boolean finished() {
         boolean varA5D7CEB2C59B8CEE46C2953FEC9ABC19_399892043 = (finished);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_440493474 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_440493474;
-        
-        
+        // ---------- Original Method ----------
+        //return finished;
     }
 
     
@@ -259,13 +255,12 @@ public class Deflater {
         int var61302C031A2885A841CE2FB4B1CD67CE_1718453894 = (getAdlerImpl(streamHandle));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809479023 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809479023;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return getAdlerImpl(streamHandle);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.580 -0400", hash_original_method = "B92F3D2B64C580905B1CBAEAEEC7E950", hash_generated_method = "BCC188700C1A426733711E2A32023DFE")
     private int getAdlerImpl(long handle) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379499791 = getTaintInt();
@@ -279,13 +274,12 @@ public class Deflater {
         int var41FF03F033445FC50B95D7E5B48795BC_278587304 = ((int) getTotalInImpl(streamHandle));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435538263 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_435538263;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return (int) getTotalInImpl(streamHandle);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.581 -0400", hash_original_method = "BB22F222483240F64BF20392C09B432F", hash_generated_method = "CCC0A500833AC6CD70826A0BCEF72895")
     private long getTotalInImpl(long handle) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1365206945 = getTaintLong();
@@ -299,13 +293,12 @@ public class Deflater {
         int var9C35427B72469E54B140D55A741E94F0_1935168060 = ((int) getTotalOutImpl(streamHandle));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503027846 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_503027846;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return (int) getTotalOutImpl(streamHandle);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.581 -0400", hash_original_method = "2C5C1800FBCC7A9569101FDF1B411571", hash_generated_method = "157CC77105788A0C36DDD6C09AA48CEC")
     private long getTotalOutImpl(long handle) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_421502022 = getTaintLong();
@@ -313,7 +306,6 @@ public class Deflater {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.581 -0400", hash_original_method = "F6DEF148508A4D024151CB5B8FE739D4", hash_generated_method = "D5820C2110CCAE017E3149CF7EF28552")
     public synchronized boolean needsInput() {
     if(inputBuffer == null)        
@@ -321,15 +313,15 @@ public class Deflater {
             boolean varB326B5062B2F0E69046810717534CB09_1511951796 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_266953950 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_266953950;
-        } 
+        } //End block
         boolean var8421F335F8C4BFF221A6FB370125003A_2069616541 = (inRead == inLength);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174613683 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174613683;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (inputBuffer == null) {
+            //return true;
+        //}
+        //return inRead == inLength;
     }
 
     
@@ -340,16 +332,15 @@ public class Deflater {
         finished = false;
         resetImpl(streamHandle);
         inputBuffer = null;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //flushParm = NO_FLUSH;
+        //finished = false;
+        //resetImpl(streamHandle);
+        //inputBuffer = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.581 -0400", hash_original_method = "D92307F0039AB335BB1BCA1E70FBBC75", hash_generated_method = "828BDA31BE8E9DA88C9805DDF29C0415")
     private void resetImpl(long handle) {
     }
@@ -359,8 +350,8 @@ public class Deflater {
     public void setDictionary(byte[] dictionary) {
         addTaint(dictionary[0]);
         setDictionary(dictionary, 0, dictionary.length);
-        
-        
+        // ---------- Original Method ----------
+        //setDictionary(dictionary, 0, dictionary.length);
     }
 
     
@@ -372,14 +363,13 @@ public class Deflater {
         checkOpen();
         Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
         setDictionaryImpl(buf, offset, byteCount, streamHandle);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
+        //setDictionaryImpl(buf, offset, byteCount, streamHandle);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.581 -0400", hash_original_method = "7E435812B66ABED0B356693E1B3AC0D7", hash_generated_method = "27D3805C15D2F67C20A0B01214394D68")
     private void setDictionaryImpl(byte[] buf, int offset, int byteCount, long handle) {
     }
@@ -389,8 +379,8 @@ public class Deflater {
     public void setInput(byte[] buf) {
         addTaint(buf[0]);
         setInput(buf, 0, buf.length);
-        
-        
+        // ---------- Original Method ----------
+        //setInput(buf, 0, buf.length);
     }
 
     
@@ -404,29 +394,27 @@ public class Deflater {
     if(inputBuffer == null)        
         {
             setLevelsImpl(compressLevel, strategy, streamHandle);
-        } 
+        } //End block
         inputBuffer = buf;
         setInputImpl(buf, offset, byteCount, streamHandle);
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
+        //inLength = byteCount;
+        //inRead = 0;
+        //if (inputBuffer == null) {
+            //setLevelsImpl(compressLevel, strategy, streamHandle);
+        //}
+        //inputBuffer = buf;
+        //setInputImpl(buf, offset, byteCount, streamHandle);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.582 -0400", hash_original_method = "6366C8E331223E53339096A4FF906729", hash_generated_method = "AF1DD229C3811CE1BC4818D190947479")
     private void setLevelsImpl(int level, int strategy, long handle) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.582 -0400", hash_original_method = "CFB5087A7D9EFE706B98C4EB08838FDC", hash_generated_method = "A07D70B78BE6B11783FE90F8CB71C6AF")
     private void setInputImpl(byte[] buf, int offset, int byteCount, long handle) {
     }
@@ -439,22 +427,22 @@ public class Deflater {
             IllegalArgumentException var88B06204DF75B47E4B0EB8082FA374A6_140794338 = new IllegalArgumentException("Bad level: " + level);
             var88B06204DF75B47E4B0EB8082FA374A6_140794338.addTaint(taint);
             throw var88B06204DF75B47E4B0EB8082FA374A6_140794338;
-        } 
+        } //End block
     if(inputBuffer != null)        
         {
             IllegalStateException var9F85BFFC2A78B73C26EE75C2D725A938_981533325 = new IllegalStateException("setLevel cannot be called after setInput");
             var9F85BFFC2A78B73C26EE75C2D725A938_981533325.addTaint(taint);
             throw var9F85BFFC2A78B73C26EE75C2D725A938_981533325;
-        } 
+        } //End block
         compressLevel = level;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (level < DEFAULT_COMPRESSION || level > BEST_COMPRESSION) {
+            //throw new IllegalArgumentException("Bad level: " + level);
+        //}
+        //if (inputBuffer != null) {
+            //throw new IllegalStateException("setLevel cannot be called after setInput");
+        //}
+        //compressLevel = level;
     }
 
     
@@ -465,22 +453,22 @@ public class Deflater {
             IllegalArgumentException var4DD0F176114E3F4B8603693A103B43BC_1147145338 = new IllegalArgumentException("Bad strategy: " + strategy);
             var4DD0F176114E3F4B8603693A103B43BC_1147145338.addTaint(taint);
             throw var4DD0F176114E3F4B8603693A103B43BC_1147145338;
-        } 
+        } //End block
     if(inputBuffer != null)        
         {
             IllegalStateException var6137D35C5BCBE0FD3CC3B4BE51EB9B50_1248495482 = new IllegalStateException("setStrategy cannot be called after setInput");
             var6137D35C5BCBE0FD3CC3B4BE51EB9B50_1248495482.addTaint(taint);
             throw var6137D35C5BCBE0FD3CC3B4BE51EB9B50_1248495482;
-        } 
+        } //End block
         this.strategy = strategy;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (strategy < DEFAULT_STRATEGY || strategy > HUFFMAN_ONLY) {
+            //throw new IllegalArgumentException("Bad strategy: " + strategy);
+        //}
+        //if (inputBuffer != null) {
+            //throw new IllegalStateException("setStrategy cannot be called after setInput");
+        //}
+        //this.strategy = strategy;
     }
 
     
@@ -490,9 +478,9 @@ public class Deflater {
         long varFFF9322F09CACDF491BC38F3E51EFD52_1612253576 = (getTotalInImpl(streamHandle));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1885921474 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1885921474;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return getTotalInImpl(streamHandle);
     }
 
     
@@ -502,13 +490,12 @@ public class Deflater {
         long varF50D575295CFD2BB6AFCADFDDD55EBD6_1000637985 = (getTotalOutImpl(streamHandle));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1420182225 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1420182225;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return getTotalOutImpl(streamHandle);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.583 -0400", hash_original_method = "C56CB62EAF4356747257EC4F43A6E2A6", hash_generated_method = "F2213BB1B0A3ADE62F25E890C2DCAAE0")
     private long createStream(int level, int strategy1, boolean noHeader1) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1750986524 = getTaintLong();
@@ -523,11 +510,11 @@ public class Deflater {
             IllegalStateException varF2D7421E593C8F4E0E44F2BEF15B7FD9_718586433 = new IllegalStateException("attempt to use Deflater after calling end");
             varF2D7421E593C8F4E0E44F2BEF15B7FD9_718586433.addTaint(taint);
             throw varF2D7421E593C8F4E0E44F2BEF15B7FD9_718586433;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (streamHandle == -1) {
+            //throw new IllegalStateException("attempt to use Deflater after calling end");
+        //}
     }
 
     

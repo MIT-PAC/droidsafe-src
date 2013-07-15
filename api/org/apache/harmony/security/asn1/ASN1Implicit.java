@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,37 +23,37 @@ public final class ASN1Implicit extends ASN1Type {
             IllegalArgumentException var9BEB172156F000642F9EFA4B65B94FA0_1970174401 = new IllegalArgumentException("Implicit tagging can not be used for ASN.1 ANY or CHOICE type");
             var9BEB172156F000642F9EFA4B65B94FA0_1970174401.addTaint(taint);
             throw var9BEB172156F000642F9EFA4B65B94FA0_1970174401;
-        } 
+        } //End block
         this.type = type;
     if(type.checkTag(type.id))        
         {
     if(type.checkTag(type.constrId))            
             {
                 taggingType = TAGGING_STRING;
-            } 
+            } //End block
             else
             {
                 taggingType = TAGGING_PRIMITIVE;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             taggingType = TAGGING_CONSTRUCTED;
-        } 
-        
-        
-            
-        
-        
-        
-            
-                
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ((type instanceof ASN1Choice) || (type instanceof ASN1Any)) {
+            //throw new IllegalArgumentException("Implicit tagging can not be used for ASN.1 ANY or CHOICE type");
+        //}
+        //this.type = type;
+        //if (type.checkTag(type.id)) {
+            //if (type.checkTag(type.constrId)) {
+                //taggingType = TAGGING_STRING;
+            //} else {
+                //taggingType = TAGGING_PRIMITIVE;
+            //}
+        //} else {
+            //taggingType = TAGGING_CONSTRUCTED;
+        //}
     }
 
     
@@ -74,15 +74,15 @@ switch(taggingType){
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1654354585 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1654354585;
 }
-        
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //switch (taggingType) {
+        //case TAGGING_PRIMITIVE:
+            //return id == identifier;
+        //case TAGGING_CONSTRUCTED:
+            //return constrId == identifier;
+        //default: 
+            //return id == identifier || constrId == identifier;
+        //}
     }
 
     
@@ -96,41 +96,41 @@ switch(taggingType){
                     "but got " + Integer.toHexString(in.tag));
             var61912881525C5A231FE75D3C60EB7BAC_283026900.addTaint(taint);
             throw var61912881525C5A231FE75D3C60EB7BAC_283026900;
-        } 
+        } //End block
     if(id == in.tag)        
         {
             in.tag = type.id;
-        } 
+        } //End block
         else
         {
             in.tag = type.constrId;
-        } 
+        } //End block
         in.content = type.decode(in);
     if(in.isVerify)        
         {
 Object var540C13E9E156B687226421B24F2DF178_2100584874 =             null;
             var540C13E9E156B687226421B24F2DF178_2100584874.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2100584874;
-        } 
+        } //End block
 Object var6AD043AF0280111F31D0D60A6CD70863_1366761189 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_1366761189.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_1366761189;
-        
-        
-            
-                    
-                    
-        
-        
-            
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!checkTag(in.tag)) {
+            //throw new ASN1Exception("ASN.1 implicitly tagged type expected at " +
+                    //"[" + in.tagOffset + "]. Expected tag: " + Integer.toHexString(id) + ", " +
+                    //"but got " + Integer.toHexString(in.tag));
+        //}
+        //if (id == in.tag) {
+            //in.tag = type.id;
+        //} else {
+            //in.tag = type.constrId;
+        //}
+        //in.content = type.decode(in);
+        //if (in.isVerify) {
+            //return null;
+        //}
+        //return getDecodedObject(in);
     }
 
     
@@ -140,19 +140,19 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1366761189 =         getDecodedObject
     if(taggingType == TAGGING_CONSTRUCTED)        
         {
             out.encodeTag(constrId);
-        } 
+        } //End block
         else
         {
             out.encodeTag(id);
-        } 
+        } //End block
         encodeContent(out);
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (taggingType == TAGGING_CONSTRUCTED) {
+            //out.encodeTag(constrId);
+        //} else {
+            //out.encodeTag(id);
+        //}
+        //encodeContent(out);
     }
 
     
@@ -160,8 +160,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1366761189 =         getDecodedObject
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         type.encodeContent(out);
-        
-        
+        // ---------- Original Method ----------
+        //type.encodeContent(out);
     }
 
     
@@ -169,8 +169,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1366761189 =         getDecodedObject
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
         type.setEncodingContent(out);
-        
-        
+        // ---------- Original Method ----------
+        //type.setEncodingContent(out);
     }
 
     

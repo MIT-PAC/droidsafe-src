@@ -1,6 +1,6 @@
 package android.nfc.tech;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,10 +24,10 @@ public final class NfcV extends BasicTagTechnology {
         Bundle extras = tag.getTechExtras(TagTechnology.NFC_V);
         mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
         mDsfId = extras.getByte(EXTRA_DSFID);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Bundle extras = tag.getTechExtras(TagTechnology.NFC_V);
+        //mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
+        //mDsfId = extras.getByte(EXTRA_DSFID);
     }
 
     
@@ -41,25 +41,23 @@ public final class NfcV extends BasicTagTechnology {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.085 -0400", hash_original_method = "19D3A3646C1C2655B316DC5413F4466A", hash_generated_method = "57A780AB7247A57E3ED9AF00CBF2DE42")
     public byte getResponseFlags() {
         byte var3934254C6C714B19DE22D4F58C5042D2_1020788590 = (mRespFlags);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_1037342228 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1037342228;
-        
-        
+        // ---------- Original Method ----------
+        //return mRespFlags;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.085 -0400", hash_original_method = "9F53E6713A0959247C46979AAE2F100E", hash_generated_method = "08E8D5EC7D98A6EC8D4D03D7A8484F4F")
     public byte getDsfId() {
         byte varE9C54BDE6798E1875D8BC87A6FAA80B7_1596397142 = (mDsfId);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_1921984277 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1921984277;
-        
-        
+        // ---------- Original Method ----------
+        //return mDsfId;
     }
 
     
@@ -69,8 +67,8 @@ public final class NfcV extends BasicTagTechnology {
         byte[] varEE32C696607EBC614D9A30134ACB1AE3_265096570 = (transceive(data, true));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_345518645 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_345518645;
-        
-        
+        // ---------- Original Method ----------
+        //return transceive(data, true);
     }
 
     
@@ -79,8 +77,8 @@ public final class NfcV extends BasicTagTechnology {
         int var534FE261D7083B235B3B010A14A83EE1_746476423 = (getMaxTransceiveLengthInternal());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_465017813 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_465017813;
-        
-        
+        // ---------- Original Method ----------
+        //return getMaxTransceiveLengthInternal();
     }
 
     

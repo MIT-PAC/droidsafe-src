@@ -1,6 +1,6 @@
 package android.test;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,9 +43,9 @@ public class RenamingDelegatingContext extends ContextWrapper {
         super(context);
         mFileContext = context;
         mFilePrefix = filePrefix;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFileContext = context;
+        //mFilePrefix = filePrefix;
     }
 
     
@@ -55,9 +55,9 @@ public class RenamingDelegatingContext extends ContextWrapper {
         addTaint(context.getTaint());
         mFileContext = fileContext;
         mFilePrefix = filePrefix;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFileContext = fileContext;
+        //mFilePrefix = filePrefix;
     }
 
     
@@ -89,29 +89,29 @@ for(String diskName : databaseList)
     if(shouldDiskNameBeVisible(diskName))            
             {
                 mDatabaseNames.add(publicNameFromDiskName(diskName));
-            } 
-        } 
+            } //End block
+        } //End block
         String[] fileList = mFileContext.fileList();
 for(String diskName : fileList)
         {
     if(shouldDiskNameBeVisible(diskName))            
             {
                 mFileNames.add(publicNameFromDiskName(diskName));
-            } 
-        } 
-        
-        
-        
-            
-                
-            
-        
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //String[] databaseList = mFileContext.databaseList();
+        //for (String diskName : databaseList) {
+            //if (shouldDiskNameBeVisible(diskName)) {
+                //mDatabaseNames.add(publicNameFromDiskName(diskName));
+            //}
+        //}
+        //String[] fileList = mFileContext.fileList();
+        //for (String diskName : fileList) {
+            //if (shouldDiskNameBeVisible(diskName)) {
+                //mFileNames.add(publicNameFromDiskName(diskName));
+            //}
+        //}
     }
 
     
@@ -121,8 +121,8 @@ for(String diskName : fileList)
         boolean varC475EE889E5CA894DF8715CEF854B3A7_2072222556 = (diskName.startsWith(mFilePrefix));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1654228848 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1654228848;
-        
-        
+        // ---------- Original Method ----------
+        //return diskName.startsWith(mFilePrefix);
     }
 
     
@@ -134,38 +134,36 @@ for(String diskName : fileList)
             IllegalArgumentException varB87E5E9841F3CD5EE783CC487F5E1612_1029457413 = new IllegalArgumentException("disk file should not be visible: " + diskName);
             varB87E5E9841F3CD5EE783CC487F5E1612_1029457413.addTaint(taint);
             throw varB87E5E9841F3CD5EE783CC487F5E1612_1029457413;
-        } 
+        } //End block
 String var0CE097494E0BC0F82FE4E9665F1EC7B9_384922230 =         diskName.substring(mFilePrefix.length(), diskName.length());
         var0CE097494E0BC0F82FE4E9665F1EC7B9_384922230.addTaint(taint);
         return var0CE097494E0BC0F82FE4E9665F1EC7B9_384922230;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!shouldDiskNameBeVisible(diskName)) {
+            //throw new IllegalArgumentException("disk file should not be visible: " + diskName);
+        //}
+        //return diskName.substring(mFilePrefix.length(), diskName.length());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.163 -0400", hash_original_method = "417E64563BC7C8978E920D60AB5E069C", hash_generated_method = "4EF867E680DFC50834BEEFE00D7CADD1")
     public String getDatabasePrefix() {
 String var362F964D970E0E1B94D1C2D044CD64A2_1409738956 =         mFilePrefix;
         var362F964D970E0E1B94D1C2D044CD64A2_1409738956.addTaint(taint);
         return var362F964D970E0E1B94D1C2D044CD64A2_1409738956;
-        
-        
+        // ---------- Original Method ----------
+        //return mFilePrefix;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.163 -0400", hash_original_method = "288CD7FC3C9C01601C3178A31BF94464", hash_generated_method = "04F78B8E790B597D18E40311FD2B10A0")
     private String renamedFileName(String name) {
         addTaint(name.getTaint());
 String varF2801096E84D7B061A670E1505987270_2133633190 =         mFilePrefix + name;
         varF2801096E84D7B061A670E1505987270_2133633190.addTaint(taint);
         return varF2801096E84D7B061A670E1505987270_2133633190;
-        
-        
+        // ---------- Original Method ----------
+        //return mFilePrefix + name;
     }
 
     
@@ -181,17 +179,17 @@ String varF2801096E84D7B061A670E1505987270_2133633190 =         mFilePrefix + na
         {
             mDatabaseNames.add(name);
             mFileContext.deleteDatabase(internalName);
-        } 
+        } //End block
 SQLiteDatabase varEF9AA0913B9F67D8BA83A28CF0D2C274_1469936725 =         mFileContext.openOrCreateDatabase(internalName, mode, factory);
         varEF9AA0913B9F67D8BA83A28CF0D2C274_1469936725.addTaint(taint);
         return varEF9AA0913B9F67D8BA83A28CF0D2C274_1469936725;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //final String internalName = renamedFileName(name);
+        //if (!mDatabaseNames.contains(name)) {
+            //mDatabaseNames.add(name);
+            //mFileContext.deleteDatabase(internalName);
+        //}
+        //return mFileContext.openOrCreateDatabase(internalName, mode, factory);
     }
 
     
@@ -208,21 +206,20 @@ SQLiteDatabase varEF9AA0913B9F67D8BA83A28CF0D2C274_1469936725 =         mFileCon
         {
             mDatabaseNames.add(name);
             mFileContext.deleteDatabase(internalName);
-        } 
+        } //End block
 SQLiteDatabase varD521834BA89A83E0413BF0F37D6D9DCE_2045450895 =         mFileContext.openOrCreateDatabase(internalName, mode, factory, errorHandler);
         varD521834BA89A83E0413BF0F37D6D9DCE_2045450895.addTaint(taint);
         return varD521834BA89A83E0413BF0F37D6D9DCE_2045450895;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //final String internalName = renamedFileName(name);
+        //if (!mDatabaseNames.contains(name)) {
+            //mDatabaseNames.add(name);
+            //mFileContext.deleteDatabase(internalName);
+        //}
+        //return mFileContext.openOrCreateDatabase(internalName, mode, factory, errorHandler);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.165 -0400", hash_original_method = "769583112D24FD602F7B9C331E63368D", hash_generated_method = "820CCA2DB33F38CCBCBAA56007F21514")
     @Override
     public boolean deleteDatabase(String name) {
@@ -233,24 +230,23 @@ SQLiteDatabase varD521834BA89A83E0413BF0F37D6D9DCE_2045450895 =         mFileCon
             boolean varE0577A2601440216B756B5BEC91FF6A6_476241363 = (mFileContext.deleteDatabase(renamedFileName(name)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1273236599 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1273236599;
-        } 
+        } //End block
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1366441271 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_309516928 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_309516928;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mDatabaseNames.contains(name)) {
+            //mDatabaseNames.remove(name);
+            //return mFileContext.deleteDatabase(renamedFileName(name));
+        //} else {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.165 -0400", hash_original_method = "D9A3864414B54AB528512CE33B05FB4D", hash_generated_method = "FEE492D31D6F03B2CE7744C91C529042")
     @Override
     public File getDatabasePath(String name) {
@@ -258,24 +254,22 @@ SQLiteDatabase varD521834BA89A83E0413BF0F37D6D9DCE_2045450895 =         mFileCon
 File var76CE04263C550BECC0F1A57BECD8BE94_1477530150 =         mFileContext.getDatabasePath(renamedFileName(name));
         var76CE04263C550BECC0F1A57BECD8BE94_1477530150.addTaint(taint);
         return var76CE04263C550BECC0F1A57BECD8BE94_1477530150;
-        
-        
+        // ---------- Original Method ----------
+        //return mFileContext.getDatabasePath(renamedFileName(name));
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.166 -0400", hash_original_method = "C72F928FF6D1DE8462B16697F47B8129", hash_generated_method = "DEF63B295C39BCD0A23BC3489D0D41E7")
     @Override
     public String[] databaseList() {
 String[] var9D5D41B4C26BCA35487A5325A77218ED_2132598794 =         mDatabaseNames.toArray(new String[]{});
         var9D5D41B4C26BCA35487A5325A77218ED_2132598794.addTaint(taint);
         return var9D5D41B4C26BCA35487A5325A77218ED_2132598794;
-        
-        
+        // ---------- Original Method ----------
+        //return mDatabaseNames.toArray(new String[]{});
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.166 -0400", hash_original_method = "22834974648353EE4B305B5F791B6612", hash_generated_method = "2CE7A765C7AC9374C00B76D25949AFC3")
     @Override
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
@@ -286,24 +280,23 @@ String[] var9D5D41B4C26BCA35487A5325A77218ED_2132598794 =         mDatabaseNames
 FileInputStream var2BD693B4BCAD6759F4E88A5E81233801_1298620003 =             mFileContext.openFileInput(internalName);
             var2BD693B4BCAD6759F4E88A5E81233801_1298620003.addTaint(taint);
             return var2BD693B4BCAD6759F4E88A5E81233801_1298620003;
-        } 
+        } //End block
         else
         {
             FileNotFoundException var7FA59ADD56868E528F90EC0B33CEE535_229085232 = new FileNotFoundException(internalName);
             var7FA59ADD56868E528F90EC0B33CEE535_229085232.addTaint(taint);
             throw var7FA59ADD56868E528F90EC0B33CEE535_229085232;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final String internalName = renamedFileName(name);
+        //if (mFileNames.contains(name)) {
+            //return mFileContext.openFileInput(internalName);
+        //} else {
+            //throw new FileNotFoundException(internalName);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.166 -0400", hash_original_method = "BAFF09712F6A622B6FB90CC40B6EB538", hash_generated_method = "C8336F2EC6D0C2848848C200C0B522D2")
     @Override
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
@@ -313,13 +306,12 @@ FileInputStream var2BD693B4BCAD6759F4E88A5E81233801_1298620003 =             mFi
 FileOutputStream var10B6626D436D657417F8FCB752E9658B_537619580 =         mFileContext.openFileOutput(renamedFileName(name), mode);
         var10B6626D436D657417F8FCB752E9658B_537619580.addTaint(taint);
         return var10B6626D436D657417F8FCB752E9658B_537619580;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFileNames.add(name);
+        //return mFileContext.openFileOutput(renamedFileName(name), mode);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.167 -0400", hash_original_method = "46FF4FEA40FAAA40585EE8088997DFB9", hash_generated_method = "7FB90C69DA3DCB1AEB96CF25AFFD022F")
     @Override
     public File getFileStreamPath(String name) {
@@ -327,12 +319,11 @@ FileOutputStream var10B6626D436D657417F8FCB752E9658B_537619580 =         mFileCo
 File var64D4A2E452E8A20AF76657C67B11AAE9_702904836 =         mFileContext.getFileStreamPath(renamedFileName(name));
         var64D4A2E452E8A20AF76657C67B11AAE9_702904836.addTaint(taint);
         return var64D4A2E452E8A20AF76657C67B11AAE9_702904836;
-        
-        
+        // ---------- Original Method ----------
+        //return mFileContext.getFileStreamPath(renamedFileName(name));
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.167 -0400", hash_original_method = "B618668AF514509A928F75BC70031AF8", hash_generated_method = "AC01DA18380D9D1EC5E681022710CAE9")
     @Override
     public boolean deleteFile(String name) {
@@ -343,32 +334,31 @@ File var64D4A2E452E8A20AF76657C67B11AAE9_702904836 =         mFileContext.getFil
             boolean var4837BA085A06E18BC860B9BADF1D1F47_14111904 = (mFileContext.deleteFile(renamedFileName(name)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2029408053 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2029408053;
-        } 
+        } //End block
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1834121612 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908484525 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_908484525;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mFileNames.contains(name)) {
+            //mFileNames.remove(name);
+            //return mFileContext.deleteFile(renamedFileName(name));
+        //} else {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.167 -0400", hash_original_method = "945BB3C3C9DB1E1310115126C2994271", hash_generated_method = "176517D255CBA9723AF4B18E3F733F6A")
     @Override
     public String[] fileList() {
 String[] varE0E91E51CD6F4F1B465DF87E6E14623F_1454034788 =         mFileNames.toArray(new String[]{});
         varE0E91E51CD6F4F1B465DF87E6E14623F_1454034788.addTaint(taint);
         return varE0E91E51CD6F4F1B465DF87E6E14623F_1454034788;
-        
-        
+        // ---------- Original Method ----------
+        //return mFileNames.toArray(new String[]{});
     }
 
     
@@ -380,7 +370,7 @@ String[] varE0E91E51CD6F4F1B465DF87E6E14623F_1454034788 =         mFileNames.toA
     if(mCacheDir == null)            
             {
                 mCacheDir = new File(mFileContext.getCacheDir(), renamedFileName("cache"));
-            } 
+            } //End block
     if(!mCacheDir.exists())            
             {
     if(!mCacheDir.mkdirs())                
@@ -388,33 +378,33 @@ String[] varE0E91E51CD6F4F1B465DF87E6E14623F_1454034788 =         mFileNames.toA
 File var540C13E9E156B687226421B24F2DF178_1706525673 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1706525673.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1706525673;
-                } 
+                } //End block
                 FileUtils.setPermissions(
                         mCacheDir.getPath(),
                         FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
                         -1, -1);
-            } 
-        } 
+            } //End block
+        } //End block
 File var02A188D4F0BB4497378BBD745019EB79_125504630 =         mCacheDir;
         var02A188D4F0BB4497378BBD745019EB79_125504630.addTaint(taint);
         return var02A188D4F0BB4497378BBD745019EB79_125504630;
-        
-        
-            
-                
-            
-            
-                
-                    
-                    
-                
-                
-                        
-                        
-                        
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mSync) {
+            //if (mCacheDir == null) {
+                //mCacheDir = new File(mFileContext.getCacheDir(), renamedFileName("cache"));
+            //}
+            //if (!mCacheDir.exists()) {
+                //if(!mCacheDir.mkdirs()) {
+                    //Log.w("RenamingDelegatingContext", "Unable to create cache directory");
+                    //return null;
+                //}
+                //FileUtils.setPermissions(
+                        //mCacheDir.getPath(),
+                        //FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
+                        //-1, -1);
+            //}
+        //}
+        //return mCacheDir;
     }
 
     

@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ final class StringToReal {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.336 -0400", hash_original_method = "50763D5996F4E117B646112682AF8739", hash_generated_method = "50763D5996F4E117B646112682AF8739")
     public StringToReal ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -233,11 +233,10 @@ final class StringToReal {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.340 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
         public StringExponentPair ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.341 -0400", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "34C5601E7A11CF36CDA98BCC633F1A32")
         public float specialValue() {
     if(infinity)            
@@ -245,15 +244,15 @@ final class StringToReal {
                 float var58A293DBE41BE1FC7DA27C34389052B6_1850661140 = (negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY);
                                 float var546ADE640B6EDFBC8A086EF31347E768_766128125 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_766128125;
-            } 
+            } //End block
             float var8EBD4BDE80414E3383036D59A456AD3A_2054280963 = (negative ? -0.0f : 0.0f);
                         float var546ADE640B6EDFBC8A086EF31347E768_1098093663 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1098093663;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (infinity) {
+                //return negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
+            //}
+            //return negative ? -0.0f : 0.0f;
         }
 
         

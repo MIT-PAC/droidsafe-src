@@ -1,6 +1,6 @@
 package java.security.spec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,13 +12,13 @@ public class InvalidKeySpecException extends GeneralSecurityException {
     public  InvalidKeySpecException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.671 -0400", hash_original_method = "62E7948E21963822758AD86C4EE61479", hash_generated_method = "375CBDDC3236D67BD233F634A596B6E0")
     public  InvalidKeySpecException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,7 +27,7 @@ public class InvalidKeySpecException extends GeneralSecurityException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -35,7 +35,7 @@ public class InvalidKeySpecException extends GeneralSecurityException {
     public  InvalidKeySpecException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

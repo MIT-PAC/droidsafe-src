@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,15 +25,15 @@ public final class CodeSigner implements Serializable {
             NullPointerException varAD3BDBD70F6B1C2E530A6596114697A8_1757225745 = new NullPointerException("signerCertPath == null");
             varAD3BDBD70F6B1C2E530A6596114697A8_1757225745.addTaint(taint);
             throw varAD3BDBD70F6B1C2E530A6596114697A8_1757225745;
-        } 
+        } //End block
         this.signerCertPath = signerCertPath;
         this.timestamp = timestamp;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (signerCertPath == null) {
+            //throw new NullPointerException("signerCertPath == null");
+        //}
+        //this.signerCertPath = signerCertPath;
+        //this.timestamp = timestamp;
     }
 
     
@@ -46,7 +46,7 @@ public final class CodeSigner implements Serializable {
             boolean varB326B5062B2F0E69046810717534CB09_294746743 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940472004 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_940472004;
-        } 
+        } //End block
     if(obj instanceof CodeSigner)        
         {
             CodeSigner that = (CodeSigner) obj;
@@ -55,50 +55,48 @@ public final class CodeSigner implements Serializable {
                 boolean var68934A3E9455FA72420237EB05902327_1097755736 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_593684766 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_593684766;
-            } 
+            } //End block
             boolean varFF12D6A406BF50E0FC2C438C5A86D757_1312063114 = (timestamp == null ? that.timestamp == null : timestamp
                     .equals(that.timestamp));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_344815889 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_344815889;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_582979114 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1336785082 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1336785082;
-        
-        
-            
-        
-        
-            
-            
-                
-            
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (obj == this) {
+            //return true;
+        //}
+        //if (obj instanceof CodeSigner) {
+            //CodeSigner that = (CodeSigner) obj;
+            //if (!signerCertPath.equals(that.signerCertPath)) {
+                //return false;
+            //}
+            //return timestamp == null ? that.timestamp == null : timestamp
+                    //.equals(that.timestamp);
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.946 -0400", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "E248F023712F89DE6755F2D64E51AFED")
     public CertPath getSignerCertPath() {
 CertPath varC4579A22BE0444B538B995294C4BD4B5_1971977180 =         signerCertPath;
         varC4579A22BE0444B538B995294C4BD4B5_1971977180.addTaint(taint);
         return varC4579A22BE0444B538B995294C4BD4B5_1971977180;
-        
-        
+        // ---------- Original Method ----------
+        //return signerCertPath;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.946 -0400", hash_original_method = "F117DFA1A6EB777CC4A763885DD30F8B", hash_generated_method = "FEF9F73E6A124870465A4A272A8D12B6")
     public Timestamp getTimestamp() {
 Timestamp var7D8A855DA9A411559B05DE99C498CFFA_1241577390 =         timestamp;
         var7D8A855DA9A411559B05DE99C498CFFA_1241577390.addTaint(taint);
         return var7D8A855DA9A411559B05DE99C498CFFA_1241577390;
-        
-        
+        // ---------- Original Method ----------
+        //return timestamp;
     }
 
     
@@ -109,16 +107,16 @@ Timestamp var7D8A855DA9A411559B05DE99C498CFFA_1241577390 =         timestamp;
         {
             hash = signerCertPath.hashCode()
                     ^ (timestamp == null ? 0 : timestamp.hashCode());
-        } 
+        } //End block
         int var0800FC577294C34E0B28AD2839435945_898963470 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227228748 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227228748;
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (hash == 0) {
+            //hash = signerCertPath.hashCode()
+                    //^ (timestamp == null ? 0 : timestamp.hashCode());
+        //}
+        //return hash;
     }
 
     
@@ -130,19 +128,19 @@ Timestamp var7D8A855DA9A411559B05DE99C498CFFA_1241577390 =         timestamp;
     if(timestamp != null)        
         {
             buf.append("; ").append(timestamp);
-        } 
+        } //End block
         buf.append("]");
 String var4FC680801218E6372BC708D6FA44AE60_484820216 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_484820216.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_484820216;
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buf = new StringBuilder(256);
+        //buf.append("CodeSigner [").append(signerCertPath.getCertificates().get(0));
+        //if( timestamp != null ) {
+            //buf.append("; ").append(timestamp);
+        //}
+        //buf.append("]");
+        //return buf.toString();
     }
 
     

@@ -1,6 +1,6 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ class HttpConnection extends Connection {
         addTaint(requestFeeder.getTaint());
         addTaint(host.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -41,16 +41,16 @@ class HttpConnection extends Connection {
 AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265 =         conn;
         varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265.addTaint(taint);
         return varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //EventHandler eventHandler = req.getEventHandler();
+        //mCertificate = null;
+        //eventHandler.certificate(mCertificate);
+        //AndroidHttpClientConnection conn = new AndroidHttpClientConnection();
+        //BasicHttpParams params = new BasicHttpParams();
+        //Socket sock = new Socket(mHost.getHostName(), mHost.getPort());
+        //params.setIntParameter(HttpConnectionParams.SOCKET_BUFFER_SIZE, 8192);
+        //conn.bind(sock, params);
+        //return conn;
     }
 
     
@@ -61,8 +61,8 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265 =    
     if(mHttpClientConnection != null && mHttpClientConnection.isOpen())            
             {
                 mHttpClientConnection.close();
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException e)
         {
     if(HttpLog.LOGV)            
@@ -70,37 +70,35 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1802880265 =    
                     "closeConnection(): failed closing connection " +
                     mHost);
             e.printStackTrace();
-        } 
-        
-        
-            
-                
-            
-        
-            
-                    
-                    
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (mHttpClientConnection != null && mHttpClientConnection.isOpen()) {
+                //mHttpClientConnection.close();
+            //}
+        //} catch (IOException e) {
+            //if (HttpLog.LOGV) HttpLog.v(
+                    //"closeConnection(): failed closing connection " +
+                    //mHost);
+            //e.printStackTrace();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.216 -0400", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "3D03B196C0054FDF260344F57DB44DDC")
      void restartConnection(boolean abort) {
         addTaint(abort);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.216 -0400", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "47E41E4EAB614CFB35D520A8333FB623")
      String getScheme() {
 String var44B57466CD1C2BC7FBE96906897504B6_934017218 =         "http";
         var44B57466CD1C2BC7FBE96906897504B6_934017218.addTaint(taint);
         return var44B57466CD1C2BC7FBE96906897504B6_934017218;
-        
-        
+        // ---------- Original Method ----------
+        //return "http";
     }
 
     

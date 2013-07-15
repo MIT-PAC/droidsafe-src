@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.agreement;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,17 +19,16 @@ public class ECDHBasicAgreement implements BasicAgreement {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.819 -0400", hash_original_method = "96D932906701A5168A9F039F437639FE", hash_generated_method = "96D932906701A5168A9F039F437639FE")
     public ECDHBasicAgreement ()
     {
-        
+        //Synthesized constructor
     }
 
 
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.820 -0400", hash_original_method = "C673BA12443BA4859FBCFCA898D52D2A", hash_generated_method = "E19C4EAC31689C280C3CB5FC55C9A89F")
     public void init(
         CipherParameters key) {
         this.key = (ECPrivateKeyParameters)key;
-        
-        
+        // ---------- Original Method ----------
+        //this.key = (ECPrivateKeyParameters)key;
     }
 
     
@@ -42,10 +41,10 @@ public class ECDHBasicAgreement implements BasicAgreement {
 BigInteger varC51B7E4AD72D846F8CD5C771B0587BB2_1535646439 =         P.getX().toBigInteger();
         varC51B7E4AD72D846F8CD5C771B0587BB2_1535646439.addTaint(taint);
         return varC51B7E4AD72D846F8CD5C771B0587BB2_1535646439;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ECPublicKeyParameters pub = (ECPublicKeyParameters)pubKey;
+        //ECPoint P = pub.getQ().multiply(key.getD());
+        //return P.getX().toBigInteger();
     }
 
     

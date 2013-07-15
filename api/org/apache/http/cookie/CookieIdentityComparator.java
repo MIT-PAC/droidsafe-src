@@ -1,6 +1,6 @@
 package org.apache.http.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class CookieIdentityComparator implements Serializable, Comparator<Cookie
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.830 -0400", hash_original_method = "4E7102072F2E26643CD713A2D98D9246", hash_generated_method = "4E7102072F2E26643CD713A2D98D9246")
     public CookieIdentityComparator ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -27,31 +27,31 @@ public class CookieIdentityComparator implements Serializable, Comparator<Cookie
     if(d1 == null)            
             {
                 d1 = "";
-            } 
+            } //End block
             String d2 = c2.getDomain();
     if(d2 == null)            
             {
                 d2 = "";
-            } 
+            } //End block
             res = d1.compareToIgnoreCase(d2);
-        } 
+        } //End block
         int var9B207167E5381C47682C6B4F58A623FB_588555791 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908082135 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908082135;
-        
-        
-        
-            
-            
-                
-            
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int res = c1.getName().compareTo(c2.getName());
+        //if (res == 0) {
+            //String d1 = c1.getDomain();
+            //if (d1 == null) {
+                //d1 = "";
+            //}
+            //String d2 = c2.getDomain();
+            //if (d2 == null) {
+                //d2 = "";
+            //}
+            //res = d1.compareToIgnoreCase(d2);
+        //}
+        //return res;
     }
 
     

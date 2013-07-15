@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -62,12 +62,12 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
         mPbrFile = null;
         mIsPbrPresent = true;
         mAdnCache = cache;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPhone = phone;
+        //mPhoneBookRecords = new ArrayList<AdnRecord>();
+        //mPbrFile = null;
+        //mIsPbrPresent = true;
+        //mAdnCache = cache;
     }
 
     
@@ -79,13 +79,13 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
         mPbrFile = null;
         mIsPbrPresent = true;
         mRefreshCache = false;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPhoneBookRecords.clear();
+        //mIapFileRecord = null;
+        //mEmailFileRecord = null;
+        //mPbrFile = null;
+        //mIsPbrPresent = true;
+        //mRefreshCache = false;
     }
 
     
@@ -99,11 +99,11 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
                 {
                     mRefreshCache = false;
                     refreshCache();
-                } 
+                } //End block
 ArrayList<AdnRecord> var8C99AB5783B2B47FF38441E92273C2C9_1816991885 =                 mPhoneBookRecords;
                 var8C99AB5783B2B47FF38441E92273C2C9_1816991885.addTaint(taint);
                 return var8C99AB5783B2B47FF38441E92273C2C9_1816991885;
-            } 
+            } //End block
     if(!mIsPbrPresent)            
             {
 ArrayList<AdnRecord> var540C13E9E156B687226421B24F2DF178_1070555539 =             null;
@@ -113,7 +113,7 @@ ArrayList<AdnRecord> var540C13E9E156B687226421B24F2DF178_1070555539 =           
     if(mPbrFile == null)            
             {
                 readPbrFileAndWait();
-            } 
+            } //End block
     if(mPbrFile == null)            
             {
 ArrayList<AdnRecord> var540C13E9E156B687226421B24F2DF178_1617300503 =             null;
@@ -125,32 +125,32 @@ for(int i = 0;i < numRecs;i++)
             {
                 readAdnFileAndWait(i);
                 readEmailFileAndWait(i);
-            } 
-        } 
+            } //End block
+        } //End block
 ArrayList<AdnRecord> var8C99AB5783B2B47FF38441E92273C2C9_1488998289 =         mPhoneBookRecords;
         var8C99AB5783B2B47FF38441E92273C2C9_1488998289.addTaint(taint);
         return var8C99AB5783B2B47FF38441E92273C2C9_1488998289;
-        
-        
-            
-                
-                    
-                    
-                
-                
-            
-            
-            
-                
-            
-            
-            
-            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (!mPhoneBookRecords.isEmpty()) {
+                //if (mRefreshCache) {
+                    //mRefreshCache = false;
+                    //refreshCache();
+                //}
+                //return mPhoneBookRecords;
+            //}
+            //if (!mIsPbrPresent) return null;
+            //if (mPbrFile == null) {
+                //readPbrFileAndWait();
+            //}
+            //if (mPbrFile == null) return null;
+            //int numRecs = mPbrFile.mFileIds.size();
+            //for (int i = 0; i < numRecs; i++) {
+                //readAdnFileAndWait(i);
+                //readEmailFileAndWait(i);
+            //}
+        //}
+        //return mPhoneBookRecords;
     }
 
     
@@ -163,23 +163,22 @@ ArrayList<AdnRecord> var8C99AB5783B2B47FF38441E92273C2C9_1488998289 =         mP
 for(int i = 0;i < numRecs;i++)
         {
             readAdnFileAndWait(i);
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mPbrFile == null) return;
+        //mPhoneBookRecords.clear();
+        //int numRecs = mPbrFile.mFileIds.size();
+        //for (int i = 0; i < numRecs; i++) {
+            //readAdnFileAndWait(i);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.998 -0400", hash_original_method = "4227D3403F7221594B4C4984D58136B1", hash_generated_method = "94D421C1BCB4B33EF173797F9066F6AC")
     public void invalidateCache() {
         mRefreshCache = true;
-        
-        
+        // ---------- Original Method ----------
+        //mRefreshCache = true;
     }
 
     
@@ -189,17 +188,17 @@ for(int i = 0;i < numRecs;i++)
         try 
         {
             mLock.wait();
-        } 
+        } //End block
         catch (InterruptedException e)
         {
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mPhone.getIccFileHandler().loadEFLinearFixedAll(EF_PBR, obtainMessage(EVENT_PBR_LOAD_DONE));
+        //try {
+            //mLock.wait();
+        //} catch (InterruptedException e) {
+            //Log.e(LOG_TAG, "Interrupted Exception in readAdnFileAndWait");
+        //}
     }
 
     
@@ -219,25 +218,25 @@ for(int i = 0;i < numRecs;i++)
     if(mIapFileRecord == null)                
                 {
                     return;
-                } 
-            } 
+                } //End block
+            } //End block
             mPhone.getIccFileHandler().loadEFLinearFixedAll(fileIds.get(USIM_EFEMAIL_TAG),
                     obtainMessage(EVENT_EMAIL_LOAD_DONE));
             try 
             {
                 mLock.wait();
-            } 
+            } //End block
             catch (InterruptedException e)
             {
-            } 
+            } //End block
     if(mEmailFileRecord == null)            
             {
                 return;
-            } 
+            } //End block
             updatePhoneAdnRecord();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -248,17 +247,17 @@ for(int i = 0;i < numRecs;i++)
         try 
         {
             mLock.wait();
-        } 
+        } //End block
         catch (InterruptedException e)
         {
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mPhone.getIccFileHandler().loadEFLinearFixedAll(efid, obtainMessage(EVENT_IAP_LOAD_DONE));
+        //try {
+            //mLock.wait();
+        //} catch (InterruptedException e) {
+            //Log.e(LOG_TAG, "Interrupted Exception in readIapFileAndWait");
+        //}
     }
 
     
@@ -275,11 +274,11 @@ for(int i = 0;i < numAdnRecs;i++)
                 try 
                 {
                     record = mIapFileRecord.get(i);
-                } 
+                } //End block
                 catch (IndexOutOfBoundsException e)
                 {
                     break;
-                } 
+                } //End block
                 int recNum = record[mEmailTagNumberInIap];
     if(recNum != -1)                
                 {
@@ -289,31 +288,31 @@ for(int i = 0;i < numAdnRecs;i++)
     if(rec != null)                    
                     {
                         rec.setEmails(emails);
-                    } 
+                    } //End block
                     else
                     {
                         rec = new AdnRecord("", "", emails);
-                    } 
+                    } //End block
                     mPhoneBookRecords.set(i, rec);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         int len = mPhoneBookRecords.size();
     if(mEmailsForAdnRec == null)        
         {
             parseType1EmailFile(len);
-        } 
+        } //End block
 for(int i = 0;i < numAdnRecs;i++)
         {
             ArrayList<String> emailList = null;
             try 
             {
                 emailList = mEmailsForAdnRec.get(i);
-            } 
+            } //End block
             catch (IndexOutOfBoundsException e)
             {
                 break;
-            } 
+            } //End block
     if(emailList == null)            
             continue;
             AdnRecord rec = mPhoneBookRecords.get(i);
@@ -321,9 +320,9 @@ for(int i = 0;i < numAdnRecs;i++)
             System.arraycopy(emailList.toArray(), 0, emails, 0, emailList.size());
             rec.setEmails(emails);
             mPhoneBookRecords.set(i, rec);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -337,31 +336,31 @@ for(int i = 0;i < numRecs;i++)
             try 
             {
                 emailRec = mEmailFileRecord.get(i);
-            } 
+            } //End block
             catch (IndexOutOfBoundsException e)
             {
                 break;
-            } 
+            } //End block
             int adnRecNum = emailRec[emailRec.length - 1];
     if(adnRecNum == -1)            
             {
                 continue;
-            } 
+            } //End block
             String email = readEmailRecord(i);
     if(email == null || email.equals(""))            
             {
                 continue;
-            } 
+            } //End block
             ArrayList<String> val = mEmailsForAdnRec.get(adnRecNum - 1);
     if(val == null)            
             {
                 val = new ArrayList<String>();
-            } 
+            } //End block
             val.add(email);
             mEmailsForAdnRec.put(adnRecNum - 1, val);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -372,26 +371,26 @@ for(int i = 0;i < numRecs;i++)
         try 
         {
             emailRec = mEmailFileRecord.get(recNum);
-        } 
+        } //End block
         catch (IndexOutOfBoundsException e)
         {
 String var540C13E9E156B687226421B24F2DF178_639944681 =             null;
             var540C13E9E156B687226421B24F2DF178_639944681.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_639944681;
-        } 
+        } //End block
         String email = IccUtils.adnStringFieldToString(emailRec, 0, emailRec.length - 2);
 String var2D726FE6F9242582D95F0FF51CCDA35C_1600598886 =         email;
         var2D726FE6F9242582D95F0FF51CCDA35C_1600598886.addTaint(taint);
         return var2D726FE6F9242582D95F0FF51CCDA35C_1600598886;
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] emailRec = null;
+        //try {
+            //emailRec = mEmailFileRecord.get(recNum);
+        //} catch (IndexOutOfBoundsException e) {
+            //return null;
+        //}
+        //String email = IccUtils.adnStringFieldToString(emailRec, 0, emailRec.length - 2);
+        //return email;
     }
 
     
@@ -406,31 +405,31 @@ String var2D726FE6F9242582D95F0FF51CCDA35C_1600598886 =         email;
     if(fileIds.containsKey(USIM_EFEXT1_TAG))        
         {
             extEf = fileIds.get(USIM_EFEXT1_TAG);
-        } 
+        } //End block
         mAdnCache.requestLoadAllAdnLike(fileIds.get(USIM_EFADN_TAG),
             extEf, obtainMessage(EVENT_USIM_ADN_LOAD_DONE));
         try 
         {
             mLock.wait();
-        } 
+        } //End block
         catch (InterruptedException e)
         {
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Map <Integer,Integer> fileIds;
+        //fileIds = mPbrFile.mFileIds.get(recNum);
+        //if (fileIds == null || fileIds.isEmpty()) return;
+        //int extEf = 0;
+        //if (fileIds.containsKey(USIM_EFEXT1_TAG)) {
+            //extEf = fileIds.get(USIM_EFEXT1_TAG);
+        //}
+        //mAdnCache.requestLoadAllAdnLike(fileIds.get(USIM_EFADN_TAG),
+            //extEf, obtainMessage(EVENT_USIM_ADN_LOAD_DONE));
+        //try {
+            //mLock.wait();
+        //} catch (InterruptedException e) {
+            //Log.e(LOG_TAG, "Interrupted Exception in readAdnFileAndWait");
+        //}
     }
 
     
@@ -441,15 +440,15 @@ String var2D726FE6F9242582D95F0FF51CCDA35C_1600598886 =         email;
             mPbrFile = null;
             mIsPbrPresent = false;
             return;
-        } 
+        } //End block
         mPbrFile = new PbrFile(records);
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (records == null) {
+            //mPbrFile = null;
+            //mIsPbrPresent = false;
+            //return;
+        //}
+        //mPbrFile = new PbrFile(records);
     }
 
     
@@ -464,11 +463,11 @@ switch(msg.what){
     if(ar.exception == null)        
         {
             createPbrFile((ArrayList<byte[]>)ar.result);
-        } 
+        } //End block
         synchronized
 (mLock)        {
             mLock.notify();
-        } 
+        } //End block
         break;
         case EVENT_USIM_ADN_LOAD_DONE:
         log("Loading USIM ADN records done");
@@ -476,11 +475,11 @@ switch(msg.what){
     if(ar.exception == null)        
         {
             mPhoneBookRecords.addAll((ArrayList<AdnRecord>)ar.result);
-        } 
+        } //End block
         synchronized
 (mLock)        {
             mLock.notify();
-        } 
+        } //End block
         break;
         case EVENT_IAP_LOAD_DONE:
         log("Loading USIM IAP records done");
@@ -488,11 +487,11 @@ switch(msg.what){
     if(ar.exception == null)        
         {
             mIapFileRecord = ((ArrayList<byte[]>)ar.result);
-        } 
+        } //End block
         synchronized
 (mLock)        {
             mLock.notify();
-        } 
+        } //End block
         break;
         case EVENT_EMAIL_LOAD_DONE:
         log("Loading USIM Email records done");
@@ -500,15 +499,15 @@ switch(msg.what){
     if(ar.exception == null)        
         {
             mEmailFileRecord = ((ArrayList<byte[]>)ar.result);
-        } 
+        } //End block
         synchronized
 (mLock)        {
             mLock.notify();
-        } 
+        } //End block
         break;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -517,8 +516,8 @@ switch(msg.what){
         addTaint(msg.getTaint());
     if(DBG)        
         Log.d(LOG_TAG, msg);
-        
-        
+        // ---------- Original Method ----------
+        //if(DBG) Log.d(LOG_TAG, msg);
     }
 
     
@@ -538,16 +537,16 @@ for(byte[] record : records)
                 recTlv = new SimTlv(record, 0, record.length);
                 parseTag(recTlv, recNum);
                 recNum ++;
-            } 
-            
-            
-            
-            
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mFileIds = new HashMap<Integer, Map<Integer, Integer>>();
+            //SimTlv recTlv;
+            //int recNum = 0;
+            //for (byte[] record: records) {
+                //recTlv = new SimTlv(record, 0, record.length);
+                //parseTag(recTlv, recNum);
+                //recNum ++;
+            //}
         }
 
         
@@ -571,27 +570,27 @@ switch(tag){
                     parseEf(tlvEf, val, tag);
                     break;
 }
-                } 
+                } //End block
 } while (tlv.nextObject());
             mFileIds.put(recNum, val);
-            
-            
-            
-            
-            
-            
-                
-                
-                
-                
-                
-                    
-                    
-                    
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //SimTlv tlvEf;
+            //int tag;
+            //byte[] data;
+            //Map<Integer, Integer> val = new HashMap<Integer, Integer>();
+            //do {
+                //tag = tlv.getTag();
+                //switch(tag) {
+                //case USIM_TYPE1_TAG: 
+                //case USIM_TYPE3_TAG: 
+                //case USIM_TYPE2_TAG: 
+                    //data = tlv.getData();
+                    //tlvEf = new SimTlv(data, 0, data.length);
+                    //parseEf(tlvEf, val, tag);
+                    //break;
+                //}
+            //} while (tlv.nextObject());
+            //mFileIds.put(recNum, val);
         }
 
         
@@ -610,7 +609,7 @@ switch(tag){
                     {
                         mEmailPresentInIap = true;
                         mEmailTagNumberInIap = tagNumberWithinParentTag;
-                    } 
+                    } //End block
 switch(tag){
                     case USIM_EFEMAIL_TAG:
                     case USIM_EFADN_TAG:
@@ -629,10 +628,10 @@ switch(tag){
                     val.put(tag, efid);
                     break;
 }                    tagNumberWithinParentTag ++;
-                } 
+                } //End block
 } while (tlv.nextObject());
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

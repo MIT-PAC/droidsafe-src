@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public abstract class LoaderManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.152 -0400", hash_original_method = "921B150ED82AB2739CD0194A062DB550", hash_generated_method = "921B150ED82AB2739CD0194A062DB550")
     public LoaderManager ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -40,20 +40,18 @@ public abstract class LoaderManager {
     public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
 
     
-        @DSModeled(DSC.SAFE)
-    public static void enableDebugLogging(boolean enabled) {
+        public static void enableDebugLogging(boolean enabled) {
         LoaderManagerImpl.DEBUG = enabled;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.154 -0400", hash_original_method = "59280299B88BC81400789A85A7BD24F4", hash_generated_method = "492CD06F4EE82849FBD67D0D15AE6A39")
     public boolean hasRunningLoaders() {
         boolean var68934A3E9455FA72420237EB05902327_2098696153 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2072662821 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2072662821;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -101,19 +99,18 @@ class LoaderManagerImpl extends LoaderManager {
         mWho = who;
         mActivity = activity;
         mStarted = started;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWho = who;
+        //mActivity = activity;
+        //mStarted = started;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.156 -0400", hash_original_method = "39148A68E08215CAB837BA67F40FAA62", hash_generated_method = "FD7298AAA1462E00D71BDFDBAB50C6A6")
      void updateActivity(FragmentActivity activity) {
         mActivity = activity;
-        
-        
+        // ---------- Original Method ----------
+        //mActivity = activity;
     }
 
     
@@ -129,11 +126,11 @@ class LoaderManagerImpl extends LoaderManager {
 LoaderInfo var43CF3338FDBA93597A9562D3166E9DC4_856484873 =         info;
         var43CF3338FDBA93597A9562D3166E9DC4_856484873.addTaint(taint);
         return var43CF3338FDBA93597A9562D3166E9DC4_856484873;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //LoaderInfo info = new LoaderInfo(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
+        //Loader<Object> loader = callback.onCreateLoader(id, args);
+        //info.mLoader = (Loader<Object>)loader;
+        //return info;
     }
 
     
@@ -151,20 +148,20 @@ LoaderInfo var43CF3338FDBA93597A9562D3166E9DC4_856484873 =         info;
 LoaderInfo var43CF3338FDBA93597A9562D3166E9DC4_537693289 =             info;
             var43CF3338FDBA93597A9562D3166E9DC4_537693289.addTaint(taint);
             return var43CF3338FDBA93597A9562D3166E9DC4_537693289;
-        } 
+        } //End block
         finally 
         {
             mCreatingLoader = false;
-        } 
-        
-        
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mCreatingLoader = true;
+            //LoaderInfo info = createLoader(id, args, callback);
+            //installLoader(info);
+            //return info;
+        //} finally {
+            //mCreatingLoader = false;
+        //}
     }
 
     
@@ -175,12 +172,12 @@ LoaderInfo var43CF3338FDBA93597A9562D3166E9DC4_537693289 =             info;
     if(mStarted)        
         {
             info.start();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLoaders.put(info.mId, info);
+        //if (mStarted) {
+            //info.start();
+        //}
     }
 
     
@@ -195,41 +192,41 @@ LoaderInfo var43CF3338FDBA93597A9562D3166E9DC4_537693289 =             info;
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_1942650603 = new IllegalStateException("Called while creating a loader");
             varC1757A3C3A6F109D8AFC5079F17B7ED3_1942650603.addTaint(taint);
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_1942650603;
-        } 
+        } //End block
         LoaderInfo info = mLoaders.get(id);
     if(DEBUG){ }    if(info == null)        
         {
             info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
     if(DEBUG){ }
-        } 
+        } //End block
         else
         {
     if(DEBUG){ }            info.mCallbacks = (LoaderManager.LoaderCallbacks<Object>)callback;
-        } 
+        } //End block
     if(info.mHaveData && mStarted)        
         {
             info.callOnLoadFinished(info.mLoader, info.mData);
-        } 
+        } //End block
 Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_1585413132 =         (Loader<D>)info.mLoader;
         var75A6A3900136EAA1B4E4C3D43F1802B1_1585413132.addTaint(taint);
         return var75A6A3900136EAA1B4E4C3D43F1802B1_1585413132;
-        
-        
-            
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mCreatingLoader) {
+            //throw new IllegalStateException("Called while creating a loader");
+        //}
+        //LoaderInfo info = mLoaders.get(id);
+        //if (DEBUG) Log.v(TAG, "initLoader in " + this + ": args=" + args);
+        //if (info == null) {
+            //info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
+            //if (DEBUG) Log.v(TAG, "  Created new loader " + info);
+        //} else {
+            //if (DEBUG) Log.v(TAG, "  Re-using existing loader " + info);
+            //info.mCallbacks = (LoaderManager.LoaderCallbacks<Object>)callback;
+        //}
+        //if (info.mHaveData && mStarted) {
+            //info.callOnLoadFinished(info.mLoader, info.mData);
+        //}
+        //return (Loader<D>)info.mLoader;
     }
 
     
@@ -244,7 +241,7 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_1585413132 =         (Loader<D>)in
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_1194920441 = new IllegalStateException("Called while creating a loader");
             varC1757A3C3A6F109D8AFC5079F17B7ED3_1194920441.addTaint(taint);
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_1194920441;
-        } 
+        } //End block
         LoaderInfo info = mLoaders.get(id);
     if(DEBUG){ }    if(info != null)        
         {
@@ -257,41 +254,41 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_1585413132 =         (Loader<D>)in
                     inactive.destroy();
                     info.mLoader.abandon();
                     mInactiveLoaders.put(id, info);
-                } 
+                } //End block
                 else
                 {
     if(!info.mStarted)                    
                     {
     if(DEBUG){ }                        mLoaders.put(id, null);
                         info.destroy();
-                    } 
+                    } //End block
                     else
                     {
     if(info.mPendingLoader != null)                        
                         {
     if(DEBUG){ }                            info.mPendingLoader.destroy();
                             info.mPendingLoader = null;
-                        } 
+                        } //End block
     if(DEBUG){ }                        info.mPendingLoader = createLoader(id, args, 
                                 (LoaderManager.LoaderCallbacks<Object>)callback);
 Loader<D> varA0A415B70AD2C3775252A85D08956D6B_134864925 =                         (Loader<D>)info.mPendingLoader.mLoader;
                         varA0A415B70AD2C3775252A85D08956D6B_134864925.addTaint(taint);
                         return varA0A415B70AD2C3775252A85D08956D6B_134864925;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             else
             {
     if(DEBUG){ }                info.mLoader.abandon();
                 mInactiveLoaders.put(id, info);
-            } 
-        } 
+            } //End block
+        } //End block
         info = createAndInstallLoader(id, args,  (LoaderManager.LoaderCallbacks<Object>)callback);
 Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_1700926405 =         (Loader<D>)info.mLoader;
         var75A6A3900136EAA1B4E4C3D43F1802B1_1700926405.addTaint(taint);
         return var75A6A3900136EAA1B4E4C3D43F1802B1_1700926405;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -303,45 +300,45 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_1700926405 =         (Loader<D>)in
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_2089638052 = new IllegalStateException("Called while creating a loader");
             varC1757A3C3A6F109D8AFC5079F17B7ED3_2089638052.addTaint(taint);
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_2089638052;
-        } 
+        } //End block
     if(DEBUG){ }        int idx = mLoaders.indexOfKey(id);
     if(idx >= 0)        
         {
             LoaderInfo info = mLoaders.valueAt(idx);
             mLoaders.removeAt(idx);
             info.destroy();
-        } 
+        } //End block
         idx = mInactiveLoaders.indexOfKey(id);
     if(idx >= 0)        
         {
             LoaderInfo info = mInactiveLoaders.valueAt(idx);
             mInactiveLoaders.removeAt(idx);
             info.destroy();
-        } 
+        } //End block
     if(mActivity != null && !hasRunningLoaders())        
         {
             mActivity.mFragments.startPendingDeferredFragments();
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-            
-            
-        
-        
-        
-            
-            
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mCreatingLoader) {
+            //throw new IllegalStateException("Called while creating a loader");
+        //}
+        //if (DEBUG) Log.v(TAG, "destroyLoader in " + this + " of " + id);
+        //int idx = mLoaders.indexOfKey(id);
+        //if (idx >= 0) {
+            //LoaderInfo info = mLoaders.valueAt(idx);
+            //mLoaders.removeAt(idx);
+            //info.destroy();
+        //}
+        //idx = mInactiveLoaders.indexOfKey(id);
+        //if (idx >= 0) {
+            //LoaderInfo info = mInactiveLoaders.valueAt(idx);
+            //mInactiveLoaders.removeAt(idx);
+            //info.destroy();
+        //}
+        //if (mActivity != null && !hasRunningLoaders()) {
+            //mActivity.mFragments.startPendingDeferredFragments();
+        //}
     }
 
     
@@ -354,7 +351,7 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_1700926405 =         (Loader<D>)in
             IllegalStateException varC1757A3C3A6F109D8AFC5079F17B7ED3_2051055015 = new IllegalStateException("Called while creating a loader");
             varC1757A3C3A6F109D8AFC5079F17B7ED3_2051055015.addTaint(taint);
             throw varC1757A3C3A6F109D8AFC5079F17B7ED3_2051055015;
-        } 
+        } //End block
         LoaderInfo loaderInfo = mLoaders.get(id);
     if(loaderInfo != null)        
         {
@@ -363,26 +360,26 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_1700926405 =         (Loader<D>)in
 Loader<D> varD7DEEECF015803983B03F1336AB68299_493757253 =                 (Loader<D>)loaderInfo.mPendingLoader.mLoader;
                 varD7DEEECF015803983B03F1336AB68299_493757253.addTaint(taint);
                 return varD7DEEECF015803983B03F1336AB68299_493757253;
-            } 
+            } //End block
 Loader<D> var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_657002691 =             (Loader<D>)loaderInfo.mLoader;
             var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_657002691.addTaint(taint);
             return var9DBC3DF5BD36BC2BA7A9B881B9D6E27D_657002691;
-        } 
+        } //End block
 Loader<D> var540C13E9E156B687226421B24F2DF178_1068897030 =         null;
         var540C13E9E156B687226421B24F2DF178_1068897030.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1068897030;
-        
-        
-            
-        
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mCreatingLoader) {
+            //throw new IllegalStateException("Called while creating a loader");
+        //}
+        //LoaderInfo loaderInfo = mLoaders.get(id);
+        //if (loaderInfo != null) {
+            //if (loaderInfo.mPendingLoader != null) {
+                //return (Loader<D>)loaderInfo.mPendingLoader.mLoader;
+            //}
+            //return (Loader<D>)loaderInfo.mLoader;
+        //}
+        //return null;
     }
 
     
@@ -393,24 +390,24 @@ Loader<D> var540C13E9E156B687226421B24F2DF178_1068897030 =         null;
             RuntimeException e = new RuntimeException("here");
             e.fillInStackTrace();
             return;
-        } 
+        } //End block
         mStarted = true;
 for(int i = mLoaders.size()-1;i >= 0;i--)
         {
             mLoaders.valueAt(i).start();
-        } 
-        
-        
-        
-            
-            
-            
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "Starting in " + this);
+        //if (mStarted) {
+            //RuntimeException e = new RuntimeException("here");
+            //e.fillInStackTrace();
+            //Log.w(TAG, "Called doStart when already started: " + this, e);
+            //return;
+        //}
+        //mStarted = true;
+        //for (int i = mLoaders.size()-1; i >= 0; i--) {
+            //mLoaders.valueAt(i).start();
+        //}
     }
 
     
@@ -421,24 +418,24 @@ for(int i = mLoaders.size()-1;i >= 0;i--)
             RuntimeException e = new RuntimeException("here");
             e.fillInStackTrace();
             return;
-        } 
+        } //End block
 for(int i = mLoaders.size()-1;i >= 0;i--)
         {
             mLoaders.valueAt(i).stop();
-        } 
+        } //End block
         mStarted = false;
-        
-        
-        
-            
-            
-            
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "Stopping in " + this);
+        //if (!mStarted) {
+            //RuntimeException e = new RuntimeException("here");
+            //e.fillInStackTrace();
+            //Log.w(TAG, "Called doStop when not started: " + this, e);
+            //return;
+        //}
+        //for (int i = mLoaders.size()-1; i >= 0; i--) {
+            //mLoaders.valueAt(i).stop();
+        //}
+        //mStarted = false;
     }
 
     
@@ -449,26 +446,26 @@ for(int i = mLoaders.size()-1;i >= 0;i--)
             RuntimeException e = new RuntimeException("here");
             e.fillInStackTrace();
             return;
-        } 
+        } //End block
         mRetaining = true;
         mStarted = false;
 for(int i = mLoaders.size()-1;i >= 0;i--)
         {
             mLoaders.valueAt(i).retain();
-        } 
-        
-        
-        
-            
-            
-            
-            
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG) Log.v(TAG, "Retaining in " + this);
+        //if (!mStarted) {
+            //RuntimeException e = new RuntimeException("here");
+            //e.fillInStackTrace();
+            //Log.w(TAG, "Called doRetain when not started: " + this, e);
+            //return;
+        //}
+        //mRetaining = true;
+        //mStarted = false;
+        //for (int i = mLoaders.size()-1; i >= 0; i--) {
+            //mLoaders.valueAt(i).retain();
+        //}
     }
 
     
@@ -480,16 +477,16 @@ for(int i = mLoaders.size()-1;i >= 0;i--)
 for(int i = mLoaders.size()-1;i >= 0;i--)
             {
                 mLoaders.valueAt(i).finishRetain();
-            } 
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mRetaining) {
+            //if (DEBUG) Log.v(TAG, "Finished Retaining in " + this);
+            //mRetaining = false;
+            //for (int i = mLoaders.size()-1; i >= 0; i--) {
+                //mLoaders.valueAt(i).finishRetain();
+            //}
+        //}
     }
 
     
@@ -498,11 +495,11 @@ for(int i = mLoaders.size()-1;i >= 0;i--)
 for(int i = mLoaders.size()-1;i >= 0;i--)
         {
             mLoaders.valueAt(i).mReportNextStart = true;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = mLoaders.size()-1; i >= 0; i--) {
+            //mLoaders.valueAt(i).mReportNextStart = true;
+        //}
     }
 
     
@@ -511,11 +508,11 @@ for(int i = mLoaders.size()-1;i >= 0;i--)
 for(int i = mLoaders.size()-1;i >= 0;i--)
         {
             mLoaders.valueAt(i).reportStart();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = mLoaders.size()-1; i >= 0; i--) {
+            //mLoaders.valueAt(i).reportStart();
+        //}
     }
 
     
@@ -526,27 +523,27 @@ for(int i = mLoaders.size()-1;i >= 0;i--)
     if(DEBUG){ }for(int i = mLoaders.size()-1;i >= 0;i--)
             {
                 mLoaders.valueAt(i).destroy();
-            } 
+            } //End block
             mLoaders.clear();
-        } 
+        } //End block
     if(DEBUG){ }for(int i = mInactiveLoaders.size()-1;i >= 0;i--)
         {
             mInactiveLoaders.valueAt(i).destroy();
-        } 
+        } //End block
         mInactiveLoaders.clear();
-        
-        
-            
-            
-                
-            
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!mRetaining) {
+            //if (DEBUG) Log.v(TAG, "Destroying Active in " + this);
+            //for (int i = mLoaders.size()-1; i >= 0; i--) {
+                //mLoaders.valueAt(i).destroy();
+            //}
+            //mLoaders.clear();
+        //}
+        //if (DEBUG) Log.v(TAG, "Destroying Inactive in " + this);
+        //for (int i = mInactiveLoaders.size()-1; i >= 0; i--) {
+            //mInactiveLoaders.valueAt(i).destroy();
+        //}
+        //mInactiveLoaders.clear();
     }
 
     
@@ -562,14 +559,14 @@ for(int i = mLoaders.size()-1;i >= 0;i--)
 String var2460B846747F8B22185AD8BE722266A5_1286582260 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1286582260.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1286582260;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(128);
+        //sb.append("LoaderManager{");
+        //sb.append(Integer.toHexString(System.identityHashCode(this)));
+        //sb.append(" in ");
+        //DebugUtils.buildShortClassTag(mActivity, sb);
+        //sb.append("}}");
+        //return sb.toString();
     }
 
     
@@ -594,8 +591,8 @@ for(int i=0;i < mLoaders.size();i++)
                 writer.print(": ");
                 writer.println(li.toString());
                 li.dump(innerPrefix, fd, writer, args);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mInactiveLoaders.size() > 0)        
         {
             writer.print(prefix);
@@ -610,10 +607,10 @@ for(int i=0;i < mInactiveLoaders.size();i++)
                 writer.print(": ");
                 writer.println(li.toString());
                 li.dump(innerPrefix, fd, writer, args);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -626,18 +623,18 @@ for(int i = 0;i < count;i++)
         {
             final LoaderInfo li = mLoaders.valueAt(i);
             loadersRunning |= li.mStarted && !li.mDeliveredData;
-        } 
+        } //End block
         boolean var606D8489253BD9E9D91CEB4E75BDD667_1507963979 = (loadersRunning);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1122465504 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1122465504;
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean loadersRunning = false;
+        //final int count = mLoaders.size();
+        //for (int i = 0; i < count; i++) {
+            //final LoaderInfo li = mLoaders.valueAt(i);
+            //loadersRunning |= li.mStarted && !li.mDeliveredData;
+        //}
+        //return loadersRunning;
     }
 
     
@@ -690,10 +687,10 @@ for(int i = 0;i < count;i++)
             mId = id;
             mArgs = args;
             mCallbacks = callbacks;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mId = id;
+            //mArgs = args;
+            //mCallbacks = callbacks;
         }
 
         
@@ -703,16 +700,16 @@ for(int i = 0;i < count;i++)
             {
                 mStarted = true;
                 return;
-            } 
+            } //End block
     if(mStarted)            
             {
                 return;
-            } 
+            } //End block
             mStarted = true;
     if(DEBUG){ }    if(mLoader == null && mCallbacks != null)            
             {
                 mLoader = mCallbacks.onCreateLoader(mId, mArgs);
-            } 
+            } //End block
     if(mLoader != null)            
             {
     if(mLoader.getClass().isMemberClass()
@@ -723,16 +720,16 @@ for(int i = 0;i < count;i++)
                             + mLoader);
                     var4B8346B77A5BF415573A735E89DFAAA9_991329066.addTaint(taint);
                     throw var4B8346B77A5BF415573A735E89DFAAA9_991329066;
-                } 
+                } //End block
     if(!mListenerRegistered)                
                 {
                     mLoader.registerListener(mId, this);
                     mListenerRegistered = true;
-                } 
+                } //End block
                 mLoader.startLoading();
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -742,12 +739,12 @@ for(int i = 0;i < count;i++)
             mRetainingStarted = mStarted;
             mStarted = false;
             mCallbacks = null;
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (DEBUG) Log.v(TAG, "  Retaining: " + this);
+            //mRetaining = true;
+            //mRetainingStarted = mStarted;
+            //mStarted = false;
+            //mCallbacks = null;
         }
 
         
@@ -761,26 +758,26 @@ for(int i = 0;i < count;i++)
     if(!mStarted)                    
                     {
                         stop();
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if(mStarted && mHaveData && !mReportNextStart)            
             {
                 callOnLoadFinished(mLoader, mData);
-            } 
-            
-            
-                
-                
-                
-                    
-                        
-                    
-                
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mRetaining) {
+                //if (DEBUG) Log.v(TAG, "  Finished Retaining: " + this);
+                //mRetaining = false;
+                //if (mStarted != mRetainingStarted) {
+                    //if (!mStarted) {
+                        //stop();
+                    //}
+                //}
+            //}
+            //if (mStarted && mHaveData && !mReportNextStart) {
+                //callOnLoadFinished(mLoader, mData);
+            //}
         }
 
         
@@ -794,18 +791,18 @@ for(int i = 0;i < count;i++)
     if(mHaveData)                    
                     {
                         callOnLoadFinished(mLoader, mData);
-                    } 
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                        
-                    
-                
-            
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //if (mStarted) {
+                //if (mReportNextStart) {
+                    //mReportNextStart = false;
+                    //if (mHaveData) {
+                        //callOnLoadFinished(mLoader, mData);
+                    //}
+                //}
+            //}
         }
 
         
@@ -819,18 +816,18 @@ for(int i = 0;i < count;i++)
                     mListenerRegistered = false;
                     mLoader.unregisterListener(this);
                     mLoader.stopLoading();
-                } 
-            } 
-            
-            
-            
-            
-                
-                    
-                    
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //if (DEBUG) Log.v(TAG, "  Stopping: " + this);
+            //mStarted = false;
+            //if (!mRetaining) {
+                //if (mLoader != null && mListenerRegistered) {
+                    //mListenerRegistered = false;
+                    //mLoader.unregisterListener(this);
+                    //mLoader.stopLoading();
+                //}
+            //}
         }
 
         
@@ -846,19 +843,19 @@ for(int i = 0;i < count;i++)
                 {
                     lastBecause = mActivity.mFragments.mNoTransactionsBecause;
                     mActivity.mFragments.mNoTransactionsBecause = "onLoaderReset";
-                } 
+                } //End block
                 try 
                 {
                     mCallbacks.onLoaderReset(mLoader);
-                } 
+                } //End block
                 finally 
                 {
     if(mActivity != null)                    
                     {
                         mActivity.mFragments.mNoTransactionsBecause = lastBecause;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             mCallbacks = null;
             mData = null;
             mHaveData = false;
@@ -868,31 +865,31 @@ for(int i = 0;i < count;i++)
                 {
                     mListenerRegistered = false;
                     mLoader.unregisterListener(this);
-                } 
+                } //End block
                 mLoader.reset();
-            } 
+            } //End block
     if(mPendingLoader != null)            
             {
                 mPendingLoader.destroy();
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.175 -0400", hash_original_method = "5D6E68340AACAB27821B5B5851C94699", hash_generated_method = "7171DBD7033371002C95648D2C22BBD1")
         @Override
         public void onLoadComplete(Loader<Object> loader, Object data) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(loader.getTaint());
     if(DEBUG){ }    if(mDestroyed)            
             {
     if(DEBUG){ }                return;
-            } 
+            } //End block
     if(mLoaders.get(mId) != this)            
             {
     if(DEBUG){ }                return;
-            } 
+            } //End block
             LoaderInfo pending = mPendingLoader;
     if(pending != null)            
             {
@@ -901,7 +898,7 @@ for(int i = 0;i < count;i++)
                 destroy();
                 installLoader(pending);
                 return;
-            } 
+            } //End block
     if(mData != data || !mHaveData)            
             {
                 mData = data;
@@ -909,21 +906,21 @@ for(int i = 0;i < count;i++)
     if(mStarted)                
                 {
                     callOnLoadFinished(loader, data);
-                } 
-            } 
+                } //End block
+            } //End block
             LoaderInfo info = mInactiveLoaders.get(mId);
     if(info != null && info != this)            
             {
                 info.mDeliveredData = false;
                 info.destroy();
                 mInactiveLoaders.remove(mId);
-            } 
+            } //End block
     if(mActivity != null && !hasRunningLoaders())            
             {
                 mActivity.mFragments.startPendingDeferredFragments();
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -938,38 +935,38 @@ for(int i = 0;i < count;i++)
                 {
                     lastBecause = mActivity.mFragments.mNoTransactionsBecause;
                     mActivity.mFragments.mNoTransactionsBecause = "onLoadFinished";
-                } 
+                } //End block
                 try 
                 {
     if(DEBUG){ }                    mCallbacks.onLoadFinished(loader, data);
-                } 
+                } //End block
                 finally 
                 {
     if(mActivity != null)                    
                     {
                         mActivity.mFragments.mNoTransactionsBecause = lastBecause;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 mDeliveredData = true;
-            } 
-            
-            
-                
-                
-                    
-                    
-                
-                
-                    
-                            
-                    
-                
-                    
-                        
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mCallbacks != null) {
+                //String lastBecause = null;
+                //if (mActivity != null) {
+                    //lastBecause = mActivity.mFragments.mNoTransactionsBecause;
+                    //mActivity.mFragments.mNoTransactionsBecause = "onLoadFinished";
+                //}
+                //try {
+                    //if (DEBUG) Log.v(TAG, "  onLoadFinished in " + loader + ": "
+                            //+ loader.dataToString(data));
+                    //mCallbacks.onLoadFinished(loader, data);
+                //} finally {
+                    //if (mActivity != null) {
+                        //mActivity.mFragments.mNoTransactionsBecause = lastBecause;
+                    //}
+                //}
+                //mDeliveredData = true;
+            //}
         }
 
         
@@ -987,16 +984,16 @@ for(int i = 0;i < count;i++)
 String var2460B846747F8B22185AD8BE722266A5_1888004109 =             sb.toString();
             var2460B846747F8B22185AD8BE722266A5_1888004109.addTaint(taint);
             return var2460B846747F8B22185AD8BE722266A5_1888004109;
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //StringBuilder sb = new StringBuilder(64);
+            //sb.append("LoaderInfo{");
+            //sb.append(Integer.toHexString(System.identityHashCode(this)));
+            //sb.append(" #");
+            //sb.append(mId);
+            //sb.append(" : ");
+            //DebugUtils.buildShortClassTag(mLoader, sb);
+            //sb.append("}}");
+            //return sb.toString();
         }
 
         
@@ -1020,7 +1017,7 @@ String var2460B846747F8B22185AD8BE722266A5_1888004109 =             sb.toString(
     if(mLoader != null)            
             {
                 mLoader.dump(prefix + "  ", fd, writer, args);
-            } 
+            } //End block
     if(mHaveData || mDeliveredData)            
             {
                 writer.print(prefix);
@@ -1031,7 +1028,7 @@ String var2460B846747F8B22185AD8BE722266A5_1888004109 =             sb.toString(
                 writer.print(prefix);
                 writer.print("mData=");
                 writer.println(mData);
-            } 
+            } //End block
             writer.print(prefix);
             writer.print("mStarted=");
             writer.print(mStarted);
@@ -1053,9 +1050,9 @@ String var2460B846747F8B22185AD8BE722266A5_1888004109 =             sb.toString(
                 writer.print(mPendingLoader);
                 writer.println(":");
                 mPendingLoader.dump(prefix + "  ", fd, writer, args);
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

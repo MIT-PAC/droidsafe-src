@@ -1,6 +1,6 @@
 package org.bouncycastle.util.encoders;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,12 +13,11 @@ public class Base64 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.440 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
     public Base64 ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static byte[] encode(
+        public static byte[] encode(
         byte[]    data) {
         int len = (data.length + 2) / 3 * 4;
         ByteArrayOutputStream bOut = new ByteArrayOutputStream(len);
@@ -50,8 +49,7 @@ public class Base64 {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] decode(
+        public static byte[] decode(
         byte[]    data) {
         int len = data.length / 4 * 3;
         ByteArrayOutputStream bOut = new ByteArrayOutputStream(len);

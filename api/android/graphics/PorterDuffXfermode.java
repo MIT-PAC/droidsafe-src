@@ -1,6 +1,6 @@
 package android.graphics;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,9 +14,9 @@ public class PorterDuffXfermode extends Xfermode {
     public  PorterDuffXfermode(PorterDuff.Mode mode) {
         this.mode = mode;
         native_instance = nativeCreateXfermode(mode.nativeInt);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.mode = mode;
+        //native_instance = nativeCreateXfermode(mode.nativeInt);
     }
 
     

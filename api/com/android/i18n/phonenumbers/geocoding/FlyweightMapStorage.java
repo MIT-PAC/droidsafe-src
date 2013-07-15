@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers.geocoding;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,24 +34,22 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.414 -0400", hash_original_method = "17265440A4150496F4E4B3AED89DBE4A", hash_generated_method = "0B56FFACCBE5FD82AEECA13F4E299B52")
     public  FlyweightMapStorage() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.414 -0400", hash_original_method = "8579179DB51630AA1D46F39490760068", hash_generated_method = "9187FAC644D890FEE51323D5788E32F2")
     @Override
     public boolean isFlyweight() {
         boolean varB326B5062B2F0E69046810717534CB09_311898154 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_670146487 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_670146487;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int getOptimalNumberOfBytesForValue(int value) {
+        private static int getOptimalNumberOfBytesForValue(int value) {
         return value <= Short.MAX_VALUE ? SHORT_SIZE : INT_SIZE;
     }
 
@@ -79,8 +77,8 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
         int var260D539EF7E4CBA16B9E7D7909112882_1413189993 = (readWordFromBuffer(phoneNumberPrefixes, prefixSizeInBytes, index));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176623260 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176623260;
-        
-        
+        // ---------- Original Method ----------
+        //return readWordFromBuffer(phoneNumberPrefixes, prefixSizeInBytes, index);
     }
 
     
@@ -91,8 +89,8 @@ class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
 String var241898A6DABBEF51A12E2D4BEDE5883D_741052448 =         descriptionPool[readWordFromBuffer(descriptionIndexes, descIndexSizeInBytes, index)];
         var241898A6DABBEF51A12E2D4BEDE5883D_741052448.addTaint(taint);
         return var241898A6DABBEF51A12E2D4BEDE5883D_741052448;
-        
-        
+        // ---------- Original Method ----------
+        //return descriptionPool[readWordFromBuffer(descriptionIndexes, descIndexSizeInBytes, index)];
     }
 
     
@@ -110,7 +108,7 @@ for(Entry<Integer, String> entry : sortedAreaCodeMap.entrySet())
             storeWordInBuffer(phoneNumberPrefixes, prefixSizeInBytes, index++, prefix);
             possibleLengths.add((int) Math.log10(prefix) + 1);
             descriptionsSet.add(entry.getValue());
-        } 
+        } //End block
         descIndexSizeInBytes = getOptimalNumberOfBytesForValue(descriptionsSet.size() - 1);
         descriptionIndexes = ByteBuffer.allocate(numOfEntries * descIndexSizeInBytes);
         descriptionPool = new String[descriptionsSet.size()];
@@ -125,9 +123,9 @@ for(int i = 0;i < numOfEntries;i++)
           });
             storeWordInBuffer(descriptionIndexes, descIndexSizeInBytes, index++,
                         positionInDescriptionPool);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -152,33 +150,33 @@ for(int i = 0;i < numOfEntries;i++)
 for(int i = 0;i < sizeOfLengths;i++)
         {
             possibleLengths.add(objectInput.readInt());
-        } 
+        } //End block
         int descriptionPoolSize = objectInput.readInt();
     if(descriptionPool == null || descriptionPool.length < descriptionPoolSize)        
         {
             descriptionPool = new String[descriptionPoolSize];
-        } 
+        } //End block
 for(int i = 0;i < descriptionPoolSize;i++)
         {
             String description = objectInput.readUTF();
             descriptionPool[i] = description;
-        } 
+        } //End block
         numOfEntries = objectInput.readInt();
     if(phoneNumberPrefixes == null || phoneNumberPrefixes.capacity() < numOfEntries)        
         {
             phoneNumberPrefixes = ByteBuffer.allocate(numOfEntries * prefixSizeInBytes);
-        } 
+        } //End block
     if(descriptionIndexes == null || descriptionIndexes.capacity() < numOfEntries)        
         {
             descriptionIndexes = ByteBuffer.allocate(numOfEntries * descIndexSizeInBytes);
-        } 
+        } //End block
 for(int i = 0;i < numOfEntries;i++)
         {
             readExternalWord(objectInput, prefixSizeInBytes, phoneNumberPrefixes, i);
             readExternalWord(objectInput, descIndexSizeInBytes, descriptionIndexes, i);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -204,35 +202,35 @@ for(int i = 0;i < numOfEntries;i++)
 for(Integer length : possibleLengths)
         {
             objectOutput.writeInt(length);
-        } 
+        } //End block
         objectOutput.writeInt(descriptionPool.length);
 for(String description : descriptionPool)
         {
             objectOutput.writeUTF(description);
-        } 
+        } //End block
         objectOutput.writeInt(numOfEntries);
 for(int i = 0;i < numOfEntries;i++)
         {
             writeExternalWord(objectOutput, prefixSizeInBytes, phoneNumberPrefixes, i);
             writeExternalWord(objectOutput, descIndexSizeInBytes, descriptionIndexes, i);
-        } 
-        
-        
-        
-        
-        
-        
-      
-    
-        
-        
-      
-    
-        
-        
-      
-      
-    
+        } //End block
+        // ---------- Original Method ----------
+        //objectOutput.writeInt(prefixSizeInBytes);
+        //objectOutput.writeInt(descIndexSizeInBytes);
+        //int sizeOfLengths = possibleLengths.size();
+        //objectOutput.writeInt(sizeOfLengths);
+        //for (Integer length : possibleLengths) {
+      //objectOutput.writeInt(length);
+    //}
+        //objectOutput.writeInt(descriptionPool.length);
+        //for (String description : descriptionPool) {
+      //objectOutput.writeUTF(description);
+    //}
+        //objectOutput.writeInt(numOfEntries);
+        //for (int i = 0; i < numOfEntries; i++) {
+      //writeExternalWord(objectOutput, prefixSizeInBytes, phoneNumberPrefixes, i);
+      //writeExternalWord(objectOutput, descIndexSizeInBytes, descriptionIndexes, i);
+    //}
     }
 
     

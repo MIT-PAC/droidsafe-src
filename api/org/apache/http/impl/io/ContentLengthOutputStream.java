@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,24 +30,24 @@ public class ContentLengthOutputStream extends OutputStream {
             IllegalArgumentException var37F5C066C9D0ECEEAAAFE6FBC9B24E18_898814570 = new IllegalArgumentException("Session output buffer may not be null");
             var37F5C066C9D0ECEEAAAFE6FBC9B24E18_898814570.addTaint(taint);
             throw var37F5C066C9D0ECEEAAAFE6FBC9B24E18_898814570;
-        } 
+        } //End block
     if(contentLength < 0)        
         {
             IllegalArgumentException varC9A4EC004E3A33FE21D2178F89740754_808323526 = new IllegalArgumentException("Content length may not be negative");
             varC9A4EC004E3A33FE21D2178F89740754_808323526.addTaint(taint);
             throw varC9A4EC004E3A33FE21D2178F89740754_808323526;
-        } 
+        } //End block
         this.out = out;
         this.contentLength = contentLength;
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (out == null) {
+            //throw new IllegalArgumentException("Session output buffer may not be null");
+        //}
+        //if (contentLength < 0) {
+            //throw new IllegalArgumentException("Content length may not be negative");
+        //}
+        //this.out = out;
+        //this.contentLength = contentLength;
     }
 
     
@@ -57,20 +57,20 @@ public class ContentLengthOutputStream extends OutputStream {
         {
             this.closed = true;
             this.out.flush();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!this.closed) {
+            //this.closed = true;
+            //this.out.flush();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.188 -0400", hash_original_method = "A5A452E28D931563D6707491621FFBE7", hash_generated_method = "659F5DF70DF5E6C77EDF97533C3E99AE")
     public void flush() throws IOException {
         this.out.flush();
-        
-        
+        // ---------- Original Method ----------
+        //this.out.flush();
     }
 
     
@@ -83,29 +83,29 @@ public class ContentLengthOutputStream extends OutputStream {
             IOException varB052DBEEB15E0A31B3EDC9E0CDC85E32_1741438830 = new IOException("Attempted write to closed stream.");
             varB052DBEEB15E0A31B3EDC9E0CDC85E32_1741438830.addTaint(taint);
             throw varB052DBEEB15E0A31B3EDC9E0CDC85E32_1741438830;
-        } 
+        } //End block
     if(this.total < this.contentLength)        
         {
             long max = this.contentLength - this.total;
     if(len > max)            
             {
                 len = (int) max;
-            } 
+            } //End block
             this.out.write(b, off, len);
             this.total += len;
-        } 
-        
-        
-            
-        
-        
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.closed) {
+            //throw new IOException("Attempted write to closed stream.");
+        //}
+        //if (this.total < this.contentLength) {
+            //long max = this.contentLength - this.total;
+            //if (len > max) {
+                //len = (int) max;
+            //}
+            //this.out.write(b, off, len);
+            //this.total += len;
+        //}
     }
 
     
@@ -113,8 +113,8 @@ public class ContentLengthOutputStream extends OutputStream {
     public void write(byte[] b) throws IOException {
         addTaint(b[0]);
         write(b, 0, b.length);
-        
-        
+        // ---------- Original Method ----------
+        //write(b, 0, b.length);
     }
 
     
@@ -126,20 +126,20 @@ public class ContentLengthOutputStream extends OutputStream {
             IOException varB052DBEEB15E0A31B3EDC9E0CDC85E32_872759155 = new IOException("Attempted write to closed stream.");
             varB052DBEEB15E0A31B3EDC9E0CDC85E32_872759155.addTaint(taint);
             throw varB052DBEEB15E0A31B3EDC9E0CDC85E32_872759155;
-        } 
+        } //End block
     if(this.total < this.contentLength)        
         {
             this.out.write(b);
             this.total++;
-        } 
-        
-        
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.closed) {
+            //throw new IOException("Attempted write to closed stream.");
+        //}
+        //if (this.total < this.contentLength) {
+            //this.out.write(b);
+            //this.total++;
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,17 +47,17 @@ public class WebViewDatabase {
         @Override
         public void run() {
             init(context);
-            
-            
+            // ---------- Original Method ----------
+            //init(context);
         }
 }.start();
-        
-        
-            
-            
-                
-            
-        
+        // ---------- Original Method ----------
+        //new Thread() {
+            //@Override
+            //public void run() {
+                //init(context);
+            //}
+        //}.start();
     }
 
     
@@ -75,56 +75,55 @@ public class WebViewDatabase {
     if(mInitialized)        
         {
             return;
-        } 
+        } //End block
         initDatabase(context);
     if(JniUtil.useChromiumHttpStack())        
         {
             context.deleteDatabase(CACHE_DATABASE_FILE);
-        } 
+        } //End block
         else
         {
             initCacheDatabase(context);
-        } 
+        } //End block
         mInitialized = true;
         notify();
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mInitialized) {
+            //return;
+        //}
+        //initDatabase(context);
+        //if (JniUtil.useChromiumHttpStack()) {
+            //context.deleteDatabase(CACHE_DATABASE_FILE);
+        //} else {
+            //initCacheDatabase(context);
+        //}
+        //mInitialized = true;
+        //notify();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.314 -0400", hash_original_method = "CE06D258DB88B89F42DED68141C198E0", hash_generated_method = "8ED787C8A111B97FFF6227F82334906C")
     private void initDatabase(Context context) {
         addTaint(context.getTaint());
         try 
         {
             mDatabase = context.openOrCreateDatabase(DATABASE_FILE, 0, null);
-        } 
+        } //End block
         catch (SQLiteException e)
         {
     if(context.deleteDatabase(DATABASE_FILE))            
             {
                 mDatabase = context.openOrCreateDatabase(DATABASE_FILE, 0,
                         null);
-            } 
-        } 
+            } //End block
+        } //End block
         mDatabase.enableWriteAheadLogging();
     if(mDatabase == null)        
         {
             mInitialized = true;
             notify();
             return;
-        } 
+        } //End block
     if(mDatabase.getVersion() != DATABASE_VERSION)        
         {
             mDatabase.beginTransactionNonExclusive();
@@ -132,19 +131,18 @@ public class WebViewDatabase {
             {
                 upgradeDatabase();
                 mDatabase.setTransactionSuccessful();
-            } 
+            } //End block
             finally 
             {
                 mDatabase.endTransaction();
-            } 
-        } 
+            } //End block
+        } //End block
         mDatabase.setLockingEnabled(false);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.316 -0400", hash_original_method = "C7A89DE182CA76C10CB3961C893695C2", hash_generated_method = "B7B953F9F84E18EEB6FF32F047B97209")
     private void initCacheDatabase(Context context) {
         addTaint(context.getTaint());
@@ -152,22 +150,22 @@ public class WebViewDatabase {
         {
             mCacheDatabase = context.openOrCreateDatabase(
                     CACHE_DATABASE_FILE, 0, null);
-        } 
+        } //End block
         catch (SQLiteException e)
         {
     if(context.deleteDatabase(CACHE_DATABASE_FILE))            
             {
                 mCacheDatabase = context.openOrCreateDatabase(
                         CACHE_DATABASE_FILE, 0, null);
-            } 
-        } 
+            } //End block
+        } //End block
         mCacheDatabase.enableWriteAheadLogging();
     if(mCacheDatabase == null)        
         {
             mInitialized = true;
             notify();
             return;
-        } 
+        } //End block
     if(mCacheDatabase.getVersion() != CACHE_DATABASE_VERSION)        
         {
             mCacheDatabase.beginTransactionNonExclusive();
@@ -176,13 +174,13 @@ public class WebViewDatabase {
                 upgradeCacheDatabase();
                 bootstrapCacheDatabase();
                 mCacheDatabase.setTransactionSuccessful();
-            } 
+            } //End block
             finally 
             {
                 mCacheDatabase.endTransaction();
-            } 
+            } //End block
             CacheManager.removeAllCacheFiles();
-        } 
+        } //End block
         mCacheDatabase.execSQL("PRAGMA read_uncommitted = true;");
         mCacheDatabase.setLockingEnabled(false);
         mCacheInserter =
@@ -214,21 +212,19 @@ public class WebViewDatabase {
                 .getColumnIndex(CACHE_CONTENTDISPOSITION_COL);
         mCacheCrossDomainColIndex = mCacheInserter
                 .getColumnIndex(CACHE_CROSSDOMAIN_COL);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void upgradeDatabase() {
+        private static void upgradeDatabase() {
         upgradeDatabaseToV10();
         upgradeDatabaseFromV10ToV11();
         mDatabase.setVersion(DATABASE_VERSION);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void upgradeDatabaseFromV10ToV11() {
+        private static void upgradeDatabaseFromV10ToV11() {
         int oldVersion = mDatabase.getVersion();
         if (oldVersion >= 11) {
             return;
@@ -359,28 +355,28 @@ public class WebViewDatabase {
                 try 
                 {
                     wait();
-                } 
+                } //End block
                 catch (InterruptedException e)
                 {
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean varE1196345D361F8ECF9424BF755C2F21D_343869004 = (mDatabase != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_170677346 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_170677346;
-        
-        
-            
-                
-                    
-                
-                    
-                                  
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //while (!mInitialized) {
+                //try {
+                    //wait();
+                //} catch (InterruptedException e) {
+                    //Log.e(LOGTAG, "Caught exception while checking " +
+                                  //"initialization");
+                    //Log.e(LOGTAG, Log.getStackTraceString(e));
+                //}
+            //}
+        //}
+        //return mDatabase != null;
     }
 
     
@@ -392,7 +388,7 @@ public class WebViewDatabase {
             boolean var68934A3E9455FA72420237EB05902327_1742875416 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_735996659 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_735996659;
-        } 
+        } //End block
         Cursor cursor = null;
         boolean ret = false;
         try 
@@ -400,34 +396,34 @@ public class WebViewDatabase {
             cursor = mDatabase.query(mTableNames[tableId], ID_PROJECTION,
                     null, null, null, null, null);
             ret = cursor.moveToFirst() == true;
-        } 
+        } //End block
         catch (IllegalStateException e)
         {
-        } 
+        } //End block
         finally 
         {
     if(cursor != null)            
             cursor.close();
-        } 
+        } //End block
         boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_744508541 = (ret);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_502277897 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_502277897;
-        
-        
-            
-        
-        
-        
-        
-            
-                    
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return false;
+        //}
+        //Cursor cursor = null;
+        //boolean ret = false;
+        //try {
+            //cursor = mDatabase.query(mTableNames[tableId], ID_PROJECTION,
+                    //null, null, null, null, null);
+            //ret = cursor.moveToFirst() == true;
+        //} catch (IllegalStateException e) {
+            //Log.e(LOGTAG, "hasEntries", e);
+        //} finally {
+            //if (cursor != null) cursor.close();
+        //}
+        //return ret;
     }
 
     
@@ -440,7 +436,7 @@ public class WebViewDatabase {
 ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_825648488 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_825648488.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_825648488;
-        } 
+        } //End block
         synchronized
 (mCookieLock)        {
             final String[] columns = new String[] {
@@ -474,36 +470,35 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_825648488 =             li
     if(cursor.isNull(expiresCol))                            
                             {
                                 cookie.expires = -1;
-                            } 
+                            } //End block
                             else
                             {
                                 cookie.expires = cursor.getLong(expiresCol);
-                            } 
+                            } //End block
                             cookie.secure = cursor.getShort(secureCol) != 0;
                             cookie.mode = Cookie.MODE_NORMAL;
                             list.add(cookie);
-                        } 
+                        } //End block
 } while (cursor.moveToNext());
-                } 
-            } 
+                } //End block
+            } //End block
             catch (IllegalStateException e)
             {
-            } 
+            } //End block
             finally 
             {
     if(cursor != null)                
                 cursor.close();
-            } 
+            } //End block
 ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.321 -0400", hash_original_method = "BC23D2938EE88E31CA87024518493BE2", hash_generated_method = "C43938F5DE948F0ABDFD2070CF2A98D2")
      void deleteCookies(String domain, String path, String name) {
         addTaint(name.getTaint());
@@ -512,7 +507,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     if(domain == null || !checkInitialized())        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mCookieLock)        {
             final String where = "(" + COOKIES_DOMAIN_COL + " == ?) AND ("
@@ -520,22 +515,21 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
                     + " == ?)";
             mDatabase.delete(mTableNames[TABLE_COOKIES_ID], where,
                     new String[] { domain, path, name });
-        } 
-        
-        
-            
-        
-        
-            
-                    
-                    
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (domain == null || !checkInitialized()) {
+            //return;
+        //}
+        //synchronized (mCookieLock) {
+            //final String where = "(" + COOKIES_DOMAIN_COL + " == ?) AND ("
+                    //+ COOKIES_PATH_COL + " == ?) AND (" + COOKIES_NAME_COL
+                    //+ " == ?)";
+            //mDatabase.delete(mTableNames[TABLE_COOKIES_ID], where,
+                    //new String[] { domain, path, name });
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.321 -0400", hash_original_method = "33710CB1E65A2C52E9ABEE23433BB87F", hash_generated_method = "1208C4C0CE57D44963C19C22AD3D6115")
      void addCookie(Cookie cookie) {
         addTaint(cookie.getTaint());
@@ -543,7 +537,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
                 || !checkInitialized())        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mCookieLock)        {
             ContentValues cookieVal = new ContentValues();
@@ -554,31 +548,30 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     if(cookie.expires != -1)            
             {
                 cookieVal.put(COOKIES_EXPIRES_COL, cookie.expires);
-            } 
+            } //End block
             cookieVal.put(COOKIES_SECURE_COL, cookie.secure);
             mDatabase.insert(mTableNames[TABLE_COOKIES_ID], null, cookieVal);
-        } 
-        
-        
-                
-            
-        
-        
-            
-            
-            
-            
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (cookie.domain == null || cookie.path == null || cookie.name == null
+                //|| !checkInitialized()) {
+            //return;
+        //}
+        //synchronized (mCookieLock) {
+            //ContentValues cookieVal = new ContentValues();
+            //cookieVal.put(COOKIES_DOMAIN_COL, cookie.domain);
+            //cookieVal.put(COOKIES_PATH_COL, cookie.path);
+            //cookieVal.put(COOKIES_NAME_COL, cookie.name);
+            //cookieVal.put(COOKIES_VALUE_COL, cookie.value);
+            //if (cookie.expires != -1) {
+                //cookieVal.put(COOKIES_EXPIRES_COL, cookie.expires);
+            //}
+            //cookieVal.put(COOKIES_SECURE_COL, cookie.secure);
+            //mDatabase.insert(mTableNames[TABLE_COOKIES_ID], null, cookieVal);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.322 -0400", hash_original_method = "83E6237273AAD0C9F4D2DED923ACAFB7", hash_generated_method = "F38AFCF23E3771027F2AA3FCE3E344F4")
      boolean hasCookies() {
         synchronized
@@ -586,32 +579,31 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
             boolean varDC4B474C1C5ADF138EE01798F6B0F909_93835755 = (hasEntries(TABLE_COOKIES_ID));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1597052482 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1597052482;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCookieLock) {
+            //return hasEntries(TABLE_COOKIES_ID);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.322 -0400", hash_original_method = "3E1D9455881C3029C0C51566A563B8F4", hash_generated_method = "99BB8A0AFB075E7668D74A6B4049265C")
      void clearCookies() {
     if(!checkInitialized())        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mCookieLock)        {
             mDatabase.delete(mTableNames[TABLE_COOKIES_ID], null, null);
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return;
+        //}
+        //synchronized (mCookieLock) {
+            //mDatabase.delete(mTableNames[TABLE_COOKIES_ID], null, null);
+        //}
     }
 
     
@@ -620,22 +612,22 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     if(!checkInitialized())        
         {
             return;
-        } 
+        } //End block
         final String sessionExpired = COOKIES_EXPIRES_COL + " ISNULL";
         synchronized
 (mCookieLock)        {
             mDatabase.delete(mTableNames[TABLE_COOKIES_ID], sessionExpired,
                     null);
-        } 
-        
-        
-            
-        
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return;
+        //}
+        //final String sessionExpired = COOKIES_EXPIRES_COL + " ISNULL";
+        //synchronized (mCookieLock) {
+            //mDatabase.delete(mTableNames[TABLE_COOKIES_ID], sessionExpired,
+                    //null);
+        //}
     }
 
     
@@ -645,22 +637,22 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     if(!checkInitialized())        
         {
             return;
-        } 
+        } //End block
         final String expires = COOKIES_EXPIRES_COL + " <= ?";
         synchronized
 (mCookieLock)        {
             mDatabase.delete(mTableNames[TABLE_COOKIES_ID], expires,
                     new String[] { Long.toString(now) });
-        } 
-        
-        
-            
-        
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return;
+        //}
+        //final String expires = COOKIES_EXPIRES_COL + " <= ?";
+        //synchronized (mCookieLock) {
+            //mDatabase.delete(mTableNames[TABLE_COOKIES_ID], expires,
+                    //new String[] { Long.toString(now) });
+        //}
     }
 
     
@@ -671,27 +663,27 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     if(!Thread.currentThread().equals(
                     WebViewWorker.getHandler().getLooper().getThread()))            
             {
-            } 
+            } //End block
             mCacheDatabase.beginTransactionNonExclusive();
             boolean varB326B5062B2F0E69046810717534CB09_1094719874 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_992460228 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_992460228;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_2045185024 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_480835669 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_480835669;
-        
-        
-            
-                    
-                
-                        
-                        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (++mCacheTransactionRefcount == 1) {
+            //if (!Thread.currentThread().equals(
+                    //WebViewWorker.getHandler().getLooper().getThread())) {
+                //Log.w(LOGTAG, "startCacheTransaction should be called from "
+                        //+ "WebViewWorkerThread instead of from "
+                        //+ Thread.currentThread().getName());
+            //}
+            //mCacheDatabase.beginTransactionNonExclusive();
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -702,42 +694,41 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
     if(!Thread.currentThread().equals(
                     WebViewWorker.getHandler().getLooper().getThread()))            
             {
-            } 
+            } //End block
             try 
             {
                 mCacheDatabase.setTransactionSuccessful();
-            } 
+            } //End block
             finally 
             {
                 mCacheDatabase.endTransaction();
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_764254235 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1252325504 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1252325504;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_2144413702 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_497901182 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_497901182;
-        
-        
-            
-                    
-                
-                        
-                        
-            
-            
-                
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (--mCacheTransactionRefcount == 0) {
+            //if (!Thread.currentThread().equals(
+                    //WebViewWorker.getHandler().getLooper().getThread())) {
+                //Log.w(LOGTAG, "endCacheTransaction should be called from "
+                        //+ "WebViewWorkerThread instead of from "
+                        //+ Thread.currentThread().getName());
+            //}
+            //try {
+                //mCacheDatabase.setTransactionSuccessful();
+            //} finally {
+                //mCacheDatabase.endTransaction();
+            //}
+            //return true;
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.325 -0400", hash_original_method = "BF73224910862A6343E046C49771A81E", hash_generated_method = "10E2DD9D962147ABE142CBDA38C2FB28")
      CacheResult getCache(String url) {
         addTaint(url.getTaint());
@@ -746,7 +737,7 @@ ArrayList<Cookie> varED12C351C2E8CA4F85F097DDC7E77B4D_2142700480 =             l
 CacheResult var540C13E9E156B687226421B24F2DF178_486955194 =             null;
             var540C13E9E156B687226421B24F2DF178_486955194.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_486955194;
-        } 
+        } //End block
         Cursor cursor = null;
         final String query = "SELECT filepath, lastmodify, etag, expires, "
                 + "expiresstring, mimetype, encoding, httpstatus, location, contentlength, "
@@ -772,21 +763,21 @@ CacheResult var540C13E9E156B687226421B24F2DF178_486955194 =             null;
 CacheResult varEDFF4FBBF053B5DC2B444ADFA049EE0F_1704230377 =                 ret;
                 varEDFF4FBBF053B5DC2B444ADFA049EE0F_1704230377.addTaint(taint);
                 return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1704230377;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IllegalStateException e)
         {
-        } 
+        } //End block
         finally 
         {
     if(cursor != null)            
             cursor.close();
-        } 
+        } //End block
 CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
         var540C13E9E156B687226421B24F2DF178_1546170972.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1546170972;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -796,18 +787,17 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
     if(url == null || !checkInitialized())        
         {
             return;
-        } 
+        } //End block
         mCacheDatabase.execSQL("DELETE FROM cache WHERE url = ?", new String[] { url });
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //assert !JniUtil.useChromiumHttpStack();
+        //if (url == null || !checkInitialized()) {
+            //return;
+        //}
+        //mCacheDatabase.execSQL("DELETE FROM cache WHERE url = ?", new String[] { url });
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.327 -0400", hash_original_method = "C4FACCF94A8569C78058717A9665F703", hash_generated_method = "7CAC807D4E10D806454E462F731BE6DD")
      void addCache(String url, CacheResult c) {
         addTaint(c.getTaint());
@@ -815,7 +805,7 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
     if(url == null || !checkInitialized())        
         {
             return;
-        } 
+        } //End block
         mCacheInserter.prepareForInsert();
         mCacheInserter.bind(mCacheUrlColIndex, url);
         mCacheInserter.bind(mCacheFilePathColIndex, c.localPath);
@@ -832,8 +822,8 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
                 c.contentdisposition);
         mCacheInserter.bind(mCacheCrossDomainColIndex, c.crossDomain);
         mCacheInserter.execute();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -842,13 +832,13 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
     if(!checkInitialized())        
         {
             return;
-        } 
+        } //End block
         mCacheDatabase.delete("cache", null, null);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return;
+        //}
+        //mCacheDatabase.delete("cache", null, null);
     }
 
     
@@ -859,7 +849,7 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
             boolean var68934A3E9455FA72420237EB05902327_1917667426 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500685527 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_500685527;
-        } 
+        } //End block
         Cursor cursor = null;
         boolean ret = false;
         try 
@@ -867,34 +857,34 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
             cursor = mCacheDatabase.query("cache", ID_PROJECTION,
                     null, null, null, null, null);
             ret = cursor.moveToFirst() == true;
-        } 
+        } //End block
         catch (IllegalStateException e)
         {
-        } 
+        } //End block
         finally 
         {
     if(cursor != null)            
             cursor.close();
-        } 
+        } //End block
         boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_391152330 = (ret);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_941570817 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_941570817;
-        
-        
-            
-        
-        
-        
-        
-            
-                    
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return false;
+        //}
+        //Cursor cursor = null;
+        //boolean ret = false;
+        //try {
+            //cursor = mCacheDatabase.query("cache", ID_PROJECTION,
+                    //null, null, null, null, null);
+            //ret = cursor.moveToFirst() == true;
+        //} catch (IllegalStateException e) {
+            //Log.e(LOGTAG, "hasCache", e);
+        //} finally {
+            //if (cursor != null) cursor.close();
+        //}
+        //return ret;
     }
 
     
@@ -905,7 +895,7 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
             long varCFCD208495D565EF66E7DFF9F98764DA_1124052376 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_513753575 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_513753575;
-        } 
+        } //End block
         long size = 0;
         Cursor cursor = null;
         final String query = "SELECT SUM(contentlength) as sum FROM cache";
@@ -915,41 +905,40 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
     if(cursor.moveToFirst())            
             {
                 size = cursor.getLong(0);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IllegalStateException e)
         {
-        } 
+        } //End block
         finally 
         {
     if(cursor != null)            
             cursor.close();
-        } 
+        } //End block
         long varF7BD60B75B29D79B660A2859395C1A24_482928573 = (size);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1114584802 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1114584802;
-        
-        
-            
-        
-        
-        
-        
-        
-            
-            
-                
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mCacheDatabase == null) {
+            //return 0;
+        //}
+        //long size = 0;
+        //Cursor cursor = null;
+        //final String query = "SELECT SUM(contentlength) as sum FROM cache";
+        //try {
+            //cursor = mCacheDatabase.rawQuery(query, null);
+            //if (cursor.moveToFirst()) {
+                //size = cursor.getLong(0);
+            //}
+        //} catch (IllegalStateException e) {
+            //Log.e(LOGTAG, "getCacheTotalSize", e);
+        //} finally {
+            //if (cursor != null) cursor.close();
+        //}
+        //return size;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.330 -0400", hash_original_method = "E1CB3EA921D4F41F15D60CB73EFC3B4C", hash_generated_method = "411F7AEE214E8C00435A4D0000CC225B")
      List<String> trimCache(long amount) {
         addTaint(amount);
@@ -967,7 +956,7 @@ CacheResult var540C13E9E156B687226421B24F2DF178_1546170972 =         null;
 for(int i = 1;i < batchSize;i++)
                 {
                     pathStr.append(", ?");
-                } 
+                } //End block
                 pathStr.append(")");
                 SQLiteStatement statement = null;
                 try 
@@ -981,7 +970,7 @@ for(int i = 1;i < batchSize;i++)
     if(length == 0)                            
                             {
                                 continue;
-                            } 
+                            } //End block
                             amount -= length;
                             String filePath = cursor.getString(1);
                             statement.bindString(index, filePath);
@@ -991,37 +980,37 @@ for(int i = 1;i < batchSize;i++)
                                 statement.execute();
                                 statement.clearBindings();
                                 index = 1;
-                            } 
-                        } 
+                            } //End block
+                        } //End block
 } while (cursor.moveToNext() && amount > 0);
     if(index > 1)                    
                     {
                         statement.execute();
-                    } 
-                } 
+                    } //End block
+                } //End block
                 catch (IllegalStateException e)
                 {
-                } 
+                } //End block
                 finally 
                 {
     if(statement != null)                    
                     statement.close();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (IllegalStateException e)
         {
-        } 
+        } //End block
         finally 
         {
     if(cursor != null)            
             cursor.close();
-        } 
+        } //End block
 List<String> var024CEB90B19D0AC297D288C50E00741D_703771396 =         pathList;
         var024CEB90B19D0AC297D288C50E00741D_703771396.addTaint(taint);
         return var024CEB90B19D0AC297D288C50E00741D_703771396;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1039,43 +1028,42 @@ List<String> var024CEB90B19D0AC297D288C50E00741D_703771396 =         pathList;
                 do {
                     {
                         pathList.add(cursor.getString(0));
-                    } 
+                    } //End block
 } while (cursor.moveToNext());
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IllegalStateException e)
         {
-        } 
+        } //End block
         finally 
         {
     if(cursor != null)            
             cursor.close();
-        } 
+        } //End block
 List<String> var024CEB90B19D0AC297D288C50E00741D_514588909 =         pathList;
         var024CEB90B19D0AC297D288C50E00741D_514588909.addTaint(taint);
         return var024CEB90B19D0AC297D288C50E00741D_514588909;
-        
-        
-        
-        
-            
-                    
-            
-                
-                
-                    
-                
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<String> pathList = null;
+        //Cursor cursor = null;
+        //try {
+            //cursor = mCacheDatabase.rawQuery("SELECT filepath FROM cache",
+                    //null);
+            //if (cursor != null && cursor.moveToFirst()) {
+                //pathList = new ArrayList<String>(cursor.getCount());
+                //do {
+                    //pathList.add(cursor.getString(0));
+                //} while (cursor.moveToNext());
+            //}
+        //} catch (IllegalStateException e) {
+            //Log.e(LOGTAG, "getAllCacheFileNames", e);
+        //} finally {
+            //if (cursor != null) cursor.close();
+        //}
+        //return pathList;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.331 -0400", hash_original_method = "06E61C8A80289A57F170E4E5B574929B", hash_generated_method = "8AB9F28DA1219E94220832982B1CC9DA")
      void setUsernamePassword(String schemePlusHost, String username,
                 String password) {
@@ -1085,7 +1073,7 @@ List<String> var024CEB90B19D0AC297D288C50E00741D_514588909 =         pathList;
     if(schemePlusHost == null || !checkInitialized())        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mPasswordLock)        {
             final ContentValues c = new ContentValues();
@@ -1094,19 +1082,19 @@ List<String> var024CEB90B19D0AC297D288C50E00741D_514588909 =         pathList;
             c.put(PASSWORD_PASSWORD_COL, password);
             mDatabase.insert(mTableNames[TABLE_PASSWORD_ID], PASSWORD_HOST_COL,
                     c);
-        } 
-        
-        
-            
-        
-        
-            
-            
-            
-            
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (schemePlusHost == null || !checkInitialized()) {
+            //return;
+        //}
+        //synchronized (mPasswordLock) {
+            //final ContentValues c = new ContentValues();
+            //c.put(PASSWORD_HOST_COL, schemePlusHost);
+            //c.put(PASSWORD_USERNAME_COL, username);
+            //c.put(PASSWORD_PASSWORD_COL, password);
+            //mDatabase.insert(mTableNames[TABLE_PASSWORD_ID], PASSWORD_HOST_COL,
+                    //c);
+        //}
     }
 
     
@@ -1118,7 +1106,7 @@ List<String> var024CEB90B19D0AC297D288C50E00741D_514588909 =         pathList;
 String[] var540C13E9E156B687226421B24F2DF178_661147373 =             null;
             var540C13E9E156B687226421B24F2DF178_661147373.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_661147373;
-        } 
+        } //End block
         final String[] columns = new String[] {
                 PASSWORD_USERNAME_COL, PASSWORD_PASSWORD_COL
         };
@@ -1139,22 +1127,22 @@ String[] var540C13E9E156B687226421B24F2DF178_661147373 =             null;
                             cursor.getColumnIndex(PASSWORD_USERNAME_COL));
                     ret[1] = cursor.getString(
                             cursor.getColumnIndex(PASSWORD_PASSWORD_COL));
-                } 
-            } 
+                } //End block
+            } //End block
             catch (IllegalStateException e)
             {
-            } 
+            } //End block
             finally 
             {
     if(cursor != null)                
                 cursor.close();
-            } 
+            } //End block
 String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027 =             ret;
             varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027.addTaint(taint);
             return varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1165,36 +1153,34 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027 =             ret;
             boolean varCA6566241B9286BDE1D87EE5E743CB75_1978358261 = (hasEntries(TABLE_PASSWORD_ID));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_619630914 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_619630914;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mPasswordLock) {
+            //return hasEntries(TABLE_PASSWORD_ID);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.332 -0400", hash_original_method = "1884CD7855F3B6349631839451D5E408", hash_generated_method = "848F2BB39154CC500D95AF3DB97FEC12")
     public void clearUsernamePassword() {
     if(!checkInitialized())        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mPasswordLock)        {
             mDatabase.delete(mTableNames[TABLE_PASSWORD_ID], null, null);
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return;
+        //}
+        //synchronized (mPasswordLock) {
+            //mDatabase.delete(mTableNames[TABLE_PASSWORD_ID], null, null);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.333 -0400", hash_original_method = "AAEAEDF714B99771C21BA669DE54047C", hash_generated_method = "1F36241B323756F4E98AEF11E18858F2")
      void setHttpAuthUsernamePassword(String host, String realm, String username,
             String password) {
@@ -1205,7 +1191,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027 =             ret;
     if(host == null || realm == null || !checkInitialized())        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mHttpAuthLock)        {
             final ContentValues c = new ContentValues();
@@ -1215,20 +1201,20 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027 =             ret;
             c.put(HTTPAUTH_PASSWORD_COL, password);
             mDatabase.insert(mTableNames[TABLE_HTTPAUTH_ID], HTTPAUTH_HOST_COL,
                     c);
-        } 
-        
-        
-            
-        
-        
-            
-            
-            
-            
-            
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (host == null || realm == null || !checkInitialized()) {
+            //return;
+        //}
+        //synchronized (mHttpAuthLock) {
+            //final ContentValues c = new ContentValues();
+            //c.put(HTTPAUTH_HOST_COL, host);
+            //c.put(HTTPAUTH_REALM_COL, realm);
+            //c.put(HTTPAUTH_USERNAME_COL, username);
+            //c.put(HTTPAUTH_PASSWORD_COL, password);
+            //mDatabase.insert(mTableNames[TABLE_HTTPAUTH_ID], HTTPAUTH_HOST_COL,
+                    //c);
+        //}
     }
 
     
@@ -1241,7 +1227,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_2060397027 =             ret;
 String[] var540C13E9E156B687226421B24F2DF178_228407065 =             null;
             var540C13E9E156B687226421B24F2DF178_228407065.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_228407065;
-        } 
+        } //End block
         final String[] columns = new String[] {
                 HTTPAUTH_USERNAME_COL, HTTPAUTH_PASSWORD_COL
         };
@@ -1263,22 +1249,22 @@ String[] var540C13E9E156B687226421B24F2DF178_228407065 =             null;
                             cursor.getColumnIndex(HTTPAUTH_USERNAME_COL));
                     ret[1] = cursor.getString(
                             cursor.getColumnIndex(HTTPAUTH_PASSWORD_COL));
-                } 
-            } 
+                } //End block
+            } //End block
             catch (IllegalStateException e)
             {
-            } 
+            } //End block
             finally 
             {
     if(cursor != null)                
                 cursor.close();
-            } 
+            } //End block
 String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
             varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401.addTaint(taint);
             return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1289,32 +1275,31 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
             boolean var83A42B3DD44C5BDB18F9221C452437F2_1175747330 = (hasEntries(TABLE_HTTPAUTH_ID));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_989501400 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_989501400;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mHttpAuthLock) {
+            //return hasEntries(TABLE_HTTPAUTH_ID);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.335 -0400", hash_original_method = "447C774EFBF83BDF0A062EB0F2F80455", hash_generated_method = "83F28CF967DDDDC0A6E9120656A5332E")
     public void clearHttpAuthUsernamePassword() {
     if(!checkInitialized())        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mHttpAuthLock)        {
             mDatabase.delete(mTableNames[TABLE_HTTPAUTH_ID], null, null);
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return;
+        //}
+        //synchronized (mHttpAuthLock) {
+            //mDatabase.delete(mTableNames[TABLE_HTTPAUTH_ID], null, null);
+        //}
     }
 
     
@@ -1325,7 +1310,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
     if(url == null || formdata == null || !checkInitialized())        
         {
             return;
-        } 
+        } //End block
         final String selection = "(" + FORMURL_URL_COL + " == ?)";
         synchronized
 (mFormLock)        {
@@ -1339,23 +1324,23 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
     if(cursor.moveToFirst())                
                 {
                     urlid = cursor.getLong(cursor.getColumnIndex(ID_COL));
-                } 
+                } //End block
                 else
                 {
                     ContentValues c = new ContentValues();
                     c.put(FORMURL_URL_COL, url);
                     urlid = mDatabase.insert(
                             mTableNames[TABLE_FORMURL_ID], null, c);
-                } 
-            } 
+                } //End block
+            } //End block
             catch (IllegalStateException e)
             {
-            } 
+            } //End block
             finally 
             {
     if(cursor != null)                
                 cursor.close();
-            } 
+            } //End block
     if(urlid >= 0)            
             {
                 Set<Entry<String, String>> set = formdata.entrySet();
@@ -1369,11 +1354,11 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
                     map.put(FORMDATA_NAME_COL, entry.getKey());
                     map.put(FORMDATA_VALUE_COL, entry.getValue());
                     mDatabase.insert(mTableNames[TABLE_FORMDATA_ID], null, map);
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1387,7 +1372,7 @@ String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_1086200401 =             ret;
 ArrayList<String> var674B10C763DBAAF9696AD9A3DDAE07B3_1249544937 =             values;
             var674B10C763DBAAF9696AD9A3DDAE07B3_1249544937.addTaint(taint);
             return var674B10C763DBAAF9696AD9A3DDAE07B3_1249544937;
-        } 
+        } //End block
         final String urlSelection = "(" + FORMURL_URL_COL + " == ?)";
         final String dataSelection = "(" + FORMDATA_URLID_COL + " == ?) AND ("
                 + FORMDATA_NAME_COL + " == ?)";
@@ -1419,34 +1404,34 @@ ArrayList<String> var674B10C763DBAAF9696AD9A3DDAE07B3_1249544937 =             v
                             do {
                                 {
                                     values.add(dataCursor.getString(valueCol));
-                                } 
+                                } //End block
 } while (dataCursor.moveToNext());
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (IllegalStateException e)
                     {
-                    } 
+                    } //End block
                     finally 
                     {
     if(dataCursor != null)                        
                         dataCursor.close();
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             catch (IllegalStateException e)
             {
-            } 
+            } //End block
             finally 
             {
     if(cursor != null)                
                 cursor.close();
-            } 
+            } //End block
 ArrayList<String> var674B10C763DBAAF9696AD9A3DDAE07B3_348678464 =             values;
             var674B10C763DBAAF9696AD9A3DDAE07B3_348678464.addTaint(taint);
             return var674B10C763DBAAF9696AD9A3DDAE07B3_348678464;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1457,11 +1442,11 @@ ArrayList<String> var674B10C763DBAAF9696AD9A3DDAE07B3_348678464 =             va
             boolean varB3DCC1A220E48009681D86C6BCA1CAF7_215346837 = (hasEntries(TABLE_FORMURL_ID));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011583847 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011583847;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mFormLock) {
+            //return hasEntries(TABLE_FORMURL_ID);
+        //}
     }
 
     
@@ -1470,20 +1455,20 @@ ArrayList<String> var674B10C763DBAAF9696AD9A3DDAE07B3_348678464 =             va
     if(!checkInitialized())        
         {
             return;
-        } 
+        } //End block
         synchronized
 (mFormLock)        {
             mDatabase.delete(mTableNames[TABLE_FORMURL_ID], null, null);
             mDatabase.delete(mTableNames[TABLE_FORMDATA_ID], null, null);
-        } 
-        
-        
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!checkInitialized()) {
+            //return;
+        //}
+        //synchronized (mFormLock) {
+            //mDatabase.delete(mTableNames[TABLE_FORMURL_ID], null, null);
+            //mDatabase.delete(mTableNames[TABLE_FORMDATA_ID], null, null);
+        //}
     }
 
     

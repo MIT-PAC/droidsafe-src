@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public class RemoteCallbackList<E extends IInterface> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.504 -0400", hash_original_method = "7510693ACC17AC22B2C7AA646F89D542", hash_generated_method = "7510693ACC17AC22B2C7AA646F89D542")
     public RemoteCallbackList ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -33,8 +33,8 @@ public class RemoteCallbackList<E extends IInterface> {
         boolean var92EA61A90CB5D0228FF67B2A9B2FE3AD_39631769 = (register(callback, null));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1995642663 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1995642663;
-        
-        
+        // ---------- Original Method ----------
+        //return register(callback, null);
     }
 
     
@@ -49,7 +49,7 @@ public class RemoteCallbackList<E extends IInterface> {
                 boolean var68934A3E9455FA72420237EB05902327_1874078210 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_856355380 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_856355380;
-            } 
+            } //End block
             IBinder binder = callback.asBinder();
             try 
             {
@@ -59,29 +59,29 @@ public class RemoteCallbackList<E extends IInterface> {
                 boolean varB326B5062B2F0E69046810717534CB09_1555149468 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_157361698 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_157361698;
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1586902849 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_249310224 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_249310224;
-            } 
-        } 
-        
-        
-            
-                
-            
-            
-            
-                
-                
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCallbacks) {
+            //if (mKilled) {
+                //return false;
+            //}
+            //IBinder binder = callback.asBinder();
+            //try {
+                //Callback cb = new Callback(callback, cookie);
+                //binder.linkToDeath(cb, 0);
+                //mCallbacks.put(binder, cb);
+                //return true;
+            //} catch (RemoteException e) {
+                //return false;
+            //}
+        //}
     }
 
     
@@ -97,20 +97,20 @@ public class RemoteCallbackList<E extends IInterface> {
                 boolean varB326B5062B2F0E69046810717534CB09_739052868 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_14039002 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_14039002;
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_1248773821 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1006956763 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1006956763;
-        } 
-        
-        
-            
-            
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCallbacks) {
+            //Callback cb = mCallbacks.remove(callback.asBinder());
+            //if (cb != null) {
+                //cb.mCallback.asBinder().unlinkToDeath(cb, 0);
+                //return true;
+            //}
+            //return false;
+        //}
     }
 
     
@@ -121,37 +121,37 @@ public class RemoteCallbackList<E extends IInterface> {
 for(Callback cb : mCallbacks.values())
             {
                 cb.mCallback.asBinder().unlinkToDeath(cb, 0);
-            } 
+            } //End block
             mCallbacks.clear();
             mKilled = true;
-        } 
-        
-        
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCallbacks) {
+            //for (Callback cb : mCallbacks.values()) {
+                //cb.mCallback.asBinder().unlinkToDeath(cb, 0);
+            //}
+            //mCallbacks.clear();
+            //mKilled = true;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.508 -0400", hash_original_method = "B434989CEB936B9194BF8BFB60F8F696", hash_generated_method = "C207C2EEEC5BA9BE9962A64534BC332F")
     public void onCallbackDied(E callback) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(callback.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.509 -0400", hash_original_method = "0963A4798BF8140F1109AA736DE1F9A0", hash_generated_method = "0F4DCC0F85E2CB1AE7F5362026E5BCDB")
     public void onCallbackDied(E callback, Object cookie) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(cookie.getTaint());
         addTaint(callback.getTaint());
         onCallbackDied(callback);
-        
-        
+        // ---------- Original Method ----------
+        //onCallbackDied(callback);
     }
 
     
@@ -165,48 +165,48 @@ for(Callback cb : mCallbacks.values())
                         "beginBroadcast() called while already in a broadcast");
                 varBAA632CC604AE88F1B3666724C0E416E_662782401.addTaint(taint);
                 throw varBAA632CC604AE88F1B3666724C0E416E_662782401;
-            } 
+            } //End block
             final int N = mBroadcastCount = mCallbacks.size();
     if(N <= 0)            
             {
                 int varCFCD208495D565EF66E7DFF9F98764DA_296739078 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1183741657 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1183741657;
-            } 
+            } //End block
             Object[] active = mActiveBroadcast;
     if(active == null || active.length < N)            
             {
                 mActiveBroadcast = active = new Object[N];
-            } 
+            } //End block
             int i = 0;
 for(Callback cb : mCallbacks.values())
             {
                 active[i++] = cb;
-            } 
+            } //End block
             int var865C0C0B4AB0E063E5CAA3387C1A8741_1720784376 = (i);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_721740686 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_721740686;
-        } 
-        
-        
-            
-                
-                        
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCallbacks) {
+            //if (mBroadcastCount > 0) {
+                //throw new IllegalStateException(
+                        //"beginBroadcast() called while already in a broadcast");
+            //}
+            //final int N = mBroadcastCount = mCallbacks.size();
+            //if (N <= 0) {
+                //return 0;
+            //}
+            //Object[] active = mActiveBroadcast;
+            //if (active == null || active.length < N) {
+                //mActiveBroadcast = active = new Object[N];
+            //}
+            //int i=0;
+            //for (Callback cb : mCallbacks.values()) {
+                //active[i++] = cb;
+            //}
+            //return i;
+        //}
     }
 
     
@@ -216,20 +216,19 @@ for(Callback cb : mCallbacks.values())
 E varB387F1FD5AB54FD12A37CFCEE986154C_418405655 =         ((Callback)mActiveBroadcast[index]).mCallback;
         varB387F1FD5AB54FD12A37CFCEE986154C_418405655.addTaint(taint);
         return varB387F1FD5AB54FD12A37CFCEE986154C_418405655;
-        
-        
+        // ---------- Original Method ----------
+        //return ((Callback)mActiveBroadcast[index]).mCallback;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.512 -0400", hash_original_method = "25A2DBE745AB094B33E63C6F1B03FB52", hash_generated_method = "CEF4FB6EC0B28BAC88E6F2B9CD7F37D4")
     public Object getBroadcastCookie(int index) {
         addTaint(index);
 Object var827DDB4E5F2D629148BAD499A051C937_926600287 =         ((Callback)mActiveBroadcast[index]).mCookie;
         var827DDB4E5F2D629148BAD499A051C937_926600287.addTaint(taint);
         return var827DDB4E5F2D629148BAD499A051C937_926600287;
-        
-        
+        // ---------- Original Method ----------
+        //return ((Callback)mActiveBroadcast[index]).mCookie;
     }
 
     
@@ -241,7 +240,7 @@ Object var827DDB4E5F2D629148BAD499A051C937_926600287 =         ((Callback)mActiv
                     "finishBroadcast() called outside of a broadcast");
             var13D39806D294C1A85F74F92F61421CE1_648360307.addTaint(taint);
             throw var13D39806D294C1A85F74F92F61421CE1_648360307;
-        } 
+        } //End block
         Object[] active = mActiveBroadcast;
     if(active != null)        
         {
@@ -249,22 +248,22 @@ Object var827DDB4E5F2D629148BAD499A051C937_926600287 =         ((Callback)mActiv
 for(int i=0;i<N;i++)
             {
                 active[i] = null;
-            } 
-        } 
+            } //End block
+        } //End block
         mBroadcastCount = -1;
-        
-        
-            
-                    
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mBroadcastCount < 0) {
+            //throw new IllegalStateException(
+                    //"finishBroadcast() called outside of a broadcast");
+        //}
+        //Object[] active = mActiveBroadcast;
+        //if (active != null) {
+            //final int N = mBroadcastCount;
+            //for (int i=0; i<N; i++) {
+                //active[i] = null;
+            //}
+        //}
+        //mBroadcastCount = -1;
     }
 
     
@@ -280,9 +279,9 @@ for(int i=0;i<N;i++)
           Callback(E callback, Object cookie) {
             mCallback = callback;
             mCookie = cookie;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mCallback = callback;
+            //mCookie = cookie;
         }
 
         
@@ -291,13 +290,13 @@ for(int i=0;i<N;i++)
             synchronized
 (mCallbacks)            {
                 mCallbacks.remove(mCallback.asBinder());
-            } 
+            } //End block
             onCallbackDied(mCallback, mCookie);
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //synchronized (mCallbacks) {
+                //mCallbacks.remove(mCallback.asBinder());
+            //}
+            //onCallbackDied(mCallback, mCookie);
         }
 
         

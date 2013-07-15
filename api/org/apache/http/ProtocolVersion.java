@@ -1,6 +1,6 @@
 package org.apache.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,40 +26,40 @@ public class ProtocolVersion implements Serializable, Cloneable {
                 ("Protocol name must not be null.");
             var89E03E0C3AA6B5FF759E230A76A67CE2_1725773799.addTaint(taint);
             throw var89E03E0C3AA6B5FF759E230A76A67CE2_1725773799;
-        } 
+        } //End block
     if(major < 0)        
         {
             IllegalArgumentException var0DB524F997D14F270E2B4389BE6B1606_209469475 = new IllegalArgumentException
                 ("Protocol major version number must not be negative.");
             var0DB524F997D14F270E2B4389BE6B1606_209469475.addTaint(taint);
             throw var0DB524F997D14F270E2B4389BE6B1606_209469475;
-        } 
+        } //End block
     if(minor < 0)        
         {
             IllegalArgumentException var772F431E821A2063ECC79E95083DF8B5_57229166 = new IllegalArgumentException
                 ("Protocol minor version number may not be negative");
             var772F431E821A2063ECC79E95083DF8B5_57229166.addTaint(taint);
             throw var772F431E821A2063ECC79E95083DF8B5_57229166;
-        } 
+        } //End block
         this.protocol = protocol;
         this.major = major;
         this.minor = minor;
-        
-        
-            
-                
-        
-        
-            
-                
-        
-        
-            
-                
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (protocol == null) {
+            //throw new IllegalArgumentException
+                //("Protocol name must not be null.");
+        //}
+        //if (major < 0) {
+            //throw new IllegalArgumentException
+                //("Protocol major version number must not be negative.");
+        //}
+        //if (minor < 0) {
+            //throw new IllegalArgumentException
+                //("Protocol minor version number may not be negative");
+        //}
+        //this.protocol = protocol;
+        //this.major = major;
+        //this.minor = minor;
     }
 
     
@@ -68,8 +68,8 @@ public class ProtocolVersion implements Serializable, Cloneable {
 String varDD56EE388A0FA5696BF9686AC14D2DB9_833527765 =         protocol;
         varDD56EE388A0FA5696BF9686AC14D2DB9_833527765.addTaint(taint);
         return varDD56EE388A0FA5696BF9686AC14D2DB9_833527765;
-        
-        
+        // ---------- Original Method ----------
+        //return protocol;
     }
 
     
@@ -78,8 +78,8 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_833527765 =         protocol;
         int varF1425DA40A9F2D21AB702A1C7FEAE026_1201252242 = (major);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472834772 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472834772;
-        
-        
+        // ---------- Original Method ----------
+        //return major;
     }
 
     
@@ -88,8 +88,8 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_833527765 =         protocol;
         int varAB846C0E3717A3E7D14AF45CAB70B44A_1160905546 = (minor);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324382866 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324382866;
-        
-        
+        // ---------- Original Method ----------
+        //return minor;
     }
 
     
@@ -102,15 +102,15 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_833527765 =         protocol;
 ProtocolVersion var72A74007B2BE62B849F475C7BDA4658B_1834633673 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1834633673.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1834633673;
-        } 
+        } //End block
 ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new ProtocolVersion(this.protocol, major, minor);
         varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440.addTaint(taint);
         return varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if ((major == this.major) && (minor == this.minor)) {
+            //return this;
+        //}
+        //return new ProtocolVersion(this.protocol, major, minor);
     }
 
     
@@ -119,8 +119,8 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new Prot
         int varD183A6D7752C69C399F68A158B5DFDD4_1526363479 = (this.protocol.hashCode() ^ (this.major * 100000) ^ this.minor);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_717963322 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_717963322;
-        
-        
+        // ---------- Original Method ----------
+        //return this.protocol.hashCode() ^ (this.major * 100000) ^ this.minor;
     }
 
     
@@ -132,30 +132,30 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new Prot
             boolean varB326B5062B2F0E69046810717534CB09_1216374771 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394459220 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_394459220;
-        } 
+        } //End block
     if(!(obj instanceof ProtocolVersion))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1499834828 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562095245 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1562095245;
-        } 
+        } //End block
         ProtocolVersion that = (ProtocolVersion) obj;
         boolean var951746293E8EAE5EA594637D66F71308_1739625583 = (((this.protocol.equals(that.protocol)) &&
                 (this.major == that.major) &&
                 (this.minor == that.minor)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_814347337 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_814347337;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //if (this == obj) {
+            //return true;
+        //}
+        //if (!(obj instanceof ProtocolVersion)) {
+            //return false;
+        //}
+        //ProtocolVersion that = (ProtocolVersion) obj;
+        //return ((this.protocol.equals(that.protocol)) &&
+                //(this.major == that.major) &&
+                //(this.minor == that.minor));
     }
 
     
@@ -165,8 +165,8 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new Prot
         boolean var68437857B2D69CBBD43E93F3FE545E7F_1773750806 = ((that != null) && this.protocol.equals(that.protocol));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_339007602 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_339007602;
-        
-        
+        // ---------- Original Method ----------
+        //return (that != null) && this.protocol.equals(that.protocol);
     }
 
     
@@ -179,7 +179,7 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new Prot
                 ("Protocol version must not be null.");
             varED1AFF25625857E84D7E852ADCFA2EED_1020435022.addTaint(taint);
             throw varED1AFF25625857E84D7E852ADCFA2EED_1020435022;
-        } 
+        } //End block
     if(!this.protocol.equals(that.protocol))        
         {
             IllegalArgumentException var071CECA53444181C82DDEB2010EF8CED_711847131 = new IllegalArgumentException
@@ -187,30 +187,30 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new Prot
                  this + " " + that);
             var071CECA53444181C82DDEB2010EF8CED_711847131.addTaint(taint);
             throw var071CECA53444181C82DDEB2010EF8CED_711847131;
-        } 
+        } //End block
         int delta = getMajor() - that.getMajor();
     if(delta == 0)        
         {
             delta = getMinor() - that.getMinor();
-        } 
+        } //End block
         int var63BCABF86A9A991864777C631C5B7617_1743122218 = (delta);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_987324444 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_987324444;
-        
-        
-            
-                
-        
-        
-            
-                
-                 
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (that == null) {
+            //throw new IllegalArgumentException
+                //("Protocol version must not be null."); 
+        //}
+        //if (!this.protocol.equals(that.protocol)) {
+            //throw new IllegalArgumentException
+                //("Versions for different protocols cannot be compared. " +
+                 //this + " " + that);
+        //}
+        //int delta = getMajor() - that.getMajor();
+        //if (delta == 0) {
+            //delta = getMinor() - that.getMinor();
+        //}
+        //return delta;
     }
 
     
@@ -220,8 +220,8 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new Prot
         boolean var23277FDBC4CF36663C280085EC8D17D0_1429449482 = (isComparable(version) && (compareToVersion(version) >= 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1036445870 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1036445870;
-        
-        
+        // ---------- Original Method ----------
+        //return isComparable(version) && (compareToVersion(version) >= 0);
     }
 
     
@@ -231,8 +231,8 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new Prot
         boolean var61752013E44BB28B8057AA614DEDE534_1512766985 = (isComparable(version) && (compareToVersion(version) <= 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1680485134 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1680485134;
-        
-        
+        // ---------- Original Method ----------
+        //return isComparable(version) && (compareToVersion(version) <= 0);
     }
 
     
@@ -247,14 +247,14 @@ ProtocolVersion varD2924DB4DA2F5F9ABE6F7D208A34A0F0_749017440 =         new Prot
 String varD03843288D33B9E1D3062E25339ECF6D_1346181174 =         buffer.toString();
         varD03843288D33B9E1D3062E25339ECF6D_1346181174.addTaint(taint);
         return varD03843288D33B9E1D3062E25339ECF6D_1346181174;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //CharArrayBuffer buffer = new CharArrayBuffer(16);
+        //buffer.append(this.protocol);
+        //buffer.append('/');
+        //buffer.append(Integer.toString(this.major));
+        //buffer.append('.');
+        //buffer.append(Integer.toString(this.minor));
+        //return buffer.toString();
     }
 
     
@@ -263,8 +263,8 @@ String varD03843288D33B9E1D3062E25339ECF6D_1346181174 =         buffer.toString(
 Object var46F3A0D86742C1D6E099C2B166941A33_1165549061 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_1165549061.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_1165549061;
-        
-        
+        // ---------- Original Method ----------
+        //return super.clone();
     }
 
     

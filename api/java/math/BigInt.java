@@ -1,6 +1,6 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ final class BigInt {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.705 -0400", hash_original_method = "1310F12C90284BE28EAEC322C36620BE", hash_generated_method = "1310F12C90284BE28EAEC322C36620BE")
     public BigInt ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -26,21 +26,21 @@ final class BigInt {
             {
                 NativeBN.BN_free(this.bignum);
                 this.bignum = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (this.bignum != 0) {
+                //NativeBN.BN_free(this.bignum);
+                //this.bignum = 0;
+            //}
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
@@ -50,19 +50,18 @@ final class BigInt {
 String varEE38A904DF70C757D780CC0689FFC426_1542107688 =         this.decString();
         varEE38A904DF70C757D780CC0689FFC426_1542107688.addTaint(taint);
         return varEE38A904DF70C757D780CC0689FFC426_1542107688;
-        
-        
+        // ---------- Original Method ----------
+        //return this.decString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.706 -0400", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "207B7A97DFBCD2EF292DD267FC341775")
      int getNativeBIGNUM() {
         int var2F62ECB1E1BFD54CAB557BA7F701A0DB_795313843 = (this.bignum);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621226979 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621226979;
-        
-        
+        // ---------- Original Method ----------
+        //return this.bignum;
     }
 
     
@@ -105,12 +104,12 @@ String varEE38A904DF70C757D780CC0689FFC426_1542107688 =         this.decString()
         {
             this.bignum = NativeBN.BN_new();
             Check(this.bignum != 0);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.bignum == 0) {
+            //this.bignum = NativeBN.BN_new();
+            //Check(this.bignum != 0);
+        //}
     }
 
     
@@ -132,9 +131,9 @@ String varEE38A904DF70C757D780CC0689FFC426_1542107688 =         this.decString()
         addTaint(from.getTaint());
         this.makeValid();
         Check(NativeBN.BN_copy(this.bignum, from.bignum));
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.BN_copy(this.bignum, from.bignum));
     }
 
     
@@ -145,10 +144,10 @@ String varEE38A904DF70C757D780CC0689FFC426_1542107688 =         this.decString()
 BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
         var87B0A797C42126F3585C9636042C24CE_1293285840.addTaint(taint);
         return var87B0A797C42126F3585C9636042C24CE_1293285840;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //BigInt bi = new BigInt();
+        //bi.putCopy(this);
+        //return bi;
     }
 
     
@@ -157,9 +156,9 @@ BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
         addTaint(val);
         this.makeValid();
         Check(NativeBN.putLongInt(this.bignum, val));
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.putLongInt(this.bignum, val));
     }
 
     
@@ -169,9 +168,9 @@ BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
         addTaint(val);
         this.makeValid();
         Check(NativeBN.putULongInt(this.bignum, val, neg));
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.putULongInt(this.bignum, val, neg));
     }
 
     
@@ -181,8 +180,8 @@ BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
         NumberFormatException var3E0A23870CF491D90DB3D166BB4BDFBA_1652486484 = new NumberFormatException("Invalid BigInteger: " + s);
         var3E0A23870CF491D90DB3D166BB4BDFBA_1652486484.addTaint(taint);
         throw var3E0A23870CF491D90DB3D166BB4BDFBA_1652486484;
-        
-        
+        // ---------- Original Method ----------
+        //throw new NumberFormatException("Invalid BigInteger: " + s);
     }
 
     
@@ -198,15 +197,15 @@ BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
             java.lang.NumberFormatException varE8D11AC18CAE370F8E495AB217B30BEE_479104065 = invalidBigInteger(original);
             varE8D11AC18CAE370F8E495AB217B30BEE_479104065.addTaint(taint);
             throw varE8D11AC18CAE370F8E495AB217B30BEE_479104065;
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String s = checkString(original, 10);
+        //this.makeValid();
+        //int usedLen = NativeBN.BN_dec2bn(this.bignum, s);
+        //Check((usedLen > 0));
+        //if (usedLen < s.length()) {
+            //throw invalidBigInteger(original);
+        //}
     }
 
     
@@ -222,15 +221,15 @@ BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
             java.lang.NumberFormatException varE8D11AC18CAE370F8E495AB217B30BEE_1544842357 = invalidBigInteger(original);
             varE8D11AC18CAE370F8E495AB217B30BEE_1544842357.addTaint(taint);
             throw varE8D11AC18CAE370F8E495AB217B30BEE_1544842357;
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String s = checkString(original, 16);
+        //this.makeValid();
+        //int usedLen = NativeBN.BN_hex2bn(this.bignum, s);
+        //Check((usedLen > 0));
+        //if (usedLen < s.length()) {
+            //throw invalidBigInteger(original);
+        //}
     }
 
     
@@ -243,7 +242,7 @@ BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1839930692 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1839930692.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1839930692;
-        } 
+        } //End block
         int charCount = s.length();
         int i = 0;
     if(charCount > 0)        
@@ -253,19 +252,19 @@ BigInt var87B0A797C42126F3585C9636042C24CE_1293285840 =         bi;
             {
                 s = s.substring(1);
                 --charCount;
-            } 
+            } //End block
             else
     if(ch == '-')            
             {
                 ++i;
-            } 
-        } 
+            } //End block
+        } //End block
     if(charCount - i == 0)        
         {
             java.lang.NumberFormatException var7F9B1EBE0B97EE479C788F183C4079A9_823287794 = invalidBigInteger(s);
             var7F9B1EBE0B97EE479C788F183C4079A9_823287794.addTaint(taint);
             throw var7F9B1EBE0B97EE479C788F183C4079A9_823287794;
-        } 
+        } //End block
         boolean nonAscii = false;
 for(;i < charCount;++i)
         {
@@ -275,17 +274,17 @@ for(;i < charCount;++i)
                 java.lang.NumberFormatException var7F9B1EBE0B97EE479C788F183C4079A9_1999332240 = invalidBigInteger(s);
                 var7F9B1EBE0B97EE479C788F183C4079A9_1999332240.addTaint(taint);
                 throw var7F9B1EBE0B97EE479C788F183C4079A9_1999332240;
-            } 
+            } //End block
     if(ch > 128)            
             {
                 nonAscii = true;
-            } 
-        } 
+            } //End block
+        } //End block
 String varF5914D263E7A63078B23C8BE55D5C92B_488148871 =         nonAscii ? toAscii(s, base) : s;
         varF5914D263E7A63078B23C8BE55D5C92B_488148871.addTaint(taint);
         return varF5914D263E7A63078B23C8BE55D5C92B_488148871;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -310,9 +309,9 @@ String varF5914D263E7A63078B23C8BE55D5C92B_488148871 =         nonAscii ? toAsci
         addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.BN_bin2bn(a, a.length, neg, this.bignum));
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.BN_bin2bn(a, a.length, neg, this.bignum));
     }
 
     
@@ -322,9 +321,9 @@ String varF5914D263E7A63078B23C8BE55D5C92B_488148871 =         nonAscii ? toAsci
         addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.litEndInts2bn(a, a.length, neg, this.bignum));
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.litEndInts2bn(a, a.length, neg, this.bignum));
     }
 
     
@@ -333,9 +332,9 @@ String varF5914D263E7A63078B23C8BE55D5C92B_488148871 =         nonAscii ? toAsci
         addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.makeValid();
+        //Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
     }
 
     
@@ -344,8 +343,8 @@ String varF5914D263E7A63078B23C8BE55D5C92B_488148871 =         nonAscii ? toAsci
         long varC55BA8B2B9A00B1323A548E5B86AFCBA_939182026 = (NativeBN.longInt(this.bignum));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_540452572 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_540452572;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.longInt(this.bignum);
     }
 
     
@@ -354,8 +353,8 @@ String varF5914D263E7A63078B23C8BE55D5C92B_488148871 =         nonAscii ? toAsci
 String varCCF863F4D48E2DE62C695A86A66040EF_1818559748 =         NativeBN.BN_bn2dec(this.bignum);
         varCCF863F4D48E2DE62C695A86A66040EF_1818559748.addTaint(taint);
         return varCCF863F4D48E2DE62C695A86A66040EF_1818559748;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.BN_bn2dec(this.bignum);
     }
 
     
@@ -364,8 +363,8 @@ String varCCF863F4D48E2DE62C695A86A66040EF_1818559748 =         NativeBN.BN_bn2d
 String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2hex(this.bignum);
         varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489.addTaint(taint);
         return varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.BN_bn2hex(this.bignum);
     }
 
     
@@ -374,8 +373,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
         byte[] var974B961D29BF5708EEFD709EE3C9B6C3_1968424326 = (NativeBN.BN_bn2bin(this.bignum));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1763414573 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1763414573;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.BN_bn2bin(this.bignum);
     }
 
     
@@ -384,8 +383,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
         int[] var4B84E68D8CDD0E00B539C5BBDD3C0297_1561325170 = (NativeBN.bn2litEndInts(this.bignum));
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1185629083 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1185629083;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.bn2litEndInts(this.bignum);
     }
 
     
@@ -394,8 +393,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
         int var30B6F63E32027C8A1E184493509869A6_664528447 = (NativeBN.sign(this.bignum));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349742467 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349742467;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.sign(this.bignum);
     }
 
     
@@ -405,18 +404,18 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
     if(val > 0)        
         {
             NativeBN.BN_set_negative(this.bignum, 0);
-        } 
+        } //End block
         else
         {
     if(val < 0)            
             NativeBN.BN_set_negative(this.bignum, 1);
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (val > 0) {
+            //NativeBN.BN_set_negative(this.bignum, 0);
+        //} else {
+            //if (val < 0) NativeBN.BN_set_negative(this.bignum, 1);
+        //}
     }
 
     
@@ -427,9 +426,9 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
         boolean var56074C02CFA094DC2F93464BDA66A9DD_9023711 = (actualByteCount <= desiredByteCount);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1913516370 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1913516370;
-        
-        
-        
+        // ---------- Original Method ----------
+        //int actualByteCount = (NativeBN.bitLength(this.bignum) + 7) / 8;
+        //return actualByteCount <= desiredByteCount;
     }
 
     
@@ -438,8 +437,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
         int var0F9DE3413157B0BF360CFE49C565F557_2134322298 = (NativeBN.bitLength(this.bignum));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1475678904 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1475678904;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.bitLength(this.bignum);
     }
 
     
@@ -449,8 +448,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
         boolean varF06EB7850FF23805EFB6B8AE10768B04_1441630018 = (NativeBN.BN_is_bit_set(this.bignum, n));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1055143334 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1055143334;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.BN_is_bit_set(this.bignum, n);
     }
 
     
@@ -465,8 +464,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
      void shift(int n) {
         addTaint(n);
         Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
-        
-        
+        // ---------- Original Method ----------
+        //Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
     }
 
     
@@ -474,8 +473,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
      void addPositiveInt(int w) {
         addTaint(w);
         Check(NativeBN.BN_add_word(this.bignum, w));
-        
-        
+        // ---------- Original Method ----------
+        //Check(NativeBN.BN_add_word(this.bignum, w));
     }
 
     
@@ -483,8 +482,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
      void multiplyByPositiveInt(int w) {
         addTaint(w);
         Check(NativeBN.BN_mul_word(this.bignum, w));
-        
-        
+        // ---------- Original Method ----------
+        //Check(NativeBN.BN_mul_word(this.bignum, w));
     }
 
     
@@ -506,8 +505,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
      void add(BigInt a) {
         addTaint(a.getTaint());
         Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
-        
-        
+        // ---------- Original Method ----------
+        //Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
     }
 
     
@@ -599,8 +598,8 @@ String varE4F8BA600302B1E57A5C31B3EB1B1B21_976697489 =         NativeBN.BN_bn2he
         boolean var241D89B17919157472B0C305FE26C87F_548361975 = (NativeBN.BN_is_prime_ex(bignum, certainty, 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060198593 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060198593;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeBN.BN_is_prime_ex(bignum, certainty, 0);
     }
 
     

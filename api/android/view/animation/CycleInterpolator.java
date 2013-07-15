@@ -1,6 +1,6 @@
 package android.view.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ public class CycleInterpolator implements Interpolator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.755 -0400", hash_original_method = "B3C740F3395BC63F138ED104BB72F5FF", hash_generated_method = "BA11D4BA12DF3EAB1AB28B2B714A5C98")
     public  CycleInterpolator(float cycles) {
         mCycles = cycles;
-        
-        
+        // ---------- Original Method ----------
+        //mCycles = cycles;
     }
 
     
@@ -28,11 +28,11 @@ public class CycleInterpolator implements Interpolator {
         TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.CycleInterpolator);
         mCycles = a.getFloat(com.android.internal.R.styleable.CycleInterpolator_cycles, 1.0f);
         a.recycle();
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //TypedArray a =
+            //context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.CycleInterpolator);
+        //mCycles = a.getFloat(com.android.internal.R.styleable.CycleInterpolator_cycles, 1.0f);
+        //a.recycle();
     }
 
     
@@ -42,8 +42,8 @@ public class CycleInterpolator implements Interpolator {
         float varCAA5374381A561639DB19EE12C68720E_2117734666 = ((float)(Math.sin(2 * mCycles * Math.PI * input)));
                 float var546ADE640B6EDFBC8A086EF31347E768_556117530 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_556117530;
-        
-        
+        // ---------- Original Method ----------
+        //return (float)(Math.sin(2 * mCycles * Math.PI * input));
     }
 
     

@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class Base64OutputStream extends FilterOutputStream {
         this(out, flags, true);
         addTaint(flags);
         addTaint(out.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -40,43 +40,42 @@ public class Base64OutputStream extends FilterOutputStream {
     if(encode)        
         {
             coder = new Base64.Encoder(flags, null);
-        } 
+        } //End block
         else
         {
             coder = new Base64.Decoder(flags, null);
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.flags = flags;
+        //if (encode) {
+            //coder = new Base64.Encoder(flags, null);
+        //} else {
+            //coder = new Base64.Decoder(flags, null);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.784 -0400", hash_original_method = "FE73EB52D6E189AC5420897BE3BAB488", hash_generated_method = "CC7A998E19022A793CC09650902F7B5D")
     public void write(int b) throws IOException {
     if(buffer == null)        
         {
             buffer = new byte[1024];
-        } 
+        } //End block
     if(bpos >= buffer.length)        
         {
             internalWrite(buffer, 0, bpos, false);
             bpos = 0;
-        } 
+        } //End block
         buffer[bpos++] = (byte) b;
-        
-        
-            
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (buffer == null) {
+            //buffer = new byte[1024];
+        //}
+        //if (bpos >= buffer.length) {
+            //internalWrite(buffer, 0, bpos, false);
+            //bpos = 0;
+        //}
+        //buffer[bpos++] = (byte) b;
     }
 
     
@@ -86,16 +85,15 @@ public class Base64OutputStream extends FilterOutputStream {
         {
             internalWrite(buffer, 0, bpos, false);
             bpos = 0;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (bpos > 0) {
+            //internalWrite(buffer, 0, bpos, false);
+            //bpos = 0;
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.785 -0400", hash_original_method = "A3459DDB741D1D5DB893FD9A7CFFE0F1", hash_generated_method = "9B8A7469D3F6400D187082335FF47885")
     public void write(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -105,14 +103,13 @@ public class Base64OutputStream extends FilterOutputStream {
         return;
         flushBuffer();
         internalWrite(b, off, len, false);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (len <= 0) return;
+        //flushBuffer();
+        //internalWrite(b, off, len, false);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.786 -0400", hash_original_method = "17457DFCCCBD635753AB001ED5B818FB", hash_generated_method = "9CE0DEBDB385AF1C9E213046ADEE54C4")
     public void close() throws IOException {
         IOException thrown = null;
@@ -120,56 +117,56 @@ public class Base64OutputStream extends FilterOutputStream {
         {
             flushBuffer();
             internalWrite(EMPTY, 0, 0, true);
-        } 
+        } //End block
         catch (IOException e)
         {
             thrown = e;
-        } 
+        } //End block
         try 
         {
     if((flags & Base64.NO_CLOSE) == 0)            
             {
                 out.close();
-            } 
+            } //End block
             else
             {
                 out.flush();
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException e)
         {
     if(thrown != null)            
             {
                 thrown = e;
-            } 
-        } 
+            } //End block
+        } //End block
     if(thrown != null)        
         {
             thrown.addTaint(taint);
             throw thrown;
-        } 
-        
-        
-        
-            
-            
-        
-            
-        
-        
-            
-                
-            
-                
-            
-        
-            
-                
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //IOException thrown = null;
+        //try {
+            //flushBuffer();
+            //internalWrite(EMPTY, 0, 0, true);
+        //} catch (IOException e) {
+            //thrown = e;
+        //}
+        //try {
+            //if ((flags & Base64.NO_CLOSE) == 0) {
+                //out.close();
+            //} else {
+                //out.flush();
+            //}
+        //} catch (IOException e) {
+            //if (thrown != null) {
+                //thrown = e;
+            //}
+        //}
+        //if (thrown != null) {
+            //throw thrown;
+        //}
     }
 
     
@@ -184,18 +181,17 @@ public class Base64OutputStream extends FilterOutputStream {
             Base64DataException varF0DD44910C7219815AA4C8F30CAF8B81_2100553887 = new Base64DataException("bad base-64");
             varF0DD44910C7219815AA4C8F30CAF8B81_2100553887.addTaint(taint);
             throw varF0DD44910C7219815AA4C8F30CAF8B81_2100553887;
-        } 
+        } //End block
         out.write(coder.output, 0, coder.op);
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //coder.output = embiggen(coder.output, coder.maxOutputSize(len));
+        //if (!coder.process(b, off, len, finish)) {
+            //throw new Base64DataException("bad base-64");
+        //}
+        //out.write(coder.output, 0, coder.op);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.788 -0400", hash_original_method = "8F1A1CDA0B50B3C3FF8220D3A1F18B22", hash_generated_method = "FEB15C45BCAED0327B33AA870DD50865")
     private byte[] embiggen(byte[] b, int len) {
         addTaint(len);
@@ -205,19 +201,19 @@ public class Base64OutputStream extends FilterOutputStream {
             byte[] varB12B4D663E56EB1612747752D18CD890_1725077452 = (new byte[len]);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_836485339 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_836485339;
-        } 
+        } //End block
         else
         {
             byte[] var92EB5FFEE6AE2FEC3AD71C777531578F_179360640 = (b);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1791531903 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1791531903;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (b == null || b.length < len) {
+            //return new byte[len];
+        //} else {
+            //return b;
+        //}
     }
 
     

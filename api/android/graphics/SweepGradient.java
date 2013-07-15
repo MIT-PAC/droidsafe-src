@@ -1,6 +1,6 @@
 package android.graphics;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,26 +19,26 @@ public class SweepGradient extends Shader {
             IllegalArgumentException var38C288485201E20FEF77EEB0BDD8A17B_226146650 = new IllegalArgumentException("needs >= 2 number of colors");
             var38C288485201E20FEF77EEB0BDD8A17B_226146650.addTaint(taint);
             throw var38C288485201E20FEF77EEB0BDD8A17B_226146650;
-        } 
+        } //End block
     if(positions != null && colors.length != positions.length)        
         {
             IllegalArgumentException varFBD021BA7FC99ABEF82125BE636E6EF0_1080951232 = new IllegalArgumentException(
                         "color and position arrays must be of equal length");
             varFBD021BA7FC99ABEF82125BE636E6EF0_1080951232.addTaint(taint);
             throw varFBD021BA7FC99ABEF82125BE636E6EF0_1080951232;
-        } 
+        } //End block
         native_instance = nativeCreate1(cx, cy, colors, positions);
         native_shader = nativePostCreate1(native_instance, cx, cy, colors, positions);
-        
-        
-            
-        
-        
-            
-                        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (colors.length < 2) {
+            //throw new IllegalArgumentException("needs >= 2 number of colors");
+        //}
+        //if (positions != null && colors.length != positions.length) {
+            //throw new IllegalArgumentException(
+                        //"color and position arrays must be of equal length");
+        //}
+        //native_instance = nativeCreate1(cx, cy, colors, positions);
+        //native_shader = nativePostCreate1(native_instance, cx, cy, colors, positions);
     }
 
     
@@ -50,9 +50,9 @@ public class SweepGradient extends Shader {
         addTaint(cx);
         native_instance = nativeCreate2(cx, cy, color0, color1);
         native_shader = nativePostCreate2(native_instance, cx, cy, color0, color1);
-        
-        
-        
+        // ---------- Original Method ----------
+        //native_instance = nativeCreate2(cx, cy, color0, color1);
+        //native_shader = nativePostCreate2(native_instance, cx, cy, color0, color1);
     }
 
     

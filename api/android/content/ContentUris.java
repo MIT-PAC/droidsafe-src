@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,12 +11,11 @@ public class ContentUris {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.901 -0400", hash_original_method = "8AAA02C02EB3A227B34A166B78568DD1", hash_generated_method = "8AAA02C02EB3A227B34A166B78568DD1")
     public ContentUris ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static long parseId(Uri contentUri) {
+        public static long parseId(Uri contentUri) {
         String last = contentUri.getLastPathSegment();
         return last == null ? -1 : Long.parseLong(last);
     }
@@ -27,8 +26,7 @@ public class ContentUris {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri withAppendedId(Uri contentUri, long id) {
+        public static Uri withAppendedId(Uri contentUri, long id) {
         return appendId(contentUri.buildUpon(), id).build();
     }
 

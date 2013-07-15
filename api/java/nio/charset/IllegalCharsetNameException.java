@@ -1,6 +1,6 @@
 package java.nio.charset;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,19 +14,18 @@ public class IllegalCharsetNameException extends IllegalArgumentException {
     public  IllegalCharsetNameException(String charsetName) {
         super((charsetName != null) ? charsetName : "null");
         this.charsetName = charsetName;
-        
-        
+        // ---------- Original Method ----------
+        //this.charsetName = charsetName;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.878 -0400", hash_original_method = "62D3F36CA78A6EC4185A2D1A05C169E6", hash_generated_method = "4A0BB873836D2E6B3D2F246CA47EB419")
     public String getCharsetName() {
 String var51D38528197C73FD97B2AD0E5CC1E13F_349610216 =         charsetName;
         var51D38528197C73FD97B2AD0E5CC1E13F_349610216.addTaint(taint);
         return var51D38528197C73FD97B2AD0E5CC1E13F_349610216;
-        
-        
+        // ---------- Original Method ----------
+        //return charsetName;
     }
 
     

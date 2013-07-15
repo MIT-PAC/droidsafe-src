@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public final class StructPollfd {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.949 -0400", hash_original_method = "46E26FF7732270460330521087FDEE88", hash_generated_method = "46E26FF7732270460330521087FDEE88")
     public StructPollfd ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -33,8 +33,8 @@ public final class StructPollfd {
 String varD1A9934F92FC0D47E0956E235ABDEC62_1187142933 =         "StructPollfd[fd=" + fd + ",events=" + events + ",revents=" + revents + "]";
         varD1A9934F92FC0D47E0956E235ABDEC62_1187142933.addTaint(taint);
         return varD1A9934F92FC0D47E0956E235ABDEC62_1187142933;
-        
-        
+        // ---------- Original Method ----------
+        //return "StructPollfd[fd=" + fd + ",events=" + events + ",revents=" + revents + "]";
     }
 
     

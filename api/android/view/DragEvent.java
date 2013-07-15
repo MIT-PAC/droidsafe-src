@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,11 +43,10 @@ public class DragEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.653 -0400", hash_original_method = "5492E1A6EF7C89CB56D8B22EE2854B8B", hash_generated_method = "C325B7A5D23661790703116059A6FDC6")
     private  DragEvent() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.654 -0400", hash_original_method = "7C5024523CDDAF1D0113FCBE9F36B975", hash_generated_method = "938EDBDAF55CF15B95F169EDD98664E3")
     private void init(int action, float x, float y, ClipDescription description, ClipData data,
             Object localState, boolean result) {
@@ -58,14 +57,14 @@ public class DragEvent implements Parcelable {
         mClipData = data;
         mLocalState = localState;
         mDragResult = result;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mAction = action;
+        //mX = x;
+        //mY = y;
+        //mClipDescription = description;
+        //mClipData = data;
+        //mLocalState = localState;
+        //mDragResult = result;
     }
 
     
@@ -101,80 +100,73 @@ public class DragEvent implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.655 -0400", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "431B1DD21FFB897F348ACBF2939FA6C5")
     public int getAction() {
         int varA3988EEE869C06063B06A0C38A6A1E11_2107625403 = (mAction);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106611356 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106611356;
-        
-        
+        // ---------- Original Method ----------
+        //return mAction;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.656 -0400", hash_original_method = "331663EFF3E2EE62701FDAFEDB013F35", hash_generated_method = "93E146EA9390FA7069D52713C9648FFC")
     public float getX() {
         float varE47D03BC59EE2C8B3B45870BE85294FB_785243418 = (mX);
                 float var546ADE640B6EDFBC8A086EF31347E768_891171311 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_891171311;
-        
-        
+        // ---------- Original Method ----------
+        //return mX;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.656 -0400", hash_original_method = "ABC228174E672AD41349CE6D52652626", hash_generated_method = "CF0C69F2DC42D29A5907A593E7E69B79")
     public float getY() {
         float var29DA5B2B864236A2CCB25B548E8F5F0A_1573781833 = (mY);
                 float var546ADE640B6EDFBC8A086EF31347E768_74104937 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_74104937;
-        
-        
+        // ---------- Original Method ----------
+        //return mY;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.656 -0400", hash_original_method = "933F7F307168902744E3973968DC1B74", hash_generated_method = "400A2C1742F228EA86762458252D99C9")
     public ClipData getClipData() {
 ClipData var1977025219EA5CDD9C5515A6C37627CE_993161952 =         mClipData;
         var1977025219EA5CDD9C5515A6C37627CE_993161952.addTaint(taint);
         return var1977025219EA5CDD9C5515A6C37627CE_993161952;
-        
-        
+        // ---------- Original Method ----------
+        //return mClipData;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.656 -0400", hash_original_method = "314798A5FB9D41875D673F25B7EDBA77", hash_generated_method = "EDE246224DF7282DFB9C1A9DF98AE91A")
     public ClipDescription getClipDescription() {
 ClipDescription var66737B70E012D8A6A7B87AF89D5A9D5F_2121712149 =         mClipDescription;
         var66737B70E012D8A6A7B87AF89D5A9D5F_2121712149.addTaint(taint);
         return var66737B70E012D8A6A7B87AF89D5A9D5F_2121712149;
-        
-        
+        // ---------- Original Method ----------
+        //return mClipDescription;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.657 -0400", hash_original_method = "37C7BCFB2F6F270ABDBD12EAE79514EC", hash_generated_method = "246596F6DD44CCC63D040B223C927436")
     public Object getLocalState() {
 Object var7FD3E34206D71BA5A444CCA1F25A17E3_954551146 =         mLocalState;
         var7FD3E34206D71BA5A444CCA1F25A17E3_954551146.addTaint(taint);
         return var7FD3E34206D71BA5A444CCA1F25A17E3_954551146;
-        
-        
+        // ---------- Original Method ----------
+        //return mLocalState;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.657 -0400", hash_original_method = "137903529BA54F55A1080182FA7064FC", hash_generated_method = "68CEB6FEC770F9AA53BF51E3B8574DD3")
     public boolean getResult() {
         boolean var8927DB6CA9E7C245BB19CB5184DE9194_1020777703 = (mDragResult);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_822808024 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_822808024;
-        
-        
+        // ---------- Original Method ----------
+        //return mDragResult;
     }
 
     
@@ -187,9 +179,9 @@ Object var7FD3E34206D71BA5A444CCA1F25A17E3_954551146 =         mLocalState;
                 RuntimeException var560DEC13FEE3B93EDBE65D649F29206C_1930309527 = new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
                 var560DEC13FEE3B93EDBE65D649F29206C_1930309527.addTaint(taint);
                 throw var560DEC13FEE3B93EDBE65D649F29206C_1930309527;
-            } 
+            } //End block
             mRecycledLocation = new RuntimeException("Last recycled here");
-        } 
+        } //End block
         else
         {
     if(mRecycled)            
@@ -197,9 +189,9 @@ Object var7FD3E34206D71BA5A444CCA1F25A17E3_954551146 =         mLocalState;
                 RuntimeException var4B7E168C1631949DA6BD5DCA24D52129_698450358 = new RuntimeException(toString() + " recycled twice!");
                 var4B7E168C1631949DA6BD5DCA24D52129_698450358.addTaint(taint);
                 throw var4B7E168C1631949DA6BD5DCA24D52129_698450358;
-            } 
+            } //End block
             mRecycled = true;
-        } 
+        } //End block
         mClipData = null;
         mClipDescription = null;
         mLocalState = null;
@@ -210,30 +202,30 @@ Object var7FD3E34206D71BA5A444CCA1F25A17E3_954551146 =         mLocalState;
                 gRecyclerUsed++;
                 mNext = gRecyclerTop;
                 gRecyclerTop = this;
-            } 
-        } 
-        
-        
-            
-                
-            
-            
-        
-            
-                
-            
-            
-        
-        
-        
-        
-        
-            
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (TRACK_RECYCLED_LOCATION) {
+            //if (mRecycledLocation != null) {
+                //throw new RuntimeException(toString() + " recycled twice!", mRecycledLocation);
+            //}
+            //mRecycledLocation = new RuntimeException("Last recycled here");
+        //} else {
+            //if (mRecycled) {
+                //throw new RuntimeException(toString() + " recycled twice!");
+            //}
+            //mRecycled = true;
+        //}
+        //mClipData = null;
+        //mClipDescription = null;
+        //mLocalState = null;
+        //synchronized (gRecyclerLock) {
+            //if (gRecyclerUsed < MAX_RECYCLED) {
+                //gRecyclerUsed++;
+                //mNext = gRecyclerTop;
+                //gRecyclerTop = this;
+            //}
+        //}
     }
 
     
@@ -246,22 +238,21 @@ String var6ED7BFAC44A120FA659019E4D9D1818B_1176131954 =         "DragEvent{" + I
         + "}";
         var6ED7BFAC44A120FA659019E4D9D1818B_1176131954.addTaint(taint);
         return var6ED7BFAC44A120FA659019E4D9D1818B_1176131954;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //return "DragEvent{" + Integer.toHexString(System.identityHashCode(this))
+        //+ " action=" + mAction + " @ (" + mX + ", " + mY + ") desc=" + mClipDescription
+        //+ " data=" + mClipData + " local=" + mLocalState + " result=" + mDragResult
+        //+ "}";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.659 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "B4AE47701E40057D00EFA9652495B29A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1710675107 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101963876 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101963876;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -276,38 +267,38 @@ String var6ED7BFAC44A120FA659019E4D9D1818B_1176131954 =         "DragEvent{" + I
     if(mClipData == null)        
         {
             dest.writeInt(0);
-        } 
+        } //End block
         else
         {
             dest.writeInt(1);
             mClipData.writeToParcel(dest, flags);
-        } 
+        } //End block
     if(mClipDescription == null)        
         {
             dest.writeInt(0);
-        } 
+        } //End block
         else
         {
             dest.writeInt(1);
             mClipDescription.writeToParcel(dest, flags);
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
-            
-            
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //dest.writeInt(mAction);
+        //dest.writeFloat(mX);
+        //dest.writeFloat(mY);
+        //dest.writeInt(mDragResult ? 1 : 0);
+        //if (mClipData == null) {
+            //dest.writeInt(0);
+        //} else {
+            //dest.writeInt(1);
+            //mClipData.writeToParcel(dest, flags);
+        //}
+        //if (mClipDescription == null) {
+            //dest.writeInt(0);
+        //} else {
+            //dest.writeInt(1);
+            //mClipDescription.writeToParcel(dest, flags);
+        //}
     }
 
     
@@ -367,7 +358,7 @@ String var6ED7BFAC44A120FA659019E4D9D1818B_1176131954 =         "DragEvent{" + I
             return new DragEvent[size];
         }
     };
-    
+    // orphaned legacy method
     public DragEvent createFromParcel(Parcel in) {
             DragEvent event = DragEvent.obtain();
             event.mAction = in.readInt();
@@ -383,7 +374,7 @@ String var6ED7BFAC44A120FA659019E4D9D1818B_1176131954 =         "DragEvent{" + I
             return event;
         }
     
-    
+    // orphaned legacy method
     public DragEvent[] newArray(int size) {
             return new DragEvent[size];
         }

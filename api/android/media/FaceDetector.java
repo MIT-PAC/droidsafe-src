@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,21 +37,21 @@ public class FaceDetector {
     if(!sInitialized)        
         {
             return;
-        } 
+        } //End block
         fft_initialize(width, height, maxFaces);
         mWidth = width;
         mHeight = height;
         mMaxFaces = maxFaces;
         mBWBuffer = new byte[width * height];
-        
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!sInitialized) {
+            //return;
+        //}
+        //fft_initialize(width, height, maxFaces);
+        //mWidth = width;
+        //mHeight = height;
+        //mMaxFaces = maxFaces;
+        //mBWBuffer = new byte[width * height];
     }
 
     
@@ -64,21 +64,21 @@ public class FaceDetector {
             int varCFCD208495D565EF66E7DFF9F98764DA_564890617 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_31863398 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_31863398;
-        } 
+        } //End block
     if(bitmap.getWidth() != mWidth || bitmap.getHeight() != mHeight)        
         {
             IllegalArgumentException var154C644C9C69E602A2014751BF7C49BC_1099416852 = new IllegalArgumentException(
                     "bitmap size doesn't match initialization");
             var154C644C9C69E602A2014751BF7C49BC_1099416852.addTaint(taint);
             throw var154C644C9C69E602A2014751BF7C49BC_1099416852;
-        } 
+        } //End block
     if(faces.length < mMaxFaces)        
         {
             IllegalArgumentException var2510662408A702670DD9B0096485E415_251587750 = new IllegalArgumentException(
                     "faces[] smaller than maxFaces");
             var2510662408A702670DD9B0096485E415_251587750.addTaint(taint);
             throw var2510662408A702670DD9B0096485E415_251587750;
-        } 
+        } //End block
         int numFaces = fft_detect(bitmap);
     if(numFaces >= mMaxFaces)        
         numFaces = mMaxFaces;
@@ -87,31 +87,31 @@ for(int i=0;i<numFaces;i++)
     if(faces[i] == null)            
             faces[i] = new Face();
             fft_get_face(faces[i], i);
-        } 
+        } //End block
         int var176C6CB8FAA1E6C3704F46504E8512AE_1252513350 = (numFaces);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009271448 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1009271448;
-        
-        
-            
-        
-        
-            
-                    
-        
-        
-            
-                    
-        
-        
-        
-            
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!sInitialized) {
+            //return 0;
+        //}
+        //if (bitmap.getWidth() != mWidth || bitmap.getHeight() != mHeight) {
+            //throw new IllegalArgumentException(
+                    //"bitmap size doesn't match initialization");
+        //}
+        //if (faces.length < mMaxFaces) {
+            //throw new IllegalArgumentException(
+                    //"faces[] smaller than maxFaces");
+        //}
+        //int numFaces = fft_detect(bitmap);
+        //if (numFaces >= mMaxFaces)
+            //numFaces = mMaxFaces;
+        //for (int i=0 ; i<numFaces ; i++) {
+            //if (faces[i] == null)
+                //faces[i] = new Face();
+            //fft_get_face(faces[i], i);
+        //}
+        //return numFaces;
     }
 
     
@@ -119,17 +119,15 @@ for(int i=0;i<numFaces;i++)
     @Override
     protected void finalize() throws Throwable {
         fft_destroy();
-        
-        
+        // ---------- Original Method ----------
+        //fft_destroy();
     }
 
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.837 -0400", hash_original_method = "D8B51518847CA27E06A5D5CCCEFE0583", hash_generated_method = "0271A03F8296EC9660DAAA0B1AC61E78")
     private int fft_initialize(int width, int height, int maxFaces) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568846977 = getTaintInt();
@@ -137,7 +135,6 @@ for(int i=0;i<numFaces;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.838 -0400", hash_original_method = "0EFAC765C015AB65F15820DF03280C70", hash_generated_method = "6B24CD91ED01C94175BB1A45D12BB141")
     private int fft_detect(Bitmap bitmap) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_393648706 = getTaintInt();
@@ -145,13 +142,11 @@ for(int i=0;i<numFaces;i++)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.838 -0400", hash_original_method = "CB86BCB7657566AD08727E53423C77D8", hash_generated_method = "8662A1DE4A4B8DE549C38F3796471A14")
     private void fft_get_face(Face face, int i) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.838 -0400", hash_original_method = "7408AB46012CCA5768269842BF780619", hash_generated_method = "676CA60B71ACB1DA9EFD2C5C1886ACF8")
     private void fft_destroy() {
     }
@@ -182,18 +177,17 @@ for(int i=0;i<numFaces;i++)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.839 -0400", hash_original_method = "AEF29885362690B7E7A5098C2C347237", hash_generated_method = "6CF5710E5D033018DA5255DB3AFFFC40")
         private  Face() {
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.840 -0400", hash_original_method = "C4C15952E1E232D46597A87ECAFE1945", hash_generated_method = "CF15D7FFBE017735100166E7621205D7")
         public float confidence() {
             float varE794D0ADC53728A5ABD87B319A179821_569476158 = (mConfidence);
                         float var546ADE640B6EDFBC8A086EF31347E768_2000880217 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_2000880217;
-            
-            
+            // ---------- Original Method ----------
+            //return mConfidence;
         }
 
         
@@ -201,19 +195,18 @@ for(int i=0;i<numFaces;i++)
         public void getMidPoint(PointF point) {
             addTaint(point.getTaint());
             point.set(mMidPointX, mMidPointY);
-            
-            
+            // ---------- Original Method ----------
+            //point.set(mMidPointX, mMidPointY);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.840 -0400", hash_original_method = "80E9D70CB6ACD6183E07186EDB4A95C5", hash_generated_method = "8896FE2AD6A17B77ED44068B0D507C02")
         public float eyesDistance() {
             float var08BB0117896C2E0A1E26DAA06F2494D6_202823962 = (mEyesDist);
                         float var546ADE640B6EDFBC8A086EF31347E768_2140076347 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_2140076347;
-            
-            
+            // ---------- Original Method ----------
+            //return mEyesDist;
         }
 
         
@@ -243,14 +236,14 @@ for(int i=0;i<numFaces;i++)
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_654303088 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_654303088.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_654303088;
-            
-            
-                
-            
-                
-            
-                
-            
+            // ---------- Original Method ----------
+            //if (euler == EULER_X)
+                //return mPoseEulerX;
+            //else if (euler == EULER_Y)
+                //return mPoseEulerY;
+            //else if (euler == EULER_Z)
+                //return mPoseEulerZ;
+            //throw new IllegalArgumentException();
         }
 
         

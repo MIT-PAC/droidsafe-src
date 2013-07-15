@@ -1,6 +1,6 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,7 +32,7 @@ public class DatabaseUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.326 -0400", hash_original_method = "333D4DF31C6A57BA4790D091F2223BA8", hash_generated_method = "333D4DF31C6A57BA4790D091F2223BA8")
     public DatabaseUtils ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -154,8 +154,7 @@ public class DatabaseUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getTypeOfObject(Object obj) {
+        public static int getTypeOfObject(Object obj) {
         if (obj == null) {
             return Cursor.FIELD_TYPE_NULL;
         } else if (obj instanceof byte[]) {
@@ -299,8 +298,7 @@ public class DatabaseUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int getKeyLen(byte[] arr) {
+        private static int getKeyLen(byte[] arr) {
         if (arr[arr.length - 1] != 0) {
             return arr.length;
         } else {
@@ -491,14 +489,12 @@ public class DatabaseUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
+        public static long queryNumEntries(SQLiteDatabase db, String table, String selection) {
         return queryNumEntries(db, table, selection, null);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
+        public static long queryNumEntries(SQLiteDatabase db, String table, String selection,
             String[] selectionArgs) {
         String s = (!TextUtils.isEmpty(selection)) ? " where " + selection : "";
         return longForQuery(db, "select count(*) from " + table + s,
@@ -696,9 +692,9 @@ public class DatabaseUtils {
         public  InsertHelper(SQLiteDatabase db, String tableName) {
             mDb = db;
             mTableName = tableName;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mDb = db;
+            //mTableName = tableName;
         }
 
         
@@ -728,28 +724,28 @@ public class DatabaseUtils {
     if(defaultValue == null)                    
                     {
                         sbv.append("?");
-                    } 
+                    } //End block
                     else
                     {
                         sbv.append("COALESCE(?, ");
                         sbv.append(defaultValue);
                         sbv.append(")");
-                    } 
+                    } //End block
                     sb.append(i == cur.getCount() ? ") " : ", ");
                     sbv.append(i == cur.getCount() ? ");" : ", ");
                     ++i;
-                } 
-            } 
+                } //End block
+            } //End block
             finally 
             {
     if(cur != null)                
                 cur.close();
-            } 
+            } //End block
             sb.append(sbv);
             mInsertSQL = sb.toString();
     if(LOCAL_LOGV){ }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -764,11 +760,11 @@ public class DatabaseUtils {
                     buildSQL();
                     String replaceSQL = "INSERT OR REPLACE" + mInsertSQL.substring(6);
                     mReplaceStatement = mDb.compileStatement(replaceSQL);
-                } 
+                } //End block
 SQLiteStatement varEE68A500C86ADC6CC4A62D1FA299D51B_1758131790 =                 mReplaceStatement;
                 varEE68A500C86ADC6CC4A62D1FA299D51B_1758131790.addTaint(taint);
                 return varEE68A500C86ADC6CC4A62D1FA299D51B_1758131790;
-            } 
+            } //End block
             else
             {
     if(mInsertStatement == null)                
@@ -776,26 +772,26 @@ SQLiteStatement varEE68A500C86ADC6CC4A62D1FA299D51B_1758131790 =                
     if(mInsertSQL == null)                    
                     buildSQL();
                     mInsertStatement = mDb.compileStatement(mInsertSQL);
-                } 
+                } //End block
 SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 mInsertStatement;
                 varAD5A42E88853B75996FA8F712CDDA6AE_479313984.addTaint(taint);
                 return varAD5A42E88853B75996FA8F712CDDA6AE_479313984;
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                
-            
-                
-                    
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (allowReplace) {
+                //if (mReplaceStatement == null) {
+                    //if (mInsertSQL == null) buildSQL();
+                    //String replaceSQL = "INSERT OR REPLACE" + mInsertSQL.substring(6);
+                    //mReplaceStatement = mDb.compileStatement(replaceSQL);
+                //}
+                //return mReplaceStatement;
+            //} else {
+                //if (mInsertStatement == null) {
+                    //if (mInsertSQL == null) buildSQL();
+                    //mInsertStatement = mDb.compileStatement(mInsertSQL);
+                //}
+                //return mInsertStatement;
+            //}
         }
 
         
@@ -814,20 +810,20 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
                     DatabaseUtils.bindObjectToProgram(stmt, i, e.getValue());
     if(LOCAL_LOGV)                    
                     {
-                    } 
-                } 
+                    } //End block
+                } //End block
                 long var1127914C5B9108749821AB7395969133_376108852 = (stmt.executeInsert());
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1882773094 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1882773094;
-            } 
+            } //End block
             catch (SQLException e)
             {
                 long var6BB61E3B7BCE0931DA574D19D1D82C88_1881509720 = (-1);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1832378278 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1832378278;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -841,17 +837,17 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
                 IllegalArgumentException varB4DF23F40945651B092E0DBDB0C453DD_511088540 = new IllegalArgumentException("column '" + key + "' is invalid");
                 varB4DF23F40945651B092E0DBDB0C453DD_511088540.addTaint(taint);
                 throw varB4DF23F40945651B092E0DBDB0C453DD_511088540;
-            } 
+            } //End block
             int var6A992D5529F459A44FEE58C733255E86_1326219487 = (index);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800488925 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800488925;
-            
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //getStatement(false);
+            //final Integer index = mColumns.get(key);
+            //if (index == null) {
+                //throw new IllegalArgumentException("column '" + key + "' is invalid");
+            //}
+            //return index;
         }
 
         
@@ -860,8 +856,8 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
             addTaint(value);
             addTaint(index);
             mPreparedStatement.bindDouble(index, value);
-            
-            
+            // ---------- Original Method ----------
+            //mPreparedStatement.bindDouble(index, value);
         }
 
         
@@ -870,8 +866,8 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
             addTaint(value);
             addTaint(index);
             mPreparedStatement.bindDouble(index, value);
-            
-            
+            // ---------- Original Method ----------
+            //mPreparedStatement.bindDouble(index, value);
         }
 
         
@@ -880,8 +876,8 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
             addTaint(value);
             addTaint(index);
             mPreparedStatement.bindLong(index, value);
-            
-            
+            // ---------- Original Method ----------
+            //mPreparedStatement.bindLong(index, value);
         }
 
         
@@ -890,8 +886,8 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
             addTaint(value);
             addTaint(index);
             mPreparedStatement.bindLong(index, value);
-            
-            
+            // ---------- Original Method ----------
+            //mPreparedStatement.bindLong(index, value);
         }
 
         
@@ -900,8 +896,8 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
             addTaint(value);
             addTaint(index);
             mPreparedStatement.bindLong(index, value ? 1 : 0);
-            
-            
+            // ---------- Original Method ----------
+            //mPreparedStatement.bindLong(index, value ? 1 : 0);
         }
 
         
@@ -909,8 +905,8 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
         public void bindNull(int index) {
             addTaint(index);
             mPreparedStatement.bindNull(index);
-            
-            
+            // ---------- Original Method ----------
+            //mPreparedStatement.bindNull(index);
         }
 
         
@@ -921,17 +917,17 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
     if(value == null)            
             {
                 mPreparedStatement.bindNull(index);
-            } 
+            } //End block
             else
             {
                 mPreparedStatement.bindBlob(index, value);
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (value == null) {
+                //mPreparedStatement.bindNull(index);
+            //} else {
+                //mPreparedStatement.bindBlob(index, value);
+            //}
         }
 
         
@@ -942,17 +938,17 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
     if(value == null)            
             {
                 mPreparedStatement.bindNull(index);
-            } 
+            } //End block
             else
             {
                 mPreparedStatement.bindString(index, value);
-            } 
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (value == null) {
+                //mPreparedStatement.bindNull(index);
+            //} else {
+                //mPreparedStatement.bindString(index, value);
+            //}
         }
 
         
@@ -962,8 +958,8 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
             long varE6B1E23565A47916B8E419B3A64ACE91_284493912 = (insertInternal(values, false));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_124125802 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_124125802;
-            
-            
+            // ---------- Original Method ----------
+            //return insertInternal(values, false);
         }
 
         
@@ -975,37 +971,37 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
                         + "execute");
                 varE371913FBCF66F87E5BC36955C500ACA_67449302.addTaint(taint);
                 throw varE371913FBCF66F87E5BC36955C500ACA_67449302;
-            } 
+            } //End block
             try 
             {
     if(LOCAL_LOGV){ }                long varC99CD6101FE1736C00BB7015BBB65ADE_80859046 = (mPreparedStatement.executeInsert());
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1028237028 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1028237028;
-            } 
+            } //End block
             catch (SQLException e)
             {
                 long var6BB61E3B7BCE0931DA574D19D1D82C88_311400424 = (-1);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1814367560 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1814367560;
-            } 
+            } //End block
             finally 
             {
                 mPreparedStatement = null;
-            } 
-            
-            
-                
-                        
-            
-            
-                
-                
-            
-                
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mPreparedStatement == null) {
+                //throw new IllegalStateException("you must prepare this inserter before calling "
+                        //+ "execute");
+            //}
+            //try {
+                //if (LOCAL_LOGV) Log.v(TAG, "--- doing insert or replace in table " + mTableName);
+                //return mPreparedStatement.executeInsert();
+            //} catch (SQLException e) {
+                //Log.e(TAG, "Error executing InsertHelper with table " + mTableName, e);
+                //return -1;
+            //} finally {
+                //mPreparedStatement = null;
+            //}
         }
 
         
@@ -1013,9 +1009,9 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
         public void prepareForInsert() {
             mPreparedStatement = getStatement(false);
             mPreparedStatement.clearBindings();
-            
-            
-            
+            // ---------- Original Method ----------
+            //mPreparedStatement = getStatement(false);
+            //mPreparedStatement.clearBindings();
         }
 
         
@@ -1023,9 +1019,9 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
         public void prepareForReplace() {
             mPreparedStatement = getStatement(true);
             mPreparedStatement.clearBindings();
-            
-            
-            
+            // ---------- Original Method ----------
+            //mPreparedStatement = getStatement(true);
+            //mPreparedStatement.clearBindings();
         }
 
         
@@ -1035,8 +1031,8 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
             long varBBEABD15D98AE63C73B4F078004080C6_959616661 = (insertInternal(values, true));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1104948371 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1104948371;
-            
-            
+            // ---------- Original Method ----------
+            //return insertInternal(values, true);
         }
 
         
@@ -1046,25 +1042,25 @@ SQLiteStatement varAD5A42E88853B75996FA8F712CDDA6AE_479313984 =                 
             {
                 mInsertStatement.close();
                 mInsertStatement = null;
-            } 
+            } //End block
     if(mReplaceStatement != null)            
             {
                 mReplaceStatement.close();
                 mReplaceStatement = null;
-            } 
+            } //End block
             mInsertSQL = null;
             mColumns = null;
-            
-            
-                
-                
-            
-            
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mInsertStatement != null) {
+                //mInsertStatement.close();
+                //mInsertStatement = null;
+            //}
+            //if (mReplaceStatement != null) {
+                //mReplaceStatement.close();
+                //mReplaceStatement = null;
+            //}
+            //mInsertSQL = null;
+            //mColumns = null;
         }
 
         

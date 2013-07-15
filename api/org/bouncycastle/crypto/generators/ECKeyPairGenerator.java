@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.generators;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.277 -0400", hash_original_method = "179E873A290E5A119544D1E31906496A", hash_generated_method = "179E873A290E5A119544D1E31906496A")
     public ECKeyPairGenerator ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -38,10 +38,10 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
         ECKeyGenerationParameters ecP = (ECKeyGenerationParameters)param;
         this.random = ecP.getRandom();
         this.params = ecP.getDomainParameters();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ECKeyGenerationParameters  ecP = (ECKeyGenerationParameters)param;
+        //this.random = ecP.getRandom();
+        //this.params = ecP.getDomainParameters();
     }
 
     
@@ -53,7 +53,7 @@ public class ECKeyPairGenerator implements AsymmetricCipherKeyPairGenerator, ECC
         do {
             {
                 d = new BigInteger(nBitLength, random);
-            } 
+            } //End block
 } while (d.equals(ZERO)  || (d.compareTo(n) >= 0));
         ECPoint Q = params.getG().multiply(d);
 AsymmetricCipherKeyPair varF53F406CBD2E0867E11BA68B1CDE34E8_1529384770 =         new AsymmetricCipherKeyPair(
@@ -61,19 +61,19 @@ AsymmetricCipherKeyPair varF53F406CBD2E0867E11BA68B1CDE34E8_1529384770 =        
             new ECPrivateKeyParameters(d, params));
         varF53F406CBD2E0867E11BA68B1CDE34E8_1529384770.addTaint(taint);
         return varF53F406CBD2E0867E11BA68B1CDE34E8_1529384770;
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
+        // ---------- Original Method ----------
+        //BigInteger n = params.getN();
+        //int        nBitLength = n.bitLength();
+        //BigInteger d;
+        //do
+        //{
+            //d = new BigInteger(nBitLength, random);
+        //}
+        //while (d.equals(ZERO)  || (d.compareTo(n) >= 0));
+        //ECPoint Q = params.getG().multiply(d);
+        //return new AsymmetricCipherKeyPair(
+            //new ECPublicKeyParameters(Q, params),
+            //new ECPrivateKeyParameters(d, params));
     }
 
     

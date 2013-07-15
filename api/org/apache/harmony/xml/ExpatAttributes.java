@@ -1,6 +1,6 @@
 package org.apache.harmony.xml;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ abstract class ExpatAttributes implements Attributes {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.884 -0400", hash_original_method = "D4DF1C9BC2FF91CA250847447EABC788", hash_generated_method = "D4DF1C9BC2FF91CA250847447EABC788")
     public ExpatAttributes ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -32,15 +32,15 @@ abstract class ExpatAttributes implements Attributes {
 String var540C13E9E156B687226421B24F2DF178_468183508 =             null;
             var540C13E9E156B687226421B24F2DF178_468183508.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_468183508;
-        } 
+        } //End block
 String varA2510C6EE73B8C0F038F54B09AE84839_1760359056 =         getURI(getParserPointer(), getPointer(), index);
         varA2510C6EE73B8C0F038F54B09AE84839_1760359056.addTaint(taint);
         return varA2510C6EE73B8C0F038F54B09AE84839_1760359056;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (index < 0 || index >= getLength()) {
+            //return null;
+        //}
+        //return getURI(getParserPointer(), getPointer(), index);
     }
 
     
@@ -52,10 +52,10 @@ String varE9C78DB39C4181168A54285DD59C1B40_325244092 =         (index < 0 || ind
                 : getLocalName(getParserPointer(), getPointer(), index);
         varE9C78DB39C4181168A54285DD59C1B40_325244092.addTaint(taint);
         return varE9C78DB39C4181168A54285DD59C1B40_325244092;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return (index < 0 || index >= getLength())
+                //? null
+                //: getLocalName(getParserPointer(), getPointer(), index);
     }
 
     
@@ -67,10 +67,10 @@ String var83B75B73A459239093C3A115ADCAEC22_136350485 =         (index < 0 || ind
                 : getQName(getParserPointer(), getPointer(), index);
         var83B75B73A459239093C3A115ADCAEC22_136350485.addTaint(taint);
         return var83B75B73A459239093C3A115ADCAEC22_136350485;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return (index < 0 || index >= getLength())
+                //? null
+                //: getQName(getParserPointer(), getPointer(), index);
     }
 
     
@@ -80,8 +80,8 @@ String var83B75B73A459239093C3A115ADCAEC22_136350485 =         (index < 0 || ind
 String var1C4F05A547C0F7E57CC38D5C9BDF43F4_661517899 =         (index < 0 || index >= getLength()) ? null : CDATA;
         var1C4F05A547C0F7E57CC38D5C9BDF43F4_661517899.addTaint(taint);
         return var1C4F05A547C0F7E57CC38D5C9BDF43F4_661517899;
-        
-        
+        // ---------- Original Method ----------
+        //return (index < 0 || index >= getLength()) ? null : CDATA;
     }
 
     
@@ -93,10 +93,10 @@ String varB49A60064FD492A96C55111B103E1FA7_883475951 =         (index < 0 || ind
                 : getValueByIndex(getPointer(), index);
         varB49A60064FD492A96C55111B103E1FA7_883475951.addTaint(taint);
         return varB49A60064FD492A96C55111B103E1FA7_883475951;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return (index < 0 || index >= getLength())
+                //? null
+                //: getValueByIndex(getPointer(), index);
     }
 
     
@@ -109,35 +109,35 @@ String varB49A60064FD492A96C55111B103E1FA7_883475951 =         (index < 0 || ind
             NullPointerException var0A06F819995E53F46E9CCB946CCC07D9_917171249 = new NullPointerException("uri");
             var0A06F819995E53F46E9CCB946CCC07D9_917171249.addTaint(taint);
             throw var0A06F819995E53F46E9CCB946CCC07D9_917171249;
-        } 
+        } //End block
     if(localName == null)        
         {
             NullPointerException var1D09B83246E8C66D38F27E4C02574BAB_1014446326 = new NullPointerException("local name");
             var1D09B83246E8C66D38F27E4C02574BAB_1014446326.addTaint(taint);
             throw var1D09B83246E8C66D38F27E4C02574BAB_1014446326;
-        } 
+        } //End block
         int pointer = getPointer();
     if(pointer == 0)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1085141011 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1219444847 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1219444847;
-        } 
+        } //End block
         int varA011DC7869C6AAB8D9AF009A73BC3894_413313187 = (getIndex(pointer, uri, localName));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_689408628 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_689408628;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (uri == null) {
+            //throw new NullPointerException("uri");
+        //}
+        //if (localName == null) {
+            //throw new NullPointerException("local name");
+        //}
+        //int pointer = getPointer();
+        //if (pointer == 0) {
+            //return -1;
+        //}
+        //return getIndex(pointer, uri, localName);
     }
 
     
@@ -149,26 +149,26 @@ String varB49A60064FD492A96C55111B103E1FA7_883475951 =         (index < 0 || ind
             NullPointerException var0A06F819995E53F46E9CCB946CCC07D9_1114286030 = new NullPointerException("uri");
             var0A06F819995E53F46E9CCB946CCC07D9_1114286030.addTaint(taint);
             throw var0A06F819995E53F46E9CCB946CCC07D9_1114286030;
-        } 
+        } //End block
         int pointer = getPointer();
     if(pointer == 0)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1288752643 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681005226 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681005226;
-        } 
+        } //End block
         int var576D4CB1A0F7EEA32ACD5591A10482F8_5565374 = (getIndexForQName(pointer, qName));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1142254736 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1142254736;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (qName == null) {
+            //throw new NullPointerException("uri");
+        //}
+        //int pointer = getPointer();
+        //if (pointer == 0) {
+            //return -1;
+        //}
+        //return getIndexForQName(pointer, qName);
     }
 
     
@@ -181,24 +181,24 @@ String varB49A60064FD492A96C55111B103E1FA7_883475951 =         (index < 0 || ind
             NullPointerException var0A06F819995E53F46E9CCB946CCC07D9_1934752888 = new NullPointerException("uri");
             var0A06F819995E53F46E9CCB946CCC07D9_1934752888.addTaint(taint);
             throw var0A06F819995E53F46E9CCB946CCC07D9_1934752888;
-        } 
+        } //End block
     if(localName == null)        
         {
             NullPointerException var1D09B83246E8C66D38F27E4C02574BAB_614697318 = new NullPointerException("local name");
             var1D09B83246E8C66D38F27E4C02574BAB_614697318.addTaint(taint);
             throw var1D09B83246E8C66D38F27E4C02574BAB_614697318;
-        } 
+        } //End block
 String varC04434C4E85414930EE6EADF3FF469A4_1488704840 =         getIndex(uri, localName) == -1 ? null : CDATA;
         varC04434C4E85414930EE6EADF3FF469A4_1488704840.addTaint(taint);
         return varC04434C4E85414930EE6EADF3FF469A4_1488704840;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (uri == null) {
+            //throw new NullPointerException("uri");
+        //}
+        //if (localName == null) {
+            //throw new NullPointerException("local name");
+        //}
+        //return getIndex(uri, localName) == -1 ? null : CDATA;
     }
 
     
@@ -208,8 +208,8 @@ String varC04434C4E85414930EE6EADF3FF469A4_1488704840 =         getIndex(uri, lo
 String varA41D0BC36B3E3C4AE23E8E34671D0A46_1727284847 =         getIndex(qName) == -1 ? null : CDATA;
         varA41D0BC36B3E3C4AE23E8E34671D0A46_1727284847.addTaint(taint);
         return varA41D0BC36B3E3C4AE23E8E34671D0A46_1727284847;
-        
-        
+        // ---------- Original Method ----------
+        //return getIndex(qName) == -1 ? null : CDATA;
     }
 
     
@@ -222,35 +222,35 @@ String varA41D0BC36B3E3C4AE23E8E34671D0A46_1727284847 =         getIndex(qName) 
             NullPointerException var0A06F819995E53F46E9CCB946CCC07D9_317522953 = new NullPointerException("uri");
             var0A06F819995E53F46E9CCB946CCC07D9_317522953.addTaint(taint);
             throw var0A06F819995E53F46E9CCB946CCC07D9_317522953;
-        } 
+        } //End block
     if(localName == null)        
         {
             NullPointerException var1D09B83246E8C66D38F27E4C02574BAB_1011729118 = new NullPointerException("local name");
             var1D09B83246E8C66D38F27E4C02574BAB_1011729118.addTaint(taint);
             throw var1D09B83246E8C66D38F27E4C02574BAB_1011729118;
-        } 
+        } //End block
         int pointer = getPointer();
     if(pointer == 0)        
         {
 String var540C13E9E156B687226421B24F2DF178_1681066546 =             null;
             var540C13E9E156B687226421B24F2DF178_1681066546.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1681066546;
-        } 
+        } //End block
 String varD4D21E93203A8FF776FFEF18BDCAB032_915026484 =         getValue(pointer, uri, localName);
         varD4D21E93203A8FF776FFEF18BDCAB032_915026484.addTaint(taint);
         return varD4D21E93203A8FF776FFEF18BDCAB032_915026484;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (uri == null) {
+            //throw new NullPointerException("uri");
+        //}
+        //if (localName == null) {
+            //throw new NullPointerException("local name");
+        //}
+        //int pointer = getPointer();
+        //if (pointer == 0) {
+            //return null;
+        //}
+        //return getValue(pointer, uri, localName);
     }
 
     
@@ -262,26 +262,26 @@ String varD4D21E93203A8FF776FFEF18BDCAB032_915026484 =         getValue(pointer,
             NullPointerException var2ADFACD5558A5B11902C7CDBF1A967AA_1493732708 = new NullPointerException("qName");
             var2ADFACD5558A5B11902C7CDBF1A967AA_1493732708.addTaint(taint);
             throw var2ADFACD5558A5B11902C7CDBF1A967AA_1493732708;
-        } 
+        } //End block
         int pointer = getPointer();
     if(pointer == 0)        
         {
 String var540C13E9E156B687226421B24F2DF178_144103379 =             null;
             var540C13E9E156B687226421B24F2DF178_144103379.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_144103379;
-        } 
+        } //End block
 String varE07B6E3B798DFD23138E54E703D445BD_1262533456 =         getValueForQName(pointer, qName);
         varE07B6E3B798DFD23138E54E703D445BD_1262533456.addTaint(taint);
         return varE07B6E3B798DFD23138E54E703D445BD_1262533456;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (qName == null) {
+            //throw new NullPointerException("qName");
+        //}
+        //int pointer = getPointer();
+        //if (pointer == 0) {
+            //return null;
+        //}
+        //return getValueForQName(pointer, qName);
     }
 
     
@@ -357,7 +357,6 @@ String varE07B6E3B798DFD23138E54E703D445BD_1262533456 =         getValueForQName
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:30.888 -0400", hash_original_method = "9C2FF3514BF1A56FDD02B5A5C31F714B", hash_generated_method = "89627B71E85340B676FC2D21222B8514")
     protected void freeAttributes(int pointer) {
     }

@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -212,11 +212,11 @@ public abstract class IccCard {
         mPhone.mCM.registerForIccStatusChanged(mHandler, EVENT_ICC_STATUS_CHANGED, null);
         mLogTag = logTag;
         mDbg = dbg;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPhone = phone;
+        //mPhone.mCM.registerForIccStatusChanged(mHandler, EVENT_ICC_STATUS_CHANGED, null);
+        //mLogTag = logTag;
+        //mDbg = dbg;
     }
 
     
@@ -248,43 +248,41 @@ State var6CFD911D61EE1CB04A4DE674D6400D59_1489567203 =             State.ABSENT;
             var6CFD911D61EE1CB04A4DE674D6400D59_1489567203.addTaint(taint);
             return var6CFD911D61EE1CB04A4DE674D6400D59_1489567203;
 }
-        } 
+        } //End block
         else
         {
 State var8B975C85F13BECB9FD4D21A5F3C8A56D_2083094549 =             mState;
             var8B975C85F13BECB9FD4D21A5F3C8A56D_2083094549.addTaint(taint);
             return var8B975C85F13BECB9FD4D21A5F3C8A56D_2083094549;
-        } 
+        } //End block
 State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         var4770D84E0C6F67F8CE04CBDC149857AC_1781692272.addTaint(taint);
         return var4770D84E0C6F67F8CE04CBDC149857AC_1781692272;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.338 -0400", hash_original_method = "EF67D81D926CA0EC8F8754BC29C8826B", hash_generated_method = "8FB4003EBB7FCD2F2B0FD7E02F818470")
     public void dispose() {
         mPhone.mCM.unregisterForIccStatusChanged(mHandler);
-        
-        
+        // ---------- Original Method ----------
+        //mPhone.mCM.unregisterForIccStatusChanged(mHandler);
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.338 -0400", hash_original_method = "C148A728067D02A221BE75C987C5D733", hash_generated_method = "075B2DD258946BBD2F1ED4568E67D027")
     protected void finalize() {
     if(mDbg)        
         Log.d(mLogTag, "IccCard finalized");
-        
-        
+        // ---------- Original Method ----------
+        //if(mDbg) Log.d(mLogTag, "IccCard finalized");
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.339 -0400", hash_original_method = "45A4F957AA9A104F89D6FFEF5C13C9B4", hash_generated_method = "419651D566BEF7CA5A430E53CA2810EB")
     public void registerForAbsent(Handler h, int what, Object obj) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
@@ -293,29 +291,28 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     if(getState() == State.ABSENT)        
         {
             r.notifyRegistrant();
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Registrant r = new Registrant (h, what, obj);
+        //mAbsentRegistrants.add(r);
+        //if (getState() == State.ABSENT) {
+            //r.notifyRegistrant();
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.339 -0400", hash_original_method = "A388490F008524959D490318F4B49030", hash_generated_method = "66FC903E19FC06F23B54C0169321B9F6")
     public void unregisterForAbsent(Handler h) {
         addTaint(h.getTaint());
         mAbsentRegistrants.remove(h);
-        
-        
+        // ---------- Original Method ----------
+        //mAbsentRegistrants.remove(h);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.339 -0400", hash_original_method = "DD13D18C49861341C8AF8EABF1CC2E24", hash_generated_method = "826627162F515175B05924DDF22D8557")
     public void registerForNetworkLocked(Handler h, int what, Object obj) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
@@ -324,29 +321,28 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     if(getState() == State.NETWORK_LOCKED)        
         {
             r.notifyRegistrant();
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Registrant r = new Registrant (h, what, obj);
+        //mNetworkLockedRegistrants.add(r);
+        //if (getState() == State.NETWORK_LOCKED) {
+            //r.notifyRegistrant();
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.340 -0400", hash_original_method = "5CEB6427435BFB9EC514E781B4093E7E", hash_generated_method = "7DFB72ED84F9CCDD81A7238D28F7A6EB")
     public void unregisterForNetworkLocked(Handler h) {
         addTaint(h.getTaint());
         mNetworkLockedRegistrants.remove(h);
-        
-        
+        // ---------- Original Method ----------
+        //mNetworkLockedRegistrants.remove(h);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.340 -0400", hash_original_method = "A158B3B1FDF0C70FEF29C25B6F4DD072", hash_generated_method = "B0AEE7C3CBC49D12C94D01C35C07DBCB")
     public void registerForLocked(Handler h, int what, Object obj) {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
@@ -355,23 +351,22 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     if(getState().isPinLocked())        
         {
             r.notifyRegistrant();
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Registrant r = new Registrant (h, what, obj);
+        //mPinLockedRegistrants.add(r);
+        //if (getState().isPinLocked()) {
+            //r.notifyRegistrant();
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.340 -0400", hash_original_method = "5667345A02500557814700DAC5845BCA", hash_generated_method = "4120B15D3085B4081E351EA59521ADBF")
     public void unregisterForLocked(Handler h) {
         addTaint(h.getTaint());
         mPinLockedRegistrants.remove(h);
-        
-        
+        // ---------- Original Method ----------
+        //mPinLockedRegistrants.remove(h);
     }
 
     
@@ -380,12 +375,11 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         addTaint(onComplete.getTaint());
         addTaint(pin.getTaint());
         mPhone.mCM.supplyIccPin(pin, mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
-        
-        
+        // ---------- Original Method ----------
+        //mPhone.mCM.supplyIccPin(pin, mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.341 -0400", hash_original_method = "F069297D525546A0218C2FB5A43E0287", hash_generated_method = "6C4B332D320CB80099C34321333EC54B")
     public void supplyPuk(String puk, String newPin, Message onComplete) {
         addTaint(onComplete.getTaint());
@@ -393,26 +387,24 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         addTaint(puk.getTaint());
         mPhone.mCM.supplyIccPuk(puk, newPin,
                 mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mPhone.mCM.supplyIccPuk(puk, newPin,
+                //mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.341 -0400", hash_original_method = "35EFF2F2C787166AB4A51F303C9455F4", hash_generated_method = "75BBF5125FE3936953DDFEEA8E7F2019")
     public void supplyPin2(String pin2, Message onComplete) {
         addTaint(onComplete.getTaint());
         addTaint(pin2.getTaint());
         mPhone.mCM.supplyIccPin2(pin2,
                 mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mPhone.mCM.supplyIccPin2(pin2,
+                //mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.342 -0400", hash_original_method = "982062922CE016EAC29E809D9B066C8E", hash_generated_method = "3FD2710E1D191E6F5553ECD82AE860A2")
     public void supplyPuk2(String puk2, String newPin2, Message onComplete) {
         addTaint(onComplete.getTaint());
@@ -420,44 +412,41 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         addTaint(puk2.getTaint());
         mPhone.mCM.supplyIccPuk2(puk2, newPin2,
                 mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mPhone.mCM.supplyIccPuk2(puk2, newPin2,
+                //mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.342 -0400", hash_original_method = "96497D4DFF6E2FE9CEEE26788CBD4E3F", hash_generated_method = "FDBF1AFB05FA4F18733CCB7FD465D8B5")
     public void supplyNetworkDepersonalization(String pin, Message onComplete) {
         addTaint(onComplete.getTaint());
         addTaint(pin.getTaint());
         mPhone.mCM.supplyNetworkDepersonalization(pin,
                 mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
-        
-        
-                
+        // ---------- Original Method ----------
+        //mPhone.mCM.supplyNetworkDepersonalization(pin,
+                //mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.342 -0400", hash_original_method = "BCA6EFC1210C838BF4CD916790946AA6", hash_generated_method = "912E76BE560A0DDE6E9DC645753D71CC")
     public boolean getIccLockEnabled() {
         boolean var98241A760904A8071026171FB5F891EF_1537214631 = (mIccPinLocked);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_557220205 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_557220205;
-        
-        
+        // ---------- Original Method ----------
+        //return mIccPinLocked;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.343 -0400", hash_original_method = "F2BBF6EB30564DA8841F6D4A48D01D80", hash_generated_method = "75EF38D476865F39FF68CB5327539A42")
     public boolean getIccFdnEnabled() {
         boolean var5D26F052B120A0C24B0BF31105E0F878_1550469319 = (mIccFdnEnabled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1279109263 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1279109263;
-        
-        
+        // ---------- Original Method ----------
+        //return mIccFdnEnabled;
     }
 
     
@@ -474,15 +463,15 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         mPhone.mCM.setFacilityLock(CommandsInterface.CB_FACILITY_BA_SIM,
                  enabled, password, serviceClassX,
                  mHandler.obtainMessage(EVENT_CHANGE_FACILITY_LOCK_DONE, onComplete));
-        
-        
-        
-                 
-                 
-        
-        
-                 
-                 
+        // ---------- Original Method ----------
+        //int serviceClassX;
+        //serviceClassX = CommandsInterface.SERVICE_CLASS_VOICE +
+                 //CommandsInterface.SERVICE_CLASS_DATA +
+                 //CommandsInterface.SERVICE_CLASS_FAX;
+        //mDesiredPinLocked = enabled;
+        //mPhone.mCM.setFacilityLock(CommandsInterface.CB_FACILITY_BA_SIM,
+                 //enabled, password, serviceClassX,
+                 //mHandler.obtainMessage(EVENT_CHANGE_FACILITY_LOCK_DONE, onComplete));
     }
 
     
@@ -500,16 +489,16 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         mPhone.mCM.setFacilityLock(CommandsInterface.CB_FACILITY_BA_FD,
                  enabled, password, serviceClassX,
                  mHandler.obtainMessage(EVENT_CHANGE_FACILITY_FDN_DONE, onComplete));
-        
-        
-        
-                 
-                 
-                 
-        
-        
-                 
-                 
+        // ---------- Original Method ----------
+        //int serviceClassX;
+        //serviceClassX = CommandsInterface.SERVICE_CLASS_VOICE +
+                 //CommandsInterface.SERVICE_CLASS_DATA +
+                 //CommandsInterface.SERVICE_CLASS_FAX +
+                 //CommandsInterface.SERVICE_CLASS_SMS;
+        //mDesiredFdnEnabled = enabled;
+        //mPhone.mCM.setFacilityLock(CommandsInterface.CB_FACILITY_BA_FD,
+                 //enabled, password, serviceClassX,
+                 //mHandler.obtainMessage(EVENT_CHANGE_FACILITY_FDN_DONE, onComplete));
     }
 
     
@@ -521,9 +510,9 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         addTaint(oldPassword.getTaint());
         mPhone.mCM.changeIccPin(oldPassword, newPassword,
                  mHandler.obtainMessage(EVENT_CHANGE_ICC_PASSWORD_DONE, onComplete));
-        
-        
-                 
+        // ---------- Original Method ----------
+        //mPhone.mCM.changeIccPin(oldPassword, newPassword,
+                 //mHandler.obtainMessage(EVENT_CHANGE_ICC_PASSWORD_DONE, onComplete));
     }
 
     
@@ -535,41 +524,39 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         addTaint(oldPassword.getTaint());
         mPhone.mCM.changeIccPin2(oldPassword, newPassword,
                  mHandler.obtainMessage(EVENT_CHANGE_ICC_PASSWORD_DONE, onComplete));
-        
-        
-                 
+        // ---------- Original Method ----------
+        //mPhone.mCM.changeIccPin2(oldPassword, newPassword,
+                 //mHandler.obtainMessage(EVENT_CHANGE_ICC_PASSWORD_DONE, onComplete));
     }
 
     
     public abstract String getServiceProviderName();
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.345 -0400", hash_original_method = "26BBB856B8138972809A4E6EC2BCC376", hash_generated_method = "4A1645AE835255FE7642245C74B88BD6")
     protected void updateStateProperty() {
         mPhone.setSystemProperty(TelephonyProperties.PROPERTY_SIM_STATE, getState().toString());
-        
-        
+        // ---------- Original Method ----------
+        //mPhone.setSystemProperty(TelephonyProperties.PROPERTY_SIM_STATE, getState().toString());
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.345 -0400", hash_original_method = "B8050A82EEEB3E75B61D0D7FED84BD4F", hash_generated_method = "12BBA13D839834AB35ED613287238E93")
     private void getIccCardStatusDone(AsyncResult ar) {
         addTaint(ar.getTaint());
     if(ar.exception != null)        
         {
             return;
-        } 
+        } //End block
         handleIccCardStatus((IccCardStatus) ar.result);
-        
-        
-            
-                    
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (ar.exception != null) {
+            //Log.e(mLogTag,"Error getting ICC status. "
+                    //+ "RIL_REQUEST_GET_ICC_STATUS should "
+                    //+ "never return an error", ar.exception);
+            //return;
+        //}
+        //handleIccCardStatus((IccCardStatus) ar.result);
     }
 
     
@@ -608,7 +595,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
             broadcastIccStateChangedIntent(INTENT_VALUE_ICC_LOCKED,
                     (newState == State.PIN_REQUIRED) ?
                        INTENT_VALUE_LOCKED_ON_PIN : INTENT_VALUE_LOCKED_ON_PUK);
-        } 
+        } //End block
         else
     if(transitionedIntoAbsent)        
         {
@@ -616,7 +603,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
             log("Notify SIM missing.");
             mAbsentRegistrants.notifyRegistrants();
             broadcastIccStateChangedIntent(INTENT_VALUE_ICC_ABSENT, null);
-        } 
+        } //End block
         else
     if(transitionedIntoNetworkLocked)        
         {
@@ -625,7 +612,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
             mNetworkLockedRegistrants.notifyRegistrants();
             broadcastIccStateChangedIntent(INTENT_VALUE_ICC_LOCKED,
                   INTENT_VALUE_LOCKED_NETWORK);
-        } 
+        } //End block
         else
     if(transitionedIntoPermBlocked)        
         {
@@ -633,22 +620,21 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
             log("Notify SIM permanently disabled.");
             broadcastIccStateChangedIntent(INTENT_VALUE_ICC_ABSENT,
                     INTENT_VALUE_ABSENT_ON_PERM_DISABLED);
-        } 
+        } //End block
     if(isIccCardRemoved)        
         {
             mHandler.sendMessage(mHandler.obtainMessage(EVENT_CARD_REMOVED, null));
-        } 
+        } //End block
         else
     if(isIccCardAdded)        
         {
             mHandler.sendMessage(mHandler.obtainMessage(EVENT_CARD_ADDED, null));
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.348 -0400", hash_original_method = "482C40D5983445C1A7C95EBEDC56AC82", hash_generated_method = "B509E0B2F3B300F4D599576F13AFE3ED")
     private void onIccSwap(boolean isAdded) {
         addTaint(isAdded);
@@ -657,7 +643,7 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.348 -0400", hash_original_method = "9D3F97D682E1929CAA7D6B8E66CF9703", hash_generated_method = "E441E8D126BF80A46D375A9FCECC9070")
         @Override
         public void onClick(DialogInterface dialog, int which) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(which);
             addTaint(dialog.getTaint());
     if(which == DialogInterface.BUTTON_POSITIVE)            
@@ -667,14 +653,14 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
                 PowerManager pm = (PowerManager) mPhone.getContext()
                     .getSystemService(Context.POWER_SERVICE);
                 pm.reboot("SIM is added.");
-            } 
-            
-            
-                    
-                    
-                    
-                    
-                
+            } //End block
+            // ---------- Original Method ----------
+            //if (which == DialogInterface.BUTTON_POSITIVE) {
+                    //if (mDbg) log("Reboot due to SIM swap");
+                    //PowerManager pm = (PowerManager) mPhone.getContext()
+                    //.getSystemService(Context.POWER_SERVICE);
+                    //pm.reboot("SIM is added.");
+                //}
         }
 };
         Resources r = Resources.getSystem();
@@ -690,8 +676,8 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
             .create();
         dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         dialog.show();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -703,29 +689,29 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     if(mDbg)            
             log("Error in querying facility lock:" + ar.exception);
             return;
-        } 
+        } //End block
         int[] ints = (int[])ar.result;
     if(ints.length != 0)        
         {
             mIccFdnEnabled = (0!=ints[0]);
     if(mDbg)            
             log("Query facility lock : "  + mIccFdnEnabled);
-        } 
+        } //End block
         else
         {
-        } 
-        
-        
-            
-            
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if(ar.exception != null) {
+            //if(mDbg) log("Error in querying facility lock:" + ar.exception);
+            //return;
+        //}
+        //int[] ints = (int[])ar.result;
+        //if(ints.length != 0) {
+            //mIccFdnEnabled = (0!=ints[0]);
+            //if(mDbg) log("Query facility lock : "  + mIccFdnEnabled);
+        //} else {
+            //Log.e(mLogTag, "[IccCard] Bogus facility lock response");
+        //}
     }
 
     
@@ -737,29 +723,29 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
     if(mDbg)            
             log("Error in querying facility lock:" + ar.exception);
             return;
-        } 
+        } //End block
         int[] ints = (int[])ar.result;
     if(ints.length != 0)        
         {
             mIccPinLocked = (0!=ints[0]);
     if(mDbg)            
             log("Query facility lock : "  + mIccPinLocked);
-        } 
+        } //End block
         else
         {
-        } 
-        
-        
-            
-            
-        
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if(ar.exception != null) {
+            //if (mDbg) log("Error in querying facility lock:" + ar.exception);
+            //return;
+        //}
+        //int[] ints = (int[])ar.result;
+        //if(ints.length != 0) {
+            //mIccPinLocked = (0!=ints[0]);
+            //if(mDbg) log("Query facility lock : "  + mIccPinLocked);
+        //} else {
+            //Log.e(mLogTag, "[IccCard] Bogus facility lock response");
+        //}
     }
 
     
@@ -776,19 +762,18 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
         log("Broadcasting intent ACTION_SIM_STATE_CHANGED " +  value
                 + " reason " + reason);
         ActivityManagerNative.broadcastStickyIntent(intent, READ_PHONE_STATE);
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //Intent intent = new Intent(TelephonyIntents.ACTION_SIM_STATE_CHANGED);
+        //intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+        //intent.putExtra(Phone.PHONE_NAME_KEY, mPhone.getPhoneName());
+        //intent.putExtra(INTENT_KEY_ICC_STATE, value);
+        //intent.putExtra(INTENT_KEY_LOCKED_REASON, reason);
+        //if(mDbg) log("Broadcasting intent ACTION_SIM_STATE_CHANGED " +  value
+                //+ " reason " + reason);
+        //ActivityManagerNative.broadcastStickyIntent(intent, READ_PHONE_STATE);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.350 -0400", hash_original_method = "531282E014DCDC26F790CA6DADE3C8C6", hash_generated_method = "C877E460BC8719B85C9B0D4EE7DFECD0")
     public State getIccCardState() {
     if(mIccCardStatus == null)        
@@ -796,13 +781,13 @@ State var4770D84E0C6F67F8CE04CBDC149857AC_1781692272 =         State.UNKNOWN;
 State varFCEDD57BF48360BF7820E13AE787AB2E_1485862774 =             IccCard.State.ABSENT;
             varFCEDD57BF48360BF7820E13AE787AB2E_1485862774.addTaint(taint);
             return varFCEDD57BF48360BF7820E13AE787AB2E_1485862774;
-        } 
+        } //End block
     if(!mIccCardStatus.getCardState().isCardPresent())        
         {
 State varFCEDD57BF48360BF7820E13AE787AB2E_998885749 =             IccCard.State.ABSENT;
             varFCEDD57BF48360BF7820E13AE787AB2E_998885749.addTaint(taint);
             return varFCEDD57BF48360BF7820E13AE787AB2E_998885749;
-        } 
+        } //End block
         RadioState currentRadioState = mPhone.mCM.getRadioState();
     if(currentRadioState == RadioState.RADIO_OFF         ||
             currentRadioState == RadioState.RADIO_UNAVAILABLE ||
@@ -814,7 +799,7 @@ State varFCEDD57BF48360BF7820E13AE787AB2E_998885749 =             IccCard.State.
 State var02D409DFF15E9D7C28B89B1EDC402D16_1819226861 =             IccCard.State.NOT_READY;
             var02D409DFF15E9D7C28B89B1EDC402D16_1819226861.addTaint(taint);
             return var02D409DFF15E9D7C28B89B1EDC402D16_1819226861;
-        } 
+        } //End block
     if(currentRadioState == RadioState.SIM_LOCKED_OR_ABSENT  ||
             currentRadioState == RadioState.SIM_READY             ||
             currentRadioState == RadioState.RUIM_LOCKED_OR_ABSENT ||
@@ -829,23 +814,23 @@ State var02D409DFF15E9D7C28B89B1EDC402D16_1819226861 =             IccCard.State
 State varC70F0ED3658B18459C5481615BDF9123_47513910 =                 getConsolidatedState(csimState, usimState, csimState);
                 varC70F0ED3658B18459C5481615BDF9123_47513910.addTaint(taint);
                 return varC70F0ED3658B18459C5481615BDF9123_47513910;
-            } 
+            } //End block
     if(currentRadioState == RadioState.RUIM_LOCKED_OR_ABSENT ||
                 currentRadioState == RadioState.RUIM_READY)            
             {
 State varF6BDC09C9BF42060DFE76EF373C0511C_1808242494 =                 csimState;
                 varF6BDC09C9BF42060DFE76EF373C0511C_1808242494.addTaint(taint);
                 return varF6BDC09C9BF42060DFE76EF373C0511C_1808242494;
-            } 
+            } //End block
 State var1EB83541F5404B37E217C1B56F0DA8C0_777657573 =             usimState;
             var1EB83541F5404B37E217C1B56F0DA8C0_777657573.addTaint(taint);
             return var1EB83541F5404B37E217C1B56F0DA8C0_777657573;
-        } 
+        } //End block
 State varFCEDD57BF48360BF7820E13AE787AB2E_491629187 =         IccCard.State.ABSENT;
         varFCEDD57BF48360BF7820E13AE787AB2E_491629187.addTaint(taint);
         return varFCEDD57BF48360BF7820E13AE787AB2E_491629187;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -856,64 +841,63 @@ State varFCEDD57BF48360BF7820E13AE787AB2E_491629187 =         IccCard.State.ABSE
     if(appIndex >= 0 && appIndex < IccCardStatus.CARD_MAX_APPS)        
         {
             app = mIccCardStatus.getApplication(appIndex);
-        } 
+        } //End block
         else
         {
 State varFCEDD57BF48360BF7820E13AE787AB2E_250629315 =             IccCard.State.ABSENT;
             varFCEDD57BF48360BF7820E13AE787AB2E_250629315.addTaint(taint);
             return varFCEDD57BF48360BF7820E13AE787AB2E_250629315;
-        } 
+        } //End block
     if(app == null)        
         {
 State varFCEDD57BF48360BF7820E13AE787AB2E_436981614 =             IccCard.State.ABSENT;
             varFCEDD57BF48360BF7820E13AE787AB2E_436981614.addTaint(taint);
             return varFCEDD57BF48360BF7820E13AE787AB2E_436981614;
-        } 
+        } //End block
     if(app.pin1.isPermBlocked())        
         {
 State var6324888BBA94EA63A4B1C5882456F969_634426299 =             IccCard.State.PERM_DISABLED;
             var6324888BBA94EA63A4B1C5882456F969_634426299.addTaint(taint);
             return var6324888BBA94EA63A4B1C5882456F969_634426299;
-        } 
+        } //End block
     if(app.app_state.isPinRequired())        
         {
 State var88D534A38D0FF0A4E450C30A5AB5C60E_501469295 =             IccCard.State.PIN_REQUIRED;
             var88D534A38D0FF0A4E450C30A5AB5C60E_501469295.addTaint(taint);
             return var88D534A38D0FF0A4E450C30A5AB5C60E_501469295;
-        } 
+        } //End block
     if(app.app_state.isPukRequired())        
         {
 State var35831D7DA794BA943EBE88B29052DB16_859834820 =             IccCard.State.PUK_REQUIRED;
             var35831D7DA794BA943EBE88B29052DB16_859834820.addTaint(taint);
             return var35831D7DA794BA943EBE88B29052DB16_859834820;
-        } 
+        } //End block
     if(app.app_state.isSubscriptionPersoEnabled())        
         {
 State varC6F56ED76E89AB56CDF9095B5484343E_602550537 =             IccCard.State.NETWORK_LOCKED;
             varC6F56ED76E89AB56CDF9095B5484343E_602550537.addTaint(taint);
             return varC6F56ED76E89AB56CDF9095B5484343E_602550537;
-        } 
+        } //End block
     if(app.app_state.isAppReady())        
         {
 State var9F689D628ADD856BBA513DAF5BD74808_538776617 =             IccCard.State.READY;
             var9F689D628ADD856BBA513DAF5BD74808_538776617.addTaint(taint);
             return var9F689D628ADD856BBA513DAF5BD74808_538776617;
-        } 
+        } //End block
     if(app.app_state.isAppNotReady())        
         {
 State var02D409DFF15E9D7C28B89B1EDC402D16_1478271858 =             IccCard.State.NOT_READY;
             var02D409DFF15E9D7C28B89B1EDC402D16_1478271858.addTaint(taint);
             return var02D409DFF15E9D7C28B89B1EDC402D16_1478271858;
-        } 
+        } //End block
 State var02D409DFF15E9D7C28B89B1EDC402D16_879521334 =         IccCard.State.NOT_READY;
         var02D409DFF15E9D7C28B89B1EDC402D16_879521334.addTaint(taint);
         return var02D409DFF15E9D7C28B89B1EDC402D16_879521334;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.353 -0400", hash_original_method = "292BB37BE4996383C23DC23B1670D1D7", hash_generated_method = "DF536A31BE2F10EEC061DFC2375BEDBF")
     private State getConsolidatedState(State left, State right, State preferredState) {
         addTaint(preferredState.getTaint());
@@ -936,14 +920,14 @@ State varA94968893C3CAA62B2C64D402B416B0C_876595875 =         right;
 State var6409814A64BE3687CEC3A7AF97CABF0F_1299244680 =             State.READY;
             var6409814A64BE3687CEC3A7AF97CABF0F_1299244680.addTaint(taint);
             return var6409814A64BE3687CEC3A7AF97CABF0F_1299244680;
-        } 
+        } //End block
     if(((right == IccCard.State.NOT_READY) && (left == IccCard.State.READY)) ||
             ((left == IccCard.State.NOT_READY) && (right == IccCard.State.READY)))        
         {
 State var02D409DFF15E9D7C28B89B1EDC402D16_1372872754 =             IccCard.State.NOT_READY;
             var02D409DFF15E9D7C28B89B1EDC402D16_1372872754.addTaint(taint);
             return var02D409DFF15E9D7C28B89B1EDC402D16_1372872754;
-        } 
+        } //End block
     if(right == IccCard.State.NOT_READY)        
         {
 State var2F9EA7A95FCD838AD3645B4D4006360C_1839863707 =         left;
@@ -959,19 +943,19 @@ State varA94968893C3CAA62B2C64D402B416B0C_1893175304 =         right;
 State varC05083034437F20EEDDA0D9EAD73A16E_139254501 =         preferredState;
         varC05083034437F20EEDDA0D9EAD73A16E_139254501.addTaint(taint);
         return varC05083034437F20EEDDA0D9EAD73A16E_139254501;
-        
-        
-        
-        
-            
-        
-        
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (right == IccCard.State.ABSENT) return left;
+        //if (left == IccCard.State.ABSENT) return right;
+        //if ((left == IccCard.State.READY) && (right == IccCard.State.READY)) {
+            //return State.READY;
+        //}
+        //if (((right == IccCard.State.NOT_READY) && (left == IccCard.State.READY)) ||
+            //((left == IccCard.State.NOT_READY) && (right == IccCard.State.READY))) {
+            //return IccCard.State.NOT_READY;
+        //}
+        //if (right == IccCard.State.NOT_READY) return left;
+        //if (left == IccCard.State.NOT_READY) return right;
+        //return preferredState;
     }
 
     
@@ -992,20 +976,20 @@ for(int i = 0;i < mIccCardStatus.getNumApplications();i++)
                 boolean varB326B5062B2F0E69046810717534CB09_609662613 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_64158401 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_64158401;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_322863649 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879782461 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879782461;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mIccCardStatus == null) return false;
+        //for (int i = 0 ; i < mIccCardStatus.getNumApplications(); i++) {
+            //IccCardApplication app = mIccCardStatus.getApplication(i);
+            //if (app != null && app.app_type == type) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
@@ -1016,19 +1000,19 @@ for(int i = 0;i < mIccCardStatus.getNumApplications();i++)
             boolean var68934A3E9455FA72420237EB05902327_828254653 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065749361 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065749361;
-        } 
+        } //End block
         else
         {
             boolean var8186A778FCD91F082221143CB585D5EE_1524511507 = (mIccCardStatus.getCardState().isCardPresent());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1433401279 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1433401279;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mIccCardStatus == null) {
+            //return false;
+        //} else {
+            //return mIccCardStatus.getCardState().isCardPresent();
+        //}
     }
 
     
@@ -1036,8 +1020,8 @@ for(int i = 0;i < mIccCardStatus.getNumApplications();i++)
     private void log(String msg) {
         addTaint(msg.getTaint());
         Log.d(mLogTag, "[IccCard] " + msg);
-        
-        
+        // ---------- Original Method ----------
+        //Log.d(mLogTag, "[IccCard] " + msg);
     }
 
     
@@ -1050,11 +1034,9 @@ for(int i = 0;i < mIccCardStatus.getNumApplications();i++)
         READY,
         NOT_READY,
         PERM_DISABLED;
-        @DSModeled(DSC.SAFE)
         public boolean isPinLocked() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED));
         }
-        @DSModeled(DSC.SAFE)
         public boolean iccCardExist() {
             return ((this == PIN_REQUIRED) || (this == PUK_REQUIRED)
                     || (this == NETWORK_LOCKED) || (this == READY)

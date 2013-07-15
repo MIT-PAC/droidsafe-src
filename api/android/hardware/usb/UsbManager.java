@@ -1,6 +1,6 @@
 package android.hardware.usb;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,9 +25,9 @@ public class UsbManager {
     public  UsbManager(Context context, IUsbManager service) {
         mContext = context;
         mService = service;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mService = service;
     }
 
     
@@ -41,30 +41,30 @@ public class UsbManager {
 for(String name : bundle.keySet())
             {
                 result.put(name, (UsbDevice)bundle.get(name));
-            } 
+            } //End block
 HashMap<String,UsbDevice> varDC838461EE2FA0CA4C9BBB70A15456B0_1247786315 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1247786315.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1247786315;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 HashMap<String,UsbDevice> var540C13E9E156B687226421B24F2DF178_1459092700 =             null;
             var540C13E9E156B687226421B24F2DF178_1459092700.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1459092700;
-        } 
-        
-        
-        
-            
-            
-            
-                
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Bundle bundle = new Bundle();
+        //try {
+            //mService.getDeviceList(bundle);
+            //HashMap<String,UsbDevice> result = new HashMap<String,UsbDevice>();
+            //for (String name : bundle.keySet()) {
+                //result.put(name, (UsbDevice)bundle.get(name));
+            //}
+            //return result;
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in getDeviceList", e);
+            //return null;
+        //}
     }
 
     
@@ -85,31 +85,31 @@ HashMap<String,UsbDevice> var540C13E9E156B687226421B24F2DF178_1459092700 =      
 UsbDeviceConnection var9911BB1C5F1522C1630847C40E8BC67E_75461928 =                     connection;
                     var9911BB1C5F1522C1630847C40E8BC67E_75461928.addTaint(taint);
                     return var9911BB1C5F1522C1630847C40E8BC67E_75461928;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (Exception e)
         {
-        } 
+        } //End block
 UsbDeviceConnection var540C13E9E156B687226421B24F2DF178_232833909 =         null;
         var540C13E9E156B687226421B24F2DF178_232833909.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_232833909;
-        
-        
-            
-            
-            
-                
-                
-                
-                
-                    
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //String deviceName = device.getDeviceName();
+            //ParcelFileDescriptor pfd = mService.openDevice(deviceName);
+            //if (pfd != null) {
+                //UsbDeviceConnection connection = new UsbDeviceConnection(device);
+                //boolean result = connection.open(deviceName, pfd);
+                //pfd.close();
+                //if (result) {
+                    //return connection;
+                //}
+            //}
+        //} catch (Exception e) {
+            //Log.e(TAG, "exception in UsbManager.openDevice", e);
+        //}
+        //return null;
     }
 
     
@@ -123,32 +123,32 @@ UsbDeviceConnection var540C13E9E156B687226421B24F2DF178_232833909 =         null
 UsbAccessory[] var540C13E9E156B687226421B24F2DF178_897849652 =                 null;
                 var540C13E9E156B687226421B24F2DF178_897849652.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_897849652;
-            } 
+            } //End block
             else
             {
 UsbAccessory[] varB854EE60877EC2A752DA2366949EA45C_1213129086 =                 new UsbAccessory[] { accessory };
                 varB854EE60877EC2A752DA2366949EA45C_1213129086.addTaint(taint);
                 return varB854EE60877EC2A752DA2366949EA45C_1213129086;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
 UsbAccessory[] var540C13E9E156B687226421B24F2DF178_1977233187 =             null;
             var540C13E9E156B687226421B24F2DF178_1977233187.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1977233187;
-        } 
-        
-        
-            
-            
-                
-            
-                
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //UsbAccessory accessory = mService.getCurrentAccessory();
+            //if (accessory == null) {
+                //return null;
+            //} else {
+                //return new UsbAccessory[] { accessory };
+            //}
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in getAccessoryList", e);
+            //return null;
+        //}
     }
 
     
@@ -160,20 +160,20 @@ UsbAccessory[] var540C13E9E156B687226421B24F2DF178_1977233187 =             null
 ParcelFileDescriptor varA3585D0D8E2D95CF3108941122D41146_889344520 =             mService.openAccessory(accessory);
             varA3585D0D8E2D95CF3108941122D41146_889344520.addTaint(taint);
             return varA3585D0D8E2D95CF3108941122D41146_889344520;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_508612948 =             null;
             var540C13E9E156B687226421B24F2DF178_508612948.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_508612948;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.openAccessory(accessory);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in openAccessory", e);
+            //return null;
+        //}
     }
 
     
@@ -185,20 +185,20 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_508612948 =            
             boolean var65641DBFE364B36131CB0DCEEB840655_488877989 = (mService.hasDevicePermission(device));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2035775809 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2035775809;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_427924024 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_256719216 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_256719216;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.hasDevicePermission(device);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in hasPermission", e);
+            //return false;
+        //}
     }
 
     
@@ -210,20 +210,20 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_508612948 =            
             boolean var01AA2DCF11FEEC0BD574C96F0D87B780_924579371 = (mService.hasAccessoryPermission(accessory));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_838076222 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_838076222;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_500821866 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_209920217 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_209920217;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.hasAccessoryPermission(accessory);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in hasPermission", e);
+            //return false;
+        //}
     }
 
     
@@ -234,16 +234,16 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_508612948 =            
         try 
         {
             mService.requestDevicePermission(device, mContext.getPackageName(), pi);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.requestDevicePermission(device, mContext.getPackageName(), pi);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in requestPermission", e);
+        //}
     }
 
     
@@ -254,16 +254,16 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_508612948 =            
         try 
         {
             mService.requestAccessoryPermission(accessory, mContext.getPackageName(), pi);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.requestAccessoryPermission(accessory, mContext.getPackageName(), pi);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in requestPermission", e);
+        //}
     }
 
     
@@ -284,8 +284,8 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_508612948 =            
         boolean var074588086C206A519C1C0B5BF7B12F70_629570428 = (propertyContainsFunction("sys.usb.config", function));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676943967 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_676943967;
-        
-        
+        // ---------- Original Method ----------
+        //return propertyContainsFunction("sys.usb.config", function);
     }
 
     
@@ -298,21 +298,21 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_508612948 =            
 String varB1F03C09EF1517A7A07AC1EC158DB374_632453616 =             functions.substring(0, commaIndex);
             varB1F03C09EF1517A7A07AC1EC158DB374_632453616.addTaint(taint);
             return varB1F03C09EF1517A7A07AC1EC158DB374_632453616;
-        } 
+        } //End block
         else
         {
 String varA910D99B3498A5875DCE8E4786C1850C_239154251 =             functions;
             varA910D99B3498A5875DCE8E4786C1850C_239154251.addTaint(taint);
             return varA910D99B3498A5875DCE8E4786C1850C_239154251;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String functions = SystemProperties.get("persist.sys.usb.config", "");
+        //int commaIndex = functions.indexOf(',');
+        //if (commaIndex > 0) {
+            //return functions.substring(0, commaIndex);
+        //} else {
+            //return functions;
+        //}
     }
 
     
@@ -323,16 +323,16 @@ String varA910D99B3498A5875DCE8E4786C1850C_239154251 =             functions;
         try 
         {
             mService.setCurrentFunction(function, makeDefault);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setCurrentFunction(function, makeDefault);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in setCurrentFunction", e);
+        //}
     }
 
     
@@ -342,16 +342,16 @@ String varA910D99B3498A5875DCE8E4786C1850C_239154251 =             functions;
         try 
         {
             mService.setMassStorageBackingFile(path);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setMassStorageBackingFile(path);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "RemoteException in setDefaultFunction", e);
+        //}
     }
 
     

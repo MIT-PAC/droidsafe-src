@@ -1,6 +1,6 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,33 +35,33 @@ public abstract class JarURLConnection extends URLConnection {
             MalformedURLException var21E10CD6C5DF9565D3549D417E79A72D_1864859686 = new MalformedURLException();
             var21E10CD6C5DF9565D3549D417E79A72D_1864859686.addTaint(taint);
             throw var21E10CD6C5DF9565D3549D417E79A72D_1864859686;
-        } 
+        } //End block
         fileURL = new URL(url.getFile().substring(0,sepIdx));
         sepIdx += 2;
     if(file.length() == sepIdx)        
         {
             return;
-        } 
+        } //End block
         entryName = file.substring(sepIdx, file.length());
     if(url.getRef() != null)        
         {
             entryName += "#" + url.getRef();
-        } 
-        
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //file = url.getFile();
+        //int sepIdx;
+        //if ((sepIdx = file.indexOf("!/")) < 0) {
+            //throw new MalformedURLException();
+        //}
+        //fileURL = new URL(url.getFile().substring(0,sepIdx));
+        //sepIdx += 2;
+        //if (file.length() == sepIdx) {
+            //return;
+        //}
+        //entryName = file.substring(sepIdx, file.length());
+        //if (url.getRef() != null) {
+            //entryName += "#" + url.getRef();
+        //}
     }
 
     
@@ -71,9 +71,9 @@ public abstract class JarURLConnection extends URLConnection {
 Attributes var397D1096BF67692CA492F7FA250DB59A_278424915 =         (jEntry == null) ? null : jEntry.getAttributes();
         var397D1096BF67692CA492F7FA250DB59A_278424915.addTaint(taint);
         return var397D1096BF67692CA492F7FA250DB59A_278424915;
-        
-        
-        
+        // ---------- Original Method ----------
+        //JarEntry jEntry = getJarEntry();
+        //return (jEntry == null) ? null : jEntry.getAttributes();
     }
 
     
@@ -85,27 +85,26 @@ Attributes var397D1096BF67692CA492F7FA250DB59A_278424915 =         (jEntry == nu
 Certificate[] var540C13E9E156B687226421B24F2DF178_170402807 =             null;
             var540C13E9E156B687226421B24F2DF178_170402807.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_170402807;
-        } 
+        } //End block
 Certificate[] var20D23548D5B29B039534CE2DC596F6FF_1816746442 =         jEntry.getCertificates();
         var20D23548D5B29B039534CE2DC596F6FF_1816746442.addTaint(taint);
         return var20D23548D5B29B039534CE2DC596F6FF_1816746442;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //JarEntry jEntry = getJarEntry();
+        //if (jEntry == null) {
+            //return null;
+        //}
+        //return jEntry.getCertificates();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.844 -0400", hash_original_method = "DAD1125851C16B3E7BCEFC2CE4B21F94", hash_generated_method = "1299D2C6E4503E7C7D01A90BC0FA9100")
     public String getEntryName() {
 String varF3E8D7D8476436F75D1BE6BA494262B0_301287445 =         entryName;
         varF3E8D7D8476436F75D1BE6BA494262B0_301287445.addTaint(taint);
         return varF3E8D7D8476436F75D1BE6BA494262B0_301287445;
-        
-        
+        // ---------- Original Method ----------
+        //return entryName;
     }
 
     
@@ -114,24 +113,24 @@ String varF3E8D7D8476436F75D1BE6BA494262B0_301287445 =         entryName;
     if(!connected)        
         {
             connect();
-        } 
+        } //End block
     if(entryName == null)        
         {
 JarEntry var540C13E9E156B687226421B24F2DF178_299297923 =             null;
             var540C13E9E156B687226421B24F2DF178_299297923.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_299297923;
-        } 
+        } //End block
 JarEntry varF75877B5990554D5010042B3CE857FC6_1253634934 =         getJarFile().getJarEntry(entryName);
         varF75877B5990554D5010042B3CE857FC6_1253634934.addTaint(taint);
         return varF75877B5990554D5010042B3CE857FC6_1253634934;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!connected) {
+            //connect();
+        //}
+        //if (entryName == null) {
+            //return null;
+        //}
+        //return getJarFile().getJarEntry(entryName);
     }
 
     
@@ -140,22 +139,21 @@ JarEntry varF75877B5990554D5010042B3CE857FC6_1253634934 =         getJarFile().g
 Manifest varD6A473F34A9B589697EE5BB39DA55A84_1762091243 =         (Manifest)getJarFile().getManifest().clone();
         varD6A473F34A9B589697EE5BB39DA55A84_1762091243.addTaint(taint);
         return varD6A473F34A9B589697EE5BB39DA55A84_1762091243;
-        
-        
+        // ---------- Original Method ----------
+        //return (Manifest)getJarFile().getManifest().clone();
     }
 
     
     public abstract JarFile getJarFile() throws java.io.IOException;
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.846 -0400", hash_original_method = "35923E0EC1A4B6746505AC2CF9BCB1E8", hash_generated_method = "A4CB7DF055302870C91AE6CC1ED9826C")
     public URL getJarFileURL() {
 URL var8B7F9BD78C6186977C46D48EA3629742_1102297032 =         fileURL;
         var8B7F9BD78C6186977C46D48EA3629742_1102297032.addTaint(taint);
         return var8B7F9BD78C6186977C46D48EA3629742_1102297032;
-        
-        
+        // ---------- Original Method ----------
+        //return fileURL;
     }
 
     
@@ -165,9 +163,9 @@ URL var8B7F9BD78C6186977C46D48EA3629742_1102297032 =         fileURL;
 Attributes varEF0569FCE2C5DC98D21FE9C1CBEF240D_1756768882 =         (m == null) ? null : m.getMainAttributes();
         varEF0569FCE2C5DC98D21FE9C1CBEF240D_1756768882.addTaint(taint);
         return varEF0569FCE2C5DC98D21FE9C1CBEF240D_1756768882;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Manifest m = getJarFile().getManifest();
+        //return (m == null) ? null : m.getMainAttributes();
     }
 
     

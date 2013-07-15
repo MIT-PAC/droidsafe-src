@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,27 +31,26 @@ public class BasicTokenIterator implements TokenIterator {
                 ("Header iterator must not be null.");
             var7DF460ACC625D606A2CEDF16D44D1646_2123654278.addTaint(taint);
             throw var7DF460ACC625D606A2CEDF16D44D1646_2123654278;
-        } 
+        } //End block
         this.headerIt = headerIterator;
         this.searchPos = findNext(-1);
-        
-        
-            
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (headerIterator == null) {
+            //throw new IllegalArgumentException
+                //("Header iterator must not be null.");
+        //}
+        //this.headerIt = headerIterator;
+        //this.searchPos = findNext(-1);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.689 -0400", hash_original_method = "DAB37B2EA98FD1DE22306A8DB0E83A00", hash_generated_method = "00E525DFB13DB1726422483E3297801A")
     public boolean hasNext() {
         boolean varF9D1FD9B4069C0625E90F30612866EF5_519470397 = ((this.currentToken != null));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1954622223 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1954622223;
-        
-        
+        // ---------- Original Method ----------
+        //return (this.currentToken != null);
     }
 
     
@@ -62,19 +61,19 @@ public class BasicTokenIterator implements TokenIterator {
             NoSuchElementException var987AB9BC96C39424DAD4C83B35F26CD8_1479901082 = new NoSuchElementException("Iteration already finished.");
             var987AB9BC96C39424DAD4C83B35F26CD8_1479901082.addTaint(taint);
             throw var987AB9BC96C39424DAD4C83B35F26CD8_1479901082;
-        } 
+        } //End block
         final String result = this.currentToken;
         this.searchPos = findNext(this.searchPos);
 String varDC838461EE2FA0CA4C9BBB70A15456B0_162000035 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_162000035.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_162000035;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (this.currentToken == null) {
+            //throw new NoSuchElementException("Iteration already finished.");
+        //}
+        //final String result = this.currentToken;
+        //this.searchPos = findNext(this.searchPos);
+        //return result;
     }
 
     
@@ -83,8 +82,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_162000035 =         result;
 Object var1E85D5DD28517B6F091CC30DA1235BD1_767750184 =         nextToken();
         var1E85D5DD28517B6F091CC30DA1235BD1_767750184.addTaint(taint);
         return var1E85D5DD28517B6F091CC30DA1235BD1_767750184;
-        
-        
+        // ---------- Original Method ----------
+        //return nextToken();
     }
 
     
@@ -94,9 +93,9 @@ Object var1E85D5DD28517B6F091CC30DA1235BD1_767750184 =         nextToken();
             ("Removing tokens is not supported.");
         var7B570CABEE51442D3CCB7BB64D5EC4F8_597599413.addTaint(taint);
         throw var7B570CABEE51442D3CCB7BB64D5EC4F8_597599413;
-        
-        
-            
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException
+            //("Removing tokens is not supported.");
     }
 
     
@@ -110,14 +109,14 @@ Object var1E85D5DD28517B6F091CC30DA1235BD1_767750184 =         nextToken();
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_2107567532 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1037012153 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1037012153;
-            } 
+            } //End block
             this.currentHeader = this.headerIt.nextHeader().getValue();
             from = 0;
-        } 
+        } //End block
         else
         {
             from = findTokenSeparator(from);
-        } 
+        } //End block
         int start = findTokenStart(from);
     if(start < 0)        
         {
@@ -125,30 +124,30 @@ Object var1E85D5DD28517B6F091CC30DA1235BD1_767750184 =         nextToken();
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1484952286 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_819776749 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_819776749;
-        } 
+        } //End block
         int end = findTokenEnd(start);
         this.currentToken = createToken(this.currentHeader, start, end);
         int var7F021A1415B86F2D013B2618FB31AE53_1616365868 = (end);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1957190574 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1957190574;
-        
-        
-            
-                
-            
-            
-            
-        
-            
-        
-        
-        
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (from < 0) {
+            //if (!this.headerIt.hasNext()) {
+                //return -1;
+            //}
+            //this.currentHeader = this.headerIt.nextHeader().getValue();
+            //from = 0;
+        //} else {
+            //from = findTokenSeparator(from);
+        //}
+        //int start = findTokenStart(from);
+        //if (start < 0) {
+            //this.currentToken = null;
+            //return -1; 
+        //}
+        //int end = findTokenEnd(start);
+        //this.currentToken = createToken(this.currentHeader, start, end);
+        //return end;
     }
 
     
@@ -160,8 +159,8 @@ Object var1E85D5DD28517B6F091CC30DA1235BD1_767750184 =         nextToken();
 String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(start, end);
         var6D1AD31619F0A44155D98F0B7B4EEE63_818405000.addTaint(taint);
         return var6D1AD31619F0A44155D98F0B7B4EEE63_818405000;
-        
-        
+        // ---------- Original Method ----------
+        //return value.substring(start, end);
     }
 
     
@@ -174,7 +173,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
                 ("Search position must not be negative: " + from);
             varE67816026124B737FE00C0674250C1B6_1604507112.addTaint(taint);
             throw varE67816026124B737FE00C0674250C1B6_1604507112;
-        } 
+        } //End block
         boolean found = false;
         while
 (!found && (this.currentHeader != null))        
@@ -187,12 +186,12 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
     if(isTokenSeparator(ch) || isWhitespace(ch))                
                 {
                     from++;
-                } 
+                } //End block
                 else
     if(isTokenChar(this.currentHeader.charAt(from)))                
                 {
                     found = true;
-                } 
+                } //End block
                 else
                 {
                     ParseException varA8030CC569E7A8CB5F552D188C3E0720_1864553204 = new ParseException
@@ -200,26 +199,26 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
                          "): " + this.currentHeader);
                     varA8030CC569E7A8CB5F552D188C3E0720_1864553204.addTaint(taint);
                     throw varA8030CC569E7A8CB5F552D188C3E0720_1864553204;
-                } 
-            } 
+                } //End block
+            } //End block
     if(!found)            
             {
     if(this.headerIt.hasNext())                
                 {
                     this.currentHeader = this.headerIt.nextHeader().getValue();
                     from = 0;
-                } 
+                } //End block
                 else
                 {
                     this.currentHeader = null;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         int var30BEC673AA85928644B576FD1EBDB4A9_2129150162 = (found ? from : -1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650004067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1650004067;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -232,7 +231,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
                 ("Search position must not be negative: " + from);
             varE67816026124B737FE00C0674250C1B6_250908238.addTaint(taint);
             throw varE67816026124B737FE00C0674250C1B6_250908238;
-        } 
+        } //End block
         boolean found = false;
         final int to = this.currentHeader.length();
         while
@@ -242,12 +241,12 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
     if(isTokenSeparator(ch))            
             {
                 found = true;
-            } 
+            } //End block
             else
     if(isWhitespace(ch))            
             {
                 from++;
-            } 
+            } //End block
             else
     if(isTokenChar(ch))            
             {
@@ -256,7 +255,7 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
                      "): " + this.currentHeader);
                 varEA490B7121C4EAA91DF759C9DBD7A5E2_1235875232.addTaint(taint);
                 throw varEA490B7121C4EAA91DF759C9DBD7A5E2_1235875232;
-            } 
+            } //End block
             else
             {
                 ParseException varE0E763A9CA040A12DD639AF228B6984D_2126017827 = new ParseException
@@ -264,13 +263,13 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
                      "): " + this.currentHeader);
                 varE0E763A9CA040A12DD639AF228B6984D_2126017827.addTaint(taint);
                 throw varE0E763A9CA040A12DD639AF228B6984D_2126017827;
-            } 
-        } 
+            } //End block
+        } //End block
         int varD98A07F84921B24EE30F86FD8CD85C3C_1944655861 = (from);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1623784335 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1623784335;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -283,40 +282,39 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
                 ("Token start position must not be negative: " + from);
             varA6DC0764CC986C425F6C0F9B12A0AD34_1031935293.addTaint(taint);
             throw varA6DC0764CC986C425F6C0F9B12A0AD34_1031935293;
-        } 
+        } //End block
         final int to = this.currentHeader.length();
         int end = from+1;
         while
 ((end < to) && isTokenChar(this.currentHeader.charAt(end)))        
         {
             end++;
-        } 
+        } //End block
         int var7F021A1415B86F2D013B2618FB31AE53_1263728749 = (end);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627658992 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627658992;
-        
-        
-            
-                
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (from < 0) {
+            //throw new IllegalArgumentException
+                //("Token start position must not be negative: " + from);
+        //}
+        //final int to = this.currentHeader.length();
+        //int end = from+1;
+        //while ((end < to) && isTokenChar(this.currentHeader.charAt(end))) {
+            //end++;
+        //}
+        //return end;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.697 -0400", hash_original_method = "82ADC719B633E23931D943624F51E118", hash_generated_method = "49A73D3A5BC28B0EB4A46CD38134308D")
     protected boolean isTokenSeparator(char ch) {
         addTaint(ch);
         boolean var618CE8E35889B64AFA0E42D547797C4D_1678750449 = ((ch == ','));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856550433 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856550433;
-        
-        
+        // ---------- Original Method ----------
+        //return (ch == ',');
     }
 
     
@@ -326,8 +324,8 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
         boolean var19DF6487BAD8F89596CAC8516F2A5CC2_602301956 = (((ch == '\t') || Character.isSpaceChar(ch)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2141050789 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2141050789;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ch == '\t') || Character.isSpaceChar(ch));
     }
 
     
@@ -355,14 +353,14 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
         boolean varB326B5062B2F0E69046810717534CB09_1281964135 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_623319239 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_623319239;
-        
-        
-            
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (Character.isLetterOrDigit(ch))
+            //return true;
+        //if (Character.isISOControl(ch))
+            //return false;
+        //if (isHttpSeparator(ch))
+            //return false;
+        //return true;
     }
 
     
@@ -372,8 +370,8 @@ String var6D1AD31619F0A44155D98F0B7B4EEE63_818405000 =         value.substring(s
         boolean var05603C57C93F34A5B16428FA2E84075F_556393032 = ((HTTP_SEPARATORS.indexOf(ch) >= 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_127211119 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_127211119;
-        
-        
+        // ---------- Original Method ----------
+        //return (HTTP_SEPARATORS.indexOf(ch) >= 0);
     }
 
     

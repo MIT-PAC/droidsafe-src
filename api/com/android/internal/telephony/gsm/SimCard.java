@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,11 +21,11 @@ public final class SimCard extends IccCard {
         mPhone.mCM.registerForOffOrNotAvailable(mHandler, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
         mPhone.mCM.registerForSIMReady(mHandler, EVENT_ICC_READY, null);
         updateStateProperty();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPhone.mCM.registerForSIMLockedOrAbsent(mHandler, EVENT_ICC_LOCKED_OR_ABSENT, null);
+        //mPhone.mCM.registerForOffOrNotAvailable(mHandler, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
+        //mPhone.mCM.registerForSIMReady(mHandler, EVENT_ICC_READY, null);
+        //updateStateProperty();
     }
 
     
@@ -42,15 +42,15 @@ public final class SimCard extends IccCard {
     if(mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE)        
         {
             mPhone.mCM.registerForIccStatusChanged(mHandler, EVENT_ICC_LOCKED_OR_ABSENT, null);
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mPhone.mCM.registerForSIMLockedOrAbsent(mHandler, EVENT_ICC_LOCKED_OR_ABSENT, null);
+        //mPhone.mCM.registerForOffOrNotAvailable(mHandler, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
+        //mPhone.mCM.registerForSIMReady(mHandler, EVENT_ICC_READY, null);
+        //updateStateProperty();
+        //if(mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE) {
+            //mPhone.mCM.registerForIccStatusChanged(mHandler, EVENT_ICC_LOCKED_OR_ABSENT, null);
+        //}
     }
 
     
@@ -64,27 +64,26 @@ public final class SimCard extends IccCard {
     if(mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE)        
         {
             mPhone.mCM.unregisterForIccStatusChanged(mHandler);
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.dispose();
+        //mPhone.mCM.unregisterForSIMLockedOrAbsent(mHandler);
+        //mPhone.mCM.unregisterForOffOrNotAvailable(mHandler);
+        //mPhone.mCM.unregisterForSIMReady(mHandler);
+        //if(mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE) {
+            //mPhone.mCM.unregisterForIccStatusChanged(mHandler);
+        //}
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.539 -0400", hash_original_method = "9DB5C3DD2D46DFBEACD42980054AFF5F", hash_generated_method = "B139DE21BFB4AED0C35CEAA7E625DE0B")
     @Override
     public String getServiceProviderName() {
 String var7F74CA4F27DBD97ED17E538302BDEBEB_1516828074 =         mPhone.mIccRecords.getServiceProviderName();
         var7F74CA4F27DBD97ED17E538302BDEBEB_1516828074.addTaint(taint);
         return var7F74CA4F27DBD97ED17E538302BDEBEB_1516828074;
-        
-        
+        // ---------- Original Method ----------
+        //return mPhone.mIccRecords.getServiceProviderName();
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class SubscriptionStateParser extends HeaderParser {
     public  SubscriptionStateParser(String subscriptionState) {
         super(subscriptionState);
         addTaint(subscriptionState.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,7 +23,7 @@ public class SubscriptionStateParser extends HeaderParser {
     protected  SubscriptionStateParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -55,7 +55,7 @@ public class SubscriptionStateParser extends HeaderParser {
                     token = lexer.getNextToken();
                     value = token.getTokenValue();
                     subscriptionState.setReasonCode(value);
-                } 
+                } //End block
                 else
     if(value.equalsIgnoreCase("expires"))                
                 {
@@ -68,20 +68,20 @@ public class SubscriptionStateParser extends HeaderParser {
                     {
                         int expires = Integer.parseInt(value);
                         subscriptionState.setExpires(expires);
-                    } 
+                    } //End block
                     catch (NumberFormatException ex)
                     {
                         java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1884280142 = createParseException(ex.getMessage());
                         varB8C80F72F95BF6A850D07F4EC5726C09_1884280142.addTaint(taint);
                         throw varB8C80F72F95BF6A850D07F4EC5726C09_1884280142;
-                    } 
+                    } //End block
                     catch (InvalidArgumentException ex)
                     {
                         java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_962089614 = createParseException(ex.getMessage());
                         varB8C80F72F95BF6A850D07F4EC5726C09_962089614.addTaint(taint);
                         throw varB8C80F72F95BF6A850D07F4EC5726C09_962089614;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
     if(value.equalsIgnoreCase("retry-after"))                
                 {
@@ -94,20 +94,20 @@ public class SubscriptionStateParser extends HeaderParser {
                     {
                         int retryAfter = Integer.parseInt(value);
                         subscriptionState.setRetryAfter(retryAfter);
-                    } 
+                    } //End block
                     catch (NumberFormatException ex)
                     {
                         java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1053311612 = createParseException(ex.getMessage());
                         varB8C80F72F95BF6A850D07F4EC5726C09_1053311612.addTaint(taint);
                         throw varB8C80F72F95BF6A850D07F4EC5726C09_1053311612;
-                    } 
+                    } //End block
                     catch (InvalidArgumentException ex)
                     {
                         java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_810689689 = createParseException(ex.getMessage());
                         varB8C80F72F95BF6A850D07F4EC5726C09_810689689.addTaint(taint);
                         throw varB8C80F72F95BF6A850D07F4EC5726C09_810689689;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     this.lexer.match('=');
@@ -116,20 +116,20 @@ public class SubscriptionStateParser extends HeaderParser {
                     Token secondToken = lexer.getNextToken();
                     String secondValue = secondToken.getTokenValue();
                     subscriptionState.setParameter(value, secondValue);
-                } 
+                } //End block
                 this.lexer.SPorHT();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("SubscriptionStateParser.parse");
-        } 
+        } //End block
 SIPHeader varA52984FDFAEAAD19E4B7B1100E2740EB_583859670 =         subscriptionState;
         varA52984FDFAEAAD19E4B7B1100E2740EB_583859670.addTaint(taint);
         return varA52984FDFAEAAD19E4B7B1100E2740EB_583859670;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

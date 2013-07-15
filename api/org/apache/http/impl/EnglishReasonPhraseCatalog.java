@@ -1,6 +1,6 @@
 package org.apache.http.impl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.031 -0400", hash_original_method = "7E219D4204F52B71BC25A968ECCA9516", hash_generated_method = "B7F389F477620D30D508A0713D2A466A")
     protected  EnglishReasonPhraseCatalog() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,7 +26,7 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
                 ("Unknown category for status code " + status + ".");
             var29C44D8F7746F3313015E7D6995B3353_234171724.addTaint(taint);
             throw var29C44D8F7746F3313015E7D6995B3353_234171724;
-        } 
+        } //End block
         final int category = status / 100;
         final int subcode = status - 100*category;
         String reason = null;
@@ -35,22 +35,21 @@ public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
 String varD602C4C1684F7464133CA1A6851CC44A_387996384 =         reason;
         varD602C4C1684F7464133CA1A6851CC44A_387996384.addTaint(taint);
         return varD602C4C1684F7464133CA1A6851CC44A_387996384;
-        
-        
-            
-                
-        
-        
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if ((status < 100) || (status >= 600)) {
+            //throw new IllegalArgumentException
+                //("Unknown category for status code " + status + ".");
+        //}
+        //final int category = status / 100;
+        //final int subcode  = status - 100*category;
+        //String reason = null;
+        //if (REASON_PHRASES[category].length > subcode)
+            //reason = REASON_PHRASES[category][subcode];
+        //return reason;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void setReason(int status, String reason) {
+        private static void setReason(int status, String reason) {
         final int category = status / 100;
         final int subcode  = status - 100*category;
         REASON_PHRASES[category][subcode] = reason;

@@ -1,6 +1,6 @@
 package android.app.backup;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,23 +32,21 @@ public abstract class BackupAgent extends ContextWrapper {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.977 -0400", hash_original_method = "B5A8D7758CDB468D197C4191C97B62B7", hash_generated_method = "10BCF02BE8187F1DDF7130F69F515B81")
     public  BackupAgent() {
         super(null);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.978 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
     public void onCreate() {
-        
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.978 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
     public void onDestroy() {
-        
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        // ---------- Original Method ----------
     }
 
     
@@ -63,7 +61,7 @@ public abstract class BackupAgent extends ContextWrapper {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.980 -0400", hash_original_method = "9C0AD80B0DC65359576BE56D304BF72D", hash_generated_method = "F69E378ECAF785A1D57CE651CF87F204")
     public void onFullBackup(FullBackupDataOutput data) throws IOException {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(data.getTaint());
         ApplicationInfo appInfo = getApplicationInfo();
         String rootDir = new File(appInfo.dataDir).getCanonicalPath();
@@ -79,7 +77,7 @@ public abstract class BackupAgent extends ContextWrapper {
     if(libDir != null)        
         {
             filterSet.add(libDir);
-        } 
+        } //End block
         filterSet.add(cacheDir);
         filterSet.add(databaseDir);
         filterSet.add(sharedPrefsDir);
@@ -94,8 +92,8 @@ public abstract class BackupAgent extends ContextWrapper {
         filterSet.add(databaseDir);
         filterSet.remove(sharedPrefsDir);
         fullBackupFileTree(packageName, FullBackup.SHAREDPREFS_TREE_TOKEN, sharedPrefsDir, filterSet, data);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -122,48 +120,48 @@ public abstract class BackupAgent extends ContextWrapper {
                     ? null
                     : new File(appInfo.nativeLibraryDir).getCanonicalPath();
             filePath = file.getCanonicalPath();
-        } 
+        } //End block
         catch (IOException e)
         {
             return;
-        } 
+        } //End block
     if(filePath.startsWith(cacheDir) || filePath.startsWith(libDir))        
         {
             return;
-        } 
+        } //End block
         String domain;
         String rootpath = null;
     if(filePath.startsWith(dbDir))        
         {
             domain = FullBackup.DATABASE_TREE_TOKEN;
             rootpath = dbDir;
-        } 
+        } //End block
         else
     if(filePath.startsWith(spDir))        
         {
             domain = FullBackup.SHAREDPREFS_TREE_TOKEN;
             rootpath = spDir;
-        } 
+        } //End block
         else
     if(filePath.startsWith(filesDir))        
         {
             domain = FullBackup.DATA_TREE_TOKEN;
             rootpath = filesDir;
-        } 
+        } //End block
         else
     if(filePath.startsWith(mainDir))        
         {
             domain = FullBackup.ROOT_TREE_TOKEN;
             rootpath = mainDir;
-        } 
+        } //End block
         else
         {
             return;
-        } 
+        } //End block
         FullBackup.backupToTar(getPackageName(), domain, null, rootpath, filePath,
                 output.getData());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -191,12 +189,12 @@ public abstract class BackupAgent extends ContextWrapper {
     if(excludes != null && excludes.contains(filePath))                    
                     {
                         continue;
-                    } 
+                    } //End block
                     StructStat stat = Libcore.os.lstat(filePath);
     if(OsConstants.S_ISLNK(stat.st_mode))                    
                     {
     if(DEBUG){ }                        continue;
-                    } 
+                    } //End block
                     else
     if(OsConstants.S_ISDIR(stat.st_mode))                    
                     {
@@ -206,31 +204,31 @@ public abstract class BackupAgent extends ContextWrapper {
 for(File entry : contents)
                             {
                                 scanQueue.add(0, entry);
-                            } 
-                        } 
-                    } 
-                } 
+                            } //End block
+                        } //End block
+                    } //End block
+                } //End block
                 catch (IOException e)
                 {
     if(DEBUG){ }                    continue;
-                } 
+                } //End block
                 catch (ErrnoException e)
                 {
     if(DEBUG){ }                    continue;
-                } 
+                } //End block
                 FullBackup.backupToTar(packageName, domain, null, rootPath, filePath,
                         output.getData());
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.985 -0400", hash_original_method = "20621F323ECDCB060A13554E50206415", hash_generated_method = "EBD8889E36CAEF03FD32589A3131E682")
     public void onRestoreFile(ParcelFileDescriptor data, long size,
             File destination, int type, long mode, long mtime) throws IOException {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(mtime);
         addTaint(mode);
         addTaint(type);
@@ -238,15 +236,15 @@ for(File entry : contents)
         addTaint(size);
         addTaint(data.getTaint());
         FullBackup.restoreFile(data, size, type, mode, mtime, destination);
-        
-        
+        // ---------- Original Method ----------
+        //FullBackup.restoreFile(data, size, type, mode, mtime, destination);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.987 -0400", hash_original_method = "588B4C1C50D0665AE90099672BE15A28", hash_generated_method = "B32995C9B26B6C2B65EB71094E1CF1C1")
     protected void onRestoreFile(ParcelFileDescriptor data, long size,
             int type, String domain, String path, long mode, long mtime) throws IOException {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(mtime);
         addTaint(mode);
         addTaint(path.getTaint());
@@ -262,52 +260,52 @@ for(File entry : contents)
     if(domain.equals(FullBackup.DATA_TREE_TOKEN))        
         {
             basePath = getFilesDir().getCanonicalPath();
-        } 
+        } //End block
         else
     if(domain.equals(FullBackup.DATABASE_TREE_TOKEN))        
         {
             basePath = getDatabasePath("foo").getParentFile().getCanonicalPath();
-        } 
+        } //End block
         else
     if(domain.equals(FullBackup.ROOT_TREE_TOKEN))        
         {
             basePath = new File(getApplicationInfo().dataDir).getCanonicalPath();
-        } 
+        } //End block
         else
     if(domain.equals(FullBackup.SHAREDPREFS_TREE_TOKEN))        
         {
             basePath = getSharedPrefsFile("foo").getParentFile().getCanonicalPath();
-        } 
+        } //End block
         else
     if(domain.equals(FullBackup.CACHE_TREE_TOKEN))        
         {
             basePath = getCacheDir().getCanonicalPath();
-        } 
+        } //End block
         else
         {
-        } 
+        } //End block
     if(basePath != null)        
         {
             File outFile = new File(basePath, path);
     if(DEBUG){ }            onRestoreFile(data, size, outFile, type, mode, mtime);
-        } 
+        } //End block
         else
         {
     if(DEBUG){ }            FullBackup.restoreFile(data, size, type, mode, mtime, null);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.988 -0400", hash_original_method = "2EA8D194620A11CB2853C240391D2146", hash_generated_method = "D379C087A38AC2BC883E445650E98FB5")
     public final IBinder onBind() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
 IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650 =         mBinder;
         varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650.addTaint(taint);
         return varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650;
-        
-        
+        // ---------- Original Method ----------
+        //return mBinder;
     }
 
     
@@ -315,8 +313,8 @@ IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650 =         mBinder;
     public void attach(Context context) {
         addTaint(context.getTaint());
         attachBaseContext(context);
-        
-        
+        // ---------- Original Method ----------
+        //attachBaseContext(context);
     }
 
     
@@ -325,7 +323,7 @@ IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650 =         mBinder;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.988 -0400", hash_original_method = "981BC5161F50D30EEB7E3364AFC1A4E5", hash_generated_method = "981BC5161F50D30EEB7E3364AFC1A4E5")
         public BackupServiceBinder ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -345,33 +343,33 @@ IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650 =         mBinder;
             try 
             {
                 BackupAgent.this.onBackup(oldState, output, newState);
-            } 
+            } //End block
             catch (IOException ex)
             {
                 Log.d(TAG, "onBackup (" + BackupAgent.this.getClass().getName() + ") threw", ex);
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_568257890 = new RuntimeException(ex);
                 varF35D3C95F99DACEE8C542CF38D772C50_568257890.addTaint(taint);
                 throw varF35D3C95F99DACEE8C542CF38D772C50_568257890;
-            } 
+            } //End block
             catch (RuntimeException ex)
             {
                 Log.d(TAG, "onBackup (" + BackupAgent.this.getClass().getName() + ") threw", ex);
                 ex.addTaint(taint);
                 throw ex;
-            } 
+            } //End block
             finally 
             {
                 Binder.restoreCallingIdentity(ident);
                 try 
                 {
                     callbackBinder.opComplete(token);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -390,33 +388,33 @@ IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650 =         mBinder;
             try 
             {
                 BackupAgent.this.onRestore(input, appVersionCode, newState);
-            } 
+            } //End block
             catch (IOException ex)
             {
                 Log.d(TAG, "onRestore (" + BackupAgent.this.getClass().getName() + ") threw", ex);
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_221590890 = new RuntimeException(ex);
                 varF35D3C95F99DACEE8C542CF38D772C50_221590890.addTaint(taint);
                 throw varF35D3C95F99DACEE8C542CF38D772C50_221590890;
-            } 
+            } //End block
             catch (RuntimeException ex)
             {
                 Log.d(TAG, "onRestore (" + BackupAgent.this.getClass().getName() + ") threw", ex);
                 ex.addTaint(taint);
                 throw ex;
-            } 
+            } //End block
             finally 
             {
                 Binder.restoreCallingIdentity(ident);
                 try 
                 {
                     callbackBinder.opComplete(token);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -431,20 +429,20 @@ IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650 =         mBinder;
     if(DEBUG){ }            try 
             {
                 BackupAgent.this.onFullBackup(new FullBackupDataOutput(data));
-            } 
+            } //End block
             catch (IOException ex)
             {
                 Log.d(TAG, "onBackup (" + BackupAgent.this.getClass().getName() + ") threw", ex);
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_1988650373 = new RuntimeException(ex);
                 varF35D3C95F99DACEE8C542CF38D772C50_1988650373.addTaint(taint);
                 throw varF35D3C95F99DACEE8C542CF38D772C50_1988650373;
-            } 
+            } //End block
             catch (RuntimeException ex)
             {
                 Log.d(TAG, "onBackup (" + BackupAgent.this.getClass().getName() + ") threw", ex);
                 ex.addTaint(taint);
                 throw ex;
-            } 
+            } //End block
             finally 
             {
                 try 
@@ -452,21 +450,21 @@ IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650 =         mBinder;
                     FileOutputStream out = new FileOutputStream(data.getFileDescriptor());
                     byte[] buf = new byte[4];
                     out.write(buf);
-                } 
+                } //End block
                 catch (IOException e)
                 {
-                } 
+                } //End block
                 Binder.restoreCallingIdentity(ident);
                 try 
                 {
                     callbackBinder.opComplete(token);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -488,37 +486,37 @@ IBinder varA9FF01A383A9C8C5D4DA9D8985A671A5_624496650 =         mBinder;
             try 
             {
                 BackupAgent.this.onRestoreFile(data, size, type, domain, path, mode, mtime);
-            } 
+            } //End block
             catch (IOException e)
             {
                 RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_2000290314 = new RuntimeException(e);
                 varC76ADF009CE2FEDD948F7A54F409BA37_2000290314.addTaint(taint);
                 throw varC76ADF009CE2FEDD948F7A54F409BA37_2000290314;
-            } 
+            } //End block
             finally 
             {
                 Binder.restoreCallingIdentity(ident);
                 try 
                 {
                     callbackBinder.opComplete(token);
-                } 
+                } //End block
                 catch (RemoteException e)
                 {
-                } 
-            } 
-            
-            
-            
-                
-            
-                
-            
-                
-                
-                    
-                
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //long ident = Binder.clearCallingIdentity();
+            //try {
+                //BackupAgent.this.onRestoreFile(data, size, type, domain, path, mode, mtime);
+            //} catch (IOException e) {
+                //throw new RuntimeException(e);
+            //} finally {
+                //Binder.restoreCallingIdentity(ident);
+                //try {
+                    //callbackBinder.opComplete(token);
+                //} catch (RemoteException e) {
+                //}
+            //}
         }
 
         

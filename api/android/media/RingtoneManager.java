@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -52,9 +52,9 @@ public class RingtoneManager {
     public  RingtoneManager(Activity activity) {
         mContext = mActivity = activity;
         setType(mType);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = mActivity = activity;
+        //setType(mType);
     }
 
     
@@ -62,9 +62,9 @@ public class RingtoneManager {
     public  RingtoneManager(Context context) {
         mContext = context;
         setType(mType);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //setType(mType);
     }
 
     
@@ -76,20 +76,19 @@ public class RingtoneManager {
                     "Setting filter columns should be done before querying for ringtones.");
             varE30B04B05BECE00C66C72178A884E444_911804846.addTaint(taint);
             throw varE30B04B05BECE00C66C72178A884E444_911804846;
-        } 
+        } //End block
         mType = type;
         setFilterColumnsList(type);
-        
-        
-            
-                    
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mCursor != null) {
+            //throw new IllegalStateException(
+                    //"Setting filter columns should be done before querying for ringtones.");
+        //}
+        //mType = type;
+        //setFilterColumnsList(type);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.630 -0400", hash_original_method = "26C25231B8EE38423D74AE317EB8CDCC", hash_generated_method = "93DB5B3AB230B3F1CEBC5B9FF9DEC54C")
     public int inferStreamType() {
 switch(mType){
@@ -106,35 +105,33 @@ switch(mType){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570977803 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570977803;
 }
-        
-        
-            
-                
-            
-                
-            
-                
-        
+        // ---------- Original Method ----------
+        //switch (mType) {
+            //case TYPE_ALARM:
+                //return AudioManager.STREAM_ALARM;
+            //case TYPE_NOTIFICATION:
+                //return AudioManager.STREAM_NOTIFICATION;
+            //default:
+                //return AudioManager.STREAM_RING;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.631 -0400", hash_original_method = "A35CDF85342D56F6EFBA8853AE857D3A", hash_generated_method = "A319332DE37A3B6466CE25846A7922D3")
     public void setStopPreviousRingtone(boolean stopPreviousRingtone) {
         mStopPreviousRingtone = stopPreviousRingtone;
-        
-        
+        // ---------- Original Method ----------
+        //mStopPreviousRingtone = stopPreviousRingtone;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.632 -0400", hash_original_method = "0B3E7FCD199769A7D560D3943A8B1B23", hash_generated_method = "3C15DF4C4B4343FC4AF79F0D19715EF8")
     public boolean getStopPreviousRingtone() {
         boolean var6E1EF126CABB9337F9B6F4F268DFDCC7_1211545183 = (mStopPreviousRingtone);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247872874 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247872874;
-        
-        
+        // ---------- Original Method ----------
+        //return mStopPreviousRingtone;
     }
 
     
@@ -143,31 +140,29 @@ switch(mType){
     if(mPreviousRingtone != null)        
         {
             mPreviousRingtone.stop();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mPreviousRingtone != null) {
+            //mPreviousRingtone.stop();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.633 -0400", hash_original_method = "9F2D30C6202871DC182E5AD2A88B91B1", hash_generated_method = "87B7156ED3D6113781D6AE09ED643B5E")
     public boolean getIncludeDrm() {
         boolean varE2BB809370A9738D99D955B8499EB4DB_389302988 = (mIncludeDrm);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_843512806 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_843512806;
-        
-        
+        // ---------- Original Method ----------
+        //return mIncludeDrm;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.634 -0400", hash_original_method = "9AE3415FBA2FD0FC22ED2C93FA9F8016", hash_generated_method = "7524A5DEEE7B1595BB0B2B13A3C596AD")
     public void setIncludeDrm(boolean includeDrm) {
         mIncludeDrm = includeDrm;
-        
-        
+        // ---------- Original Method ----------
+        //mIncludeDrm = includeDrm;
     }
 
     
@@ -178,7 +173,7 @@ switch(mType){
 Cursor var2D697C95C6440211C70889796F0139B0_1938473609 =             mCursor;
             var2D697C95C6440211C70889796F0139B0_1938473609.addTaint(taint);
             return var2D697C95C6440211C70889796F0139B0_1938473609;
-        } 
+        } //End block
         final Cursor internalCursor = getInternalRingtones();
         final Cursor drmCursor = mIncludeDrm ? getDrmRingtones() : null;
         final Cursor mediaCursor = getMediaRingtones();
@@ -186,15 +181,15 @@ Cursor var61A6DC9612A061EF7F8E8FA220F1F6AE_1201738603 =         mCursor = new So
                 MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
         var61A6DC9612A061EF7F8E8FA220F1F6AE_1201738603.addTaint(taint);
         return var61A6DC9612A061EF7F8E8FA220F1F6AE_1201738603;
-        
-        
-            
-        
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (mCursor != null && mCursor.requery()) {
+            //return mCursor;
+        //}
+        //final Cursor internalCursor = getInternalRingtones();
+        //final Cursor drmCursor = mIncludeDrm ? getDrmRingtones() : null;
+        //final Cursor mediaCursor = getMediaRingtones();
+        //return mCursor = new SortCursor(new Cursor[] { internalCursor, drmCursor, mediaCursor },
+                //MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
     }
 
     
@@ -203,21 +198,20 @@ Cursor var61A6DC9612A061EF7F8E8FA220F1F6AE_1201738603 =         mCursor = new So
     if(mStopPreviousRingtone && mPreviousRingtone != null)        
         {
             mPreviousRingtone.stop();
-        } 
+        } //End block
         mPreviousRingtone = getRingtone(mContext, getRingtoneUri(position), inferStreamType());
 Ringtone varE3841A3D763ABF5CA41C4E2D0700A62A_759115349 =         mPreviousRingtone;
         varE3841A3D763ABF5CA41C4E2D0700A62A_759115349.addTaint(taint);
         return varE3841A3D763ABF5CA41C4E2D0700A62A_759115349;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mStopPreviousRingtone && mPreviousRingtone != null) {
+            //mPreviousRingtone.stop();
+        //}
+        //mPreviousRingtone = getRingtone(mContext, getRingtoneUri(position), inferStreamType());
+        //return mPreviousRingtone;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.636 -0400", hash_original_method = "4D2A1FDA5FCE10764EC2653DD3811CF2", hash_generated_method = "4EC9290C1929706FEEF7A7820A3FA336")
     public Uri getRingtoneUri(int position) {
         addTaint(position);
@@ -227,27 +221,25 @@ Ringtone varE3841A3D763ABF5CA41C4E2D0700A62A_759115349 =         mPreviousRingto
 Uri var540C13E9E156B687226421B24F2DF178_1125725390 =             null;
             var540C13E9E156B687226421B24F2DF178_1125725390.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1125725390;
-        } 
+        } //End block
 Uri var2A644E3E4254A7B4229AC3F3F0E82486_1107119836 =         getUriFromCursor(cursor);
         var2A644E3E4254A7B4229AC3F3F0E82486_1107119836.addTaint(taint);
         return var2A644E3E4254A7B4229AC3F3F0E82486_1107119836;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //final Cursor cursor = getCursor();
+        //if (!cursor.moveToPosition(position)) {
+            //return null;
+        //}
+        //return getUriFromCursor(cursor);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Uri getUriFromCursor(Cursor cursor) {
+        private static Uri getUriFromCursor(Cursor cursor) {
         return ContentUris.withAppendedId(Uri.parse(cursor.getString(URI_COLUMN_INDEX)), cursor
                 .getLong(ID_COLUMN_INDEX));
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.637 -0400", hash_original_method = "ED1F9D5C280AF9E93D506709043225B3", hash_generated_method = "6F32CBB11F561113CC7052DB3B70BAE8")
     public int getRingtonePosition(Uri ringtoneUri) {
         addTaint(ringtoneUri.getTaint());
@@ -264,7 +256,7 @@ Uri var2A644E3E4254A7B4229AC3F3F0E82486_1107119836 =         getUriFromCursor(cu
             int var6BB61E3B7BCE0931DA574D19D1D82C88_2055718597 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_761986156 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_761986156;
-        } 
+        } //End block
         Uri currentUri = null;
         String previousUriString = null;
 for(int i = 0;i < cursorCount;i++)
@@ -273,27 +265,26 @@ for(int i = 0;i < cursorCount;i++)
     if(currentUri == null || !uriString.equals(previousUriString))            
             {
                 currentUri = Uri.parse(uriString);
-            } 
+            } //End block
     if(ringtoneUri.equals(ContentUris.withAppendedId(currentUri, cursor
                     .getLong(ID_COLUMN_INDEX))))            
             {
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_996543431 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694948734 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694948734;
-            } 
+            } //End block
             cursor.move(1);
             previousUriString = uriString;
-        } 
+        } //End block
         int var6BB61E3B7BCE0931DA574D19D1D82C88_201547041 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164076664 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164076664;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri getValidRingtoneUri(Context context) {
+        public static Uri getValidRingtoneUri(Context context) {
         final RingtoneManager rm = new RingtoneManager(context);
         Uri uri = getValidRingtoneUriFromCursorAndClose(context, rm.getInternalRingtones());
         if (uri == null) {
@@ -306,8 +297,7 @@ for(int i = 0;i < cursorCount;i++)
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Uri getValidRingtoneUriFromCursorAndClose(Context context, Cursor cursor) {
+        private static Uri getValidRingtoneUriFromCursorAndClose(Context context, Cursor cursor) {
         if (cursor != null) {
             Uri uri = null;
             if (cursor.moveToFirst()) {
@@ -329,11 +319,11 @@ Cursor varD4117AB3E5F8CEF89663189BA800770F_1447893007 =         query(
                 null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
         varD4117AB3E5F8CEF89663189BA800770F_1447893007.addTaint(taint);
         return varD4117AB3E5F8CEF89663189BA800770F_1447893007;
-        
-        
-                
-                
-                
+        // ---------- Original Method ----------
+        //return query(
+                //MediaStore.Audio.Media.INTERNAL_CONTENT_URI, INTERNAL_COLUMNS,
+                //constructBooleanTrueWhereClause(mFilterColumns, mIncludeDrm),
+                //null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
     }
 
     
@@ -344,10 +334,10 @@ Cursor var47CD44F0D9BC63FBCFE2300FDD4C6E5D_289280062 =         query(
                 null, null, DrmStore.Audio.TITLE);
         var47CD44F0D9BC63FBCFE2300FDD4C6E5D_289280062.addTaint(taint);
         return var47CD44F0D9BC63FBCFE2300FDD4C6E5D_289280062;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return query(
+                //DrmStore.Audio.CONTENT_URI, DRM_COLUMNS,
+                //null, null, DrmStore.Audio.TITLE);
     }
 
     
@@ -363,15 +353,15 @@ Cursor var4FD924592E964437FE0D0841E451D08B_1010469940 =         (status.equals(E
                 : null;
         var4FD924592E964437FE0D0841E451D08B_1010469940.addTaint(taint);
         return var4FD924592E964437FE0D0841E451D08B_1010469940;
-        
-        
-        
-                    
-                
-                    
-                    
-                    
-                
+        // ---------- Original Method ----------
+        //final String status = Environment.getExternalStorageState();
+        //return (status.equals(Environment.MEDIA_MOUNTED) ||
+                    //status.equals(Environment.MEDIA_MOUNTED_READ_ONLY))
+                //? query(
+                    //MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, MEDIA_COLUMNS,
+                    //constructBooleanTrueWhereClause(mFilterColumns, mIncludeDrm), null,
+                    //MediaStore.Audio.Media.DEFAULT_SORT_ORDER)
+                //: null;
     }
 
     
@@ -383,27 +373,27 @@ Cursor var4FD924592E964437FE0D0841E451D08B_1010469940 =         (status.equals(E
     if((type & TYPE_RINGTONE) != 0)        
         {
             columns.add(MediaStore.Audio.AudioColumns.IS_RINGTONE);
-        } 
+        } //End block
     if((type & TYPE_NOTIFICATION) != 0)        
         {
             columns.add(MediaStore.Audio.AudioColumns.IS_NOTIFICATION);
-        } 
+        } //End block
     if((type & TYPE_ALARM) != 0)        
         {
             columns.add(MediaStore.Audio.AudioColumns.IS_ALARM);
-        } 
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //List<String> columns = mFilterColumns;
+        //columns.clear();
+        //if ((type & TYPE_RINGTONE) != 0) {
+            //columns.add(MediaStore.Audio.AudioColumns.IS_RINGTONE);
+        //}
+        //if ((type & TYPE_NOTIFICATION) != 0) {
+            //columns.add(MediaStore.Audio.AudioColumns.IS_NOTIFICATION);
+        //}
+        //if ((type & TYPE_ALARM) != 0) {
+            //columns.add(MediaStore.Audio.AudioColumns.IS_ALARM);
+        //}
     }
 
     
@@ -427,7 +417,6 @@ Cursor var4FD924592E964437FE0D0841E451D08B_1010469940 =         (status.equals(E
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.640 -0400", hash_original_method = "4C1ED3200DB68E8363398CACE6114D33", hash_generated_method = "336A8CD4640E13D7B90E6AA182E10409")
     private Cursor query(Uri uri,
             String[] projection,
@@ -444,21 +433,21 @@ Cursor var4FD924592E964437FE0D0841E451D08B_1010469940 =         (status.equals(E
 Cursor var0CB94611966AFE0FC2A81B8A6B87045B_1589003269 =             mActivity.managedQuery(uri, projection, selection, selectionArgs, sortOrder);
             var0CB94611966AFE0FC2A81B8A6B87045B_1589003269.addTaint(taint);
             return var0CB94611966AFE0FC2A81B8A6B87045B_1589003269;
-        } 
+        } //End block
         else
         {
 Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.getContentResolver().query(uri, projection, selection, selectionArgs,
                     sortOrder);
             varF51A46FC56B71DD50496E6BDEB727135_1478170541.addTaint(taint);
             return varF51A46FC56B71DD50496E6BDEB727135_1478170541;
-        } 
-        
-        
-            
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mActivity != null) {
+            //return mActivity.managedQuery(uri, projection, selection, selectionArgs, sortOrder);
+        //} else {
+            //return mContext.getContentResolver().query(uri, projection, selection, selectionArgs,
+                    //sortOrder);
+        //}
     }
 
     
@@ -482,8 +471,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri getActualDefaultRingtoneUri(Context context, int type) {
+        public static Uri getActualDefaultRingtoneUri(Context context, int type) {
         String setting = getSettingForType(type);
         if (setting == null) return null;
         final String uriString = Settings.System.getString(context.getContentResolver(), setting);
@@ -491,8 +479,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void setActualDefaultRingtoneUri(Context context, int type, Uri ringtoneUri) {
+        public static void setActualDefaultRingtoneUri(Context context, int type, Uri ringtoneUri) {
         String setting = getSettingForType(type);
         if (setting == null) return;
         Settings.System.putString(context.getContentResolver(), setting,
@@ -500,8 +487,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static String getSettingForType(int type) {
+        private static String getSettingForType(int type) {
         if ((type & TYPE_RINGTONE) != 0) {
             return Settings.System.RINGTONE;
         } else if ((type & TYPE_NOTIFICATION) != 0) {
@@ -514,14 +500,12 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static boolean isDefault(Uri ringtoneUri) {
+        public static boolean isDefault(Uri ringtoneUri) {
         return getDefaultType(ringtoneUri) != -1;
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static int getDefaultType(Uri defaultRingtoneUri) {
+        public static int getDefaultType(Uri defaultRingtoneUri) {
         if (defaultRingtoneUri == null) {
             return -1;
         } else if (defaultRingtoneUri.equals(Settings.System.DEFAULT_RINGTONE_URI)) {
@@ -536,8 +520,7 @@ Cursor varF51A46FC56B71DD50496E6BDEB727135_1478170541 =             mContext.get
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Uri getDefaultUri(int type) {
+        public static Uri getDefaultUri(int type) {
         if ((type & TYPE_RINGTONE) != 0) {
             return Settings.System.DEFAULT_RINGTONE_URI;
         } else if ((type & TYPE_NOTIFICATION) != 0) {

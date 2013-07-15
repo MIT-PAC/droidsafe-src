@@ -1,6 +1,6 @@
 package android.app.admin;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,10 +36,10 @@ public class DevicePolicyManager {
         mContext = context;
         mService = IDevicePolicyManager.Stub.asInterface(
                 ServiceManager.getService(Context.DEVICE_POLICY_SERVICE));
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mService = IDevicePolicyManager.Stub.asInterface(
+                //ServiceManager.getService(Context.DEVICE_POLICY_SERVICE));
     }
 
     
@@ -59,23 +59,23 @@ public class DevicePolicyManager {
                 boolean var13D2F88545DC64D095A18A27973B566E_496569726 = (mService.isAdminActive(who));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115464665 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115464665;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1950255477 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1225923958 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1225923958;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.isAdminActive(who);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return false;
     }
 
     
@@ -88,23 +88,23 @@ public class DevicePolicyManager {
 List<ComponentName> varC13AFE4588D35FE947AC5FB9446B0F65_1380098916 =                 mService.getActiveAdmins();
                 varC13AFE4588D35FE947AC5FB9446B0F65_1380098916.addTaint(taint);
                 return varC13AFE4588D35FE947AC5FB9446B0F65_1380098916;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
 List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null;
         var540C13E9E156B687226421B24F2DF178_691211426.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_691211426;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getActiveAdmins();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return null;
     }
 
     
@@ -118,23 +118,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 boolean var775926304587C8D410BEFC33EFA380BE_717100447 = (mService.packageHasActiveAdmins(packageName));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_47929973 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_47929973;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_809290207 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1910142252 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1910142252;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.packageHasActiveAdmins(packageName);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return false;
     }
 
     
@@ -146,19 +146,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.removeActiveAdmin(who);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.removeActiveAdmin(who);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -173,23 +173,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 boolean var2ECE2CA0F342382DD6C45D58F7A1C215_240559053 = (mService.hasGrantedPolicy(admin, usesPolicy));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_306495298 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_306495298;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1655175987 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1347218442 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1347218442;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.hasGrantedPolicy(admin, usesPolicy);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return false;
     }
 
     
@@ -202,19 +202,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordQuality(admin, quality);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordQuality(admin, quality);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -228,23 +228,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var2538A9CC1B611C3F8984C5EEB3E63DCD_1846408821 = (mService.getPasswordQuality(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1684905870 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1684905870;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int var796529F4FA8C24CE2930D34645BBECF6_1270643472 = (PASSWORD_QUALITY_UNSPECIFIED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844180143 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1844180143;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordQuality(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return PASSWORD_QUALITY_UNSPECIFIED;
     }
 
     
@@ -257,19 +257,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordMinimumLength(admin, length);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordMinimumLength(admin, length);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -283,23 +283,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var3A056EFEA71A118B0E7E483B980B2500_796195037 = (mService.getPasswordMinimumLength(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_949324675 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_949324675;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1109094788 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1414344658 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1414344658;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordMinimumLength(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -312,19 +312,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordMinimumUpperCase(admin, length);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordMinimumUpperCase(admin, length);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -338,23 +338,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var062555FC9D958C9BCC6472CA4D015234_1691166304 = (mService.getPasswordMinimumUpperCase(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531444558 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531444558;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1182782205 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1309923575 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1309923575;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordMinimumUpperCase(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -367,19 +367,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordMinimumLowerCase(admin, length);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordMinimumLowerCase(admin, length);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -393,23 +393,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var9434E76896781369D79856E6F615B080_296334455 = (mService.getPasswordMinimumLowerCase(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806584033 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806584033;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1999825906 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629018663 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629018663;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordMinimumLowerCase(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -422,19 +422,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordMinimumLetters(admin, length);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordMinimumLetters(admin, length);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -448,23 +448,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var6D18DDC98E75B56D338F7C4BF7236572_1994023841 = (mService.getPasswordMinimumLetters(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_760881675 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_760881675;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1585656562 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1219985 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1219985;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordMinimumLetters(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -477,19 +477,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordMinimumNumeric(admin, length);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordMinimumNumeric(admin, length);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -503,23 +503,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var55D01805A0587E114704553EA76C8ABC_27343752 = (mService.getPasswordMinimumNumeric(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_188159054 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_188159054;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1812087828 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212371038 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212371038;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordMinimumNumeric(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -532,19 +532,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordMinimumSymbols(admin, length);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordMinimumSymbols(admin, length);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -558,23 +558,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var2B879F679016A14A4EE0C872F1897E9F_1232793032 = (mService.getPasswordMinimumSymbols(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368051778 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368051778;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_2117678623 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2062395345 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2062395345;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordMinimumSymbols(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -587,19 +587,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordMinimumNonLetter(admin, length);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordMinimumNonLetter(admin, length);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -613,23 +613,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int varC8F509EBAD2A2E56255AC11752B25CCD_1813148698 = (mService.getPasswordMinimumNonLetter(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1230129531 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1230129531;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_507351697 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054015021 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054015021;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordMinimumNonLetter(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -642,19 +642,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordHistoryLength(admin, length);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordHistoryLength(admin, length);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -667,19 +667,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setPasswordExpirationTimeout(admin, timeout);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setPasswordExpirationTimeout(admin, timeout);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -693,23 +693,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 long varEE0C5E40159421A12A790C8A84B060F0_813463301 = (mService.getPasswordExpirationTimeout(admin));
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_164396539 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_164396539;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         long varCFCD208495D565EF66E7DFF9F98764DA_935396898 = (0);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_457803949 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_457803949;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordExpirationTimeout(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -723,23 +723,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 long var9B85005219D405FC2A274E5B92078F81_839009916 = (mService.getPasswordExpiration(admin));
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_743224160 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_743224160;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         long varCFCD208495D565EF66E7DFF9F98764DA_8450944 = (0);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1138304462 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1138304462;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordExpiration(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -753,35 +753,34 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var636026391D9C21F4DBB8C09F8A80CB39_872742005 = (mService.getPasswordHistoryLength(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_650289559 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_650289559;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_190058286 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1113654761 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1113654761;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getPasswordHistoryLength(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.583 -0400", hash_original_method = "B720364465717C512AF715245037D814", hash_generated_method = "3E44B81121CEA2E54D5289CBA0A47D7C")
     public int getPasswordMaximumLength(int quality) {
         addTaint(quality);
         int varC74D97B01EAE257E44AA9D5BADE97BAF_1390091885 = (16);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220046008 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220046008;
-        
-        
+        // ---------- Original Method ----------
+        //return 16;
     }
 
     
@@ -794,23 +793,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 boolean var880A109A10260DD9B2A9063FAED29085_2028168524 = (mService.isActivePasswordSufficient());
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1081978772 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1081978772;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_93970691 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1873671385 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1873671385;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.isActivePasswordSufficient();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return false;
     }
 
     
@@ -823,23 +822,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int varFC26D26A89900E9D0321371B20C72DA6_1334498652 = (mService.getCurrentFailedPasswordAttempts());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_121608286 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_121608286;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1055721443 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491366270 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491366270;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getCurrentFailedPasswordAttempts();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return -1;
     }
 
     
@@ -852,19 +851,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setMaximumFailedPasswordsForWipe(admin, num);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setMaximumFailedPasswordsForWipe(admin, num);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -878,23 +877,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 int var68BEAD26D832B852098C81D706A8A37E_896813910 = (mService.getMaximumFailedPasswordsForWipe(admin));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1064369984 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1064369984;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1999617925 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570704100 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570704100;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getMaximumFailedPasswordsForWipe(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -909,23 +908,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 boolean var9FA47EF6FA0319A2C7C0CE9F05E9CE92_612089587 = (mService.resetPassword(password, flags));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1941497810 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1941497810;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_645837188 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_860768897 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_860768897;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.resetPassword(password, flags);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return false;
     }
 
     
@@ -938,19 +937,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.setMaximumTimeToLock(admin, timeMs);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setMaximumTimeToLock(admin, timeMs);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -964,23 +963,23 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 long var372088348A58CBCA92034A274668955F_1790994317 = (mService.getMaximumTimeToLock(admin));
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1381095285 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1381095285;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         long varCFCD208495D565EF66E7DFF9F98764DA_1939505293 = (0);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_202213369 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_202213369;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getMaximumTimeToLock(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return 0;
     }
 
     
@@ -991,19 +990,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.lockNow();
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.lockNow();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -1015,19 +1014,19 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             try 
             {
                 mService.wipeData(flags);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.wipeData(flags);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -1042,7 +1041,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1101735450 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1101735450.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1101735450;
-        } 
+        } //End block
     if(mService != null)        
         {
             try 
@@ -1053,7 +1052,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                 {
                     hostSpec = null;
                     exclSpec = null;
-                } 
+                } //End block
                 else
                 {
     if(!proxySpec.type().equals(Proxy.Type.HTTP))                    
@@ -1061,7 +1060,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
                         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1727884850 = new IllegalArgumentException();
                         var5783EF97022AA508B74A1E3EA38534AF_1727884850.addTaint(taint);
                         throw var5783EF97022AA508B74A1E3EA38534AF_1727884850;
-                    } 
+                    } //End block
                     InetSocketAddress sa = (InetSocketAddress)proxySpec.address();
                     String hostName = sa.getHostName();
                     int port = sa.getPort();
@@ -1071,7 +1070,7 @@ List<ComponentName> var540C13E9E156B687226421B24F2DF178_691211426 =         null
     if(exclusionList == null)                    
                     {
                         exclSpec = "";
-                    } 
+                    } //End block
                     else
                     {
                         StringBuilder listBuilder = new StringBuilder();
@@ -1081,30 +1080,30 @@ for(String exclDomain : exclusionList)
     if(!firstDomain)                            
                             {
                                 listBuilder = listBuilder.append(",");
-                            } 
+                            } //End block
                             else
                             {
                                 firstDomain = false;
-                            } 
+                            } //End block
                             listBuilder = listBuilder.append(exclDomain.trim());
-                        } 
+                        } //End block
                         exclSpec = listBuilder.toString();
-                    } 
+                    } //End block
                     android.net.Proxy.validate(hostName, Integer.toString(port), exclSpec);
-                } 
+                } //End block
 ComponentName varB35344B1C50CD546B6E24DF639855582_2122749471 =                 mService.setGlobalProxy(admin, hostSpec, exclSpec);
                 varB35344B1C50CD546B6E24DF639855582_2122749471.addTaint(taint);
                 return varB35344B1C50CD546B6E24DF639855582_2122749471;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
 ComponentName var540C13E9E156B687226421B24F2DF178_196905027 =         null;
         var540C13E9E156B687226421B24F2DF178_196905027.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_196905027;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1117,23 +1116,23 @@ ComponentName var540C13E9E156B687226421B24F2DF178_196905027 =         null;
 ComponentName varC3C4898010A44A3696DD18AC06A725C5_1824311659 =                 mService.getGlobalProxyAdmin();
                 varC3C4898010A44A3696DD18AC06A725C5_1824311659.addTaint(taint);
                 return varC3C4898010A44A3696DD18AC06A725C5_1824311659;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
 ComponentName var540C13E9E156B687226421B24F2DF178_1769649592 =         null;
         var540C13E9E156B687226421B24F2DF178_1769649592.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1769649592;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getGlobalProxyAdmin();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return null;
     }
 
     
@@ -1148,23 +1147,23 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1769649592 =         null;
                 int varD043DC5E40724FF443922CDA04432823_254204587 = (mService.setStorageEncryption(admin, encrypt));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1670198260 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1670198260;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varD36B3042B1FDF372CA00B243643CA766_1627402722 = (ENCRYPTION_STATUS_UNSUPPORTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1307218377 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1307218377;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.setStorageEncryption(admin, encrypt);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return ENCRYPTION_STATUS_UNSUPPORTED;
     }
 
     
@@ -1178,23 +1177,23 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1769649592 =         null;
                 boolean var9462F8ACF2B335669D31123B4636C546_1664100814 = (mService.getStorageEncryption(admin));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1895877889 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1895877889;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_97341573 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1060066791 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1060066791;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getStorageEncryption(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return false;
     }
 
     
@@ -1207,23 +1206,23 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1769649592 =         null;
                 int varFAC54F1D468EF70CD05178AD0D044CFA_184475978 = (mService.getStorageEncryptionStatus());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1536068928 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1536068928;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         int varD36B3042B1FDF372CA00B243643CA766_850079080 = (ENCRYPTION_STATUS_UNSUPPORTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831597137 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831597137;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getStorageEncryptionStatus();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return ENCRYPTION_STATUS_UNSUPPORTED;
     }
 
     
@@ -1236,19 +1235,19 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1769649592 =         null;
             try 
             {
                 mService.setCameraDisabled(admin, disabled);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setCameraDisabled(admin, disabled);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -1262,23 +1261,23 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1769649592 =         null;
                 boolean var29D72B98EB670E7158E114256E05744A_1420770972 = (mService.getCameraDisabled(admin));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_765237594 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_765237594;
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_635046612 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1396918004 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1396918004;
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //return mService.getCameraDisabled(admin);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
+        //return false;
     }
 
     
@@ -1291,19 +1290,19 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1769649592 =         null;
             try 
             {
                 mService.setActiveAdmin(policyReceiver, refreshing);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setActiveAdmin(policyReceiver, refreshing);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -1315,13 +1314,13 @@ ComponentName var540C13E9E156B687226421B24F2DF178_1769649592 =         null;
         {
             ai = mContext.getPackageManager().getReceiverInfo(cn,
                     PackageManager.GET_META_DATA);
-        } 
+        } //End block
         catch (PackageManager.NameNotFoundException e)
         {
 DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_1805947518 =             null;
             var540C13E9E156B687226421B24F2DF178_1805947518.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1805947518;
-        } 
+        } //End block
         ResolveInfo ri = new ResolveInfo();
         ri.activityInfo = ai;
         try 
@@ -1329,39 +1328,39 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_1805947518 =             nul
 DeviceAdminInfo varAADB1F77EDF8CDC4A4744B325052C979_415113013 =             new DeviceAdminInfo(mContext, ri);
             varAADB1F77EDF8CDC4A4744B325052C979_415113013.addTaint(taint);
             return varAADB1F77EDF8CDC4A4744B325052C979_415113013;
-        } 
+        } //End block
         catch (XmlPullParserException e)
         {
 DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_824711955 =             null;
             var540C13E9E156B687226421B24F2DF178_824711955.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_824711955;
-        } 
+        } //End block
         catch (IOException e)
         {
 DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_1146148303 =             null;
             var540C13E9E156B687226421B24F2DF178_1146148303.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1146148303;
-        } 
-        
-        
-        
-            
-                    
-        
-            
-            
-        
-        
-        
-        
-            
-        
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //ActivityInfo ai;
+        //try {
+            //ai = mContext.getPackageManager().getReceiverInfo(cn,
+                    //PackageManager.GET_META_DATA);
+        //} catch (PackageManager.NameNotFoundException e) {
+            //Log.w(TAG, "Unable to retrieve device policy " + cn, e);
+            //return null;
+        //}
+        //ResolveInfo ri = new ResolveInfo();
+        //ri.activityInfo = ai;
+        //try {
+            //return new DeviceAdminInfo(mContext, ri);
+        //} catch (XmlPullParserException e) {
+            //Log.w(TAG, "Unable to parse device policy " + cn, e);
+            //return null;
+        //} catch (IOException e) {
+            //Log.w(TAG, "Unable to parse device policy " + cn, e);
+            //return null;
+        //}
     }
 
     
@@ -1374,19 +1373,19 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_1146148303 =             nul
             try 
             {
                 mService.getRemoveWarning(admin, result);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.getRemoveWarning(admin, result);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -1407,20 +1406,20 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_1146148303 =             nul
             {
                 mService.setActivePasswordState(quality, length, letters, uppercase, lowercase,
                         numbers, symbols, nonletter);
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-                        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.setActivePasswordState(quality, length, letters, uppercase, lowercase,
+                        //numbers, symbols, nonletter);
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -1431,19 +1430,19 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_1146148303 =             nul
             try 
             {
                 mService.reportFailedPasswordAttempt();
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.reportFailedPasswordAttempt();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     
@@ -1454,19 +1453,19 @@ DeviceAdminInfo var540C13E9E156B687226421B24F2DF178_1146148303 =             nul
             try 
             {
                 mService.reportSuccessfulPasswordAttempt();
-            } 
+            } //End block
             catch (RemoteException e)
             {
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mService != null) {
+            //try {
+                //mService.reportSuccessfulPasswordAttempt();
+            //} catch (RemoteException e) {
+                //Log.w(TAG, "Failed talking with device policy service", e);
+            //}
+        //}
     }
 
     

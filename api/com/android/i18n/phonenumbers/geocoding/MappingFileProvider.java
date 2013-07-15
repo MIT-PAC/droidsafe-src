@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers.geocoding;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public class MappingFileProvider implements Externalizable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.477 -0400", hash_original_method = "8FB53B01F748B2BCB846F8E0ABF1A4BF", hash_generated_method = "E1EA2CA8DCBD71E4D8727E1C0D169F8E")
     public  MappingFileProvider() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -47,16 +47,16 @@ for(int countryCallingCode : availableDataFiles.keySet())
         {
             countryCallingCodes[index++] = countryCallingCode;
             availableLanguages.add(new HashSet<String>(availableDataFiles.get(countryCallingCode)));
-        } 
-        
-        
-        
-        
-        
-        
-      
-      
-    
+        } //End block
+        // ---------- Original Method ----------
+        //numOfEntries = availableDataFiles.size();
+        //countryCallingCodes = new int[numOfEntries];
+        //availableLanguages = new ArrayList<Set<String>>(numOfEntries);
+        //int index = 0;
+        //for (int countryCallingCode : availableDataFiles.keySet()) {
+      //countryCallingCodes[index++] = countryCallingCode;
+      //availableLanguages.add(new HashSet<String>(availableDataFiles.get(countryCallingCode)));
+    //}
     }
 
     
@@ -66,11 +66,11 @@ for(int countryCallingCode : availableDataFiles.keySet())
     if(countryCallingCodes == null || countryCallingCodes.length < numOfEntries)        
         {
             countryCallingCodes = new int[numOfEntries];
-        } 
+        } //End block
     if(availableLanguages == null)        
         {
             availableLanguages = new ArrayList<Set<String>>();
-        } 
+        } //End block
 for(int i = 0;i < numOfEntries;i++)
         {
             countryCallingCodes[i] = objectInput.readInt();
@@ -79,26 +79,26 @@ for(int i = 0;i < numOfEntries;i++)
 for(int j = 0;j < numOfLangs;j++)
             {
                 setOfLangs.add(objectInput.readUTF());
-            } 
+            } //End block
             availableLanguages.add(setOfLangs);
-        } 
-        
-        
-        
-      
-    
-        
-      
-    
-        
-      
-      
-      
-      
-        
-      
-      
-    
+        } //End block
+        // ---------- Original Method ----------
+        //numOfEntries = objectInput.readInt();
+        //if (countryCallingCodes == null || countryCallingCodes.length < numOfEntries) {
+      //countryCallingCodes = new int[numOfEntries];
+    //}
+        //if (availableLanguages == null) {
+      //availableLanguages = new ArrayList<Set<String>>();
+    //}
+        //for (int i = 0; i < numOfEntries; i++) {
+      //countryCallingCodes[i] = objectInput.readInt();
+      //int numOfLangs = objectInput.readInt();
+      //Set<String> setOfLangs = new HashSet<String>();
+      //for (int j = 0; j < numOfLangs; j++) {
+        //setOfLangs.add(objectInput.readUTF());
+      //}
+      //availableLanguages.add(setOfLangs);
+    //}
     }
 
     
@@ -115,19 +115,19 @@ for(int i = 0;i < numOfEntries;i++)
 for(String lang : setOfLangs)
             {
                 objectOutput.writeUTF(lang);
-            } 
-        } 
-        
-        
-        
-      
-      
-      
-      
-      
-        
-      
-    
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //objectOutput.writeInt(numOfEntries);
+        //for (int i = 0; i < numOfEntries; i++) {
+      //objectOutput.writeInt(countryCallingCodes[i]);
+      //Set<String> setOfLangs = availableLanguages.get(i);
+      //int numOfLangs = setOfLangs.size();
+      //objectOutput.writeInt(numOfLangs);
+      //for (String lang : setOfLangs) {
+        //objectOutput.writeUTF(lang);
+      //}
+    //}
     }
 
     
@@ -144,25 +144,25 @@ for(String lang : sortedSetOfLangs)
             {
                 output.append(lang);
                 output.append(',');
-            } 
+            } //End block
             output.append('\n');
-        } 
+        } //End block
 String varEBF0387156E2D98F471F997058C674A5_53003265 =         output.toString();
         varEBF0387156E2D98F471F997058C674A5_53003265.addTaint(taint);
         return varEBF0387156E2D98F471F997058C674A5_53003265;
-        
-        
-        
-      
-      
-      
-      
-        
-        
-      
-      
-    
-        
+        // ---------- Original Method ----------
+        //StringBuilder output = new StringBuilder();
+        //for (int i = 0; i < numOfEntries; i++) {
+      //output.append(countryCallingCodes[i]);
+      //output.append('|');
+      //SortedSet<String> sortedSetOfLangs = new TreeSet<String>(availableLanguages.get(i));
+      //for (String lang : sortedSetOfLangs) {
+        //output.append(lang);
+        //output.append(',');
+      //}
+      //output.append('\n');
+    //}
+        //return output.toString();
     }
 
     
@@ -177,14 +177,14 @@ String varEBF0387156E2D98F471F997058C674A5_53003265 =         output.toString();
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_340122738 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_340122738.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_340122738;
-        } 
+        } //End block
         int index = Arrays.binarySearch(countryCallingCodes, countryCallingCode);
     if(index < 0)        
         {
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1976169662 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1976169662.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1976169662;
-        } 
+        } //End block
         Set<String> setOfLangs = availableLanguages.get(index);
     if(setOfLangs.size() > 0)        
         {
@@ -196,29 +196,29 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1976169662 =             "";
 String var43BA8F2DD2C0F2EB249ACFEE2BFD792C_1409318178 =                 fileName.toString();
                 var43BA8F2DD2C0F2EB249ACFEE2BFD792C_1409318178.addTaint(taint);
                 return var43BA8F2DD2C0F2EB249ACFEE2BFD792C_1409318178;
-            } 
-        } 
+            } //End block
+        } //End block
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_490548417 =         "";
         var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_490548417.addTaint(taint);
         return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_490548417;
-        
-        
-      
-    
-        
-        
-      
-    
-        
-        
-      
-      
-        
-        
-        
-      
-    
-        
+        // ---------- Original Method ----------
+        //if (language.length() == 0) {
+      //return "";
+    //}
+        //int index = Arrays.binarySearch(countryCallingCodes, countryCallingCode);
+        //if (index < 0) {
+      //return "";
+    //}
+        //Set<String> setOfLangs = availableLanguages.get(index);
+        //if (setOfLangs.size() > 0) {
+      //String languageCode = findBestMatchingLanguageCode(setOfLangs, language, script, region);
+      //if (languageCode.length() > 0) {
+        //StringBuilder fileName = new StringBuilder();
+        //fileName.append(countryCallingCode).append('_').append(languageCode);
+        //return fileName.toString();
+      //}
+    //}
+        //return "";
     }
 
     
@@ -239,14 +239,14 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_490548417 =         "";
 String var4F21C8D8A98FB4F4085BDD1058E274A3_1190933388 =                 normalizedLocale;
                 var4F21C8D8A98FB4F4085BDD1058E274A3_1190933388.addTaint(taint);
                 return var4F21C8D8A98FB4F4085BDD1058E274A3_1190933388;
-            } 
-        } 
+            } //End block
+        } //End block
     if(setOfLangs.contains(fullLocaleStr))        
         {
 String varABD38B61BC1463D561DF0B5C9D9373DC_1495543695 =             fullLocaleStr;
             varABD38B61BC1463D561DF0B5C9D9373DC_1495543695.addTaint(taint);
             return varABD38B61BC1463D561DF0B5C9D9373DC_1495543695;
-        } 
+        } //End block
     if(onlyOneOfScriptOrRegionIsEmpty(script, region))        
         {
     if(setOfLangs.contains(language))            
@@ -254,8 +254,8 @@ String varABD38B61BC1463D561DF0B5C9D9373DC_1495543695 =             fullLocaleSt
 String var9CB6700F2CAEB604A10339BD9223F8CA_1197940294 =                 language;
                 var9CB6700F2CAEB604A10339BD9223F8CA_1197940294.addTaint(taint);
                 return var9CB6700F2CAEB604A10339BD9223F8CA_1197940294;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(script.length() > 0 && region.length() > 0)        
         {
@@ -266,7 +266,7 @@ String var9CB6700F2CAEB604A10339BD9223F8CA_1197940294 =                 language
 String varF400C0A70FA82FC6FF75E78191F0FEE3_1713129684 =                 langWithScriptStr;
                 varF400C0A70FA82FC6FF75E78191F0FEE3_1713129684.addTaint(taint);
                 return varF400C0A70FA82FC6FF75E78191F0FEE3_1713129684;
-            } 
+            } //End block
             StringBuilder langWithRegion = new StringBuilder(language).append('_').append(region);
             String langWithRegionStr = langWithRegion.toString();
     if(setOfLangs.contains(langWithRegionStr))            
@@ -274,19 +274,19 @@ String varF400C0A70FA82FC6FF75E78191F0FEE3_1713129684 =                 langWith
 String var1EF1FABAB075CBFCECF61B0B93FECE86_141457791 =                 langWithRegionStr;
                 var1EF1FABAB075CBFCECF61B0B93FECE86_141457791.addTaint(taint);
                 return var1EF1FABAB075CBFCECF61B0B93FECE86_141457791;
-            } 
+            } //End block
     if(setOfLangs.contains(language))            
             {
 String var9CB6700F2CAEB604A10339BD9223F8CA_106847621 =                 language;
                 var9CB6700F2CAEB604A10339BD9223F8CA_106847621.addTaint(taint);
                 return var9CB6700F2CAEB604A10339BD9223F8CA_106847621;
-            } 
-        } 
+            } //End block
+        } //End block
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1742093200 =         "";
         var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1742093200.addTaint(taint);
         return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1742093200;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -298,9 +298,9 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1742093200 =         "";
             (region.length() == 0 && script.length() > 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1912366445 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1912366445;
-        
-        
-            
+        // ---------- Original Method ----------
+        //return (script.length() == 0 && region.length() > 0) ||
+            //(region.length() == 0 && script.length() > 0);
     }
 
     
@@ -315,11 +315,11 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1742093200 =         "";
 StringBuilder var690DC80614311B79D32C7436393D703D_2039121957 =         fullLocale;
         var690DC80614311B79D32C7436393D703D_2039121957.addTaint(taint);
         return var690DC80614311B79D32C7436393D703D_2039121957;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder fullLocale = new StringBuilder(language);
+        //appendSubsequentLocalePart(script, fullLocale);
+        //appendSubsequentLocalePart(region, fullLocale);
+        //return fullLocale;
     }
 
     
@@ -330,11 +330,11 @@ StringBuilder var690DC80614311B79D32C7436393D703D_2039121957 =         fullLocal
     if(subsequentLocalePart.length() > 0)        
         {
             fullLocale.append('_').append(subsequentLocalePart);
-        } 
-        
-        
-      
-    
+        } //End block
+        // ---------- Original Method ----------
+        //if (subsequentLocalePart.length() > 0) {
+      //fullLocale.append('_').append(subsequentLocalePart);
+    //}
     }
 
     

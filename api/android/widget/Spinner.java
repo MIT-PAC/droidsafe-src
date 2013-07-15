@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -42,7 +42,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     public  Spinner(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -51,7 +51,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         this(context, null, com.android.internal.R.attr.spinnerStyle, mode);
         addTaint(mode);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -60,7 +60,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         this(context, attrs, com.android.internal.R.attr.spinnerStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -70,7 +70,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -86,13 +86,13 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     if(mode == MODE_THEME)        
         {
             mode = a.getInt(com.android.internal.R.styleable.Spinner_spinnerMode, MODE_DIALOG);
-        } 
+        } //End block
 switch(mode){
         case MODE_DIALOG:
         {
             mPopup = new DialogPopup();
             break;
-        } 
+        } //End block
         case MODE_DROPDOWN:
         {
             DropdownPopup popup = new DropdownPopup(context, attrs, defStyle);
@@ -106,16 +106,16 @@ switch(mode){
     if(verticalOffset != 0)            
             {
                 popup.setVerticalOffset(verticalOffset);
-            } 
+            } //End block
             final int horizontalOffset = a.getDimensionPixelOffset(
                     com.android.internal.R.styleable.Spinner_dropDownHorizontalOffset, 0);
     if(horizontalOffset != 0)            
             {
                 popup.setHorizontalOffset(horizontalOffset);
-            } 
+            } //End block
             mPopup = popup;
             break;
-        } 
+        } //End block
 }        mGravity = a.getInt(com.android.internal.R.styleable.Spinner_gravity, Gravity.CENTER);
         mPopup.setPromptText(a.getString(com.android.internal.R.styleable.Spinner_prompt));
         mDisableChildrenWhenDisabled = a.getBoolean(
@@ -125,9 +125,9 @@ switch(mode){
         {
             mPopup.setAdapter(mTempAdapter);
             mTempAdapter = null;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -142,16 +142,16 @@ switch(mode){
 for(int i = 0;i < count;i++)
             {
                 getChildAt(i).setEnabled(enabled);
-            } 
-        } 
-        
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //super.setEnabled(enabled);
+        //if (mDisableChildrenWhenDisabled) {
+            //final int count = getChildCount();
+            //for (int i = 0; i < count; i++) {
+                //getChildAt(i).setEnabled(enabled);
+            //}
+        //}
     }
 
     
@@ -162,18 +162,18 @@ for(int i = 0;i < count;i++)
     if((gravity & Gravity.HORIZONTAL_GRAVITY_MASK) == 0)            
             {
                 gravity |= Gravity.LEFT;
-            } 
+            } //End block
             mGravity = gravity;
             requestLayout();
-        } 
-        
-        
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mGravity != gravity) {
+            //if ((gravity & Gravity.HORIZONTAL_GRAVITY_MASK) == 0) {
+                //gravity |= Gravity.LEFT;
+            //}
+            //mGravity = gravity;
+            //requestLayout();
+        //}
     }
 
     
@@ -184,18 +184,18 @@ for(int i = 0;i < count;i++)
     if(mPopup != null)        
         {
             mPopup.setAdapter(new DropDownAdapter(adapter));
-        } 
+        } //End block
         else
         {
             mTempAdapter = new DropDownAdapter(adapter);
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.setAdapter(adapter);
+        //if (mPopup != null) {
+            //mPopup.setAdapter(new DropDownAdapter(adapter));
+        //} else {
+            //mTempAdapter = new DropDownAdapter(adapter);
+        //}
     }
 
     
@@ -206,59 +206,59 @@ for(int i = 0;i < count;i++)
     if(getChildCount() > 0)        
         {
             child = getChildAt(0);
-        } 
+        } //End block
         else
     if(mAdapter != null && mAdapter.getCount() > 0)        
         {
             child = makeAndAddView(0);
             mRecycler.put(0, child);
             removeAllViewsInLayout();
-        } 
+        } //End block
     if(child != null)        
         {
             final int childBaseline = child.getBaseline();
             int var6DD57D69AEB22D4D2F933B58EF61AAC4_1362451696 = (childBaseline >= 0 ? child.getTop() + childBaseline : -1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_20355181 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_20355181;
-        } 
+        } //End block
         else
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_2092129679 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755464208 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755464208;
-        } 
-        
-        
-        
-            
-        
-            
-            
-            
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //View child = null;
+        //if (getChildCount() > 0) {
+            //child = getChildAt(0);
+        //} else if (mAdapter != null && mAdapter.getCount() > 0) {
+            //child = makeAndAddView(0);
+            //mRecycler.put(0, child);
+            //removeAllViewsInLayout();
+        //}
+        //if (child != null) {
+            //final int childBaseline = child.getBaseline();
+            //return childBaseline >= 0 ? child.getTop() + childBaseline : -1;
+        //} else {
+            //return -1;
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.910 -0400", hash_original_method = "B6F13EE08FDC85FB02DBBB6CA125C601", hash_generated_method = "7C42324E894157B295EC6714F81C0CF8")
     @Override
     protected void onDetachedFromWindow() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDetachedFromWindow();
     if(mPopup != null && mPopup.isShowing())        
         {
             mPopup.dismiss();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onDetachedFromWindow();
+        //if (mPopup != null && mPopup.isShowing()) {
+            //mPopup.dismiss();
+        //}
     }
 
     
@@ -269,15 +269,15 @@ for(int i = 0;i < count;i++)
         RuntimeException var4AA440995E8FDA88D81E06B057BF062D_2076744723 = new RuntimeException("setOnItemClickListener cannot be used with a spinner.");
         var4AA440995E8FDA88D81E06B057BF062D_2076744723.addTaint(taint);
         throw var4AA440995E8FDA88D81E06B057BF062D_2076744723;
-        
-        
+        // ---------- Original Method ----------
+        //throw new RuntimeException("setOnItemClickListener cannot be used with a spinner.");
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.911 -0400", hash_original_method = "EC8AF316641014792672178145DBD315", hash_generated_method = "71DB245565BD31984A55F06E3FE5D5B4")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -288,23 +288,23 @@ for(int i = 0;i < count;i++)
                     measureContentWidth(getAdapter(), getBackground())),
                     MeasureSpec.getSize(widthMeasureSpec)),
                     getMeasuredHeight());
-        } 
-        
-        
-        
-            
-            
-                    
-                    
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        //if (mPopup != null && MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST) {
+            //final int measuredWidth = getMeasuredWidth();
+            //setMeasuredDimension(Math.min(Math.max(measuredWidth,
+                    //measureContentWidth(getAdapter(), getBackground())),
+                    //MeasureSpec.getSize(widthMeasureSpec)),
+                    //getMeasuredHeight());
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.911 -0400", hash_original_method = "2F25E46AB3A307ED9F0C91E6C81BDCD4", hash_generated_method = "323BD35E0292D6B6549E04FE095F2399")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(b);
         addTaint(r);
         addTaint(t);
@@ -314,11 +314,11 @@ for(int i = 0;i < count;i++)
         mInLayout = true;
         layout(0, false);
         mInLayout = false;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onLayout(changed, l, t, r, b);
+        //mInLayout = true;
+        //layout(0, false);
+        //mInLayout = false;
     }
 
     
@@ -332,16 +332,16 @@ for(int i = 0;i < count;i++)
     if(mDataChanged)        
         {
             handleDataChanged();
-        } 
+        } //End block
     if(mItemCount == 0)        
         {
             resetList();
             return;
-        } 
+        } //End block
     if(mNextSelectedPosition >= 0)        
         {
             setSelectedPositionInt(mNextSelectedPosition);
-        } 
+        } //End block
         recycleAllViews();
         removeAllViewsInLayout();
         mFirstPosition = mSelectedPosition;
@@ -362,8 +362,8 @@ switch(mGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
         mDataChanged = false;
         mNeedSync = false;
         setNextSelectedPositionInt(mSelectedPosition);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -380,25 +380,25 @@ switch(mGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
 View var73902FD3E151130B4329B76EF04D2A54_724759153 =                 child;
                 var73902FD3E151130B4329B76EF04D2A54_724759153.addTaint(taint);
                 return var73902FD3E151130B4329B76EF04D2A54_724759153;
-            } 
-        } 
+            } //End block
+        } //End block
         child = mAdapter.getView(position, null, this);
         setUpChild(child);
 View var73902FD3E151130B4329B76EF04D2A54_481939772 =         child;
         var73902FD3E151130B4329B76EF04D2A54_481939772.addTaint(taint);
         return var73902FD3E151130B4329B76EF04D2A54_481939772;
-        
-        
-        
-            
-            
-                
-                
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //View child;
+        //if (!mDataChanged) {
+            //child = mRecycler.get(position);
+            //if (child != null) {
+                //setUpChild(child);
+                //return child;
+            //}
+        //}
+        //child = mAdapter.getView(position, null, this);
+        //setUpChild(child);
+        //return child;
     }
 
     
@@ -409,13 +409,13 @@ View var73902FD3E151130B4329B76EF04D2A54_481939772 =         child;
     if(lp == null)        
         {
             lp = generateDefaultLayoutParams();
-        } 
+        } //End block
         addViewInLayout(child, 0, lp);
         child.setSelected(hasFocus());
     if(mDisableChildrenWhenDisabled)        
         {
             child.setEnabled(isEnabled());
-        } 
+        } //End block
         int childHeightSpec = ViewGroup.getChildMeasureSpec(mHeightMeasureSpec,
                 mSpinnerPadding.top + mSpinnerPadding.bottom, lp.height);
         int childWidthSpec = ViewGroup.getChildMeasureSpec(mWidthMeasureSpec,
@@ -431,8 +431,8 @@ View var73902FD3E151130B4329B76EF04D2A54_481939772 =         child;
         childLeft = 0;
         childRight = childLeft + width;
         child.layout(childLeft, childTop, childRight, childBottom);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -446,33 +446,33 @@ View var73902FD3E151130B4329B76EF04D2A54_481939772 =         child;
     if(!mPopup.isShowing())            
             {
                 mPopup.show();
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_1234786522 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_227771851 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_227771851;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //boolean handled = super.performClick();
+        //if (!handled) {
+            //handled = true;
+            //if (!mPopup.isShowing()) {
+                //mPopup.show();
+            //}
+        //}
+        //return handled;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.915 -0400", hash_original_method = "21A8DBFD7E0EEAC4158875C988469F50", hash_generated_method = "45E4EE2D286C2662F060389589EBB096")
     public void onClick(DialogInterface dialog, int which) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(which);
         addTaint(dialog.getTaint());
         setSelection(which);
         dialog.dismiss();
-        
-        
-        
+        // ---------- Original Method ----------
+        //setSelection(which);
+        //dialog.dismiss();
     }
 
     
@@ -480,8 +480,8 @@ View var73902FD3E151130B4329B76EF04D2A54_481939772 =         child;
     public void setPrompt(CharSequence prompt) {
         addTaint(prompt.getTaint());
         mPopup.setPromptText(prompt);
-        
-        
+        // ---------- Original Method ----------
+        //mPopup.setPromptText(prompt);
     }
 
     
@@ -489,8 +489,8 @@ View var73902FD3E151130B4329B76EF04D2A54_481939772 =         child;
     public void setPromptId(int promptId) {
         addTaint(promptId);
         setPrompt(getContext().getText(promptId));
-        
-        
+        // ---------- Original Method ----------
+        //setPrompt(getContext().getText(promptId));
     }
 
     
@@ -499,8 +499,8 @@ View var73902FD3E151130B4329B76EF04D2A54_481939772 =         child;
 CharSequence var660C90DFF4CC5BB8EC30A018F8548473_490216393 =         mPopup.getHintText();
         var660C90DFF4CC5BB8EC30A018F8548473_490216393.addTaint(taint);
         return var660C90DFF4CC5BB8EC30A018F8548473_490216393;
-        
-        
+        // ---------- Original Method ----------
+        //return mPopup.getHintText();
     }
 
     
@@ -513,7 +513,7 @@ CharSequence var660C90DFF4CC5BB8EC30A018F8548473_490216393 =         mPopup.getH
             int varCFCD208495D565EF66E7DFF9F98764DA_1480795454 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418430961 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418430961;
-        } 
+        } //End block
         int width = 0;
         View itemView = null;
         int itemType = 0;
@@ -530,27 +530,27 @@ for(int i = start;i < end;i++)
             {
                 itemType = positionType;
                 itemView = null;
-            } 
+            } //End block
             itemView = adapter.getView(i, itemView, this);
     if(itemView.getLayoutParams() == null)            
             {
                 itemView.setLayoutParams(new ViewGroup.LayoutParams(
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT));
-            } 
+            } //End block
             itemView.measure(widthMeasureSpec, heightMeasureSpec);
             width = Math.max(width, itemView.getMeasuredWidth());
-        } 
+        } //End block
     if(background != null)        
         {
             background.getPadding(mTempRect);
             width += mTempRect.left + mTempRect.right;
-        } 
+        } //End block
         int varEAAE26A6FB20ED3EF54FB23BFA0B1FCC_1129547617 = (width);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479695958 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479695958;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -568,12 +568,12 @@ for(int i = start;i < end;i++)
     if(adapter instanceof ListAdapter)            
             {
                 this.mListAdapter = (ListAdapter) adapter;
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //this.mAdapter = adapter;
+            //if (adapter instanceof ListAdapter) {
+                //this.mListAdapter = (ListAdapter) adapter;
+            //}
         }
 
         
@@ -582,8 +582,8 @@ for(int i = start;i < end;i++)
             int varE493E749D889C1C89CA9DD5144946D16_1610507517 = (mAdapter == null ? 0 : mAdapter.getCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865580864 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865580864;
-            
-            
+            // ---------- Original Method ----------
+            //return mAdapter == null ? 0 : mAdapter.getCount();
         }
 
         
@@ -593,8 +593,8 @@ for(int i = start;i < end;i++)
 Object var96DEDFAA2FEF81546397D7B866437E91_833824773 =             mAdapter == null ? null : mAdapter.getItem(position);
             var96DEDFAA2FEF81546397D7B866437E91_833824773.addTaint(taint);
             return var96DEDFAA2FEF81546397D7B866437E91_833824773;
-            
-            
+            // ---------- Original Method ----------
+            //return mAdapter == null ? null : mAdapter.getItem(position);
         }
 
         
@@ -604,8 +604,8 @@ Object var96DEDFAA2FEF81546397D7B866437E91_833824773 =             mAdapter == n
             long var85A0C8FBD455921A3C1766783ED128AA_1467484998 = (mAdapter == null ? -1 : mAdapter.getItemId(position));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_2041607001 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2041607001;
-            
-            
+            // ---------- Original Method ----------
+            //return mAdapter == null ? -1 : mAdapter.getItemId(position);
         }
 
         
@@ -617,8 +617,8 @@ Object var96DEDFAA2FEF81546397D7B866437E91_833824773 =             mAdapter == n
 View varC9778900F845CDEBC131D3259B01E458_1355507489 =             getDropDownView(position, convertView, parent);
             varC9778900F845CDEBC131D3259B01E458_1355507489.addTaint(taint);
             return varC9778900F845CDEBC131D3259B01E458_1355507489;
-            
-            
+            // ---------- Original Method ----------
+            //return getDropDownView(position, convertView, parent);
         }
 
         
@@ -631,9 +631,9 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
                     mAdapter.getDropDownView(position, convertView, parent);
             var462E579EA172B70D86B33F9C5EB9EE26_476868543.addTaint(taint);
             return var462E579EA172B70D86B33F9C5EB9EE26_476868543;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return mAdapter == null ? null :
+                    //mAdapter.getDropDownView(position, convertView, parent);
         }
 
         
@@ -642,23 +642,23 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
             boolean varABD62A89E81A93992CB212ED6F6240A4_1322003905 = (mAdapter != null && mAdapter.hasStableIds());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1409757233 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1409757233;
-            
-            
+            // ---------- Original Method ----------
+            //return mAdapter != null && mAdapter.hasStableIds();
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.920 -0400", hash_original_method = "809D44C02719E33F590103DE7F6576A1", hash_generated_method = "32335E466B0703D3E78FB752261F1D23")
         public void registerDataSetObserver(DataSetObserver observer) {
-            
+            //DSFIXME: CODE0010: Possible callback registration function detected
             addTaint(observer.getTaint());
     if(mAdapter != null)            
             {
                 mAdapter.registerDataSetObserver(observer);
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mAdapter != null) {
+                //mAdapter.registerDataSetObserver(observer);
+            //}
         }
 
         
@@ -668,11 +668,11 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
     if(mAdapter != null)            
             {
                 mAdapter.unregisterDataSetObserver(observer);
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mAdapter != null) {
+                //mAdapter.unregisterDataSetObserver(observer);
+            //}
         }
 
         
@@ -684,20 +684,20 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
                 boolean var4147A888FBE7A708EEE41544ED66BB9B_992970113 = (adapter.areAllItemsEnabled());
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1411639229 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1411639229;
-            } 
+            } //End block
             else
             {
                 boolean varB326B5062B2F0E69046810717534CB09_2133111371 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1930497671 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1930497671;
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //final ListAdapter adapter = mListAdapter;
+            //if (adapter != null) {
+                //return adapter.areAllItemsEnabled();
+            //} else {
+                //return true;
+            //}
         }
 
         
@@ -710,43 +710,41 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
                 boolean var6FF3E7B244961D6C5FBA9E7223CBE7CC_439823760 = (adapter.isEnabled(position));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_397799526 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_397799526;
-            } 
+            } //End block
             else
             {
                 boolean varB326B5062B2F0E69046810717534CB09_931835024 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_876092707 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_876092707;
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //final ListAdapter adapter = mListAdapter;
+            //if (adapter != null) {
+                //return adapter.isEnabled(position);
+            //} else {
+                //return true;
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.921 -0400", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "74E15B6456AE67D52A1ABB86B720AA70")
         public int getItemViewType(int position) {
             addTaint(position);
             int varCFCD208495D565EF66E7DFF9F98764DA_866446795 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317213132 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317213132;
-            
-            
+            // ---------- Original Method ----------
+            //return 0;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.921 -0400", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "D499556D0CDCEF6D30221EFFFEF25622")
         public int getViewTypeCount() {
             int varC4CA4238A0B923820DCC509A6F75849B_481167442 = (1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_648940139 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_648940139;
-            
-            
+            // ---------- Original Method ----------
+            //return 1;
         }
 
         
@@ -755,8 +753,8 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
             boolean varA8BDE4853B46678F6434AC4599BE04DB_1698086362 = (getCount() == 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_851249397 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_851249397;
-            
-            
+            // ---------- Original Method ----------
+            //return getCount() == 0;
         }
 
         
@@ -778,7 +776,7 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.922 -0400", hash_original_method = "CE7B674B2EA3FB97987A0C722722E738", hash_generated_method = "CE7B674B2EA3FB97987A0C722722E738")
         public DialogPopup ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -786,9 +784,9 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
         public void dismiss() {
             mPopup.dismiss();
             mPopup = null;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mPopup.dismiss();
+            //mPopup = null;
         }
 
         
@@ -797,37 +795,34 @@ View var462E579EA172B70D86B33F9C5EB9EE26_476868543 =             mAdapter == nul
             boolean var150F1752BC0DC283F944E1FEAB4EFCA1_847841465 = (mPopup != null ? mPopup.isShowing() : false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1402107663 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1402107663;
-            
-            
+            // ---------- Original Method ----------
+            //return mPopup != null ? mPopup.isShowing() : false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.923 -0400", hash_original_method = "8403FBCA2C28723FD059691B00D88CE1", hash_generated_method = "2A0FFE64737AEA0CAA4489A819F70A16")
         public void setAdapter(ListAdapter adapter) {
             mListAdapter = adapter;
-            
-            
+            // ---------- Original Method ----------
+            //mListAdapter = adapter;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.923 -0400", hash_original_method = "9624F776B01A0F54225A1B393847DC0B", hash_generated_method = "BB0F0F2687998277E739EA69AA391DAB")
         public void setPromptText(CharSequence hintText) {
             mPrompt = hintText;
-            
-            
+            // ---------- Original Method ----------
+            //mPrompt = hintText;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.924 -0400", hash_original_method = "2D362FF1EB68D3106D16676724B21A20", hash_generated_method = "6F3EB1E8F679A3B4F2A60AD7D645C00B")
         public CharSequence getHintText() {
 CharSequence var1FB7DF1267B72EDEFBAE28E644BD2FCE_2119209550 =             mPrompt;
             var1FB7DF1267B72EDEFBAE28E644BD2FCE_2119209550.addTaint(taint);
             return var1FB7DF1267B72EDEFBAE28E644BD2FCE_2119209550;
-            
-            
+            // ---------- Original Method ----------
+            //return mPrompt;
         }
 
         
@@ -837,29 +832,29 @@ CharSequence var1FB7DF1267B72EDEFBAE28E644BD2FCE_2119209550 =             mPromp
     if(mPrompt != null)            
             {
                 builder.setTitle(mPrompt);
-            } 
+            } //End block
             mPopup = builder.setSingleChoiceItems(mListAdapter,
                     getSelectedItemPosition(), this).show();
-            
-            
-            
-                
-            
-            
-                    
+            // ---------- Original Method ----------
+            //AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            //if (mPrompt != null) {
+                //builder.setTitle(mPrompt);
+            //}
+            //mPopup = builder.setSingleChoiceItems(mListAdapter,
+                    //getSelectedItemPosition(), this).show();
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.924 -0400", hash_original_method = "611F98047F020130E79D369CDAEB53F1", hash_generated_method = "862EC6E1CC66DC47DFB51FC5C71069BB")
         public void onClick(DialogInterface dialog, int which) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(which);
             addTaint(dialog.getTaint());
             setSelection(which);
             dismiss();
-            
-            
-            
+            // ---------- Original Method ----------
+            //setSelection(which);
+            //dismiss();
         }
 
         
@@ -887,28 +882,28 @@ CharSequence var1FB7DF1267B72EDEFBAE28E644BD2FCE_2119209550 =             mPromp
             setOnItemClickListener(new OnItemClickListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.925 -0400", hash_original_method = "BF22134BB65D55D48C7DDDF1370D6ED2", hash_generated_method = "872A7E0392CDFBAEDAC72AD29E3F80FA")
             public void onItemClick(AdapterView parent, View v, int position, long id) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(id);
                 addTaint(position);
                 addTaint(v.getTaint());
                 addTaint(parent.getTaint());
                 Spinner.this.setSelection(position);
                 dismiss();
-                
-                
-                
+                // ---------- Original Method ----------
+                //Spinner.this.setSelection(position);
+                //dismiss();
             }
 });
-            
-            
-            
-            
-            
-                
-                    
-                    
-                
-            
+            // ---------- Original Method ----------
+            //setAnchorView(Spinner.this);
+            //setModal(true);
+            //setPromptPosition(POSITION_PROMPT_ABOVE);
+            //setOnItemClickListener(new OnItemClickListener() {
+                //public void onItemClick(AdapterView parent, View v, int position, long id) {
+                    //Spinner.this.setSelection(position);
+                    //dismiss();
+                //}
+            //});
         }
 
         
@@ -917,29 +912,27 @@ CharSequence var1FB7DF1267B72EDEFBAE28E644BD2FCE_2119209550 =             mPromp
         public void setAdapter(ListAdapter adapter) {
             super.setAdapter(adapter);
             mAdapter = adapter;
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.setAdapter(adapter);
+            //mAdapter = adapter;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.926 -0400", hash_original_method = "708F2EB27A8EC2C1F7F8C9DF82B35D6E", hash_generated_method = "D9AE9778F086325506FE34809DA9E765")
         public CharSequence getHintText() {
 CharSequence var0C76325C74E482106577E009928E6B9E_673855326 =             mHintText;
             var0C76325C74E482106577E009928E6B9E_673855326.addTaint(taint);
             return var0C76325C74E482106577E009928E6B9E_673855326;
-            
-            
+            // ---------- Original Method ----------
+            //return mHintText;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.927 -0400", hash_original_method = "5C072498C5CF07F19C35B82F77A3E1EC", hash_generated_method = "16E5231AF70EBF4E19AB1B172E7CB522")
         public void setPromptText(CharSequence hintText) {
             mHintText = hintText;
-            
-            
+            // ---------- Original Method ----------
+            //mHintText = hintText;
         }
 
         
@@ -954,32 +947,32 @@ CharSequence var0C76325C74E482106577E009928E6B9E_673855326 =             mHintTe
                 setContentWidth(Math.max(
                         measureContentWidth((SpinnerAdapter) mAdapter, getBackground()),
                         spinnerWidth - spinnerPaddingLeft - spinnerPaddingRight));
-            } 
+            } //End block
             else
     if(mDropDownWidth == MATCH_PARENT)            
             {
                 final int spinnerWidth = Spinner.this.getWidth();
                 final int spinnerPaddingRight = Spinner.this.getPaddingRight();
                 setContentWidth(spinnerWidth - spinnerPaddingLeft - spinnerPaddingRight);
-            } 
+            } //End block
             else
             {
                 setContentWidth(mDropDownWidth);
-            } 
+            } //End block
             final Drawable background = getBackground();
             int bgOffset = 0;
     if(background != null)            
             {
                 background.getPadding(mTempRect);
                 bgOffset = -mTempRect.left;
-            } 
+            } //End block
             setHorizontalOffset(bgOffset + spinnerPaddingLeft);
             setInputMethodMode(ListPopupWindow.INPUT_METHOD_NOT_NEEDED);
             super.show();
             getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             setSelection(Spinner.this.getSelectedItemPosition());
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

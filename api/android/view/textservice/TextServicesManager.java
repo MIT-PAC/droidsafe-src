@@ -1,6 +1,6 @@
 package android.view.textservice;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,12 +22,12 @@ public final class TextServicesManager {
         {
             IBinder b = ServiceManager.getService(Context.TEXT_SERVICES_MANAGER_SERVICE);
             sService = ITextServicesManager.Stub.asInterface(b);
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (sService == null) {
+            //IBinder b = ServiceManager.getService(Context.TEXT_SERVICES_MANAGER_SERVICE);
+            //sService = ITextServicesManager.Stub.asInterface(b);
+        //}
     }
 
     
@@ -54,37 +54,37 @@ public final class TextServicesManager {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1746712030 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1746712030.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1746712030;
-        } 
+        } //End block
     if(!referToSpellCheckerLanguageSettings && locale == null)        
         {
             IllegalArgumentException var049408D924C2121FDC2D270D0D8FC1DD_382479747 = new IllegalArgumentException("Locale should not be null if you don't refer"
                     + " settings.");
             var049408D924C2121FDC2D270D0D8FC1DD_382479747.addTaint(taint);
             throw var049408D924C2121FDC2D270D0D8FC1DD_382479747;
-        } 
+        } //End block
     if(referToSpellCheckerLanguageSettings && !isSpellCheckerEnabled())        
         {
 SpellCheckerSession var540C13E9E156B687226421B24F2DF178_2146800898 =             null;
             var540C13E9E156B687226421B24F2DF178_2146800898.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2146800898;
-        } 
+        } //End block
         SpellCheckerInfo sci;
         try 
         {
             sci = sService.getCurrentSpellChecker(null);
-        } 
+        } //End block
         catch (RemoteException e)
         {
 SpellCheckerSession var540C13E9E156B687226421B24F2DF178_298570864 =             null;
             var540C13E9E156B687226421B24F2DF178_298570864.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_298570864;
-        } 
+        } //End block
     if(sci == null)        
         {
 SpellCheckerSession var540C13E9E156B687226421B24F2DF178_10262072 =             null;
             var540C13E9E156B687226421B24F2DF178_10262072.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_10262072;
-        } 
+        } //End block
         SpellCheckerSubtype subtypeInUse = null;
     if(referToSpellCheckerLanguageSettings)        
         {
@@ -94,7 +94,7 @@ SpellCheckerSession var540C13E9E156B687226421B24F2DF178_10262072 =             n
 SpellCheckerSession var540C13E9E156B687226421B24F2DF178_1440010278 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1440010278.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1440010278;
-            } 
+            } //End block
     if(locale != null)            
             {
                 final String subtypeLocale = subtypeInUse.getLocale();
@@ -105,9 +105,9 @@ SpellCheckerSession var540C13E9E156B687226421B24F2DF178_1440010278 =            
 SpellCheckerSession var540C13E9E156B687226421B24F2DF178_1090626192 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1090626192.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1090626192;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
             final String localeStr = locale.toString();
@@ -119,39 +119,39 @@ for(int i = 0;i < sci.getSubtypeCount();++i)
                 {
                     subtypeInUse = subtype;
                     break;
-                } 
+                } //End block
                 else
     if(localeStr.length() >= 2 && tempSubtypeLocale.length() >= 2
                         && localeStr.startsWith(tempSubtypeLocale))                
                 {
                     subtypeInUse = subtype;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(subtypeInUse == null)        
         {
 SpellCheckerSession var540C13E9E156B687226421B24F2DF178_1239524019 =             null;
             var540C13E9E156B687226421B24F2DF178_1239524019.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1239524019;
-        } 
+        } //End block
         final SpellCheckerSession session = new SpellCheckerSession(sci, sService, listener);
         try 
         {
             sService.getSpellCheckerService(sci.getId(), subtypeInUse.getLocale(),
                     session.getTextServicesSessionListener(),
                     session.getSpellCheckerSessionListener(), bundle);
-        } 
+        } //End block
         catch (RemoteException e)
         {
 SpellCheckerSession var540C13E9E156B687226421B24F2DF178_1921362866 =             null;
             var540C13E9E156B687226421B24F2DF178_1921362866.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1921362866;
-        } 
+        } //End block
 SpellCheckerSession varD555E544A66E0F97DA6BCDE940E3E79C_960480253 =         session;
         varD555E544A66E0F97DA6BCDE940E3E79C_960480253.addTaint(taint);
         return varD555E544A66E0F97DA6BCDE940E3E79C_960480253;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -163,28 +163,28 @@ SpellCheckerSession varD555E544A66E0F97DA6BCDE940E3E79C_960480253 =         sess
     if(DBG)            
             {
                 Log.d(TAG, "getEnabledSpellCheckers: " + (retval != null ? retval.length : "null"));
-            } 
+            } //End block
 SpellCheckerInfo[] varF9E19AD6135C970F387F77C6F3DE4477_2026757765 =             retval;
             varF9E19AD6135C970F387F77C6F3DE4477_2026757765.addTaint(taint);
             return varF9E19AD6135C970F387F77C6F3DE4477_2026757765;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 SpellCheckerInfo[] var540C13E9E156B687226421B24F2DF178_951997802 =             null;
             var540C13E9E156B687226421B24F2DF178_951997802.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_951997802;
-        } 
-        
-        
-            
-            
-                
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //final SpellCheckerInfo[] retval = sService.getEnabledSpellCheckers();
+            //if (DBG) {
+                //Log.d(TAG, "getEnabledSpellCheckers: " + (retval != null ? retval.length : "null"));
+            //}
+            //return retval;
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "Error in getEnabledSpellCheckers: " + e);
+            //return null;
+        //}
     }
 
     
@@ -195,19 +195,19 @@ SpellCheckerInfo[] var540C13E9E156B687226421B24F2DF178_951997802 =             n
 SpellCheckerInfo var93B4D1EE37EE09C8F6DDDDA2EED201C7_2046001171 =             sService.getCurrentSpellChecker(null);
             var93B4D1EE37EE09C8F6DDDDA2EED201C7_2046001171.addTaint(taint);
             return var93B4D1EE37EE09C8F6DDDDA2EED201C7_2046001171;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 SpellCheckerInfo var540C13E9E156B687226421B24F2DF178_1919653598 =             null;
             var540C13E9E156B687226421B24F2DF178_1919653598.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1919653598;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.getCurrentSpellChecker(null);
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -221,21 +221,21 @@ SpellCheckerInfo var540C13E9E156B687226421B24F2DF178_1919653598 =             nu
                 NullPointerException varB03A091E07FFD936EAF226651CA4A244_1230094480 = new NullPointerException("SpellCheckerInfo is null.");
                 varB03A091E07FFD936EAF226651CA4A244_1230094480.addTaint(taint);
                 throw varB03A091E07FFD936EAF226651CA4A244_1230094480;
-            } 
+            } //End block
             sService.setCurrentSpellChecker(null, sci.getId());
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (sci == null) {
+                //throw new NullPointerException("SpellCheckerInfo is null.");
+            //}
+            //sService.setCurrentSpellChecker(null, sci.getId());
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "Error in setCurrentSpellChecker: " + e);
+        //}
     }
 
     
@@ -248,20 +248,20 @@ SpellCheckerInfo var540C13E9E156B687226421B24F2DF178_1919653598 =             nu
 SpellCheckerSubtype var7A3F944B0E30A3F8F4F1D67EE1CD7074_489229437 =             sService.getCurrentSpellCheckerSubtype(null, allowImplicitlySelectedSubtype);
             var7A3F944B0E30A3F8F4F1D67EE1CD7074_489229437.addTaint(taint);
             return var7A3F944B0E30A3F8F4F1D67EE1CD7074_489229437;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 SpellCheckerSubtype var540C13E9E156B687226421B24F2DF178_1839462041 =             null;
             var540C13E9E156B687226421B24F2DF178_1839462041.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1839462041;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.getCurrentSpellCheckerSubtype(null, allowImplicitlySelectedSubtype);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "Error in getCurrentSpellCheckerSubtype: " + e);
+            //return null;
+        //}
     }
 
     
@@ -274,28 +274,28 @@ SpellCheckerSubtype var540C13E9E156B687226421B24F2DF178_1839462041 =            
     if(subtype == null)            
             {
                 hashCode = 0;
-            } 
+            } //End block
             else
             {
                 hashCode = subtype.hashCode();
-            } 
+            } //End block
             sService.setCurrentSpellCheckerSubtype(null, hashCode);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-            
-                
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //final int hashCode;
+            //if (subtype == null) {
+                //hashCode = 0;
+            //} else {
+                //hashCode = subtype.hashCode();
+            //}
+            //sService.setCurrentSpellCheckerSubtype(null, hashCode);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "Error in setSpellCheckerSubtype:" + e);
+        //}
     }
 
     
@@ -305,16 +305,16 @@ SpellCheckerSubtype var540C13E9E156B687226421B24F2DF178_1839462041 =            
         try 
         {
             sService.setSpellCheckerEnabled(enabled);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //sService.setSpellCheckerEnabled(enabled);
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "Error in setSpellCheckerEnabled:" + e);
+        //}
     }
 
     
@@ -325,20 +325,20 @@ SpellCheckerSubtype var540C13E9E156B687226421B24F2DF178_1839462041 =            
             boolean var7E195E4F1E9C259AB047738E613FAF8E_452760130 = (sService.isSpellCheckerEnabled());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2096394595 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2096394595;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1373425416 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1411233404 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1411233404;
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return sService.isSpellCheckerEnabled();
+        //} catch (RemoteException e) {
+            //Log.e(TAG, "Error in isSpellCheckerEnabled:" + e);
+            //return false;
+        //}
     }
 
     

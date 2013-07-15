@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,11 +31,11 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_2113222431 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_2113222431.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_2113222431;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (out == null) {
+            //throw new NullPointerException();
+        //}
     }
 
     
@@ -48,13 +48,13 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_268618108 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_268618108.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_268618108;
-        } 
+        } //End block
         this.autoFlush = autoFlush;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (out == null) {
+            //throw new NullPointerException();
+        //}
+        //this.autoFlush = autoFlush;
     }
 
     
@@ -67,7 +67,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1203932402 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1203932402.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1203932402;
-        } 
+        } //End block
         this.autoFlush = autoFlush;
         try 
         {
@@ -76,28 +76,28 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
                 UnsupportedEncodingException var397991C29CD3376A5C5B3BD1C2DA8637_747371247 = new UnsupportedEncodingException(enc);
                 var397991C29CD3376A5C5B3BD1C2DA8637_747371247.addTaint(taint);
                 throw var397991C29CD3376A5C5B3BD1C2DA8637_747371247;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IllegalCharsetNameException e)
         {
             UnsupportedEncodingException var397991C29CD3376A5C5B3BD1C2DA8637_660389043 = new UnsupportedEncodingException(enc);
             var397991C29CD3376A5C5B3BD1C2DA8637_660389043.addTaint(taint);
             throw var397991C29CD3376A5C5B3BD1C2DA8637_660389043;
-        } 
+        } //End block
         encoding = enc;
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (out == null || enc == null) {
+            //throw new NullPointerException();
+        //}
+        //this.autoFlush = autoFlush;
+        //try {
+            //if (!Charset.isSupported(enc)) {
+                //throw new UnsupportedEncodingException(enc);
+            //}
+        //} catch (IllegalCharsetNameException e) {
+            //throw new UnsupportedEncodingException(enc);
+        //}
+        //encoding = enc;
     }
 
     
@@ -105,7 +105,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     public  PrintStream(File file) throws FileNotFoundException {
         super(new FileOutputStream(file));
         addTaint(file.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -119,22 +119,22 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1060744488 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1060744488.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1060744488;
-        } 
+        } //End block
     if(!Charset.isSupported(csn))        
         {
             UnsupportedEncodingException var7859B5BCA746BF527B2AFF3653AB541B_955867369 = new UnsupportedEncodingException(csn);
             var7859B5BCA746BF527B2AFF3653AB541B_955867369.addTaint(taint);
             throw var7859B5BCA746BF527B2AFF3653AB541B_955867369;
-        } 
+        } //End block
         encoding = csn;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (csn == null) {
+            //throw new NullPointerException();
+        //}
+        //if (!Charset.isSupported(csn)) {
+            //throw new UnsupportedEncodingException(csn);
+        //}
+        //encoding = csn;
     }
 
     
@@ -142,7 +142,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     public  PrintStream(String fileName) throws FileNotFoundException {
         this(new File(fileName));
         addTaint(fileName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -151,7 +151,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
         this(new File(fileName), csn);
         addTaint(csn.getTaint());
         addTaint(fileName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -163,27 +163,26 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
             boolean var4B4C3D08948825F5FE6B51A1087D503E_194201631 = (ioError);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1506971959 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1506971959;
-        } 
+        } //End block
         flush();
         boolean var1AB2E4CBCC9F33350E940BF281B2CFD6_909559449 = (ioError || delegate.checkError());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1735767554 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1735767554;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //OutputStream delegate = out;
+        //if (delegate == null) {
+            //return ioError;
+        //}
+        //flush();
+        //return ioError || delegate.checkError();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.582 -0400", hash_original_method = "785F4CCF429F72C42E20A1AABCB6C5CE", hash_generated_method = "CC852D7FE95E7B5290039A783A243D73")
     protected void clearError() {
         ioError = false;
-        
-        
+        // ---------- Original Method ----------
+        //ioError = false;
     }
 
     
@@ -197,22 +196,22 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
             {
                 out.close();
                 out = null;
-            } 
+            } //End block
             catch (IOException e)
             {
                 setError();
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //flush();
+        //if (out != null) {
+            //try {
+                //out.close();
+                //out = null;
+            //} catch (IOException e) {
+                //setError();
+            //}
+        //}
     }
 
     
@@ -225,21 +224,21 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
             {
                 out.flush();
                 return;
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         setError();
-        
-        
-            
-                
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (out != null) {
+            //try {
+                //out.flush();
+                //return;
+            //} catch (IOException e) {
+            //}
+        //}
+        //setError();
     }
 
     
@@ -250,8 +249,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
 PrintStream varAC550D889141827F9746A4BB1DA8EE48_1639847283 =         format(Locale.getDefault(), format, args);
         varAC550D889141827F9746A4BB1DA8EE48_1639847283.addTaint(taint);
         return varAC550D889141827F9746A4BB1DA8EE48_1639847283;
-        
-        
+        // ---------- Original Method ----------
+        //return format(Locale.getDefault(), format, args);
     }
 
     
@@ -265,17 +264,17 @@ PrintStream varAC550D889141827F9746A4BB1DA8EE48_1639847283 =         format(Loca
             NullPointerException var3D4C345142DA17934F9E5E26254068BE_1702381648 = new NullPointerException("format == null");
             var3D4C345142DA17934F9E5E26254068BE_1702381648.addTaint(taint);
             throw var3D4C345142DA17934F9E5E26254068BE_1702381648;
-        } 
+        } //End block
         new Formatter(this, l).format(format, args);
 PrintStream var72A74007B2BE62B849F475C7BDA4658B_291712077 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_291712077.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_291712077;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (format == null) {
+            //throw new NullPointerException("format == null");
+        //}
+        //new Formatter(this, l).format(format, args);
+        //return this;
     }
 
     
@@ -286,8 +285,8 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_291712077 =         this;
 PrintStream var1C1A7E0ECC814A41656D8DF055D1B8DD_890029342 =         format(format, args);
         var1C1A7E0ECC814A41656D8DF055D1B8DD_890029342.addTaint(taint);
         return var1C1A7E0ECC814A41656D8DF055D1B8DD_890029342;
-        
-        
+        // ---------- Original Method ----------
+        //return format(format, args);
     }
 
     
@@ -299,16 +298,16 @@ PrintStream var1C1A7E0ECC814A41656D8DF055D1B8DD_890029342 =         format(forma
 PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, format, args);
         varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998.addTaint(taint);
         return varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998;
-        
-        
+        // ---------- Original Method ----------
+        //return format(l, format, args);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.586 -0400", hash_original_method = "171496FE667133D572716C296277B927", hash_generated_method = "26FA29E3F019DA8274A7A58369323ED3")
     private void newline() {
         print(System.lineSeparator());
-        
-        
+        // ---------- Original Method ----------
+        //print(System.lineSeparator());
     }
 
     
@@ -316,8 +315,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void print(char[] chars) {
         addTaint(chars[0]);
         print(new String(chars, 0, chars.length));
-        
-        
+        // ---------- Original Method ----------
+        //print(new String(chars, 0, chars.length));
     }
 
     
@@ -325,8 +324,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void print(char c) {
         addTaint(c);
         print(String.valueOf(c));
-        
-        
+        // ---------- Original Method ----------
+        //print(String.valueOf(c));
     }
 
     
@@ -334,8 +333,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void print(double d) {
         addTaint(d);
         print(String.valueOf(d));
-        
-        
+        // ---------- Original Method ----------
+        //print(String.valueOf(d));
     }
 
     
@@ -343,8 +342,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void print(float f) {
         addTaint(f);
         print(String.valueOf(f));
-        
-        
+        // ---------- Original Method ----------
+        //print(String.valueOf(f));
     }
 
     
@@ -352,8 +351,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void print(int i) {
         addTaint(i);
         print(String.valueOf(i));
-        
-        
+        // ---------- Original Method ----------
+        //print(String.valueOf(i));
     }
 
     
@@ -361,8 +360,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void print(long l) {
         addTaint(l);
         print(String.valueOf(l));
-        
-        
+        // ---------- Original Method ----------
+        //print(String.valueOf(l));
     }
 
     
@@ -370,8 +369,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void print(Object o) {
         addTaint(o.getTaint());
         print(String.valueOf(o));
-        
-        
+        // ---------- Original Method ----------
+        //print(String.valueOf(o));
     }
 
     
@@ -382,45 +381,45 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
         {
             setError();
             return;
-        } 
+        } //End block
     if(str == null)        
         {
             print("null");
             return;
-        } 
+        } //End block
         try 
         {
     if(encoding == null)            
             {
                 write(str.getBytes());
-            } 
+            } //End block
             else
             {
                 write(str.getBytes(encoding));
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException e)
         {
             setError();
-        } 
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
-            
-                
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (out == null) {
+            //setError();
+            //return;
+        //}
+        //if (str == null) {
+            //print("null");
+            //return;
+        //}
+        //try {
+            //if (encoding == null) {
+                //write(str.getBytes());
+            //} else {
+                //write(str.getBytes(encoding));
+            //}
+        //} catch (IOException e) {
+            //setError();
+        //}
     }
 
     
@@ -428,16 +427,16 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void print(boolean b) {
         addTaint(b);
         print(String.valueOf(b));
-        
-        
+        // ---------- Original Method ----------
+        //print(String.valueOf(b));
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.592 -0400", hash_original_method = "9182DD9F41FA957369047C0FC9C79FCF", hash_generated_method = "AE04CE77FFF014604388A9A7F5E28EEF")
     public void println() {
         newline();
-        
-        
+        // ---------- Original Method ----------
+        //newline();
     }
 
     
@@ -445,8 +444,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void println(char[] chars) {
         addTaint(chars[0]);
         println(new String(chars, 0, chars.length));
-        
-        
+        // ---------- Original Method ----------
+        //println(new String(chars, 0, chars.length));
     }
 
     
@@ -454,8 +453,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void println(char c) {
         addTaint(c);
         println(String.valueOf(c));
-        
-        
+        // ---------- Original Method ----------
+        //println(String.valueOf(c));
     }
 
     
@@ -463,8 +462,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void println(double d) {
         addTaint(d);
         println(String.valueOf(d));
-        
-        
+        // ---------- Original Method ----------
+        //println(String.valueOf(d));
     }
 
     
@@ -472,8 +471,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void println(float f) {
         addTaint(f);
         println(String.valueOf(f));
-        
-        
+        // ---------- Original Method ----------
+        //println(String.valueOf(f));
     }
 
     
@@ -481,8 +480,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void println(int i) {
         addTaint(i);
         println(String.valueOf(i));
-        
-        
+        // ---------- Original Method ----------
+        //println(String.valueOf(i));
     }
 
     
@@ -490,8 +489,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void println(long l) {
         addTaint(l);
         println(String.valueOf(l));
-        
-        
+        // ---------- Original Method ----------
+        //println(String.valueOf(l));
     }
 
     
@@ -499,8 +498,8 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void println(Object o) {
         addTaint(o.getTaint());
         println(String.valueOf(o));
-        
-        
+        // ---------- Original Method ----------
+        //println(String.valueOf(o));
     }
 
     
@@ -509,9 +508,9 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
         addTaint(str.getTaint());
         print(str);
         newline();
-        
-        
-        
+        // ---------- Original Method ----------
+        //print(str);
+        //newline();
     }
 
     
@@ -519,17 +518,16 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     public void println(boolean b) {
         addTaint(b);
         println(String.valueOf(b));
-        
-        
+        // ---------- Original Method ----------
+        //println(String.valueOf(b));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.597 -0400", hash_original_method = "203605AE3CB77711209DB798B89166F2", hash_generated_method = "F8950940439079B93D22633B21205292")
     protected void setError() {
         ioError = true;
-        
-        
+        // ---------- Original Method ----------
+        //ioError = true;
     }
 
     
@@ -546,36 +544,36 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
             {
                 setError();
                 return;
-            } 
+            } //End block
             try 
             {
                 out.write(buffer, offset, length);
     if(autoFlush)                
                 {
                     flush();
-                } 
-            } 
+                } //End block
+            } //End block
             catch (IOException e)
             {
                 setError();
-            } 
-        } 
-        
-        
-        
-            
-                
-                
-            
-            
-                
-                
-                    
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(buffer.length, offset, length);
+        //synchronized (this) {
+            //if (out == null) {
+                //setError();
+                //return;
+            //}
+            //try {
+                //out.write(buffer, offset, length);
+                //if (autoFlush) {
+                    //flush();
+                //}
+            //} catch (IOException e) {
+                //setError();
+            //}
+        //}
     }
 
     
@@ -587,7 +585,7 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
         {
             setError();
             return;
-        } 
+        } //End block
         try 
         {
             out.write(oneByte);
@@ -596,27 +594,27 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
     if(autoFlush && isNewline)            
             {
                 flush();
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException e)
         {
             setError();
-        } 
-        
-        
-            
-            
-        
-        
-            
-            
-            
-            
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (out == null) {
+            //setError();
+            //return;
+        //}
+        //try {
+            //out.write(oneByte);
+            //int b = oneByte & 0xFF;
+            //boolean isNewline = b == 0x0A || b == 0x15;
+            //if (autoFlush && isNewline) {
+                //flush();
+            //}
+        //} catch (IOException e) {
+            //setError();
+        //}
     }
 
     
@@ -627,9 +625,9 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1714829998 =         format(l, f
 PrintStream var72A74007B2BE62B849F475C7BDA4658B_2032469817 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2032469817.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2032469817;
-        
-        
-        
+        // ---------- Original Method ----------
+        //print(c);
+        //return this;
     }
 
     
@@ -639,21 +637,21 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_2032469817 =         this;
     if(charSequence == null)        
         {
             print("null");
-        } 
+        } //End block
         else
         {
             print(charSequence.toString());
-        } 
+        } //End block
 PrintStream var72A74007B2BE62B849F475C7BDA4658B_1593595578 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1593595578.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1593595578;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (charSequence == null) {
+            //print("null");
+        //} else {
+            //print(charSequence.toString());
+        //}
+        //return this;
     }
 
     
@@ -665,17 +663,17 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1593595578 =         this;
     if(charSequence == null)        
         {
             charSequence = "null";
-        } 
+        } //End block
         print(charSequence.subSequence(start, end).toString());
 PrintStream var72A74007B2BE62B849F475C7BDA4658B_464033899 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_464033899.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_464033899;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (charSequence == null) {
+            //charSequence = "null";
+        //}
+        //print(charSequence.subSequence(start, end).toString());
+        //return this;
     }
 
     

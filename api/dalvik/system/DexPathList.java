@@ -1,6 +1,6 @@
 package dalvik.system;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,13 +33,13 @@ final class DexPathList {
             NullPointerException var952458ABE09734497891F39F52044D52_1717557615 = new NullPointerException("definingContext == null");
             var952458ABE09734497891F39F52044D52_1717557615.addTaint(taint);
             throw var952458ABE09734497891F39F52044D52_1717557615;
-        } 
+        } //End block
     if(dexPath == null)        
         {
             NullPointerException var37160EC520B086EBEBB9867ACDB6CFA7_1974257792 = new NullPointerException("dexPath == null");
             var37160EC520B086EBEBB9867ACDB6CFA7_1974257792.addTaint(taint);
             throw var37160EC520B086EBEBB9867ACDB6CFA7_1974257792;
-        } 
+        } //End block
     if(optimizedDirectory != null)        
         {
     if(!optimizedDirectory.exists())            
@@ -49,7 +49,7 @@ final class DexPathList {
                         + optimizedDirectory);
                 varFE9A63280676E72D3ECD1690D27420E6_1799197778.addTaint(taint);
                 throw varFE9A63280676E72D3ECD1690D27420E6_1799197778;
-            } 
+            } //End block
     if(!(optimizedDirectory.canRead()
                             && optimizedDirectory.canWrite()))            
             {
@@ -58,14 +58,14 @@ final class DexPathList {
                         + optimizedDirectory);
                 var40695EF630B8E2354F86A2FCDA4A3895_596110216.addTaint(taint);
                 throw var40695EF630B8E2354F86A2FCDA4A3895_596110216;
-            } 
-        } 
+            } //End block
+        } //End block
         this.definingContext = definingContext;
         this.dexElements =
             makeDexElements(splitDexPath(dexPath), optimizedDirectory);
         this.nativeLibraryDirectories = splitLibraryPath(libraryPath);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -74,8 +74,7 @@ final class DexPathList {
     }
 
     
-        @DSModeled(DSC.BAN)
-    private static File[] splitLibraryPath(String path) {
+        private static File[] splitLibraryPath(String path) {
         ArrayList<File> result = splitPaths(
                 path, System.getProperty("java.library.path", "."), true);
         return result.toArray(new File[result.size()]);
@@ -151,8 +150,7 @@ final class DexPathList {
     }
 
     
-        @DSModeled(DSC.BAN)
-    private static DexFile loadDexFile(File file, File optimizedDirectory) throws IOException {
+        private static DexFile loadDexFile(File file, File optimizedDirectory) throws IOException {
         if (optimizedDirectory == null) {
             return new DexFile(file);
         } else {
@@ -162,8 +160,7 @@ final class DexPathList {
     }
 
     
-        @DSModeled(DSC.BAN)
-    private static String optimizedPathFor(File path,
+        private static String optimizedPathFor(File path,
             File optimizedDirectory) {
         String fileName = path.getName();
         if (!fileName.endsWith(DEX_SUFFIX)) {
@@ -182,7 +179,6 @@ final class DexPathList {
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.793 -0400", hash_original_method = "D0077BF0C677FC7F0C28C59D93206805", hash_generated_method = "7536EF13133183E9C6FA0A986FA54355")
     public Class findClass(String name) {
         addTaint(name.getTaint());
@@ -197,27 +193,26 @@ for(Element element : dexElements)
 Class var3E303968598B6EE307EE3739CE40F332_1137728930 =                     clazz;
                     var3E303968598B6EE307EE3739CE40F332_1137728930.addTaint(taint);
                     return var3E303968598B6EE307EE3739CE40F332_1137728930;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 Class var540C13E9E156B687226421B24F2DF178_1065809304 =         null;
         var540C13E9E156B687226421B24F2DF178_1065809304.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1065809304;
-        
-        
-            
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (Element element : dexElements) {
+            //DexFile dex = element.dexFile;
+            //if (dex != null) {
+                //Class clazz = dex.loadClassBinaryName(name, definingContext);
+                //if (clazz != null) {
+                    //return clazz;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.799 -0400", hash_original_method = "5F5378C3BB7399B364C8BA4B56CD7FC5", hash_generated_method = "1335CF2635CAF888AA9C4A5035CE7523")
     public URL findResource(String name) {
         addTaint(name.getTaint());
@@ -229,19 +224,19 @@ for(Element element : dexElements)
 URL var4F9C62D322C7F68D5668056D4B193F9B_1494703774 =                 url;
                 var4F9C62D322C7F68D5668056D4B193F9B_1494703774.addTaint(taint);
                 return var4F9C62D322C7F68D5668056D4B193F9B_1494703774;
-            } 
-        } 
+            } //End block
+        } //End block
 URL var540C13E9E156B687226421B24F2DF178_965109469 =         null;
         var540C13E9E156B687226421B24F2DF178_965109469.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_965109469;
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (Element element : dexElements) {
+            //URL url = element.findResource(name);
+            //if (url != null) {
+                //return url;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -255,24 +250,23 @@ for(Element element : dexElements)
     if(url != null)            
             {
                 result.add(url);
-            } 
-        } 
+            } //End block
+        } //End block
 Enumeration<URL> var286CA219AF9141A8529875BDEFF253E1_956129260 =         Collections.enumeration(result);
         var286CA219AF9141A8529875BDEFF253E1_956129260.addTaint(taint);
         return var286CA219AF9141A8529875BDEFF253E1_956129260;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<URL> result = new ArrayList<URL>();
+        //for (Element element : dexElements) {
+            //URL url = element.findResource(name);
+            //if (url != null) {
+                //result.add(url);
+            //}
+        //}
+        //return Collections.enumeration(result);
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.811 -0400", hash_original_method = "240DC3968F2BE784AD66FA40662DC8EC", hash_generated_method = "B03C93446C87318497DC226325AA118E")
     public String findLibrary(String libraryName) {
         addTaint(libraryName.getTaint());
@@ -285,20 +279,20 @@ for(File directory : nativeLibraryDirectories)
 String varD4A0F0F7EFBD18E8DFB61C75171645BB_923156960 =                 file.getPath();
                 varD4A0F0F7EFBD18E8DFB61C75171645BB_923156960.addTaint(taint);
                 return varD4A0F0F7EFBD18E8DFB61C75171645BB_923156960;
-            } 
-        } 
+            } //End block
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_1773595931 =         null;
         var540C13E9E156B687226421B24F2DF178_1773595931.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1773595931;
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //String fileName = System.mapLibraryName(libraryName);
+        //for (File directory : nativeLibraryDirectories) {
+            //File file = new File(directory, fileName);
+            //if (file.exists() && file.isFile() && file.canRead()) {
+                //return file.getPath();
+            //}
+        //}
+        //return null;
     }
 
     
@@ -318,14 +312,13 @@ String var540C13E9E156B687226421B24F2DF178_1773595931 =         null;
             this.file = file;
             this.zipFile = zipFile;
             this.dexFile = dexFile;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.file = file;
+            //this.zipFile = zipFile;
+            //this.dexFile = dexFile;
         }
 
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.831 -0400", hash_original_method = "853A43CB46D2A1F46888921026F3A6BF", hash_generated_method = "3236B6C844ABCCF27CACBAFF677AE900")
         public URL findResource(String name) {
             addTaint(name.getTaint());
@@ -334,28 +327,28 @@ String var540C13E9E156B687226421B24F2DF178_1773595931 =         null;
 URL var540C13E9E156B687226421B24F2DF178_1343319811 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1343319811.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1343319811;
-            } 
+            } //End block
             try 
             {
 URL varDE4D4F9940645A2D29CB372F60F88A3A_1795437851 =                 new URL("jar:" + file.toURL() + "!/" + name);
                 varDE4D4F9940645A2D29CB372F60F88A3A_1795437851.addTaint(taint);
                 return varDE4D4F9940645A2D29CB372F60F88A3A_1795437851;
-            } 
+            } //End block
             catch (MalformedURLException ex)
             {
                 RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_420218287 = new RuntimeException(ex);
                 varF35D3C95F99DACEE8C542CF38D772C50_420218287.addTaint(taint);
                 throw varF35D3C95F99DACEE8C542CF38D772C50_420218287;
-            } 
-            
-            
-                
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if ((zipFile == null) || (zipFile.getEntry(name) == null)) {
+                //return null;
+            //}
+            //try {
+                //return new URL("jar:" + file.toURL() + "!/" + name);
+            //} catch (MalformedURLException ex) {
+                //throw new RuntimeException(ex);
+            //}
         }
 
         

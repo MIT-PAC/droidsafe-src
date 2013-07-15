@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,16 +29,16 @@ public class Attribute extends ASN1Encodable {
             IllegalArgumentException varA2072CF614C7B8C7696DD5A02DBCCE9C_1013233827 = new IllegalArgumentException("Bad sequence size: " + seq.size());
             varA2072CF614C7B8C7696DD5A02DBCCE9C_1013233827.addTaint(taint);
             throw varA2072CF614C7B8C7696DD5A02DBCCE9C_1013233827;
-        } 
+        } //End block
         attrType = DERObjectIdentifier.getInstance(seq.getObjectAt(0));
         attrValues = ASN1Set.getInstance(seq.getObjectAt(1));
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (seq.size() != 2)
+        //{
+            //throw new IllegalArgumentException("Bad sequence size: " + seq.size());
+        //}
+        //attrType = DERObjectIdentifier.getInstance(seq.getObjectAt(0));
+        //attrValues = ASN1Set.getInstance(seq.getObjectAt(1));
     }
 
     
@@ -48,9 +48,9 @@ public class Attribute extends ASN1Encodable {
         ASN1Set             attrValues) {
         this.attrType = attrType;
         this.attrValues = attrValues;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.attrType = attrType;
+        //this.attrValues = attrValues;
     }
 
     
@@ -73,8 +73,8 @@ public class Attribute extends ASN1Encodable {
 ASN1ObjectIdentifier var4DC76BA213854B470841C5B398272A26_173132939 =         new ASN1ObjectIdentifier(attrType.getId());
         var4DC76BA213854B470841C5B398272A26_173132939.addTaint(taint);
         return var4DC76BA213854B470841C5B398272A26_173132939;
-        
-        
+        // ---------- Original Method ----------
+        //return new ASN1ObjectIdentifier(attrType.getId());
     }
 
     
@@ -83,19 +83,18 @@ ASN1ObjectIdentifier var4DC76BA213854B470841C5B398272A26_173132939 =         new
 ASN1Encodable[] var62CC3281B32ED3E929A0D40B228643F8_136495898 =         attrValues.toArray();
         var62CC3281B32ED3E929A0D40B228643F8_136495898.addTaint(taint);
         return var62CC3281B32ED3E929A0D40B228643F8_136495898;
-        
-        
+        // ---------- Original Method ----------
+        //return attrValues.toArray();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.936 -0400", hash_original_method = "0C9FA4513BA0CB1318C076F6A4C1BAA0", hash_generated_method = "F8D9C3BB4D8BC874430DF9398FA80AC0")
     public ASN1Set getAttrValues() {
 ASN1Set varC1BD46225B9E104129100789C289BE4C_677975461 =         attrValues;
         varC1BD46225B9E104129100789C289BE4C_677975461.addTaint(taint);
         return varC1BD46225B9E104129100789C289BE4C_677975461;
-        
-        
+        // ---------- Original Method ----------
+        //return attrValues;
     }
 
     
@@ -107,11 +106,11 @@ ASN1Set varC1BD46225B9E104129100789C289BE4C_677975461 =         attrValues;
 DERObject var0B338F106E3279986C87B595B0F4A439_1343053949 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_1343053949.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_1343053949;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //v.add(attrType);
+        //v.add(attrValues);
+        //return new DERSequence(v);
     }
 
     

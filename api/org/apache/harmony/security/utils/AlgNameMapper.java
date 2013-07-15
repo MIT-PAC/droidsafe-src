@@ -1,6 +1,6 @@
 package org.apache.harmony.security.utils;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class AlgNameMapper {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.371 -0400", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "31CEA5AC8FC09495AFA62E889F9BA508")
     private  AlgNameMapper() {
-        
+        // ---------- Original Method ----------
     }
 
     

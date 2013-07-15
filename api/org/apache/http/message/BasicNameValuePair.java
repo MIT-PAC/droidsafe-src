@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,37 +24,35 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
             IllegalArgumentException var3C43595648C24A9FD2A1B7AF0D642045_351379625 = new IllegalArgumentException("Name may not be null");
             var3C43595648C24A9FD2A1B7AF0D642045_351379625.addTaint(taint);
             throw var3C43595648C24A9FD2A1B7AF0D642045_351379625;
-        } 
+        } //End block
         this.name = name;
         this.value = value;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new IllegalArgumentException("Name may not be null");
+        //}
+        //this.name = name;
+        //this.value = value;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.641 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "3703D79C0E179FC54ACEB7DD2C3908CC")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_1493112174 =         this.name;
         varDC708CD29829AA84C3F2D9B68CF84B0D_1493112174.addTaint(taint);
         return varDC708CD29829AA84C3F2D9B68CF84B0D_1493112174;
-        
-        
+        // ---------- Original Method ----------
+        //return this.name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.641 -0400", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "34D8EBD3287C215C12855BF38D44D2A8")
     public String getValue() {
 String varD64EF4B55BF21CB8765EC6BE5560B5B8_1544299887 =         this.value;
         varD64EF4B55BF21CB8765EC6BE5560B5B8_1544299887.addTaint(taint);
         return varD64EF4B55BF21CB8765EC6BE5560B5B8_1544299887;
-        
-        
+        // ---------- Original Method ----------
+        //return this.value;
     }
 
     
@@ -69,21 +67,21 @@ String varD64EF4B55BF21CB8765EC6BE5560B5B8_1544299887 =         this.value;
         {
             buffer.append("=");
             buffer.append(this.value);
-        } 
+        } //End block
 String varD03843288D33B9E1D3062E25339ECF6D_278800300 =         buffer.toString();
         varD03843288D33B9E1D3062E25339ECF6D_278800300.addTaint(taint);
         return varD03843288D33B9E1D3062E25339ECF6D_278800300;
-        
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int len = this.name.length();
+        //if (this.value != null)
+            //len += 1 + this.value.length();
+        //CharArrayBuffer buffer = new CharArrayBuffer(len);
+        //buffer.append(this.name);
+        //if (this.value != null) {
+            //buffer.append("=");
+            //buffer.append(this.value);
+        //}
+        //return buffer.toString();
     }
 
     
@@ -109,23 +107,23 @@ String varD03843288D33B9E1D3062E25339ECF6D_278800300 =         buffer.toString()
                   && LangUtils.equals(this.value, that.value));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_399211909 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_399211909;
-        } 
+        } //End block
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1965121390 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051697535 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051697535;
-        } 
-        
-        
-        
-        
-            
-            
-                  
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (object == null) return false;
+        //if (this == object) return true;
+        //if (object instanceof NameValuePair) {
+            //BasicNameValuePair that = (BasicNameValuePair) object;
+            //return this.name.equals(that.name)
+                  //&& LangUtils.equals(this.value, that.value);
+        //} else {
+            //return false;
+        //}
     }
 
     
@@ -137,11 +135,11 @@ String varD03843288D33B9E1D3062E25339ECF6D_278800300 =         buffer.toString()
         int var0800FC577294C34E0B28AD2839435945_1058766626 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858352886 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1858352886;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int hash = LangUtils.HASH_SEED;
+        //hash = LangUtils.hashCode(hash, this.name);
+        //hash = LangUtils.hashCode(hash, this.value);
+        //return hash;
     }
 
     
@@ -150,8 +148,8 @@ String varD03843288D33B9E1D3062E25339ECF6D_278800300 =         buffer.toString()
 Object var46F3A0D86742C1D6E099C2B166941A33_372403417 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_372403417.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_372403417;
-        
-        
+        // ---------- Original Method ----------
+        //return super.clone();
     }
 
     

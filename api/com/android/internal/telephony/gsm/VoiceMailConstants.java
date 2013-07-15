@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,25 +25,23 @@ class VoiceMailConstants {
       VoiceMailConstants() {
         CarrierVmMap = new HashMap<String, String[]>();
         loadVoiceMail();
-        
-        
-        
+        // ---------- Original Method ----------
+        //CarrierVmMap = new HashMap<String, String[]>();
+        //loadVoiceMail();
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.029 -0400", hash_original_method = "EA61BB6A69E663D3A55745A8DC567B93", hash_generated_method = "3D964C9B974146968E7E3FEB58C0BC92")
      boolean containsCarrier(String carrier) {
         addTaint(carrier.getTaint());
         boolean var7BC711206EF82846D7AC6E14A8BE1874_798559803 = (CarrierVmMap.containsKey(carrier));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659477067 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_659477067;
-        
-        
+        // ---------- Original Method ----------
+        //return CarrierVmMap.containsKey(carrier);
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.029 -0400", hash_original_method = "50C2E249A143A488875B9940B1F1FDE1", hash_generated_method = "389B5201AA33C71444A615B8361BEBBF")
      String getCarrierName(String carrier) {
         addTaint(carrier.getTaint());
@@ -51,13 +49,12 @@ class VoiceMailConstants {
 String varD24591417917DD3D4237E62016A99D8A_95462319 =         data[NAME];
         varD24591417917DD3D4237E62016A99D8A_95462319.addTaint(taint);
         return varD24591417917DD3D4237E62016A99D8A_95462319;
-        
-        
-        
+        // ---------- Original Method ----------
+        //String[] data = CarrierVmMap.get(carrier);
+        //return data[NAME];
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.029 -0400", hash_original_method = "0EE8F97DB48267A64D2C0726286D2A1F", hash_generated_method = "A564406494622ED6D5574D659D6E9F2F")
      String getVoiceMailNumber(String carrier) {
         addTaint(carrier.getTaint());
@@ -65,13 +62,12 @@ String varD24591417917DD3D4237E62016A99D8A_95462319 =         data[NAME];
 String var72FF74B6CD4ABE1D2FC635821C089974_835289481 =         data[NUMBER];
         var72FF74B6CD4ABE1D2FC635821C089974_835289481.addTaint(taint);
         return var72FF74B6CD4ABE1D2FC635821C089974_835289481;
-        
-        
-        
+        // ---------- Original Method ----------
+        //String[] data = CarrierVmMap.get(carrier);
+        //return data[NUMBER];
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.030 -0400", hash_original_method = "DE969177752DBF24A725FEF909B2130D", hash_generated_method = "497B60F9D0E2CC46BFB48B4EB9BF8565")
      String getVoiceMailTag(String carrier) {
         addTaint(carrier.getTaint());
@@ -79,9 +75,9 @@ String var72FF74B6CD4ABE1D2FC635821C089974_835289481 =         data[NUMBER];
 String var999169416C4489763CC073FF64F0FE09_1049714341 =         data[TAG];
         var999169416C4489763CC073FF64F0FE09_1049714341.addTaint(taint);
         return var999169416C4489763CC073FF64F0FE09_1049714341;
-        
-        
-        
+        // ---------- Original Method ----------
+        //String[] data = CarrierVmMap.get(carrier);
+        //return data[TAG];
     }
 
     
@@ -93,11 +89,11 @@ String var999169416C4489763CC073FF64F0FE09_1049714341 =         data[TAG];
         try 
         {
             vmReader = new FileReader(vmFile);
-        } 
+        } //End block
         catch (FileNotFoundException e)
         {
             return;
-        } 
+        } //End block
         try 
         {
             XmlPullParser parser = Xml.newPullParser();
@@ -111,23 +107,23 @@ String var999169416C4489763CC073FF64F0FE09_1049714341 =         data[TAG];
     if(!"voicemail".equals(name))                
                 {
                     break;
-                } 
+                } //End block
                 String[] data = new String[SIZE];
                 String numeric = parser.getAttributeValue(null, "numeric");
                 data[NAME]     = parser.getAttributeValue(null, "carrier");
                 data[NUMBER]   = parser.getAttributeValue(null, "vmnumber");
                 data[TAG]      = parser.getAttributeValue(null, "vmtag");
                 CarrierVmMap.put(numeric, data);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (XmlPullParserException e)
         {
-        } 
+        } //End block
         catch (IOException e)
         {
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

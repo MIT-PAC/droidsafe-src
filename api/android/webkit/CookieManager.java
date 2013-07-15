@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public final class CookieManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.703 -0400", hash_original_method = "D1B429C0ADFDAAD2AA9A34491D464202", hash_generated_method = "7E9E6C54D01E5F13F7A4CCB58B878A0F")
     private  CookieManager() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,8 +42,8 @@ public final class CookieManager {
         CloneNotSupportedException var526F0275412AAA8782D17897499AAE9F_794930757 = new CloneNotSupportedException("doesn't implement Cloneable");
         var526F0275412AAA8782D17897499AAE9F_794930757.addTaint(taint);
         throw var526F0275412AAA8782D17897499AAE9F_794930757;
-        
-        
+        // ---------- Original Method ----------
+        //throw new CloneNotSupportedException("doesn't implement Cloneable");
     }
 
     
@@ -61,14 +61,14 @@ public final class CookieManager {
         {
             nativeSetAcceptCookie(accept);
             return;
-        } 
+        } //End block
         mAcceptCookie = accept;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (JniUtil.useChromiumHttpStack()) {
+            //nativeSetAcceptCookie(accept);
+            //return;
+        //}
+        //mAcceptCookie = accept;
     }
 
     
@@ -79,15 +79,15 @@ public final class CookieManager {
             boolean varE5E4502D52B670C93AEA2A7AA47C6D71_1988842214 = (nativeAcceptCookie());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1972631437 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1972631437;
-        } 
+        } //End block
         boolean var49A4E18BE20202FF3725A646D0AC31F6_477564007 = (mAcceptCookie);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_313785980 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_313785980;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (JniUtil.useChromiumHttpStack()) {
+            //return nativeAcceptCookie();
+        //}
+        //return mAcceptCookie;
     }
 
     
@@ -99,30 +99,30 @@ public final class CookieManager {
         {
             setCookie(url, value, false);
             return;
-        } 
+        } //End block
         WebAddress uri;
         try 
         {
             uri = new WebAddress(url);
-        } 
+        } //End block
         catch (ParseException ex)
         {
             return;
-        } 
+        } //End block
         setCookie(uri, value);
-        
-        
-            
-            
-        
-        
-        
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (JniUtil.useChromiumHttpStack()) {
+            //setCookie(url, value, false);
+            //return;
+        //}
+        //WebAddress uri;
+        //try {
+            //uri = new WebAddress(url);
+        //} catch (ParseException ex) {
+            //Log.e(LOGTAG, "Bad address: " + url);
+            //return;
+        //}
+        //setCookie(uri, value);
     }
 
     
@@ -135,30 +135,30 @@ public final class CookieManager {
         {
             setCookie(url, value);
             return;
-        } 
+        } //End block
         WebAddress uri;
         try 
         {
             uri = new WebAddress(url);
-        } 
+        } //End block
         catch (ParseException ex)
         {
             return;
-        } 
+        } //End block
         nativeSetCookie(uri.toString(), value, privateBrowsing);
-        
-        
-            
-            
-        
-        
-        
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!JniUtil.useChromiumHttpStack()) {
+            //setCookie(url, value);
+            //return;
+        //}
+        //WebAddress uri;
+        //try {
+            //uri = new WebAddress(url);
+        //} catch (ParseException ex) {
+            //Log.e(LOGTAG, "Bad address: " + url);
+            //return;
+        //}
+        //nativeSetCookie(uri.toString(), value, privateBrowsing);
     }
 
     
@@ -170,41 +170,41 @@ public final class CookieManager {
         {
             nativeSetCookie(uri.toString(), value, false);
             return;
-        } 
+        } //End block
     if(value != null && value.length() > MAX_COOKIE_LENGTH)        
         {
             return;
-        } 
+        } //End block
     if(!mAcceptCookie || uri == null)        
         {
             return;
-        } 
+        } //End block
     if(DebugFlags.COOKIE_MANAGER)        
         {
-        } 
+        } //End block
         String[] hostAndPath = getHostAndPath(uri);
     if(hostAndPath == null)        
         {
             return;
-        } 
+        } //End block
     if(hostAndPath[1].length() > 1)        
         {
             int index = hostAndPath[1].lastIndexOf(PATH_DELIM);
             hostAndPath[1] = hostAndPath[1].substring(0, 
                     index > 0 ? index : index + 1);
-        } 
+        } //End block
         ArrayList<Cookie> cookies = null;
         try 
         {
             cookies = parseCookie(hostAndPath[0], hostAndPath[1], value);
-        } 
+        } //End block
         catch (RuntimeException ex)
         {
-        } 
+        } //End block
     if(cookies == null || cookies.size() == 0)        
         {
             return;
-        } 
+        } //End block
         String baseDomain = getBaseDomain(hostAndPath[0]);
         ArrayList<Cookie> cookieList = mCookieMap.get(baseDomain);
     if(cookieList == null)        
@@ -212,7 +212,7 @@ public final class CookieManager {
             cookieList = CookieSyncManager.getInstance()
                     .getCookiesForDomain(baseDomain);
             mCookieMap.put(baseDomain, cookieList);
-        } 
+        } //End block
         long now = System.currentTimeMillis();
         int size = cookies.size();
 for(int i = 0;i < size;i++)
@@ -236,17 +236,17 @@ for(int i = 0;i < size;i++)
                             cookieEntry.lastAcessTime = now;
                             cookieEntry.lastUpdateTime = now;
                             cookieEntry.mode = Cookie.MODE_REPLACED;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
                     {
                         cookieEntry.lastUpdateTime = now;
                         cookieEntry.mode = Cookie.MODE_DELETED;
-                    } 
+                    } //End block
                     done = true;
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(!done && (cookie.expires < 0 || cookie.expires > now))            
             {
                 cookie.lastAcessTime = now;
@@ -265,15 +265,15 @@ for(int i = 0;i < size;i++)
                                 && cookieEntry2.mode != Cookie.MODE_DELETED)                        
                         {
                             toDelete = cookieEntry2;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     toDelete.mode = Cookie.MODE_DELETED;
-                } 
+                } //End block
                 cookieList.add(cookie);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -285,33 +285,33 @@ for(int i = 0;i < size;i++)
 String varF4013E3CDCD90AC74FFF8590033F8AB4_789441834 =             getCookie(url, false);
             varF4013E3CDCD90AC74FFF8590033F8AB4_789441834.addTaint(taint);
             return varF4013E3CDCD90AC74FFF8590033F8AB4_789441834;
-        } 
+        } //End block
         WebAddress uri;
         try 
         {
             uri = new WebAddress(url);
-        } 
+        } //End block
         catch (ParseException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1177016121 =             null;
             var540C13E9E156B687226421B24F2DF178_1177016121.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1177016121;
-        } 
+        } //End block
 String var407A51A1DFAF9AAFAEF8FC170E67F8D8_124778341 =         getCookie(uri);
         var407A51A1DFAF9AAFAEF8FC170E67F8D8_124778341.addTaint(taint);
         return var407A51A1DFAF9AAFAEF8FC170E67F8D8_124778341;
-        
-        
-            
-        
-        
-        
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (JniUtil.useChromiumHttpStack()) {
+            //return getCookie(url, false);
+        //}
+        //WebAddress uri;
+        //try {
+            //uri = new WebAddress(url);
+        //} catch (ParseException ex) {
+            //Log.e(LOGTAG, "Bad address: " + url);
+            //return null;
+        //}
+        //return getCookie(uri);
     }
 
     
@@ -324,33 +324,33 @@ String var407A51A1DFAF9AAFAEF8FC170E67F8D8_124778341 =         getCookie(uri);
 String varBB2B84388E474811EBE3C854A52081D4_1936293468 =             getCookie(url);
             varBB2B84388E474811EBE3C854A52081D4_1936293468.addTaint(taint);
             return varBB2B84388E474811EBE3C854A52081D4_1936293468;
-        } 
+        } //End block
         WebAddress uri;
         try 
         {
             uri = new WebAddress(url);
-        } 
+        } //End block
         catch (ParseException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_219945880 =             null;
             var540C13E9E156B687226421B24F2DF178_219945880.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_219945880;
-        } 
+        } //End block
 String varDC437723AB9FFD70AC3DBD8C655741B2_340415472 =         nativeGetCookie(uri.toString(), privateBrowsing);
         varDC437723AB9FFD70AC3DBD8C655741B2_340415472.addTaint(taint);
         return varDC437723AB9FFD70AC3DBD8C655741B2_340415472;
-        
-        
-            
-        
-        
-        
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!JniUtil.useChromiumHttpStack()) {
+            //return getCookie(url);
+        //}
+        //WebAddress uri;
+        //try {
+            //uri = new WebAddress(url);
+        //} catch (ParseException ex) {
+            //Log.e(LOGTAG, "Bad address: " + url);
+            //return null;
+        //}
+        //return nativeGetCookie(uri.toString(), privateBrowsing);
     }
 
     
@@ -362,20 +362,20 @@ String varDC437723AB9FFD70AC3DBD8C655741B2_340415472 =         nativeGetCookie(u
 String varC5032DF947036C987207202C98CE27A2_1040543617 =             nativeGetCookie(uri.toString(), false);
             varC5032DF947036C987207202C98CE27A2_1040543617.addTaint(taint);
             return varC5032DF947036C987207202C98CE27A2_1040543617;
-        } 
+        } //End block
     if(!mAcceptCookie || uri == null)        
         {
 String var540C13E9E156B687226421B24F2DF178_1268611834 =             null;
             var540C13E9E156B687226421B24F2DF178_1268611834.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1268611834;
-        } 
+        } //End block
         String[] hostAndPath = getHostAndPath(uri);
     if(hostAndPath == null)        
         {
 String var540C13E9E156B687226421B24F2DF178_2022454515 =             null;
             var540C13E9E156B687226421B24F2DF178_2022454515.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2022454515;
-        } 
+        } //End block
         String baseDomain = getBaseDomain(hostAndPath[0]);
         ArrayList<Cookie> cookieList = mCookieMap.get(baseDomain);
     if(cookieList == null)        
@@ -383,7 +383,7 @@ String var540C13E9E156B687226421B24F2DF178_2022454515 =             null;
             cookieList = CookieSyncManager.getInstance()
                     .getCookiesForDomain(baseDomain);
             mCookieMap.put(baseDomain, cookieList);
-        } 
+        } //End block
         long now = System.currentTimeMillis();
         boolean secure = HTTPS.equals(uri.getScheme());
         Iterator<Cookie> iter = cookieList.iterator();
@@ -400,8 +400,8 @@ String var540C13E9E156B687226421B24F2DF178_2022454515 =             null;
             {
                 cookie.lastAcessTime = now;
                 cookieSet.add(cookie);
-            } 
-        } 
+            } //End block
+        } //End block
         StringBuilder ret = new StringBuilder(256);
         Iterator<Cookie> setIter = cookieSet.iterator();
         while
@@ -412,34 +412,34 @@ String var540C13E9E156B687226421B24F2DF178_2022454515 =             null;
             {
                 ret.append(SEMICOLON);
                 ret.append(WHITE_SPACE);
-            } 
+            } //End block
             ret.append(cookie.name);
     if(cookie.value != null)            
             {
                 ret.append(EQUAL);
                 ret.append(cookie.value);
-            } 
-        } 
+            } //End block
+        } //End block
     if(ret.length() > 0)        
         {
     if(DebugFlags.COOKIE_MANAGER)            
             {
-            } 
+            } //End block
 String varBF0416CC9C97BA8F7D7771199729A131_1802437046 =             ret.toString();
             varBF0416CC9C97BA8F7D7771199729A131_1802437046.addTaint(taint);
             return varBF0416CC9C97BA8F7D7771199729A131_1802437046;
-        } 
+        } //End block
         else
         {
     if(DebugFlags.COOKIE_MANAGER)            
             {
-            } 
+            } //End block
 String var540C13E9E156B687226421B24F2DF178_1856118514 =             null;
             var540C13E9E156B687226421B24F2DF178_1856118514.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1856118514;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -453,20 +453,20 @@ String var540C13E9E156B687226421B24F2DF178_1856118514 =             null;
                 try 
                 {
                     wait();
-                } 
+                } //End block
                 catch (InterruptedException e)
                 {
-                } 
-            } 
-        } 
-        
-        
-            
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (this) {
+            //while (pendingCookieOperations > 0) {
+                //try {
+                    //wait();
+                //} catch (InterruptedException e) { }
+            //}
+        //}
     }
 
     
@@ -474,19 +474,18 @@ String var540C13E9E156B687226421B24F2DF178_1856118514 =             null;
     private synchronized void signalCookieOperationsComplete() {
         pendingCookieOperations--;
         notify();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //pendingCookieOperations--;
+        //assert pendingCookieOperations > -1;
+        //notify();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.712 -0400", hash_original_method = "3D00699F37AF6D5720F5926DFEED864B", hash_generated_method = "E349E3171C584B41701676E3CC873736")
     private synchronized void signalCookieOperationsStart() {
         pendingCookieOperations++;
-        
-        
+        // ---------- Original Method ----------
+        //pendingCookieOperations++;
     }
 
     
@@ -504,14 +503,14 @@ String var540C13E9E156B687226421B24F2DF178_1856118514 =             null;
 Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
             var540C13E9E156B687226421B24F2DF178_1268020359.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1268020359;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //nativeRemoveSessionCookie();
+            //signalCookieOperationsComplete();
+            //return null;
         }
 }.execute();
             return;
-        } 
+        } //End block
         final Runnable clearCache = new Runnable() {
             public void run() {
                 synchronized(CookieManager.this) {
@@ -533,8 +532,8 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
             }
         };
         new Thread(clearCache).start();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -544,7 +543,7 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
         {
             nativeRemoveAllCookie();
             return;
-        } 
+        } //End block
         final Runnable clearCache = new Runnable() {
             public void run() {
                 synchronized(CookieManager.this) {
@@ -555,21 +554,21 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
             }
         };
         new Thread(clearCache).start();
-        
-        
-            
-            
-        
-        
-            
-                
-                    
-                            
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (JniUtil.useChromiumHttpStack()) {
+            //nativeRemoveAllCookie();
+            //return;
+        //}
+        //final Runnable clearCache = new Runnable() {
+            //public void run() {
+                //synchronized(CookieManager.this) {
+                    //mCookieMap = new LinkedHashMap<String, ArrayList<Cookie>>(
+                            //MAX_DOMAIN_COUNT, 0.75f, true);
+                    //CookieSyncManager.getInstance().clearAllCookies();
+                //}
+            //}
+        //};
+        //new Thread(clearCache).start();
     }
 
     
@@ -580,15 +579,15 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
             boolean var95F7A9F99520A76FCBA60C13FE542A6E_1199986318 = (hasCookies(false));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_568720262 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_568720262;
-        } 
+        } //End block
         boolean var91293B5C020EF0EB227BF89D9D25910B_425374320 = (CookieSyncManager.getInstance().hasCookies());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_887491649 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_887491649;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (JniUtil.useChromiumHttpStack()) {
+            //return hasCookies(false);
+        //}
+        //return CookieSyncManager.getInstance().hasCookies();
     }
 
     
@@ -600,15 +599,15 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
             boolean var64FF49FA7F904E536DCB9813EC3FE843_1017907001 = (hasCookies());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1686723910 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1686723910;
-        } 
+        } //End block
         boolean varE6D541A0DC8E3A114D73BFC1B78BCF9A_2074040091 = (nativeHasCookies(privateBrowsing));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_820942553 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_820942553;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!JniUtil.useChromiumHttpStack()) {
+            //return hasCookies();
+        //}
+        //return nativeHasCookies(privateBrowsing);
     }
 
     
@@ -618,7 +617,7 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
         {
             nativeRemoveExpiredCookie();
             return;
-        } 
+        } //End block
         final Runnable clearCache = new Runnable() {
             public void run() {
                 synchronized(CookieManager.this) {
@@ -640,8 +639,8 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
             }
         };
         new Thread(clearCache).start();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -650,11 +649,11 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
     if(JniUtil.useChromiumHttpStack())        
         {
             nativeFlushCookieStore();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (JniUtil.useChromiumHttpStack()) {
+            //nativeFlushCookieStore();
+        //}
     }
 
     
@@ -692,27 +691,27 @@ Void var540C13E9E156B687226421B24F2DF178_1268020359 =             null;
     if(cookie.lastUpdateTime > last)                
                 {
                     cookies.add(cookie);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 ArrayList<Cookie> var7A32AB0BC299936B4ABF6C972D767041_1110539045 =         cookies;
         var7A32AB0BC299936B4ABF6C972D767041_1110539045.addTaint(taint);
         return var7A32AB0BC299936B4ABF6C972D767041_1110539045;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<Cookie> cookies = new ArrayList<Cookie>();
+        //Collection<ArrayList<Cookie>> cookieList = mCookieMap.values();
+        //Iterator<ArrayList<Cookie>> listIter = cookieList.iterator();
+        //while (listIter.hasNext()) {
+            //ArrayList<Cookie> list = listIter.next();
+            //Iterator<Cookie> iter = list.iterator();
+            //while (iter.hasNext()) {
+                //Cookie cookie = iter.next();
+                //if (cookie.lastUpdateTime > last) {
+                    //cookies.add(cookie);
+                //}
+            //}
+        //}
+        //return cookies;
     }
 
     
@@ -729,30 +728,29 @@ ArrayList<Cookie> var7A32AB0BC299936B4ABF6C972D767041_1110539045 =         cooki
     if(cookieList.isEmpty())                
                 {
                     mCookieMap.remove(baseDomain);
-                } 
-            } 
-        } 
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (cookie.mode == Cookie.MODE_DELETED) {
+            //String baseDomain = getBaseDomain(cookie.domain);
+            //ArrayList<Cookie> cookieList = mCookieMap.get(baseDomain);
+            //if (cookieList != null) {
+                //cookieList.remove(cookie);
+                //if (cookieList.isEmpty()) {
+                    //mCookieMap.remove(baseDomain);
+                //}
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.716 -0400", hash_original_method = "23D0913407E37C8868B97CA5EA461217", hash_generated_method = "E9139E4036FB7922E32DF7EF47AF9E4A")
     synchronized void syncedACookie(Cookie cookie) {
         addTaint(cookie.getTaint());
         cookie.mode = Cookie.MODE_NORMAL;
-        
-        
+        // ---------- Original Method ----------
+        //cookie.mode = Cookie.MODE_NORMAL;
     }
 
     
@@ -784,20 +782,20 @@ ArrayList<Cookie> var7A32AB0BC299936B4ABF6C972D767041_1110539045 =         cooki
                                         : 0)
                                 + 14;
                         count++;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     count += list.size();
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         ArrayList<Cookie> retlist = new ArrayList<Cookie>();
     if(mapSize >= MAX_RAM_DOMAIN_COUNT || count >= MAX_RAM_COOKIES_COUNT)        
         {
     if(DebugFlags.COOKIE_MANAGER)            
             {
-            } 
+            } //End block
             Object[] domains = mCookieMap.keySet().toArray();
             int toGo = mapSize / 10 + 1;
             while
@@ -806,16 +804,16 @@ ArrayList<Cookie> var7A32AB0BC299936B4ABF6C972D767041_1110539045 =         cooki
                 String domain = domains[toGo].toString();
     if(DebugFlags.COOKIE_MANAGER)                
                 {
-                } 
+                } //End block
                 retlist.addAll(mCookieMap.get(domain));
                 mCookieMap.remove(domain);
-            } 
-        } 
+            } //End block
+        } //End block
 ArrayList<Cookie> var74ABD4429824C0B59980227BA1F53471_285953652 =         retlist;
         var74ABD4429824C0B59980227BA1F53471_285953652.addTaint(taint);
         return var74ABD4429824C0B59980227BA1F53471_285953652;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -833,36 +831,36 @@ ArrayList<Cookie> var74ABD4429824C0B59980227BA1F53471_285953652 =         retlis
     if(uri.getScheme().equalsIgnoreCase("file"))                
                 {
                     ret[0] = "localhost";
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(index == ret[0].lastIndexOf(PERIOD))            
             {
                 ret[0] = PERIOD + ret[0];
-            } 
+            } //End block
     if(ret[1].charAt(0) != PATH_DELIM)            
             {
 String[] var540C13E9E156B687226421B24F2DF178_1276333412 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1276333412.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1276333412;
-            } 
+            } //End block
             index = ret[1].indexOf(QUESTION_MARK);
     if(index != -1)            
             {
                 ret[1] = ret[1].substring(0, index);
-            } 
+            } //End block
 String[] varEDFF4FBBF053B5DC2B444ADFA049EE0F_723794581 =             ret;
             varEDFF4FBBF053B5DC2B444ADFA049EE0F_723794581.addTaint(taint);
             return varEDFF4FBBF053B5DC2B444ADFA049EE0F_723794581;
-        } 
+        } //End block
         else
         {
 String[] var540C13E9E156B687226421B24F2DF178_674705440 =         null;
         var540C13E9E156B687226421B24F2DF178_674705440.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_674705440;
         }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -877,32 +875,32 @@ String[] var540C13E9E156B687226421B24F2DF178_674705440 =         null;
         {
             startIndex = nextIndex + 1;
             nextIndex = host.indexOf(PERIOD, startIndex);
-        } 
+        } //End block
     if(startIndex > 0)        
         {
 String varEB32A0C667C3D67123A0EA3E65CE6484_201453620 =             host.substring(startIndex);
             varEB32A0C667C3D67123A0EA3E65CE6484_201453620.addTaint(taint);
             return varEB32A0C667C3D67123A0EA3E65CE6484_201453620;
-        } 
+        } //End block
         else
         {
 String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
             var872E07117C05F1A34EC24B57B694B8E3_785496457.addTaint(taint);
             return var872E07117C05F1A34EC24B57B694B8E3_785496457;
-        } 
-        
-        
-        
-        
-        
-            
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int startIndex = 0;
+        //int nextIndex = host.indexOf(PERIOD);
+        //int lastIndex = host.lastIndexOf(PERIOD);
+        //while (nextIndex < lastIndex) {
+            //startIndex = nextIndex + 1;
+            //nextIndex = host.indexOf(PERIOD, startIndex);
+        //}
+        //if (startIndex > 0) {
+            //return host.substring(startIndex);
+        //} else {
+            //return host;
+        //}
     }
 
     
@@ -922,12 +920,12 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
     if(index < 0 || index >= length)            
             {
                 break;
-            } 
+            } //End block
     if(cookieString.charAt(index) == WHITE_SPACE)            
             {
                 index++;
                 continue;
-            } 
+            } //End block
             int semicolonIndex = cookieString.indexOf(SEMICOLON, index);
             int equalIndex = cookieString.indexOf(EQUAL, index);
             cookie = new Cookie(host, path);
@@ -937,10 +935,10 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
     if(semicolonIndex == -1)                
                 {
                     semicolonIndex = length;
-                } 
+                } //End block
                 cookie.name = cookieString.substring(index, semicolonIndex);
                 cookie.value = null;
-            } 
+            } //End block
             else
             {
                 cookie.name = cookieString.substring(index, equalIndex);
@@ -951,30 +949,30 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
     if(index == -1)                    
                     {
                         break;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 semicolonIndex = cookieString.indexOf(SEMICOLON, index);
     if(semicolonIndex == -1)                
                 {
                     semicolonIndex = length;
-                } 
+                } //End block
     if(semicolonIndex - equalIndex > MAX_COOKIE_LENGTH)                
                 {
                     cookie.value = cookieString.substring(equalIndex + 1,
                             equalIndex + 1 + MAX_COOKIE_LENGTH);
-                } 
+                } //End block
                 else
     if(equalIndex + 1 == semicolonIndex
                         || semicolonIndex < equalIndex)                
                 {
                     cookie.value = "";
-                } 
+                } //End block
                 else
                 {
                     cookie.value = cookieString.substring(equalIndex + 1,
                             semicolonIndex);
-                } 
-            } 
+                } //End block
+            } //End block
             index = semicolonIndex;
             while
 (true)            
@@ -982,18 +980,18 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
     if(index < 0 || index >= length)                
                 {
                     break;
-                } 
+                } //End block
     if(cookieString.charAt(index) == WHITE_SPACE
                         || cookieString.charAt(index) == SEMICOLON)                
                 {
                     index++;
                     continue;
-                } 
+                } //End block
     if(cookieString.charAt(index) == COMMA)                
                 {
                     index++;
                     break;
-                } 
+                } //End block
     if(length - index >= SECURE_LENGTH
                         && cookieString.substring(index, index + SECURE_LENGTH).
                         equalsIgnoreCase(SECURE))                
@@ -1005,7 +1003,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
     if(cookieString.charAt(index) == EQUAL)                    
                     index++;
                     continue;
-                } 
+                } //End block
     if(length - index >= HTTP_ONLY_LENGTH
                         && cookieString.substring(index,
                             index + HTTP_ONLY_LENGTH).
@@ -1017,7 +1015,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
     if(cookieString.charAt(index) == EQUAL)                    
                     index++;
                     continue;
-                } 
+                } //End block
                 equalIndex = cookieString.indexOf(EQUAL, index);
     if(equalIndex > 0)                
                 {
@@ -1027,7 +1025,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
 (valueIndex < length && cookieString.charAt(valueIndex) == WHITE_SPACE)                    
                     {
                         valueIndex++;
-                    } 
+                    } //End block
     if(name.equals(EXPIRES))                    
                     {
                         int comaIndex = cookieString.indexOf(COMMA, equalIndex);
@@ -1035,28 +1033,28 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
                                 (comaIndex - valueIndex <= 10))                        
                         {
                             index = comaIndex + 1;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     semicolonIndex = cookieString.indexOf(SEMICOLON, index);
                     int commaIndex = cookieString.indexOf(COMMA, index);
     if(semicolonIndex == -1 && commaIndex == -1)                    
                     {
                         index = length;
-                    } 
+                    } //End block
                     else
     if(semicolonIndex == -1)                    
                     {
                         index = commaIndex;
-                    } 
+                    } //End block
                     else
     if(commaIndex == -1)                    
                     {
                         index = semicolonIndex;
-                    } 
+                    } //End block
                     else
                     {
                         index = Math.min(semicolonIndex, commaIndex);
-                    } 
+                    } //End block
                     String value = cookieString.substring(valueIndex, index);
     if(value.length() > 2 && value.charAt(0) == QUOTATION)                    
                     {
@@ -1064,18 +1062,18 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
     if(endQuote > 0)                        
                         {
                             value = value.substring(1, endQuote);
-                        } 
-                    } 
+                        } //End block
+                    } //End block
     if(name.equals(EXPIRES))                    
                     {
                         try 
                         {
                             cookie.expires = AndroidHttpClient.parseDate(value);
-                        } 
+                        } //End block
                         catch (IllegalArgumentException ex)
                         {
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
     if(name.equals(MAX_AGE))                    
                     {
@@ -1083,19 +1081,19 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
                         {
                             cookie.expires = System.currentTimeMillis() + 1000
                                     * Long.parseLong(value);
-                        } 
+                        } //End block
                         catch (NumberFormatException ex)
                         {
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
     if(name.equals(PATH))                    
                     {
     if(value.length() > 0)                        
                         {
                             cookie.path = value;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
     if(name.equals(DOMAIN))                    
                     {
@@ -1104,25 +1102,25 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
                         {
                             cookie.domain = null;
                             continue;
-                        } 
+                        } //End block
                         try 
                         {
                             Integer.parseInt(value.substring(lastPeriod + 1));
     if(!value.equals(host))                            
                             {
                                 cookie.domain = null;
-                            } 
+                            } //End block
                             continue;
-                        } 
+                        } //End block
                         catch (NumberFormatException ex)
                         {
-                        } 
+                        } //End block
                         value = value.toLowerCase();
     if(value.charAt(0) != PERIOD)                        
                         {
                             value = PERIOD + value;
                             lastPeriod++;
-                        } 
+                        } //End block
     if(host.endsWith(value.substring(1)))                        
                         {
                             int len = value.length();
@@ -1132,7 +1130,7 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
                             {
                                 cookie.domain = null;
                                 continue;
-                            } 
+                            } //End block
     if((len == lastPeriod + 3)
                                     && (len >= 6 && len <= 8))                            
                             {
@@ -1141,31 +1139,31 @@ String var872E07117C05F1A34EC24B57B694B8E3_785496457 =             host;
                                 {
                                     cookie.domain = null;
                                     continue;
-                                } 
-                            } 
+                                } //End block
+                            } //End block
                             cookie.domain = value;
-                        } 
+                        } //End block
                         else
                         {
                             cookie.domain = null;
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     index = length;
-                } 
-            } 
+                } //End block
+            } //End block
     if(cookie != null && cookie.domain != null)            
             {
                 ret.add(cookie);
-            } 
-        } 
+            } //End block
+        } //End block
 ArrayList<Cookie> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1442522919 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_1442522919.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1442522919;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1264,7 +1262,7 @@ ArrayList<Cookie> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1442522919 =         ret;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.783 -0400", hash_original_method = "91108A58846CEDD8DA5905902DEE69F4", hash_generated_method = "0337FD9DF266AE2D58305A9F66087523")
           Cookie() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -1273,10 +1271,10 @@ ArrayList<Cookie> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1442522919 =         ret;
             domain = defaultDomain;
             path = defaultPath;
             expires = -1;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //domain = defaultDomain;
+            //path = defaultPath;
+            //expires = -1;
         }
 
         
@@ -1288,10 +1286,10 @@ ArrayList<Cookie> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1442522919 =         ret;
                     name.equals(in.name) && valuesMatch);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_686715149 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_686715149;
-            
-            
-            
-                    
+            // ---------- Original Method ----------
+            //boolean valuesMatch = !((value == null) ^ (in.value == null));
+            //return domain.equals(in.domain) && path.equals(in.path) &&
+                    //name.equals(in.name) && valuesMatch;
         }
 
         
@@ -1309,35 +1307,35 @@ ArrayList<Cookie> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1442522919 =         ret;
                         boolean var7F040CFFB39F147413F4D230F7D31224_1607320873 = (urlHost.charAt(urlLen - len) == PERIOD);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1660772152 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1660772152;
-                    } 
+                    } //End block
                     boolean varB326B5062B2F0E69046810717534CB09_980530694 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666699439 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_666699439;
-                } 
+                } //End block
                 boolean var68934A3E9455FA72420237EB05902327_99391946 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1454978548 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1454978548;
-            } 
+            } //End block
             else
             {
                 boolean var50CE1E37988004E04494AA05F0E6D7E0_1713882891 = (urlHost.equals(domain));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1651415762 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1651415762;
-            } 
-            
-            
-                
-                    
-                    
-                    
-                        
-                    
-                    
-                
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (domain.startsWith(".")) {
+                //if (urlHost.endsWith(domain.substring(1))) {
+                    //int len = domain.length();
+                    //int urlLen = urlHost.length();
+                    //if (urlLen > len - 1) {
+                        //return urlHost.charAt(urlLen - len) == PERIOD;
+                    //}
+                    //return true;
+                //}
+                //return false;
+            //} else {
+                //return urlHost.equals(domain);
+            //}
         }
 
         
@@ -1352,35 +1350,35 @@ ArrayList<Cookie> varEDFF4FBBF053B5DC2B444ADFA049EE0F_1442522919 =         ret;
                     boolean var68934A3E9455FA72420237EB05902327_1835340524 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1585159992 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1585159992;
-                } 
+                } //End block
                 int urlLen = urlPath.length();
     if(path.charAt(len-1) != PATH_DELIM && urlLen > len)                
                 {
                     boolean var198C0DA975F6F5AE12CF132B8EBCACF8_384629421 = (urlPath.charAt(len) == PATH_DELIM);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_400942959 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_400942959;
-                } 
+                } //End block
                 boolean varB326B5062B2F0E69046810717534CB09_1226873342 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_363162400 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_363162400;
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_295570589 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_196184592 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_196184592;
-            
-            
-                
-                
-                    
-                    
-                
-                
-                
-                    
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (urlPath.startsWith(path)) {
+                //int len = path.length();
+                //if (len == 0) {
+                    //Log.w(LOGTAG, "Empty cookie path");
+                    //return false;
+                //}
+                //int urlLen = urlPath.length();
+                //if (path.charAt(len-1) != PATH_DELIM && urlLen > len) {
+                    //return urlPath.charAt(len) == PATH_DELIM;
+                //}
+                //return true;
+            //}
+            //return false;
         }
 
         
@@ -1390,9 +1388,9 @@ String var350011719E9D74BBEF287BFDF99EFDD8_378391513 =             "domain: " + 
                     + "; value: " + value;
             var350011719E9D74BBEF287BFDF99EFDD8_378391513.addTaint(taint);
             return var350011719E9D74BBEF287BFDF99EFDD8_378391513;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return "domain: " + domain + "; path: " + path + "; name: " + name
+                    //+ "; value: " + value;
         }
 
         
@@ -1417,7 +1415,7 @@ String var350011719E9D74BBEF287BFDF99EFDD8_378391513 =             "domain: " + 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.784 -0400", hash_original_method = "EA07F3AA36DD3B1C5469CE7D110356B0", hash_generated_method = "EA07F3AA36DD3B1C5469CE7D110356B0")
         public CookieComparator ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1446,31 +1444,31 @@ String var350011719E9D74BBEF287BFDF99EFDD8_378391513 =             "domain: " + 
                     int var6BB61E3B7BCE0931DA574D19D1D82C88_481111414 = (-1);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1045676423 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1045676423;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(cookie1.value == null)            
             {
                 int varC4CA4238A0B923820DCC509A6F75849B_1988943751 = (1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1239497054 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1239497054;
-            } 
+            } //End block
             int varC9641A8BBE5000FAE8F810E0F8D51C9B_517135551 = (cookie1.name.compareTo(cookie2.name));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2042278080 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2042278080;
-            
-            
-            
-            
-            
-            
-                
-                    
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //int diff = cookie2.path.length() - cookie1.path.length();
+            //if (diff != 0) return diff;
+            //diff = cookie2.domain.length() - cookie1.domain.length();
+            //if (diff != 0) return diff;
+            //if (cookie2.value == null) {
+                //if (cookie1.value != null) {
+                    //return -1;
+                //}
+            //} else if (cookie1.value == null) {
+                //return 1;
+            //}
+            //return cookie1.name.compareTo(cookie2.name);
         }
 
         

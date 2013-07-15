@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,14 +18,13 @@ public class ProtocolVersion {
     private  ProtocolVersion(String name, byte[] version) {
         this.name = name;
         this.version = version;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
+        //this.version = version;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isSupported(byte[] version) {
+        public static boolean isSupported(byte[] version) {
         if (version[0] != 3 || (version[1] != 0 && version[1] != 1)) {
             return false;
         }
@@ -33,8 +32,7 @@ public class ProtocolVersion {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static ProtocolVersion getByVersion(byte[] version) {
+        public static ProtocolVersion getByVersion(byte[] version) {
         if (version[0] == 3) {
             if (version[1] == 1) {
                 return TLSv1;

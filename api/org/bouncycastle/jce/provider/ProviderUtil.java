@@ -1,6 +1,6 @@
 package org.bouncycastle.jce.provider;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,12 +18,11 @@ public class ProviderUtil {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.672 -0400", hash_original_method = "3B38983DBBB4F78AB4315AD498EBEF25", hash_generated_method = "3B38983DBBB4F78AB4315AD498EBEF25")
     public ProviderUtil ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.BAN)
-    static void setParameter(String parameterName, Object parameter) {
+        static void setParameter(String parameterName, Object parameter) {
         SecurityManager securityManager = System.getSecurityManager();
         if (parameterName.equals(ConfigurableProvider.THREAD_LOCAL_EC_IMPLICITLY_CA))
         {

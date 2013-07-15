@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,7 +31,7 @@ public class ThumbnailUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.742 -0400", hash_original_method = "569A57C095D8F73163C7FEBA6E020B38", hash_generated_method = "569A57C095D8F73163C7FEBA6E020B38")
     public ThumbnailUtils ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -182,8 +182,7 @@ public class ThumbnailUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Bitmap makeBitmap(int minSideLength, int maxNumOfPixels,
+        private static Bitmap makeBitmap(int minSideLength, int maxNumOfPixels,
             Uri uri, ContentResolver cr, ParcelFileDescriptor pfd,
             BitmapFactory.Options options) {
         Bitmap b = null;
@@ -215,8 +214,7 @@ public class ThumbnailUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static void closeSilently(ParcelFileDescriptor c) {
+        private static void closeSilently(ParcelFileDescriptor c) {
         if (c == null) return;
         try {
           c.close();
@@ -225,8 +223,7 @@ public class ThumbnailUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static ParcelFileDescriptor makeInputStream(
+        private static ParcelFileDescriptor makeInputStream(
             Uri uri, ContentResolver cr) {
         try {
             return cr.openFileDescriptor(uri, "r");
@@ -236,8 +233,7 @@ public class ThumbnailUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Bitmap transform(Matrix scaler,
+        private static Bitmap transform(Matrix scaler,
             Bitmap source,
             int targetWidth,
             int targetHeight,
@@ -379,7 +375,7 @@ public class ThumbnailUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.746 -0400", hash_original_method = "00296400B022DD946E1008D4AF6645F7", hash_generated_method = "00296400B022DD946E1008D4AF6645F7")
         public SizedThumbnailBitmap ()
         {
-            
+            //Synthesized constructor
         }
 
 

@@ -1,6 +1,6 @@
 package javax.crypto;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public abstract class MacSpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.337 -0400", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "8D6409E06ABF820FA39D434786DC17A2")
     public  MacSpi() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -37,7 +37,7 @@ public abstract class MacSpi {
     if(!input.hasRemaining())        
         {
             return;
-        } 
+        } //End block
         byte[] bInput;
     if(input.hasArray())        
         {
@@ -47,30 +47,30 @@ public abstract class MacSpi {
             int limit = input.limit();
             engineUpdate(bInput, offset + position, limit - position);
             input.position(limit);
-        } 
+        } //End block
         else
         {
             bInput = new byte[input.limit() - input.position()];
             input.get(bInput);
             engineUpdate(bInput, 0, bInput.length);
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-            
-            
-            
-            
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!input.hasRemaining()) {
+            //return;
+        //}
+        //byte[] bInput;
+        //if (input.hasArray()) {
+            //bInput = input.array();
+            //int offset = input.arrayOffset();
+            //int position = input.position();
+            //int limit = input.limit();
+            //engineUpdate(bInput, offset + position, limit - position);
+            //input.position(limit);
+        //} else {
+            //bInput = new byte[input.limit() - input.position()];
+            //input.get(bInput);
+            //engineUpdate(bInput, 0, bInput.length);
+        //}
     }
 
     
@@ -86,8 +86,8 @@ public abstract class MacSpi {
 Object var46F3A0D86742C1D6E099C2B166941A33_832995573 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_832995573.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_832995573;
-        
-        
+        // ---------- Original Method ----------
+        //return super.clone();
     }
 
     

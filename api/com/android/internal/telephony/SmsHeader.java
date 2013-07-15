@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ public class SmsHeader {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.440 -0400", hash_original_method = "F06BD280EA34997B1794CB44E7D9D16A", hash_generated_method = "EBF9FF6335726A7119DA9BD07425785D")
     public  SmsHeader() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -155,7 +155,6 @@ public class SmsHeader {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.442 -0400", hash_original_method = "3B501A432F153619ABA258E9F603F65E", hash_generated_method = "21C5A00987745231BDE1498BF3228BA7")
     @Override
     public String toString() {
@@ -165,7 +164,7 @@ public class SmsHeader {
     if(concatRef == null)        
         {
             builder.append("unset");
-        } 
+        } //End block
         else
         {
             builder.append("{ refNumber=" + concatRef.refNumber);
@@ -173,27 +172,27 @@ public class SmsHeader {
             builder.append(", seqNumber=" + concatRef.seqNumber);
             builder.append(", isEightBits=" + concatRef.isEightBits);
             builder.append(" }");
-        } 
+        } //End block
         builder.append(", PortAddrs ");
     if(portAddrs == null)        
         {
             builder.append("unset");
-        } 
+        } //End block
         else
         {
             builder.append("{ destPort=" + portAddrs.destPort);
             builder.append(", origPort=" + portAddrs.origPort);
             builder.append(", areEightBits=" + portAddrs.areEightBits);
             builder.append(" }");
-        } 
+        } //End block
     if(languageShiftTable != 0)        
         {
             builder.append(", languageShiftTable=" + languageShiftTable);
-        } 
+        } //End block
     if(languageTable != 0)        
         {
             builder.append(", languageTable=" + languageTable);
-        } 
+        } //End block
 for(MiscElt miscElt : miscEltList)
         {
             builder.append(", MiscElt ");
@@ -201,13 +200,13 @@ for(MiscElt miscElt : miscEltList)
             builder.append(", length=" + miscElt.data.length);
             builder.append(", data=" + HexDump.toHexString(miscElt.data));
             builder.append(" }");
-        } 
+        } //End block
         builder.append(" }");
 String varF4CF030572656354ACFDF83FEE21D7A6_234489528 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_234489528.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_234489528;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -225,7 +224,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_234489528 =         builder.toString(
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.443 -0400", hash_original_method = "0146EA7913C9A86565770A69E4015B6C", hash_generated_method = "0146EA7913C9A86565770A69E4015B6C")
         public PortAddrs ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -250,7 +249,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_234489528 =         builder.toString(
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.444 -0400", hash_original_method = "F12AD75E9E03099DD407C7814D08C2E0", hash_generated_method = "F12AD75E9E03099DD407C7814D08C2E0")
         public ConcatRef ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -269,7 +268,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_234489528 =         builder.toString(
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.444 -0400", hash_original_method = "424479238E621C77A92D33EDE0B97D13", hash_generated_method = "424479238E621C77A92D33EDE0B97D13")
         public MiscElt ()
         {
-            
+            //Synthesized constructor
         }
 
 

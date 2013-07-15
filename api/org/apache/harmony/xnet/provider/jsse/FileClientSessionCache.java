@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class FileClientSessionCache {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.368 -0400", hash_original_method = "EB2573B5E8F417FAB0EF293234CCCD0D", hash_generated_method = "828492362A3CD17C2E63D720E59E71D4")
     private  FileClientSessionCache() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,8 +39,7 @@ public class FileClientSessionCache {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static synchronized void reset() {
+        static synchronized void reset() {
         caches.clear();
     }
 
@@ -67,7 +66,7 @@ public class FileClientSessionCache {
                 IOException varCA908EABAF1A77616F2980FB9EC17A74_2067237049 = new IOException(directory + " exists but is not a directory.");
                 varCA908EABAF1A77616F2980FB9EC17A74_2067237049.addTaint(taint);
                 throw varCA908EABAF1A77616F2980FB9EC17A74_2067237049;
-            } 
+            } //End block
     if(exists)            
             {
                 initialFiles = directory.list();
@@ -76,10 +75,10 @@ public class FileClientSessionCache {
                     IOException var240033CDD4AAF078253733FC3E0DB8F5_232074231 = new IOException(directory + " exists but cannot list contents.");
                     var240033CDD4AAF078253733FC3E0DB8F5_232074231.addTaint(taint);
                     throw var240033CDD4AAF078253733FC3E0DB8F5_232074231;
-                } 
+                } //End block
                 Arrays.sort(initialFiles);
                 size = initialFiles.length;
-            } 
+            } //End block
             else
             {
     if(!directory.mkdirs())                
@@ -87,12 +86,12 @@ public class FileClientSessionCache {
                     IOException var68FF09276BABB13126C6873B15728CCD_1801660629 = new IOException("Creation of " + directory + " directory failed.");
                     var68FF09276BABB13126C6873B15728CCD_1801660629.addTaint(taint);
                     throw var68FF09276BABB13126C6873B15728CCD_1801660629;
-                } 
+                } //End block
                 size = 0;
-            } 
+            } //End block
             this.directory = directory;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -123,28 +122,28 @@ public class FileClientSessionCache {
                     byte[] var37A6259CC0C1DAE299A7866489DFF0BD_615189257 = (null);
                                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1867649510 = {getTaintByte()};
                     return var2F9C81BC6E497382285CD6B7A7E33DE1_1867649510;
-                } 
+                } //End block
     if(Arrays.binarySearch(initialFiles, name) < 0)                
                 {
                     byte[] var37A6259CC0C1DAE299A7866489DFF0BD_2063621427 = (null);
                                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_71746956 = {getTaintByte()};
                     return var2F9C81BC6E497382285CD6B7A7E33DE1_71746956;
-                } 
+                } //End block
                 file = new File(directory, name);
                 accessOrder.put(name, file);
-            } 
+            } //End block
             FileInputStream in;
             try 
             {
                 in = new FileInputStream(file);
-            } 
+            } //End block
             catch (FileNotFoundException e)
             {
                 logReadError(host, file, e);
                 byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1578496540 = (null);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2136260048 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_2136260048;
-            } 
+            } //End block
             try 
             {
                 int size = (int) file.length();
@@ -153,20 +152,20 @@ public class FileClientSessionCache {
                 byte[] var8D777F385D3DFEC8815D20F7496026DC_1468469874 = (data);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1994141514 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_1994141514;
-            } 
+            } //End block
             catch (IOException e)
             {
                 logReadError(host, file, e);
                 byte[] var37A6259CC0C1DAE299A7866489DFF0BD_2106956275 = (null);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_116221364 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_116221364;
-            } 
+            } //End block
             finally 
             {
                 IoUtils.closeQuietly(in);
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -186,7 +185,7 @@ public class FileClientSessionCache {
                 NullPointerException varB0CFDC853DE7DD0027E86BF1E560C555_1081451586 = new NullPointerException("sessionData");
                 varB0CFDC853DE7DD0027E86BF1E560C555_1081451586.addTaint(taint);
                 throw varB0CFDC853DE7DD0027E86BF1E560C555_1081451586;
-            } 
+            } //End block
             String name = fileName(host, session.getPeerPort());
             File file = new File(directory, name);
             boolean existedBefore = file.exists();
@@ -194,27 +193,27 @@ public class FileClientSessionCache {
             try 
             {
                 out = new FileOutputStream(file);
-            } 
+            } //End block
             catch (FileNotFoundException e)
             {
                 logWriteError(host, file, e);
                 return;
-            } 
+            } //End block
     if(!existedBefore)            
             {
                 size++;
                 makeRoom();
-            } 
+            } //End block
             boolean writeSuccessful = false;
             try 
             {
                 out.write(sessionData);
                 writeSuccessful = true;
-            } 
+            } //End block
             catch (IOException e)
             {
                 logWriteError(host, file, e);
-            } 
+            } //End block
             finally 
             {
                 boolean closeSuccessful = false;
@@ -222,25 +221,25 @@ public class FileClientSessionCache {
                 {
                     out.close();
                     closeSuccessful = true;
-                } 
+                } //End block
                 catch (IOException e)
                 {
                     logWriteError(host, file, e);
-                } 
+                } //End block
                 finally 
                 {
     if(!writeSuccessful || !closeSuccessful)                    
                     {
                         delete(file);
-                    } 
+                    } //End block
                     else
                     {
                         accessOrder.put(name, file);
-                    } 
-                } 
-            } 
-            
-            
+                    } //End block
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -249,7 +248,7 @@ public class FileClientSessionCache {
     if(size <= MAX_SIZE)            
             {
                 return;
-            } 
+            } //End block
             indexFiles();
             int removals = size - MAX_SIZE;
             Iterator<File> i = accessOrder.values().iterator();
@@ -257,19 +256,19 @@ public class FileClientSessionCache {
                 {
                     delete(i.next());
                     i.remove();
-                } 
+                } //End block
 } while (--removals > 0);
-            
-            
-                
-            
-            
-            
-            
-            
-                
-                
-            
+            // ---------- Original Method ----------
+            //if (size <= MAX_SIZE) {
+                //return;
+            //}
+            //indexFiles();
+            //int removals = size - MAX_SIZE;
+            //Iterator<File> i = accessOrder.values().iterator();
+            //do {
+                //delete(i.next());
+                //i.remove();
+            //} while (--removals > 0);
         }
 
         
@@ -285,21 +284,21 @@ for(String name : initialFiles)
     if(!accessOrder.containsKey(name))                    
                     {
                         diskOnly.add(new CacheFile(directory, name));
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(!diskOnly.isEmpty())                
                 {
                     Map<String, File> newOrder = newAccessOrder();
 for(CacheFile cacheFile : diskOnly)
                     {
                         newOrder.put(cacheFile.name, cacheFile);
-                    } 
+                    } //End block
                     newOrder.putAll(accessOrder);
                     this.accessOrder = newOrder;
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -310,13 +309,13 @@ for(CacheFile cacheFile : diskOnly)
     if(!file.delete())            
             {
                 System.logW("Failed to delete " + file + ".", new IOException());
-            } 
+            } //End block
             size--;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (!file.delete()) {
+                //System.logW("Failed to delete " + file + ".", new IOException());
+            //}
+            //size--;
         }
 
         
@@ -342,8 +341,8 @@ for(CacheFile cacheFile : diskOnly)
             super(dir, name);
             addTaint(dir.getTaint());
             this.name = name;
-            
-            
+            // ---------- Original Method ----------
+            //this.name = name;
         }
 
         
@@ -354,20 +353,19 @@ for(CacheFile cacheFile : diskOnly)
     if(lastModified == -1)            
             {
                 lastModified = this.lastModified = super.lastModified();
-            } 
+            } //End block
             long var56D4CE3ADDD9E0185B21EB938EA5BC79_793679393 = (lastModified);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_551526532 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_551526532;
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //long lastModified = this.lastModified;
+            //if (lastModified == -1) {
+                //lastModified = this.lastModified = super.lastModified();
+            //}
+            //return lastModified;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.381 -0400", hash_original_method = "D50DE30B99FDC8E45DF3D781BD6CEC46", hash_generated_method = "0FB46900A3E8A9D31BFC2B1422807676")
         @Override
         public int compareTo(File another) {
@@ -378,16 +376,16 @@ for(CacheFile cacheFile : diskOnly)
                 int varFF312826F736316A102585272714A9D5_667189932 = (super.compareTo(another));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_134150648 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_134150648;
-            } 
+            } //End block
             int var0FF13776863362E2ACEFA19819A1FF38_173650398 = (result < 0 ? -1 : 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_380411637 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_380411637;
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //long result = lastModified() - another.lastModified();
+            //if (result == 0) {
+                //return super.compareTo(another);
+            //}
+            //return result < 0 ? -1 : 1;
         }
 
         

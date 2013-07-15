@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ abstract class ValueParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.588 -0400", hash_original_method = "536C7A90AC0042B9CC31730ED4B5756F", hash_generated_method = "536C7A90AC0042B9CC31730ED4B5756F")
     public ValueParser ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -65,8 +65,7 @@ abstract class ValueParser {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
+        static Item retrieveItem(ComprehensionTlv ctlv) throws ResultException {
         Item item = null;
         byte[] rawValue = ctlv.getRawValue();
         int valueIndex = ctlv.getValueIndex();

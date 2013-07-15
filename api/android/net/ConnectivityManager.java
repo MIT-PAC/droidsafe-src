@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,13 +21,12 @@ public class ConnectivityManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.878 -0400", hash_original_method = "6A60C197741333EAEC6E0EA679C6387D", hash_generated_method = "9748824EC9A278AAE7881447974F69D5")
     public  ConnectivityManager(IConnectivityManager service) {
         mService = checkNotNull(service, "missing IConnectivityManager");
-        
-        
+        // ---------- Original Method ----------
+        //mService = checkNotNull(service, "missing IConnectivityManager");
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isNetworkTypeValid(int networkType) {
+        public static boolean isNetworkTypeValid(int networkType) {
         return networkType >= 0 && networkType <= MAX_NETWORK_TYPE;
     }
 
@@ -68,8 +67,7 @@ public class ConnectivityManager {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isNetworkTypeMobile(int networkType) {
+        public static boolean isNetworkTypeMobile(int networkType) {
         switch (networkType) {
             case TYPE_MOBILE:
             case TYPE_MOBILE_MMS:
@@ -92,15 +90,15 @@ public class ConnectivityManager {
         try 
         {
             mService.setNetworkPreference(preference);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setNetworkPreference(preference);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -111,19 +109,19 @@ public class ConnectivityManager {
             int var19A3790390823FE4079A20780D0EE00C_1568977901 = (mService.getNetworkPreference());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973777536 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973777536;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_165178221 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1207190412 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1207190412;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getNetworkPreference();
+        //} catch (RemoteException e) {
+            //return -1;
+        //}
     }
 
     
@@ -134,19 +132,19 @@ public class ConnectivityManager {
 NetworkInfo var71037231270A581C4BC2348D12DBB752_941288640 =             mService.getActiveNetworkInfo();
             var71037231270A581C4BC2348D12DBB752_941288640.addTaint(taint);
             return var71037231270A581C4BC2348D12DBB752_941288640;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 NetworkInfo var540C13E9E156B687226421B24F2DF178_729401278 =             null;
             var540C13E9E156B687226421B24F2DF178_729401278.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_729401278;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getActiveNetworkInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -158,19 +156,19 @@ NetworkInfo var540C13E9E156B687226421B24F2DF178_729401278 =             null;
 NetworkInfo var716369D49A4FE5B98EE868B69EA92A1E_1035764706 =             mService.getActiveNetworkInfoForUid(uid);
             var716369D49A4FE5B98EE868B69EA92A1E_1035764706.addTaint(taint);
             return var716369D49A4FE5B98EE868B69EA92A1E_1035764706;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 NetworkInfo var540C13E9E156B687226421B24F2DF178_846321807 =             null;
             var540C13E9E156B687226421B24F2DF178_846321807.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_846321807;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getActiveNetworkInfoForUid(uid);
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -182,19 +180,19 @@ NetworkInfo var540C13E9E156B687226421B24F2DF178_846321807 =             null;
 NetworkInfo var3FB1D95655254021728BF247DB3F0249_1759328042 =             mService.getNetworkInfo(networkType);
             var3FB1D95655254021728BF247DB3F0249_1759328042.addTaint(taint);
             return var3FB1D95655254021728BF247DB3F0249_1759328042;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 NetworkInfo var540C13E9E156B687226421B24F2DF178_2067442848 =             null;
             var540C13E9E156B687226421B24F2DF178_2067442848.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2067442848;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getNetworkInfo(networkType);
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -205,19 +203,19 @@ NetworkInfo var540C13E9E156B687226421B24F2DF178_2067442848 =             null;
 NetworkInfo[] var70CFDC0136921D96C056C2A1EB42D810_1476364664 =             mService.getAllNetworkInfo();
             var70CFDC0136921D96C056C2A1EB42D810_1476364664.addTaint(taint);
             return var70CFDC0136921D96C056C2A1EB42D810_1476364664;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 NetworkInfo[] var540C13E9E156B687226421B24F2DF178_988028398 =             null;
             var540C13E9E156B687226421B24F2DF178_988028398.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_988028398;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getAllNetworkInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -228,19 +226,19 @@ NetworkInfo[] var540C13E9E156B687226421B24F2DF178_988028398 =             null;
 LinkProperties varBA28DAB2FB296D0CC5A82CF84CEA5F30_1238914621 =             mService.getActiveLinkProperties();
             varBA28DAB2FB296D0CC5A82CF84CEA5F30_1238914621.addTaint(taint);
             return varBA28DAB2FB296D0CC5A82CF84CEA5F30_1238914621;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 LinkProperties var540C13E9E156B687226421B24F2DF178_984019170 =             null;
             var540C13E9E156B687226421B24F2DF178_984019170.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_984019170;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getActiveLinkProperties();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -252,19 +250,19 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_984019170 =             null;
 LinkProperties varCB694E0F083E3A04EA3638584A69852B_686633924 =             mService.getLinkProperties(networkType);
             varCB694E0F083E3A04EA3638584A69852B_686633924.addTaint(taint);
             return varCB694E0F083E3A04EA3638584A69852B_686633924;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null;
             var540C13E9E156B687226421B24F2DF178_1006263053.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1006263053;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getLinkProperties(networkType);
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -276,19 +274,19 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
             boolean varD09A4D6511E647D79E7FB3BE2F8B26E6_1403816826 = (mService.setRadios(turnOn));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_920872152 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_920872152;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1789017394 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_568678398 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_568678398;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.setRadios(turnOn);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -301,19 +299,19 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
             boolean var32495EF67E52304E6220286C24BA7911_404490731 = (mService.setRadio(networkType, turnOn));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1296961521 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1296961521;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1425788197 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1238355572 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1238355572;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.setRadio(networkType, turnOn);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -327,20 +325,20 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
                     new Binder()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668006883 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668006883;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1579838511 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_560348509 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_560348509;
-        } 
-        
-        
-            
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.startUsingNetworkFeature(networkType, feature,
+                    //new Binder());
+        //} catch (RemoteException e) {
+            //return -1;
+        //}
     }
 
     
@@ -353,19 +351,19 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
             int var908FAFA2FE48FDE6EA53EBB333658A21_590536184 = (mService.stopUsingNetworkFeature(networkType, feature));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404373918 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404373918;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_39455224 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_282116079 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_282116079;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.stopUsingNetworkFeature(networkType, feature);
+        //} catch (RemoteException e) {
+            //return -1;
+        //}
     }
 
     
@@ -379,16 +377,16 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
             boolean var68934A3E9455FA72420237EB05902327_310958398 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_68929344 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_68929344;
-        } 
+        } //End block
         boolean varC1317118DA63ED4EE5A4EA03701A9C38_1489114894 = (requestRouteToHostAddress(networkType, inetAddress));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_865900094 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_865900094;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //InetAddress inetAddress = NetworkUtils.intToInetAddress(hostAddress);
+        //if (inetAddress == null) {
+            //return false;
+        //}
+        //return requestRouteToHostAddress(networkType, inetAddress);
     }
 
     
@@ -402,41 +400,39 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
             boolean var0AFF5DF071EDC728B4E87E4CC9407A65_1840674554 = (mService.requestRouteToHostAddress(networkType, address));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_572660248 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_572660248;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1092285976 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_903739450 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_903739450;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //byte[] address = hostAddress.getAddress();
+        //try {
+            //return mService.requestRouteToHostAddress(networkType, address);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.889 -0400", hash_original_method = "6498894EA2E4C7DBE6A13B3BD05F6504", hash_generated_method = "FE813DBC143B3FE92D50CDECE2106F3D")
     @Deprecated
     public boolean getBackgroundDataSetting() {
         boolean varB326B5062B2F0E69046810717534CB09_747191804 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_769023181 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_769023181;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.890 -0400", hash_original_method = "C7D66D7319A6F772837F5FAC4582BCF2", hash_generated_method = "DD5713BFAEAD7937DCF087E006B8A5CE")
     @Deprecated
     public void setBackgroundDataSetting(boolean allowBackgroundData) {
         addTaint(allowBackgroundData);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -447,19 +443,19 @@ LinkProperties var540C13E9E156B687226421B24F2DF178_1006263053 =             null
 NetworkQuotaInfo var2C6D2C827838090203CD1E15C5DF8B8F_1876897530 =             mService.getActiveNetworkQuotaInfo();
             var2C6D2C827838090203CD1E15C5DF8B8F_1876897530.addTaint(taint);
             return var2C6D2C827838090203CD1E15C5DF8B8F_1876897530;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 NetworkQuotaInfo var540C13E9E156B687226421B24F2DF178_2172322 =             null;
             var540C13E9E156B687226421B24F2DF178_2172322.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2172322;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getActiveNetworkQuotaInfo();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -470,19 +466,19 @@ NetworkQuotaInfo var540C13E9E156B687226421B24F2DF178_2172322 =             null;
             boolean varB458843D81D2B3075744C73F266D7A2C_1917348918 = (mService.getMobileDataEnabled());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1557154678 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1557154678;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean varB326B5062B2F0E69046810717534CB09_230910424 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1303149336 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1303149336;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getMobileDataEnabled();
+        //} catch (RemoteException e) {
+            //return true;
+        //}
     }
 
     
@@ -492,15 +488,15 @@ NetworkQuotaInfo var540C13E9E156B687226421B24F2DF178_2172322 =             null;
         try 
         {
             mService.setMobileDataEnabled(enabled);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setMobileDataEnabled(enabled);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -511,19 +507,19 @@ NetworkQuotaInfo var540C13E9E156B687226421B24F2DF178_2172322 =             null;
 String[] var74024E2BFB98559A6111021EA7992D3F_738380640 =             mService.getTetherableIfaces();
             var74024E2BFB98559A6111021EA7992D3F_738380640.addTaint(taint);
             return var74024E2BFB98559A6111021EA7992D3F_738380640;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1642710082 =             new String[0];
             var93992EED3A5738F23A3CAF5AB8E5B9F1_1642710082.addTaint(taint);
             return var93992EED3A5738F23A3CAF5AB8E5B9F1_1642710082;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetherableIfaces();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
@@ -534,19 +530,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1642710082 =             new String
 String[] var9B4335AB68A75F3AE5F7A851BC933C3D_1952750379 =             mService.getTetheredIfaces();
             var9B4335AB68A75F3AE5F7A851BC933C3D_1952750379.addTaint(taint);
             return var9B4335AB68A75F3AE5F7A851BC933C3D_1952750379;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1590803600 =             new String[0];
             var93992EED3A5738F23A3CAF5AB8E5B9F1_1590803600.addTaint(taint);
             return var93992EED3A5738F23A3CAF5AB8E5B9F1_1590803600;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetheredIfaces();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
@@ -557,19 +553,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1590803600 =             new String
 String[] varCB858A8AEA35BBB091CA19C8F620CC00_1138359736 =             mService.getTetheringErroredIfaces();
             varCB858A8AEA35BBB091CA19C8F620CC00_1138359736.addTaint(taint);
             return varCB858A8AEA35BBB091CA19C8F620CC00_1138359736;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234 =             new String[0];
             var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234.addTaint(taint);
             return var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetheringErroredIfaces();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
@@ -581,19 +577,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234 =             new String[
             int var1D4AF5D11C4A903069F1C114E73F4A9F_295876757 = (mService.tether(iface));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43693992 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43693992;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int varF5619E86E20DFE886240F33BFE9271F1_1660049580 = (TETHER_ERROR_SERVICE_UNAVAIL);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_557869896 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_557869896;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.tether(iface);
+        //} catch (RemoteException e) {
+            //return TETHER_ERROR_SERVICE_UNAVAIL;
+        //}
     }
 
     
@@ -605,19 +601,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234 =             new String[
             int var5B82BA8E8DD0B942DDAE4754B7562770_281964132 = (mService.untether(iface));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108969404 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108969404;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int varF5619E86E20DFE886240F33BFE9271F1_485221707 = (TETHER_ERROR_SERVICE_UNAVAIL);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960366060 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960366060;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.untether(iface);
+        //} catch (RemoteException e) {
+            //return TETHER_ERROR_SERVICE_UNAVAIL;
+        //}
     }
 
     
@@ -628,19 +624,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234 =             new String[
             boolean var1814E5587EF425295177A903081E6EE1_719248920 = (mService.isTetheringSupported());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81592171 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_81592171;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_589731449 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1315368869 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1315368869;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.isTetheringSupported();
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -651,19 +647,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_710638234 =             new String[
 String[] var18382B048E6AE48852E65DB6AAA5EAD0_1570720885 =             mService.getTetherableUsbRegexs();
             var18382B048E6AE48852E65DB6AAA5EAD0_1570720885.addTaint(taint);
             return var18382B048E6AE48852E65DB6AAA5EAD0_1570720885;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1462106886 =             new String[0];
             var93992EED3A5738F23A3CAF5AB8E5B9F1_1462106886.addTaint(taint);
             return var93992EED3A5738F23A3CAF5AB8E5B9F1_1462106886;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetherableUsbRegexs();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
@@ -674,19 +670,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1462106886 =             new String
 String[] varE6D299C14A46E7068C0D9D2AE29FFBB7_794479475 =             mService.getTetherableWifiRegexs();
             varE6D299C14A46E7068C0D9D2AE29FFBB7_794479475.addTaint(taint);
             return varE6D299C14A46E7068C0D9D2AE29FFBB7_794479475;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1449546339 =             new String[0];
             var93992EED3A5738F23A3CAF5AB8E5B9F1_1449546339.addTaint(taint);
             return var93992EED3A5738F23A3CAF5AB8E5B9F1_1449546339;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetherableWifiRegexs();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
@@ -697,19 +693,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1449546339 =             new String
 String[] var8C1BF787D9A26A56A43A1294212A5EA6_553253686 =             mService.getTetherableBluetoothRegexs();
             var8C1BF787D9A26A56A43A1294212A5EA6_553253686.addTaint(taint);
             return var8C1BF787D9A26A56A43A1294212A5EA6_553253686;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784 =             new String[0];
             var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784.addTaint(taint);
             return var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getTetherableBluetoothRegexs();
+        //} catch (RemoteException e) {
+            //return new String[0];
+        //}
     }
 
     
@@ -721,19 +717,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784 =             new String[
             int varB4C6BADBC3FE30C5AE139BE353835FAF_552202674 = (mService.setUsbTethering(enable));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691345115 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691345115;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int varF5619E86E20DFE886240F33BFE9271F1_553975736 = (TETHER_ERROR_SERVICE_UNAVAIL);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500928003 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500928003;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.setUsbTethering(enable);
+        //} catch (RemoteException e) {
+            //return TETHER_ERROR_SERVICE_UNAVAIL;
+        //}
     }
 
     
@@ -745,19 +741,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784 =             new String[
             int var191E4B382B7503278B8565A1DC8456AB_1090575485 = (mService.getLastTetherError(iface));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_103692746 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_103692746;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int varF5619E86E20DFE886240F33BFE9271F1_2107907378 = (TETHER_ERROR_SERVICE_UNAVAIL);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379045367 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_379045367;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getLastTetherError(iface);
+        //} catch (RemoteException e) {
+            //return TETHER_ERROR_SERVICE_UNAVAIL;
+        //}
     }
 
     
@@ -770,20 +766,20 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784 =             new String[
             boolean varB326B5062B2F0E69046810717534CB09_989684777 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1972549773 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1972549773;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1466580629 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_309767313 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_309767313;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.requestNetworkTransitionWakelock(forWhom);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -794,15 +790,15 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784 =             new String[
         try 
         {
             mService.reportInetCondition(networkType, percentage);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.reportInetCondition(networkType, percentage);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -812,15 +808,15 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784 =             new String[
         try 
         {
             mService.setGlobalProxy(p);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setGlobalProxy(p);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -831,19 +827,19 @@ String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_451063784 =             new String[
 ProxyProperties varC8A152E0F06A06977A2C52FB090F4830_45093719 =             mService.getGlobalProxy();
             varC8A152E0F06A06977A2C52FB090F4830_45093719.addTaint(taint);
             return varC8A152E0F06A06977A2C52FB090F4830_45093719;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 ProxyProperties var540C13E9E156B687226421B24F2DF178_335575286 =             null;
             var540C13E9E156B687226421B24F2DF178_335575286.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_335575286;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getGlobalProxy();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -854,19 +850,19 @@ ProxyProperties var540C13E9E156B687226421B24F2DF178_335575286 =             null
 ProxyProperties varF9A83677CD54FBE1BA647420C68E1B7F_817200808 =             mService.getProxy();
             varF9A83677CD54FBE1BA647420C68E1B7F_817200808.addTaint(taint);
             return varF9A83677CD54FBE1BA647420C68E1B7F_817200808;
-        } 
+        } //End block
         catch (RemoteException e)
         {
 ProxyProperties var540C13E9E156B687226421B24F2DF178_354828075 =             null;
             var540C13E9E156B687226421B24F2DF178_354828075.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_354828075;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mService.getProxy();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
     }
 
     
@@ -877,15 +873,15 @@ ProxyProperties var540C13E9E156B687226421B24F2DF178_354828075 =             null
         try 
         {
             mService.setDataDependency(networkType, met);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mService.setDataDependency(networkType, met);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -897,18 +893,18 @@ ProxyProperties var540C13E9E156B687226421B24F2DF178_354828075 =             null
             boolean var88D9C5576C1212BE5027394109B0F368_361585339 = (mService.isNetworkSupported(networkType));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_370975161 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_370975161;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1667997952 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_621619142 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_621619142;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mService.isNetworkSupported(networkType);
+        //} catch (RemoteException e) {}
+        //return false;
     }
 
     

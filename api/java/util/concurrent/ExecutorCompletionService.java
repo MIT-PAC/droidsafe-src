@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,13 +28,13 @@ public class ExecutorCompletionService<V> implements CompletionService<V> {
         this.aes = (executor instanceof AbstractExecutorService) ?
             (AbstractExecutorService) executor : null;
         this.completionQueue = new LinkedBlockingQueue<Future<V>>();
-        
-        
-            
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (executor == null)
+            //throw new NullPointerException();
+        //this.executor = executor;
+        //this.aes = (executor instanceof AbstractExecutorService) ?
+            //(AbstractExecutorService) executor : null;
+        //this.completionQueue = new LinkedBlockingQueue<Future<V>>();
     }
 
     
@@ -51,13 +51,13 @@ public class ExecutorCompletionService<V> implements CompletionService<V> {
         this.aes = (executor instanceof AbstractExecutorService) ?
             (AbstractExecutorService) executor : null;
         this.completionQueue = completionQueue;
-        
-        
-            
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (executor == null || completionQueue == null)
+            //throw new NullPointerException();
+        //this.executor = executor;
+        //this.aes = (executor instanceof AbstractExecutorService) ?
+            //(AbstractExecutorService) executor : null;
+        //this.completionQueue = completionQueue;
     }
 
     
@@ -76,11 +76,11 @@ RunnableFuture<V> var43B3148BB5E6650D57F808400964E06A_1815022163 =         aes.n
         var43B3148BB5E6650D57F808400964E06A_1815022163.addTaint(taint);
         return var43B3148BB5E6650D57F808400964E06A_1815022163;
         }
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (aes == null)
+            //return new FutureTask<V>(task);
+        //else
+            //return aes.newTaskFor(task);
     }
 
     
@@ -100,11 +100,11 @@ RunnableFuture<V> var9D13125A19E67035EAA1615C5C63FD97_1591364286 =         aes.n
         var9D13125A19E67035EAA1615C5C63FD97_1591364286.addTaint(taint);
         return var9D13125A19E67035EAA1615C5C63FD97_1591364286;
         }
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (aes == null)
+            //return new FutureTask<V>(task, result);
+        //else
+            //return aes.newTaskFor(task, result);
     }
 
     
@@ -122,11 +122,11 @@ RunnableFuture<V> var9D13125A19E67035EAA1615C5C63FD97_1591364286 =         aes.n
 Future<V> varABE3CFB53FE4A79F34CB25BC80BFD6E2_1837115893 =         f;
         varABE3CFB53FE4A79F34CB25BC80BFD6E2_1837115893.addTaint(taint);
         return varABE3CFB53FE4A79F34CB25BC80BFD6E2_1837115893;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (task == null) throw new NullPointerException();
+        //RunnableFuture<V> f = newTaskFor(task);
+        //executor.execute(new QueueingFuture(f));
+        //return f;
     }
 
     
@@ -145,11 +145,11 @@ Future<V> varABE3CFB53FE4A79F34CB25BC80BFD6E2_1837115893 =         f;
 Future<V> varABE3CFB53FE4A79F34CB25BC80BFD6E2_947850188 =         f;
         varABE3CFB53FE4A79F34CB25BC80BFD6E2_947850188.addTaint(taint);
         return varABE3CFB53FE4A79F34CB25BC80BFD6E2_947850188;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (task == null) throw new NullPointerException();
+        //RunnableFuture<V> f = newTaskFor(task, result);
+        //executor.execute(new QueueingFuture(f));
+        //return f;
     }
 
     
@@ -158,8 +158,8 @@ Future<V> varABE3CFB53FE4A79F34CB25BC80BFD6E2_947850188 =         f;
 Future<V> varDDA8A4DDC380A4CADE2CFC8A8159504F_60841611 =         completionQueue.take();
         varDDA8A4DDC380A4CADE2CFC8A8159504F_60841611.addTaint(taint);
         return varDDA8A4DDC380A4CADE2CFC8A8159504F_60841611;
-        
-        
+        // ---------- Original Method ----------
+        //return completionQueue.take();
     }
 
     
@@ -168,8 +168,8 @@ Future<V> varDDA8A4DDC380A4CADE2CFC8A8159504F_60841611 =         completionQueue
 Future<V> varB1E3F920A6FDBCB7B47C9C9E8C6506B8_237531041 =         completionQueue.poll();
         varB1E3F920A6FDBCB7B47C9C9E8C6506B8_237531041.addTaint(taint);
         return varB1E3F920A6FDBCB7B47C9C9E8C6506B8_237531041;
-        
-        
+        // ---------- Original Method ----------
+        //return completionQueue.poll();
     }
 
     
@@ -180,8 +180,8 @@ Future<V> varB1E3F920A6FDBCB7B47C9C9E8C6506B8_237531041 =         completionQueu
 Future<V> var6499A2FAA4A72B0B362D284410DD9B81_927905039 =         completionQueue.poll(timeout, unit);
         var6499A2FAA4A72B0B362D284410DD9B81_927905039.addTaint(taint);
         return var6499A2FAA4A72B0B362D284410DD9B81_927905039;
-        
-        
+        // ---------- Original Method ----------
+        //return completionQueue.poll(timeout, unit);
     }
 
     
@@ -194,16 +194,16 @@ Future<V> var6499A2FAA4A72B0B362D284410DD9B81_927905039 =         completionQueu
           QueueingFuture(RunnableFuture<V> task) {
             super(task, null);
             this.task = task;
-            
-            
+            // ---------- Original Method ----------
+            //this.task = task;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.502 -0400", hash_original_method = "A6F9634D935F51A2E62823D21027F809", hash_generated_method = "4F7C67B055D3EAF2C5931F9AE96CF3D2")
         protected void done() {
             completionQueue.add(task);
-            
-            
+            // ---------- Original Method ----------
+            //completionQueue.add(task);
         }
 
         

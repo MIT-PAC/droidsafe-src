@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,7 +36,7 @@ public class TextMessage implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.510 -0400", hash_original_method = "9D0AB1B2CC05C1155E2594BD69FE3EC1", hash_generated_method = "83409D8B2575D0083E782346223705C9")
       TextMessage() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -50,26 +50,25 @@ public class TextMessage implements Parcelable {
         responseNeeded = in.readInt() == 1 ? true : false;
         userClear = in.readInt() == 1 ? true : false;
         duration = in.readParcelable(null);
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //title = in.readString();
+        //text = in.readString();
+        //icon = in.readParcelable(null);
+        //iconSelfExplanatory = in.readInt() == 1 ? true : false;
+        //isHighPriority = in.readInt() == 1 ? true : false;
+        //responseNeeded = in.readInt() == 1 ? true : false;
+        //userClear = in.readInt() == 1 ? true : false;
+        //duration = in.readParcelable(null);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.511 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7E8DFD7888C9A1A48D4D2C2F771FB995")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1335485399 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200303155 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200303155;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -85,15 +84,15 @@ public class TextMessage implements Parcelable {
         dest.writeInt(responseNeeded ? 1 : 0);
         dest.writeInt(userClear ? 1 : 0);
         dest.writeParcelable(duration, 0);
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeString(title);
+        //dest.writeString(text);
+        //dest.writeParcelable(icon, 0);
+        //dest.writeInt(iconSelfExplanatory ? 1 : 0);
+        //dest.writeInt(isHighPriority ? 1 : 0);
+        //dest.writeInt(responseNeeded ? 1 : 0);
+        //dest.writeInt(userClear ? 1 : 0);
+        //dest.writeParcelable(duration, 0);
     }
 
     
@@ -108,12 +107,12 @@ public class TextMessage implements Parcelable {
             return new TextMessage[size];
         }
     };
-    
+    // orphaned legacy method
     public TextMessage createFromParcel(Parcel in) {
             return new TextMessage(in);
         }
     
-    
+    // orphaned legacy method
     public TextMessage[] newArray(int size) {
             return new TextMessage[size];
         }

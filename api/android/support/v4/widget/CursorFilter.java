@@ -1,6 +1,6 @@
 package android.support.v4.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ class CursorFilter extends Filter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.550 -0400", hash_original_method = "D61DC331CF58D286B36C03C7DC72D315", hash_generated_method = "6E3D5C0883E914F2A2E7C1B092F68B97")
       CursorFilter(CursorFilterClient client) {
         mClient = client;
-        
-        
+        // ---------- Original Method ----------
+        //mClient = client;
     }
 
     
@@ -27,8 +27,8 @@ class CursorFilter extends Filter {
 CharSequence var96717A582256C30A3C013FF45D0F5738_398977435 =         mClient.convertToString((Cursor) resultValue);
         var96717A582256C30A3C013FF45D0F5738_398977435.addTaint(taint);
         return var96717A582256C30A3C013FF45D0F5738_398977435;
-        
-        
+        // ---------- Original Method ----------
+        //return mClient.convertToString((Cursor) resultValue);
     }
 
     
@@ -42,26 +42,26 @@ CharSequence var96717A582256C30A3C013FF45D0F5738_398977435 =         mClient.con
         {
             results.count = cursor.getCount();
             results.values = cursor;
-        } 
+        } //End block
         else
         {
             results.count = 0;
             results.values = null;
-        } 
+        } //End block
 FilterResults var238ECCC9872FFCA0B3C3DB83598FF044_957020024 =         results;
         var238ECCC9872FFCA0B3C3DB83598FF044_957020024.addTaint(taint);
         return var238ECCC9872FFCA0B3C3DB83598FF044_957020024;
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //Cursor cursor = mClient.runQueryOnBackgroundThread(constraint);
+        //FilterResults results = new FilterResults();
+        //if (cursor != null) {
+            //results.count = cursor.getCount();
+            //results.values = cursor;
+        //} else {
+            //results.count = 0;
+            //results.values = null;
+        //}
+        //return results;
     }
 
     
@@ -74,12 +74,12 @@ FilterResults var238ECCC9872FFCA0B3C3DB83598FF044_957020024 =         results;
     if(results.values != null && results.values != oldCursor)        
         {
             mClient.changeCursor((Cursor) results.values);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Cursor oldCursor = mClient.getCursor();
+        //if (results.values != null && results.values != oldCursor) {
+            //mClient.changeCursor((Cursor) results.values);
+        //}
     }
 
     

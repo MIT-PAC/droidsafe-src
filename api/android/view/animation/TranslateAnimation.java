@@ -1,6 +1,6 @@
 package android.view.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -70,8 +70,8 @@ public class TranslateAnimation extends Animation {
         mToYType = d.type;
         mToYValue = d.value;
         a.recycle();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -85,15 +85,15 @@ public class TranslateAnimation extends Animation {
         mToXType = ABSOLUTE;
         mFromYType = ABSOLUTE;
         mToYType = ABSOLUTE;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFromXValue = fromXDelta;
+        //mToXValue = toXDelta;
+        //mFromYValue = fromYDelta;
+        //mToYValue = toYDelta;
+        //mFromXType = ABSOLUTE;
+        //mToXType = ABSOLUTE;
+        //mFromYType = ABSOLUTE;
+        //mToYType = ABSOLUTE;
     }
 
     
@@ -108,15 +108,15 @@ public class TranslateAnimation extends Animation {
         mToXType = toXType;
         mFromYType = fromYType;
         mToYType = toYType;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFromXValue = fromXValue;
+        //mToXValue = toXValue;
+        //mFromYValue = fromYValue;
+        //mToYValue = toYValue;
+        //mFromXType = fromXType;
+        //mToXType = toXType;
+        //mFromYType = fromYType;
+        //mToYType = toYType;
     }
 
     
@@ -130,22 +130,22 @@ public class TranslateAnimation extends Animation {
     if(mFromXDelta != mToXDelta)        
         {
             dx = mFromXDelta + ((mToXDelta - mFromXDelta) * interpolatedTime);
-        } 
+        } //End block
     if(mFromYDelta != mToYDelta)        
         {
             dy = mFromYDelta + ((mToYDelta - mFromYDelta) * interpolatedTime);
-        } 
+        } //End block
         t.getMatrix().setTranslate(dx, dy);
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //float dx = mFromXDelta;
+        //float dy = mFromYDelta;
+        //if (mFromXDelta != mToXDelta) {
+            //dx = mFromXDelta + ((mToXDelta - mFromXDelta) * interpolatedTime);
+        //}
+        //if (mFromYDelta != mToYDelta) {
+            //dy = mFromYDelta + ((mToYDelta - mFromYDelta) * interpolatedTime);
+        //}
+        //t.getMatrix().setTranslate(dx, dy);
     }
 
     
@@ -157,12 +157,12 @@ public class TranslateAnimation extends Animation {
         mToXDelta = resolveSize(mToXType, mToXValue, width, parentWidth);
         mFromYDelta = resolveSize(mFromYType, mFromYValue, height, parentHeight);
         mToYDelta = resolveSize(mToYType, mToYValue, height, parentHeight);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.initialize(width, height, parentWidth, parentHeight);
+        //mFromXDelta = resolveSize(mFromXType, mFromXValue, width, parentWidth);
+        //mToXDelta = resolveSize(mToXType, mToXValue, width, parentWidth);
+        //mFromYDelta = resolveSize(mFromYType, mFromYValue, height, parentHeight);
+        //mToYDelta = resolveSize(mToYType, mToYValue, height, parentHeight);
     }
 
     

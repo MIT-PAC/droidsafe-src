@@ -1,6 +1,6 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.651 -0400", hash_original_method = "39015C507ACAACD362C6AF5AEC7D9CF8", hash_generated_method = "A30DF7F45610C591D70BF68AB99C63B7")
       EnumSet(Class<E> cls) {
         elementClass = cls;
-        
-        
+        // ---------- Original Method ----------
+        //elementClass = cls;
     }
 
     
@@ -140,35 +140,33 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
 EnumSet<E> varEF0FA5E6D5CDFF5EA3B5838CC968F234_1312346977 =             (EnumSet<E>) super.clone();
             varEF0FA5E6D5CDFF5EA3B5838CC968F234_1312346977.addTaint(taint);
             return varEF0FA5E6D5CDFF5EA3B5838CC968F234_1312346977;
-        } 
+        } //End block
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_82285967 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_82285967.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_82285967;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return (EnumSet<E>) super.clone();
+        //} catch (CloneNotSupportedException e) {
+            //throw new AssertionError(e);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.654 -0400", hash_original_method = "04E56AE18F38E72A8E3B6B437517B693", hash_generated_method = "704E9070063C85D5EDC2E867313B8910")
      boolean isValidType(Class<?> cls) {
         addTaint(cls.getTaint());
         boolean varA4C9D97F9E25688FCC6F325088E3177C_335551151 = (cls == elementClass || cls.getSuperclass() == elementClass);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_25932411 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_25932411;
-        
-        
+        // ---------- Original Method ----------
+        //return cls == elementClass || cls.getSuperclass() == elementClass;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.655 -0400", hash_original_method = "3A8DA3E34FE3E13C123721386FD31559", hash_generated_method = "7A5BB76BA2EA44A02CBA0031C6F3548C")
     @SuppressWarnings("unchecked")
      Object writeReplace() {
@@ -178,11 +176,11 @@ EnumSet<E> varEF0FA5E6D5CDFF5EA3B5838CC968F234_1312346977 =             (EnumSet
 Object var60FC9F22F7E863EBFD33B2ADB8462743_1482022873 =         proxy;
         var60FC9F22F7E863EBFD33B2ADB8462743_1482022873.addTaint(taint);
         return var60FC9F22F7E863EBFD33B2ADB8462743_1482022873;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //SerializationProxy proxy = new SerializationProxy();
+        //proxy.elements = toArray(new Enum[0]);
+        //proxy.elementType = elementClass;
+        //return proxy;
     }
 
     
@@ -197,7 +195,7 @@ Object var60FC9F22F7E863EBFD33B2ADB8462743_1482022873 =         proxy;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.655 -0400", hash_original_method = "F430ADBE7D405D29614A0779FFE3FD6E", hash_generated_method = "F430ADBE7D405D29614A0779FFE3FD6E")
         public SerializationProxy ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -207,16 +205,16 @@ Object var60FC9F22F7E863EBFD33B2ADB8462743_1482022873 =         proxy;
 for(E e : elements)
             {
                 set.add(e);
-            } 
+            } //End block
 Object varD2D4612E029977363A9BBEBD4F0339C0_1378835875 =             set;
             varD2D4612E029977363A9BBEBD4F0339C0_1378835875.addTaint(taint);
             return varD2D4612E029977363A9BBEBD4F0339C0_1378835875;
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //EnumSet<E> set = EnumSet.noneOf(elementType);
+            //for (E e : elements) {
+                //set.add(e);
+            //}
+            //return set;
         }
 
         

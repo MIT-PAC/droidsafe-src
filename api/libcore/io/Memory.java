@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public final class Memory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.709 -0400", hash_original_method = "8E748606B262B165332F0089DEAB291F", hash_generated_method = "65AB48DAC941764A247934D1396F6184")
     private  Memory() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,8 +29,7 @@ public final class Memory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int peekInt(byte[] src, int offset, ByteOrder order) {
+        public static int peekInt(byte[] src, int offset, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             return (((src[offset++] & 0xff) << 24) |
                     ((src[offset++] & 0xff) << 16) |
@@ -45,8 +44,7 @@ public final class Memory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long peekLong(byte[] src, int offset, ByteOrder order) {
+        public static long peekLong(byte[] src, int offset, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             int h = ((src[offset++] & 0xff) << 24) |
                     ((src[offset++] & 0xff) << 16) |
@@ -71,8 +69,7 @@ public final class Memory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static short peekShort(byte[] src, int offset, ByteOrder order) {
+        public static short peekShort(byte[] src, int offset, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             return (short) ((src[offset] << 8) | (src[offset + 1] & 0xff));
         } else {
@@ -81,8 +78,7 @@ public final class Memory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void pokeInt(byte[] dst, int offset, int value, ByteOrder order) {
+        public static void pokeInt(byte[] dst, int offset, int value, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             dst[offset++] = (byte) ((value >> 24) & 0xff);
             dst[offset++] = (byte) ((value >> 16) & 0xff);
@@ -97,8 +93,7 @@ public final class Memory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void pokeLong(byte[] dst, int offset, long value, ByteOrder order) {
+        public static void pokeLong(byte[] dst, int offset, long value, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             int i = (int) (value >> 32);
             dst[offset++] = (byte) ((i >> 24) & 0xff);
@@ -125,8 +120,7 @@ public final class Memory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void pokeShort(byte[] dst, int offset, short value, ByteOrder order) {
+        public static void pokeShort(byte[] dst, int offset, short value, ByteOrder order) {
         if (order == ByteOrder.BIG_ENDIAN) {
             dst[offset++] = (byte) ((value >> 8) & 0xff);
             dst[offset  ] = (byte) ((value >> 0) & 0xff);

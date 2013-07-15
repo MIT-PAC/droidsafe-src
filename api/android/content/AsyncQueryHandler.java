@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,19 +32,19 @@ public abstract class AsyncQueryHandler extends Handler {
                 HandlerThread thread = new HandlerThread("AsyncQueryWorker");
                 thread.start();
                 sLooper = thread.getLooper();
-            } 
-        } 
+            } //End block
+        } //End block
         mWorkerThreadHandler = createHandler(sLooper);
-        
-        
-        
-            
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //mResolver = new WeakReference<ContentResolver>(cr);
+        //synchronized (AsyncQueryHandler.class) {
+            //if (sLooper == null) {
+                //HandlerThread thread = new HandlerThread("AsyncQueryWorker");
+                //thread.start();
+                //sLooper = thread.getLooper();
+            //}
+        //}
+        //mWorkerThreadHandler = createHandler(sLooper);
     }
 
     
@@ -54,12 +54,11 @@ public abstract class AsyncQueryHandler extends Handler {
 Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandler(looper);
         var068CCC2B93BE9A402088FD79638C7AA5_1140315222.addTaint(taint);
         return var068CCC2B93BE9A402088FD79638C7AA5_1140315222;
-        
-        
+        // ---------- Original Method ----------
+        //return new WorkerHandler(looper);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.126 -0400", hash_original_method = "28A47EA36D54BFEB24E3F3419F095F72", hash_generated_method = "62C6883177E06C5D3EE9245139D57ADC")
     public void startQuery(int token, Object cookie, Uri uri,
             String[] projection, String selection, String[] selectionArgs,
@@ -83,19 +82,19 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
         args.cookie = cookie;
         msg.obj = args;
         mWorkerThreadHandler.sendMessage(msg);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = mWorkerThreadHandler.obtainMessage(token);
+        //msg.arg1 = EVENT_ARG_QUERY;
+        //WorkerArgs args = new WorkerArgs();
+        //args.handler = this;
+        //args.uri = uri;
+        //args.projection = projection;
+        //args.selection = selection;
+        //args.selectionArgs = selectionArgs;
+        //args.orderBy = orderBy;
+        //args.cookie = cookie;
+        //msg.obj = args;
+        //mWorkerThreadHandler.sendMessage(msg);
     }
 
     
@@ -103,8 +102,8 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
     public final void cancelOperation(int token) {
         addTaint(token);
         mWorkerThreadHandler.removeMessages(token);
-        
-        
+        // ---------- Original Method ----------
+        //mWorkerThreadHandler.removeMessages(token);
     }
 
     
@@ -124,16 +123,16 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
         args.values = initialValues;
         msg.obj = args;
         mWorkerThreadHandler.sendMessage(msg);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = mWorkerThreadHandler.obtainMessage(token);
+        //msg.arg1 = EVENT_ARG_INSERT;
+        //WorkerArgs args = new WorkerArgs();
+        //args.handler = this;
+        //args.uri = uri;
+        //args.cookie = cookie;
+        //args.values = initialValues;
+        //msg.obj = args;
+        //mWorkerThreadHandler.sendMessage(msg);
     }
 
     
@@ -157,18 +156,18 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
         args.selectionArgs = selectionArgs;
         msg.obj = args;
         mWorkerThreadHandler.sendMessage(msg);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = mWorkerThreadHandler.obtainMessage(token);
+        //msg.arg1 = EVENT_ARG_UPDATE;
+        //WorkerArgs args = new WorkerArgs();
+        //args.handler = this;
+        //args.uri = uri;
+        //args.cookie = cookie;
+        //args.values = values;
+        //args.selection = selection;
+        //args.selectionArgs = selectionArgs;
+        //msg.obj = args;
+        //mWorkerThreadHandler.sendMessage(msg);
     }
 
     
@@ -190,61 +189,57 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
         args.selectionArgs = selectionArgs;
         msg.obj = args;
         mWorkerThreadHandler.sendMessage(msg);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg = mWorkerThreadHandler.obtainMessage(token);
+        //msg.arg1 = EVENT_ARG_DELETE;
+        //WorkerArgs args = new WorkerArgs();
+        //args.handler = this;
+        //args.uri = uri;
+        //args.cookie = cookie;
+        //args.selection = selection;
+        //args.selectionArgs = selectionArgs;
+        //msg.obj = args;
+        //mWorkerThreadHandler.sendMessage(msg);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.135 -0400", hash_original_method = "DE79F9BA4E2E1E76FD6FB5837E125869", hash_generated_method = "9D3FF6ECD27AC8BDCBB25BE5F4EF571A")
     protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(cursor.getTaint());
         addTaint(cookie.getTaint());
         addTaint(token);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.135 -0400", hash_original_method = "56E707F93CF845AF5D37EDA14CF36C80", hash_generated_method = "FB85709BC61A8419CE005019868AF694")
     protected void onInsertComplete(int token, Object cookie, Uri uri) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(uri.getTaint());
         addTaint(cookie.getTaint());
         addTaint(token);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.136 -0400", hash_original_method = "D24E238B6DD6917FF9CA66039892AD0D", hash_generated_method = "136393E13205FCAEE209B63116A32EAB")
     protected void onUpdateComplete(int token, Object cookie, int result) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(result);
         addTaint(cookie.getTaint());
         addTaint(token);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.137 -0400", hash_original_method = "5282503E7213EB860C46CD1340339EC5", hash_generated_method = "6409983EE856B1ECD4D07AAFA58F9B22")
     protected void onDeleteComplete(int token, Object cookie, int result) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(result);
         addTaint(cookie.getTaint());
         addTaint(token);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -257,7 +252,7 @@ Handler var068CCC2B93BE9A402088FD79638C7AA5_1140315222 =         new WorkerHandl
         {
             Log.d(TAG, "AsyncQueryHandler.handleMessage: msg.what=" + msg.what
                     + ", msg.arg1=" + msg.arg1);
-        } 
+        } //End block
         int token = msg.what;
         int event = msg.arg1;
 switch(event){
@@ -274,8 +269,8 @@ switch(event){
         onDeleteComplete(token, args.cookie, (Integer) args.result);
         break;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -311,7 +306,7 @@ switch(event){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.139 -0400", hash_original_method = "5AD25B0DEF3037CAAA377C35BF29670C", hash_generated_method = "5AD25B0DEF3037CAAA377C35BF29670C")
         public WorkerArgs ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -325,7 +320,7 @@ switch(event){
         public  WorkerHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -350,12 +345,12 @@ switch(event){
     if(cursor != null)                
                 {
                     cursor.getCount();
-                } 
-            } 
+                } //End block
+            } //End block
             catch (Exception e)
             {
                 cursor = null;
-            } 
+            } //End block
             args.result = cursor;
             break;
             case EVENT_ARG_INSERT:
@@ -375,10 +370,10 @@ switch(event){
             {
                 Log.d(TAG, "WorkerHandler.handleMsg: msg.arg1=" + msg.arg1
                         + ", reply.what=" + reply.what);
-            } 
+            } //End block
             reply.sendToTarget();
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

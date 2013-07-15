@@ -1,6 +1,6 @@
 package java.beans;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,13 +32,13 @@ public class PropertyChangeSupport implements Serializable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1139733601 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1139733601.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1139733601;
-        } 
+        } //End block
         this.sourceBean = sourceBean;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (sourceBean == null) {
+            //throw new NullPointerException();
+        //}
+        //this.sourceBean = sourceBean;
     }
 
     
@@ -48,8 +48,8 @@ public class PropertyChangeSupport implements Serializable {
         addTaint(oldValue.getTaint());
         addTaint(propertyName.getTaint());
         firePropertyChange(new PropertyChangeEvent(sourceBean, propertyName, oldValue, newValue));
-        
-        
+        // ---------- Original Method ----------
+        //firePropertyChange(new PropertyChangeEvent(sourceBean, propertyName, oldValue, newValue));
     }
 
     
@@ -62,9 +62,9 @@ public class PropertyChangeSupport implements Serializable {
         addTaint(propertyName.getTaint());
         firePropertyChange(new IndexedPropertyChangeEvent(sourceBean,
                 propertyName, oldValue, newValue, index));
-        
-        
-                
+        // ---------- Original Method ----------
+        //firePropertyChange(new IndexedPropertyChangeEvent(sourceBean,
+                //propertyName, oldValue, newValue, index));
     }
 
     
@@ -78,15 +78,15 @@ for(PropertyChangeListener p : listeners)
             {
                 listeners.remove(p);
                 return;
-            } 
-        } 
-        
-        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (PropertyChangeListener p : listeners) {
+            //if (equals(propertyName, listener, p)) {
+                //listeners.remove(p);
+                //return;
+            //}
+        //}
     }
 
     
@@ -108,41 +108,41 @@ for(PropertyChangeListener p : listeners)
                     boolean var68934A3E9455FA72420237EB05902327_839382480 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1489378756 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1489378756;
-                } 
+                } //End block
                 PropertyChangeListenerProxy aProxy = (PropertyChangeListenerProxy) a;
                 aName = aProxy.getPropertyName();
                 a = aProxy.getListener();
-            } 
+            } //End block
     if(!Objects.equal(aName, bName))            
             {
                 boolean var68934A3E9455FA72420237EB05902327_2102669906 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_569993370 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_569993370;
-            } 
+            } //End block
             aName = null;
-        } 
+        } //End block
         boolean var881BE61EA94846CE7E8F42516504422F_13690456 = (aName == null && Objects.equal(a, b));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_376681081 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_376681081;
-        
-        
-            
-            
-            
-            
-                
-                    
-                
-                
-                
-                
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //while (b instanceof PropertyChangeListenerProxy) {
+            //PropertyChangeListenerProxy bProxy = (PropertyChangeListenerProxy) b; 
+            //String bName = bProxy.getPropertyName();
+            //b = bProxy.getListener();
+            //if (aName == null) {
+                //if (!(a instanceof PropertyChangeListenerProxy)) {
+                    //return false;
+                //}
+                //PropertyChangeListenerProxy aProxy = (PropertyChangeListenerProxy) a; 
+                //aName = aProxy.getPropertyName();
+                //a = aProxy.getListener();
+            //}
+            //if (!Objects.equal(aName, bName)) {
+                //return false; 
+            //}
+            //aName = null;
+        //}
+        //return aName == null && Objects.equal(a, b);
     }
 
     
@@ -153,11 +153,11 @@ for(PropertyChangeListener p : listeners)
     if(listener != null && propertyName != null)        
         {
             listeners.add(new PropertyChangeListenerProxy(propertyName, listener));
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (listener != null && propertyName != null) {
+            //listeners.add(new PropertyChangeListenerProxy(propertyName, listener));
+        //}
     }
 
     
@@ -171,20 +171,20 @@ for(PropertyChangeListener p : listeners)
                     propertyName, ((PropertyChangeListenerProxy) p).getPropertyName()))            
             {
                 result.add(p);
-            } 
-        } 
+            } //End block
+        } //End block
 PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_772086375 =         result.toArray(new PropertyChangeListener[result.size()]);
         varF0EACBCF567A9F951330FD2EA45DDC95_772086375.addTaint(taint);
         return varF0EACBCF567A9F951330FD2EA45DDC95_772086375;
-        
-        
-        
-            
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //List<PropertyChangeListener> result = new ArrayList<PropertyChangeListener>();
+        //for (PropertyChangeListener p : listeners) {
+            //if (p instanceof PropertyChangeListenerProxy && Objects.equal(
+                    //propertyName, ((PropertyChangeListenerProxy) p).getPropertyName())) {
+                //result.add(p);
+            //}
+        //}
+        //return result.toArray(new PropertyChangeListener[result.size()]);
     }
 
     
@@ -194,8 +194,8 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_772086375 =        
         addTaint(oldValue);
         addTaint(propertyName.getTaint());
         firePropertyChange(propertyName, Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
-        
-        
+        // ---------- Original Method ----------
+        //firePropertyChange(propertyName, Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
     }
 
     
@@ -210,12 +210,12 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_772086375 =        
         {
             fireIndexedPropertyChange(propertyName, index,
                     Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
-        } 
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (oldValue != newValue) {
+            //fireIndexedPropertyChange(propertyName, index,
+                    //Boolean.valueOf(oldValue), Boolean.valueOf(newValue));
+        //}
     }
 
     
@@ -225,8 +225,8 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_772086375 =        
         addTaint(oldValue);
         addTaint(propertyName.getTaint());
         firePropertyChange(propertyName, Integer.valueOf(oldValue), Integer.valueOf(newValue));
-        
-        
+        // ---------- Original Method ----------
+        //firePropertyChange(propertyName, Integer.valueOf(oldValue), Integer.valueOf(newValue));
     }
 
     
@@ -241,12 +241,12 @@ PropertyChangeListener[] varF0EACBCF567A9F951330FD2EA45DDC95_772086375 =        
         {
             fireIndexedPropertyChange(propertyName, index,
                     Integer.valueOf(oldValue), Integer.valueOf(newValue));
-        } 
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (oldValue != newValue) {
+            //fireIndexedPropertyChange(propertyName, index,
+                    //Integer.valueOf(oldValue), Integer.valueOf(newValue));
+        //}
     }
 
     
@@ -261,19 +261,19 @@ for(PropertyChangeListener p : listeners)
                 boolean varB326B5062B2F0E69046810717534CB09_1592740462 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_32139067 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_32139067;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_2055877805 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1766399637 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1766399637;
-        
-        
-            
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (PropertyChangeListener p : listeners) {
+            //if (!(p instanceof PropertyChangeListenerProxy) || Objects.equal(
+                    //propertyName, ((PropertyChangeListenerProxy) p).getPropertyName())) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
@@ -286,15 +286,15 @@ for(PropertyChangeListener p : listeners)
             {
                 listeners.remove(p);
                 return;
-            } 
-        } 
-        
-        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (PropertyChangeListener p : listeners) {
+            //if (equals(null, listener, p)) {
+                //listeners.remove(p);
+                //return;
+            //}
+        //}
     }
 
     
@@ -304,11 +304,11 @@ for(PropertyChangeListener p : listeners)
     if(listener != null)        
         {
             listeners.add(listener);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (listener != null) {
+            //listeners.add(listener);
+        //}
     }
 
     
@@ -317,8 +317,8 @@ for(PropertyChangeListener p : listeners)
 PropertyChangeListener[] var8E8BCC75E96F024B72E78A7CD5C9975D_2125380484 =         listeners.toArray(new PropertyChangeListener[0]);
         var8E8BCC75E96F024B72E78A7CD5C9975D_2125380484.addTaint(taint);
         return var8E8BCC75E96F024B72E78A7CD5C9975D_2125380484;
-        
-        
+        // ---------- Original Method ----------
+        //return listeners.toArray(new PropertyChangeListener[0]);
     }
 
     
@@ -339,11 +339,11 @@ for(PropertyChangeListener p : listeners)
                     {
                         list = new PropertyChangeSupport(sourceBean);
                         map.put(proxy.getPropertyName(), list);
-                    } 
+                    } //End block
                     list.listeners.add(listener);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         ObjectOutputStream.PutField putFields = out.putFields();
         putFields.put("source", sourceBean);
         putFields.put("children", map);
@@ -353,11 +353,11 @@ for(PropertyChangeListener p : listeners)
     if(p instanceof Serializable)            
             {
                 out.writeObject(p);
-            } 
-        } 
+            } //End block
+        } //End block
         out.writeObject(null);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -376,17 +376,17 @@ for(Map.Entry<String, PropertyChangeSupport> entry : children.entrySet())
 for(PropertyChangeListener p : entry.getValue().listeners)
                 {
                     listeners.add(new PropertyChangeListenerProxy(entry.getKey(), p));
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         PropertyChangeListener listener;
         while
 ((listener = (PropertyChangeListener) in.readObject()) != null)        
         {
             listeners.add(listener);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -399,7 +399,7 @@ for(PropertyChangeListener p : entry.getValue().listeners)
     if(newValue != null && oldValue != null && newValue.equals(oldValue))        
         {
             return;
-        } 
+        } //End block
     notifyEachListener        :
 for(PropertyChangeListener p : listeners)
         {
@@ -410,29 +410,29 @@ for(PropertyChangeListener p : listeners)
     if(!Objects.equal(proxy.getPropertyName(), propertyName))                
                 {
                     continue notifyEachListener;
-                } 
+                } //End block
                 p = (PropertyChangeListener) proxy.getListener();
-            } 
+            } //End block
             p.propertyChange(event);
-        } 
-        
-        
-        
-        
-        
-            
-        
-        
-        
-            
-                
-                
-                    
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String propertyName = event.getPropertyName();
+        //Object oldValue = event.getOldValue();
+        //Object newValue = event.getNewValue();
+        //if (newValue != null && oldValue != null && newValue.equals(oldValue)) {
+            //return;
+        //}
+        //notifyEachListener:
+        //for (PropertyChangeListener p : listeners) {
+            //while (p instanceof PropertyChangeListenerProxy) {
+                //PropertyChangeListenerProxy proxy = (PropertyChangeListenerProxy) p;
+                //if (!Objects.equal(proxy.getPropertyName(), propertyName)) {
+                    //continue notifyEachListener;
+                //}
+                //p = (PropertyChangeListener) proxy.getListener();
+            //}
+            //p.propertyChange(event);
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,9 +33,9 @@ public final class Inet6Address extends InetAddress {
         addTaint(ipaddress[0]);
         this.scope_id = scope_id;
         this.scope_id_set = (scope_id != 0);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.scope_id = scope_id;
+        //this.scope_id_set = (scope_id != 0);
     }
 
     
@@ -86,33 +86,33 @@ public final class Inet6Address extends InetAddress {
             boolean varB326B5062B2F0E69046810717534CB09_161493969 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1450447341 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1450447341;
-        } 
+        } //End block
     if(ia.isLinkLocalAddress() && isLinkLocalAddress())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1962973594 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1318117585 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1318117585;
-        } 
+        } //End block
     if(!ia.isSiteLocalAddress() && !ia.isLinkLocalAddress())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_920788218 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_208318015 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_208318015;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1616378997 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_495728560 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_495728560;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (ia.isSiteLocalAddress() && isSiteLocalAddress()) {
+            //return true;
+        //}
+        //if (ia.isLinkLocalAddress() && isLinkLocalAddress()) {
+            //return true;
+        //}
+        //if (!ia.isSiteLocalAddress() && !ia.isLinkLocalAddress()) {
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -122,12 +122,11 @@ public final class Inet6Address extends InetAddress {
         boolean varF0BCD000C3B68BC2094721CF537784DA_1273889043 = (Arrays.equals(ipaddress, Inet6Address.ANY.ipaddress));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_622696914 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_622696914;
-        
-        
+        // ---------- Original Method ----------
+        //return Arrays.equals(ipaddress, Inet6Address.ANY.ipaddress);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.703 -0400", hash_original_method = "0048D9C1E27FFD1D482DB9672EA3AE03", hash_generated_method = "8A48C8E2B47787BBA5A5D0164FE84460")
     public boolean isIPv4CompatibleAddress() {
 for(int i = 0;i < 12;i++)
@@ -137,30 +136,29 @@ for(int i = 0;i < 12;i++)
                 boolean var68934A3E9455FA72420237EB05902327_58837215 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1154653890 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1154653890;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_798442980 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1222890907 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1222890907;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (int i = 0; i < 12; i++) {
+            //if (ipaddress[i] != 0) {
+                //return false;
+            //}
+        //}
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.704 -0400", hash_original_method = "9F5F5CEBE580C822E7F3125E303D498E", hash_generated_method = "73283572AF9379D012BCD5DE4B9F2EDB")
     @Override
     public boolean isLinkLocalAddress() {
         boolean var1B7806100EF7DF9D115FB5C25F7F477B_1553839716 = (((ipaddress[0] & 0xff) == 0xfe) && ((ipaddress[1] & 0xc0) == 0x80));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_311259327 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_311259327;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ipaddress[0] & 0xff) == 0xfe) && ((ipaddress[1] & 0xc0) == 0x80);
     }
 
     
@@ -170,103 +168,95 @@ for(int i = 0;i < 12;i++)
         boolean varB815A8AE0F4ADE1C8715B51E2243ECAE_270026023 = (Arrays.equals(ipaddress, Inet6Address.LOOPBACK.ipaddress));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_729458998 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_729458998;
-        
-        
+        // ---------- Original Method ----------
+        //return Arrays.equals(ipaddress, Inet6Address.LOOPBACK.ipaddress);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.704 -0400", hash_original_method = "54D483B8739F01A2815B2B8F656686DE", hash_generated_method = "8AD2B79D80CDA581E54B9648F6613F4A")
     @Override
     public boolean isMCGlobal() {
         boolean varCDA0726ADC94A41FEECEA90D24B3ED14_778874837 = (((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x0e));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1449623094 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1449623094;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x0e);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.705 -0400", hash_original_method = "DCFE2D7DF3B86ED730BA1C809E9E7D4A", hash_generated_method = "016213704A602AD4D8EFF2FBA43A4678")
     @Override
     public boolean isMCLinkLocal() {
         boolean var5E6297AE587703DC72935A39DC50861A_1870741616 = (((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x02));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1137155340 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1137155340;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x02);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.705 -0400", hash_original_method = "A2CA5CB23BE5DDD68CAA7DA2135DB2EA", hash_generated_method = "A2E8584F67F41E5F943A9F2AEE2B8FCC")
     @Override
     public boolean isMCNodeLocal() {
         boolean var0490226B8466FDAB8E6C2D510B76FF2E_1123887602 = (((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x01));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1581147216 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1581147216;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x01);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.706 -0400", hash_original_method = "54DE0BED5AB4157674DB2DAF2389E694", hash_generated_method = "AF7F86BF1BF3B79F52B651E29CBD0120")
     @Override
     public boolean isMCOrgLocal() {
         boolean var83211C213A7B34829FB45804A60011B7_1670494522 = (((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x08));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_571234853 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_571234853;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x08);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.706 -0400", hash_original_method = "F3FC244CCF2BE8692CC93BDBE33FAF7E", hash_generated_method = "8038C039C41CA4B3DAFFB8091E6D0931")
     @Override
     public boolean isMCSiteLocal() {
         boolean var3EFB650162BA17F8BDEF653AECD716C1_68382038 = (((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x05));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_372817916 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_372817916;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ipaddress[0] & 0xff) == 0xff) && ((ipaddress[1] & 0x0f) == 0x05);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.706 -0400", hash_original_method = "421AE0BE80F642901B6D5A89B5DB9DC1", hash_generated_method = "A2F56AE02F2251AF5B117E14FC6CDF1E")
     @Override
     public boolean isMulticastAddress() {
         boolean varF403369D5FA9239E89AE6DC89879B832_1961976021 = (((ipaddress[0] & 0xff) == 0xff));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_302784718 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_302784718;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ipaddress[0] & 0xff) == 0xff);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.707 -0400", hash_original_method = "3C2D74882AEFA2EBBC23E3A728C5AE01", hash_generated_method = "FA86519AA060C5B0C7C9521A1DAF29B7")
     @Override
     public boolean isSiteLocalAddress() {
         boolean var3F9F96271FB6CCEA6DEA05DDB46E74D5_1244251666 = (((ipaddress[0] & 0xff) == 0xfe) && ((ipaddress[1] & 0xc0) == 0xc0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1232345090 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1232345090;
-        
-        
+        // ---------- Original Method ----------
+        //return ((ipaddress[0] & 0xff) == 0xfe) && ((ipaddress[1] & 0xc0) == 0xc0);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.707 -0400", hash_original_method = "50E705BC98343A8115E00AFCB06615D7", hash_generated_method = "CB4045DD525224E2FE3EAAD326B39C9C")
     public int getScopeId() {
         int varBB72CB804BAAB3F6631DAC16FDDF0A60_480862564 = (scope_id_set ? scope_id : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580366423 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580366423;
-        
-        
+        // ---------- Original Method ----------
+        //return scope_id_set ? scope_id : 0;
     }
 
     
@@ -277,19 +267,19 @@ for(int i = 0;i < 12;i++)
 NetworkInterface var670F0207639AADBD1A2638194C71812C_854681317 =             (scope_ifname_set && ifname != null) ? NetworkInterface.getByName(ifname) : null;
             var670F0207639AADBD1A2638194C71812C_854681317.addTaint(taint);
             return var670F0207639AADBD1A2638194C71812C_854681317;
-        } 
+        } //End block
         catch (SocketException ex)
         {
 NetworkInterface var540C13E9E156B687226421B24F2DF178_1825200464 =             null;
             var540C13E9E156B687226421B24F2DF178_1825200464.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1825200464;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return (scope_ifname_set && ifname != null) ? NetworkInterface.getByName(ifname) : null;
+        //} catch (SocketException ex) {
+            //return null;
+        //}
     }
 
     
@@ -300,28 +290,28 @@ NetworkInterface var540C13E9E156B687226421B24F2DF178_1825200464 =             nu
     if(ipaddress == null)        
         {
             fields.put("ipaddress", null);
-        } 
+        } //End block
         else
         {
             fields.put("ipaddress", ipaddress);
-        } 
+        } //End block
         fields.put("scope_id", scope_id);
         fields.put("scope_id_set", scope_id_set);
         fields.put("scope_ifname_set", scope_ifname_set);
         fields.put("ifname", ifname);
         stream.writeFields();
-        
-        
-        
-            
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ObjectOutputStream.PutField fields = stream.putFields();
+        //if (ipaddress == null) {
+            //fields.put("ipaddress", null);
+        //} else {
+            //fields.put("ipaddress", ipaddress);
+        //}
+        //fields.put("scope_id", scope_id);
+        //fields.put("scope_id_set", scope_id_set);
+        //fields.put("scope_ifname_set", scope_ifname_set);
+        //fields.put("ifname", ifname);
+        //stream.writeFields();
     }
 
     
@@ -334,13 +324,13 @@ NetworkInterface var540C13E9E156B687226421B24F2DF178_1825200464 =             nu
         scope_id_set = fields.get("scope_id_set", false);
         ifname = (String) fields.get("ifname", null);
         scope_ifname_set = fields.get("scope_ifname_set", false);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ObjectInputStream.GetField fields = stream.readFields();
+        //ipaddress = (byte[]) fields.get("ipaddress", null);
+        //scope_id = fields.get("scope_id", 0);
+        //scope_id_set = fields.get("scope_id_set", false);
+        //ifname = (String) fields.get("ifname", null);
+        //scope_ifname_set = fields.get("scope_ifname_set", false);
     }
 
     
@@ -352,24 +342,24 @@ NetworkInterface var540C13E9E156B687226421B24F2DF178_1825200464 =             nu
 String var513E1C9C97BE616BBA449C00266EF245_619818152 =             super.toString() + "%" + ifname;
             var513E1C9C97BE616BBA449C00266EF245_619818152.addTaint(taint);
             return var513E1C9C97BE616BBA449C00266EF245_619818152;
-        } 
+        } //End block
     if(scope_id != 0)        
         {
 String var7DFC9E25F05AAB46CA8381F63C666066_1256723386 =             super.toString() + "%" + scope_id;
             var7DFC9E25F05AAB46CA8381F63C666066_1256723386.addTaint(taint);
             return var7DFC9E25F05AAB46CA8381F63C666066_1256723386;
-        } 
+        } //End block
 String varD8287C6801A4C167675BF9EBA9EC2C1B_1964078539 =         super.toString();
         varD8287C6801A4C167675BF9EBA9EC2C1B_1964078539.addTaint(taint);
         return varD8287C6801A4C167675BF9EBA9EC2C1B_1964078539;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (ifname != null) {
+            //return super.toString() + "%" + ifname;
+        //}
+        //if (scope_id != 0) {
+            //return super.toString() + "%" + scope_id;
+        //}
+        //return super.toString();
     }
 
     

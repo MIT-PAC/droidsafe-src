@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public final class HttpDate {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.208 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
     public HttpDate ()
     {
-        
+        //Synthesized constructor
     }
 
 

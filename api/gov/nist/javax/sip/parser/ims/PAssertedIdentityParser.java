@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class PAssertedIdentityParser extends AddressParametersParser implements 
     public  PAssertedIdentityParser(String assertedIdentity) {
         super(assertedIdentity);
         addTaint(assertedIdentity.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,7 +27,7 @@ public class PAssertedIdentityParser extends AddressParametersParser implements 
     protected  PAssertedIdentityParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -53,20 +53,20 @@ public class PAssertedIdentityParser extends AddressParametersParser implements 
                 super.parse(pai);
                 assertedIdList.add(pai);
                 this.lexer.SPorHT();
-            } 
+            } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
 SIPHeader varA71E01B4BE13127DBE4088ADB6E3CDAB_1174351330 =             assertedIdList;
             varA71E01B4BE13127DBE4088ADB6E3CDAB_1174351330.addTaint(taint);
             return varA71E01B4BE13127DBE4088ADB6E3CDAB_1174351330;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("AssertedIdentityParser.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

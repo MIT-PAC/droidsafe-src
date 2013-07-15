@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,13 +47,13 @@ final class HexStringParser {
         this.MAX_EXPONENT = ~(-1L << exponentWidth);
         this.MIN_EXPONENT = -(MANTISSA_WIDTH + 1);
         this.MANTISSA_MASK = ~(-1L << mantissaWidth);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.EXPONENT_WIDTH = exponentWidth;
+        //this.MANTISSA_WIDTH = mantissaWidth;
+        //this.EXPONENT_BASE = ~(-1L << (exponentWidth - 1));
+        //this.MAX_EXPONENT = ~(-1L << exponentWidth);
+        //this.MIN_EXPONENT = -(MANTISSA_WIDTH + 1);
+        //this.MANTISSA_MASK = ~(-1L << mantissaWidth);
     }
 
     
@@ -82,7 +82,7 @@ final class HexStringParser {
                     hexString);
             var9E6F64F797855B33ACF21BC0B16057D0_875811741.addTaint(taint);
             throw var9E6F64F797855B33ACF21BC0B16057D0_875811741;
-        } 
+        } //End block
         String signStr = matcher.group(1);
         String significantStr = matcher.group(2);
         String exponentStr = matcher.group(3);
@@ -94,29 +94,29 @@ final class HexStringParser {
         long var8A0BFB77CF9220716E634FC53CAE9C50_2011777843 = (sign | exponent | mantissa);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_340576940 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_340576940;
-        
-        
-        
-            
-                    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Matcher matcher = PATTERN.matcher(hexString);
+        //if (!matcher.matches()) {
+            //throw new NumberFormatException("Invalid hex " + (isDouble ? "double" : "float")+ ":" +
+                    //hexString);
+        //}
+        //String signStr = matcher.group(1);
+        //String significantStr = matcher.group(2);
+        //String exponentStr = matcher.group(3);
+        //parseHexSign(signStr);
+        //parseExponent(exponentStr);
+        //parseMantissa(significantStr);
+        //sign <<= (MANTISSA_WIDTH + EXPONENT_WIDTH);
+        //exponent <<= MANTISSA_WIDTH;
+        //return sign | exponent | mantissa;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.857 -0400", hash_original_method = "974D688FE86E3244D16C6508E4669FC6", hash_generated_method = "13BFEC942BAEF96FE6E364B15622A4E9")
     private void parseHexSign(String signStr) {
         this.sign = signStr.equals("-") ? 1 : 0;
-        
-        
+        // ---------- Original Method ----------
+        //this.sign = signStr.equals("-") ? 1 : 0;
     }
 
     
@@ -127,28 +127,28 @@ final class HexStringParser {
     if(!Character.isDigit(leadingChar))        
         {
             exponentStr = exponentStr.substring(1);
-        } 
+        } //End block
         try 
         {
             exponent = expSign * Long.parseLong(exponentStr);
             checkedAddExponent(EXPONENT_BASE);
-        } 
+        } //End block
         catch (NumberFormatException e)
         {
             exponent = expSign * Long.MAX_VALUE;
-        } 
-        
-        
-        
-        
-            
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //char leadingChar = exponentStr.charAt(0);
+        //int expSign = (leadingChar == '-' ? -1 : 1);
+        //if (!Character.isDigit(leadingChar)) {
+            //exponentStr = exponentStr.substring(1);
+        //}
+        //try {
+            //exponent = expSign * Long.parseLong(exponentStr);
+            //checkedAddExponent(EXPONENT_BASE);
+        //} catch (NumberFormatException e) {
+            //exponent = expSign * Long.MAX_VALUE;
+        //}
     }
 
     
@@ -163,57 +163,55 @@ final class HexStringParser {
         {
             setZero();
             return;
-        } 
+        } //End block
         int offset = getOffset(strIntegerPart, strDecimalPart);
         checkedAddExponent(offset);
     if(exponent >= MAX_EXPONENT)        
         {
             setInfinite();
             return;
-        } 
+        } //End block
     if(exponent <= MIN_EXPONENT)        
         {
             setZero();
             return;
-        } 
+        } //End block
     if(significand.length() > MAX_SIGNIFICANT_LENGTH)        
         {
             abandonedNumber = significand.substring(MAX_SIGNIFICANT_LENGTH);
             significand = significand.substring(0, MAX_SIGNIFICANT_LENGTH);
-        } 
+        } //End block
         mantissa = Long.parseLong(significand, HEX_RADIX);
     if(exponent >= 1)        
         {
             processNormalNumber();
-        } 
+        } //End block
         else
         {
             processSubNormalNumber();
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.860 -0400", hash_original_method = "E5B2CE5158E0191EB1B4342B503B503C", hash_generated_method = "79359CB12970F2F3F56D34C9271ED5F0")
     private void setInfinite() {
         exponent = MAX_EXPONENT;
         mantissa = 0;
-        
-        
-        
+        // ---------- Original Method ----------
+        //exponent = MAX_EXPONENT;
+        //mantissa = 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.861 -0400", hash_original_method = "B9AC8BA0C31319FE099B6A6C8A6F4144", hash_generated_method = "243374FBE0863DE96BE7168DB3C6FD32")
     private void setZero() {
         exponent = 0;
         mantissa = 0;
-        
-        
-        
+        // ---------- Original Method ----------
+        //exponent = 0;
+        //mantissa = 0;
     }
 
     
@@ -225,19 +223,19 @@ final class HexStringParser {
     if(expSign * Long.signum(offset) > 0 && expSign * Long.signum(result) < 0)        
         {
             exponent = expSign * Long.MAX_VALUE;
-        } 
+        } //End block
         else
         {
             exponent = result;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //long result = exponent + offset;
+        //int expSign = Long.signum(exponent);
+        //if (expSign * Long.signum(offset) > 0 && expSign * Long.signum(result) < 0) {
+            //exponent = expSign * Long.MAX_VALUE;
+        //} else {
+            //exponent = result;
+        //}
     }
 
     
@@ -247,11 +245,11 @@ final class HexStringParser {
         fitMantissaInDesiredWidth(desiredWidth);
         round();
         mantissa = mantissa & MANTISSA_MASK;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int desiredWidth = MANTISSA_WIDTH + 2;
+        //fitMantissaInDesiredWidth(desiredWidth);
+        //round();
+        //mantissa = mantissa & MANTISSA_MASK;
     }
 
     
@@ -263,13 +261,13 @@ final class HexStringParser {
         fitMantissaInDesiredWidth(desiredWidth);
         round();
         mantissa = mantissa & MANTISSA_MASK;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int desiredWidth = MANTISSA_WIDTH + 1;
+        //desiredWidth += (int)exponent;
+        //exponent = 0;
+        //fitMantissaInDesiredWidth(desiredWidth);
+        //round();
+        //mantissa = mantissa & MANTISSA_MASK;
     }
 
     
@@ -279,18 +277,18 @@ final class HexStringParser {
     if(bitLength > desiredWidth)        
         {
             discardTrailingBits(bitLength - desiredWidth);
-        } 
+        } //End block
         else
         {
             mantissa <<= (desiredWidth - bitLength);
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int bitLength = countBitsLength(mantissa);
+        //if (bitLength > desiredWidth) {
+            //discardTrailingBits(bitLength - desiredWidth);
+        //} else {
+            //mantissa <<= (desiredWidth - bitLength);
+        //}
     }
 
     
@@ -299,14 +297,13 @@ final class HexStringParser {
         long mask = ~(-1L << num);
         abandonedNumber += (mantissa & mask);
         mantissa >>= num;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //long mask = ~(-1L << num);
+        //abandonedNumber += (mantissa & mask);
+        //mantissa >>= num;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.866 -0400", hash_original_method = "BE1368BC0340B1F1D2FFF04FBC3A9E13", hash_generated_method = "3EB605AE18A4F8B425B8E1B5B168B3CB")
     private void round() {
         String result = abandonedNumber.replaceAll("0+", "");
@@ -322,22 +319,22 @@ final class HexStringParser {
     if(oldLength >= MANTISSA_WIDTH && newLength > oldLength)            
             {
                 checkedAddExponent(1);
-            } 
-        } 
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //String result = abandonedNumber.replaceAll("0+", "");
+        //boolean moreThanZero = (result.length() > 0 ? true : false);
+        //int lastDiscardedBit = (int) (mantissa & 1L);
+        //mantissa >>= 1;
+        //int tailBitInMantissa = (int) (mantissa & 1L);
+        //if (lastDiscardedBit == 1 && (moreThanZero || tailBitInMantissa == 1)) {
+            //int oldLength = countBitsLength(mantissa);
+            //mantissa += 1L;
+            //int newLength = countBitsLength(mantissa);
+            //if (oldLength >= MANTISSA_WIDTH && newLength > oldLength) {
+                //checkedAddExponent(1);
+            //}
+        //}
     }
 
     
@@ -350,21 +347,20 @@ final class HexStringParser {
     if(significand.length() == 0)        
         {
             significand = "0";
-        } 
+        } //End block
 String var41AB4756B20347E39831A25B31A6008E_532413534 =         significand;
         var41AB4756B20347E39831A25B31A6008E_532413534.addTaint(taint);
         return var41AB4756B20347E39831A25B31A6008E_532413534;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String significand = strIntegerPart + strDecimalPart;
+        //significand = significand.replaceFirst("^0+", "");
+        //if (significand.length() == 0) {
+            //significand = "0";
+        //}
+        //return significand;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.868 -0400", hash_original_method = "08762480F158FA197B11D4959C7DC334", hash_generated_method = "30FBC7A03E5A4AA5DD2A95A2B2A7D1C2")
     private int getOffset(String strIntegerPart, String strDecimalPart) {
         addTaint(strDecimalPart.getTaint());
@@ -376,7 +372,7 @@ String var41AB4756B20347E39831A25B31A6008E_532413534 =         significand;
             int varA42771118F02D9AF1DEEEBB758B511E8_1456108447 = ((strIntegerPart.length() - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber,HEX_RADIX)) - 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_999562415 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_999562415;
-        } 
+        } //End block
         int i;
 for(i = 0;i < strDecimalPart.length() && strDecimalPart.charAt(i) == '0';i++)
         ;
@@ -385,24 +381,24 @@ for(i = 0;i < strDecimalPart.length() && strDecimalPart.charAt(i) == '0';i++)
             int varCFCD208495D565EF66E7DFF9F98764DA_1213380945 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072364479 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072364479;
-        } 
+        } //End block
         String leadingNumber = strDecimalPart.substring(i,i + 1);
         int var353BD6777A0DA09D9454133997E5FB64_861808010 = ((-i - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber, HEX_RADIX)) - 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168873091 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168873091;
-        
-        
-        
-            
-            
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //strIntegerPart = strIntegerPart.replaceFirst("^0+", "");
+        //if (strIntegerPart.length() != 0) {
+            //String leadingNumber = strIntegerPart.substring(0, 1);
+            //return (strIntegerPart.length() - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber,HEX_RADIX)) - 1;
+        //}
+        //int i;
+        //for (i = 0; i < strDecimalPart.length() && strDecimalPart.charAt(i) == '0'; i++);
+        //if (i == strDecimalPart.length()) {
+            //return 0;
+        //}
+        //String leadingNumber=strDecimalPart.substring(i,i + 1);
+        //return (-i - 1) * 4 + countBitsLength(Long.parseLong(leadingNumber, HEX_RADIX)) - 1;
     }
 
     
@@ -413,9 +409,9 @@ for(i = 0;i < strDecimalPart.length() && strDecimalPart.charAt(i) == '0';i++)
         int varFB000237B069C89ADFA459681B8133E0_1279242515 = (Long.SIZE - leadingZeros);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337475178 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337475178;
-        
-        
-        
+        // ---------- Original Method ----------
+        //int leadingZeros = Long.numberOfLeadingZeros(value);
+        //return Long.SIZE - leadingZeros;
     }
 
     

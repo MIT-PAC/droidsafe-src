@@ -1,6 +1,6 @@
 package org.bouncycastle.jce;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class X509Principal extends X509Name implements Principal {
         byte[]  bytes) throws IOException {
         super(readSequence(new ASN1InputStream(bytes)));
         addTaint(bytes[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,7 +29,7 @@ public class X509Principal extends X509Name implements Principal {
         X509Name  name) {
         super((ASN1Sequence)name.getDERObject());
         addTaint(name.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -38,7 +38,7 @@ public class X509Principal extends X509Name implements Principal {
         Hashtable  attributes) {
         super(attributes);
         addTaint(attributes.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -49,7 +49,7 @@ public class X509Principal extends X509Name implements Principal {
         super(ordering, attributes);
         addTaint(attributes.getTaint());
         addTaint(ordering.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -60,7 +60,7 @@ public class X509Principal extends X509Name implements Principal {
         super(oids, values);
         addTaint(values.getTaint());
         addTaint(oids.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -69,7 +69,7 @@ public class X509Principal extends X509Name implements Principal {
         String  dirName) {
         super(dirName);
         addTaint(dirName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -80,7 +80,7 @@ public class X509Principal extends X509Name implements Principal {
         super(reverse, dirName);
         addTaint(dirName.getTaint());
         addTaint(reverse);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -93,7 +93,7 @@ public class X509Principal extends X509Name implements Principal {
         addTaint(dirName.getTaint());
         addTaint(lookUp.getTaint());
         addTaint(reverse);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -115,8 +115,8 @@ public class X509Principal extends X509Name implements Principal {
 String var4014743B4FB5C9F0052F04A16DA88A03_987058271 =         this.toString();
         var4014743B4FB5C9F0052F04A16DA88A03_987058271.addTaint(taint);
         return var4014743B4FB5C9F0052F04A16DA88A03_987058271;
-        
-        
+        // ---------- Original Method ----------
+        //return this.toString();
     }
 
     
@@ -127,22 +127,22 @@ String var4014743B4FB5C9F0052F04A16DA88A03_987058271 =         this.toString();
             byte[] var75679B9D6E0C3BD65FFE938E240A5B3B_675051022 = (this.getEncoded(ASN1Encodable.DER));
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1527988965 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1527988965;
-        } 
+        } //End block
         catch (IOException e)
         {
             RuntimeException var7731B7FAF9DB516E410EE38D728795B2_168892164 = new RuntimeException(e.toString());
             var7731B7FAF9DB516E410EE38D728795B2_168892164.addTaint(taint);
             throw var7731B7FAF9DB516E410EE38D728795B2_168892164;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return this.getEncoded(ASN1Encodable.DER);
+        //}
+        //catch (IOException e)
+        //{
+            //throw new RuntimeException(e.toString());
+        //}
     }
 
     

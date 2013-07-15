@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public abstract class X509NameEntryConverter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.575 -0400", hash_original_method = "895CB1F94322718A75CF3FC7407A7622", hash_generated_method = "895CB1F94322718A75CF3FC7407A7622")
     public X509NameEntryConverter ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -35,26 +35,26 @@ for(int index = 0;index != data.length;index++)
     if(left < 'a')            
             {
                 data[index] = (byte)((left - '0') << 4);
-            } 
+            } //End block
             else
             {
                 data[index] = (byte)((left - 'a' + 10) << 4);
-            } 
+            } //End block
     if(right < 'a')            
             {
                 data[index] |= (byte)(right - '0');
-            } 
+            } //End block
             else
             {
                 data[index] |= (byte)(right - 'a' + 10);
-            } 
-        } 
+            } //End block
+        } //End block
         ASN1InputStream aIn = new ASN1InputStream(data);
 DERObject var744C7B728C1BF7AC9370DA8D8B9598D6_1774561935 =         aIn.readObject();
         var744C7B728C1BF7AC9370DA8D8B9598D6_1774561935.addTaint(taint);
         return var744C7B728C1BF7AC9370DA8D8B9598D6_1774561935;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -65,8 +65,8 @@ DERObject var744C7B728C1BF7AC9370DA8D8B9598D6_1774561935 =         aIn.readObjec
         boolean varF6C770A90D6BB561B31334BDADDD9A35_1264491093 = (DERPrintableString.isPrintableString(str));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1979217496 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1979217496;
-        
-        
+        // ---------- Original Method ----------
+        //return DERPrintableString.isPrintableString(str);
     }
 
     

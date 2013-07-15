@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public final class IoUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.688 -0400", hash_original_method = "79E9471925B005378EBE1BC903B5DD58", hash_generated_method = "23C96EFBE22D08DF5FBBE8620DF9E369")
     private  IoUtils() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -51,8 +51,7 @@ public final class IoUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static void closeQuietly(Socket socket) {
+        public static void closeQuietly(Socket socket) {
         if (socket != null) {
             try {
                 socket.close();
@@ -82,8 +81,7 @@ public final class IoUtils {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static String readFileAsString(String path) throws IOException {
+        public static String readFileAsString(String path) throws IOException {
         return readFileAsBytes(path).toString(Charsets.UTF_8);
     }
 

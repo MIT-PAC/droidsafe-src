@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,45 +26,43 @@ abstract public class AsyncService extends Service {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.624 -0400", hash_original_method = "CDBBAD55BFC0A5CC84037EA07FE5935A", hash_generated_method = "CDBBAD55BFC0A5CC84037EA07FE5935A")
     public AsyncService ()
     {
-        
+        //Synthesized constructor
     }
 
 
     abstract public AsyncServiceInfo createHandler();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.624 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "D7B4D3DB9E698B589A836995581399A1")
     public Handler getHandler() {
 Handler varF60F4C595C5EF9EE40FAD1FE8119479B_1924336907 =         mHandler;
         varF60F4C595C5EF9EE40FAD1FE8119479B_1924336907.addTaint(taint);
         return varF60F4C595C5EF9EE40FAD1FE8119479B_1924336907;
-        
-        
+        // ---------- Original Method ----------
+        //return mHandler;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.624 -0400", hash_original_method = "3B5584E888A7B561A64B27D36B3A98B1", hash_generated_method = "E16B41F02880778C39873A593DFBFF5C")
     @Override
     public void onCreate() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onCreate();
         mAsyncServiceInfo = createHandler();
         mHandler = mAsyncServiceInfo.mHandler;
         mMessenger = new Messenger(mHandler);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onCreate();
+        //mAsyncServiceInfo = createHandler();
+        //mHandler = mAsyncServiceInfo.mHandler;
+        //mMessenger = new Messenger(mHandler);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.624 -0400", hash_original_method = "1BF64941FDCF96E405385BCB202DC026", hash_generated_method = "0D48CE5BCBFDD9F8FB7FE55FBE09F4B1")
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(startId);
         addTaint(flags);
         addTaint(intent.getTaint());
@@ -79,46 +77,45 @@ Handler varF60F4C595C5EF9EE40FAD1FE8119479B_1924336907 =         mHandler;
         int var735FBF2B9E4ADA63A36B74A69D9881E5_2007352346 = (mAsyncServiceInfo.mRestartFlags);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1399021838 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1399021838;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) Slog.d(TAG, "onStartCommand");
+        //Message msg = mHandler.obtainMessage();
+        //msg.what = CMD_ASYNC_SERVICE_ON_START_INTENT;
+        //msg.arg1 = flags;
+        //msg.arg2 = startId;
+        //msg.obj = intent;
+        //mHandler.sendMessage(msg);
+        //return mAsyncServiceInfo.mRestartFlags;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.624 -0400", hash_original_method = "A27858FAC62CCDCA7FEFFF51708F3684", hash_generated_method = "60D9A0DEE08FF4EA81054D6B5F1772E8")
     @Override
     public void onDestroy() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
     if(DBG)        
         Slog.d(TAG, "onDestroy");
         Message msg = mHandler.obtainMessage();
         msg.what = CMD_ASYNC_SERVICE_DESTROY;
         mHandler.sendMessage(msg);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) Slog.d(TAG, "onDestroy");
+        //Message msg = mHandler.obtainMessage();
+        //msg.what = CMD_ASYNC_SERVICE_DESTROY;
+        //mHandler.sendMessage(msg);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.625 -0400", hash_original_method = "A7446927BF81E8D364D2A886C10F0DCF", hash_generated_method = "02CE0687FBED22D51AA5D811D10285D1")
     @Override
     public IBinder onBind(Intent intent) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(intent.getTaint());
 IBinder var8DA32E2A0A24A0A74D390C850A5E5690_404898868 =         mMessenger.getBinder();
         var8DA32E2A0A24A0A74D390C850A5E5690_404898868.addTaint(taint);
         return var8DA32E2A0A24A0A74D390C850A5E5690_404898868;
-        
-        
+        // ---------- Original Method ----------
+        //return mMessenger.getBinder();
     }
 
     
@@ -133,7 +130,7 @@ IBinder var8DA32E2A0A24A0A74D390C850A5E5690_404898868 =         mMessenger.getBi
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.625 -0400", hash_original_method = "57A0F445E2B528F3F0EFA1B7467553A2", hash_generated_method = "57A0F445E2B528F3F0EFA1B7467553A2")
         public AsyncServiceInfo ()
         {
-            
+            //Synthesized constructor
         }
 
 

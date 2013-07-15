@@ -1,6 +1,6 @@
 package org.json;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class JSONException extends Exception {
     public  JSONException(String s) {
         super(s);
         addTaint(s.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,25 +37,25 @@ abstract class WebSyncManager implements Runnable {
             mSyncThread = new Thread(this);
             mSyncThread.setName(mThreadName);
             mSyncThread.start();
-        } 
+        } //End block
         else
         {
             IllegalStateException varD4012E522E12ECC73BD4A5482CDDCE1B_571671056 = new IllegalStateException(
                     "WebSyncManager can't be created without context");
             varD4012E522E12ECC73BD4A5482CDDCE1B_571671056.addTaint(taint);
             throw varD4012E522E12ECC73BD4A5482CDDCE1B_571671056;
-        } 
-        
-        
-        
-            
-            
-            
-            
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mThreadName = name;
+        //if (context != null) {
+            //mDataBase = WebViewDatabase.getInstance(context);
+            //mSyncThread = new Thread(this);
+            //mSyncThread.setName(mThreadName);
+            //mSyncThread.start();
+        //} else {
+            //throw new IllegalStateException(
+                    //"WebSyncManager can't be created without context");
+        //}
     }
 
     
@@ -64,8 +64,8 @@ abstract class WebSyncManager implements Runnable {
         CloneNotSupportedException var526F0275412AAA8782D17897499AAE9F_1725106629 = new CloneNotSupportedException("doesn't implement Cloneable");
         var526F0275412AAA8782D17897499AAE9F_1725106629.addTaint(taint);
         throw var526F0275412AAA8782D17897499AAE9F_1725106629;
-        
-        
+        // ---------- Original Method ----------
+        //throw new CloneNotSupportedException("doesn't implement Cloneable");
     }
 
     
@@ -78,14 +78,14 @@ abstract class WebSyncManager implements Runnable {
         Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
         mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
         Looper.loop();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Looper.prepare();
+        //mHandler = new SyncHandler();
+        //onSyncInit();
+        //Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+        //Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
+        //mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
+        //Looper.loop();
     }
 
     
@@ -93,24 +93,24 @@ abstract class WebSyncManager implements Runnable {
     public void sync() {
     if(DebugFlags.WEB_SYNC_MANAGER)        
         {
-        } 
+        } //End block
     if(mHandler == null)        
         {
             return;
-        } 
+        } //End block
         mHandler.removeMessages(SYNC_MESSAGE);
         Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
         mHandler.sendMessageDelayed(msg, SYNC_NOW_INTERVAL);
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DebugFlags.WEB_SYNC_MANAGER) {
+            //Log.v(LOGTAG, "*** WebSyncManager sync ***");
+        //}
+        //if (mHandler == null) {
+            //return;
+        //}
+        //mHandler.removeMessages(SYNC_MESSAGE);
+        //Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
+        //mHandler.sendMessageDelayed(msg, SYNC_NOW_INTERVAL);
     }
 
     
@@ -118,54 +118,53 @@ abstract class WebSyncManager implements Runnable {
     public void resetSync() {
     if(DebugFlags.WEB_SYNC_MANAGER)        
         {
-        } 
+        } //End block
     if(mHandler == null)        
         {
             return;
-        } 
+        } //End block
         mHandler.removeMessages(SYNC_MESSAGE);
         Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
         mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DebugFlags.WEB_SYNC_MANAGER) {
+            //Log.v(LOGTAG, "*** WebSyncManager resetSync ***");
+        //}
+        //if (mHandler == null) {
+            //return;
+        //}
+        //mHandler.removeMessages(SYNC_MESSAGE);
+        //Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
+        //mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.967 -0400", hash_original_method = "2AEDBC8F7C27D5B102C45AFA67E1CB2E", hash_generated_method = "2EAD867CFF16CF65E3B95A6633278CE8")
     public void startSync() {
     if(DebugFlags.WEB_SYNC_MANAGER)        
         {
-        } 
+        } //End block
     if(mHandler == null)        
         {
             return;
-        } 
+        } //End block
     if(++mStartSyncRefCount == 1)        
         {
             Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
             mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
-        } 
-        
-        
-            
-                    
-        
-        
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DebugFlags.WEB_SYNC_MANAGER) {
+            //Log.v(LOGTAG, "***  WebSyncManager startSync ***, Ref count:" + 
+                    //mStartSyncRefCount);
+        //}
+        //if (mHandler == null) {
+            //return;
+        //}
+        //if (++mStartSyncRefCount == 1) {
+            //Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
+            //mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
+        //}
     }
 
     
@@ -173,34 +172,33 @@ abstract class WebSyncManager implements Runnable {
     public void stopSync() {
     if(DebugFlags.WEB_SYNC_MANAGER)        
         {
-        } 
+        } //End block
     if(mHandler == null)        
         {
             return;
-        } 
+        } //End block
     if(--mStartSyncRefCount == 0)        
         {
             mHandler.removeMessages(SYNC_MESSAGE);
-        } 
-        
-        
-            
-                    
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DebugFlags.WEB_SYNC_MANAGER) {
+            //Log.v(LOGTAG, "*** WebSyncManager stopSync ***, Ref count:" + 
+                    //mStartSyncRefCount);
+        //}
+        //if (mHandler == null) {
+            //return;
+        //}
+        //if (--mStartSyncRefCount == 0) {
+            //mHandler.removeMessages(SYNC_MESSAGE);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.968 -0400", hash_original_method = "E2DCC4A23007ACC5EB483532AA9CED02", hash_generated_method = "39287E7B275BD495C704BF01DE9A8034")
     protected void onSyncInit() {
-        
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
+        // ---------- Original Method ----------
     }
 
     
@@ -212,7 +210,7 @@ abstract class WebSyncManager implements Runnable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.968 -0400", hash_original_method = "A501FFC6AE70F7E6319A21E151433B3A", hash_generated_method = "A501FFC6AE70F7E6319A21E151433B3A")
         public SyncHandler ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -224,20 +222,20 @@ abstract class WebSyncManager implements Runnable {
             {
     if(DebugFlags.WEB_SYNC_MANAGER)                
                 {
-                } 
+                } //End block
                 syncFromRamToFlash();
                 Message newmsg = obtainMessage(SYNC_MESSAGE);
                 sendMessageDelayed(newmsg, SYNC_LATER_INTERVAL);
-            } 
-            
-            
-                
-                    
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (msg.what == SYNC_MESSAGE) {
+                //if (DebugFlags.WEB_SYNC_MANAGER) {
+                    //Log.v(LOGTAG, "*** WebSyncManager sync ***");
+                //}
+                //syncFromRamToFlash();
+                //Message newmsg = obtainMessage(SYNC_MESSAGE);
+                //sendMessageDelayed(newmsg, SYNC_LATER_INTERVAL);
+            //}
         }
 
         

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,10 +29,10 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
         Enumeration e = seq.getObjects();
         algId = AlgorithmIdentifier.getInstance(e.nextElement());
         data = (ASN1OctetString)e.nextElement();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Enumeration e = seq.getObjects();
+        //algId = AlgorithmIdentifier.getInstance(e.nextElement());
+        //data = (ASN1OctetString)e.nextElement();
     }
 
     
@@ -42,9 +42,9 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
         byte[]              encoding) {
         this.algId = algId;
         this.data = new DEROctetString(encoding);
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.algId = algId;
+        //this.data = new DEROctetString(encoding);
     }
 
     
@@ -62,14 +62,13 @@ public class EncryptedPrivateKeyInfo extends ASN1Encodable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.326 -0400", hash_original_method = "742117C3F9E40BA83B51D9D3C5056A2D", hash_generated_method = "53A49D2424A40C72AD17AB54273199F8")
     public AlgorithmIdentifier getEncryptionAlgorithm() {
 AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1479486749 =         algId;
         varA285EDCEC70BDAD72C7F53B57CB6849B_1479486749.addTaint(taint);
         return varA285EDCEC70BDAD72C7F53B57CB6849B_1479486749;
-        
-        
+        // ---------- Original Method ----------
+        //return algId;
     }
 
     
@@ -78,8 +77,8 @@ AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1479486749 =         alg
         byte[] var5EE6B65A36B3C65F89881A2A71E8AF96_2058922999 = (data.getOctets());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1396463693 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1396463693;
-        
-        
+        // ---------- Original Method ----------
+        //return data.getOctets();
     }
 
     
@@ -91,11 +90,11 @@ AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1479486749 =         alg
 DERObject var0B338F106E3279986C87B595B0F4A439_1638479704 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_1638479704.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_1638479704;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector v = new ASN1EncodableVector();
+        //v.add(algId);
+        //v.add(data);
+        //return new DERSequence(v);
     }
 
     

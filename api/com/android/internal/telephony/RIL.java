@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -64,7 +64,7 @@ class RILRequest {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.915 -0400", hash_original_method = "9C4E8F6E2A10EF2C06F20638ED2CBC6D", hash_generated_method = "560681FC445F3861C142757487DA3B91")
     private  RILRequest() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -96,7 +96,6 @@ class RILRequest {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.916 -0400", hash_original_method = "E7EE736E24A2BE53AC107C249FFB0880", hash_generated_method = "0691A91AC44CFDEADBCBC5569F7616DE")
      void release() {
         synchronized
@@ -107,22 +106,21 @@ class RILRequest {
                 sPool = this;
                 sPoolSize++;
                 mResult = null;
-            } 
-        } 
-        
-        
-            
-                
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (sPoolSync) {
+            //if (sPoolSize < MAX_POOL_SIZE) {
+                //this.mNext = sPool;
+                //sPool = this;
+                //sPoolSize++;
+                //mResult = null;
+            //}
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static void resetSerial() {
+        static void resetSerial() {
         synchronized(sSerialMonitor) {
             sNextSerial = 0;
         }
@@ -138,30 +136,29 @@ class RILRequest {
 for(int i = 0, s = sn.length();i < 4 - s;i++)
         {
             sb.append('0');
-        } 
+        } //End block
         sb.append(sn);
         sb.append(']');
 String var2460B846747F8B22185AD8BE722266A5_1974223292 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1974223292.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1974223292;
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(8);
+        //String sn;
+        //sn = Integer.toString(mSerial);
+        //sb.append('[');
+        //for (int i = 0, s = sn.length() ; i < 4 - s; i++) {
+            //sb.append('0');
+        //}
+        //sb.append(sn);
+        //sb.append(']');
+        //return sb.toString();
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.916 -0400", hash_original_method = "DAF6125A6A3BAA8EA4AAF17920DB80E6", hash_generated_method = "DA50EEA5657715DE753BDECA72EE0201")
      void onError(int error, Object ret) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(ret.getTaint());
         addTaint(error);
         CommandException ex;
@@ -174,26 +171,26 @@ String var2460B846747F8B22185AD8BE722266A5_1974223292 =         sb.toString();
         {
             AsyncResult.forMessage(mResult, ret, ex);
             mResult.sendToTarget();
-        } 
+        } //End block
     if(mp != null)        
         {
             mp.recycle();
             mp = null;
-        } 
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //CommandException ex;
+        //ex = CommandException.fromRilErrno(error);
+        //if (RIL.RILJ_LOGD) Log.d(LOG_TAG, serialString() + "< "
+            //+ RIL.requestToString(mRequest)
+            //+ " error: " + ex);
+        //if (mResult != null) {
+            //AsyncResult.forMessage(mResult, ret, ex);
+            //mResult.sendToTarget();
+        //}
+        //if (mp != null) {
+            //mp.recycle();
+            //mp = null;
+        //}
     }
 
     
@@ -301,7 +298,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         {
             riljLog("RIL(context, preferredNetworkType=" + preferredNetworkType +
                     " cdmaSubscription=" + cdmaSubscription + ")");
-        } 
+        } //End block
         mCdmaSubscription  = cdmaSubscription;
         mPreferredNetworkType = preferredNetworkType;
         mPhoneType = RILConstants.NO_PHONE;
@@ -321,7 +318,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE) == false)        
         {
             riljLog("Not starting RILReceiver: wifi-only");
-        } 
+        } //End block
         else
         {
             riljLog("Starting RILReceiver");
@@ -332,9 +329,9 @@ public final class RIL extends BaseCommands implements CommandsInterface {
             filter.addAction(Intent.ACTION_SCREEN_ON);
             filter.addAction(Intent.ACTION_SCREEN_OFF);
             context.registerReceiver(mIntentReceiver, filter);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -374,7 +371,6 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.919 -0400", hash_original_method = "9505EC70575F3F081B82639224A26C6E", hash_generated_method = "443450A329CA9792DED812D3E399C489")
     @Override
     public void setOnNITZTime(Handler h, int what, Object obj) {
@@ -388,15 +384,15 @@ public final class RIL extends BaseCommands implements CommandsInterface {
                 .notifyRegistrant(
                     new AsyncResult (null, mLastNITZTimeInfo, null));
             mLastNITZTimeInfo = null;
-        } 
-        
-        
-        
-            
-                
-                    
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.setOnNITZTime(h, what, obj);
+        //if (mLastNITZTimeInfo != null) {
+            //mNITZTimeRegistrant
+                //.notifyRegistrant(
+                    //new AsyncResult (null, mLastNITZTimeInfo, null));
+            //mLastNITZTimeInfo = null;
+        //}
     }
 
     
@@ -407,10 +403,10 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_SIM_STATUS, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -420,8 +416,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         addTaint(result.getTaint());
         addTaint(pin.getTaint());
         supplyIccPinForApp(pin, null, result);
-        
-        
+        // ---------- Original Method ----------
+        //supplyIccPinForApp(pin, null, result);
     }
 
     
@@ -438,13 +434,13 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeString(pin);
         rr.mp.writeString(aid);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_ENTER_SIM_PIN, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(2);
+        //rr.mp.writeString(pin);
+        //rr.mp.writeString(aid);
+        //send(rr);
     }
 
     
@@ -455,8 +451,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         addTaint(newPin.getTaint());
         addTaint(puk.getTaint());
         supplyIccPukForApp(puk, newPin, null, result);
-        
-        
+        // ---------- Original Method ----------
+        //supplyIccPukForApp(puk, newPin, null, result);
     }
 
     
@@ -475,14 +471,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeString(newPin);
         rr.mp.writeString(aid);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_ENTER_SIM_PUK, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(3);
+        //rr.mp.writeString(puk);
+        //rr.mp.writeString(newPin);
+        //rr.mp.writeString(aid);
+        //send(rr);
     }
 
     
@@ -492,8 +488,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         addTaint(result.getTaint());
         addTaint(pin.getTaint());
         supplyIccPin2ForApp(pin, null, result);
-        
-        
+        // ---------- Original Method ----------
+        //supplyIccPin2ForApp(pin, null, result);
     }
 
     
@@ -510,13 +506,13 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeString(pin);
         rr.mp.writeString(aid);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_ENTER_SIM_PIN2, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(2);
+        //rr.mp.writeString(pin);
+        //rr.mp.writeString(aid);
+        //send(rr);
     }
 
     
@@ -527,8 +523,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         addTaint(newPin2.getTaint());
         addTaint(puk2.getTaint());
         supplyIccPuk2ForApp(puk2, newPin2, null, result);
-        
-        
+        // ---------- Original Method ----------
+        //supplyIccPuk2ForApp(puk2, newPin2, null, result);
     }
 
     
@@ -547,14 +543,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeString(newPin2);
         rr.mp.writeString(aid);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_ENTER_SIM_PUK2, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(3);
+        //rr.mp.writeString(puk);
+        //rr.mp.writeString(newPin2);
+        //rr.mp.writeString(aid);
+        //send(rr);
     }
 
     
@@ -565,8 +561,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         addTaint(newPin.getTaint());
         addTaint(oldPin.getTaint());
         changeIccPinForApp(oldPin, newPin, null, result);
-        
-        
+        // ---------- Original Method ----------
+        //changeIccPinForApp(oldPin, newPin, null, result);
     }
 
     
@@ -585,14 +581,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeString(newPin);
         rr.mp.writeString(aid);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CHANGE_SIM_PIN, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(3);
+        //rr.mp.writeString(oldPin);
+        //rr.mp.writeString(newPin);
+        //rr.mp.writeString(aid);
+        //send(rr);
     }
 
     
@@ -603,8 +599,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         addTaint(newPin2.getTaint());
         addTaint(oldPin2.getTaint());
         changeIccPin2ForApp(oldPin2, newPin2, null, result);
-        
-        
+        // ---------- Original Method ----------
+        //changeIccPin2ForApp(oldPin2, newPin2, null, result);
     }
 
     
@@ -623,14 +619,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeString(newPin2);
         rr.mp.writeString(aid);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CHANGE_SIM_PIN2, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(3);
+        //rr.mp.writeString(oldPin2);
+        //rr.mp.writeString(newPin2);
+        //rr.mp.writeString(aid);
+        //send(rr);
     }
 
     
@@ -648,14 +644,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeString(oldPwd);
         rr.mp.writeString(newPwd);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CHANGE_BARRING_PASSWORD, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(3);
+        //rr.mp.writeString(facility);
+        //rr.mp.writeString(oldPwd);
+        //rr.mp.writeString(newPwd);
+        //send(rr);
     }
 
     
@@ -669,12 +665,12 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeInt(1);
         rr.mp.writeString(netpin);
         send(rr);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_ENTER_NETWORK_DEPERSONALIZATION, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(1);
+        //rr.mp.writeString(netpin);
+        //send(rr);
     }
 
     
@@ -685,10 +681,10 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_CURRENT_CALLS, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -697,8 +693,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     public void getPDPContextList(Message result) {
         addTaint(result.getTaint());
         getDataCallList(result);
-        
-        
+        // ---------- Original Method ----------
+        //getDataCallList(result);
     }
 
     
@@ -709,10 +705,10 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_DATA_CALL_LIST, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -722,8 +718,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         addTaint(clirMode);
         addTaint(address.getTaint());
         dial(address, clirMode, null, result);
-        
-        
+        // ---------- Original Method ----------
+        //dial(address, clirMode, null, result);
     }
 
     
@@ -740,32 +736,32 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(uusInfo == null)        
         {
             rr.mp.writeInt(0);
-        } 
+        } //End block
         else
         {
             rr.mp.writeInt(1);
             rr.mp.writeInt(uusInfo.getType());
             rr.mp.writeInt(uusInfo.getDcs());
             rr.mp.writeByteArray(uusInfo.getUserData());
-        } 
+        } //End block
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
-        
-        
-            
-        
-            
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_DIAL, result);
+        //rr.mp.writeString(address);
+        //rr.mp.writeInt(clirMode);
+        //rr.mp.writeInt(0);
+        //if (uusInfo == null) {
+            //rr.mp.writeInt(0); 
+        //} else {
+            //rr.mp.writeInt(1); 
+            //rr.mp.writeInt(uusInfo.getType());
+            //rr.mp.writeInt(uusInfo.getDcs());
+            //rr.mp.writeByteArray(uusInfo.getUserData());
+        //}
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -776,10 +772,10 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_IMSI, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -790,10 +786,10 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_IMEI, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -804,10 +800,10 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_IMEISV, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -824,14 +820,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeInt(1);
         rr.mp.writeInt(gsmIndex);
         send(rr);
-        
-        
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (RILJ_LOGD) riljLog("hangupConnection: gsmIndex=" + gsmIndex);
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_HANGUP, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest) + " " +
+                //gsmIndex);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(gsmIndex);
+        //send(rr);
     }
 
     
@@ -843,11 +839,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                                        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_HANGUP_WAITING_OR_BACKGROUND,
+                                        //result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -860,13 +856,13 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-                        
-                                        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(
+                        //RIL_REQUEST_HANGUP_FOREGROUND_RESUME_BACKGROUND,
+                                        //result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -879,13 +875,13 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-                        
-                                        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(
+                        //RIL_REQUEST_SWITCH_WAITING_OR_HOLDING_AND_ACTIVE,
+                                        //result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -896,11 +892,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_CONFERENCE, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -913,12 +909,12 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeInt(1);
         rr.mp.writeInt(enable ? 1:0);
         send(rr);
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_SET_PREFERRED_VOICE_PRIVACY_MODE,
+                //result);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(enable ? 1:0);
+        //send(rr);
     }
 
     
@@ -928,10 +924,10 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_QUERY_PREFERRED_VOICE_PRIVACY_MODE,
                 result);
         send(rr);
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_QUERY_PREFERRED_VOICE_PRIVACY_MODE,
+                //result);
+        //send(rr);
     }
 
     
@@ -946,14 +942,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeInt(1);
         rr.mp.writeInt(gsmIndex);
         send(rr);
-        
-        
-                
-        
-                            
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SEPARATE_CONNECTION, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                            //+ " " + gsmIndex);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(gsmIndex);
+        //send(rr);
     }
 
     
@@ -964,11 +960,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_ANSWER, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -979,11 +975,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_UDUB, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -994,11 +990,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_EXPLICIT_CALL_TRANSFER, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1009,11 +1005,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_LAST_CALL_FAIL_CAUSE, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1021,8 +1017,8 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     public void getLastPdpFailCause(Message result) {
         addTaint(result.getTaint());
         getLastDataCallFailCause (result);
-        
-        
+        // ---------- Original Method ----------
+        //getLastDataCallFailCause (result);
     }
 
     
@@ -1033,11 +1029,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_LAST_DATA_CALL_FAIL_CAUSE, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1052,14 +1048,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         rr.mp.writeInt(1);
         rr.mp.writeInt(enableMute ? 1 : 0);
         send(rr);
-        
-        
-                
-        
-                            
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_MUTE, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                            //+ " " + enableMute);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(enableMute ? 1 : 0);
+        //send(rr);
     }
 
     
@@ -1070,11 +1066,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_GET_MUTE, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1085,11 +1081,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SIGNAL_STRENGTH, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1100,11 +1096,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_VOICE_REGISTRATION_STATE, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1115,11 +1111,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_DATA_REGISTRATION_STATE, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1130,11 +1126,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_OPERATOR, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1147,12 +1143,12 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         rr.mp.writeString(Character.toString(c));
         send(rr);
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_DTMF, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeString(Character.toString(c));
+        //send(rr);
     }
 
     
@@ -1165,12 +1161,12 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         rr.mp.writeString(Character.toString(c));
         send(rr);
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_DTMF_START, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeString(Character.toString(c));
+        //send(rr);
     }
 
     
@@ -1181,11 +1177,11 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_DTMF_STOP, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1204,15 +1200,15 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " : " + dtmfString);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_BURST_DTMF, result);
+        //rr.mp.writeInt(3);
+        //rr.mp.writeString(dtmfString);
+        //rr.mp.writeString(Integer.toString(on));
+        //rr.mp.writeString(Integer.toString(off));
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " : " + dtmfString);
+        //send(rr);
     }
 
     
@@ -1228,14 +1224,14 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SEND_SMS, result);
+        //rr.mp.writeInt(2);
+        //rr.mp.writeString(smscPDU);
+        //rr.mp.writeString(pdu);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1263,7 +1259,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
 for(int i=0;i < address_nbr_of_digits;i++)
             {
                 rr.mp.writeByte(dis.readByte());
-            } 
+            } //End block
             rr.mp.writeInt(dis.read());
             rr.mp.writeByte((byte) dis.read());
             subaddr_nbr_of_digits = (byte) dis.read();
@@ -1271,25 +1267,25 @@ for(int i=0;i < address_nbr_of_digits;i++)
 for(int i=0;i < subaddr_nbr_of_digits;i++)
             {
                 rr.mp.writeByte(dis.readByte());
-            } 
+            } //End block
             bearerDataLength = dis.read();
             rr.mp.writeInt(bearerDataLength);
 for(int i=0;i < bearerDataLength;i++)
             {
                 rr.mp.writeByte(dis.readByte());
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException ex)
         {
     if(RILJ_LOGD)            
             riljLog("sendSmsCdma: conversion from input stream to object failed: "
                     + ex);
-        } 
+        } //End block
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1307,19 +1303,19 @@ for(int i=0;i < bearerDataLength;i++)
             riljLog(rr.serialString() + "> "
                     + requestToString(rr.mRequest)
                     + " " + index);
-        } 
+        } //End block
         send(rr);
-        
-        
-                
-        
-        
-        
-            
-                    
-                    
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_DELETE_SMS_ON_SIM,
+                //response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(index);
+        //if (false) {
+            //if (RILJ_LOGD) riljLog(rr.serialString() + "> "
+                    //+ requestToString(rr.mRequest)
+                    //+ " " + index);
+        //}
+        //send(rr);
     }
 
     
@@ -1337,19 +1333,19 @@ for(int i=0;i < bearerDataLength;i++)
             riljLog(rr.serialString() + "> "
                     + requestToString(rr.mRequest)
                     + " " + index);
-        } 
+        } //End block
         send(rr);
-        
-        
-                
-        
-        
-        
-            
-                    
-                    
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_DELETE_SMS_ON_RUIM,
+                //response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(index);
+        //if (false) {
+            //if (RILJ_LOGD) riljLog(rr.serialString() + "> "
+                    //+ requestToString(rr.mRequest)
+                    //+ " " + index);
+        //}
+        //send(rr);
     }
 
     
@@ -1371,21 +1367,21 @@ for(int i=0;i < bearerDataLength;i++)
             riljLog(rr.serialString() + "> "
                     + requestToString(rr.mRequest)
                     + " " + status);
-        } 
+        } //End block
         send(rr);
-        
-        
-        
-                
-        
-        
-        
-        
-            
-                    
-                    
-        
-        
+        // ---------- Original Method ----------
+        //status = translateStatus(status);
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_WRITE_SMS_TO_SIM,
+                //response);
+        //rr.mp.writeInt(status);
+        //rr.mp.writeString(pdu);
+        //rr.mp.writeString(smsc);
+        //if (false) {
+            //if (RILJ_LOGD) riljLog(rr.serialString() + "> "
+                    //+ requestToString(rr.mRequest)
+                    //+ " " + status);
+        //}
+        //send(rr);
     }
 
     
@@ -1405,24 +1401,23 @@ for(int i=0;i < bearerDataLength;i++)
             riljLog(rr.serialString() + "> "
                     + requestToString(rr.mRequest)
                     + " " + status);
-        } 
+        } //End block
         send(rr);
-        
-        
-        
-                
-        
-        
-        
-            
-                    
-                    
-        
-        
+        // ---------- Original Method ----------
+        //status = translateStatus(status);
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_WRITE_SMS_TO_RUIM,
+                //response);
+        //rr.mp.writeInt(status);
+        //rr.mp.writeString(pdu);
+        //if (false) {
+            //if (RILJ_LOGD) riljLog(rr.serialString() + "> "
+                    //+ requestToString(rr.mRequest)
+                    //+ " " + status);
+        //}
+        //send(rr);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.930 -0400", hash_original_method = "0D77FBD1C1F349CB6A533B80F899FC6F", hash_generated_method = "4E17B94F15925F1F87577239BBF6E1F7")
     private int translateStatus(int status) {
         addTaint(status);
@@ -1446,18 +1441,18 @@ switch(status & 0x7){
 }        int varC4CA4238A0B923820DCC509A6F75849B_757431988 = (1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769507538 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769507538;
-        
-        
-            
-                
-            
-                
-            
-                
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //switch(status & 0x7) {
+            //case SmsManager.STATUS_ON_ICC_READ:
+                //return 1;
+            //case SmsManager.STATUS_ON_ICC_UNREAD:
+                //return 0;
+            //case SmsManager.STATUS_ON_ICC_SENT:
+                //return 3;
+            //case SmsManager.STATUS_ON_ICC_UNSENT:
+                //return 2;
+        //}
+        //return 1;
     }
 
     
@@ -1488,22 +1483,22 @@ switch(status & 0x7){
                 + profile + " " + apn + " " + user + " "
                 + password + " " + authType + " " + protocol);
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-                
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SETUP_DATA_CALL, result);
+        //rr.mp.writeInt(7);
+        //rr.mp.writeString(radioTechnology);
+        //rr.mp.writeString(profile);
+        //rr.mp.writeString(apn);
+        //rr.mp.writeString(user);
+        //rr.mp.writeString(password);
+        //rr.mp.writeString(authType);
+        //rr.mp.writeString(protocol);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> "
+                //+ requestToString(rr.mRequest) + " " + radioTechnology + " "
+                //+ profile + " " + apn + " " + user + " "
+                //+ password + " " + authType + " " + protocol);
+        //send(rr);
     }
 
     
@@ -1520,15 +1515,15 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " +
                 requestToString(rr.mRequest) + " " + cid + " " + reason);
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_DEACTIVATE_DATA_CALL, result);
+        //rr.mp.writeInt(2);
+        //rr.mp.writeString(Integer.toString(cid));
+        //rr.mp.writeString(Integer.toString(reason));
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " +
+                //requestToString(rr.mRequest) + " " + cid + " " + reason);
+        //send(rr);
     }
 
     
@@ -1543,17 +1538,17 @@ switch(status & 0x7){
         {
             riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                     + (on ? " on" : " off"));
-        } 
+        } //End block
         send(rr);
-        
-        
-        
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_RADIO_POWER, result);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(on ? 1 : 0);
+        //if (RILJ_LOGD) {
+            //riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                    //+ (on ? " on" : " off"));
+        //}
+        //send(rr);
     }
 
     
@@ -1568,14 +1563,14 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> "
                 + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_SUPP_SVC_NOTIFICATION, result);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(enable ? 1 : 0);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> "
+                //+ requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1592,15 +1587,15 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " " + success + " " + cause);
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SMS_ACKNOWLEDGE, result);
+        //rr.mp.writeInt(2);
+        //rr.mp.writeInt(success ? 1 : 0);
+        //rr.mp.writeInt(cause);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " " + success + " " + cause);
+        //send(rr);
     }
 
     
@@ -1616,14 +1611,14 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " " + success + " " + cause);
         send(rr);
-        
-        
-                
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_CDMA_SMS_ACKNOWLEDGE, result);
+        //rr.mp.writeInt(success ? 0 : 1);
+        //rr.mp.writeInt(cause);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " " + success + " " + cause);
+        //send(rr);
     }
 
     
@@ -1640,19 +1635,18 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + ' ' + success + " [" + ackPdu + ']');
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_ACKNOWLEDGE_INCOMING_GSM_SMS_WITH_PDU, result);
+        //rr.mp.writeInt(2);
+        //rr.mp.writeString(success ? "1" : "0");
+        //rr.mp.writeString(ackPdu);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ ' ' + success + " [" + ackPdu + ']');
+        //send(rr);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.933 -0400", hash_original_method = "59EE7F242CC2ECDC31CC3317E2625FB0", hash_generated_method = "D5AC675DDE2089CF469920874AB4A9F4")
     public void iccIO(int command, int fileid, String path, int p1, int p2, int p3,
             String data, String pin2, Message result) {
@@ -1681,23 +1675,23 @@ switch(status & 0x7){
                 + " path: " + path + ","
                 + p1 + "," + p2 + "," + p3);
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-                
-                
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SIM_IO, result);
+        //rr.mp.writeInt(command);
+        //rr.mp.writeInt(fileid);
+        //rr.mp.writeString(path);
+        //rr.mp.writeInt(p1);
+        //rr.mp.writeInt(p2);
+        //rr.mp.writeInt(p3);
+        //rr.mp.writeString(data);
+        //rr.mp.writeString(pin2);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> iccIO: " + requestToString(rr.mRequest)
+                //+ " 0x" + Integer.toHexString(command)
+                //+ " 0x" + Integer.toHexString(fileid) + " "
+                //+ " path: " + path + ","
+                //+ p1 + "," + p2 + "," + p3);
+        //send(rr);
     }
 
     
@@ -1708,11 +1702,11 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_GET_CLIR, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1727,14 +1721,14 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                     + " " + clirMode);
         send(rr);
-        
-        
-                
-        
-        
-        
-                    
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_CLIR, result);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(clirMode);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                    //+ " " + clirMode);
+        //send(rr);
     }
 
     
@@ -1749,14 +1743,14 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                     + " " + serviceClass);
         send(rr);
-        
-        
-                
-        
-        
-        
-                    
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_QUERY_CALL_WAITING, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(serviceClass);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                    //+ " " + serviceClass);
+        //send(rr);
     }
 
     
@@ -1773,15 +1767,15 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " " + enable + ", " + serviceClass);
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_CALL_WAITING, response);
+        //rr.mp.writeInt(2);
+        //rr.mp.writeInt(enable ? 1 : 0);
+        //rr.mp.writeInt(serviceClass);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " " + enable + ", " + serviceClass);
+        //send(rr);
     }
 
     
@@ -1793,12 +1787,12 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-                                    
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_NETWORK_SELECTION_AUTOMATIC,
+                                    //response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1813,14 +1807,14 @@ switch(status & 0x7){
                     + " " + operatorNumeric);
         rr.mp.writeString(operatorNumeric);
         send(rr);
-        
-        
-                
-                                    
-        
-                    
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL,
+                                    //response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                    //+ " " + operatorNumeric);
+        //rr.mp.writeString(operatorNumeric);
+        //send(rr);
     }
 
     
@@ -1832,12 +1826,12 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-                                    
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE,
+                                    //response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1849,12 +1843,12 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-                                    
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_QUERY_AVAILABLE_NETWORKS,
+                                    //response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1879,23 +1873,22 @@ switch(status & 0x7){
                     + " " + action + " " + cfReason + " " + serviceClass
                     + timeSeconds);
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-        
-        
-        
-                    
-                    
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_CALL_FORWARD, response);
+        //rr.mp.writeInt(action);
+        //rr.mp.writeInt(cfReason);
+        //rr.mp.writeInt(serviceClass);
+        //rr.mp.writeInt(PhoneNumberUtils.toaFromString(number));
+        //rr.mp.writeString(number);
+        //rr.mp.writeInt (timeSeconds);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                    //+ " " + action + " " + cfReason + " " + serviceClass
+                    //+ timeSeconds);
+        //send(rr);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.935 -0400", hash_original_method = "23037026F2CF508E3AB593A615459BEF", hash_generated_method = "FA72C811632A9379E882111FA8729B70")
     public void queryCallForwardStatus(int cfReason, int serviceClass,
                 String number, Message response) {
@@ -1914,18 +1907,18 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " " + cfReason + " " + serviceClass);
         send(rr);
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+            //= RILRequest.obtain(RIL_REQUEST_QUERY_CALL_FORWARD_STATUS, response);
+        //rr.mp.writeInt(2);
+        //rr.mp.writeInt(cfReason);
+        //rr.mp.writeInt(serviceClass);
+        //rr.mp.writeInt(PhoneNumberUtils.toaFromString(number));
+        //rr.mp.writeString(number);
+        //rr.mp.writeInt (0);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " " + cfReason + " " + serviceClass);
+        //send(rr);
     }
 
     
@@ -1936,11 +1929,11 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+            //= RILRequest.obtain(RIL_REQUEST_QUERY_CLIP, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1951,11 +1944,11 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_BASEBAND_VERSION, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -1968,8 +1961,8 @@ switch(status & 0x7){
         addTaint(password.getTaint());
         addTaint(facility.getTaint());
         queryFacilityLockForApp(facility, password, serviceClass, null, response);
-        
-        
+        // ---------- Original Method ----------
+        //queryFacilityLockForApp(facility, password, serviceClass, null, response);
     }
 
     
@@ -1991,15 +1984,15 @@ switch(status & 0x7){
         rr.mp.writeString(Integer.toString(serviceClass));
         rr.mp.writeString(appId);
         send(rr);
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_QUERY_FACILITY_LOCK, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(4);
+        //rr.mp.writeString(facility);
+        //rr.mp.writeString(password);
+        //rr.mp.writeString(Integer.toString(serviceClass));
+        //rr.mp.writeString(appId);
+        //send(rr);
     }
 
     
@@ -2013,8 +2006,8 @@ switch(status & 0x7){
         addTaint(lockState);
         addTaint(facility.getTaint());
         setFacilityLockForApp(facility, lockState, password, serviceClass, null, response);
-        
-        
+        // ---------- Original Method ----------
+        //setFacilityLockForApp(facility, lockState, password, serviceClass, null, response);
     }
 
     
@@ -2040,19 +2033,19 @@ switch(status & 0x7){
         rr.mp.writeString(Integer.toString(serviceClass));
         rr.mp.writeString(appId);
         send(rr);
-        
-        
-        
-                
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //String lockString;
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_FACILITY_LOCK, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeInt(5);
+        //rr.mp.writeString(facility);
+        //lockString = (lockState)?"1":"0";
+        //rr.mp.writeString(lockString);
+        //rr.mp.writeString(password);
+        //rr.mp.writeString(Integer.toString(serviceClass));
+        //rr.mp.writeString(appId);
+        //send(rr);
     }
 
     
@@ -2066,13 +2059,13 @@ switch(status & 0x7){
                             + " " + ussdString);
         rr.mp.writeString(ussdString);
         send(rr);
-        
-        
-                
-        
-                            
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SEND_USSD, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                            //+ " " + ussdString);
+        //rr.mp.writeString(ussdString);
+        //send(rr);
     }
 
     
@@ -2084,12 +2077,12 @@ switch(status & 0x7){
         riljLog(rr.serialString()
                 + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_CANCEL_USSD, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString()
+                //+ "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2100,11 +2093,11 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_RESET_RADIO, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2118,13 +2111,13 @@ switch(status & 0x7){
                + "[" + IccUtils.bytesToHexString(data) + "]");
         rr.mp.writeByteArray(data);
         send(rr);
-        
-        
-                
-        
-               
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_OEM_HOOK_RAW, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+               //+ "[" + IccUtils.bytesToHexString(data) + "]");
+        //rr.mp.writeByteArray(data);
+        //send(rr);
     }
 
     
@@ -2137,12 +2130,12 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         rr.mp.writeStringArray(strings);
         send(rr);
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_OEM_HOOK_STRINGS, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeStringArray(strings);
+        //send(rr);
     }
 
     
@@ -2157,14 +2150,14 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                  + " " + bandMode);
         send(rr);
-        
-        
-                
-        
-        
-        
-                 
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_SET_BAND_MODE, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(bandMode);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                 //+ " " + bandMode);
+        //send(rr);
     }
 
     
@@ -2176,12 +2169,12 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr
+                //= RILRequest.obtain(RIL_REQUEST_QUERY_AVAILABLE_BAND_MODE,
+                //response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2195,12 +2188,12 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         rr.mp.writeString(contents);
         send(rr);
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_STK_SEND_TERMINAL_RESPONSE, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeString(contents);
+        //send(rr);
     }
 
     
@@ -2214,12 +2207,12 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         rr.mp.writeString(contents);
         send(rr);
-        
-        
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_STK_SEND_ENVELOPE_COMMAND, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //rr.mp.writeString(contents);
+        //send(rr);
     }
 
     
@@ -2234,13 +2227,13 @@ switch(status & 0x7){
                 + '[' + contents + ']');
         rr.mp.writeString(contents);
         send(rr);
-        
-        
-                
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_STK_SEND_ENVELOPE_WITH_STATUS, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ '[' + contents + ']');
+        //rr.mp.writeString(contents);
+        //send(rr);
     }
 
     
@@ -2258,15 +2251,15 @@ switch(status & 0x7){
         param[0] = accept ? 1 : 0;
         rr.mp.writeIntArray(param);
         send(rr);
-        
-        
-            
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+            //RILConstants.RIL_REQUEST_STK_HANDLE_CALL_SETUP_REQUESTED_FROM_SIM,
+            //response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //int[] param = new int[1];
+        //param[0] = accept ? 1 : 0;
+        //rr.mp.writeIntArray(param);
+        //send(rr);
     }
 
     
@@ -2276,9 +2269,9 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog("setCurrentPreferredNetworkType: " + mSetPreferredNetworkType);
         setPreferredNetworkType(mSetPreferredNetworkType, null);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (RILJ_LOGD) riljLog("setCurrentPreferredNetworkType: " + mSetPreferredNetworkType);
+        //setPreferredNetworkType(mSetPreferredNetworkType, null);
     }
 
     
@@ -2295,16 +2288,16 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " : " + networkType);
         send(rr);
-        
-        
-                
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_SET_PREFERRED_NETWORK_TYPE, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(networkType);
+        //mSetPreferredNetworkType = networkType;
+        //mPreferredNetworkType = networkType;
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " : " + networkType);
+        //send(rr);
     }
 
     
@@ -2316,11 +2309,11 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_GET_PREFERRED_NETWORK_TYPE, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2332,11 +2325,11 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_GET_NEIGHBORING_CELL_IDS, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2351,13 +2344,13 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> "
                 + requestToString(rr.mRequest) + ": " + enable);
         send(rr);
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_SET_LOCATION_UPDATES, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(enable ? 1 : 0);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> "
+                //+ requestToString(rr.mRequest) + ": " + enable);
+        //send(rr);
     }
 
     
@@ -2368,10 +2361,10 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_GET_SMSC_ADDRESS, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2385,12 +2378,12 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " : " + address);
         send(rr);
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_SET_SMSC_ADDRESS, result);
+        //rr.mp.writeString(address);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " : " + address);
+        //send(rr);
     }
 
     
@@ -2405,13 +2398,13 @@ switch(status & 0x7){
         riljLog(rr.serialString() + "> "
                 + requestToString(rr.mRequest) + ": " + available);
         send(rr);
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_REPORT_SMS_MEMORY_STATUS, result);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(available ? 1 : 0);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> "
+                //+ requestToString(rr.mRequest) + ": " + available);
+        //send(rr);
     }
 
     
@@ -2422,10 +2415,10 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING, result);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2436,10 +2429,10 @@ switch(status & 0x7){
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_GSM_GET_BROADCAST_CONFIG, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2457,7 +2450,7 @@ for(int i = 0;i < numOfConfig;i++)
             rr.mp.writeInt(config[i].getFromCodeScheme());
             rr.mp.writeInt(config[i].getToCodeScheme());
             rr.mp.writeInt(config[i].isSelected() ? 1 : 0);
-        } 
+        } //End block
     if(RILJ_LOGD)        
         {
             riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
@@ -2465,11 +2458,11 @@ for(int i = 0;i < numOfConfig;i++)
 for(int i = 0;i < numOfConfig;i++)
             {
                 riljLog(config[i].toString());
-            } 
-        } 
+            } //End block
+        } //End block
         send(rr);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2483,12 +2476,12 @@ for(int i = 0;i < numOfConfig;i++)
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_GSM_BROADCAST_ACTIVATION, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(activate ? 0 : 1);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -2502,23 +2495,22 @@ for(int i = 0;i < numOfConfig;i++)
         riljLog(rr.serialString()
                 + "> " + requestToString(rr.mRequest) + ": " + on);
         send(rr);
-        
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_SCREEN_STATE, null);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(on ? 1 : 0);
+        //if (RILJ_LOGD) riljLog(rr.serialString()
+                //+ "> " + requestToString(rr.mRequest) + ": " + on);
+        //send(rr);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.942 -0400", hash_original_method = "BB835229E5EA50CDBB0B126232F0F168", hash_generated_method = "D18433B9DE179811653284B06AFFE308")
     protected void onRadioAvailable() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         sendScreenState(true);
-        
-        
+        // ---------- Original Method ----------
+        //sendScreenState(true);
     }
 
     
@@ -2565,8 +2557,8 @@ switch(stateInt){
 }RadioState var37C56C9D63C623261861C16DCFB73F6D_880774529 =         state;
         var37C56C9D63C623261861C16DCFB73F6D_880774529.addTaint(taint);
         return var37C56C9D63C623261861C16DCFB73F6D_880774529;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2574,8 +2566,8 @@ switch(stateInt){
     private void switchToRadioState(RadioState newState) {
         addTaint(newState.getTaint());
         setRadioState(newState);
-        
-        
+        // ---------- Original Method ----------
+        //setRadioState(newState);
     }
 
     
@@ -2588,15 +2580,15 @@ switch(stateInt){
             mSender.removeMessages(EVENT_WAKE_LOCK_TIMEOUT);
             Message msg = mSender.obtainMessage(EVENT_WAKE_LOCK_TIMEOUT);
             mSender.sendMessageDelayed(msg, mWakeLockTimeout);
-        } 
-        
-        
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mWakeLock) {
+            //mWakeLock.acquire();
+            //mRequestMessagesPending++;
+            //mSender.removeMessages(EVENT_WAKE_LOCK_TIMEOUT);
+            //Message msg = mSender.obtainMessage(EVENT_WAKE_LOCK_TIMEOUT);
+            //mSender.sendMessageDelayed(msg, mWakeLockTimeout);
+        //}
     }
 
     
@@ -2610,17 +2602,17 @@ switch(stateInt){
             {
                 mSender.removeMessages(EVENT_WAKE_LOCK_TIMEOUT);
                 mWakeLock.release();
-            } 
-        } 
-        
-        
-            
-                
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mWakeLock) {
+            //if (mWakeLock.isHeld() &&
+                //(mRequestMessagesPending == 0) &&
+                //(mRequestMessagesWaiting == 0)) {
+                //mSender.removeMessages(EVENT_WAKE_LOCK_TIMEOUT);
+                //mWakeLock.release();
+            //}
+        //}
     }
 
     
@@ -2633,20 +2625,20 @@ switch(stateInt){
             rr.onError(RADIO_NOT_AVAILABLE, null);
             rr.release();
             return;
-        } 
+        } //End block
         msg = mSender.obtainMessage(EVENT_SEND, rr);
         acquireWakeLock();
         msg.sendToTarget();
-        
-        
-        
-            
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message msg;
+        //if (mSocket == null) {
+            //rr.onError(RADIO_NOT_AVAILABLE, null);
+            //rr.release();
+            //return;
+        //}
+        //msg = mSender.obtainMessage(EVENT_SEND, rr);
+        //acquireWakeLock();
+        //msg.sendToTarget();
     }
 
     
@@ -2658,22 +2650,22 @@ switch(stateInt){
     if(type == RESPONSE_UNSOLICITED)        
         {
             processUnsolicited (p);
-        } 
+        } //End block
         else
     if(type == RESPONSE_SOLICITED)        
         {
             processSolicited (p);
-        } 
+        } //End block
         releaseWakeLockIfDone();
-        
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int type;
+        //type = p.readInt();
+        //if (type == RESPONSE_UNSOLICITED) {
+            //processUnsolicited (p);
+        //} else if (type == RESPONSE_SOLICITED) {
+            //processSolicited (p);
+        //}
+        //releaseWakeLockIfDone();
     }
 
     
@@ -2690,7 +2682,7 @@ switch(stateInt){
                 Log.d(LOG_TAG, "WAKE_LOCK_TIMEOUT " +
                         " mReqPending=" + mRequestMessagesPending +
                         " mRequestList=" + count);
-            } 
+            } //End block
 for(int i = 0;i < count;i++)
             {
                 rr = mRequestsList.get(i);
@@ -2698,34 +2690,34 @@ for(int i = 0;i < count;i++)
                 {
                     Log.d(LOG_TAG, i + ": [" + rr.mSerial + "] " +
                             requestToString(rr.mRequest));
-                } 
+                } //End block
                 rr.onError(error, null);
                 rr.release();
-            } 
+            } //End block
             mRequestsList.clear();
             mRequestMessagesWaiting = 0;
-        } 
-        
-        
-        
-            
-            
-                
-                        
-                        
-            
-            
-                
-                
-                    
-                            
-                
-                
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //RILRequest rr;
+        //synchronized (mRequestsList) {
+            //int count = mRequestsList.size();
+            //if (RILJ_LOGD && loggable) {
+                //Log.d(LOG_TAG, "WAKE_LOCK_TIMEOUT " +
+                        //" mReqPending=" + mRequestMessagesPending +
+                        //" mRequestList=" + count);
+            //}
+            //for (int i = 0; i < count ; i++) {
+                //rr = mRequestsList.get(i);
+                //if (RILJ_LOGD && loggable) {
+                    //Log.d(LOG_TAG, i + ": [" + rr.mSerial + "] " +
+                            //requestToString(rr.mRequest));
+                //}
+                //rr.onError(error, null);
+                //rr.release();
+            //}
+            //mRequestsList.clear();
+            //mRequestMessagesWaiting = 0;
+        //}
     }
 
     
@@ -2745,25 +2737,25 @@ for(int i = 0, s = mRequestsList.size();i < s;i++)
 RILRequest var2A28F1EA1AB5EF586FD3804D7EF3F072_2056901718 =                     rr;
                     var2A28F1EA1AB5EF586FD3804D7EF3F072_2056901718.addTaint(taint);
                     return var2A28F1EA1AB5EF586FD3804D7EF3F072_2056901718;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 RILRequest var540C13E9E156B687226421B24F2DF178_973112086 =         null;
         var540C13E9E156B687226421B24F2DF178_973112086.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_973112086;
-        
-        
-            
-                
-                
-                    
-                    
-                        
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mRequestsList) {
+            //for (int i = 0, s = mRequestsList.size() ; i < s ; i++) {
+                //RILRequest rr = mRequestsList.get(i);
+                //if (rr.mSerial == serial) {
+                    //mRequestsList.remove(i);
+                    //if (mRequestMessagesWaiting > 0)
+                        //mRequestMessagesWaiting--;
+                    //return rr;
+                //}
+            //}
+        //}
+        //return null;
     }
 
     
@@ -2780,7 +2772,7 @@ RILRequest var540C13E9E156B687226421B24F2DF178_973112086 =         null;
     if(rr == null)        
         {
             return;
-        } 
+        } //End block
         Object ret = null;
     if(error == 0 || p.dataAvail() > 0)        
         {
@@ -3113,24 +3105,24 @@ switch(rr.mRequest){
                 varE8CE26F5FD54EFF3FF978E83581CAC6F_649503699.addTaint(taint);
                 throw varE8CE26F5FD54EFF3FF978E83581CAC6F_649503699;
 }
-            } 
+            } //End block
             catch (Throwable tr)
             {
     if(rr.mResult != null)                
                 {
                     AsyncResult.forMessage(rr.mResult, null, tr);
                     rr.mResult.sendToTarget();
-                } 
+                } //End block
                 rr.release();
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
     if(error != 0)        
         {
             rr.onError(error, ret);
             rr.release();
             return;
-        } 
+        } //End block
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "< " + requestToString(rr.mRequest)
             + " " + retToString(rr.mRequest, ret));
@@ -3138,10 +3130,10 @@ switch(rr.mRequest){
         {
             AsyncResult.forMessage(rr.mResult, ret, null);
             rr.mResult.sendToTarget();
-        } 
+        } //End block
         rr.release();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -3164,7 +3156,7 @@ switch(req){
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_407775788 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_407775788.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_407775788;
-        } 
+        } //End block
 }        StringBuilder sb;
         String s;
         int length;
@@ -3181,11 +3173,11 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_407775788 =             "";
 (i < length)                
                 {
                     sb.append(", ").append(intArray[i++]);
-                } 
-            } 
+                } //End block
+            } //End block
             sb.append("}");
             s = sb.toString();
-        } 
+        } //End block
         else
     if(ret instanceof String[])        
         {
@@ -3200,11 +3192,11 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_407775788 =             "";
 (i < length)                
                 {
                     sb.append(", ").append(strings[i++]);
-                } 
-            } 
+                } //End block
+            } //End block
             sb.append("}");
             s = sb.toString();
-        } 
+        } //End block
         else
     if(req == RIL_REQUEST_GET_CURRENT_CALLS)        
         {
@@ -3213,9 +3205,9 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_407775788 =             "";
 for(DriverCall dc : calls)
             {
                 sb.append("[").append(dc).append("] ");
-            } 
+            } //End block
             s = sb.toString();
-        } 
+        } //End block
         else
     if(req == RIL_REQUEST_GET_NEIGHBORING_CELL_IDS)        
         {
@@ -3225,22 +3217,21 @@ for(DriverCall dc : calls)
 for(NeighboringCellInfo cell : cells)
             {
                 sb.append(cell).append(" ");
-            } 
+            } //End block
             s = sb.toString();
-        } 
+        } //End block
         else
         {
             s = ret.toString();
-        } 
+        } //End block
 String var0478718F0636FB61899C13801CE9FE09_74007223 =         s;
         var0478718F0636FB61899C13801CE9FE09_74007223.addTaint(taint);
         return var0478718F0636FB61899C13801CE9FE09_74007223;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.954 -0400", hash_original_method = "0DD0C2CAC9DFFC256536DE8141109DEC", hash_generated_method = "7FFAC9683547E8B3B9E90B54C17A82A1")
     private void processUnsolicited(Parcel p) {
         addTaint(p.getTaint());
@@ -3357,11 +3348,11 @@ switch(response){
             var0F2E625871D6054A6A77E96060AD0B2E_1715285995.addTaint(taint);
             throw var0F2E625871D6054A6A77E96060AD0B2E_1715285995;
 }
-        } 
+        } //End block
         catch (Throwable tr)
         {
             return;
-        } 
+        } //End block
 switch(response){
         case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED:
         RadioState newState = getRadioStateFromInt(p.readInt());
@@ -3393,9 +3384,9 @@ switch(response){
             {
                 mGsmSmsRegistrant
                         .notifyRegistrant(new AsyncResult(null, sms, null));
-            } 
+            } //End block
             break;
-        } 
+        } //End block
         case RIL_UNSOL_RESPONSE_NEW_SMS_STATUS_REPORT:
     if(RILJ_LOGD)        
         unsljLogRet(response, ret);
@@ -3403,7 +3394,7 @@ switch(response){
         {
             mSmsStatusRegistrant.notifyRegistrant(
                             new AsyncResult(null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_RESPONSE_NEW_SMS_ON_SIM:
     if(RILJ_LOGD)        
@@ -3415,14 +3406,14 @@ switch(response){
             {
                 mSmsOnSimRegistrant.
                                 notifyRegistrant(new AsyncResult(null, smsIndex, null));
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(RILJ_LOGD)            
             riljLog(" NEW_SMS_ON_SIM ERROR with wrong length "
                             + smsIndex.length);
-        } 
+        } //End block
         break;
         case RIL_UNSOL_ON_USSD:
         String[] resp = (String[])ret;
@@ -3431,14 +3422,14 @@ switch(response){
             resp = new String[2];
             resp[0] = ((String[])ret)[0];
             resp[1] = null;
-        } 
+        } //End block
     if(RILJ_LOGD)        
         unsljLogMore(response, resp[0]);
     if(mUSSDRegistrant != null)        
         {
             mUSSDRegistrant.notifyRegistrant(
                         new AsyncResult (null, resp, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_NITZ_TIME_RECEIVED:
     if(RILJ_LOGD)        
@@ -3451,11 +3442,11 @@ switch(response){
         {
             mNITZTimeRegistrant
                         .notifyRegistrant(new AsyncResult (null, result, null));
-        } 
+        } //End block
         else
         {
             mLastNITZTimeInfo = result;
-        } 
+        } //End block
         break;
         case RIL_UNSOL_SIGNAL_STRENGTH:
     if(RILJ_LOGV)        
@@ -3464,7 +3455,7 @@ switch(response){
         {
             mSignalStrengthRegistrant.notifyRegistrant(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_DATA_CALL_LIST_CHANGED:
     if(RILJ_LOGD)        
@@ -3478,7 +3469,7 @@ switch(response){
         {
             mSsnRegistrant.notifyRegistrant(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_STK_SESSION_END:
     if(RILJ_LOGD)        
@@ -3487,7 +3478,7 @@ switch(response){
         {
             mCatSessionEndRegistrant.notifyRegistrant(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_STK_PROACTIVE_COMMAND:
     if(RILJ_LOGD)        
@@ -3496,7 +3487,7 @@ switch(response){
         {
             mCatProCmdRegistrant.notifyRegistrant(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_STK_EVENT_NOTIFY:
     if(RILJ_LOGD)        
@@ -3505,7 +3496,7 @@ switch(response){
         {
             mCatEventRegistrant.notifyRegistrant(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_STK_CALL_SETUP:
     if(RILJ_LOGD)        
@@ -3514,7 +3505,7 @@ switch(response){
         {
             mCatCallSetUpRegistrant.notifyRegistrant(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_SIM_SMS_STORAGE_FULL:
     if(RILJ_LOGD)        
@@ -3522,7 +3513,7 @@ switch(response){
     if(mIccSmsFullRegistrant != null)        
         {
             mIccSmsFullRegistrant.notifyRegistrant();
-        } 
+        } //End block
         break;
         case RIL_UNSOL_SIM_REFRESH:
     if(RILJ_LOGD)        
@@ -3531,7 +3522,7 @@ switch(response){
         {
             mIccRefreshRegistrants.notifyRegistrants(
                             new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_CALL_RING:
     if(RILJ_LOGD)        
@@ -3540,7 +3531,7 @@ switch(response){
         {
             mRingRegistrant.notifyRegistrant(
                             new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_RESTRICTED_STATE_CHANGED:
     if(RILJ_LOGD)        
@@ -3549,7 +3540,7 @@ switch(response){
         {
             mRestrictedStateRegistrant.notifyRegistrant(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_RESPONSE_SIM_STATUS_CHANGED:
     if(RILJ_LOGD)        
@@ -3557,7 +3548,7 @@ switch(response){
     if(mIccStatusChangedRegistrants != null)        
         {
             mIccStatusChangedRegistrants.notifyRegistrants();
-        } 
+        } //End block
         break;
         case RIL_UNSOL_RESPONSE_CDMA_NEW_SMS:
     if(RILJ_LOGD)        
@@ -3567,7 +3558,7 @@ switch(response){
         {
             mCdmaSmsRegistrant
                         .notifyRegistrant(new AsyncResult(null, sms, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_RESPONSE_NEW_BROADCAST_SMS:
     if(RILJ_LOGD)        
@@ -3576,7 +3567,7 @@ switch(response){
         {
             mGsmBroadcastSmsRegistrant
                         .notifyRegistrant(new AsyncResult(null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_CDMA_RUIM_SMS_STORAGE_FULL:
     if(RILJ_LOGD)        
@@ -3584,7 +3575,7 @@ switch(response){
     if(mIccSmsFullRegistrant != null)        
         {
             mIccSmsFullRegistrant.notifyRegistrant();
-        } 
+        } //End block
         break;
         case RIL_UNSOL_ENTER_EMERGENCY_CALLBACK_MODE:
     if(RILJ_LOGD)        
@@ -3592,7 +3583,7 @@ switch(response){
     if(mEmergencyCallbackModeRegistrant != null)        
         {
             mEmergencyCallbackModeRegistrant.notifyRegistrant();
-        } 
+        } //End block
         break;
         case RIL_UNSOL_CDMA_CALL_WAITING:
     if(RILJ_LOGD)        
@@ -3601,7 +3592,7 @@ switch(response){
         {
             mCallWaitingInfoRegistrants.notifyRegistrants(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_CDMA_OTA_PROVISION_STATUS:
     if(RILJ_LOGD)        
@@ -3610,24 +3601,24 @@ switch(response){
         {
             mOtaProvisionRegistrants.notifyRegistrants(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_CDMA_INFO_REC:
         ArrayList<CdmaInformationRecords> listInfoRecs;
         try 
         {
             listInfoRecs = (ArrayList<CdmaInformationRecords>)ret;
-        } 
+        } //End block
         catch (ClassCastException e)
         {
             break;
-        } 
+        } //End block
 for(CdmaInformationRecords rec : listInfoRecs)
         {
     if(RILJ_LOGD)            
             unsljLogRet(response, rec);
             notifyRegistrantsCdmaInfoRec(rec);
-        } 
+        } //End block
         break;
         case RIL_UNSOL_OEM_HOOK_RAW:
     if(RILJ_LOGD)        
@@ -3635,7 +3626,7 @@ for(CdmaInformationRecords rec : listInfoRecs)
     if(mUnsolOemHookRawRegistrant != null)        
         {
             mUnsolOemHookRawRegistrant.notifyRegistrant(new AsyncResult(null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_RINGBACK_TONE:
     if(RILJ_LOGD)        
@@ -3645,7 +3636,7 @@ for(CdmaInformationRecords rec : listInfoRecs)
             boolean playtone = (((int[])ret)[0] == 1);
             mRingbackToneRegistrants.notifyRegistrants(
                                         new AsyncResult (null, playtone, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_RESEND_INCALL_MUTE:
     if(RILJ_LOGD)        
@@ -3654,7 +3645,7 @@ for(CdmaInformationRecords rec : listInfoRecs)
         {
             mResendIncallMuteRegistrants.notifyRegistrants(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_CDMA_SUBSCRIPTION_SOURCE_CHANGED:
     if(RILJ_LOGD)        
@@ -3663,7 +3654,7 @@ for(CdmaInformationRecords rec : listInfoRecs)
         {
             mCdmaSubscriptionChangedRegistrants.notifyRegistrants(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOl_CDMA_PRL_CHANGED:
     if(RILJ_LOGD)        
@@ -3672,7 +3663,7 @@ for(CdmaInformationRecords rec : listInfoRecs)
         {
             mCdmaPrlChangedRegistrants.notifyRegistrants(
                                         new AsyncResult (null, ret, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_EXIT_EMERGENCY_CALLBACK_MODE:
     if(RILJ_LOGD)        
@@ -3681,7 +3672,7 @@ for(CdmaInformationRecords rec : listInfoRecs)
         {
             mExitEmergencyCallbackModeRegistrants.notifyRegistrants(
                                         new AsyncResult (null, null, null));
-        } 
+        } //End block
         break;
         case RIL_UNSOL_RIL_CONNECTED:
         {
@@ -3692,10 +3683,10 @@ for(CdmaInformationRecords rec : listInfoRecs)
             setCdmaSubscriptionSource(mCdmaSubscription, null);
             notifyRegistrantsRilConnectionChanged(((int[])ret)[0]);
             break;
-        } 
+        } //End block
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -3707,13 +3698,13 @@ for(CdmaInformationRecords rec : listInfoRecs)
         {
             mRilConnectedRegistrants.notifyRegistrants(
                                 new AsyncResult (null, new Integer(rilVer), null));
-        } 
-        
-        
-        
-            
-                                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mRilVersion = rilVer;
+        //if (mRilConnectedRegistrants != null) {
+            //mRilConnectedRegistrants.notifyRegistrants(
+                                //new AsyncResult (null, new Integer(rilVer), null));
+        //}
     }
 
     
@@ -3727,31 +3718,30 @@ for(CdmaInformationRecords rec : listInfoRecs)
 for(int i = 0;i < numInts;i++)
         {
             response[i] = p.readInt();
-        } 
+        } //End block
 Object var2A1114F4272D753FE23A36E3D68CD293_1567729940 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1567729940.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1567729940;
-        
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numInts;
+        //int response[];
+        //numInts = p.readInt();
+        //response = new int[numInts];
+        //for (int i = 0 ; i < numInts ; i++) {
+            //response[i] = p.readInt();
+        //}
+        //return response;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.956 -0400", hash_original_method = "F83E9E0330A999E5D5277EA606DEC7ED", hash_generated_method = "631332E3B17842C2CFA5070215488798")
     private Object responseVoid(Parcel p) {
         addTaint(p.getTaint());
 Object var540C13E9E156B687226421B24F2DF178_286673073 =         null;
         var540C13E9E156B687226421B24F2DF178_286673073.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_286673073;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
@@ -3771,25 +3761,25 @@ for(int i = 0;i < numInfos;i++)
             infos[i].toa = p.readInt();
             infos[i].number = p.readString();
             infos[i].timeSeconds = p.readInt();
-        } 
+        } //End block
 Object var856335B33F20D10100490622F4E3620B_1815373660 =         infos;
         var856335B33F20D10100490622F4E3620B_1815373660.addTaint(taint);
         return var856335B33F20D10100490622F4E3620B_1815373660;
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numInfos;
+        //CallForwardInfo infos[];
+        //numInfos = p.readInt();
+        //infos = new CallForwardInfo[numInfos];
+        //for (int i = 0 ; i < numInfos ; i++) {
+            //infos[i] = new CallForwardInfo();
+            //infos[i].status = p.readInt();
+            //infos[i].reason = p.readInt();
+            //infos[i].serviceClass = p.readInt();
+            //infos[i].toa = p.readInt();
+            //infos[i].number = p.readString();
+            //infos[i].timeSeconds = p.readInt();
+        //}
+        //return infos;
     }
 
     
@@ -3805,14 +3795,14 @@ Object var856335B33F20D10100490622F4E3620B_1815373660 =         infos;
 Object var2ED9E3026D104797820BFDEFB87E16D8_531532979 =         notification;
         var2ED9E3026D104797820BFDEFB87E16D8_531532979.addTaint(taint);
         return var2ED9E3026D104797820BFDEFB87E16D8_531532979;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //SuppServiceNotification notification = new SuppServiceNotification();
+        //notification.notificationType = p.readInt();
+        //notification.code = p.readInt();
+        //notification.index = p.readInt();
+        //notification.type = p.readInt();
+        //notification.number = p.readString();
+        //return notification;
     }
 
     
@@ -3824,10 +3814,10 @@ Object var2ED9E3026D104797820BFDEFB87E16D8_531532979 =         notification;
 Object var2E0C99463B58778B9565A9086F0B0FFD_537449652 =         sms;
         var2E0C99463B58778B9565A9086F0B0FFD_537449652.addTaint(taint);
         return var2E0C99463B58778B9565A9086F0B0FFD_537449652;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //SmsMessage sms;
+        //sms = SmsMessage.newFromParcel(p);
+        //return sms;
     }
 
     
@@ -3839,10 +3829,10 @@ Object var2E0C99463B58778B9565A9086F0B0FFD_537449652 =         sms;
 Object var2A1114F4272D753FE23A36E3D68CD293_1044161302 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1044161302.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1044161302;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //String response;
+        //response = p.readString();
+        //return response;
     }
 
     
@@ -3859,23 +3849,23 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1044161302 =         response;
 for(int i = 0;i < num;i++)
             {
                 response[i] = p.readString();
-            } 
-        } 
+            } //End block
+        } //End block
 Object var2A1114F4272D753FE23A36E3D68CD293_1625445816 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1625445816.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1625445816;
-        
-        
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int num;
+        //String response[];
+        //response = p.readStringArray();
+        //if (false) {
+            //num = p.readInt();
+            //response = new String[num];
+            //for (int i = 0; i < num; i++) {
+                //response[i] = p.readString();
+            //}
+        //}
+        //return response;
     }
 
     
@@ -3888,11 +3878,11 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1625445816 =         response;
 Object var2A1114F4272D753FE23A36E3D68CD293_1085479449 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1085479449.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1085479449;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int num;
+        //byte response[];
+        //response = p.createByteArray();
+        //return response;
     }
 
     
@@ -3909,14 +3899,14 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1085479449 =         response;
 Object var2A1114F4272D753FE23A36E3D68CD293_1497380133 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1497380133.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1497380133;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int messageRef, errorCode;
+        //String ackPDU;
+        //messageRef = p.readInt();
+        //ackPDU = p.readString();
+        //errorCode = p.readInt();
+        //SmsResponse response = new SmsResponse(messageRef, ackPDU, errorCode);
+        //return response;
     }
 
     
@@ -3938,18 +3928,18 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1497380133 =         response;
 Object varA4DE666E15471FC46793A14E11D99E42_1065753617 =         new IccIoResult(sw1, sw2, s);
         varA4DE666E15471FC46793A14E11D99E42_1065753617.addTaint(taint);
         return varA4DE666E15471FC46793A14E11D99E42_1065753617;
-        
-        
-        
-        
-        
-        
-        
-        
-                
-                
-                
-        
+        // ---------- Original Method ----------
+        //int sw1, sw2;
+        //byte data[] = null;
+        //Message ret;
+        //sw1 = p.readInt();
+        //sw2 = p.readInt();
+        //String s = p.readString();
+        //if (RILJ_LOGV) riljLog("< iccIO: "
+                //+ " 0x" + Integer.toHexString(sw1)
+                //+ " 0x" + Integer.toHexString(sw2) + " "
+                //+ s);
+        //return new IccIoResult(sw1, sw2, s);
     }
 
     
@@ -3967,7 +3957,7 @@ Object varA4DE666E15471FC46793A14E11D99E42_1065753617 =         new IccIoResult(
     if(numApplications > IccCardStatus.CARD_MAX_APPS)        
         {
             numApplications = IccCardStatus.CARD_MAX_APPS;
-        } 
+        } //End block
         status.setNumApplications(numApplications);
 for(int i = 0;i < numApplications;i++)
         {
@@ -3981,12 +3971,12 @@ for(int i = 0;i < numApplications;i++)
             ca.pin1           = ca.PinStateFromRILInt(p.readInt());
             ca.pin2           = ca.PinStateFromRILInt(p.readInt());
             status.addApplication(ca);
-        } 
+        } //End block
 Object var62D3D5D442782C1992154E821A40FA75_1627159437 =         status;
         var62D3D5D442782C1992154E821A40FA75_1627159437.addTaint(taint);
         return var62D3D5D442782C1992154E821A40FA75_1627159437;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4031,30 +4021,30 @@ for(int i = 0;i < num;i++)
                         + new String(dc.uusInfo.getUserData()));
                 riljLogv("Incoming UUS : data (hex): "
                         + IccUtils.bytesToHexString(dc.uusInfo.getUserData()));
-            } 
+            } //End block
             else
             {
                 riljLogv("Incoming UUS : NOT present!");
-            } 
+            } //End block
             dc.number = PhoneNumberUtils.stringFromStringAndTOA(dc.number, dc.TOA);
             response.add(dc);
     if(dc.isVoicePrivacy)            
             {
                 mVoicePrivacyOnRegistrants.notifyRegistrants();
                 riljLog("InCall VoicePrivacy is enabled");
-            } 
+            } //End block
             else
             {
                 mVoicePrivacyOffRegistrants.notifyRegistrants();
                 riljLog("InCall VoicePrivacy is disabled");
-            } 
-        } 
+            } //End block
+        } //End block
         Collections.sort(response);
 Object var2A1114F4272D753FE23A36E3D68CD293_1674619373 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1674619373.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1674619373;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4073,8 +4063,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1674619373 =         response;
     if(!TextUtils.isEmpty(addresses))            
             {
                 dataCall.addresses = addresses.split(" ");
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             dataCall.status = p.readInt();
@@ -4089,28 +4079,28 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1674619373 =         response;
                 RuntimeException var8405CADCB98D15E5F158252C86B46497_2138785868 = new RuntimeException("getDataCallState, no ifname");
                 var8405CADCB98D15E5F158252C86B46497_2138785868.addTaint(taint);
                 throw var8405CADCB98D15E5F158252C86B46497_2138785868;
-            } 
+            } //End block
             String addresses = p.readString();
     if(!TextUtils.isEmpty(addresses))            
             {
                 dataCall.addresses = addresses.split(" ");
-            } 
+            } //End block
             String dnses = p.readString();
     if(!TextUtils.isEmpty(dnses))            
             {
                 dataCall.dnses = dnses.split(" ");
-            } 
+            } //End block
             String gateways = p.readString();
     if(!TextUtils.isEmpty(gateways))            
             {
                 dataCall.gateways = gateways.split(" ");
-            } 
-        } 
+            } //End block
+        } //End block
 DataCallState var1FA3F27DDFFF65A1C78D28EE65B36A1F_342168260 =         dataCall;
         var1FA3F27DDFFF65A1C78D28EE65B36A1F_342168260.addTaint(taint);
         return var1FA3F27DDFFF65A1C78D28EE65B36A1F_342168260;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4125,20 +4115,20 @@ DataCallState var1FA3F27DDFFF65A1C78D28EE65B36A1F_342168260 =         dataCall;
 for(int i = 0;i < num;i++)
         {
             response.add(getDataCallState(p, ver));
-        } 
+        } //End block
 Object var2A1114F4272D753FE23A36E3D68CD293_710663683 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_710663683.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_710663683;
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<DataCallState> response;
+        //int ver = p.readInt();
+        //int num = p.readInt();
+        //riljLog("responseDataCallList ver=" + ver + " num=" + num);
+        //response = new ArrayList<DataCallState>(num);
+        //for (int i = 0; i < num; i++) {
+            //response.add(getDataCallState(p, ver));
+        //}
+        //return response;
     }
 
     
@@ -4162,12 +4152,12 @@ Object var2A1114F4272D753FE23A36E3D68CD293_710663683 =         response;
                         "RIL_REQUEST_SETUP_DATA_CALL response, no ifname");
                 var07D8741E9F54B07F3ED5A991C2C9886E_132906091.addTaint(taint);
                 throw var07D8741E9F54B07F3ED5A991C2C9886E_132906091;
-            } 
+            } //End block
             String addresses = p.readString();
     if(!TextUtils.isEmpty(addresses))            
             {
                 dataCall.addresses = addresses.split(" ");
-            } 
+            } //End block
     if(num >= 4)            
             {
                 String dnses = p.readString();
@@ -4176,8 +4166,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_710663683 =         response;
     if(!TextUtils.isEmpty(dnses))                
                 {
                     dataCall.dnses = dnses.split(" ");
-                } 
-            } 
+                } //End block
+            } //End block
     if(num >= 5)            
             {
                 String gateways = p.readString();
@@ -4186,9 +4176,9 @@ Object var2A1114F4272D753FE23A36E3D68CD293_710663683 =         response;
     if(!TextUtils.isEmpty(gateways))                
                 {
                     dataCall.gateways = gateways.split(" ");
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
     if(num != 1)            
@@ -4198,14 +4188,14 @@ Object var2A1114F4272D753FE23A36E3D68CD293_710663683 =         response;
                         + " got " + num);
                 varC7A41519B460DCD5DB34E74BB4F3C0D6_1053434816.addTaint(taint);
                 throw varC7A41519B460DCD5DB34E74BB4F3C0D6_1053434816;
-            } 
+            } //End block
             dataCall = getDataCallState(p, ver);
-        } 
+        } //End block
 Object var1FA3F27DDFFF65A1C78D28EE65B36A1F_945005684 =         dataCall;
         var1FA3F27DDFFF65A1C78D28EE65B36A1F_945005684.addTaint(taint);
         return var1FA3F27DDFFF65A1C78D28EE65B36A1F_945005684;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4221,7 +4211,7 @@ Object var1FA3F27DDFFF65A1C78D28EE65B36A1F_945005684 =         dataCall;
                 + strings.length + " strings, expected multible of 4");
             varD856F6F2F980354E8E3EB71B536B0E7A_1180875145.addTaint(taint);
             throw varD856F6F2F980354E8E3EB71B536B0E7A_1180875145;
-        } 
+        } //End block
         ret = new ArrayList<OperatorInfo>(strings.length / 4);
 for(int i = 0;i < strings.length;i += 4)
         {
@@ -4231,28 +4221,28 @@ for(int i = 0;i < strings.length;i += 4)
                     strings[i+1],
                     strings[i+2],
                     strings[i+3]));
-        } 
+        } //End block
 Object varEDFF4FBBF053B5DC2B444ADFA049EE0F_60610381 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_60610381.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_60610381;
-        
-        
-        
-        
-            
-                
-                
-        
-        
-        
-            
-                
-                    
-                    
-                    
-                    
-        
-        
+        // ---------- Original Method ----------
+        //String strings[] = (String [])responseStrings(p);
+        //ArrayList<OperatorInfo> ret;
+        //if (strings.length % 4 != 0) {
+            //throw new RuntimeException(
+                //"RIL_REQUEST_QUERY_AVAILABLE_NETWORKS: invalid response. Got "
+                //+ strings.length + " strings, expected multible of 4");
+        //}
+        //ret = new ArrayList<OperatorInfo>(strings.length / 4);
+        //for (int i = 0 ; i < strings.length ; i += 4) {
+            //ret.add (
+                //new OperatorInfo(
+                    //strings[i+0],
+                    //strings[i+1],
+                    //strings[i+2],
+                    //strings[i+3]));
+        //}
+        //return ret;
     }
 
     
@@ -4272,36 +4262,36 @@ Object varEDFF4FBBF053B5DC2B444ADFA049EE0F_60610381 =         ret;
     if(radioString.equals("GPRS"))        
         {
             radioType = NETWORK_TYPE_GPRS;
-        } 
+        } //End block
         else
     if(radioString.equals("EDGE"))        
         {
             radioType = NETWORK_TYPE_EDGE;
-        } 
+        } //End block
         else
     if(radioString.equals("UMTS"))        
         {
             radioType = NETWORK_TYPE_UMTS;
-        } 
+        } //End block
         else
     if(radioString.equals("HSDPA"))        
         {
             radioType = NETWORK_TYPE_HSDPA;
-        } 
+        } //End block
         else
     if(radioString.equals("HSUPA"))        
         {
             radioType = NETWORK_TYPE_HSUPA;
-        } 
+        } //End block
         else
     if(radioString.equals("HSPA"))        
         {
             radioType = NETWORK_TYPE_HSPA;
-        } 
+        } //End block
         else
         {
             radioType = NETWORK_TYPE_UNKNOWN;
-        } 
+        } //End block
     if(radioType != NETWORK_TYPE_UNKNOWN)        
         {
 for(int i = 0;i < num;i++)
@@ -4310,13 +4300,13 @@ for(int i = 0;i < num;i++)
                 location = p.readString();
                 cell = new NeighboringCellInfo(rssi, location, radioType);
                 response.add(cell);
-            } 
-        } 
+            } //End block
+        } //End block
 Object var2A1114F4272D753FE23A36E3D68CD293_850184970 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_850184970.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_850184970;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4327,16 +4317,16 @@ Object var2A1114F4272D753FE23A36E3D68CD293_850184970 =         response;
     if(response.length >= 1)        
         {
             mPreferredNetworkType = response[0];
-        } 
+        } //End block
 Object var2A1114F4272D753FE23A36E3D68CD293_800578972 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_800578972.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_800578972;
-        
-        
-        
-           
-       
-        
+        // ---------- Original Method ----------
+        //int [] response = (int[]) responseInts(p);
+        //if (response.length >= 1) {
+           //mPreferredNetworkType = response[0];
+       //}
+        //return response;
     }
 
     
@@ -4358,27 +4348,27 @@ for(int i = 0;i < num;i++)
             info = new SmsBroadcastConfigInfo(fromId, toId, fromScheme,
                     toScheme, selected);
             response.add(info);
-        } 
+        } //End block
 Object var2A1114F4272D753FE23A36E3D68CD293_269408000 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_269408000.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_269408000;
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //int num;
+        //ArrayList<SmsBroadcastConfigInfo> response;
+        //SmsBroadcastConfigInfo info;
+        //num = p.readInt();
+        //response = new ArrayList<SmsBroadcastConfigInfo>(num);
+        //for (int i = 0; i < num; i++) {
+            //int fromId = p.readInt();
+            //int toId = p.readInt();
+            //int fromScheme = p.readInt();
+            //int toScheme = p.readInt();
+            //boolean selected = (p.readInt() == 1);
+            //info = new SmsBroadcastConfigInfo(fromId, toId, fromScheme,
+                    //toScheme, selected);
+            //response.add(info);
+        //}
+        //return response;
     }
 
     
@@ -4399,8 +4389,8 @@ for(int i = 1;i < numInts;i += CDMA_BSI_NO_OF_INTS_STRUCT)
                 response[i + 0] = i / CDMA_BSI_NO_OF_INTS_STRUCT;
                 response[i + 1] = 1;
                 response[i + 2] = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             int numInts;
@@ -4410,13 +4400,13 @@ for(int i = 1;i < numInts;i += CDMA_BSI_NO_OF_INTS_STRUCT)
 for(int i = 1;i < numInts;i++)
             {
                 response[i] = p.readInt();
-            } 
-        } 
+            } //End block
+        } //End block
 Object var2A1114F4272D753FE23A36E3D68CD293_1137216658 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1137216658.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1137216658;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -4429,18 +4419,18 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1137216658 =         response;
 for(int i = 0;i < numInts;i++)
         {
             response[i] = p.readInt();
-        } 
+        } //End block
 Object var2A1114F4272D753FE23A36E3D68CD293_1685907958 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1685907958.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1685907958;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numInts = 12;
+        //int response[];
+        //response = new int[numInts];
+        //for (int i = 0 ; i < numInts ; i++) {
+            //response[i] = p.readInt();
+        //}
+        //return response;
     }
 
     
@@ -4455,20 +4445,20 @@ for(int i = 0;i < numberOfInfoRecs;i++)
         {
             CdmaInformationRecords InfoRec = new CdmaInformationRecords(p);
             response.add(InfoRec);
-        } 
+        } //End block
 ArrayList<CdmaInformationRecords> var2A1114F4272D753FE23A36E3D68CD293_1623757220 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1623757220.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1623757220;
-        
-        
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int numberOfInfoRecs;
+        //ArrayList<CdmaInformationRecords> response;
+        //numberOfInfoRecs = p.readInt();
+        //response = new ArrayList<CdmaInformationRecords>(numberOfInfoRecs);
+        //for (int i = 0; i < numberOfInfoRecs; i++) {
+            //CdmaInformationRecords InfoRec = new CdmaInformationRecords(p);
+            //response.add(InfoRec);
+        //}
+        //return response;
     }
 
     
@@ -4489,19 +4479,19 @@ ArrayList<CdmaInformationRecords> var2A1114F4272D753FE23A36E3D68CD293_1623757220
 Object var2ED9E3026D104797820BFDEFB87E16D8_1944319355 =         notification;
         var2ED9E3026D104797820BFDEFB87E16D8_1944319355.addTaint(taint);
         return var2ED9E3026D104797820BFDEFB87E16D8_1944319355;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //CdmaCallWaitingNotification notification = new CdmaCallWaitingNotification();
+        //notification.number = p.readString();
+        //notification.numberPresentation = notification.presentationFromCLIP(p.readInt());
+        //notification.name = p.readString();
+        //notification.namePresentation = notification.numberPresentation;
+        //notification.isPresent = p.readInt();
+        //notification.signalType = p.readInt();
+        //notification.alertPitch = p.readInt();
+        //notification.signal = p.readInt();
+        //notification.numberType = p.readInt();
+        //notification.numberPlan = p.readInt();
+        //return notification;
     }
 
     
@@ -4516,13 +4506,13 @@ Object var2ED9E3026D104797820BFDEFB87E16D8_1944319355 =         notification;
 Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1922272310.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1922272310;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //char response[] = new char[4];
+        //response[0] = (char) p.readInt();
+        //response[1] = (char) p.readInt();
+        //response[2] = (char) p.readInt();
+        //response[3] = (char) p.readInt();
+        //return response;
     }
 
     
@@ -4538,8 +4528,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
                 unsljLogRet(response, infoRec.record);
                 mDisplayInfoRegistrants.notifyRegistrants(
                         new AsyncResult (null, infoRec.record, null));
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(infoRec.record instanceof CdmaInformationRecords.CdmaSignalInfoRec)        
         {
@@ -4549,8 +4539,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
                 unsljLogRet(response, infoRec.record);
                 mSignalInfoRegistrants.notifyRegistrants(
                         new AsyncResult (null, infoRec.record, null));
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(infoRec.record instanceof CdmaInformationRecords.CdmaNumberInfoRec)        
         {
@@ -4560,8 +4550,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
                 unsljLogRet(response, infoRec.record);
                 mNumberInfoRegistrants.notifyRegistrants(
                         new AsyncResult (null, infoRec.record, null));
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(infoRec.record instanceof CdmaInformationRecords.CdmaRedirectingNumberInfoRec)        
         {
@@ -4571,8 +4561,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
                 unsljLogRet(response, infoRec.record);
                 mRedirNumInfoRegistrants.notifyRegistrants(
                         new AsyncResult (null, infoRec.record, null));
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(infoRec.record instanceof CdmaInformationRecords.CdmaLineControlInfoRec)        
         {
@@ -4582,8 +4572,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
                 unsljLogRet(response, infoRec.record);
                 mLineControlInfoRegistrants.notifyRegistrants(
                         new AsyncResult (null, infoRec.record, null));
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(infoRec.record instanceof CdmaInformationRecords.CdmaT53ClirInfoRec)        
         {
@@ -4593,8 +4583,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
                 unsljLogRet(response, infoRec.record);
                 mT53ClirInfoRegistrants.notifyRegistrants(
                         new AsyncResult (null, infoRec.record, null));
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(infoRec.record instanceof CdmaInformationRecords.CdmaT53AudioControlInfoRec)        
         {
@@ -4604,15 +4594,14 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
                 unsljLogRet(response, infoRec.record);
                 mT53AudCntrlInfoRegistrants.notifyRegistrants(
                        new AsyncResult (null, infoRec.record, null));
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static String requestToString(int request) {
+        static String requestToString(int request) {
         switch(request) {
             case RIL_REQUEST_GET_SIM_STATUS: return "GET_SIM_STATUS";
             case RIL_REQUEST_ENTER_SIM_PIN: return "ENTER_SIM_PIN";
@@ -4726,8 +4715,7 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    static String responseToString(int request) {
+        static String responseToString(int request) {
         switch(request) {
             case RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED: return "UNSOL_RESPONSE_RADIO_STATE_CHANGED";
             case RIL_UNSOL_RESPONSE_CALL_STATE_CHANGED: return "UNSOL_RESPONSE_CALL_STATE_CHANGED";
@@ -4773,16 +4761,16 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     private void riljLog(String msg) {
         addTaint(msg.getTaint());
         Log.d(LOG_TAG, msg);
-        
-        
+        // ---------- Original Method ----------
+        //Log.d(LOG_TAG, msg);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.978 -0400", hash_original_method = "709360DE622013B25C1B037A3416C3B6", hash_generated_method = "A6A9E98C2BCD8F608F27D186F899DF39")
     private void riljLogv(String msg) {
         addTaint(msg.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        //Log.v(LOG_TAG, msg);
     }
 
     
@@ -4790,8 +4778,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     private void unsljLog(int response) {
         addTaint(response);
         riljLog("[UNSL]< " + responseToString(response));
-        
-        
+        // ---------- Original Method ----------
+        //riljLog("[UNSL]< " + responseToString(response));
     }
 
     
@@ -4800,8 +4788,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         addTaint(more.getTaint());
         addTaint(response);
         riljLog("[UNSL]< " + responseToString(response) + " " + more);
-        
-        
+        // ---------- Original Method ----------
+        //riljLog("[UNSL]< " + responseToString(response) + " " + more);
     }
 
     
@@ -4810,8 +4798,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         addTaint(ret.getTaint());
         addTaint(response);
         riljLog("[UNSL]< " + responseToString(response) + " " + retToString(response, ret));
-        
-        
+        // ---------- Original Method ----------
+        //riljLog("[UNSL]< " + responseToString(response) + " " + retToString(response, ret));
     }
 
     
@@ -4820,8 +4808,8 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         addTaint(ret.getTaint());
         addTaint(response);
         riljLogv("[UNSL]< " + responseToString(response) + " " + retToString(response, ret));
-        
-        
+        // ---------- Original Method ----------
+        //riljLogv("[UNSL]< " + responseToString(response) + " " + retToString(response, ret));
     }
 
     
@@ -4832,10 +4820,10 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_DEVICE_IDENTITY, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -4846,10 +4834,10 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_SUBSCRIPTION, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -4860,9 +4848,9 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     if(RILJ_LOGD)        
         riljLog("setPhoneType=" + phoneType + " old value=" + mPhoneType);
         mPhoneType = phoneType;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (RILJ_LOGD) riljLog("setPhoneType=" + phoneType + " old value=" + mPhoneType);
+        //mPhoneType = phoneType;
     }
 
     
@@ -4874,11 +4862,11 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_CDMA_QUERY_ROAMING_PREFERENCE, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -4894,14 +4882,14 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " : " + cdmaRoamingType);
         send(rr);
-        
-        
-                
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_CDMA_SET_ROAMING_PREFERENCE, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(cdmaRoamingType);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " : " + cdmaRoamingType);
+        //send(rr);
     }
 
     
@@ -4917,14 +4905,14 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " : " + cdmaSubscription);
         send(rr);
-        
-        
-                
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(cdmaSubscription);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " : " + cdmaSubscription);
+        //send(rr);
     }
 
     
@@ -4937,11 +4925,11 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -4953,11 +4941,11 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_QUERY_TTY_MODE, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -4973,14 +4961,14 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " : " + ttyMode);
         send(rr);
-        
-        
-                
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(
+                //RILConstants.RIL_REQUEST_SET_TTY_MODE, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(ttyMode);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " : " + ttyMode);
+        //send(rr);
     }
 
     
@@ -4994,12 +4982,12 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
                 + " : " + FeatureCode);
         send(rr);
-        
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_FLASH, response);
+        //rr.mp.writeString(FeatureCode);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest)
+                //+ " : " + FeatureCode);
+        //send(rr);
     }
 
     
@@ -5008,9 +4996,9 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
         addTaint(response.getTaint());
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_GET_BROADCAST_CONFIG, response);
         send(rr);
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_GET_BROADCAST_CONFIG, response);
+        //send(rr);
     }
 
     
@@ -5022,17 +5010,17 @@ Object var2A1114F4272D753FE23A36E3D68CD293_1922272310 =         response;
 for(int i = 0;i < configValuesArray.length;i++)
         {
             rr.mp.writeInt(configValuesArray[i]);
-        } 
+        } //End block
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_SET_BROADCAST_CONFIG, response);
+        //for(int i = 0; i < configValuesArray.length; i++) {
+            //rr.mp.writeInt(configValuesArray[i]);
+        //}
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -5046,12 +5034,12 @@ for(int i = 0;i < configValuesArray.length;i++)
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_CDMA_BROADCAST_ACTIVATION, response);
+        //rr.mp.writeInt(1);
+        //rr.mp.writeInt(activate ? 0 :1);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -5062,10 +5050,10 @@ for(int i = 0;i < configValuesArray.length;i++)
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_EXIT_EMERGENCY_CALLBACK_MODE, response);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -5078,11 +5066,11 @@ for(int i = 0;i < configValuesArray.length;i++)
     if(RILJ_LOGD)        
         riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
         send(rr);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //RILRequest rr = RILRequest.obtain(RIL_REQUEST_ISIM_AUTHENTICATION, response);
+        //rr.mp.writeString(nonce);
+        //if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+        //send(rr);
     }
 
     
@@ -5095,14 +5083,13 @@ for(int i = 0;i < configValuesArray.length;i++)
         public  RILSender(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.984 -0400", hash_original_method = "941C644B96F3E7EE75FAD0CC47E0EEC2", hash_generated_method = "A2E5AE58616EECC7176440E5139E1684")
         public void run() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -5127,12 +5114,12 @@ switch(msg.what){
                     mRequestMessagesPending--;
                     alreadySubtracted = true;
                     return;
-                } 
+                } //End block
                 synchronized
 (mRequestsList)                {
                     mRequestsList.add(rr);
                     mRequestMessagesWaiting++;
-                } 
+                } //End block
     if(mRequestMessagesPending > 0)                
                 mRequestMessagesPending--;
                 alreadySubtracted = true;
@@ -5147,13 +5134,13 @@ switch(msg.what){
                                                           + data.length);
                     var83DABE5BB69C73B17ACD1A40CDC7D5C1_912418506.addTaint(taint);
                     throw var83DABE5BB69C73B17ACD1A40CDC7D5C1_912418506;
-                } 
+                } //End block
                 dataLength[0] = dataLength[1] = 0;
                 dataLength[2] = (byte)((data.length >> 8) & 0xff);
                 dataLength[3] = (byte)((data.length) & 0xff);
                 s.getOutputStream().write(dataLength);
                 s.getOutputStream().write(data);
-            } 
+            } //End block
             catch (IOException ex)
             {
                 req = findAndRemoveRequestFromList(rr.mSerial);
@@ -5161,8 +5148,8 @@ switch(msg.what){
                 {
                     rr.onError(RADIO_NOT_AVAILABLE, null);
                     rr.release();
-                } 
-            } 
+                } //End block
+            } //End block
             catch (RuntimeException exc)
             {
                 req = findAndRemoveRequestFromList(rr.mSerial);
@@ -5170,16 +5157,16 @@ switch(msg.what){
                 {
                     rr.onError(GENERIC_FAILURE, null);
                     rr.release();
-                } 
-            } 
+                } //End block
+            } //End block
             finally 
             {
                 releaseWakeLockIfDone();
-            } 
+            } //End block
     if(!alreadySubtracted && mRequestMessagesPending > 0)            
             {
                 mRequestMessagesPending--;
-            } 
+            } //End block
             break;
             case EVENT_WAKE_LOCK_TIMEOUT:
             synchronized
@@ -5204,21 +5191,21 @@ for(int i = 0;i < count;i++)
                                     rr = mRequestsList.get(i);
                                     Log.d(LOG_TAG, i + ": [" + rr.mSerial + "] "
                                                     + requestToString(rr.mRequest));
-                                } 
-                            } 
-                        } 
-                    } 
+                                } //End block
+                            } //End block
+                        } //End block
+                    } //End block
     if(mRequestMessagesPending != 0)                    
                     {
                         mRequestMessagesPending = 0;
-                    } 
+                    } //End block
                     mWakeLock.release();
-                } 
-            } 
+                } //End block
+            } //End block
             break;
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -5234,12 +5221,11 @@ for(int i = 0;i < count;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.986 -0400", hash_original_method = "AEB7D4EC0C0D3B29B57F76734A093487", hash_generated_method = "832D356F5AA3BF59D3700679E90409AE")
           RILReceiver() {
             buffer = new byte[RIL_MAX_COMMAND_BYTES];
-            
-            
+            // ---------- Original Method ----------
+            //buffer = new byte[RIL_MAX_COMMAND_BYTES];
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.990 -0400", hash_original_method = "3E25FFC0D00CEB4B0CF0C518A51DB777", hash_generated_method = "80F9CF4511441DA19A43E646B384E2A3")
         public void run() {
             int retryCount = 0;
@@ -5255,7 +5241,7 @@ for(;;)
                         l = new LocalSocketAddress(SOCKET_NAME_RIL,
                             LocalSocketAddress.Namespace.RESERVED);
                         s.connect(l);
-                    } 
+                    } //End block
                     catch (IOException ex)
                     {
                         try 
@@ -5263,28 +5249,28 @@ for(;;)
     if(s != null)                            
                             {
                                 s.close();
-                            } 
-                        } 
+                            } //End block
+                        } //End block
                         catch (IOException ex2)
                         {
-                        } 
+                        } //End block
     if(retryCount == 8)                        
                         {
-                        } 
+                        } //End block
                         else
     if(retryCount > 0 && retryCount < 8)                        
                         {
-                        } 
+                        } //End block
                         try 
                         {
                             Thread.sleep(SOCKET_OPEN_RETRY_MILLIS);
-                        } 
+                        } //End block
                         catch (InterruptedException er)
                         {
-                        } 
+                        } //End block
                         retryCount++;
                         continue;
-                    } 
+                    } //End block
                     retryCount = 0;
                     mSocket = s;
                     int length = 0;
@@ -5298,39 +5284,39 @@ for(;;)
     if(length < 0)                            
                             {
                                 break;
-                            } 
+                            } //End block
                             p = Parcel.obtain();
                             p.unmarshall(buffer, 0, length);
                             p.setDataPosition(0);
                             processResponse(p);
                             p.recycle();
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (java.io.IOException ex)
                     {
-                    } 
+                    } //End block
                     catch (Throwable tr)
                     {
-                    } 
+                    } //End block
                     setRadioState (RadioState.RADIO_UNAVAILABLE);
                     try 
                     {
                         mSocket.close();
-                    } 
+                    } //End block
                     catch (IOException ex)
                     {
-                    } 
+                    } //End block
                     mSocket = null;
                     RILRequest.resetSerial();
                     clearRequestsList(RADIO_NOT_AVAILABLE, false);
-                } 
-            } 
+                } //End block
+            } //End block
             catch (Throwable tr)
             {
-            } 
+            } //End block
             notifyRegistrantsRilConnectionChanged(-1);
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

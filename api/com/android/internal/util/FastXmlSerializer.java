@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,7 +44,7 @@ public class FastXmlSerializer implements XmlSerializer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.692 -0400", hash_original_method = "14D217AC288267AE1031A94F745E4E30", hash_generated_method = "14D217AC288267AE1031A94F745E4E30")
     public FastXmlSerializer ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -55,17 +55,17 @@ public class FastXmlSerializer implements XmlSerializer {
         {
             flush();
             pos = mPos;
-        } 
+        } //End block
         mText[pos] = c;
         mPos = pos+1;
-        
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int pos = mPos;
+        //if (pos >= (BUFFER_LEN-1)) {
+            //flush();
+            //pos = mPos;
+        //}
+        //mText[pos] = c;
+        //mPos = pos+1;
     }
 
     
@@ -82,34 +82,34 @@ public class FastXmlSerializer implements XmlSerializer {
                 int next = i + BUFFER_LEN;
                 append(str, i, next<end ? BUFFER_LEN : (end-i));
                 i = next;
-            } 
+            } //End block
             return;
-        } 
+        } //End block
         int pos = mPos;
     if((pos+length) > BUFFER_LEN)        
         {
             flush();
             pos = mPos;
-        } 
+        } //End block
         str.getChars(i, i+length, mText, pos);
         mPos = pos + length;
-        
-        
-            
-            
-                
-                
-                
-            
-            
-        
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (length > BUFFER_LEN) {
+            //final int end = i + length;
+            //while (i < end) {
+                //int next = i + BUFFER_LEN;
+                //append(str, i, next<end ? BUFFER_LEN : (end-i));
+                //i = next;
+            //}
+            //return;
+        //}
+        //int pos = mPos;
+        //if ((pos+length) > BUFFER_LEN) {
+            //flush();
+            //pos = mPos;
+        //}
+        //str.getChars(i, i+length, mText, pos);
+        //mPos = pos + length;
     }
 
     
@@ -126,34 +126,34 @@ public class FastXmlSerializer implements XmlSerializer {
                 int next = i + BUFFER_LEN;
                 append(buf, i, next<end ? BUFFER_LEN : (end-i));
                 i = next;
-            } 
+            } //End block
             return;
-        } 
+        } //End block
         int pos = mPos;
     if((pos+length) > BUFFER_LEN)        
         {
             flush();
             pos = mPos;
-        } 
+        } //End block
         System.arraycopy(buf, i, mText, pos, length);
         mPos = pos + length;
-        
-        
-            
-            
-                
-                
-                
-            
-            
-        
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (length > BUFFER_LEN) {
+            //final int end = i + length;
+            //while (i < end) {
+                //int next = i + BUFFER_LEN;
+                //append(buf, i, next<end ? BUFFER_LEN : (end-i));
+                //i = next;
+            //}
+            //return;
+        //}
+        //int pos = mPos;
+        //if ((pos+length) > BUFFER_LEN) {
+            //flush();
+            //pos = mPos;
+        //}
+        //System.arraycopy(buf, i, mText, pos, length);
+        //mPos = pos + length;
     }
 
     
@@ -161,8 +161,8 @@ public class FastXmlSerializer implements XmlSerializer {
     private void append(String str) throws IOException {
         addTaint(str.getTaint());
         append(str, 0, str.length());
-        
-        
+        // ---------- Original Method ----------
+        //append(str, 0, str.length());
     }
 
     
@@ -186,25 +186,25 @@ for(pos=0;pos<N;pos++)
             append(string, lastPos, pos-lastPos);
             lastPos = pos + 1;
             append(escape);
-        } 
+        } //End block
     if(lastPos < pos)        
         append(string, lastPos, pos-lastPos);
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //final int N = string.length();
+        //final char NE = (char)ESCAPE_TABLE.length;
+        //final String[] escapes = ESCAPE_TABLE;
+        //int lastPos = 0;
+        //int pos;
+        //for (pos=0; pos<N; pos++) {
+            //char c = string.charAt(pos);
+            //if (c >= NE) continue;
+            //String escape = escapes[c];
+            //if (escape == null) continue;
+            //if (lastPos < pos) append(string, lastPos, pos-lastPos);
+            //lastPos = pos + 1;
+            //append(escape);
+        //}
+        //if (lastPos < pos) append(string, lastPos, pos-lastPos);
     }
 
     
@@ -230,25 +230,25 @@ for(pos=start;pos<end;pos++)
             append(buf, lastPos, pos-lastPos);
             lastPos = pos + 1;
             append(escape);
-        } 
+        } //End block
     if(lastPos < pos)        
         append(buf, lastPos, pos-lastPos);
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //final char NE = (char)ESCAPE_TABLE.length;
+        //final String[] escapes = ESCAPE_TABLE;
+        //int end = start+len;
+        //int lastPos = start;
+        //int pos;
+        //for (pos=start; pos<end; pos++) {
+            //char c = buf[pos];
+            //if (c >= NE) continue;
+            //String escape = escapes[c];
+            //if (escape == null) continue;
+            //if (lastPos < pos) append(buf, lastPos, pos-lastPos);
+            //lastPos = pos + 1;
+            //append(escape);
+        //}
+        //if (lastPos < pos) append(buf, lastPos, pos-lastPos);
     }
 
     
@@ -263,7 +263,7 @@ for(pos=start;pos<end;pos++)
         {
             append(namespace);
             append(':');
-        } 
+        } //End block
         append(name);
         append("=\"");
         escapeAndAppendString(value);
@@ -271,17 +271,17 @@ for(pos=start;pos<end;pos++)
 XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1159230304 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1159230304.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1159230304;
-        
-        
-        
-            
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //append(' ');
+        //if (namespace != null) {
+            //append(namespace);
+            //append(':');
+        //}
+        //append(name);
+        //append("=\"");
+        //escapeAndAppendString(value);
+        //append('"');
+        //return this;
     }
 
     
@@ -292,8 +292,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1159230304 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1991076578 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1991076578.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1991076578;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -304,8 +304,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1159230304 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1568548819 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1568548819.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1568548819;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -316,16 +316,16 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1159230304 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1414198134 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1414198134.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1414198134;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.704 -0400", hash_original_method = "1B99F1BEFCF86F47AB36CD07598B151B", hash_generated_method = "BF20983D9077DC4EE2ECB5B538CCC3C3")
     public void endDocument() throws IOException, IllegalArgumentException, IllegalStateException {
         flush();
-        
-        
+        // ---------- Original Method ----------
+        //flush();
     }
 
     
@@ -337,7 +337,7 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1159230304 =         this;
     if(mInTag)        
         {
             append(" />\n");
-        } 
+        } //End block
         else
         {
             append("</");
@@ -345,28 +345,28 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1159230304 =         this;
             {
                 append(namespace);
                 append(':');
-            } 
+            } //End block
             append(name);
             append(">\n");
-        } 
+        } //End block
         mInTag = false;
 XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1125315279.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1125315279;
-        
-        
-            
-        
-            
-            
-                
-                
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mInTag) {
+            //append(" />\n");
+        //} else {
+            //append("</");
+            //if (namespace != null) {
+                //append(namespace);
+                //append(':');
+            //}
+            //append(name);
+            //append(">\n");
+        //}
+        //mInTag = false;
+        //return this;
     }
 
     
@@ -377,8 +377,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1804039279 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1804039279.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1804039279;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -390,14 +390,14 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
             mBytes.flip();
             mOutputStream.write(mBytes.array(), 0, position);
             mBytes.clear();
-        } 
-        
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int position;
+        //if ((position = mBytes.position()) > 0) {
+            //mBytes.flip();
+            //mOutputStream.write(mBytes.array(), 0, position);
+            //mBytes.clear();
+        //}
     }
 
     
@@ -417,28 +417,28 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
                         IOException varDAA51430864010737E8EC2F8A3A5A24C_510188149 = new IOException(result.toString());
                         varDAA51430864010737E8EC2F8A3A5A24C_510188149.addTaint(taint);
                         throw varDAA51430864010737E8EC2F8A3A5A24C_510188149;
-                    } 
+                    } //End block
                     else
     if(result.isOverflow())                    
                     {
                         flushBytes();
                         result = mCharset.encode(charBuffer, mBytes, true);
                         continue;
-                    } 
+                    } //End block
                     break;
-                } 
+                } //End block
                 flushBytes();
                 mOutputStream.flush();
-            } 
+            } //End block
             else
             {
                 mWriter.write(mText, 0, mPos);
                 mWriter.flush();
-            } 
+            } //End block
             mPos = 0;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -447,8 +447,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_163599635 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_163599635.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_163599635;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -458,8 +458,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1919735735 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1919735735.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1919735735;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -468,8 +468,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_406289805 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_406289805.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_406289805;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -478,8 +478,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_36122781 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_36122781.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_36122781;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -490,8 +490,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_745375975 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_745375975.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_745375975;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -501,8 +501,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1459461242 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1459461242.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1459461242;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -513,8 +513,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_492367252 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_492367252.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_492367252;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -525,8 +525,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1299745156 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1299745156.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1299745156;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -538,15 +538,15 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
     if(name.equals("http://xmlpull.org/v1/doc/features.html#indent-output"))        
         {
             return;
-        } 
+        } //End block
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_362460158 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_362460158.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_362460158;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name.equals("http://xmlpull.org/v1/doc/features.html#indent-output")) {
+            //return;
+        //}
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -564,60 +564,59 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
             try 
             {
                 mCharset = Charset.forName(encoding).newEncoder();
-            } 
+            } //End block
             catch (IllegalCharsetNameException e)
             {
                 UnsupportedEncodingException var2BA2B3056B09BF95A7A1AAD1688C8331_80895125 = (UnsupportedEncodingException) (new UnsupportedEncodingException(
                         encoding).initCause(e));
                 var2BA2B3056B09BF95A7A1AAD1688C8331_80895125.addTaint(taint);
                 throw var2BA2B3056B09BF95A7A1AAD1688C8331_80895125;
-            } 
+            } //End block
             catch (UnsupportedCharsetException e)
             {
                 UnsupportedEncodingException var2BA2B3056B09BF95A7A1AAD1688C8331_432475321 = (UnsupportedEncodingException) (new UnsupportedEncodingException(
                         encoding).initCause(e));
                 var2BA2B3056B09BF95A7A1AAD1688C8331_432475321.addTaint(taint);
                 throw var2BA2B3056B09BF95A7A1AAD1688C8331_432475321;
-            } 
+            } //End block
             mOutputStream = os;
-        } 
+        } //End block
         else
         {
             setOutput(
                 encoding == null
                     ? new OutputStreamWriter(os)
                     : new OutputStreamWriter(os, encoding));
-        } 
-        
-        
-            
-        
-            
-                
-            
-                
-                        
-            
-                
-                        
-            
-            
-        
-            
-                
-                    
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (os == null)
+            //throw new IllegalArgumentException();
+        //if (true) {
+            //try {
+                //mCharset = Charset.forName(encoding).newEncoder();
+            //} catch (IllegalCharsetNameException e) {
+                //throw (UnsupportedEncodingException) (new UnsupportedEncodingException(
+                        //encoding).initCause(e));
+            //} catch (UnsupportedCharsetException e) {
+                //throw (UnsupportedEncodingException) (new UnsupportedEncodingException(
+                        //encoding).initCause(e));
+            //}
+            //mOutputStream = os;
+        //} else {
+            //setOutput(
+                //encoding == null
+                    //? new OutputStreamWriter(os)
+                    //: new OutputStreamWriter(os, encoding));
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.710 -0400", hash_original_method = "66C59149F26C5606D1058F17E91C2E36", hash_generated_method = "19FF5C74DB405E85A6CA055D58E4DA60")
     public void setOutput(Writer writer) throws IOException, IllegalArgumentException,
             IllegalStateException {
         mWriter = writer;
-        
-        
+        // ---------- Original Method ----------
+        //mWriter = writer;
     }
 
     
@@ -629,8 +628,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_758439695 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_758439695.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_758439695;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -642,8 +641,8 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1726075065 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1726075065.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1726075065;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -654,9 +653,9 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
         addTaint(encoding.getTaint());
         append("<?xml version='1.0' encoding='utf-8' standalone='"
                 + (standalone ? "yes" : "no") + "' ?>\n");
-        
-        
-                
+        // ---------- Original Method ----------
+        //append("<?xml version='1.0' encoding='utf-8' standalone='"
+                //+ (standalone ? "yes" : "no") + "' ?>\n");
     }
 
     
@@ -668,30 +667,30 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1125315279 =         this;
     if(mInTag)        
         {
             append(">\n");
-        } 
+        } //End block
         append('<');
     if(namespace != null)        
         {
             append(namespace);
             append(':');
-        } 
+        } //End block
         append(name);
         mInTag = true;
 XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_506236498 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_506236498.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_506236498;
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mInTag) {
+            //append(">\n");
+        //}
+        //append('<');
+        //if (namespace != null) {
+            //append(namespace);
+            //append(':');
+        //}
+        //append(name);
+        //mInTag = true;
+        //return this;
     }
 
     
@@ -705,18 +704,18 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_506236498 =         this;
         {
             append(">");
             mInTag = false;
-        } 
+        } //End block
         escapeAndAppendString(buf, start, len);
 XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1944993046 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1944993046.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1944993046;
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mInTag) {
+            //append(">");
+            //mInTag = false;
+        //}
+        //escapeAndAppendString(buf, start, len);
+        //return this;
     }
 
     
@@ -728,18 +727,18 @@ XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_1944993046 =         this;
         {
             append(">");
             mInTag = false;
-        } 
+        } //End block
         escapeAndAppendString(text);
 XmlSerializer var72A74007B2BE62B849F475C7BDA4658B_496039208 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_496039208.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_496039208;
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mInTag) {
+            //append(">");
+            //mInTag = false;
+        //}
+        //escapeAndAppendString(text);
+        //return this;
     }
 
     

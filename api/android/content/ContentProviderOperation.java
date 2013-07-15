@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -54,16 +54,16 @@ public class ContentProviderOperation implements Parcelable {
         mSelectionArgsBackReferences = builder.mSelectionArgsBackReferences;
         mValuesBackReferences = builder.mValuesBackReferences;
         mYieldAllowed = builder.mYieldAllowed;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mType = builder.mType;
+        //mUri = builder.mUri;
+        //mValues = builder.mValues;
+        //mSelection = builder.mSelection;
+        //mSelectionArgs = builder.mSelectionArgs;
+        //mExpectedCount = builder.mExpectedCount;
+        //mSelectionArgsBackReferences = builder.mSelectionArgsBackReferences;
+        //mValuesBackReferences = builder.mValuesBackReferences;
+        //mYieldAllowed = builder.mYieldAllowed;
     }
 
     
@@ -87,11 +87,11 @@ public class ContentProviderOperation implements Parcelable {
 for(int i = 0;i < count;i++)
             {
                 mSelectionArgsBackReferences.put(source.readInt(), source.readInt());
-            } 
-        } 
+            } //End block
+        } //End block
         mYieldAllowed = source.readInt() != 0;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -105,47 +105,47 @@ for(int i = 0;i < count;i++)
         {
             dest.writeInt(1);
             mValues.writeToParcel(dest, 0);
-        } 
+        } //End block
         else
         {
             dest.writeInt(0);
-        } 
+        } //End block
     if(mSelection != null)        
         {
             dest.writeInt(1);
             dest.writeString(mSelection);
-        } 
+        } //End block
         else
         {
             dest.writeInt(0);
-        } 
+        } //End block
     if(mSelectionArgs != null)        
         {
             dest.writeInt(1);
             dest.writeStringArray(mSelectionArgs);
-        } 
+        } //End block
         else
         {
             dest.writeInt(0);
-        } 
+        } //End block
     if(mExpectedCount != null)        
         {
             dest.writeInt(1);
             dest.writeInt(mExpectedCount);
-        } 
+        } //End block
         else
         {
             dest.writeInt(0);
-        } 
+        } //End block
     if(mValuesBackReferences != null)        
         {
             dest.writeInt(1);
             mValuesBackReferences.writeToParcel(dest, 0);
-        } 
+        } //End block
         else
         {
             dest.writeInt(0);
-        } 
+        } //End block
     if(mSelectionArgsBackReferences != null)        
         {
             dest.writeInt(1);
@@ -154,98 +154,88 @@ for(Map.Entry<Integer, Integer> entry : mSelectionArgsBackReferences.entrySet())
             {
                 dest.writeInt(entry.getKey());
                 dest.writeInt(entry.getValue());
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             dest.writeInt(0);
-        } 
+        } //End block
         dest.writeInt(mYieldAllowed ? 1 : 0);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Builder newInsert(Uri uri) {
+        public static Builder newInsert(Uri uri) {
         return new Builder(TYPE_INSERT, uri);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Builder newUpdate(Uri uri) {
+        public static Builder newUpdate(Uri uri) {
         return new Builder(TYPE_UPDATE, uri);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Builder newDelete(Uri uri) {
+        public static Builder newDelete(Uri uri) {
         return new Builder(TYPE_DELETE, uri);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Builder newAssertQuery(Uri uri) {
+        public static Builder newAssertQuery(Uri uri) {
         return new Builder(TYPE_ASSERT, uri);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.688 -0400", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "E7973766B26F8BB7CE20E4574C5B7EF9")
     public Uri getUri() {
 Uri var7D41D50876117CE5D7DFAD684A455037_35770264 =         mUri;
         var7D41D50876117CE5D7DFAD684A455037_35770264.addTaint(taint);
         return var7D41D50876117CE5D7DFAD684A455037_35770264;
-        
-        
+        // ---------- Original Method ----------
+        //return mUri;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.688 -0400", hash_original_method = "0D76D2BF4F9E314AF3AEB01067FC98E0", hash_generated_method = "2376DCA5FBA76D217DDFF146773E74C0")
     public boolean isYieldAllowed() {
         boolean varB3463DA9E487038FF44897CC868147B7_1358038527 = (mYieldAllowed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1682999678 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1682999678;
-        
-        
+        // ---------- Original Method ----------
+        //return mYieldAllowed;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.689 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "F91DF4CA456B85E471AC9BB91BEB454F")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_1426472940 = (mType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_942643579 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_942643579;
-        
-        
+        // ---------- Original Method ----------
+        //return mType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.689 -0400", hash_original_method = "94452D9A7E20FFB1CE97B24DC927192A", hash_generated_method = "484D38DBC138A4C3850C997F93E7FAE5")
     public boolean isWriteOperation() {
         boolean var61CA068672D6005E111FF12D7F442E6F_661351605 = (mType == TYPE_DELETE || mType == TYPE_INSERT || mType == TYPE_UPDATE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1826077262 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1826077262;
-        
-        
+        // ---------- Original Method ----------
+        //return mType == TYPE_DELETE || mType == TYPE_INSERT || mType == TYPE_UPDATE;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.689 -0400", hash_original_method = "BBB0424C7EB706D24B64E8DBE01BF66B", hash_generated_method = "176D650D037E30540F03DA693D04927C")
     public boolean isReadOperation() {
         boolean var9CDB60DEFE76685410316EA9CCF1700B_586139720 = (mType == TYPE_ASSERT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687246233 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_687246233;
-        
-        
+        // ---------- Original Method ----------
+        //return mType == TYPE_ASSERT;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.691 -0400", hash_original_method = "2009EEC78D1FCDD51A500D4742040E7C", hash_generated_method = "F402789FAA322923286EBDB14FA6A479")
     public ContentProviderResult apply(ContentProvider provider, ContentProviderResult[] backRefs,
             int numBackRefs) throws OperationApplicationException {
@@ -262,21 +252,21 @@ Uri var7D41D50876117CE5D7DFAD684A455037_35770264 =         mUri;
                 OperationApplicationException varA6CE2F71154C4F233E0ABAA24AE5D409_1329063451 = new OperationApplicationException("insert failed");
                 varA6CE2F71154C4F233E0ABAA24AE5D409_1329063451.addTaint(taint);
                 throw varA6CE2F71154C4F233E0ABAA24AE5D409_1329063451;
-            } 
+            } //End block
 ContentProviderResult var145C6886DCF804651A2020E0EF51F855_568615068 =             new ContentProviderResult(newUri);
             var145C6886DCF804651A2020E0EF51F855_568615068.addTaint(taint);
             return var145C6886DCF804651A2020E0EF51F855_568615068;
-        } 
+        } //End block
         int numRows;
     if(mType == TYPE_DELETE)        
         {
             numRows = provider.delete(mUri, mSelection, selectionArgs);
-        } 
+        } //End block
         else
     if(mType == TYPE_UPDATE)        
         {
             numRows = provider.update(mUri, values, mSelection, selectionArgs);
-        } 
+        } //End block
         else
     if(mType == TYPE_ASSERT)        
         {
@@ -287,9 +277,9 @@ ContentProviderResult var145C6886DCF804651A2020E0EF51F855_568615068 =           
 for(Map.Entry<String, Object> entry : values.valueSet())
                 {
                     projectionList.add(entry.getKey());
-                } 
+                } //End block
                 projection = projectionList.toArray(new String[projectionList.size()]);
-            } 
+            } //End block
             final Cursor cursor = provider.query(mUri, projection, mSelection, selectionArgs, null);
             try 
             {
@@ -310,33 +300,33 @@ for(int i = 0;i < projection.length;i++)
                                         + projection[i]);
                                 var54CEF03D663D0CBD25594AF1D4317FE4_919775060.addTaint(taint);
                                 throw var54CEF03D663D0CBD25594AF1D4317FE4_919775060;
-                            } 
-                        } 
-                    } 
-                } 
-            } 
+                            } //End block
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             finally 
             {
                 cursor.close();
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             IllegalStateException var81D5403BCE7FB12BF76E47AEFD8D3143_400373994 = new IllegalStateException("bad type, " + mType);
             var81D5403BCE7FB12BF76E47AEFD8D3143_400373994.addTaint(taint);
             throw var81D5403BCE7FB12BF76E47AEFD8D3143_400373994;
-        } 
+        } //End block
     if(mExpectedCount != null && mExpectedCount != numRows)        
         {
             OperationApplicationException var57390826D91AE37160B3E86D21E7D909_2036226339 = new OperationApplicationException("wrong number of rows: " + numRows);
             var57390826D91AE37160B3E86D21E7D909_2036226339.addTaint(taint);
             throw var57390826D91AE37160B3E86D21E7D909_2036226339;
-        } 
+        } //End block
 ContentProviderResult var6E113893A689DEDF404C7D4BD6D35874_312311582 =         new ContentProviderResult(numRows);
         var6E113893A689DEDF404C7D4BD6D35874_312311582.addTaint(taint);
         return var6E113893A689DEDF404C7D4BD6D35874_312311582;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -350,16 +340,16 @@ ContentProviderResult var6E113893A689DEDF404C7D4BD6D35874_312311582 =         ne
 ContentValues varC2D5F196132EC24FFA86AC8D1AA44E77_1771432796 =             mValues;
             varC2D5F196132EC24FFA86AC8D1AA44E77_1771432796.addTaint(taint);
             return varC2D5F196132EC24FFA86AC8D1AA44E77_1771432796;
-        } 
+        } //End block
         ContentValues values;
     if(mValues == null)        
         {
             values = new ContentValues();
-        } 
+        } //End block
         else
         {
             values = new ContentValues(mValues);
-        } 
+        } //End block
 for(Map.Entry<String, Object> entry : mValuesBackReferences.valueSet())
         {
             String key = entry.getKey();
@@ -369,32 +359,32 @@ for(Map.Entry<String, Object> entry : mValuesBackReferences.valueSet())
                 IllegalArgumentException var6ADC783FA239957ADEC8FF8BF3EB1F69_1140005082 = new IllegalArgumentException("values backref " + key + " is not an integer");
                 var6ADC783FA239957ADEC8FF8BF3EB1F69_1140005082.addTaint(taint);
                 throw var6ADC783FA239957ADEC8FF8BF3EB1F69_1140005082;
-            } 
+            } //End block
             values.put(key, backRefToValue(backRefs, numBackRefs, backRefIndex));
-        } 
+        } //End block
 ContentValues var674B10C763DBAAF9696AD9A3DDAE07B3_1852329485 =         values;
         var674B10C763DBAAF9696AD9A3DDAE07B3_1852329485.addTaint(taint);
         return var674B10C763DBAAF9696AD9A3DDAE07B3_1852329485;
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
-        
-            
-            
-            
-                
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mValuesBackReferences == null) {
+            //return mValues;
+        //}
+        //final ContentValues values;
+        //if (mValues == null) {
+            //values = new ContentValues();
+        //} else {
+            //values = new ContentValues(mValues);
+        //}
+        //for (Map.Entry<String, Object> entry : mValuesBackReferences.valueSet()) {
+            //String key = entry.getKey();
+            //Integer backRefIndex = mValuesBackReferences.getAsInteger(key);
+            //if (backRefIndex == null) {
+                //Log.e(TAG, this.toString());
+                //throw new IllegalArgumentException("values backref " + key + " is not an integer");
+            //}
+            //values.put(key, backRefToValue(backRefs, numBackRefs, backRefIndex));
+        //}
+        //return values;
     }
 
     
@@ -408,7 +398,7 @@ ContentValues var674B10C763DBAAF9696AD9A3DDAE07B3_1852329485 =         values;
 String[] varDBA0D6591B6C7829463FE09B1460B708_1974131851 =             mSelectionArgs;
             varDBA0D6591B6C7829463FE09B1460B708_1974131851.addTaint(taint);
             return varDBA0D6591B6C7829463FE09B1460B708_1974131851;
-        } 
+        } //End block
         String[] newArgs = new String[mSelectionArgs.length];
         System.arraycopy(mSelectionArgs, 0, newArgs, 0, mSelectionArgs.length);
 for(Map.Entry<Integer, Integer> selectionArgBackRef : mSelectionArgsBackReferences.entrySet())
@@ -417,24 +407,24 @@ for(Map.Entry<Integer, Integer> selectionArgBackRef : mSelectionArgsBackReferenc
             final int backRefIndex = selectionArgBackRef.getValue();
             newArgs[selectionArgIndex] =
                     String.valueOf(backRefToValue(backRefs, numBackRefs, backRefIndex));
-        } 
+        } //End block
 String[] var66A41BD6CDACE61B81A29265306FE12C_605118089 =         newArgs;
         var66A41BD6CDACE61B81A29265306FE12C_605118089.addTaint(taint);
         return var66A41BD6CDACE61B81A29265306FE12C_605118089;
-        
-        
-            
-        
-        
-        
-        
-                
-            
-            
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (mSelectionArgsBackReferences == null) {
+            //return mSelectionArgs;
+        //}
+        //String[] newArgs = new String[mSelectionArgs.length];
+        //System.arraycopy(mSelectionArgs, 0, newArgs, 0, mSelectionArgs.length);
+        //for (Map.Entry<Integer, Integer> selectionArgBackRef
+                //: mSelectionArgsBackReferences.entrySet()) {
+            //final Integer selectionArgIndex = selectionArgBackRef.getKey();
+            //final int backRefIndex = selectionArgBackRef.getValue();
+            //newArgs[selectionArgIndex] =
+                    //String.valueOf(backRefToValue(backRefs, numBackRefs, backRefIndex));
+        //}
+        //return newArgs;
     }
 
     
@@ -450,14 +440,14 @@ String var5437924A98110F3BAD119BEF211F2BFE_587531811 =         "mType: " + mType
                 ", mSelectionArgsBackReferences: " + mSelectionArgsBackReferences;
         var5437924A98110F3BAD119BEF211F2BFE_587531811.addTaint(taint);
         return var5437924A98110F3BAD119BEF211F2BFE_587531811;
-        
-        
-                
-                
-                
-                
-                
-                
+        // ---------- Original Method ----------
+        //return "mType: " + mType + ", mUri: " + mUri +
+                //", mSelection: " + mSelection +
+                //", mExpectedCount: " + mExpectedCount +
+                //", mYieldAllowed: " + mYieldAllowed +
+                //", mValues: " + mValues +
+                //", mValuesBackReferences: " + mValuesBackReferences +
+                //", mSelectionArgsBackReferences: " + mSelectionArgsBackReferences;
     }
 
     
@@ -473,45 +463,44 @@ String var5437924A98110F3BAD119BEF211F2BFE_587531811 =         "mType: " + mType
                     + " but there are only " + numBackRefs + " back refs");
             var95D966B584E4BCAB72C55E07D71D9FD5_512217356.addTaint(taint);
             throw var95D966B584E4BCAB72C55E07D71D9FD5_512217356;
-        } 
+        } //End block
         ContentProviderResult backRef = backRefs[backRefIndex];
         long backRefValue;
     if(backRef.uri != null)        
         {
             backRefValue = ContentUris.parseId(backRef.uri);
-        } 
+        } //End block
         else
         {
             backRefValue = backRef.count;
-        } 
+        } //End block
         long varB83EEB38068B6C7D72340D5BBED97B43_286854221 = (backRefValue);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_78630510 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_78630510;
-        
-        
-            
-            
-                    
-        
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (backRefIndex >= numBackRefs) {
+            //Log.e(TAG, this.toString());
+            //throw new ArrayIndexOutOfBoundsException("asked for back ref " + backRefIndex
+                    //+ " but there are only " + numBackRefs + " back refs");
+        //}
+        //ContentProviderResult backRef = backRefs[backRefIndex];
+        //long backRefValue;
+        //if (backRef.uri != null) {
+            //backRefValue = ContentUris.parseId(backRef.uri);
+        //} else {
+            //backRefValue = backRef.count;
+        //}
+        //return backRefValue;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.698 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E04BBAE0F399B57E334E466EA46C683A")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_462618791 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_23403591 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_23403591;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -551,19 +540,18 @@ String var5437924A98110F3BAD119BEF211F2BFE_587531811 =         "mType: " + mType
                 IllegalArgumentException varA7E51D1A6F179308507624649E54C0ED_1535732781 = new IllegalArgumentException("uri must not be null");
                 varA7E51D1A6F179308507624649E54C0ED_1535732781.addTaint(taint);
                 throw varA7E51D1A6F179308507624649E54C0ED_1535732781;
-            } 
+            } //End block
             mType = type;
             mUri = uri;
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (uri == null) {
+                //throw new IllegalArgumentException("uri must not be null");
+            //}
+            //mType = type;
+            //mUri = uri;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.701 -0400", hash_original_method = "52DF5CD1F3EDB944F65D1FF1857828C4", hash_generated_method = "CFF0D8CAE49C492549547C51E00C2476")
         public ContentProviderOperation build() {
     if(mType == TYPE_UPDATE)            
@@ -574,8 +562,8 @@ String var5437924A98110F3BAD119BEF211F2BFE_587531811 =         "mType: " + mType
                     IllegalArgumentException varEEE2AB986D839FC34B1428F77875E0E5_1264931924 = new IllegalArgumentException("Empty values");
                     varEEE2AB986D839FC34B1428F77875E0E5_1264931924.addTaint(taint);
                     throw varEEE2AB986D839FC34B1428F77875E0E5_1264931924;
-                } 
-            } 
+                } //End block
+            } //End block
     if(mType == TYPE_ASSERT)            
             {
     if((mValues == null || mValues.size() == 0)
@@ -585,26 +573,26 @@ String var5437924A98110F3BAD119BEF211F2BFE_587531811 =         "mType: " + mType
                     IllegalArgumentException varEEE2AB986D839FC34B1428F77875E0E5_1034149131 = new IllegalArgumentException("Empty values");
                     varEEE2AB986D839FC34B1428F77875E0E5_1034149131.addTaint(taint);
                     throw varEEE2AB986D839FC34B1428F77875E0E5_1034149131;
-                } 
-            } 
+                } //End block
+            } //End block
 ContentProviderOperation var8F6B2413C892A7178518BAA0272AF02D_2098917994 =             new ContentProviderOperation(this);
             var8F6B2413C892A7178518BAA0272AF02D_2098917994.addTaint(taint);
             return var8F6B2413C892A7178518BAA0272AF02D_2098917994;
-            
-            
-                
-                        
-                    
-                
-            
-            
-                
-                        
-                        
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mType == TYPE_UPDATE) {
+                //if ((mValues == null || mValues.size() == 0)
+                        //&& (mValuesBackReferences == null || mValuesBackReferences.size() == 0)) {
+                    //throw new IllegalArgumentException("Empty values");
+                //}
+            //}
+            //if (mType == TYPE_ASSERT) {
+                //if ((mValues == null || mValues.size() == 0)
+                        //&& (mValuesBackReferences == null || mValuesBackReferences.size() == 0)
+                        //&& (mExpectedCount == null)) {
+                    //throw new IllegalArgumentException("Empty values");
+                //}
+            //}
+            //return new ContentProviderOperation(this);
         }
 
         
@@ -616,18 +604,18 @@ ContentProviderOperation var8F6B2413C892A7178518BAA0272AF02D_2098917994 =       
                         "only inserts, updates, and asserts can have value back-references");
                 var2562CEF33A43FADE3371034A66954C31_71938602.addTaint(taint);
                 throw var2562CEF33A43FADE3371034A66954C31_71938602;
-            } 
+            } //End block
             mValuesBackReferences = backReferences;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1210393746 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1210393746.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1210393746;
-            
-            
-                
-                        
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mType != TYPE_INSERT && mType != TYPE_UPDATE && mType != TYPE_ASSERT) {
+                //throw new IllegalArgumentException(
+                        //"only inserts, updates, and asserts can have value back-references");
+            //}
+            //mValuesBackReferences = backReferences;
+            //return this;
         }
 
         
@@ -641,25 +629,25 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1210393746 =             this;
                         "only inserts, updates, and asserts can have value back-references");
                 var2562CEF33A43FADE3371034A66954C31_685302938.addTaint(taint);
                 throw var2562CEF33A43FADE3371034A66954C31_685302938;
-            } 
+            } //End block
     if(mValuesBackReferences == null)            
             {
                 mValuesBackReferences = new ContentValues();
-            } 
+            } //End block
             mValuesBackReferences.put(key, previousResult);
 Builder var72A74007B2BE62B849F475C7BDA4658B_1412732412 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1412732412.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1412732412;
-            
-            
-                
-                        
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mType != TYPE_INSERT && mType != TYPE_UPDATE && mType != TYPE_ASSERT) {
+                //throw new IllegalArgumentException(
+                        //"only inserts, updates, and asserts can have value back-references");
+            //}
+            //if (mValuesBackReferences == null) {
+                //mValuesBackReferences = new ContentValues();
+            //}
+            //mValuesBackReferences.put(key, previousResult);
+            //return this;
         }
 
         
@@ -673,25 +661,25 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1412732412 =             this;
                         + "can have selection back-references");
                 varEC8B43E029FD8D0DEA7F827884E738CB_2132852532.addTaint(taint);
                 throw varEC8B43E029FD8D0DEA7F827884E738CB_2132852532;
-            } 
+            } //End block
     if(mSelectionArgsBackReferences == null)            
             {
                 mSelectionArgsBackReferences = new HashMap<Integer, Integer>();
-            } 
+            } //End block
             mSelectionArgsBackReferences.put(selectionArgIndex, previousResult);
 Builder var72A74007B2BE62B849F475C7BDA4658B_1906632249 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1906632249.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1906632249;
-            
-            
-                
-                        
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mType != TYPE_UPDATE && mType != TYPE_DELETE && mType != TYPE_ASSERT) {
+                //throw new IllegalArgumentException("only updates, deletes, and asserts "
+                        //+ "can have selection back-references");
+            //}
+            //if (mSelectionArgsBackReferences == null) {
+                //mSelectionArgsBackReferences = new HashMap<Integer, Integer>();
+            //}
+            //mSelectionArgsBackReferences.put(selectionArgIndex, previousResult);
+            //return this;
         }
 
         
@@ -704,25 +692,25 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1906632249 =             this;
                         "only inserts, updates, and asserts can have values");
                 var3501CD791067BFD06BDC0B582F4BFD7C_721663278.addTaint(taint);
                 throw var3501CD791067BFD06BDC0B582F4BFD7C_721663278;
-            } 
+            } //End block
     if(mValues == null)            
             {
                 mValues = new ContentValues();
-            } 
+            } //End block
             mValues.putAll(values);
 Builder var72A74007B2BE62B849F475C7BDA4658B_1428610711 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1428610711.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1428610711;
-            
-            
-                
-                        
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mType != TYPE_INSERT && mType != TYPE_UPDATE && mType != TYPE_ASSERT) {
+                //throw new IllegalArgumentException(
+                        //"only inserts, updates, and asserts can have values");
+            //}
+            //if (mValues == null) {
+                //mValues = new ContentValues();
+            //}
+            //mValues.putAll(values);
+            //return this;
         }
 
         
@@ -735,71 +723,71 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1428610711 =             this;
                 IllegalArgumentException var62577629427F25FEAFE83CF835F221E0_1064246965 = new IllegalArgumentException("only inserts and updates can have values");
                 var62577629427F25FEAFE83CF835F221E0_1064246965.addTaint(taint);
                 throw var62577629427F25FEAFE83CF835F221E0_1064246965;
-            } 
+            } //End block
     if(mValues == null)            
             {
                 mValues = new ContentValues();
-            } 
+            } //End block
     if(value == null)            
             {
                 mValues.putNull(key);
-            } 
+            } //End block
             else
     if(value instanceof String)            
             {
                 mValues.put(key, (String) value);
-            } 
+            } //End block
             else
     if(value instanceof Byte)            
             {
                 mValues.put(key, (Byte) value);
-            } 
+            } //End block
             else
     if(value instanceof Short)            
             {
                 mValues.put(key, (Short) value);
-            } 
+            } //End block
             else
     if(value instanceof Integer)            
             {
                 mValues.put(key, (Integer) value);
-            } 
+            } //End block
             else
     if(value instanceof Long)            
             {
                 mValues.put(key, (Long) value);
-            } 
+            } //End block
             else
     if(value instanceof Float)            
             {
                 mValues.put(key, (Float) value);
-            } 
+            } //End block
             else
     if(value instanceof Double)            
             {
                 mValues.put(key, (Double) value);
-            } 
+            } //End block
             else
     if(value instanceof Boolean)            
             {
                 mValues.put(key, (Boolean) value);
-            } 
+            } //End block
             else
     if(value instanceof byte[])            
             {
                 mValues.put(key, (byte[]) value);
-            } 
+            } //End block
             else
             {
                 IllegalArgumentException var893B5BC28B0A8E36B9912B85C9157319_1185796377 = new IllegalArgumentException("bad value type: " + value.getClass().getName());
                 var893B5BC28B0A8E36B9912B85C9157319_1185796377.addTaint(taint);
                 throw var893B5BC28B0A8E36B9912B85C9157319_1185796377;
-            } 
+            } //End block
 Builder var72A74007B2BE62B849F475C7BDA4658B_1162132505 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1162132505.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1162132505;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -811,33 +799,33 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1162132505 =             this;
                         "only updates, deletes, and asserts can have selections");
                 varFA037EB6F12CAD4EEBB241C27677030E_14332710.addTaint(taint);
                 throw varFA037EB6F12CAD4EEBB241C27677030E_14332710;
-            } 
+            } //End block
             mSelection = selection;
     if(selectionArgs == null)            
             {
                 mSelectionArgs = null;
-            } 
+            } //End block
             else
             {
                 mSelectionArgs = new String[selectionArgs.length];
                 System.arraycopy(selectionArgs, 0, mSelectionArgs, 0, selectionArgs.length);
-            } 
+            } //End block
 Builder var72A74007B2BE62B849F475C7BDA4658B_935693024 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_935693024.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_935693024;
-            
-            
-                
-                        
-            
-            
-            
-                
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (mType != TYPE_UPDATE && mType != TYPE_DELETE && mType != TYPE_ASSERT) {
+                //throw new IllegalArgumentException(
+                        //"only updates, deletes, and asserts can have selections");
+            //}
+            //mSelection = selection;
+            //if (selectionArgs == null) {
+                //mSelectionArgs = null;
+            //} else {
+                //mSelectionArgs = new String[selectionArgs.length];
+                //System.arraycopy(selectionArgs, 0, mSelectionArgs, 0, selectionArgs.length);
+            //}
+            //return this;
         }
 
         
@@ -849,31 +837,30 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_935693024 =             this;
                         "only updates, deletes, and asserts can have expected counts");
                 var2F4A6F69802DC485819D2951B829E9EB_1439078733.addTaint(taint);
                 throw var2F4A6F69802DC485819D2951B829E9EB_1439078733;
-            } 
+            } //End block
             mExpectedCount = count;
 Builder var72A74007B2BE62B849F475C7BDA4658B_274090281 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_274090281.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_274090281;
-            
-            
-                
-                        
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mType != TYPE_UPDATE && mType != TYPE_DELETE && mType != TYPE_ASSERT) {
+                //throw new IllegalArgumentException(
+                        //"only updates, deletes, and asserts can have expected counts");
+            //}
+            //mExpectedCount = count;
+            //return this;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.717 -0400", hash_original_method = "1D016C05C5C9EB70F24159159C761C5E", hash_generated_method = "29637C43B9B176ECADBF4CDCDB435EEE")
         public Builder withYieldAllowed(boolean yieldAllowed) {
             mYieldAllowed = yieldAllowed;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1855849187 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1855849187.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1855849187;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mYieldAllowed = yieldAllowed;
+            //return this;
         }
 
         
@@ -908,12 +895,12 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1855849187 =             this;
             return new ContentProviderOperation[size];
         }
     };
-    
+    // orphaned legacy method
     public ContentProviderOperation createFromParcel(Parcel source) {
             return new ContentProviderOperation(source);
         }
     
-    
+    // orphaned legacy method
     public ContentProviderOperation[] newArray(int size) {
             return new ContentProviderOperation[size];
         }

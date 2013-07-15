@@ -1,6 +1,6 @@
 package org.apache.http.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class CircularRedirectException extends RedirectException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.104 -0400", hash_original_method = "3163E6492879DE65B32F21199BC78667", hash_generated_method = "8EC3C449331F2CBDF12BF47BD100F15B")
     public  CircularRedirectException() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -18,7 +18,7 @@ public class CircularRedirectException extends RedirectException {
     public  CircularRedirectException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,7 +27,7 @@ public class CircularRedirectException extends RedirectException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.entity;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,17 +22,17 @@ public class BufferedHttpEntity extends HttpEntityWrapper {
     if(!entity.isRepeatable() || entity.getContentLength() < 0)        
         {
             this.buffer = EntityUtils.toByteArray(entity);
-        } 
+        } //End block
         else
         {
             this.buffer = null;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!entity.isRepeatable() || entity.getContentLength() < 0) {
+            //this.buffer = EntityUtils.toByteArray(entity);
+        //} else {
+            //this.buffer = null;
+        //}
     }
 
     
@@ -43,19 +43,19 @@ public class BufferedHttpEntity extends HttpEntityWrapper {
             long var52B286FBAC396E14EB741753BEC48E2E_407806549 = (this.buffer.length);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_90091393 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_90091393;
-        } 
+        } //End block
         else
         {
             long varE16A3D9A28884C197B737656D3267561_1719142134 = (wrappedEntity.getContentLength());
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1965807967 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1965807967;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.buffer != null) {
+            //return this.buffer.length;
+        //} else {
+            //return wrappedEntity.getContentLength();
+        //}
     }
 
     
@@ -66,19 +66,19 @@ public class BufferedHttpEntity extends HttpEntityWrapper {
 InputStream varFB8BC527E57C1094D1FA48F51FC1BD49_605495355 =             new ByteArrayInputStream(this.buffer);
             varFB8BC527E57C1094D1FA48F51FC1BD49_605495355.addTaint(taint);
             return varFB8BC527E57C1094D1FA48F51FC1BD49_605495355;
-        } 
+        } //End block
         else
         {
 InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_1183218242 =             wrappedEntity.getContent();
             varF6ACD77A5F5C16B8B8AB61A8E0321333_1183218242.addTaint(taint);
             return varF6ACD77A5F5C16B8B8AB61A8E0321333_1183218242;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.buffer != null) {
+            //return new ByteArrayInputStream(this.buffer);
+        //} else {
+            //return wrappedEntity.getContent();
+        //}
     }
 
     
@@ -87,19 +87,18 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_1183218242 =             wrapped
         boolean varEDC1D0D5ABDB221CF275D0292D0CB0A7_980077902 = ((buffer == null) && wrappedEntity.isChunked());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_302680663 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_302680663;
-        
-        
+        // ---------- Original Method ----------
+        //return (buffer == null) && wrappedEntity.isChunked();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.928 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "C99E335C42E845AC438A02F9BAA69694")
     public boolean isRepeatable() {
         boolean varB326B5062B2F0E69046810717534CB09_1254044504 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_824479560 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_824479560;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -111,24 +110,24 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_1183218242 =             wrapped
             IllegalArgumentException var8C9256F172D6E7DD26CC6F974ABC4716_1815163249 = new IllegalArgumentException("Output stream may not be null");
             var8C9256F172D6E7DD26CC6F974ABC4716_1815163249.addTaint(taint);
             throw var8C9256F172D6E7DD26CC6F974ABC4716_1815163249;
-        } 
+        } //End block
     if(this.buffer != null)        
         {
             outstream.write(this.buffer);
-        } 
+        } //End block
         else
         {
             wrappedEntity.writeTo(outstream);
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (outstream == null) {
+            //throw new IllegalArgumentException("Output stream may not be null");
+        //}
+        //if (this.buffer != null) {
+            //outstream.write(this.buffer);
+        //} else {
+            //wrappedEntity.writeTo(outstream);
+        //}
     }
 
     
@@ -137,8 +136,8 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_1183218242 =             wrapped
         boolean var3E6A1689093D41868EEEA62EB3AFDCAD_305271970 = ((buffer == null) && wrappedEntity.isStreaming());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_402036335 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_402036335;
-        
-        
+        // ---------- Original Method ----------
+        //return (buffer == null) && wrappedEntity.isStreaming();
     }
 
     

@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -57,14 +57,13 @@ class PluginFullScreenHolder {
         mWebView = webView;
         mNpp = npp;
         mOrientation = orientation;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mWebView = webView;
+        //mNpp = npp;
+        //mOrientation = orientation;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.905 -0400", hash_original_method = "66123030FC4915555385B1DD2D68510F", hash_generated_method = "6502952572BE9906FB5F54E12D5F4DDD")
     public void setContentView(View contentView) {
         mLayout = new CustomFrameLayout(mWebView.getContext());
@@ -80,24 +79,24 @@ class PluginFullScreenHolder {
     if(sView.isFixedSize())            
             {
                 sView.getHolder().setSizeFromLayout();
-            } 
-        } 
+            } //End block
+        } //End block
         mContentView = contentView;
-        
-        
-        
-                            
-                            
-                            
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //mLayout = new CustomFrameLayout(mWebView.getContext());
+        //FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                            //ViewGroup.LayoutParams.MATCH_PARENT,
+                            //ViewGroup.LayoutParams.MATCH_PARENT,
+                            //Gravity.CENTER);
+        //mLayout.addView(contentView, layoutParams);
+        //mLayout.setVisibility(View.VISIBLE);
+        //if (contentView instanceof SurfaceView) {
+            //final SurfaceView sView = (SurfaceView) contentView;
+            //if (sView.isFixedSize()) {
+                //sView.getHolder().setSizeFromLayout();
+            //}
+        //}
+        //mContentView = contentView;
     }
 
     
@@ -107,11 +106,11 @@ class PluginFullScreenHolder {
         mWebView.getViewManager().hideAll();
         WebChromeClient client = mWebView.getWebChromeClient();
         client.onShowCustomView(mLayout, mOrientation, mCallback);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mWebView.getViewManager() != null)
+            //mWebView.getViewManager().hideAll();
+        //WebChromeClient client = mWebView.getWebChromeClient();
+        //client.onShowCustomView(mLayout, mOrientation, mCallback);
     }
 
     
@@ -119,9 +118,9 @@ class PluginFullScreenHolder {
     public void hide() {
         WebChromeClient client = mWebView.getWebChromeClient();
         client.onHideCustomView();
-        
-        
-        
+        // ---------- Original Method ----------
+        //WebChromeClient client = mWebView.getWebChromeClient();
+        //client.onHideCustomView();
     }
 
     
@@ -131,15 +130,14 @@ class PluginFullScreenHolder {
           CustomFrameLayout(Context context) {
             super(context);
             addTaint(context.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.907 -0400", hash_original_method = "2FA80045A66041D881611423B2D72BE2", hash_generated_method = "3D3D8EC0388C161EE68F77BB61AF804A")
         @Override
         public boolean onKeyDown(int keyCode, KeyEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             addTaint(keyCode);
     if(event.isSystem())            
@@ -147,25 +145,24 @@ class PluginFullScreenHolder {
                 boolean var947F0C250323B9F4475E02588E9A9740_2016187443 = (super.onKeyDown(keyCode, event));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2120865155 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2120865155;
-            } 
+            } //End block
             mWebView.onKeyDown(keyCode, event);
             boolean varB326B5062B2F0E69046810717534CB09_84199027 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_401361744 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_401361744;
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (event.isSystem()) {
+                //return super.onKeyDown(keyCode, event);
+            //}
+            //mWebView.onKeyDown(keyCode, event);
+            //return true;
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.907 -0400", hash_original_method = "5F021E74A22E2DE8FA3FAB6B663A24D2", hash_generated_method = "3DA0B1EE52E88C98E6A1227B00A6492D")
         @Override
         public boolean onKeyUp(int keyCode, KeyEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             addTaint(keyCode);
     if(event.isSystem())            
@@ -173,46 +170,45 @@ class PluginFullScreenHolder {
                 boolean varAD33E8F21A74B923C1A24761EAF2F4A9_1653149713 = (super.onKeyUp(keyCode, event));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1817070265 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1817070265;
-            } 
+            } //End block
             mWebView.onKeyUp(keyCode, event);
             boolean varB326B5062B2F0E69046810717534CB09_1716474485 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1964143931 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1964143931;
-            
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (event.isSystem()) {
+                //return super.onKeyUp(keyCode, event);
+            //}
+            //mWebView.onKeyUp(keyCode, event);
+            //return true;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.907 -0400", hash_original_method = "D87B32C51AD302A4F9341AA86337AE33", hash_generated_method = "B92E182E534CB7249C5C10C8B103710E")
         @Override
         public boolean onTouchEvent(MotionEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             boolean varB326B5062B2F0E69046810717534CB09_1781826558 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_788964956 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_788964956;
-            
-            
+            // ---------- Original Method ----------
+            //return true;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.908 -0400", hash_original_method = "B00867DA6E98462A97CBDDC40208DF51", hash_generated_method = "1B26B9907B0A86F26BB878105C2C26BC")
         @Override
         public boolean onTrackballEvent(MotionEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             mWebView.onTrackballEvent(event);
             boolean varB326B5062B2F0E69046810717534CB09_1757796120 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_729289547 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_729289547;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mWebView.onTrackballEvent(event);
+            //return true;
         }
 
         

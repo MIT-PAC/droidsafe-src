@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,10 +31,10 @@ public class KeyManagerFactory {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = factorySpi;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.provider = provider;
+        //this.algorithm = algorithm;
+        //this.spiImpl = factorySpi;
     }
 
     
@@ -81,8 +81,8 @@ public class KeyManagerFactory {
 String var44A46B4003FC81ACB0223385BA1FA818_1820615968 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_1820615968.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_1820615968;
-        
-        
+        // ---------- Original Method ----------
+        //return algorithm;
     }
 
     
@@ -91,8 +91,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1820615968 =         algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_399434692 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_399434692.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_399434692;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
@@ -102,8 +102,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_399434692 =         provider;
         addTaint(password[0]);
         addTaint(ks.getTaint());
         spiImpl.engineInit(ks, password);
-        
-        
+        // ---------- Original Method ----------
+        //spiImpl.engineInit(ks, password);
     }
 
     
@@ -111,8 +111,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_399434692 =         provider;
     public final void init(ManagerFactoryParameters spec) throws InvalidAlgorithmParameterException {
         addTaint(spec.getTaint());
         spiImpl.engineInit(spec);
-        
-        
+        // ---------- Original Method ----------
+        //spiImpl.engineInit(spec);
     }
 
     
@@ -121,8 +121,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_399434692 =         provider;
 KeyManager[] var955490AC7A1924D012F4879486E1856B_1008153863 =         spiImpl.engineGetKeyManagers();
         var955490AC7A1924D012F4879486E1856B_1008153863.addTaint(taint);
         return var955490AC7A1924D012F4879486E1856B_1008153863;
-        
-        
+        // ---------- Original Method ----------
+        //return spiImpl.engineGetKeyManagers();
     }
 
     

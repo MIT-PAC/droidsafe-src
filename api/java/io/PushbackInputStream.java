@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public class PushbackInputStream extends FilterInputStream {
         super(in);
         buf = (in == null) ? null : new byte[1];
         pos = 1;
-        
-        
-        
+        // ---------- Original Method ----------
+        //buf = (in == null) ? null : new byte[1];
+        //pos = 1;
     }
 
     
@@ -33,15 +33,15 @@ public class PushbackInputStream extends FilterInputStream {
             IllegalArgumentException var5AFB46BA040E4CEE38200888DC74991F_1968903929 = new IllegalArgumentException("size <= 0");
             var5AFB46BA040E4CEE38200888DC74991F_1968903929.addTaint(taint);
             throw var5AFB46BA040E4CEE38200888DC74991F_1968903929;
-        } 
+        } //End block
         buf = (in == null) ? null : new byte[size];
         pos = size;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (size <= 0) {
+            //throw new IllegalArgumentException("size <= 0");
+        //}
+        //buf = (in == null) ? null : new byte[size];
+        //pos = size;
     }
 
     
@@ -53,15 +53,15 @@ public class PushbackInputStream extends FilterInputStream {
             IOException var1508E3FDF27FD56D4E1051DB16DE1816_1796130131 = new IOException();
             var1508E3FDF27FD56D4E1051DB16DE1816_1796130131.addTaint(taint);
             throw var1508E3FDF27FD56D4E1051DB16DE1816_1796130131;
-        } 
+        } //End block
         int var3D32F8324B13BED4C9BAB5426B17A76D_1758229025 = (buf.length - pos + in.available());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548702911 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548702911;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (buf == null) {
+            //throw new IOException();
+        //}
+        //return buf.length - pos + in.available();
     }
 
     
@@ -73,25 +73,24 @@ public class PushbackInputStream extends FilterInputStream {
             in.close();
             in = null;
             buf = null;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (in != null) {
+            //in.close();
+            //in = null;
+            //buf = null;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.743 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "8F76D9F6FDFC71A04FDD11BDB51E49E1")
     @Override
     public boolean markSupported() {
         boolean var68934A3E9455FA72420237EB05902327_566361186 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868531869 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868531869;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -103,24 +102,24 @@ public class PushbackInputStream extends FilterInputStream {
             IOException var1508E3FDF27FD56D4E1051DB16DE1816_1096980682 = new IOException();
             var1508E3FDF27FD56D4E1051DB16DE1816_1096980682.addTaint(taint);
             throw var1508E3FDF27FD56D4E1051DB16DE1816_1096980682;
-        } 
+        } //End block
     if(pos < buf.length)        
         {
             int var7BA40CDA8787C8B57CD926EA9659088F_595750514 = ((buf[pos++] & 0xFF));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1928633075 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1928633075;
-        } 
+        } //End block
         int varC746AA2461228F1337791E992A2C4661_452173194 = (in.read());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_172870463 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_172870463;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (buf == null) {
+            //throw new IOException();
+        //}
+        //if (pos < buf.length) {
+            //return (buf[pos++] & 0xFF);
+        //}
+        //return in.read();
     }
 
     
@@ -135,7 +134,7 @@ public class PushbackInputStream extends FilterInputStream {
             java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_168255008 = streamClosed();
             varA98E388EB7D58355C3D9798BF8FEED22_168255008.addTaint(taint);
             throw varA98E388EB7D58355C3D9798BF8FEED22_168255008;
-        } 
+        } //End block
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
         int copiedBytes = 0;
         int copyLength = 0;
@@ -148,31 +147,31 @@ public class PushbackInputStream extends FilterInputStream {
             newOffset += copyLength;
             copiedBytes += copyLength;
             pos += copyLength;
-        } 
+        } //End block
     if(copyLength == length)        
         {
             int var2FA47F7C65FEC19CC163B195725E3844_1785766786 = (length);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_552396062 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_552396062;
-        } 
+        } //End block
         int inCopied = in.read(buffer, newOffset, length - copiedBytes);
     if(inCopied > 0)        
         {
             int varDB0770958FBE9F872F2BC732090BF239_698465201 = (inCopied + copiedBytes);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408280943 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408280943;
-        } 
+        } //End block
     if(copiedBytes == 0)        
         {
             int var787E8700E82D0C2395ECBB8EA3AA68D6_118442676 = (inCopied);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_832869710 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_832869710;
-        } 
+        } //End block
         int var61A4D4698CE31A96A8B3DB19604C002C_1659299347 = (copiedBytes);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1531249998 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1531249998;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -181,8 +180,8 @@ public class PushbackInputStream extends FilterInputStream {
         IOException varA0BB301E46D4FCBF44B7C62E997ABEAD_708341249 = new IOException("PushbackInputStream is closed");
         varA0BB301E46D4FCBF44B7C62E997ABEAD_708341249.addTaint(taint);
         throw varA0BB301E46D4FCBF44B7C62E997ABEAD_708341249;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IOException("PushbackInputStream is closed");
     }
 
     
@@ -195,42 +194,42 @@ public class PushbackInputStream extends FilterInputStream {
             java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_332304496 = streamClosed();
             varA98E388EB7D58355C3D9798BF8FEED22_332304496.addTaint(taint);
             throw varA98E388EB7D58355C3D9798BF8FEED22_332304496;
-        } 
+        } //End block
     if(byteCount <= 0)        
         {
             long varCFCD208495D565EF66E7DFF9F98764DA_1507982454 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1441351875 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1441351875;
-        } 
+        } //End block
         int numSkipped = 0;
     if(pos < buf.length)        
         {
             numSkipped += (byteCount < buf.length - pos) ? byteCount : buf.length - pos;
             pos += numSkipped;
-        } 
+        } //End block
     if(numSkipped < byteCount)        
         {
             numSkipped += in.skip(byteCount - numSkipped);
-        } 
+        } //End block
         long var19B188D897AB08790F4D81B26C6FB431_1816415336 = (numSkipped);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1343106402 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1343106402;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (in == null) {
+            //throw streamClosed();
+        //}
+        //if (byteCount <= 0) {
+            //return 0;
+        //}
+        //int numSkipped = 0;
+        //if (pos < buf.length) {
+            //numSkipped += (byteCount < buf.length - pos) ? byteCount : buf.length - pos;
+            //pos += numSkipped;
+        //}
+        //if (numSkipped < byteCount) {
+            //numSkipped += in.skip(byteCount - numSkipped);
+        //}
+        //return numSkipped;
     }
 
     
@@ -238,8 +237,8 @@ public class PushbackInputStream extends FilterInputStream {
     public void unread(byte[] buffer) throws IOException {
         addTaint(buffer[0]);
         unread(buffer, 0, buffer.length);
-        
-        
+        // ---------- Original Method ----------
+        //unread(buffer, 0, buffer.length);
     }
 
     
@@ -252,26 +251,26 @@ public class PushbackInputStream extends FilterInputStream {
             IOException var026BB6CEDAAF18AFE37343DFB85FF3B4_1391023383 = new IOException("Pushback buffer full");
             var026BB6CEDAAF18AFE37343DFB85FF3B4_1391023383.addTaint(taint);
             throw var026BB6CEDAAF18AFE37343DFB85FF3B4_1391023383;
-        } 
+        } //End block
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
     if(buf == null)        
         {
             java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_986369837 = streamClosed();
             varA98E388EB7D58355C3D9798BF8FEED22_986369837.addTaint(taint);
             throw varA98E388EB7D58355C3D9798BF8FEED22_986369837;
-        } 
+        } //End block
         System.arraycopy(buffer, offset, buf, pos - length, length);
         pos = pos - length;
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (length > pos) {
+            //throw new IOException("Pushback buffer full");
+        //}
+        //Arrays.checkOffsetAndCount(buffer.length, offset, length);
+        //if (buf == null) {
+            //throw streamClosed();
+        //}
+        //System.arraycopy(buffer, offset, buf, pos - length, length);
+        //pos = pos - length;
     }
 
     
@@ -282,31 +281,30 @@ public class PushbackInputStream extends FilterInputStream {
             IOException var1508E3FDF27FD56D4E1051DB16DE1816_172952794 = new IOException();
             var1508E3FDF27FD56D4E1051DB16DE1816_172952794.addTaint(taint);
             throw var1508E3FDF27FD56D4E1051DB16DE1816_172952794;
-        } 
+        } //End block
     if(pos == 0)        
         {
             IOException var026BB6CEDAAF18AFE37343DFB85FF3B4_300423361 = new IOException("Pushback buffer full");
             var026BB6CEDAAF18AFE37343DFB85FF3B4_300423361.addTaint(taint);
             throw var026BB6CEDAAF18AFE37343DFB85FF3B4_300423361;
-        } 
+        } //End block
         buf[--pos] = (byte) oneByte;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (buf == null) {
+            //throw new IOException();
+        //}
+        //if (pos == 0) {
+            //throw new IOException("Pushback buffer full");
+        //}
+        //buf[--pos] = (byte) oneByte;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.817 -0400", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "374E02FA36CE7C442AE21827EF6D82FC")
     @Override
     public void mark(int readlimit) {
         addTaint(readlimit);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -316,8 +314,8 @@ public class PushbackInputStream extends FilterInputStream {
         IOException var1508E3FDF27FD56D4E1051DB16DE1816_1550371988 = new IOException();
         var1508E3FDF27FD56D4E1051DB16DE1816_1550371988.addTaint(taint);
         throw var1508E3FDF27FD56D4E1051DB16DE1816_1550371988;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IOException();
     }
 
     

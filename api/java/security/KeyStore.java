@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -42,11 +42,11 @@ public class KeyStore {
         this.provider = provider;
         this.implSpi = keyStoreSpi;
         isInit = false;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.type = type;
+        //this.provider = provider;
+        //this.implSpi = keyStoreSpi;
+        //isInit = false;
     }
 
     
@@ -111,8 +111,8 @@ public class KeyStore {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1709462866 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_1709462866.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_1709462866;
-        
-        
+        // ---------- Original Method ----------
+        //return provider;
     }
 
     
@@ -121,8 +121,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1709462866 =         provider;
 String varC5B9F25B4EEAD3E8E2C33F9429204397_73403761 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_73403761.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_73403761;
-        
-        
+        // ---------- Original Method ----------
+        //return type;
     }
 
     
@@ -134,15 +134,15 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_73403761 =         type;
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
 Key var22386E2414BBD1C9031BE4204BE576F1_383761642 =         implSpi.engineGetKey(alias, password);
         var22386E2414BBD1C9031BE4204BE576F1_383761642.addTaint(taint);
         return var22386E2414BBD1C9031BE4204BE576F1_383761642;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineGetKey(alias, password);
     }
 
     
@@ -152,15 +152,15 @@ Key var22386E2414BBD1C9031BE4204BE576F1_383761642 =         implSpi.engineGetKey
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
 Certificate[] varC7394969E6E4373B9A6832CF44A56F10_178253114 =         implSpi.engineGetCertificateChain(alias);
         varC7394969E6E4373B9A6832CF44A56F10_178253114.addTaint(taint);
         return varC7394969E6E4373B9A6832CF44A56F10_178253114;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineGetCertificateChain(alias);
     }
 
     
@@ -170,15 +170,15 @@ Certificate[] varC7394969E6E4373B9A6832CF44A56F10_178253114 =         implSpi.en
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
 Certificate var833CCAA86CBB384E871E474F89E2D680_8303143 =         implSpi.engineGetCertificate(alias);
         var833CCAA86CBB384E871E474F89E2D680_8303143.addTaint(taint);
         return var833CCAA86CBB384E871E474F89E2D680_8303143;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineGetCertificate(alias);
     }
 
     
@@ -188,15 +188,15 @@ Certificate var833CCAA86CBB384E871E474F89E2D680_8303143 =         implSpi.engine
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
 Date var978EBB799D75BBFCEF16CE8A7B5F63A1_223355812 =         implSpi.engineGetCreationDate(alias);
         var978EBB799D75BBFCEF16CE8A7B5F63A1_223355812.addTaint(taint);
         return var978EBB799D75BBFCEF16CE8A7B5F63A1_223355812;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineGetCreationDate(alias);
     }
 
     
@@ -210,22 +210,22 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_223355812 =         implSpi.engineGetCr
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
     if(key != null && key instanceof PrivateKey && (chain == null || chain.length == 0))        
         {
             IllegalArgumentException var73E899CD5FA102001EC69F37D46760E1_1747827253 = new IllegalArgumentException("Certificate chain is not defined for Private key");
             var73E899CD5FA102001EC69F37D46760E1_1747827253.addTaint(taint);
             throw var73E899CD5FA102001EC69F37D46760E1_1747827253;
-        } 
+        } //End block
         implSpi.engineSetKeyEntry(alias, key, password, chain);
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //if (key != null && key instanceof PrivateKey && (chain == null || chain.length == 0)) {
+            //throw new IllegalArgumentException("Certificate chain is not defined for Private key");
+        //}
+        //implSpi.engineSetKeyEntry(alias, key, password, chain);
     }
 
     
@@ -237,13 +237,13 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_223355812 =         implSpi.engineGetCr
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         implSpi.engineSetKeyEntry(alias, key, chain);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //implSpi.engineSetKeyEntry(alias, key, chain);
     }
 
     
@@ -254,13 +254,13 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_223355812 =         implSpi.engineGetCr
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         implSpi.engineSetCertificateEntry(alias, cert);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //implSpi.engineSetCertificateEntry(alias, cert);
     }
 
     
@@ -270,13 +270,13 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_223355812 =         implSpi.engineGetCr
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         implSpi.engineDeleteEntry(alias);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //implSpi.engineDeleteEntry(alias);
     }
 
     
@@ -285,15 +285,15 @@ Date var978EBB799D75BBFCEF16CE8A7B5F63A1_223355812 =         implSpi.engineGetCr
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
 Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_251441141 =         implSpi.engineAliases();
         var85B6F664BD58B3CF4577E64A2AB90B50_251441141.addTaint(taint);
         return var85B6F664BD58B3CF4577E64A2AB90B50_251441141;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineAliases();
     }
 
     
@@ -303,15 +303,15 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_251441141 =         impl
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         boolean varB46C777B08F224E16A7D856127FD564A_747924369 = (implSpi.engineContainsAlias(alias));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_445521104 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_445521104;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineContainsAlias(alias);
     }
 
     
@@ -320,15 +320,15 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_251441141 =         impl
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         int varE3BC275F4991B60CAD0D50FE94DFC047_531005253 = (implSpi.engineSize());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691292187 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691292187;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineSize();
     }
 
     
@@ -338,15 +338,15 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_251441141 =         impl
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         boolean varE56149231F88A09AE157AA64C0ABBE65_1137903863 = (implSpi.engineIsKeyEntry(alias));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_769895287 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_769895287;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineIsKeyEntry(alias);
     }
 
     
@@ -356,15 +356,15 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_251441141 =         impl
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         boolean var4E95594686724AFB412B250F5330EEA2_1275517844 = (implSpi.engineIsCertificateEntry(alias));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_622193038 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_622193038;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineIsCertificateEntry(alias);
     }
 
     
@@ -374,15 +374,15 @@ Enumeration<String> var85B6F664BD58B3CF4577E64A2AB90B50_251441141 =         impl
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
 String varE0168F4163D76C5D386E3314C17ABA86_810036347 =         implSpi.engineGetCertificateAlias(cert);
         varE0168F4163D76C5D386E3314C17ABA86_810036347.addTaint(taint);
         return varE0168F4163D76C5D386E3314C17ABA86_810036347;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineGetCertificateAlias(cert);
     }
 
     
@@ -393,13 +393,13 @@ String varE0168F4163D76C5D386E3314C17ABA86_810036347 =         implSpi.engineGet
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         implSpi.engineStore(stream, password);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //implSpi.engineStore(stream, password);
     }
 
     
@@ -410,13 +410,13 @@ String varE0168F4163D76C5D386E3314C17ABA86_810036347 =         implSpi.engineGet
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         implSpi.engineStore(param);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //implSpi.engineStore(param);
     }
 
     
@@ -426,9 +426,9 @@ String varE0168F4163D76C5D386E3314C17ABA86_810036347 =         implSpi.engineGet
         addTaint(stream.getTaint());
         implSpi.engineLoad(stream, password);
         isInit = true;
-        
-        
-        
+        // ---------- Original Method ----------
+        //implSpi.engineLoad(stream, password);
+        //isInit = true;
     }
 
     
@@ -438,9 +438,9 @@ String varE0168F4163D76C5D386E3314C17ABA86_810036347 =         implSpi.engineGet
         addTaint(param.getTaint());
         implSpi.engineLoad(param);
         isInit = true;
-        
-        
-        
+        // ---------- Original Method ----------
+        //implSpi.engineLoad(param);
+        //isInit = true;
     }
 
     
@@ -453,22 +453,22 @@ String varE0168F4163D76C5D386E3314C17ABA86_810036347 =         implSpi.engineGet
             NullPointerException varA41DA010B75092C1DC41FB26CB17ACAE_309540224 = new NullPointerException("alias == null");
             varA41DA010B75092C1DC41FB26CB17ACAE_309540224.addTaint(taint);
             throw varA41DA010B75092C1DC41FB26CB17ACAE_309540224;
-        } 
+        } //End block
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
 Entry var701895B2E8389D95272372ED4DA24D57_244848948 =         implSpi.engineGetEntry(alias, param);
         var701895B2E8389D95272372ED4DA24D57_244848948.addTaint(taint);
         return var701895B2E8389D95272372ED4DA24D57_244848948;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (alias == null) {
+            //throw new NullPointerException("alias == null");
+        //}
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineGetEntry(alias, param);
     }
 
     
@@ -481,31 +481,31 @@ Entry var701895B2E8389D95272372ED4DA24D57_244848948 =         implSpi.engineGetE
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
     if(alias == null)        
         {
             NullPointerException varA41DA010B75092C1DC41FB26CB17ACAE_778951582 = new NullPointerException("alias == null");
             varA41DA010B75092C1DC41FB26CB17ACAE_778951582.addTaint(taint);
             throw varA41DA010B75092C1DC41FB26CB17ACAE_778951582;
-        } 
+        } //End block
     if(entry == null)        
         {
             NullPointerException varA1CA961276A9269464A9A0C7C21D8671_459558529 = new NullPointerException("entry == null");
             varA1CA961276A9269464A9A0C7C21D8671_459558529.addTaint(taint);
             throw varA1CA961276A9269464A9A0C7C21D8671_459558529;
-        } 
+        } //End block
         implSpi.engineSetEntry(alias, entry, param);
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //if (alias == null) {
+            //throw new NullPointerException("alias == null");
+        //}
+        //if (entry == null) {
+            //throw new NullPointerException("entry == null");
+        //}
+        //implSpi.engineSetEntry(alias, entry, param);
     }
 
     
@@ -519,31 +519,31 @@ Entry var701895B2E8389D95272372ED4DA24D57_244848948 =         implSpi.engineGetE
             NullPointerException varA41DA010B75092C1DC41FB26CB17ACAE_1569749729 = new NullPointerException("alias == null");
             varA41DA010B75092C1DC41FB26CB17ACAE_1569749729.addTaint(taint);
             throw varA41DA010B75092C1DC41FB26CB17ACAE_1569749729;
-        } 
+        } //End block
     if(entryClass == null)        
         {
             NullPointerException var727F62F29CA470EB66CED6BA9E0BF92E_2052810157 = new NullPointerException("entryClass == null");
             var727F62F29CA470EB66CED6BA9E0BF92E_2052810157.addTaint(taint);
             throw var727F62F29CA470EB66CED6BA9E0BF92E_2052810157;
-        } 
+        } //End block
     if(!isInit)        
         {
             throwNotInitialized();
-        } 
+        } //End block
         boolean varA2C4D67D3CB30E4D68D58F7D632B334C_1357180625 = (implSpi.engineEntryInstanceOf(alias, entryClass));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_152015010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_152015010;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (alias == null) {
+            //throw new NullPointerException("alias == null");
+        //}
+        //if (entryClass == null) {
+            //throw new NullPointerException("entryClass == null");
+        //}
+        //if (!isInit) {
+            //throwNotInitialized();
+        //}
+        //return implSpi.engineEntryInstanceOf(alias, entryClass);
     }
 
     
@@ -551,7 +551,7 @@ Entry var701895B2E8389D95272372ED4DA24D57_244848948 =         implSpi.engineGetE
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.036 -0400", hash_original_method = "7023F746232F077A36DCA003B1A512D2", hash_generated_method = "6A2D7D49B1C0B8CFA567F3789BFA22DC")
         protected  Builder() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -648,33 +648,33 @@ Entry var701895B2E8389D95272372ED4DA24D57_244848948 =         implSpi.engineGetE
                 providerForKeyStore = provider;
                 isGetKeyStore = false;
                 lastException = null;
-                
-                
-                
-                
-                
-                
-                
-                
+                // ---------- Original Method ----------
+                //keyStore = ks;
+                //protParameter = pp;
+                //fileForLoad = file;
+                //typeForKeyStore = type;
+                //providerForKeyStore = provider;
+                //isGetKeyStore = false;
+                //lastException = null;
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.040 -0400", hash_original_method = "ACF5EEE61FC6C7F04EA4DB97E46396E0", hash_generated_method = "1B08EB48D1014BB6066076FFB3F3D583")
-            @DSOverride 
+            @DSOverride // easy throw pattern
             @Override
             public synchronized KeyStore getKeyStore() throws KeyStoreException {
     if(lastException != null)                
                 {
                     lastException.addTaint(taint);
                     throw lastException;
-                } 
+                } //End block
     if(keyStore != null)                
                 {
                     isGetKeyStore = true;
 KeyStore varAE043FAC2ECABF7CB73EFBD5237554D7_1643818128 =                     keyStore;
                     varAE043FAC2ECABF7CB73EFBD5237554D7_1643818128.addTaint(taint);
                     return varAE043FAC2ECABF7CB73EFBD5237554D7_1643818128;
-                } 
+                } //End block
                 try 
                 {
                     final KeyStore ks = (providerForKeyStore == null ? KeyStore
@@ -685,20 +685,20 @@ KeyStore varAE043FAC2ECABF7CB73EFBD5237554D7_1643818128 =                     ke
                     {
                         passwd = ((PasswordProtection) protParameter)
                                 .getPassword();
-                    } 
+                    } //End block
                     else
     if(protParameter instanceof CallbackHandlerProtection)                    
                     {
                         passwd = KeyStoreSpi
                                 .getPasswordFromCallBack(protParameter);
-                    } 
+                    } //End block
                     else
                     {
                         KeyStoreException varA7F1174C83806DE906A3FB4AABBE8047_711836833 = new KeyStoreException("protectionParameter is neither "
                                 + "PasswordProtection nor CallbackHandlerProtection instance");
                         varA7F1174C83806DE906A3FB4AABBE8047_711836833.addTaint(taint);
                         throw varA7F1174C83806DE906A3FB4AABBE8047_711836833;
-                    } 
+                    } //End block
     if(fileForLoad != null)                    
                     {
                         FileInputStream fis = null;
@@ -706,35 +706,35 @@ KeyStore varAE043FAC2ECABF7CB73EFBD5237554D7_1643818128 =                     ke
                         {
                             fis = new FileInputStream(fileForLoad);
                             ks.load(fis, passwd);
-                        } 
+                        } //End block
                         finally 
                         {
                             IoUtils.closeQuietly(fis);
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     else
                     {
                         ks.load(new TmpLSParameter(protParameter));
-                    } 
+                    } //End block
                     isGetKeyStore = true;
 KeyStore var4EA107C714DD2FEC6BD5E5FECFE3866C_2057391778 =                     ks;
                     var4EA107C714DD2FEC6BD5E5FECFE3866C_2057391778.addTaint(taint);
                     return var4EA107C714DD2FEC6BD5E5FECFE3866C_2057391778;
-                } 
+                } //End block
                 catch (KeyStoreException e)
                 {
                 	lastException = e;
                 	e.addTaint(taint);
                     throw e;
-                } 
+                } //End block
                 catch (Exception e)
                 {
                     lastException = new KeyStoreException(e);
                     lastException.addTaint(taint);
                     throw lastException;
-                } 
-                
-                
+                } //End block
+                // ---------- Original Method ----------
+                // Original Method Too Long, Refer to Original Implementation
             }
 
             
@@ -748,24 +748,24 @@ KeyStore var4EA107C714DD2FEC6BD5E5FECFE3866C_2057391778 =                     ks
                     NullPointerException varA41DA010B75092C1DC41FB26CB17ACAE_425166756 = new NullPointerException("alias == null");
                     varA41DA010B75092C1DC41FB26CB17ACAE_425166756.addTaint(taint);
                     throw varA41DA010B75092C1DC41FB26CB17ACAE_425166756;
-                } 
+                } //End block
     if(!isGetKeyStore)                
                 {
                     IllegalStateException var7F5978FFD43A929CE4A35794259530EC_1588143766 = new IllegalStateException("getKeyStore() was not invoked");
                     var7F5978FFD43A929CE4A35794259530EC_1588143766.addTaint(taint);
                     throw var7F5978FFD43A929CE4A35794259530EC_1588143766;
-                } 
+                } //End block
 ProtectionParameter var2316ED0B587143554FCBF2DD4DB7A565_538662120 =                 protParameter;
                 var2316ED0B587143554FCBF2DD4DB7A565_538662120.addTaint(taint);
                 return var2316ED0B587143554FCBF2DD4DB7A565_538662120;
-                
-                
-                    
-                
-                
-                    
-                
-                
+                // ---------- Original Method ----------
+                //if (alias == null) {
+                    //throw new NullPointerException("alias == null");
+                //}
+                //if (!isGetKeyStore) {
+                    //throw new IllegalStateException("getKeyStore() was not invoked");
+                //}
+                //return protParameter;
             }
 
             
@@ -781,19 +781,18 @@ ProtectionParameter var2316ED0B587143554FCBF2DD4DB7A565_538662120 =             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.042 -0400", hash_original_method = "418DF9EAB7B4417735B80C8244C9AAA5", hash_generated_method = "98B7F8D22C8521F8F173B8F76A0B9B73")
             public  TmpLSParameter(ProtectionParameter protPar) {
                 this.protPar = protPar;
-                
-                
+                // ---------- Original Method ----------
+                //this.protPar = protPar;
             }
 
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.042 -0400", hash_original_method = "DB6A0984AE74C268B3C1D4EEBB473782", hash_generated_method = "7AB1BC188385468AF0FFBF6D23924B3B")
             public ProtectionParameter getProtectionParameter() {
 ProtectionParameter varB96525DB79F204E71157168F35C67FD8_1341104806 =                 protPar;
                 varB96525DB79F204E71157168F35C67FD8_1341104806.addTaint(taint);
                 return varB96525DB79F204E71157168F35C67FD8_1341104806;
-                
-                
+                // ---------- Original Method ----------
+                //return protPar;
             }
 
             
@@ -817,24 +816,23 @@ ProtectionParameter varB96525DB79F204E71157168F35C67FD8_1341104806 =            
                 NullPointerException varD94467648DCE8F6C33B5B75FE7E11924_1052434735 = new NullPointerException("handler == null");
                 varD94467648DCE8F6C33B5B75FE7E11924_1052434735.addTaint(taint);
                 throw varD94467648DCE8F6C33B5B75FE7E11924_1052434735;
-            } 
+            } //End block
             this.callbackHandler = handler;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (handler == null) {
+                //throw new NullPointerException("handler == null");
+            //}
+            //this.callbackHandler = handler;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.043 -0400", hash_original_method = "0C642C7CCF2E4FDE3C3DD3C1F1B0C85D", hash_generated_method = "97D5A6EDA25A0A93D0FA1ED50D5C2A20")
         public CallbackHandler getCallbackHandler() {
 CallbackHandler var227A5049B2A61D81DA13523544301401_523395098 =             callbackHandler;
             var227A5049B2A61D81DA13523544301401_523395098.addTaint(taint);
             return var227A5049B2A61D81DA13523544301401_523395098;
-            
-            
+            // ---------- Original Method ----------
+            //return callbackHandler;
         }
 
         
@@ -855,11 +853,11 @@ CallbackHandler var227A5049B2A61D81DA13523544301401_523395098 =             call
     if(password != null)            
             {
                 this.password = password.clone();
-            } 
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (password != null) {
+                //this.password = password.clone();
+            //}
         }
 
         
@@ -870,15 +868,15 @@ CallbackHandler var227A5049B2A61D81DA13523544301401_523395098 =             call
                 IllegalStateException var677BDDDA023C08B39B835AB0EF4DDF05_474244899 = new IllegalStateException("Password was destroyed");
                 var677BDDDA023C08B39B835AB0EF4DDF05_474244899.addTaint(taint);
                 throw var677BDDDA023C08B39B835AB0EF4DDF05_474244899;
-            } 
+            } //End block
             char[] var5F4DCC3B5AA765D61D8327DEB882CF99_1772090715 = (password);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1481851498 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_1481851498;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (isDestroyed) {
+                //throw new IllegalStateException("Password was destroyed");
+            //}
+            //return password;
         }
 
         
@@ -889,24 +887,23 @@ CallbackHandler var227A5049B2A61D81DA13523544301401_523395098 =             call
             {
                 Arrays.fill(password, '\u0000');
                 password = null;
-            } 
-            
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //isDestroyed = true;
+            //if (password != null) {
+                //Arrays.fill(password, '\u0000');
+                //password = null;
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.045 -0400", hash_original_method = "B936E1D4B92F105E0DF31A4819E36563", hash_generated_method = "283631751C87277D3CBA722793E448B9")
         public synchronized boolean isDestroyed() {
             boolean var090F38A7DDDF192B3BA702F9AFFD747C_1711108534 = (isDestroyed);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_129420541 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_129420541;
-            
-            
+            // ---------- Original Method ----------
+            //return isDestroyed;
         }
 
         
@@ -929,19 +926,19 @@ CallbackHandler var227A5049B2A61D81DA13523544301401_523395098 =             call
                 NullPointerException var27E1267D3AC66A31D766CED3F42F2404_317678557 = new NullPointerException("privateKey == null");
                 var27E1267D3AC66A31D766CED3F42F2404_317678557.addTaint(taint);
                 throw var27E1267D3AC66A31D766CED3F42F2404_317678557;
-            } 
+            } //End block
     if(chain == null)            
             {
                 NullPointerException var570EF4F5784BEEEBF1A7E8203D1902CF_1214588488 = new NullPointerException("chain == null");
                 var570EF4F5784BEEEBF1A7E8203D1902CF_1214588488.addTaint(taint);
                 throw var570EF4F5784BEEEBF1A7E8203D1902CF_1214588488;
-            } 
+            } //End block
     if(chain.length == 0)            
             {
                 IllegalArgumentException varAC112B1AD00F20C60B703AACEBA6F5E7_1487571184 = new IllegalArgumentException("chain.length == 0");
                 varAC112B1AD00F20C60B703AACEBA6F5E7_1487571184.addTaint(taint);
                 throw varAC112B1AD00F20C60B703AACEBA6F5E7_1487571184;
-            } 
+            } //End block
             String s = chain[0].getType();
     if(!(chain[0].getPublicKey().getAlgorithm()).equals(privateKey.getAlgorithm()))            
             {
@@ -950,7 +947,7 @@ CallbackHandler var227A5049B2A61D81DA13523544301401_523395098 =             call
                         + "(with index number: 0)");
                 varA45E4E0F5F20C00E77222A9E4D749512_1386072354.addTaint(taint);
                 throw varA45E4E0F5F20C00E77222A9E4D749512_1386072354;
-            } 
+            } //End block
 for(int i = 1;i < chain.length;i++)
             {
     if(!s.equals(chain[i].getType()))                
@@ -959,8 +956,8 @@ for(int i = 1;i < chain.length;i++)
                                                        + "different types");
                     varE90BA1D4A5233A00CECCC6769BF7EFC2_263471855.addTaint(taint);
                     throw varE90BA1D4A5233A00CECCC6769BF7EFC2_263471855;
-                } 
-            } 
+                } //End block
+            } //End block
             boolean isAllX509Certificates = true;
 for(Certificate cert : chain)
             {
@@ -968,31 +965,30 @@ for(Certificate cert : chain)
                 {
                     isAllX509Certificates = false;
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(isAllX509Certificates)            
             {
                 this.chain = new X509Certificate[chain.length];
-            } 
+            } //End block
             else
             {
                 this.chain = new Certificate[chain.length];
-            } 
+            } //End block
             System.arraycopy(chain, 0, this.chain, 0, chain.length);
             this.privateKey = privateKey;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.047 -0400", hash_original_method = "20D5E1BC38F4066008A03A45816FEC0F", hash_generated_method = "F0C72314A6002E01E0780BE3C82C87BD")
         public PrivateKey getPrivateKey() {
 PrivateKey varEAD85D869E43E7A2ADE031F4AAD29487_525262098 =             privateKey;
             varEAD85D869E43E7A2ADE031F4AAD29487_525262098.addTaint(taint);
             return varEAD85D869E43E7A2ADE031F4AAD29487_525262098;
-            
-            
+            // ---------- Original Method ----------
+            //return privateKey;
         }
 
         
@@ -1001,19 +997,18 @@ PrivateKey varEAD85D869E43E7A2ADE031F4AAD29487_525262098 =             privateKe
 Certificate[] var1320DF02155D736EF045D6D8E640BC3B_1206121697 =             chain.clone();
             var1320DF02155D736EF045D6D8E640BC3B_1206121697.addTaint(taint);
             return var1320DF02155D736EF045D6D8E640BC3B_1206121697;
-            
-            
+            // ---------- Original Method ----------
+            //return chain.clone();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.047 -0400", hash_original_method = "547F6E4E355F50070DC97734154D15F8", hash_generated_method = "987C6C2241E0DD1C6F59C7119CB76878")
         public Certificate getCertificate() {
 Certificate var90F30F0A578C11244DA8D7946F97A693_1612175694 =             chain[0];
             var90F30F0A578C11244DA8D7946F97A693_1612175694.addTaint(taint);
             return var90F30F0A578C11244DA8D7946F97A693_1612175694;
-            
-            
+            // ---------- Original Method ----------
+            //return chain[0];
         }
 
         
@@ -1028,20 +1023,20 @@ for(int i = 0;i < chain.length;i++)
             {
                 sb.append(chain[i].toString());
                 sb.append("\n");
-            } 
+            } //End block
 String var2460B846747F8B22185AD8BE722266A5_316001126 =             sb.toString();
             var2460B846747F8B22185AD8BE722266A5_316001126.addTaint(taint);
             return var2460B846747F8B22185AD8BE722266A5_316001126;
-            
-            
-                    
-            
-            
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //StringBuilder sb = new StringBuilder(
+                    //"PrivateKeyEntry: number of elements in certificate chain is ");
+            //sb.append(Integer.toString(chain.length));
+            //sb.append("\n");
+            //for (int i = 0; i < chain.length; i++) {
+                //sb.append(chain[i].toString());
+                //sb.append("\n");
+            //}
+            //return sb.toString();
         }
 
         
@@ -1061,24 +1056,23 @@ String var2460B846747F8B22185AD8BE722266A5_316001126 =             sb.toString()
                 NullPointerException varB8D39E9EC6643D0241032E0B0941D83C_1455937597 = new NullPointerException("secretKey == null");
                 varB8D39E9EC6643D0241032E0B0941D83C_1455937597.addTaint(taint);
                 throw varB8D39E9EC6643D0241032E0B0941D83C_1455937597;
-            } 
+            } //End block
             this.secretKey = secretKey;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (secretKey == null) {
+                //throw new NullPointerException("secretKey == null");
+            //}
+            //this.secretKey = secretKey;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.049 -0400", hash_original_method = "086B5E46810BA78C7777CDD972BB99BA", hash_generated_method = "F7624BE51C24E438564AFCE30CBA1DA3")
         public SecretKey getSecretKey() {
 SecretKey var120920E5150C15DE0AB193510B014067_741090821 =             secretKey;
             var120920E5150C15DE0AB193510B014067_741090821.addTaint(taint);
             return var120920E5150C15DE0AB193510B014067_741090821;
-            
-            
+            // ---------- Original Method ----------
+            //return secretKey;
         }
 
         
@@ -1090,10 +1084,10 @@ SecretKey var120920E5150C15DE0AB193510B014067_741090821 =             secretKey;
 String var2460B846747F8B22185AD8BE722266A5_1202354463 =             sb.toString();
             var2460B846747F8B22185AD8BE722266A5_1202354463.addTaint(taint);
             return var2460B846747F8B22185AD8BE722266A5_1202354463;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //StringBuilder sb = new StringBuilder("SecretKeyEntry: algorithm - ");
+            //sb.append(secretKey.getAlgorithm());
+            //return sb.toString();
         }
 
         
@@ -1113,24 +1107,23 @@ String var2460B846747F8B22185AD8BE722266A5_1202354463 =             sb.toString(
                 NullPointerException var30C801AE8E2B836B487877775BE4C7FD_1567655480 = new NullPointerException("trustCertificate == null");
                 var30C801AE8E2B836B487877775BE4C7FD_1567655480.addTaint(taint);
                 throw var30C801AE8E2B836B487877775BE4C7FD_1567655480;
-            } 
+            } //End block
             this.trustCertificate = trustCertificate;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (trustCertificate == null) {
+                //throw new NullPointerException("trustCertificate == null");
+            //}
+            //this.trustCertificate = trustCertificate;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.050 -0400", hash_original_method = "4E60EB3F26EAC182CAA181F2D2BA1C01", hash_generated_method = "CA6CD3989FCFF52722DFD57CFF779F85")
         public Certificate getTrustedCertificate() {
 Certificate var77F8F6B7E3870AD03BA1DE0AC584EB03_438408977 =             trustCertificate;
             var77F8F6B7E3870AD03BA1DE0AC584EB03_438408977.addTaint(taint);
             return var77F8F6B7E3870AD03BA1DE0AC584EB03_438408977;
-            
-            
+            // ---------- Original Method ----------
+            //return trustCertificate;
         }
 
         
@@ -1140,8 +1133,8 @@ Certificate var77F8F6B7E3870AD03BA1DE0AC584EB03_438408977 =             trustCer
 String var359A1FE7677830BCE57680B7AC142941_437561517 =             "Trusted certificate entry:\n" + trustCertificate;
             var359A1FE7677830BCE57680B7AC142941_437561517.addTaint(taint);
             return var359A1FE7677830BCE57680B7AC142941_437561517;
-            
-            
+            // ---------- Original Method ----------
+            //return "Trusted certificate entry:\n" + trustCertificate;
         }
 
         

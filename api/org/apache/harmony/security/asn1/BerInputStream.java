@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -56,7 +56,7 @@ public class BerInputStream {
     public  BerInputStream(byte[] encoded) throws IOException {
         this(encoded, 0, encoded.length);
         addTaint(encoded[0]);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -73,16 +73,16 @@ public class BerInputStream {
             ASN1Exception varB0F890C2A356BB480ED367F285F64F08_1379166194 = new ASN1Exception("Wrong content length");
             varB0F890C2A356BB480ED367F285F64F08_1379166194.addTaint(taint);
             throw varB0F890C2A356BB480ED367F285F64F08_1379166194;
-        } 
-        
-        
-        
-        
-        
-        
-                
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.in = null;
+        //this.buffer = encoded;
+        //this.offset = offset;
+        //next();
+        //if (length != INDEFINIT_LENGTH
+                //&& (offset + expectedLength) != (this.offset + this.length)) {
+            //throw new ASN1Exception("Wrong content length");
+        //}
     }
 
     
@@ -90,7 +90,7 @@ public class BerInputStream {
     public  BerInputStream(InputStream in) throws IOException {
         this(in, BUF_INCREASE_SIZE);
         addTaint(in.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -106,29 +106,29 @@ public class BerInputStream {
                 byte[] newBuffer = new byte[length + offset];
                 System.arraycopy(buffer, 0, newBuffer, 0, offset);
                 buffer = newBuffer;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             isIndefinedLength = true;
             ASN1Exception var54A4D56CBDC0B40731B7A58FAD9A8196_211779606 = new ASN1Exception("Decoding indefinite length encoding is not supported");
             var54A4D56CBDC0B40731B7A58FAD9A8196_211779606.addTaint(taint);
             throw var54A4D56CBDC0B40731B7A58FAD9A8196_211779606;
-        } 
-        
-        
-        
-        
-        
-            
-                
-                
-                
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //this.in = in;
+        //buffer = new byte[initialSize];
+        //next();
+        //if (length != INDEFINIT_LENGTH) {
+            //if (buffer.length < (length + offset)) {
+                //byte[] newBuffer = new byte[length + offset];
+                //System.arraycopy(buffer, 0, newBuffer, 0, offset);
+                //buffer = newBuffer;
+            //}
+        //} else {
+            //isIndefinedLength = true;
+            //throw new ASN1Exception("Decoding indefinite length encoding is not supported");
+        //}
     }
 
     
@@ -136,9 +136,9 @@ public class BerInputStream {
     public final void reset(byte[] encoded) throws IOException {
         buffer = encoded;
         next();
-        
-        
-        
+        // ---------- Original Method ----------
+        //buffer = encoded;
+        //next();
     }
 
     
@@ -157,36 +157,35 @@ public class BerInputStream {
                     ASN1Exception varBD1890F5E4E062EC3A4E0B1B48CB4C8F_1275487928 = new ASN1Exception("Too long encoding at [" + tagOffset + "]");
                     varBD1890F5E4E062EC3A4E0B1B48CB4C8F_1275487928.addTaint(taint);
                     throw varBD1890F5E4E062EC3A4E0B1B48CB4C8F_1275487928;
-                } 
+                } //End block
                 length = read();
 for(int i = 1;i < numOctets;i++)
                 {
                     int ch = read();
                     length = (length << 8) + ch;
-                } 
+                } //End block
     if(length > 0xFFFFFF)                
                 {
                     ASN1Exception varBD1890F5E4E062EC3A4E0B1B48CB4C8F_698398828 = new ASN1Exception("Too long encoding at [" + tagOffset + "]");
                     varBD1890F5E4E062EC3A4E0B1B48CB4C8F_698398828.addTaint(taint);
                     throw varBD1890F5E4E062EC3A4E0B1B48CB4C8F_698398828;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
             length = INDEFINIT_LENGTH;
-        } 
+        } //End block
         contentOffset = offset;
         int varE4D23E841D8E8804190027BCE3180FA5_1275595902 = (tag);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_593917062 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_593917062;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getLength(byte[] encoding) {
+        public static int getLength(byte[] encoding) {
         int length = encoding[1] & 0xFF;
         int numOctets = 0;
         if ((length & 0x80) != 0) { 
@@ -209,7 +208,7 @@ for(int i = 1;i < numOctets;i++)
                 ASN1Exception var81E1F886748BDC34D8A4553AC8005463_1161903742 = new ASN1Exception("ASN.1 Bitstring: wrong length. Tag at [" + tagOffset + "]");
                 var81E1F886748BDC34D8A4553AC8005463_1161903742.addTaint(taint);
                 throw var81E1F886748BDC34D8A4553AC8005463_1161903742;
-            } 
+            } //End block
             readContent();
     if(buffer[contentOffset] > 7)            
             {
@@ -217,30 +216,30 @@ for(int i = 1;i < numOctets;i++)
                         + "]. A number of unused bits MUST be in range 0 to 7");
                 var5F450A67A5944F6D81916FC2548CC078_220290507.addTaint(taint);
                 throw var5F450A67A5944F6D81916FC2548CC078_220290507;
-            } 
+            } //End block
     if(length == 1 && buffer[contentOffset] != 0)            
             {
                 ASN1Exception var05777D5E8FFAACB333195FFC499F725A_1973691611 = new ASN1Exception("ASN.1 Bitstring: wrong content at [" + contentOffset
                         + "]. For empty string unused bits MUST be 0");
                 var05777D5E8FFAACB333195FFC499F725A_1973691611.addTaint(taint);
                 throw var05777D5E8FFAACB333195FFC499F725A_1973691611;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(tag == ASN1Constants.TAG_C_BITSTRING)        
         {
             ASN1Exception varC43382E12489F4CD5C2C424238ACA629_2003880365 = new ASN1Exception("Decoding constructed ASN.1 bitstring  type is not provided");
             varC43382E12489F4CD5C2C424238ACA629_2003880365.addTaint(taint);
             throw varC43382E12489F4CD5C2C424238ACA629_2003880365;
-        } 
+        } //End block
         else
         {
             org.apache.harmony.security.asn1.ASN1Exception varE48E3968ACB5C0CAFBC4EF0127FAD6B0_440350253 = expected("bitstring");
             varE48E3968ACB5C0CAFBC4EF0127FAD6B0_440350253.addTaint(taint);
             throw varE48E3968ACB5C0CAFBC4EF0127FAD6B0_440350253;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -251,14 +250,14 @@ for(int i = 1;i < numOctets;i++)
             org.apache.harmony.security.asn1.ASN1Exception var6CEFDC196090BEB9B130DF3C4C24118B_1251239586 = expected("enumerated");
             var6CEFDC196090BEB9B130DF3C4C24118B_1251239586.addTaint(taint);
             throw var6CEFDC196090BEB9B130DF3C4C24118B_1251239586;
-        } 
+        } //End block
     if(length == 0)        
         {
             ASN1Exception var0B16AFB0E027FB2FF710F6F4E3438F3C_36853818 = new ASN1Exception("ASN.1 enumerated: wrong length for identifier at ["
                     + tagOffset + "]");
             var0B16AFB0E027FB2FF710F6F4E3438F3C_36853818.addTaint(taint);
             throw var0B16AFB0E027FB2FF710F6F4E3438F3C_36853818;
-        } 
+        } //End block
         readContent();
     if(length > 1)        
         {
@@ -266,34 +265,34 @@ for(int i = 1;i < numOctets;i++)
     if(buffer[contentOffset + 1] < 0)            
             {
                 bits += 0x100;
-            } 
+            } //End block
     if(bits == 0 || bits == 0x1FF)            
             {
                 ASN1Exception var06ED68E8CF9D538BC278D8903A085A1C_2089535492 = new ASN1Exception("ASN.1 enumerated: wrong content at [" + contentOffset
                         + "]. An integer MUST be encoded in minimum number of octets");
                 var06ED68E8CF9D538BC278D8903A085A1C_2089535492.addTaint(taint);
                 throw var06ED68E8CF9D538BC278D8903A085A1C_2089535492;
-            } 
-        } 
-        
-        
-            
-        
-        
-            
-                    
-        
-        
-        
-            
-            
-                
-            
-            
-                
-                        
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (tag != ASN1Constants.TAG_ENUM) {
+            //throw expected("enumerated");
+        //}
+        //if (length == 0) {
+            //throw new ASN1Exception("ASN.1 enumerated: wrong length for identifier at ["
+                    //+ tagOffset + "]");
+        //}
+        //readContent();
+        //if (length > 1) {
+            //int bits = buffer[contentOffset] & 0xFF;
+            //if (buffer[contentOffset + 1] < 0) {
+                //bits += 0x100;
+            //}
+            //if (bits == 0 || bits == 0x1FF) {
+                //throw new ASN1Exception("ASN.1 enumerated: wrong content at [" + contentOffset
+                        //+ "]. An integer MUST be encoded in minimum number of octets");
+            //}
+        //}
     }
 
     
@@ -304,22 +303,22 @@ for(int i = 1;i < numOctets;i++)
             org.apache.harmony.security.asn1.ASN1Exception varEFA3EF36A0C476961B46A4D8ABA7D265_1723687222 = expected("boolean");
             varEFA3EF36A0C476961B46A4D8ABA7D265_1723687222.addTaint(taint);
             throw varEFA3EF36A0C476961B46A4D8ABA7D265_1723687222;
-        } 
+        } //End block
     if(length != 1)        
         {
             ASN1Exception var43A07363A82AF3BEE58F953C3D9038BF_788282269 = new ASN1Exception("Wrong length for ASN.1 boolean at [" + tagOffset + "]");
             var43A07363A82AF3BEE58F953C3D9038BF_788282269.addTaint(taint);
             throw var43A07363A82AF3BEE58F953C3D9038BF_788282269;
-        } 
+        } //End block
         readContent();
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (tag != ASN1Constants.TAG_BOOLEAN) {
+            //throw expected("boolean");
+        //}
+        //if (length != 1) {
+            //throw new ASN1Exception("Wrong length for ASN.1 boolean at [" + tagOffset + "]");
+        //}
+        //readContent();
     }
 
     
@@ -333,14 +332,14 @@ for(int i = 1;i < numOctets;i++)
                 ASN1Exception varA29B31F0C543B27C5A273FEFE7372CC8_1257292672 = new ASN1Exception("ASN.1 GeneralizedTime: encoded format is not implemented");
                 varA29B31F0C543B27C5A273FEFE7372CC8_1257292672.addTaint(taint);
                 throw varA29B31F0C543B27C5A273FEFE7372CC8_1257292672;
-            } 
+            } //End block
     if(length != 15 && (length < 17 || length > 19))            
             {
                 ASN1Exception var5D220EA44DF236695BC180CC7D7493F1_716331586 = new ASN1Exception("ASN.1 GeneralizedTime wrongly encoded at ["
                         + contentOffset + "]");
                 var5D220EA44DF236695BC180CC7D7493F1_716331586.addTaint(taint);
                 throw var5D220EA44DF236695BC180CC7D7493F1_716331586;
-            } 
+            } //End block
     if(length > 16)            
             {
                 byte char14 = buffer[contentOffset + 14];
@@ -350,12 +349,12 @@ for(int i = 1;i < numOctets;i++)
                             + contentOffset + "]");
                     var5D220EA44DF236695BC180CC7D7493F1_1489171067.addTaint(taint);
                     throw var5D220EA44DF236695BC180CC7D7493F1_1489171067;
-                } 
-            } 
+                } //End block
+            } //End block
     if(times == null)            
             {
                 times = new int[7];
-            } 
+            } //End block
             times[0] = strToInt(contentOffset, 4);
             times[1] = strToInt(contentOffset + 4, 2);
             times[2] = strToInt(contentOffset + 6, 2);
@@ -368,29 +367,29 @@ for(int i = 1;i < numOctets;i++)
     if(length == 17)                
                 {
                     times[6] = times[6] * 100;
-                } 
+                } //End block
                 else
     if(length == 18)                
                 {
                     times[6] = times[6] * 10;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
     if(tag == ASN1Constants.TAG_C_GENERALIZEDTIME)        
         {
             ASN1Exception varB7227F8A5F29C5D1F6D9C6C5A75B2208_1930815525 = new ASN1Exception("Decoding constructed ASN.1 GeneralizedTime type is not supported");
             varB7227F8A5F29C5D1F6D9C6C5A75B2208_1930815525.addTaint(taint);
             throw varB7227F8A5F29C5D1F6D9C6C5A75B2208_1930815525;
-        } 
+        } //End block
         else
         {
             org.apache.harmony.security.asn1.ASN1Exception varED979873169C54EE1A261A2790B3D61B_1830906150 = expected("GeneralizedTime");
             varED979873169C54EE1A261A2790B3D61B_1830906150.addTaint(taint);
             throw varED979873169C54EE1A261A2790B3D61B_1830906150;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -418,20 +417,20 @@ switch(length){
                         + contentOffset + ']');
                 var03C7C95A390DD4D9B5B64CABA9914274_790122861.addTaint(taint);
                 throw var03C7C95A390DD4D9B5B64CABA9914274_790122861;
-            } 
+            } //End block
     if(times == null)            
             {
                 times = new int[7];
-            } 
+            } //End block
             times[0] = strToInt(contentOffset, 2);
     if(times[0] > 49)            
             {
                 times[0] += 1900;
-            } 
+            } //End block
             else
             {
                 times[0] += 2000;
-            } 
+            } //End block
             times[1] = strToInt(contentOffset + 2, 2);
             times[2] = strToInt(contentOffset + 4, 2);
             times[3] = strToInt(contentOffset + 6, 2);
@@ -439,23 +438,23 @@ switch(length){
     if(length == ASN1UTCTime.UTC_HMS)            
             {
                 times[5] = strToInt(contentOffset + 10, 2);
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(tag == ASN1Constants.TAG_C_UTCTIME)        
         {
             ASN1Exception var793FDDEB95F2FB061E2D85B4A4E2A88E_1277572401 = new ASN1Exception("Decoding constructed ASN.1 UTCTime type is not supported");
             var793FDDEB95F2FB061E2D85B4A4E2A88E_1277572401.addTaint(taint);
             throw var793FDDEB95F2FB061E2D85B4A4E2A88E_1277572401;
-        } 
+        } //End block
         else
         {
             org.apache.harmony.security.asn1.ASN1Exception varF60ADDA30580DDCE55211C2F5C6A3A64_524492035 = expected("UTCTime");
             varF60ADDA30580DDCE55211C2F5C6A3A64_524492035.addTaint(taint);
             throw varF60ADDA30580DDCE55211C2F5C6A3A64_524492035;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -472,22 +471,22 @@ for(int i = off, end = off + count;i < end;i++)
                 ASN1Exception varBCF34CC252A41A843DCCDC7999C8E955_1710372398 = new ASN1Exception("Time encoding has invalid char");
                 varBCF34CC252A41A843DCCDC7999C8E955_1710372398.addTaint(taint);
                 throw varBCF34CC252A41A843DCCDC7999C8E955_1710372398;
-            } 
+            } //End block
             result = result * 10 + c;
-        } 
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_165958204 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1414515865 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1414515865;
-        
-        
-        
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int result = 0;
+        //for (int i = off, end = off + count; i < end; i++) {
+            //int c = buffer[i] - 48;
+            //if (c < 0 || c > 9) {
+                //throw new ASN1Exception("Time encoding has invalid char");
+            //}
+            //result = result * 10 + c;
+        //}
+        //return result;
     }
 
     
@@ -498,13 +497,13 @@ for(int i = off, end = off + count;i < end;i++)
             org.apache.harmony.security.asn1.ASN1Exception var86AA29E38FF5A6A302EE7C158E0F212E_1523424263 = expected("integer");
             var86AA29E38FF5A6A302EE7C158E0F212E_1523424263.addTaint(taint);
             throw var86AA29E38FF5A6A302EE7C158E0F212E_1523424263;
-        } 
+        } //End block
     if(length < 1)        
         {
             ASN1Exception var09AF55CB6530112CAB26F3DB8D600C9B_1088014259 = new ASN1Exception("Wrong length for ASN.1 integer at [" + tagOffset + "]");
             var09AF55CB6530112CAB26F3DB8D600C9B_1088014259.addTaint(taint);
             throw var09AF55CB6530112CAB26F3DB8D600C9B_1088014259;
-        } 
+        } //End block
         readContent();
     if(length > 1)        
         {
@@ -516,24 +515,24 @@ for(int i = off, end = off + count;i < end;i++)
                 ASN1Exception varAD452B9FB9D82CA8DD1C4BC4D5970DBD_795392136 = new ASN1Exception("Wrong content for ASN.1 integer at [" + (offset - length) + "]. An integer MUST be encoded in minimum number of octets");
                 varAD452B9FB9D82CA8DD1C4BC4D5970DBD_795392136.addTaint(taint);
                 throw varAD452B9FB9D82CA8DD1C4BC4D5970DBD_795392136;
-            } 
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-            
-            
-                    
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (tag != ASN1Constants.TAG_INTEGER) {
+            //throw expected("integer");
+        //}
+        //if (length < 1) {
+            //throw new ASN1Exception("Wrong length for ASN.1 integer at [" + tagOffset + "]");
+        //}
+        //readContent();
+        //if (length > 1) {
+            //byte firstByte = buffer[offset - length];
+            //byte secondByte = (byte) (buffer[offset - length + 1] & 0x80);
+            //if (firstByte == 0 && secondByte == 0 || firstByte == (byte) 0xFF
+                    //&& secondByte == (byte) 0x80) {
+                //throw new ASN1Exception("Wrong content for ASN.1 integer at [" + (offset - length) + "]. An integer MUST be encoded in minimum number of octets");
+            //}
+        //}
     }
 
     
@@ -542,40 +541,39 @@ for(int i = off, end = off + count;i < end;i++)
     if(tag == ASN1Constants.TAG_OCTETSTRING)        
         {
             readContent();
-        } 
+        } //End block
         else
     if(tag == ASN1Constants.TAG_C_OCTETSTRING)        
         {
             ASN1Exception var6E9A683485519CEBE2064A48B15A3331_947538254 = new ASN1Exception("Decoding constructed ASN.1 octet string type is not supported");
             var6E9A683485519CEBE2064A48B15A3331_947538254.addTaint(taint);
             throw var6E9A683485519CEBE2064A48B15A3331_947538254;
-        } 
+        } //End block
         else
         {
             org.apache.harmony.security.asn1.ASN1Exception var71AACD0964BFC3FA26CC63EE2E887D15_1785467330 = expected("octetstring");
             var71AACD0964BFC3FA26CC63EE2E887D15_1785467330.addTaint(taint);
             throw var71AACD0964BFC3FA26CC63EE2E887D15_1785467330;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (tag == ASN1Constants.TAG_OCTETSTRING) {
+            //readContent();
+        //} else if (tag == ASN1Constants.TAG_C_OCTETSTRING) {
+            //throw new ASN1Exception("Decoding constructed ASN.1 octet string type is not supported");
+        //} else {
+            //throw expected("octetstring");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.891 -0400", hash_original_method = "31EAA277FAF0612B23F88A136EEA2499", hash_generated_method = "95F8349A55ACF7071C5FC92AFAC815A9")
     private ASN1Exception expected(String what) throws ASN1Exception {
         addTaint(what.getTaint());
         ASN1Exception varD41BC60AA1F934B444D0C89980E02BA2_377262732 = new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
         varD41BC60AA1F934B444D0C89980E02BA2_377262732.addTaint(taint);
         throw varD41BC60AA1F934B444D0C89980E02BA2_377262732;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ASN1Exception("ASN.1 " + what + " identifier expected at [" + tagOffset + "], got " + Integer.toHexString(tag));
     }
 
     
@@ -586,20 +584,20 @@ for(int i = off, end = off + count;i < end;i++)
             org.apache.harmony.security.asn1.ASN1Exception var40F298E39089338C810B48C45E81F938_629037430 = expected("OID");
             var40F298E39089338C810B48C45E81F938_629037430.addTaint(taint);
             throw var40F298E39089338C810B48C45E81F938_629037430;
-        } 
+        } //End block
     if(length < 1)        
         {
             ASN1Exception var414FA454F66DB3BBC07828876058D547_1964243792 = new ASN1Exception("Wrong length for ASN.1 object identifier at [" + tagOffset + "]");
             var414FA454F66DB3BBC07828876058D547_1964243792.addTaint(taint);
             throw var414FA454F66DB3BBC07828876058D547_1964243792;
-        } 
+        } //End block
         readContent();
     if((buffer[offset - 1] & 0x80) != 0)        
         {
             ASN1Exception var7AABC3456FDE31D3386BE1D2A6939D6E_1239116082 = new ASN1Exception("Wrong encoding at [" + (offset - 1) + "]");
             var7AABC3456FDE31D3386BE1D2A6939D6E_1239116082.addTaint(taint);
             throw var7AABC3456FDE31D3386BE1D2A6939D6E_1239116082;
-        } 
+        } //End block
         oidElement = 1;
 for(int i = 0;i < length;i++,++oidElement)
         {
@@ -607,25 +605,25 @@ for(int i = 0;i < length;i++,++oidElement)
 ((buffer[contentOffset + i] & 0x80) == 0x80)            
             {
                 i++;
-            } 
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (tag != ASN1Constants.TAG_OID) {
+            //throw expected("OID");
+        //}
+        //if (length < 1) {
+            //throw new ASN1Exception("Wrong length for ASN.1 object identifier at [" + tagOffset + "]");
+        //}
+        //readContent();
+        //if ((buffer[offset - 1] & 0x80) != 0) {
+            //throw new ASN1Exception("Wrong encoding at [" + (offset - 1) + "]");
+        //}
+        //oidElement = 1;
+        //for (int i = 0; i < length; i++, ++oidElement) {
+            //while ((buffer[contentOffset + i] & 0x80) == 0x80) {
+                //i++;
+            //}
+        //}
     }
 
     
@@ -637,7 +635,7 @@ for(int i = 0;i < length;i++,++oidElement)
             org.apache.harmony.security.asn1.ASN1Exception var589AB7506A8FD2C98815356FBAFE6068_573886426 = expected("sequence");
             var589AB7506A8FD2C98815356FBAFE6068_573886426.addTaint(taint);
             throw var589AB7506A8FD2C98815356FBAFE6068_573886426;
-        } 
+        } //End block
         int begOffset = offset;
         int endOffset = begOffset + length;
         ASN1Type[] type = sequence.type;
@@ -655,11 +653,11 @@ for(;(offset < endOffset) && (i < type.length);i++)
                         ASN1Exception var3C7E2304E8760621EDA869C0E1FEFBA0_1400999427 = new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                         var3C7E2304E8760621EDA869C0E1FEFBA0_1400999427.addTaint(taint);
                         throw var3C7E2304E8760621EDA869C0E1FEFBA0_1400999427;
-                    } 
+                    } //End block
                     i++;
-                } 
+                } //End block
                 type[i].decode(this);
-            } 
+            } //End block
 for(;i < type.length;i++)
             {
     if(!sequence.OPTIONAL[i])                
@@ -667,9 +665,9 @@ for(;i < type.length;i++)
                     ASN1Exception var3C7E2304E8760621EDA869C0E1FEFBA0_1651844770 = new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                     var3C7E2304E8760621EDA869C0E1FEFBA0_1651844770.addTaint(taint);
                     throw var3C7E2304E8760621EDA869C0E1FEFBA0_1651844770;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
             int seqTagOffset = tagOffset;
@@ -685,15 +683,15 @@ for(;(offset < endOffset) && (i < type.length);i++)
                         ASN1Exception var3C7E2304E8760621EDA869C0E1FEFBA0_442298485 = new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                         var3C7E2304E8760621EDA869C0E1FEFBA0_442298485.addTaint(taint);
                         throw var3C7E2304E8760621EDA869C0E1FEFBA0_442298485;
-                    } 
+                    } //End block
     if(sequence.DEFAULT[i] != null)                    
                     {
                         values[i] = sequence.DEFAULT[i];
-                    } 
+                    } //End block
                     i++;
-                } 
+                } //End block
                 values[i] = type[i].decode(this);
-            } 
+            } //End block
 for(;i < type.length;i++)
             {
     if(!sequence.OPTIONAL[i])                
@@ -701,23 +699,23 @@ for(;i < type.length;i++)
                     ASN1Exception var3C7E2304E8760621EDA869C0E1FEFBA0_316592213 = new ASN1Exception("ASN.1 Sequence: mandatory value is missing at [" + tagOffset + "]");
                     var3C7E2304E8760621EDA869C0E1FEFBA0_316592213.addTaint(taint);
                     throw var3C7E2304E8760621EDA869C0E1FEFBA0_316592213;
-                } 
+                } //End block
     if(sequence.DEFAULT[i] != null)                
                 {
                     values[i] = sequence.DEFAULT[i];
-                } 
-            } 
+                } //End block
+            } //End block
             content = values;
             tagOffset = seqTagOffset;
-        } 
+        } //End block
     if(offset != endOffset)        
         {
             ASN1Exception var12B767C9FC2DBAD178BC1E0EA0AB862F_1040027855 = new ASN1Exception("Wrong encoding at [" + begOffset + "]. Content's length and encoded length are not the same");
             var12B767C9FC2DBAD178BC1E0EA0AB862F_1040027855.addTaint(taint);
             throw var12B767C9FC2DBAD178BC1E0EA0AB862F_1040027855;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -729,13 +727,13 @@ for(;i < type.length;i++)
             org.apache.harmony.security.asn1.ASN1Exception varACB2B980E7A602ECF098FBC22121049F_419005953 = expected("sequenceOf");
             varACB2B980E7A602ECF098FBC22121049F_419005953.addTaint(taint);
             throw varACB2B980E7A602ECF098FBC22121049F_419005953;
-        } 
+        } //End block
         decodeValueCollection(sequenceOf);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (tag != ASN1Constants.TAG_C_SEQUENCEOF) {
+            //throw expected("sequenceOf");
+        //}
+        //decodeValueCollection(sequenceOf);
     }
 
     
@@ -747,15 +745,15 @@ for(;i < type.length;i++)
             org.apache.harmony.security.asn1.ASN1Exception varAE40295708C87BB87863360F3C87DB01_127620940 = expected("set");
             varAE40295708C87BB87863360F3C87DB01_127620940.addTaint(taint);
             throw varAE40295708C87BB87863360F3C87DB01_127620940;
-        } 
+        } //End block
         ASN1Exception var2FD3D3C38B3CBAECC82CB8F1D8DEC1C4_1300707359 = new ASN1Exception("Decoding ASN.1 Set type is not supported");
         var2FD3D3C38B3CBAECC82CB8F1D8DEC1C4_1300707359.addTaint(taint);
         throw var2FD3D3C38B3CBAECC82CB8F1D8DEC1C4_1300707359;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (tag != ASN1Constants.TAG_C_SET) {
+            //throw expected("set");
+        //}
+        //throw new ASN1Exception("Decoding ASN.1 Set type is not supported");
     }
 
     
@@ -767,13 +765,13 @@ for(;i < type.length;i++)
             org.apache.harmony.security.asn1.ASN1Exception var5D26E8F56B4F9D46AEF15E951BCA4AF6_979709213 = expected("setOf");
             var5D26E8F56B4F9D46AEF15E951BCA4AF6_979709213.addTaint(taint);
             throw var5D26E8F56B4F9D46AEF15E951BCA4AF6_979709213;
-        } 
+        } //End block
         decodeValueCollection(setOf);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (tag != ASN1Constants.TAG_C_SETOF) {
+            //throw expected("setOf");
+        //}
+        //decodeValueCollection(setOf);
     }
 
     
@@ -790,8 +788,8 @@ for(;i < type.length;i++)
             {
                 next();
                 type.decode(this);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             int seqTagOffset = tagOffset;
@@ -801,40 +799,40 @@ for(;i < type.length;i++)
             {
                 next();
                 values.add(type.decode(this));
-            } 
+            } //End block
             values.trimToSize();
             content = values;
             tagOffset = seqTagOffset;
-        } 
+        } //End block
     if(offset != endOffset)        
         {
             ASN1Exception var12B767C9FC2DBAD178BC1E0EA0AB862F_1214500363 = new ASN1Exception("Wrong encoding at [" + begOffset + "]. Content's length and encoded length are not the same");
             var12B767C9FC2DBAD178BC1E0EA0AB862F_1214500363.addTaint(taint);
             throw var12B767C9FC2DBAD178BC1E0EA0AB862F_1214500363;
-        } 
-        
-        
-        
-        
-        
-            
-                
-                
-            
-        
-            
-            
-            
-                
-                
-            
-            
-            
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int begOffset = offset;
+        //int endOffset = begOffset + length;
+        //ASN1Type type = collection.type;
+        //if (isVerify) {
+            //while (endOffset > offset) {
+                //next();
+                //type.decode(this);
+            //}
+        //} else {
+            //int seqTagOffset = tagOffset; 
+            //ArrayList<Object> values = new ArrayList<Object>();
+            //while (endOffset > offset) {
+                //next();
+                //values.add(type.decode(this));
+            //}
+            //values.trimToSize();
+            //content = values;
+            //tagOffset = seqTagOffset; 
+        //}
+        //if (offset != endOffset) {
+            //throw new ASN1Exception("Wrong encoding at [" + begOffset + "]. Content's length and encoded length are not the same");
+        //}
     }
 
     
@@ -844,28 +842,28 @@ for(;i < type.length;i++)
     if(tag == type.id)        
         {
             readContent();
-        } 
+        } //End block
         else
     if(tag == type.constrId)        
         {
             ASN1Exception varA5300DA95960E60A237A165C0604DBC4_965824230 = new ASN1Exception("Decoding constructed ASN.1 string type is not provided");
             varA5300DA95960E60A237A165C0604DBC4_965824230.addTaint(taint);
             throw varA5300DA95960E60A237A165C0604DBC4_965824230;
-        } 
+        } //End block
         else
         {
             org.apache.harmony.security.asn1.ASN1Exception varFA27DDBF3A90727D3293AB180606DF22_2104681181 = expected("string");
             varFA27DDBF3A90727D3293AB180606DF22_2104681181.addTaint(taint);
             throw varFA27DDBF3A90727D3293AB180606DF22_2104681181;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (tag == type.id) {
+            //readContent();
+        //} else if (tag == type.constrId) {
+            //throw new ASN1Exception("Decoding constructed ASN.1 string type is not provided");
+        //} else {
+            //throw expected("string");
+        //}
     }
 
     
@@ -876,10 +874,10 @@ for(;i < type.length;i++)
         byte[] var4B719ACEE4A1D5E30577F59E80D06205_1461383401 = (encoded);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2064643398 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2064643398;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //byte[] encoded = new byte[offset - tagOffset];
+        //System.arraycopy(buffer, tagOffset, encoded, 0, encoded.length);
+        //return encoded;
     }
 
     
@@ -888,8 +886,8 @@ for(;i < type.length;i++)
         byte[] var7F2DB423A49B305459147332FB01CF87_950844557 = (buffer);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1030318883 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1030318883;
-        
-        
+        // ---------- Original Method ----------
+        //return buffer;
     }
 
     
@@ -898,8 +896,8 @@ for(;i < type.length;i++)
         int var2FA47F7C65FEC19CC163B195725E3844_566253833 = (length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1241849572 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1241849572;
-        
-        
+        // ---------- Original Method ----------
+        //return length;
     }
 
     
@@ -908,8 +906,8 @@ for(;i < type.length;i++)
         int var7A86C157EE9713C34FBD7A1EE40F0C5A_810723956 = (offset);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_323514783 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_323514783;
-        
-        
+        // ---------- Original Method ----------
+        //return offset;
     }
 
     
@@ -918,8 +916,8 @@ for(;i < type.length;i++)
         int var8F6516B482CCBEE9DDA86D5558C78891_1024670878 = (offset + length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1203109868 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1203109868;
-        
-        
+        // ---------- Original Method ----------
+        //return offset + length;
     }
 
     
@@ -928,20 +926,19 @@ for(;i < type.length;i++)
         int var0FE9238E05A1761544B80900699E2D71_2048091684 = (tagOffset);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1320408726 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1320408726;
-        
-        
+        // ---------- Original Method ----------
+        //return tagOffset;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.935 -0400", hash_original_method = "E5C1E507EA76A704FAE5F4AC771876E5", hash_generated_method = "38A0FA5CCBFAD28A394824D8D2033CBB")
     public final void setVerify() {
         isVerify = true;
-        
-        
+        // ---------- Original Method ----------
+        //isVerify = true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.936 -0400", hash_original_method = "BBFB621282CA0716A19F3267ACDEEE7E", hash_generated_method = "F982AFECE3173308946B4FA9325526D9")
     protected int read() throws IOException {
     if(offset == buffer.length)        
@@ -949,13 +946,13 @@ for(;i < type.length;i++)
             ASN1Exception var26B82ADCA4A481B99A8295458E5FD024_1799508906 = new ASN1Exception("Unexpected end of encoding");
             var26B82ADCA4A481B99A8295458E5FD024_1799508906.addTaint(taint);
             throw var26B82ADCA4A481B99A8295458E5FD024_1799508906;
-        } 
+        } //End block
     if(in == null)        
         {
             int var793E73D2A95F5BD3DFB82DCD9580B725_1542106075 = (buffer[offset++] & 0xFF);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_537187180 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_537187180;
-        } 
+        } //End block
         else
         {
             int octet = in.read();
@@ -964,26 +961,26 @@ for(;i < type.length;i++)
                 ASN1Exception var26B82ADCA4A481B99A8295458E5FD024_711564847 = new ASN1Exception("Unexpected end of encoding");
                 var26B82ADCA4A481B99A8295458E5FD024_711564847.addTaint(taint);
                 throw var26B82ADCA4A481B99A8295458E5FD024_711564847;
-            } 
+            } //End block
             buffer[offset++] = (byte) octet;
             int varE7E4B902CD921DDFF17C1D06E34FD67C_623431546 = (octet);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859924828 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859924828;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (offset == buffer.length) {
+            //throw new ASN1Exception("Unexpected end of encoding");
+        //}
+        //if (in == null) {
+            //return buffer[offset++] & 0xFF;
+        //} else {
+            //int octet = in.read();
+            //if (octet == -1) {
+                //throw new ASN1Exception("Unexpected end of encoding");
+            //}
+            //buffer[offset++] = (byte) octet;
+            //return octet;
+        //}
     }
 
     
@@ -994,11 +991,11 @@ for(;i < type.length;i++)
             ASN1Exception var26B82ADCA4A481B99A8295458E5FD024_267926457 = new ASN1Exception("Unexpected end of encoding");
             var26B82ADCA4A481B99A8295458E5FD024_267926457.addTaint(taint);
             throw var26B82ADCA4A481B99A8295458E5FD024_267926457;
-        } 
+        } //End block
     if(in == null)        
         {
             offset += length;
-        } 
+        } //End block
         else
         {
             int bytesRead = in.read(buffer, offset, length);
@@ -1012,34 +1009,34 @@ for(;i < type.length;i++)
                             ASN1Exception var2F62A2C4E37AA4576FB221343C553893_494727406 = new ASN1Exception("Failed to read encoded content");
                             var2F62A2C4E37AA4576FB221343C553893_494727406.addTaint(taint);
                             throw var2F62A2C4E37AA4576FB221343C553893_494727406;
-                        } 
+                        } //End block
                         c = in.read(buffer, offset + bytesRead, length - bytesRead);
                         bytesRead += c;
-                    } 
+                    } //End block
 } while (bytesRead != length);
-            } 
+            } //End block
             offset += length;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-            
-                
-                
-                    
-                        
-                    
-                    
-                    
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (offset + length > buffer.length) {
+            //throw new ASN1Exception("Unexpected end of encoding");
+        //}
+        //if (in == null) {
+            //offset += length;
+        //} else {
+            //int bytesRead = in.read(buffer, offset, length);
+            //if (bytesRead != length) {
+                //int c = bytesRead;
+                //do {
+                    //if (c < 1 || bytesRead > length) {
+                        //throw new ASN1Exception("Failed to read encoded content");
+                    //}
+                    //c = in.read(buffer, offset + bytesRead, length - bytesRead);
+                    //bytesRead += c;
+                //} while (bytesRead != length);
+            //}
+            //offset += length;
+        //}
     }
 
     
@@ -1050,13 +1047,13 @@ for(;i < type.length;i++)
             byte[] newBuffer = new byte[offset];
             System.arraycopy(buffer, 0, newBuffer, 0, offset);
             buffer = newBuffer;
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (offset != buffer.length) {
+            //byte[] newBuffer = new byte[offset];
+            //System.arraycopy(buffer, 0, newBuffer, 0, offset);
+            //buffer = newBuffer;
+        //}
     }
 
     
@@ -1065,7 +1062,7 @@ for(;i < type.length;i++)
     if(pool == null)        
         {
             pool = new Object[2][10];
-        } 
+        } //End block
         int i = 0;
 for(;i < pool[0].length && pool[0][i] != null;i++)
         {
@@ -1073,44 +1070,43 @@ for(;i < pool[0].length && pool[0][i] != null;i++)
             {
                 pool[1][i] = entry;
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
     if(i == pool[0].length)        
         {
             Object[][] newPool = new Object[pool[0].length * 2][2];
             System.arraycopy(pool[0], 0, newPool[0], 0, pool[0].length);
             System.arraycopy(pool[1], 0, newPool[1], 0, pool[0].length);
             pool = newPool;
-        } 
+        } //End block
         else
         {
             pool[0][i] = key;
             pool[1][i] = entry;
-        } 
-        
-        
-            
-        
-        
-        
-            
-                
-                
-            
-        
-        
-            
-            
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (pool == null) {
+            //pool = new Object[2][10];
+        //}
+        //int i = 0;
+        //for (; i < pool[0].length && pool[0][i] != null; i++) {
+            //if (pool[0][i] == key) {
+                //pool[1][i] = entry;
+                //return;
+            //}
+        //}
+        //if (i == pool[0].length) {
+            //Object[][] newPool = new Object[pool[0].length * 2][2];
+            //System.arraycopy(pool[0], 0, newPool[0], 0, pool[0].length);
+            //System.arraycopy(pool[1], 0, newPool[1], 0, pool[0].length);
+            //pool = newPool;
+        //} else {
+            //pool[0][i] = key;
+            //pool[1][i] = entry;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.939 -0400", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "D9CF83BABE567FFCE009A8242FBFABB6")
     public Object get(Object key) {
         addTaint(key.getTaint());
@@ -1119,7 +1115,7 @@ for(;i < pool[0].length && pool[0][i] != null;i++)
 Object var540C13E9E156B687226421B24F2DF178_579018636 =             null;
             var540C13E9E156B687226421B24F2DF178_579018636.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_579018636;
-        } 
+        } //End block
 for(int i = 0;i < pool[0].length;i++)
         {
     if(pool[0][i] == key)            
@@ -1127,21 +1123,21 @@ for(int i = 0;i < pool[0].length;i++)
 Object var17C0E2951280DB92AB4C4872C23A923E_1922343965 =                 pool[1][i];
                 var17C0E2951280DB92AB4C4872C23A923E_1922343965.addTaint(taint);
                 return var17C0E2951280DB92AB4C4872C23A923E_1922343965;
-            } 
-        } 
+            } //End block
+        } //End block
 Object var540C13E9E156B687226421B24F2DF178_2125205525 =         null;
         var540C13E9E156B687226421B24F2DF178_2125205525.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2125205525;
-        
-        
-            
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (pool == null) {
+            //return null;
+        //}
+        //for (int i = 0; i < pool[0].length; i++) {
+            //if (pool[0][i] == key) {
+                //return pool[1][i];
+            //}
+        //}
+        //return null;
     }
 
     

@@ -1,6 +1,6 @@
 package javax.security.cert;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,13 +11,13 @@ public class CertificateEncodingException extends CertificateException {
     public  CertificateEncodingException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.237 -0400", hash_original_method = "4937F69C7A48975DF1EBD7F32A366CEE", hash_generated_method = "C2D35BC07014BC3018532FA9B69AF7DE")
     public  CertificateEncodingException() {
-        
+        // ---------- Original Method ----------
     }
 
     

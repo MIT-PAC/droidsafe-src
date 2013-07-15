@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public class CertificationRequest extends ASN1Encodable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.275 -0400", hash_original_method = "1CFEB89AC9CC2F01B2815840CE7D5DC0", hash_generated_method = "0A9AC513A138E0AC5A936CA016F6281D")
     protected  CertificationRequest() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -37,10 +37,10 @@ public class CertificationRequest extends ASN1Encodable {
         this.reqInfo = requestInfo;
         this.sigAlgId = algorithm;
         this.sigBits = signature;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.reqInfo = requestInfo;
+        //this.sigAlgId = algorithm;
+        //this.sigBits = signature;
     }
 
     
@@ -50,10 +50,10 @@ public class CertificationRequest extends ASN1Encodable {
         reqInfo = CertificationRequestInfo.getInstance(seq.getObjectAt(0));
         sigAlgId = AlgorithmIdentifier.getInstance(seq.getObjectAt(1));
         sigBits = (DERBitString)seq.getObjectAt(2);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //reqInfo = CertificationRequestInfo.getInstance(seq.getObjectAt(0));
+        //sigAlgId = AlgorithmIdentifier.getInstance(seq.getObjectAt(1));
+        //sigBits = (DERBitString)seq.getObjectAt(2);
     }
 
     
@@ -70,36 +70,33 @@ public class CertificationRequest extends ASN1Encodable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.277 -0400", hash_original_method = "1818E5C8C94900171F27F008E876A50C", hash_generated_method = "EA97A7B34D5E4477AD326E03A40A03AB")
     public CertificationRequestInfo getCertificationRequestInfo() {
 CertificationRequestInfo varA100F011E28E515ED2938D9CA6D6D85B_723544991 =         reqInfo;
         varA100F011E28E515ED2938D9CA6D6D85B_723544991.addTaint(taint);
         return varA100F011E28E515ED2938D9CA6D6D85B_723544991;
-        
-        
+        // ---------- Original Method ----------
+        //return reqInfo;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.278 -0400", hash_original_method = "D2F866B035500F031847DB89A72323B9", hash_generated_method = "18DA53206124BCF93B87337F7275F0C8")
     public AlgorithmIdentifier getSignatureAlgorithm() {
 AlgorithmIdentifier varAD578BE7D19E543E6C39C817BAD78E33_758684725 =         sigAlgId;
         varAD578BE7D19E543E6C39C817BAD78E33_758684725.addTaint(taint);
         return varAD578BE7D19E543E6C39C817BAD78E33_758684725;
-        
-        
+        // ---------- Original Method ----------
+        //return sigAlgId;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.278 -0400", hash_original_method = "FF80120581998E22D8FC69A9F1A1E26B", hash_generated_method = "96B5798E0FC311102B255D84AA7A9ACF")
     public DERBitString getSignature() {
 DERBitString varC5633072113013D70DBB727048BAA9AC_1715680413 =         sigBits;
         varC5633072113013D70DBB727048BAA9AC_1715680413.addTaint(taint);
         return varC5633072113013D70DBB727048BAA9AC_1715680413;
-        
-        
+        // ---------- Original Method ----------
+        //return sigBits;
     }
 
     
@@ -112,12 +109,12 @@ DERBitString varC5633072113013D70DBB727048BAA9AC_1715680413 =         sigBits;
 DERObject var0B338F106E3279986C87B595B0F4A439_210215993 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_210215993.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_210215993;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector  v = new ASN1EncodableVector();
+        //v.add(reqInfo);
+        //v.add(sigAlgId);
+        //v.add(sigBits);
+        //return new DERSequence(v);
     }
 
     

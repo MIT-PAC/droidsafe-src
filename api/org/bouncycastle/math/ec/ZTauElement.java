@@ -1,6 +1,6 @@
 package org.bouncycastle.math.ec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ class ZTauElement {
     public  ZTauElement(BigInteger u, BigInteger v) {
         this.u = u;
         this.v = v;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.u = u;
+        //this.v = v;
     }
 
     

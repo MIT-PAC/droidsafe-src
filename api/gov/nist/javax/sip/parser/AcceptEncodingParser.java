@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class AcceptEncodingParser extends HeaderParser {
     public  AcceptEncodingParser(String acceptEncoding) {
         super(acceptEncoding);
         addTaint(acceptEncoding.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,7 +23,7 @@ public class AcceptEncodingParser extends HeaderParser {
     protected  AcceptEncodingParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,7 +39,7 @@ public class AcceptEncodingParser extends HeaderParser {
             {
                 AcceptEncoding acceptEncoding = new AcceptEncoding();
                 acceptEncodingList.add(acceptEncoding);
-            } 
+            } //End block
             else
             {
                 while
@@ -51,7 +51,7 @@ public class AcceptEncodingParser extends HeaderParser {
                         lexer.match(TokenTypes.ID);
                         Token value = lexer.getNextToken();
                         acceptEncoding.setEncoding(value.getTokenValue());
-                    } 
+                    } //End block
                     while
 (lexer.lookAhead(0) == ';')                    
                     {
@@ -67,40 +67,40 @@ public class AcceptEncodingParser extends HeaderParser {
                         {
                             float qv = Float.parseFloat(value.getTokenValue());
                             acceptEncoding.setQValue(qv);
-                        } 
+                        } //End block
                         catch (NumberFormatException ex)
                         {
                             java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_2063960708 = createParseException(ex.getMessage());
                             varB8C80F72F95BF6A850D07F4EC5726C09_2063960708.addTaint(taint);
                             throw varB8C80F72F95BF6A850D07F4EC5726C09_2063960708;
-                        } 
+                        } //End block
                         catch (InvalidArgumentException ex)
                         {
                             java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_923063212 = createParseException(ex.getMessage());
                             varB8C80F72F95BF6A850D07F4EC5726C09_923063212.addTaint(taint);
                             throw varB8C80F72F95BF6A850D07F4EC5726C09_923063212;
-                        } 
+                        } //End block
                         this.lexer.SPorHT();
-                    } 
+                    } //End block
                     acceptEncodingList.add(acceptEncoding);
     if(lexer.lookAhead(0) == ',')                    
                     {
                         this.lexer.match(',');
                         this.lexer.SPorHT();
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
 SIPHeader var684A86F9D58202A886EBCEE5BAF09496_1561862169 =             acceptEncodingList;
             var684A86F9D58202A886EBCEE5BAF09496_1561862169.addTaint(taint);
             return var684A86F9D58202A886EBCEE5BAF09496_1561862169;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("AcceptEncodingParser.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

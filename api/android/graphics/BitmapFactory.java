@@ -1,6 +1,6 @@
 package android.graphics;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,12 +19,11 @@ public class BitmapFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.861 -0400", hash_original_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7", hash_generated_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7")
     public BitmapFactory ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeFile(String pathName, Options opts) {
+        public static Bitmap decodeFile(String pathName, Options opts) {
         Bitmap bm = null;
         InputStream stream = null;
         try {
@@ -43,14 +42,12 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeFile(String pathName) {
+        public static Bitmap decodeFile(String pathName) {
         return decodeFile(pathName, null);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeResourceStream(Resources res, TypedValue value,
+        public static Bitmap decodeResourceStream(Resources res, TypedValue value,
             InputStream is, Rect pad, Options opts) {
         if (opts == null) {
             opts = new Options();
@@ -70,8 +67,7 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeResource(Resources res, int id, Options opts) {
+        public static Bitmap decodeResource(Resources res, int id, Options opts) {
         Bitmap bm = null;
         InputStream is = null;
         try {
@@ -92,14 +88,12 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeResource(Resources res, int id) {
+        public static Bitmap decodeResource(Resources res, int id) {
         return decodeResource(res, id, null);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts) {
+        public static Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts) {
         if ((offset | length) < 0 || data.length < offset + length) {
             throw new ArrayIndexOutOfBoundsException();
         }
@@ -111,14 +105,12 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeByteArray(byte[] data, int offset, int length) {
+        public static Bitmap decodeByteArray(byte[] data, int offset, int length) {
         return decodeByteArray(data, offset, length, null);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts) {
+        public static Bitmap decodeStream(InputStream is, Rect outPadding, Options opts) {
         if (is == null) {
             return null;
         }
@@ -143,8 +135,7 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static Bitmap finishDecode(Bitmap bm, Rect outPadding, Options opts) {
+        private static Bitmap finishDecode(Bitmap bm, Rect outPadding, Options opts) {
         if (bm == null || opts == null) {
             return bm;
         }
@@ -175,14 +166,12 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeStream(InputStream is) {
+        public static Bitmap decodeStream(InputStream is) {
         return decodeStream(is, null, null);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts) {
+        public static Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts) {
         if (nativeIsSeekable(fd)) {
             Bitmap bm = nativeDecodeFileDescriptor(fd, outPadding, opts);
             if (bm == null && opts != null && opts.inBitmap != null) {
@@ -202,14 +191,12 @@ public class BitmapFactory {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Bitmap decodeFileDescriptor(FileDescriptor fd) {
+        public static Bitmap decodeFileDescriptor(FileDescriptor fd) {
         return decodeFileDescriptor(fd, null, null);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setDefaultConfig(Bitmap.Config config) {
+        public static void setDefaultConfig(Bitmap.Config config) {
         if (config == null) {
             config = Bitmap.Config.RGB_565;
         }
@@ -320,26 +307,24 @@ public class BitmapFactory {
         public  Options() {
             inDither = false;
             inScaled = true;
-            
-            
-            
+            // ---------- Original Method ----------
+            //inDither = false;
+            //inScaled = true;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.871 -0400", hash_original_method = "D7A23FF2AF4CBD01F551E962769DA287", hash_generated_method = "0A55D796763E8D9E6E50E72FD3E99166")
         private void requestCancel() {
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.871 -0400", hash_original_method = "1FC603D50B1CC5C62A2F5DE57FF4610A", hash_generated_method = "4C9F07CF8433D9C32575769E3132C089")
         public void requestCancelDecode() {
             mCancel = true;
             requestCancel();
-            
-            
-            
+            // ---------- Original Method ----------
+            //mCancel = true;
+            //requestCancel();
         }
 
         

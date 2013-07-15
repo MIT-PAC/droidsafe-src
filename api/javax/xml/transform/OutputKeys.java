@@ -1,6 +1,6 @@
 package javax.xml.transform;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class OutputKeys {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.952 -0400", hash_original_method = "C4127F219AC170F374CB3A1F6630DA14", hash_generated_method = "85A27E0188674BF70CE334481EEA5E74")
     private  OutputKeys() {
-        
+        // ---------- Original Method ----------
     }
 
     

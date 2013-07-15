@@ -1,6 +1,6 @@
 package org.bouncycastle.util.io.pem;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class PemObject implements PemObjectGenerator {
         this(type, EMPTY_LIST, content);
         addTaint(content[0]);
         addTaint(type.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -33,54 +33,50 @@ public class PemObject implements PemObjectGenerator {
         this.type = type;
         this.headers = Collections.unmodifiableList(headers);
         this.content = content;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.type = type;
+        //this.headers = Collections.unmodifiableList(headers);
+        //this.content = content;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.601 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "DE53AADD1C0871336C82286CE91AAE4A")
     public String getType() {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_1160772257 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_1160772257.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_1160772257;
-        
-        
+        // ---------- Original Method ----------
+        //return type;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.601 -0400", hash_original_method = "7A0337E547AB2E290525371E494B1A30", hash_generated_method = "5C7A4C410CBEE3551B6C5EFD02E4F055")
     public List getHeaders() {
 List var6937E37BAD8D53F9D49A0E32C69A3A2C_435252671 =         headers;
         var6937E37BAD8D53F9D49A0E32C69A3A2C_435252671.addTaint(taint);
         return var6937E37BAD8D53F9D49A0E32C69A3A2C_435252671;
-        
-        
+        // ---------- Original Method ----------
+        //return headers;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.602 -0400", hash_original_method = "CA0902D8AF35560815DA28546D2C787A", hash_generated_method = "6179918FA9E11ABFC41585ABB5A06BF4")
     public byte[] getContent() {
         byte[] var9A0364B9E99BB480DD25E1F0284C8555_889661428 = (content);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1118856297 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1118856297;
-        
-        
+        // ---------- Original Method ----------
+        //return content;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.602 -0400", hash_original_method = "E898D78DBFB1F3FB89A6D402FC0A6D27", hash_generated_method = "82FF109258695413BCE82521B48D02E9")
     public PemObject generate() throws PemGenerationException {
 PemObject var72A74007B2BE62B849F475C7BDA4658B_1332825588 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1332825588.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1332825588;
-        
-        
+        // ---------- Original Method ----------
+        //return this;
     }
 
     

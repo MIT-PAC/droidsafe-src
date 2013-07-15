@@ -1,6 +1,6 @@
 package android.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class NetworkUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.283 -0400", hash_original_method = "F1C492907C316113D8B010C69392B76F", hash_generated_method = "F1C492907C316113D8B010C69392B76F")
     public NetworkUtils ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -143,8 +143,7 @@ public class NetworkUtils {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean addressTypeMatches(InetAddress left, InetAddress right) {
+        public static boolean addressTypeMatches(InetAddress left, InetAddress right) {
         return (((left instanceof Inet4Address) && (right instanceof Inet4Address)) ||
                 ((left instanceof Inet6Address) && (right instanceof Inet6Address)));
     }

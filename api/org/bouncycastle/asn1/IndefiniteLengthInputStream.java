@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,16 +35,16 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
             EOFException var0239D63DB748BB20D119EB36D6D1C384_798500876 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_798500876.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_798500876;
-        } 
+        } //End block
         checkForEof();
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //_b1 = in.read();
+        //_b2 = in.read();
+        //if (_b2 < 0)
+        //{
+            //throw new EOFException();
+        //}
+        //checkForEof();
     }
 
     
@@ -53,9 +53,9 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
         boolean eofOn00) {
         _eofOn00 = eofOn00;
         checkForEof();
-        
-        
-        
+        // ---------- Original Method ----------
+        //_eofOn00 = eofOn00;
+        //checkForEof();
     }
 
     
@@ -65,21 +65,20 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
         {
             _eofReached = true;
             setParentEofDetect(true);
-        } 
+        } //End block
         boolean var218B6DABB70AD67737B64B3B25E2287A_1746028105 = (_eofReached);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_274992235 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_274992235;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!_eofReached && _eofOn00 && (_b1 == 0x00 && _b2 == 0x00))
+        //{
+            //_eofReached = true;
+            //setParentEofDetect(true);
+        //}
+        //return _eofReached;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.307 -0400", hash_original_method = "5E4C46F83EA6D4798D78ECC8F00428E0", hash_generated_method = "DC829571E7FF2F86DF2671A44157BAAD")
     public int read(byte[] b, int off, int len) throws IOException {
         addTaint(len);
@@ -90,20 +89,20 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
             int var48B3EFAF438A7AA7380C0F5886A076AA_2056935938 = (super.read(b, off, len));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1684199462 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1684199462;
-        } 
+        } //End block
     if(_eofReached)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_518500472 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_504526350 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_504526350;
-        } 
+        } //End block
         int numRead = _in.read(b, off + 2, len - 2);
     if(numRead < 0)        
         {
             EOFException var0239D63DB748BB20D119EB36D6D1C384_923786676 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_923786676.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_923786676;
-        } 
+        } //End block
         b[off] = (byte)_b1;
         b[off + 1] = (byte)_b2;
         _b1 = _in.read();
@@ -113,33 +112,33 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
             EOFException var0239D63DB748BB20D119EB36D6D1C384_2024576456 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_2024576456.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_2024576456;
-        } 
+        } //End block
         int varC3453D8ED018A27EE5F4A01D4B45E766_712007361 = (numRead + 2);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2109686493 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2109686493;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (_eofOn00 || len < 3)
+        //{
+            //return super.read(b, off, len);
+        //}
+        //if (_eofReached)
+        //{
+            //return -1;
+        //}
+        //int numRead = _in.read(b, off + 2, len - 2);
+        //if (numRead < 0)
+        //{
+            //throw new EOFException();
+        //}
+        //b[off] = (byte)_b1;
+        //b[off + 1] = (byte)_b2;
+        //_b1 = _in.read();
+        //_b2 = _in.read();
+        //if (_b2 < 0)
+        //{
+            //throw new EOFException();
+        //}
+        //return numRead + 2;
     }
 
     
@@ -150,34 +149,34 @@ class IndefiniteLengthInputStream extends LimitedInputStream {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1010473636 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_476051591 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_476051591;
-        } 
+        } //End block
         int b = _in.read();
     if(b < 0)        
         {
             EOFException var0239D63DB748BB20D119EB36D6D1C384_2102047479 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_2102047479.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_2102047479;
-        } 
+        } //End block
         int v = _b1;
         _b1 = _b2;
         _b2 = b;
         int var9E3669D19B675BD57058FD4664205D2A_652995417 = (v);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154099017 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154099017;
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (checkForEof())
+        //{
+            //return -1;
+        //}
+        //int b = _in.read();
+        //if (b < 0)
+        //{
+            //throw new EOFException();
+        //}
+        //int v = _b1;
+        //_b1 = _b2;
+        //_b2 = b;
+        //return v;
     }
 
     

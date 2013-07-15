@@ -1,6 +1,6 @@
 package android.test;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,9 +26,9 @@ public class TestPrinter implements TestRunner.Listener, TestListener {
     public  TestPrinter(String tag, boolean onlyFailures) {
         mTag = tag;
         mOnlyFailures = onlyFailures;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mTag = tag;
+        //mOnlyFailures = onlyFailures;
     }
 
     
@@ -37,11 +37,11 @@ public class TestPrinter implements TestRunner.Listener, TestListener {
         addTaint(className.getTaint());
     if(!mOnlyFailures)        
         {
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!mOnlyFailures) {
+            //Log.i(mTag, "started: " + className);
+        //}
     }
 
     
@@ -50,11 +50,11 @@ public class TestPrinter implements TestRunner.Listener, TestListener {
         addTaint(className.getTaint());
     if(!mOnlyFailures)        
         {
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!mOnlyFailures) {
+            //Log.i(mTag, "finished: " + className);
+        //}
     }
 
     
@@ -72,19 +72,19 @@ public class TestPrinter implements TestRunner.Listener, TestListener {
 for(int i = 0;i < N;i++)
             {
                 TestRunner.IntermediateTime time = intermediates.get(i);
-            } 
-        } 
-        
-        
-                
-        
-            
-            
-                
-                
-                        
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //Log.i(mTag, "perf: " + className + " = " + itemTimeNS + "ns/op (done "
+                //+ iterations + " times)");
+        //if (intermediates != null && intermediates.size() > 0) {
+            //int N = intermediates.size();
+            //for (int i = 0; i < N; i++) {
+                //TestRunner.IntermediateTime time = intermediates.get(i);
+                //Log.i(mTag, "  intermediate: " + time.name + " = "
+                        //+ time.timeInNS + "ns");
+            //}
+        //}
     }
 
     
@@ -93,11 +93,11 @@ for(int i = 0;i < N;i++)
         addTaint(className.getTaint());
     if(!mOnlyFailures)        
         {
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!mOnlyFailures) {
+            //Log.i(mTag, "passed: " + className);
+        //}
     }
 
     
@@ -105,11 +105,11 @@ for(int i = 0;i < N;i++)
     public void failed(String className, Throwable exception) {
         addTaint(exception.getTaint());
         addTaint(className.getTaint());
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Log.i(mTag, "failed: " + className);
+        //Log.i(mTag, "----- begin exception -----");
+        //Log.i(mTag, "", exception);
+        //Log.i(mTag, "----- end exception -----");
     }
 
     
@@ -119,9 +119,9 @@ for(int i = 0;i < N;i++)
         addTaint(test.getTaint());
         mFailedTests.add(test.toString());
         failed(test.toString(), t);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFailedTests.add(test.toString());
+        //failed(test.toString(), t);
     }
 
     
@@ -130,8 +130,8 @@ for(int i = 0;i < N;i++)
         addTaint(t.getTaint());
         addTaint(test.getTaint());
         failed(test, t);
-        
-        
+        // ---------- Original Method ----------
+        //failed(test, t);
     }
 
     
@@ -140,8 +140,8 @@ for(int i = 0;i < N;i++)
         addTaint(t.getTaint());
         addTaint(test.getTaint());
         failed(test, t);
-        
-        
+        // ---------- Original Method ----------
+        //failed(test, t);
     }
 
     
@@ -152,14 +152,14 @@ for(int i = 0;i < N;i++)
     if(!mFailedTests.contains(test.toString()))        
         {
             passed(test.toString());
-        } 
+        } //End block
         mFailedTests.remove(test.toString());
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //finished(test.toString());
+        //if (!mFailedTests.contains(test.toString())) {
+            //passed(test.toString());
+        //}
+        //mFailedTests.remove(test.toString());
     }
 
     
@@ -167,8 +167,8 @@ for(int i = 0;i < N;i++)
     public void startTest(Test test) {
         addTaint(test.getTaint());
         started(test.toString());
-        
-        
+        // ---------- Original Method ----------
+        //started(test.toString());
     }
 
     

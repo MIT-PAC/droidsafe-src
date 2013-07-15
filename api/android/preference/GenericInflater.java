@@ -1,6 +1,6 @@
 package android.preference;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,8 +40,8 @@ abstract class GenericInflater<T, P extends GenericInflater.Parent> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.272 -0400", hash_original_method = "A8AA332702376B454A767A9414B9F159", hash_generated_method = "FB5B2F7669C654AD5EBC4C0486706ABC")
     protected  GenericInflater(Context context) {
         mContext = context;
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
     }
 
     
@@ -49,43 +49,40 @@ abstract class GenericInflater<T, P extends GenericInflater.Parent> {
     protected  GenericInflater(GenericInflater<T,P> original, Context newContext) {
         mContext = newContext;
         mFactory = original.mFactory;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = newContext;
+        //mFactory = original.mFactory;
     }
 
     
     public abstract GenericInflater cloneInContext(Context newContext);
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.273 -0400", hash_original_method = "601AA595429A3B000CED526A81A8472C", hash_generated_method = "7BC7A6A5CCACB62BC0C669BFFD05EDF1")
     public void setDefaultPackage(String defaultPackage) {
         mDefaultPackage = defaultPackage;
-        
-        
+        // ---------- Original Method ----------
+        //mDefaultPackage = defaultPackage;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.273 -0400", hash_original_method = "46E608B0485504B383BE067A0BD6622F", hash_generated_method = "F9829EABE8AA95FDD3EB35D484795E22")
     public String getDefaultPackage() {
 String varF2E95DF9778A091AD1F79240098DBF1E_1944942323 =         mDefaultPackage;
         varF2E95DF9778A091AD1F79240098DBF1E_1944942323.addTaint(taint);
         return varF2E95DF9778A091AD1F79240098DBF1E_1944942323;
-        
-        
+        // ---------- Original Method ----------
+        //return mDefaultPackage;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.274 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "FE3A39CAE3A535B81281C96D62EFD33E")
     public Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_141396511 =         mContext;
         var178E2AD52D6FBBB503F908168856B574_141396511.addTaint(taint);
         return var178E2AD52D6FBBB503F908168856B574_141396511;
-        
-        
+        // ---------- Original Method ----------
+        //return mContext;
     }
 
     
@@ -94,8 +91,8 @@ Context var178E2AD52D6FBBB503F908168856B574_141396511 =         mContext;
 Factory<T> var086273A71AC89A5E1A3A59778647C1F0_1233182358 =         mFactory;
         var086273A71AC89A5E1A3A59778647C1F0_1233182358.addTaint(taint);
         return var086273A71AC89A5E1A3A59778647C1F0_1233182358;
-        
-        
+        // ---------- Original Method ----------
+        //return mFactory;
     }
 
     
@@ -107,36 +104,36 @@ Factory<T> var086273A71AC89A5E1A3A59778647C1F0_1233182358 =         mFactory;
             		"A factory has already been set on this inflater");
             var0C04ECB822399DA6A3F6B017EFDA36E7_1186404742.addTaint(taint);
             throw var0C04ECB822399DA6A3F6B017EFDA36E7_1186404742;
-        } 
+        } //End block
     if(factory == null)        
         {
             NullPointerException var4E80D5BF81BCD97DD9195749F4C7E02F_620747902 = new NullPointerException("Given factory can not be null");
             var4E80D5BF81BCD97DD9195749F4C7E02F_620747902.addTaint(taint);
             throw var4E80D5BF81BCD97DD9195749F4C7E02F_620747902;
-        } 
+        } //End block
         mFactorySet = true;
     if(mFactory == null)        
         {
             mFactory = factory;
-        } 
+        } //End block
         else
         {
             mFactory = new FactoryMerger<T>(factory, mFactory);
-        } 
-        
-        
-            
-            		
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mFactorySet) {
+            //throw new IllegalStateException("" +
+            		//"A factory has already been set on this inflater");
+        //}
+        //if (factory == null) {
+            //throw new NullPointerException("Given factory can not be null");
+        //}
+        //mFactorySet = true;
+        //if (mFactory == null) {
+            //mFactory = factory;
+        //} else {
+            //mFactory = new FactoryMerger<T>(factory, mFactory);
+        //}
     }
 
     
@@ -147,8 +144,8 @@ Factory<T> var086273A71AC89A5E1A3A59778647C1F0_1233182358 =         mFactory;
 T varF5D4BA408024E74ED8C69060F20BBFE3_1439176681 =         inflate(resource, root, root != null);
         varF5D4BA408024E74ED8C69060F20BBFE3_1439176681.addTaint(taint);
         return varF5D4BA408024E74ED8C69060F20BBFE3_1439176681;
-        
-        
+        // ---------- Original Method ----------
+        //return inflate(resource, root, root != null);
     }
 
     
@@ -159,8 +156,8 @@ T varF5D4BA408024E74ED8C69060F20BBFE3_1439176681 =         inflate(resource, roo
 T varD2994770AB4B2FBF2D952E8ECED55234_2070464850 =         inflate(parser, root, root != null);
         varD2994770AB4B2FBF2D952E8ECED55234_2070464850.addTaint(taint);
         return varD2994770AB4B2FBF2D952E8ECED55234_2070464850;
-        
-        
+        // ---------- Original Method ----------
+        //return inflate(parser, root, root != null);
     }
 
     
@@ -177,19 +174,19 @@ T varD2994770AB4B2FBF2D952E8ECED55234_2070464850 =         inflate(parser, root,
 T var754E077DDE07C53AB996CC4C6A8F2A1A_749616064 =             inflate(parser, root, attachToRoot);
             var754E077DDE07C53AB996CC4C6A8F2A1A_749616064.addTaint(taint);
             return var754E077DDE07C53AB996CC4C6A8F2A1A_749616064;
-        } 
+        } //End block
         finally 
         {
             parser.close();
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DEBUG) System.out.println("INFLATING from resource: " + resource);
+        //XmlResourceParser parser = getContext().getResources().getXml(resource);
+        //try {
+            //return inflate(parser, root, attachToRoot);
+        //} finally {
+            //parser.close();
+        //}
     }
 
     
@@ -212,46 +209,46 @@ T var754E077DDE07C53AB996CC4C6A8F2A1A_749616064 =             inflate(parser, ro
                         && type != parser.END_DOCUMENT)                
                 {
                     ;
-                } 
+                } //End block
     if(type != parser.START_TAG)                
                 {
                     InflateException varBF7F2731384F279DD8DADDE40FD4FA2A_1986322529 = new InflateException(parser.getPositionDescription()
                             + ": No start tag found!");
                     varBF7F2731384F279DD8DADDE40FD4FA2A_1986322529.addTaint(taint);
                     throw varBF7F2731384F279DD8DADDE40FD4FA2A_1986322529;
-                } 
+                } //End block
     if(DEBUG)                
                 {
                     System.out.println("**************************");
                     System.out.println("Creating root: "
                             + parser.getName());
                     System.out.println("**************************");
-                } 
+                } //End block
                 T xmlRoot = createItemFromTag(parser, parser.getName(),
                         attrs);
                 result = (T) onMergeRoots(root, attachToRoot, (P) xmlRoot);
     if(DEBUG)                
                 {
                     System.out.println("-----> start inflating children");
-                } 
+                } //End block
                 rInflate(parser, result, attrs);
     if(DEBUG)                
                 {
                     System.out.println("-----> done inflating children");
-                } 
-            } 
+                } //End block
+            } //End block
             catch (InflateException e)
             {
                 e.addTaint(taint);
                 throw e;
-            } 
+            } //End block
             catch (XmlPullParserException e)
             {
                 InflateException ex = new InflateException(e.getMessage());
                 ex.initCause(e);
                 ex.addTaint(taint);
                 throw ex;
-            } 
+            } //End block
             catch (IOException e)
             {
                 InflateException ex = new InflateException(
@@ -260,13 +257,13 @@ T var754E077DDE07C53AB996CC4C6A8F2A1A_749616064 =             inflate(parser, ro
                 ex.initCause(e);
                 ex.addTaint(taint);
                 throw ex;
-            } 
+            } //End block
 T varDC838461EE2FA0CA4C9BBB70A15456B0_446723125 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_446723125.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_446723125;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -284,13 +281,13 @@ T varDC838461EE2FA0CA4C9BBB70A15456B0_446723125 =             result;
                         prefix != null ? (prefix + name) : name);
                 constructor = clazz.getConstructor(mConstructorSignature);
                 sConstructorMap.put(name, constructor);
-            } 
+            } //End block
             Object[] args = mConstructorArgs;
             args[1] = attrs;
 T var9A2B10BE0D166EB47CE47038525DA5F1_1126312096 =             (T) constructor.newInstance(args);
             var9A2B10BE0D166EB47CE47038525DA5F1_1126312096.addTaint(taint);
             return var9A2B10BE0D166EB47CE47038525DA5F1_1126312096;
-        } 
+        } //End block
         catch (NoSuchMethodException e)
         {
             InflateException ie = new InflateException(attrs
@@ -300,12 +297,12 @@ T var9A2B10BE0D166EB47CE47038525DA5F1_1126312096 =             (T) constructor.n
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } 
+        } //End block
         catch (ClassNotFoundException e)
         {
             e.addTaint(taint);
             throw e;
-        } 
+        } //End block
         catch (Exception e)
         {
             InflateException ie = new InflateException(attrs
@@ -315,22 +312,22 @@ T var9A2B10BE0D166EB47CE47038525DA5F1_1126312096 =             (T) constructor.n
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.281 -0400", hash_original_method = "4FBBE2487A51D08C4064228D927262EC", hash_generated_method = "EEBFCE03CC22CAE3BD67EB4FA2A42C43")
     protected T onCreateItem(String name, AttributeSet attrs) throws ClassNotFoundException {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(attrs.getTaint());
         addTaint(name.getTaint());
 T var19048E9B5FBA4BA561E1AC6C48A6F349_384906009 =         createItem(name, mDefaultPackage, attrs);
         var19048E9B5FBA4BA561E1AC6C48A6F349_384906009.addTaint(taint);
         return var19048E9B5FBA4BA561E1AC6C48A6F349_384906009;
-        
-        
+        // ---------- Original Method ----------
+        //return createItem(name, mDefaultPackage, attrs);
     }
 
     
@@ -349,23 +346,23 @@ T var19048E9B5FBA4BA561E1AC6C48A6F349_384906009 =         createItem(name, mDefa
     if(-1 == name.indexOf('.'))                
                 {
                     item = onCreateItem(name, attrs);
-                } 
+                } //End block
                 else
                 {
                     item = createItem(name, null, attrs);
-                } 
-            } 
+                } //End block
+            } //End block
     if(DEBUG)            
             System.out.println("Created item is: " + item);
 T var393CF4FD24220F0ED4B080A1E7108CD3_128432504 =             item;
             var393CF4FD24220F0ED4B080A1E7108CD3_128432504.addTaint(taint);
             return var393CF4FD24220F0ED4B080A1E7108CD3_128432504;
-        } 
+        } //End block
         catch (InflateException e)
         {
             e.addTaint(taint);
             throw e;
-        } 
+        } //End block
         catch (ClassNotFoundException e)
         {
             InflateException ie = new InflateException(attrs
@@ -374,7 +371,7 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_128432504 =             item;
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } 
+        } //End block
         catch (Exception e)
         {
             InflateException ie = new InflateException(attrs
@@ -383,9 +380,9 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_128432504 =             item;
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -403,64 +400,64 @@ T var393CF4FD24220F0ED4B080A1E7108CD3_128432504 =             item;
     if(type != parser.START_TAG)            
             {
                 continue;
-            } 
+            } //End block
     if(onCreateCustomFromTag(parser, parent, attrs))            
             {
                 continue;
-            } 
+            } //End block
     if(DEBUG)            
             {
                 System.out.println("Now inflating tag: " + parser.getName());
-            } 
+            } //End block
             String name = parser.getName();
             T item = createItemFromTag(parser, name, attrs);
     if(DEBUG)            
             {
                 System.out
                         .println("Creating params from parent: " + parent);
-            } 
+            } //End block
             ((P) parent).addItemFromInflater(item);
     if(DEBUG)            
             {
                 System.out.println("-----> start inflating children");
-            } 
+            } //End block
             rInflate(parser, item, attrs);
     if(DEBUG)            
             {
                 System.out.println("-----> done inflating children");
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.285 -0400", hash_original_method = "19860FA740DE510446609E99D1C237FB", hash_generated_method = "C158BC83352369A9307FC72BF993846E")
     protected boolean onCreateCustomFromTag(XmlPullParser parser, T parent,
             final AttributeSet attrs) throws XmlPullParserException {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(attrs.getTaint());
         addTaint(parent.getTaint());
         addTaint(parser.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_398950111 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_770776548 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_770776548;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.285 -0400", hash_original_method = "5E31CC12237E180F4815989ECA3F6501", hash_generated_method = "AC9E8C7D872DB6904F09418AE6A3E5E2")
     protected P onMergeRoots(P givenRoot, boolean attachToGivenRoot, P xmlRoot) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(xmlRoot.getTaint());
         addTaint(attachToGivenRoot);
         addTaint(givenRoot.getTaint());
 P varCBFCBF588E89F8CE897CCC58BE8F27B0_619500137 =         xmlRoot;
         varCBFCBF588E89F8CE897CCC58BE8F27B0_619500137.addTaint(taint);
         return varCBFCBF588E89F8CE897CCC58BE8F27B0_619500137;
-        
-        
+        // ---------- Original Method ----------
+        //return xmlRoot;
     }
 
     
@@ -476,15 +473,15 @@ P varCBFCBF588E89F8CE897CCC58BE8F27B0_619500137 =         xmlRoot;
           FactoryMerger(Factory<T> f1, Factory<T> f2) {
             mF1 = f1;
             mF2 = f2;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mF1 = f1;
+            //mF2 = f2;
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.286 -0400", hash_original_method = "361561DAAA3A2CCBFCF79A32350158C1", hash_generated_method = "78BE1CBCEDD4CA46C4516E0B6F3A2152")
         public T onCreateItem(String name, Context context, AttributeSet attrs) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(attrs.getTaint());
             addTaint(context.getTaint());
             addTaint(name.getTaint());
@@ -498,10 +495,10 @@ T var6DC76BC51820DD65E8396280E884AA78_1116545876 =             v;
 T varEDA26570C89C7D761435D65AB1648A6B_120962143 =             mF2.onCreateItem(name, context, attrs);
             varEDA26570C89C7D761435D65AB1648A6B_120962143.addTaint(taint);
             return varEDA26570C89C7D761435D65AB1648A6B_120962143;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //T v = mF1.onCreateItem(name, context, attrs);
+            //if (v != null) return v;
+            //return mF2.onCreateItem(name, context, attrs);
         }
 
         

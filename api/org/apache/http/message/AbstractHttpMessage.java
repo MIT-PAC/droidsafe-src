@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,16 +24,16 @@ public abstract class AbstractHttpMessage implements HttpMessage {
         super();
         this.headergroup = new HeaderGroup();
         this.params = params;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.headergroup = new HeaderGroup();
+        //this.params = params;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.281 -0400", hash_original_method = "2222B1AD198C1052436204E49A67A13C", hash_generated_method = "20CE23CB860DE8F239A1882E6A61E5B3")
     protected  AbstractHttpMessage() {
         this(null);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -43,8 +43,8 @@ public abstract class AbstractHttpMessage implements HttpMessage {
         boolean varBAF0911C5B07CAA71AE5E495DF06E2EB_966778092 = (this.headergroup.containsHeader(name));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1415257622 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1415257622;
-        
-        
+        // ---------- Original Method ----------
+        //return this.headergroup.containsHeader(name);
     }
 
     
@@ -54,8 +54,8 @@ public abstract class AbstractHttpMessage implements HttpMessage {
 Header[] var4405D79A789F00918F592F035CB6C2D8_1816556279 =         this.headergroup.getHeaders(name);
         var4405D79A789F00918F592F035CB6C2D8_1816556279.addTaint(taint);
         return var4405D79A789F00918F592F035CB6C2D8_1816556279;
-        
-        
+        // ---------- Original Method ----------
+        //return this.headergroup.getHeaders(name);
     }
 
     
@@ -65,8 +65,8 @@ Header[] var4405D79A789F00918F592F035CB6C2D8_1816556279 =         this.headergro
 Header var76E8CB6F7B6FA9646332056848EE09DA_1393411267 =         this.headergroup.getFirstHeader(name);
         var76E8CB6F7B6FA9646332056848EE09DA_1393411267.addTaint(taint);
         return var76E8CB6F7B6FA9646332056848EE09DA_1393411267;
-        
-        
+        // ---------- Original Method ----------
+        //return this.headergroup.getFirstHeader(name);
     }
 
     
@@ -76,8 +76,8 @@ Header var76E8CB6F7B6FA9646332056848EE09DA_1393411267 =         this.headergroup
 Header varDCA51A694DA7D6393945A3D3B01EF2B5_1605776514 =         this.headergroup.getLastHeader(name);
         varDCA51A694DA7D6393945A3D3B01EF2B5_1605776514.addTaint(taint);
         return varDCA51A694DA7D6393945A3D3B01EF2B5_1605776514;
-        
-        
+        // ---------- Original Method ----------
+        //return this.headergroup.getLastHeader(name);
     }
 
     
@@ -86,8 +86,8 @@ Header varDCA51A694DA7D6393945A3D3B01EF2B5_1605776514 =         this.headergroup
 Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergroup.getAllHeaders();
         var99C90132A83F658FD46240FBE89AABEC_608863904.addTaint(taint);
         return var99C90132A83F658FD46240FBE89AABEC_608863904;
-        
-        
+        // ---------- Original Method ----------
+        //return this.headergroup.getAllHeaders();
     }
 
     
@@ -95,8 +95,8 @@ Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergrou
     public void addHeader(final Header header) {
         addTaint(header.getTaint());
         this.headergroup.addHeader(header);
-        
-        
+        // ---------- Original Method ----------
+        //this.headergroup.addHeader(header);
     }
 
     
@@ -109,13 +109,13 @@ Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergrou
             IllegalArgumentException varDDD3396BC702FA063F0107D538A5EACE_175383783 = new IllegalArgumentException("Header name may not be null");
             varDDD3396BC702FA063F0107D538A5EACE_175383783.addTaint(taint);
             throw varDDD3396BC702FA063F0107D538A5EACE_175383783;
-        } 
+        } //End block
         this.headergroup.addHeader(new BasicHeader(name, value));
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new IllegalArgumentException("Header name may not be null");
+        //}
+        //this.headergroup.addHeader(new BasicHeader(name, value));
     }
 
     
@@ -123,8 +123,8 @@ Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergrou
     public void setHeader(final Header header) {
         addTaint(header.getTaint());
         this.headergroup.updateHeader(header);
-        
-        
+        // ---------- Original Method ----------
+        //this.headergroup.updateHeader(header);
     }
 
     
@@ -137,13 +137,13 @@ Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergrou
             IllegalArgumentException varDDD3396BC702FA063F0107D538A5EACE_371022152 = new IllegalArgumentException("Header name may not be null");
             varDDD3396BC702FA063F0107D538A5EACE_371022152.addTaint(taint);
             throw varDDD3396BC702FA063F0107D538A5EACE_371022152;
-        } 
+        } //End block
         this.headergroup.updateHeader(new BasicHeader(name, value));
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //throw new IllegalArgumentException("Header name may not be null");
+        //}
+        //this.headergroup.updateHeader(new BasicHeader(name, value));
     }
 
     
@@ -151,8 +151,8 @@ Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergrou
     public void setHeaders(final Header[] headers) {
         addTaint(headers[0].getTaint());
         this.headergroup.setHeaders(headers);
-        
-        
+        // ---------- Original Method ----------
+        //this.headergroup.setHeaders(headers);
     }
 
     
@@ -160,8 +160,8 @@ Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergrou
     public void removeHeader(final Header header) {
         addTaint(header.getTaint());
         this.headergroup.removeHeader(header);
-        
-        
+        // ---------- Original Method ----------
+        //this.headergroup.removeHeader(header);
     }
 
     
@@ -171,25 +171,25 @@ Header[] var99C90132A83F658FD46240FBE89AABEC_608863904 =         this.headergrou
     if(name == null)        
         {
             return;
-        } 
+        } //End block
 for(Iterator i = this.headergroup.iterator();i.hasNext();)
         {
             Header header = (Header) i.next();
     if(name.equalsIgnoreCase(header.getName()))            
             {
                 i.remove();
-            } 
-        } 
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (name == null) {
+            //return;
+        //}
+        //for (Iterator i = this.headergroup.iterator(); i.hasNext(); ) {
+            //Header header = (Header) i.next();
+            //if (name.equalsIgnoreCase(header.getName())) {
+                //i.remove();
+            //}
+        //}
     }
 
     
@@ -198,8 +198,8 @@ for(Iterator i = this.headergroup.iterator();i.hasNext();)
 HeaderIterator varBC8FD1A25E6CA34046651A289C8D3833_485808447 =         this.headergroup.iterator();
         varBC8FD1A25E6CA34046651A289C8D3833_485808447.addTaint(taint);
         return varBC8FD1A25E6CA34046651A289C8D3833_485808447;
-        
-        
+        // ---------- Original Method ----------
+        //return this.headergroup.iterator();
     }
 
     
@@ -209,8 +209,8 @@ HeaderIterator varBC8FD1A25E6CA34046651A289C8D3833_485808447 =         this.head
 HeaderIterator var50B3BE6049EC99BC0B6303B951AFDF6C_390273764 =         this.headergroup.iterator(name);
         var50B3BE6049EC99BC0B6303B951AFDF6C_390273764.addTaint(taint);
         return var50B3BE6049EC99BC0B6303B951AFDF6C_390273764;
-        
-        
+        // ---------- Original Method ----------
+        //return this.headergroup.iterator(name);
     }
 
     
@@ -219,15 +219,15 @@ HeaderIterator var50B3BE6049EC99BC0B6303B951AFDF6C_390273764 =         this.head
     if(this.params == null)        
         {
             this.params = new BasicHttpParams();
-        } 
+        } //End block
 HttpParams var751A5B03769AE238544A23D7966F9A50_1416935422 =         this.params;
         var751A5B03769AE238544A23D7966F9A50_1416935422.addTaint(taint);
         return var751A5B03769AE238544A23D7966F9A50_1416935422;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.params == null) {
+            //this.params = new BasicHttpParams();
+        //}
+        //return this.params;
     }
 
     
@@ -238,13 +238,13 @@ HttpParams var751A5B03769AE238544A23D7966F9A50_1416935422 =         this.params;
             IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1187967424 = new IllegalArgumentException("HTTP parameters may not be null");
             var497CCC27A43EDD6EE25BEEC5507E2BE2_1187967424.addTaint(taint);
             throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1187967424;
-        } 
+        } //End block
         this.params = params;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (params == null) {
+            //throw new IllegalArgumentException("HTTP parameters may not be null");
+        //}
+        //this.params = params;
     }
 
     

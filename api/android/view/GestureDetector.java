@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -81,7 +81,7 @@ public class GestureDetector {
         this(null, listener, handler);
         addTaint(handler.getTaint());
         addTaint(listener.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -90,7 +90,7 @@ public class GestureDetector {
     public  GestureDetector(OnGestureListener listener) {
         this(null, listener, null);
         addTaint(listener.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -99,7 +99,7 @@ public class GestureDetector {
         this(context, listener, null);
         addTaint(listener.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -110,7 +110,7 @@ public class GestureDetector {
         addTaint(handler.getTaint());
         addTaint(listener.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -122,28 +122,28 @@ public class GestureDetector {
     if(handler != null)        
         {
             mHandler = new GestureHandler(handler);
-        } 
+        } //End block
         else
         {
             mHandler = new GestureHandler();
-        } 
+        } //End block
         mListener = listener;
     if(listener instanceof OnDoubleTapListener)        
         {
             setOnDoubleTapListener((OnDoubleTapListener) listener);
-        } 
+        } //End block
         init(context, ignoreMultitouch);
-        
-        
-            
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (handler != null) {
+            //mHandler = new GestureHandler(handler);
+        //} else {
+            //mHandler = new GestureHandler();
+        //}
+        //mListener = listener;
+        //if (listener instanceof OnDoubleTapListener) {
+            //setOnDoubleTapListener((OnDoubleTapListener) listener);
+        //}
+        //init(context, ignoreMultitouch);
     }
 
     
@@ -155,7 +155,7 @@ public class GestureDetector {
             NullPointerException varED1C003194A7D238BD8D57F55A176CB2_1987005019 = new NullPointerException("OnGestureListener must not be null");
             varED1C003194A7D238BD8D57F55A176CB2_1987005019.addTaint(taint);
             throw varED1C003194A7D238BD8D57F55A176CB2_1987005019;
-        } 
+        } //End block
         mIsLongpressEnabled = true;
         mIgnoreMultitouch = ignoreMultitouch;
         int touchSlop;
@@ -166,7 +166,7 @@ public class GestureDetector {
             doubleTapSlop = ViewConfiguration.getDoubleTapSlop();
             mMinimumFlingVelocity = ViewConfiguration.getMinimumFlingVelocity();
             mMaximumFlingVelocity = ViewConfiguration.getMaximumFlingVelocity();
-        } 
+        } //End block
         else
         {
             final ViewConfiguration configuration = ViewConfiguration.get(context);
@@ -174,57 +174,54 @@ public class GestureDetector {
             doubleTapSlop = configuration.getScaledDoubleTapSlop();
             mMinimumFlingVelocity = configuration.getScaledMinimumFlingVelocity();
             mMaximumFlingVelocity = configuration.getScaledMaximumFlingVelocity();
-        } 
+        } //End block
         mTouchSlopSquare = touchSlop * touchSlop;
         mDoubleTapSlopSquare = doubleTapSlop * doubleTapSlop;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.134 -0400", hash_original_method = "571B39F87736E3994F3A317209D7E1C6", hash_generated_method = "8874C66605DB2FF6FE5F0E858C5BB080")
     public void setOnDoubleTapListener(OnDoubleTapListener onDoubleTapListener) {
         mDoubleTapListener = onDoubleTapListener;
-        
-        
+        // ---------- Original Method ----------
+        //mDoubleTapListener = onDoubleTapListener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.135 -0400", hash_original_method = "14829325F18703625EF98BC2472601E3", hash_generated_method = "0B13C9500814A87A70F39F82D929A9E5")
     public void setIsLongpressEnabled(boolean isLongpressEnabled) {
         mIsLongpressEnabled = isLongpressEnabled;
-        
-        
+        // ---------- Original Method ----------
+        //mIsLongpressEnabled = isLongpressEnabled;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.135 -0400", hash_original_method = "880D3BB55D8069819877BA46CC6F055B", hash_generated_method = "BACB0953473E868E0EA4D1BB26677615")
     public boolean isLongpressEnabled() {
         boolean varAC0E18C364C0753415CC5A3B2FB177AA_885577743 = (mIsLongpressEnabled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1532193725 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1532193725;
-        
-        
+        // ---------- Original Method ----------
+        //return mIsLongpressEnabled;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.139 -0400", hash_original_method = "83C7BED09A17CDEA8B0FB9700395D72F", hash_generated_method = "FA38E8D28B50E4195FC1EC564A79B39B")
     public boolean onTouchEvent(MotionEvent ev) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onTouchEvent(ev, 0);
-        } 
+        } //End block
         final int action = ev.getAction();
         final float y = ev.getY();
         final float x = ev.getX();
     if(mVelocityTracker == null)        
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } 
+        } //End block
         mVelocityTracker.addMovement(ev);
         boolean handled = false;
 switch(action & MotionEvent.ACTION_MASK){
@@ -232,7 +229,7 @@ switch(action & MotionEvent.ACTION_MASK){
     if(mIgnoreMultitouch)        
         {
             cancel();
-        } 
+        } //End block
         break;
         case MotionEvent.ACTION_POINTER_UP:
     if(mIgnoreMultitouch && ev.getPointerCount() == 2)        
@@ -243,7 +240,7 @@ switch(action & MotionEvent.ACTION_MASK){
             mLastMotionY = ev.getY(index);
             mVelocityTracker.recycle();
             mVelocityTracker = VelocityTracker.obtain();
-        } 
+        } //End block
         break;
         case MotionEvent.ACTION_DOWN:
     if(mDoubleTapListener != null)        
@@ -257,18 +254,18 @@ switch(action & MotionEvent.ACTION_MASK){
                 mIsDoubleTapping = true;
                 handled |= mDoubleTapListener.onDoubleTap(mCurrentDownEvent);
                 handled |= mDoubleTapListener.onDoubleTapEvent(ev);
-            } 
+            } //End block
             else
             {
                 mHandler.sendEmptyMessageDelayed(TAP, DOUBLE_TAP_TIMEOUT);
-            } 
-        } 
+            } //End block
+        } //End block
         mLastMotionX = x;
         mLastMotionY = y;
     if(mCurrentDownEvent != null)        
         {
             mCurrentDownEvent.recycle();
-        } 
+        } //End block
         mCurrentDownEvent = MotionEvent.obtain(ev);
         mAlwaysInTapRegion = true;
         mAlwaysInBiggerTapRegion = true;
@@ -279,7 +276,7 @@ switch(action & MotionEvent.ACTION_MASK){
             mHandler.removeMessages(LONG_PRESS);
             mHandler.sendEmptyMessageAtTime(LONG_PRESS, mCurrentDownEvent.getDownTime()
                         + TAP_TIMEOUT + LONGPRESS_TIMEOUT);
-        } 
+        } //End block
         mHandler.sendEmptyMessageAtTime(SHOW_PRESS, mCurrentDownEvent.getDownTime() + TAP_TIMEOUT);
         handled |= mListener.onDown(ev);
         break;
@@ -287,13 +284,13 @@ switch(action & MotionEvent.ACTION_MASK){
     if(mInLongPress || (mIgnoreMultitouch && ev.getPointerCount() > 1))        
         {
             break;
-        } 
+        } //End block
         final float scrollX = mLastMotionX - x;
         final float scrollY = mLastMotionY - y;
     if(mIsDoubleTapping)        
         {
             handled |= mDoubleTapListener.onDoubleTapEvent(ev);
-        } 
+        } //End block
         else
     if(mAlwaysInTapRegion)        
         {
@@ -309,19 +306,19 @@ switch(action & MotionEvent.ACTION_MASK){
                 mHandler.removeMessages(TAP);
                 mHandler.removeMessages(SHOW_PRESS);
                 mHandler.removeMessages(LONG_PRESS);
-            } 
+            } //End block
     if(distance > mBiggerTouchSlopSquare)            
             {
                 mAlwaysInBiggerTapRegion = false;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if((Math.abs(scrollX) >= 1) || (Math.abs(scrollY) >= 1))        
         {
             handled = mListener.onScroll(mCurrentDownEvent, ev, scrollX, scrollY);
             mLastMotionX = x;
             mLastMotionY = y;
-        } 
+        } //End block
         break;
         case MotionEvent.ACTION_UP:
         mStillDown = false;
@@ -329,18 +326,18 @@ switch(action & MotionEvent.ACTION_MASK){
     if(mIsDoubleTapping)        
         {
             handled |= mDoubleTapListener.onDoubleTapEvent(ev);
-        } 
+        } //End block
         else
     if(mInLongPress)        
         {
             mHandler.removeMessages(TAP);
             mInLongPress = false;
-        } 
+        } //End block
         else
     if(mAlwaysInTapRegion)        
         {
             handled = mListener.onSingleTapUp(ev);
-        } 
+        } //End block
         else
         {
             final VelocityTracker velocityTracker = mVelocityTracker;
@@ -351,12 +348,12 @@ switch(action & MotionEvent.ACTION_MASK){
                         || (Math.abs(velocityX) > mMinimumFlingVelocity))            
             {
                 handled = mListener.onFling(mCurrentDownEvent, ev, velocityX, velocityY);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mPreviousUpEvent != null)        
         {
             mPreviousUpEvent.recycle();
-        } 
+        } //End block
         mPreviousUpEvent = currentUpEvent;
         mVelocityTracker.recycle();
         mVelocityTracker = null;
@@ -370,12 +367,12 @@ switch(action & MotionEvent.ACTION_MASK){
 }    if(!handled && mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(ev, 0);
-        } 
+        } //End block
         boolean var98F0599AF776A1FE4101C199A40EEB8F_1701484276 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_679056994 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_679056994;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -393,20 +390,20 @@ switch(action & MotionEvent.ACTION_MASK){
     if(mInLongPress)        
         {
             mInLongPress = false;
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mHandler.removeMessages(SHOW_PRESS);
+        //mHandler.removeMessages(LONG_PRESS);
+        //mHandler.removeMessages(TAP);
+        //mVelocityTracker.recycle();
+        //mVelocityTracker = null;
+        //mIsDoubleTapping = false;
+        //mStillDown = false;
+        //mAlwaysInTapRegion = false;
+        //mAlwaysInBiggerTapRegion = false;
+        //if (mInLongPress) {
+            //mInLongPress = false;
+        //}
     }
 
     
@@ -421,28 +418,28 @@ switch(action & MotionEvent.ACTION_MASK){
             boolean var68934A3E9455FA72420237EB05902327_1484688561 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_72645179 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_72645179;
-        } 
+        } //End block
     if(secondDown.getEventTime() - firstUp.getEventTime() > DOUBLE_TAP_TIMEOUT)        
         {
             boolean var68934A3E9455FA72420237EB05902327_2099465701 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_910932699 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_910932699;
-        } 
+        } //End block
         int deltaX = (int) firstDown.getX() - (int) secondDown.getX();
         int deltaY = (int) firstDown.getY() - (int) secondDown.getY();
         boolean varF3D273F1BF9D7EA8A8933EB9ED1F4682_1262914221 = ((deltaX * deltaX + deltaY * deltaY < mDoubleTapSlopSquare));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_930141514 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_930141514;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!mAlwaysInBiggerTapRegion) {
+            //return false;
+        //}
+        //if (secondDown.getEventTime() - firstUp.getEventTime() > DOUBLE_TAP_TIMEOUT) {
+            //return false;
+        //}
+        //int deltaX = (int) firstDown.getX() - (int) secondDown.getX();
+        //int deltaY = (int) firstDown.getY() - (int) secondDown.getY();
+        //return (deltaX * deltaX + deltaY * deltaY < mDoubleTapSlopSquare);
     }
 
     
@@ -451,10 +448,10 @@ switch(action & MotionEvent.ACTION_MASK){
         mHandler.removeMessages(TAP);
         mInLongPress = true;
         mListener.onLongPress(mCurrentDownEvent);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mHandler.removeMessages(TAP);
+        //mInLongPress = true;
+        //mListener.onLongPress(mCurrentDownEvent);
     }
 
     
@@ -463,37 +460,34 @@ switch(action & MotionEvent.ACTION_MASK){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.142 -0400", hash_original_method = "6EE8AB65667171335D0E5E557D623FF3", hash_generated_method = "6EE8AB65667171335D0E5E557D623FF3")
         public SimpleOnGestureListener ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.143 -0400", hash_original_method = "6CD5191C407A0B3CBB6F0A0F3D91B6D6", hash_generated_method = "C8BFCF7C40F590B7CBBA8ED1738803C6")
         public boolean onSingleTapUp(MotionEvent e) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(e.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_399565950 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436951363 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436951363;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.143 -0400", hash_original_method = "E609FB951BEBFF493B5A5F179A09A7F5", hash_generated_method = "CE7B5EECBD6FB992C82AB867D868DEBD")
         public void onLongPress(MotionEvent e) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(e.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.144 -0400", hash_original_method = "3D0A16086A925B93F4340895FE1B4CBC", hash_generated_method = "5D9363376C58114EDE5EA1E1D30B43FC")
         public boolean onScroll(MotionEvent e1, MotionEvent e2,
                 float distanceX, float distanceY) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(distanceY);
             addTaint(distanceX);
             addTaint(e2.getTaint());
@@ -501,16 +495,15 @@ switch(action & MotionEvent.ACTION_MASK){
             boolean var68934A3E9455FA72420237EB05902327_94129200 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2091785732 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2091785732;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.144 -0400", hash_original_method = "BDBE517451C02C6DD8B1C60030C3C43A", hash_generated_method = "3283410B287E329A17E8BB709F706B69")
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                 float velocityY) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(velocityY);
             addTaint(velocityX);
             addTaint(e2.getTaint());
@@ -518,69 +511,64 @@ switch(action & MotionEvent.ACTION_MASK){
             boolean var68934A3E9455FA72420237EB05902327_1979216173 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_94960547 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_94960547;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.145 -0400", hash_original_method = "54A2BF3809B435C5302401FC76B54B22", hash_generated_method = "59BDBECCD2C5F0A2860E71595A2D2C31")
         public void onShowPress(MotionEvent e) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(e.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.145 -0400", hash_original_method = "124BA11CC014942E61EFD87F7F37262C", hash_generated_method = "D23712AF75FCCB295C44FAC4372217C6")
         public boolean onDown(MotionEvent e) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(e.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1224901509 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1309543993 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1309543993;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.145 -0400", hash_original_method = "40BA7E2512EA076BF84D5B49A825B220", hash_generated_method = "2B10A94DD4D24A9E08FB95EE755BD6F3")
         public boolean onDoubleTap(MotionEvent e) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(e.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1472464442 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1041662597 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1041662597;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.146 -0400", hash_original_method = "D3FAA1FBAE0BE329BB5AEDA3CD619E7D", hash_generated_method = "62C5FC73A09CA927085B11931D19DAF3")
         public boolean onDoubleTapEvent(MotionEvent e) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(e.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_805216523 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2138484471 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2138484471;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.146 -0400", hash_original_method = "5E9F34FF920329D07D248580C4BBB180", hash_generated_method = "C2F79E40F2A0ECC3A578514437E938E4")
         public boolean onSingleTapConfirmed(MotionEvent e) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(e.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1428299318 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_996194061 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_996194061;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
@@ -593,7 +581,7 @@ switch(action & MotionEvent.ACTION_MASK){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:49.146 -0400", hash_original_method = "9D2431BB2A48CA4B74BDD0A31919D26A", hash_generated_method = "09E7D20AAEDBA7AC640E49A4D07867CB")
           GestureHandler() {
             super();
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -601,7 +589,7 @@ switch(action & MotionEvent.ACTION_MASK){
           GestureHandler(Handler handler) {
             super(handler.getLooper());
             addTaint(handler.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -620,29 +608,29 @@ switch(msg.what){
     if(mDoubleTapListener != null && !mStillDown)            
             {
                 mDoubleTapListener.onSingleTapConfirmed(mCurrentDownEvent);
-            } 
+            } //End block
             break;
             default:
             RuntimeException varD073940B7D772B025CA83558DFEB8953_246358785 = new RuntimeException("Unknown message " + msg);
             varD073940B7D772B025CA83558DFEB8953_246358785.addTaint(taint);
             throw varD073940B7D772B025CA83558DFEB8953_246358785;
 }
-            
-            
-            
-                
-                
-            
-                
-                
-            
-                
-                    
-                
-                
-            
-                
-            
+            // ---------- Original Method ----------
+            //switch (msg.what) {
+            //case SHOW_PRESS:
+                //mListener.onShowPress(mCurrentDownEvent);
+                //break;
+            //case LONG_PRESS:
+                //dispatchLongPress();
+                //break;
+            //case TAP:
+                //if (mDoubleTapListener != null && !mStillDown) {
+                    //mDoubleTapListener.onSingleTapConfirmed(mCurrentDownEvent);
+                //}
+                //break;
+            //default:
+                //throw new RuntimeException("Unknown message " + msg); 
+            //}
         }
 
         

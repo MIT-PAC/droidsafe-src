@@ -1,6 +1,6 @@
 package org.bouncycastle.jce;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class ECNamedCurveTable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.432 -0400", hash_original_method = "BD64543C1F72D4D2B4CE5D415F2B3F42", hash_generated_method = "BD64543C1F72D4D2B4CE5D415F2B3F42")
     public ECNamedCurveTable ()
     {
-        
+        //Synthesized constructor
     }
 
 

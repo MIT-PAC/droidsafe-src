@@ -1,6 +1,6 @@
 package android.graphics.drawable;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class LevelListDrawable extends DrawableContainer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.470 -0400", hash_original_method = "44C08D01AD86FB5FD2CB8E648FBEEBE6", hash_generated_method = "8DEE93644819C11B01FE6D8DDDC1A0A5")
     public  LevelListDrawable() {
         this(null, null);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -34,15 +34,14 @@ public class LevelListDrawable extends DrawableContainer {
         mLevelListState = as;
         setConstantState(as);
         onLevelChange(getLevel());
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //LevelListState as = new LevelListState(state, this, res);
+        //mLevelListState = as;
+        //setConstantState(as);
+        //onLevelChange(getLevel());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.471 -0400", hash_original_method = "034C59859D302C36E8258EB9CAEDE0AF", hash_generated_method = "F3CE64CF0E5519D168420D6A03918457")
     public void addLevel(int low, int high, Drawable drawable) {
         addTaint(drawable.getTaint());
@@ -52,20 +51,19 @@ public class LevelListDrawable extends DrawableContainer {
         {
             mLevelListState.addLevel(low, high, drawable);
             onLevelChange(getLevel());
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (drawable != null) {
+            //mLevelListState.addLevel(low, high, drawable);
+            //onLevelChange(getLevel());
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.472 -0400", hash_original_method = "69975FEB6AC4D6000EB731D154CA4016", hash_generated_method = "781938E2D95915DB9508329CF92F658C")
     @Override
     protected boolean onLevelChange(int level) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(level);
         int idx = mLevelListState.indexOfLevel(level);
     if(selectDrawable(idx))        
@@ -73,20 +71,19 @@ public class LevelListDrawable extends DrawableContainer {
             boolean varB326B5062B2F0E69046810717534CB09_1535236738 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1084187121 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1084187121;
-        } 
+        } //End block
         boolean var55D85368FEC8B8968114D2ED6BABC9BE_895687589 = (super.onLevelChange(level));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1129407375 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1129407375;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int idx = mLevelListState.indexOfLevel(level);
+        //if (selectDrawable(idx)) {
+            //return true;
+        //}
+        //return super.onLevelChange(level);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.473 -0400", hash_original_method = "D1DA3B3E6F995A3C0C835AA99D4132D2", hash_generated_method = "AD40F1D40ED170E3F0CAAC9F4CABD676")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -106,11 +103,11 @@ public class LevelListDrawable extends DrawableContainer {
     if(type != XmlPullParser.START_TAG)            
             {
                 continue;
-            } 
+            } //End block
     if(depth > innerDepth || !parser.getName().equals("item"))            
             {
                 continue;
-            } 
+            } //End block
             TypedArray a = r.obtainAttributes(attrs,
                     com.android.internal.R.styleable.LevelListDrawableItem);
             low = a.getInt(
@@ -126,18 +123,18 @@ public class LevelListDrawable extends DrawableContainer {
                         + ": <item> tag requires a 'maxLevel' attribute");
                 varDA0FC977C726BC6EAB19AAC38D594373_1690241075.addTaint(taint);
                 throw varDA0FC977C726BC6EAB19AAC38D594373_1690241075;
-            } 
+            } //End block
             Drawable dr;
     if(drawableRes != 0)            
             {
                 dr = r.getDrawable(drawableRes);
-            } 
+            } //End block
             else
             {
                 while
 ((type = parser.next()) == XmlPullParser.TEXT)                
                 {
-                } 
+                } //End block
     if(type != XmlPullParser.START_TAG)                
                 {
                     XmlPullParserException var323689A2E36B2E80C03C4E544ECA8A7C_59098115 = new XmlPullParserException(
@@ -146,18 +143,17 @@ public class LevelListDrawable extends DrawableContainer {
                                     + "child tag defining a drawable");
                     var323689A2E36B2E80C03C4E544ECA8A7C_59098115.addTaint(taint);
                     throw var323689A2E36B2E80C03C4E544ECA8A7C_59098115;
-                } 
+                } //End block
                 dr = Drawable.createFromXmlInner(r, parser, attrs);
-            } 
+            } //End block
             mLevelListState.addLevel(low, high, dr);
-        } 
+        } //End block
         onLevelChange(getLevel());
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.474 -0400", hash_original_method = "2F3DD5E6B39B84FDED94D3B2A7A7FBE8", hash_generated_method = "112B38DDE58639F908281CD991A780DE")
     @Override
     public Drawable mutate() {
@@ -166,17 +162,17 @@ public class LevelListDrawable extends DrawableContainer {
             mLevelListState.mLows = mLevelListState.mLows.clone();
             mLevelListState.mHighs = mLevelListState.mHighs.clone();
             mMutated = true;
-        } 
+        } //End block
 Drawable var72A74007B2BE62B849F475C7BDA4658B_560512338 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_560512338.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_560512338;
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!mMutated && super.mutate() == this) {
+            //mLevelListState.mLows = mLevelListState.mLows.clone();
+            //mLevelListState.mHighs = mLevelListState.mHighs.clone();
+            //mMutated = true;
+        //}
+        //return this;
     }
 
     
@@ -197,20 +193,20 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_560512338 =         this;
             {
                 mLows = orig.mLows;
                 mHighs = orig.mHighs;
-            } 
+            } //End block
             else
             {
                 mLows = new int[getChildren().length];
                 mHighs = new int[getChildren().length];
-            } 
-            
-            
-                
-                
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (orig != null) {
+                //mLows = orig.mLows;
+                //mHighs = orig.mHighs;
+            //} else {
+                //mLows = new int[getChildren().length];
+                //mHighs = new int[getChildren().length];
+            //}
         }
 
         
@@ -220,10 +216,10 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_560512338 =         this;
             int pos = addChild(drawable);
             mLows[pos] = low;
             mHighs[pos] = high;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //int pos = addChild(drawable);
+            //mLows[pos] = low;
+            //mHighs[pos] = high;
         }
 
         
@@ -240,21 +236,21 @@ for(int i = 0;i < N;i++)
                     int var865C0C0B4AB0E063E5CAA3387C1A8741_1559749330 = (i);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132399587 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132399587;
-                } 
-            } 
+                } //End block
+            } //End block
             int var6BB61E3B7BCE0931DA574D19D1D82C88_831523344 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1069517943 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1069517943;
-            
-            
-            
-            
-            
-                
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //final int[] lows = mLows;
+            //final int[] highs = mHighs;
+            //final int N = getChildCount();
+            //for (int i = 0; i < N; i++) {
+                //if (level >= lows[i] && level <= highs[i]) {
+                    //return i;
+                //}
+            //}
+            //return -1;
         }
 
         
@@ -264,8 +260,8 @@ for(int i = 0;i < N;i++)
 Drawable var6167E9193441AB5E7B9D360C480317F7_968004962 =             new LevelListDrawable(this, null);
             var6167E9193441AB5E7B9D360C480317F7_968004962.addTaint(taint);
             return var6167E9193441AB5E7B9D360C480317F7_968004962;
-            
-            
+            // ---------- Original Method ----------
+            //return new LevelListDrawable(this, null);
         }
 
         
@@ -276,8 +272,8 @@ Drawable var6167E9193441AB5E7B9D360C480317F7_968004962 =             new LevelLi
 Drawable var658F4AFFCC25F59D3034E6F8A11F2A98_533535099 =             new LevelListDrawable(this, res);
             var658F4AFFCC25F59D3034E6F8A11F2A98_533535099.addTaint(taint);
             return var658F4AFFCC25F59D3034E6F8A11F2A98_533535099;
-            
-            
+            // ---------- Original Method ----------
+            //return new LevelListDrawable(this, res);
         }
 
         
@@ -293,14 +289,14 @@ Drawable var658F4AFFCC25F59D3034E6F8A11F2A98_533535099 =             new LevelLi
             newInts = new int[newSize];
             System.arraycopy(mHighs, 0, newInts, 0, oldSize);
             mHighs = newInts;
-            
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //super.growArray(oldSize, newSize);
+            //int[] newInts = new int[newSize];
+            //System.arraycopy(mLows, 0, newInts, 0, oldSize);
+            //mLows = newInts;
+            //newInts = new int[newSize];
+            //System.arraycopy(mHighs, 0, newInts, 0, oldSize);
+            //mHighs = newInts;
         }
 
         

@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -82,31 +82,30 @@ public class MediaPlayer {
     if((looper = Looper.myLooper()) != null)        
         {
             mEventHandler = new EventHandler(this, looper);
-        } 
+        } //End block
         else
     if((looper = Looper.getMainLooper()) != null)        
         {
             mEventHandler = new EventHandler(this, looper);
-        } 
+        } //End block
         else
         {
             mEventHandler = null;
-        } 
+        } //End block
         native_setup(new WeakReference<MediaPlayer>(this));
-        
-        
-        
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Looper looper;
+        //if ((looper = Looper.myLooper()) != null) {
+            //mEventHandler = new EventHandler(this, looper);
+        //} else if ((looper = Looper.getMainLooper()) != null) {
+            //mEventHandler = new EventHandler(this, looper);
+        //} else {
+            //mEventHandler = null;
+        //}
+        //native_setup(new WeakReference<MediaPlayer>(this));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.299 -0400", hash_original_method = "53B8A3255E430D9C87E415235A089C4A", hash_generated_method = "F5B57F3315662D3ED70CDAF04D4628F0")
     private void _setVideoSurface(Surface surface) {
     }
@@ -119,10 +118,10 @@ public class MediaPlayer {
 Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
         varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302.addTaint(taint);
         return varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel parcel = Parcel.obtain();
+        //parcel.writeInterfaceToken(IMEDIA_PLAYER);
+        //return parcel;
     }
 
     
@@ -135,10 +134,10 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
         int var038970C09BCC57B17734FF8598F974F2_1782713117 = (retcode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100120616 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100120616;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int retcode = native_invoke(request, reply);
+        //reply.setDataPosition(0);
+        //return retcode;
     }
 
     
@@ -149,23 +148,23 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
     if(sh != null)        
         {
             surface = sh.getSurface();
-        } 
+        } //End block
         else
         {
             surface = null;
-        } 
+        } //End block
         _setVideoSurface(surface);
         updateSurfaceScreenOn();
-        
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //mSurfaceHolder = sh;
+        //Surface surface;
+        //if (sh != null) {
+            //surface = sh.getSurface();
+        //} else {
+            //surface = null;
+        //}
+        //_setVideoSurface(surface);
+        //updateSurfaceScreenOn();
     }
 
     
@@ -174,28 +173,26 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
         addTaint(surface.getTaint());
     if(mScreenOnWhilePlaying && surface != null)        
         {
-        } 
+        } //End block
         mSurfaceHolder = null;
         _setVideoSurface(surface);
         updateSurfaceScreenOn();
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mScreenOnWhilePlaying && surface != null) {
+            //Log.w(TAG, "setScreenOnWhilePlaying(true) is ineffective for Surface");
+        //}
+        //mSurfaceHolder = null;
+        //_setVideoSurface(surface);
+        //updateSurfaceScreenOn();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static MediaPlayer create(Context context, Uri uri) {
+        public static MediaPlayer create(Context context, Uri uri) {
         return create (context, uri, null);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder) {
+        public static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder) {
         try {
             MediaPlayer mp = new MediaPlayer();
             mp.setDataSource(context, uri);
@@ -235,14 +232,13 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.304 -0400", hash_original_method = "40ED5E4D3E36120D5E7C77AB85EB12F0", hash_generated_method = "BD51E02768AFE95BF00E0182B9B96EF5")
     public void setDataSource(Context context, Uri uri) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
         addTaint(uri.getTaint());
         addTaint(context.getTaint());
         setDataSource(context, uri, null);
-        
-        
+        // ---------- Original Method ----------
+        //setDataSource(context, uri, null);
     }
 
     
@@ -256,7 +252,7 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
         {
             setDataSource(uri.getPath());
             return;
-        } 
+        } //End block
         AssetFileDescriptor fd = null;
         try 
         {
@@ -265,39 +261,38 @@ Parcel varE1D9FB4EF23B2E2DCF7F61DDCE95DE0F_5384302 =         parcel;
     if(fd == null)            
             {
                 return;
-            } 
+            } //End block
     if(fd.getDeclaredLength() < 0)            
             {
                 setDataSource(fd.getFileDescriptor());
-            } 
+            } //End block
             else
             {
                 setDataSource(fd.getFileDescriptor(), fd.getStartOffset(), fd.getDeclaredLength());
-            } 
+            } //End block
             return;
-        } 
+        } //End block
         catch (SecurityException ex)
         {
-        } 
+        } //End block
         catch (IOException ex)
         {
-        } 
+        } //End block
         finally 
         {
     if(fd != null)            
             {
                 fd.close();
-            } 
-        } 
+            } //End block
+        } //End block
         Log.d(TAG, "Couldn't open file on client side, trying server side");
         setDataSource(uri.toString(), headers);
         return;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.305 -0400", hash_original_method = "70B5385C7A556D37595F97E42F2F2DFE", hash_generated_method = "F5B05B6380317717B89E41C25427E8C2")
     public void setDataSource(String path) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
     }
@@ -319,27 +314,26 @@ for(Map.Entry<String, String> entry : headers.entrySet())
                 keys[i] = entry.getKey();
                 values[i] = entry.getValue();
                 ++i;
-            } 
-        } 
+            } //End block
+        } //End block
         _setDataSource(path, keys, values);
-        
-        
-        
-        
-            
-            
-            
-            
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //String[] keys = null;
+        //String[] values = null;
+        //if (headers != null) {
+            //keys = new String[headers.size()];
+            //values = new String[headers.size()];
+            //int i = 0;
+            //for (Map.Entry<String, String> entry: headers.entrySet()) {
+                //keys[i] = entry.getKey();
+                //values[i] = entry.getValue();
+                //++i;
+            //}
+        //}
+        //_setDataSource(path, keys, values);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.306 -0400", hash_original_method = "35737102382ABAAE0A83F0ED650DE965", hash_generated_method = "1B2287D7576FA769D7F1C01F8D9C70AA")
     private void _setDataSource(
         String path, String[] keys, String[] values) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
@@ -350,24 +344,21 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     public void setDataSource(FileDescriptor fd) throws IOException, IllegalArgumentException, IllegalStateException {
         addTaint(fd.getTaint());
         setDataSource(fd, 0, 0x7ffffffffffffffL);
-        
-        
+        // ---------- Original Method ----------
+        //setDataSource(fd, 0, 0x7ffffffffffffffL);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.307 -0400", hash_original_method = "CF807E4C5554BB2848F7651782391DCD", hash_generated_method = "26CA4E702FD63E687650E57F874CD4B8")
     public void setDataSource(FileDescriptor fd, long offset, long length) throws IOException, IllegalArgumentException, IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.307 -0400", hash_original_method = "BE634EB7B5A47DD549B3D4698CE7CD0F", hash_generated_method = "E7E943D15349F05D8E6452080C3FE19C")
     public void prepare() throws IOException, IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.307 -0400", hash_original_method = "9BEAA7388253BD2C3E319E2E43B2453F", hash_generated_method = "953CE432DFBBEC63464F146F85A74F11")
     public void prepareAsync() throws IllegalStateException {
     }
@@ -377,13 +368,12 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     public void start() throws IllegalStateException {
         stayAwake(true);
         _start();
-        
-        
-        
+        // ---------- Original Method ----------
+        //stayAwake(true);
+        //_start();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.307 -0400", hash_original_method = "6DEDFC534300C5310A66033260D8A31E", hash_generated_method = "D1FE609F1EBAE49EEF1BACBB02C63952")
     private void _start() throws IllegalStateException {
     }
@@ -393,13 +383,12 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     public void stop() throws IllegalStateException {
         stayAwake(false);
         _stop();
-        
-        
-        
+        // ---------- Original Method ----------
+        //stayAwake(false);
+        //_stop();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.308 -0400", hash_original_method = "7A254901D3417D112F523A3CB4C0BACF", hash_generated_method = "E38D7EC8B95A05706550F50CD55A4851")
     private void _stop() throws IllegalStateException {
     }
@@ -409,13 +398,12 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     public void pause() throws IllegalStateException {
         stayAwake(false);
         _pause();
-        
-        
-        
+        // ---------- Original Method ----------
+        //stayAwake(false);
+        //_pause();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.308 -0400", hash_original_method = "3CFA64AA4FE31303B150AAAF6D2A439E", hash_generated_method = "85A230E7AF7EEA7FE619291D65BB2491")
     private void _pause() throws IllegalStateException {
     }
@@ -431,31 +419,31 @@ for(Map.Entry<String, String> entry : headers.entrySet())
             {
                 washeld = true;
                 mWakeLock.release();
-            } 
+            } //End block
             mWakeLock = null;
-        } 
+        } //End block
         PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
         mWakeLock = pm.newWakeLock(mode|PowerManager.ON_AFTER_RELEASE, MediaPlayer.class.getName());
         mWakeLock.setReferenceCounted(false);
     if(washeld)        
         {
             mWakeLock.acquire();
-        } 
-        
-        
-        
-            
-                
-                
-            
-            
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //boolean washeld = false;
+        //if (mWakeLock != null) {
+            //if (mWakeLock.isHeld()) {
+                //washeld = true;
+                //mWakeLock.release();
+            //}
+            //mWakeLock = null;
+        //}
+        //PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+        //mWakeLock = pm.newWakeLock(mode|PowerManager.ON_AFTER_RELEASE, MediaPlayer.class.getName());
+        //mWakeLock.setReferenceCounted(false);
+        //if (washeld) {
+            //mWakeLock.acquire();
+        //}
     }
 
     
@@ -465,18 +453,18 @@ for(Map.Entry<String, String> entry : headers.entrySet())
         {
     if(screenOn && mSurfaceHolder == null)            
             {
-            } 
+            } //End block
             mScreenOnWhilePlaying = screenOn;
             updateSurfaceScreenOn();
-        } 
-        
-        
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mScreenOnWhilePlaying != screenOn) {
+            //if (screenOn && mSurfaceHolder == null) {
+                //Log.w(TAG, "setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder");
+            //}
+            //mScreenOnWhilePlaying = screenOn;
+            //updateSurfaceScreenOn();
+        //}
     }
 
     
@@ -487,25 +475,25 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     if(awake && !mWakeLock.isHeld())            
             {
                 mWakeLock.acquire();
-            } 
+            } //End block
             else
     if(!awake && mWakeLock.isHeld())            
             {
                 mWakeLock.release();
-            } 
-        } 
+            } //End block
+        } //End block
         mStayAwake = awake;
         updateSurfaceScreenOn();
-        
-        
-            
-                
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mWakeLock != null) {
+            //if (awake && !mWakeLock.isHeld()) {
+                //mWakeLock.acquire();
+            //} else if (!awake && mWakeLock.isHeld()) {
+                //mWakeLock.release();
+            //}
+        //}
+        //mStayAwake = awake;
+        //updateSurfaceScreenOn();
     }
 
     
@@ -514,15 +502,14 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     if(mSurfaceHolder != null)        
         {
             mSurfaceHolder.setKeepScreenOn(mScreenOnWhilePlaying && mStayAwake);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mSurfaceHolder != null) {
+            //mSurfaceHolder.setKeepScreenOn(mScreenOnWhilePlaying && mStayAwake);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.311 -0400", hash_original_method = "33D5C83ED46D1CA5E488AF592A477814", hash_generated_method = "1176079568A1D7CE15A3127BF3E53D1D")
     public int getVideoWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436668441 = getTaintInt();
@@ -530,7 +517,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.311 -0400", hash_original_method = "AA8703DABD049C78A6839F5E3DDBB949", hash_generated_method = "599B9FDFBF2A332511F2FB13B4D7712D")
     public int getVideoHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1901892713 = getTaintInt();
@@ -538,7 +524,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.311 -0400", hash_original_method = "F383FE244E24C0C545B5D975B4462316", hash_generated_method = "5BBD80285A5EEC249D7B7E7A1D24B033")
     public boolean isPlaying() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_382980376 = getTaintBoolean();
@@ -546,13 +531,11 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.312 -0400", hash_original_method = "97A3BCAAD25A5F0CCA6DBA135F05FFD4", hash_generated_method = "9C09E9E38768EBB3BE88E178DF59A105")
     public void seekTo(int msec) throws IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.312 -0400", hash_original_method = "540585A22AA6C1E9C18EA05D71ACEBDE", hash_generated_method = "345045D3817606856C71239CD5FE7D84")
     public int getCurrentPosition() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1729969722 = getTaintInt();
@@ -560,7 +543,6 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.312 -0400", hash_original_method = "5FCC06EDC9BF2D1AEA92A44CF2A2F31E", hash_generated_method = "4F55CE986FCE430DEF6DE8167732A09B")
     public int getDuration() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1017827264 = getTaintInt();
@@ -581,29 +563,29 @@ for(Map.Entry<String, String> entry : headers.entrySet())
 Metadata var540C13E9E156B687226421B24F2DF178_99602171 =             null;
             var540C13E9E156B687226421B24F2DF178_99602171.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_99602171;
-        } 
+        } //End block
     if(!data.parse(reply))        
         {
             reply.recycle();
 Metadata var540C13E9E156B687226421B24F2DF178_324358686 =             null;
             var540C13E9E156B687226421B24F2DF178_324358686.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_324358686;
-        } 
+        } //End block
 Metadata var0C8B2C9585EB05DD9CD70726CF8CBC07_671283680 =         data;
         var0C8B2C9585EB05DD9CD70726CF8CBC07_671283680.addTaint(taint);
         return var0C8B2C9585EB05DD9CD70726CF8CBC07_671283680;
-        
-        
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //Parcel reply = Parcel.obtain();
+        //Metadata data = new Metadata();
+        //if (!native_getMetadata(update_only, apply_filter, reply)) {
+            //reply.recycle();
+            //return null;
+        //}
+        //if (!data.parse(reply)) {
+            //reply.recycle();
+            //return null;
+        //}
+        //return data;
     }
 
     
@@ -616,35 +598,35 @@ Metadata var0C8B2C9585EB05DD9CD70726CF8CBC07_671283680 =         data;
     if(request.dataCapacity() < capacity)        
         {
             request.setDataCapacity(capacity);
-        } 
+        } //End block
         request.writeInt(allow.size());
 for(Integer t : allow)
         {
             request.writeInt(t);
-        } 
+        } //End block
         request.writeInt(block.size());
 for(Integer t : block)
         {
             request.writeInt(t);
-        } 
+        } //End block
         int var830512877C789BCE8F8A9D83241BA841_36900800 = (native_setMetadataFilter(request));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905384977 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905384977;
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Parcel request =  newRequest();
+        //int capacity = request.dataSize() + 4 * (1 + allow.size() + 1 + block.size());
+        //if (request.dataCapacity() < capacity) {
+            //request.setDataCapacity(capacity);
+        //}
+        //request.writeInt(allow.size());
+        //for(Integer t: allow) {
+            //request.writeInt(t);
+        //}
+        //request.writeInt(block.size());
+        //for(Integer t: block) {
+            //request.writeInt(t);
+        //}
+        //return native_setMetadataFilter(request);
     }
 
     
@@ -661,22 +643,21 @@ for(Integer t : block)
         mOnVideoSizeChangedListener = null;
         mOnTimedTextListener = null;
         _release();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //stayAwake(false);
+        //updateSurfaceScreenOn();
+        //mOnPreparedListener = null;
+        //mOnBufferingUpdateListener = null;
+        //mOnCompletionListener = null;
+        //mOnSeekCompleteListener = null;
+        //mOnErrorListener = null;
+        //mOnInfoListener = null;
+        //mOnVideoSizeChangedListener = null;
+        //mOnTimedTextListener = null;
+        //_release();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.315 -0400", hash_original_method = "D6ED0B9EBF82A338F6093204ADC2E481", hash_generated_method = "AA5F59E16F2B6AC2DE4549F16EAF4890")
     private void _release() {
     }
@@ -687,32 +668,28 @@ for(Integer t : block)
         stayAwake(false);
         _reset();
         mEventHandler.removeCallbacksAndMessages(null);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //stayAwake(false);
+        //_reset();
+        //mEventHandler.removeCallbacksAndMessages(null);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.315 -0400", hash_original_method = "3FFFF13DAAD4B409C984414CD8318D6D", hash_generated_method = "3553160F21F5CD09799179A1C4084CF0")
     private void _reset() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.315 -0400", hash_original_method = "7EA0CD9F896B971C851CD4CA96BFE5FA", hash_generated_method = "99A0AEB1474BFA8AD85F70AF19D36753")
     public void setAudioStreamType(int streamtype) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.316 -0400", hash_original_method = "4C3A78CA2E07F71A05B213D4CFF64128", hash_generated_method = "0C49790A1DD7D1A295D28EB1B65DC925")
     public void setLooping(boolean looping) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.316 -0400", hash_original_method = "0D67125EE341895F5558E4CEF076C5C6", hash_generated_method = "E9AFB64D6287829004ADA34B1AF7E295")
     public boolean isLooping() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_928028193 = getTaintBoolean();
@@ -720,7 +697,6 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.316 -0400", hash_original_method = "BE4EAA7A7DB479C280C8B84C90E58238", hash_generated_method = "D76177723C9C7B83B2B950CDE7DB2CDA")
     public void setVolume(float leftVolume, float rightVolume) {
     }
@@ -735,13 +711,11 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.317 -0400", hash_original_method = "63928D15D2C6CC99F2E8386267D06FF3", hash_generated_method = "90A8FC942E771DDCEC53B1C3A67572F9")
     public void setAudioSessionId(int sessionId) throws IllegalArgumentException, IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.317 -0400", hash_original_method = "A9F7BB2486256FFAA61FE97D99C9B85E", hash_generated_method = "C240D4226C6057B44FB0F98AF045A917")
     public int getAudioSessionId() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072000340 = getTaintInt();
@@ -749,13 +723,11 @@ for(Integer t : block)
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.317 -0400", hash_original_method = "267B75456E03BDFBAB6FC1F227BFBD27", hash_generated_method = "308855D822BAB31E9E5D0F3584415B59")
     public void attachAuxEffect(int effectId) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.318 -0400", hash_original_method = "4D1DAD410063C63E8C280A1116B73E03", hash_generated_method = "A661988F25917D0D8693F4930F0533A8")
     public boolean setParameter(int key, Parcel value) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1820334070 = getTaintBoolean();
@@ -774,12 +746,12 @@ for(Integer t : block)
         boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_880766874 = (ret);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1958015774 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1958015774;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel p = Parcel.obtain();
+        //p.writeString(value);
+        //boolean ret = setParameter(key, p);
+        //p.recycle();
+        //return ret;
     }
 
     
@@ -794,16 +766,15 @@ for(Integer t : block)
         boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_1459387319 = (ret);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2040873231 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2040873231;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel p = Parcel.obtain();
+        //p.writeInt(value);
+        //boolean ret = setParameter(key, p);
+        //p.recycle();
+        //return ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.319 -0400", hash_original_method = "331C8FC44967717E7E0670FCEDE9BFD0", hash_generated_method = "7FD7F9F0D2267E4E3D8F33E6B3FB173B")
     private void getParameter(int key, Parcel reply) {
     }
@@ -817,10 +788,10 @@ for(Integer t : block)
 Parcel var74E4690D9F2A026504928C017944E149_779931954 =         p;
         var74E4690D9F2A026504928C017944E149_779931954.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_779931954;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel p = Parcel.obtain();
+        //getParameter(key, p);
+        //return p;
     }
 
     
@@ -834,12 +805,12 @@ Parcel var74E4690D9F2A026504928C017944E149_779931954 =         p;
 String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel p = Parcel.obtain();
+        //getParameter(key, p);
+        //String ret = p.readString();
+        //p.recycle();
+        //return ret;
     }
 
     
@@ -853,16 +824,15 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
         int var2CB9DF9898E55FD0AD829DC202DDBD1C_330576938 = (ret);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720108651 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1720108651;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel p = Parcel.obtain();
+        //getParameter(key, p);
+        //int ret = p.readInt();
+        //p.recycle();
+        //return ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.320 -0400", hash_original_method = "D28173AB681B94731B1FF3947E2DFEF3", hash_generated_method = "672F3C0FD3FDB80EEF14F3C255A04A14")
     public void setAuxEffectSendLevel(float level) {
     }
@@ -913,15 +883,15 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
             boolean var68934A3E9455FA72420237EB05902327_587895448 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1665889666 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1665889666;
-        } 
+        } //End block
         boolean var0609CF9757C146007CCA7E7D3D953696_250167530 = (setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, index));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1739485402 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1739485402;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (index < 0) {
+            //return false;
+        //}
+        //return setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, index);
     }
 
     
@@ -930,8 +900,8 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
         boolean varA25F83339352E8D1308780CF786FBF5C_1736561660 = (enableTimedTextTrackIndex(0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_180620851 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_180620851;
-        
-        
+        // ---------- Original Method ----------
+        //return enableTimedTextTrackIndex(0);
     }
 
     
@@ -940,8 +910,8 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
         boolean varBF138E6E82C5C2C93AC9D2604652D7B0_401946604 = (setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, -1));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_69801826 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_69801826;
-        
-        
+        // ---------- Original Method ----------
+        //return setParameter(KEY_PARAMETER_TIMED_TEXT_TRACK_INDEX, -1);
     }
 
     
@@ -956,8 +926,8 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     @Override
     protected void finalize() {
         native_finalize();
-        
-        
+        // ---------- Original Method ----------
+        //native_finalize();
     }
 
     
@@ -974,75 +944,67 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.324 -0400", hash_original_method = "652A10B898FA76BB677D4E34679A7B5D", hash_generated_method = "987EBE7B07F0BFE0DA24DF93DF11B855")
     public void setOnPreparedListener(OnPreparedListener listener) {
         mOnPreparedListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnPreparedListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.325 -0400", hash_original_method = "6CC4251EDF834484FDBD6F0A122C65D9", hash_generated_method = "02AF5E76A57B14C22A8D31C1FD5DA3AF")
     public void setOnCompletionListener(OnCompletionListener listener) {
         mOnCompletionListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnCompletionListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.325 -0400", hash_original_method = "DDA62D9965B414E96A3CCD5D800217D1", hash_generated_method = "0C9AB338C3C684416FAC16C098DF00A6")
     public void setOnBufferingUpdateListener(OnBufferingUpdateListener listener) {
         mOnBufferingUpdateListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnBufferingUpdateListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.326 -0400", hash_original_method = "E6C283B9723E51C1AAC734ADC41F741F", hash_generated_method = "09F00DE120F67FA2E06D414F50C2147F")
     public void setOnSeekCompleteListener(OnSeekCompleteListener listener) {
         mOnSeekCompleteListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnSeekCompleteListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.326 -0400", hash_original_method = "8379FC1073131EA9347F12938BFC14C4", hash_generated_method = "136130265E2833871182C75F9CC3334A")
     public void setOnVideoSizeChangedListener(OnVideoSizeChangedListener listener) {
         mOnVideoSizeChangedListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnVideoSizeChangedListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.326 -0400", hash_original_method = "EF2D264E164B28DBC06EEC6D3EBE8B23", hash_generated_method = "D337EF32E4653756194FC2A4088DE668")
     public void setOnTimedTextListener(OnTimedTextListener listener) {
         mOnTimedTextListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnTimedTextListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.327 -0400", hash_original_method = "606EB06B64A07407B83CA5CBEBF309C3", hash_generated_method = "C60A0B1416D18FD751AE5692034CBEE5")
     public void setOnErrorListener(OnErrorListener listener) {
         mOnErrorListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnErrorListener = listener;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.327 -0400", hash_original_method = "4D9753A45AFF6F50F6DD9F2BE501A438", hash_generated_method = "CC22DF79C368D299CC0E0400ABB99A07")
     public void setOnInfoListener(OnInfoListener listener) {
         mOnInfoListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnInfoListener = listener;
     }
 
     
@@ -1056,8 +1018,8 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
             super(looper);
             addTaint(looper.getTaint());
             mMediaPlayer = mp;
-            
-            
+            // ---------- Original Method ----------
+            //mMediaPlayer = mp;
         }
 
         
@@ -1068,7 +1030,7 @@ String varEDFF4FBBF053B5DC2B444ADFA049EE0F_2027771813 =         ret;
     if(mMediaPlayer.mNativeContext == 0)            
             {
                 return;
-            } 
+            } //End block
 switch(msg.what){
             case MEDIA_PREPARED:
     if(mOnPreparedListener != null)            
@@ -1096,21 +1058,21 @@ switch(msg.what){
     if(mOnErrorListener != null)            
             {
                 error_was_handled = mOnErrorListener.onError(mMediaPlayer, msg.arg1, msg.arg2);
-            } 
+            } //End block
     if(mOnCompletionListener != null && ! error_was_handled)            
             {
                 mOnCompletionListener.onCompletion(mMediaPlayer);
-            } 
+            } //End block
             stayAwake(false);
             return;
             case MEDIA_INFO:
     if(msg.arg1 != MEDIA_INFO_VIDEO_TRACK_LAGGING)            
             {
-            } 
+            } //End block
     if(mOnInfoListener != null)            
             {
                 mOnInfoListener.onInfo(mMediaPlayer, msg.arg1, msg.arg2);
-            } 
+            } //End block
             return;
             case MEDIA_TIMED_TEXT:
     if(mOnTimedTextListener != null)            
@@ -1118,24 +1080,24 @@ switch(msg.what){
     if(msg.obj == null)                
                 {
                     mOnTimedTextListener.onTimedText(mMediaPlayer, null);
-                } 
+                } //End block
                 else
                 {
     if(msg.obj instanceof byte[])                    
                     {
                         TimedText text = new TimedText((byte[])(msg.obj));
                         mOnTimedTextListener.onTimedText(mMediaPlayer, text);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             return;
             case MEDIA_NOP:
             break;
             default:
             return;
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

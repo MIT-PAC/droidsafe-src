@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -42,7 +42,7 @@ public class CdmaCallWaitingNotification {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.056 -0400", hash_original_method = "EA80599905C22E601830CAF570ACF6E5", hash_generated_method = "EA80599905C22E601830CAF570ACF6E5")
     public CdmaCallWaitingNotification ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -61,18 +61,18 @@ String var0FF37B5AFCEF923E613934F2498F778A_371316195 =         super.toString() 
             + " signal: " + signal;
         var0FF37B5AFCEF923E613934F2498F778A_371316195.addTaint(taint);
         return var0FF37B5AFCEF923E613934F2498F778A_371316195;
-        
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+        // ---------- Original Method ----------
+        //return super.toString() + "Call Waiting Notification  "
+            //+ " number: " + number
+            //+ " numberPresentation: " + numberPresentation
+            //+ " name: " + name
+            //+ " namePresentation: " + namePresentation
+            //+ " numberType: " + numberType
+            //+ " numberPlan: " + numberPlan
+            //+ " isPresent: " + isPresent
+            //+ " signalType: " + signalType
+            //+ " alertPitch: " + alertPitch
+            //+ " signal: " + signal ;
     }
 
     

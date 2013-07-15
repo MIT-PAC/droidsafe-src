@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class NoClassDefFoundError extends LinkageError {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.605 -0400", hash_original_method = "8CFE32FE45EF5975C0AEC893301BEE4B", hash_generated_method = "0E91492388418CA4E74C2221C3AD3DDC")
     public  NoClassDefFoundError() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class NoClassDefFoundError extends LinkageError {
     public  NoClassDefFoundError(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

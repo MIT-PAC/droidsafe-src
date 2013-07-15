@@ -1,6 +1,6 @@
 package java.math;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public final class MathContext implements Serializable {
     public  MathContext(int precision) {
         this(precision, RoundingMode.HALF_UP);
         addTaint(precision);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -30,10 +30,10 @@ public final class MathContext implements Serializable {
         this.precision = precision;
         this.roundingMode = roundingMode;
         checkValid();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.precision = precision;
+        //this.roundingMode = roundingMode;
+        //checkValid();
     }
 
     
@@ -47,34 +47,33 @@ public final class MathContext implements Serializable {
             java.lang.IllegalArgumentException varD50ED92A3DD4CE03CCA0144EC534D709_1689966341 = invalidMathContext("Missing precision", s);
             varD50ED92A3DD4CE03CCA0144EC534D709_1689966341.addTaint(taint);
             throw varD50ED92A3DD4CE03CCA0144EC534D709_1689966341;
-        } 
+        } //End block
         String precisionString = s.substring(precisionLength, spaceIndex);
         try 
         {
             this.precision = Integer.parseInt(precisionString);
-        } 
+        } //End block
         catch (NumberFormatException nfe)
         {
             java.lang.IllegalArgumentException var213634FDDAEA52C24BEAC03414F443E4_1877681719 = invalidMathContext("Bad precision", s);
             var213634FDDAEA52C24BEAC03414F443E4_1877681719.addTaint(taint);
             throw var213634FDDAEA52C24BEAC03414F443E4_1877681719;
-        } 
+        } //End block
         int roundingModeStart = spaceIndex + 1;
     if(!s.regionMatches(roundingModeStart, "roundingMode=", 0, roundingModeLength))        
         {
             java.lang.IllegalArgumentException var12D1A417FDA706F32B7229A707E9976E_553601511 = invalidMathContext("Missing rounding mode", s);
             var12D1A417FDA706F32B7229A707E9976E_553601511.addTaint(taint);
             throw var12D1A417FDA706F32B7229A707E9976E_553601511;
-        } 
+        } //End block
         roundingModeStart += roundingModeLength;
         this.roundingMode = RoundingMode.valueOf(s.substring(roundingModeStart));
         checkValid();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.302 -0400", hash_original_method = "426953F7355AB3CD325EF2685FB1287C", hash_generated_method = "7BF89FFA0647A481B39798F2F3641A5A")
     private IllegalArgumentException invalidMathContext(String reason, String s) {
         addTaint(s.getTaint());
@@ -82,12 +81,11 @@ public final class MathContext implements Serializable {
         IllegalArgumentException var1091AF25FF67E9B01DD7F575637C2C5F_2024318539 = new IllegalArgumentException(reason + ": " + s);
         var1091AF25FF67E9B01DD7F575637C2C5F_2024318539.addTaint(taint);
         throw var1091AF25FF67E9B01DD7F575637C2C5F_2024318539;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IllegalArgumentException(reason + ": " + s);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.302 -0400", hash_original_method = "D8DAE7CCCFF0DCEAE4D1ED9221F38BDC", hash_generated_method = "EEBC37DC074D6510E971D3394FB7F11E")
     private void checkValid() {
     if(precision < 0)        
@@ -95,46 +93,43 @@ public final class MathContext implements Serializable {
             IllegalArgumentException var07CFDDE05BC001AAA3B368C5412ECAAF_1056835568 = new IllegalArgumentException("Negative precision: " + precision);
             var07CFDDE05BC001AAA3B368C5412ECAAF_1056835568.addTaint(taint);
             throw var07CFDDE05BC001AAA3B368C5412ECAAF_1056835568;
-        } 
+        } //End block
     if(roundingMode == null)        
         {
             NullPointerException varD23A7BDC7ECC6C55AA11878B739C26B1_638611960 = new NullPointerException("roundingMode == null");
             varD23A7BDC7ECC6C55AA11878B739C26B1_638611960.addTaint(taint);
             throw varD23A7BDC7ECC6C55AA11878B739C26B1_638611960;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (precision < 0) {
+            //throw new IllegalArgumentException("Negative precision: " + precision);
+        //}
+        //if (roundingMode == null) {
+            //throw new NullPointerException("roundingMode == null");
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.303 -0400", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "1EB236C286725216FA5EB19CCF9AC164")
     public int getPrecision() {
         int varE2794D8F12719281EFF5601251C8A680_1581266719 = (precision);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734729307 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1734729307;
-        
-        
+        // ---------- Original Method ----------
+        //return precision;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.303 -0400", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "E2F726522ECA5B545CA1CD950731AE21")
     public RoundingMode getRoundingMode() {
 RoundingMode var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137 =         roundingMode;
         var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137.addTaint(taint);
         return var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137;
-        
-        
+        // ---------- Original Method ----------
+        //return roundingMode;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.304 -0400", hash_original_method = "297627CFD1856C2678820F72FEC54301", hash_generated_method = "FBD59ABF05422C6C92B3FBFB533630A0")
     @Override
     public boolean equals(Object x) {
@@ -144,38 +139,35 @@ RoundingMode var212E4C0114CE7EB809681C4A5E5BA4B1_1917807137 =         roundingMo
                 .getRoundingMode() == roundingMode)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1172726715 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1172726715;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return ((x instanceof MathContext)
+                //&& (((MathContext) x).getPrecision() == precision) && (((MathContext) x)
+                //.getRoundingMode() == roundingMode));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.304 -0400", hash_original_method = "CDDF05FC589C0F0146B62DD26D215A30", hash_generated_method = "4380144ACEA0DDC79EFF988EA37111B2")
     @Override
     public int hashCode() {
         int varEE0DC23B0F7DCB6AADC58BC99EAE4644_2091332977 = (((precision << 3) | roundingMode.ordinal()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_199366892 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_199366892;
-        
-        
+        // ---------- Original Method ----------
+        //return ((precision << 3) | roundingMode.ordinal());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.304 -0400", hash_original_method = "537ED30546F81713B44C66AB9FEB6470", hash_generated_method = "3ED21B6C159C0FFB7F714A597B1A6D81")
     @Override
     public String toString() {
 String var939940AE6DFAF48A015D25E5ACE18ECD_935157246 =         "precision=" + precision + " roundingMode=" + roundingMode;
         var939940AE6DFAF48A015D25E5ACE18ECD_935157246.addTaint(taint);
         return var939940AE6DFAF48A015D25E5ACE18ECD_935157246;
-        
-        
+        // ---------- Original Method ----------
+        //return "precision=" + precision + " roundingMode=" + roundingMode;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.305 -0400", hash_original_method = "323BCE51E980C267DF7F7C47AD5D1D50", hash_generated_method = "829DEEEEB6A1705438C8CA3A7DA01733")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         addTaint(s.getTaint());
@@ -183,20 +175,20 @@ String var939940AE6DFAF48A015D25E5ACE18ECD_935157246 =         "precision=" + pr
         try 
         {
             checkValid();
-        } 
+        } //End block
         catch (Exception ex)
         {
             StreamCorruptedException varC25D93F078866AC77F9F0370ED18FB45_892683931 = new StreamCorruptedException(ex.getMessage());
             varC25D93F078866AC77F9F0370ED18FB45_892683931.addTaint(taint);
             throw varC25D93F078866AC77F9F0370ED18FB45_892683931;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //s.defaultReadObject();
+        //try {
+            //checkValid();
+        //} catch (Exception ex) {
+            //throw new StreamCorruptedException(ex.getMessage());
+        //}
     }
 
     

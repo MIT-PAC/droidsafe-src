@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -80,21 +80,21 @@ public class ViewConfiguration {
         mOverscrollDistance = OVERSCROLL_DISTANCE;
         mOverflingDistance = OVERFLING_DISTANCE;
         mFadingMarqueeEnabled = true;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mEdgeSlop = EDGE_SLOP;
+        //mFadingEdgeLength = FADING_EDGE_LENGTH;
+        //mMinimumFlingVelocity = MINIMUM_FLING_VELOCITY;
+        //mMaximumFlingVelocity = MAXIMUM_FLING_VELOCITY;
+        //mScrollbarSize = SCROLL_BAR_SIZE;
+        //mTouchSlop = TOUCH_SLOP;
+        //mPagingTouchSlop = PAGING_TOUCH_SLOP;
+        //mDoubleTapSlop = DOUBLE_TAP_SLOP;
+        //mScaledTouchExplorationTapSlop = TOUCH_EXPLORATION_TAP_SLOP;
+        //mWindowTouchSlop = WINDOW_TOUCH_SLOP;
+        //mMaximumDrawingCacheSize = MAXIMUM_DRAWING_CACHE_SIZE;
+        //mOverscrollDistance = OVERSCROLL_DISTANCE;
+        //mOverflingDistance = OVERFLING_DISTANCE;
+        //mFadingMarqueeEnabled = true;
     }
 
     
@@ -109,11 +109,11 @@ public class ViewConfiguration {
     if(config.isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_XLARGE))        
         {
             sizeAndDensity = density * 1.5f;
-        } 
+        } //End block
         else
         {
             sizeAndDensity = density;
-        } 
+        } //End block
         mEdgeSlop = (int) (sizeAndDensity * EDGE_SLOP + 0.5f);
         mFadingEdgeLength = (int) (sizeAndDensity * FADING_EDGE_LENGTH + 0.5f);
         mMinimumFlingVelocity = (int) (density * MINIMUM_FLING_VELOCITY + 0.5f);
@@ -132,19 +132,19 @@ public class ViewConfiguration {
             {
                 sHasPermanentMenuKey = wm.canStatusBarHide() && !wm.hasNavigationBar();
                 sHasPermanentMenuKeySet = true;
-            } 
+            } //End block
             catch (RemoteException ex)
             {
                 sHasPermanentMenuKey = false;
-            } 
-        } 
+            } //End block
+        } //End block
         mFadingMarqueeEnabled = res.getBoolean(
                 com.android.internal.R.bool.config_ui_enableFadingMarquee);
         mTouchSlop = res.getDimensionPixelSize(
                 com.android.internal.R.dimen.config_viewConfigurationTouchSlop);
         mPagingTouchSlop = mTouchSlop * 2;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -160,56 +160,49 @@ public class ViewConfiguration {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getScrollBarSize() {
         return SCROLL_BAR_SIZE;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.327 -0400", hash_original_method = "64B2CB77402813F2D85B7730CCF96AEF", hash_generated_method = "F7BD7649FA5DF35B2FCF77531727CD55")
     public int getScaledScrollBarSize() {
         int varE8596193B8D43C34B40311F87AB4FCD6_1874558098 = (mScrollbarSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437450964 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437450964;
-        
-        
+        // ---------- Original Method ----------
+        //return mScrollbarSize;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getScrollBarFadeDuration() {
+        public static int getScrollBarFadeDuration() {
         return SCROLL_BAR_FADE_DURATION;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getScrollDefaultDelay() {
+        public static int getScrollDefaultDelay() {
         return SCROLL_BAR_DEFAULT_DELAY;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getFadingEdgeLength() {
         return FADING_EDGE_LENGTH;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.328 -0400", hash_original_method = "DBA79B5462EB99E7DC2C8AF68ED4F8B2", hash_generated_method = "6FEE15DF4BF2FEBDE27A05A11B9EB4C5")
     public int getScaledFadingEdgeLength() {
         int var827A52B85CF8A98C1BAE5458C6B4B4F5_1423430199 = (mFadingEdgeLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_502213921 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_502213921;
-        
-        
+        // ---------- Original Method ----------
+        //return mFadingEdgeLength;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getPressedStateDuration() {
+        public static int getPressedStateDuration() {
         return PRESSED_STATE_DURATION;
     }
 
@@ -225,255 +218,225 @@ public class ViewConfiguration {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getKeyRepeatDelay() {
+        public static int getKeyRepeatDelay() {
         return KEY_REPEAT_DELAY;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getTapTimeout() {
+        public static int getTapTimeout() {
         return TAP_TIMEOUT;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getJumpTapTimeout() {
+        public static int getJumpTapTimeout() {
         return JUMP_TAP_TIMEOUT;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getDoubleTapTimeout() {
+        public static int getDoubleTapTimeout() {
         return DOUBLE_TAP_TIMEOUT;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getHoverTapTimeout() {
+        public static int getHoverTapTimeout() {
         return HOVER_TAP_TIMEOUT;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getHoverTapSlop() {
+        public static int getHoverTapSlop() {
         return HOVER_TAP_SLOP;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getEdgeSlop() {
         return EDGE_SLOP;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.330 -0400", hash_original_method = "26568609E943FB4B92788BE90A3C6865", hash_generated_method = "1647A7A9D73795E553CB80514FF21774")
     public int getScaledEdgeSlop() {
         int var7572292F9A0C0E3DA861F35B2F9EB690_509133210 = (mEdgeSlop);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927152728 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927152728;
-        
-        
+        // ---------- Original Method ----------
+        //return mEdgeSlop;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getTouchSlop() {
         return TOUCH_SLOP;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.330 -0400", hash_original_method = "60BD37725F7CBB3A1C18E0C12D7EC92F", hash_generated_method = "C3886BB4BEBEFBC4390ADB60AADE544A")
     public int getScaledTouchSlop() {
         int var3DFFFAD10926598D18EEC50D61DE79CA_803129756 = (mTouchSlop);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_303731293 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_303731293;
-        
-        
+        // ---------- Original Method ----------
+        //return mTouchSlop;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.331 -0400", hash_original_method = "4AE776F4126E41D66D9D9E5C3DD06CAD", hash_generated_method = "7808FE6A804C875DDD3B5B2A4EF0B7DB")
     public int getScaledPagingTouchSlop() {
         int varD601D279C05E34D2E9921B35CB90BAB6_1205060199 = (mPagingTouchSlop);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1628293053 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1628293053;
-        
-        
+        // ---------- Original Method ----------
+        //return mPagingTouchSlop;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getDoubleTapSlop() {
         return DOUBLE_TAP_SLOP;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.331 -0400", hash_original_method = "6B30BD1A6859DBFC35C31996D22D0A66", hash_generated_method = "1F2269EF1B2B400F023A025D821581C8")
     public int getScaledDoubleTapSlop() {
         int varF450F850864B9ECCFF82FE2087B59917_1968336800 = (mDoubleTapSlop);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571766054 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571766054;
-        
-        
+        // ---------- Original Method ----------
+        //return mDoubleTapSlop;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.331 -0400", hash_original_method = "B7560D2EBF5FE44925FF9E0F817886D6", hash_generated_method = "459048969C87F29C53719EA8C226E74F")
     public int getScaledTouchExplorationTapSlop() {
         int var65E37DD557E6D0E9D40F0750A85C869B_1212248567 = (mScaledTouchExplorationTapSlop);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134740856 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134740856;
-        
-        
+        // ---------- Original Method ----------
+        //return mScaledTouchExplorationTapSlop;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long getSendRecurringAccessibilityEventsInterval() {
+        public static long getSendRecurringAccessibilityEventsInterval() {
         return SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getWindowTouchSlop() {
         return WINDOW_TOUCH_SLOP;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.332 -0400", hash_original_method = "C43D675F470050DADBFF4CBA809EB35A", hash_generated_method = "14F8102B890A18018CDD71228C69C754")
     public int getScaledWindowTouchSlop() {
         int var2A69574802589D7DE45CCCB3649B1790_846596084 = (mWindowTouchSlop);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_57359869 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_57359869;
-        
-        
+        // ---------- Original Method ----------
+        //return mWindowTouchSlop;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getMinimumFlingVelocity() {
         return MINIMUM_FLING_VELOCITY;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.332 -0400", hash_original_method = "0486ED6F0D874BB9D1C234D99788A23A", hash_generated_method = "7C084F468332DD111838A1C96FFF7FF9")
     public int getScaledMinimumFlingVelocity() {
         int var950A8222B535BF5159B013E5329A56C7_88596526 = (mMinimumFlingVelocity);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977649416 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977649416;
-        
-        
+        // ---------- Original Method ----------
+        //return mMinimumFlingVelocity;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getMaximumFlingVelocity() {
         return MAXIMUM_FLING_VELOCITY;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.332 -0400", hash_original_method = "FB70B19A53E289FD25C6D1F0C8994CAD", hash_generated_method = "1AD552CE01A9AE2302AC1BE4D5FC6C3D")
     public int getScaledMaximumFlingVelocity() {
         int var8ED13B950D5803064219CE68BB8F2695_1756484016 = (mMaximumFlingVelocity);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1243332185 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1243332185;
-        
-        
+        // ---------- Original Method ----------
+        //return mMaximumFlingVelocity;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    @Deprecated
+        @Deprecated
     public static int getMaximumDrawingCacheSize() {
         return MAXIMUM_DRAWING_CACHE_SIZE;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.333 -0400", hash_original_method = "C4F1814F49D0F58AC601C99A9F6FDB3F", hash_generated_method = "D4CEDD18688FDCD935D30EB8AD1B100D")
     public int getScaledMaximumDrawingCacheSize() {
         int var3BDF1FAEEAA948FC1D6E05137A75FC00_1987401874 = (mMaximumDrawingCacheSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_667481052 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_667481052;
-        
-        
+        // ---------- Original Method ----------
+        //return mMaximumDrawingCacheSize;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.333 -0400", hash_original_method = "36377B5ABE3B6C0802B86BCCF5BB67A1", hash_generated_method = "3DD769FC7F654B99C6DA23C16B28DDE6")
     public int getScaledOverscrollDistance() {
         int var7A5B6F76BA72A8D6AFCFCEA14B8C2556_1183524043 = (mOverscrollDistance);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2126991106 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2126991106;
-        
-        
+        // ---------- Original Method ----------
+        //return mOverscrollDistance;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.334 -0400", hash_original_method = "1172E195811EBBA2C8358246D6F16FAF", hash_generated_method = "0DC743C9478392D157DEB1C7F8A8521D")
     public int getScaledOverflingDistance() {
         int var755491871A4FCE3E01181030F8FEB178_1894466463 = (mOverflingDistance);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_821302443 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_821302443;
-        
-        
+        // ---------- Original Method ----------
+        //return mOverflingDistance;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long getZoomControlsTimeout() {
+        public static long getZoomControlsTimeout() {
         return ZOOM_CONTROLS_TIMEOUT;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long getGlobalActionKeyTimeout() {
+        public static long getGlobalActionKeyTimeout() {
         return GLOBAL_ACTIONS_KEY_TIMEOUT;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float getScrollFriction() {
+        public static float getScrollFriction() {
         return SCROLL_FRICTION;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.335 -0400", hash_original_method = "545A02CAD62F49742EF9C21476AFC78D", hash_generated_method = "BBDADC58592A2FF835E9813A117746DD")
     public boolean hasPermanentMenuKey() {
         boolean varC1DDB0579B2A8CD16E731E3F7E518AD4_1060787119 = (sHasPermanentMenuKey);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_46530549 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_46530549;
-        
-        
+        // ---------- Original Method ----------
+        //return sHasPermanentMenuKey;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:52.335 -0400", hash_original_method = "B98AC48BC285AD77A873792B80842BAD", hash_generated_method = "89DA334B0003D927FED7DB2E6709F617")
     public boolean isFadingMarqueeEnabled() {
         boolean varB38C8D561AB27D8D243BC403028E7F56_1810188122 = (mFadingMarqueeEnabled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1779573571 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1779573571;
-        
-        
+        // ---------- Original Method ----------
+        //return mFadingMarqueeEnabled;
     }
 
     

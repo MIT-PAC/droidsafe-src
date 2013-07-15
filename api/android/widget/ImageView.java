@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -106,8 +106,8 @@ public class ImageView extends View {
         super(context);
         addTaint(context.getTaint());
         initImageView();
-        
-        
+        // ---------- Original Method ----------
+        //initImageView();
     }
 
     
@@ -116,7 +116,7 @@ public class ImageView extends View {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -133,7 +133,7 @@ public class ImageView extends View {
     if(d != null)        
         {
             setImageDrawable(d);
-        } 
+        } //End block
         mBaselineAlignBottom = a.getBoolean(
                 com.android.internal.R.styleable.ImageView_baselineAlignBottom, false);
         mBaseline = a.getDimensionPixelSize(
@@ -149,22 +149,22 @@ public class ImageView extends View {
     if(index >= 0)        
         {
             setScaleType(sScaleTypeArray[index]);
-        } 
+        } //End block
         int tint = a.getInt(com.android.internal.R.styleable.ImageView_tint, 0);
     if(tint != 0)        
         {
             setColorFilter(tint);
-        } 
+        } //End block
         int alpha = a.getInt(com.android.internal.R.styleable.ImageView_drawableAlpha, 255);
     if(alpha != 255)        
         {
             setAlpha(alpha);
-        } 
+        } //End block
         mCropToPadding = a.getBoolean(
                 com.android.internal.R.styleable.ImageView_cropToPadding, false);
         a.recycle();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -172,9 +172,9 @@ public class ImageView extends View {
     private void initImageView() {
         mMatrix     = new Matrix();
         mScaleType  = ScaleType.FIT_CENTER;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mMatrix     = new Matrix();
+        //mScaleType  = ScaleType.FIT_CENTER;
     }
 
     
@@ -185,8 +185,8 @@ public class ImageView extends View {
         boolean varC1FFB548593DBD6036C20D574FC33382_674485500 = (mDrawable == dr || super.verifyDrawable(dr));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2113226925 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2113226925;
-        
-        
+        // ---------- Original Method ----------
+        //return mDrawable == dr || super.verifyDrawable(dr);
     }
 
     
@@ -196,9 +196,9 @@ public class ImageView extends View {
         super.jumpDrawablesToCurrentState();
     if(mDrawable != null)        
         mDrawable.jumpToCurrentState();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.jumpDrawablesToCurrentState();
+        //if (mDrawable != null) mDrawable.jumpToCurrentState();
     }
 
     
@@ -209,17 +209,17 @@ public class ImageView extends View {
     if(dr == mDrawable)        
         {
             invalidate();
-        } 
+        } //End block
         else
         {
             super.invalidateDrawable(dr);
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (dr == mDrawable) {
+            //invalidate();
+        //} else {
+            //super.invalidateDrawable(dr);
+        //}
     }
 
     
@@ -231,16 +231,16 @@ public class ImageView extends View {
                 getResolvedLayoutDirection() : super.getResolvedLayoutDirection(dr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790943518 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790943518;
-        
-        
-                
+        // ---------- Original Method ----------
+        //return (dr == mDrawable) ?
+                //getResolvedLayoutDirection() : super.getResolvedLayoutDirection(dr);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.973 -0400", hash_original_method = "000365A595FBC289F16F7AD48241010C", hash_generated_method = "5067EB6439F0B29B533FC25DFC4A1CB4")
     @Override
     protected boolean onSetAlpha(int alpha) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(alpha);
     if(getBackground() == null)        
         {
@@ -250,45 +250,45 @@ public class ImageView extends View {
                 mViewAlphaScale = scale;
                 mColorMod = true;
                 applyColorMod();
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_864273538 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_434631850 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_434631850;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_829358534 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2005304539 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2005304539;
-        
-        
-            
-            
-                
-                
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (getBackground() == null) {
+            //int scale = alpha + (alpha >> 7);
+            //if (mViewAlphaScale != scale) {
+                //mViewAlphaScale = scale;
+                //mColorMod = true;
+                //applyColorMod();
+            //}
+            //return true;
+        //}
+        //return false;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.973 -0400", hash_original_method = "9770981DD4DB73204B697C6119742B6F", hash_generated_method = "FB2A7D1EBC37D2CBE528515AE1825B46")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         super.onPopulateAccessibilityEvent(event);
         CharSequence contentDescription = getContentDescription();
     if(!TextUtils.isEmpty(contentDescription))        
         {
             event.getText().add(contentDescription);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onPopulateAccessibilityEvent(event);
+        //CharSequence contentDescription = getContentDescription();
+        //if (!TextUtils.isEmpty(contentDescription)) {
+            //event.getText().add(contentDescription);
+        //}
     }
 
     
@@ -299,43 +299,40 @@ public class ImageView extends View {
     if(adjustViewBounds)        
         {
             setScaleType(ScaleType.FIT_CENTER);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mAdjustViewBounds = adjustViewBounds;
+        //if (adjustViewBounds) {
+            //setScaleType(ScaleType.FIT_CENTER);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.974 -0400", hash_original_method = "EB73857FE18ECB168F084B0FAC346FEA", hash_generated_method = "79DFBF0CB12D07C0AEB4E082D13DCC35")
     @android.view.RemotableViewMethod
     public void setMaxWidth(int maxWidth) {
         mMaxWidth = maxWidth;
-        
-        
+        // ---------- Original Method ----------
+        //mMaxWidth = maxWidth;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.974 -0400", hash_original_method = "9473C5CB1AE9899AEC7CB726EABA77F7", hash_generated_method = "0CD17647B54DD7BBE70494C14EEAE2F5")
     @android.view.RemotableViewMethod
     public void setMaxHeight(int maxHeight) {
         mMaxHeight = maxHeight;
-        
-        
+        // ---------- Original Method ----------
+        //mMaxHeight = maxHeight;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.975 -0400", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "4A95EB16ED0EBBD5486E1571C5216982")
     public Drawable getDrawable() {
 Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
         var421F6744A8B50797FB9C4A96CE6DA02C_250468295.addTaint(taint);
         return var421F6744A8B50797FB9C4A96CE6DA02C_250468295;
-        
-        
+        // ---------- Original Method ----------
+        //return mDrawable;
     }
 
     
@@ -350,20 +347,19 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
             resolveUri();
             requestLayout();
             invalidate();
-        } 
-        
-        
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mUri != null || mResource != resId) {
+            //updateDrawable(null);
+            //mResource = resId;
+            //mUri = null;
+            //resolveUri();
+            //requestLayout();
+            //invalidate();
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.976 -0400", hash_original_method = "796039DEA15F6465B0D947F27F5B4F32", hash_generated_method = "E99CFD5A46B994C1CD16DAE3C04F7B42")
     @android.view.RemotableViewMethod
     public void setImageURI(Uri uri) {
@@ -377,18 +373,18 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
             resolveUri();
             requestLayout();
             invalidate();
-        } 
-        
-        
-                
-                 
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mResource != 0 ||
+                //(mUri != uri &&
+                 //(uri == null || mUri == null || !uri.equals(mUri)))) {
+            //updateDrawable(null);
+            //mResource = 0;
+            //mUri = uri;
+            //resolveUri();
+            //requestLayout();
+            //invalidate();
+        //}
     }
 
     
@@ -405,21 +401,21 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
     if(oldWidth != mDrawableWidth || oldHeight != mDrawableHeight)            
             {
                 requestLayout();
-            } 
+            } //End block
             invalidate();
-        } 
-        
-        
-            
-            
-            
-            
-            
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mDrawable != drawable) {
+            //mResource = 0;
+            //mUri = null;
+            //int oldWidth = mDrawableWidth;
+            //int oldHeight = mDrawableHeight;
+            //updateDrawable(drawable);
+            //if (oldWidth != mDrawableWidth || oldHeight != mDrawableHeight) {
+                //requestLayout();
+            //}
+            //invalidate();
+        //}
     }
 
     
@@ -428,8 +424,8 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
     public void setImageBitmap(Bitmap bm) {
         addTaint(bm.getTaint());
         setImageDrawable(new BitmapDrawable(mContext.getResources(), bm));
-        
-        
+        // ---------- Original Method ----------
+        //setImageDrawable(new BitmapDrawable(mContext.getResources(), bm));
     }
 
     
@@ -441,14 +437,14 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
         {
             refreshDrawableState();
             resizeFromDrawable();
-        } 
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mState = state;
+        //mMergeState = merge;
+        //if (mDrawable != null) {
+            //refreshDrawableState();
+            //resizeFromDrawable();
+        //}
     }
 
     
@@ -458,9 +454,9 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
         addTaint(selected);
         super.setSelected(selected);
         resizeFromDrawable();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.setSelected(selected);
+        //resizeFromDrawable();
     }
 
     
@@ -472,13 +468,13 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
         {
             mDrawable.setLevel(level);
             resizeFromDrawable();
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mLevel = level;
+        //if (mDrawable != null) {
+            //mDrawable.setLevel(level);
+            //resizeFromDrawable();
+        //}
     }
 
     
@@ -489,46 +485,44 @@ Drawable var421F6744A8B50797FB9C4A96CE6DA02C_250468295 =         mDrawable;
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1220045301 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1220045301.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1220045301;
-        } 
+        } //End block
     if(mScaleType != scaleType)        
         {
             mScaleType = scaleType;
             setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);
             requestLayout();
             invalidate();
-        } 
-        
-        
-            
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (scaleType == null) {
+            //throw new NullPointerException();
+        //}
+        //if (mScaleType != scaleType) {
+            //mScaleType = scaleType;
+            //setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);            
+            //requestLayout();
+            //invalidate();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.979 -0400", hash_original_method = "84B4F1338E9C8554FC089CA7254325E0", hash_generated_method = "015F73206C97123A08911AD7E35E1A1B")
     public ScaleType getScaleType() {
 ScaleType varA1BE4DC72C5F3036640C8E62A5AD64BE_1428883977 =         mScaleType;
         varA1BE4DC72C5F3036640C8E62A5AD64BE_1428883977.addTaint(taint);
         return varA1BE4DC72C5F3036640C8E62A5AD64BE_1428883977;
-        
-        
+        // ---------- Original Method ----------
+        //return mScaleType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.979 -0400", hash_original_method = "5B9FD9A0A164EA90D695E910523F6E96", hash_generated_method = "E08DF8EC126C40052FB36F9A4B4A6F30")
     public Matrix getImageMatrix() {
 Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
         var49A816397330451E1FD30BEA000F3851_1561464063.addTaint(taint);
         return var49A816397330451E1FD30BEA000F3851_1561464063;
-        
-        
+        // ---------- Original Method ----------
+        //return mMatrix;
     }
 
     
@@ -538,24 +532,24 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
     if(matrix != null && matrix.isIdentity())        
         {
             matrix = null;
-        } 
+        } //End block
     if(matrix == null && !mMatrix.isIdentity() ||
                 matrix != null && !mMatrix.equals(matrix))        
         {
             mMatrix.set(matrix);
             configureBounds();
             invalidate();
-        } 
-        
-        
-            
-        
-        
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (matrix != null && matrix.isIdentity()) {
+            //matrix = null;
+        //}
+        //if (matrix == null && !mMatrix.isIdentity() ||
+                //matrix != null && !mMatrix.equals(matrix)) {
+            //mMatrix.set(matrix);
+            //configureBounds();
+            //invalidate();
+        //}
     }
 
     
@@ -564,24 +558,24 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
     if(mDrawable != null)        
         {
             return;
-        } 
+        } //End block
         Resources rsrc = getResources();
     if(rsrc == null)        
         {
             return;
-        } 
+        } //End block
         Drawable d = null;
     if(mResource != 0)        
         {
             try 
             {
                 d = rsrc.getDrawable(mResource);
-            } 
+            } //End block
             catch (Exception e)
             {
                 mUri = null;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(mUri != null)        
         {
@@ -592,11 +586,11 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
                 {
                     ContentResolver.OpenResourceIdResult r = mContext.getContentResolver().getResourceId(mUri);
                     d = r.r.getDrawable(r.id);
-                } 
+                } //End block
                 catch (Exception e)
                 {
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(ContentResolver.SCHEME_CONTENT.equals(scheme)
                     || ContentResolver.SCHEME_FILE.equals(scheme))            
@@ -606,66 +600,66 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
                     d = Drawable.createFromStream(
                         mContext.getContentResolver().openInputStream(mUri),
                         null);
-                } 
+                } //End block
                 catch (Exception e)
                 {
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 d = Drawable.createFromPath(mUri.toString());
-            } 
+            } //End block
     if(d == null)            
             {
                 System.out.println("resolveUri failed on bad bitmap uri: "
                                    + mUri);
                 mUri = null;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             return;
-        } 
+        } //End block
         updateDrawable(d);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.982 -0400", hash_original_method = "F00D7A8DB32B373F9AAF90A3CC19DF16", hash_generated_method = "4770E24A182229A4765A2898920A50F9")
     @Override
     public int[] onCreateDrawableState(int extraSpace) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(extraSpace);
     if(mState == null)        
         {
             int[] var66AAC6FF29C922B79B81CD6E0D9D06DC_820498535 = (super.onCreateDrawableState(extraSpace));
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1969388364 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_1969388364;
-        } 
+        } //End block
         else
     if(!mMergeState)        
         {
             int[] var48A902C1D749B47EBC75C77370D5A1F0_1439130781 = (mState);
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_73060241 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_73060241;
-        } 
+        } //End block
         else
         {
             int[] var06A61937153242066E647F94DABCB336_802952893 = (mergeDrawableStates(
                     super.onCreateDrawableState(extraSpace + mState.length), mState));
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1682962691 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_1682962691;
-        } 
-        
-        
-            
-        
-            
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mState == null) {
+            //return super.onCreateDrawableState(extraSpace);
+        //} else if (!mMergeState) {
+            //return mState;
+        //} else {
+            //return mergeDrawableStates(
+                    //super.onCreateDrawableState(extraSpace + mState.length), mState);
+        //}
     }
 
     
@@ -675,7 +669,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
         {
             mDrawable.setCallback(null);
             unscheduleDrawable(mDrawable);
-        } 
+        } //End block
         mDrawable = d;
     if(d != null)        
         {
@@ -683,36 +677,36 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
     if(d.isStateful())            
             {
                 d.setState(getDrawableState());
-            } 
+            } //End block
             d.setLevel(mLevel);
             mDrawableWidth = d.getIntrinsicWidth();
             mDrawableHeight = d.getIntrinsicHeight();
             applyColorMod();
             configureBounds();
-        } 
+        } //End block
         else
         {
             mDrawableWidth = mDrawableHeight = -1;
-        } 
-        
-        
-            
-            
-        
-        
-        
-            
-            
-                
-            
-            
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mDrawable != null) {
+            //mDrawable.setCallback(null);
+            //unscheduleDrawable(mDrawable);
+        //}
+        //mDrawable = d;
+        //if (d != null) {
+            //d.setCallback(this);
+            //if (d.isStateful()) {
+                //d.setState(getDrawableState());
+            //}
+            //d.setLevel(mLevel);
+            //mDrawableWidth = d.getIntrinsicWidth();
+            //mDrawableHeight = d.getIntrinsicHeight();
+            //applyColorMod();
+            //configureBounds();
+        //} else {
+            //mDrawableWidth = mDrawableHeight = -1;
+        //}
     }
 
     
@@ -732,26 +726,25 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
                 mDrawableWidth = w;
                 mDrawableHeight = h;
                 requestLayout();
-            } 
-        } 
-        
-        
-        
-            
-            
-            
-            
-            
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //Drawable d = mDrawable;
+        //if (d != null) {
+            //int w = d.getIntrinsicWidth();
+            //if (w < 0) w = mDrawableWidth;
+            //int h = d.getIntrinsicHeight();
+            //if (h < 0) h = mDrawableHeight;
+            //if (w != mDrawableWidth || h != mDrawableHeight) {
+                //mDrawableWidth = w;
+                //mDrawableHeight = h;
+                //requestLayout();
+            //}
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st) {
+        private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st) {
         return sS2FArray[st.nativeInt - 1];
     }
 
@@ -759,7 +752,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.987 -0400", hash_original_method = "5D5C8E0C5B3B131983F43D2E85F23CCE", hash_generated_method = "9FB99FA837B85B92844664E7480A3DC4")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         resolveUri();
@@ -775,7 +768,7 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
             mDrawableWidth = -1;
             mDrawableHeight = -1;
             w = h = 0;
-        } 
+        } //End block
         else
         {
             w = mDrawableWidth;
@@ -789,8 +782,8 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
                 resizeWidth = widthSpecMode != MeasureSpec.EXACTLY;
                 resizeHeight = heightSpecMode != MeasureSpec.EXACTLY;
                 desiredAspect = (float) w / (float) h;
-            } 
-        } 
+            } //End block
+        } //End block
         int pleft = mPaddingLeft;
         int pright = mPaddingRight;
         int ptop = mPaddingTop;
@@ -816,8 +809,8 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
                         {
                             widthSize = newWidth;
                             done = true;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
     if(!done && resizeHeight)                    
                     {
                         int newHeight = (int)((widthSize - pleft - pright) / desiredAspect) +
@@ -825,11 +818,11 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
     if(newHeight <= heightSize)                        
                         {
                             heightSize = newHeight;
-                        } 
-                    } 
-                } 
-            } 
-        } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         else
         {
             w += pleft + pright;
@@ -838,10 +831,10 @@ Matrix var49A816397330451E1FD30BEA000F3851_1561464063 =         mMatrix;
             h = Math.max(h, getSuggestedMinimumHeight());
             widthSize = resolveSizeAndState(w, widthMeasureSpec, 0);
             heightSize = resolveSizeAndState(h, heightMeasureSpec, 0);
-        } 
+        } //End block
         setMeasuredDimension(widthSize, heightSize);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -867,22 +860,22 @@ switch(specMode){
 }        int varB4A88417B3D0170D754C647C30B7216A_115850467 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561542598 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561542598;
-        
-        
-        
-        
-        
-            
-                
-                
-            
-                
-                
-            
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //int result = desiredSize;
+        //int specMode = MeasureSpec.getMode(measureSpec);
+        //int specSize =  MeasureSpec.getSize(measureSpec);
+        //switch (specMode) {
+            //case MeasureSpec.UNSPECIFIED:
+                //result = Math.min(desiredSize, maxSize);
+                //break;
+            //case MeasureSpec.AT_MOST:
+                //result = Math.min(Math.min(desiredSize, specSize), maxSize);
+                //break;
+            //case MeasureSpec.EXACTLY:
+                //result = specSize;
+                //break;
+        //}
+        //return result;
     }
 
     
@@ -899,11 +892,11 @@ switch(specMode){
         boolean var8977DFAC2F8E04CB96E66882235F5ABA_1760721835 = (changed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_459208829 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_459208829;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean changed = super.setFrame(l, t, r, b);
+        //mHaveFrame = true;
+        //configureBounds();
+        //return changed;
     }
 
     
@@ -912,7 +905,7 @@ switch(specMode){
     if(mDrawable == null || !mHaveFrame)        
         {
             return;
-        } 
+        } //End block
         int dwidth = mDrawableWidth;
         int dheight = mDrawableHeight;
         int vwidth = getWidth() - mPaddingLeft - mPaddingRight;
@@ -923,7 +916,7 @@ switch(specMode){
         {
             mDrawable.setBounds(0, 0, vwidth, vheight);
             mDrawMatrix = null;
-        } 
+        } //End block
         else
         {
             mDrawable.setBounds(0, 0, dwidth, dheight);
@@ -932,24 +925,24 @@ switch(specMode){
     if(mMatrix.isIdentity())                
                 {
                     mDrawMatrix = null;
-                } 
+                } //End block
                 else
                 {
                     mDrawMatrix = mMatrix;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(fits)            
             {
                 mDrawMatrix = null;
-            } 
+            } //End block
             else
     if(ScaleType.CENTER == mScaleType)            
             {
                 mDrawMatrix = mMatrix;
                 mDrawMatrix.setTranslate((int) ((vwidth - dwidth) * 0.5f + 0.5f),
                                          (int) ((vheight - dheight) * 0.5f + 0.5f));
-            } 
+            } //End block
             else
     if(ScaleType.CENTER_CROP == mScaleType)            
             {
@@ -961,15 +954,15 @@ switch(specMode){
                 {
                     scale = (float) vheight / (float) dheight;
                     dx = (vwidth - dwidth * scale) * 0.5f;
-                } 
+                } //End block
                 else
                 {
                     scale = (float) vwidth / (float) dwidth;
                     dy = (vheight - dheight * scale) * 0.5f;
-                } 
+                } //End block
                 mDrawMatrix.setScale(scale, scale);
                 mDrawMatrix.postTranslate((int) (dx + 0.5f), (int) (dy + 0.5f));
-            } 
+            } //End block
             else
     if(ScaleType.CENTER_INSIDE == mScaleType)            
             {
@@ -980,27 +973,27 @@ switch(specMode){
     if(dwidth <= vwidth && dheight <= vheight)                
                 {
                     scale = 1.0f;
-                } 
+                } //End block
                 else
                 {
                     scale = Math.min((float) vwidth / (float) dwidth,
                             (float) vheight / (float) dheight);
-                } 
+                } //End block
                 dx = (int) ((vwidth - dwidth * scale) * 0.5f + 0.5f);
                 dy = (int) ((vheight - dheight * scale) * 0.5f + 0.5f);
                 mDrawMatrix.setScale(scale, scale);
                 mDrawMatrix.postTranslate(dx, dy);
-            } 
+            } //End block
             else
             {
                 mTempSrc.set(0, 0, dwidth, dheight);
                 mTempDst.set(0, 0, vwidth, vheight);
                 mDrawMatrix = mMatrix;
                 mDrawMatrix.setRectToRect(mTempSrc, mTempDst, scaleTypeToScaleToFit(mScaleType));
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1012,34 +1005,34 @@ switch(specMode){
     if(d != null && d.isStateful())        
         {
             d.setState(getDrawableState());
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.drawableStateChanged();
+        //Drawable d = mDrawable;
+        //if (d != null && d.isStateful()) {
+            //d.setState(getDrawableState());
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.997 -0400", hash_original_method = "355C7834E61DDE917A6F527556974749", hash_generated_method = "815D34035F4F758600330521508698C7")
     @Override
     protected void onDraw(Canvas canvas) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(canvas.getTaint());
         super.onDraw(canvas);
     if(mDrawable == null)        
         {
             return;
-        } 
+        } //End block
     if(mDrawableWidth == 0 || mDrawableHeight == 0)        
         {
             return;
-        } 
+        } //End block
     if(mDrawMatrix == null && mPaddingTop == 0 && mPaddingLeft == 0)        
         {
             mDrawable.draw(canvas);
-        } 
+        } //End block
         else
         {
             int saveCount = canvas.getSaveCount();
@@ -1051,17 +1044,17 @@ switch(specMode){
                 canvas.clipRect(scrollX + mPaddingLeft, scrollY + mPaddingTop,
                         scrollX + mRight - mLeft - mPaddingRight,
                         scrollY + mBottom - mTop - mPaddingBottom);
-            } 
+            } //End block
             canvas.translate(mPaddingLeft, mPaddingTop);
     if(mDrawMatrix != null)            
             {
                 canvas.concat(mDrawMatrix);
-            } 
+            } //End block
             mDrawable.draw(canvas);
             canvas.restoreToCount(saveCount);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1074,19 +1067,19 @@ switch(specMode){
             int varC4673332F839A2FA125328034972035F_2077515054 = (getMeasuredHeight());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_693841502 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_693841502;
-        } 
+        } //End block
         else
         {
             int var3D720983D149EBC77303DA989B1707CA_2079249151 = (mBaseline);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1804010232 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1804010232;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mBaselineAlignBottom) {
+            //return getMeasuredHeight();
+        //} else {
+            //return mBaseline;
+        //}
     }
 
     
@@ -1096,12 +1089,12 @@ switch(specMode){
         {
             mBaseline = baseline;
             requestLayout();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mBaseline != baseline) {
+            //mBaseline = baseline;
+            //requestLayout();
+        //}
     }
 
     
@@ -1111,23 +1104,22 @@ switch(specMode){
         {
             mBaselineAlignBottom = aligned;
             requestLayout();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mBaselineAlignBottom != aligned) {
+            //mBaselineAlignBottom = aligned;
+            //requestLayout();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.999 -0400", hash_original_method = "7D3365C5D6F47846F65EFD0480835D79", hash_generated_method = "3307B7D7CB30FD7EB6E48320DEA1F61F")
     public boolean getBaselineAlignBottom() {
         boolean varA26D0642E93B878E7AEE8C305FF97C22_206369390 = (mBaselineAlignBottom);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1367315378 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1367315378;
-        
-        
+        // ---------- Original Method ----------
+        //return mBaselineAlignBottom;
     }
 
     
@@ -1136,8 +1128,8 @@ switch(specMode){
         addTaint(mode.getTaint());
         addTaint(color);
         setColorFilter(new PorterDuffColorFilter(color, mode));
-        
-        
+        // ---------- Original Method ----------
+        //setColorFilter(new PorterDuffColorFilter(color, mode));
     }
 
     
@@ -1146,16 +1138,16 @@ switch(specMode){
     public final void setColorFilter(int color) {
         addTaint(color);
         setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-        
-        
+        // ---------- Original Method ----------
+        //setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:06.999 -0400", hash_original_method = "B358CFD4AAFD748C624F742F21F12081", hash_generated_method = "5C5D223E65BC6100D1D7D1061123E386")
     public final void clearColorFilter() {
         setColorFilter(null);
-        
-        
+        // ---------- Original Method ----------
+        //setColorFilter(null);
     }
 
     
@@ -1167,14 +1159,14 @@ switch(specMode){
             mColorMod = true;
             applyColorMod();
             invalidate();
-        } 
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mColorFilter != cf) {
+            //mColorFilter = cf;
+            //mColorMod = true;
+            //applyColorMod();
+            //invalidate();
+        //}
     }
 
     
@@ -1188,15 +1180,15 @@ switch(specMode){
             mColorMod = true;
             applyColorMod();
             invalidate();
-        } 
-        
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //alpha &= 0xFF;
+        //if (mAlpha != alpha) {
+            //mAlpha = alpha;
+            //mColorMod = true;
+            //applyColorMod();
+            //invalidate();
+        //}
     }
 
     
@@ -1207,13 +1199,13 @@ switch(specMode){
             mDrawable = mDrawable.mutate();
             mDrawable.setColorFilter(mColorFilter);
             mDrawable.setAlpha(mAlpha * mViewAlphaScale >> 8);
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mDrawable != null && mColorMod) {
+            //mDrawable = mDrawable.mutate();
+            //mDrawable.setColorFilter(mColorFilter);
+            //mDrawable.setAlpha(mAlpha * mViewAlphaScale >> 8);
+        //}
     }
 
     
@@ -1226,46 +1218,46 @@ switch(specMode){
     if(mDrawable != null)        
         {
             mDrawable.setVisible(visibility == VISIBLE, false);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.setVisibility(visibility);
+        //if (mDrawable != null) {
+            //mDrawable.setVisible(visibility == VISIBLE, false);
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.002 -0400", hash_original_method = "3717E0990FC85EED7B1343A97507698D", hash_generated_method = "B1E5E56D571E2B53A9A6D95C52312116")
     @Override
     protected void onAttachedToWindow() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onAttachedToWindow();
     if(mDrawable != null)        
         {
             mDrawable.setVisible(getVisibility() == VISIBLE, false);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onAttachedToWindow();
+        //if (mDrawable != null) {
+            //mDrawable.setVisible(getVisibility() == VISIBLE, false);
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.002 -0400", hash_original_method = "66E6E711A91B2172E1C35BB591AC6445", hash_generated_method = "C4081A958D547BC7E7545B67BFED03FE")
     @Override
     protected void onDetachedFromWindow() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDetachedFromWindow();
     if(mDrawable != null)        
         {
             mDrawable.setVisible(false, false);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onDetachedFromWindow();
+        //if (mDrawable != null) {
+            //mDrawable.setVisible(false, false);
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package android.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,7 +31,7 @@ public class TypedValue {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.447 -0400", hash_original_method = "0B58DE40EB8BF8C74A189BC20C7FD705", hash_generated_method = "0B58DE40EB8BF8C74A189BC20C7FD705")
     public TypedValue ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -40,13 +40,12 @@ public class TypedValue {
         float varDB0829D96679B3E70A0CB58EAC799176_890242205 = (Float.intBitsToFloat(data));
                 float var546ADE640B6EDFBC8A086EF31347E768_901360787 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_901360787;
-        
-        
+        // ---------- Original Method ----------
+        //return Float.intBitsToFloat(data);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float complexToFloat(int complex) {
+        public static float complexToFloat(int complex) {
         return (complex&(TypedValue.COMPLEX_MANTISSA_MASK
                    <<TypedValue.COMPLEX_MANTISSA_SHIFT))
             * RADIX_MULTS[(complex>>TypedValue.COMPLEX_RADIX_SHIFT)
@@ -100,8 +99,7 @@ public class TypedValue {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static float applyDimension(int unit, float value,
+        public static float applyDimension(int unit, float value,
                                        DisplayMetrics metrics) {
         switch (unit) {
         case COMPLEX_UNIT_PX:
@@ -127,8 +125,8 @@ public class TypedValue {
         float var5C0E2B71D9BB7E63D53516F0EC676CD7_1990651540 = (complexToDimension(data, metrics));
                 float var546ADE640B6EDFBC8A086EF31347E768_2074639999 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2074639999;
-        
-        
+        // ---------- Original Method ----------
+        //return complexToDimension(data, metrics);
     }
 
     
@@ -150,8 +148,8 @@ public class TypedValue {
         float var4C84E76686717A5E1D39992F3B0FFAF6_2113407539 = (complexToFraction(data, base, pbase));
                 float var546ADE640B6EDFBC8A086EF31347E768_1207569799 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1207569799;
-        
-        
+        // ---------- Original Method ----------
+        //return complexToFraction(data, base, pbase);
     }
 
     
@@ -163,16 +161,16 @@ public class TypedValue {
 CharSequence varDCF8A90B03379D9C1C8BF337A3879E0C_2081529772 =             string;
             varDCF8A90B03379D9C1C8BF337A3879E0C_2081529772.addTaint(taint);
             return varDCF8A90B03379D9C1C8BF337A3879E0C_2081529772;
-        } 
+        } //End block
 CharSequence varC48A172B614CE5EFF1251A722A45354E_657320663 =         coerceToString(t, data);
         varC48A172B614CE5EFF1251A722A45354E_657320663.addTaint(taint);
         return varC48A172B614CE5EFF1251A722A45354E_657320663;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int t = type;
+        //if (t == TYPE_STRING) {
+            //return string;
+        //}
+        //return coerceToString(t, data);
     }
 
     
@@ -206,7 +204,6 @@ CharSequence varC48A172B614CE5EFF1251A722A45354E_657320663 =         coerceToStr
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.452 -0400", hash_original_method = "AE1CAB20A8487EE7B21133A09B8F6C44", hash_generated_method = "92B2774E264185FFD066BBD574CB6742")
     public void setTo(TypedValue other) {
         type = other.type;
@@ -215,13 +212,13 @@ CharSequence varC48A172B614CE5EFF1251A722A45354E_657320663 =         coerceToStr
         assetCookie = other.assetCookie;
         resourceId = other.resourceId;
         density = other.density;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //type = other.type;
+        //string = other.string;
+        //data = other.data;
+        //assetCookie = other.assetCookie;
+        //resourceId = other.resourceId;
+        //density = other.density;
     }
 
     
@@ -233,34 +230,34 @@ CharSequence varC48A172B614CE5EFF1251A722A45354E_657320663 =         coerceToStr
     if(type == TYPE_STRING)        
         {
             sb.append(" \"").append(string != null ? string : "<null>").append("\"");
-        } 
+        } //End block
     if(assetCookie != 0)        
         {
             sb.append(" a=").append(assetCookie);
-        } 
+        } //End block
     if(resourceId != 0)        
         {
             sb.append(" r=0x").append(Integer.toHexString(resourceId));
-        } 
+        } //End block
         sb.append("}");
 String var2460B846747F8B22185AD8BE722266A5_1406578387 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1406578387.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1406578387;
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder();
+        //sb.append("TypedValue{t=0x").append(Integer.toHexString(type));
+        //sb.append("/d=0x").append(Integer.toHexString(data));
+        //if (type == TYPE_STRING) {
+            //sb.append(" \"").append(string != null ? string : "<null>").append("\"");
+        //}
+        //if (assetCookie != 0) {
+            //sb.append(" a=").append(assetCookie);
+        //}
+        //if (resourceId != 0) {
+            //sb.append(" r=0x").append(Integer.toHexString(resourceId));
+        //}
+        //sb.append("}");
+        //return sb.toString();
     }
 
     

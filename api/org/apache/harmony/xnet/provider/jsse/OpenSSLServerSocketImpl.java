@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,8 +30,8 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.580 -0400", hash_original_method = "E4A94FB7C9239842E6393D001A5B9FB9", hash_generated_method = "431E5CD9106B1EC78566243984CF3B1A")
     protected  OpenSSLServerSocketImpl(SSLParametersImpl sslParameters) throws IOException {
         this.sslParameters = sslParameters;
-        
-        
+        // ---------- Original Method ----------
+        //this.sslParameters = sslParameters;
     }
 
     
@@ -40,8 +40,8 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
         super(port);
         addTaint(port);
         this.sslParameters = sslParameters;
-        
-        
+        // ---------- Original Method ----------
+        //this.sslParameters = sslParameters;
     }
 
     
@@ -51,8 +51,8 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
         addTaint(backlog);
         addTaint(port);
         this.sslParameters = sslParameters;
-        
-        
+        // ---------- Original Method ----------
+        //this.sslParameters = sslParameters;
     }
 
     
@@ -66,8 +66,8 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
         addTaint(backlog);
         addTaint(port);
         this.sslParameters = sslParameters;
-        
-        
+        // ---------- Original Method ----------
+        //this.sslParameters = sslParameters;
     }
 
     
@@ -77,8 +77,8 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
         boolean var6A496EF2CB1B11366741370C45064742_14288703 = (sslParameters.getEnableSessionCreation());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_618563916 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_618563916;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getEnableSessionCreation();
     }
 
     
@@ -87,8 +87,8 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
     public void setEnableSessionCreation(boolean flag) {
         addTaint(flag);
         sslParameters.setEnableSessionCreation(flag);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setEnableSessionCreation(flag);
     }
 
     
@@ -98,8 +98,8 @@ public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
 String[] varA2CB83838D3C3E6CB428AFD2FA549124_1868264597 =         NativeCrypto.getSupportedProtocols();
         varA2CB83838D3C3E6CB428AFD2FA549124_1868264597.addTaint(taint);
         return varA2CB83838D3C3E6CB428AFD2FA549124_1868264597;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeCrypto.getSupportedProtocols();
     }
 
     
@@ -109,8 +109,8 @@ String[] varA2CB83838D3C3E6CB428AFD2FA549124_1868264597 =         NativeCrypto.g
 String[] var7F784EE3631AE57BC482259F3F556633_1396603336 =         enabledProtocols.clone();
         var7F784EE3631AE57BC482259F3F556633_1396603336.addTaint(taint);
         return var7F784EE3631AE57BC482259F3F556633_1396603336;
-        
-        
+        // ---------- Original Method ----------
+        //return enabledProtocols.clone();
     }
 
     
@@ -118,8 +118,8 @@ String[] var7F784EE3631AE57BC482259F3F556633_1396603336 =         enabledProtoco
     @Override
     public void setEnabledProtocols(String[] protocols) {
         enabledProtocols = NativeCrypto.checkEnabledProtocols(protocols);
-        
-        
+        // ---------- Original Method ----------
+        //enabledProtocols = NativeCrypto.checkEnabledProtocols(protocols);
     }
 
     
@@ -129,8 +129,8 @@ String[] var7F784EE3631AE57BC482259F3F556633_1396603336 =         enabledProtoco
 String[] var0633111015CD199BA68A1C170162F6EA_664524882 =         NativeCrypto.getSupportedCipherSuites();
         var0633111015CD199BA68A1C170162F6EA_664524882.addTaint(taint);
         return var0633111015CD199BA68A1C170162F6EA_664524882;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeCrypto.getSupportedCipherSuites();
     }
 
     
@@ -140,8 +140,8 @@ String[] var0633111015CD199BA68A1C170162F6EA_664524882 =         NativeCrypto.ge
 String[] var45BDDDD9D941A372292490884D2E3BF9_1604069154 =         enabledCipherSuites.clone();
         var45BDDDD9D941A372292490884D2E3BF9_1604069154.addTaint(taint);
         return var45BDDDD9D941A372292490884D2E3BF9_1604069154;
-        
-        
+        // ---------- Original Method ----------
+        //return enabledCipherSuites.clone();
     }
 
     
@@ -149,8 +149,8 @@ String[] var45BDDDD9D941A372292490884D2E3BF9_1604069154 =         enabledCipherS
     @Override
     public void setEnabledCipherSuites(String[] suites) {
         enabledCipherSuites = NativeCrypto.checkEnabledCipherSuites(suites);
-        
-        
+        // ---------- Original Method ----------
+        //enabledCipherSuites = NativeCrypto.checkEnabledCipherSuites(suites);
     }
 
     
@@ -159,8 +159,8 @@ String[] var45BDDDD9D941A372292490884D2E3BF9_1604069154 =         enabledCipherS
 String[] varBE8CCF8BFA8321AAC102544B2EEE72A0_572700467 =         NativeCrypto.getSupportedCompressionMethods();
         varBE8CCF8BFA8321AAC102544B2EEE72A0_572700467.addTaint(taint);
         return varBE8CCF8BFA8321AAC102544B2EEE72A0_572700467;
-        
-        
+        // ---------- Original Method ----------
+        //return NativeCrypto.getSupportedCompressionMethods();
     }
 
     
@@ -169,16 +169,16 @@ String[] varBE8CCF8BFA8321AAC102544B2EEE72A0_572700467 =         NativeCrypto.ge
 String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompressionMethods.clone();
         varB18894ACCABD95AE01B6F73BD5F6D994_988509863.addTaint(taint);
         return varB18894ACCABD95AE01B6F73BD5F6D994_988509863;
-        
-        
+        // ---------- Original Method ----------
+        //return enabledCompressionMethods.clone();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.584 -0400", hash_original_method = "8EA4CA69B5E5586515E70C8BB15F1DC8", hash_generated_method = "F6E8AD11719A044F802E33A113589650")
     public void setEnabledCompressionMethods(String[] methods) {
         enabledCompressionMethods = NativeCrypto.checkEnabledCompressionMethods(methods);
-        
-        
+        // ---------- Original Method ----------
+        //enabledCompressionMethods = NativeCrypto.checkEnabledCompressionMethods(methods);
     }
 
     
@@ -188,8 +188,8 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompress
         boolean var49776A2797A76D9AE0E32B9F61634A24_290578177 = (sslParameters.getWantClientAuth());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1685692110 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1685692110;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getWantClientAuth();
     }
 
     
@@ -198,8 +198,8 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompress
     public void setWantClientAuth(boolean want) {
         addTaint(want);
         sslParameters.setWantClientAuth(want);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setWantClientAuth(want);
     }
 
     
@@ -209,8 +209,8 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompress
         boolean var8775D3F02F22101BF43E8B27516BBE95_377036951 = (sslParameters.getNeedClientAuth());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_325933216 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_325933216;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getNeedClientAuth();
     }
 
     
@@ -219,8 +219,8 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompress
     public void setNeedClientAuth(boolean need) {
         addTaint(need);
         sslParameters.setNeedClientAuth(need);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setNeedClientAuth(need);
     }
 
     
@@ -229,8 +229,8 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompress
     public void setUseClientMode(boolean mode) {
         addTaint(mode);
         sslParameters.setUseClientMode(mode);
-        
-        
+        // ---------- Original Method ----------
+        //sslParameters.setUseClientMode(mode);
     }
 
     
@@ -240,19 +240,18 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompress
         boolean var264C485BBAEC609C8CEC6E380F554AB0_859784725 = (sslParameters.getUseClientMode());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1978990745 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1978990745;
-        
-        
+        // ---------- Original Method ----------
+        //return sslParameters.getUseClientMode();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.585 -0400", hash_original_method = "99974EADFE56BC36D8DB1EC28EC422DC", hash_generated_method = "BC543B1B7FA4A2C234E2A769D3EF4B96")
     @Override
     public Socket accept() throws IOException {
     if(!sslParameters.getUseClientMode())        
         {
             checkEnabledCipherSuites();
-        } 
+        } //End block
         OpenSSLSocketImpl socket = new OpenSSLSocketImpl(sslParameters,
                                                          enabledProtocols.clone(),
                                                          enabledCipherSuites.clone(),
@@ -261,16 +260,16 @@ String[] varB18894ACCABD95AE01B6F73BD5F6D994_988509863 =         enabledCompress
 Socket varA63412D4E099639C1BBCBDC8D705186B_1355331973 =         socket;
         varA63412D4E099639C1BBCBDC8D705186B_1355331973.addTaint(taint);
         return varA63412D4E099639C1BBCBDC8D705186B_1355331973;
-        
-        
-            
-        
-        
-                                                         
-                                                         
-                                                         
-        
-        
+        // ---------- Original Method ----------
+        //if (!sslParameters.getUseClientMode()) {
+            //checkEnabledCipherSuites();
+        //}
+        //OpenSSLSocketImpl socket = new OpenSSLSocketImpl(sslParameters,
+                                                         //enabledProtocols.clone(),
+                                                         //enabledCipherSuites.clone(),
+                                                         //enabledCompressionMethods.clone());
+        //implAccept(socket);
+        //return socket;
     }
 
     
@@ -281,30 +280,30 @@ for(String enabledCipherSuite : enabledCipherSuites)
     if(enabledCipherSuite.equals(NativeCrypto.TLS_EMPTY_RENEGOTIATION_INFO_SCSV))            
             {
                 continue;
-            } 
+            } //End block
             String keyType = CipherSuite.getByName(enabledCipherSuite).getServerKeyType();
     if(keyType == null)            
             {
                 return;
-            } 
+            } //End block
     if(keyType.equals(CipherSuite.KEY_TYPE_RSA)
                     || keyType.equals(CipherSuite.KEY_TYPE_DH_RSA))            
             {
     if(checkForPrivateKey(keyType, RSAPrivateKey.class))                
                 {
                     return;
-                } 
+                } //End block
                 continue;
-            } 
+            } //End block
     if(keyType.equals(CipherSuite.KEY_TYPE_DSA)
                     || keyType.equals(CipherSuite.KEY_TYPE_DH_DSA))            
             {
     if(checkForPrivateKey(keyType, DSAPrivateKey.class))                
                 {
                     return;
-                } 
+                } //End block
                 continue;
-            } 
+            } //End block
     if(keyType.equals(CipherSuite.KEY_TYPE_EC)
                     || keyType.equals(CipherSuite.KEY_TYPE_EC_RSA)
                     || keyType.equals(CipherSuite.KEY_TYPE_EC_EC))            
@@ -312,19 +311,19 @@ for(String enabledCipherSuite : enabledCipherSuites)
     if(checkForPrivateKey(keyType, ECPrivateKey.class))                
                 {
                     return;
-                } 
+                } //End block
                 continue;
-            } 
+            } //End block
             IllegalStateException var0B9CC4384477B0BE55A8EDD602F30530_167303387 = new IllegalStateException("Unknown key type " + keyType);
             var0B9CC4384477B0BE55A8EDD602F30530_167303387.addTaint(taint);
             throw var0B9CC4384477B0BE55A8EDD602F30530_167303387;
-        } 
+        } //End block
         SSLException varEE3EF93FCDE76103BB8CE4480E0A9788_1934721707 = new SSLException("Could not find any key store entries "
                                + "to support the enabled cipher suites.");
         varEE3EF93FCDE76103BB8CE4480E0A9788_1934721707.addTaint(taint);
         throw varEE3EF93FCDE76103BB8CE4480E0A9788_1934721707;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -338,18 +337,18 @@ for(String enabledCipherSuite : enabledCipherSuites)
             boolean var68934A3E9455FA72420237EB05902327_2020500454 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_520668037 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_520668037;
-        } 
+        } //End block
         PrivateKey key = sslParameters.getKeyManager().getPrivateKey(alias);
         boolean varF9249D6157316753CA621B7E1C257C01_154133593 = ((key != null && keyClass.isAssignableFrom(key.getClass())));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_920448921 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_920448921;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //String alias = sslParameters.getKeyManager().chooseServerAlias(keyType, null, null);
+        //if (alias == null) {
+            //return false;
+        //}
+        //PrivateKey key = sslParameters.getKeyManager().getPrivateKey(alias);
+        //return (key != null && keyClass.isAssignableFrom(key.getClass()));
     }
 
     

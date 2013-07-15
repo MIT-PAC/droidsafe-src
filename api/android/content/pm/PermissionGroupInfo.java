@@ -1,6 +1,6 @@
 package android.content.pm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.114 -0400", hash_original_method = "82344B3D2D2745586AE3E2C39F67E56D", hash_generated_method = "C344FD7EBA0ACA0405579BE9BC8FB4E5")
     public  PermissionGroupInfo() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,9 +27,9 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
         super(orig);
         descriptionRes = orig.descriptionRes;
         nonLocalizedDescription = orig.nonLocalizedDescription;
-        
-        
-        
+        // ---------- Original Method ----------
+        //descriptionRes = orig.descriptionRes;
+        //nonLocalizedDescription = orig.nonLocalizedDescription;
     }
 
     
@@ -38,9 +38,9 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
         super(source);
         descriptionRes = source.readInt();
         nonLocalizedDescription = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        
-        
-        
+        // ---------- Original Method ----------
+        //descriptionRes = source.readInt();
+        //nonLocalizedDescription = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
     }
 
     
@@ -52,7 +52,7 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
 CharSequence var755997E6D6993799464A90913EEFCB50_2145741849 =             nonLocalizedDescription;
             var755997E6D6993799464A90913EEFCB50_2145741849.addTaint(taint);
             return var755997E6D6993799464A90913EEFCB50_2145741849;
-        } 
+        } //End block
     if(descriptionRes != 0)        
         {
             CharSequence label = pm.getText(packageName, descriptionRes, null);
@@ -61,22 +61,22 @@ CharSequence var755997E6D6993799464A90913EEFCB50_2145741849 =             nonLoc
 CharSequence var057F26F90053C562EFC08298AB91C2B1_370001416 =                 label;
                 var057F26F90053C562EFC08298AB91C2B1_370001416.addTaint(taint);
                 return var057F26F90053C562EFC08298AB91C2B1_370001416;
-            } 
-        } 
+            } //End block
+        } //End block
 CharSequence var540C13E9E156B687226421B24F2DF178_416881644 =         null;
         var540C13E9E156B687226421B24F2DF178_416881644.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_416881644;
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (nonLocalizedDescription != null) {
+            //return nonLocalizedDescription;
+        //}
+        //if (descriptionRes != 0) {
+            //CharSequence label = pm.getText(packageName, descriptionRes, null);
+            //if (label != null) {
+                //return label;
+            //}
+        //}
+        //return null;
     }
 
     
@@ -87,21 +87,20 @@ String var72C53EB254ECB0D5467E66B7861D8A47_173319434 =         "PermissionGroupI
             + " " + name + "}";
         var72C53EB254ECB0D5467E66B7861D8A47_173319434.addTaint(taint);
         return var72C53EB254ECB0D5467E66B7861D8A47_173319434;
-        
-        
-            
-            
+        // ---------- Original Method ----------
+        //return "PermissionGroupInfo{"
+            //+ Integer.toHexString(System.identityHashCode(this))
+            //+ " " + name + "}";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.117 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1B194DAD236131E9B8C4D51E300FB2D8")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_738008111 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889770971 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889770971;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -112,10 +111,10 @@ String var72C53EB254ECB0D5467E66B7861D8A47_173319434 =         "PermissionGroupI
         super.writeToParcel(dest, parcelableFlags);
         dest.writeInt(descriptionRes);
         TextUtils.writeToParcel(nonLocalizedDescription, dest, parcelableFlags);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.writeToParcel(dest, parcelableFlags);
+        //dest.writeInt(descriptionRes);
+        //TextUtils.writeToParcel(nonLocalizedDescription, dest, parcelableFlags);
     }
 
     
@@ -130,12 +129,12 @@ String var72C53EB254ECB0D5467E66B7861D8A47_173319434 =         "PermissionGroupI
             return new PermissionGroupInfo[size];
         }
     };
-    
+    // orphaned legacy method
     public PermissionGroupInfo createFromParcel(Parcel source) {
             return new PermissionGroupInfo(source);
         }
     
-    
+    // orphaned legacy method
     public PermissionGroupInfo[] newArray(int size) {
             return new PermissionGroupInfo[size];
         }

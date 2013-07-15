@@ -1,6 +1,6 @@
 package libcore.net.url;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,14 +41,14 @@ public class FileURLConnection extends URLConnection {
     if(fileName == null)        
         {
             fileName = "";
-        } 
+        } //End block
         fileName = UriCodec.decode(fileName);
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //fileName = url.getFile();
+        //if (fileName == null) {
+            //fileName = "";
+        //}
+        //fileName = UriCodec.decode(fileName);
     }
 
     
@@ -60,25 +60,25 @@ public class FileURLConnection extends URLConnection {
         {
             isDir = true;
             is = getDirectoryListing(f);
-        } 
+        } //End block
         else
         {
             is = new BufferedInputStream(new FileInputStream(f));
             long lengthAsLong = f.length();
             length = lengthAsLong <= Integer.MAX_VALUE ? (int) lengthAsLong : Integer.MAX_VALUE;
-        } 
+        } //End block
         connected = true;
-        
-        
-        
-            
-            
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //File f = new File(fileName);
+        //if (f.isDirectory()) {
+            //isDir = true;
+            //is = getDirectoryListing(f);
+        //} else {
+            //is = new BufferedInputStream(new FileInputStream(f));
+            //long lengthAsLong = f.length();
+            //length = lengthAsLong <= Integer.MAX_VALUE ? (int) lengthAsLong : Integer.MAX_VALUE;
+        //}
+        //connected = true;
     }
 
     
@@ -90,22 +90,22 @@ public class FileURLConnection extends URLConnection {
     if(!connected)            
             {
                 connect();
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException e)
         {
-        } 
+        } //End block
         int var2FA47F7C65FEC19CC163B195725E3844_1240906566 = (length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1213093753 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1213093753;
-        
-        
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //if (!connected) {
+                //connect();
+            //}
+        //} catch (IOException e) {
+        //}
+        //return length;
     }
 
     
@@ -117,66 +117,66 @@ public class FileURLConnection extends URLConnection {
     if(!connected)            
             {
                 connect();
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException e)
         {
 String var74BE35FB698BCBEC5E595F7D368A5F61_1157295135 =             "content/unknown";
             var74BE35FB698BCBEC5E595F7D368A5F61_1157295135.addTaint(taint);
             return var74BE35FB698BCBEC5E595F7D368A5F61_1157295135;
-        } 
+        } //End block
     if(isDir)        
         {
 String varF583FE76B1E99A18DF158173F36BC8DC_1352583566 =             "text/plain";
             varF583FE76B1E99A18DF158173F36BC8DC_1352583566.addTaint(taint);
             return varF583FE76B1E99A18DF158173F36BC8DC_1352583566;
-        } 
+        } //End block
         String result = guessContentTypeFromName(url.getFile());
     if(result != null)        
         {
 String varDC838461EE2FA0CA4C9BBB70A15456B0_1037439207 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1037439207.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1037439207;
-        } 
+        } //End block
         try 
         {
             result = guessContentTypeFromStream(is);
-        } 
+        } //End block
         catch (IOException e)
         {
-        } 
+        } //End block
     if(result != null)        
         {
 String varDC838461EE2FA0CA4C9BBB70A15456B0_1761939358 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1761939358.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1761939358;
-        } 
+        } //End block
 String var74BE35FB698BCBEC5E595F7D368A5F61_1916685501 =         "content/unknown";
         var74BE35FB698BCBEC5E595F7D368A5F61_1916685501.addTaint(taint);
         return var74BE35FB698BCBEC5E595F7D368A5F61_1916685501;
-        
-        
-            
-                
-            
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //if (!connected) {
+                //connect();
+            //}
+        //} catch (IOException e) {
+            //return "content/unknown";
+        //}
+        //if (isDir) {
+            //return "text/plain";
+        //}
+        //String result = guessContentTypeFromName(url.getFile());
+        //if (result != null) {
+            //return result;
+        //}
+        //try {
+            //result = guessContentTypeFromStream(is);
+        //} catch (IOException e) {
+        //}
+        //if (result != null) {
+            //return result;
+        //}
+        //return "content/unknown";
     }
 
     
@@ -194,25 +194,25 @@ String var74BE35FB698BCBEC5E595F7D368A5F61_1916685501 =         "content/unknown
 for(i = 0;i < fileList.length;i++)
         {
             out.print(fileList[i] + "<br>\n");
-        } 
+        } //End block
         out.close();
 InputStream var3844484F7CAF8650F3CB9D0A65F2D71C_1549794519 =         new ByteArrayInputStream(bytes.toByteArray());
         var3844484F7CAF8650F3CB9D0A65F2D71C_1549794519.addTaint(taint);
         return var3844484F7CAF8650F3CB9D0A65F2D71C_1549794519;
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //String fileList[] = f.list();
+        //ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream();
+        //PrintStream out = new PrintStream(bytes);
+        //out.print("<title>Directory Listing</title>\n");
+        //out.print("<base href=\"file:");
+        //out.print(f.getPath().replace('\\', '/') + "/\"><h1>" + f.getPath()
+                //+ "</h1>\n<hr>\n");
+        //int i;
+        //for (i = 0; i < fileList.length; i++) {
+            //out.print(fileList[i] + "<br>\n");
+        //}
+        //out.close();
+        //return new ByteArrayInputStream(bytes.toByteArray());
     }
 
     
@@ -222,15 +222,15 @@ InputStream var3844484F7CAF8650F3CB9D0A65F2D71C_1549794519 =         new ByteArr
     if(!connected)        
         {
             connect();
-        } 
+        } //End block
 InputStream varFEDEDC0F36E8CADECC99C26A1426338D_564512792 =         is;
         varFEDEDC0F36E8CADECC99C26A1426338D_564512792.addTaint(taint);
         return varFEDEDC0F36E8CADECC99C26A1426338D_564512792;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!connected) {
+            //connect();
+        //}
+        //return is;
     }
 
     
@@ -243,21 +243,21 @@ InputStream varFEDEDC0F36E8CADECC99C26A1426338D_564512792 =         is;
     if(File.separatorChar != '/')            
             {
                 path = path.replace('/', File.separatorChar);
-            } 
+            } //End block
             permission = new FilePermission(path, "read");
-        } 
+        } //End block
 java.security.Permission varF950FF3A88BA107D0E5EEB7D5554678A_1039490666 =         permission;
         varF950FF3A88BA107D0E5EEB7D5554678A_1039490666.addTaint(taint);
         return varF950FF3A88BA107D0E5EEB7D5554678A_1039490666;
-        
-        
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (permission == null) {
+            //String path = fileName;
+            //if (File.separatorChar != '/') {
+                //path = path.replace('/', File.separatorChar);
+            //}
+            //permission = new FilePermission(path, "read");
+        //}
+        //return permission;
     }
 
     

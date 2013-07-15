@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,16 +31,16 @@ public class PBEParameter extends ASN1Encodable {
             IllegalArgumentException var506BB451BC97752FE0609B8A8667B7EC_2046546141 = new IllegalArgumentException("salt length must be 8");
             var506BB451BC97752FE0609B8A8667B7EC_2046546141.addTaint(taint);
             throw var506BB451BC97752FE0609B8A8667B7EC_2046546141;
-        } 
+        } //End block
         this.salt = new DEROctetString(salt);
         this.iterations = new DERInteger(iterations);
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (salt.length != 8)
+        //{
+            //throw new IllegalArgumentException("salt length must be 8");
+        //}
+        //this.salt = new DEROctetString(salt);
+        //this.iterations = new DERInteger(iterations);
     }
 
     
@@ -49,9 +49,9 @@ public class PBEParameter extends ASN1Encodable {
         ASN1Sequence  seq) {
         salt = (ASN1OctetString)seq.getObjectAt(0);
         iterations = (DERInteger)seq.getObjectAt(1);
-        
-        
-        
+        // ---------- Original Method ----------
+        //salt = (ASN1OctetString)seq.getObjectAt(0);
+        //iterations = (DERInteger)seq.getObjectAt(1);
     }
 
     
@@ -74,8 +74,8 @@ public class PBEParameter extends ASN1Encodable {
 BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_695842 =         iterations.getValue();
         var8563E23A7E89A15DC1621E7AA8EF0C9E_695842.addTaint(taint);
         return var8563E23A7E89A15DC1621E7AA8EF0C9E_695842;
-        
-        
+        // ---------- Original Method ----------
+        //return iterations.getValue();
     }
 
     
@@ -84,8 +84,8 @@ BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_695842 =         iterations.getVa
         byte[] var3B49B46E31C5F6502835BFC79B7BB43D_1867723119 = (salt.getOctets());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1162632918 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1162632918;
-        
-        
+        // ---------- Original Method ----------
+        //return salt.getOctets();
     }
 
     
@@ -97,11 +97,11 @@ BigInteger var8563E23A7E89A15DC1621E7AA8EF0C9E_695842 =         iterations.getVa
 DERObject var0B338F106E3279986C87B595B0F4A439_448520697 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_448520697.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_448520697;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ASN1EncodableVector  v = new ASN1EncodableVector();
+        //v.add(salt);
+        //v.add(iterations);
+        //return new DERSequence(v);
     }
 
     

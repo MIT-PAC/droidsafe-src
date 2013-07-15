@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class AudioSystem {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.690 -0400", hash_original_method = "54895CB2BF1D5A08CFD79D31582209F6", hash_generated_method = "54895CB2BF1D5A08CFD79D31582209F6")
     public AudioSystem ()
     {
-        
+        //Synthesized constructor
     }
 
 

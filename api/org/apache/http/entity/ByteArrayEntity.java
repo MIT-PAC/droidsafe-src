@@ -1,6 +1,6 @@
 package org.apache.http.entity;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,35 +22,33 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
             IllegalArgumentException var34B358B29BB5C3E485EDF7496E5DF046_1488842678 = new IllegalArgumentException("Source byte array may not be null");
             var34B358B29BB5C3E485EDF7496E5DF046_1488842678.addTaint(taint);
             throw var34B358B29BB5C3E485EDF7496E5DF046_1488842678;
-        } 
+        } //End block
         this.content = b;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (b == null) {
+            //throw new IllegalArgumentException("Source byte array may not be null");
+        //}
+        //this.content = b;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.936 -0400", hash_original_method = "8850B92ED3324DB77471CF2A1052D726", hash_generated_method = "040C1140A3D008EF6EE27A353A604B52")
     public boolean isRepeatable() {
         boolean varB326B5062B2F0E69046810717534CB09_51475802 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1837012782 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1837012782;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.937 -0400", hash_original_method = "161FF0185286748984501E39486F36ED", hash_generated_method = "C1C2A217E4413A89E46A3138D86FBB8E")
     public long getContentLength() {
         long varFF3D4578F788B008DD2D7570337D294B_990396490 = (this.content.length);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_24614517 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_24614517;
-        
-        
+        // ---------- Original Method ----------
+        //return this.content.length;
     }
 
     
@@ -59,8 +57,8 @@ public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
 InputStream varEFD22E670A1626295FDBD437906D30FE_381162454 =         new ByteArrayInputStream(this.content);
         varEFD22E670A1626295FDBD437906D30FE_381162454.addTaint(taint);
         return varEFD22E670A1626295FDBD437906D30FE_381162454;
-        
-        
+        // ---------- Original Method ----------
+        //return new ByteArrayInputStream(this.content);
     }
 
     
@@ -72,26 +70,25 @@ InputStream varEFD22E670A1626295FDBD437906D30FE_381162454 =         new ByteArra
             IllegalArgumentException var8C9256F172D6E7DD26CC6F974ABC4716_749866160 = new IllegalArgumentException("Output stream may not be null");
             var8C9256F172D6E7DD26CC6F974ABC4716_749866160.addTaint(taint);
             throw var8C9256F172D6E7DD26CC6F974ABC4716_749866160;
-        } 
+        } //End block
         outstream.write(this.content);
         outstream.flush();
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (outstream == null) {
+            //throw new IllegalArgumentException("Output stream may not be null");
+        //}
+        //outstream.write(this.content);
+        //outstream.flush();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.939 -0400", hash_original_method = "1C9916E491D93B6DAF758D3D738C6EEB", hash_generated_method = "FA9C5DE607574E62EB4CEFA57E69D855")
     public boolean isStreaming() {
         boolean var68934A3E9455FA72420237EB05902327_646303520 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_40694404 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_40694404;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -100,8 +97,8 @@ InputStream varEFD22E670A1626295FDBD437906D30FE_381162454 =         new ByteArra
 Object var46F3A0D86742C1D6E099C2B166941A33_1032325727 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_1032325727.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_1032325727;
-        
-        
+        // ---------- Original Method ----------
+        //return super.clone();
     }
 
     

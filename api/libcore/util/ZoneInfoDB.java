@@ -1,6 +1,6 @@
 package libcore.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public final class ZoneInfoDB {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.206 -0400", hash_original_method = "6AD30DC678AA79198B9A535BC6352D82", hash_generated_method = "F186C26C76B663EC1F34BF428D4B8EAF")
     private  ZoneInfoDB() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -168,8 +168,7 @@ public final class ZoneInfoDB {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getVersion() {
+        public static String getVersion() {
         return VERSION;
     }
 

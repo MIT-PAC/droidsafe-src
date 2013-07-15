@@ -1,6 +1,6 @@
 package java.util.jar;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,8 +51,8 @@ class JarVerifier {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.178 -0400", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "0A8DC9E44BE88658AD08D7EFC25F2EE1")
       JarVerifier(String name) {
         jarName = name;
-        
-        
+        // ---------- Original Method ----------
+        //jarName = name;
     }
 
     
@@ -65,9 +65,9 @@ class JarVerifier {
                 " in " + jarName);
         var074A5CA52DC88256F635FF6342A6CFE2_1617031252.addTaint(taint);
         throw var074A5CA52DC88256F635FF6342A6CFE2_1617031252;
-        
-        
-                
+        // ---------- Original Method ----------
+        //throw new SecurityException(signatureFile + " has invalid digest for " + name +
+                //" in " + jarName);
     }
 
     
@@ -78,8 +78,8 @@ class JarVerifier {
         SecurityException varB468A6384A0E268EB77C0514F32BE836_104477158 = new SecurityException(jarName + " failed verification of " + signatureFile);
         varB468A6384A0E268EB77C0514F32BE836_104477158.addTaint(taint);
         throw varB468A6384A0E268EB77C0514F32BE836_104477158;
-        
-        
+        // ---------- Original Method ----------
+        //throw new SecurityException(jarName + " failed verification of " + signatureFile);
     }
 
     
@@ -91,14 +91,14 @@ class JarVerifier {
 VerifierEntry var540C13E9E156B687226421B24F2DF178_1907612543 =             null;
             var540C13E9E156B687226421B24F2DF178_1907612543.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1907612543;
-        } 
+        } //End block
         Attributes attributes = man.getAttributes(name);
     if(attributes == null)        
         {
 VerifierEntry var540C13E9E156B687226421B24F2DF178_1604456868 =             null;
             var540C13E9E156B687226421B24F2DF178_1604456868.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1604456868;
-        } 
+        } //End block
         ArrayList<Certificate> certs = new ArrayList<Certificate>();
         Iterator<Map.Entry<String, HashMap<String, Attributes>>> it = signatures.entrySet().iterator();
         while
@@ -110,20 +110,20 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1604456868 =             null;
             {
                 String signatureFile = entry.getKey();
                 certs.addAll(getSignerCertificates(signatureFile, certificates));
-            } 
-        } 
+            } //End block
+        } //End block
     if(certs.isEmpty())        
         {
 VerifierEntry var540C13E9E156B687226421B24F2DF178_599695540 =             null;
             var540C13E9E156B687226421B24F2DF178_599695540.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_599695540;
-        } 
+        } //End block
         Certificate[] certificatesArray = certs.toArray(new Certificate[certs.size()]);
         String algorithms = attributes.getValue("Digest-Algorithms");
     if(algorithms == null)        
         {
             algorithms = "SHA SHA1";
-        } 
+        } //End block
         StringTokenizer tokens = new StringTokenizer(algorithms);
         while
 (tokens.hasMoreTokens())        
@@ -133,7 +133,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_599695540 =             null;
     if(hash == null)            
             {
                 continue;
-            } 
+            } //End block
             byte[] hashBytes = hash.getBytes(Charsets.ISO_8859_1);
             try 
             {
@@ -141,16 +141,16 @@ VerifierEntry var18BE1F5426B3001F1D977CE0544C7884_1486456982 =                 n
                         .getInstance(algorithm), hashBytes, certificatesArray);
                 var18BE1F5426B3001F1D977CE0544C7884_1486456982.addTaint(taint);
                 return var18BE1F5426B3001F1D977CE0544C7884_1486456982;
-            } 
+            } //End block
             catch (NoSuchAlgorithmException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
 VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
         var540C13E9E156B687226421B24F2DF178_1133771427.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1133771427;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -159,8 +159,8 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
         addTaint(buf[0]);
         addTaint(name.getTaint());
         metaEntries.put(name.toUpperCase(Locale.US), buf);
-        
-        
+        // ---------- Original Method ----------
+        //metaEntries.put(name.toUpperCase(Locale.US), buf);
     }
 
     
@@ -171,7 +171,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
             boolean var68934A3E9455FA72420237EB05902327_1598273376 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1877678 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1877678;
-        } 
+        } //End block
         Iterator<String> it = metaEntries.keySet().iterator();
         while
 (it.hasNext())        
@@ -185,29 +185,29 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
                     boolean var68934A3E9455FA72420237EB05902327_1348777368 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394741465 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_394741465;
-                } 
+                } //End block
                 it.remove();
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_177587160 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1688072467 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1688072467;
-        
-        
-            
-        
-        
-        
-            
-            
-                
-                
-                    
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (metaEntries == null) {
+            //return false;
+        //}
+        //Iterator<String> it = metaEntries.keySet().iterator();
+        //while (it.hasNext()) {
+            //String key = it.next();
+            //if (key.endsWith(".DSA") || key.endsWith(".RSA")) {
+                //verifyCertificate(key);
+                //if (metaEntries == null) {
+                    //return false;
+                //}
+                //it.remove();
+            //}
+        //}
+        //return true;
     }
 
     
@@ -220,12 +220,12 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
     if(sfBytes == null)        
         {
             return;
-        } 
+        } //End block
         byte[] manifest = metaEntries.get(JarFile.MANIFEST_NAME);
     if(manifest == null)        
         {
             return;
-        } 
+        } //End block
         byte[] sBlockBytes = metaEntries.get(certFile);
         try 
         {
@@ -235,39 +235,39 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
     if(metaEntries == null)            
             {
                 return;
-            } 
+            } //End block
     if(signerCertChain != null)            
             {
                 certificates.put(signatureFile, signerCertChain);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (IOException e)
         {
             return;
-        } 
+        } //End block
         catch (GeneralSecurityException e)
         {
             java.lang.SecurityException var9F75C122D2300A75696115F728064C23_1998297175 = failedVerification(jarName, signatureFile);
             var9F75C122D2300A75696115F728064C23_1998297175.addTaint(taint);
             throw var9F75C122D2300A75696115F728064C23_1998297175;
-        } 
+        } //End block
         Attributes attributes = new Attributes();
         HashMap<String, Attributes> entries = new HashMap<String, Attributes>();
         try 
         {
             InitManifest im = new InitManifest(sfBytes, attributes, Attributes.Name.SIGNATURE_VERSION);
             im.initEntries(entries, null);
-        } 
+        } //End block
         catch (IOException e)
         {
             return;
-        } 
+        } //End block
         boolean createdBySigntool = false;
         String createdBy = attributes.getValue("Created-By");
     if(createdBy != null)        
         {
             createdBySigntool = createdBy.indexOf("signtool") != -1;
-        } 
+        } //End block
     if(mainAttributesEnd > 0 && !createdBySigntool)        
         {
             String digestAttribute = "-Digest-Manifest-Main-Attributes";
@@ -276,8 +276,8 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
                 java.lang.SecurityException var9F75C122D2300A75696115F728064C23_947594623 = failedVerification(jarName, signatureFile);
                 var9F75C122D2300A75696115F728064C23_947594623.addTaint(taint);
                 throw var9F75C122D2300A75696115F728064C23_947594623;
-            } 
-        } 
+            } //End block
+        } //End block
         String digestAttribute = createdBySigntool ? "-Digest"
                 : "-Digest-Manifest";
     if(!verify(attributes, digestAttribute, manifest, 0, manifest.length,
@@ -293,29 +293,28 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
     if(chunk == null)                
                 {
                     return;
-                } 
+                } //End block
     if(!verify(entry.getValue(), "-Digest", manifest,
                         chunk.start, chunk.end, createdBySigntool, false))                
                 {
                     java.lang.SecurityException var67613D444084A15067150FCA554C8CE7_2033499939 = invalidDigest(signatureFile, entry.getKey(), jarName);
                     var67613D444084A15067150FCA554C8CE7_2033499939.addTaint(taint);
                     throw var67613D444084A15067150FCA554C8CE7_2033499939;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         metaEntries.put(signatureFile, null);
         signatures.put(signatureFile, entries);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.199 -0400", hash_original_method = "5E96175D15755C77B9F4C5D6341FECA1", hash_generated_method = "27CCBD8B39BAC0602317753C0A8767E5")
      void setManifest(Manifest mf) {
         man = mf;
-        
-        
+        // ---------- Original Method ----------
+        //man = mf;
     }
 
     
@@ -324,8 +323,8 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
         boolean varAAB13CD57140FC9C26289A146A937C91_1783775607 = (certificates.size() > 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_610053655 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_610053655;
-        
-        
+        // ---------- Original Method ----------
+        //return certificates.size() > 0;
     }
 
     
@@ -343,7 +342,7 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
     if(algorithms == null)        
         {
             algorithms = "SHA SHA1";
-        } 
+        } //End block
         StringTokenizer tokens = new StringTokenizer(algorithms);
         while
 (tokens.hasMoreTokens())        
@@ -353,36 +352,36 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
     if(hash == null)            
             {
                 continue;
-            } 
+            } //End block
             MessageDigest md;
             try 
             {
                 md = MessageDigest.getInstance(algorithm);
-            } 
+            } //End block
             catch (NoSuchAlgorithmException e)
             {
                 continue;
-            } 
+            } //End block
     if(ignoreSecondEndline && data[end - 1] == '\n'
                     && data[end - 2] == '\n')            
             {
                 md.update(data, start, end - 1 - start);
-            } 
+            } //End block
             else
             {
                 md.update(data, start, end - start);
-            } 
+            } //End block
             byte[] b = md.digest();
             byte[] hashBytes = hash.getBytes(Charsets.ISO_8859_1);
             boolean var682244A446E71B106B75EA193A59EB60_1333056555 = (MessageDigest.isEqual(b, Base64.decode(hashBytes)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2023757009 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2023757009;
-        } 
+        } //End block
         boolean var945E3CDAF82CC9611962E167614498BC_1107985467 = (ignorable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1443872212 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1443872212;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -395,25 +394,24 @@ VerifierEntry var540C13E9E156B687226421B24F2DF178_1133771427 =         null;
 Certificate[] var540C13E9E156B687226421B24F2DF178_84656812 =             null;
             var540C13E9E156B687226421B24F2DF178_84656812.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_84656812;
-        } 
+        } //End block
 Certificate[] var32B73750590266689C19084802167374_1446959973 =         verifiedCerts.clone();
         var32B73750590266689C19084802167374_1446959973.addTaint(taint);
         return var32B73750590266689C19084802167374_1446959973;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Certificate[] verifiedCerts = verifiedEntries.get(name);
+        //if (verifiedCerts == null) {
+            //return null;
+        //}
+        //return verifiedCerts.clone();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.201 -0400", hash_original_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E", hash_generated_method = "B134C21CF39C711019A6E185A2A3E9BB")
      void removeMetaEntries() {
         metaEntries = null;
-        
-        
+        // ---------- Original Method ----------
+        //metaEntries = null;
     }
 
     
@@ -451,11 +449,11 @@ Certificate[] var32B73750590266689C19084802167374_1446959973 =         verifiedC
             this.digest = digest;
             this.hash = hash;
             this.certificates = certificates;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.name = name;
+            //this.digest = digest;
+            //this.hash = hash;
+            //this.certificates = certificates;
         }
 
         
@@ -464,8 +462,8 @@ Certificate[] var32B73750590266689C19084802167374_1446959973 =         verifiedC
         public void write(int value) {
             addTaint(value);
             digest.update((byte) value);
-            
-            
+            // ---------- Original Method ----------
+            //digest.update((byte) value);
         }
 
         
@@ -476,8 +474,8 @@ Certificate[] var32B73750590266689C19084802167374_1446959973 =         verifiedC
             addTaint(off);
             addTaint(buf[0]);
             digest.update(buf, off, nbytes);
-            
-            
+            // ---------- Original Method ----------
+            //digest.update(buf, off, nbytes);
         }
 
         
@@ -489,14 +487,14 @@ Certificate[] var32B73750590266689C19084802167374_1446959973 =         verifiedC
                 SecurityException var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624 = invalidDigest(JarFile.MANIFEST_NAME, name, jarName);
                 var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624.addTaint(taint);
                 throw var9EEA0942EA74388A1F03C5B5C555D6C5_1241829624;
-            } 
+            } //End block
             verifiedEntries.put(name, certificates);
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //byte[] d = digest.digest();
+            //if (!MessageDigest.isEqual(d, Base64.decode(hash))) {
+                //throw invalidDigest(JarFile.MANIFEST_NAME, name, jarName);
+            //}
+            //verifiedEntries.put(name, certificates);
         }
 
         

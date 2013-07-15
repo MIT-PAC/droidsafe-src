@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.963 -0400", hash_original_method = "8D7038EECA0B07E6CABE7C4563FEE1B0", hash_generated_method = "85C85690ED146B961192627A81D00D75")
     public  PChargingFunctionAddresses() {
         super(P_CHARGING_FUNCTION_ADDRESSES);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,17 +29,17 @@ public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.Parame
     if(!duplicates.isEmpty())        
         {
             encoding.append(duplicates.encode());
-        } 
+        } //End block
 String varD48A745DC29A29C7851286E6A426D0D0_1235274709 =         encoding.toString();
         varD48A745DC29A29C7851286E6A426D0D0_1235274709.addTaint(taint);
         return varD48A745DC29A29C7851286E6A426D0D0_1235274709;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuffer encoding = new StringBuffer();
+        //if (!duplicates.isEmpty())
+        //{
+            //encoding.append(duplicates.encode());
+        //}
+        //return encoding.toString();
     }
 
     
@@ -55,12 +55,12 @@ String varD48A745DC29A29C7851286E6A426D0D0_1235274709 =         encoding.toStrin
         throw varCD2C2F46FDAB7F4E4EDDFFC1212E3878_560807749;
         }
         setMultiParameter(ParameterNamesIms.CCF, ccfAddress);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (ccfAddress == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP Exception, "
+                    //+ "P-Charging-Function-Addresses, setChargingCollectionFunctionAddress(), the ccfAddress parameter is null.");
+        //setMultiParameter(ParameterNamesIms.CCF, ccfAddress);
     }
 
     
@@ -76,12 +76,12 @@ String varD48A745DC29A29C7851286E6A426D0D0_1235274709 =         encoding.toStrin
         throw varCD2C2F46FDAB7F4E4EDDFFC1212E3878_1967749454;
         }
         this.parameters.set(ParameterNamesIms.CCF, ccfAddress);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (ccfAddress == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP Exception, "
+                    //+ "P-Charging-Function-Addresses, setChargingCollectionFunctionAddress(), the ccfAddress parameter is null.");
+        //this.parameters.set(ParameterNamesIms.CCF, ccfAddress);
     }
 
     
@@ -101,15 +101,15 @@ String varD48A745DC29A29C7851286E6A426D0D0_1235274709 =         encoding.toStrin
             ParseException var36B925E46F37CA25D112CE896FEC51E3_919480820 = new ParseException("CCF Address Not Removed",0);
             var36B925E46F37CA25D112CE896FEC51E3_919480820.addTaint(taint);
             throw var36B925E46F37CA25D112CE896FEC51E3_919480820;
-        } 
-        
-        
-            
-                
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (ccfAddress == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP Exception, "
+                    //+ "P-Charging-Function-Addresses, setChargingCollectionFunctionAddress(), the ccfAddress parameter is null.");
+        //if(!this.delete(ccfAddress, ParameterNamesIms.CCF)) {
+            //throw new ParseException("CCF Address Not Removed",0);
+        //}
     }
 
     
@@ -128,25 +128,25 @@ String varD48A745DC29A29C7851286E6A426D0D0_1235274709 =         encoding.toStrin
                 ccfNV.setName(nv.getName());
                 ccfNV.setValueAsObject(nv.getValueAsObject());
                 ccfLIST.add(ccfNV);
-            } 
-        } 
+            } //End block
+        } //End block
 ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1933936701 =         ccfLIST.listIterator();
         var258D93B65AF7A31DC580C27ACCEE4A1E_1933936701.addTaint(taint);
         return var258D93B65AF7A31DC580C27ACCEE4A1E_1933936701;
-        
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Iterator li = this.parameters.iterator();
+        //LinkedList ccfLIST = new LinkedList();
+        //NameValue nv;
+        //while (li.hasNext()) {
+            //nv = (NameValue) li.next();
+            //if (nv.getName().equalsIgnoreCase(ParameterNamesIms.CCF)) {
+                //NameValue ccfNV = new NameValue();
+                //ccfNV.setName(nv.getName());
+                //ccfNV.setValueAsObject(nv.getValueAsObject());
+                //ccfLIST.add(ccfNV);
+            //}
+        //}
+        //return ccfLIST.listIterator();
     }
 
     
@@ -162,12 +162,12 @@ ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1933936701 =         ccfLIST.li
         throw var9A2261485AEB710E03059779E00E748F_2060110909;
         }
         setMultiParameter(ParameterNamesIms.ECF, ecfAddress);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (ecfAddress == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP Exception, "
+                    //+ "P-Charging-Function-Addresses, setEventChargingFunctionAddress(), the ecfAddress parameter is null.");
+        //setMultiParameter(ParameterNamesIms.ECF, ecfAddress);
     }
 
     
@@ -183,12 +183,12 @@ ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1933936701 =         ccfLIST.li
         throw var9A2261485AEB710E03059779E00E748F_1539194822;
         }
         this.parameters.set(ParameterNamesIms.ECF, ecfAddress);
-        
-        
-            
-                
-                    
-        
+        // ---------- Original Method ----------
+        //if (ecfAddress == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP Exception, "
+                    //+ "P-Charging-Function-Addresses, setEventChargingFunctionAddress(), the ecfAddress parameter is null.");
+        //this.parameters.set(ParameterNamesIms.ECF, ecfAddress);
     }
 
     
@@ -208,15 +208,15 @@ ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1933936701 =         ccfLIST.li
             java.text.ParseException var10EAD238A7BD4A6031329EAB0E3E08D2_1036443478 = new java.text.ParseException("ECF Address Not Removed",0);
             var10EAD238A7BD4A6031329EAB0E3E08D2_1036443478.addTaint(taint);
             throw var10EAD238A7BD4A6031329EAB0E3E08D2_1036443478;
-        } 
-        
-        
-            
-                
-                    
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (ecfAddress == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP Exception, "
+                    //+ "P-Charging-Function-Addresses, setEventChargingFunctionAddress(), the ecfAddress parameter is null.");
+        //if(!this.delete(ecfAddress, ParameterNamesIms.ECF)) {
+            //throw new java.text.ParseException("ECF Address Not Removed",0);
+        //}
     }
 
     
@@ -237,27 +237,27 @@ ListIterator var258D93B65AF7A31DC580C27ACCEE4A1E_1933936701 =         ccfLIST.li
                 ecfNV.setName(nv.getName());
                 ecfNV.setValueAsObject(nv.getValueAsObject());
                 ecfLIST.add(ecfNV);
-            } 
-        } 
+            } //End block
+        } //End block
 ListIterator<NameValue> varE121826118567FAC0BD5D1878DD1BAB8_1140422167 =         ecfLIST;
         varE121826118567FAC0BD5D1878DD1BAB8_1140422167.addTaint(taint);
         return varE121826118567FAC0BD5D1878DD1BAB8_1140422167;
-        
-        
-        
-        
-        
-        
-        
-            
-            
-                
-                
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //LinkedList<NameValue> listw = new LinkedList<NameValue>();
+        //Iterator li = this.parameters.iterator();
+        //ListIterator<NameValue> ecfLIST = listw.listIterator();
+        //NameValue nv;
+        //boolean removed = false;
+        //while (li.hasNext()) {
+            //nv = (NameValue) li.next();
+            //if (nv.getName().equalsIgnoreCase(ParameterNamesIms.ECF)) {
+                //NameValue ecfNV = new NameValue();
+                //ecfNV.setName(nv.getName());
+                //ecfNV.setValueAsObject(nv.getValueAsObject());
+                //ecfLIST.add(ecfNV);
+            //}
+        //}
+        //return ecfLIST;
     }
 
     
@@ -276,23 +276,23 @@ ListIterator<NameValue> varE121826118567FAC0BD5D1878DD1BAB8_1140422167 =        
             {
                 li.remove();
                 removed = true;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB07286EBBB5BC7AA91CC3EAA8BC19711_1290780792 = (removed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2113934901 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2113934901;
-        
-        
-        
-        
-        
-            
-            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Iterator li = this.parameters.iterator();
+        //NameValue nv;
+        //boolean removed = false;
+        //while (li.hasNext()) {
+            //nv = (NameValue) li.next();
+            //if (((String) nv.getValueAsObject()).equalsIgnoreCase(value) && nv.getName().equalsIgnoreCase(name)) {
+                //li.remove();
+                //removed = true;
+            //}
+        //}
+        //return removed;
     }
 
     
@@ -302,8 +302,8 @@ ListIterator<NameValue> varE121826118567FAC0BD5D1878DD1BAB8_1140422167 =        
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1145366535 = new ParseException ( value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_1145366535.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_1145366535;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ParseException ( value,0);
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.core;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,10 +33,10 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
         listName = null;
         stringRep = "";
         separator = ";";
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //listName = null;
+        //stringRep = "";
+        //separator = ";";
     }
 
     
@@ -44,8 +44,8 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
     protected  GenericObjectList(String lname) {
         this();
         listName = lname;
-        
-        
+        // ---------- Original Method ----------
+        //listName = lname;
     }
 
     
@@ -56,17 +56,17 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
         try 
         {
             myClass = Class.forName(classname);
-        } 
+        } //End block
         catch (ClassNotFoundException ex)
         {
             InternalErrorHandler.handleException(ex);
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //myClass = Class.forName(classname);
+        //} catch (ClassNotFoundException ex) {
+            //InternalErrorHandler.handleException(ex);
+        //}
     }
 
     
@@ -75,12 +75,11 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
         this(lname);
         addTaint(lname.getTaint());
         myClass = objclass;
-        
-        
+        // ---------- Original Method ----------
+        //myClass = objclass;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.251 -0400", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "46E6B77F197313587BFC095D09FA5111")
     protected String getIndentation() {
         char[] chars = new char[indentation];
@@ -88,21 +87,19 @@ public abstract class GenericObjectList extends LinkedList<GenericObject> implem
 String var300818D7D4F603E5F4346D4E090224B6_479965771 =         new String(chars);
         var300818D7D4F603E5F4346D4E090224B6_479965771.addTaint(taint);
         return var300818D7D4F603E5F4346D4E090224B6_479965771;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //char[] chars = new char[indentation];
+        //java.util.Arrays.fill(chars, ' ');
+        //return new String(chars);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static boolean isCloneable(Object obj) {
+        protected static boolean isCloneable(Object obj) {
         return obj instanceof Cloneable;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isMySubclass(Class<?> other) {
+        public static boolean isMySubclass(Class<?> other) {
         return GenericObjectList.class.isAssignableFrom(other);
     }
 
@@ -115,27 +112,26 @@ for(ListIterator<GenericObject> iter = retval.listIterator();iter.hasNext();)
             GenericObject obj = (GenericObject) ((GenericObject) iter.next())
                     .clone();
             iter.set(obj);
-        } 
+        } //End block
 Object varF9E19AD6135C970F387F77C6F3DE4477_782499885 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_782499885.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_782499885;
-        
-        
-        
-            
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //GenericObjectList retval = (GenericObjectList) super.clone();
+        //for (ListIterator<GenericObject> iter = retval.listIterator(); iter.hasNext();) {
+            //GenericObject obj = (GenericObject) ((GenericObject) iter.next())
+                    //.clone();
+            //iter.set(obj);
+        //}
+        //return retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.252 -0400", hash_original_method = "D0155A1FF97450AAAC485CBFCA9B9151", hash_generated_method = "CD555D9A7A572ADB1416682B5064D9A7")
     public void setMyClass(Class cl) {
         myClass = cl;
-        
-        
+        // ---------- Original Method ----------
+        //myClass = cl;
     }
 
     
@@ -147,19 +143,19 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_782499885 =         retval;
 GenericObject varF8A4C5F00CE0EF2DDC27545CDFF28D4C_994685075 =             (GenericObject) iterator.next();
             varF8A4C5F00CE0EF2DDC27545CDFF28D4C_994685075.addTaint(taint);
             return varF8A4C5F00CE0EF2DDC27545CDFF28D4C_994685075;
-        } 
+        } //End block
         catch (NoSuchElementException ex)
         {
 GenericObject var540C13E9E156B687226421B24F2DF178_1911378215 =             null;
             var540C13E9E156B687226421B24F2DF178_1911378215.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1911378215;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return (GenericObject) iterator.next();
+        //} catch (NoSuchElementException ex) {
+            //return null;
+        //}
     }
 
     
@@ -171,20 +167,20 @@ GenericObject var540C13E9E156B687226421B24F2DF178_1911378215 =             null;
 GenericObject varE2756AEC1430DA89A0100343889C2F3D_1151632070 =             (GenericObject) myListIterator.next();
             varE2756AEC1430DA89A0100343889C2F3D_1151632070.addTaint(taint);
             return varE2756AEC1430DA89A0100343889C2F3D_1151632070;
-        } 
+        } //End block
         catch (NoSuchElementException ex)
         {
 GenericObject var540C13E9E156B687226421B24F2DF178_2124571326 =             null;
             var540C13E9E156B687226421B24F2DF178_2124571326.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2124571326;
-        } 
-        
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //myListIterator = this.listIterator(0);
+        //try {
+            //return (GenericObject) myListIterator.next();
+        //} catch (NoSuchElementException ex) {
+            //return null;
+        //}
     }
 
     
@@ -193,30 +189,30 @@ GenericObject var540C13E9E156B687226421B24F2DF178_2124571326 =             null;
     if(myListIterator == null)        
         {
             myListIterator = this.listIterator(0);
-        } 
+        } //End block
         try 
         {
 GenericObject varE2756AEC1430DA89A0100343889C2F3D_184440654 =             (GenericObject) myListIterator.next();
             varE2756AEC1430DA89A0100343889C2F3D_184440654.addTaint(taint);
             return varE2756AEC1430DA89A0100343889C2F3D_184440654;
-        } 
+        } //End block
         catch (NoSuchElementException ex)
         {
             myListIterator = null;
 GenericObject var540C13E9E156B687226421B24F2DF178_1575801893 =             null;
             var540C13E9E156B687226421B24F2DF178_1575801893.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1575801893;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (myListIterator == null) {
+            //myListIterator = this.listIterator(0);
+        //}
+        //try {
+            //return (GenericObject) myListIterator.next();
+        //} catch (NoSuchElementException ex) {
+            //myListIterator = null;
+            //return null;
+        //}
     }
 
     
@@ -224,8 +220,8 @@ GenericObject var540C13E9E156B687226421B24F2DF178_1575801893 =             null;
     protected void concatenate(GenericObjectList objList) {
         addTaint(objList.getTaint());
         concatenate(objList, false);
-        
-        
+        // ---------- Original Method ----------
+        //concatenate(objList, false);
     }
 
     
@@ -236,21 +232,20 @@ GenericObject var540C13E9E156B687226421B24F2DF178_1575801893 =             null;
     if(!topFlag)        
         {
             this.addAll(objList);
-        } 
+        } //End block
         else
         {
             this.addAll(0, objList);
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!topFlag) {
+            //this.addAll(objList);
+        //} else {
+            //this.addAll(0, objList);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.255 -0400", hash_original_method = "ECC7081A6DE8800C166F28F2C3CCF64F", hash_generated_method = "3761CEDEEDE8B8C61A2B8BEEEE74C3EB")
     private void sprint(String s) {
     if(s == null)        
@@ -258,33 +253,33 @@ GenericObject var540C13E9E156B687226421B24F2DF178_1575801893 =             null;
             stringRep += getIndentation();
             stringRep += "<null>\n";
             return;
-        } 
+        } //End block
     if(s.compareTo("}") == 0 || s.compareTo("]") == 0)        
         {
             indentation--;
-        } 
+        } //End block
         stringRep += getIndentation();
         stringRep += s;
         stringRep += "\n";
     if(s.compareTo("{") == 0 || s.compareTo("[") == 0)        
         {
             indentation++;
-        } 
-        
-        
-            
-            
-            
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (s == null) {
+            //stringRep += getIndentation();
+            //stringRep += "<null>\n";
+            //return;
+        //}
+        //if (s.compareTo("}") == 0 || s.compareTo("]") == 0) {
+            //indentation--;
+        //}
+        //stringRep += getIndentation();
+        //stringRep += s;
+        //stringRep += "\n";
+        //if (s.compareTo("{") == 0 || s.compareTo("[") == 0) {
+            //indentation++;
+        //}
     }
 
     
@@ -308,27 +303,27 @@ String var8277B846C0FEC64C0D7C6AE63630090D_1343504207 =         "<null>";
             sprint(((GenericObject) obj).debugDump(this.indentation));
             obj = next();
             sprint("]");
-        } 
+        } //End block
         sprint("}");
 String varBB173740B3F06857085CC2C58DFBA675_1191413896 =         stringRep;
         varBB173740B3F06857085CC2C58DFBA675_1191413896.addTaint(taint);
         return varBB173740B3F06857085CC2C58DFBA675_1191413896;
-        
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //stringRep = "";
+        //Object obj = this.first();
+        //if (obj == null)
+            //return "<null>";
+        //sprint("listName:");
+        //sprint(listName);
+        //sprint("{");
+        //while (obj != null) {
+            //sprint("[");
+            //sprint(((GenericObject) obj).debugDump(this.indentation));
+            //obj = next();
+            //sprint("]");
+        //}
+        //sprint("}");
+        //return stringRep;
     }
 
     
@@ -341,32 +336,31 @@ String varBB173740B3F06857085CC2C58DFBA675_1191413896 =         stringRep;
 String varF9E19AD6135C970F387F77C6F3DE4477_1591904100 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1591904100.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1591904100;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int save = indentation;
+        //indentation = indent;
+        //String retval = this.debugDump();
+        //indentation = save;
+        //return retval;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.258 -0400", hash_original_method = "8D0C02EDD4F71C5F926965BFB69DF22C", hash_generated_method = "382CDBE7B59CE5A40C34003CF9834C55")
     public void addFirst(GenericObject objToAdd) {
     if(myClass == null)        
         {
             myClass = objToAdd.getClass();
-        } 
+        } //End block
         else
         {
             super.addFirst(objToAdd);
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (myClass == null) {
+            //myClass = objToAdd.getClass();
+        //} else {
+            //super.addFirst(objToAdd);
+        //}
     }
 
     
@@ -386,20 +380,20 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1591904100 =         retval;
             {
                 Object innerObj = it2.next();
                 outerObj.merge(innerObj);
-            } 
-        } 
-        
-        
-            
-        
-        
-        
-            
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mergeList == null)
+            //return;
+        //Iterator it1 = this.listIterator();
+        //Iterator it2 = mergeList.listIterator();
+        //while (it1.hasNext()) {
+            //GenericObject outerObj = (GenericObject) it1.next();
+            //while (it2.hasNext()) {
+                //Object innerObj = it2.next();
+                //outerObj.merge(innerObj);
+            //}
+        //}
     }
 
     
@@ -423,41 +417,41 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1175219126 =         "";
                 {
                     GenericObject gobj = (GenericObject) obj;
                     encoding.append(gobj.encode());
-                } 
+                } //End block
                 else
                 {
                     encoding.append(obj.toString());
-                } 
+                } //End block
     if(iterator.hasNext())                
                 encoding.append(separator);
                 else
                 break;
-            } 
-        } 
+            } //End block
+        } //End block
 String varD48A745DC29A29C7851286E6A426D0D0_1582057543 =         encoding.toString();
         varD48A745DC29A29C7851286E6A426D0D0_1582057543.addTaint(taint);
         return varD48A745DC29A29C7851286E6A426D0D0_1582057543;
-        
-        
-            
-        
-        
-        
-            
-                
-                
-                    
-                    
-                
-                    
-                
-                
-                    
-                
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.isEmpty())
+            //return "";
+        //StringBuffer encoding = new StringBuffer();
+        //ListIterator iterator = this.listIterator();
+        //if (iterator.hasNext()) {
+            //while (true) {
+                //Object obj = iterator.next();
+                //if (obj instanceof GenericObject) {
+                    //GenericObject gobj = (GenericObject) obj;
+                    //encoding.append(gobj.encode());
+                //} else {
+                    //encoding.append(obj.toString());
+                //}
+                //if (iterator.hasNext())
+                    //encoding.append(separator);
+                //else
+                    //break;
+            //}
+        //}
+        //return encoding.toString();
     }
 
     
@@ -466,28 +460,26 @@ String varD48A745DC29A29C7851286E6A426D0D0_1582057543 =         encoding.toStrin
 String varB17575D7C845B2C662583710539AAEBB_1513441414 =         this.encode();
         varB17575D7C845B2C662583710539AAEBB_1513441414.addTaint(taint);
         return varB17575D7C845B2C662583710539AAEBB_1513441414;
-        
-        
+        // ---------- Original Method ----------
+        //return this.encode();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.259 -0400", hash_original_method = "8B5A99905EE1811A879B3378EE7C88B1", hash_generated_method = "BE8D7A91CF35C3CE4342E681E66ABB40")
     public void setSeparator(String sep) {
         separator = sep;
-        
-        
+        // ---------- Original Method ----------
+        //separator = sep;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.260 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "762DA5970B0C4592019664F21FBE388D")
     public int hashCode() {
         int varA1D0C6E83F027327D8461063F4AC58A6_801829064 = (42);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920746586 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920746586;
-        
-        
+        // ---------- Original Method ----------
+        //return 42;
     }
 
     
@@ -527,15 +519,15 @@ String varB17575D7C845B2C662583710539AAEBB_1513441414 =         this.encode();
                     Object hisobj = hisIterator.next();
     if(myobj.equals(hisobj))                    
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (NoSuchElementException ex)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1272728034 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2076422298 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2076422298;
-            } 
-        } 
+            } //End block
+        } //End block
         ListIterator hisIterator = that.listIterator();
         while
 (hisIterator.hasNext())        
@@ -550,20 +542,20 @@ String varB17575D7C845B2C662583710539AAEBB_1513441414 =         this.encode();
                     Object myobj = myIterator.next();
     if(hisobj.equals(myobj))                    
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (NoSuchElementException ex)
             {
                 boolean var68934A3E9455FA72420237EB05902327_881834021 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_731881370 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_731881370;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_408977301 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1184686864 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1184686864;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -599,17 +591,17 @@ String varB17575D7C845B2C662583710539AAEBB_1513441414 =         this.encode();
     if(GenericObjectList.isMySubclass(myobj.getClass())
                         && ((GenericObjectList) myobj).match(hisobj))                
                 break outer;
-            } 
+            } //End block
             System.out.println(((GenericObject) hisobj).encode());
             boolean var68934A3E9455FA72420237EB05902327_1901904674 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526930916 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1526930916;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_1004523797 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_27422645 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_27422645;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

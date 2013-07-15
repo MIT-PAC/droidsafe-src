@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class PriorityParser extends HeaderParser {
     public  PriorityParser(String priority) {
         super(priority);
         addTaint(priority.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class PriorityParser extends HeaderParser {
     protected  PriorityParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,28 +42,28 @@ public class PriorityParser extends HeaderParser {
 SIPHeader var9141C1D2D467F4F6FF150C27DE3F01A3_944671166 =             priority;
             var9141C1D2D467F4F6FF150C27DE3F01A3_944671166.addTaint(taint);
             return var9141C1D2D467F4F6FF150C27DE3F01A3_944671166;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("PriorityParser.parse");
-        } 
-        
-        
-            
-        
-        
-            
-            
-            
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("PriorityParser.parse");
+        //Priority priority = new Priority();
+        //try {
+            //headerName(TokenTypes.PRIORITY);
+            //priority.setHeaderName(SIPHeaderNames.PRIORITY);
+            //this.lexer.SPorHT();
+            //priority.setPriority(this.lexer.ttokenSafe());
+            //this.lexer.SPorHT();
+            //this.lexer.match('\n');
+            //return priority;
+        //} finally {
+            //if (debug)
+                //dbg_leave("PriorityParser.parse");
+        //}
     }
 
     

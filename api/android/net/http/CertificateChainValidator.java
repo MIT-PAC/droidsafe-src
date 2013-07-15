@@ -1,6 +1,6 @@
 package android.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,17 +27,15 @@ class CertificateChainValidator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.929 -0400", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "249781E5FCB4B7182831503E258AE636")
     private  CertificateChainValidator() {
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static CertificateChainValidator getInstance() {
+        public static CertificateChainValidator getInstance() {
         return sInstance;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.930 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "678C6184B8F1F4881AD2DEEDE7373600")
     public SslError doHandshakeAndValidateServerCertificates(
             HttpsConnection connection, SSLSocket sslSocket, String domain) throws IOException {
@@ -48,13 +46,13 @@ class CertificateChainValidator {
     if(!sslSession.isValid())        
         {
             closeSocketThrowException(sslSocket, "failed to perform SSL handshake");
-        } 
+        } //End block
         Certificate[] peerCertificates = sslSocket.getSession().getPeerCertificates();
     if(peerCertificates == null || peerCertificates.length == 0)        
         {
             closeSocketThrowException(
                 sslSocket, "failed to retrieve peer certificates");
-        } 
+        } //End block
         else
         {
     if(connection != null)            
@@ -63,14 +61,14 @@ class CertificateChainValidator {
                 {
                     connection.setCertificate(
                         new SslCertificate((X509Certificate)peerCertificates[0]));
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
 SslError var5995AA76FBBB5331C788BBF94383B022_2086607111 =         verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
         var5995AA76FBBB5331C788BBF94383B022_2086607111.addTaint(taint);
         return var5995AA76FBBB5331C788BBF94383B022_2086607111;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -112,7 +110,6 @@ SslError var5995AA76FBBB5331C788BBF94383B022_2086607111 =         verifyServerDo
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.931 -0400", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "05E0FE804B6759B78541079DC94C2EE6")
     private void closeSocketThrowException(
             SSLSocket socket, String errorMessage, String defaultErrorMessage) throws IOException {
@@ -121,13 +118,12 @@ SslError var5995AA76FBBB5331C788BBF94383B022_2086607111 =         verifyServerDo
         addTaint(socket.getTaint());
         closeSocketThrowException(
             socket, errorMessage != null ? errorMessage : defaultErrorMessage);
-        
-        
-            
+        // ---------- Original Method ----------
+        //closeSocketThrowException(
+            //socket, errorMessage != null ? errorMessage : defaultErrorMessage);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.931 -0400", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "EEF79FB8E32C667459C0C833C5AEACAF")
     private void closeSocketThrowException(SSLSocket socket,
             String errorMessage) throws IOException {
@@ -136,31 +132,31 @@ SslError var5995AA76FBBB5331C788BBF94383B022_2086607111 =         verifyServerDo
     if(HttpLog.LOGV)        
         {
             HttpLog.v("validation error: " + errorMessage);
-        } 
+        } //End block
     if(socket != null)        
         {
             SSLSession session = socket.getSession();
     if(session != null)            
             {
                 session.invalidate();
-            } 
+            } //End block
             socket.close();
-        } 
+        } //End block
         SSLHandshakeException varED9E2837C945A63AD04740882155F953_34834657 = new SSLHandshakeException(errorMessage);
         varED9E2837C945A63AD04740882155F953_34834657.addTaint(taint);
         throw varED9E2837C945A63AD04740882155F953_34834657;
-        
-        
-            
-        
-        
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (HttpLog.LOGV) {
+            //HttpLog.v("validation error: " + errorMessage);
+        //}
+        //if (socket != null) {
+            //SSLSession session = socket.getSession();
+            //if (session != null) {
+                //session.invalidate();
+            //}
+            //socket.close();
+        //}
+        //throw new SSLHandshakeException(errorMessage);
     }
 
     

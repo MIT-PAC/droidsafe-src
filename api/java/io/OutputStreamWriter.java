@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class OutputStreamWriter extends Writer {
     public  OutputStreamWriter(OutputStream out) {
         this(out, Charset.defaultCharset());
         addTaint(out.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -39,32 +39,32 @@ public class OutputStreamWriter extends Writer {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1841103583 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1841103583.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1841103583;
-        } 
+        } //End block
         this.out = out;
         try 
         {
             encoder = Charset.forName(enc).newEncoder();
-        } 
+        } //End block
         catch (Exception e)
         {
             UnsupportedEncodingException var397991C29CD3376A5C5B3BD1C2DA8637_2110927722 = new UnsupportedEncodingException(enc);
             var397991C29CD3376A5C5B3BD1C2DA8637_2110927722.addTaint(taint);
             throw var397991C29CD3376A5C5B3BD1C2DA8637_2110927722;
-        } 
+        } //End block
         encoder.onMalformedInput(CodingErrorAction.REPLACE);
         encoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
-        
-        
-            
-        
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (enc == null) {
+            //throw new NullPointerException();
+        //}
+        //this.out = out;
+        //try {
+            //encoder = Charset.forName(enc).newEncoder();
+        //} catch (Exception e) {
+            //throw new UnsupportedEncodingException(enc);
+        //}
+        //encoder.onMalformedInput(CodingErrorAction.REPLACE);
+        //encoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
     }
 
     
@@ -75,11 +75,11 @@ public class OutputStreamWriter extends Writer {
         encoder = cs.newEncoder();
         encoder.onMalformedInput(CodingErrorAction.REPLACE);
         encoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.out = out;
+        //encoder = cs.newEncoder();
+        //encoder.onMalformedInput(CodingErrorAction.REPLACE);
+        //encoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
     }
 
     
@@ -89,10 +89,10 @@ public class OutputStreamWriter extends Writer {
         enc.charset();
         this.out = out;
         encoder = enc;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //enc.charset();
+        //this.out = out;
+        //encoder = enc;
     }
 
     
@@ -108,18 +108,18 @@ public class OutputStreamWriter extends Writer {
                 out.close();
                 encoder = null;
                 bytes = null;
-            } 
-        } 
-        
-        
-            
-                
-                
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //if (encoder != null) {
+                //drainEncoder();
+                //flushBytes(false);
+                //out.close();
+                //encoder = null;
+                //bytes = null;
+            //}
+        //}
     }
 
     
@@ -127,8 +127,8 @@ public class OutputStreamWriter extends Writer {
     @Override
     public void flush() throws IOException {
         flushBytes(true);
-        
-        
+        // ---------- Original Method ----------
+        //flushBytes(true);
     }
 
     
@@ -144,25 +144,25 @@ public class OutputStreamWriter extends Writer {
                 bytes.flip();
                 out.write(bytes.array(), bytes.arrayOffset(), position);
                 bytes.clear();
-            } 
+            } //End block
     if(flushUnderlyingStream)            
             {
                 out.flush();
-            } 
-        } 
-        
-        
-            
-            
-            
-                
-                
-                
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //checkStatus();
+            //int position = bytes.position();
+            //if (position > 0) {
+                //bytes.flip();
+                //out.write(bytes.array(), bytes.arrayOffset(), position);
+                //bytes.clear();
+            //}
+            //if (flushUnderlyingStream) {
+                //out.flush();
+            //}
+        //}
     }
 
     
@@ -177,25 +177,25 @@ public class OutputStreamWriter extends Writer {
             {
                 flushBytes(false);
                 continue;
-            } 
+            } //End block
             else
     if(result.isError())            
             {
                 result.throwException();
-            } 
+            } //End block
             break;
-        } 
-        
-        
-            
-            
-                
-                
-            
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (true) {
+            //CoderResult result = encoder.encode(chars, bytes, false);
+            //if (result.isOverflow()) {
+                //flushBytes(false);
+                //continue;
+            //} else if (result.isError()) {
+                //result.throwException();
+            //}
+            //break;
+        //}
     }
 
     
@@ -209,15 +209,15 @@ public class OutputStreamWriter extends Writer {
     if(result.isError())            
             {
                 result.throwException();
-            } 
+            } //End block
             else
     if(result.isOverflow())            
             {
                 flushBytes(false);
                 continue;
-            } 
+            } //End block
             break;
-        } 
+        } //End block
         CoderResult result = encoder.flush(bytes);
         while
 (!result.isUnderflow())        
@@ -226,33 +226,33 @@ public class OutputStreamWriter extends Writer {
             {
                 flushBytes(false);
                 result = encoder.flush(bytes);
-            } 
+            } //End block
             else
             {
                 result.throwException();
-            } 
-        } 
-        
-        
-        
-            
-            
-                
-            
-                
-                
-            
-            
-        
-        
-        
-            
-                
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //CharBuffer chars = CharBuffer.allocate(0);
+        //while (true) {
+            //CoderResult result = encoder.encode(chars, bytes, true);
+            //if (result.isError()) {
+                //result.throwException();
+            //} else if (result.isOverflow()) {
+                //flushBytes(false);
+                //continue;
+            //}
+            //break;
+        //}
+        //CoderResult result = encoder.flush(bytes);
+        //while (!result.isUnderflow()) {
+            //if (result.isOverflow()) {
+                //flushBytes(false);
+                //result = encoder.flush(bytes);
+            //} else {
+                //result.throwException();
+            //}
+        //}
     }
 
     
@@ -263,11 +263,11 @@ public class OutputStreamWriter extends Writer {
             IOException var93A2469A2C365C12CFE77B4A013993F3_1247704282 = new IOException("OutputStreamWriter is closed");
             var93A2469A2C365C12CFE77B4A013993F3_1247704282.addTaint(taint);
             throw var93A2469A2C365C12CFE77B4A013993F3_1247704282;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (encoder == null) {
+            //throw new IOException("OutputStreamWriter is closed");
+        //}
     }
 
     
@@ -278,15 +278,15 @@ public class OutputStreamWriter extends Writer {
 String var540C13E9E156B687226421B24F2DF178_2120575749 =             null;
             var540C13E9E156B687226421B24F2DF178_2120575749.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2120575749;
-        } 
+        } //End block
 String var4A583A09AA1C94B97CFEDE3A84E886D4_1928902582 =         HistoricalCharsetNames.get(encoder.charset());
         var4A583A09AA1C94B97CFEDE3A84E886D4_1928902582.addTaint(taint);
         return var4A583A09AA1C94B97CFEDE3A84E886D4_1928902582;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoder == null) {
+            //return null;
+        //}
+        //return HistoricalCharsetNames.get(encoder.charset());
     }
 
     
@@ -302,14 +302,14 @@ String var4A583A09AA1C94B97CFEDE3A84E886D4_1928902582 =         HistoricalCharse
             Arrays.checkOffsetAndCount(buffer.length, offset, count);
             CharBuffer chars = CharBuffer.wrap(buffer, offset, count);
             convert(chars);
-        } 
-        
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //checkStatus();
+            //Arrays.checkOffsetAndCount(buffer.length, offset, count);
+            //CharBuffer chars = CharBuffer.wrap(buffer, offset, count);
+            //convert(chars);
+        //}
     }
 
     
@@ -322,13 +322,13 @@ String var4A583A09AA1C94B97CFEDE3A84E886D4_1928902582 =         HistoricalCharse
             checkStatus();
             CharBuffer chars = CharBuffer.wrap(new char[] { (char) oneChar });
             convert(chars);
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //checkStatus();
+            //CharBuffer chars = CharBuffer.wrap(new char[] { (char) oneChar });
+            //convert(chars);
+        //}
     }
 
     
@@ -345,38 +345,38 @@ String var4A583A09AA1C94B97CFEDE3A84E886D4_1928902582 =         HistoricalCharse
                 StringIndexOutOfBoundsException varDD6466A465572C8C2EC4C6C733FC9AF8_1771335282 = new StringIndexOutOfBoundsException(str, offset, count);
                 varDD6466A465572C8C2EC4C6C733FC9AF8_1771335282.addTaint(taint);
                 throw varDD6466A465572C8C2EC4C6C733FC9AF8_1771335282;
-            } 
+            } //End block
     if(str == null)            
             {
                 NullPointerException varBAAB5D2ADD4C016ACB92A2133697155C_158189080 = new NullPointerException("str == null");
                 varBAAB5D2ADD4C016ACB92A2133697155C_158189080.addTaint(taint);
                 throw varBAAB5D2ADD4C016ACB92A2133697155C_158189080;
-            } 
+            } //End block
     if((offset | count) < 0 || offset > str.length() - count)            
             {
                 StringIndexOutOfBoundsException varDD6466A465572C8C2EC4C6C733FC9AF8_1652843454 = new StringIndexOutOfBoundsException(str, offset, count);
                 varDD6466A465572C8C2EC4C6C733FC9AF8_1652843454.addTaint(taint);
                 throw varDD6466A465572C8C2EC4C6C733FC9AF8_1652843454;
-            } 
+            } //End block
             checkStatus();
             CharBuffer chars = CharBuffer.wrap(str, offset, count + offset);
             convert(chars);
-        } 
-        
-        
-            
-                
-            
-            
-                
-            
-            
-                
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //if (count < 0) {
+                //throw new StringIndexOutOfBoundsException(str, offset, count);
+            //}
+            //if (str == null) {
+                //throw new NullPointerException("str == null");
+            //}
+            //if ((offset | count) < 0 || offset > str.length() - count) {
+                //throw new StringIndexOutOfBoundsException(str, offset, count);
+            //}
+            //checkStatus();
+            //CharBuffer chars = CharBuffer.wrap(str, offset, count + offset);
+            //convert(chars);
+        //}
     }
 
     
@@ -386,8 +386,8 @@ String var4A583A09AA1C94B97CFEDE3A84E886D4_1928902582 =         HistoricalCharse
         boolean var07ACD71AC6574277636F8AF67D4AA28C_596474924 = (out.checkError());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1059742399 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1059742399;
-        
-        
+        // ---------- Original Method ----------
+        //return out.checkError();
     }
 
     

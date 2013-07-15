@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class DataInputStream extends FilterInputStream implements DataInput {
     public  DataInputStream(InputStream in) {
         super(in);
         addTaint(in.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -30,8 +30,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         int var3FE886BA5F76407D9A7A09D1A143BE63_1508871013 = (super.read(buffer));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_4472281 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_4472281;
-        
-        
+        // ---------- Original Method ----------
+        //return super.read(buffer);
     }
 
     
@@ -44,8 +44,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         int varC5C3B52C3F3EBBB977DA9D0736DD40A6_462462596 = (in.read(buffer, offset, length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_954144601 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_954144601;
-        
-        
+        // ---------- Original Method ----------
+        //return in.read(buffer, offset, length);
     }
 
     
@@ -57,16 +57,16 @@ public class DataInputStream extends FilterInputStream implements DataInput {
             EOFException var0239D63DB748BB20D119EB36D6D1C384_751045366 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_751045366.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_751045366;
-        } 
+        } //End block
         boolean var581071D2E1ACA721FA204A220D24D3E5_1633810749 = (temp != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1173808878 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1173808878;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int temp = in.read();
+        //if (temp < 0) {
+            //throw new EOFException();
+        //}
+        //return temp != 0;
     }
 
     
@@ -78,16 +78,16 @@ public class DataInputStream extends FilterInputStream implements DataInput {
             EOFException var0239D63DB748BB20D119EB36D6D1C384_214234281 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_214234281.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_214234281;
-        } 
+        } //End block
         byte varEB0C37FB3D2A4D56EFEF536C0C588373_1076948528 = ((byte) temp);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_705470546 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_705470546;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int temp = in.read();
+        //if (temp < 0) {
+            //throw new EOFException();
+        //}
+        //return (byte) temp;
     }
 
     
@@ -96,8 +96,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         char varD2B9D0AC7E6CAD4B64D448E3DC4EE790_1811063479 = ((char) readShort());
                 char varA87DEB01C5F539E6BDA34829C8EF2368_268514711 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_268514711;
-        
-        
+        // ---------- Original Method ----------
+        //return (char) readShort();
     }
 
     
@@ -106,8 +106,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         double varB44FB75D2A60D6225B161B58EE8BE0EE_1858275803 = (Double.longBitsToDouble(readLong()));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_2133741514 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_2133741514;
-        
-        
+        // ---------- Original Method ----------
+        //return Double.longBitsToDouble(readLong());
     }
 
     
@@ -116,8 +116,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         float var61F55322990BB97833DB081A7753B25B_2083899482 = (Float.intBitsToFloat(readInt()));
                 float var546ADE640B6EDFBC8A086EF31347E768_1001432340 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1001432340;
-        
-        
+        // ---------- Original Method ----------
+        //return Float.intBitsToFloat(readInt());
     }
 
     
@@ -125,8 +125,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
     public final void readFully(byte[] dst) throws IOException {
         addTaint(dst[0]);
         readFully(dst, 0, dst.length);
-        
-        
+        // ---------- Original Method ----------
+        //readFully(dst, 0, dst.length);
     }
 
     
@@ -136,8 +136,8 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         addTaint(offset);
         addTaint(dst[0]);
         Streams.readFully(in, dst, offset, byteCount);
-        
-        
+        // ---------- Original Method ----------
+        //Streams.readFully(in, dst, offset, byteCount);
     }
 
     
@@ -147,9 +147,9 @@ public class DataInputStream extends FilterInputStream implements DataInput {
         int var7C922A9B161AE4D77245C27862C5A0B3_1554812222 = (Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090888583 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090888583;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Streams.readFully(in, scratch, 0, SizeOf.INT);
+        //return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
     
@@ -169,7 +169,7 @@ switch(nextByte){
 String var540C13E9E156B687226421B24F2DF178_1676814054 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1676814054.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1676814054;
-            } 
+            } //End block
 String var212D8FC412CCB2BE0F33E17280622756_271518949 =             line.toString();
             var212D8FC412CCB2BE0F33E17280622756_271518949.addTaint(taint);
             return var212D8FC412CCB2BE0F33E17280622756_271518949;
@@ -180,12 +180,12 @@ String var212D8FC412CCB2BE0F33E17280622756_271518949 =             line.toString
 String var212D8FC412CCB2BE0F33E17280622756_85811352 =                 line.toString();
                 var212D8FC412CCB2BE0F33E17280622756_85811352.addTaint(taint);
                 return var212D8FC412CCB2BE0F33E17280622756_85811352;
-            } 
+            } //End block
             foundTerminator = true;
     if(!(in.getClass() == PushbackInputStream.class))            
             {
                 in = new PushbackInputStream(in);
-            } 
+            } //End block
             break;
             case (byte) '\n':
 String var212D8FC412CCB2BE0F33E17280622756_1793280458 =             line.toString();
@@ -198,12 +198,12 @@ String var212D8FC412CCB2BE0F33E17280622756_1793280458 =             line.toStrin
 String var212D8FC412CCB2BE0F33E17280622756_1687777459 =                 line.toString();
                 var212D8FC412CCB2BE0F33E17280622756_1687777459.addTaint(taint);
                 return var212D8FC412CCB2BE0F33E17280622756_1687777459;
-            } 
+            } //End block
             line.append((char) nextByte);
 }
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -213,9 +213,9 @@ String var212D8FC412CCB2BE0F33E17280622756_1687777459 =                 line.toS
         long var2D893E0C4B322812F3FC68288B698EF2_174969089 = (Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1941120478 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1941120478;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Streams.readFully(in, scratch, 0, SizeOf.LONG);
+        //return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
     
@@ -225,9 +225,9 @@ String var212D8FC412CCB2BE0F33E17280622756_1687777459 =                 line.toS
         short var5EF02BCDD6FDC20E2BA6E56CB7B1512F_82450487 = (Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_313664077 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_313664077;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Streams.readFully(in, scratch, 0, SizeOf.SHORT);
+        //return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
     
@@ -239,16 +239,16 @@ String var212D8FC412CCB2BE0F33E17280622756_1687777459 =                 line.toS
             EOFException var0239D63DB748BB20D119EB36D6D1C384_322339668 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_322339668.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_322339668;
-        } 
+        } //End block
         int var3D801AA532C1CEC3EE82D87A99FDF63F_1707421226 = (temp);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_902054879 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_902054879;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int temp = in.read();
+        //if (temp < 0) {
+            //throw new EOFException();
+        //}
+        //return temp;
     }
 
     
@@ -257,8 +257,8 @@ String var212D8FC412CCB2BE0F33E17280622756_1687777459 =                 line.toS
         int var4535605AA0CDF96DAC5C016A8613FBB9_492302945 = (((int) readShort()) & 0xffff);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_444376526 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_444376526;
-        
-        
+        // ---------- Original Method ----------
+        //return ((int) readShort()) & 0xffff;
     }
 
     
@@ -267,8 +267,8 @@ String var212D8FC412CCB2BE0F33E17280622756_1687777459 =                 line.toS
 String var13BDC1EE45FDB60E3252771D7EB64C4D_1065688850 =         decodeUTF(readUnsignedShort());
         var13BDC1EE45FDB60E3252771D7EB64C4D_1065688850.addTaint(taint);
         return var13BDC1EE45FDB60E3252771D7EB64C4D_1065688850;
-        
-        
+        // ---------- Original Method ----------
+        //return decodeUTF(readUnsignedShort());
     }
 
     
@@ -278,8 +278,8 @@ String var13BDC1EE45FDB60E3252771D7EB64C4D_1065688850 =         decodeUTF(readUn
 String var8DE7745E9459616109A9A855B8DF1F39_871956042 =         decodeUTF(utfSize, this);
         var8DE7745E9459616109A9A855B8DF1F39_871956042.addTaint(taint);
         return var8DE7745E9459616109A9A855B8DF1F39_871956042;
-        
-        
+        // ---------- Original Method ----------
+        //return decodeUTF(utfSize, this);
     }
 
     
@@ -304,17 +304,17 @@ String var8DE7745E9459616109A9A855B8DF1F39_871956042 =         decodeUTF(utfSize
 (skipped < count && (skip = in.skip(count - skipped)) != 0)        
         {
             skipped += skip;
-        } 
+        } //End block
         int varE52E279299E912838F689D4380C81F4A_123357545 = (skipped);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691419524 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691419524;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int skipped = 0;
+        //long skip;
+        //while (skipped < count && (skip = in.skip(count - skipped)) != 0) {
+            //skipped += skip;
+        //}
+        //return skipped;
     }
 
     

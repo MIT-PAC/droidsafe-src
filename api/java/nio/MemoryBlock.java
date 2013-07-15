@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,9 +25,9 @@ class MemoryBlock {
     private  MemoryBlock(int address, long size) {
         this.address = address;
         this.size = size;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.address = address;
+        //this.size = size;
     }
 
     
@@ -72,21 +72,19 @@ class MemoryBlock {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.877 -0400", hash_original_method = "0474BFDE3AD81DCD66C16B9CD0EF394B", hash_generated_method = "43CB35035F131465C65FE5F69E42CE91")
     public byte[] array() {
         byte[] var37A6259CC0C1DAE299A7866489DFF0BD_462899351 = (null);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1144604400 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1144604400;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.877 -0400", hash_original_method = "DAA4200658B56FF77DA7170F747BB7D3", hash_generated_method = "5BE07C58F63F85984738B520AF21ADD2")
     public void free() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -95,8 +93,8 @@ class MemoryBlock {
         addTaint(value);
         addTaint(offset);
         Memory.pokeByte(address + offset, value);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeByte(address + offset, value);
     }
 
     
@@ -107,8 +105,8 @@ class MemoryBlock {
         addTaint(src[0]);
         addTaint(offset);
         Memory.pokeByteArray(address + offset, src, srcOffset, byteCount);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeByteArray(address + offset, src, srcOffset, byteCount);
     }
 
     
@@ -120,8 +118,8 @@ class MemoryBlock {
         addTaint(src[0]);
         addTaint(offset);
         Memory.pokeCharArray(address + offset, src, srcOffset, charCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeCharArray(address + offset, src, srcOffset, charCount, swap);
     }
 
     
@@ -133,8 +131,8 @@ class MemoryBlock {
         addTaint(src[0]);
         addTaint(offset);
         Memory.pokeDoubleArray(address + offset, src, srcOffset, doubleCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeDoubleArray(address + offset, src, srcOffset, doubleCount, swap);
     }
 
     
@@ -146,8 +144,8 @@ class MemoryBlock {
         addTaint(src[0]);
         addTaint(offset);
         Memory.pokeFloatArray(address + offset, src, srcOffset, floatCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeFloatArray(address + offset, src, srcOffset, floatCount, swap);
     }
 
     
@@ -159,8 +157,8 @@ class MemoryBlock {
         addTaint(src[0]);
         addTaint(offset);
         Memory.pokeIntArray(address + offset, src, srcOffset, intCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeIntArray(address + offset, src, srcOffset, intCount, swap);
     }
 
     
@@ -172,8 +170,8 @@ class MemoryBlock {
         addTaint(src[0]);
         addTaint(offset);
         Memory.pokeLongArray(address + offset, src, srcOffset, longCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeLongArray(address + offset, src, srcOffset, longCount, swap);
     }
 
     
@@ -185,8 +183,8 @@ class MemoryBlock {
         addTaint(src[0]);
         addTaint(offset);
         Memory.pokeShortArray(address + offset, src, srcOffset, shortCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeShortArray(address + offset, src, srcOffset, shortCount, swap);
     }
 
     
@@ -196,8 +194,8 @@ class MemoryBlock {
         byte varBF69BD39DB3E6BC5E54BE37FDD52CEC8_1314597470 = (Memory.peekByte(address + offset));
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_1667213789 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1667213789;
-        
-        
+        // ---------- Original Method ----------
+        //return Memory.peekByte(address + offset);
     }
 
     
@@ -208,8 +206,8 @@ class MemoryBlock {
         addTaint(dst[0]);
         addTaint(offset);
         Memory.peekByteArray(address + offset, dst, dstOffset, byteCount);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekByteArray(address + offset, dst, dstOffset, byteCount);
     }
 
     
@@ -221,8 +219,8 @@ class MemoryBlock {
         addTaint(dst[0]);
         addTaint(offset);
         Memory.peekCharArray(address + offset, dst, dstOffset, charCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekCharArray(address + offset, dst, dstOffset, charCount, swap);
     }
 
     
@@ -234,8 +232,8 @@ class MemoryBlock {
         addTaint(dst[0]);
         addTaint(offset);
         Memory.peekDoubleArray(address + offset, dst, dstOffset, doubleCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekDoubleArray(address + offset, dst, dstOffset, doubleCount, swap);
     }
 
     
@@ -247,8 +245,8 @@ class MemoryBlock {
         addTaint(dst[0]);
         addTaint(offset);
         Memory.peekFloatArray(address + offset, dst, dstOffset, floatCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekFloatArray(address + offset, dst, dstOffset, floatCount, swap);
     }
 
     
@@ -260,8 +258,8 @@ class MemoryBlock {
         addTaint(dst[0]);
         addTaint(offset);
         Memory.peekIntArray(address + offset, dst, dstOffset, intCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekIntArray(address + offset, dst, dstOffset, intCount, swap);
     }
 
     
@@ -273,8 +271,8 @@ class MemoryBlock {
         addTaint(dst[0]);
         addTaint(offset);
         Memory.peekLongArray(address + offset, dst, dstOffset, longCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekLongArray(address + offset, dst, dstOffset, longCount, swap);
     }
 
     
@@ -286,8 +284,8 @@ class MemoryBlock {
         addTaint(dst[0]);
         addTaint(offset);
         Memory.peekShortArray(address + offset, dst, dstOffset, shortCount, swap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.peekShortArray(address + offset, dst, dstOffset, shortCount, swap);
     }
 
     
@@ -297,8 +295,8 @@ class MemoryBlock {
         addTaint(value);
         addTaint(offset);
         Memory.pokeShort(address + offset, value, order.needsSwap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeShort(address + offset, value, order.needsSwap);
     }
 
     
@@ -309,8 +307,8 @@ class MemoryBlock {
         short var561CA6F3639999A5BFA4E72B6DD34397_1502347008 = (Memory.peekShort(address + offset, order.needsSwap));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1144681690 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1144681690;
-        
-        
+        // ---------- Original Method ----------
+        //return Memory.peekShort(address + offset, order.needsSwap);
     }
 
     
@@ -320,8 +318,8 @@ class MemoryBlock {
         addTaint(value);
         addTaint(offset);
         Memory.pokeInt(address + offset, value, order.needsSwap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeInt(address + offset, value, order.needsSwap);
     }
 
     
@@ -332,8 +330,8 @@ class MemoryBlock {
         int var5D7A81FC0D8D6BDAFEFB0DB8D6DFF6EC_1383129822 = (Memory.peekInt(address + offset, order.needsSwap));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1867507049 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1867507049;
-        
-        
+        // ---------- Original Method ----------
+        //return Memory.peekInt(address + offset, order.needsSwap);
     }
 
     
@@ -343,8 +341,8 @@ class MemoryBlock {
         addTaint(value);
         addTaint(offset);
         Memory.pokeLong(address + offset, value, order.needsSwap);
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeLong(address + offset, value, order.needsSwap);
     }
 
     
@@ -355,8 +353,8 @@ class MemoryBlock {
         long varC641E7B348990B52C2BD579831060188_1134747810 = (Memory.peekLong(address + offset, order.needsSwap));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2084987964 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2084987964;
-        
-        
+        // ---------- Original Method ----------
+        //return Memory.peekLong(address + offset, order.needsSwap);
     }
 
     
@@ -365,8 +363,8 @@ class MemoryBlock {
         int var884D9804999FC47A3C2694E49AD2536A_245838606 = (address);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1329939397 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1329939397;
-        
-        
+        // ---------- Original Method ----------
+        //return address;
     }
 
     
@@ -375,8 +373,8 @@ class MemoryBlock {
 String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getName() + "[" + address + "]";
         var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725.addTaint(taint);
         return var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725;
-        
-        
+        // ---------- Original Method ----------
+        //return getClass().getName() + "[" + address + "]";
     }
 
     
@@ -385,8 +383,8 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getNa
         long varF7BD60B75B29D79B660A2859395C1A24_2063238588 = (size);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_349268609 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_349268609;
-        
-        
+        // ---------- Original Method ----------
+        //return size;
     }
 
     
@@ -397,7 +395,7 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getNa
             super(address, byteCount);
             addTaint(byteCount);
             addTaint(address);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -409,24 +407,24 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getNa
                 try 
                 {
                     Libcore.os.munmap(address, size);
-                } 
+                } //End block
                 catch (ErrnoException errnoException)
                 {
                     AssertionError var8D75DBC63153835F7D08A31E99200A1F_9962030 = new AssertionError(errnoException);
                     var8D75DBC63153835F7D08A31E99200A1F_9962030.addTaint(taint);
                     throw var8D75DBC63153835F7D08A31E99200A1F_9962030;
-                } 
+                } //End block
                 address = 0;
-            } 
-            
-            
-                
-                    
-                
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (address != 0) {
+                //try {
+                    //Libcore.os.munmap(address, size);
+                //} catch (ErrnoException errnoException) {
+                    //throw new AssertionError(errnoException);
+                //}
+                //address = 0;
+            //}
         }
 
         
@@ -434,8 +432,8 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getNa
         @Override
         protected void finalize() throws Throwable {
             free();
-            
-            
+            // ---------- Original Method ----------
+            //free();
         }
 
         
@@ -454,32 +452,30 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getNa
             addTaint(byteCount);
             addTaint(address);
             this.array = array;
-            
-            
+            // ---------- Original Method ----------
+            //this.array = array;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.891 -0400", hash_original_method = "D17F44ECB38D0894EC4D368C7A4552E2", hash_generated_method = "163892CD627642C4913F1A71B6D4E971")
         @Override
         public byte[] array() {
             byte[] varF1F713C9E000F5D3F280ADBD124DF4F5_1434362757 = (array);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1170775679 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1170775679;
-            
-            
+            // ---------- Original Method ----------
+            //return array;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.891 -0400", hash_original_method = "7CD7BC202225C0DF2E4B3C563E9F4089", hash_generated_method = "732E056F3D64E4EBE26E88FEB87054A0")
         @Override
         public void free() {
             array = null;
             address = 0;
-            
-            
-            
+            // ---------- Original Method ----------
+            //array = null;
+            //address = 0;
         }
 
         
@@ -494,7 +490,7 @@ String var9B6496D1EFD2B56F2C6FB54568E0E325_1057645725 =         getClass().getNa
             super(address, byteCount);
             addTaint(byteCount);
             addTaint(address);
-            
+            // ---------- Original Method ----------
         }
 
         

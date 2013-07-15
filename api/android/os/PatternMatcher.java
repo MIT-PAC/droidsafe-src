@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,9 +17,9 @@ public class PatternMatcher implements Parcelable {
     public  PatternMatcher(String pattern, int type) {
         mPattern = pattern;
         mType = type;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPattern = pattern;
+        //mType = type;
     }
 
     
@@ -27,9 +27,9 @@ public class PatternMatcher implements Parcelable {
     public  PatternMatcher(Parcel src) {
         mPattern = src.readString();
         mType = src.readInt();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPattern = src.readString();
+        //mType = src.readInt();
     }
 
     
@@ -38,8 +38,8 @@ public class PatternMatcher implements Parcelable {
 String var85927E281577E5F9975F9E6243687DB0_634488477 =         mPattern;
         var85927E281577E5F9975F9E6243687DB0_634488477.addTaint(taint);
         return var85927E281577E5F9975F9E6243687DB0_634488477;
-        
-        
+        // ---------- Original Method ----------
+        //return mPattern;
     }
 
     
@@ -48,8 +48,8 @@ String var85927E281577E5F9975F9E6243687DB0_634488477 =         mPattern;
         int var3462A1A18A0EE070E8953CCF1DD788C0_289384452 = (mType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_647782934 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_647782934;
-        
-        
+        // ---------- Original Method ----------
+        //return mType;
     }
 
     
@@ -59,8 +59,8 @@ String var85927E281577E5F9975F9E6243687DB0_634488477 =         mPattern;
         boolean var180517933D62CEFA77B5C6C3FDCF3B9D_593661929 = (matchPattern(mPattern, str, mType));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_714485871 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_714485871;
-        
-        
+        // ---------- Original Method ----------
+        //return matchPattern(mPattern, str, mType);
     }
 
     
@@ -80,31 +80,30 @@ switch(mType){
 }String var160283AB18459AF9E5F227D40E26F553_61087513 =         "PatternMatcher{" + type + mPattern + "}";
         var160283AB18459AF9E5F227D40E26F553_61087513.addTaint(taint);
         return var160283AB18459AF9E5F227D40E26F553_61087513;
-        
-        
-        
-            
-                
-                
-            
-                
-                
-            
-                
-                
-        
-        
+        // ---------- Original Method ----------
+        //String type = "? ";
+        //switch (mType) {
+            //case PATTERN_LITERAL:
+                //type = "LITERAL: ";
+                //break;
+            //case PATTERN_PREFIX:
+                //type = "PREFIX: ";
+                //break;
+            //case PATTERN_SIMPLE_GLOB:
+                //type = "GLOB: ";
+                //break;
+        //}
+        //return "PatternMatcher{" + type + mPattern + "}";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.197 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FAFA85DD7C5C25F95950A047173AFDEB")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1772990905 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_32095361 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_32095361;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -114,14 +113,13 @@ switch(mType){
         addTaint(dest.getTaint());
         dest.writeString(mPattern);
         dest.writeInt(mType);
-        
-        
-        
+        // ---------- Original Method ----------
+        //dest.writeString(mPattern);
+        //dest.writeInt(mType);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static boolean matchPattern(String pattern, String match, int type) {
+        static boolean matchPattern(String pattern, String match, int type) {
         if (match == null) return false;
         if (type == PATTERN_LITERAL) {
             return pattern.equals(match);
@@ -218,12 +216,12 @@ switch(mType){
             return new PatternMatcher[size];
         }
     };
-    
+    // orphaned legacy method
     public PatternMatcher createFromParcel(Parcel source) {
             return new PatternMatcher(source);
         }
     
-    
+    // orphaned legacy method
     public PatternMatcher[] newArray(int size) {
             return new PatternMatcher[size];
         }

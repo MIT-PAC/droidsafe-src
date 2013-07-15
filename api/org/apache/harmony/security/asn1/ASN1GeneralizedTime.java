@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,12 +14,11 @@ public final class ASN1GeneralizedTime extends ASN1Time {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.600 -0400", hash_original_method = "BB0F4D8A317B403CA2CD2FD0C74F8C92", hash_generated_method = "AB7ED863FCD9D63D36CDA59E2988CC10")
     public  ASN1GeneralizedTime() {
         super(TAG_GENERALIZEDTIME);
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static ASN1GeneralizedTime getInstance() {
+        public static ASN1GeneralizedTime getInstance() {
         return ASN1;
     }
 
@@ -33,16 +32,16 @@ public final class ASN1GeneralizedTime extends ASN1Time {
 Object var540C13E9E156B687226421B24F2DF178_751982900 =             null;
             var540C13E9E156B687226421B24F2DF178_751982900.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_751982900;
-        } 
+        } //End block
 Object var6AD043AF0280111F31D0D60A6CD70863_1244638534 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_1244638534.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_1244638534;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //in.readGeneralizedTime();
+        //if (in.isVerify) {
+            //return null;
+        //}
+        //return getDecodedObject(in);
     }
 
     
@@ -50,8 +49,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1244638534 =         getDecodedObject
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.encodeGeneralizedTime();
-        
-        
+        // ---------- Original Method ----------
+        //out.encodeGeneralizedTime();
     }
 
     
@@ -68,28 +67,28 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1244638534 =         getDecodedObject
                 & (nullId == currLength))        
         {
             temp = temp.substring(0, nullId);
-        } 
+        } //End block
     if(temp.charAt(currLength) == '.')        
         {
             temp = temp.substring(0, currLength);
-        } 
+        } //End block
         out.content = (temp + "Z").getBytes(Charsets.UTF_8);
         out.length = ((byte[]) out.content).length;
-        
-        
-        
-        
-        
-        
-        
-                
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //SimpleDateFormat sdf = new SimpleDateFormat(GEN_PATTERN);
+        //sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        //String temp = sdf.format(out.content);
+        //int nullId;
+        //int currLength;
+        //while (((nullId = temp.lastIndexOf('0', currLength = temp.length() - 1)) != -1)
+                //& (nullId == currLength)) {
+            //temp = temp.substring(0, nullId);
+        //}
+        //if (temp.charAt(currLength) == '.') {
+            //temp = temp.substring(0, currLength);
+        //}
+        //out.content = (temp + "Z").getBytes(Charsets.UTF_8);
+        //out.length = ((byte[]) out.content).length;
     }
 
     

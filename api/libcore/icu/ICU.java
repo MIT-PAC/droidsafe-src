@@ -1,6 +1,6 @@
 package libcore.icu;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public final class ICU {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.504 -0400", hash_original_method = "41D0A20E3850008EA50DF809FC4EB919", hash_generated_method = "41D0A20E3850008EA50DF809FC4EB919")
     public ICU ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -45,8 +45,7 @@ public final class ICU {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static Locale[] localesFromStrings(String[] localeNames) {
+        public static Locale[] localesFromStrings(String[] localeNames) {
         LinkedHashSet<Locale> set = new LinkedHashSet<Locale>();
         for (String localeName : localeNames) {
             set.add(localeFromString(localeName));

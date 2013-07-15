@@ -1,6 +1,6 @@
 package com.android.internal.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,8 +23,8 @@ public class InputConnectionWrapper implements InputConnection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.707 -0400", hash_original_method = "200A59D07195D77203DE13B6F1D7E213", hash_generated_method = "7612BD2DCE02136E56A8BD3FD04ECE95")
     public  InputConnectionWrapper(IInputContext inputContext) {
         mIInputContext = inputContext;
-        
-        
+        // ---------- Original Method ----------
+        //mIInputContext = inputContext;
     }
 
     
@@ -43,35 +43,35 @@ public class InputConnectionWrapper implements InputConnection {
     if(callback.mHaveValue)                
                 {
                     value = callback.mTextAfterCursor;
-                } 
-            } 
+                } //End block
+            } //End block
             callback.dispose();
-        } 
+        } //End block
         catch (RemoteException e)
         {
 CharSequence var540C13E9E156B687226421B24F2DF178_1605855647 =             null;
             var540C13E9E156B687226421B24F2DF178_1605855647.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1605855647;
-        } 
+        } //End block
 CharSequence varAF280DA2BC37D8BE783D8499160168DE_327423035 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_327423035.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_327423035;
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //CharSequence value = null;
+        //try {
+            //InputContextCallback callback = InputContextCallback.getInstance();
+            //mIInputContext.getTextAfterCursor(length, flags, callback.mSeq, callback);
+            //synchronized (callback) {
+                //callback.waitForResultLocked();
+                //if (callback.mHaveValue) {
+                    //value = callback.mTextAfterCursor;
+                //}
+            //}
+            //callback.dispose();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
+        //return value;
     }
 
     
@@ -90,35 +90,35 @@ CharSequence varAF280DA2BC37D8BE783D8499160168DE_327423035 =         value;
     if(callback.mHaveValue)                
                 {
                     value = callback.mTextBeforeCursor;
-                } 
-            } 
+                } //End block
+            } //End block
             callback.dispose();
-        } 
+        } //End block
         catch (RemoteException e)
         {
 CharSequence var540C13E9E156B687226421B24F2DF178_1040312709 =             null;
             var540C13E9E156B687226421B24F2DF178_1040312709.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1040312709;
-        } 
+        } //End block
 CharSequence varAF280DA2BC37D8BE783D8499160168DE_540881060 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_540881060.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_540881060;
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //CharSequence value = null;
+        //try {
+            //InputContextCallback callback = InputContextCallback.getInstance();
+            //mIInputContext.getTextBeforeCursor(length, flags, callback.mSeq, callback);
+            //synchronized (callback) {
+                //callback.waitForResultLocked();
+                //if (callback.mHaveValue) {
+                    //value = callback.mTextBeforeCursor;
+                //}
+            //}
+            //callback.dispose();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
+        //return value;
     }
 
     
@@ -136,35 +136,35 @@ CharSequence varAF280DA2BC37D8BE783D8499160168DE_540881060 =         value;
     if(callback.mHaveValue)                
                 {
                     value = callback.mSelectedText;
-                } 
-            } 
+                } //End block
+            } //End block
             callback.dispose();
-        } 
+        } //End block
         catch (RemoteException e)
         {
 CharSequence var540C13E9E156B687226421B24F2DF178_1531066545 =             null;
             var540C13E9E156B687226421B24F2DF178_1531066545.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1531066545;
-        } 
+        } //End block
 CharSequence varAF280DA2BC37D8BE783D8499160168DE_1567368463 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_1567368463.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_1567368463;
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //CharSequence value = null;
+        //try {
+            //InputContextCallback callback = InputContextCallback.getInstance();
+            //mIInputContext.getSelectedText(flags, callback.mSeq, callback);
+            //synchronized (callback) {
+                //callback.waitForResultLocked();
+                //if (callback.mHaveValue) {
+                    //value = callback.mSelectedText;
+                //}
+            //}
+            //callback.dispose();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
+        //return value;
     }
 
     
@@ -182,35 +182,35 @@ CharSequence varAF280DA2BC37D8BE783D8499160168DE_1567368463 =         value;
     if(callback.mHaveValue)                
                 {
                     value = callback.mCursorCapsMode;
-                } 
-            } 
+                } //End block
+            } //End block
             callback.dispose();
-        } 
+        } //End block
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1390684332 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461350045 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461350045;
-        } 
+        } //End block
         int var2063C1608D6E0BAF80249C42E2BE5804_349375779 = (value);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788218782 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_788218782;
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int value = 0;
+        //try {
+            //InputContextCallback callback = InputContextCallback.getInstance();
+            //mIInputContext.getCursorCapsMode(reqModes, callback.mSeq, callback);
+            //synchronized (callback) {
+                //callback.waitForResultLocked();
+                //if (callback.mHaveValue) {
+                    //value = callback.mCursorCapsMode;
+                //}
+            //}
+            //callback.dispose();
+        //} catch (RemoteException e) {
+            //return 0;
+        //}
+        //return value;
     }
 
     
@@ -229,35 +229,35 @@ CharSequence varAF280DA2BC37D8BE783D8499160168DE_1567368463 =         value;
     if(callback.mHaveValue)                
                 {
                     value = callback.mExtractedText;
-                } 
-            } 
+                } //End block
+            } //End block
             callback.dispose();
-        } 
+        } //End block
         catch (RemoteException e)
         {
 ExtractedText var540C13E9E156B687226421B24F2DF178_1016248608 =             null;
             var540C13E9E156B687226421B24F2DF178_1016248608.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1016248608;
-        } 
+        } //End block
 ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_550734943.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_550734943;
-        
-        
-        
-            
-            
-            
-                
-                
-                    
-                
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //ExtractedText value = null;
+        //try {
+            //InputContextCallback callback = InputContextCallback.getInstance();
+            //mIInputContext.getExtractedText(request, flags, callback.mSeq, callback);
+            //synchronized (callback) {
+                //callback.waitForResultLocked();
+                //if (callback.mHaveValue) {
+                    //value = callback.mExtractedText;
+                //}
+            //}
+            //callback.dispose();
+        //} catch (RemoteException e) {
+            //return null;
+        //}
+        //return value;
     }
 
     
@@ -271,20 +271,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_519839199 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008988784 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2008988784;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_463121921 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_265516181 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_265516181;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.commitText(text, newCursorPosition);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -297,20 +297,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_388867008 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1160107178 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1160107178;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_326012107 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1326718306 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1326718306;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.commitCompletion(text);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -323,20 +323,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_2114906311 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1706803444 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1706803444;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1334972390 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1555727707 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1555727707;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.commitCorrection(correctionInfo);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -350,20 +350,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_547941238 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_416112853 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_416112853;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1257151284 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1439275749 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1439275749;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.setSelection(start, end);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -376,20 +376,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_1343334463 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1700060876 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1700060876;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1656124946 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1391243467 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1391243467;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.performEditorAction(actionCode);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -402,20 +402,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_1924649767 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_73221147 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_73221147;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_951480610 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1109939734 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1109939734;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.performContextMenuAction(id);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -429,20 +429,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_871966299 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1181978090 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1181978090;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_405305421 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1481512324 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1481512324;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.setComposingRegion(start, end);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -456,20 +456,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_669501479 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_64333597 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_64333597;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_619721461 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1732977059 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1732977059;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.setComposingText(text, newCursorPosition);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -481,20 +481,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_799012430 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1427433378 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1427433378;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1719981324 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_146100730 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_146100730;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.finishComposingText();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -506,20 +506,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_525141302 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_275965950 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_275965950;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_857068929 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1277891568 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1277891568;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.beginBatchEdit();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -531,20 +531,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_450490426 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_595980825 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_595980825;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1842672517 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_233862653 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_233862653;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.endBatchEdit();
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -557,20 +557,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_250878451 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_454087611 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_454087611;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_951423564 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_598090387 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_598090387;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.sendKeyEvent(event);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -583,20 +583,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_2135672917 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1510239191 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1510239191;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1495298796 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2091073310 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2091073310;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.clearMetaKeyStates(states);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -610,20 +610,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_1753185073 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1531725969 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1531725969;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_2142029670 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1437722390 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1437722390;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.deleteSurroundingText(leftLength, rightLength);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -636,20 +636,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_675984530 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1517442722 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1517442722;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1313276517 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1414319043 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1414319043;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.reportFullscreenMode(enabled);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -663,20 +663,20 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_1166498834 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1032070600 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1032070600;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_134191521 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2131985619 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2131985619;
-        } 
-        
-        
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mIInputContext.performPrivateCommand(action, data);
+            //return true;
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
@@ -706,7 +706,7 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.718 -0400", hash_original_method = "C2F7B541292D8E4E042270C21CD2A858", hash_generated_method = "C2F7B541292D8E4E042270C21CD2A858")
         public InputContextCallback ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -726,7 +726,6 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.718 -0400", hash_original_method = "114A3AA754115CB63309037B1A16C75C", hash_generated_method = "9BD80E9ED6FC3B32FF54FD83C1DF9459")
         private void dispose() {
             synchronized
@@ -737,17 +736,17 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
                     mTextBeforeCursor = null;
                     mExtractedText = null;
                     sInstance = this;
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (InputContextCallback.class) {
+                //if (sInstance == null) {
+                    //mTextAfterCursor = null;
+                    //mTextBeforeCursor = null;
+                    //mExtractedText = null;
+                    //sInstance = this;
+                //}
+            //}
         }
 
         
@@ -761,22 +760,22 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
                     mTextBeforeCursor = textBeforeCursor;
                     mHaveValue = true;
                     notifyAll();
-                } 
+                } //End block
                 else
                 {
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                            
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (this) {
+                //if (seq == mSeq) {
+                    //mTextBeforeCursor = textBeforeCursor;
+                    //mHaveValue = true;
+                    //notifyAll();
+                //} else {
+                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
+                            //+ ") in setTextBeforeCursor, ignoring.");
+                //}
+            //}
         }
 
         
@@ -790,22 +789,22 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
                     mTextAfterCursor = textAfterCursor;
                     mHaveValue = true;
                     notifyAll();
-                } 
+                } //End block
                 else
                 {
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                            
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (this) {
+                //if (seq == mSeq) {
+                    //mTextAfterCursor = textAfterCursor;
+                    //mHaveValue = true;
+                    //notifyAll();
+                //} else {
+                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
+                            //+ ") in setTextAfterCursor, ignoring.");
+                //}
+            //}
         }
 
         
@@ -819,22 +818,22 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
                     mSelectedText = selectedText;
                     mHaveValue = true;
                     notifyAll();
-                } 
+                } //End block
                 else
                 {
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                            
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (this) {
+                //if (seq == mSeq) {
+                    //mSelectedText = selectedText;
+                    //mHaveValue = true;
+                    //notifyAll();
+                //} else {
+                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
+                            //+ ") in setSelectedText, ignoring.");
+                //}
+            //}
         }
 
         
@@ -848,22 +847,22 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
                     mCursorCapsMode = capsMode;
                     mHaveValue = true;
                     notifyAll();
-                } 
+                } //End block
                 else
                 {
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                            
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (this) {
+                //if (seq == mSeq) {
+                    //mCursorCapsMode = capsMode; 
+                    //mHaveValue = true;  
+                    //notifyAll();
+                //} else {
+                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
+                            //+ ") in setCursorCapsMode, ignoring.");
+                //}
+            //}
         }
 
         
@@ -877,26 +876,25 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
                     mExtractedText = extractedText;
                     mHaveValue = true;
                     notifyAll();
-                } 
+                } //End block
                 else
                 {
-                } 
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                            
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //synchronized (this) {
+                //if (seq == mSeq) {
+                    //mExtractedText = extractedText;
+                    //mHaveValue = true;
+                    //notifyAll();
+                //} else {
+                    //Log.i(TAG, "Got out-of-sequence callback " + seq + " (expected " + mSeq
+                            //+ ") in setExtractedText, ignoring.");
+                //}
+            //}
         }
 
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.722 -0400", hash_original_method = "0DFF250C75DABF6F6E35FBCC4F44FCEA", hash_generated_method = "49A1CCF5EB26A17E95436859628A9D7E")
          void waitForResultLocked() {
             long startTime = SystemClock.uptimeMillis();
@@ -908,29 +906,29 @@ ExtractedText varAF280DA2BC37D8BE783D8499160168DE_550734943 =         value;
     if(remainingTime <= 0)                
                 {
                     return;
-                } 
+                } //End block
                 try 
                 {
                     wait(remainingTime);
-                } 
+                } //End block
                 catch (InterruptedException e)
                 {
-                } 
-            } 
-            
-            
-            
-            
-                
-                
-                    
-                    
-                
-                
-                    
-                
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //long startTime = SystemClock.uptimeMillis();
+            //long endTime = startTime + MAX_WAIT_TIME_MILLIS;
+            //while (!mHaveValue) {
+                //long remainingTime = endTime - SystemClock.uptimeMillis();
+                //if (remainingTime <= 0) {
+                    //Log.w(TAG, "Timed out waiting on IInputContextCallback");
+                    //return;
+                //}
+                //try {
+                    //wait(remainingTime);
+                //} catch (InterruptedException e) {
+                //}
+            //}
         }
 
         

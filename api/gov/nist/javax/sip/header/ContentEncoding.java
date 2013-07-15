@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.247 -0400", hash_original_method = "AF3A83AEFF326F1AB1D055130F5C4343", hash_generated_method = "484568D4CE2DAF62679DC5CF40341916")
     public  ContentEncoding() {
         super(CONTENT_ENCODING);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,30 +22,28 @@ public class ContentEncoding extends SIPHeader implements javax.sip.header.Conte
     public  ContentEncoding(String enc) {
         super(CONTENT_ENCODING);
         contentEncoding = enc;
-        
-        
+        // ---------- Original Method ----------
+        //contentEncoding = enc;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.247 -0400", hash_original_method = "762501862EB015269BBC405DBBAC5194", hash_generated_method = "CA9D50E0C7061F275FEAB55835FACD60")
     public String encodeBody() {
 String varB77403BF8D1FE544589F5EE718B4AD53_2091267711 =         contentEncoding;
         varB77403BF8D1FE544589F5EE718B4AD53_2091267711.addTaint(taint);
         return varB77403BF8D1FE544589F5EE718B4AD53_2091267711;
-        
-        
+        // ---------- Original Method ----------
+        //return contentEncoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.247 -0400", hash_original_method = "13F27076508F7754A69639743C7567EC", hash_generated_method = "9DE7ACA7C3D1F3E5B7CD9AC65272E62F")
     public String getEncoding() {
 String varB77403BF8D1FE544589F5EE718B4AD53_1068949585 =         contentEncoding;
         varB77403BF8D1FE544589F5EE718B4AD53_1068949585.addTaint(taint);
         return varB77403BF8D1FE544589F5EE718B4AD53_1068949585;
-        
-        
+        // ---------- Original Method ----------
+        //return contentEncoding;
     }
 
     
@@ -59,11 +57,11 @@ String varB77403BF8D1FE544589F5EE718B4AD53_1068949585 =         contentEncoding;
         throw var9A42999D50208B50BE32AFF87EB6A8E8_1578938866;
         }
         contentEncoding = encoding;
-        
-        
-            
-                
-        
+        // ---------- Original Method ----------
+        //if (encoding == null)
+            //throw new NullPointerException(
+                //"JAIN-SIP Exception, " + " encoding is null");
+        //contentEncoding = encoding;
     }
 
     

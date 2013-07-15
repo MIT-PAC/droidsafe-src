@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public class BERSequenceParser implements ASN1SequenceParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.814 -0400", hash_original_method = "0FD98DAB53613A9925FD049FC2961E55", hash_generated_method = "C654E682B02E53A6F891C99264E7B745")
       BERSequenceParser(ASN1StreamParser parser) {
         this._parser = parser;
-        
-        
+        // ---------- Original Method ----------
+        //this._parser = parser;
     }
 
     
@@ -24,8 +24,8 @@ public class BERSequenceParser implements ASN1SequenceParser {
 DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_461185065 =         _parser.readObject();
         var7FA56CC8A68C244D303C7C9A462CBFE7_461185065.addTaint(taint);
         return var7FA56CC8A68C244D303C7C9A462CBFE7_461185065;
-        
-        
+        // ---------- Original Method ----------
+        //return _parser.readObject();
     }
 
     
@@ -34,8 +34,8 @@ DEREncodable var7FA56CC8A68C244D303C7C9A462CBFE7_461185065 =         _parser.rea
 DERObject var21DEBB4142B2B66D46250DEF57F91A81_61935691 =         new BERSequence(_parser.readVector());
         var21DEBB4142B2B66D46250DEF57F91A81_61935691.addTaint(taint);
         return var21DEBB4142B2B66D46250DEF57F91A81_61935691;
-        
-        
+        // ---------- Original Method ----------
+        //return new BERSequence(_parser.readVector());
     }
 
     
@@ -46,22 +46,22 @@ DERObject var21DEBB4142B2B66D46250DEF57F91A81_61935691 =         new BERSequence
 DERObject var7CA8C38BF885E63AD9395CA9CA98D912_1049765524 =             getLoadedObject();
             var7CA8C38BF885E63AD9395CA9CA98D912_1049765524.addTaint(taint);
             return var7CA8C38BF885E63AD9395CA9CA98D912_1049765524;
-        } 
+        } //End block
         catch (IOException e)
         {
             IllegalStateException var49138AC78EB5C3712B0E46EA65CA7614_1942888468 = new IllegalStateException(e.getMessage());
             var49138AC78EB5C3712B0E46EA65CA7614_1942888468.addTaint(taint);
             throw var49138AC78EB5C3712B0E46EA65CA7614_1942888468;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //return getLoadedObject();
+        //}
+        //catch (IOException e)
+        //{
+            //throw new IllegalStateException(e.getMessage());
+        //}
     }
 
     

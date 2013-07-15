@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class CharSequences {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.660 -0400", hash_original_method = "1F7BA79C239DAD6228A2DB1150F5EF80", hash_generated_method = "1F7BA79C239DAD6228A2DB1150F5EF80")
     public CharSequences ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -55,8 +55,7 @@ public class CharSequences {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static void validate(int start, int end, int length) {
+        static void validate(int start, int end, int length) {
         if (start < 0) throw new IndexOutOfBoundsException();
         if (end < 0) throw new IndexOutOfBoundsException();
         if (end > length) throw new IndexOutOfBoundsException();

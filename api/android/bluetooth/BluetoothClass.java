@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,12 +15,11 @@ public final class BluetoothClass implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.871 -0400", hash_original_method = "3018CA2607FD366405F97E43B06E77B3", hash_generated_method = "90B904425EE4604164B554F63464E722")
     public  BluetoothClass(int classInt) {
         mClass = classInt;
-        
-        
+        // ---------- Original Method ----------
+        //mClass = classInt;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.872 -0400", hash_original_method = "217E4DCE2F47DBEE08566901FB7CC9C3", hash_generated_method = "49E79B18D849EF0D5404606CA45B0A86")
     @Override
     public boolean equals(Object o) {
@@ -30,27 +29,26 @@ public final class BluetoothClass implements Parcelable {
             boolean var9111256F314568154B4EAFB32B65F8B0_357503834 = (mClass == ((BluetoothClass)o).mClass);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1739617213 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1739617213;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1527942890 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1105152514 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1105152514;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (o instanceof BluetoothClass) {
+            //return mClass == ((BluetoothClass)o).mClass;
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.873 -0400", hash_original_method = "874CCBA476992320BB2BF01B58BECDFE", hash_generated_method = "7B8B983834DF7DDB7EC206C5B7CF4CE9")
     @Override
     public int hashCode() {
         int var3C06167D41E761EA62261D0BFD22DD5C_1467299582 = (mClass);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362502249 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1362502249;
-        
-        
+        // ---------- Original Method ----------
+        //return mClass;
     }
 
     
@@ -60,19 +58,18 @@ public final class BluetoothClass implements Parcelable {
 String varE79732AA16E5FC09BDC824B127CB6617_1949339607 =         Integer.toHexString(mClass);
         varE79732AA16E5FC09BDC824B127CB6617_1949339607.addTaint(taint);
         return varE79732AA16E5FC09BDC824B127CB6617_1949339607;
-        
-        
+        // ---------- Original Method ----------
+        //return Integer.toHexString(mClass);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.876 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E93E787938377242112998AF520DA5B2")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1672206062 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726776524 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726776524;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -81,42 +78,39 @@ String varE79732AA16E5FC09BDC824B127CB6617_1949339607 =         Integer.toHexStr
         addTaint(flags);
         addTaint(out.getTaint());
         out.writeInt(mClass);
-        
-        
+        // ---------- Original Method ----------
+        //out.writeInt(mClass);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.878 -0400", hash_original_method = "A40FEF9DD742C9180312A83CC46BA74D", hash_generated_method = "BCBD937F5E1A86F06DE1A2C9C3FF4E34")
     public boolean hasService(int service) {
         addTaint(service);
         boolean var23E09A6742DA5A33ED83AAC695B37ED9_409376695 = (((mClass & Service.BITMASK & service) != 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1356671071 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1356671071;
-        
-        
+        // ---------- Original Method ----------
+        //return ((mClass & Service.BITMASK & service) != 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.878 -0400", hash_original_method = "3B15E8C4111EC35F10AF5C168F9A121C", hash_generated_method = "64B260BE586A07EFFFE7C8E254D7B8F5")
     public int getMajorDeviceClass() {
         int var3AEA43EC55D211279D605E0296A1D8FE_404336493 = ((mClass & Device.Major.BITMASK));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_904412280 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_904412280;
-        
-        
+        // ---------- Original Method ----------
+        //return (mClass & Device.Major.BITMASK);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.879 -0400", hash_original_method = "BA237D1BE1EA8EE11A66DDAAF0ED747D", hash_generated_method = "441DD16F6EDADBABA5260190CBF0B747")
     public int getDeviceClass() {
         int var3218FC416E2249A00358985692C83844_523504211 = ((mClass & Device.BITMASK));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_562644889 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_562644889;
-        
-        
+        // ---------- Original Method ----------
+        //return (mClass & Device.BITMASK);
     }
 
     
@@ -130,7 +124,7 @@ String varE79732AA16E5FC09BDC824B127CB6617_1949339607 =         Integer.toHexStr
                 boolean varB326B5062B2F0E69046810717534CB09_1840654588 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_636051447 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_636051447;
-            } 
+            } //End block
 switch(getDeviceClass()){
             case Device.AUDIO_VIDEO_HIFI_AUDIO:
             case Device.AUDIO_VIDEO_HEADPHONES:
@@ -144,7 +138,7 @@ switch(getDeviceClass()){
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247040282 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247040282;
 }
-        } 
+        } //End block
         else
     if(profile == PROFILE_HEADSET)        
         {
@@ -153,7 +147,7 @@ switch(getDeviceClass()){
                 boolean varB326B5062B2F0E69046810717534CB09_1307200428 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_132360255 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_132360255;
-            } 
+            } //End block
 switch(getDeviceClass()){
             case Device.AUDIO_VIDEO_HANDSFREE:
             case Device.AUDIO_VIDEO_WEARABLE_HEADSET:
@@ -166,7 +160,7 @@ switch(getDeviceClass()){
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2005328576 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2005328576;
 }
-        } 
+        } //End block
         else
     if(profile == PROFILE_OPP)        
         {
@@ -175,7 +169,7 @@ switch(getDeviceClass()){
                 boolean varB326B5062B2F0E69046810717534CB09_535391459 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051409837 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051409837;
-            } 
+            } //End block
 switch(getDeviceClass()){
             case Device.COMPUTER_UNCATEGORIZED:
             case Device.COMPUTER_DESKTOP:
@@ -198,14 +192,14 @@ switch(getDeviceClass()){
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1774709767 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1774709767;
 }
-        } 
+        } //End block
         else
     if(profile == PROFILE_HID)        
         {
             boolean var3CC75CFCE60D826E6342F8CB2DDDF94E_388932271 = ((getDeviceClass() & Device.Major.PERIPHERAL) == Device.Major.PERIPHERAL);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_670419624 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_670419624;
-        } 
+        } //End block
         else
     if(profile == PROFILE_PANU || profile == PROFILE_NAP)        
         {
@@ -214,19 +208,19 @@ switch(getDeviceClass()){
                 boolean varB326B5062B2F0E69046810717534CB09_1711003254 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1161270413 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1161270413;
-            } 
+            } //End block
             boolean var37FC5865FE6840C2AA64A8ABDDC31039_1402860805 = ((getDeviceClass() & Device.Major.NETWORKING) == Device.Major.NETWORKING);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1367836553 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1367836553;
-        } 
+        } //End block
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1155101781 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659893886 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_659893886;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -235,7 +229,7 @@ switch(getDeviceClass()){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.882 -0400", hash_original_method = "05DD0D3AE8FB07CCF5507C6E023C1B78", hash_generated_method = "05DD0D3AE8FB07CCF5507C6E023C1B78")
         public Service ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -278,7 +272,7 @@ switch(getDeviceClass()){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.885 -0400", hash_original_method = "40AF3D7165C50C753FB5A8D2115663B9", hash_generated_method = "40AF3D7165C50C753FB5A8D2115663B9")
         public Device ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -287,7 +281,7 @@ switch(getDeviceClass()){
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.886 -0400", hash_original_method = "2C98A313400B6C1B74CB3BC1CC68B05F", hash_generated_method = "2C98A313400B6C1B74CB3BC1CC68B05F")
             public Major ()
             {
-                
+                //Synthesized constructor
             }
 
 

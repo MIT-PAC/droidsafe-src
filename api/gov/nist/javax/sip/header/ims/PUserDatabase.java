@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,26 +16,25 @@ public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader im
     public  PUserDatabase(String databaseName) {
         super(NAME);
         this.databaseName = databaseName;
-        
-        
+        // ---------- Original Method ----------
+        //this.databaseName = databaseName;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.074 -0400", hash_original_method = "E39FCB193BD9E02D223AAEA09A512240", hash_generated_method = "7ADBEBC1D5F5E2626F7290454A00780A")
     public  PUserDatabase() {
         super(P_USER_DATABASE);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.075 -0400", hash_original_method = "1786B1376B4CD3FEAEBCAB28A560C6C6", hash_generated_method = "3D81D0E04E157D102DF8F1AEF4E4D3A4")
     public String getDatabaseName() {
 String var851A3104A174A0317C1CB008C48A1898_493213275 =         this.databaseName;
         var851A3104A174A0317C1CB008C48A1898_493213275.addTaint(taint);
         return var851A3104A174A0317C1CB008C48A1898_493213275;
-        
-        
+        // ---------- Original Method ----------
+        //return this.databaseName;
     }
 
     
@@ -52,14 +51,14 @@ String var851A3104A174A0317C1CB008C48A1898_493213275 =         this.databaseName
         this.databaseName = new StringBuffer().append("aaa://").append(databaseName).toString();
         else
         this.databaseName = databaseName;
-        
-        
-            
-        
-            
-        
-            
-                
+        // ---------- Original Method ----------
+        //if((databaseName==null)||(databaseName.equals(" ")))
+            //throw new NullPointerException("Database name is null");
+        //else
+            //if(!databaseName.contains("aaa://"))
+        //this.databaseName = new StringBuffer().append("aaa://").append(databaseName).toString();
+            //else
+                //this.databaseName = databaseName;
     }
 
     
@@ -75,15 +74,15 @@ String var851A3104A174A0317C1CB008C48A1898_493213275 =         this.databaseName
 String var1B324365A764C077A55854483509F4AB_407987131 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_407987131.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_407987131;
-        
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuffer retval = new StringBuffer();
+        //retval.append("<");
+        //if(getDatabaseName()!=null)
+        //retval.append(getDatabaseName());
+        //if (!parameters.isEmpty())
+            //retval.append(SEMICOLON + this.parameters.encode());
+        //retval.append(">");
+        //return retval.toString();
     }
 
     
@@ -93,8 +92,8 @@ String var1B324365A764C077A55854483509F4AB_407987131 =         retval.toString()
         boolean var3F1E40688CFCC9D3E63130371C01BF36_2061185265 = ((other instanceof PUserDatabaseHeader) && super.equals(other));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_422947862 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_422947862;
-        
-        
+        // ---------- Original Method ----------
+        //return (other instanceof PUserDatabaseHeader) && super.equals(other);
     }
 
     
@@ -104,9 +103,9 @@ String var1B324365A764C077A55854483509F4AB_407987131 =         retval.toString()
 Object varF9E19AD6135C970F387F77C6F3DE4477_137964154 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_137964154.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_137964154;
-        
-        
-        
+        // ---------- Original Method ----------
+        //PUserDatabase retval = (PUserDatabase) super.clone();
+        //return retval;
     }
 
     
@@ -116,8 +115,8 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_137964154 =         retval;
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1066327932 = new ParseException(value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_1066327932.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_1066327932;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ParseException(value,0);
     }
 
     

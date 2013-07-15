@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,19 +19,18 @@ public class HandshakeCompletedEvent extends EventObject {
         super(sock);
         addTaint(sock.getTaint());
         session = s;
-        
-        
+        // ---------- Original Method ----------
+        //session = s;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.757 -0400", hash_original_method = "2F35DBDDEE25D44180770FC68EA02FBF", hash_generated_method = "FF033B955DCDAE8E871B63CB46295FC3")
     public SSLSession getSession() {
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1036168708 =         session;
         varD555E544A66E0F97DA6BCDE940E3E79C_1036168708.addTaint(taint);
         return varD555E544A66E0F97DA6BCDE940E3E79C_1036168708;
-        
-        
+        // ---------- Original Method ----------
+        //return session;
     }
 
     
@@ -40,8 +39,8 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1036168708 =         session;
 String var17F7C6541C3AC9A1AB7A1A7947F67092_255456102 =         session.getCipherSuite();
         var17F7C6541C3AC9A1AB7A1A7947F67092_255456102.addTaint(taint);
         return var17F7C6541C3AC9A1AB7A1A7947F67092_255456102;
-        
-        
+        // ---------- Original Method ----------
+        //return session.getCipherSuite();
     }
 
     
@@ -50,8 +49,8 @@ String var17F7C6541C3AC9A1AB7A1A7947F67092_255456102 =         session.getCipher
 Certificate[] var814C5E0AD153A50BA7251795F2B21D70_1497831764 =         session.getLocalCertificates();
         var814C5E0AD153A50BA7251795F2B21D70_1497831764.addTaint(taint);
         return var814C5E0AD153A50BA7251795F2B21D70_1497831764;
-        
-        
+        // ---------- Original Method ----------
+        //return session.getLocalCertificates();
     }
 
     
@@ -60,8 +59,8 @@ Certificate[] var814C5E0AD153A50BA7251795F2B21D70_1497831764 =         session.g
 Certificate[] var95023AC60737474272021AD776AF6739_448635937 =         session.getPeerCertificates();
         var95023AC60737474272021AD776AF6739_448635937.addTaint(taint);
         return var95023AC60737474272021AD776AF6739_448635937;
-        
-        
+        // ---------- Original Method ----------
+        //return session.getPeerCertificates();
     }
 
     
@@ -70,41 +69,38 @@ Certificate[] var95023AC60737474272021AD776AF6739_448635937 =         session.ge
 X509Certificate[] varDD253E96FEFE5AFA9B8333B5E04E8D52_210821848 =         session.getPeerCertificateChain();
         varDD253E96FEFE5AFA9B8333B5E04E8D52_210821848.addTaint(taint);
         return varDD253E96FEFE5AFA9B8333B5E04E8D52_210821848;
-        
-        
+        // ---------- Original Method ----------
+        //return session.getPeerCertificateChain();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.759 -0400", hash_original_method = "E52328DA42ED4C7658029875D0FD2A85", hash_generated_method = "C45AC8F9BF802BD5F501B2B7D4854DB5")
     public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
 Principal varE32C5C017D2564D4CA9314996F3A7199_1125130394 =         session.getPeerPrincipal();
         varE32C5C017D2564D4CA9314996F3A7199_1125130394.addTaint(taint);
         return varE32C5C017D2564D4CA9314996F3A7199_1125130394;
-        
-        
+        // ---------- Original Method ----------
+        //return session.getPeerPrincipal();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.760 -0400", hash_original_method = "9AEFAC82D29E63E6CA9E21A60A8B85D0", hash_generated_method = "36732E1DC64FA9F1AB14B6984012BD16")
     public Principal getLocalPrincipal() {
 Principal var1392FB01BD123E39BCC698D8FF713577_1920073809 =         session.getLocalPrincipal();
         var1392FB01BD123E39BCC698D8FF713577_1920073809.addTaint(taint);
         return var1392FB01BD123E39BCC698D8FF713577_1920073809;
-        
-        
+        // ---------- Original Method ----------
+        //return session.getLocalPrincipal();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.760 -0400", hash_original_method = "D59F011BF3B2DFBF72B84D897263E8E1", hash_generated_method = "67A68340575EFF8D23F588214518F365")
     public SSLSocket getSocket() {
 SSLSocket varB4DBB6057745BC2AB2ECD0D5AFD60222_1760842237 =         (SSLSocket) this.source;
         varB4DBB6057745BC2AB2ECD0D5AFD60222_1760842237.addTaint(taint);
         return varB4DBB6057745BC2AB2ECD0D5AFD60222_1760842237;
-        
-        
+        // ---------- Original Method ----------
+        //return (SSLSocket) this.source;
     }
 
     

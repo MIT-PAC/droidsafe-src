@@ -1,6 +1,6 @@
 package android.test;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -55,8 +55,8 @@ public class TestRunner implements PerformanceTestCase.Intermediates {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.346 -0400", hash_original_method = "8950AB5377F72756EC0D34993CFF0108", hash_generated_method = "BF65C91F46D7F52B37ED4DA8D623D17F")
     public  TestRunner(Context context) {
         mContext = context;
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
     }
 
     
@@ -64,8 +64,8 @@ public class TestRunner implements PerformanceTestCase.Intermediates {
     public void addListener(Listener listener) {
         addTaint(listener.getTaint());
         mListeners.add(listener);
-        
-        
+        // ---------- Original Method ----------
+        //mListeners.add(listener);
     }
 
     
@@ -75,19 +75,19 @@ public class TestRunner implements PerformanceTestCase.Intermediates {
         file.mkdir();
         String base = "/tmp/trace/" + mClassName + ".dmtrace";
         Debug.startMethodTracing(base, 8 * 1024 * 1024);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //File file = new File("/tmp/trace");
+        //file.mkdir();
+        //String base = "/tmp/trace/" + mClassName + ".dmtrace";
+        //Debug.startMethodTracing(base, 8 * 1024 * 1024);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.347 -0400", hash_original_method = "4696774C6D9FEF3FF4454E20DBB64304", hash_generated_method = "07899BFCC26D1E02E53077B2B0C266AE")
     public void finishProfiling() {
         Debug.stopMethodTracing();
-        
-        
+        // ---------- Original Method ----------
+        //Debug.stopMethodTracing();
     }
 
     
@@ -98,12 +98,12 @@ public class TestRunner implements PerformanceTestCase.Intermediates {
 for(int i = 0;i < count;i++)
         {
             mListeners.get(i).started(className);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int count = mListeners.size();
+        //for (int i = 0; i < count; i++) {
+            //mListeners.get(i).started(className);
+        //}
     }
 
     
@@ -114,12 +114,12 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             mListeners.get(i).finished(className);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int count = mListeners.size();
+        //for (int i = 0; i < count; i++) {
+            //mListeners.get(i).finished(className);
+        //}
     }
 
     
@@ -139,15 +139,15 @@ for(int i = 0;i < count;i++)
                     itemTimeNS,
                     iterations,
                     intermediates);
-        } 
-        
-        
-        
-            
-                    
-                    
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int count = mListeners.size();
+        //for (int i = 0; i < count; i++) {
+            //mListeners.get(i).performance(className,
+                    //itemTimeNS,
+                    //iterations,
+                    //intermediates);
+        //}
     }
 
     
@@ -159,13 +159,13 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             mListeners.get(i).passed(className);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mPassed++;
+        //int count = mListeners.size();
+        //for (int i = 0; i < count; i++) {
+            //mListeners.get(i).passed(className);
+        //}
     }
 
     
@@ -178,35 +178,33 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             mListeners.get(i).failed(className, exception);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mFailed++;
+        //int count = mListeners.size();
+        //for (int i = 0; i < count; i++) {
+            //mListeners.get(i).failed(className, exception);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.350 -0400", hash_original_method = "0B532C5E5191073233FEF0FB3B24844F", hash_generated_method = "8415894A66DA67731A999B876FF0D865")
     public int passedCount() {
         int varBD3E147FF22ECCD5153F0A5E9B1D2945_1815568913 = (mPassed);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1578058378 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1578058378;
-        
-        
+        // ---------- Original Method ----------
+        //return mPassed;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.350 -0400", hash_original_method = "0CCEB79CE1070F202583C9915927C804", hash_generated_method = "781012B23DFD68E1294ACEB4ACF320CA")
     public int failedCount() {
         int var0902E9DB58B13DD3F11BEA37160A278B_1101984377 = (mFailed);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1087651572 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1087651572;
-        
-        
+        // ---------- Original Method ----------
+        //return mFailed;
     }
 
     
@@ -216,20 +214,19 @@ for(int i = 0;i < count;i++)
 for(String cl : classes)
         {
             run(cl);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (String cl : classes) {
+            //run(cl);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.351 -0400", hash_original_method = "53E84480F070131E858702808FE92767", hash_generated_method = "DC4449037DFCBD6DB5FA61FD72D77725")
     public void setInternalIterations(int count) {
         mInternalIterations = count;
-        
-        
+        // ---------- Original Method ----------
+        //mInternalIterations = count;
     }
 
     
@@ -239,17 +236,17 @@ for(String cl : classes)
     if(realTime)        
         {
             mStartTime = System.currentTimeMillis();
-        } 
+        } //End block
         else
         {
             mStartTime = SystemClock.currentThreadTimeMillis();
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (realTime) {
+            //mStartTime = System.currentTimeMillis();
+        //} else {
+            //mStartTime = SystemClock.currentThreadTimeMillis();
+        //}
     }
 
     
@@ -257,8 +254,8 @@ for(String cl : classes)
     public void addIntermediate(String name) {
         addTaint(name.getTaint());
         addIntermediate(name, (System.currentTimeMillis() - mStartTime) * 1000000);
-        
-        
+        // ---------- Original Method ----------
+        //addIntermediate(name, (System.currentTimeMillis() - mStartTime) * 1000000);
     }
 
     
@@ -267,8 +264,8 @@ for(String cl : classes)
         addTaint(timeInNS);
         addTaint(name.getTaint());
         mIntermediates.add(new IntermediateTime(name, timeInNS));
-        
-        
+        // ---------- Original Method ----------
+        //mIntermediates.add(new IntermediateTime(name, timeInNS));
     }
 
     
@@ -278,26 +275,25 @@ for(String cl : classes)
     if(realTime)        
         {
             mEndTime = System.currentTimeMillis();
-        } 
+        } //End block
         else
         {
             mEndTime = SystemClock.currentThreadTimeMillis();
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (realTime) {
+            //mEndTime = System.currentTimeMillis();
+        //} else {
+            //mEndTime = SystemClock.currentThreadTimeMillis();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.353 -0400", hash_original_method = "EC5A911B7459E56F5BCB8B3F76085E8F", hash_generated_method = "ABEA4E480EED3CE327E9D593E33EF0F7")
     public void setPerformanceMode(int mode) {
         mMode = mode;
-        
-        
+        // ---------- Original Method ----------
+        //mMode = mode;
     }
 
     
@@ -308,10 +304,10 @@ for(String cl : classes)
         started(className);
         finished(className);
         failed(className, e);
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //started(className);
+        //finished(className);
+        //failed(className, e);
     }
 
     
@@ -326,7 +322,7 @@ for(String cl : classes)
             {
                 String[] children = getChildren(method);
                 run(children);
-            } 
+            } //End block
             else
     if(mRunnableClass.isAssignableFrom(clazz))            
             {
@@ -335,7 +331,7 @@ for(String cl : classes)
     if(test instanceof TestCase)                
                 {
                     testcase = (TestCase) test;
-                } 
+                } //End block
                 Throwable e = null;
                 boolean didSetup = false;
                 started(className);
@@ -345,48 +341,48 @@ for(String cl : classes)
                     {
                         testcase.setUp(mContext);
                         didSetup = true;
-                    } 
+                    } //End block
     if(mMode == PERFORMANCE)                    
                     {
                         runInPerformanceMode(test, className, false, className);
-                    } 
+                    } //End block
                     else
     if(mMode == PROFILING)                    
                     {
                         startProfiling();
                         test.run();
                         finishProfiling();
-                    } 
+                    } //End block
                     else
                     {
                         test.run();
-                    } 
-                } 
+                    } //End block
+                } //End block
                 catch (Throwable ex)
                 {
                     e = ex;
-                } 
+                } //End block
     if(testcase != null && didSetup)                
                 {
                     try 
                     {
                         testcase.tearDown();
-                    } 
+                    } //End block
                     catch (Throwable ex)
                     {
                         e = ex;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 finished(className);
     if(e == null)                
                 {
                     passed(className);
-                } 
+                } //End block
                 else
                 {
                     failed(className, e);
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(mJUnitClass.isAssignableFrom(clazz))            
             {
@@ -404,13 +400,13 @@ for(Method m : methods)
                         {
                             testcase.setContext(mContext);
                             testcase.setTestContext(mContext);
-                        } 
+                        } //End block
                         catch (Exception ex)
                         {
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     suite.addTest(test);
-                } 
+                } //End block
     if(mMode == PERFORMANCE)                
                 {
                     final int testCount = suite.testCount();
@@ -421,63 +417,63 @@ for(int j = 0;j < testCount;j++)
                         try 
                         {
                             runInPerformanceMode(test, className, true, test.toString());
-                        } 
+                        } //End block
                         catch (Throwable ex)
                         {
                             e = ex;
-                        } 
+                        } //End block
                         finished(test.toString());
     if(e == null)                        
                         {
                             passed(test.toString());
-                        } 
+                        } //End block
                         else
                         {
                             failed(test.toString(), e);
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
     if(mMode == PROFILING)                
                 {
                     startProfiling();
                     junit.textui.TestRunner.run(suite);
                     finishProfiling();
-                } 
+                } //End block
                 else
                 {
                     junit.textui.TestRunner.run(suite);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 System.out.println("Test wasn't Runnable and didn't have a"
                         + " children method: " + className);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (ClassNotFoundException e)
         {
     if(isJunitTest(className))            
             {
                 runSingleJunitTest(className);
-            } 
+            } //End block
             else
             {
                 missingTest(className, e);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (InstantiationException e)
         {
             System.out.println("InstantiationException for " + className);
             missingTest(className, e);
-        } 
+        } //End block
         catch (IllegalAccessException e)
         {
             System.out.println("IllegalAccessException for " + className);
             missingTest(className, e);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -501,7 +497,7 @@ for(int j = 0;j < testCount;j++)
             perftestcase = (PerformanceTestCase) perftest;
     if(mMode == REGRESSION && perftestcase.isPerformanceOnly())            
             return;
-        } 
+        } //End block
         Runtime.getRuntime().runFinalization();
         Runtime.getRuntime().gc();
     if(perftestcase != null)        
@@ -511,12 +507,12 @@ for(int j = 0;j < testCount;j++)
     if(iterations > 0)            
             {
                 increaseIterations = false;
-            } 
+            } //End block
             else
             {
                 iterations = 1;
-            } 
-        } 
+            } //End block
+        } //End block
         Thread.sleep(1000);
         do {
             {
@@ -524,69 +520,69 @@ for(int j = 0;j < testCount;j++)
     if(increaseIterations)                
                 {
                     mStartTime = SystemClock.currentThreadTimeMillis();
-                } 
+                } //End block
                 else
                 {
                     mStartTime = 0;
-                } 
+                } //End block
     if(junitTest)                
                 {
 for(int i = 0;i < iterations;i++)
                     {
                         junit.textui.TestRunner.run((junit.framework.Test) testCase);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     Runnable test = (Runnable) testCase;
 for(int i = 0;i < iterations;i++)
                     {
                         test.run();
-                    } 
-                } 
+                    } //End block
+                } //End block
                 long endTime = mEndTime;
     if(endTime == 0)                
                 {
                     endTime = SystemClock.currentThreadTimeMillis();
-                } 
+                } //End block
                 duration = endTime - mStartTime;
     if(!increaseIterations)                
                 {
                     break;
-                } 
+                } //End block
     if(duration <= 1)                
                 {
                     iterations *= 1000;
-                } 
+                } //End block
                 else
     if(duration <= 10)                
                 {
                     iterations *= 100;
-                } 
+                } //End block
                 else
     if(duration < 100)                
                 {
                     iterations *= 10;
-                } 
+                } //End block
                 else
     if(duration < 1000)                
                 {
                     iterations *= (int) ((1000 / duration) + 2);
-                } 
+                } //End block
                 else
                 {
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
 } while (true);
     if(duration != 0)        
         {
             iterations *= mInternalIterations;
             performance(testNameInDb, (duration * 1000000) / iterations,
                     iterations, mIntermediates);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -601,7 +597,7 @@ for(int i = 0;i < iterations;i++)
         {
             className = className.substring(0, index);
             testName = originalClassName.substring(index + 1);
-        } 
+        } //End block
         try 
         {
             Class clazz = mContext.getClassLoader().loadClass(className);
@@ -616,11 +612,11 @@ for(int i = 0;i < iterations;i++)
                     try 
                     {
                         testcase.setContext(mContext);
-                    } 
+                    } //End block
                     catch (Exception ex)
                     {
-                    } 
-                } 
+                    } //End block
+                } //End block
                 newSuite.addTest(test);
     if(mMode == PERFORMANCE)                
                 {
@@ -632,41 +628,41 @@ for(int i = 0;i < iterations;i++)
     if(excep == null)                        
                         {
                             passed(test.toString());
-                        } 
+                        } //End block
                         else
                         {
                             failed(test.toString(), excep);
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (Throwable ex)
                     {
                         excep = ex;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
     if(mMode == PROFILING)                
                 {
                     startProfiling();
                     junit.textui.TestRunner.run(newSuite);
                     finishProfiling();
-                } 
+                } //End block
                 else
                 {
                     junit.textui.TestRunner.run(newSuite);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (ClassNotFoundException e)
         {
-        } 
+        } //End block
         catch (IllegalAccessException e)
         {
-        } 
+        } //End block
         catch (InstantiationException e)
         {
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -810,7 +806,7 @@ for(int i = 0;i < iterations;i++)
     if(index >= 0)        
         {
             className = className.substring(0, index);
-        } 
+        } //End block
         try 
         {
             Class clazz = mContext.getClassLoader().loadClass(className);
@@ -819,27 +815,27 @@ for(int i = 0;i < iterations;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_407194780 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1904135378 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1904135378;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (ClassNotFoundException e)
         {
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1725236297 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_312484098 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_312484098;
-        
-        
-        
-            
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int index = className.lastIndexOf('$');
+        //if (index >= 0) {
+            //className = className.substring(0, index);
+        //}
+        //try {
+            //Class clazz = mContext.getClassLoader().loadClass(className);
+            //if (mJUnitClass.isAssignableFrom(clazz)) {
+                //return true;
+            //}
+        //} catch (ClassNotFoundException e) {
+        //}
+        //return false;
     }
 
     
@@ -885,7 +881,7 @@ for(int i = 0;i < iterations;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.364 -0400", hash_original_method = "CFFE110BDEA2EF1B39A9BF20964D075D", hash_generated_method = "170612CB63D4C2F9D6EFA48333C292DA")
         public  JunitTestSuite() {
             super();
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -896,10 +892,10 @@ for(int i = 0;i < iterations;i++)
             result.addListener(this);
             super.run(result);
             result.removeListener(this);
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //result.addListener(this);
+            //super.run(result);
+            //result.removeListener(this);
         }
 
         
@@ -907,8 +903,8 @@ for(int i = 0;i < iterations;i++)
         public void startTest(Test test) {
             addTaint(test.getTaint());
             started(test.toString());
-            
-            
+            // ---------- Original Method ----------
+            //started(test.toString());
         }
 
         
@@ -919,12 +915,12 @@ for(int i = 0;i < iterations;i++)
     if(!mError)            
             {
                 passed(test.toString());
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //finished(test.toString());
+            //if (!mError) {
+                //passed(test.toString());
+            //}
         }
 
         
@@ -934,9 +930,9 @@ for(int i = 0;i < iterations;i++)
             addTaint(test.getTaint());
             mError = true;
             failed(test.toString(), t);
-            
-            
-            
+            // ---------- Original Method ----------
+            //mError = true;
+            //failed(test.toString(), t);
         }
 
         
@@ -946,9 +942,9 @@ for(int i = 0;i < iterations;i++)
             addTaint(test.getTaint());
             mError = true;
             failed(test.toString(), t);
-            
-            
-            
+            // ---------- Original Method ----------
+            //mError = true;
+            //failed(test.toString(), t);
         }
 
         
@@ -968,9 +964,9 @@ for(int i = 0;i < iterations;i++)
         public  IntermediateTime(String name, long timeInNS) {
             this.name = name;
             this.timeInNS = timeInNS;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.name = name;
+            //this.timeInNS = timeInNS;
         }
 
         

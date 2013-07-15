@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -60,77 +60,70 @@ class FrameLoader {
         mInterceptResponse = interceptResponse;
         mUaprofHeader = mListener.getContext().getResources().getString(
                 com.android.internal.R.string.config_useragentprofile_url, Build.MODEL);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //assert !JniUtil.useChromiumHttpStack();
+        //mListener = listener;
+        //mHeaders = null;
+        //mMethod = method;
+        //mCacheMode = WebSettings.LOAD_NORMAL;
+        //mSettings = settings;
+        //mInterceptResponse = interceptResponse;
+        //mUaprofHeader = mListener.getContext().getResources().getString(
+                //com.android.internal.R.string.config_useragentprofile_url, Build.MODEL);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.084 -0400", hash_original_method = "DAE08684530294543D6392896259C957", hash_generated_method = "92386B791CB1171C17B7ECFBFCCD9818")
     public void setReferrer(String ref) {
     if(URLUtil.isNetworkUrl(ref))        
         mReferrer = ref;
-        
-        
+        // ---------- Original Method ----------
+        //if (URLUtil.isNetworkUrl(ref)) mReferrer = ref;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.084 -0400", hash_original_method = "D2C8C4DED03F288D6E8AB32DB5451075", hash_generated_method = "AFA899BAAE4627D629483619DC707622")
     public void setPostData(byte[] postData) {
         mPostData = postData;
-        
-        
+        // ---------- Original Method ----------
+        //mPostData = postData;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.084 -0400", hash_original_method = "E910F46151D172102331975C2568BBCE", hash_generated_method = "FA7AB8F86BB414F666064016C84E824E")
     public void setContentTypeForPost(String postContentType) {
         mContentType = postContentType;
-        
-        
+        // ---------- Original Method ----------
+        //mContentType = postContentType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.085 -0400", hash_original_method = "4FD1C5F2E68FCD3B6425DADD4042F496", hash_generated_method = "07CDE86C3243F89B692735454AED33C1")
     public void setCacheMode(int cacheMode) {
         mCacheMode = cacheMode;
-        
-        
+        // ---------- Original Method ----------
+        //mCacheMode = cacheMode;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.085 -0400", hash_original_method = "E0E34456BA61E1D94659FB0013B44B13", hash_generated_method = "E4CBCEFCEF3480884B759040661DF0A4")
     public void setHeaders(HashMap headers) {
         mHeaders = headers;
-        
-        
+        // ---------- Original Method ----------
+        //mHeaders = headers;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.085 -0400", hash_original_method = "C430EEAE75F5C9BA4DF5580B50F4FE67", hash_generated_method = "AD1043AE497CBFFD7C8FB0EACA08F522")
     public LoadListener getLoadListener() {
 LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
         varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064.addTaint(taint);
         return varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064;
-        
-        
+        // ---------- Original Method ----------
+        //return mListener;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.086 -0400", hash_original_method = "C44DBC63D87836D797664A5A599046E9", hash_generated_method = "0AB7F85C33151A6F382FCEE422B8AA38")
     public boolean executeLoad() {
         String url = mListener.url();
@@ -139,17 +132,17 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
     if(mListener.isSynchronous())            
             {
                 mInterceptResponse.loader(mListener).load();
-            } 
+            } //End block
             else
             {
                 WebViewWorker.getHandler().obtainMessage(
                         WebViewWorker.MSG_ADD_STREAMLOADER,
                         mInterceptResponse.loader(mListener)).sendToTarget();
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_267010361 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1614943295 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1614943295;
-        } 
+        } //End block
         else
     if(URLUtil.isNetworkUrl(url))        
         {
@@ -161,7 +154,7 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
                 boolean var68934A3E9455FA72420237EB05902327_1320859679 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_811640439 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_811640439;
-            } 
+            } //End block
     if(!URLUtil.verifyURLEncoding(mListener.host()))            
             {
                 mListener.error(EventHandler.ERROR_BAD_URL,
@@ -170,43 +163,42 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
                 boolean var68934A3E9455FA72420237EB05902327_1042893704 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1202628764 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1202628764;
-            } 
+            } //End block
             mNetwork = Network.getInstance(mListener.getContext());
     if(mListener.isSynchronous())            
             {
                 boolean var03C36CD4DF7ED468A28523D62BCFED45_1901762654 = (handleHTTPLoad());
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1055447938 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1055447938;
-            } 
+            } //End block
             WebViewWorker.getHandler().obtainMessage(
                     WebViewWorker.MSG_ADD_HTTPLOADER, this).sendToTarget();
             boolean varB326B5062B2F0E69046810717534CB09_1032902825 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_947997208 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_947997208;
-        } 
+        } //End block
         else
     if(handleLocalFile(url, mListener, mSettings))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_481282485 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1907974751 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1907974751;
-        } 
+        } //End block
     if(DebugFlags.FRAME_LOADER)        
         {
-        } 
+        } //End block
         mListener.error(EventHandler.ERROR_UNSUPPORTED_SCHEME,
                 mListener.getContext().getText(
                         com.android.internal.R.string.httpErrorUnsupportedScheme).toString());
         boolean var68934A3E9455FA72420237EB05902327_171775629 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_804818114 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_804818114;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static boolean handleLocalFile(String url, LoadListener loadListener,
+        private static boolean handleLocalFile(String url, LoadListener loadListener,
             WebSettings settings) {
         assert !JniUtil.useChromiumHttpStack();
         try {
@@ -273,13 +265,12 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.089 -0400", hash_original_method = "24B8F725DD0D2F171F529FAFE2897245", hash_generated_method = "B8212BBCBDC09F749B6A61C95B4EAC9C")
      boolean handleHTTPLoad() {
     if(mHeaders == null)        
         {
             mHeaders = new HashMap<String, String>();
-        } 
+        } //End block
         populateStaticHeaders();
         populateHeaders();
     if(handleCache())        
@@ -288,37 +279,37 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
             boolean varB326B5062B2F0E69046810717534CB09_474981562 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1263803208 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1263803208;
-        } 
+        } //End block
     if(DebugFlags.FRAME_LOADER)        
         {
-        } 
+        } //End block
         boolean ret = false;
         int error = EventHandler.ERROR_UNSUPPORTED_SCHEME;
         try 
         {
             ret = mNetwork.requestURL(mMethod, mHeaders,
                     mPostData, mListener);
-        } 
+        } //End block
         catch (android.net.ParseException ex)
         {
             error = EventHandler.ERROR_BAD_URL;
-        } 
+        } //End block
         catch (java.lang.RuntimeException ex)
         {
             error = EventHandler.ERROR_BAD_URL;
-        } 
+        } //End block
     if(!ret)        
         {
             mListener.error(error, ErrorStrings.getString(error, mListener.getContext()));
             boolean var68934A3E9455FA72420237EB05902327_1313506437 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1494299303 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1494299303;
-        } 
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_890106065 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1849655764 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1849655764;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -327,36 +318,35 @@ LoadListener varB7C366B3FCCD3E2168CA30DDDB430A4F_1782253064 =         mListener;
         addTaint(result.getTaint());
     if(DebugFlags.FRAME_LOADER)        
         {
-        } 
+        } //End block
         CacheLoader cacheLoader = new CacheLoader(mListener, result);
         mListener.setCacheLoader(cacheLoader);
     if(mListener.isSynchronous())        
         {
             cacheLoader.load();
-        } 
+        } //End block
         else
         {
             WebViewWorker.getHandler().obtainMessage(
                     WebViewWorker.MSG_ADD_STREAMLOADER, cacheLoader).sendToTarget();
-        } 
-        
-        
-            
-                  
-        
-        
-                
-        
-        
-            
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (DebugFlags.FRAME_LOADER) {
+            //Log.v(LOGTAG, "FrameLoader: loading from cache: "
+                  //+ mListener.url());
+        //}
+        //CacheLoader cacheLoader =
+                //new CacheLoader(mListener, result);
+        //mListener.setCacheLoader(cacheLoader);
+        //if (mListener.isSynchronous()) {
+            //cacheLoader.load();
+        //} else {
+            //WebViewWorker.getHandler().obtainMessage(
+                    //WebViewWorker.MSG_ADD_STREAMLOADER, cacheLoader).sendToTarget();
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.090 -0400", hash_original_method = "ED6284595A2927F289F312ED71C4BF2D", hash_generated_method = "E4ED5AEB4C7C57A8420949EC662867AF")
     private boolean handleCache() {
 switch(mCacheMode){
@@ -369,22 +359,22 @@ switch(mCacheMode){
     if(result != null)            
             {
                 startCacheLoad(result);
-            } 
+            } //End block
             else
             {
                 int err = EventHandler.FILE_NOT_FOUND_ERROR;
                 mListener.error(err,
                             ErrorStrings.getString(err, mListener.getContext()));
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_764556046 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_669440208 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_669440208;
-        } 
+        } //End block
         case WebSettings.LOAD_CACHE_ELSE_NETWORK:
         {
     if(DebugFlags.FRAME_LOADER)            
             {
-            } 
+            } //End block
             CacheResult result = CacheManager.getCacheFile(mListener.url(),
                         mListener.postIdentifier(), null);
     if(result != null)            
@@ -393,9 +383,9 @@ switch(mCacheMode){
                 boolean varB326B5062B2F0E69046810717534CB09_1356590314 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1384221732 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1384221732;
-            } 
+            } //End block
             break;
-        } 
+        } //End block
         default:
         case WebSettings.LOAD_NORMAL:
         boolean var54BEEA9328BF32A869AE4ED6EE467781_1861158180 = (mListener.checkCache(mHeaders));
@@ -404,48 +394,46 @@ switch(mCacheMode){
 }        boolean var68934A3E9455FA72420237EB05902327_1234327058 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1154887470 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1154887470;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.091 -0400", hash_original_method = "2D0BB20A4C7261DEBC8826658FC12230", hash_generated_method = "4712B931494AD22C3CCFAC85ADE49922")
     private void populateStaticHeaders() {
         String accept = mHeaders.get("Accept");
     if(accept == null || accept.length() == 0)        
         {
             mHeaders.put("Accept", HEADER_STR);
-        } 
+        } //End block
         mHeaders.put("Accept-Charset", "utf-8, iso-8859-1, utf-16, *;q=0.7");
         String acceptLanguage = mSettings.getAcceptLanguage();
     if(acceptLanguage.length() > 0)        
         {
             mHeaders.put("Accept-Language", acceptLanguage);
-        } 
+        } //End block
         mHeaders.put("User-Agent", mSettings.getUserAgentString());
     if(mUaprofHeader != null && mUaprofHeader.length() > 0)        
         {
             mHeaders.put("x-wap-profile", mUaprofHeader);
-        } 
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String accept = mHeaders.get("Accept");
+        //if (accept == null || accept.length() == 0) {
+            //mHeaders.put("Accept", HEADER_STR);
+        //}
+        //mHeaders.put("Accept-Charset", "utf-8, iso-8859-1, utf-16, *;q=0.7");
+        //String acceptLanguage = mSettings.getAcceptLanguage();
+        //if (acceptLanguage.length() > 0) {
+            //mHeaders.put("Accept-Language", acceptLanguage);
+        //}
+        //mHeaders.put("User-Agent", mSettings.getUserAgentString());
+        //if (mUaprofHeader != null && mUaprofHeader.length() > 0) {
+            //mHeaders.put("x-wap-profile", mUaprofHeader);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.092 -0400", hash_original_method = "FC5DAD276D63BF9B93BD19919189EAE8", hash_generated_method = "EEEC9434E0A08CEA31852FC09037CFDA")
     private void populateHeaders() {
     if(mReferrer != null)        
@@ -460,23 +448,23 @@ switch(mCacheMode){
 (mNetwork)            {
                 username = mNetwork.getProxyUsername();
                 password = mNetwork.getProxyPassword();
-            } 
+            } //End block
     if(username != null && password != null)            
             {
                 String proxyHeader = RequestHandle.authorizationHeader(true);
                 mHeaders.put(proxyHeader,
                         "Basic " + RequestHandle.computeBasicAuthResponse(
                                 username, password));
-            } 
-        } 
+            } //End block
+        } //End block
         String cookie = CookieManager.getInstance().getCookie(
                 mListener.getWebAddress());
     if(cookie != null && cookie.length() > 0)        
         {
             mHeaders.put("Cookie", cookie);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,8 +37,8 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.103 -0400", hash_original_method = "444DC66B3432907DFEA55328E5B69649", hash_generated_method = "FF0B4D083A157B879D7CD5A2215454A9")
     public  ActivityManagerNative() {
         attachInterface(this, descriptor);
-        
-        
+        // ---------- Original Method ----------
+        //attachInterface(this, descriptor);
     }
 
     
@@ -68,8 +68,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static public void broadcastStickyIntent(Intent intent, String permission) {
+        static public void broadcastStickyIntent(Intent intent, String permission) {
         try {
             getDefault().broadcastIntent(
                 null, intent, null, null, Activity.RESULT_OK, null, null,
@@ -79,8 +78,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     }
 
     
-        @DSModeled(DSC.BAN)
-    static public void noteWakeupAlarm(PendingIntent ps) {
+        static public void noteWakeupAlarm(PendingIntent ps) {
         try {
             getDefault().noteWakeupAlarm(ps.getTarget());
         } catch (RemoteException ex) {
@@ -90,7 +88,7 @@ public abstract class ActivityManagerNative extends Binder implements IActivityM
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.151 -0400", hash_original_method = "796B52B1E8846F7CCEC22CD4B5B906A8", hash_generated_method = "10A0EFF57C035419FA86DE954940F1D1")
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(flags);
         addTaint(reply.getTaint());
         addTaint(data.getTaint());
@@ -122,7 +120,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_576421403 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_729849800 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_729849800;
-        } 
+        } //End block
         case START_ACTIVITY_AND_WAIT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -149,7 +147,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_73474230 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1397847459 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1397847459;
-        } 
+        } //End block
         case START_ACTIVITY_WITH_CONFIG_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -173,7 +171,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_451893038 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_295584197 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_295584197;
-        } 
+        } //End block
         case START_ACTIVITY_INTENT_SENDER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -184,7 +182,7 @@ switch(code){
     if(data.readInt() != 0)            
             {
                 fillInIntent = Intent.CREATOR.createFromParcel(data);
-            } 
+            } //End block
             String resolvedType = data.readString();
             IBinder resultTo = data.readStrongBinder();
             String resultWho = data.readString();
@@ -199,7 +197,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1373170179 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_695642434 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_695642434;
-        } 
+        } //End block
         case START_NEXT_MATCHING_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -211,7 +209,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1884017513 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_132204306 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_132204306;
-        } 
+        } //End block
         case FINISH_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -221,14 +219,14 @@ switch(code){
     if(data.readInt() != 0)            
             {
                 resultData = Intent.CREATOR.createFromParcel(data);
-            } 
+            } //End block
             boolean res = finishActivity(token, resultCode, resultData);
             reply.writeNoException();
             reply.writeInt(res ? 1 : 0);
             boolean varB326B5062B2F0E69046810717534CB09_756409053 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_728325357 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_728325357;
-        } 
+        } //End block
         case FINISH_SUB_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -240,7 +238,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_753875157 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_824143774 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_824143774;
-        } 
+        } //End block
         case WILL_ACTIVITY_BE_VISIBLE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -251,7 +249,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_15694179 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1834013492 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1834013492;
-        } 
+        } //End block
         case REGISTER_RECEIVER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -268,15 +266,15 @@ switch(code){
             {
                 reply.writeInt(1);
                 intent.writeToParcel(reply, 0);
-            } 
+            } //End block
             else
             {
                 reply.writeInt(0);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_567243937 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2097549622 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2097549622;
-        } 
+        } //End block
         case UNREGISTER_RECEIVER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -286,14 +284,14 @@ switch(code){
                 boolean varB326B5062B2F0E69046810717534CB09_464001498 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435471164 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_435471164;
-            } 
+            } //End block
             IIntentReceiver rec = IIntentReceiver.Stub.asInterface(b);
             unregisterReceiver(rec);
             reply.writeNoException();
             boolean varB326B5062B2F0E69046810717534CB09_959204347 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_767051419 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_767051419;
-        } 
+        } //End block
         case BROADCAST_INTENT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -317,7 +315,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1025344819 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_134995448 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_134995448;
-        } 
+        } //End block
         case UNBROADCAST_INTENT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -329,7 +327,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1860244494 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_391895967 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_391895967;
-        } 
+        } //End block
         case FINISH_RECEIVER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -341,12 +339,12 @@ switch(code){
     if(who != null)            
             {
                 finishReceiver(who, resultCode, resultData, resultExtras, resultAbort);
-            } 
+            } //End block
             reply.writeNoException();
             boolean varB326B5062B2F0E69046810717534CB09_630413850 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_892814343 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_892814343;
-        } 
+        } //End block
         case ATTACH_APPLICATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -355,12 +353,12 @@ switch(code){
     if(app != null)            
             {
                 attachApplication(app);
-            } 
+            } //End block
             reply.writeNoException();
             boolean varB326B5062B2F0E69046810717534CB09_1793778655 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_108779545 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_108779545;
-        } 
+        } //End block
         case ACTIVITY_IDLE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -369,17 +367,17 @@ switch(code){
     if(data.readInt() != 0)            
             {
                 config = Configuration.CREATOR.createFromParcel(data);
-            } 
+            } //End block
             boolean stopProfiling = data.readInt() != 0;
     if(token != null)            
             {
                 activityIdle(token, config, stopProfiling);
-            } 
+            } //End block
             reply.writeNoException();
             boolean varB326B5062B2F0E69046810717534CB09_1643097924 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659791209 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_659791209;
-        } 
+        } //End block
         case ACTIVITY_PAUSED_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -389,7 +387,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1591369391 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1803490738 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1803490738;
-        } 
+        } //End block
         case ACTIVITY_STOPPED_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -403,7 +401,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_344555766 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_730025327 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_730025327;
-        } 
+        } //End block
         case ACTIVITY_SLEPT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -413,7 +411,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1512144852 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831040796 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831040796;
-        } 
+        } //End block
         case ACTIVITY_DESTROYED_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -423,7 +421,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1718110149 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_788089342 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_788089342;
-        } 
+        } //End block
         case GET_CALLING_PACKAGE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -434,7 +432,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_157744195 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_972075565 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_972075565;
-        } 
+        } //End block
         case GET_CALLING_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -445,7 +443,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1723004883 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_101456139 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_101456139;
-        } 
+        } //End block
         case GET_TASKS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -464,11 +462,11 @@ for(i=0;i<N;i++)
             {
                 ActivityManager.RunningTaskInfo info = (ActivityManager.RunningTaskInfo)list.get(i);
                 info.writeToParcel(reply, 0);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1519375229 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1236285240 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1236285240;
-        } 
+        } //End block
         case GET_RECENT_TASKS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -481,7 +479,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_801223189 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1708763605 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1708763605;
-        } 
+        } //End block
         case GET_TASK_THUMBNAILS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -492,15 +490,15 @@ for(i=0;i<N;i++)
             {
                 reply.writeInt(1);
                 bm.writeToParcel(reply, 0);
-            } 
+            } //End block
             else
             {
                 reply.writeInt(0);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_609607361 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_190486332 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_190486332;
-        } 
+        } //End block
         case GET_SERVICES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -515,11 +513,11 @@ for(i=0;i<N;i++)
             {
                 ActivityManager.RunningServiceInfo info = (ActivityManager.RunningServiceInfo)list.get(i);
                 info.writeToParcel(reply, 0);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_19921000 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2146040347 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2146040347;
-        } 
+        } //End block
         case GET_PROCESSES_IN_ERROR_STATE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -529,7 +527,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_10050107 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_497771753 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_497771753;
-        } 
+        } //End block
         case GET_RUNNING_APP_PROCESSES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -539,7 +537,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1501210975 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1631414841 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1631414841;
-        } 
+        } //End block
         case GET_RUNNING_EXTERNAL_APPLICATIONS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -549,7 +547,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_922935285 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1878893784 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1878893784;
-        } 
+        } //End block
         case MOVE_TASK_TO_FRONT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -560,7 +558,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_527015819 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1305774715 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1305774715;
-        } 
+        } //End block
         case MOVE_TASK_TO_BACK_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -570,7 +568,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1193074786 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1030683028 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1030683028;
-        } 
+        } //End block
         case MOVE_ACTIVITY_TASK_TO_BACK_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -582,7 +580,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1320922627 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_362539800 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_362539800;
-        } 
+        } //End block
         case MOVE_TASK_BACKWARDS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -592,7 +590,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1903053948 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1172683356 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1172683356;
-        } 
+        } //End block
         case GET_TASK_FOR_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -605,7 +603,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_57780864 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1772871826 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1772871826;
-        } 
+        } //End block
         case FINISH_OTHER_INSTANCES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -616,7 +614,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1089786377 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_199799836 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_199799836;
-        } 
+        } //End block
         case REPORT_THUMBNAIL_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -629,7 +627,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1376582349 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057396727 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057396727;
-        } 
+        } //End block
         case GET_CONTENT_PROVIDER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -642,15 +640,15 @@ for(i=0;i<N;i++)
             {
                 reply.writeInt(1);
                 cph.writeToParcel(reply, 0);
-            } 
+            } //End block
             else
             {
                 reply.writeInt(0);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_2082675066 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1124558781 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1124558781;
-        } 
+        } //End block
         case PUBLISH_CONTENT_PROVIDERS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -662,7 +660,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_900360077 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_26432670 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_26432670;
-        } 
+        } //End block
         case REMOVE_CONTENT_PROVIDER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -674,7 +672,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1442887370 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1650194426 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1650194426;
-        } 
+        } //End block
         case GET_RUNNING_SERVICE_CONTROL_PANEL_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -685,7 +683,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1232811132 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2001205960 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2001205960;
-        } 
+        } //End block
         case START_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -699,7 +697,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1497367245 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1136617213 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1136617213;
-        } 
+        } //End block
         case STOP_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -713,7 +711,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1004241920 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2056991504 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2056991504;
-        } 
+        } //End block
         case STOP_SERVICE_TOKEN_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -726,7 +724,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_363628813 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_412540371 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_412540371;
-        } 
+        } //End block
         case SET_SERVICE_FOREGROUND_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -737,14 +735,14 @@ for(i=0;i<N;i++)
     if(data.readInt() != 0)            
             {
                 notification = Notification.CREATOR.createFromParcel(data);
-            } 
+            } //End block
             boolean removeNotification = data.readInt() != 0;
             setServiceForeground(className, token, id, notification, removeNotification);
             reply.writeNoException();
             boolean varB326B5062B2F0E69046810717534CB09_591672829 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1311603907 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1311603907;
-        } 
+        } //End block
         case BIND_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -762,7 +760,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1106719206 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2030632785 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2030632785;
-        } 
+        } //End block
         case UNBIND_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -774,7 +772,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_827161773 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_627231035 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_627231035;
-        } 
+        } //End block
         case PUBLISH_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -786,7 +784,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_284395618 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751975639 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751975639;
-        } 
+        } //End block
         case UNBIND_FINISHED_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -798,7 +796,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1384713259 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1398967011 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1398967011;
-        } 
+        } //End block
         case SERVICE_DONE_EXECUTING_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -811,7 +809,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1525759297 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1763907689 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1763907689;
-        } 
+        } //End block
         case START_INSTRUMENTATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -827,7 +825,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1782773651 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_51194258 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_51194258;
-        } 
+        } //End block
         case FINISH_INSTRUMENTATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -840,7 +838,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_930514113 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1711232987 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1711232987;
-        } 
+        } //End block
         case GET_CONFIGURATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -850,7 +848,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1484720051 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1037814375 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1037814375;
-        } 
+        } //End block
         case UPDATE_CONFIGURATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -860,7 +858,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1480634852 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1718180315 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1718180315;
-        } 
+        } //End block
         case SET_REQUESTED_ORIENTATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -871,7 +869,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_954119452 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_89091587 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_89091587;
-        } 
+        } //End block
         case GET_REQUESTED_ORIENTATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -882,7 +880,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_519337857 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1765470625 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1765470625;
-        } 
+        } //End block
         case GET_ACTIVITY_CLASS_FOR_TOKEN_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -893,7 +891,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_915472639 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1396417197 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1396417197;
-        } 
+        } //End block
         case GET_PACKAGE_FOR_TOKEN_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -903,7 +901,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1886607844 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_515020285 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_515020285;
-        } 
+        } //End block
         case GET_INTENT_SENDER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -918,12 +916,12 @@ for(i=0;i<N;i++)
             {
                 requestIntents = data.createTypedArray(Intent.CREATOR);
                 requestResolvedTypes = data.createStringArray();
-            } 
+            } //End block
             else
             {
                 requestIntents = null;
                 requestResolvedTypes = null;
-            } 
+            } //End block
             int fl = data.readInt();
             IIntentSender res = getIntentSender(type, packageName, token,
                     resultWho, requestCode, requestIntents,
@@ -933,7 +931,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_395718137 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331109509 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_331109509;
-        } 
+        } //End block
         case CANCEL_INTENT_SENDER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -944,7 +942,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1528763800 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1851623314 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1851623314;
-        } 
+        } //End block
         case GET_PACKAGE_FOR_INTENT_SENDER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -956,7 +954,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_55064400 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_903923988 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_903923988;
-        } 
+        } //End block
         case SET_PROCESS_LIMIT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -966,7 +964,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1062325943 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1653889157 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1653889157;
-        } 
+        } //End block
         case GET_PROCESS_LIMIT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -976,7 +974,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1432442524 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1789471393 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1789471393;
-        } 
+        } //End block
         case SET_PROCESS_FOREGROUND_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -988,7 +986,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_2104976386 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_615314335 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_615314335;
-        } 
+        } //End block
         case CHECK_PERMISSION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1001,7 +999,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1943161820 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_730759232 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_730759232;
-        } 
+        } //End block
         case CHECK_URI_PERMISSION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1015,7 +1013,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_874631024 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2037557485 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2037557485;
-        } 
+        } //End block
         case CLEAR_APP_DATA_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1028,7 +1026,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1151700524 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1237291282 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1237291282;
-        } 
+        } //End block
         case GRANT_URI_PERMISSION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1042,7 +1040,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_2097568600 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1084024856 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1084024856;
-        } 
+        } //End block
         case REVOKE_URI_PERMISSION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1055,7 +1053,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_713858830 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1443689316 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1443689316;
-        } 
+        } //End block
         case SHOW_WAITING_FOR_DEBUGGER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1067,7 +1065,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_230168791 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_961952638 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_961952638;
-        } 
+        } //End block
         case GET_MEMORY_INFO_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1078,7 +1076,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_165154842 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1163134604 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1163134604;
-        } 
+        } //End block
         case UNHANDLED_BACK_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1087,7 +1085,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_35399040 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_70721316 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_70721316;
-        } 
+        } //End block
         case OPEN_CONTENT_URI_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1098,15 +1096,15 @@ for(i=0;i<N;i++)
             {
                 reply.writeInt(1);
                 pfd.writeToParcel(reply, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-            } 
+            } //End block
             else
             {
                 reply.writeInt(0);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1370985466 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1932141037 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1932141037;
-        } 
+        } //End block
         case GOING_TO_SLEEP_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1115,7 +1113,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_528488966 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1598493226 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1598493226;
-        } 
+        } //End block
         case WAKING_UP_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1124,7 +1122,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1372403819 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1324068257 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1324068257;
-        } 
+        } //End block
         case SET_DEBUG_APP_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1136,7 +1134,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1223167739 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_410387893 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_410387893;
-        } 
+        } //End block
         case SET_ALWAYS_FINISH_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1146,7 +1144,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1388017632 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1389214206 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1389214206;
-        } 
+        } //End block
         case SET_ACTIVITY_CONTROLLER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1156,7 +1154,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_202766810 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_814889450 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_814889450;
-        } 
+        } //End block
         case ENTER_SAFE_MODE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1165,7 +1163,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_339509817 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_115387434 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_115387434;
-        } 
+        } //End block
         case NOTE_WAKEUP_ALARM_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1176,7 +1174,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1893319766 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1854172690 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1854172690;
-        } 
+        } //End block
         case KILL_PIDS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1189,7 +1187,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1309467732 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1806512777 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1806512777;
-        } 
+        } //End block
         case START_RUNNING_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1202,7 +1200,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_326972951 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_47295585 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_47295585;
-        } 
+        } //End block
         case HANDLE_APPLICATION_CRASH_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1213,7 +1211,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_363473358 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1188001576 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1188001576;
-        } 
+        } //End block
         case HANDLE_APPLICATION_WTF_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1226,7 +1224,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1818215195 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1088473909 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1088473909;
-        } 
+        } //End block
         case HANDLE_APPLICATION_STRICT_MODE_VIOLATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1238,7 +1236,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_392159881 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_88972836 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_88972836;
-        } 
+        } //End block
         case SIGNAL_PERSISTENT_PROCESSES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1248,7 +1246,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1039847153 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_95905204 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_95905204;
-        } 
+        } //End block
         case KILL_BACKGROUND_PROCESSES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1258,7 +1256,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_868079337 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1347094312 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1347094312;
-        } 
+        } //End block
         case KILL_ALL_BACKGROUND_PROCESSES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1267,7 +1265,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_335407201 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_493574012 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_493574012;
-        } 
+        } //End block
         case FORCE_STOP_PACKAGE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1277,7 +1275,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1452204550 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_152346962 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_152346962;
-        } 
+        } //End block
         case GET_DEVICE_CONFIGURATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1287,7 +1285,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1738916892 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_975985667 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_975985667;
-        } 
+        } //End block
         case PROFILE_CONTROL_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1303,7 +1301,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_911644098 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1810102540 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1810102540;
-        } 
+        } //End block
         case SHUTDOWN_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1313,7 +1311,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1425532 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1995305975 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1995305975;
-        } 
+        } //End block
         case STOP_APP_SWITCHES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1322,7 +1320,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_810533304 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2117702848 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2117702848;
-        } 
+        } //End block
         case RESUME_APP_SWITCHES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1331,7 +1329,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1556175682 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_955299592 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_955299592;
-        } 
+        } //End block
         case PEEK_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1343,7 +1341,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_90717679 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_291054636 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_291054636;
-        } 
+        } //End block
         case START_BACKUP_AGENT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1355,7 +1353,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_445937866 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321038067 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_321038067;
-        } 
+        } //End block
         case BACKUP_AGENT_CREATED_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1366,7 +1364,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1286525147 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2043070256 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2043070256;
-        } 
+        } //End block
         case UNBIND_BACKUP_AGENT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1376,7 +1374,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_117205631 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1208025283 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1208025283;
-        } 
+        } //End block
         case REGISTER_ACTIVITY_WATCHER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1386,7 +1384,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_2002526349 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_870188789 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_870188789;
-        } 
+        } //End block
         case UNREGISTER_ACTIVITY_WATCHER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1396,7 +1394,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_992581488 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1084451309 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1084451309;
-        } 
+        } //End block
         case START_ACTIVITY_IN_PACKAGE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1414,7 +1412,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_532280442 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_745214321 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_745214321;
-        } 
+        } //End block
         case KILL_APPLICATION_WITH_UID_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1425,7 +1423,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_698387741 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_794041084 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_794041084;
-        } 
+        } //End block
         case CLOSE_SYSTEM_DIALOGS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1435,7 +1433,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1623581756 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586359639 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_586359639;
-        } 
+        } //End block
         case GET_PROCESS_MEMORY_INFO_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1446,7 +1444,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1619840329 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2025934240 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2025934240;
-        } 
+        } //End block
         case KILL_APPLICATION_PROCESS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1457,7 +1455,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1172368574 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682135383 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_682135383;
-        } 
+        } //End block
         case OVERRIDE_PENDING_TRANSITION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1470,7 +1468,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_2129890035 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1978752511 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1978752511;
-        } 
+        } //End block
         case IS_USER_A_MONKEY_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1480,7 +1478,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1460215387 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_400448397 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_400448397;
-        } 
+        } //End block
         case FINISH_HEAVY_WEIGHT_APP_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1489,7 +1487,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1495737051 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1772719757 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1772719757;
-        } 
+        } //End block
         case IS_IMMERSIVE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1500,7 +1498,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_684091683 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1457189882 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1457189882;
-        } 
+        } //End block
         case SET_IMMERSIVE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1511,7 +1509,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_2070681897 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_311408856 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_311408856;
-        } 
+        } //End block
         case IS_TOP_ACTIVITY_IMMERSIVE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1521,7 +1519,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_840623629 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_242520426 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_242520426;
-        } 
+        } //End block
         case CRASH_APPLICATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1534,7 +1532,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_540628603 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_521229836 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_521229836;
-        } 
+        } //End block
         case GET_PROVIDER_MIME_TYPE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1545,7 +1543,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1512471294 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1658080403 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1658080403;
-        } 
+        } //End block
         case NEW_URI_PERMISSION_OWNER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1556,7 +1554,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1000513937 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1601772023 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1601772023;
-        } 
+        } //End block
         case GRANT_URI_PERMISSION_FROM_OWNER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1570,7 +1568,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1459400154 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1052037133 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1052037133;
-        } 
+        } //End block
         case REVOKE_URI_PERMISSION_FROM_OWNER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1579,14 +1577,14 @@ for(i=0;i<N;i++)
     if(data.readInt() != 0)            
             {
                 Uri.CREATOR.createFromParcel(data);
-            } 
+            } //End block
             int mode = data.readInt();
             revokeUriPermissionFromOwner(owner, uri, mode);
             reply.writeNoException();
             boolean varB326B5062B2F0E69046810717534CB09_1739468415 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1592004469 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1592004469;
-        } 
+        } //End block
         case CHECK_GRANT_URI_PERMISSION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1600,7 +1598,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_2068636205 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1957976414 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1957976414;
-        } 
+        } //End block
         case DUMP_HEAP_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1615,7 +1613,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_758525784 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051298826 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051298826;
-        } 
+        } //End block
         case START_ACTIVITIES_IN_PACKAGE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1629,7 +1627,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1692696056 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1971148344 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1971148344;
-        } 
+        } //End block
         case START_ACTIVITIES_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1644,7 +1642,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1348338786 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1888456841 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1888456841;
-        } 
+        } //End block
         case GET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1654,7 +1652,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_932930490 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2138788970 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2138788970;
-        } 
+        } //End block
         case SET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1665,7 +1663,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1410352424 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_201563798 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_201563798;
-        } 
+        } //End block
         case GET_PACKAGE_SCREEN_COMPAT_MODE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1676,7 +1674,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1490699178 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_257032722 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_257032722;
-        } 
+        } //End block
         case SET_PACKAGE_SCREEN_COMPAT_MODE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1687,7 +1685,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1655876568 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645316603 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_645316603;
-        } 
+        } //End block
         case SWITCH_USER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1698,7 +1696,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_592903417 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1550630541 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1550630541;
-        } 
+        } //End block
         case REMOVE_SUB_TASK_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1710,7 +1708,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_326833354 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_927985167 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_927985167;
-        } 
+        } //End block
         case REMOVE_TASK_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1722,7 +1720,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1583075859 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1947855526 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1947855526;
-        } 
+        } //End block
         case REGISTER_PROCESS_OBSERVER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1732,7 +1730,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1763596292 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_752369252 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_752369252;
-        } 
+        } //End block
         case UNREGISTER_PROCESS_OBSERVER_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1742,7 +1740,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1024196024 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1670293752 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1670293752;
-        } 
+        } //End block
         case GET_PACKAGE_ASK_SCREEN_COMPAT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1753,7 +1751,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_88020625 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394006794 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_394006794;
-        } 
+        } //End block
         case SET_PACKAGE_ASK_SCREEN_COMPAT_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1764,7 +1762,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1229790236 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_222547689 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_222547689;
-        } 
+        } //End block
         case IS_INTENT_SENDER_TARGETED_TO_PACKAGE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1776,7 +1774,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1228676831 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1273558692 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1273558692;
-        } 
+        } //End block
         case UPDATE_PERSISTENT_CONFIGURATION_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1786,7 +1784,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_575288565 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_548278089 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_548278089;
-        } 
+        } //End block
         case GET_PROCESS_PSS_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1797,7 +1795,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_387589656 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1897498899 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1897498899;
-        } 
+        } //End block
         case SHOW_BOOT_MESSAGE_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1808,7 +1806,7 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1176696372 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1211948027 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1211948027;
-        } 
+        } //End block
         case DISMISS_KEYGUARD_ON_NEXT_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1817,23 +1815,22 @@ for(i=0;i<N;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1667887570 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1496812334 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1496812334;
-        } 
+        } //End block
 }        boolean var3B3A841664B2F7D5B8C0C4B7B8E31E3B_1274258065 = (super.onTransact(code, data, reply, flags));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_644505812 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_644505812;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.160 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "9E669AF9EC43561F589295F7CE82C151")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_1652912481 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1652912481.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1652912481;
-        
-        
+        // ---------- Original Method ----------
+        //return this;
     }
 
     
@@ -1875,19 +1872,18 @@ class ActivityManagerProxy implements IActivityManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.163 -0400", hash_original_method = "3287CA7C2EB4AADDF2EFFF2704D2BE9E", hash_generated_method = "45B8F41C62FE771FA42BECD8E8563D23")
     public  ActivityManagerProxy(IBinder remote) {
         mRemote = remote;
-        
-        
+        // ---------- Original Method ----------
+        //mRemote = remote;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.164 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "C6DB3CAA8F66992B18FF656299E23D1A")
     public IBinder asBinder() {
 IBinder varF4936CA84F7841A48B466C9D273BE2EB_1747796033 =         mRemote;
         varF4936CA84F7841A48B466C9D273BE2EB_1747796033.addTaint(taint);
         return varF4936CA84F7841A48B466C9D273BE2EB_1747796033;
-        
-        
+        // ---------- Original Method ----------
+        //return mRemote;
     }
 
     
@@ -1929,11 +1925,11 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1747796033 =         mRemote;
         {
             data.writeInt(1);
             profileFd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         data.writeInt(autoStopProfiler ? 1 : 0);
         mRemote.transact(START_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -1943,8 +1939,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1747796033 =         mRemote;
         int varB4A88417B3D0170D754C647C30B7216A_2020891921 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1911419658 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1911419658;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1986,11 +1982,11 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1747796033 =         mRemote;
         {
             data.writeInt(1);
             profileFd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         data.writeInt(autoStopProfiler ? 1 : 0);
         mRemote.transact(START_ACTIVITY_AND_WAIT_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -2000,8 +1996,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_1747796033 =         mRemote;
 WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_93002068.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_93002068;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2044,31 +2040,30 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         int varB4A88417B3D0170D754C647C30B7216A_1503405480 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_619429235 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_619429235;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //intent.writeToParcel(data, 0);
+        //data.writeString(resolvedType);
+        //data.writeTypedArray(grantedUriPermissions, 0);
+        //data.writeInt(grantedMode);
+        //data.writeStrongBinder(resultTo);
+        //data.writeString(resultWho);
+        //data.writeInt(requestCode);
+        //data.writeInt(onlyIfNeeded ? 1 : 0);
+        //data.writeInt(debug ? 1 : 0);
+        //config.writeToParcel(data, 0);
+        //mRemote.transact(START_ACTIVITY_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int result = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return result;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.175 -0400", hash_original_method = "FD56EAF7591CCE02A2449EB3C30AEF02", hash_generated_method = "F0447C227C8C059F2270CEF8E9ECA574")
     public int startActivityIntentSender(IApplicationThread caller,
             IntentSender intent, Intent fillInIntent, String resolvedType,
@@ -2092,11 +2087,11 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         {
             data.writeInt(1);
             fillInIntent.writeToParcel(data, 0);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         data.writeString(resolvedType);
         data.writeStrongBinder(resultTo);
         data.writeString(resultWho);
@@ -2111,12 +2106,11 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         int varB4A88417B3D0170D754C647C30B7216A_396330229 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464369901 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464369901;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.176 -0400", hash_original_method = "A532370FCCB6C359BF27FA22D92F73F5", hash_generated_method = "A6AC0E8D9655422D0FBCB693AA932939")
     public boolean startNextMatchingActivity(IBinder callingActivity,
             Intent intent) throws RemoteException {
@@ -2135,22 +2129,21 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         boolean var48B2BB9B3785EB1DD7973635DF866605_1285399243 = (result != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1317503474 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317503474;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(callingActivity);
+        //intent.writeToParcel(data, 0);
+        //mRemote.transact(START_NEXT_MATCHING_ACTIVITY_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int result = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return result != 0;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.178 -0400", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "251A2A90E21C81B0825E020FEB03EB28")
     public boolean finishActivity(IBinder token, int resultCode, Intent resultData) throws RemoteException {
         addTaint(resultData.getTaint());
@@ -2165,11 +2158,11 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         {
             data.writeInt(1);
             resultData.writeToParcel(data, 0);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         mRemote.transact(FINISH_ACTIVITY_TRANSACTION, data, reply, 0);
         reply.readException();
         boolean res = reply.readInt() != 0;
@@ -2178,24 +2171,24 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         boolean var9B207167E5381C47682C6B4F58A623FB_2029343293 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2020261264 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2020261264;
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeInt(resultCode);
+        //if (resultData != null) {
+            //data.writeInt(1);
+            //resultData.writeToParcel(data, 0);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //mRemote.transact(FINISH_ACTIVITY_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -2214,17 +2207,17 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeString(resultWho);
+        //data.writeInt(requestCode);
+        //mRemote.transact(FINISH_SUB_ACTIVITY_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2243,26 +2236,25 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
         boolean var9B207167E5381C47682C6B4F58A623FB_1803204860 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_728345751 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_728345751;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(WILL_ACTIVITY_BE_VISIBLE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.187 -0400", hash_original_method = "D0EC9750E66DC0864B7AF9A5D43ED043", hash_generated_method = "C8D66FC61232C0917C25CF93F1BE6337")
     public Intent registerReceiver(IApplicationThread caller, String packageName,
             IIntentReceiver receiver,
             IntentFilter filter, String perm) throws RemoteException {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(perm.getTaint());
         addTaint(filter.getTaint());
         addTaint(receiver.getTaint());
@@ -2283,31 +2275,31 @@ WaitResult varDC838461EE2FA0CA4C9BBB70A15456B0_93002068 =         result;
     if(haveIntent != 0)        
         {
             intent = Intent.CREATOR.createFromParcel(reply);
-        } 
+        } //End block
         reply.recycle();
         data.recycle();
 Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         var095937E5B36214360A2644916BF0E8DF_516582007.addTaint(taint);
         return var095937E5B36214360A2644916BF0E8DF_516582007;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //data.writeString(packageName);
+        //data.writeStrongBinder(receiver != null ? receiver.asBinder() : null);
+        //filter.writeToParcel(data, 0);
+        //data.writeString(perm);
+        //mRemote.transact(REGISTER_RECEIVER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //Intent intent = null;
+        //int haveIntent = reply.readInt();
+        //if (haveIntent != 0) {
+            //intent = Intent.CREATOR.createFromParcel(reply);
+        //}
+        //reply.recycle();
+        //data.recycle();
+        //return intent;
     }
 
     
@@ -2322,19 +2314,18 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(receiver.asBinder());
+        //mRemote.transact(UNREGISTER_RECEIVER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.190 -0400", hash_original_method = "189D2A1B1A14BF35BFCC0BB8AD6C1CE5", hash_generated_method = "63960C28C2857B716600915B70019072")
     public int broadcastIntent(IApplicationThread caller,
             Intent intent, String resolvedType,  IIntentReceiver resultTo,
@@ -2372,30 +2363,29 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         int var9B207167E5381C47682C6B4F58A623FB_1633154165 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895797995 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895797995;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //intent.writeToParcel(data, 0);
+        //data.writeString(resolvedType);
+        //data.writeStrongBinder(resultTo != null ? resultTo.asBinder() : null);
+        //data.writeInt(resultCode);
+        //data.writeString(resultData);
+        //data.writeBundle(map);
+        //data.writeString(requiredPermission);
+        //data.writeInt(serialized ? 1 : 0);
+        //data.writeInt(sticky ? 1 : 0);
+        //mRemote.transact(BROADCAST_INTENT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.192 -0400", hash_original_method = "84F4ECE33F63E245917246490F7877AA", hash_generated_method = "0090436865129974CDDE7C46CB4631DE")
     public void unbroadcastIntent(IApplicationThread caller, Intent intent) throws RemoteException {
         addTaint(intent.getTaint());
@@ -2409,16 +2399,16 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //intent.writeToParcel(data, 0);
+        //mRemote.transact(UNBROADCAST_INTENT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2441,19 +2431,19 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(who);
+        //data.writeInt(resultCode);
+        //data.writeString(resultData);
+        //data.writeBundle(map);
+        //data.writeInt(abortBroadcast ? 1 : 0);
+        //mRemote.transact(FINISH_RECEIVER_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2468,15 +2458,15 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(app.asBinder());
+        //mRemote.transact(ATTACH_APPLICATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2493,32 +2483,32 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         {
             data.writeInt(1);
             config.writeToParcel(data, 0);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         data.writeInt(stopProfiling ? 1 : 0);
         mRemote.transact(ACTIVITY_IDLE_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //if (config != null) {
+            //data.writeInt(1);
+            //config.writeToParcel(data, 0);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //data.writeInt(stopProfiling ? 1 : 0);
+        //mRemote.transact(ACTIVITY_IDLE_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2533,15 +2523,15 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(ACTIVITY_PAUSED_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2561,33 +2551,33 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         {
             data.writeInt(1);
             thumbnail.writeToParcel(data, 0);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         TextUtils.writeToParcel(description, data, 0);
         mRemote.transact(ACTIVITY_STOPPED_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeBundle(state);
+        //if (thumbnail != null) {
+            //data.writeInt(1);
+            //thumbnail.writeToParcel(data, 0);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //TextUtils.writeToParcel(description, data, 0);
+        //mRemote.transact(ACTIVITY_STOPPED_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2602,15 +2592,15 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(ACTIVITY_SLEPT_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2625,15 +2615,15 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(ACTIVITY_DESTROYED_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2652,17 +2642,17 @@ Intent var095937E5B36214360A2644916BF0E8DF_516582007 =         intent;
 String varB5053E025797B3BF768F5C37934C244D_1614224721 =         res;
         varB5053E025797B3BF768F5C37934C244D_1614224721.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_1614224721;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(GET_CALLING_PACKAGE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //String res = reply.readString();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -2681,17 +2671,17 @@ String varB5053E025797B3BF768F5C37934C244D_1614224721 =         res;
 ComponentName varB5053E025797B3BF768F5C37934C244D_267455921 =         res;
         varB5053E025797B3BF768F5C37934C244D_267455921.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_267455921;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(GET_CALLING_ACTIVITY_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ComponentName res = ComponentName.readFromParcel(reply);
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -2721,15 +2711,15 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_267455921 =         res;
                         .createFromParcel(reply);
                 list.add(info);
                 N--;
-            } 
-        } 
+            } //End block
+        } //End block
         data.recycle();
         reply.recycle();
 List varED12C351C2E8CA4F85F097DDC7E77B4D_950643667 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_950643667.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_950643667;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -2751,19 +2741,19 @@ List varED12C351C2E8CA4F85F097DDC7E77B4D_950643667 =         list;
 List<ActivityManager.RecentTaskInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_406087783 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_406087783.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_406087783;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(maxNum);
+        //data.writeInt(flags);
+        //mRemote.transact(GET_RECENT_TASKS_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ArrayList<ActivityManager.RecentTaskInfo> list
+            //= reply.createTypedArrayList(ActivityManager.RecentTaskInfo.CREATOR);
+        //data.recycle();
+        //reply.recycle();
+        //return list;
     }
 
     
@@ -2780,26 +2770,26 @@ List<ActivityManager.RecentTaskInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_4060877
     if(reply.readInt() != 0)        
         {
             bm = ActivityManager.TaskThumbnails.CREATOR.createFromParcel(reply);
-        } 
+        } //End block
         data.recycle();
         reply.recycle();
 ActivityManager.TaskThumbnails varB8E43D5ABE5A56CEFCFBA2D810F6046C_853385851 =         bm;
         varB8E43D5ABE5A56CEFCFBA2D810F6046C_853385851.addTaint(taint);
         return varB8E43D5ABE5A56CEFCFBA2D810F6046C_853385851;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(id);
+        //mRemote.transact(GET_TASK_THUMBNAILS_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ActivityManager.TaskThumbnails bm = null;
+        //if (reply.readInt() != 0) {
+            //bm = ActivityManager.TaskThumbnails.CREATOR.createFromParcel(reply);
+        //}
+        //data.recycle();
+        //reply.recycle();
+        //return bm;
     }
 
     
@@ -2826,36 +2816,36 @@ ActivityManager.TaskThumbnails varB8E43D5ABE5A56CEFCFBA2D810F6046C_853385851 =  
                         .createFromParcel(reply);
                 list.add(info);
                 N--;
-            } 
-        } 
+            } //End block
+        } //End block
         data.recycle();
         reply.recycle();
 List varED12C351C2E8CA4F85F097DDC7E77B4D_2034041592 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_2034041592.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_2034041592;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-                
-                        
-                        
-                
-                
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(maxNum);
+        //data.writeInt(flags);
+        //mRemote.transact(GET_SERVICES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ArrayList list = null;
+        //int N = reply.readInt();
+        //if (N >= 0) {
+            //list = new ArrayList();
+            //while (N > 0) {
+                //ActivityManager.RunningServiceInfo info =
+                        //ActivityManager.RunningServiceInfo.CREATOR
+                        //.createFromParcel(reply);
+                //list.add(info);
+                //N--;
+            //}
+        //}
+        //data.recycle();
+        //reply.recycle();
+        //return list;
     }
 
     
@@ -2872,17 +2862,17 @@ List varED12C351C2E8CA4F85F097DDC7E77B4D_2034041592 =         list;
 List<ActivityManager.ProcessErrorStateInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1539404875 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_1539404875.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_1539404875;
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GET_PROCESSES_IN_ERROR_STATE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ArrayList<ActivityManager.ProcessErrorStateInfo> list
+            //= reply.createTypedArrayList(ActivityManager.ProcessErrorStateInfo.CREATOR);
+        //data.recycle();
+        //reply.recycle();
+        //return list;
     }
 
     
@@ -2899,17 +2889,17 @@ List<ActivityManager.ProcessErrorStateInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_
 List<ActivityManager.RunningAppProcessInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_48577251 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_48577251.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_48577251;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GET_RUNNING_APP_PROCESSES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ArrayList<ActivityManager.RunningAppProcessInfo> list
+        //= reply.createTypedArrayList(ActivityManager.RunningAppProcessInfo.CREATOR);
+        //data.recycle();
+        //reply.recycle();
+        //return list;
     }
 
     
@@ -2926,17 +2916,17 @@ List<ActivityManager.RunningAppProcessInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_
 List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GET_RUNNING_EXTERNAL_APPLICATIONS_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ArrayList<ApplicationInfo> list
+        //= reply.createTypedArrayList(ApplicationInfo.CREATOR);
+        //data.recycle();
+        //reply.recycle();
+        //return list;
     }
 
     
@@ -2953,16 +2943,16 @@ List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         l
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(task);
+        //data.writeInt(flags);
+        //mRemote.transact(MOVE_TASK_TO_FRONT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -2977,15 +2967,15 @@ List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         l
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(task);
+        //mRemote.transact(MOVE_TASK_TO_BACK_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3006,18 +2996,18 @@ List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         l
         boolean var9B207167E5381C47682C6B4F58A623FB_594768652 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_961139262 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_961139262;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeInt(nonRoot ? 1 : 0);
+        //mRemote.transact(MOVE_ACTIVITY_TASK_TO_BACK_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -3032,15 +3022,15 @@ List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         l
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(task);
+        //mRemote.transact(MOVE_TASK_BACKWARDS_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3061,18 +3051,18 @@ List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         l
         int var9B207167E5381C47682C6B4F58A623FB_197362823 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1532186404 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1532186404;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeInt(onlyRoot ? 1 : 0);
+        //mRemote.transact(GET_TASK_FOR_ACTIVITY_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -3089,16 +3079,16 @@ List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         l
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //ComponentName.writeToParcel(className, data);
+        //mRemote.transact(FINISH_OTHER_INSTANCES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3116,32 +3106,32 @@ List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         l
         {
             data.writeInt(1);
             thumbnail.writeToParcel(data, 0);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         TextUtils.writeToParcel(description, data, 0);
         mRemote.transact(REPORT_THUMBNAIL_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //if (thumbnail != null) {
+            //data.writeInt(1);
+            //thumbnail.writeToParcel(data, 0);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //TextUtils.writeToParcel(description, data, 0);
+        //mRemote.transact(REPORT_THUMBNAIL_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3162,28 +3152,28 @@ List<ApplicationInfo> varED12C351C2E8CA4F85F097DDC7E77B4D_1177187574 =         l
     if(res != 0)        
         {
             cph = ContentProviderHolder.CREATOR.createFromParcel(reply);
-        } 
+        } //End block
         data.recycle();
         reply.recycle();
 ContentProviderHolder var714D5B899646D8F8DB57A5F82D1906E2_1267144485 =         cph;
         var714D5B899646D8F8DB57A5F82D1906E2_1267144485.addTaint(taint);
         return var714D5B899646D8F8DB57A5F82D1906E2_1267144485;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //data.writeString(name);
+        //mRemote.transact(GET_CONTENT_PROVIDER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //ContentProviderHolder cph = null;
+        //if (res != 0) {
+            //cph = ContentProviderHolder.CREATOR.createFromParcel(reply);
+        //}
+        //data.recycle();
+        //reply.recycle();
+        //return cph;
     }
 
     
@@ -3201,16 +3191,16 @@ ContentProviderHolder var714D5B899646D8F8DB57A5F82D1906E2_1267144485 =         c
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //data.writeTypedList(providers);
+        //mRemote.transact(PUBLISH_CONTENT_PROVIDERS_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3228,16 +3218,16 @@ ContentProviderHolder var714D5B899646D8F8DB57A5F82D1906E2_1267144485 =         c
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //data.writeString(name);
+        //mRemote.transact(REMOVE_CONTENT_PROVIDER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3256,21 +3246,20 @@ ContentProviderHolder var714D5B899646D8F8DB57A5F82D1906E2_1267144485 =         c
 PendingIntent varB5053E025797B3BF768F5C37934C244D_2047410759 =         res;
         varB5053E025797B3BF768F5C37934C244D_2047410759.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_2047410759;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //service.writeToParcel(data, 0);
+        //mRemote.transact(GET_RUNNING_SERVICE_CONTROL_PANEL_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //PendingIntent res = PendingIntent.readPendingIntentOrNullFromParcel(reply);
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.248 -0400", hash_original_method = "A683CF3BA039B3B97AA6ADC23E6FBDCC", hash_generated_method = "8FC5574F2888D9773E8D618AF929F5A7")
     public ComponentName startService(IApplicationThread caller, Intent service,
             String resolvedType) throws RemoteException {
@@ -3291,23 +3280,22 @@ PendingIntent varB5053E025797B3BF768F5C37934C244D_2047410759 =         res;
 ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         varB5053E025797B3BF768F5C37934C244D_1058210168.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_1058210168;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //service.writeToParcel(data, 0);
+        //data.writeString(resolvedType);
+        //mRemote.transact(START_SERVICE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ComponentName res = ComponentName.readFromParcel(reply);
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.249 -0400", hash_original_method = "B5D9E3A4F6ABA893303F2F02B64751B8", hash_generated_method = "26C84687D5D987FB3B2DFD0EEE7CA262")
     public int stopService(IApplicationThread caller, Intent service,
             String resolvedType) throws RemoteException {
@@ -3328,19 +3316,19 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         int var9B207167E5381C47682C6B4F58A623FB_569540986 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677215379 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1677215379;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //service.writeToParcel(data, 0);
+        //data.writeString(resolvedType);
+        //mRemote.transact(STOP_SERVICE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
@@ -3364,19 +3352,19 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_615446054 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1987611517 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1987611517;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //ComponentName.writeToParcel(className, data);
+        //data.writeStrongBinder(token);
+        //data.writeInt(startId);
+        //mRemote.transact(STOP_SERVICE_TOKEN_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -3398,38 +3386,37 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         {
             data.writeInt(1);
             notification.writeToParcel(data, 0);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         data.writeInt(removeNotification ? 1 : 0);
         mRemote.transact(SET_SERVICE_FOREGROUND_TRANSACTION, data, reply, 0);
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //ComponentName.writeToParcel(className, data);
+        //data.writeStrongBinder(token);
+        //data.writeInt(id);
+        //if (notification != null) {
+            //data.writeInt(1);
+            //notification.writeToParcel(data, 0);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //data.writeInt(removeNotification ? 1 : 0);
+        //mRemote.transact(SET_SERVICE_FOREGROUND_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.255 -0400", hash_original_method = "A1E6D6F237E88697017FA79FBE451840", hash_generated_method = "BC7623570DA1218731CE4208C7CD00E0")
     public int bindService(IApplicationThread caller, IBinder token,
             Intent service, String resolvedType, IServiceConnection connection,
@@ -3457,22 +3444,22 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         int var9B207167E5381C47682C6B4F58A623FB_551258701 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1850356679 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1850356679;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //data.writeStrongBinder(token);
+        //service.writeToParcel(data, 0);
+        //data.writeString(resolvedType);
+        //data.writeStrongBinder(connection.asBinder());
+        //data.writeInt(flags);
+        //mRemote.transact(BIND_SERVICE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -3491,21 +3478,20 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_495554970 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_605687600 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_605687600;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(connection.asBinder());
+        //mRemote.transact(UNBIND_SERVICE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.266 -0400", hash_original_method = "87A207496B270585D5EEA34C1AF57170", hash_generated_method = "62E2A5AA0BDE8905001277D60B27A6B4")
     public void publishService(IBinder token,
             Intent intent, IBinder service) throws RemoteException {
@@ -3522,21 +3508,20 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //intent.writeToParcel(data, 0);
+        //data.writeStrongBinder(service);
+        //mRemote.transact(PUBLISH_SERVICE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.268 -0400", hash_original_method = "3796516624A8D493E471933ECF7A3CD3", hash_generated_method = "20021A6F0FB54C6E552B5DF0C700D785")
     public void unbindFinished(IBinder token, Intent intent, boolean doRebind) throws RemoteException {
         addTaint(doRebind);
@@ -3552,17 +3537,17 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //intent.writeToParcel(data, 0);
+        //data.writeInt(doRebind ? 1 : 0);
+        //mRemote.transact(UNBIND_FINISHED_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3584,22 +3569,21 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeInt(type);
+        //data.writeInt(startId);
+        //data.writeInt(res);
+        //mRemote.transact(SERVICE_DONE_EXECUTING_TRANSACTION, data, reply, IBinder.FLAG_ONEWAY);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.270 -0400", hash_original_method = "BEF476EE5F43517187661CDC39F2A448", hash_generated_method = "6AC174832CC92DADA3F67F207985075A")
     public IBinder peekService(Intent service, String resolvedType) throws RemoteException {
         addTaint(resolvedType.getTaint());
@@ -3617,18 +3601,18 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1058210168 =         res;
 IBinder varE3C074C8A98249A08331B334269AEB91_1437660643 =         binder;
         varE3C074C8A98249A08331B334269AEB91_1437660643.addTaint(taint);
         return varE3C074C8A98249A08331B334269AEB91_1437660643;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //service.writeToParcel(data, 0);
+        //data.writeString(resolvedType);
+        //mRemote.transact(PEEK_SERVICE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //IBinder binder = reply.readStrongBinder();
+        //reply.recycle();
+        //data.recycle();
+        //return binder;
     }
 
     
@@ -3649,18 +3633,18 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1437660643 =         binder;
         boolean var260CA9DD8A4577FC00B7BD5810298076_1313219475 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1494787346 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1494787346;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //app.writeToParcel(data, 0);
+        //data.writeInt(backupRestoreMode);
+        //mRemote.transact(START_BACKUP_AGENT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean success = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return success;
     }
 
     
@@ -3676,15 +3660,15 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1437660643 =         binder;
         mRemote.transact(BACKUP_AGENT_CREATED_TRANSACTION, data, reply, 0);
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //data.writeStrongBinder(agent);
+        //mRemote.transact(BACKUP_AGENT_CREATED_TRANSACTION, data, reply, 0);
+        //reply.recycle();
+        //data.recycle();
     }
 
     
@@ -3699,15 +3683,15 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1437660643 =         binder;
         reply.readException();
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //app.writeToParcel(data, 0);
+        //mRemote.transact(UNBIND_BACKUP_AGENT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //reply.recycle();
+        //data.recycle();
     }
 
     
@@ -3735,21 +3719,21 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1437660643 =         binder;
         boolean var9B207167E5381C47682C6B4F58A623FB_40994061 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_93933772 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_93933772;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //ComponentName.writeToParcel(className, data);
+        //data.writeString(profileFile);
+        //data.writeInt(flags);
+        //data.writeBundle(arguments);
+        //data.writeStrongBinder(watcher != null ? watcher.asBinder() : null);
+        //mRemote.transact(START_INSTRUMENTATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
@@ -3769,17 +3753,17 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1437660643 =         binder;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(target != null ? target.asBinder() : null);
+        //data.writeInt(resultCode);
+        //data.writeBundle(results);
+        //mRemote.transact(FINISH_INSTRUMENTATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3796,16 +3780,16 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1437660643 =         binder;
 Configuration varB5053E025797B3BF768F5C37934C244D_122135256 =         res;
         varB5053E025797B3BF768F5C37934C244D_122135256.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_122135256;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GET_CONFIGURATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //Configuration res = Configuration.CREATOR.createFromParcel(reply);
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
@@ -3820,15 +3804,15 @@ Configuration varB5053E025797B3BF768F5C37934C244D_122135256 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //values.writeToParcel(data, 0);
+        //mRemote.transact(UPDATE_CONFIGURATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3845,16 +3829,16 @@ Configuration varB5053E025797B3BF768F5C37934C244D_122135256 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeInt(requestedOrientation);
+        //mRemote.transact(SET_REQUESTED_ORIENTATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -3873,17 +3857,17 @@ Configuration varB5053E025797B3BF768F5C37934C244D_122135256 =         res;
         int var9B207167E5381C47682C6B4F58A623FB_1378866681 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_508235243 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_508235243;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(GET_REQUESTED_ORIENTATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -3902,17 +3886,17 @@ Configuration varB5053E025797B3BF768F5C37934C244D_122135256 =         res;
 ComponentName varB5053E025797B3BF768F5C37934C244D_1853091695 =         res;
         varB5053E025797B3BF768F5C37934C244D_1853091695.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_1853091695;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(GET_ACTIVITY_CLASS_FOR_TOKEN_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ComponentName res = ComponentName.readFromParcel(reply);
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -3931,17 +3915,17 @@ ComponentName varB5053E025797B3BF768F5C37934C244D_1853091695 =         res;
 String varB5053E025797B3BF768F5C37934C244D_1486803703 =         res;
         varB5053E025797B3BF768F5C37934C244D_1486803703.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_1486803703;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(GET_PACKAGE_FOR_TOKEN_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //String res = reply.readString();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -3970,11 +3954,11 @@ String varB5053E025797B3BF768F5C37934C244D_1486803703 =         res;
             data.writeInt(1);
             data.writeTypedArray(intents, 0);
             data.writeStringArray(resolvedTypes);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         data.writeInt(flags);
         mRemote.transact(GET_INTENT_SENDER_TRANSACTION, data, reply, 0);
         reply.readException();
@@ -3985,30 +3969,30 @@ String varB5053E025797B3BF768F5C37934C244D_1486803703 =         res;
 IIntentSender varB5053E025797B3BF768F5C37934C244D_586971258 =         res;
         varB5053E025797B3BF768F5C37934C244D_586971258.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_586971258;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-            
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(type);
+        //data.writeString(packageName);
+        //data.writeStrongBinder(token);
+        //data.writeString(resultWho);
+        //data.writeInt(requestCode);
+        //if (intents != null) {
+            //data.writeInt(1);
+            //data.writeTypedArray(intents, 0);
+            //data.writeStringArray(resolvedTypes);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //data.writeInt(flags);
+        //mRemote.transact(GET_INTENT_SENDER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //IIntentSender res = IIntentSender.Stub.asInterface(
+            //reply.readStrongBinder());
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -4023,15 +4007,15 @@ IIntentSender varB5053E025797B3BF768F5C37934C244D_586971258 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(sender.asBinder());
+        //mRemote.transact(CANCEL_INTENT_SENDER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4050,17 +4034,17 @@ IIntentSender varB5053E025797B3BF768F5C37934C244D_586971258 =         res;
 String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         varB5053E025797B3BF768F5C37934C244D_2100799964.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_2100799964;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(sender.asBinder());
+        //mRemote.transact(GET_PACKAGE_FOR_INTENT_SENDER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //String res = reply.readString();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -4075,15 +4059,15 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(max);
+        //mRemote.transact(SET_PROCESS_LIMIT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4100,16 +4084,16 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         int var9B207167E5381C47682C6B4F58A623FB_177000474 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1602276179 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1602276179;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GET_PROCESS_LIMIT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -4129,17 +4113,17 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeInt(pid);
+        //data.writeInt(isForeground ? 1 : 0);
+        //mRemote.transact(SET_PROCESS_FOREGROUND_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4162,19 +4146,19 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         int var9B207167E5381C47682C6B4F58A623FB_936802681 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1533893613 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1533893613;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(permission);
+        //data.writeInt(pid);
+        //data.writeInt(uid);
+        //mRemote.transact(CHECK_PERMISSION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -4196,22 +4180,21 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_545351312 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1048448319 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1048448319;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //data.writeStrongBinder(observer.asBinder());
+        //mRemote.transact(CLEAR_APP_DATA_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.313 -0400", hash_original_method = "FEF4F93E5B02F55707A11B36638BBB59", hash_generated_method = "68F31481F44BBB29BCB77B18190F9073")
     public int checkUriPermission(Uri uri, int pid, int uid, int mode) throws RemoteException {
         addTaint(mode);
@@ -4233,24 +4216,23 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         int var9B207167E5381C47682C6B4F58A623FB_117408858 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394567565 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394567565;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //uri.writeToParcel(data, 0);
+        //data.writeInt(pid);
+        //data.writeInt(uid);
+        //data.writeInt(mode);
+        //mRemote.transact(CHECK_URI_PERMISSION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.315 -0400", hash_original_method = "2CEB2CA82A36297F49BF5DB3286E579B", hash_generated_method = "CF51A08F5792E5A4520861FF10ADBEEE")
     public void grantUriPermission(IApplicationThread caller, String targetPkg,
             Uri uri, int mode) throws RemoteException {
@@ -4269,22 +4251,21 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller.asBinder());
+        //data.writeString(targetPkg);
+        //uri.writeToParcel(data, 0);
+        //data.writeInt(mode);
+        //mRemote.transact(GRANT_URI_PERMISSION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.317 -0400", hash_original_method = "84D534ABCBC85608735C63399D2C9E1E", hash_generated_method = "E901FFEA3C64B01E4CCC51D33D232D97")
     public void revokeUriPermission(IApplicationThread caller, Uri uri,
             int mode) throws RemoteException {
@@ -4301,17 +4282,17 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller.asBinder());
+        //uri.writeToParcel(data, 0);
+        //data.writeInt(mode);
+        //mRemote.transact(REVOKE_URI_PERMISSION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4328,16 +4309,16 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(who.asBinder());
+        //data.writeInt(waiting ? 1 : 0);
+        //mRemote.transact(SHOW_WAITING_FOR_DEBUGGER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4352,15 +4333,15 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         outInfo.readFromParcel(reply);
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GET_MEMORY_INFO_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //outInfo.readFromParcel(reply);
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4373,18 +4354,17 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(UNHANDLED_BACK_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.323 -0400", hash_original_method = "1E46E6C9628834765008140B25990D23", hash_generated_method = "046E62ABCD8283F831657152AA43BD74")
     public ParcelFileDescriptor openContentUri(Uri uri) throws RemoteException {
         addTaint(uri.getTaint());
@@ -4397,25 +4377,25 @@ String varB5053E025797B3BF768F5C37934C244D_2100799964 =         res;
     if(reply.readInt() != 0)        
         {
             pfd = ParcelFileDescriptor.CREATOR.createFromParcel(reply);
-        } 
+        } //End block
         data.recycle();
         reply.recycle();
 ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pfd;
         varC93E3EE3359509D81434E9F216020655_2036154931.addTaint(taint);
         return varC93E3EE3359509D81434E9F216020655_2036154931;
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(OPEN_CONTENT_URI_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ParcelFileDescriptor pfd = null;
+        //if (reply.readInt() != 0) {
+            //pfd = ParcelFileDescriptor.CREATOR.createFromParcel(reply);
+        //}
+        //data.recycle();
+        //reply.recycle();
+        //return pfd;
     }
 
     
@@ -4428,14 +4408,14 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GOING_TO_SLEEP_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4448,14 +4428,14 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(WAKING_UP_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4475,17 +4455,17 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //data.writeInt(waitForDebugger ? 1 : 0);
+        //data.writeInt(persistent ? 1 : 0);
+        //mRemote.transact(SET_DEBUG_APP_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4500,15 +4480,15 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(enabled ? 1 : 0);
+        //mRemote.transact(SET_ALWAYS_FINISH_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4523,15 +4503,15 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(watcher != null ? watcher.asBinder() : null);
+        //mRemote.transact(SET_ACTIVITY_CONTROLLER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4541,11 +4521,11 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(ENTER_SAFE_MODE_TRANSACTION, data, null, 0);
         data.recycle();
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(ENTER_SAFE_MODE_TRANSACTION, data, null, 0);
+        //data.recycle();
     }
 
     
@@ -4557,12 +4537,12 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         data.writeInterfaceToken(IActivityManager.descriptor);
         mRemote.transact(NOTE_WAKEUP_ALARM_TRANSACTION, data, null, 0);
         data.recycle();
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //data.writeStrongBinder(sender.asBinder());
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(NOTE_WAKEUP_ALARM_TRANSACTION, data, null, 0);
+        //data.recycle();
     }
 
     
@@ -4584,18 +4564,18 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         boolean var9B207167E5381C47682C6B4F58A623FB_1191058232 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1312334207 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1312334207;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeIntArray(pids);
+        //data.writeString(reason);
+        //data.writeInt(secure ? 1 : 0);
+        //mRemote.transact(KILL_PIDS_TRANSACTION, data, reply, 0);
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -4617,29 +4597,28 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(pkg);
+        //data.writeString(cls);
+        //data.writeString(action);
+        //data.writeString(indata);
+        //mRemote.transact(START_RUNNING_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.341 -0400", hash_original_method = "6C8B2FE75A3BFFE16EADA916F678A09D", hash_generated_method = "4AED8114D048C2258F0DAEA9ADA42C5C")
     public boolean testIsSystemReady() {
         boolean varB326B5062B2F0E69046810717534CB09_2075278513 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_831347660 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_831347660;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -4657,16 +4636,16 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(app);
+        //crashInfo.writeToParcel(data, 0);
+        //mRemote.transact(HANDLE_APPLICATION_CRASH_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //reply.recycle();
+        //data.recycle();
     }
 
     
@@ -4690,19 +4669,19 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         boolean var9B207167E5381C47682C6B4F58A623FB_2044970981 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_13428442 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_13428442;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(app);
+        //data.writeString(tag);
+        //crashInfo.writeToParcel(data, 0);
+        //mRemote.transact(HANDLE_APPLICATION_WTF_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
@@ -4723,17 +4702,17 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(app);
+        //data.writeInt(violationMask);
+        //info.writeToParcel(data, 0);
+        //mRemote.transact(HANDLE_APPLICATION_STRICT_MODE_VIOLATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //reply.recycle();
+        //data.recycle();
     }
 
     
@@ -4748,15 +4727,15 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(sig);
+        //mRemote.transact(SIGNAL_PERSISTENT_PROCESSES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4771,15 +4750,15 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //mRemote.transact(KILL_BACKGROUND_PROCESSES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4792,14 +4771,14 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(KILL_ALL_BACKGROUND_PROCESSES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4814,15 +4793,15 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //mRemote.transact(FORCE_STOP_PACKAGE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -4839,16 +4818,16 @@ ParcelFileDescriptor varC93E3EE3359509D81434E9F216020655_2036154931 =         pf
 ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         varB5053E025797B3BF768F5C37934C244D_1036836205.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_1036836205;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GET_DEVICE_CONFIGURATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //ConfigurationInfo res = ConfigurationInfo.CREATOR.createFromParcel(reply);
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
@@ -4871,11 +4850,11 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         {
             data.writeInt(1);
             fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         mRemote.transact(PROFILE_CONTROL_TRANSACTION, data, reply, 0);
         reply.readException();
         boolean res = reply.readInt() != 0;
@@ -4884,26 +4863,26 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_823170849 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1021970225 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1021970225;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(process);
+        //data.writeInt(start ? 1 : 0);
+        //data.writeInt(profileType);
+        //data.writeString(path);
+        //if (fd != null) {
+            //data.writeInt(1);
+            //fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //mRemote.transact(PROFILE_CONTROL_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
@@ -4922,17 +4901,17 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_1485132504 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1873377131 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1873377131;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(timeout);
+        //mRemote.transact(SHUTDOWN_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
@@ -4945,14 +4924,14 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         reply.readException();
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(STOP_APP_SWITCHES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //reply.recycle();
+        //data.recycle();
     }
 
     
@@ -4965,20 +4944,20 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         reply.readException();
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(RESUME_APP_SWITCHES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //reply.recycle();
+        //data.recycle();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.355 -0400", hash_original_method = "7B78E2FEC61CC471A8E07C6C34C74BD6", hash_generated_method = "3817B8C1148D03480BC754EDE7A8783D")
     public void registerActivityWatcher(IActivityWatcher watcher) throws RemoteException {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(watcher.getTaint());
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -4988,15 +4967,15 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(watcher != null ? watcher.asBinder() : null);
+        //mRemote.transact(REGISTER_ACTIVITY_WATCHER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5011,19 +4990,18 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(watcher != null ? watcher.asBinder() : null);
+        //mRemote.transact(UNREGISTER_ACTIVITY_WATCHER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.360 -0400", hash_original_method = "C65F778BCD540838D47FE4E4412CD25E", hash_generated_method = "D90BE9BB9FB67A080236B2358463483D")
     public int startActivityInPackage(int uid,
             Intent intent, String resolvedType, IBinder resultTo,
@@ -5053,23 +5031,23 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         int varB4A88417B3D0170D754C647C30B7216A_1409197700 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977067296 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977067296;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(uid);
+        //intent.writeToParcel(data, 0);
+        //data.writeString(resolvedType);
+        //data.writeStrongBinder(resultTo);
+        //data.writeString(resultWho);
+        //data.writeInt(requestCode);
+        //data.writeInt(onlyIfNeeded ? 1 : 0);
+        //mRemote.transact(START_ACTIVITY_IN_PACKAGE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int result = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return result;
     }
 
     
@@ -5086,16 +5064,16 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(pkg);
+        //data.writeInt(uid);
+        //mRemote.transact(KILL_APPLICATION_WITH_UID_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5110,15 +5088,15 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(reason);
+        //mRemote.transact(CLOSE_SYSTEM_DIALOGS_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5137,17 +5115,17 @@ ConfigurationInfo varB5053E025797B3BF768F5C37934C244D_1036836205 =         res;
 Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         varB5053E025797B3BF768F5C37934C244D_2126301097.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_2126301097;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeIntArray(pids);
+        //mRemote.transact(GET_PROCESS_MEMORY_INFO_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //Debug.MemoryInfo[] res = reply.createTypedArray(Debug.MemoryInfo.CREATOR);
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -5164,16 +5142,16 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(processName);
+        //data.writeInt(uid);
+        //mRemote.transact(KILL_APPLICATION_PROCESS_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5195,18 +5173,18 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeString(packageName);
+        //data.writeInt(enterAnim);
+        //data.writeInt(exitAnim);
+        //mRemote.transact(OVERRIDE_PENDING_TRANSITION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5223,16 +5201,16 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_1984689862 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1435356970 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1435356970;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(IS_USER_A_MONKEY_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -5245,14 +5223,14 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(FINISH_HEAVY_WEIGHT_APP_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5269,16 +5247,16 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //data.writeInt(immersive ? 1 : 0);
+        //mRemote.transact(SET_IMMERSIVE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5297,17 +5275,17 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_958084765 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_236268885 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_236268885;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(token);
+        //mRemote.transact(IS_IMMERSIVE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() == 1;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -5324,16 +5302,16 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_218435837 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_275955955 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_275955955;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(IS_TOP_ACTIVITY_IMMERSIVE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() == 1;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -5355,22 +5333,21 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(uid);
+        //data.writeInt(initialPid);
+        //data.writeString(packageName);
+        //data.writeString(message);
+        //mRemote.transact(CRASH_APPLICATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.378 -0400", hash_original_method = "CF06029063749F4266D5EFBB16694E04", hash_generated_method = "C82E88D074E3C75D29BF201799C35DE4")
     public String getProviderMimeType(Uri uri) throws RemoteException {
         addTaint(uri.getTaint());
@@ -5386,17 +5363,17 @@ Debug.MemoryInfo[] varB5053E025797B3BF768F5C37934C244D_2126301097 =         res;
 String varB5053E025797B3BF768F5C37934C244D_2028046883 =         res;
         varB5053E025797B3BF768F5C37934C244D_2028046883.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_2028046883;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //uri.writeToParcel(data, 0);
+        //mRemote.transact(GET_PROVIDER_MIME_TYPE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //String res = reply.readString();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -5415,21 +5392,20 @@ String varB5053E025797B3BF768F5C37934C244D_2028046883 =         res;
 IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         varB5053E025797B3BF768F5C37934C244D_1368296163.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_1368296163;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(name);
+        //mRemote.transact(NEW_URI_PERMISSION_OWNER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //IBinder res = reply.readStrongBinder();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.385 -0400", hash_original_method = "1C35FE424D422C73471D9ECEE35C4093", hash_generated_method = "0FBD6A1EE34CA0659502DAE0423D0CDB")
     public void grantUriPermissionFromOwner(IBinder owner, int fromUid, String targetPkg,
             Uri uri, int mode) throws RemoteException {
@@ -5450,23 +5426,22 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(owner);
+        //data.writeInt(fromUid);
+        //data.writeString(targetPkg);
+        //uri.writeToParcel(data, 0);
+        //data.writeInt(mode);
+        //mRemote.transact(GRANT_URI_PERMISSION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.387 -0400", hash_original_method = "D07898A73558FBA66858F774589B082E", hash_generated_method = "7A2746B9C5AA4E0478034865BF9597FA")
     public void revokeUriPermissionFromOwner(IBinder owner, Uri uri,
             int mode) throws RemoteException {
@@ -5481,36 +5456,35 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         {
             data.writeInt(1);
             uri.writeToParcel(data, 0);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         data.writeInt(mode);
         mRemote.transact(REVOKE_URI_PERMISSION_TRANSACTION, data, reply, 0);
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(owner);
+        //if (uri != null) {
+            //data.writeInt(1);
+            //uri.writeToParcel(data, 0);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //data.writeInt(mode);
+        //mRemote.transact(REVOKE_URI_PERMISSION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.389 -0400", hash_original_method = "3DAB9C9F42020370AD19E1FE0AC1BDCE", hash_generated_method = "E3EC32944079D307ECA83E0EBF757466")
     public int checkGrantUriPermission(int callingUid, String targetPkg,
             Uri uri, int modeFlags) throws RemoteException {
@@ -5533,20 +5507,20 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         int var9B207167E5381C47682C6B4F58A623FB_166280438 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248136883 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248136883;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(callingUid);
+        //data.writeString(targetPkg);
+        //uri.writeToParcel(data, 0);
+        //data.writeInt(modeFlags);
+        //mRemote.transact(CHECK_GRANT_URI_PERMISSION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int res = reply.readInt();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -5567,11 +5541,11 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         {
             data.writeInt(1);
             fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } 
+        } //End block
         else
         {
             data.writeInt(0);
-        } 
+        } //End block
         mRemote.transact(DUMP_HEAP_TRANSACTION, data, reply, 0);
         reply.readException();
         boolean res = reply.readInt() != 0;
@@ -5580,25 +5554,25 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_500162274 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1544861465 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1544861465;
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(process);
+        //data.writeInt(managed ? 1 : 0);
+        //data.writeString(path);
+        //if (fd != null) {
+            //data.writeInt(1);
+            //fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+        //} else {
+            //data.writeInt(0);
+        //}
+        //mRemote.transact(DUMP_HEAP_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return res;
     }
 
     
@@ -5624,20 +5598,20 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         int varB4A88417B3D0170D754C647C30B7216A_544304314 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1824693982 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1824693982;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(caller != null ? caller.asBinder() : null);
+        //data.writeTypedArray(intents, 0);
+        //data.writeStringArray(resolvedTypes);
+        //data.writeStrongBinder(resultTo);
+        //mRemote.transact(START_ACTIVITIES_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int result = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return result;
     }
 
     
@@ -5663,20 +5637,20 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         int varB4A88417B3D0170D754C647C30B7216A_1811505892 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617163714 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617163714;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(uid);
+        //data.writeTypedArray(intents, 0);
+        //data.writeStringArray(resolvedTypes);
+        //data.writeStrongBinder(resultTo);
+        //mRemote.transact(START_ACTIVITIES_IN_PACKAGE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int result = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return result;
     }
 
     
@@ -5693,16 +5667,16 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         int var15D61712450A686A7F365ADF4FEF581F_447798071 = (mode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_961169875 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_961169875;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(GET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int mode = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return mode;
     }
 
     
@@ -5717,15 +5691,15 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(mode);
+        //mRemote.transact(SET_FRONT_ACTIVITY_SCREEN_COMPAT_MODE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //reply.recycle();
+        //data.recycle();
     }
 
     
@@ -5744,17 +5718,17 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         int var15D61712450A686A7F365ADF4FEF581F_921309411 = (mode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_928161607 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_928161607;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //mRemote.transact(GET_PACKAGE_SCREEN_COMPAT_MODE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //int mode = reply.readInt();
+        //reply.recycle();
+        //data.recycle();
+        //return mode;
     }
 
     
@@ -5771,16 +5745,16 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //data.writeInt(mode);
+        //mRemote.transact(SET_PACKAGE_SCREEN_COMPAT_MODE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //reply.recycle();
+        //data.recycle();
     }
 
     
@@ -5799,17 +5773,17 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         boolean var5ED33F7008771C9D49E3716AEAECA581_1008801689 = (ask);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1442130671 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1442130671;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //mRemote.transact(GET_PACKAGE_ASK_SCREEN_COMPAT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean ask = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return ask;
     }
 
     
@@ -5826,16 +5800,16 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         reply.recycle();
         data.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeString(packageName);
+        //data.writeInt(ask ? 1 : 0);
+        //mRemote.transact(SET_PACKAGE_ASK_SCREEN_COMPAT_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //reply.recycle();
+        //data.recycle();
     }
 
     
@@ -5854,17 +5828,17 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         boolean varB4A88417B3D0170D754C647C30B7216A_868139464 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1431872812 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1431872812;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(userid);
+        //mRemote.transact(SWITCH_USER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean result = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return result;
     }
 
     
@@ -5885,18 +5859,18 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         boolean varB4A88417B3D0170D754C647C30B7216A_863324641 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013160154 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013160154;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(taskId);
+        //data.writeInt(subTaskIndex);
+        //mRemote.transact(REMOVE_SUB_TASK_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean result = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return result;
     }
 
     
@@ -5917,24 +5891,24 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         boolean varB4A88417B3D0170D754C647C30B7216A_497812357 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1249725935 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1249725935;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeInt(taskId);
+        //data.writeInt(flags);
+        //mRemote.transact(REMOVE_TASK_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean result = reply.readInt() != 0;
+        //reply.recycle();
+        //data.recycle();
+        //return result;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:58.419 -0400", hash_original_method = "AD040AF08607A87C88C9CB9BE1E3C408", hash_generated_method = "F79D0782D7ADBF945089C278A2C3F53F")
     public void registerProcessObserver(IProcessObserver observer) throws RemoteException {
-        
+        //DSFIXME: CODE0010: Possible callback registration function detected
         addTaint(observer.getTaint());
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
@@ -5944,15 +5918,15 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(observer != null ? observer.asBinder() : null);
+        //mRemote.transact(REGISTER_PROCESS_OBSERVER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5967,15 +5941,15 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(observer != null ? observer.asBinder() : null);
+        //mRemote.transact(UNREGISTER_PROCESS_OBSERVER_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -5994,17 +5968,17 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         boolean var9B207167E5381C47682C6B4F58A623FB_1089315724 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_541336384 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_541336384;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeStrongBinder(sender.asBinder());
+        //mRemote.transact(IS_INTENT_SENDER_TARGETED_TO_PACKAGE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //boolean res = reply.readInt() != 0;
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -6019,15 +5993,15 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //values.writeToParcel(data, 0);
+        //mRemote.transact(UPDATE_PERSISTENT_CONFIGURATION_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -6046,17 +6020,17 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         long[] var9B207167E5381C47682C6B4F58A623FB_702977956 = (res);
                 long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1596726584 = {getTaintLong()};
         return var3908C7C3AF5171CEE1F112DAE77A5C4D_1596726584;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //data.writeIntArray(pids);
+        //mRemote.transact(GET_PROCESS_PSS_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //long[] res = reply.createLongArray();
+        //data.recycle();
+        //reply.recycle();
+        //return res;
     }
 
     
@@ -6073,16 +6047,16 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //TextUtils.writeToParcel(msg, data, 0);
+        //data.writeInt(always ? 1 : 0);
+        //mRemote.transact(SHOW_BOOT_MESSAGE_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     
@@ -6095,14 +6069,14 @@ IBinder varB5053E025797B3BF768F5C37934C244D_1368296163 =         res;
         reply.readException();
         data.recycle();
         reply.recycle();
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Parcel data = Parcel.obtain();
+        //Parcel reply = Parcel.obtain();
+        //data.writeInterfaceToken(IActivityManager.descriptor);
+        //mRemote.transact(DISMISS_KEYGUARD_ON_NEXT_ACTIVITY_TRANSACTION, data, reply, 0);
+        //reply.readException();
+        //data.recycle();
+        //reply.recycle();
     }
 
     

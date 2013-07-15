@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class SQLiteDiskIOException extends SQLiteException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.981 -0400", hash_original_method = "79812D0F211F1884E30281CBD1527413", hash_generated_method = "84710FAAC729F217AE0CC0FA3CC6C246")
     public  SQLiteDiskIOException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class SQLiteDiskIOException extends SQLiteException {
     public  SQLiteDiskIOException(String error) {
         super(error);
         addTaint(error.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

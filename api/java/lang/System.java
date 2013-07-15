@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,7 +30,7 @@ public final class System {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.396 -0400", hash_original_method = "E6A64E449436C53F69301A453DED3B55", hash_generated_method = "56A6DF4ABD5F4C986DFF90DF1C5AAD2A")
     private  System() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -224,8 +224,7 @@ public final class System {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static SecurityManager getSecurityManager() {
+        public static SecurityManager getSecurityManager() {
         return null;
     }
 
@@ -237,8 +236,7 @@ public final class System {
 	}
 
     
-        @DSModeled(DSC.SAFE)
-    public static String lineSeparator() {
+        public static String lineSeparator() {
         return lineSeparator;
     }
 
@@ -300,8 +298,7 @@ public final class System {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setProperties(Properties p) {
+        public static void setProperties(Properties p) {
         systemProperties = p;
     }
 
@@ -334,8 +331,8 @@ public final class System {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.413 -0400", hash_original_method = "B0FD4399CD935BEF9930B0D70FEAF52A", hash_generated_method = "47274EE90A9CC35993F9EE134C77826B")
         public  SystemEnvironment(Map<String, String> map) {
             this.map = Collections.unmodifiableMap(map);
-            
-            
+            // ---------- Original Method ----------
+            //this.map = Collections.unmodifiableMap(map);
         }
 
         
@@ -345,8 +342,8 @@ public final class System {
 Set<Entry<String, String>> varD70A818A9C24919C79B0A6854ED78BA4_321688091 =             map.entrySet();
             varD70A818A9C24919C79B0A6854ED78BA4_321688091.addTaint(taint);
             return varD70A818A9C24919C79B0A6854ED78BA4_321688091;
-            
-            
+            // ---------- Original Method ----------
+            //return map.entrySet();
         }
 
         
@@ -357,8 +354,8 @@ Set<Entry<String, String>> varD70A818A9C24919C79B0A6854ED78BA4_321688091 =      
 String var97F01DF1234C7D523320BD81BC314B44_693163431 =             map.get(toNonNullString(key));
             var97F01DF1234C7D523320BD81BC314B44_693163431.addTaint(taint);
             return var97F01DF1234C7D523320BD81BC314B44_693163431;
-            
-            
+            // ---------- Original Method ----------
+            //return map.get(toNonNullString(key));
         }
 
         
@@ -369,8 +366,8 @@ String var97F01DF1234C7D523320BD81BC314B44_693163431 =             map.get(toNon
             boolean var1CC8639F877576DDAF962665FC2AC8A9_1776929726 = (map.containsKey(toNonNullString(key)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1871203557 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1871203557;
-            
-            
+            // ---------- Original Method ----------
+            //return map.containsKey(toNonNullString(key));
         }
 
         
@@ -381,8 +378,8 @@ String var97F01DF1234C7D523320BD81BC314B44_693163431 =             map.get(toNon
             boolean varDDFC8CE7CC09440F2F971A472071D732_574400365 = (map.containsValue(toNonNullString(value)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_327143942 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_327143942;
-            
-            
+            // ---------- Original Method ----------
+            //return map.containsValue(toNonNullString(value));
         }
 
         
@@ -394,15 +391,15 @@ String var97F01DF1234C7D523320BD81BC314B44_693163431 =             map.get(toNon
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1703137913 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_1703137913.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_1703137913;
-            } 
+            } //End block
 String var05F8BA7898C830EEFB724B7656469F9E_709594519 =             (String) o;
             var05F8BA7898C830EEFB724B7656469F9E_709594519.addTaint(taint);
             return var05F8BA7898C830EEFB724B7656469F9E_709594519;
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (o == null) {
+                //throw new NullPointerException();
+            //}
+            //return (String) o;
         }
 
         

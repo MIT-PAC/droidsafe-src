@@ -1,6 +1,6 @@
 package android.view.animation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,8 +21,8 @@ public class Transformation {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.990 -0400", hash_original_method = "B51BFBC203820EC809B8E082E20903C2", hash_generated_method = "3F4DA68BCEF9BF3D04E9F77E20D14323")
     public  Transformation() {
         clear();
-        
-        
+        // ---------- Original Method ----------
+        //clear();
     }
 
     
@@ -31,41 +31,39 @@ public class Transformation {
     if(mMatrix == null)        
         {
             mMatrix = new Matrix();
-        } 
+        } //End block
         else
         {
             mMatrix.reset();
-        } 
+        } //End block
         mAlpha = 1.0f;
         mTransformationType = TYPE_BOTH;
-        
-        
-            
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mMatrix == null) {
+            //mMatrix = new Matrix();
+        //} else {
+            //mMatrix.reset();
+        //}
+        //mAlpha = 1.0f;
+        //mTransformationType = TYPE_BOTH;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.991 -0400", hash_original_method = "8DFDD7EF6072FC95D95C5176557C9475", hash_generated_method = "540AE450E8ED864228FB5C0DC1CF6495")
     public int getTransformationType() {
         int varE809ABB3554FAD67C52E87DB28F12771_1375712427 = (mTransformationType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263598833 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263598833;
-        
-        
+        // ---------- Original Method ----------
+        //return mTransformationType;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.991 -0400", hash_original_method = "B4636E05B9A8A9BE17FDDB51FD79878A", hash_generated_method = "39AC39ACD4F7908E138EDFE8ECD24ED9")
     public void setTransformationType(int transformationType) {
         mTransformationType = transformationType;
-        
-        
+        // ---------- Original Method ----------
+        //mTransformationType = transformationType;
     }
 
     
@@ -74,10 +72,10 @@ public class Transformation {
         mAlpha = t.getAlpha();
         mMatrix.set(t.getMatrix());
         mTransformationType = t.getTransformationType();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mAlpha = t.getAlpha();
+        //mMatrix.set(t.getMatrix());
+        //mTransformationType = t.getTransformationType();
     }
 
     
@@ -85,40 +83,37 @@ public class Transformation {
     public void compose(Transformation t) {
         mAlpha *= t.getAlpha();
         mMatrix.preConcat(t.getMatrix());
-        
-        
-        
+        // ---------- Original Method ----------
+        //mAlpha *= t.getAlpha();
+        //mMatrix.preConcat(t.getMatrix());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.993 -0400", hash_original_method = "2E54F4327BDE93D0CE557FC100DEED67", hash_generated_method = "2331EC2C00652F69357B22091433A957")
     public Matrix getMatrix() {
 Matrix var49A816397330451E1FD30BEA000F3851_1270977908 =         mMatrix;
         var49A816397330451E1FD30BEA000F3851_1270977908.addTaint(taint);
         return var49A816397330451E1FD30BEA000F3851_1270977908;
-        
-        
+        // ---------- Original Method ----------
+        //return mMatrix;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.993 -0400", hash_original_method = "0C33009713633FC103F0B586FD422009", hash_generated_method = "C9CD91170EA13924C0FBD5C314E4E67F")
     public void setAlpha(float alpha) {
         mAlpha = alpha;
-        
-        
+        // ---------- Original Method ----------
+        //mAlpha = alpha;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.993 -0400", hash_original_method = "84CA63CC358414A9CD87B6516C604402", hash_generated_method = "7187A556A5BF42863ED51A9ADAFBE484")
     public float getAlpha() {
         float var7574041472B9B2E76867A37482E74343_908194804 = (mAlpha);
                 float var546ADE640B6EDFBC8A086EF31347E768_751498866 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_751498866;
-        
-        
+        // ---------- Original Method ----------
+        //return mAlpha;
     }
 
     
@@ -131,11 +126,11 @@ Matrix var49A816397330451E1FD30BEA000F3851_1270977908 =         mMatrix;
 String var2460B846747F8B22185AD8BE722266A5_825600311 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_825600311.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_825600311;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(64);
+        //sb.append("Transformation");
+        //toShortString(sb);
+        //return sb.toString();
     }
 
     
@@ -146,10 +141,10 @@ String var2460B846747F8B22185AD8BE722266A5_825600311 =         sb.toString();
 String var2460B846747F8B22185AD8BE722266A5_1012984187 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1012984187.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1012984187;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(64);
+        //toShortString(sb);
+        //return sb.toString();
     }
 
     
@@ -161,12 +156,12 @@ String var2460B846747F8B22185AD8BE722266A5_1012984187 =         sb.toString();
         sb.append(" matrix=");
         mMatrix.toShortString(sb);
         sb.append('}');
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //sb.append("{alpha=");
+        //sb.append(mAlpha);
+        //sb.append(" matrix=");
+        //mMatrix.toShortString(sb);
+        //sb.append('}');
     }
 
     
@@ -178,12 +173,12 @@ String var2460B846747F8B22185AD8BE722266A5_1012984187 =         sb.toString();
         pw.print(" matrix=");
         mMatrix.printShortString(pw);
         pw.print('}');
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //pw.print("{alpha=");
+        //pw.print(mAlpha);
+        //pw.print(" matrix=");
+        //mMatrix.printShortString(pw);
+        //pw.print('}');
     }
 
     

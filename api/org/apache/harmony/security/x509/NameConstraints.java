@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -42,8 +42,8 @@ public final class NameConstraints extends ExtensionValue {
                 IllegalArgumentException varFA3A25D61E91A1A53597FEB6C1C9DCF7_495740387 = new IllegalArgumentException("permittedSubtrees are empty");
                 varFA3A25D61E91A1A53597FEB6C1C9DCF7_495740387.addTaint(taint);
                 throw varFA3A25D61E91A1A53597FEB6C1C9DCF7_495740387;
-            } 
-        } 
+            } //End block
+        } //End block
     if(excludedSubtrees != null)        
         {
             List<GeneralSubtree> es = excludedSubtrees.getSubtrees();
@@ -52,25 +52,25 @@ public final class NameConstraints extends ExtensionValue {
                 IllegalArgumentException var69068CFE9E140C713C89A1A82166F086_1575119363 = new IllegalArgumentException("excludedSubtrees are empty");
                 var69068CFE9E140C713C89A1A82166F086_1575119363.addTaint(taint);
                 throw var69068CFE9E140C713C89A1A82166F086_1575119363;
-            } 
-        } 
+            } //End block
+        } //End block
         this.permittedSubtrees = permittedSubtrees;
         this.excludedSubtrees = excludedSubtrees;
-        
-        
-            
-            
-                
-            
-        
-        
-            
-            
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (permittedSubtrees != null) {
+            //List<GeneralSubtree> ps = permittedSubtrees.getSubtrees();
+            //if (ps == null || ps.isEmpty()) {
+                //throw new IllegalArgumentException("permittedSubtrees are empty");
+            //}
+        //}
+        //if (excludedSubtrees != null) {
+            //List<GeneralSubtree> es = excludedSubtrees.getSubtrees();
+            //if (es == null || es.isEmpty()) {
+                //throw new IllegalArgumentException("excludedSubtrees are empty");
+            //}
+        //}
+        //this.permittedSubtrees = permittedSubtrees;
+        //this.excludedSubtrees = excludedSubtrees;
     }
 
     
@@ -81,37 +81,34 @@ public final class NameConstraints extends ExtensionValue {
         addTaint(excludedSubtrees.getTaint());
         addTaint(permittedSubtrees.getTaint());
         this.encoding = encoding;
-        
-        
+        // ---------- Original Method ----------
+        //this.encoding = encoding;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static NameConstraints decode(byte[] encoding) throws IOException {
+        public static NameConstraints decode(byte[] encoding) throws IOException {
         return (NameConstraints) ASN1.decode(encoding);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.204 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "D0D28C6D90F4A160D2009557284B30B0")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_970264771 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1971545612 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1971545612;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = ASN1.encode(this);
+        //}
+        //return encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.205 -0400", hash_original_method = "D5B90ECD7CBCC97B9564754E474A01DA", hash_generated_method = "68F2E6CC77406B2CC339C3449F94A293")
     private void prepareNames() {
         permitted_names = new ArrayList[9];
@@ -124,10 +121,10 @@ for(GeneralSubtree generalSubtree : permittedSubtrees.getSubtrees())
     if(permitted_names[tag] == null)                
                 {
                     permitted_names[tag] = new ArrayList<GeneralName>();
-                } 
+                } //End block
                 permitted_names[tag].add(name);
-            } 
-        } 
+            } //End block
+        } //End block
         excluded_names = new ArrayList[9];
     if(excludedSubtrees != null)        
         {
@@ -138,16 +135,15 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
     if(excluded_names[tag] == null)                
                 {
                     excluded_names[tag] = new ArrayList<GeneralName>();
-                } 
+                } //End block
                 excluded_names[tag].add(name);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.205 -0400", hash_original_method = "7F050A55683D0AA0C8EC41E810522931", hash_generated_method = "4A642D64C3E5A0FD40D454B017C18270")
     private byte[] getExtensionValue(X509Certificate cert, String OID) {
         addTaint(OID.getTaint());
@@ -160,27 +156,27 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
                 byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1166175478 = (null);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1027860360 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_1027860360;
-            } 
+            } //End block
             byte[] varB1B51C0C2868C986EDA7186601141A11_1210915726 = ((byte[]) ASN1OctetString.getInstance().decode(bytes));
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1108913858 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1108913858;
-        } 
+        } //End block
         catch (IOException e)
         {
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_933561017 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1336357495 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1336357495;
-        } 
-        
-        
-            
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //byte[] bytes = cert.getExtensionValue(OID);
+            //if (bytes == null) {
+                //return null;
+            //}
+            //return (byte[]) ASN1OctetString.getInstance().decode(bytes);
+        //} catch (IOException e) {
+            //return null;
+        //}
     }
 
     
@@ -190,7 +186,7 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
     if(permitted_names == null)        
         {
             prepareNames();
-        } 
+        } //End block
         byte[] bytes = getExtensionValue(cert, "2.5.29.17");
         List<GeneralName> names;
         try 
@@ -198,50 +194,50 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
             names = (bytes == null)
                 ? new ArrayList<GeneralName>(1) 
                 : ((GeneralNames) GeneralNames.ASN1.decode(bytes)).getNames();
-        } 
+        } //End block
         catch (IOException e)
         {
             e.printStackTrace();
             boolean var68934A3E9455FA72420237EB05902327_699974504 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997395777 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997395777;
-        } 
+        } //End block
     if((excluded_names[4] != null) || (permitted_names[4] != null))        
         {
             try 
             {
                 names.add(new GeneralName(4,
                         cert.getSubjectX500Principal().getName()));
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varD0EDB3A4BDF9C87D2708957F42F24AA5_448257179 = (isAcceptable(names));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1786972516 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1786972516;
-        
-        
-            
-        
-        
-        
-        
-            
-                
-                
-        
-            
-            
-        
-        
-            
-                
-                        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (permitted_names == null) {
+            //prepareNames();
+        //}
+        //byte[] bytes = getExtensionValue(cert, "2.5.29.17");
+        //List<GeneralName> names;
+        //try {
+            //names = (bytes == null)
+                //? new ArrayList<GeneralName>(1) 
+                //: ((GeneralNames) GeneralNames.ASN1.decode(bytes)).getNames();
+        //} catch (IOException e) {
+            //e.printStackTrace();
+            //return false;
+        //}
+        //if ((excluded_names[4] != null) || (permitted_names[4] != null)) {
+            //try {
+                //names.add(new GeneralName(4,
+                        //cert.getSubjectX500Principal().getName()));
+            //} catch (IOException e) {
+            //}
+        //}
+        //return isAcceptable(names);
     }
 
     
@@ -251,7 +247,7 @@ for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
     if(permitted_names == null)        
         {
             prepareNames();
-        } 
+        } //End block
         boolean[] types_presented = new boolean[9];
         boolean[] permitted_found = new boolean[9];
 for(GeneralName name : names)
@@ -266,9 +262,9 @@ for(int i = 0;i < excluded_names[type].size();i++)
                         boolean var68934A3E9455FA72420237EB05902327_182083251 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_162475308 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_162475308;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
     if((permitted_names[type] != null) && (!permitted_found[type]))            
             {
                 types_presented[type] = true;
@@ -277,10 +273,10 @@ for(int i = 0;i < permitted_names[type].size();i++)
     if(permitted_names[type].get(i).isAcceptable(name))                    
                     {
                         permitted_found[type] = true;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
 for(int type = 0;type < 9;type++)
         {
     if(types_presented[type] && !permitted_found[type])            
@@ -288,17 +284,16 @@ for(int type = 0;type < 9;type++)
                 boolean var68934A3E9455FA72420237EB05902327_692047408 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1371303874 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1371303874;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB326B5062B2F0E69046810717534CB09_2054305435 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1094585766 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1094585766;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.208 -0400", hash_original_method = "54185F2659E074B2203C13418D4687EB", hash_generated_method = "7767A1292F0845AA0F9EF9DD7A70C32B")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -311,36 +306,36 @@ for(int type = 0;type < 9;type++)
 for(GeneralSubtree generalSubtree : permittedSubtrees.getSubtrees())
             {
                 generalSubtree.dumpValue(sb, prefix + "    ");
-            } 
+            } //End block
             sb.append(prefix).append("  ]\n");
-        } 
+        } //End block
     if(excludedSubtrees != null)        
         {
             sb.append(prefix).append("  Excluded: [\n");
 for(GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees())
             {
                 generalSubtree.dumpValue(sb, prefix + "    ");
-            } 
+            } //End block
             sb.append(prefix).append("  ]\n");
-        } 
+        } //End block
         sb.append('\n').append(prefix).append("]\n");
-        
-        
-        
-            
-            
-                
-            
-            
-        
-        
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //sb.append(prefix).append("Name Constraints: [\n");
+        //if (permittedSubtrees != null) {
+            //sb.append(prefix).append("  Permitted: [\n");
+            //for (GeneralSubtree generalSubtree : permittedSubtrees.getSubtrees()) {
+                //generalSubtree.dumpValue(sb, prefix + "    ");
+            //}
+            //sb.append(prefix).append("  ]\n");
+        //}
+        //if (excludedSubtrees != null) {
+            //sb.append(prefix).append("  Excluded: [\n");
+            //for (GeneralSubtree generalSubtree : excludedSubtrees.getSubtrees()) {
+                //generalSubtree.dumpValue(sb, prefix + "    ");
+            //}
+            //sb.append(prefix).append("  ]\n");
+        //}
+        //sb.append('\n').append(prefix).append("]\n");
     }
 
     

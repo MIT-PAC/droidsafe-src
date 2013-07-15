@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.digests;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,8 +32,8 @@ public class SHA1Digest extends GeneralDigest {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.261 -0400", hash_original_method = "1DF8B488961A33FC47935CC7CCD682F9", hash_generated_method = "5BEBE9232FDB549FC09A55F3A228E9E2")
     public  SHA1Digest() {
         reset();
-        
-        
+        // ---------- Original Method ----------
+        //reset();
     }
 
     
@@ -47,36 +47,34 @@ public class SHA1Digest extends GeneralDigest {
         H5 = t.H5;
         System.arraycopy(t.X, 0, X, 0, t.X.length);
         xOff = t.xOff;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //H1 = t.H1;
+        //H2 = t.H2;
+        //H3 = t.H3;
+        //H4 = t.H4;
+        //H5 = t.H5;
+        //System.arraycopy(t.X, 0, X, 0, t.X.length);
+        //xOff = t.xOff;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.265 -0400", hash_original_method = "A93F195BA36C5C6DC02ECFC655EFA07D", hash_generated_method = "CC0B2F8B62006ACE9D4C68D54C0E7138")
     public String getAlgorithmName() {
 String var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827 =         "SHA-1";
         var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827.addTaint(taint);
         return var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827;
-        
-        
+        // ---------- Original Method ----------
+        //return "SHA-1";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.265 -0400", hash_original_method = "3039C1E557EE9A1557E064C50078D361", hash_generated_method = "E3A8AF639271E58A27F3059EE240FF05")
     public int getDigestSize() {
         int var4582481E693E9037762BFFA6D99AC172_949686236 = (DIGEST_LENGTH);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_6302753 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_6302753;
-        
-        
+        // ---------- Original Method ----------
+        //return DIGEST_LENGTH;
     }
 
     
@@ -94,17 +92,17 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827 =         "SHA-1";
     if(++xOff == 16)        
         {
             processBlock();
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int n = in[  inOff] << 24;
+        //n |= (in[++inOff] & 0xff) << 16;
+        //n |= (in[++inOff] & 0xff) << 8;
+        //n |= (in[++inOff] & 0xff);
+        //X[xOff] = n;
+        //if (++xOff == 16)
+        //{
+            //processBlock();
+        //}
     }
 
     
@@ -114,16 +112,16 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827 =         "SHA-1";
     if(xOff > 14)        
         {
             processBlock();
-        } 
+        } //End block
         X[14] = (int)(bitLength >>> 32);
         X[15] = (int)(bitLength & 0xffffffff);
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (xOff > 14)
+        //{
+            //processBlock();
+        //}
+        //X[14] = (int)(bitLength >>> 32);
+        //X[15] = (int)(bitLength & 0xffffffff);
     }
 
     
@@ -143,15 +141,15 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827 =         "SHA-1";
         int var4582481E693E9037762BFFA6D99AC172_845523749 = (DIGEST_LENGTH);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1120970797 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1120970797;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //finish();
+        //Pack.intToBigEndian(H1, out, outOff);
+        //Pack.intToBigEndian(H2, out, outOff + 4);
+        //Pack.intToBigEndian(H3, out, outOff + 8);
+        //Pack.intToBigEndian(H4, out, outOff + 12);
+        //Pack.intToBigEndian(H5, out, outOff + 16);
+        //reset();
+        //return DIGEST_LENGTH;
     }
 
     
@@ -167,23 +165,22 @@ String var1E1AC6D31B058D162EAB78A22C4FBDE6_1363702827 =         "SHA-1";
 for(int i = 0;i != X.length;i++)
         {
             X[i] = 0;
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.reset();
+        //H1 = 0x67452301;
+        //H2 = 0xefcdab89;
+        //H3 = 0x98badcfe;
+        //H4 = 0x10325476;
+        //H5 = 0xc3d2e1f0;
+        //xOff = 0;
+        //for (int i = 0; i != X.length; i++)
+        //{
+            //X[i] = 0;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.266 -0400", hash_original_method = "56B08AF140AAB579ED6513720D1D076E", hash_generated_method = "7A596A419272FE55426C1C8F8F275D9A")
     private int f(
         int    u,
@@ -195,12 +192,11 @@ for(int i = 0;i != X.length;i++)
         int var2487C51D3865899CC68D9844942F1A98_1517558290 = (((u & v) | ((~u) & w)));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694547998 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694547998;
-        
-        
+        // ---------- Original Method ----------
+        //return ((u & v) | ((~u) & w));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.266 -0400", hash_original_method = "D49E57B066D19086A0B27FD85ECFCAA8", hash_generated_method = "11FD5BC79042F838CF83665AB701E0E2")
     private int h(
         int    u,
@@ -212,12 +208,11 @@ for(int i = 0;i != X.length;i++)
         int var34210A5656A51D318801037134EA4008_1175295694 = ((u ^ v ^ w));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257608432 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257608432;
-        
-        
+        // ---------- Original Method ----------
+        //return (u ^ v ^ w);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.266 -0400", hash_original_method = "1EBC13F1810260C1F73348183BDA0BFB", hash_generated_method = "03F9B8A034BB92D6276A5BBA7FF8CEFA")
     private int g(
         int    u,
@@ -229,8 +224,8 @@ for(int i = 0;i != X.length;i++)
         int var279DD88AA3FA09DA950BC3D1A8E4846A_1353193408 = (((u & v) | (u & w) | (v & w)));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1673022138 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1673022138;
-        
-        
+        // ---------- Original Method ----------
+        //return ((u & v) | (u & w) | (v & w));
     }
 
     
@@ -240,7 +235,7 @@ for(int i = 16;i < 80;i++)
         {
             int t = X[i - 3] ^ X[i - 8] ^ X[i - 14] ^ X[i - 16];
             X[i] = t << 1 | t >>> 31;
-        } 
+        } //End block
         int A = H1;
         int B = H2;
         int C = H3;
@@ -259,7 +254,7 @@ for(int j = 0;j < 4;j++)
             D = D << 30 | D >>> 2;
             A += (B << 5 | B >>> 27) + f(C, D, E) + X[idx++] + Y1;
             C = C << 30 | C >>> 2;
-        } 
+        } //End block
 for(int j = 0;j < 4;j++)
         {
             E += (A << 5 | A >>> 27) + h(B, C, D) + X[idx++] + Y2;
@@ -272,7 +267,7 @@ for(int j = 0;j < 4;j++)
             D = D << 30 | D >>> 2;
             A += (B << 5 | B >>> 27) + h(C, D, E) + X[idx++] + Y2;
             C = C << 30 | C >>> 2;
-        } 
+        } //End block
 for(int j = 0;j < 4;j++)
         {
             E += (A << 5 | A >>> 27) + g(B, C, D) + X[idx++] + Y3;
@@ -285,7 +280,7 @@ for(int j = 0;j < 4;j++)
             D = D << 30 | D >>> 2;
             A += (B << 5 | B >>> 27) + g(C, D, E) + X[idx++] + Y3;
             C = C << 30 | C >>> 2;
-        } 
+        } //End block
 for(int j = 0;j <= 3;j++)
         {
             E += (A << 5 | A >>> 27) + h(B, C, D) + X[idx++] + Y4;
@@ -298,7 +293,7 @@ for(int j = 0;j <= 3;j++)
             D = D << 30 | D >>> 2;
             A += (B << 5 | B >>> 27) + h(C, D, E) + X[idx++] + Y4;
             C = C << 30 | C >>> 2;
-        } 
+        } //End block
         H1 += A;
         H2 += B;
         H3 += C;
@@ -308,9 +303,9 @@ for(int j = 0;j <= 3;j++)
 for(int i = 0;i < 16;i++)
         {
             X[i] = 0;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

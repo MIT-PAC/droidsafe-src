@@ -1,6 +1,6 @@
 package android.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,36 +31,35 @@ public class TelephonyManager {
     if(appContext != null)            
             {
                 sContext = appContext;
-            } 
+            } //End block
             else
             {
                 sContext = context;
-            } 
+            } //End block
             sRegistry = ITelephonyRegistry.Stub.asInterface(ServiceManager.getService(
                     "telephony.registry"));
-        } 
-        
-        
-            
-            
-                
-            
-                
-            
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (sContext == null) {
+            //Context appContext = context.getApplicationContext();
+            //if (appContext != null) {
+                //sContext = appContext;
+            //} else {
+                //sContext = context;
+            //}
+            //sRegistry = ITelephonyRegistry.Stub.asInterface(ServiceManager.getService(
+                    //"telephony.registry"));
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.643 -0400", hash_original_method = "8E4DE1903A24C15F73A151ACA155A108", hash_generated_method = "ED16BD9217E0E1C9750C925EEB9F2C13")
     private  TelephonyManager() {
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static TelephonyManager getDefault() {
+        public static TelephonyManager getDefault() {
         return sInstance;
     }
 
@@ -72,27 +71,27 @@ public class TelephonyManager {
 String var92E11FB3A5ACDBA36DC262A645834C01_1142982732 =             getSubscriberInfo().getDeviceSvn();
             var92E11FB3A5ACDBA36DC262A645834C01_1142982732.addTaint(taint);
             return var92E11FB3A5ACDBA36DC262A645834C01_1142982732;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1132500495 =             null;
             var540C13E9E156B687226421B24F2DF178_1132500495.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1132500495;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1513792622 =             null;
             var540C13E9E156B687226421B24F2DF178_1513792622.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1513792622;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getDeviceSvn();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -103,27 +102,27 @@ String var540C13E9E156B687226421B24F2DF178_1513792622 =             null;
 String var258DFF02E73F62A381FDA0D0FEF65321_1983486787 =             getSubscriberInfo().getDeviceId();
             var258DFF02E73F62A381FDA0D0FEF65321_1983486787.addTaint(taint);
             return var258DFF02E73F62A381FDA0D0FEF65321_1983486787;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1338358293 =             null;
             var540C13E9E156B687226421B24F2DF178_1338358293.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1338358293;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1713597650 =             null;
             var540C13E9E156B687226421B24F2DF178_1713597650.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1713597650;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getDeviceId();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -142,31 +141,31 @@ CellLocation var540C13E9E156B687226421B24F2DF178_891574220 =             null;
 CellLocation var8C6A66A89969D061B1ECE468EDE00B0A_1735180218 =             cl;
             var8C6A66A89969D061B1ECE468EDE00B0A_1735180218.addTaint(taint);
             return var8C6A66A89969D061B1ECE468EDE00B0A_1735180218;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 CellLocation var540C13E9E156B687226421B24F2DF178_1672195905 =             null;
             var540C13E9E156B687226421B24F2DF178_1672195905.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1672195905;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 CellLocation var540C13E9E156B687226421B24F2DF178_2083820590 =             null;
             var540C13E9E156B687226421B24F2DF178_2083820590.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2083820590;
-        } 
-        
-        
-            
-            
-            
-                
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //Bundle bundle = getITelephony().getCellLocation();
+            //CellLocation cl = CellLocation.newFromBundle(bundle);
+            //if (cl.isEmpty())
+                //return null;
+            //return cl;
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -175,19 +174,19 @@ CellLocation var540C13E9E156B687226421B24F2DF178_2083820590 =             null;
         try 
         {
             getITelephony().enableLocationUpdates();
-        } 
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
-        } 
-        
-        
-            
-        
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //getITelephony().enableLocationUpdates();
+        //} catch (RemoteException ex) {
+        //} catch (NullPointerException ex) {
+        //}
     }
 
     
@@ -196,19 +195,19 @@ CellLocation var540C13E9E156B687226421B24F2DF178_2083820590 =             null;
         try 
         {
             getITelephony().disableLocationUpdates();
-        } 
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
-        } 
-        
-        
-            
-        
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //getITelephony().disableLocationUpdates();
+        //} catch (RemoteException ex) {
+        //} catch (NullPointerException ex) {
+        //}
     }
 
     
@@ -219,27 +218,27 @@ CellLocation var540C13E9E156B687226421B24F2DF178_2083820590 =             null;
 List<NeighboringCellInfo> var5A9F94DE5778407204A51AFEA855C7DC_234771556 =             getITelephony().getNeighboringCellInfo();
             var5A9F94DE5778407204A51AFEA855C7DC_234771556.addTaint(taint);
             return var5A9F94DE5778407204A51AFEA855C7DC_234771556;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 List<NeighboringCellInfo> var540C13E9E156B687226421B24F2DF178_2022013916 =             null;
             var540C13E9E156B687226421B24F2DF178_2022013916.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2022013916;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 List<NeighboringCellInfo> var540C13E9E156B687226421B24F2DF178_1837557523 =             null;
             var540C13E9E156B687226421B24F2DF178_1837557523.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1837557523;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getNeighboringCellInfo();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -253,39 +252,39 @@ List<NeighboringCellInfo> var540C13E9E156B687226421B24F2DF178_1837557523 =      
                 int var207C7D40C8911F113054424D1DF5069F_77844387 = (telephony.getActivePhoneType());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_299958492 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_299958492;
-            } 
+            } //End block
             else
             {
                 int var5BBA19BD841898DA2F7C5FCD1995F1E4_461009494 = (getPhoneTypeFromProperty());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221092695 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221092695;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
             int var5BBA19BD841898DA2F7C5FCD1995F1E4_1298067393 = (getPhoneTypeFromProperty());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1004750374 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1004750374;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int var5BBA19BD841898DA2F7C5FCD1995F1E4_1640425810 = (getPhoneTypeFromProperty());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52238565 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52238565;
-        } 
-        
-        
-            
-            
-                
-            
-                
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try{
+            //ITelephony telephony = getITelephony();
+            //if (telephony != null) {
+                //return telephony.getActivePhoneType();
+            //} else {
+                //return getPhoneTypeFromProperty();
+            //}
+        //} catch (RemoteException ex) {
+            //return getPhoneTypeFromProperty();
+        //} catch (NullPointerException ex) {
+            //return getPhoneTypeFromProperty();
+        //}
     }
 
     
@@ -296,15 +295,15 @@ List<NeighboringCellInfo> var540C13E9E156B687226421B24F2DF178_1837557523 =      
             int var933A3EEBF382A8DB3F7AE8DB1A497E51_274642086 = (PHONE_TYPE_NONE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2070423127 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2070423127;
-        } 
+        } //End block
         int varFFB10A25E36ACDE8671CA3C5A340AF1F_1131611044 = (getCurrentPhoneType());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548074469 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548074469;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isVoiceCapable()) {
+            //return PHONE_TYPE_NONE;
+        //}
+        //return getCurrentPhoneType();
     }
 
     
@@ -315,11 +314,11 @@ List<NeighboringCellInfo> var540C13E9E156B687226421B24F2DF178_1837557523 =      
         int var599DCCE2998A6B40B1E38E8C6006CB0A_22528991 = (type);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1425841254 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1425841254;
-        
-        
-            
-                    
-        
+        // ---------- Original Method ----------
+        //int type =
+            //SystemProperties.getInt(TelephonyProperties.CURRENT_ACTIVE_PHONE,
+                    //getPhoneTypeFromNetworkType());
+        //return type;
     }
 
     
@@ -335,11 +334,11 @@ List<NeighboringCellInfo> var540C13E9E156B687226421B24F2DF178_1837557523 =      
         int varCC211E12A4E547D75008B3BFB24C1145_1941133944 = (PhoneFactory.getPhoneType(mode));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309517722 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309517722;
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //int mode = SystemProperties.getInt("ro.telephony.default_network", -1);
+        //if (mode == -1)
+            //return PHONE_TYPE_NONE;
+        //return PhoneFactory.getPhoneType(mode);
     }
 
     
@@ -348,8 +347,8 @@ List<NeighboringCellInfo> var540C13E9E156B687226421B24F2DF178_1837557523 =      
 String var73871D1FF3E9D719EECB3335948F1CDC_1447055758 =         SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ALPHA);
         var73871D1FF3E9D719EECB3335948F1CDC_1447055758.addTaint(taint);
         return var73871D1FF3E9D719EECB3335948F1CDC_1447055758;
-        
-        
+        // ---------- Original Method ----------
+        //return SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ALPHA);
     }
 
     
@@ -358,8 +357,8 @@ String var73871D1FF3E9D719EECB3335948F1CDC_1447055758 =         SystemProperties
 String var94807E458B4F9DA7EDF532B6F1F6CC70_1434583006 =         SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_NUMERIC);
         var94807E458B4F9DA7EDF532B6F1F6CC70_1434583006.addTaint(taint);
         return var94807E458B4F9DA7EDF532B6F1F6CC70_1434583006;
-        
-        
+        // ---------- Original Method ----------
+        //return SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_NUMERIC);
     }
 
     
@@ -368,8 +367,8 @@ String var94807E458B4F9DA7EDF532B6F1F6CC70_1434583006 =         SystemProperties
         boolean varDC2EE143E8D8E20973281D90126C9E6B_1148470665 = ("true".equals(SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ISROAMING)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_848362227 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_848362227;
-        
-        
+        // ---------- Original Method ----------
+        //return "true".equals(SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ISROAMING));
     }
 
     
@@ -378,8 +377,8 @@ String var94807E458B4F9DA7EDF532B6F1F6CC70_1434583006 =         SystemProperties
 String var8CFF43696043E49880EFA10219C0A265_953958393 =         SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY);
         var8CFF43696043E49880EFA10219C0A265_953958393.addTaint(taint);
         return var8CFF43696043E49880EFA10219C0A265_953958393;
-        
-        
+        // ---------- Original Method ----------
+        //return SystemProperties.get(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY);
     }
 
     
@@ -393,44 +392,43 @@ String var8CFF43696043E49880EFA10219C0A265_953958393 =         SystemProperties.
                 int varC3F1D1F3FD401BD68E763D59BF81C9D4_1544498017 = (telephony.getNetworkType());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439497582 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439497582;
-            } 
+            } //End block
             else
             {
                 int var6D35B307BC3AEF80DFCB303E8C106287_622341609 = (NETWORK_TYPE_UNKNOWN);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46059021 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46059021;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException ex)
         {
             int var6D35B307BC3AEF80DFCB303E8C106287_956643935 = (NETWORK_TYPE_UNKNOWN);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127772968 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1127772968;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int var6D35B307BC3AEF80DFCB303E8C106287_879366054 = (NETWORK_TYPE_UNKNOWN);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668519230 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668519230;
-        } 
-        
-        
-            
-            
-                
-            
-                
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try{
+            //ITelephony telephony = getITelephony();
+            //if (telephony != null) {
+                //return telephony.getNetworkType();
+            //} else {
+                //return NETWORK_TYPE_UNKNOWN;
+            //}
+        //} catch(RemoteException ex) {
+            //return NETWORK_TYPE_UNKNOWN;
+        //} catch (NullPointerException ex) {
+            //return NETWORK_TYPE_UNKNOWN;
+        //}
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getNetworkClass(int networkType) {
+        public static int getNetworkClass(int networkType) {
         switch (networkType) {
             case NETWORK_TYPE_GPRS:
             case NETWORK_TYPE_EDGE:
@@ -461,13 +459,12 @@ String var8CFF43696043E49880EFA10219C0A265_953958393 =         SystemProperties.
 String var92831851986B8D91B76559793762AEFE_1652538462 =         getNetworkTypeName(getNetworkType());
         var92831851986B8D91B76559793762AEFE_1652538462.addTaint(taint);
         return var92831851986B8D91B76559793762AEFE_1652538462;
-        
-        
+        // ---------- Original Method ----------
+        //return getNetworkTypeName(getNetworkType());
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String getNetworkTypeName(int type) {
+        public static String getNetworkTypeName(int type) {
         switch (type) {
             case NETWORK_TYPE_GPRS:
                 return "GPRS";
@@ -512,27 +509,27 @@ String var92831851986B8D91B76559793762AEFE_1652538462 =         getNetworkTypeNa
             boolean varF83DB46E6BE3F596A2204CF762E5714B_1904312692 = (getITelephony().hasIccCard());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1354236658 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1354236658;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_470607233 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1317818435 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317818435;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_1653110752 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_364050323 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_364050323;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().hasIccCard();
+        //} catch (RemoteException ex) {
+            //return false;
+        //} catch (NullPointerException ex) {
+            //return false;
+        //}
     }
 
     
@@ -544,61 +541,61 @@ String var92831851986B8D91B76559793762AEFE_1652538462 =         getNetworkTypeNa
             int var310859A914E1FF7D8D3B6DCF9FEC27D5_973858099 = (SIM_STATE_ABSENT);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_51909305 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_51909305;
-        } 
+        } //End block
         else
     if("PIN_REQUIRED".equals(prop))        
         {
             int varEAAA7869D7A4FDD6E0D342001CDB3F78_168529465 = (SIM_STATE_PIN_REQUIRED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888833352 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1888833352;
-        } 
+        } //End block
         else
     if("PUK_REQUIRED".equals(prop))        
         {
             int var33EAD433ED01A985171371F88F25466E_967048327 = (SIM_STATE_PUK_REQUIRED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1146640192 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1146640192;
-        } 
+        } //End block
         else
     if("NETWORK_LOCKED".equals(prop))        
         {
             int var61C51B26F8E195647CE4265C60EE96AD_919799666 = (SIM_STATE_NETWORK_LOCKED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133903173 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133903173;
-        } 
+        } //End block
         else
     if("READY".equals(prop))        
         {
             int var68898ABDFAF17764D66A814C17D4CA91_1218826324 = (SIM_STATE_READY);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2000066814 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2000066814;
-        } 
+        } //End block
         else
         {
             int var4E0AE99BC80B48CCA9518F22A8A64586_669880278 = (SIM_STATE_UNKNOWN);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1223816933 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1223816933;
-        } 
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String prop = SystemProperties.get(TelephonyProperties.PROPERTY_SIM_STATE);
+        //if ("ABSENT".equals(prop)) {
+            //return SIM_STATE_ABSENT;
+        //}
+        //else if ("PIN_REQUIRED".equals(prop)) {
+            //return SIM_STATE_PIN_REQUIRED;
+        //}
+        //else if ("PUK_REQUIRED".equals(prop)) {
+            //return SIM_STATE_PUK_REQUIRED;
+        //}
+        //else if ("NETWORK_LOCKED".equals(prop)) {
+            //return SIM_STATE_NETWORK_LOCKED;
+        //}
+        //else if ("READY".equals(prop)) {
+            //return SIM_STATE_READY;
+        //}
+        //else {
+            //return SIM_STATE_UNKNOWN;
+        //}
     }
 
     
@@ -607,8 +604,8 @@ String var92831851986B8D91B76559793762AEFE_1652538462 =         getNetworkTypeNa
 String varE0D8DCFEB481C5F1DA67FE16D1AE487D_1660982655 =         SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC);
         varE0D8DCFEB481C5F1DA67FE16D1AE487D_1660982655.addTaint(taint);
         return varE0D8DCFEB481C5F1DA67FE16D1AE487D_1660982655;
-        
-        
+        // ---------- Original Method ----------
+        //return SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC);
     }
 
     
@@ -617,8 +614,8 @@ String varE0D8DCFEB481C5F1DA67FE16D1AE487D_1660982655 =         SystemProperties
 String varAAD94F657014223D99B4CB3AB4E39386_692643035 =         SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA);
         varAAD94F657014223D99B4CB3AB4E39386_692643035.addTaint(taint);
         return varAAD94F657014223D99B4CB3AB4E39386_692643035;
-        
-        
+        // ---------- Original Method ----------
+        //return SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ALPHA);
     }
 
     
@@ -627,8 +624,8 @@ String varAAD94F657014223D99B4CB3AB4E39386_692643035 =         SystemProperties.
 String var1D4558181D427765E58D96BCE70EB4D2_1674426396 =         SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY);
         var1D4558181D427765E58D96BCE70EB4D2_1674426396.addTaint(taint);
         return var1D4558181D427765E58D96BCE70EB4D2_1674426396;
-        
-        
+        // ---------- Original Method ----------
+        //return SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_ISO_COUNTRY);
     }
 
     
@@ -639,27 +636,27 @@ String var1D4558181D427765E58D96BCE70EB4D2_1674426396 =         SystemProperties
 String varC07CA9B8ACF6FBB55A1905C372F44A2C_1297777737 =             getSubscriberInfo().getIccSerialNumber();
             varC07CA9B8ACF6FBB55A1905C372F44A2C_1297777737.addTaint(taint);
             return varC07CA9B8ACF6FBB55A1905C372F44A2C_1297777737;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1217645337 =             null;
             var540C13E9E156B687226421B24F2DF178_1217645337.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1217645337;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_238720608 =             null;
             var540C13E9E156B687226421B24F2DF178_238720608.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_238720608;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getIccSerialNumber();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -670,27 +667,27 @@ String var540C13E9E156B687226421B24F2DF178_238720608 =             null;
             int var8D5C79ED7FDF1504D237906C08876124_83430560 = (getITelephony().getLteOnCdmaMode());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350687112 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1350687112;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             int var85561970C7F35EF1CB0B14D4B853BD1F_1676431233 = (Phone.LTE_ON_CDMA_UNKNOWN);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1330131632 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1330131632;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int var85561970C7F35EF1CB0B14D4B853BD1F_2119167963 = (Phone.LTE_ON_CDMA_UNKNOWN);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_389426672 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_389426672;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getLteOnCdmaMode();
+        //} catch (RemoteException ex) {
+            //return Phone.LTE_ON_CDMA_UNKNOWN;
+        //} catch (NullPointerException ex) {
+            //return Phone.LTE_ON_CDMA_UNKNOWN;
+        //}
     }
 
     
@@ -701,27 +698,27 @@ String var540C13E9E156B687226421B24F2DF178_238720608 =             null;
 String varB158F957286FF2E581DA89AD3BAA5EA6_1575406977 =             getSubscriberInfo().getSubscriberId();
             varB158F957286FF2E581DA89AD3BAA5EA6_1575406977.addTaint(taint);
             return varB158F957286FF2E581DA89AD3BAA5EA6_1575406977;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_82271988 =             null;
             var540C13E9E156B687226421B24F2DF178_82271988.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_82271988;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1066293683 =             null;
             var540C13E9E156B687226421B24F2DF178_1066293683.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1066293683;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getSubscriberId();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -732,27 +729,27 @@ String var540C13E9E156B687226421B24F2DF178_1066293683 =             null;
 String var983498833C06A525878EEFCDB264A0CB_2041760284 =             getSubscriberInfo().getLine1Number();
             var983498833C06A525878EEFCDB264A0CB_2041760284.addTaint(taint);
             return var983498833C06A525878EEFCDB264A0CB_2041760284;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1958432307 =             null;
             var540C13E9E156B687226421B24F2DF178_1958432307.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1958432307;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_310617462 =             null;
             var540C13E9E156B687226421B24F2DF178_310617462.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_310617462;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getLine1Number();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -763,27 +760,27 @@ String var540C13E9E156B687226421B24F2DF178_310617462 =             null;
 String var5DB8D4BD6E6FC520259D22B155656688_713632212 =             getSubscriberInfo().getLine1AlphaTag();
             var5DB8D4BD6E6FC520259D22B155656688_713632212.addTaint(taint);
             return var5DB8D4BD6E6FC520259D22B155656688_713632212;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_317807484 =             null;
             var540C13E9E156B687226421B24F2DF178_317807484.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_317807484;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1758769524 =             null;
             var540C13E9E156B687226421B24F2DF178_1758769524.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1758769524;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getLine1AlphaTag();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -794,27 +791,27 @@ String var540C13E9E156B687226421B24F2DF178_1758769524 =             null;
 String var28DE8B75CFEF55CC92B40A66094DEA13_225937196 =             getSubscriberInfo().getMsisdn();
             var28DE8B75CFEF55CC92B40A66094DEA13_225937196.addTaint(taint);
             return var28DE8B75CFEF55CC92B40A66094DEA13_225937196;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1477323408 =             null;
             var540C13E9E156B687226421B24F2DF178_1477323408.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1477323408;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1788107455 =             null;
             var540C13E9E156B687226421B24F2DF178_1788107455.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1788107455;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getMsisdn();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -825,27 +822,27 @@ String var540C13E9E156B687226421B24F2DF178_1788107455 =             null;
 String varEEDDBA2EC557565748B47A89CA9CD41F_1133354685 =             getSubscriberInfo().getVoiceMailNumber();
             varEEDDBA2EC557565748B47A89CA9CD41F_1133354685.addTaint(taint);
             return varEEDDBA2EC557565748B47A89CA9CD41F_1133354685;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1946058594 =             null;
             var540C13E9E156B687226421B24F2DF178_1946058594.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1946058594;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_783322921 =             null;
             var540C13E9E156B687226421B24F2DF178_783322921.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_783322921;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getVoiceMailNumber();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -856,27 +853,27 @@ String var540C13E9E156B687226421B24F2DF178_783322921 =             null;
 String varAC9D7B026F058803907DA664ED69D865_360715502 =             getSubscriberInfo().getCompleteVoiceMailNumber();
             varAC9D7B026F058803907DA664ED69D865_360715502.addTaint(taint);
             return varAC9D7B026F058803907DA664ED69D865_360715502;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_830533973 =             null;
             var540C13E9E156B687226421B24F2DF178_830533973.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_830533973;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1751900263 =             null;
             var540C13E9E156B687226421B24F2DF178_1751900263.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1751900263;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getCompleteVoiceMailNumber();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -887,27 +884,27 @@ String var540C13E9E156B687226421B24F2DF178_1751900263 =             null;
             int var78722B9D5687BE8E31F3703D63503553_568617321 = (getITelephony().getVoiceMessageCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123917612 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123917612;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1930841878 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145718492 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145718492;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1164309856 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864540731 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864540731;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getVoiceMessageCount();
+        //} catch (RemoteException ex) {
+            //return 0;
+        //} catch (NullPointerException ex) {
+            //return 0;
+        //}
     }
 
     
@@ -918,27 +915,27 @@ String var540C13E9E156B687226421B24F2DF178_1751900263 =             null;
 String var60728D46261C57D7990E1218012D2E2A_1754174316 =             getSubscriberInfo().getVoiceMailAlphaTag();
             var60728D46261C57D7990E1218012D2E2A_1754174316.addTaint(taint);
             return var60728D46261C57D7990E1218012D2E2A_1754174316;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1918036527 =             null;
             var540C13E9E156B687226421B24F2DF178_1918036527.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1918036527;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_883755663 =             null;
             var540C13E9E156B687226421B24F2DF178_883755663.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_883755663;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getVoiceMailAlphaTag();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -949,27 +946,27 @@ String var540C13E9E156B687226421B24F2DF178_883755663 =             null;
 String var5DCEABE210E09D0767D02AEADC198C7C_1986662750 =             getSubscriberInfo().getIsimImpi();
             var5DCEABE210E09D0767D02AEADC198C7C_1986662750.addTaint(taint);
             return var5DCEABE210E09D0767D02AEADC198C7C_1986662750;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1308410477 =             null;
             var540C13E9E156B687226421B24F2DF178_1308410477.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1308410477;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1013775671 =             null;
             var540C13E9E156B687226421B24F2DF178_1013775671.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1013775671;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getIsimImpi();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -980,27 +977,27 @@ String var540C13E9E156B687226421B24F2DF178_1013775671 =             null;
 String var75CFD427E781BA29EF05EB9A61BBC625_1604523917 =             getSubscriberInfo().getIsimDomain();
             var75CFD427E781BA29EF05EB9A61BBC625_1604523917.addTaint(taint);
             return var75CFD427E781BA29EF05EB9A61BBC625_1604523917;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1794527532 =             null;
             var540C13E9E156B687226421B24F2DF178_1794527532.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1794527532;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1444093410 =             null;
             var540C13E9E156B687226421B24F2DF178_1444093410.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1444093410;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getIsimDomain();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -1011,38 +1008,37 @@ String var540C13E9E156B687226421B24F2DF178_1444093410 =             null;
 String[] varF954435B24638BDFE068699A047A39D8_77469957 =             getSubscriberInfo().getIsimImpu();
             varF954435B24638BDFE068699A047A39D8_77469957.addTaint(taint);
             return varF954435B24638BDFE068699A047A39D8_77469957;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String[] var540C13E9E156B687226421B24F2DF178_1467568867 =             null;
             var540C13E9E156B687226421B24F2DF178_1467568867.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1467568867;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String[] var540C13E9E156B687226421B24F2DF178_2066334682 =             null;
             var540C13E9E156B687226421B24F2DF178_2066334682.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2066334682;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getSubscriberInfo().getIsimImpu();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.660 -0400", hash_original_method = "0499CDF49B310038A9BEEA0F802EAB63", hash_generated_method = "76C1B88A5473D88A8D3BB9F92CD97438")
     private IPhoneSubInfo getSubscriberInfo() {
 IPhoneSubInfo var7BACB97921B95FA085BBBBACC7480C10_94451353 =         IPhoneSubInfo.Stub.asInterface(ServiceManager.getService("iphonesubinfo"));
         var7BACB97921B95FA085BBBBACC7480C10_94451353.addTaint(taint);
         return var7BACB97921B95FA085BBBBACC7480C10_94451353;
-        
-        
+        // ---------- Original Method ----------
+        //return IPhoneSubInfo.Stub.asInterface(ServiceManager.getService("iphonesubinfo"));
     }
 
     
@@ -1053,27 +1049,27 @@ IPhoneSubInfo var7BACB97921B95FA085BBBBACC7480C10_94451353 =         IPhoneSubIn
             int var0533A309AC0CCC3C1518BAC766974296_470059686 = (getITelephony().getCallState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_104700265 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_104700265;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             int varACD5DB586FA3C193894F7E999ECE3BDC_999234564 = (CALL_STATE_IDLE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145335905 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145335905;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int varACD5DB586FA3C193894F7E999ECE3BDC_259640748 = (CALL_STATE_IDLE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_774995684 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_774995684;
-        } 
-        
-        
-            
-        
-            
-        
-          
-      
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getCallState();
+        //} catch (RemoteException ex) {
+            //return CALL_STATE_IDLE;
+        //} catch (NullPointerException ex) {
+          //return CALL_STATE_IDLE;
+      //}
     }
 
     
@@ -1084,27 +1080,27 @@ IPhoneSubInfo var7BACB97921B95FA085BBBBACC7480C10_94451353 =         IPhoneSubIn
             int varE198B3E0B8F7EB8111E1E325E736D999_1678413796 = (getITelephony().getDataActivity());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259040225 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259040225;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             int varF280D694AF4929CB77F11E46920F2BC7_1555416345 = (DATA_ACTIVITY_NONE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670405701 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670405701;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int varF280D694AF4929CB77F11E46920F2BC7_2088293411 = (DATA_ACTIVITY_NONE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_954562539 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_954562539;
-        } 
-        
-        
-            
-        
-            
-        
-          
-      
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getDataActivity();
+        //} catch (RemoteException ex) {
+            //return DATA_ACTIVITY_NONE;
+        //} catch (NullPointerException ex) {
+          //return DATA_ACTIVITY_NONE;
+      //}
     }
 
     
@@ -1115,27 +1111,27 @@ IPhoneSubInfo var7BACB97921B95FA085BBBBACC7480C10_94451353 =         IPhoneSubIn
             int var05DEB0811BD07FD65D630D2271C9E705_944302865 = (getITelephony().getDataState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1553588732 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1553588732;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             int var29171A006551A2ED0D5825353A5B1E74_332841563 = (DATA_DISCONNECTED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_163489574 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_163489574;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int var29171A006551A2ED0D5825353A5B1E74_1697455751 = (DATA_DISCONNECTED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1634505457 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1634505457;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getDataState();
+        //} catch (RemoteException ex) {
+            //return DATA_DISCONNECTED;
+        //} catch (NullPointerException ex) {
+            //return DATA_DISCONNECTED;
+        //}
     }
 
     
@@ -1144,8 +1140,8 @@ IPhoneSubInfo var7BACB97921B95FA085BBBBACC7480C10_94451353 =         IPhoneSubIn
 ITelephony varE24CC4A0FD54521112B71EDFD4C7944D_740062067 =         ITelephony.Stub.asInterface(ServiceManager.getService(Context.TELEPHONY_SERVICE));
         varE24CC4A0FD54521112B71EDFD4C7944D_740062067.addTaint(taint);
         return varE24CC4A0FD54521112B71EDFD4C7944D_740062067;
-        
-        
+        // ---------- Original Method ----------
+        //return ITelephony.Stub.asInterface(ServiceManager.getService(Context.TELEPHONY_SERVICE));
     }
 
     
@@ -1158,21 +1154,21 @@ ITelephony varE24CC4A0FD54521112B71EDFD4C7944D_740062067 =         ITelephony.St
         {
             Boolean notifyNow = (getITelephony() != null);
             sRegistry.listen(pkgForDebug, listener.callback, events, notifyNow);
-        } 
+        } //End block
         catch (RemoteException ex)
         {
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
-        } 
-        
-        
-        
-            
-            
-        
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //String pkgForDebug = sContext != null ? sContext.getPackageName() : "<unknown>";
+        //try {
+            //Boolean notifyNow = (getITelephony() != null);
+            //sRegistry.listen(pkgForDebug, listener.callback, events, notifyNow);
+        //} catch (RemoteException ex) {
+        //} catch (NullPointerException ex) {
+        //}
     }
 
     
@@ -1183,27 +1179,27 @@ ITelephony varE24CC4A0FD54521112B71EDFD4C7944D_740062067 =         ITelephony.St
             int varCA2A48CD0337F08156258F3B047734F6_726017763 = (getITelephony().getCdmaEriIconIndex());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1100008603 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1100008603;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1320974742 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_536549491 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_536549491;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1811490625 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1095057733 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1095057733;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getCdmaEriIconIndex();
+        //} catch (RemoteException ex) {
+            //return -1;
+        //} catch (NullPointerException ex) {
+            //return -1;
+        //}
     }
 
     
@@ -1214,27 +1210,27 @@ ITelephony varE24CC4A0FD54521112B71EDFD4C7944D_740062067 =         ITelephony.St
             int varBFA19FD509DB7D6C9AE52A8F6879FE87_1779579783 = (getITelephony().getCdmaEriIconMode());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_217794217 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_217794217;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1151882100 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_448052274 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_448052274;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_414288589 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967191300 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1967191300;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getCdmaEriIconMode();
+        //} catch (RemoteException ex) {
+            //return -1;
+        //} catch (NullPointerException ex) {
+            //return -1;
+        //}
     }
 
     
@@ -1245,27 +1241,27 @@ ITelephony varE24CC4A0FD54521112B71EDFD4C7944D_740062067 =         ITelephony.St
 String varDA840479D06986C73A4D036E8023EF9C_1715097618 =             getITelephony().getCdmaEriText();
             varDA840479D06986C73A4D036E8023EF9C_1715097618.addTaint(taint);
             return varDA840479D06986C73A4D036E8023EF9C_1715097618;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_555806295 =             null;
             var540C13E9E156B687226421B24F2DF178_555806295.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_555806295;
-        } 
+        } //End block
         catch (NullPointerException ex)
         {
 String var540C13E9E156B687226421B24F2DF178_1649740831 =             null;
             var540C13E9E156B687226421B24F2DF178_1649740831.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1649740831;
-        } 
-        
-        
-            
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return getITelephony().getCdmaEriText();
+        //} catch (RemoteException ex) {
+            //return null;
+        //} catch (NullPointerException ex) {
+            //return null;
+        //}
     }
 
     
@@ -1281,10 +1277,10 @@ String var540C13E9E156B687226421B24F2DF178_1649740831 =             null;
                 com.android.internal.R.bool.config_voice_capable));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246004115 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246004115;
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (sContext == null) return true;
+        //return sContext.getResources().getBoolean(
+                //com.android.internal.R.bool.config_voice_capable);
     }
 
     
@@ -1300,10 +1296,10 @@ String var540C13E9E156B687226421B24F2DF178_1649740831 =             null;
                 com.android.internal.R.bool.config_sms_capable));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1655269858 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1655269858;
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (sContext == null) return true;
+        //return sContext.getResources().getBoolean(
+                //com.android.internal.R.bool.config_sms_capable);
     }
 
     

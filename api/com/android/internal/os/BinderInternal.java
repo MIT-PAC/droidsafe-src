@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class BinderInternal {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.904 -0400", hash_original_method = "574B8095C5FEB674167544EA24FDCEF4", hash_generated_method = "574B8095C5FEB674167544EA24FDCEF4")
     public BinderInternal ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -29,8 +29,7 @@ public class BinderInternal {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static long getLastGcTime() {
+        public static long getLastGcTime() {
         return mLastGcTime;
     }
 
@@ -64,7 +63,7 @@ public class BinderInternal {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.906 -0400", hash_original_method = "23BF1C701EF3B7F131F4805BD4892CC0", hash_generated_method = "23BF1C701EF3B7F131F4805BD4892CC0")
         public GcWatcher ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -74,10 +73,10 @@ public class BinderInternal {
             handleGc();
             mLastGcTime = SystemClock.uptimeMillis();
             mGcWatcher = new WeakReference<GcWatcher>(new GcWatcher());
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //handleGc();
+            //mLastGcTime = SystemClock.uptimeMillis();
+            //mGcWatcher = new WeakReference<GcWatcher>(new GcWatcher());
         }
 
         

@@ -1,6 +1,6 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,15 +27,15 @@ public class MatrixCursor extends AbstractCursor {
     if(initialCapacity < 1)        
         {
             initialCapacity = 1;
-        } 
+        } //End block
         this.data = new Object[columnCount * initialCapacity];
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //this.columnNames = columnNames;
+        //this.columnCount = columnNames.length;
+        //if (initialCapacity < 1) {
+            //initialCapacity = 1;
+        //}
+        //this.data = new Object[columnCount * initialCapacity];
     }
 
     
@@ -43,7 +43,7 @@ public class MatrixCursor extends AbstractCursor {
     public  MatrixCursor(String[] columnNames) {
         this(columnNames, 16);
         addTaint(columnNames[0].getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -56,34 +56,34 @@ public class MatrixCursor extends AbstractCursor {
                     + column + ", # of columns: " +  columnCount);
             varAA6C033199A3FA24CC2FA97E38C9B3F5_199025639.addTaint(taint);
             throw varAA6C033199A3FA24CC2FA97E38C9B3F5_199025639;
-        } 
+        } //End block
     if(mPos < 0)        
         {
             CursorIndexOutOfBoundsException var3D21778C7346A6FF4A05ADBEC270ADAB_1754928069 = new CursorIndexOutOfBoundsException("Before first row.");
             var3D21778C7346A6FF4A05ADBEC270ADAB_1754928069.addTaint(taint);
             throw var3D21778C7346A6FF4A05ADBEC270ADAB_1754928069;
-        } 
+        } //End block
     if(mPos >= rowCount)        
         {
             CursorIndexOutOfBoundsException varEB90D69B196AA1A76BB78C83907BAFE1_1556218385 = new CursorIndexOutOfBoundsException("After last row.");
             varEB90D69B196AA1A76BB78C83907BAFE1_1556218385.addTaint(taint);
             throw varEB90D69B196AA1A76BB78C83907BAFE1_1556218385;
-        } 
+        } //End block
 Object varCE665E50DCCC5F5ACA9B01B763AFAADC_2108878429 =         data[mPos * columnCount + column];
         varCE665E50DCCC5F5ACA9B01B763AFAADC_2108878429.addTaint(taint);
         return varCE665E50DCCC5F5ACA9B01B763AFAADC_2108878429;
-        
-        
-            
-                    
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (column < 0 || column >= columnCount) {
+            //throw new CursorIndexOutOfBoundsException("Requested column: "
+                    //+ column + ", # of columns: " +  columnCount);
+        //}
+        //if (mPos < 0) {
+            //throw new CursorIndexOutOfBoundsException("Before first row.");
+        //}
+        //if (mPos >= rowCount) {
+            //throw new CursorIndexOutOfBoundsException("After last row.");
+        //}
+        //return data[mPos * columnCount + column];
     }
 
     
@@ -96,12 +96,12 @@ Object varCE665E50DCCC5F5ACA9B01B763AFAADC_2108878429 =         data[mPos * colu
 RowBuilder var7950EA17E1868E3E572BA7A944BA99FF_1353133149 =         new RowBuilder(start, endIndex);
         var7950EA17E1868E3E572BA7A944BA99FF_1353133149.addTaint(taint);
         return var7950EA17E1868E3E572BA7A944BA99FF_1353133149;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //rowCount++;
+        //int endIndex = rowCount * columnCount;
+        //ensureCapacity(endIndex);
+        //int start = endIndex - columnCount;
+        //return new RowBuilder(start, endIndex);
     }
 
     
@@ -115,19 +115,19 @@ RowBuilder var7950EA17E1868E3E572BA7A944BA99FF_1353133149 =         new RowBuild
                     + columnValues.length);
             var1B6D919EAA44EC098D9B8D13AD643A68_1135831291.addTaint(taint);
             throw var1B6D919EAA44EC098D9B8D13AD643A68_1135831291;
-        } 
+        } //End block
         int start = rowCount++ * columnCount;
         ensureCapacity(start + columnCount);
         System.arraycopy(columnValues, 0, data, start, columnCount);
-        
-        
-            
-                    
-                    
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (columnValues.length != columnCount) {
+            //throw new IllegalArgumentException("columnNames.length = "
+                    //+ columnCount + ", columnValues.length = "
+                    //+ columnValues.length);
+        //}
+        //int start = rowCount++ * columnCount;
+        //ensureCapacity(start + columnCount);
+        //System.arraycopy(columnValues, 0, data, start, columnCount);
     }
 
     
@@ -141,7 +141,7 @@ RowBuilder var7950EA17E1868E3E572BA7A944BA99FF_1353133149 =         new RowBuild
         {
             addRow((ArrayList<?>) columnValues, start);
             return;
-        } 
+        } //End block
         int current = start;
         Object[] localData = data;
 for(Object columnValue : columnValues)
@@ -152,39 +152,39 @@ for(Object columnValue : columnValues)
                         "columnValues.size() > columnNames.length");
                 var202E1063591A52171D9986809A374055_784460009.addTaint(taint);
                 throw var202E1063591A52171D9986809A374055_784460009;
-            } 
+            } //End block
             localData[current++] = columnValue;
-        } 
+        } //End block
     if(current != end)        
         {
             IllegalArgumentException var364C5F88481296176AB11E0A8F4AE466_1470137212 = new IllegalArgumentException(
                     "columnValues.size() < columnNames.length");
             var364C5F88481296176AB11E0A8F4AE466_1470137212.addTaint(taint);
             throw var364C5F88481296176AB11E0A8F4AE466_1470137212;
-        } 
+        } //End block
         rowCount++;
-        
-        
-        
-        
-        
-            
-            
-        
-        
-        
-        
-            
-                
-                        
-            
-            
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //int start = rowCount * columnCount;
+        //int end = start + columnCount;
+        //ensureCapacity(end);
+        //if (columnValues instanceof ArrayList<?>) {
+            //addRow((ArrayList<?>) columnValues, start);
+            //return;
+        //}
+        //int current = start;
+        //Object[] localData = data;
+        //for (Object columnValue : columnValues) {
+            //if (current == end) {
+                //throw new IllegalArgumentException(
+                        //"columnValues.size() > columnNames.length");
+            //}
+            //localData[current++] = columnValue;
+        //}
+        //if (current != end) {
+            //throw new IllegalArgumentException(
+                    //"columnValues.size() < columnNames.length");
+        //}
+        //rowCount++;
     }
 
     
@@ -199,24 +199,24 @@ for(Object columnValue : columnValues)
                     + columnCount + ", columnValues.size() = " + size);
             varFEDC0437535BD4EA0EC316BDBEA60742_1928776904.addTaint(taint);
             throw varFEDC0437535BD4EA0EC316BDBEA60742_1928776904;
-        } 
+        } //End block
         rowCount++;
         Object[] localData = data;
 for(int i = 0;i < size;i++)
         {
             localData[start + i] = columnValues.get(i);
-        } 
-        
-        
-        
-            
-                    
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int size = columnValues.size();
+        //if (size != columnCount) {
+            //throw new IllegalArgumentException("columnNames.length = "
+                    //+ columnCount + ", columnValues.size() = " + size);
+        //}
+        //rowCount++;
+        //Object[] localData = data;
+        //for (int i = 0; i < size; i++) {
+            //localData[start + i] = columnValues.get(i);
+        //}
     }
 
     
@@ -230,44 +230,42 @@ for(int i = 0;i < size;i++)
     if(newSize < size)            
             {
                 newSize = size;
-            } 
+            } //End block
             this.data = new Object[newSize];
             System.arraycopy(oldData, 0, this.data, 0, oldData.length);
-        } 
-        
-        
-            
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (size > data.length) {
+            //Object[] oldData = this.data;
+            //int newSize = data.length * 2;
+            //if (newSize < size) {
+                //newSize = size;
+            //}
+            //this.data = new Object[newSize];
+            //System.arraycopy(oldData, 0, this.data, 0, oldData.length);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.385 -0400", hash_original_method = "3C738FD66B9E4F046395F2884F1D431C", hash_generated_method = "869CE8DED294E5F9A7541771BC6C9D80")
     @Override
     public int getCount() {
         int var2262F69C6A73B803935283AD598F5007_737150939 = (rowCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914858393 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914858393;
-        
-        
+        // ---------- Original Method ----------
+        //return rowCount;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.386 -0400", hash_original_method = "438CBE048C14BFF65A950EB22F18A5DC", hash_generated_method = "EEA81837275BF5DCD5118484A8634B4E")
     @Override
     public String[] getColumnNames() {
 String[] var4DF41AA96E4B5CE54D79E2350D77438A_47385753 =         columnNames;
         var4DF41AA96E4B5CE54D79E2350D77438A_47385753.addTaint(taint);
         return var4DF41AA96E4B5CE54D79E2350D77438A_47385753;
-        
-        
+        // ---------- Original Method ----------
+        //return columnNames;
     }
 
     
@@ -285,10 +283,10 @@ String var540C13E9E156B687226421B24F2DF178_934819611 =         null;
 String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString();
         var066A638514F2DD1476BFFD2A1D516E60_2077782415.addTaint(taint);
         return var066A638514F2DD1476BFFD2A1D516E60_2077782415;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object value = get(column);
+        //if (value == null) return null;
+        //return value.toString();
     }
 
     
@@ -312,11 +310,11 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
         short var0F4B5C7FF1012118D6E587DC44FEE1B5_1303799348 = (Short.parseShort(value.toString()));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1206168307 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1206168307;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object value = get(column);
+        //if (value == null) return 0;
+        //if (value instanceof Number) return ((Number) value).shortValue();
+        //return Short.parseShort(value.toString());
     }
 
     
@@ -340,11 +338,11 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
         int varAA0CFC143BDFA635BAFF8C731C6BD0D6_208786648 = (Integer.parseInt(value.toString()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694854554 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694854554;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object value = get(column);
+        //if (value == null) return 0;
+        //if (value instanceof Number) return ((Number) value).intValue();
+        //return Integer.parseInt(value.toString());
     }
 
     
@@ -368,11 +366,11 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
         long var786E5C1CC9E41B7C575B548C12B9111C_595301419 = (Long.parseLong(value.toString()));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1735239300 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1735239300;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object value = get(column);
+        //if (value == null) return 0;
+        //if (value instanceof Number) return ((Number) value).longValue();
+        //return Long.parseLong(value.toString());
     }
 
     
@@ -396,11 +394,11 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
         float var177994F88C4044A63D747B7B6EB92C50_306911702 = (Float.parseFloat(value.toString()));
                 float var546ADE640B6EDFBC8A086EF31347E768_2107389001 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_2107389001;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object value = get(column);
+        //if (value == null) return 0.0f;
+        //if (value instanceof Number) return ((Number) value).floatValue();
+        //return Float.parseFloat(value.toString());
     }
 
     
@@ -424,11 +422,11 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
         double var3F33CACB5D37F77FF4C28C49AEA451BB_1176302432 = (Double.parseDouble(value.toString()));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1548806748 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1548806748;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object value = get(column);
+        //if (value == null) return 0.0d;
+        //if (value instanceof Number) return ((Number) value).doubleValue();
+        //return Double.parseDouble(value.toString());
     }
 
     
@@ -440,9 +438,9 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
         byte[] var80878A6C3D4EF9BCAD0DC4FE999679F3_2069150029 = ((byte[]) value);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1672993950 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1672993950;
-        
-        
-        
+        // ---------- Original Method ----------
+        //Object value = get(column);
+        //return (byte[]) value;
     }
 
     
@@ -453,8 +451,8 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
         int var48F1D216A75947BCCF8945DE13063F13_2033492573 = (DatabaseUtils.getTypeOfObject(get(column)));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1648957116 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1648957116;
-        
-        
+        // ---------- Original Method ----------
+        //return DatabaseUtils.getTypeOfObject(get(column));
     }
 
     
@@ -465,8 +463,8 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
         boolean var46B2337F542FDA0323ED7EE69DC685FC_1345804657 = (get(column) == null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1377394914 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1377394914;
-        
-        
+        // ---------- Original Method ----------
+        //return get(column) == null;
     }
 
     
@@ -482,9 +480,9 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
           RowBuilder(int index, int endIndex) {
             this.index = index;
             this.endIndex = endIndex;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.index = index;
+            //this.endIndex = endIndex;
         }
 
         
@@ -496,18 +494,18 @@ String var066A638514F2DD1476BFFD2A1D516E60_2077782415 =         value.toString()
                         "No more columns left.");
                 var7E5AAD6AD133D510DFD22F4FBC6E743F_216535215.addTaint(taint);
                 throw var7E5AAD6AD133D510DFD22F4FBC6E743F_216535215;
-            } 
+            } //End block
             data[index++] = columnValue;
 RowBuilder var72A74007B2BE62B849F475C7BDA4658B_1908580439 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1908580439.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1908580439;
-            
-            
-                
-                        
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (index == endIndex) {
+                //throw new CursorIndexOutOfBoundsException(
+                        //"No more columns left.");
+            //}
+            //data[index++] = columnValue;
+            //return this;
         }
 
         

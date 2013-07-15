@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,12 +24,11 @@ public class XmlUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:30.051 -0400", hash_original_method = "76C216707CDD38D546F63E977F5F31C4", hash_generated_method = "76C216707CDD38D546F63E977F5F31C4")
     public XmlUtils ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.BAN)
-    public static void skipCurrentTag(XmlPullParser parser) throws XmlPullParserException, IOException {
+        public static void skipCurrentTag(XmlPullParser parser) throws XmlPullParserException, IOException {
         int outerDepth = parser.getDepth();
         int type;
         while ((type=parser.next()) != XmlPullParser.END_DOCUMENT

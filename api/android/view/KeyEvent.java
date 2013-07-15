@@ -1,6 +1,6 @@
 package android.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -57,7 +57,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.134 -0400", hash_original_method = "E1777BC70B96D5008D693732650D9927", hash_generated_method = "560F8A7FDE8C5C12025FD3A840761BDA")
     private  KeyEvent() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -67,11 +67,11 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mKeyCode = code;
         mRepeatCount = 0;
         mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mAction = action;
+        //mKeyCode = code;
+        //mRepeatCount = 0;
+        //mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
     }
 
     
@@ -84,13 +84,13 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mKeyCode = code;
         mRepeatCount = repeat;
         mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = downTime;
+        //mEventTime = eventTime;
+        //mAction = action;
+        //mKeyCode = code;
+        //mRepeatCount = repeat;
+        //mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
     }
 
     
@@ -104,14 +104,14 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mRepeatCount = repeat;
         mMetaState = metaState;
         mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = downTime;
+        //mEventTime = eventTime;
+        //mAction = action;
+        //mKeyCode = code;
+        //mRepeatCount = repeat;
+        //mMetaState = metaState;
+        //mDeviceId = KeyCharacterMap.VIRTUAL_KEYBOARD;
     }
 
     
@@ -127,15 +127,15 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mMetaState = metaState;
         mDeviceId = deviceId;
         mScanCode = scancode;
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = downTime;
+        //mEventTime = eventTime;
+        //mAction = action;
+        //mKeyCode = code;
+        //mRepeatCount = repeat;
+        //mMetaState = metaState;
+        //mDeviceId = deviceId;
+        //mScanCode = scancode;
     }
 
     
@@ -152,16 +152,16 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mDeviceId = deviceId;
         mScanCode = scancode;
         mFlags = flags;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = downTime;
+        //mEventTime = eventTime;
+        //mAction = action;
+        //mKeyCode = code;
+        //mRepeatCount = repeat;
+        //mMetaState = metaState;
+        //mDeviceId = deviceId;
+        //mScanCode = scancode;
+        //mFlags = flags;
     }
 
     
@@ -179,17 +179,17 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mScanCode = scancode;
         mFlags = flags;
         mSource = source;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = downTime;
+        //mEventTime = eventTime;
+        //mAction = action;
+        //mKeyCode = code;
+        //mRepeatCount = repeat;
+        //mMetaState = metaState;
+        //mDeviceId = deviceId;
+        //mScanCode = scancode;
+        //mFlags = flags;
+        //mSource = source;
     }
 
     
@@ -204,16 +204,16 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mDeviceId = deviceId;
         mFlags = flags;
         mSource = InputDevice.SOURCE_KEYBOARD;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = time;
+        //mEventTime = time;
+        //mCharacters = characters;
+        //mAction = ACTION_MULTIPLE;
+        //mKeyCode = KEYCODE_UNKNOWN;
+        //mRepeatCount = 0;
+        //mDeviceId = deviceId;
+        //mFlags = flags;
+        //mSource = InputDevice.SOURCE_KEYBOARD;
     }
 
     
@@ -230,18 +230,18 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mScanCode = origEvent.mScanCode;
         mFlags = origEvent.mFlags;
         mCharacters = origEvent.mCharacters;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = origEvent.mDownTime;
+        //mEventTime = origEvent.mEventTime;
+        //mAction = origEvent.mAction;
+        //mKeyCode = origEvent.mKeyCode;
+        //mRepeatCount = origEvent.mRepeatCount;
+        //mMetaState = origEvent.mMetaState;
+        //mDeviceId = origEvent.mDeviceId;
+        //mSource = origEvent.mSource;
+        //mScanCode = origEvent.mScanCode;
+        //mFlags = origEvent.mFlags;
+        //mCharacters = origEvent.mCharacters;
     }
 
     
@@ -259,18 +259,18 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mScanCode = origEvent.mScanCode;
         mFlags = origEvent.mFlags;
         mCharacters = origEvent.mCharacters;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = origEvent.mDownTime;
+        //mEventTime = eventTime;
+        //mAction = origEvent.mAction;
+        //mKeyCode = origEvent.mKeyCode;
+        //mRepeatCount = newRepeat;
+        //mMetaState = origEvent.mMetaState;
+        //mDeviceId = origEvent.mDeviceId;
+        //mSource = origEvent.mSource;
+        //mScanCode = origEvent.mScanCode;
+        //mFlags = origEvent.mFlags;
+        //mCharacters = origEvent.mCharacters;
     }
 
     
@@ -286,17 +286,17 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mSource = origEvent.mSource;
         mScanCode = origEvent.mScanCode;
         mFlags = origEvent.mFlags;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDownTime = origEvent.mDownTime;
+        //mEventTime = origEvent.mEventTime;
+        //mAction = action;
+        //mKeyCode = origEvent.mKeyCode;
+        //mRepeatCount = origEvent.mRepeatCount;
+        //mMetaState = origEvent.mMetaState;
+        //mDeviceId = origEvent.mDeviceId;
+        //mSource = origEvent.mSource;
+        //mScanCode = origEvent.mScanCode;
+        //mFlags = origEvent.mFlags;
     }
 
     
@@ -312,17 +312,17 @@ public class KeyEvent extends InputEvent implements Parcelable {
         mFlags = in.readInt();
         mDownTime = in.readLong();
         mEventTime = in.readLong();
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDeviceId = in.readInt();
+        //mSource = in.readInt();
+        //mAction = in.readInt();
+        //mKeyCode = in.readInt();
+        //mRepeatCount = in.readInt();
+        //mMetaState = in.readInt();
+        //mScanCode = in.readInt();
+        //mFlags = in.readInt();
+        //mDownTime = in.readLong();
+        //mEventTime = in.readLong();
     }
 
     
@@ -542,8 +542,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getMaxKeyCode() {
+        public static int getMaxKeyCode() {
         return LAST_KEYCODE;
     }
 
@@ -611,8 +610,8 @@ public class KeyEvent extends InputEvent implements Parcelable {
 KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         var3E50018916F9DBFE0D39D9282EBAD97D_1460602115.addTaint(taint);
         return var3E50018916F9DBFE0D39D9282EBAD97D_1460602115;
-        
-        
+        // ---------- Original Method ----------
+        //return obtain(this);
     }
 
     
@@ -623,7 +622,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
             RuntimeException var4B7E168C1631949DA6BD5DCA24D52129_763823439 = new RuntimeException(toString() + " recycled twice!");
             var4B7E168C1631949DA6BD5DCA24D52129_763823439.addTaint(taint);
             throw var4B7E168C1631949DA6BD5DCA24D52129_763823439;
-        } 
+        } //End block
         mRecycled = true;
         mCharacters = null;
         synchronized
@@ -633,21 +632,21 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
                 gRecyclerUsed++;
                 mNext = gRecyclerTop;
                 gRecyclerTop = this;
-            } 
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mRecycled) {
+            //throw new RuntimeException(toString() + " recycled twice!");
+        //}
+        //mRecycled = true;
+        //mCharacters = null;
+        //synchronized (gRecyclerLock) {
+            //if (gRecyclerUsed < MAX_RECYCLED) {
+                //gRecyclerUsed++;
+                //mNext = gRecyclerTop;
+                //gRecyclerTop = this;
+            //}
+        //}
     }
 
     
@@ -685,8 +684,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean varE44B6FDE7A8949D5556698E64841F61D_1367167645 = ((mFlags & FLAG_TAINTED) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2105108876 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2105108876;
-        
-        
+        // ---------- Original Method ----------
+        //return (mFlags & FLAG_TAINTED) != 0;
     }
 
     
@@ -694,8 +693,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
     @Override
     public final void setTainted(boolean tainted) {
         mFlags = tainted ? mFlags | FLAG_TAINTED : mFlags & ~FLAG_TAINTED;
-        
-        
+        // ---------- Original Method ----------
+        //mFlags = tainted ? mFlags | FLAG_TAINTED : mFlags & ~FLAG_TAINTED;
     }
 
     
@@ -705,8 +704,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean varBB625A63E33C7B9D400664E2872487EA_287394889 = (mAction == ACTION_DOWN);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1353043291 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1353043291;
-        
-        
+        // ---------- Original Method ----------
+        //return mAction == ACTION_DOWN;
     }
 
     
@@ -715,8 +714,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var391E7494E451B40BF08FB0022134D8C4_1356652022 = (native_isSystemKey(mKeyCode));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107418886 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107418886;
-        
-        
+        // ---------- Original Method ----------
+        //return native_isSystemKey(mKeyCode);
     }
 
     
@@ -725,8 +724,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var06DAD779AE0F219C82FD815852FB25A4_1244218641 = (native_hasDefaultAction(mKeyCode));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1627990376 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1627990376;
-        
-        
+        // ---------- Original Method ----------
+        //return native_hasDefaultAction(mKeyCode);
     }
 
     
@@ -776,8 +775,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         int varDD9A3A8FAD85AE1264DE035645B54BEC_329596551 = (mDeviceId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696708022 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696708022;
-        
-        
+        // ---------- Original Method ----------
+        //return mDeviceId;
     }
 
     
@@ -787,8 +786,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         int var6917951DFB797D97827BAAA584F128DE_1231764356 = (mSource);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268750084 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268750084;
-        
-        
+        // ---------- Original Method ----------
+        //return mSource;
     }
 
     
@@ -796,8 +795,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
     @Override
     public final void setSource(int source) {
         mSource = source;
-        
-        
+        // ---------- Original Method ----------
+        //mSource = source;
     }
 
     
@@ -806,8 +805,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         int varFAD32D411972E0A85D1D781044420C0A_1795935207 = (mMetaState);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1377393532 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1377393532;
-        
-        
+        // ---------- Original Method ----------
+        //return mMetaState;
     }
 
     
@@ -816,8 +815,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         int var06A6ECE7D88A6501801A038FE42EB983_1859079413 = (normalizeMetaState(mMetaState) & META_MODIFIER_MASK);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1982796268 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1982796268;
-        
-        
+        // ---------- Original Method ----------
+        //return normalizeMetaState(mMetaState) & META_MODIFIER_MASK;
     }
 
     
@@ -826,19 +825,17 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         int var9C3CD7D37D3E1E66BE9B3B005FC98B3A_1431164146 = (mFlags);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417133504 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1417133504;
-        
-        
+        // ---------- Original Method ----------
+        //return mFlags;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int getModifierMetaStateMask() {
+        public static int getModifierMetaStateMask() {
         return META_MODIFIER_MASK;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean isModifierKey(int keyCode) {
+        public static boolean isModifierKey(int keyCode) {
         switch (keyCode) {
             case KEYCODE_SHIFT_LEFT:
             case KEYCODE_SHIFT_RIGHT:
@@ -858,8 +855,7 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static int normalizeMetaState(int metaState) {
+        public static int normalizeMetaState(int metaState) {
         if ((metaState & (META_SHIFT_LEFT_ON | META_SHIFT_RIGHT_ON)) != 0) {
             metaState |= META_SHIFT_ON;
         }
@@ -935,8 +931,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var56E24B7446A591127D34D387A78DE686_1386043879 = (metaStateHasNoModifiers(mMetaState));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1122885957 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1122885957;
-        
-        
+        // ---------- Original Method ----------
+        //return metaStateHasNoModifiers(mMetaState);
     }
 
     
@@ -946,8 +942,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean varD163EDAADB933867F33703F6E5408758_1992714609 = (metaStateHasModifiers(mMetaState, modifiers));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_444460286 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_444460286;
-        
-        
+        // ---------- Original Method ----------
+        //return metaStateHasModifiers(mMetaState, modifiers);
     }
 
     
@@ -956,8 +952,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var41015A81D6F4028A66C2B0367EF02510_907131160 = ((mMetaState & META_ALT_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_989655841 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_989655841;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_ALT_ON) != 0;
     }
 
     
@@ -966,8 +962,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var922135391054EF86F67F1ABC18F3EF00_2002246512 = ((mMetaState & META_SHIFT_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918598703 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918598703;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_SHIFT_ON) != 0;
     }
 
     
@@ -976,8 +972,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var5B0726C7180ABA0E4417AED25EC2DC05_1599801496 = ((mMetaState & META_SYM_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1205946662 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1205946662;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_SYM_ON) != 0;
     }
 
     
@@ -986,8 +982,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var90A5A0F47B26038BE552F20ED2F5F4D8_727434586 = ((mMetaState & META_CTRL_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1744618185 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1744618185;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_CTRL_ON) != 0;
     }
 
     
@@ -996,8 +992,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var56A82B8F9D235A059F114F8A6E260E7E_755856550 = ((mMetaState & META_META_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_403652776 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_403652776;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_META_ON) != 0;
     }
 
     
@@ -1006,8 +1002,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var40BB324A13D4BFBCEECC5AC5E46000AE_2013064302 = ((mMetaState & META_FUNCTION_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1276044965 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1276044965;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_FUNCTION_ON) != 0;
     }
 
     
@@ -1016,8 +1012,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean varF4DAD3D8DF3362E2BD10743947A83455_1515901178 = ((mMetaState & META_CAPS_LOCK_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_49731956 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_49731956;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_CAPS_LOCK_ON) != 0;
     }
 
     
@@ -1026,8 +1022,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var338CA42B91B0B88DE9DEA968EDD90DAA_761784696 = ((mMetaState & META_NUM_LOCK_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_704515019 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_704515019;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_NUM_LOCK_ON) != 0;
     }
 
     
@@ -1036,8 +1032,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var152FBF778E1CE250DBA0E1681926A3D0_860613489 = ((mMetaState & META_SCROLL_LOCK_ON) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_434273138 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_434273138;
-        
-        
+        // ---------- Original Method ----------
+        //return (mMetaState & META_SCROLL_LOCK_ON) != 0;
     }
 
     
@@ -1046,8 +1042,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         int varA3988EEE869C06063B06A0C38A6A1E11_1602761865 = (mAction);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1142278895 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1142278895;
-        
-        
+        // ---------- Original Method ----------
+        //return mAction;
     }
 
     
@@ -1056,16 +1052,16 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var634C0D1CCF9B9E2702EC28EE63AF446E_969481694 = ((mFlags&FLAG_CANCELED) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1584471606 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1584471606;
-        
-        
+        // ---------- Original Method ----------
+        //return (mFlags&FLAG_CANCELED) != 0;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.150 -0400", hash_original_method = "27796C2FEC9179970B535474C3BFAAB9", hash_generated_method = "2EE0466AB5C2F2727C33F7700B8007CE")
     public final void startTracking() {
         mFlags |= FLAG_START_TRACKING;
-        
-        
+        // ---------- Original Method ----------
+        //mFlags |= FLAG_START_TRACKING;
     }
 
     
@@ -1074,8 +1070,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean var7102E14ACCB8F820589F912AD8D8030E_1507892801 = ((mFlags&FLAG_TRACKING) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1189304580 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1189304580;
-        
-        
+        // ---------- Original Method ----------
+        //return (mFlags&FLAG_TRACKING) != 0;
     }
 
     
@@ -1084,8 +1080,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         boolean varF70CC3E5F8612C6EEA8334FA03649A09_990305270 = ((mFlags&FLAG_LONG_PRESS) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_482050054 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_482050054;
-        
-        
+        // ---------- Original Method ----------
+        //return (mFlags&FLAG_LONG_PRESS) != 0;
     }
 
     
@@ -1094,8 +1090,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
         int varEE855499B412893552B9F8058CF94D19_1985535984 = (mKeyCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664758251 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664758251;
-        
-        
+        // ---------- Original Method ----------
+        //return mKeyCode;
     }
 
     
@@ -1104,8 +1100,8 @@ KeyEvent var3E50018916F9DBFE0D39D9282EBAD97D_1460602115 =         obtain(this);
 String var10CEF5DBE14EB762163FAD87728F7E4D_956958071 =         mCharacters;
         var10CEF5DBE14EB762163FAD87728F7E4D_956958071.addTaint(taint);
         return var10CEF5DBE14EB762163FAD87728F7E4D_956958071;
-        
-        
+        // ---------- Original Method ----------
+        //return mCharacters;
     }
 
     
@@ -1114,8 +1110,8 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_956958071 =         mCharacters;
         int var35B602FDCFF3043E48F719D54038B8B1_1125130693 = (mScanCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022840260 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022840260;
-        
-        
+        // ---------- Original Method ----------
+        //return mScanCode;
     }
 
     
@@ -1124,8 +1120,8 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_956958071 =         mCharacters;
         int varF545692334BC1E20E53D9FB0B2CFFF33_364861891 = (mRepeatCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790098430 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790098430;
-        
-        
+        // ---------- Original Method ----------
+        //return mRepeatCount;
     }
 
     
@@ -1134,8 +1130,8 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_956958071 =         mCharacters;
         long var51587355C5A724D8637EF803C946DD2D_2118802164 = (mDownTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1897212165 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1897212165;
-        
-        
+        // ---------- Original Method ----------
+        //return mDownTime;
     }
 
     
@@ -1144,8 +1140,8 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_956958071 =         mCharacters;
         long var3EE1D0D0A7FA96B4DEE335E6458397C2_1522223522 = (mEventTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_834935468 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_834935468;
-        
-        
+        // ---------- Original Method ----------
+        //return mEventTime;
     }
 
     
@@ -1155,8 +1151,8 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_956958071 =         mCharacters;
         long varA84BA932F8B3909669A9F2F9C1922188_1637482226 = (mEventTime * 1000000L);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_186108407 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_186108407;
-        
-        
+        // ---------- Original Method ----------
+        //return mEventTime * 1000000L;
     }
 
     
@@ -1166,8 +1162,8 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_956958071 =         mCharacters;
         int varDD9A3A8FAD85AE1264DE035645B54BEC_1057068445 = (mDeviceId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_193232217 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_193232217;
-        
-        
+        // ---------- Original Method ----------
+        //return mDeviceId;
     }
 
     
@@ -1176,8 +1172,8 @@ String var10CEF5DBE14EB762163FAD87728F7E4D_956958071 =         mCharacters;
 KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyCharacterMap.load(mDeviceId);
         varE8BE375FC15A62135107964288CF75B9_1735517162.addTaint(taint);
         return varE8BE375FC15A62135107964288CF75B9_1735517162;
-        
-        
+        // ---------- Original Method ----------
+        //return KeyCharacterMap.load(mDeviceId);
     }
 
     
@@ -1186,8 +1182,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         char var8EDCC116513C68D8F2382CC406C703E5_1705284585 = (getKeyCharacterMap().getDisplayLabel(mKeyCode));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1664287804 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1664287804;
-        
-        
+        // ---------- Original Method ----------
+        //return getKeyCharacterMap().getDisplayLabel(mKeyCode);
     }
 
     
@@ -1196,8 +1192,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         int var2E8C75814784494E2FC0AC5A1B3B68E2_1459376040 = (getUnicodeChar(mMetaState));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_765908784 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_765908784;
-        
-        
+        // ---------- Original Method ----------
+        //return getUnicodeChar(mMetaState);
     }
 
     
@@ -1207,8 +1203,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         int var4031945D25FE3A36A22A7D80B7AA4751_1712333267 = (getKeyCharacterMap().get(mKeyCode, metaState));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1034530935 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1034530935;
-        
-        
+        // ---------- Original Method ----------
+        //return getKeyCharacterMap().get(mKeyCode, metaState);
     }
 
     
@@ -1219,8 +1215,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         boolean var50D9CDE32DA6CF4574CFC5DEAD829177_744551027 = (getKeyCharacterMap().getKeyData(mKeyCode, results));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_176990389 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_176990389;
-        
-        
+        // ---------- Original Method ----------
+        //return getKeyCharacterMap().getKeyData(mKeyCode, results);
     }
 
     
@@ -1230,8 +1226,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         char var86D8BCA8AF02206C0C2B666916672888_44803940 = (getMatch(chars, 0));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1188991691 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1188991691;
-        
-        
+        // ---------- Original Method ----------
+        //return getMatch(chars, 0);
     }
 
     
@@ -1242,8 +1238,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         char varAC912373A56B60B97AFC77606861729C_726851047 = (getKeyCharacterMap().getMatch(mKeyCode, chars, metaState));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1259944811 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1259944811;
-        
-        
+        // ---------- Original Method ----------
+        //return getKeyCharacterMap().getMatch(mKeyCode, chars, metaState);
     }
 
     
@@ -1252,8 +1248,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         char var767087C71AE91E9D48140CBFC81C6B5A_1998276721 = (getKeyCharacterMap().getNumber(mKeyCode));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1474496014 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1474496014;
-        
-        
+        // ---------- Original Method ----------
+        //return getKeyCharacterMap().getNumber(mKeyCode);
     }
 
     
@@ -1262,8 +1258,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         boolean var25A163768ADE4FD7DEA75EA089C910DD_666721522 = (getKeyCharacterMap().isPrintingKey(mKeyCode));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1208486095 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1208486095;
-        
-        
+        // ---------- Original Method ----------
+        //return getKeyCharacterMap().isPrintingKey(mKeyCode);
     }
 
     
@@ -1274,8 +1270,8 @@ KeyCharacterMap varE8BE375FC15A62135107964288CF75B9_1735517162 =         KeyChar
         boolean varE9C214C515C0A7E8A1725ED5D3F628A8_1208831168 = (dispatch(receiver, null, null));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_634515932 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_634515932;
-        
-        
+        // ---------- Original Method ----------
+        //return dispatch(receiver, null, null);
     }
 
     
@@ -1295,7 +1291,7 @@ switch(mAction){
     if(res && mRepeatCount == 0 && (mFlags&FLAG_START_TRACKING) != 0)                
                 {
     if(DEBUG){ }                    state.startTracking(this, target);
-                } 
+                } //End block
                 else
     if(isLongPress() && state.isTracking(this))                
                 {
@@ -1305,22 +1301,22 @@ switch(mAction){
                         {
     if(DEBUG){ }                            state.performedLongPress(this);
                             res = true;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (AbstractMethodError e)
                     {
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             boolean var9B207167E5381C47682C6B4F58A623FB_1062993242 = (res);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1330201817 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1330201817;
-        } 
+        } //End block
         case ACTION_UP:
     if(DEBUG){ }    if(state != null)        
         {
             state.handleUpEvent(this);
-        } 
+        } //End block
         boolean varFF89C3AEEBA34BA2DFBA18A28BD376B8_502775299 = (receiver.onKeyUp(mKeyCode, this));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_407681492 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_407681492;
@@ -1332,7 +1328,7 @@ switch(mAction){
             boolean varB326B5062B2F0E69046810717534CB09_1448518101 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2049122404 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2049122404;
-        } 
+        } //End block
     if(code != KeyEvent.KEYCODE_UNKNOWN)        
         {
             mAction = ACTION_DOWN;
@@ -1342,21 +1338,21 @@ switch(mAction){
             {
                 mAction = ACTION_UP;
                 receiver.onKeyUp(code, this);
-            } 
+            } //End block
             mAction = ACTION_MULTIPLE;
             mRepeatCount = count;
             boolean var98F0599AF776A1FE4101C199A40EEB8F_494583703 = (handled);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1245430315 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1245430315;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1356876541 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1476098750 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1476098750;
 }        boolean var68934A3E9455FA72420237EB05902327_1131651419 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_596797956 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_596797956;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1370,7 +1366,7 @@ switch(mAction){
     if(mCharacters != null)        
         {
             msg.append(", characters=\"").append(mCharacters).append("\"");
-        } 
+        } //End block
         msg.append(", metaState=").append(metaStateToString(mMetaState));
         msg.append(", flags=0x").append(Integer.toHexString(mFlags));
         msg.append(", repeatCount=").append(mRepeatCount);
@@ -1382,8 +1378,8 @@ switch(mAction){
 String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
         var684DADA25689ED258BFAD9F9C4AD23D2_212355040.addTaint(taint);
         return var684DADA25689ED258BFAD9F9C4AD23D2_212355040;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1472,22 +1468,21 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
         out.writeInt(mFlags);
         out.writeLong(mDownTime);
         out.writeLong(mEventTime);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeInt(PARCEL_TOKEN_KEY_EVENT);
+        //out.writeInt(mDeviceId);
+        //out.writeInt(mSource);
+        //out.writeInt(mAction);
+        //out.writeInt(mKeyCode);
+        //out.writeInt(mRepeatCount);
+        //out.writeInt(mMetaState);
+        //out.writeInt(mScanCode);
+        //out.writeInt(mFlags);
+        //out.writeLong(mDownTime);
+        //out.writeLong(mEventTime);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.187 -0400", hash_original_method = "7ECA2477AC40357C7C5AFE00DC4BDA17", hash_generated_method = "C892C45A2F5FA5DFB22BD8988A57177A")
     private boolean native_isSystemKey(int keyCode) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1230004241 = getTaintBoolean();
@@ -1495,7 +1490,6 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.187 -0400", hash_original_method = "B29C954784C1F1FDE17D757BB04FDB3D", hash_generated_method = "093D6C77B2907CD42765D8FFEC966010")
     private boolean native_hasDefaultAction(int keyCode) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1377423987 = getTaintBoolean();
@@ -1517,7 +1511,7 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.187 -0400", hash_original_method = "6A42904977F799CF06B04A57C142AD90", hash_generated_method = "6A42904977F799CF06B04A57C142AD90")
         public DispatcherState ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1526,15 +1520,14 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
     if(DEBUG){ }            mDownKeyCode = 0;
             mDownTarget = null;
             mActiveLongPresses.clear();
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (DEBUG) Log.v(TAG, "Reset: " + this);
+            //mDownKeyCode = 0;
+            //mDownTarget = null;
+            //mActiveLongPresses.clear();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.188 -0400", hash_original_method = "7A446B7A655E4D7578F3AEB4F96BA0A4", hash_generated_method = "AF2A149108908E36CD546253E260073F")
         public void reset(Object target) {
             addTaint(target.getTaint());
@@ -1542,13 +1535,13 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
             {
     if(DEBUG){ }                mDownKeyCode = 0;
                 mDownTarget = null;
-            } 
-            
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (mDownTarget == target) {
+                //if (DEBUG) Log.v(TAG, "Reset in " + target + ": " + this);
+                //mDownKeyCode = 0;
+                //mDownTarget = null;
+            //}
         }
 
         
@@ -1560,17 +1553,17 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
                         "Can only start tracking on a down event");
                 varFC6CF24884632CEC8425E2567E1A90AA_1072811624.addTaint(taint);
                 throw varFC6CF24884632CEC8425E2567E1A90AA_1072811624;
-            } 
+            } //End block
     if(DEBUG){ }            mDownKeyCode = event.getKeyCode();
             mDownTarget = target;
-            
-            
-                
-                        
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (event.getAction() != ACTION_DOWN) {
+                //throw new IllegalArgumentException(
+                        //"Can only start tracking on a down event");
+            //}
+            //if (DEBUG) Log.v(TAG, "Start trackingt in " + target + ": " + this);
+            //mDownKeyCode = event.getKeyCode();
+            //mDownTarget = target;
         }
 
         
@@ -1580,8 +1573,8 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
             boolean var75D53A6C393E4ADC147974FF3EBB911A_2110357930 = (mDownKeyCode == event.getKeyCode());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1995038774 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1995038774;
-            
-            
+            // ---------- Original Method ----------
+            //return mDownKeyCode == event.getKeyCode();
         }
 
         
@@ -1589,8 +1582,8 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
         public void performedLongPress(KeyEvent event) {
             addTaint(event.getTaint());
             mActiveLongPresses.put(event.getKeyCode(), 1);
-            
-            
+            // ---------- Original Method ----------
+            //mActiveLongPresses.put(event.getKeyCode(), 1);
         }
 
         
@@ -1603,28 +1596,28 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
             {
     if(DEBUG){ }                event.mFlags |= FLAG_CANCELED | FLAG_CANCELED_LONG_PRESS;
                 mActiveLongPresses.removeAt(index);
-            } 
+            } //End block
     if(mDownKeyCode == keyCode)            
             {
     if(DEBUG){ }                event.mFlags |= FLAG_TRACKING;
                 mDownKeyCode = 0;
                 mDownTarget = null;
-            } 
-            
-            
-            
-            
-            
-                
-                
-                
-            
-            
-                
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //final int keyCode = event.getKeyCode();
+            //if (DEBUG) Log.v(TAG, "Handle key up " + event + ": " + this);
+            //int index = mActiveLongPresses.indexOfKey(keyCode);
+            //if (index >= 0) {
+                //if (DEBUG) Log.v(TAG, "  Index: " + index);
+                //event.mFlags |= FLAG_CANCELED | FLAG_CANCELED_LONG_PRESS;
+                //mActiveLongPresses.removeAt(index);
+            //}
+            //if (mDownKeyCode == keyCode) {
+                //if (DEBUG) Log.v(TAG, "  Tracking!");
+                //event.mFlags |= FLAG_TRACKING;
+                //mDownKeyCode = 0;
+                //mDownTarget = null;
+            //}
         }
 
         
@@ -2506,12 +2499,12 @@ String var684DADA25689ED258BFAD9F9C4AD23D2_212355040 =         msg.toString();
             return new KeyEvent[size];
         }
     };
-    
+    // orphaned legacy method
     public KeyEvent[] newArray(int size) {
             return new KeyEvent[size];
         }
     
-    
+    // orphaned legacy method
     public KeyEvent createFromParcel(Parcel in) {
             in.readInt(); 
             return KeyEvent.createFromParcelBody(in);

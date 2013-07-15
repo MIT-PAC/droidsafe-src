@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class NoSuchFieldException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.027 -0400", hash_original_method = "C9B6E52CB5F5184DC84559DF357B6964", hash_generated_method = "0AA9C44117E303F6AB30495E8744B93B")
     public  NoSuchFieldException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class NoSuchFieldException extends Exception {
     public  NoSuchFieldException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ class CacheLoader extends StreamLoader {
         super(loadListener);
         addTaint(loadListener.getTaint());
         mCacheResult = result;
-        
-        
-        
+        // ---------- Original Method ----------
+        //assert !JniUtil.useChromiumHttpStack();
+        //mCacheResult = result;
     }
 
     
@@ -33,11 +33,11 @@ class CacheLoader extends StreamLoader {
         boolean varB326B5062B2F0E69046810717534CB09_1674725111 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_205510881 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_205510881;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mDataStream = mCacheResult.inStream;
+        //mContentLength = mCacheResult.contentLength;
+        //mLoadListener.status(1, 1, mCacheResult.httpStatusCode, "OK");
+        //return true;
     }
 
     
@@ -50,43 +50,43 @@ class CacheLoader extends StreamLoader {
         {
             sb.append(';');
             sb.append(mCacheResult.encoding);
-        } 
+        } //End block
         headers.setContentType(sb.toString());
     if(!TextUtils.isEmpty(mCacheResult.location))        
         {
             headers.setLocation(mCacheResult.location);
-        } 
+        } //End block
     if(!TextUtils.isEmpty(mCacheResult.expiresString))        
         {
             headers.setExpires(mCacheResult.expiresString);
-        } 
+        } //End block
     if(!TextUtils.isEmpty(mCacheResult.contentdisposition))        
         {
             headers.setContentDisposition(mCacheResult.contentdisposition);
-        } 
+        } //End block
     if(!TextUtils.isEmpty(mCacheResult.crossDomain))        
         {
             headers.setXPermittedCrossDomainPolicies(mCacheResult.crossDomain);
-        } 
-        
-        
-        
-            
-            
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(mCacheResult.mimeType);
+        //if (!TextUtils.isEmpty(mCacheResult.encoding)) {
+            //sb.append(';');
+            //sb.append(mCacheResult.encoding);
+        //}
+        //headers.setContentType(sb.toString());
+        //if (!TextUtils.isEmpty(mCacheResult.location)) {
+            //headers.setLocation(mCacheResult.location);
+        //}
+        //if (!TextUtils.isEmpty(mCacheResult.expiresString)) {
+            //headers.setExpires(mCacheResult.expiresString);
+        //}
+        //if (!TextUtils.isEmpty(mCacheResult.contentdisposition)) {
+            //headers.setContentDisposition(mCacheResult.contentdisposition);
+        //}
+        //if (!TextUtils.isEmpty(mCacheResult.crossDomain)) {
+            //headers.setXPermittedCrossDomainPolicies(mCacheResult.crossDomain);
+        //}
     }
 
     

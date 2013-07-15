@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,9 +27,9 @@ public class BasicCookieStore implements CookieStore {
         super();
         this.cookies = new ArrayList<Cookie>();
         this.cookieComparator = new CookieIdentityComparator();
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.cookies = new ArrayList<Cookie>();
+        //this.cookieComparator = new CookieIdentityComparator();
     }
 
     
@@ -44,25 +44,25 @@ for(Iterator<Cookie> it = cookies.iterator();it.hasNext();)
                 {
                     it.remove();
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(!cookie.isExpired(new Date()))            
             {
                 cookies.add(cookie);
-            } 
-        } 
-        
-        
-            
-                
-                    
-                    
-                
-            
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (cookie != null) {
+            //for (Iterator<Cookie> it = cookies.iterator(); it.hasNext();) {
+                //if (cookieComparator.compare(cookie, it.next()) == 0) {
+                    //it.remove();
+                    //break;
+                //}
+            //}
+            //if (!cookie.isExpired(new Date())) {
+                //cookies.add(cookie);
+            //}
+        //}
     }
 
     
@@ -74,14 +74,14 @@ for(Iterator<Cookie> it = cookies.iterator();it.hasNext();)
 for(Cookie cooky : cookies)
             {
                 this.addCookie(cooky);
-            } 
-        } 
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (cookies != null) {
+            //for (Cookie cooky : cookies) {
+                //this.addCookie(cooky);
+            //}
+        //}
     }
 
     
@@ -90,8 +90,8 @@ for(Cookie cooky : cookies)
 List<Cookie> varCBE2F43F7F720C22A8D82FB98D41DC23_251804217 =         Collections.unmodifiableList(this.cookies);
         varCBE2F43F7F720C22A8D82FB98D41DC23_251804217.addTaint(taint);
         return varCBE2F43F7F720C22A8D82FB98D41DC23_251804217;
-        
-        
+        // ---------- Original Method ----------
+        //return Collections.unmodifiableList(this.cookies);
     }
 
     
@@ -103,7 +103,7 @@ List<Cookie> varCBE2F43F7F720C22A8D82FB98D41DC23_251804217 =         Collections
             boolean var68934A3E9455FA72420237EB05902327_16391170 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_863603921 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_863603921;
-        } 
+        } //End block
         boolean removed = false;
 for(Iterator<Cookie> it = cookies.iterator();it.hasNext();)
         {
@@ -111,23 +111,23 @@ for(Iterator<Cookie> it = cookies.iterator();it.hasNext();)
             {
                 it.remove();
                 removed = true;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean varB07286EBBB5BC7AA91CC3EAA8BC19711_1430641566 = (removed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_649679040 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_649679040;
-        
-        
-            
-        
-        
-        
-            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (date == null) {
+            //return false;
+        //}
+        //boolean removed = false;
+        //for (Iterator<Cookie> it = cookies.iterator(); it.hasNext();) {
+            //if (it.next().isExpired(date)) {
+                //it.remove();
+                //removed = true;
+            //}
+        //}
+        //return removed;
     }
 
     
@@ -137,16 +137,16 @@ for(Iterator<Cookie> it = cookies.iterator();it.hasNext();)
 String var5FB4B77384CA93A6200A4A8905C96E29_1372250348 =         cookies.toString();
         var5FB4B77384CA93A6200A4A8905C96E29_1372250348.addTaint(taint);
         return var5FB4B77384CA93A6200A4A8905C96E29_1372250348;
-        
-        
+        // ---------- Original Method ----------
+        //return cookies.toString();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.312 -0400", hash_original_method = "918F9BD76316B2620CCA2503ADA6AAF2", hash_generated_method = "31DAF4A715C672504B7C730D1B4A0A58")
     public synchronized void clear() {
         cookies.clear();
-        
-        
+        // ---------- Original Method ----------
+        //cookies.clear();
     }
 
     

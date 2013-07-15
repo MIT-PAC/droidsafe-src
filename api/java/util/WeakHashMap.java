@@ -1,6 +1,6 @@
 package java.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,7 +30,7 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.239 -0400", hash_original_method = "B976885DE3CF2C49EC1331AC2786A4B5", hash_generated_method = "947788F1D50A3898B6C48AAEC3B777CB")
     public  WeakHashMap() {
         this(DEFAULT_SIZE);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -43,23 +43,23 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             loadFactor = 7500;
             computeMaxSize();
             referenceQueue = new ReferenceQueue<K>();
-        } 
+        } //End block
         else
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1018081384 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1018081384.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1018081384;
-        } 
-        
-        
-            
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (capacity >= 0) {
+            //elementCount = 0;
+            //elementData = newEntryArray(capacity == 0 ? 1 : capacity);
+            //loadFactor = 7500; 
+            //computeMaxSize();
+            //referenceQueue = new ReferenceQueue<K>();
+        //} else {
+            //throw new IllegalArgumentException();
+        //}
     }
 
     
@@ -72,23 +72,23 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             this.loadFactor = (int) (loadFactor * 10000);
             computeMaxSize();
             referenceQueue = new ReferenceQueue<K>();
-        } 
+        } //End block
         else
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_585036817 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_585036817.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_585036817;
-        } 
-        
-        
-            
-            
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (capacity >= 0 && loadFactor > 0) {
+            //elementCount = 0;
+            //elementData = newEntryArray(capacity == 0 ? 1 : capacity);
+            //this.loadFactor = (int) (loadFactor * 10000);
+            //computeMaxSize();
+            //referenceQueue = new ReferenceQueue<K>();
+        //} else {
+            //throw new IllegalArgumentException();
+        //}
     }
 
     
@@ -97,8 +97,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         this(map.size() < 6 ? 11 : map.size() * 2);
         addTaint(map.getTaint());
         putAllImpl(map);
-        
-        
+        // ---------- Original Method ----------
+        //putAllImpl(map);
     }
 
     
@@ -108,7 +108,6 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.242 -0400", hash_original_method = "C690E441FDF499DD7829AA3D638ADE28", hash_generated_method = "F3467E7C1779DDA17A7262C417055AFD")
     @Override
     public void clear() {
@@ -120,29 +119,27 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
             while
 (referenceQueue.poll() != null)            
             {
-            } 
-        } 
-        
-        
-            
-            
-            
-            
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (elementCount > 0) {
+            //elementCount = 0;
+            //Arrays.fill(elementData, null);
+            //modCount++;
+            //while (referenceQueue.poll() != null) {
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.243 -0400", hash_original_method = "85D93BA99AF40F5CDC3F42570A89C9FC", hash_generated_method = "BE619D13CAF85822181B65989DC845A9")
     private void computeMaxSize() {
         threshold = (int) ((long) elementData.length * loadFactor / 10000);
-        
-        
+        // ---------- Original Method ----------
+        //threshold = (int) ((long) elementData.length * loadFactor / 10000);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.243 -0400", hash_original_method = "7C0BA359573790AC71E46CA35F3B3C5D", hash_generated_method = "096267E7B1C1CDAD76DB6EAF94E99C14")
     @Override
     public boolean containsKey(Object key) {
@@ -150,8 +147,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
         boolean var8932A54AAACB53164E5FA2BABB4C4C06_2015793803 = (getEntry(key) != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682622421 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_682622421;
-        
-        
+        // ---------- Original Method ----------
+        //return getEntry(key) != null;
     }
 
     
@@ -160,23 +157,21 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     public Set<Map.Entry<K, V>> entrySet() {
         poll();
 Set<Map.Entry<K, V>> var952772A53018FA152689B94755082E8D_915180893 =         new AbstractSet<Map.Entry<K, V>>() {        
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.244 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "612EA033FD29F8F1B1B8EF6FC5A61837")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.244 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "612EA033FD29F8F1B1B8EF6FC5A61837")
         @Override
         public int size() {
             int varD3F415AC0DAFD84BD094635E9A38D203_251232469 = (WeakHashMap.this.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332954278 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332954278;
-            
-            
+            // ---------- Original Method ----------
+            //return WeakHashMap.this.size();
         }
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.244 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.244 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
         @Override
         public void clear() {
             WeakHashMap.this.clear();
-            
-            
+            // ---------- Original Method ----------
+            //WeakHashMap.this.clear();
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.245 -0400", hash_original_method = "1E7F94AC13E80E407E04FDAF276E4CCB", hash_generated_method = "80D4CA477C1A94672839765A4E14EF3A")
         @Override
@@ -189,17 +184,17 @@ Set<Map.Entry<K, V>> var952772A53018FA152689B94755082E8D_915180893 =         new
                 boolean varB326B5062B2F0E69046810717534CB09_354261417 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1199118272 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1199118272;
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_304459482 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1122330981 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1122330981;
-            
-            
-                    
-                            
-                    
-                
-            
+            // ---------- Original Method ----------
+            //if (contains(object)) {
+                    //WeakHashMap.this
+                            //.remove(((Map.Entry<?, ?>) object).getKey());
+                    //return true;
+                //}
+            //return false;
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.245 -0400", hash_original_method = "A69D5126071923809AD406525E677E9C", hash_generated_method = "98AC8BF9D363C4CECEDD84BEECB5ED4B")
         @Override
@@ -217,24 +212,24 @@ Set<Map.Entry<K, V>> var952772A53018FA152689B94755082E8D_915180893 =         new
                         boolean var9F67B4CD93AA547D336CDA928388F243_106815488 = (object.equals(entry));
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_921548558 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_921548558;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_1379519332 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_854323099 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_854323099;
-            
-            
-                    
-                            
-                    
-                        
-                        
-                            
-                        
-                    
-                
-            
+            // ---------- Original Method ----------
+            //if (object instanceof Map.Entry) {
+                    //Entry<?, ?> entry = getEntry(((Map.Entry<?, ?>) object)
+                            //.getKey());
+                    //if (entry != null) {
+                        //Object key = entry.get();
+                        //if (key != null || entry.isNull) {
+                            //return object.equals(entry);
+                        //}
+                    //}
+                //}
+            //return false;
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.246 -0400", hash_original_method = "6126AC883C019C19A724D0EDFC9A192D", hash_generated_method = "C5540A31518834C464989BAA9FF0BE80")
         @Override
@@ -247,25 +242,25 @@ Iterator<Map.Entry<K, V>> varFD445BCDDF9C631EA7BE770450B83225_839819223 =       
 Map.Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1660048985 =                 entry;
                 varF26DBE38545460D6F6AE1D948FF53869_1660048985.addTaint(taint);
                 return varF26DBE38545460D6F6AE1D948FF53869_1660048985;
-                
-                
+                // ---------- Original Method ----------
+                //return entry;
             }
 });
             varFD445BCDDF9C631EA7BE770450B83225_839819223.addTaint(taint);
             return varFD445BCDDF9C631EA7BE770450B83225_839819223;
-            
-            
-                        
-                            
-                                
-                            
-                        
+            // ---------- Original Method ----------
+            //return new HashIterator<Map.Entry<K, V>>(
+                        //new Entry.Type<Map.Entry<K, V>, K, V>() {
+                            //public Map.Entry<K, V> get(Map.Entry<K, V> entry) {
+                                //return entry;
+                            //}
+                        //});
         }
 };
         var952772A53018FA152689B94755082E8D_915180893.addTaint(taint);
         return var952772A53018FA152689B94755082E8D_915180893;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -283,26 +278,24 @@ Map.Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1660048985 =                
             boolean varF42ECC5119C86E67C012437242277954_1855226587 = (containsKey(object));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_418505779 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_418505779;
-            
-            
+            // ---------- Original Method ----------
+            //return containsKey(object);
         }
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.248 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "A0801843F38404635E8F87241D24EF30")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.248 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "A0801843F38404635E8F87241D24EF30")
         @Override
         public int size() {
             int varD3F415AC0DAFD84BD094635E9A38D203_58596902 = (WeakHashMap.this.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_106980471 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_106980471;
-            
-            
+            // ---------- Original Method ----------
+            //return WeakHashMap.this.size();
         }
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.248 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.248 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
         @Override
         public void clear() {
             WeakHashMap.this.clear();
-            
-            
+            // ---------- Original Method ----------
+            //WeakHashMap.this.clear();
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.249 -0400", hash_original_method = "2EBC57A89CF751265ACE297F532371F8", hash_generated_method = "A1B79CE8E9FDFBD1E747A89DF03BC4CC")
         @Override
@@ -314,16 +307,16 @@ Map.Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1660048985 =                
                 boolean varB326B5062B2F0E69046810717534CB09_1827631850 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1937373969 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1937373969;
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_2058616874 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1257297720 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1257297720;
-            
-            
-                        
-                        
-                    
-            
+            // ---------- Original Method ----------
+            //if (containsKey(key)) {
+                        //WeakHashMap.this.remove(key);
+                        //return true;
+                    //}
+            //return false;
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.249 -0400", hash_original_method = "AE3D91420CF50F34AE4E77081237432D", hash_generated_method = "FB0F0B04F6FF9685FC50FC247B34D2F9")
         @Override
@@ -335,18 +328,18 @@ Iterator<K> varDCD478621156DFA0E4D712E6830BBFE3_1381818936 =             new Has
 K varE5CD6225CB16CF7AEFEC373E217B052C_1924166295 =                 entry.getKey();
                 varE5CD6225CB16CF7AEFEC373E217B052C_1924166295.addTaint(taint);
                 return varE5CD6225CB16CF7AEFEC373E217B052C_1924166295;
-                
-                
+                // ---------- Original Method ----------
+                //return entry.getKey();
             }
 });
             varDCD478621156DFA0E4D712E6830BBFE3_1381818936.addTaint(taint);
             return varDCD478621156DFA0E4D712E6830BBFE3_1381818936;
-            
-            
-                        
-                            
-                        
-                    
+            // ---------- Original Method ----------
+            //return new HashIterator<K>(new Entry.Type<K, K, V>() {
+                        //public K get(Map.Entry<K, V> entry) {
+                            //return entry.getKey();
+                        //}
+                    //});
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.250 -0400", hash_original_method = "8D1ED5FEE11EEA3682A2E2ECF5DE32C3", hash_generated_method = "EA40CE59E2DCE7EE2A81E8AB54E29A3A")
         @Override
@@ -355,16 +348,16 @@ K varE5CD6225CB16CF7AEFEC373E217B052C_1924166295 =                 entry.getKey(
 for(Iterator<K> iter = iterator();iter.hasNext();)
             {
                 coll.add(iter.next());
-            } 
+            } //End block
 Object[] varC2A88C8443A0973DC0E59944F0A3C36C_437299285 =             coll.toArray();
             varC2A88C8443A0973DC0E59944F0A3C36C_437299285.addTaint(taint);
             return varC2A88C8443A0973DC0E59944F0A3C36C_437299285;
-            
-            
-            
-                        
-                    
-            
+            // ---------- Original Method ----------
+            //Collection<K> coll = new ArrayList<K>(size());
+            //for (Iterator<K> iter = iterator(); iter.hasNext();) {
+                        //coll.add(iter.next());
+                    //}
+            //return coll.toArray();
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.250 -0400", hash_original_method = "50B72C5F86BB9252B582673D59AA848C", hash_generated_method = "D84F498A467182F7202408A575BB0242")
         @Override
@@ -374,24 +367,24 @@ Object[] varC2A88C8443A0973DC0E59944F0A3C36C_437299285 =             coll.toArra
 for(Iterator<K> iter = iterator();iter.hasNext();)
             {
                 coll.add(iter.next());
-            } 
+            } //End block
 T[] var385EDC79139136F1D4AF8B758DE90A49_311831670 =             coll.toArray(contents);
             var385EDC79139136F1D4AF8B758DE90A49_311831670.addTaint(taint);
             return var385EDC79139136F1D4AF8B758DE90A49_311831670;
-            
-            
-            
-                        
-                    
-            
+            // ---------- Original Method ----------
+            //Collection<K> coll = new ArrayList<K>(size());
+            //for (Iterator<K> iter = iterator(); iter.hasNext();) {
+                        //coll.add(iter.next());
+                    //}
+            //return coll.toArray(contents);
         }
 };
-        } 
+        } //End block
 Set<K> varCB23CF4AFB8B7AE1843E733C4B0CC600_2072530331 =         keySet;
         varCB23CF4AFB8B7AE1843E733C4B0CC600_2072530331.addTaint(taint);
         return varCB23CF4AFB8B7AE1843E733C4B0CC600_2072530331;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -402,23 +395,21 @@ Set<K> varCB23CF4AFB8B7AE1843E733C4B0CC600_2072530331 =         keySet;
     if(valuesCollection == null)        
         {
             valuesCollection = new AbstractCollection<V>() {        
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.252 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "2685B57F37149102E429BBFAFFBA7327")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.252 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "2685B57F37149102E429BBFAFFBA7327")
         @Override
         public int size() {
             int varD3F415AC0DAFD84BD094635E9A38D203_766029023 = (WeakHashMap.this.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656792483 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656792483;
-            
-            
+            // ---------- Original Method ----------
+            //return WeakHashMap.this.size();
         }
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.252 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.252 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
         @Override
         public void clear() {
             WeakHashMap.this.clear();
-            
-            
+            // ---------- Original Method ----------
+            //WeakHashMap.this.clear();
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.252 -0400", hash_original_method = "7679F4183F803D10EFCD1172E399C7C3", hash_generated_method = "AD9F36B261C6F773F7F9D29BEFA206F6")
         @Override
@@ -427,8 +418,8 @@ Set<K> varCB23CF4AFB8B7AE1843E733C4B0CC600_2072530331 =         keySet;
             boolean varB5B67EA4257497C0385399BB5E8BA25C_443926067 = (containsValue(object));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1159292141 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1159292141;
-            
-            
+            // ---------- Original Method ----------
+            //return containsValue(object);
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.253 -0400", hash_original_method = "D1021921C3018EF53317EBCD6C577AB9", hash_generated_method = "8F55588F636ECC0C799166ED90AF117E")
         @Override
@@ -440,26 +431,26 @@ Iterator<V> var07197EA3EAD8FB5AD311B18A1D908E82_1647781354 =             new Has
 V var4A887D14956ECA386DDED2772C1F523B_575345795 =                 entry.getValue();
                 var4A887D14956ECA386DDED2772C1F523B_575345795.addTaint(taint);
                 return var4A887D14956ECA386DDED2772C1F523B_575345795;
-                
-                
+                // ---------- Original Method ----------
+                //return entry.getValue();
             }
 });
             var07197EA3EAD8FB5AD311B18A1D908E82_1647781354.addTaint(taint);
             return var07197EA3EAD8FB5AD311B18A1D908E82_1647781354;
-            
-            
-                        
-                            
-                        
-                    
+            // ---------- Original Method ----------
+            //return new HashIterator<V>(new Entry.Type<V, K, V>() {
+                        //public V get(Map.Entry<K, V> entry) {
+                            //return entry.getValue();
+                        //}
+                    //});
         }
 };
-        } 
+        } //End block
 Collection<V> var60B0A8A6E555943126A18D312F8E04FB_1559692254 =         valuesCollection;
         var60B0A8A6E555943126A18D312F8E04FB_1559692254.addTaint(taint);
         return var60B0A8A6E555943126A18D312F8E04FB_1559692254;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -480,13 +471,13 @@ Collection<V> var60B0A8A6E555943126A18D312F8E04FB_1559692254 =         valuesCol
 V varD2C0624DDD8A4F8F307477F36B405DFB_1268242984 =                     entry.value;
                     varD2C0624DDD8A4F8F307477F36B405DFB_1268242984.addTaint(taint);
                     return varD2C0624DDD8A4F8F307477F36B405DFB_1268242984;
-                } 
+                } //End block
                 entry = entry.next;
-            } 
+            } //End block
 V var540C13E9E156B687226421B24F2DF178_334105009 =             null;
             var540C13E9E156B687226421B24F2DF178_334105009.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_334105009;
-        } 
+        } //End block
         Entry<K, V> entry = elementData[0];
         while
 (entry != null)        
@@ -496,33 +487,33 @@ V var540C13E9E156B687226421B24F2DF178_334105009 =             null;
 V varD2C0624DDD8A4F8F307477F36B405DFB_904847707 =                 entry.value;
                 varD2C0624DDD8A4F8F307477F36B405DFB_904847707.addTaint(taint);
                 return varD2C0624DDD8A4F8F307477F36B405DFB_904847707;
-            } 
+            } //End block
             entry = entry.next;
-        } 
+        } //End block
 V var540C13E9E156B687226421B24F2DF178_1231869558 =         null;
         var540C13E9E156B687226421B24F2DF178_1231869558.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1231869558;
-        
-        
-        
-            
-            
-            
-                
-                    
-                
-                
-            
-            
-        
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //poll();
+        //if (key != null) {
+            //int index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
+            //Entry<K, V> entry = elementData[index];
+            //while (entry != null) {
+                //if (key.equals(entry.get())) {
+                    //return entry.value;
+                //}
+                //entry = entry.next;
+            //}
+            //return null;
+        //}
+        //Entry<K, V> entry = elementData[0];
+        //while (entry != null) {
+            //if (entry.isNull) {
+                //return entry.value;
+            //}
+            //entry = entry.next;
+        //}
+        //return null;
     }
 
     
@@ -542,13 +533,13 @@ V var540C13E9E156B687226421B24F2DF178_1231869558 =         null;
 Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1559036056 =                     entry;
                     varF26DBE38545460D6F6AE1D948FF53869_1559036056.addTaint(taint);
                     return varF26DBE38545460D6F6AE1D948FF53869_1559036056;
-                } 
+                } //End block
                 entry = entry.next;
-            } 
+            } //End block
 Entry<K, V> var540C13E9E156B687226421B24F2DF178_1488120205 =             null;
             var540C13E9E156B687226421B24F2DF178_1488120205.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1488120205;
-        } 
+        } //End block
         Entry<K, V> entry = elementData[0];
         while
 (entry != null)        
@@ -558,37 +549,36 @@ Entry<K, V> var540C13E9E156B687226421B24F2DF178_1488120205 =             null;
 Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1881884922 =                 entry;
                 varF26DBE38545460D6F6AE1D948FF53869_1881884922.addTaint(taint);
                 return varF26DBE38545460D6F6AE1D948FF53869_1881884922;
-            } 
+            } //End block
             entry = entry.next;
-        } 
+        } //End block
 Entry<K, V> var540C13E9E156B687226421B24F2DF178_1240757322 =         null;
         var540C13E9E156B687226421B24F2DF178_1240757322.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1240757322;
-        
-        
-        
-            
-            
-            
-                
-                    
-                
-                
-            
-            
-        
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //poll();
+        //if (key != null) {
+            //int index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
+            //Entry<K, V> entry = elementData[index];
+            //while (entry != null) {
+                //if (key.equals(entry.get())) {
+                    //return entry;
+                //}
+                //entry = entry.next;
+            //}
+            //return null;
+        //}
+        //Entry<K, V> entry = elementData[0];
+        //while (entry != null) {
+            //if (entry.isNull) {
+                //return entry;
+            //}
+            //entry = entry.next;
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.257 -0400", hash_original_method = "EBDA4BA5DE93153797BA511A1B84894F", hash_generated_method = "0B8C412DFEC48ACDBC4B8E269E72CB3B")
     @Override
     public boolean containsValue(Object value) {
@@ -609,11 +599,11 @@ for(int i = elementData.length;--i >= 0;)
                         boolean varB326B5062B2F0E69046810717534CB09_1475869435 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79772686 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_79772686;
-                    } 
+                    } //End block
                     entry = entry.next;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
 for(int i = elementData.length;--i >= 0;)
@@ -628,32 +618,30 @@ for(int i = elementData.length;--i >= 0;)
                         boolean varB326B5062B2F0E69046810717534CB09_1470904471 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355917056 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355917056;
-                    } 
+                    } //End block
                     entry = entry.next;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_463428560 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1062245407 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1062245407;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.258 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "C76E08E824A626CB5DF5FA05ABF9A78D")
     @Override
     public boolean isEmpty() {
         boolean var5BD3446419BAE72903C4742BF777F0E0_624872220 = (size() == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1427953554 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1427953554;
-        
-        
+        // ---------- Original Method ----------
+        //return size() == 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.258 -0400", hash_original_method = "0A4BB2570FECEAC055174AF0C493CF3C", hash_generated_method = "8A010F18FB328BAC58AD9113684DC5C8")
     @SuppressWarnings("unchecked")
      void poll() {
@@ -662,12 +650,12 @@ for(int i = elementData.length;--i >= 0;)
 ((toRemove = (Entry<K, V>) referenceQueue.poll()) != null)        
         {
             removeEntry(toRemove);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Entry<K, V> toRemove;
+        //while ((toRemove = (Entry<K, V>) referenceQueue.poll()) != null) {
+            //removeEntry(toRemove);
+        //}
     }
 
     
@@ -687,35 +675,35 @@ for(int i = elementData.length;--i >= 0;)
     if(last == null)                
                 {
                     elementData[index] = entry.next;
-                } 
+                } //End block
                 else
                 {
                     last.next = entry.next;
-                } 
+                } //End block
                 elementCount--;
                 break;
-            } 
+            } //End block
             last = entry;
             entry = entry.next;
-        } 
-        
-        
-        
-        
-        
-            
-                
-                
-                    
-                
-                    
-                
-                
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Entry<K, V> entry, last = null;
+        //int index = (toRemove.hash & 0x7FFFFFFF) % elementData.length;
+        //entry = elementData[index];
+        //while (entry != null) {
+            //if (toRemove == entry) {
+                //modCount++;
+                //if (last == null) {
+                    //elementData[index] = entry.next;
+                //} else {
+                    //last.next = entry.next;
+                //}
+                //elementCount--;
+                //break;
+            //}
+            //last = entry;
+            //entry = entry.next;
+        //}
     }
 
     
@@ -735,8 +723,8 @@ for(int i = elementData.length;--i >= 0;)
 (entry != null && !key.equals(entry.get()))            
             {
                 entry = entry.next;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             entry = elementData[0];
@@ -744,8 +732,8 @@ for(int i = elementData.length;--i >= 0;)
 (entry != null && !entry.isNull)            
             {
                 entry = entry.next;
-            } 
-        } 
+            } //End block
+        } //End block
     if(entry == null)        
         {
             modCount++;
@@ -754,32 +742,31 @@ for(int i = elementData.length;--i >= 0;)
                 rehash();
                 index = key == null ? 0 : (key.hashCode() & 0x7FFFFFFF)
                         % elementData.length;
-            } 
+            } //End block
             entry = new Entry<K, V>(key, value, referenceQueue);
             entry.next = elementData[index];
             elementData[index] = entry;
 V var540C13E9E156B687226421B24F2DF178_1297453068 =             null;
             var540C13E9E156B687226421B24F2DF178_1297453068.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1297453068;
-        } 
+        } //End block
         V result = entry.value;
         entry.value = value;
 V varDC838461EE2FA0CA4C9BBB70A15456B0_307451873 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_307451873.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_307451873;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.262 -0400", hash_original_method = "2B64F6E6AE3910B09507F9013DEACFFD", hash_generated_method = "43B89B9AE4AF91AB4CC60A9D77FCB8CD")
     private void rehash() {
         int length = elementData.length * 2;
     if(length == 0)        
         {
             length = 1;
-        } 
+        } //End block
         Entry<K, V>[] newData = newEntryArray(length);
 for(int i = 0;i < elementData.length;i++)
         {
@@ -793,29 +780,29 @@ for(int i = 0;i < elementData.length;i++)
                 entry.next = newData[index];
                 newData[index] = entry;
                 entry = next;
-            } 
-        } 
+            } //End block
+        } //End block
         elementData = newData;
         computeMaxSize();
-        
-        
-        
-            
-        
-        
-        
-            
-            
-                
-                        
-                
-                
-                
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int length = elementData.length * 2;
+        //if (length == 0) {
+            //length = 1;
+        //}
+        //Entry<K, V>[] newData = newEntryArray(length);
+        //for (int i = 0; i < elementData.length; i++) {
+            //Entry<K, V> entry = elementData[i];
+            //while (entry != null) {
+                //int index = entry.isNull ? 0 : (entry.hash & 0x7FFFFFFF)
+                        //% length;
+                //Entry<K, V> next = entry.next;
+                //entry.next = newData[index];
+                //newData[index] = entry;
+                //entry = next;
+            //}
+        //}
+        //elementData = newData;
+        //computeMaxSize();
     }
 
     
@@ -824,8 +811,8 @@ for(int i = 0;i < elementData.length;i++)
     public void putAll(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());
         putAllImpl(map);
-        
-        
+        // ---------- Original Method ----------
+        //putAllImpl(map);
     }
 
     
@@ -846,8 +833,8 @@ for(int i = 0;i < elementData.length;i++)
             {
                 last = entry;
                 entry = entry.next;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             entry = elementData[0];
@@ -856,33 +843,32 @@ for(int i = 0;i < elementData.length;i++)
             {
                 last = entry;
                 entry = entry.next;
-            } 
-        } 
+            } //End block
+        } //End block
     if(entry != null)        
         {
             modCount++;
     if(last == null)            
             {
                 elementData[index] = entry.next;
-            } 
+            } //End block
             else
             {
                 last.next = entry.next;
-            } 
+            } //End block
             elementCount--;
 V varD2C0624DDD8A4F8F307477F36B405DFB_1567076951 =             entry.value;
             varD2C0624DDD8A4F8F307477F36B405DFB_1567076951.addTaint(taint);
             return varD2C0624DDD8A4F8F307477F36B405DFB_1567076951;
-        } 
+        } //End block
 V var540C13E9E156B687226421B24F2DF178_1639818022 =         null;
         var540C13E9E156B687226421B24F2DF178_1639818022.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1639818022;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.265 -0400", hash_original_method = "B65BB7405B9BD112F0A817BA32556A99", hash_generated_method = "636FCEAB79D45EC7E17589726A6D8E61")
     @Override
     public int size() {
@@ -890,9 +876,9 @@ V var540C13E9E156B687226421B24F2DF178_1639818022 =         null;
         int varBC8C6DCF12CE09E50A98BB57ADFCADD9_756837616 = (elementCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_517005945 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_517005945;
-        
-        
-        
+        // ---------- Original Method ----------
+        //poll();
+        //return elementCount;
     }
 
     
@@ -902,11 +888,11 @@ V var540C13E9E156B687226421B24F2DF178_1639818022 =         null;
     if(map.entrySet() != null)        
         {
             super.putAll(map);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (map.entrySet() != null) {
+            //super.putAll(map);
+        //}
     }
 
     
@@ -931,10 +917,10 @@ V var540C13E9E156B687226421B24F2DF178_1639818022 =         null;
             isNull = key == null;
             hash = isNull ? 0 : key.hashCode();
             value = object;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //isNull = key == null;
+            //hash = isNull ? 0 : key.hashCode();
+            //value = object;
         }
 
         
@@ -943,8 +929,8 @@ V var540C13E9E156B687226421B24F2DF178_1639818022 =         null;
 K varF46E0FEC371F89BDFA76383E23E6646E_312273765 =             super.get();
             varF46E0FEC371F89BDFA76383E23E6646E_312273765.addTaint(taint);
             return varF46E0FEC371F89BDFA76383E23E6646E_312273765;
-            
-            
+            // ---------- Original Method ----------
+            //return super.get();
         }
 
         
@@ -953,8 +939,8 @@ K varF46E0FEC371F89BDFA76383E23E6646E_312273765 =             super.get();
 V varAF280DA2BC37D8BE783D8499160168DE_1478495474 =             value;
             varAF280DA2BC37D8BE783D8499160168DE_1478495474.addTaint(taint);
             return varAF280DA2BC37D8BE783D8499160168DE_1478495474;
-            
-            
+            // ---------- Original Method ----------
+            //return value;
         }
 
         
@@ -965,10 +951,10 @@ V varAF280DA2BC37D8BE783D8499160168DE_1478495474 =             value;
 V varDC838461EE2FA0CA4C9BBB70A15456B0_1292799013 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1292799013.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1292799013;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //V result = value;
+            //value = object;
+            //return result;
         }
 
         
@@ -981,7 +967,7 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_1292799013 =             result;
                 boolean var68934A3E9455FA72420237EB05902327_386374088 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1252541337 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1252541337;
-            } 
+            } //End block
             Map.Entry<?, ?> entry = (Map.Entry<?, ?>) other;
             Object key = super.get();
             boolean varC9CB589920583BFE71950CDF3298A1A4_1895971568 = ((key == null ? key == entry.getKey() : key.equals(entry
@@ -990,16 +976,16 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_1292799013 =             result;
                             .equals(entry.getValue())));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2094870167 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2094870167;
-            
-            
-                
-            
-            
-            
-            
-                    
-                    
-                            
+            // ---------- Original Method ----------
+            //if (!(other instanceof Map.Entry)) {
+                //return false;
+            //}
+            //Map.Entry<?, ?> entry = (Map.Entry<?, ?>) other;
+            //Object key = super.get();
+            //return (key == null ? key == entry.getKey() : key.equals(entry
+                    //.getKey()))
+                    //&& (value == null ? value == entry.getValue() : value
+                            //.equals(entry.getValue()));
         }
 
         
@@ -1009,8 +995,8 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_1292799013 =             result;
             int varF8D1F3F73B85EF59ABE7CBB7BE8BB7B9_504549886 = (hash + (value == null ? 0 : value.hashCode()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2071717277 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2071717277;
-            
-            
+            // ---------- Original Method ----------
+            //return hash + (value == null ? 0 : value.hashCode());
         }
 
         
@@ -1020,8 +1006,8 @@ V varDC838461EE2FA0CA4C9BBB70A15456B0_1292799013 =             result;
 String varFC892D331EE15D32E10B8CA14F620EF3_520388677 =             super.get() + "=" + value;
             varFC892D331EE15D32E10B8CA14F620EF3_520388677.addTaint(taint);
             return varFC892D331EE15D32E10B8CA14F620EF3_520388677;
-            
-            
+            // ---------- Original Method ----------
+            //return super.get() + "=" + value;
         }
 
         
@@ -1057,9 +1043,9 @@ String varFC892D331EE15D32E10B8CA14F620EF3_520388677 =             super.get() +
           HashIterator(Entry.Type<R, K, V> type) {
             this.type = type;
             expectedModCount = modCount;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.type = type;
+            //expectedModCount = modCount;
         }
 
         
@@ -1070,7 +1056,7 @@ String varFC892D331EE15D32E10B8CA14F620EF3_520388677 =             super.get() +
                 boolean varB326B5062B2F0E69046810717534CB09_870391327 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_917874244 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_917874244;
-            } 
+            } //End block
             while
 (true)            
             {
@@ -1082,45 +1068,45 @@ String varFC892D331EE15D32E10B8CA14F620EF3_520388677 =             super.get() +
     if((nextEntry = elementData[position++]) != null)                        
                         {
                             break;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
     if(nextEntry == null)                    
                     {
                         boolean var68934A3E9455FA72420237EB05902327_622458515 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_441880632 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_441880632;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 nextKey = nextEntry.get();
     if(nextKey != null || nextEntry.isNull)                
                 {
                     boolean varB326B5062B2F0E69046810717534CB09_1761450967 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1464153774 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1464153774;
-                } 
+                } //End block
                 nextEntry = nextEntry.next;
-            } 
-            
-            
-                
-            
-            
-                
-                    
-                        
-                            
-                        
-                    
-                    
-                        
-                    
-                
-                
-                
-                    
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (nextEntry != null && (nextKey != null || nextEntry.isNull)) {
+                //return true;
+            //}
+            //while (true) {
+                //if (nextEntry == null) {
+                    //while (position < elementData.length) {
+                        //if ((nextEntry = elementData[position++]) != null) {
+                            //break;
+                        //}
+                    //}
+                    //if (nextEntry == null) {
+                        //return false;
+                    //}
+                //}
+                //nextKey = nextEntry.get();
+                //if (nextKey != null || nextEntry.isNull) {
+                    //return true;
+                //}
+                //nextEntry = nextEntry.next;
+            //}
         }
 
         
@@ -1137,26 +1123,26 @@ String varFC892D331EE15D32E10B8CA14F620EF3_520388677 =             super.get() +
 R varDC838461EE2FA0CA4C9BBB70A15456B0_867326721 =                     result;
                     varDC838461EE2FA0CA4C9BBB70A15456B0_867326721.addTaint(taint);
                     return varDC838461EE2FA0CA4C9BBB70A15456B0_867326721;
-                } 
+                } //End block
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_120468484 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_120468484.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_120468484;
-            } 
+            } //End block
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_410393749 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_410393749.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_410393749;
-            
-            
-                
-                    
-                    
-                    
-                    
-                    
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (expectedModCount == modCount) {
+                //if (hasNext()) {
+                    //currentEntry = nextEntry;
+                    //nextEntry = currentEntry.next;
+                    //R result = type.get(currentEntry);
+                    //nextKey = null;
+                    //return result;
+                //}
+                //throw new NoSuchElementException();
+            //}
+            //throw new ConcurrentModificationException();
         }
 
         
@@ -1169,32 +1155,32 @@ R varDC838461EE2FA0CA4C9BBB70A15456B0_867326721 =                     result;
                     removeEntry(currentEntry);
                     currentEntry = null;
                     expectedModCount++;
-                } 
+                } //End block
                 else
                 {
                     IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1814523617 = new IllegalStateException();
                     varC311A989A119B96A6232C22ABFE87C25_1814523617.addTaint(taint);
                     throw varC311A989A119B96A6232C22ABFE87C25_1814523617;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1552576179 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_1552576179.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_1552576179;
-            } 
-            
-            
-                
-                    
-                    
-                    
-                
-                    
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (expectedModCount == modCount) {
+                //if (currentEntry != null) {
+                    //removeEntry(currentEntry);
+                    //currentEntry = null;
+                    //expectedModCount++;
+                //} else {
+                    //throw new IllegalStateException();
+                //}
+            //} else {
+                //throw new ConcurrentModificationException();
+            //}
         }
 
         

@@ -1,6 +1,6 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -60,9 +60,9 @@ final class ApplicationPackageManager extends PackageManager {
                               IPackageManager pm) {
         mContext = context;
         mPM = pm;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mPM = pm;
     }
 
     
@@ -79,27 +79,27 @@ final class ApplicationPackageManager extends PackageManager {
 PackageInfo var81D1A2E7B8C8FB24958425A15F743A98_1931378959 =                 pi;
                 var81D1A2E7B8C8FB24958425A15F743A98_1931378959.addTaint(taint);
                 return var81D1A2E7B8C8FB24958425A15F743A98_1931378959;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_828088072 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_828088072.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_828088072;
-        } 
+        } //End block
         NameNotFoundException var66F177309B3AAEEE242A13D4F2EC34A7_263820311 = new NameNotFoundException(packageName);
         var66F177309B3AAEEE242A13D4F2EC34A7_263820311.addTaint(taint);
         throw var66F177309B3AAEEE242A13D4F2EC34A7_263820311;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //PackageInfo pi = mPM.getPackageInfo(packageName, flags);
+            //if (pi != null) {
+                //return pi;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(packageName);
     }
 
     
@@ -112,19 +112,19 @@ PackageInfo var81D1A2E7B8C8FB24958425A15F743A98_1931378959 =                 pi;
 String[] var4408DCF3960F805BCBC82CB95360A56D_345392059 =             mPM.currentToCanonicalPackageNames(names);
             var4408DCF3960F805BCBC82CB95360A56D_345392059.addTaint(taint);
             return var4408DCF3960F805BCBC82CB95360A56D_345392059;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1494032888 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1494032888.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1494032888;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.currentToCanonicalPackageNames(names);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -137,23 +137,22 @@ String[] var4408DCF3960F805BCBC82CB95360A56D_345392059 =             mPM.current
 String[] var7E7E7838A1BF04C6EBC5094AE21CEB27_662491329 =             mPM.canonicalToCurrentPackageNames(names);
             var7E7E7838A1BF04C6EBC5094AE21CEB27_662491329.addTaint(taint);
             return var7E7E7838A1BF04C6EBC5094AE21CEB27_662491329;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1257813933 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1257813933.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1257813933;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.canonicalToCurrentPackageNames(names);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.472 -0400", hash_original_method = "A679E3857CF73FF4B9C2EA4F09C7DBB7", hash_generated_method = "175E8C5788F2B45A5A2DA85B6D6DC5A1")
     @Override
     public Intent getLaunchIntentForPackage(String packageName) {
@@ -168,13 +167,13 @@ String[] var7E7E7838A1BF04C6EBC5094AE21CEB27_662491329 =             mPM.canonic
             intentToResolve.addCategory(Intent.CATEGORY_LAUNCHER);
             intentToResolve.setPackage(packageName);
             ris = queryIntentActivities(intentToResolve, 0);
-        } 
+        } //End block
     if(ris == null || ris.size() <= 0)        
         {
 Intent var540C13E9E156B687226421B24F2DF178_557340218 =             null;
             var540C13E9E156B687226421B24F2DF178_557340218.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_557340218;
-        } 
+        } //End block
         Intent intent = new Intent(intentToResolve);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setClassName(ris.get(0).activityInfo.packageName,
@@ -182,8 +181,8 @@ Intent var540C13E9E156B687226421B24F2DF178_557340218 =             null;
 Intent var095937E5B36214360A2644916BF0E8DF_537370416 =         intent;
         var095937E5B36214360A2644916BF0E8DF_537370416.addTaint(taint);
         return var095937E5B36214360A2644916BF0E8DF_537370416;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -199,27 +198,27 @@ Intent var095937E5B36214360A2644916BF0E8DF_537370416 =         intent;
                 int[] var77DBC042260703938C8CA627F28C6CF5_487975044 = (gids);
                                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_111334216 = {getTaintInt()};
                 return varB4CCCA26F9DB9189C32F33E82D425CFB_111334216;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1790360271 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1790360271.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1790360271;
-        } 
+        } //End block
         NameNotFoundException var66F177309B3AAEEE242A13D4F2EC34A7_1868221454 = new NameNotFoundException(packageName);
         var66F177309B3AAEEE242A13D4F2EC34A7_1868221454.addTaint(taint);
         throw var66F177309B3AAEEE242A13D4F2EC34A7_1868221454;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //int[] gids = mPM.getPackageGids(packageName);
+            //if (gids == null || gids.length > 0) {
+                //return gids;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(packageName);
     }
 
     
@@ -236,27 +235,27 @@ Intent var095937E5B36214360A2644916BF0E8DF_537370416 =         intent;
 PermissionInfo var81D1A2E7B8C8FB24958425A15F743A98_797634930 =                 pi;
                 var81D1A2E7B8C8FB24958425A15F743A98_797634930.addTaint(taint);
                 return var81D1A2E7B8C8FB24958425A15F743A98_797634930;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1803951295 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1803951295.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1803951295;
-        } 
+        } //End block
         NameNotFoundException varF14FFD89079BEC8EEF84D16341E4DEE7_711624631 = new NameNotFoundException(name);
         varF14FFD89079BEC8EEF84D16341E4DEE7_711624631.addTaint(taint);
         throw varF14FFD89079BEC8EEF84D16341E4DEE7_711624631;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //PermissionInfo pi = mPM.getPermissionInfo(name, flags);
+            //if (pi != null) {
+                //return pi;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(name);
     }
 
     
@@ -273,27 +272,27 @@ PermissionInfo var81D1A2E7B8C8FB24958425A15F743A98_797634930 =                 p
 List<PermissionInfo> var81D1A2E7B8C8FB24958425A15F743A98_830352108 =                 pi;
                 var81D1A2E7B8C8FB24958425A15F743A98_830352108.addTaint(taint);
                 return var81D1A2E7B8C8FB24958425A15F743A98_830352108;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_896365434 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_896365434.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_896365434;
-        } 
+        } //End block
         NameNotFoundException varFC268ECE908C7CBE5529583AFF25E51B_1301686459 = new NameNotFoundException(group);
         varFC268ECE908C7CBE5529583AFF25E51B_1301686459.addTaint(taint);
         throw varFC268ECE908C7CBE5529583AFF25E51B_1301686459;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //List<PermissionInfo> pi = mPM.queryPermissionsByGroup(group, flags);
+            //if (pi != null) {
+                //return pi;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(group);
     }
 
     
@@ -311,27 +310,27 @@ List<PermissionInfo> var81D1A2E7B8C8FB24958425A15F743A98_830352108 =            
 PermissionGroupInfo var0069CE035D8ABD1A3D2A3A0632D80D0A_620127698 =                 pgi;
                 var0069CE035D8ABD1A3D2A3A0632D80D0A_620127698.addTaint(taint);
                 return var0069CE035D8ABD1A3D2A3A0632D80D0A_620127698;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_88695078 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_88695078.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_88695078;
-        } 
+        } //End block
         NameNotFoundException varF14FFD89079BEC8EEF84D16341E4DEE7_598367772 = new NameNotFoundException(name);
         varF14FFD89079BEC8EEF84D16341E4DEE7_598367772.addTaint(taint);
         throw varF14FFD89079BEC8EEF84D16341E4DEE7_598367772;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //PermissionGroupInfo pgi = mPM.getPermissionGroupInfo(name, flags);
+            //if (pgi != null) {
+                //return pgi;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(name);
     }
 
     
@@ -344,19 +343,19 @@ PermissionGroupInfo var0069CE035D8ABD1A3D2A3A0632D80D0A_620127698 =             
 List<PermissionGroupInfo> var91C1646E85DCB698A1FBCFC4FD1F5BA2_1700745431 =             mPM.getAllPermissionGroups(flags);
             var91C1646E85DCB698A1FBCFC4FD1F5BA2_1700745431.addTaint(taint);
             return var91C1646E85DCB698A1FBCFC4FD1F5BA2_1700745431;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_2036592120 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_2036592120.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_2036592120;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getAllPermissionGroups(flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -373,27 +372,27 @@ List<PermissionGroupInfo> var91C1646E85DCB698A1FBCFC4FD1F5BA2_1700745431 =      
 ApplicationInfo varF0D6783F85B950884EE206D023A357C0_908217089 =                 ai;
                 varF0D6783F85B950884EE206D023A357C0_908217089.addTaint(taint);
                 return varF0D6783F85B950884EE206D023A357C0_908217089;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1592079965 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1592079965.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1592079965;
-        } 
+        } //End block
         NameNotFoundException var66F177309B3AAEEE242A13D4F2EC34A7_896391791 = new NameNotFoundException(packageName);
         var66F177309B3AAEEE242A13D4F2EC34A7_896391791.addTaint(taint);
         throw var66F177309B3AAEEE242A13D4F2EC34A7_896391791;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //ApplicationInfo ai = mPM.getApplicationInfo(packageName, flags);
+            //if (ai != null) {
+                //return ai;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(packageName);
     }
 
     
@@ -410,27 +409,27 @@ ApplicationInfo varF0D6783F85B950884EE206D023A357C0_908217089 =                 
 ActivityInfo varF0D6783F85B950884EE206D023A357C0_1985263562 =                 ai;
                 varF0D6783F85B950884EE206D023A357C0_1985263562.addTaint(taint);
                 return varF0D6783F85B950884EE206D023A357C0_1985263562;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_792909198 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_792909198.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_792909198;
-        } 
+        } //End block
         NameNotFoundException var66DF60946F5E01AC15F21C65B4F5F4F4_1536415948 = new NameNotFoundException(className.toString());
         var66DF60946F5E01AC15F21C65B4F5F4F4_1536415948.addTaint(taint);
         throw var66DF60946F5E01AC15F21C65B4F5F4F4_1536415948;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //ActivityInfo ai = mPM.getActivityInfo(className, flags);
+            //if (ai != null) {
+                //return ai;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(className.toString());
     }
 
     
@@ -447,27 +446,27 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_1985263562 =                 ai
 ActivityInfo varF0D6783F85B950884EE206D023A357C0_354165559 =                 ai;
                 varF0D6783F85B950884EE206D023A357C0_354165559.addTaint(taint);
                 return varF0D6783F85B950884EE206D023A357C0_354165559;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1183152737 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1183152737.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1183152737;
-        } 
+        } //End block
         NameNotFoundException var66DF60946F5E01AC15F21C65B4F5F4F4_1072638161 = new NameNotFoundException(className.toString());
         var66DF60946F5E01AC15F21C65B4F5F4F4_1072638161.addTaint(taint);
         throw var66DF60946F5E01AC15F21C65B4F5F4F4_1072638161;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //ActivityInfo ai = mPM.getReceiverInfo(className, flags);
+            //if (ai != null) {
+                //return ai;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(className.toString());
     }
 
     
@@ -484,27 +483,27 @@ ActivityInfo varF0D6783F85B950884EE206D023A357C0_354165559 =                 ai;
 ServiceInfo var316474D4DA67FD8479E170FE8E19F283_2040483510 =                 si;
                 var316474D4DA67FD8479E170FE8E19F283_2040483510.addTaint(taint);
                 return var316474D4DA67FD8479E170FE8E19F283_2040483510;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_105354508 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_105354508.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_105354508;
-        } 
+        } //End block
         NameNotFoundException var66DF60946F5E01AC15F21C65B4F5F4F4_1869622855 = new NameNotFoundException(className.toString());
         var66DF60946F5E01AC15F21C65B4F5F4F4_1869622855.addTaint(taint);
         throw var66DF60946F5E01AC15F21C65B4F5F4F4_1869622855;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //ServiceInfo si = mPM.getServiceInfo(className, flags);
+            //if (si != null) {
+                //return si;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(className.toString());
     }
 
     
@@ -521,27 +520,27 @@ ServiceInfo var316474D4DA67FD8479E170FE8E19F283_2040483510 =                 si;
 ProviderInfo var81D1A2E7B8C8FB24958425A15F743A98_771986342 =                 pi;
                 var81D1A2E7B8C8FB24958425A15F743A98_771986342.addTaint(taint);
                 return var81D1A2E7B8C8FB24958425A15F743A98_771986342;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1871371364 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1871371364.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1871371364;
-        } 
+        } //End block
         NameNotFoundException var66DF60946F5E01AC15F21C65B4F5F4F4_1582642897 = new NameNotFoundException(className.toString());
         var66DF60946F5E01AC15F21C65B4F5F4F4_1582642897.addTaint(taint);
         throw var66DF60946F5E01AC15F21C65B4F5F4F4_1582642897;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //ProviderInfo pi = mPM.getProviderInfo(className, flags);
+            //if (pi != null) {
+                //return pi;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(className.toString());
     }
 
     
@@ -553,19 +552,19 @@ ProviderInfo var81D1A2E7B8C8FB24958425A15F743A98_771986342 =                 pi;
 String[] varB1CFFA988E3DBD9614F638D068F4C165_68668543 =             mPM.getSystemSharedLibraryNames();
             varB1CFFA988E3DBD9614F638D068F4C165_68668543.addTaint(taint);
             return varB1CFFA988E3DBD9614F638D068F4C165_68668543;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_241228956 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_241228956.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_241228956;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getSystemSharedLibraryNames();
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -577,19 +576,19 @@ String[] varB1CFFA988E3DBD9614F638D068F4C165_68668543 =             mPM.getSyste
 FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.getSystemAvailableFeatures();
             varB0F22BA1AFC32A4106709CF6A7CA068D_692482226.addTaint(taint);
             return varB0F22BA1AFC32A4106709CF6A7CA068D_692482226;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_195371368 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_195371368.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_195371368;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getSystemAvailableFeatures();
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -602,19 +601,19 @@ FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.ge
             boolean var37ADF61D22F136777D5E2BF32F95BB22_62197703 = (mPM.hasSystemFeature(name));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1876931615 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1876931615;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_458761396 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_458761396.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_458761396;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.hasSystemFeature(name);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -628,19 +627,19 @@ FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.ge
             int varDF0DA18627386C79194F175EB75BB229_1977010427 = (mPM.checkPermission(permName, pkgName));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1737763785 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1737763785;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1988969486 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1988969486.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1988969486;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.checkPermission(permName, pkgName);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -653,19 +652,19 @@ FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.ge
             boolean var4D1C33C7B58570D1EC7C0220D2C194EB_636757550 = (mPM.addPermission(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1126041681 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1126041681;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_2145059016 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_2145059016.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_2145059016;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.addPermission(info);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -678,19 +677,19 @@ FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.ge
             boolean var8881271C5790813BCB37EA64363A8107_1226497474 = (mPM.addPermissionAsync(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1422318536 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1422318536;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_817520980 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_817520980.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_817520980;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.addPermissionAsync(info);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -701,19 +700,19 @@ FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.ge
         try 
         {
             mPM.removePermission(name);
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1159957539 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1159957539.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1159957539;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.removePermission(name);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -727,19 +726,19 @@ FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.ge
             int var240C22D7ECE302ED357F18D25BCE9FC8_2062707236 = (mPM.checkSignatures(pkg1, pkg2));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_607320115 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_607320115;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_2134641300 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_2134641300.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_2134641300;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.checkSignatures(pkg1, pkg2);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -753,19 +752,19 @@ FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.ge
             int var29BBF1E11C597F71DD50DDF6CFC1E31E_1407981519 = (mPM.checkUidSignatures(uid1, uid2));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_860215760 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_860215760;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1175943273 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1175943273.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1175943273;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.checkUidSignatures(uid1, uid2);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -778,19 +777,19 @@ FeatureInfo[] varB0F22BA1AFC32A4106709CF6A7CA068D_692482226 =             mPM.ge
 String[] varD991A7FF694DD380F485AA5D6A4F3DB8_926799975 =             mPM.getPackagesForUid(uid);
             varD991A7FF694DD380F485AA5D6A4F3DB8_926799975.addTaint(taint);
             return varD991A7FF694DD380F485AA5D6A4F3DB8_926799975;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1614406062 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1614406062.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1614406062;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getPackagesForUid(uid);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -803,19 +802,19 @@ String[] varD991A7FF694DD380F485AA5D6A4F3DB8_926799975 =             mPM.getPack
 String var6CF9536D701B4110CD0A13C848A0721A_1156724852 =             mPM.getNameForUid(uid);
             var6CF9536D701B4110CD0A13C848A0721A_1156724852.addTaint(taint);
             return var6CF9536D701B4110CD0A13C848A0721A_1156724852;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_970687700 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_970687700.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_970687700;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getNameForUid(uid);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -831,27 +830,27 @@ String var6CF9536D701B4110CD0A13C848A0721A_1156724852 =             mPM.getNameF
                 int var9871D3A2C554B27151CACF1422EEC048_1889846354 = (uid);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1861056960 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1861056960;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1573608890 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1573608890.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1573608890;
-        } 
+        } //End block
         NameNotFoundException var370BCF6F4CD709E6AA3B0E291A19BA32_1156711572 = new NameNotFoundException("No shared userid for user:"+sharedUserName);
         var370BCF6F4CD709E6AA3B0E291A19BA32_1156711572.addTaint(taint);
         throw var370BCF6F4CD709E6AA3B0E291A19BA32_1156711572;
-        
-        
-            
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //int uid = mPM.getUidForSharedUser(sharedUserName);
+            //if(uid != -1) {
+                //return uid;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException("No shared userid for user:"+sharedUserName);
     }
 
     
@@ -870,32 +869,32 @@ String var6CF9536D701B4110CD0A13C848A0721A_1156724852 =             mPM.getNameF
                     final String lastKey = lastItem != null ? lastItem.packageName : null;
                     slice = mPM.getInstalledPackages(flags, lastKey);
                     lastItem = slice.populateList(packageInfos, PackageInfo.CREATOR);
-                } 
+                } //End block
 } while (!slice.isLastSlice());
 List<PackageInfo> var37101830B2D3C6C85473948F9AF68DFB_1259713759 =             packageInfos;
             var37101830B2D3C6C85473948F9AF68DFB_1259713759.addTaint(taint);
             return var37101830B2D3C6C85473948F9AF68DFB_1259713759;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_38815402 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_38815402.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_38815402;
-        } 
-        
-        
-            
-            
-            
-            
-                
-                
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //final List<PackageInfo> packageInfos = new ArrayList<PackageInfo>();
+            //PackageInfo lastItem = null;
+            //ParceledListSlice<PackageInfo> slice;
+            //do {
+                //final String lastKey = lastItem != null ? lastItem.packageName : null;
+                //slice = mPM.getInstalledPackages(flags, lastKey);
+                //lastItem = slice.populateList(packageInfos, PackageInfo.CREATOR);
+            //} while (!slice.isLastSlice());
+            //return packageInfos;
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -914,36 +913,35 @@ List<PackageInfo> var37101830B2D3C6C85473948F9AF68DFB_1259713759 =             p
                     final String lastKey = lastItem != null ? lastItem.packageName : null;
                     slice = mPM.getInstalledApplications(flags, lastKey);
                     lastItem = slice.populateList(applicationInfos, ApplicationInfo.CREATOR);
-                } 
+                } //End block
 } while (!slice.isLastSlice());
 List<ApplicationInfo> var476DDE830C1E7D654398FCDB6BE91BEE_105482440 =             applicationInfos;
             var476DDE830C1E7D654398FCDB6BE91BEE_105482440.addTaint(taint);
             return var476DDE830C1E7D654398FCDB6BE91BEE_105482440;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1371806882 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1371806882.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1371806882;
-        } 
-        
-        
-            
-            
-            
-            
-                
-                
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //final List<ApplicationInfo> applicationInfos = new ArrayList<ApplicationInfo>();
+            //ApplicationInfo lastItem = null;
+            //ParceledListSlice<ApplicationInfo> slice;
+            //do {
+                //final String lastKey = lastItem != null ? lastItem.packageName : null;
+                //slice = mPM.getInstalledApplications(flags, lastKey);
+                //lastItem = slice.populateList(applicationInfos, ApplicationInfo.CREATOR);
+            //} while (!slice.isLastSlice());
+            //return applicationInfos;
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.511 -0400", hash_original_method = "0CD7CD39AE65A355BC33F2BA54C4DC37", hash_generated_method = "F4274A646A8A98F29BFAC8FC3584B4D2")
     @Override
     public ResolveInfo resolveActivity(Intent intent, int flags) {
@@ -957,22 +955,22 @@ ResolveInfo var53CD1929C11A1EFD4D6D1E47C7C7A408_726382075 =             mPM.reso
                 flags);
             var53CD1929C11A1EFD4D6D1E47C7C7A408_726382075.addTaint(taint);
             return var53CD1929C11A1EFD4D6D1E47C7C7A408_726382075;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_608488195 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_608488195.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_608488195;
-        } 
-        
-        
-            
-                
-                
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.resolveIntent(
+                //intent,
+                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
+                //flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -990,22 +988,22 @@ List<ResolveInfo> var959EC25C5EAA6CFAF2C68E5802ED225B_1998220899 =             m
                 flags);
             var959EC25C5EAA6CFAF2C68E5802ED225B_1998220899.addTaint(taint);
             return var959EC25C5EAA6CFAF2C68E5802ED225B_1998220899;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1617110175 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1617110175.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1617110175;
-        } 
-        
-        
-            
-                
-                
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.queryIntentActivities(
+                //intent,
+                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
+                //flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -1034,12 +1032,12 @@ for(int i=0;i<N;i++)
     if(specificTypes == null)                        
                         {
                             specificTypes = new String[N];
-                        } 
+                        } //End block
                         specificTypes[i] = t;
-                    } 
-                } 
-            } 
-        } 
+                    } //End block
+                } //End block
+            } //End block
+        } //End block
         try 
         {
 List<ResolveInfo> var98A7E75C8E2130DCDDB36B3CBCB21C1D_1492114016 =             mPM.queryIntentActivityOptions(caller, specifics,
@@ -1047,15 +1045,15 @@ List<ResolveInfo> var98A7E75C8E2130DCDDB36B3CBCB21C1D_1492114016 =             m
                                                   flags);
             var98A7E75C8E2130DCDDB36B3CBCB21C1D_1492114016.addTaint(taint);
             return var98A7E75C8E2130DCDDB36B3CBCB21C1D_1492114016;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_348896618 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_348896618.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_348896618;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1072,26 +1070,25 @@ List<ResolveInfo> var8B6E5F8859DD8885402EF5F1767EE1FF_284700824 =             mP
                 flags);
             var8B6E5F8859DD8885402EF5F1767EE1FF_284700824.addTaint(taint);
             return var8B6E5F8859DD8885402EF5F1767EE1FF_284700824;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1025237045 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1025237045.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1025237045;
-        } 
-        
-        
-            
-                
-                
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.queryIntentReceivers(
+                //intent,
+                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
+                //flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.522 -0400", hash_original_method = "D7D4C733DB611C9D18D346868F9BD0BD", hash_generated_method = "C65DEB5B24439D36D3EEB2647CEF05D9")
     @Override
     public ResolveInfo resolveService(Intent intent, int flags) {
@@ -1105,22 +1102,22 @@ ResolveInfo var8DF144ADA7D834C2B6445C66A11819F1_1907245111 =             mPM.res
                 flags);
             var8DF144ADA7D834C2B6445C66A11819F1_1907245111.addTaint(taint);
             return var8DF144ADA7D834C2B6445C66A11819F1_1907245111;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1215136547 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1215136547.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1215136547;
-        } 
-        
-        
-            
-                
-                
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.resolveService(
+                //intent,
+                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
+                //flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -1137,22 +1134,22 @@ List<ResolveInfo> varAA78B32437C8D73EC53A2D8EEABDF0C8_62359032 =             mPM
                 flags);
             varAA78B32437C8D73EC53A2D8EEABDF0C8_62359032.addTaint(taint);
             return varAA78B32437C8D73EC53A2D8EEABDF0C8_62359032;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1841577965 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1841577965.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1841577965;
-        } 
-        
-        
-            
-                
-                
-                
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.queryIntentServices(
+                //intent,
+                //intent.resolveTypeIfNeeded(mContext.getContentResolver()),
+                //flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -1167,19 +1164,19 @@ List<ResolveInfo> varAA78B32437C8D73EC53A2D8EEABDF0C8_62359032 =             mPM
 ProviderInfo var9E926164775746E1973A744D08359501_185272934 =             mPM.resolveContentProvider(name, flags);
             var9E926164775746E1973A744D08359501_185272934.addTaint(taint);
             return var9E926164775746E1973A744D08359501_185272934;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_368359187 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_368359187.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_368359187;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.resolveContentProvider(name, flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -1195,19 +1192,19 @@ ProviderInfo var9E926164775746E1973A744D08359501_185272934 =             mPM.res
 List<ProviderInfo> var649783037687051D01975EFAA3A897C3_1648267626 =             mPM.queryContentProviders(processName, uid, flags);
             var649783037687051D01975EFAA3A897C3_1648267626.addTaint(taint);
             return var649783037687051D01975EFAA3A897C3_1648267626;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1008786795 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1008786795.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1008786795;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.queryContentProviders(processName, uid, flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -1226,28 +1223,28 @@ List<ProviderInfo> var649783037687051D01975EFAA3A897C3_1648267626 =             
 InstrumentationInfo var271C06C7ED7711E7D563AD4C67B1449E_116175564 =                 ii;
                 var271C06C7ED7711E7D563AD4C67B1449E_116175564.addTaint(taint);
                 return var271C06C7ED7711E7D563AD4C67B1449E_116175564;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1524248328 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1524248328.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1524248328;
-        } 
+        } //End block
         NameNotFoundException var66DF60946F5E01AC15F21C65B4F5F4F4_776811291 = new NameNotFoundException(className.toString());
         var66DF60946F5E01AC15F21C65B4F5F4F4_776811291.addTaint(taint);
         throw var66DF60946F5E01AC15F21C65B4F5F4F4_776811291;
-        
-        
-            
-                
-            
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //InstrumentationInfo ii = mPM.getInstrumentationInfo(
+                //className, flags);
+            //if (ii != null) {
+                //return ii;
+            //}
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
+        //throw new NameNotFoundException(className.toString());
     }
 
     
@@ -1262,19 +1259,19 @@ InstrumentationInfo var271C06C7ED7711E7D563AD4C67B1449E_116175564 =             
 List<InstrumentationInfo> varDACF4DF210DF604F3051E5EF852D2D12_885964872 =             mPM.queryInstrumentation(targetPackage, flags);
             varDACF4DF210DF604F3051E5EF852D2D12_885964872.addTaint(taint);
             return varDACF4DF210DF604F3051E5EF852D2D12_885964872;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_1490742880 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_1490742880.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_1490742880;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.queryInstrumentation(targetPackage, flags);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -1292,20 +1289,20 @@ List<InstrumentationInfo> varDACF4DF210DF604F3051E5EF852D2D12_885964872 =       
 Drawable varDA2FE1A9D9D8285A7F4D54668C2E4AE3_837455667 =             dr;
             varDA2FE1A9D9D8285A7F4D54668C2E4AE3_837455667.addTaint(taint);
             return varDA2FE1A9D9D8285A7F4D54668C2E4AE3_837455667;
-        } 
+        } //End block
     if(appInfo == null)        
         {
             try 
             {
                 appInfo = getApplicationInfo(packageName, 0);
-            } 
+            } //End block
             catch (NameNotFoundException e)
             {
 Drawable var540C13E9E156B687226421B24F2DF178_1768487441 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1768487441.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1768487441;
-            } 
-        } 
+            } //End block
+        } //End block
         try 
         {
             Resources r = getResourcesForApplication(appInfo);
@@ -1314,26 +1311,26 @@ Drawable var540C13E9E156B687226421B24F2DF178_1768487441 =                 null;
             {
                 RuntimeException e = new RuntimeException("here");
                 e.fillInStackTrace();
-            } 
+            } //End block
     if(DEBUG_ICONS){ }            putCachedIcon(name, dr);
 Drawable varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1148731257 =             dr;
             varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1148731257.addTaint(taint);
             return varDA2FE1A9D9D8285A7F4D54668C2E4AE3_1148731257;
-        } 
+        } //End block
         catch (NameNotFoundException e)
         {
-        } 
+        } //End block
         catch (Resources.NotFoundException e)
         {
-        } 
+        } //End block
         catch (RuntimeException e)
         {
-        } 
+        } //End block
 Drawable var540C13E9E156B687226421B24F2DF178_2116883715 =         null;
         var540C13E9E156B687226421B24F2DF178_2116883715.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2116883715;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1344,12 +1341,11 @@ Drawable var540C13E9E156B687226421B24F2DF178_2116883715 =         null;
 Drawable var0D423A11B11A8CD7FA1178796A4F2B7F_715556877 =         getActivityInfo(activityName, 0).loadIcon(this);
         var0D423A11B11A8CD7FA1178796A4F2B7F_715556877.addTaint(taint);
         return var0D423A11B11A8CD7FA1178796A4F2B7F_715556877;
-        
-        
+        // ---------- Original Method ----------
+        //return getActivityInfo(activityName, 0).loadIcon(this);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.539 -0400", hash_original_method = "EF5F409F30F5D50F1964B6AB6B7F75B7", hash_generated_method = "BBDB7990CDE5AC800373BC61EEA38587")
     @Override
     public Drawable getActivityIcon(Intent intent) throws NameNotFoundException {
@@ -1359,7 +1355,7 @@ Drawable var0D423A11B11A8CD7FA1178796A4F2B7F_715556877 =         getActivityInfo
 Drawable var748F36A39B1B34880A2295BB00CF09EE_1462640224 =             getActivityIcon(intent.getComponent());
             var748F36A39B1B34880A2295BB00CF09EE_1462640224.addTaint(taint);
             return var748F36A39B1B34880A2295BB00CF09EE_1462640224;
-        } 
+        } //End block
         ResolveInfo info = resolveActivity(
             intent, PackageManager.MATCH_DEFAULT_ONLY);
     if(info != null)        
@@ -1367,20 +1363,20 @@ Drawable var748F36A39B1B34880A2295BB00CF09EE_1462640224 =             getActivit
 Drawable var990B62C26486EA3F0D8131DEA96B2165_1258807304 =             info.activityInfo.loadIcon(this);
             var990B62C26486EA3F0D8131DEA96B2165_1258807304.addTaint(taint);
             return var990B62C26486EA3F0D8131DEA96B2165_1258807304;
-        } 
+        } //End block
         NameNotFoundException varE2BCF5174B94F5AAA49C789D58CFD1E0_1447075604 = new NameNotFoundException(intent.toUri(0));
         varE2BCF5174B94F5AAA49C789D58CFD1E0_1447075604.addTaint(taint);
         throw varE2BCF5174B94F5AAA49C789D58CFD1E0_1447075604;
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (intent.getComponent() != null) {
+            //return getActivityIcon(intent.getComponent());
+        //}
+        //ResolveInfo info = resolveActivity(
+            //intent, PackageManager.MATCH_DEFAULT_ONLY);
+        //if (info != null) {
+            //return info.activityInfo.loadIcon(this);
+        //}
+        //throw new NameNotFoundException(intent.toUri(0));
     }
 
     
@@ -1391,9 +1387,9 @@ Drawable var859ABD8972B57052B4D0C8A531A2DC09_8901988 =         Resources.getSyst
             com.android.internal.R.drawable.sym_def_app_icon);
         var859ABD8972B57052B4D0C8A531A2DC09_8901988.addTaint(taint);
         return var859ABD8972B57052B4D0C8A531A2DC09_8901988;
-        
-        
-            
+        // ---------- Original Method ----------
+        //return Resources.getSystem().getDrawable(
+            //com.android.internal.R.drawable.sym_def_app_icon);
     }
 
     
@@ -1404,8 +1400,8 @@ Drawable var859ABD8972B57052B4D0C8A531A2DC09_8901988 =         Resources.getSyst
 Drawable varBD36481CAA11421D1D3A0F1FC1E02B60_415066773 =         info.loadIcon(this);
         varBD36481CAA11421D1D3A0F1FC1E02B60_415066773.addTaint(taint);
         return varBD36481CAA11421D1D3A0F1FC1E02B60_415066773;
-        
-        
+        // ---------- Original Method ----------
+        //return info.loadIcon(this);
     }
 
     
@@ -1416,8 +1412,8 @@ Drawable varBD36481CAA11421D1D3A0F1FC1E02B60_415066773 =         info.loadIcon(t
 Drawable var574026DF4A89469F5BF04AF6F860243F_1465985448 =         getApplicationIcon(getApplicationInfo(packageName, 0));
         var574026DF4A89469F5BF04AF6F860243F_1465985448.addTaint(taint);
         return var574026DF4A89469F5BF04AF6F860243F_1465985448;
-        
-        
+        // ---------- Original Method ----------
+        //return getApplicationIcon(getApplicationInfo(packageName, 0));
     }
 
     
@@ -1428,12 +1424,11 @@ Drawable var574026DF4A89469F5BF04AF6F860243F_1465985448 =         getApplication
 Drawable varE23F661D14D7DE981F8F4A7E8A778432_1316197640 =         getActivityInfo(activityName, 0).loadLogo(this);
         varE23F661D14D7DE981F8F4A7E8A778432_1316197640.addTaint(taint);
         return varE23F661D14D7DE981F8F4A7E8A778432_1316197640;
-        
-        
+        // ---------- Original Method ----------
+        //return getActivityInfo(activityName, 0).loadLogo(this);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.550 -0400", hash_original_method = "3B1A86BB5E25FB8EFA7A1AD1A88B3B01", hash_generated_method = "2A80931DE83924C23539D79F6A9E0458")
     @Override
     public Drawable getActivityLogo(Intent intent) throws NameNotFoundException {
@@ -1443,7 +1438,7 @@ Drawable varE23F661D14D7DE981F8F4A7E8A778432_1316197640 =         getActivityInf
 Drawable var3562002FE3C5071329B46257497F8BD9_1126836147 =             getActivityLogo(intent.getComponent());
             var3562002FE3C5071329B46257497F8BD9_1126836147.addTaint(taint);
             return var3562002FE3C5071329B46257497F8BD9_1126836147;
-        } 
+        } //End block
         ResolveInfo info = resolveActivity(
             intent, PackageManager.MATCH_DEFAULT_ONLY);
     if(info != null)        
@@ -1451,20 +1446,20 @@ Drawable var3562002FE3C5071329B46257497F8BD9_1126836147 =             getActivit
 Drawable varED1E9405C1D23EFCD3BA2615D991D076_1156521182 =             info.activityInfo.loadLogo(this);
             varED1E9405C1D23EFCD3BA2615D991D076_1156521182.addTaint(taint);
             return varED1E9405C1D23EFCD3BA2615D991D076_1156521182;
-        } 
+        } //End block
         NameNotFoundException varE2BCF5174B94F5AAA49C789D58CFD1E0_1978602101 = new NameNotFoundException(intent.toUri(0));
         varE2BCF5174B94F5AAA49C789D58CFD1E0_1978602101.addTaint(taint);
         throw varE2BCF5174B94F5AAA49C789D58CFD1E0_1978602101;
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (intent.getComponent() != null) {
+            //return getActivityLogo(intent.getComponent());
+        //}
+        //ResolveInfo info = resolveActivity(
+            //intent, PackageManager.MATCH_DEFAULT_ONLY);
+        //if (info != null) {
+            //return info.activityInfo.loadLogo(this);
+        //}
+        //throw new NameNotFoundException(intent.toUri(0));
     }
 
     
@@ -1475,8 +1470,8 @@ Drawable varED1E9405C1D23EFCD3BA2615D991D076_1156521182 =             info.activ
 Drawable varDE726747D49680B2FA0EDF14A2BA0B2A_447205991 =         info.loadLogo(this);
         varDE726747D49680B2FA0EDF14A2BA0B2A_447205991.addTaint(taint);
         return varDE726747D49680B2FA0EDF14A2BA0B2A_447205991;
-        
-        
+        // ---------- Original Method ----------
+        //return info.loadLogo(this);
     }
 
     
@@ -1487,8 +1482,8 @@ Drawable varDE726747D49680B2FA0EDF14A2BA0B2A_447205991 =         info.loadLogo(t
 Drawable varEA72FA4FF4DA7EB2107FAD8967663ED9_369351687 =         getApplicationLogo(getApplicationInfo(packageName, 0));
         varEA72FA4FF4DA7EB2107FAD8967663ED9_369351687.addTaint(taint);
         return varEA72FA4FF4DA7EB2107FAD8967663ED9_369351687;
-        
-        
+        // ---------- Original Method ----------
+        //return getApplicationLogo(getApplicationInfo(packageName, 0));
     }
 
     
@@ -1501,9 +1496,9 @@ Resources var404E6134F0F48C247F1FD97ECE55C8D7_352632488 =         getResourcesFo
             getActivityInfo(activityName, 0).applicationInfo);
         var404E6134F0F48C247F1FD97ECE55C8D7_352632488.addTaint(taint);
         return var404E6134F0F48C247F1FD97ECE55C8D7_352632488;
-        
-        
-            
+        // ---------- Original Method ----------
+        //return getResourcesForApplication(
+            //getActivityInfo(activityName, 0).applicationInfo);
     }
 
     
@@ -1517,7 +1512,7 @@ Resources var404E6134F0F48C247F1FD97ECE55C8D7_352632488 =         getResourcesFo
 Resources var4F898A4732E2653A7AC6783BA2F7F31E_1628893308 =             mContext.mMainThread.getSystemContext().getResources();
             var4F898A4732E2653A7AC6783BA2F7F31E_1628893308.addTaint(taint);
             return var4F898A4732E2653A7AC6783BA2F7F31E_1628893308;
-        } 
+        } //End block
         Resources r = mContext.mMainThread.getTopLevelResources(
             app.uid == Process.myUid() ? app.sourceDir
             : app.publicSourceDir, mContext.mPackageInfo);
@@ -1526,21 +1521,21 @@ Resources var4F898A4732E2653A7AC6783BA2F7F31E_1628893308 =             mContext.
 Resources var4C1F3C86A0E56B6E375080F5F710547E_550440603 =             r;
             var4C1F3C86A0E56B6E375080F5F710547E_550440603.addTaint(taint);
             return var4C1F3C86A0E56B6E375080F5F710547E_550440603;
-        } 
+        } //End block
         NameNotFoundException varB62EA499239502213DE0ED312AC15705_2033057916 = new NameNotFoundException("Unable to open " + app.publicSourceDir);
         varB62EA499239502213DE0ED312AC15705_2033057916.addTaint(taint);
         throw varB62EA499239502213DE0ED312AC15705_2033057916;
-        
-        
-            
-        
-        
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (app.packageName.equals("system")) {
+            //return mContext.mMainThread.getSystemContext().getResources();
+        //}
+        //Resources r = mContext.mMainThread.getTopLevelResources(
+            //app.uid == Process.myUid() ? app.sourceDir
+            //: app.publicSourceDir, mContext.mPackageInfo);
+        //if (r != null) {
+            //return r;
+        //}
+        //throw new NameNotFoundException("Unable to open " + app.publicSourceDir);
     }
 
     
@@ -1553,9 +1548,9 @@ Resources var4ECAD796BEBC2036726E2B4D3C6D94FC_1670424932 =         getResourcesF
             getApplicationInfo(appPackageName, 0));
         var4ECAD796BEBC2036726E2B4D3C6D94FC_1670424932.addTaint(taint);
         return var4ECAD796BEBC2036726E2B4D3C6D94FC_1670424932;
-        
-        
-            
+        // ---------- Original Method ----------
+        //return getResourcesForApplication(
+            //getApplicationInfo(appPackageName, 0));
     }
 
     
@@ -1567,26 +1562,26 @@ Resources var4ECAD796BEBC2036726E2B4D3C6D94FC_1670424932 =         getResourcesF
     if(mCachedSafeMode < 0)            
             {
                 mCachedSafeMode = mPM.isSafeMode() ? 1 : 0;
-            } 
+            } //End block
             boolean varDFE9EA0892C8F91B8CB2C26127C7633F_1384105387 = (mCachedSafeMode != 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1660609240 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1660609240;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException var79079410F479E45F5EDE00A04B1BB448_967591999 = new RuntimeException("Package manager has died", e);
             var79079410F479E45F5EDE00A04B1BB448_967591999.addTaint(taint);
             throw var79079410F479E45F5EDE00A04B1BB448_967591999;
-        } 
-        
-        
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (mCachedSafeMode < 0) {
+                //mCachedSafeMode = mPM.isSafeMode() ? 1 : 0;
+            //}
+            //return mCachedSafeMode != 0;
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("Package manager has died", e);
+        //}
     }
 
     
@@ -1598,7 +1593,6 @@ Resources var4ECAD796BEBC2036726E2B4D3C6D94FC_1670424932 =         getResourcesF
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.562 -0400", hash_original_method = "805BC435FDAE098AFC4F53B40E89D7C1", hash_generated_method = "1645948CFCE7074B6A2875A16B6EC861")
     private Drawable getCachedIcon(ResourceName name) {
         addTaint(name.getTaint());
@@ -1612,19 +1606,19 @@ Resources var4ECAD796BEBC2036726E2B4D3C6D94FC_1670424932 =         getResourcesF
                 {
     if(DEBUG_ICONS)                    
                     {
-                    } 
+                    } //End block
 Drawable var0CE7D3E7B0B3584DE52FC6510C98BEA7_1564384141 =                     state.newDrawable();
                     var0CE7D3E7B0B3584DE52FC6510C98BEA7_1564384141.addTaint(taint);
                     return var0CE7D3E7B0B3584DE52FC6510C98BEA7_1564384141;
-                } 
+                } //End block
                 sIconCache.remove(name);
-            } 
-        } 
+            } //End block
+        } //End block
 Drawable var540C13E9E156B687226421B24F2DF178_716524834 =         null;
         var540C13E9E156B687226421B24F2DF178_716524834.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_716524834;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1636,17 +1630,16 @@ Drawable var540C13E9E156B687226421B24F2DF178_716524834 =         null;
 (sSync)        {
             sIconCache.put(name, new WeakReference<Drawable.ConstantState>(dr.getConstantState()));
     if(DEBUG_ICONS){ }
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (sSync) {
+            //sIconCache.put(name, new WeakReference<Drawable.ConstantState>(dr.getConstantState()));
+            //if (DEBUG_ICONS) Log.v(TAG, "Added cached drawable state for " + name + ": " + dr);
+        //}
     }
 
     
-        @DSModeled(DSC.BAN)
-    static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo) {
+        static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo) {
         boolean immediateGc = false;
         if (cmd == IApplicationThread.EXTERNAL_STORAGE_UNAVAILABLE) {
             immediateGc = true;
@@ -1688,7 +1681,6 @@ Drawable var540C13E9E156B687226421B24F2DF178_716524834 =         null;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.569 -0400", hash_original_method = "B66098C8E55783775B73FA7D73879D41", hash_generated_method = "94134107A668F6EA901AFFE0A5C3180E")
     private CharSequence getCachedString(ResourceName name) {
         addTaint(name.getTaint());
@@ -1703,25 +1695,25 @@ Drawable var540C13E9E156B687226421B24F2DF178_716524834 =         null;
 CharSequence varE661418CFE0D2CECDB5DF6FE0739403D_755004644 =                     cs;
                     varE661418CFE0D2CECDB5DF6FE0739403D_755004644.addTaint(taint);
                     return varE661418CFE0D2CECDB5DF6FE0739403D_755004644;
-                } 
+                } //End block
                 sStringCache.remove(name);
-            } 
-        } 
+            } //End block
+        } //End block
 CharSequence var540C13E9E156B687226421B24F2DF178_1323915232 =         null;
         var540C13E9E156B687226421B24F2DF178_1323915232.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1323915232;
-        
-        
-            
-            
-                
-                
-                    
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (sSync) {
+            //WeakReference<CharSequence> wr = sStringCache.get(name);
+            //if (wr != null) {   
+                //CharSequence cs = wr.get();
+                //if (cs != null) {
+                    //return cs;
+                //}
+                //sStringCache.remove(name);
+            //}
+        //}
+        //return null;
     }
 
     
@@ -1732,11 +1724,11 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1323915232 =         null;
         synchronized
 (sSync)        {
             sStringCache.put(name, new WeakReference<CharSequence>(cs));
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (sSync) {
+            //sStringCache.put(name, new WeakReference<CharSequence>(cs));
+        //}
     }
 
     
@@ -1754,20 +1746,20 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1323915232 =         null;
 CharSequence var79CC641C1148018540A26F7ADC424893_1427929623 =             text;
             var79CC641C1148018540A26F7ADC424893_1427929623.addTaint(taint);
             return var79CC641C1148018540A26F7ADC424893_1427929623;
-        } 
+        } //End block
     if(appInfo == null)        
         {
             try 
             {
                 appInfo = getApplicationInfo(packageName, 0);
-            } 
+            } //End block
             catch (NameNotFoundException e)
             {
 CharSequence var540C13E9E156B687226421B24F2DF178_367707013 =                 null;
                 var540C13E9E156B687226421B24F2DF178_367707013.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_367707013;
-            } 
-        } 
+            } //End block
+        } //End block
         try 
         {
             Resources r = getResourcesForApplication(appInfo);
@@ -1776,18 +1768,18 @@ CharSequence var540C13E9E156B687226421B24F2DF178_367707013 =                 nul
 CharSequence var79CC641C1148018540A26F7ADC424893_1740617980 =             text;
             var79CC641C1148018540A26F7ADC424893_1740617980.addTaint(taint);
             return var79CC641C1148018540A26F7ADC424893_1740617980;
-        } 
+        } //End block
         catch (NameNotFoundException e)
         {
-        } 
+        } //End block
         catch (RuntimeException e)
         {
-        } 
+        } //End block
 CharSequence var540C13E9E156B687226421B24F2DF178_1507544531 =         null;
         var540C13E9E156B687226421B24F2DF178_1507544531.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1507544531;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1803,50 +1795,50 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1507544531 =         null;
             try 
             {
                 appInfo = getApplicationInfo(packageName, 0);
-            } 
+            } //End block
             catch (NameNotFoundException e)
             {
 XmlResourceParser var540C13E9E156B687226421B24F2DF178_675007006 =                 null;
                 var540C13E9E156B687226421B24F2DF178_675007006.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_675007006;
-            } 
-        } 
+            } //End block
+        } //End block
         try 
         {
             Resources r = getResourcesForApplication(appInfo);
 XmlResourceParser var46FC7866FFAC31CEDC61632F8441D270_267251407 =             r.getXml(resid);
             var46FC7866FFAC31CEDC61632F8441D270_267251407.addTaint(taint);
             return var46FC7866FFAC31CEDC61632F8441D270_267251407;
-        } 
+        } //End block
         catch (RuntimeException e)
         {
-        } 
+        } //End block
         catch (NameNotFoundException e)
         {
-        } 
+        } //End block
 XmlResourceParser var540C13E9E156B687226421B24F2DF178_1918316013 =         null;
         var540C13E9E156B687226421B24F2DF178_1918316013.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1918316013;
-        
-        
-            
-                
-            
-                
-            
-        
-        
-            
-            
-        
-            
-                  
-                  
-        
-            
-                  
-        
-        
+        // ---------- Original Method ----------
+        //if (appInfo == null) {
+            //try {
+                //appInfo = getApplicationInfo(packageName, 0);
+            //} catch (NameNotFoundException e) {
+                //return null;
+            //}
+        //}
+        //try {
+            //Resources r = getResourcesForApplication(appInfo);
+            //return r.getXml(resid);
+        //} catch (RuntimeException e) {
+            //Log.w("PackageManager", "Failure retrieving xml 0x"
+                  //+ Integer.toHexString(resid) + " in package "
+                  //+ packageName, e);
+        //} catch (NameNotFoundException e) {
+            //Log.w("PackageManager", "Failure retrieving resources for "
+                  //+ appInfo.packageName);
+        //}
+        //return null;
     }
 
     
@@ -1857,12 +1849,11 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_1918316013 =         null;
 CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadLabel(this);
         varE6B628DF4BADE921BC959EBAA37CE23C_1225538538.addTaint(taint);
         return varE6B628DF4BADE921BC959EBAA37CE23C_1225538538;
-        
-        
+        // ---------- Original Method ----------
+        //return info.loadLabel(this);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.580 -0400", hash_original_method = "99610A6DD5E10C01303307EBA6938AA8", hash_generated_method = "2A5B0EA45A3D6EA2D700B737770C1E15")
     @Override
     public void installPackage(Uri packageURI, IPackageInstallObserver observer, int flags,
@@ -1874,19 +1865,18 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
         try 
         {
             mPM.installPackage(packageURI, observer, flags, installerPackageName);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.installPackage(packageURI, observer, flags, installerPackageName);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.581 -0400", hash_original_method = "769145FCC72852B2314845C8A89A2DAD", hash_generated_method = "444D9A5DE967A3750EA4B71318F6E866")
     @Override
     public void installPackageWithVerification(Uri packageURI, IPackageInstallObserver observer,
@@ -1902,16 +1892,16 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
         {
             mPM.installPackageWithVerification(packageURI, observer, flags, installerPackageName,
                     verificationURI, manifestDigest);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-                    
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.installPackageWithVerification(packageURI, observer, flags, installerPackageName,
+                    //verificationURI, manifestDigest);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -1923,15 +1913,15 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
         try 
         {
             mPM.verifyPendingInstall(id, response);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.verifyPendingInstall(id, response);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -1944,15 +1934,15 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
         try 
         {
             mPM.setInstallerPackageName(targetPackage, installerPackageName);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.setInstallerPackageName(targetPackage, installerPackageName);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -1965,15 +1955,15 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
         try 
         {
             mPM.movePackage(packageName, observer, flags);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.movePackage(packageName, observer, flags);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -1986,19 +1976,19 @@ CharSequence varE6B628DF4BADE921BC959EBAA37CE23C_1225538538 =         info.loadL
 String var485A510364D927E61B680212BA336E80_1598383468 =             mPM.getInstallerPackageName(packageName);
             var485A510364D927E61B680212BA336E80_1598383468.addTaint(taint);
             return var485A510364D927E61B680212BA336E80_1598383468;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         var540C13E9E156B687226421B24F2DF178_773552441.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_773552441;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getInstallerPackageName(packageName);
+        //} catch (RemoteException e) {
+        //}
+        //return null;
     }
 
     
@@ -2011,15 +2001,15 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         try 
         {
             mPM.deletePackage(packageName, observer, flags);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.deletePackage(packageName, observer, flags);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2032,15 +2022,15 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         try 
         {
             mPM.clearApplicationUserData(packageName, observer);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.clearApplicationUserData(packageName, observer);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2053,15 +2043,15 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         try 
         {
             mPM.deleteApplicationCacheFiles(packageName, observer);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.deleteApplicationCacheFiles(packageName, observer);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2073,15 +2063,15 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         try 
         {
             mPM.freeStorageAndNotify(idealStorageSize, observer);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.freeStorageAndNotify(idealStorageSize, observer);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2093,15 +2083,15 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         try 
         {
             mPM.freeStorage(freeStorageSize, pi);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.freeStorage(freeStorageSize, pi);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2114,15 +2104,15 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         try 
         {
             mPM.getPackageSizeInfo(packageName, observer);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.getPackageSizeInfo(packageName, observer);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2133,15 +2123,15 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         try 
         {
             mPM.addPackageToPreferred(packageName);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.addPackageToPreferred(packageName);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2152,15 +2142,15 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
         try 
         {
             mPM.removePackageFromPreferred(packageName);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.removePackageFromPreferred(packageName);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2173,19 +2163,19 @@ String var540C13E9E156B687226421B24F2DF178_773552441 =         null;
 List<PackageInfo> var02CECA28466431CD30D6FEB0418EEBD2_1017084194 =             mPM.getPreferredPackages(flags);
             var02CECA28466431CD30D6FEB0418EEBD2_1017084194.addTaint(taint);
             return var02CECA28466431CD30D6FEB0418EEBD2_1017084194;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new ArrayList<PackageInfo>();
         var85E52041F0F27DC16548B92A1451C09A_1394019903.addTaint(taint);
         return var85E52041F0F27DC16548B92A1451C09A_1394019903;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getPreferredPackages(flags);
+        //} catch (RemoteException e) {
+        //}
+        //return new ArrayList<PackageInfo>();
     }
 
     
@@ -2200,15 +2190,15 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
         try 
         {
             mPM.addPreferredActivity(filter, match, set, activity);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.addPreferredActivity(filter, match, set, activity);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2223,15 +2213,15 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
         try 
         {
             mPM.replacePreferredActivity(filter, match, set, activity);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.replacePreferredActivity(filter, match, set, activity);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2242,15 +2232,15 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
         try 
         {
             mPM.clearPackagePreferredActivities(packageName);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.clearPackagePreferredActivities(packageName);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2266,19 +2256,19 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
             int var9855CC69D059D6BFAA02AAB67EC603BD_1710710787 = (mPM.getPreferredActivities(outFilters, outActivities, packageName));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143131528 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143131528;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1796639145 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_182086926 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_182086926;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getPreferredActivities(outFilters, outActivities, packageName);
+        //} catch (RemoteException e) {
+        //}
+        //return 0;
     }
 
     
@@ -2292,15 +2282,15 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
         try 
         {
             mPM.setComponentEnabledSetting(componentName, newState, flags);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.setComponentEnabledSetting(componentName, newState, flags);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2313,19 +2303,19 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
             int var82F6DDED4142FD46021C481C139BB7B9_723158169 = (mPM.getComponentEnabledSetting(componentName));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948729903 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948729903;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         int var5719CD54023665EBD976CE3F1BF7827E_95727993 = (PackageManager.COMPONENT_ENABLED_STATE_DEFAULT);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_464905214 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_464905214;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getComponentEnabledSetting(componentName);
+        //} catch (RemoteException e) {
+        //}
+        //return PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
     }
 
     
@@ -2339,15 +2329,15 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
         try 
         {
             mPM.setApplicationEnabledSetting(packageName, newState, flags);
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mPM.setApplicationEnabledSetting(packageName, newState, flags);
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -2360,23 +2350,22 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
             int varED96627AAEA0BB660315B43819049B7C_872751081 = (mPM.getApplicationEnabledSetting(packageName));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1852326016 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1852326016;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
         int var5719CD54023665EBD976CE3F1BF7827E_114038996 = (PackageManager.COMPONENT_ENABLED_STATE_DEFAULT);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_275118582 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_275118582;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getApplicationEnabledSetting(packageName);
+        //} catch (RemoteException e) {
+        //}
+        //return PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.611 -0400", hash_original_method = "26D19368C79A5889D2D25A72A45789A8", hash_generated_method = "5B4FACE291B3743B58B2A7B0BFB201F6")
     @Override
     public UserInfo createUser(String name, int flags) {
@@ -2387,19 +2376,19 @@ List<PackageInfo> var85E52041F0F27DC16548B92A1451C09A_1394019903 =         new A
 UserInfo var30388AEABCB67D89C63024B4918EB97E_1167467122 =             mPM.createUser(name, flags);
             var30388AEABCB67D89C63024B4918EB97E_1167467122.addTaint(taint);
             return var30388AEABCB67D89C63024B4918EB97E_1167467122;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 UserInfo var540C13E9E156B687226421B24F2DF178_942799385 =         null;
         var540C13E9E156B687226421B24F2DF178_942799385.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_942799385;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.createUser(name, flags);
+        //} catch (RemoteException e) {
+        //}
+        //return null;
     }
 
     
@@ -2413,12 +2402,12 @@ UserInfo var540C13E9E156B687226421B24F2DF178_942799385 =         null;
 List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1099939617 =         users;
         varB587D448BB2B2711D4473D79B7F2AAC8_1099939617.addTaint(taint);
         return varB587D448BB2B2711D4473D79B7F2AAC8_1099939617;
-        
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<UserInfo> users = new ArrayList<UserInfo>();
+        //UserInfo primary = new UserInfo(0, "Root!",
+                //UserInfo.FLAG_ADMIN | UserInfo.FLAG_PRIMARY);
+        //users.add(primary);
+        //return users;
     }
 
     
@@ -2431,43 +2420,40 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1099939617 =         users;
             boolean var722621000620FBE206A993656F472659_1396786964 = (mPM.removeUser(id));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1273313728 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1273313728;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1406430878 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_744951921 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_744951921;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.removeUser(id);
+        //} catch (RemoteException e) {
+            //return false;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.615 -0400", hash_original_method = "C52981B6B26B608864F1952FFD2E785F", hash_generated_method = "768E22F6EBCD52428AB6C0593A94E9CB")
     @Override
     public void updateUserName(int id, String name) {
         addTaint(name.getTaint());
         addTaint(id);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.616 -0400", hash_original_method = "B193A8F9463928060D13777D952477CD", hash_generated_method = "4CD5B965E87522729F955C64A5544391")
     @Override
     public void updateUserFlags(int id, int flags) {
         addTaint(flags);
         addTaint(id);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.618 -0400", hash_original_method = "05FAEEF75E7B74D35A0F0687A4ACD32C", hash_generated_method = "D7F409BA880335DF49F329855BE8BFA9")
     @Override
     public VerifierDeviceIdentity getVerifierDeviceIdentity() {
@@ -2476,19 +2462,19 @@ List<UserInfo> varB587D448BB2B2711D4473D79B7F2AAC8_1099939617 =         users;
 VerifierDeviceIdentity varE0E6AA86EC4C031775B3978DD0D941F0_1616098019 =             mPM.getVerifierDeviceIdentity();
             varE0E6AA86EC4C031775B3978DD0D941F0_1616098019.addTaint(taint);
             return varE0E6AA86EC4C031775B3978DD0D941F0_1616098019;
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
+        } //End block
 VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         null;
         var540C13E9E156B687226421B24F2DF178_888868691.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_888868691;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //return mPM.getVerifierDeviceIdentity();
+        //} catch (RemoteException e) {
+        //}
+        //return null;
     }
 
     
@@ -2504,9 +2490,9 @@ VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         n
           ResourceName(String _packageName, int _iconId) {
             packageName = _packageName;
             iconId = _iconId;
-            
-            
-            
+            // ---------- Original Method ----------
+            //packageName = _packageName;
+            //iconId = _iconId;
         }
 
         
@@ -2515,7 +2501,7 @@ VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         n
             this(aInfo.packageName, _iconId);
             addTaint(_iconId);
             addTaint(aInfo.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -2524,7 +2510,7 @@ VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         n
             this(cInfo.applicationInfo.packageName, _iconId);
             addTaint(_iconId);
             addTaint(cInfo.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -2533,7 +2519,7 @@ VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         n
             this(rInfo.activityInfo.applicationInfo.packageName, _iconId);
             addTaint(_iconId);
             addTaint(rInfo.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -2564,13 +2550,13 @@ VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         n
                      !packageName.equals(that.packageName) : that.packageName != null));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1390771554 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1390771554;
-            
-            
-            
-            
-            
-            
-                     
+            // ---------- Original Method ----------
+            //if (this == o) return true;
+            //if (o == null || getClass() != o.getClass()) return false;
+            //ResourceName that = (ResourceName) o;
+            //if (iconId != that.iconId) return false;
+            //return !(packageName != null ?
+                     //!packageName.equals(that.packageName) : that.packageName != null);
         }
 
         
@@ -2583,11 +2569,11 @@ VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         n
             int varB4A88417B3D0170D754C647C30B7216A_379793665 = (result);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_76200900 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_76200900;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //int result;
+            //result = packageName.hashCode();
+            //result = 31 * result + iconId;
+            //return result;
         }
 
         
@@ -2597,8 +2583,8 @@ VerifierDeviceIdentity var540C13E9E156B687226421B24F2DF178_888868691 =         n
 String var2B4501D95CD6758F165DA6F1F56CC01F_82687100 =             "{ResourceName " + packageName + " / " + iconId + "}";
             var2B4501D95CD6758F165DA6F1F56CC01F_82687100.addTaint(taint);
             return var2B4501D95CD6758F165DA6F1F56CC01F_82687100;
-            
-            
+            // ---------- Original Method ----------
+            //return "{ResourceName " + packageName + " / " + iconId + "}";
         }
 
         

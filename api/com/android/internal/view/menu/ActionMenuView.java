@@ -1,6 +1,6 @@
 package com.android.internal.view.menu;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,7 +44,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     public  ActionMenuView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -57,39 +57,36 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         final float density = context.getResources().getDisplayMetrics().density;
         mMinCellSize = (int) (MIN_CELL_SIZE * density);
         mGeneratedItemPadding = (int) (GENERATED_ITEM_PADDING * density);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //setBaselineAligned(false);
+        //final float density = context.getResources().getDisplayMetrics().density;
+        //mMinCellSize = (int) (MIN_CELL_SIZE * density);
+        //mGeneratedItemPadding = (int) (GENERATED_ITEM_PADDING * density);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.023 -0400", hash_original_method = "F8B2E0B9AF6B77951E8DA779DE9E37B4", hash_generated_method = "2D2E0A69D628FF0C713DCBD58D8FEF6B")
     public void setPresenter(ActionMenuPresenter presenter) {
         mPresenter = presenter;
-        
-        
+        // ---------- Original Method ----------
+        //mPresenter = presenter;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.023 -0400", hash_original_method = "309FFF524EE8C98ED8919EC0ED593079", hash_generated_method = "4DAACA12339968EF0454766F3050567B")
     public boolean isExpandedFormat() {
         boolean var91949478145170F53463EA7B1D93DAAB_1349607086 = (mFormatItems);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1732979160 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1732979160;
-        
-        
+        // ---------- Original Method ----------
+        //return mFormatItems;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.024 -0400", hash_original_method = "8C9F73227D09E5C25F24B8EE1F20BF37", hash_generated_method = "68A3A2D5FDA4B655E08FB19B4DD36A10")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(newConfig.getTaint());
         super.onConfigurationChanged(newConfig);
         mPresenter.updateMenuView(false);
@@ -97,58 +94,58 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         {
             mPresenter.hideOverflowMenu();
             mPresenter.showOverflowMenu();
-        } 
-        
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.onConfigurationChanged(newConfig);
+        //mPresenter.updateMenuView(false);
+        //if (mPresenter != null && mPresenter.isOverflowMenuShowing()) {
+            //mPresenter.hideOverflowMenu();
+            //mPresenter.showOverflowMenu();
+        //}
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.025 -0400", hash_original_method = "7A0AC3F9A12B78835921801D3FB6DAA4", hash_generated_method = "6E2C6FE944B1E7FCF11828E57218B979")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(heightMeasureSpec);
         final boolean wasFormatted = mFormatItems;
         mFormatItems = MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY;
     if(wasFormatted != mFormatItems)        
         {
             mFormatItemsWidth = 0;
-        } 
+        } //End block
         final int widthSize = MeasureSpec.getMode(widthMeasureSpec);
     if(mFormatItems && mMenu != null && widthSize != mFormatItemsWidth)        
         {
             mFormatItemsWidth = widthSize;
             mMenu.onItemsChanged(true);
-        } 
+        } //End block
     if(mFormatItems)        
         {
             onMeasureExactFormat(widthMeasureSpec, heightMeasureSpec);
-        } 
+        } //End block
         else
         {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        } 
-        
-        
-        
-        
-            
-        
-        
-        
-            
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final boolean wasFormatted = mFormatItems;
+        //mFormatItems = MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY;
+        //if (wasFormatted != mFormatItems) {
+            //mFormatItemsWidth = 0; 
+        //}
+        //final int widthSize = MeasureSpec.getMode(widthMeasureSpec);
+        //if (mFormatItems && mMenu != null && widthSize != mFormatItemsWidth) {
+            //mFormatItemsWidth = widthSize;
+            //mMenu.onItemsChanged(true);
+        //}
+        //if (mFormatItems) {
+            //onMeasureExactFormat(widthMeasureSpec, heightMeasureSpec);
+        //} else {
+            //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        //}
     }
 
     
@@ -168,7 +165,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         {
             setMeasuredDimension(widthSize, 0);
             return;
-        } 
+        } //End block
         final int cellSize = mMinCellSize + cellSizeRemaining / cellCount;
         int cellsRemaining = cellCount;
         int maxChildHeight = 0;
@@ -188,7 +185,7 @@ for(int i = 0;i < childCount;i++)
     if(isGeneratedItem)            
             {
                 child.setPadding(mGeneratedItemPadding, 0, mGeneratedItemPadding, 0);
-            } 
+            } //End block
             final LayoutParams lp = (LayoutParams) child.getLayoutParams();
             lp.expanded = false;
             lp.extraPixels = 0;
@@ -209,7 +206,7 @@ for(int i = 0;i < childCount;i++)
             maxChildHeight = Math.max(maxChildHeight, child.getMeasuredHeight());
     if(cellsUsed == 1)            
             smallestItemsAt |= (1 << i);
-        } 
+        } //End block
         final boolean centerSingleExpandedItem = hasOverflow && visibleItemCount == 2;
         boolean needsExpansion = false;
         while
@@ -229,14 +226,14 @@ for(int i = 0;i < childCount;i++)
                     minCells = lp.cellsUsed;
                     minCellsAt = 1 << i;
                     minCellsItemCount = 1;
-                } 
+                } //End block
                 else
     if(lp.cellsUsed == minCells)                
                 {
                     minCellsAt |= 1 << i;
                     minCellsItemCount++;
-                } 
-            } 
+                } //End block
+            } //End block
             smallestItemsAt |= minCellsAt;
     if(minCellsItemCount > cellsRemaining)            
             break;
@@ -250,17 +247,17 @@ for(int i = 0;i < childCount;i++)
     if(lp.cellsUsed == minCells)                    
                     smallestItemsAt |= 1 << i;
                     continue;
-                } 
+                } //End block
     if(centerSingleExpandedItem && lp.preventEdgeOffset && cellsRemaining == 1)                
                 {
                     child.setPadding(mGeneratedItemPadding + cellSize, 0, mGeneratedItemPadding, 0);
-                } 
+                } //End block
                 lp.cellsUsed++;
                 lp.expanded = true;
                 cellsRemaining--;
-            } 
+            } //End block
             needsExpansion = true;
-        } 
+        } //End block
         final boolean singleItem = !hasOverflow && visibleItemCount == 1;
     if(cellsRemaining > 0 && smallestItemsAt != 0 &&
                 (cellsRemaining < visibleItemCount - 1 || singleItem || maxCellsUsed > 1))        
@@ -273,14 +270,14 @@ for(int i = 0;i < childCount;i++)
                     LayoutParams lp = (LayoutParams) getChildAt(0).getLayoutParams();
     if(!lp.preventEdgeOffset)                    
                     expandCount -= 0.5f;
-                } 
+                } //End block
     if((smallestItemsAt & (1 << (childCount - 1))) != 0)                
                 {
                     LayoutParams lp = ((LayoutParams) getChildAt(childCount - 1).getLayoutParams());
     if(!lp.preventEdgeOffset)                    
                     expandCount -= 0.5f;
-                } 
-            } 
+                } //End block
+            } //End block
             final int extraPixels = expandCount > 0 ?
                     (int) (cellsRemaining * cellSize / expandCount) : 0;
 for(int i = 0;i < childCount;i++)
@@ -296,9 +293,9 @@ for(int i = 0;i < childCount;i++)
     if(i == 0 && !lp.preventEdgeOffset)                    
                     {
                         lp.leftMargin = -extraPixels / 2;
-                    } 
+                    } //End block
                     needsExpansion = true;
-                } 
+                } //End block
                 else
     if(lp.isOverflowButton)                
                 {
@@ -306,21 +303,21 @@ for(int i = 0;i < childCount;i++)
                     lp.expanded = true;
                     lp.rightMargin = -extraPixels / 2;
                     needsExpansion = true;
-                } 
+                } //End block
                 else
                 {
     if(i != 0)                    
                     {
                         lp.leftMargin = extraPixels / 2;
-                    } 
+                    } //End block
     if(i != childCount - 1)                    
                     {
                         lp.rightMargin = extraPixels / 2;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             cellsRemaining = 0;
-        } 
+        } //End block
     if(needsExpansion)        
         {
             int heightSpec = MeasureSpec.makeMeasureSpec(heightSize - heightPadding, heightMode);
@@ -332,16 +329,16 @@ for(int i = 0;i < childCount;i++)
                 continue;
                 final int width = lp.cellsUsed * cellSize + lp.extraPixels;
                 child.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), heightSpec);
-            } 
-        } 
+            } //End block
+        } //End block
     if(heightMode != MeasureSpec.EXACTLY)        
         {
             heightSize = maxChildHeight;
-        } 
+        } //End block
         setMeasuredDimension(widthSize, heightSize);
         mMeasuredExtraWidth = cellsRemaining * cellSize;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -376,7 +373,7 @@ for(int i = 0;i < childCount;i++)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.037 -0400", hash_original_method = "CF95DF9C40DBA0243EC42554D6345F0F", hash_generated_method = "A0AE65CF768F5E9575C7669F802D5C80")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(bottom);
         addTaint(right);
         addTaint(top);
@@ -386,7 +383,7 @@ for(int i = 0;i < childCount;i++)
         {
             super.onLayout(changed, left, top, right, bottom);
             return;
-        } 
+        } //End block
         final int childCount = getChildCount();
         final int midVertical = (top + bottom) / 2;
         final int dividerWidth = getDividerWidth();
@@ -401,7 +398,7 @@ for(int i = 0;i < childCount;i++)
     if(v.getVisibility() == GONE)            
             {
                 continue;
-            } 
+            } //End block
             LayoutParams p = (LayoutParams) v.getLayoutParams();
     if(p.isOverflowButton)            
             {
@@ -409,7 +406,7 @@ for(int i = 0;i < childCount;i++)
     if(hasDividerBeforeChildAt(i))                
                 {
                     overflowWidth += dividerWidth;
-                } 
+                } //End block
                 int height = v.getMeasuredHeight();
                 int r = getWidth() - getPaddingRight() - p.rightMargin;
                 int l = r - overflowWidth;
@@ -418,7 +415,7 @@ for(int i = 0;i < childCount;i++)
                 v.layout(l, t, r, b);
                 widthRemaining -= overflowWidth;
                 hasOverflow = true;
-            } 
+            } //End block
             else
             {
                 final int size = v.getMeasuredWidth() + p.leftMargin + p.rightMargin;
@@ -427,10 +424,10 @@ for(int i = 0;i < childCount;i++)
     if(hasDividerBeforeChildAt(i))                
                 {
                     nonOverflowWidth += dividerWidth;
-                } 
+                } //End block
                 nonOverflowCount++;
-            } 
-        } 
+            } //End block
+        } //End block
     if(childCount == 1 && !hasOverflow)        
         {
             final View v = getChildAt(0);
@@ -441,7 +438,7 @@ for(int i = 0;i < childCount;i++)
             final int t = midVertical - height / 2;
             v.layout(l, t, l + width, t + height);
             return;
-        } 
+        } //End block
         final int spacerCount = nonOverflowCount - (hasOverflow ? 0 : 1);
         final int spacerSize = Math.max(0, spacerCount > 0 ? widthRemaining / spacerCount : 0);
         int startLeft = getPaddingLeft();
@@ -452,53 +449,49 @@ for(int i = 0;i < childCount;i++)
     if(v.getVisibility() == GONE || lp.isOverflowButton)            
             {
                 continue;
-            } 
+            } //End block
             startLeft += lp.leftMargin;
             int width = v.getMeasuredWidth();
             int height = v.getMeasuredHeight();
             int t = midVertical - height / 2;
             v.layout(startLeft, t, startLeft + width, t + height);
             startLeft += width + lp.rightMargin + spacerSize;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.038 -0400", hash_original_method = "BCFF92F724E40A93547AD27810B374B7", hash_generated_method = "20B039D9957A5ED6936C442629CD13D4")
     @Override
     public void onDetachedFromWindow() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDetachedFromWindow();
         mPresenter.dismissPopupMenus();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.onDetachedFromWindow();
+        //mPresenter.dismissPopupMenus();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.038 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "4A541722BAB683D3F8F9CC4C1F18340E")
     public boolean isOverflowReserved() {
         boolean var0E213F9463B6EFE55ADA2109C5E5DC56_1992868213 = (mReserveOverflow);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1245485852 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1245485852;
-        
-        
+        // ---------- Original Method ----------
+        //return mReserveOverflow;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.039 -0400", hash_original_method = "F5103BD0EA93D884CF8413DB778005C1", hash_generated_method = "15B323109E8BF25E66710A01C5BEDE02")
     public void setOverflowReserved(boolean reserveOverflow) {
         mReserveOverflow = reserveOverflow;
-        
-        
+        // ---------- Original Method ----------
+        //mReserveOverflow = reserveOverflow;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.039 -0400", hash_original_method = "DEBB4048965D8045F192555AB279F2BA", hash_generated_method = "AC6BB9D76D2863176B248964BAEE99A5")
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
@@ -508,11 +501,11 @@ for(int i = 0;i < childCount;i++)
 LayoutParams varD15CEB6F45B18F7EB233792D020C6115_1792298670 =         params;
         varD15CEB6F45B18F7EB233792D020C6115_1792298670.addTaint(taint);
         return varD15CEB6F45B18F7EB233792D020C6115_1792298670;
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
+                //LayoutParams.WRAP_CONTENT);
+        //params.gravity = Gravity.CENTER_VERTICAL;
+        //return params;
     }
 
     
@@ -523,8 +516,8 @@ LayoutParams varD15CEB6F45B18F7EB233792D020C6115_1792298670 =         params;
 LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_2094023663 =         new LayoutParams(getContext(), attrs);
         var023B3FAAA9940C6DE114BF4C9FED2D73_2094023663.addTaint(taint);
         return var023B3FAAA9940C6DE114BF4C9FED2D73_2094023663;
-        
-        
+        // ---------- Original Method ----------
+        //return new LayoutParams(getContext(), attrs);
     }
 
     
@@ -538,27 +531,26 @@ LayoutParams var023B3FAAA9940C6DE114BF4C9FED2D73_2094023663 =         new Layout
     if(result.gravity <= Gravity.NO_GRAVITY)            
             {
                 result.gravity = Gravity.CENTER_VERTICAL;
-            } 
+            } //End block
 LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1603846395 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1603846395.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1603846395;
-        } 
+        } //End block
 LayoutParams var0E81305CCB52037DAA521CD210230A11_405161328 =         generateDefaultLayoutParams();
         var0E81305CCB52037DAA521CD210230A11_405161328.addTaint(taint);
         return var0E81305CCB52037DAA521CD210230A11_405161328;
-        
-        
-            
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (p instanceof LayoutParams) {
+            //LayoutParams result = new LayoutParams((LayoutParams) p);
+            //if (result.gravity <= Gravity.NO_GRAVITY) {
+                //result.gravity = Gravity.CENTER_VERTICAL;
+            //}
+            //return result;
+        //}
+        //return generateDefaultLayoutParams();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.041 -0400", hash_original_method = "C7A39F9D75FC22971A40D0A54E61424A", hash_generated_method = "6F186FAF802BF712258A322803C35EAD")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -566,12 +558,11 @@ LayoutParams var0E81305CCB52037DAA521CD210230A11_405161328 =         generateDef
         boolean varD4BC6F36F8FF9315DFC5A9C362F031CB_230555077 = (p != null && p instanceof LayoutParams);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1951508791 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1951508791;
-        
-        
+        // ---------- Original Method ----------
+        //return p != null && p instanceof LayoutParams;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.041 -0400", hash_original_method = "AF673847AD60845228ED5C7DBF294789", hash_generated_method = "F0A5FAFAC28638179B5CE74517192E42")
     public LayoutParams generateOverflowButtonLayoutParams() {
         LayoutParams result = generateDefaultLayoutParams();
@@ -579,42 +570,39 @@ LayoutParams var0E81305CCB52037DAA521CD210230A11_405161328 =         generateDef
 LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //LayoutParams result = generateDefaultLayoutParams();
+        //result.isOverflowButton = true;
+        //return result;
     }
 
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.041 -0400", hash_original_method = "52251A4D38FF83C9B55C46C571A25CAE", hash_generated_method = "D64113141E3C2DEF104FC30AA897240E")
     public boolean invokeItem(MenuItemImpl item) {
         addTaint(item.getTaint());
         boolean var9CE0C397DB4ABF248543C034E9F3CC19_300096627 = (mMenu.performItemAction(item, 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_38075050 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_38075050;
-        
-        
+        // ---------- Original Method ----------
+        //return mMenu.performItemAction(item, 0);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.041 -0400", hash_original_method = "DC1BDB1B98459EBD06B93B75A5D0D038", hash_generated_method = "0B305C2971E98375BC871586DF29AF88")
     public int getWindowAnimations() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2123009705 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1450433540 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1450433540;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.042 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "E50EB2D0FDCBBA00CCFEFF4A83375DDF")
     public void initialize(MenuBuilder menu) {
         mMenu = menu;
-        
-        
+        // ---------- Original Method ----------
+        //mMenu = menu;
     }
 
     
@@ -628,37 +616,36 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
     if(childIndex < getChildCount() && childBefore instanceof ActionMenuChildView)        
         {
             result |= ((ActionMenuChildView) childBefore).needsDividerAfter();
-        } 
+        } //End block
     if(childIndex > 0 && child instanceof ActionMenuChildView)        
         {
             result |= ((ActionMenuChildView) child).needsDividerBefore();
-        } 
+        } //End block
         boolean varB4A88417B3D0170D754C647C30B7216A_1148624026 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_925642858 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_925642858;
-        
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //final View childBefore = getChildAt(childIndex - 1);
+        //final View child = getChildAt(childIndex);
+        //boolean result = false;
+        //if (childIndex < getChildCount() && childBefore instanceof ActionMenuChildView) {
+            //result |= ((ActionMenuChildView) childBefore).needsDividerAfter();
+        //}
+        //if (childIndex > 0 && child instanceof ActionMenuChildView) {
+            //result |= ((ActionMenuChildView) child).needsDividerBefore();
+        //}
+        //return result;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.043 -0400", hash_original_method = "87E5D39D1D82C11AB077A37A8786E27E", hash_generated_method = "13653DC0ECECEAC82CDEBC5217F29C58")
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
         addTaint(event.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_801836289 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1619446743 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1619446743;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -687,7 +674,7 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
             super(c, attrs);
             addTaint(attrs.getTaint());
             addTaint(c.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -695,8 +682,8 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
         public  LayoutParams(LayoutParams other) {
             super((LinearLayout.LayoutParams) other);
             isOverflowButton = other.isOverflowButton;
-            
-            
+            // ---------- Original Method ----------
+            //isOverflowButton = other.isOverflowButton;
         }
 
         
@@ -706,8 +693,8 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
             addTaint(height);
             addTaint(width);
             isOverflowButton = false;
-            
-            
+            // ---------- Original Method ----------
+            //isOverflowButton = false;
         }
 
         
@@ -717,8 +704,8 @@ LayoutParams varDC838461EE2FA0CA4C9BBB70A15456B0_1821093220 =         result;
             addTaint(height);
             addTaint(width);
             this.isOverflowButton = isOverflowButton;
-            
-            
+            // ---------- Original Method ----------
+            //this.isOverflowButton = isOverflowButton;
         }
 
         

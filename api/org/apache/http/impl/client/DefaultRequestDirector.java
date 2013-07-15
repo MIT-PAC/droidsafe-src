@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -142,84 +142,84 @@ public class DefaultRequestDirector implements RequestDirector {
                 ("Request executor may not be null.");
             varBD20B6DE94BA160E38D6A19FE620972B_1029766485.addTaint(taint);
             throw varBD20B6DE94BA160E38D6A19FE620972B_1029766485;
-        } 
+        } //End block
     if(conman == null)        
         {
             IllegalArgumentException var2CAE72D222E2018F21A500BBB781366A_742317391 = new IllegalArgumentException
                 ("Client connection manager may not be null.");
             var2CAE72D222E2018F21A500BBB781366A_742317391.addTaint(taint);
             throw var2CAE72D222E2018F21A500BBB781366A_742317391;
-        } 
+        } //End block
     if(reustrat == null)        
         {
             IllegalArgumentException varAC1BE54E06BD0BF73EC95A07797E6CC6_1150482775 = new IllegalArgumentException
                 ("Connection reuse strategy may not be null.");
             varAC1BE54E06BD0BF73EC95A07797E6CC6_1150482775.addTaint(taint);
             throw varAC1BE54E06BD0BF73EC95A07797E6CC6_1150482775;
-        } 
+        } //End block
     if(kastrat == null)        
         {
             IllegalArgumentException var5D18D55E95DEDD7525CEB1D5D4EDA5AE_1892767636 = new IllegalArgumentException
                 ("Connection keep alive strategy may not be null.");
             var5D18D55E95DEDD7525CEB1D5D4EDA5AE_1892767636.addTaint(taint);
             throw var5D18D55E95DEDD7525CEB1D5D4EDA5AE_1892767636;
-        } 
+        } //End block
     if(rouplan == null)        
         {
             IllegalArgumentException var61450AC721478F07064D5CA3DC87688F_1531502023 = new IllegalArgumentException
                 ("Route planner may not be null.");
             var61450AC721478F07064D5CA3DC87688F_1531502023.addTaint(taint);
             throw var61450AC721478F07064D5CA3DC87688F_1531502023;
-        } 
+        } //End block
     if(httpProcessor == null)        
         {
             IllegalArgumentException var483355B68B755FD92D77FBBC0550B939_1004057664 = new IllegalArgumentException
                 ("HTTP protocol processor may not be null.");
             var483355B68B755FD92D77FBBC0550B939_1004057664.addTaint(taint);
             throw var483355B68B755FD92D77FBBC0550B939_1004057664;
-        } 
+        } //End block
     if(retryHandler == null)        
         {
             IllegalArgumentException varC2CE5DC5C328BB16435F5ED993581E10_1565240985 = new IllegalArgumentException
                 ("HTTP request retry handler may not be null.");
             varC2CE5DC5C328BB16435F5ED993581E10_1565240985.addTaint(taint);
             throw varC2CE5DC5C328BB16435F5ED993581E10_1565240985;
-        } 
+        } //End block
     if(redirectHandler == null)        
         {
             IllegalArgumentException varBF23C9695C0C4964C86566E857075907_1904598945 = new IllegalArgumentException
                 ("Redirect handler may not be null.");
             varBF23C9695C0C4964C86566E857075907_1904598945.addTaint(taint);
             throw varBF23C9695C0C4964C86566E857075907_1904598945;
-        } 
+        } //End block
     if(targetAuthHandler == null)        
         {
             IllegalArgumentException varC21C33DC73C90A72F11A21040411F90C_1154680514 = new IllegalArgumentException
                 ("Target authentication handler may not be null.");
             varC21C33DC73C90A72F11A21040411F90C_1154680514.addTaint(taint);
             throw varC21C33DC73C90A72F11A21040411F90C_1154680514;
-        } 
+        } //End block
     if(proxyAuthHandler == null)        
         {
             IllegalArgumentException var891BA88640E4B3379FCF2CCC866D25AF_1235854368 = new IllegalArgumentException
                 ("Proxy authentication handler may not be null.");
             var891BA88640E4B3379FCF2CCC866D25AF_1235854368.addTaint(taint);
             throw var891BA88640E4B3379FCF2CCC866D25AF_1235854368;
-        } 
+        } //End block
     if(userTokenHandler == null)        
         {
             IllegalArgumentException var9380208749C6633F93F784E902C07784_1974417764 = new IllegalArgumentException
                 ("User token handler may not be null.");
             var9380208749C6633F93F784E902C07784_1974417764.addTaint(taint);
             throw var9380208749C6633F93F784E902C07784_1974417764;
-        } 
+        } //End block
     if(params == null)        
         {
             IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1715034259 = new IllegalArgumentException
                 ("HTTP parameters may not be null");
             var497CCC27A43EDD6EE25BEEC5507E2BE2_1715034259.addTaint(taint);
             throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1715034259;
-        } 
+        } //End block
         this.requestExec       = requestExec;
         this.connManager       = conman;
         this.reuseStrategy     = reustrat;
@@ -237,8 +237,8 @@ public class DefaultRequestDirector implements RequestDirector {
         this.maxRedirects = this.params.getIntParameter(ClientPNames.MAX_REDIRECTS, 100);
         this.targetAuthState = new AuthState();
         this.proxyAuthState = new AuthState();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -252,22 +252,22 @@ RequestWrapper var0C4280835D14C11473AAA56C205C196E_984761044 =             new E
                     (HttpEntityEnclosingRequest) request);
             var0C4280835D14C11473AAA56C205C196E_984761044.addTaint(taint);
             return var0C4280835D14C11473AAA56C205C196E_984761044;
-        } 
+        } //End block
         else
         {
 RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new RequestWrapper(
                     request);
             varECE469D25B56B0BCEBCCBF137D95445B_672521706.addTaint(taint);
             return varECE469D25B56B0BCEBCCBF137D95445B_672521706;
-        } 
-        
-        
-            
-                    
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (request instanceof HttpEntityEnclosingRequest) {
+            //return new EntityEnclosingRequestWrapper(
+                    //(HttpEntityEnclosingRequest) request);
+        //} else {
+            //return new RequestWrapper(
+                    //request);
+        //}
     }
 
     
@@ -287,43 +287,43 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new R
                     HttpHost target = route.getTargetHost();
                     uri = URIUtils.rewriteURI(uri, target);
                     request.setURI(uri);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
     if(uri.isAbsolute())                
                 {
                     uri = URIUtils.rewriteURI(uri, null);
                     request.setURI(uri);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         catch (URISyntaxException ex)
         {
             ProtocolException var7A0C22AEC7611C0CB0FD9196AE88644C_420372476 = new ProtocolException("Invalid URI: " + 
                     request.getRequestLine().getUri(), ex);
             var7A0C22AEC7611C0CB0FD9196AE88644C_420372476.addTaint(taint);
             throw var7A0C22AEC7611C0CB0FD9196AE88644C_420372476;
-        } 
-        
-        
-            
-            
-                
-                    
-                    
-                    
-                
-            
-                
-                    
-                    
-                
-            
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //URI uri = request.getURI();
+            //if (route.getProxyHost() != null && !route.isTunnelled()) {
+                //if (!uri.isAbsolute()) {
+                    //HttpHost target = route.getTargetHost();
+                    //uri = URIUtils.rewriteURI(uri, target);
+                    //request.setURI(uri);
+                //}
+            //} else {
+                //if (uri.isAbsolute()) {
+                    //uri = URIUtils.rewriteURI(uri, null);
+                    //request.setURI(uri);
+                //}
+            //}
+        //} catch (URISyntaxException ex) {
+            //throw new ProtocolException("Invalid URI: " + 
+                    //request.getRequestLine().getUri(), ex);
+        //}
     }
 
     
@@ -358,18 +358,18 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new R
     if(orig instanceof AbortableHttpRequest)                    
                     {
                         ((AbortableHttpRequest) orig).setConnectionRequest(connRequest);
-                    } 
+                    } //End block
                     try 
                     {
                         managedConn = connRequest.getConnection(timeout, TimeUnit.MILLISECONDS);
-                    } 
+                    } //End block
                     catch (InterruptedException interrupted)
                     {
                         InterruptedIOException iox = new InterruptedIOException();
                         iox.initCause(interrupted);
                         iox.addTaint(taint);
                         throw iox;
-                    } 
+                    } //End block
     if(HttpConnectionParams.isStaleCheckingEnabled(params))                    
                     {
                         this.log.debug("Stale connection check");
@@ -379,38 +379,38 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new R
                             try 
                             {
                                 managedConn.close();
-                            } 
+                            } //End block
                             catch (IOException ignored)
                             {
-                            } 
-                        } 
-                    } 
-                } 
+                            } //End block
+                        } //End block
+                    } //End block
+                } //End block
     if(orig instanceof AbortableHttpRequest)                
                 {
                     ((AbortableHttpRequest) orig).setReleaseTrigger(managedConn);
-                } 
+                } //End block
     if(!managedConn.isOpen())                
                 {
                     managedConn.open(route, context, params);
-                } 
+                } //End block
                 else
                 {
                     managedConn.setSocketTimeout(HttpConnectionParams.getSoTimeout(params));
-                } 
+                } //End block
                 try 
                 {
                     establishRoute(route, context);
-                } 
+                } //End block
                 catch (TunnelRefusedException ex)
                 {
     if(this.log.isDebugEnabled())                    
                     {
                         this.log.debug(ex.getMessage());
-                    } 
+                    } //End block
                     response = ex.getResponse();
                     break;
-                } 
+                } //End block
                 wrapper.resetHeaders();
                 rewriteRequestURI(wrapper, route);
                 target = (HttpHost) wrapper.getParams().getParameter(
@@ -418,7 +418,7 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new R
     if(target == null)                
                 {
                     target = route.getTargetHost();
-                } 
+                } //End block
                 HttpHost proxy = route.getProxyHost();
                 context.setAttribute(ExecutionContext.HTTP_TARGET_HOST,
                         target);
@@ -445,16 +445,16 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new R
                                 "with a non-repeatable request entity");
                         varBE8956FD29594D8614365E775C241D18_1874411820.addTaint(taint);
                         throw varBE8956FD29594D8614365E775C241D18_1874411820;
-                    } 
+                    } //End block
                     try 
                     {
     if(this.log.isDebugEnabled())                        
                         {
                             this.log.debug("Attempt " + execCount + " to execute request");
-                        } 
+                        } //End block
                         response = requestExec.execute(wrapper, managedConn, context);
                         retrying = false;
-                    } 
+                    } //End block
                     catch (IOException ex)
                     {
                         this.log.debug("Closing the connection.");
@@ -466,30 +466,30 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new R
                                 this.log.info("I/O exception ("+ ex.getClass().getName() + 
                                         ") caught when processing request: "
                                         + ex.getMessage());
-                            } 
+                            } //End block
     if(this.log.isDebugEnabled())                            
                             {
                                 this.log.debug(ex.getMessage(), ex);
-                            } 
+                            } //End block
                             this.log.info("Retrying request");
-                        } 
+                        } //End block
                         else
                         {
                             ex.addTaint(taint);
                             throw ex;
-                        } 
+                        } //End block
     if(route.getHopCount() == 1)                        
                         {
                             this.log.debug("Reopening the direct connection.");
                             managedConn.open(route, context, params);
-                        } 
+                        } //End block
                         else
                         {
                             ex.addTaint(taint);
                             throw ex;
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 response.setParams(params);
                 requestExec.postProcess(response, httpProcessor, context);
                 reuse = reuseStrategy.keepAlive(response, context);
@@ -497,12 +497,12 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new R
                 {
                     long duration = keepAliveStrategy.getKeepAliveDuration(response, context);
                     managedConn.setIdleDuration(duration, TimeUnit.MILLISECONDS);
-                } 
+                } //End block
                 RoutedRequest followup = handleResponse(roureq, response, context);
     if(followup == null)                
                 {
                     done = true;
-                } 
+                } //End block
                 else
                 {
     if(reuse)                    
@@ -512,63 +512,63 @@ RequestWrapper varECE469D25B56B0BCEBCCBF137D95445B_672521706 =             new R
     if(entity != null)                        
                         {
                             entity.consumeContent();
-                        } 
+                        } //End block
                         managedConn.markReusable();
-                    } 
+                    } //End block
                     else
                     {
                         managedConn.close();
-                    } 
+                    } //End block
     if(!followup.getRoute().equals(roureq.getRoute()))                    
                     {
                         releaseConnection();
-                    } 
+                    } //End block
                     roureq = followup;
-                } 
+                } //End block
                 userToken = this.userTokenHandler.getUserToken(context);
                 context.setAttribute(ClientContext.USER_TOKEN, userToken);
     if(managedConn != null)                
                 {
                     managedConn.setState(userToken);
-                } 
-            } 
+                } //End block
+            } //End block
     if((response == null) || (response.getEntity() == null) ||
                 !response.getEntity().isStreaming())            
             {
     if(reuse)                
                 managedConn.markReusable();
                 releaseConnection();
-            } 
+            } //End block
             else
             {
                 HttpEntity entity = response.getEntity();
                 entity = new BasicManagedEntity(entity, managedConn, reuse);
                 response.setEntity(entity);
-            } 
+            } //End block
 HttpResponse var2A1114F4272D753FE23A36E3D68CD293_103948176 =             response;
             var2A1114F4272D753FE23A36E3D68CD293_103948176.addTaint(taint);
             return var2A1114F4272D753FE23A36E3D68CD293_103948176;
-        } 
+        } //End block
         catch (HttpException ex)
         {
             abortConnection();
             ex.addTaint(taint);
             throw ex;
-        } 
+        } //End block
         catch (IOException ex)
         {
             abortConnection();
             ex.addTaint(taint);
             throw ex;
-        } 
+        } //End block
         catch (RuntimeException ex)
         {
             abortConnection();
             ex.addTaint(taint);
             throw ex;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -577,19 +577,19 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_103948176 =             respons
         try 
         {
             managedConn.releaseConnection();
-        } 
+        } //End block
         catch (IOException ignored)
         {
             this.log.debug("IOException releasing connection", ignored);
-        } 
+        } //End block
         managedConn = null;
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //managedConn.releaseConnection();
+        //} catch(IOException ignored) {
+            //this.log.debug("IOException releasing connection", ignored);
+        //}
+        //managedConn = null;
     }
 
     
@@ -604,7 +604,7 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_103948176 =             respons
         {
             target = (HttpHost) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HOST);
-        } 
+        } //End block
     if(target == null)        
         {
             String scheme = null;
@@ -617,17 +617,17 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_103948176 =             respons
                 scheme = uri.getScheme();
                 host = uri.getHost();
                 path = uri.getPath();
-            } 
+            } //End block
             IllegalStateException var7A13D68460776BAB9F175883D2724744_892155137 = new IllegalStateException( "Target host must not be null, or set in parameters."
                     + " scheme=" + scheme + ", host=" + host + ", path=" + path);
             var7A13D68460776BAB9F175883D2724744_892155137.addTaint(taint);
             throw var7A13D68460776BAB9F175883D2724744_892155137;
-        } 
+        } //End block
 HttpRoute var18D2C66D78254B27FEC5244CEBAE6575_851747941 =         this.routePlanner.determineRoute(target, request, context);
         var18D2C66D78254B27FEC5244CEBAE6575_851747941.addTaint(taint);
         return var18D2C66D78254B27FEC5244CEBAE6575_851747941;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -651,7 +651,7 @@ switch(step){
                     boolean secure = createTunnelToTarget(route, context);
                     this.log.debug("Tunnel to target created.");
                     managedConn.tunnelTarget(secure, this.params);
-                } 
+                } //End block
                 break;
                 case HttpRouteDirector.TUNNEL_PROXY:
                 {
@@ -660,7 +660,7 @@ switch(step){
                     this.log.debug("Tunnel to proxy created.");
                     managedConn.tunnelProxy(route.getHopTarget(hop),
                                         secure, this.params);
-                } 
+                } //End block
                 break;
                 case HttpRouteDirector.LAYER_PROTOCOL:
                 managedConn.layerProtocol(context, this.params);
@@ -680,10 +680,10 @@ switch(step){
                 var8F4BA28D8DE40A5BAB04A0DC81D7EB48_462704108.addTaint(taint);
                 throw var8F4BA28D8DE40A5BAB04A0DC81D7EB48_462704108;
 }
-            } 
+            } //End block
 } while (step > HttpRouteDirector.COMPLETE);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -703,13 +703,13 @@ switch(step){
     if(!this.managedConn.isOpen())            
             {
                 this.managedConn.open(route, context, this.params);
-            } 
+            } //End block
             HttpRequest connect = createConnectRequest(route, context);
             String agent = HttpProtocolParams.getUserAgent(params);
     if(agent != null)            
             {
                 connect.addHeader(HTTP.USER_AGENT, agent);
-            } 
+            } //End block
             connect.addHeader(HTTP.TARGET_HOST, target.toHostString());
             AuthScheme authScheme = this.proxyAuthState.getAuthScheme();
             AuthScope authScope = this.proxyAuthState.getAuthScope();
@@ -721,16 +721,16 @@ switch(step){
                     try 
                     {
                         connect.addHeader(authScheme.authenticate(creds, connect));
-                    } 
+                    } //End block
                     catch (AuthenticationException ex)
                     {
     if(this.log.isErrorEnabled())                        
                         {
                             this.log.error("Proxy authentication error: " + ex.getMessage());
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             response = requestExec.execute(connect, this.managedConn, context);
             int status = response.getStatusLine().getStatusCode();
     if(status < 200)            
@@ -739,7 +739,7 @@ switch(step){
                         response.getStatusLine());
                 varD3EF24224D53CFEC9101DECAEC6951EE_1499102339.addTaint(taint);
                 throw varD3EF24224D53CFEC9101DECAEC6951EE_1499102339;
-            } 
+            } //End block
             CredentialsProvider credsProvider = (CredentialsProvider)
                 context.getAttribute(ClientContext.CREDS_PROVIDER);
     if(credsProvider != null && HttpClientParams.isAuthenticating(params))            
@@ -754,15 +754,15 @@ switch(step){
                         processChallenges(
                                 challenges, this.proxyAuthState, this.proxyAuthHandler, 
                                 response, context);
-                    } 
+                    } //End block
                     catch (AuthenticationException ex)
                     {
     if(this.log.isWarnEnabled())                        
                         {
                             this.log.warn("Authentication error: " +  ex.getMessage());
                             break;
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     updateAuthState(this.proxyAuthState, proxy, credsProvider);
     if(this.proxyAuthState.getCredentials() != null)                    
                     {
@@ -774,20 +774,20 @@ switch(step){
     if(entity != null)                            
                             {
                                 entity.consumeContent();
-                            } 
-                        } 
+                            } //End block
+                        } //End block
                         else
                         {
                             this.managedConn.close();
-                        } 
-                    } 
-                } 
+                        } //End block
+                    } //End block
+                } //End block
                 else
                 {
                     this.proxyAuthState.setAuthScope(null);
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         int status = response.getStatusLine().getStatusCode();
     if(status > 299)        
         {
@@ -795,19 +795,19 @@ switch(step){
     if(entity != null)            
             {
                 response.setEntity(new BufferedHttpEntity(entity));
-            } 
+            } //End block
             this.managedConn.close();
             TunnelRefusedException varB63C984E4D7FCF92F245BAD42F4DFE6F_2009781547 = new TunnelRefusedException("CONNECT refused by proxy: " +
                     response.getStatusLine(), response);
             varB63C984E4D7FCF92F245BAD42F4DFE6F_2009781547.addTaint(taint);
             throw varB63C984E4D7FCF92F245BAD42F4DFE6F_2009781547;
-        } 
+        } //End block
         this.managedConn.markReusable();
         boolean var68934A3E9455FA72420237EB05902327_478251624 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_662084211 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_662084211;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -821,9 +821,9 @@ switch(step){
             ("Proxy chains are not supported.");
         varFE02595BC82A88C5229C259936D54501_1258151244.addTaint(taint);
         throw varFE02595BC82A88C5229C259936D54501_1258151244;
-        
-        
-            
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException
+            //("Proxy chains are not supported.");
     }
 
     
@@ -840,7 +840,7 @@ switch(step){
             Scheme scheme = connManager.getSchemeRegistry().
                 getScheme(target.getSchemeName());
             port = scheme.getDefaultPort();
-        } 
+        } //End block
         StringBuilder buffer = new StringBuilder(host.length() + 6);
         buffer.append(host);
         buffer.append(':');
@@ -852,24 +852,24 @@ switch(step){
 HttpRequest var71AC1B13807E2EDC246A42B3DB2D8EEA_995642604 =         req;
         var71AC1B13807E2EDC246A42B3DB2D8EEA_995642604.addTaint(taint);
         return var71AC1B13807E2EDC246A42B3DB2D8EEA_995642604;
-        
-        
-        
-        
-        
-            
-                
-            
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //HttpHost target = route.getTargetHost();
+        //String host = target.getHostName();
+        //int port = target.getPort();
+        //if (port < 0) {
+            //Scheme scheme = connManager.getSchemeRegistry().
+                //getScheme(target.getSchemeName());
+            //port = scheme.getDefaultPort();
+        //}
+        //StringBuilder buffer = new StringBuilder(host.length() + 6);
+        //buffer.append(host);
+        //buffer.append(':');
+        //buffer.append(Integer.toString(port));
+        //String authority = buffer.toString();
+        //ProtocolVersion ver = HttpProtocolParams.getVersion(params);
+        //HttpRequest req = new BasicHttpRequest
+            //("CONNECT", authority, ver);
+        //return req;
     }
 
     
@@ -893,7 +893,7 @@ HttpRequest var71AC1B13807E2EDC246A42B3DB2D8EEA_995642604 =         req;
                         + maxRedirects + ") exceeded");
                 var29BC0BAED8BB7987E47C0BA80AF93FBD_995361898.addTaint(taint);
                 throw var29BC0BAED8BB7987E47C0BA80AF93FBD_995361898;
-            } 
+            } //End block
             redirectCount++;
             URI uri = this.redirectHandler.getLocationURI(response, context);
             HttpHost newTarget = new HttpHost(
@@ -910,11 +910,11 @@ HttpRequest var71AC1B13807E2EDC246A42B3DB2D8EEA_995642604 =         req;
     if(this.log.isDebugEnabled())            
             {
                 this.log.debug("Redirecting to '" + uri + "' via " + newRoute);
-            } 
+            } //End block
 RoutedRequest var843B90BB67BB5454D25E3643EF8010AB_1097409195 =             newRequest;
             var843B90BB67BB5454D25E3643EF8010AB_1097409195.addTaint(taint);
             return var843B90BB67BB5454D25E3643EF8010AB_1097409195;
-        } 
+        } //End block
         CredentialsProvider credsProvider = (CredentialsProvider)
             context.getAttribute(ClientContext.CREDS_PROVIDER);
     if(credsProvider != null && HttpClientParams.isAuthenticating(params))        
@@ -926,7 +926,7 @@ RoutedRequest var843B90BB67BB5454D25E3643EF8010AB_1097409195 =             newRe
     if(target == null)                
                 {
                     target = route.getTargetHost();
-                } 
+                } //End block
                 this.log.debug("Target requested authentication");
                 Map<String, Header> challenges = this.targetAuthHandler.getChallenges(
                         response, context);
@@ -935,7 +935,7 @@ RoutedRequest var843B90BB67BB5454D25E3643EF8010AB_1097409195 =             newRe
                     processChallenges(challenges, 
                             this.targetAuthState, this.targetAuthHandler,
                             response, context);
-                } 
+                } //End block
                 catch (AuthenticationException ex)
                 {
     if(this.log.isWarnEnabled())                    
@@ -944,26 +944,26 @@ RoutedRequest var843B90BB67BB5454D25E3643EF8010AB_1097409195 =             newRe
 RoutedRequest var540C13E9E156B687226421B24F2DF178_1818401167 =                         null;
                         var540C13E9E156B687226421B24F2DF178_1818401167.addTaint(taint);
                         return var540C13E9E156B687226421B24F2DF178_1818401167;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 updateAuthState(this.targetAuthState, target, credsProvider);
     if(this.targetAuthState.getCredentials() != null)                
                 {
 RoutedRequest var6648910846287553B78C1318790BB204_1514966201 =                     roureq;
                     var6648910846287553B78C1318790BB204_1514966201.addTaint(taint);
                     return var6648910846287553B78C1318790BB204_1514966201;
-                } 
+                } //End block
                 else
                 {
 RoutedRequest var540C13E9E156B687226421B24F2DF178_885521346 =                     null;
                     var540C13E9E156B687226421B24F2DF178_885521346.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_885521346;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 this.targetAuthState.setAuthScope(null);
-            } 
+            } //End block
     if(this.proxyAuthHandler.isAuthenticationRequested(response, context))            
             {
                 this.log.debug("Proxy requested authentication");
@@ -974,7 +974,7 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_885521346 =                   
                     processChallenges(challenges, 
                             this.proxyAuthState, this.proxyAuthHandler, 
                             response, context);
-                } 
+                } //End block
                 catch (AuthenticationException ex)
                 {
     if(this.log.isWarnEnabled())                    
@@ -983,32 +983,32 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_885521346 =                   
 RoutedRequest var540C13E9E156B687226421B24F2DF178_499636949 =                         null;
                         var540C13E9E156B687226421B24F2DF178_499636949.addTaint(taint);
                         return var540C13E9E156B687226421B24F2DF178_499636949;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 updateAuthState(this.proxyAuthState, proxy, credsProvider);
     if(this.proxyAuthState.getCredentials() != null)                
                 {
 RoutedRequest var6648910846287553B78C1318790BB204_1912328467 =                     roureq;
                     var6648910846287553B78C1318790BB204_1912328467.addTaint(taint);
                     return var6648910846287553B78C1318790BB204_1912328467;
-                } 
+                } //End block
                 else
                 {
 RoutedRequest var540C13E9E156B687226421B24F2DF178_270893367 =                     null;
                     var540C13E9E156B687226421B24F2DF178_270893367.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_270893367;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 this.proxyAuthState.setAuthScope(null);
-            } 
-        } 
+            } //End block
+        } //End block
 RoutedRequest var540C13E9E156B687226421B24F2DF178_1682691471 =         null;
         var540C13E9E156B687226421B24F2DF178_1682691471.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1682691471;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -1021,40 +1021,40 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_1682691471 =         null;
             try 
             {
                 mcc.abortConnection();
-            } 
+            } //End block
             catch (IOException ex)
             {
     if(this.log.isDebugEnabled())                
                 {
                     this.log.debug(ex.getMessage(), ex);
-                } 
-            } 
+                } //End block
+            } //End block
             try 
             {
                 mcc.releaseConnection();
-            } 
+            } //End block
             catch (IOException ignored)
             {
                 this.log.debug("Error releasing connection", ignored);
-            } 
-        } 
-        
-        
-        
-            
-            
-                
-            
-                
-                    
-                
-            
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //ManagedClientConnection mcc = managedConn;
+        //if (mcc != null) {
+            //managedConn = null;
+            //try {
+                //mcc.abortConnection();
+            //} catch (IOException ex) {
+                //if (this.log.isDebugEnabled()) {
+                    //this.log.debug(ex.getMessage(), ex);
+                //}
+            //}
+            //try {
+                //mcc.releaseConnection();
+            //} catch(IOException ignored) {
+                //this.log.debug("Error releasing connection", ignored);
+            //}
+        //}
     }
 
     
@@ -1075,7 +1075,7 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_1682691471 =         null;
         {
             authScheme = authHandler.selectScheme(challenges, response, context);
             authState.setAuthScheme(authScheme);
-        } 
+        } //End block
         String id = authScheme.getSchemeName();
         Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
     if(challenge == null)        
@@ -1084,23 +1084,23 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_1682691471 =         null;
                 " authorization challenge expected, but not found");
             varADD197DE4731E0165FACB33B3B3666F1_877205235.addTaint(taint);
             throw varADD197DE4731E0165FACB33B3B3666F1_877205235;
-        } 
+        } //End block
         authScheme.processChallenge(challenge);
         this.log.debug("Authorization challenge processed");
-        
-        
-        
-            
-            
-        
-        
-        
-        
-            
-                
-        
-        
-        
+        // ---------- Original Method ----------
+        //AuthScheme authScheme = authState.getAuthScheme();
+        //if (authScheme == null) {
+            //authScheme = authHandler.selectScheme(challenges, response, context);
+            //authState.setAuthScheme(authScheme);
+        //}
+        //String id = authScheme.getSchemeName();
+        //Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
+        //if (challenge == null) {
+            //throw new AuthenticationException(id + 
+                //" authorization challenge expected, but not found");
+        //}
+        //authScheme.processChallenge(challenge);
+        //this.log.debug("Authorization challenge processed");
     }
 
     
@@ -1115,14 +1115,14 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_1682691471 =         null;
     if(!authState.isValid())        
         {
             return;
-        } 
+        } //End block
         String hostname = host.getHostName();
         int port = host.getPort();
     if(port < 0)        
         {
             Scheme scheme = connManager.getSchemeRegistry().getScheme(host);
             port = scheme.getDefaultPort();
-        } 
+        } //End block
         AuthScheme authScheme = authState.getAuthScheme();
         AuthScope authScope = new AuthScope(
                 hostname,
@@ -1132,7 +1132,7 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_1682691471 =         null;
     if(this.log.isDebugEnabled())        
         {
             this.log.debug("Authentication scope: " + authScope);
-        } 
+        } //End block
         Credentials creds = authState.getCredentials();
     if(creds == null)        
         {
@@ -1142,25 +1142,25 @@ RoutedRequest var540C13E9E156B687226421B24F2DF178_1682691471 =         null;
     if(creds != null)                
                 {
                     this.log.debug("Found credentials");
-                } 
+                } //End block
                 else
                 {
                     this.log.debug("Credentials not found");
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         else
         {
     if(authScheme.isComplete())            
             {
                 this.log.debug("Authentication failed");
                 creds = null;
-            } 
-        } 
+            } //End block
+        } //End block
         authState.setAuthScope(authScope);
         authState.setCredentials(creds);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

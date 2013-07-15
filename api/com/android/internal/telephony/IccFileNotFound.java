@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class IccFileNotFound extends IccException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.524 -0400", hash_original_method = "BA14DB7797A45FF6750F5919D632C5BC", hash_generated_method = "882C52828F97856B3C5401A09EB51F77")
       IccFileNotFound() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class IccFileNotFound extends IccException {
       IccFileNotFound(String s) {
         super(s);
         addTaint(s.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,7 +25,7 @@ public class IccFileNotFound extends IccException {
       IccFileNotFound(int ef) {
         super("ICC EF Not Found 0x" + Integer.toHexString(ef));
         addTaint(ef);
-        
+        // ---------- Original Method ----------
     }
 
     

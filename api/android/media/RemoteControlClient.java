@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -157,27 +157,27 @@ public class RemoteControlClient {
     if((looper = Looper.myLooper()) != null)        
         {
             mEventHandler = new EventHandler(this, looper);
-        } 
+        } //End block
         else
     if((looper = Looper.getMainLooper()) != null)        
         {
             mEventHandler = new EventHandler(this, looper);
-        } 
+        } //End block
         else
         {
             mEventHandler = null;
-        } 
-        
-        
-        
-        
-            
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //mRcMediaIntent = mediaButtonIntent;
+        //Looper looper;
+        //if ((looper = Looper.myLooper()) != null) {
+            //mEventHandler = new EventHandler(this, looper);
+        //} else if ((looper = Looper.getMainLooper()) != null) {
+            //mEventHandler = new EventHandler(this, looper);
+        //} else {
+            //mEventHandler = null;
+            //Log.e(TAG, "RemoteControlClient() couldn't find main application thread");
+        //}
     }
 
     
@@ -185,9 +185,9 @@ public class RemoteControlClient {
     public  RemoteControlClient(PendingIntent mediaButtonIntent, Looper looper) {
         mRcMediaIntent = mediaButtonIntent;
         mEventHandler = new EventHandler(this, looper);
-        
-        
-        
+        // ---------- Original Method ----------
+        //mRcMediaIntent = mediaButtonIntent;
+        //mEventHandler = new EventHandler(this, looper);
     }
 
     
@@ -201,31 +201,31 @@ public class RemoteControlClient {
             editor.mEditorArtwork = null;
             editor.mMetadataChanged = true;
             editor.mArtworkChanged = true;
-        } 
+        } //End block
         else
         {
             editor.mEditorMetadata = new Bundle(mMetadata);
             editor.mEditorArtwork = mArtwork;
             editor.mMetadataChanged = false;
             editor.mArtworkChanged = false;
-        } 
+        } //End block
 MetadataEditor varED224B1BF4EAE660E8B6808A4D079108_1604846232 =         editor;
         varED224B1BF4EAE660E8B6808A4D079108_1604846232.addTaint(taint);
         return varED224B1BF4EAE660E8B6808A4D079108_1604846232;
-        
-        
-        
-            
-            
-            
-            
-        
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //MetadataEditor editor = new MetadataEditor();
+        //if (startEmpty) {
+            //editor.mEditorMetadata = new Bundle();
+            //editor.mEditorArtwork = null;
+            //editor.mMetadataChanged = true;
+            //editor.mArtworkChanged = true;
+        //} else {
+            //editor.mEditorMetadata = new Bundle(mMetadata);
+            //editor.mEditorArtwork = mArtwork;
+            //editor.mMetadataChanged = false;
+            //editor.mArtworkChanged = false;
+        //}
+        //return editor;
     }
 
     
@@ -238,16 +238,16 @@ MetadataEditor varED224B1BF4EAE660E8B6808A4D079108_1604846232 =         editor;
                 mPlaybackState = state;
                 mPlaybackStateChangeTimeMs = SystemClock.elapsedRealtime();
                 sendPlaybackState_syncCacheLock();
-            } 
-        } 
-        
-        
-            
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mCacheLock) {
+            //if (mPlaybackState != state) {
+                //mPlaybackState = state;
+                //mPlaybackStateChangeTimeMs = SystemClock.elapsedRealtime();
+                //sendPlaybackState_syncCacheLock();
+            //}
+        //}
     }
 
     
@@ -257,47 +257,44 @@ MetadataEditor varED224B1BF4EAE660E8B6808A4D079108_1604846232 =         editor;
 (mCacheLock)        {
             mTransportControlFlags = transportControlFlags;
             sendTransportControlFlags_syncCacheLock();
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mCacheLock) {
+            //mTransportControlFlags = transportControlFlags;
+            //sendTransportControlFlags_syncCacheLock();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.542 -0400", hash_original_method = "2C35ADA55DC65E9D8CCC19BDAA7D2B4B", hash_generated_method = "9AD56FA2A4BC849436766B6C6753F712")
     public PendingIntent getRcMediaIntent() {
 PendingIntent var1596228B9A06056CB18AE26D216C4D1A_692998856 =         mRcMediaIntent;
         var1596228B9A06056CB18AE26D216C4D1A_692998856.addTaint(taint);
         return var1596228B9A06056CB18AE26D216C4D1A_692998856;
-        
-        
+        // ---------- Original Method ----------
+        //return mRcMediaIntent;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.542 -0400", hash_original_method = "6031DEC176ACCB06C28473E7885E0907", hash_generated_method = "2C5D3E18BF9EAC8F82A922CD3A925400")
     public IRemoteControlClient getIRemoteControlClient() {
 IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mIRCC;
         var09998700C9FD281176CA7E01A7D049EB_1885736888.addTaint(taint);
         return var09998700C9FD281176CA7E01A7D049EB_1885736888;
-        
-        
+        // ---------- Original Method ----------
+        //return mIRCC;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.542 -0400", hash_original_method = "1D4279FF389DE00E45CE62733E438945", hash_generated_method = "7BE69845830A5C30F8E86A0E732E3185")
     private void detachFromDisplay_syncCacheLock() {
         mRcDisplay = null;
         mArtworkExpectedWidth = ARTWORK_INVALID_SIZE;
         mArtworkExpectedHeight = ARTWORK_INVALID_SIZE;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mRcDisplay = null;
+        //mArtworkExpectedWidth = ARTWORK_INVALID_SIZE;
+        //mArtworkExpectedHeight = ARTWORK_INVALID_SIZE;
     }
 
     
@@ -309,22 +306,22 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
             {
                 mRcDisplay.setPlaybackState(mInternalClientGenId, mPlaybackState,
                         mPlaybackStateChangeTimeMs);
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } 
-        } 
-        
-        
-            
-                
-                        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
+            //try {
+                //mRcDisplay.setPlaybackState(mInternalClientGenId, mPlaybackState,
+                        //mPlaybackStateChangeTimeMs);
+            //} catch (RemoteException e) {
+                //Log.e(TAG, "Error in setPlaybackState(), dead display "+e);
+                //detachFromDisplay_syncCacheLock();
+            //}
+        //}
     }
 
     
@@ -335,21 +332,21 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
             try 
             {
                 mRcDisplay.setMetadata(mInternalClientGenId, mMetadata);
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
+            //try {
+                //mRcDisplay.setMetadata(mInternalClientGenId, mMetadata);
+            //} catch (RemoteException e) {
+                //Log.e(TAG, "Error in sendPlaybackState(), dead display "+e);
+                //detachFromDisplay_syncCacheLock();
+            //}
+        //}
     }
 
     
@@ -361,22 +358,22 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
             {
                 mRcDisplay.setTransportControlFlags(mInternalClientGenId,
                         mTransportControlFlags);
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } 
-        } 
-        
-        
-            
-                
-                        
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
+            //try {
+                //mRcDisplay.setTransportControlFlags(mInternalClientGenId,
+                        //mTransportControlFlags);
+            //} catch (RemoteException e) {
+                //Log.e(TAG, "Error in sendTransportControlFlags(), dead display "+e);
+                //detachFromDisplay_syncCacheLock();
+            //}
+        //}
     }
 
     
@@ -388,22 +385,22 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
             try 
             {
                 mRcDisplay.setArtwork(mInternalClientGenId, mArtwork);
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } 
-        } 
-        
-        
-            
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
+            //mArtwork = scaleBitmapIfTooBig(mArtwork, mArtworkExpectedWidth, mArtworkExpectedHeight);
+            //try {
+                //mRcDisplay.setArtwork(mInternalClientGenId, mArtwork);
+            //} catch (RemoteException e) {
+                //Log.e(TAG, "Error in sendArtwork(), dead display "+e);
+                //detachFromDisplay_syncCacheLock();
+            //}
+        //}
     }
 
     
@@ -415,22 +412,22 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
             try 
             {
                 mRcDisplay.setAllMetadata(mInternalClientGenId, mMetadata, mArtwork);
-            } 
+            } //End block
             catch (RemoteException e)
             {
                 detachFromDisplay_syncCacheLock();
-            } 
-        } 
-        
-        
-            
-            
-                
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if ((mCurrentClientGenId == mInternalClientGenId) && (mRcDisplay != null)) {
+            //mArtwork = scaleBitmapIfTooBig(mArtwork, mArtworkExpectedWidth, mArtworkExpectedHeight);
+            //try {
+                //mRcDisplay.setAllMetadata(mInternalClientGenId, mMetadata, mArtwork);
+            //} catch (RemoteException e) {
+                //Log.e(TAG, "Error in setAllMetadata(), dead display "+e);
+                //detachFromDisplay_syncCacheLock();
+            //}
+        //}
     }
 
     
@@ -443,44 +440,42 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
             {
                 mArtworkExpectedWidth = artWidth;
                 mArtworkExpectedHeight = artHeight;
-            } 
-        } 
-        
-        
-            
-            
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCacheLock) {
+            //mInternalClientGenId = clientGeneration.intValue();
+            //if (artWidth > 0) {
+                //mArtworkExpectedWidth = artWidth;
+                //mArtworkExpectedHeight = artHeight;
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.546 -0400", hash_original_method = "6CA13622614E338BD9C3EB3C00B6EAD4", hash_generated_method = "CE1E34C2269255946FE14815078895D2")
     private void onNewCurrentClientGen(int clientGeneration) {
         synchronized
 (mCacheLock)        {
             mCurrentClientGenId = clientGeneration;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mCacheLock) {
+            //mCurrentClientGenId = clientGeneration;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.547 -0400", hash_original_method = "53EC796651633C35ADEE8DE59FBA0A28", hash_generated_method = "7EB3D35BCC5B940E229808DC7334D943")
     private void onPlugDisplay(IRemoteControlDisplay rcd) {
         synchronized
 (mCacheLock)        {
             mRcDisplay = rcd;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mCacheLock) {
+            //mRcDisplay = rcd;
+        //}
     }
 
     
@@ -494,16 +489,16 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
                 mRcDisplay = null;
                 mArtworkExpectedWidth = ARTWORK_DEFAULT_SIZE;
                 mArtworkExpectedHeight = ARTWORK_DEFAULT_SIZE;
-            } 
-        } 
-        
-        
-            
-                
-                
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized(mCacheLock) {
+            //if ((mRcDisplay != null) && (mRcDisplay.asBinder().equals(rcd.asBinder()))) {
+                //mRcDisplay = null;
+                //mArtworkExpectedWidth = ARTWORK_DEFAULT_SIZE;
+                //mArtworkExpectedHeight = ARTWORK_DEFAULT_SIZE;
+            //}
+        //}
     }
 
     
@@ -529,18 +524,17 @@ IRemoteControlClient var09998700C9FD281176CA7E01A7D049EB_1885736888 =         mI
                 canvas.drawBitmap(bitmap, null,
                         new RectF(0, 0, outBitmap.getWidth(), outBitmap.getHeight()), paint);
                 bitmap = outBitmap;
-            } 
-        } 
+            } //End block
+        } //End block
 Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1423290041 =         bitmap;
         var3752488A34EC2C4FECF5AE64DF03DAEB_1423290041.addTaint(taint);
         return var3752488A34EC2C4FECF5AE64DF03DAEB_1423290041;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean validTypeForKey(int key, int[] validKeys) {
+        private static boolean validTypeForKey(int key, int[] validKeys) {
         try {
             for (int i = 0 ; ; i++) {
                 if (key == validKeys[i]) {
@@ -572,7 +566,7 @@ Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1423290041 =         bitmap;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.549 -0400", hash_original_method = "35489133548A4653F80D8552B0E58378", hash_generated_method = "8F0077210051A860529F5C8FE4CA59F4")
         private  MetadataEditor() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -581,8 +575,8 @@ Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1423290041 =         bitmap;
             CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_1359616897 = new CloneNotSupportedException();
             var1615C718FF05C0D800F9FFF876AD8603_1359616897.addTaint(taint);
             throw var1615C718FF05C0D800F9FFF876AD8603_1359616897;
-            
-            
+            // ---------- Original Method ----------
+            //throw new CloneNotSupportedException();
         }
 
         
@@ -595,29 +589,29 @@ Bitmap var3752488A34EC2C4FECF5AE64DF03DAEB_1423290041 =         bitmap;
 MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_1514120831 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1514120831.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1514120831;
-            } 
+            } //End block
     if(!validTypeForKey(key, METADATA_KEYS_TYPE_STRING))            
             {
                 IllegalArgumentException var19697FD90423497588699BB99E6F16FE_1370106707 = new IllegalArgumentException("Invalid type 'String' for key "+ key);
                 var19697FD90423497588699BB99E6F16FE_1370106707.addTaint(taint);
                 throw var19697FD90423497588699BB99E6F16FE_1370106707;
-            } 
+            } //End block
             mEditorMetadata.putString(String.valueOf(key), value);
             mMetadataChanged = true;
 MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_1159944194 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1159944194.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1159944194;
-            
-            
-                
-                
-            
-            
-                
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mApplied) {
+                //Log.e(TAG, "Can't edit a previously applied MetadataEditor");
+                //return this;
+            //}
+            //if (!validTypeForKey(key, METADATA_KEYS_TYPE_STRING)) {
+                //throw(new IllegalArgumentException("Invalid type 'String' for key "+ key));
+            //}
+            //mEditorMetadata.putString(String.valueOf(key), value);
+            //mMetadataChanged = true;
+            //return this;
         }
 
         
@@ -630,29 +624,29 @@ MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_1159944194 =             this
 MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_888641379 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_888641379.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_888641379;
-            } 
+            } //End block
     if(!validTypeForKey(key, METADATA_KEYS_TYPE_LONG))            
             {
                 IllegalArgumentException varDE4C8C6E2BF229D00E71F4420C0A8E29_1610191758 = new IllegalArgumentException("Invalid type 'long' for key "+ key);
                 varDE4C8C6E2BF229D00E71F4420C0A8E29_1610191758.addTaint(taint);
                 throw varDE4C8C6E2BF229D00E71F4420C0A8E29_1610191758;
-            } 
+            } //End block
             mEditorMetadata.putLong(String.valueOf(key), value);
             mMetadataChanged = true;
 MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_491398767 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_491398767.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_491398767;
-            
-            
-                
-                
-            
-            
-                
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mApplied) {
+                //Log.e(TAG, "Can't edit a previously applied MetadataEditor");
+                //return this;
+            //}
+            //if (!validTypeForKey(key, METADATA_KEYS_TYPE_LONG)) {
+                //throw(new IllegalArgumentException("Invalid type 'long' for key "+ key));
+            //}
+            //mEditorMetadata.putLong(String.valueOf(key), value);
+            //mMetadataChanged = true;
+            //return this;
         }
 
         
@@ -664,42 +658,42 @@ MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_491398767 =             this;
 MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_1780245679 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1780245679.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1780245679;
-            } 
+            } //End block
     if(key != BITMAP_KEY_ARTWORK)            
             {
                 IllegalArgumentException varF070F702F3B8A3B0C403B48995DA94A9_445078525 = new IllegalArgumentException("Invalid type 'Bitmap' for key "+ key);
                 varF070F702F3B8A3B0C403B48995DA94A9_445078525.addTaint(taint);
                 throw varF070F702F3B8A3B0C403B48995DA94A9_445078525;
-            } 
+            } //End block
     if((mArtworkExpectedWidth > 0) && (mArtworkExpectedHeight > 0))            
             {
                 mEditorArtwork = scaleBitmapIfTooBig(bitmap,
                         mArtworkExpectedWidth, mArtworkExpectedHeight);
-            } 
+            } //End block
             else
             {
                 mEditorArtwork = bitmap;
-            } 
+            } //End block
             mArtworkChanged = true;
 MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_933190431 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_933190431.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_933190431;
-            
-            
-                
-                
-            
-            
-                
-            
-            
-                
-                        
-            
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mApplied) {
+                //Log.e(TAG, "Can't edit a previously applied MetadataEditor");
+                //return this;
+            //}
+            //if (key != BITMAP_KEY_ARTWORK) {
+                //throw(new IllegalArgumentException("Invalid type 'Bitmap' for key "+ key));
+            //}
+            //if ((mArtworkExpectedWidth > 0) && (mArtworkExpectedHeight > 0)) {
+                //mEditorArtwork = scaleBitmapIfTooBig(bitmap,
+                        //mArtworkExpectedWidth, mArtworkExpectedHeight);
+            //} else {
+                //mEditorArtwork = bitmap;
+            //}
+            //mArtworkChanged = true;
+            //return this;
         }
 
         
@@ -708,16 +702,16 @@ MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_933190431 =             this;
     if(mApplied)            
             {
                 return;
-            } 
+            } //End block
             mEditorMetadata.clear();
             mEditorArtwork = null;
-            
-            
-                
-                
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (mApplied) {
+                //Log.e(TAG, "Can't clear a previously applied MetadataEditor");
+                //return;
+            //}
+            //mEditorMetadata.clear();
+            //mEditorArtwork = null;
         }
 
         
@@ -726,34 +720,34 @@ MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_933190431 =             this;
     if(mApplied)            
             {
                 return;
-            } 
+            } //End block
             synchronized
 (mCacheLock)            {
                 mMetadata = new Bundle(mEditorMetadata);
     if((mArtwork != null) && (!mArtwork.equals(mEditorArtwork)))                
                 {
                     mArtwork.recycle();
-                } 
+                } //End block
                 mArtwork = mEditorArtwork;
                 mEditorArtwork = null;
     if(mMetadataChanged & mArtworkChanged)                
                 {
                     sendMetadataWithArtwork_syncCacheLock();
-                } 
+                } //End block
                 else
     if(mMetadataChanged)                
                 {
                     sendMetadata_syncCacheLock();
-                } 
+                } //End block
                 else
     if(mArtworkChanged)                
                 {
                     sendArtwork_syncCacheLock();
-                } 
+                } //End block
                 mApplied = true;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -774,7 +768,7 @@ MetadataEditor var72A74007B2BE62B849F475C7BDA4658B_933190431 =             this;
             super(looper);
             addTaint(looper.getTaint());
             addTaint(rcc.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -787,25 +781,25 @@ switch(msg.what){
             synchronized
 (mCacheLock)            {
                 sendPlaybackState_syncCacheLock();
-            } 
+            } //End block
             break;
             case MSG_REQUEST_METADATA:
             synchronized
 (mCacheLock)            {
                 sendMetadata_syncCacheLock();
-            } 
+            } //End block
             break;
             case MSG_REQUEST_TRANSPORTCONTROL:
             synchronized
 (mCacheLock)            {
                 sendTransportControlFlags_syncCacheLock();
-            } 
+            } //End block
             break;
             case MSG_REQUEST_ARTWORK:
             synchronized
 (mCacheLock)            {
                 sendArtwork_syncCacheLock();
-            } 
+            } //End block
             break;
             case MSG_NEW_INTERNAL_CLIENT_GEN:
             onNewInternalClientGen((Integer)msg.obj, msg.arg1, msg.arg2);
@@ -821,8 +815,8 @@ switch(msg.what){
             break;
             default:
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

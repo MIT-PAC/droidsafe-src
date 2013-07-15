@@ -1,6 +1,6 @@
 package org.bouncycastle.util.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public final class Streams {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.777 -0400", hash_original_method = "E89EB8DDFA560D5750506701D7919D33", hash_generated_method = "E89EB8DDFA560D5750506701D7919D33")
     public Streams ()
     {
-        
+        //Synthesized constructor
     }
 
 

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class AuthenticationInfoParser extends ParametersParser {
     public  AuthenticationInfoParser(String authenticationInfo) {
         super(authenticationInfo);
         addTaint(authenticationInfo.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class AuthenticationInfoParser extends ParametersParser {
     protected  AuthenticationInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -48,19 +48,19 @@ public class AuthenticationInfoParser extends ParametersParser {
                 nv = super.nameValue();
                 authenticationInfo.setParameter(nv);
                 this.lexer.SPorHT();
-            } 
+            } //End block
             this.lexer.SPorHT();
 SIPHeader varFF3FCF7C032A2921E9A441AC36AB5087_329856958 =             authenticationInfo;
             varFF3FCF7C032A2921E9A441AC36AB5087_329856958.addTaint(taint);
             return varFF3FCF7C032A2921E9A441AC36AB5087_329856958;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("AuthenticationInfoParser.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

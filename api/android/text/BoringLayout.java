@@ -1,6 +1,6 @@
 package android.text;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -61,12 +61,12 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
         mEllipsizedCount = 0;
         init(source, paint, outerwidth, align, spacingmult, spacingadd,
              metrics, includepad, true);
-        
-        
-        
-        
-        
-             
+        // ---------- Original Method ----------
+        //mEllipsizedWidth = outerwidth;
+        //mEllipsizedStart = 0;
+        //mEllipsizedCount = 0;
+        //init(source, paint, outerwidth, align, spacingmult, spacingadd,
+             //metrics, includepad, true);
     }
 
     
@@ -93,7 +93,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
             mEllipsizedStart = 0;
             mEllipsizedCount = 0;
             trust = true;
-        } 
+        } //End block
         else
         {
             replaceWith(TextUtils.ellipsize(source, paint, ellipsizedWidth,
@@ -102,31 +102,30 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
                         spacingadd);
             mEllipsizedWidth = ellipsizedWidth;
             trust = false;
-        } 
+        } //End block
         init(getText(), paint, outerwidth, align, spacingmult, spacingadd,
              metrics, includepad, trust);
-        
-        
-        
-            
-            
-            
-            
-        
-            
-                                           
-                        
-                        
-            
-            
-        
-        
-             
+        // ---------- Original Method ----------
+        //boolean trust;
+        //if (ellipsize == null || ellipsize == TextUtils.TruncateAt.MARQUEE) {
+            //mEllipsizedWidth = outerwidth;
+            //mEllipsizedStart = 0;
+            //mEllipsizedCount = 0;
+            //trust = true;
+        //} else {
+            //replaceWith(TextUtils.ellipsize(source, paint, ellipsizedWidth,
+                                           //ellipsize, true, this),
+                        //paint, outerwidth, align, spacingmult,
+                        //spacingadd);
+            //mEllipsizedWidth = ellipsizedWidth;
+            //trust = false;
+        //}
+        //init(getText(), paint, outerwidth, align, spacingmult, spacingadd,
+             //metrics, includepad, trust);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static BoringLayout make(CharSequence source,
+        public static BoringLayout make(CharSequence source,
                         TextPaint paint, int outerwidth,
                         Alignment align,
                         float spacingmult, float spacingadd,
@@ -137,8 +136,7 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static BoringLayout make(CharSequence source,
+        public static BoringLayout make(CharSequence source,
                         TextPaint paint, int outerwidth,
                         Alignment align,
                         float spacingmult, float spacingadd,
@@ -150,7 +148,6 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.790 -0400", hash_original_method = "CC7D93FCE240EB61BF168844CD074EBF", hash_generated_method = "853A916B14B7F48C47ADA005084DE4B6")
     public BoringLayout replaceOrMake(CharSequence source, TextPaint paint,
                                       int outerwidth, Alignment align,
@@ -174,19 +171,18 @@ public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback 
 BoringLayout var72A74007B2BE62B849F475C7BDA4658B_251177696 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_251177696.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_251177696;
-        
-        
-                    
-        
-        
-        
-        
-             
-        
+        // ---------- Original Method ----------
+        //replaceWith(source, paint, outerwidth, align, spacingmult,
+                    //spacingadd);
+        //mEllipsizedWidth = outerwidth;
+        //mEllipsizedStart = 0;
+        //mEllipsizedCount = 0;
+        //init(source, paint, outerwidth, align, spacingmult, spacingadd,
+             //metrics, includepad, true);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.791 -0400", hash_original_method = "4B78087A434BCC06D8E64A3B5F0E26A9", hash_generated_method = "1F10B5BC426D406510D39D4082351EAC")
     public BoringLayout replaceOrMake(CharSequence source, TextPaint paint,
                                       int outerwidth, Alignment align,
@@ -212,7 +208,7 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_251177696 =         this;
             mEllipsizedStart = 0;
             mEllipsizedCount = 0;
             trust = true;
-        } 
+        } //End block
         else
         {
             replaceWith(TextUtils.ellipsize(source, paint, ellipsizedWidth,
@@ -221,18 +217,17 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_251177696 =         this;
                         spacingadd);
             mEllipsizedWidth = ellipsizedWidth;
             trust = false;
-        } 
+        } //End block
         init(getText(), paint, outerwidth, align, spacingmult, spacingadd,
              metrics, includepad, trust);
 BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1310294304.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1310294304;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.793 -0400", hash_original_method = "72A5FE71A3D3A6FEDD367DD5E3D986F4", hash_generated_method = "8D92F3E80D09FAB9D1848255EE22AD7D")
      void init(CharSequence source,
                             TextPaint paint, int outerwidth,
@@ -250,37 +245,37 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
     if(source instanceof String && align == Layout.Alignment.ALIGN_NORMAL)        
         {
             mDirect = source.toString();
-        } 
+        } //End block
         else
         {
             mDirect = null;
-        } 
+        } //End block
         mPaint = paint;
     if(includepad)        
         {
             spacing = metrics.bottom - metrics.top;
-        } 
+        } //End block
         else
         {
             spacing = metrics.descent - metrics.ascent;
-        } 
+        } //End block
     if(spacingmult != 1 || spacingadd != 0)        
         {
             spacing = (int)(spacing * spacingmult + spacingadd + 0.5f);
-        } 
+        } //End block
         mBottom = spacing;
     if(includepad)        
         {
             mDesc = spacing + metrics.top;
-        } 
+        } //End block
         else
         {
             mDesc = spacing + metrics.ascent;
-        } 
+        } //End block
     if(trustWidth)        
         {
             mMax = metrics.width;
-        } 
+        } //End block
         else
         {
             TextLine line = TextLine.obtain();
@@ -288,40 +283,36 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
                     Layout.DIRS_ALL_LEFT_TO_RIGHT, false, null);
             mMax = (int) FloatMath.ceil(line.metrics(null));
             TextLine.recycle(line);
-        } 
+        } //End block
     if(includepad)        
         {
             mTopPadding = metrics.top - metrics.ascent;
             mBottomPadding = metrics.bottom - metrics.descent;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Metrics isBoring(CharSequence text,
+        public static Metrics isBoring(CharSequence text,
                                    TextPaint paint) {
         return isBoring(text, paint, TextDirectionHeuristics.FIRSTSTRONG_LTR, null);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Metrics isBoring(CharSequence text,
+        public static Metrics isBoring(CharSequence text,
                                    TextPaint paint,
                                    TextDirectionHeuristic textDir) {
         return isBoring(text, paint, textDir, null);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Metrics isBoring(CharSequence text, TextPaint paint, Metrics metrics) {
+        public static Metrics isBoring(CharSequence text, TextPaint paint, Metrics metrics) {
         return isBoring(text, paint, TextDirectionHeuristics.FIRSTSTRONG_LTR, metrics);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static Metrics isBoring(CharSequence text, TextPaint paint,
+        public static Metrics isBoring(CharSequence text, TextPaint paint,
             TextDirectionHeuristic textDir, Metrics metrics) {
         char[] temp = TextUtils.obtain(500);
         int length = text.length();
@@ -370,31 +361,28 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.794 -0400", hash_original_method = "9C145AF64C7D263F1721F68F7FF83F17", hash_generated_method = "68BE090A3F1BC905F3BACBE9CE7528C8")
     @Override
     public int getHeight() {
         int var2FFD20D7E48915664FDF7F12FC3889D8_1088727350 = (mBottom);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568039373 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568039373;
-        
-        
+        // ---------- Original Method ----------
+        //return mBottom;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.795 -0400", hash_original_method = "2D16E05C4EC39BC67C8A172C64094881", hash_generated_method = "8D5A3F7039CD571179C4122ED76AA5DB")
     @Override
     public int getLineCount() {
         int varC4CA4238A0B923820DCC509A6F75849B_816997258 = (1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_721405853 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_721405853;
-        
-        
+        // ---------- Original Method ----------
+        //return 1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.795 -0400", hash_original_method = "FC2E2A347EB554C00B43E510002C6FE3", hash_generated_method = "8819CF9198DE660F794A6B58C81215A0")
     @Override
     public int getLineTop(int line) {
@@ -411,15 +399,14 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790443223 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790443223;
         }
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (line == 0)
+            //return 0;
+        //else
+            //return mBottom;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.795 -0400", hash_original_method = "CEFD06A93AC917501D80ABE3ADC321FA", hash_generated_method = "83FC06F2932580CE5D69124CF0AD39D9")
     @Override
     public int getLineDescent(int line) {
@@ -427,12 +414,11 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
         int var7CC9BE6231ADF86659204A1B34464053_746085590 = (mDesc);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_752375421 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_752375421;
-        
-        
+        // ---------- Original Method ----------
+        //return mDesc;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.796 -0400", hash_original_method = "01507A0D62D72F853366982B51A08E39", hash_generated_method = "76485B401DA86BF4E0A8EF0F4C05F74E")
     @Override
     public int getLineStart(int line) {
@@ -449,15 +435,14 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_76598082 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_76598082;
         }
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (line == 0)
+            //return 0;
+        //else
+            //return getText().length();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.796 -0400", hash_original_method = "C13A8C90111FE51B6C5C9E4F734C2F1E", hash_generated_method = "D3B511F5F415295C725446ECDE02872E")
     @Override
     public int getParagraphDirection(int line) {
@@ -465,12 +450,11 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
         int var43CB7D46F0E18F315D43B82024093B51_1408438821 = (DIR_LEFT_TO_RIGHT);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1119212085 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1119212085;
-        
-        
+        // ---------- Original Method ----------
+        //return DIR_LEFT_TO_RIGHT;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.796 -0400", hash_original_method = "26D4049A2082A20A88CBFE67C9B7B59C", hash_generated_method = "FDE44573A427F6E7C2FD799E1B0A45B3")
     @Override
     public boolean getLineContainsTab(int line) {
@@ -478,12 +462,11 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
         boolean var68934A3E9455FA72420237EB05902327_1167291009 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1945497801 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1945497801;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.797 -0400", hash_original_method = "B75E83FBFEF77E240A9CDC2AC2A1C8A4", hash_generated_method = "5EEE49346A0F00A3FF0A16C8C7FA2E29")
     @Override
     public float getLineMax(int line) {
@@ -491,8 +474,8 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
         float varC886C6FF92A43B3F6833B7BAFD354FBA_1159998321 = (mMax);
                 float var546ADE640B6EDFBC8A086EF31347E768_1940717709 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1940717709;
-        
-        
+        // ---------- Original Method ----------
+        //return mMax;
     }
 
     
@@ -503,36 +486,33 @@ BoringLayout var72A74007B2BE62B849F475C7BDA4658B_1310294304 =         this;
 Directions var23DB167A4CD06697C566FA0F2EDA02AD_325199986 =         Layout.DIRS_ALL_LEFT_TO_RIGHT;
         var23DB167A4CD06697C566FA0F2EDA02AD_325199986.addTaint(taint);
         return var23DB167A4CD06697C566FA0F2EDA02AD_325199986;
-        
-        
+        // ---------- Original Method ----------
+        //return Layout.DIRS_ALL_LEFT_TO_RIGHT;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.797 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "5B687631A7DD90F82DC7B7BF3E57F360")
     @Override
     public int getTopPadding() {
         int varA6796D45932911E4DA1D9D40D1BD23B8_197646289 = (mTopPadding);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1979679193 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1979679193;
-        
-        
+        // ---------- Original Method ----------
+        //return mTopPadding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.798 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "1FAC89B3440BAEC26321429BF16F5BB9")
     @Override
     public int getBottomPadding() {
         int var097A31AA17188409E251DABE4869FAFE_1190377268 = (mBottomPadding);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318032538 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318032538;
-        
-        
+        // ---------- Original Method ----------
+        //return mBottomPadding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.798 -0400", hash_original_method = "BD15B39FEBBFBBCAB07017E8474F5CA3", hash_generated_method = "1B8CC654F81219D340FF2408B8CAABC1")
     @Override
     public int getEllipsisCount(int line) {
@@ -540,12 +520,11 @@ Directions var23DB167A4CD06697C566FA0F2EDA02AD_325199986 =         Layout.DIRS_A
         int var99B4B7415CCA47573BDE1AEF6AEEFAB0_1948269478 = (mEllipsizedCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1714003637 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1714003637;
-        
-        
+        // ---------- Original Method ----------
+        //return mEllipsizedCount;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.798 -0400", hash_original_method = "414A86D89277DC065BB670E3078E25DD", hash_generated_method = "83C0CD3E80D43BA536B627B3A5A23969")
     @Override
     public int getEllipsisStart(int line) {
@@ -553,24 +532,22 @@ Directions var23DB167A4CD06697C566FA0F2EDA02AD_325199986 =         Layout.DIRS_A
         int var2500F3F15EEAC3B4C3773F3A0481EE44_1771532747 = (mEllipsizedStart);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1589571484 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1589571484;
-        
-        
+        // ---------- Original Method ----------
+        //return mEllipsizedStart;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.799 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "9412CEF5FDC1DCD959E1A804B44580A1")
     @Override
     public int getEllipsizedWidth() {
         int var5713AC9F49879DE1055FA780DFEFDF1C_1054643706 = (mEllipsizedWidth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1229904885 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1229904885;
-        
-        
+        // ---------- Original Method ----------
+        //return mEllipsizedWidth;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.800 -0400", hash_original_method = "5DBC6B0379E5085B5017E1E8304BC3E8", hash_generated_method = "6F5C2BFC013386888C3EB997E08D5CF6")
     @Override
     public void draw(Canvas c, Path highlight, Paint highlightpaint,
@@ -582,28 +559,27 @@ Directions var23DB167A4CD06697C566FA0F2EDA02AD_325199986 =         Layout.DIRS_A
     if(mDirect != null && highlight == null)        
         {
             c.drawText(mDirect, 0, mBottom - mDesc, mPaint);
-        } 
+        } //End block
         else
         {
             super.draw(c, highlight, highlightpaint, cursorOffset);
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mDirect != null && highlight == null) {
+            //c.drawText(mDirect, 0, mBottom - mDesc, mPaint);
+        //} else {
+            //super.draw(c, highlight, highlightpaint, cursorOffset);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.800 -0400", hash_original_method = "C8834FD4CE389B3AEF157EF49CB23721", hash_generated_method = "3908F2E0EC97B329D0B6E5A4EAB40C7A")
     public void ellipsized(int start, int end) {
         mEllipsizedStart = start;
         mEllipsizedCount = end - start;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mEllipsizedStart = start;
+        //mEllipsizedCount = end - start;
     }
 
     
@@ -615,19 +591,18 @@ Directions var23DB167A4CD06697C566FA0F2EDA02AD_325199986 =         Layout.DIRS_A
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.801 -0400", hash_original_method = "5093089FD85953828BC1A867B844524A", hash_generated_method = "5093089FD85953828BC1A867B844524A")
         public Metrics ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.801 -0400", hash_original_method = "12CBEFE116384BBA88EB750F89F5AC01", hash_generated_method = "E4B07024AFFFB583A0126BA333E0A302")
         @Override
         public String toString() {
 String varF4BEA69CAC1BC0FE4DC5F53DAD03EA66_351455653 =             super.toString() + " width=" + width;
             varF4BEA69CAC1BC0FE4DC5F53DAD03EA66_351455653.addTaint(taint);
             return varF4BEA69CAC1BC0FE4DC5F53DAD03EA66_351455653;
-            
-            
+            // ---------- Original Method ----------
+            //return super.toString() + " width=" + width;
         }
 
         

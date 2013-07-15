@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,67 +32,62 @@ class ComprehensionTlv {
         mLength = length;
         mValueIndex = valueIndex;
         mRawValue = data;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mTag = tag;
+        //mCr = cr;
+        //mLength = length;
+        //mValueIndex = valueIndex;
+        //mRawValue = data;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.135 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "2AE000A5DF4ED958074908FF622EA6CE")
     public int getTag() {
         int var07496860B5C53FDD66588727158D5F73_515258997 = (mTag);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1357290975 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1357290975;
-        
-        
+        // ---------- Original Method ----------
+        //return mTag;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.135 -0400", hash_original_method = "BBBB347994ECBB1AA0023AC2A90F5AE7", hash_generated_method = "73F8ABEA9AEE8DA2E374CC1C40CC3A85")
     public boolean isComprehensionRequired() {
         boolean var0F17E746BE153E70A72E97F8AE4B0967_1348843952 = (mCr);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1225627125 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1225627125;
-        
-        
+        // ---------- Original Method ----------
+        //return mCr;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.135 -0400", hash_original_method = "6E6502D65176BC2328E9B790ED2B205C", hash_generated_method = "D06B24289DEDA53864BE899E01E1D479")
     public int getLength() {
         int var429F431E8CD8AC287AA27460675EAEFE_2107959859 = (mLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2067414913 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2067414913;
-        
-        
+        // ---------- Original Method ----------
+        //return mLength;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.135 -0400", hash_original_method = "6B24631B893BC9498B1E30027D9EDCB1", hash_generated_method = "B54F8DE7C7C684B0448C7C961D3CFCCF")
     public int getValueIndex() {
         int var23B7A8A7152E7007B08DAF983B584CA9_1290884707 = (mValueIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_857442144 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_857442144;
-        
-        
+        // ---------- Original Method ----------
+        //return mValueIndex;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.136 -0400", hash_original_method = "2E1D90837620CE8C27D1ADC653AC7836", hash_generated_method = "F3840B454BCC88C4D82CF4E42DE80A24")
     public byte[] getRawValue() {
         byte[] var68EFE75FA9F684BF74FD95FB591C4772_56666222 = (mRawValue);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1019930081 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1019930081;
-        
-        
+        // ---------- Original Method ----------
+        //return mRawValue;
     }
 
     

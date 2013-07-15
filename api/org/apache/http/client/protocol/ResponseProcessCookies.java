@@ -1,6 +1,6 @@
 package org.apache.http.client.protocol;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.310 -0400", hash_original_method = "4D600FAEAE45D81498CB22DB2E88FC55", hash_generated_method = "24DEF7D8C332AA18A2A34FD1AC38543A")
     public  ResponseProcessCookies() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -42,43 +42,43 @@ public class ResponseProcessCookies implements HttpResponseInterceptor {
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_58493223 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_58493223.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_58493223;
-        } 
+        } //End block
     if(context == null)        
         {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_935335295 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_935335295.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_935335295;
-        } 
+        } //End block
         CookieStore cookieStore = (CookieStore) context.getAttribute(
                 ClientContext.COOKIE_STORE);
     if(cookieStore == null)        
         {
             this.log.info("Cookie store not available in HTTP context");
             return;
-        } 
+        } //End block
         CookieSpec cookieSpec = (CookieSpec) context.getAttribute(
                 ClientContext.COOKIE_SPEC);
     if(cookieSpec == null)        
         {
             this.log.info("CookieSpec not available in HTTP context");
             return;
-        } 
+        } //End block
         CookieOrigin cookieOrigin = (CookieOrigin) context.getAttribute(
                 ClientContext.COOKIE_ORIGIN);
     if(cookieOrigin == null)        
         {
             this.log.info("CookieOrigin not available in HTTP context");
             return;
-        } 
+        } //End block
         HeaderIterator it = response.headerIterator(SM.SET_COOKIE);
         processCookies(it, cookieSpec, cookieOrigin, cookieStore);
     if(cookieSpec.getVersion() > 0)        
         {
             it = response.headerIterator(SM.SET_COOKIE2);
             processCookies(it, cookieSpec, cookieOrigin, cookieStore);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -109,29 +109,29 @@ for(Cookie cookie : cookies)
                         {
                             this.log.debug("Cookie accepted: \""
                                     + cookieToString(cookie) + "\". ");
-                        } 
-                    } 
+                        } //End block
+                    } //End block
                     catch (MalformedCookieException ex)
                     {
     if(this.log.isWarnEnabled())                        
                         {
                             this.log.warn("Cookie rejected: \""
                                     + cookieToString(cookie) + "\". " + ex.getMessage());
-                        } 
-                    } 
-                } 
-            } 
+                        } //End block
+                    } //End block
+                } //End block
+            } //End block
             catch (MalformedCookieException ex)
             {
     if(this.log.isWarnEnabled())                
                 {
                     this.log.warn("Invalid cookie header: \""
                             + header + "\". " + ex.getMessage());
-                } 
-            } 
-        } 
-        
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -147,14 +147,14 @@ String var0ABBA5CC7B1A5006D5506D524CF2B7A5_343886443 =         cookie.getClass()
                 + "]";
         var0ABBA5CC7B1A5006D5506D524CF2B7A5_343886443.addTaint(taint);
         return var0ABBA5CC7B1A5006D5506D524CF2B7A5_343886443;
-        
-        
-                
-                
-                
-                
-                
-                
+        // ---------- Original Method ----------
+        //return cookie.getClass().getSimpleName()
+                //+ "[version=" + cookie.getVersion()
+                //+ ",name=" + cookie.getName()
+                //+ ",domain=" + cookie.getDomain()
+                //+ ",path=" + cookie.getPath()
+                //+ ",expiry=" + cookie.getExpiryDate()
+                //+ "]";
     }
 
     

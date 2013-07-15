@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class ServiceRouteList extends SIPHeaderList<ServiceRoute> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.232 -0400", hash_original_method = "C0CA39C0A35C17F8012D1D71020C7494", hash_generated_method = "357269883D61B3888F1D67DD56AA019B")
     public  ServiceRouteList() {
         super(ServiceRoute.class, ServiceRouteHeader.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,9 +21,9 @@ public class ServiceRouteList extends SIPHeaderList<ServiceRoute> {
 Object varF627329B9209466293A1BF71D9AF7B2B_1028482401 =         retval.clonehlist(this.hlist);
         varF627329B9209466293A1BF71D9AF7B2B_1028482401.addTaint(taint);
         return varF627329B9209466293A1BF71D9AF7B2B_1028482401;
-        
-        
-        
+        // ---------- Original Method ----------
+        //ServiceRouteList retval = new ServiceRouteList();
+        //return retval.clonehlist(this.hlist);
     }
 
     

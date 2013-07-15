@@ -1,6 +1,6 @@
 package org.bouncycastle.util.encoders;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,19 +13,17 @@ public class Hex {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.740 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
     public Hex ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SPEC)
-    public static byte[] encode(
+        public static byte[] encode(
         byte[]    data) {
         return encode(data, 0, data.length);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] encode(
+        public static byte[] encode(
         byte[]    data,
         int       off,
         int       length) {
@@ -58,8 +56,7 @@ public class Hex {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] decode(
+        public static byte[] decode(
         byte[]    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
         try
@@ -74,8 +71,7 @@ public class Hex {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static byte[] decode(
+        public static byte[] decode(
         String    data) {
         ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
         try

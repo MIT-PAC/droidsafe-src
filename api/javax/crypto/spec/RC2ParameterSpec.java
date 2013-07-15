@@ -1,6 +1,6 @@
 package javax.crypto.spec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
     public  RC2ParameterSpec(int effectiveKeyBits) {
         this.effectiveKeyBits = effectiveKeyBits;
         iv = null;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.effectiveKeyBits = effectiveKeyBits;
+        //iv = null;
     }
 
     
@@ -32,26 +32,26 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
             IllegalArgumentException varAE3874D37D8C60D27DA80215C0C565C2_1423856096 = new IllegalArgumentException("iv == null");
             varAE3874D37D8C60D27DA80215C0C565C2_1423856096.addTaint(taint);
             throw varAE3874D37D8C60D27DA80215C0C565C2_1423856096;
-        } 
+        } //End block
     if(iv.length < 8)        
         {
             IllegalArgumentException var20FD6B911038D1E945AA0AED39F8474E_1623045186 = new IllegalArgumentException("iv.length < 8");
             var20FD6B911038D1E945AA0AED39F8474E_1623045186.addTaint(taint);
             throw var20FD6B911038D1E945AA0AED39F8474E_1623045186;
-        } 
+        } //End block
         this.effectiveKeyBits = effectiveKeyBits;
         this.iv = new byte[8];
         System.arraycopy(iv, 0, this.iv, 0, 8);
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (iv == null) {
+            //throw new IllegalArgumentException("iv == null");
+        //}
+        //if (iv.length < 8) {
+            //throw new IllegalArgumentException("iv.length < 8");
+        //}
+        //this.effectiveKeyBits = effectiveKeyBits;
+        //this.iv = new byte[8];
+        //System.arraycopy(iv, 0, this.iv, 0, 8);
     }
 
     
@@ -63,37 +63,36 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
             IllegalArgumentException varAE3874D37D8C60D27DA80215C0C565C2_956810043 = new IllegalArgumentException("iv == null");
             varAE3874D37D8C60D27DA80215C0C565C2_956810043.addTaint(taint);
             throw varAE3874D37D8C60D27DA80215C0C565C2_956810043;
-        } 
+        } //End block
     if(iv.length - offset < 8)        
         {
             IllegalArgumentException var8E7C769CD910E2348E5D6460F43554BB_1549454703 = new IllegalArgumentException("iv.length - offset < 8");
             var8E7C769CD910E2348E5D6460F43554BB_1549454703.addTaint(taint);
             throw var8E7C769CD910E2348E5D6460F43554BB_1549454703;
-        } 
+        } //End block
         this.effectiveKeyBits = effectiveKeyBits;
         this.iv = new byte[8];
         System.arraycopy(iv, offset, this.iv, 0, 8);
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (iv == null) {
+            //throw new IllegalArgumentException("iv == null");
+        //}
+        //if (iv.length - offset < 8) {
+            //throw new IllegalArgumentException("iv.length - offset < 8");
+        //}
+        //this.effectiveKeyBits = effectiveKeyBits;
+        //this.iv = new byte[8];
+        //System.arraycopy(iv, offset, this.iv, 0, 8);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.435 -0400", hash_original_method = "1ACACD69299A3BB8DC7106B43ACB3CF4", hash_generated_method = "9EC7B6B8C0EB0714CF6DE7BB57BD702A")
     public int getEffectiveKeyBits() {
         int var427C938A30E3C42A31441455E9C82C81_1183960011 = (effectiveKeyBits);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349704889 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349704889;
-        
-        
+        // ---------- Original Method ----------
+        //return effectiveKeyBits;
     }
 
     
@@ -104,19 +103,19 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1745563633 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_355517761 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_355517761;
-        } 
+        } //End block
         byte[] result = new byte[iv.length];
         System.arraycopy(iv, 0, result, 0, iv.length);
         byte[] varB4A88417B3D0170D754C647C30B7216A_1669052181 = (result);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1785439010 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1785439010;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (iv == null) {
+            //return null;
+        //}
+        //byte[] result = new byte[iv.length];
+        //System.arraycopy(iv, 0, result, 0, iv.length);
+        //return result;
     }
 
     
@@ -129,32 +128,31 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
             boolean varB326B5062B2F0E69046810717534CB09_929695279 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2009230484 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2009230484;
-        } 
+        } //End block
     if(!(obj instanceof RC2ParameterSpec))        
         {
             boolean var68934A3E9455FA72420237EB05902327_750667538 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742904390 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_742904390;
-        } 
+        } //End block
         RC2ParameterSpec ps = (RC2ParameterSpec) obj;
         boolean var99DF152CFADCA453B2B5AAD6D1D03071_405326165 = ((effectiveKeyBits == ps.effectiveKeyBits)
             && (Arrays.equals(iv, ps.iv)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1913500673 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1913500673;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //if (obj == this) {
+            //return true;
+        //}
+        //if (!(obj instanceof RC2ParameterSpec)) {
+            //return false;
+        //}
+        //RC2ParameterSpec ps = (RC2ParameterSpec) obj;
+        //return (effectiveKeyBits == ps.effectiveKeyBits)
+            //&& (Arrays.equals(iv, ps.iv));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.437 -0400", hash_original_method = "006AB7CB427D2D70245D98F537F7CF42", hash_generated_method = "E3528A1C8672BC8E92DDA12711640C65")
     @Override
     public int hashCode() {
@@ -164,23 +162,23 @@ public class RC2ParameterSpec implements AlgorithmParameterSpec {
             int varB4A88417B3D0170D754C647C30B7216A_1859409977 = (result);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468125896 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468125896;
-        } 
+        } //End block
 for(byte element : iv)
         {
             result += element;
-        } 
+        } //End block
         int varB4A88417B3D0170D754C647C30B7216A_1990002523 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356075062 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1356075062;
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int result = effectiveKeyBits;
+        //if (iv == null) {
+            //return result;
+        //}
+        //for (byte element : iv) {
+            //result += element;
+        //}
+        //return result;
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public abstract class ASN1Primitive extends ASN1Type {
     public  ASN1Primitive(int tagNumber) {
         super(tagNumber);
         addTaint(tagNumber);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,8 +21,8 @@ public abstract class ASN1Primitive extends ASN1Type {
         boolean varA325FA0FD7DDE53B938E2EF72F7A2A48_1866977587 = (this.id == identifier);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1806521712 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1806521712;
-        
-        
+        // ---------- Original Method ----------
+        //return this.id == identifier;
     }
 
     
@@ -31,9 +31,9 @@ public abstract class ASN1Primitive extends ASN1Type {
         addTaint(out.getTaint());
         out.encodeTag(id);
         encodeContent(out);
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.encodeTag(id);
+        //encodeContent(out);
     }
 
     

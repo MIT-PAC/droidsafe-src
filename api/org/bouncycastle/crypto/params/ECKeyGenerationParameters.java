@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.params;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,19 +19,18 @@ public class ECKeyGenerationParameters extends KeyGenerationParameters {
         super(random, domainParams.getN().bitLength());
         addTaint(random.getTaint());
         this.domainParams = domainParams;
-        
-        
+        // ---------- Original Method ----------
+        //this.domainParams = domainParams;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.340 -0400", hash_original_method = "40F55F2249A14F0DC46DF54508E5891A", hash_generated_method = "432EF20AABA852F19C09869EDFC94A9E")
     public ECDomainParameters getDomainParameters() {
 ECDomainParameters varFB5FA83EE5A4C33D9E4B0FA79BF6936D_68564566 =         domainParams;
         varFB5FA83EE5A4C33D9E4B0FA79BF6936D_68564566.addTaint(taint);
         return varFB5FA83EE5A4C33D9E4B0FA79BF6936D_68564566;
-        
-        
+        // ---------- Original Method ----------
+        //return domainParams;
     }
 
     

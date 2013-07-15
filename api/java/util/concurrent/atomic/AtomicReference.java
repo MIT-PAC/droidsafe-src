@@ -1,6 +1,6 @@
 package java.util.concurrent.atomic;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,14 +14,14 @@ public class AtomicReference<V> implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.697 -0400", hash_original_method = "BDBA762FEAF5C103321D9E7FB6720E1A", hash_generated_method = "7EDDAFC99DF1D5B5D132C5D542902760")
     public  AtomicReference(V initialValue) {
         value = initialValue;
-        
-        
+        // ---------- Original Method ----------
+        //value = initialValue;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.698 -0400", hash_original_method = "F97CF4B9707D277EAF947474019CC6FE", hash_generated_method = "92D86C2B7F31D409EA2507200825BA47")
     public  AtomicReference() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -30,16 +30,16 @@ public class AtomicReference<V> implements java.io.Serializable {
 V varAF280DA2BC37D8BE783D8499160168DE_430538076 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_430538076.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_430538076;
-        
-        
+        // ---------- Original Method ----------
+        //return value;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.698 -0400", hash_original_method = "1165CC32E796F42C2841421B342AA16F", hash_generated_method = "9C8571AF8F60E12C4A3246C4368A02A4")
     public final void set(V newValue) {
         value = newValue;
-        
-        
+        // ---------- Original Method ----------
+        //value = newValue;
     }
 
     
@@ -47,8 +47,8 @@ V varAF280DA2BC37D8BE783D8499160168DE_430538076 =         value;
     public final void lazySet(V newValue) {
         addTaint(newValue.getTaint());
         unsafe.putOrderedObject(this, valueOffset, newValue);
-        
-        
+        // ---------- Original Method ----------
+        //unsafe.putOrderedObject(this, valueOffset, newValue);
     }
 
     
@@ -59,8 +59,8 @@ V varAF280DA2BC37D8BE783D8499160168DE_430538076 =         value;
         boolean var27878A05386C11842E579CA5897F4133_304230826 = (unsafe.compareAndSwapObject(this, valueOffset, expect, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2133430761 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2133430761;
-        
-        
+        // ---------- Original Method ----------
+        //return unsafe.compareAndSwapObject(this, valueOffset, expect, update);
     }
 
     
@@ -71,8 +71,8 @@ V varAF280DA2BC37D8BE783D8499160168DE_430538076 =         value;
         boolean var27878A05386C11842E579CA5897F4133_2057195660 = (unsafe.compareAndSwapObject(this, valueOffset, expect, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_644773354 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_644773354;
-        
-        
+        // ---------- Original Method ----------
+        //return unsafe.compareAndSwapObject(this, valueOffset, expect, update);
     }
 
     
@@ -89,24 +89,23 @@ V varEA5659DA512DECF23E6D37EE8060D074_1806095924 =             x;
             varEA5659DA512DECF23E6D37EE8060D074_1806095924.addTaint(taint);
             return varEA5659DA512DECF23E6D37EE8060D074_1806095924;
             }
-        } 
-        
-        
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //while (true) {
+            //V x = get();
+            //if (compareAndSet(x, newValue))
+                //return x;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.700 -0400", hash_original_method = "2EE45E1B1B1F9797465CA7143D35DB76", hash_generated_method = "871945714756646F748F3B57488F5EC7")
     public String toString() {
 String varCD8D3C26BD1C8483FC8C87F7BCDC2A28_1508908579 =         String.valueOf(get());
         varCD8D3C26BD1C8483FC8C87F7BCDC2A28_1508908579.addTaint(taint);
         return varCD8D3C26BD1C8483FC8C87F7BCDC2A28_1508908579;
-        
-        
+        // ---------- Original Method ----------
+        //return String.valueOf(get());
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.math.ec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,65 +32,60 @@ public abstract class ECPoint {
         this.curve = curve;
         this.x = x;
         this.y = y;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.curve = curve;
+        //this.x = x;
+        //this.y = y;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.032 -0400", hash_original_method = "C3733AEA1B7056ED3896C5DBEA3E645D", hash_generated_method = "DDA0B15304294C9DA61A3DC556D13740")
     public ECCurve getCurve() {
 ECCurve varCB08C04A7A1DB77E60E6F93B4C766067_823125907 =         curve;
         varCB08C04A7A1DB77E60E6F93B4C766067_823125907.addTaint(taint);
         return varCB08C04A7A1DB77E60E6F93B4C766067_823125907;
-        
-        
+        // ---------- Original Method ----------
+        //return curve;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.032 -0400", hash_original_method = "C7C8D965D2F53EB7BBE8F50406AF2883", hash_generated_method = "3DD82864535861A65D4B8E41DE6E5973")
     public ECFieldElement getX() {
 ECFieldElement varEA5659DA512DECF23E6D37EE8060D074_69228245 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_69228245.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_69228245;
-        
-        
+        // ---------- Original Method ----------
+        //return x;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.033 -0400", hash_original_method = "B5FEFF99DC806D61F0BCF9BC7ACEB9BA", hash_generated_method = "69EABDE87FCFFD75A295D5CFB06AF7F5")
     public ECFieldElement getY() {
 ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
         var01417B0442ECD521584E2B7EFB9FC218_278008415.addTaint(taint);
         return var01417B0442ECD521584E2B7EFB9FC218_278008415;
-        
-        
+        // ---------- Original Method ----------
+        //return y;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.033 -0400", hash_original_method = "B09C1F46CE24A0176C4C3F4348C76697", hash_generated_method = "39B38EAAB81955C678F688FA3B68643D")
     public boolean isInfinity() {
         boolean var14C2CA2A32591652557E17643BF90D2B_471133131 = (x == null && y == null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1433282099 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1433282099;
-        
-        
+        // ---------- Original Method ----------
+        //return x == null && y == null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.034 -0400", hash_original_method = "47BFB55B0C4A3BF2B8623783D9C43540", hash_generated_method = "AA54C8B471A2EF3E7D8D80D4D3CC5E5D")
     public boolean isCompressed() {
         boolean varA04A91040E7D1CAA0270269A913F52BB_201544331 = (withCompression);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1365253670 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1365253670;
-        
-        
+        // ---------- Original Method ----------
+        //return withCompression;
     }
 
     
@@ -103,38 +98,38 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
             boolean varB326B5062B2F0E69046810717534CB09_1058178361 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79251436 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_79251436;
-        } 
+        } //End block
     if(!(other instanceof ECPoint))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1417149889 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1834409820 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1834409820;
-        } 
+        } //End block
         ECPoint o = (ECPoint)other;
     if(this.isInfinity())        
         {
             boolean varC58E891FC6B5B1E3EB6CFC9DC6B61390_504435620 = (o.isInfinity());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2000072238 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2000072238;
-        } 
+        } //End block
         boolean var086F44B0CAEFE7D90300A0DCD6B25BBE_22804515 = (x.equals(o.x) && y.equals(o.y));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1051344836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1051344836;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (other == this)
+        //{
+            //return true;
+        //}
+        //if (!(other instanceof ECPoint))
+        //{
+            //return false;
+        //}
+        //ECPoint o = (ECPoint)other;
+        //if (this.isInfinity())
+        //{
+            //return o.isInfinity();
+        //}
+        //return x.equals(o.x) && y.equals(o.y);
     }
 
     
@@ -145,25 +140,24 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
             int varCFCD208495D565EF66E7DFF9F98764DA_2083397384 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1333204821 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1333204821;
-        } 
+        } //End block
         int var033927572431881CD2056EB9785CDCB3_1096428122 = (x.hashCode() ^ y.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_592684493 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_592684493;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this.isInfinity())
+        //{
+            //return 0;
+        //}
+        //return x.hashCode() ^ y.hashCode();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.035 -0400", hash_original_method = "3CED2898CE1D9F7EEE71D4F4E6298B52", hash_generated_method = "7B74A03DE78F3C307128B0AF3CA7A466")
      void setPreCompInfo(PreCompInfo preCompInfo) {
         this.preCompInfo = preCompInfo;
-        
-        
+        // ---------- Original Method ----------
+        //this.preCompInfo = preCompInfo;
     }
 
     
@@ -187,12 +181,12 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
     if(this.multiplier == null)        
         {
             this.multiplier = new FpNafMultiplier();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (this.multiplier == null)
+        //{
+            //this.multiplier = new FpNafMultiplier();
+        //}
     }
 
     
@@ -204,38 +198,38 @@ ECFieldElement var01417B0442ECD521584E2B7EFB9FC218_278008415 =         y;
             IllegalArgumentException var37EB9B843EF3D3A5C3587E22337ED9D2_58643769 = new IllegalArgumentException("The multiplicator cannot be negative");
             var37EB9B843EF3D3A5C3587E22337ED9D2_58643769.addTaint(taint);
             throw var37EB9B843EF3D3A5C3587E22337ED9D2_58643769;
-        } 
+        } //End block
     if(this.isInfinity())        
         {
 ECPoint var72A74007B2BE62B849F475C7BDA4658B_1858670110 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1858670110.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1858670110;
-        } 
+        } //End block
     if(k.signum() == 0)        
         {
 ECPoint varCDE459757F662B12E92627818EA576E9_1940431869 =             this.curve.getInfinity();
             varCDE459757F662B12E92627818EA576E9_1940431869.addTaint(taint);
             return varCDE459757F662B12E92627818EA576E9_1940431869;
-        } 
+        } //End block
         assertECMultiplier();
 ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier.multiply(this, k, preCompInfo);
         varE79EE08445955BDA41CB74C2C47AC61F_1810750821.addTaint(taint);
         return varE79EE08445955BDA41CB74C2C47AC61F_1810750821;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (k.signum() < 0)
+        //{
+            //throw new IllegalArgumentException("The multiplicator cannot be negative");
+        //}
+        //if (this.isInfinity())
+        //{
+            //return this;
+        //}
+        //if (k.signum() == 0)
+        //{
+            //return this.curve.getInfinity();
+        //}
+        //assertECMultiplier();
+        //return this.multiplier.multiply(this, k, preCompInfo);
     }
 
     
@@ -247,7 +241,7 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier
             addTaint(y.getTaint());
             addTaint(x.getTaint());
             addTaint(curve.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -263,14 +257,14 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier
                 IllegalArgumentException var0966596FA1E8BAEEA9450EFD05161B24_358584929 = new IllegalArgumentException("Exactly one of the field elements is null");
                 var0966596FA1E8BAEEA9450EFD05161B24_358584929.addTaint(taint);
                 throw var0966596FA1E8BAEEA9450EFD05161B24_358584929;
-            } 
+            } //End block
             this.withCompression = withCompression;
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if ((x != null && y == null) || (x == null && y != null))
+            //{
+                //throw new IllegalArgumentException("Exactly one of the field elements is null");
+            //}
+            //this.withCompression = withCompression;
         }
 
         
@@ -281,7 +275,7 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier
                 byte[] varE60031EAA71A2FC01277A55510734340_553317892 = (new byte[1]);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1299084051 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_1299084051;
-            } 
+            } //End block
             int qLength = converter.getByteLength(x);
     if(withCompression)            
             {
@@ -289,11 +283,11 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier
     if(this.getY().toBigInteger().testBit(0))                
                 {
                     PC = 0x03;
-                } 
+                } //End block
                 else
                 {
                     PC = 0x02;
-                } 
+                } //End block
                 byte[] X = converter.integerToBytes(this.getX().toBigInteger(), qLength);
                 byte[] PO = new byte[X.length + 1];
                 PO[0] = PC;
@@ -301,7 +295,7 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier
                 byte[] varB3918665EE674080BF505E1B2D862187_1130485086 = (PO);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_107104642 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_107104642;
-            } 
+            } //End block
             else
             {
                 byte[] X = converter.integerToBytes(this.getX().toBigInteger(), qLength);
@@ -313,9 +307,9 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier
                 byte[] varB3918665EE674080BF505E1B2D862187_358350498 = (PO);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1481504842 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_1481504842;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -327,13 +321,13 @@ ECPoint varE79EE08445955BDA41CB74C2C47AC61F_1810750821 =         this.multiplier
 ECPoint var73F89FAC8F369DF0913D10C37C1E0EA1_1294453224 =                 b;
                 var73F89FAC8F369DF0913D10C37C1E0EA1_1294453224.addTaint(taint);
                 return var73F89FAC8F369DF0913D10C37C1E0EA1_1294453224;
-            } 
+            } //End block
     if(b.isInfinity())            
             {
 ECPoint var72A74007B2BE62B849F475C7BDA4658B_1750438214 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1750438214.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1750438214;
-            } 
+            } //End block
     if(this.x.equals(b.x))            
             {
     if(this.y.equals(b.y))                
@@ -341,38 +335,38 @@ ECPoint var72A74007B2BE62B849F475C7BDA4658B_1750438214 =                 this;
 ECPoint varF3D495AFF337D27ED1AD381C51A4CAF8_1608454859 =                     this.twice();
                     varF3D495AFF337D27ED1AD381C51A4CAF8_1608454859.addTaint(taint);
                     return varF3D495AFF337D27ED1AD381C51A4CAF8_1608454859;
-                } 
+                } //End block
 ECPoint varCDE459757F662B12E92627818EA576E9_1315324652 =                 this.curve.getInfinity();
                 varCDE459757F662B12E92627818EA576E9_1315324652.addTaint(taint);
                 return varCDE459757F662B12E92627818EA576E9_1315324652;
-            } 
+            } //End block
             ECFieldElement gamma = b.y.subtract(this.y).divide(b.x.subtract(this.x));
             ECFieldElement x3 = gamma.square().subtract(this.x).subtract(b.x);
             ECFieldElement y3 = gamma.multiply(this.x.subtract(x3)).subtract(this.y);
 ECPoint var071BB455154747F7E03561EA2C39CC7F_1566328108 =             new ECPoint.Fp(curve, x3, y3);
             var071BB455154747F7E03561EA2C39CC7F_1566328108.addTaint(taint);
             return var071BB455154747F7E03561EA2C39CC7F_1566328108;
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-            
-                
-                
-                    
-                
-                
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (this.isInfinity())
+            //{
+                //return b;
+            //}
+            //if (b.isInfinity())
+            //{
+                //return this;
+            //}
+            //if (this.x.equals(b.x))
+            //{
+                //if (this.y.equals(b.y))
+                //{
+                    //return this.twice();
+                //}
+                //return this.curve.getInfinity();
+            //}
+            //ECFieldElement gamma = b.y.subtract(this.y).divide(b.x.subtract(this.x));
+            //ECFieldElement x3 = gamma.square().subtract(this.x).subtract(b.x);
+            //ECFieldElement y3 = gamma.multiply(this.x.subtract(x3)).subtract(this.y);
+            //return new ECPoint.Fp(curve, x3, y3);
         }
 
         
@@ -383,13 +377,13 @@ ECPoint var071BB455154747F7E03561EA2C39CC7F_1566328108 =             new ECPoint
 ECPoint var72A74007B2BE62B849F475C7BDA4658B_481053748 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_481053748.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_481053748;
-            } 
+            } //End block
     if(this.y.toBigInteger().signum() == 0)            
             {
 ECPoint varCDE459757F662B12E92627818EA576E9_1138958054 =                 this.curve.getInfinity();
                 varCDE459757F662B12E92627818EA576E9_1138958054.addTaint(taint);
                 return varCDE459757F662B12E92627818EA576E9_1138958054;
-            } 
+            } //End block
             ECFieldElement TWO = this.curve.fromBigInteger(BigInteger.valueOf(2));
             ECFieldElement THREE = this.curve.fromBigInteger(BigInteger.valueOf(3));
             ECFieldElement gamma = this.x.square().multiply(THREE).add(curve.a).divide(y.multiply(TWO));
@@ -398,21 +392,21 @@ ECPoint varCDE459757F662B12E92627818EA576E9_1138958054 =                 this.cu
 ECPoint var3A3B53403FE81238561C7DFE7EBB0574_407339122 =             new ECPoint.Fp(curve, x3, y3, this.withCompression);
             var3A3B53403FE81238561C7DFE7EBB0574_407339122.addTaint(taint);
             return var3A3B53403FE81238561C7DFE7EBB0574_407339122;
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (this.isInfinity())
+            //{
+                //return this;
+            //}
+            //if (this.y.toBigInteger().signum() == 0) 
+            //{
+                //return this.curve.getInfinity();
+            //}
+            //ECFieldElement TWO = this.curve.fromBigInteger(BigInteger.valueOf(2));
+            //ECFieldElement THREE = this.curve.fromBigInteger(BigInteger.valueOf(3));
+            //ECFieldElement gamma = this.x.square().multiply(THREE).add(curve.a).divide(y.multiply(TWO));
+            //ECFieldElement x3 = gamma.square().subtract(this.x.multiply(TWO));
+            //ECFieldElement y3 = gamma.multiply(this.x.subtract(x3)).subtract(this.y);
+            //return new ECPoint.Fp(curve, x3, y3, this.withCompression);
         }
 
         
@@ -424,16 +418,16 @@ ECPoint var3A3B53403FE81238561C7DFE7EBB0574_407339122 =             new ECPoint.
 ECPoint var72A74007B2BE62B849F475C7BDA4658B_564597927 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_564597927.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_564597927;
-            } 
+            } //End block
 ECPoint var32038E816FAB690831584DAC6FED51A3_154466517 =             add(b.negate());
             var32038E816FAB690831584DAC6FED51A3_154466517.addTaint(taint);
             return var32038E816FAB690831584DAC6FED51A3_154466517;
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (b.isInfinity())
+            //{
+                //return this;
+            //}
+            //return add(b.negate());
         }
 
         
@@ -442,8 +436,8 @@ ECPoint var32038E816FAB690831584DAC6FED51A3_154466517 =             add(b.negate
 ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint.Fp(curve, this.x, this.y.negate(), this.withCompression);
             var35D308A124E50E56D68F906961B3437A_1065451652.addTaint(taint);
             return var35D308A124E50E56D68F906961B3437A_1065451652;
-            
-            
+            // ---------- Original Method ----------
+            //return new ECPoint.Fp(curve, this.x, this.y.negate(), this.withCompression);
         }
 
         
@@ -452,12 +446,12 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
     if(this.multiplier == null)            
             {
                 this.multiplier = new WNafMultiplier();
-            } 
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (this.multiplier == null)
+            //{
+                //this.multiplier = new WNafMultiplier();
+            //}
         }
 
         
@@ -473,7 +467,7 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
             addTaint(y.getTaint());
             addTaint(x.getTaint());
             addTaint(curve.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -489,30 +483,30 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
                 IllegalArgumentException var0966596FA1E8BAEEA9450EFD05161B24_2047670718 = new IllegalArgumentException("Exactly one of the field elements is null");
                 var0966596FA1E8BAEEA9450EFD05161B24_2047670718.addTaint(taint);
                 throw var0966596FA1E8BAEEA9450EFD05161B24_2047670718;
-            } 
+            } //End block
     if(x != null)            
             {
                 ECFieldElement.F2m.checkFieldElements(this.x, this.y);
     if(curve != null)                
                 {
                     ECFieldElement.F2m.checkFieldElements(this.x, this.curve.getA());
-                } 
-            } 
+                } //End block
+            } //End block
             this.withCompression = withCompression;
-            
-            
-            
-                
-            
-            
-            
-                
-                
-                
-                    
-                
-            
-            
+            // ---------- Original Method ----------
+            //if ((x != null && y == null) || (x == null && y != null))
+            //{
+                //throw new IllegalArgumentException("Exactly one of the field elements is null");
+            //}
+            //if (x != null)
+            //{
+                //ECFieldElement.F2m.checkFieldElements(this.x, this.y);
+                //if (curve != null)
+                //{
+                    //ECFieldElement.F2m.checkFieldElements(this.x, this.curve.getA());
+                //}
+            //}
+            //this.withCompression = withCompression;
         }
 
         
@@ -523,7 +517,7 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
                 byte[] varE60031EAA71A2FC01277A55510734340_1513734247 = (new byte[1]);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_694698143 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_694698143;
-            } 
+            } //End block
             int byteCount = converter.getByteLength(this.x);
             byte[] X = converter.integerToBytes(this.getX().toBigInteger(), byteCount);
             byte[] PO;
@@ -537,10 +531,10 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
                             .toBigInteger().testBit(0))                    
                     {
                         PO[0] = 0x03;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 System.arraycopy(X, 0, PO, 1, byteCount);
-            } 
+            } //End block
             else
             {
                 byte[] Y = converter.integerToBytes(this.getY().toBigInteger(), byteCount);
@@ -548,12 +542,12 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
                 PO[0] = 0x04;
                 System.arraycopy(X, 0, PO, 1, byteCount);
                 System.arraycopy(Y, 0, PO, byteCount + 1, byteCount);
-            } 
+            } //End block
             byte[] varB3918665EE674080BF505E1B2D862187_540266293 = (PO);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_624976001 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_624976001;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -573,9 +567,9 @@ ECPoint var35D308A124E50E56D68F906961B3437A_1065451652 =             new ECPoint
 ECPoint var6E12BF01C43F8636C37FF895272EA727_453548242 =             addSimple((ECPoint.F2m)b);
             var6E12BF01C43F8636C37FF895272EA727_453548242.addTaint(taint);
             return var6E12BF01C43F8636C37FF895272EA727_453548242;
-            
-            
-            
+            // ---------- Original Method ----------
+            //checkPoints(this, b);
+            //return addSimple((ECPoint.F2m)b);
         }
 
         
@@ -588,13 +582,13 @@ ECPoint var6E12BF01C43F8636C37FF895272EA727_453548242 =             addSimple((E
 ECPoint.F2m var4E21B9EBDCBB8C692A7FDE6A282BDC6C_70584383 =                 other;
                 var4E21B9EBDCBB8C692A7FDE6A282BDC6C_70584383.addTaint(taint);
                 return var4E21B9EBDCBB8C692A7FDE6A282BDC6C_70584383;
-            } 
+            } //End block
     if(other.isInfinity())            
             {
 ECPoint.F2m var72A74007B2BE62B849F475C7BDA4658B_1170343860 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1170343860.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1170343860;
-            } 
+            } //End block
             ECFieldElement.F2m x2 = (ECFieldElement.F2m)other.getX();
             ECFieldElement.F2m y2 = (ECFieldElement.F2m)other.getY();
     if(this.x.equals(x2))            
@@ -604,19 +598,19 @@ ECPoint.F2m var72A74007B2BE62B849F475C7BDA4658B_1170343860 =                 thi
 ECPoint.F2m var1919DF098077FD20F1EAB39A6C86E871_1961251887 =                     (ECPoint.F2m)this.twice();
                     var1919DF098077FD20F1EAB39A6C86E871_1961251887.addTaint(taint);
                     return var1919DF098077FD20F1EAB39A6C86E871_1961251887;
-                } 
+                } //End block
 ECPoint.F2m varCEF30124D84DA9F1B4850269BC04DF84_1990412942 =                 (ECPoint.F2m)this.curve.getInfinity();
                 varCEF30124D84DA9F1B4850269BC04DF84_1990412942.addTaint(taint);
                 return varCEF30124D84DA9F1B4850269BC04DF84_1990412942;
-            } 
+            } //End block
             ECFieldElement.F2m lambda = (ECFieldElement.F2m)(this.y.add(y2)).divide(this.x.add(x2));
             ECFieldElement.F2m x3 = (ECFieldElement.F2m)lambda.square().add(lambda).add(this.x).add(x2).add(this.curve.getA());
             ECFieldElement.F2m y3 = (ECFieldElement.F2m)lambda.multiply(this.x.add(x3)).add(x3).add(this.y);
 ECPoint.F2m varE29EE30F858B45227C50CD4435ABFBEA_1138579208 =             new ECPoint.F2m(curve, x3, y3, withCompression);
             varE29EE30F858B45227C50CD4435ABFBEA_1138579208.addTaint(taint);
             return varE29EE30F858B45227C50CD4435ABFBEA_1138579208;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -627,9 +621,9 @@ ECPoint.F2m varE29EE30F858B45227C50CD4435ABFBEA_1138579208 =             new ECP
 ECPoint varF77FD5A0FB078C7218024671CA30605E_1310721092 =             subtractSimple((ECPoint.F2m)b);
             varF77FD5A0FB078C7218024671CA30605E_1310721092.addTaint(taint);
             return varF77FD5A0FB078C7218024671CA30605E_1310721092;
-            
-            
-            
+            // ---------- Original Method ----------
+            //checkPoints(this, b);
+            //return subtractSimple((ECPoint.F2m)b);
         }
 
         
@@ -641,16 +635,16 @@ ECPoint varF77FD5A0FB078C7218024671CA30605E_1310721092 =             subtractSim
 ECPoint.F2m var72A74007B2BE62B849F475C7BDA4658B_967861696 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_967861696.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_967861696;
-            } 
+            } //End block
 ECPoint.F2m var3E163E68CA57B99B76674064815F739F_1337768081 =             addSimple((ECPoint.F2m)b.negate());
             var3E163E68CA57B99B76674064815F739F_1337768081.addTaint(taint);
             return var3E163E68CA57B99B76674064815F739F_1337768081;
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (b.isInfinity())
+            //{
+                //return this;
+            //}
+            //return addSimple((ECPoint.F2m)b.negate());
         }
 
         
@@ -661,13 +655,13 @@ ECPoint.F2m var3E163E68CA57B99B76674064815F739F_1337768081 =             addSimp
 ECPoint var72A74007B2BE62B849F475C7BDA4658B_796191535 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_796191535.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_796191535;
-            } 
+            } //End block
     if(this.x.toBigInteger().signum() == 0)            
             {
 ECPoint varCDE459757F662B12E92627818EA576E9_1320932493 =                 this.curve.getInfinity();
                 varCDE459757F662B12E92627818EA576E9_1320932493.addTaint(taint);
                 return varCDE459757F662B12E92627818EA576E9_1320932493;
-            } 
+            } //End block
             ECFieldElement.F2m lambda = (ECFieldElement.F2m)this.x.add(this.y.divide(this.x));
             ECFieldElement.F2m x3 = (ECFieldElement.F2m)lambda.square().add(lambda).
                     add(this.curve.getA());
@@ -677,25 +671,25 @@ ECPoint varCDE459757F662B12E92627818EA576E9_1320932493 =                 this.cu
 ECPoint varD40A7246E4D1D01EF654FCE8BF0FE2B3_1721620865 =             new ECPoint.F2m(this.curve, x3, y3, withCompression);
             varD40A7246E4D1D01EF654FCE8BF0FE2B3_1721620865.addTaint(taint);
             return varD40A7246E4D1D01EF654FCE8BF0FE2B3_1721620865;
-            
-            
-            
-                
-            
-            
-            
-                
-            
-            
-                
-            
-                
-                    
-            
-            
-                
-                    
-            
+            // ---------- Original Method ----------
+            //if (this.isInfinity()) 
+            //{
+                //return this;
+            //}
+            //if (this.x.toBigInteger().signum() == 0) 
+            //{
+                //return this.curve.getInfinity();
+            //}
+            //ECFieldElement.F2m lambda
+                //= (ECFieldElement.F2m)this.x.add(this.y.divide(this.x));
+            //ECFieldElement.F2m x3
+                //= (ECFieldElement.F2m)lambda.square().add(lambda).
+                    //add(this.curve.getA());
+            //ECFieldElement ONE = this.curve.fromBigInteger(ECConstants.ONE);
+            //ECFieldElement.F2m y3
+                //= (ECFieldElement.F2m)this.x.square().add(
+                    //x3.multiply(lambda.add(ONE)));
+            //return new ECPoint.F2m(this.curve, x3, y3, withCompression);
         }
 
         
@@ -704,8 +698,8 @@ ECPoint varD40A7246E4D1D01EF654FCE8BF0FE2B3_1721620865 =             new ECPoint
 ECPoint var8A5D491956EA8C03A91531C071EF48DE_810204297 =             new ECPoint.F2m(curve, this.getX(), this.getY().add(this.getX()), withCompression);
             var8A5D491956EA8C03A91531C071EF48DE_810204297.addTaint(taint);
             return var8A5D491956EA8C03A91531C071EF48DE_810204297;
-            
-            
+            // ---------- Original Method ----------
+            //return new ECPoint.F2m(curve, this.getX(), this.getY().add(this.getX()), withCompression);
         }
 
         
@@ -716,24 +710,24 @@ ECPoint var8A5D491956EA8C03A91531C071EF48DE_810204297 =             new ECPoint.
     if(((ECCurve.F2m)this.curve).isKoblitz())                
                 {
                     this.multiplier = new WTauNafMultiplier();
-                } 
+                } //End block
                 else
                 {
                     this.multiplier = new WNafMultiplier();
-                } 
-            } 
-            
-            
-            
-                
-                
-                    
-                
-                
-                
-                    
-                
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            //if (this.multiplier == null)
+            //{
+                //if (((ECCurve.F2m)this.curve).isKoblitz())
+                //{
+                    //this.multiplier = new WTauNafMultiplier();
+                //}
+                //else
+                //{
+                    //this.multiplier = new WNafMultiplier();
+                //}
+            //}
         }
 
         

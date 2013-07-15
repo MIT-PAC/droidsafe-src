@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.extensions;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class ReferredByParser extends AddressParametersParser {
     public  ReferredByParser(String referBy) {
         super(referBy);
         addTaint(referBy.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,7 +23,7 @@ public class ReferredByParser extends AddressParametersParser {
     protected  ReferredByParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -36,12 +36,12 @@ public class ReferredByParser extends AddressParametersParser {
 SIPHeader var21AF0A523395D9560F4C726AD88CCDA3_399942783 =         referBy;
         var21AF0A523395D9560F4C726AD88CCDA3_399942783.addTaint(taint);
         return var21AF0A523395D9560F4C726AD88CCDA3_399942783;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //headerName(TokenTypes.REFERREDBY_TO);
+        //ReferredBy referBy = new ReferredBy();
+        //super.parse(referBy);
+        //this.lexer.match('\n');
+        //return referBy;
     }
 
     

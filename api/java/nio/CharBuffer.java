@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
       CharBuffer(int capacity) {
         super(1, capacity, null);
         addTaint(capacity);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -60,8 +60,8 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
         char[] var68B89E48382A0AA51B25AC59599E2EB0_971712007 = (protectedArray());
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_1228575567 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1228575567;
-        
-        
+        // ---------- Original Method ----------
+        //return protectedArray();
     }
 
     
@@ -70,8 +70,8 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
         int var0B794CE56A38A9F3BFDD2D53E83BB109_1972938741 = (protectedArrayOffset());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819094323 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819094323;
-        
-        
+        // ---------- Original Method ----------
+        //return protectedArrayOffset();
     }
 
     
@@ -86,15 +86,15 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
             IndexOutOfBoundsException var7EDBAAD1EBDE2B517419CD574EFB00C6_1292738425 = new IndexOutOfBoundsException("index=" + index + ", remaining()=" + remaining());
             var7EDBAAD1EBDE2B517419CD574EFB00C6_1292738425.addTaint(taint);
             throw var7EDBAAD1EBDE2B517419CD574EFB00C6_1292738425;
-        } 
+        } //End block
         char var2571BF635708C79B1D5368209BC3ED18_1913521877 = (get(position + index));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1011514352 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1011514352;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (index < 0 || index >= remaining()) {
+            //throw new IndexOutOfBoundsException("index=" + index + ", remaining()=" + remaining());
+        //}
+        //return get(position + index);
     }
 
     
@@ -120,31 +120,31 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
                 int var0D4D283E60262FF52C1A7D956005837E_990346904 = (thisByte < otherByte ? -1 : 1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_325052673 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_325052673;
-            } 
+            } //End block
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } 
+        } //End block
         int var1DC167191FBC7DAD3BADAE830552C692_285991551 = (remaining() - otherBuffer.remaining());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1816828682 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1816828682;
-        
-        
-                
-        
-        
-        
-        
-            
-            
-            
-                
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
+                //: otherBuffer.remaining();
+        //int thisPos = position;
+        //int otherPos = otherBuffer.position;
+        //char thisByte, otherByte;
+        //while (compareRemaining > 0) {
+            //thisByte = get(thisPos);
+            //otherByte = otherBuffer.get(otherPos);
+            //if (thisByte != otherByte) {
+                //return thisByte < otherByte ? -1 : 1;
+            //}
+            //thisPos++;
+            //otherPos++;
+            //compareRemaining--;
+        //}
+        //return remaining() - otherBuffer.remaining();
     }
 
     
@@ -160,14 +160,14 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
             boolean var68934A3E9455FA72420237EB05902327_1767170693 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_343242812 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_343242812;
-        } 
+        } //End block
         CharBuffer otherBuffer = (CharBuffer) other;
     if(remaining() != otherBuffer.remaining())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1032282056 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1760787919 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1760787919;
-        } 
+        } //End block
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
@@ -175,25 +175,25 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
 (equalSoFar && (myPosition < limit))        
         {
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        } 
+        } //End block
         boolean var4A97EF18B93B276118DD50585250A586_1912201156 = (equalSoFar);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1775949991 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1775949991;
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!(other instanceof CharBuffer)) {
+            //return false;
+        //}
+        //CharBuffer otherBuffer = (CharBuffer) other;
+        //if (remaining() != otherBuffer.remaining()) {
+            //return false;
+        //}
+        //int myPosition = position;
+        //int otherPosition = otherBuffer.position;
+        //boolean equalSoFar = true;
+        //while (equalSoFar && (myPosition < limit)) {
+            //equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
+        //}
+        //return equalSoFar;
     }
 
     
@@ -206,8 +206,8 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
 CharBuffer varAF8F268F60258FE30F192DE78F11CD4A_641140830 =         get(dst, 0, dst.length);
         varAF8F268F60258FE30F192DE78F11CD4A_641140830.addTaint(taint);
         return varAF8F268F60258FE30F192DE78F11CD4A_641140830;
-        
-        
+        // ---------- Original Method ----------
+        //return get(dst, 0, dst.length);
     }
 
     
@@ -222,23 +222,23 @@ CharBuffer varAF8F268F60258FE30F192DE78F11CD4A_641140830 =         get(dst, 0, d
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_558778582 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_558778582.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_558778582;
-        } 
+        } //End block
 for(int i = dstOffset;i < dstOffset + charCount;++i)
         {
             dst[i] = get();
-        } 
+        } //End block
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2015378192 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2015378192.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2015378192;
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(dst.length, dstOffset, charCount);
+        //if (charCount > remaining()) {
+            //throw new BufferUnderflowException();
+        //}
+        //for (int i = dstOffset; i < dstOffset + charCount; ++i) {
+            //dst[i] = get();
+        //}
+        //return this;
     }
 
     
@@ -250,8 +250,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2015378192 =         this;
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_1151675970 = (protectedHasArray());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_28627833 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_28627833;
-        
-        
+        // ---------- Original Method ----------
+        //return protectedHasArray();
     }
 
     
@@ -264,17 +264,17 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2015378192 =         this;
 (myPosition < limit)        
         {
             hash = hash + get(myPosition++);
-        } 
+        } //End block
         int var0800FC577294C34E0B28AD2839435945_841973324 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_852303178 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_852303178;
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int myPosition = position;
+        //int hash = 0;
+        //while (myPosition < limit) {
+            //hash = hash + get(myPosition++);
+        //}
+        //return hash;
     }
 
     
@@ -286,8 +286,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2015378192 =         this;
         int varDDC5A90D80216ADD8FAE07957BE5782C_2109468281 = (remaining());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497536101 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497536101;
-        
-        
+        // ---------- Original Method ----------
+        //return remaining();
     }
 
     
@@ -312,8 +312,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2015378192 =         this;
 CharBuffer var7D505613BED257805463C43ADCB4DBAD_946973252 =         put(src, 0, src.length);
         var7D505613BED257805463C43ADCB4DBAD_946973252.addTaint(taint);
         return var7D505613BED257805463C43ADCB4DBAD_946973252;
-        
-        
+        // ---------- Original Method ----------
+        //return put(src, 0, src.length);
     }
 
     
@@ -328,23 +328,23 @@ CharBuffer var7D505613BED257805463C43ADCB4DBAD_946973252 =         put(src, 0, s
             BufferOverflowException var773478A23217201B18B531915D367F31_992963369 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_992963369.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_992963369;
-        } 
+        } //End block
 for(int i = srcOffset;i < srcOffset + charCount;++i)
         {
             put(src[i]);
-        } 
+        } //End block
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1327837837 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1327837837.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1327837837;
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(src.length, srcOffset, charCount);
+        //if (charCount > remaining()) {
+            //throw new BufferOverflowException();
+        //}
+        //for (int i = srcOffset; i < srcOffset + charCount; ++i) {
+            //put(src[i]);
+        //}
+        //return this;
     }
 
     
@@ -356,30 +356,30 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1327837837 =         this;
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1442664828 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1442664828.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1442664828;
-        } 
+        } //End block
     if(src.remaining() > remaining())        
         {
             BufferOverflowException var773478A23217201B18B531915D367F31_29797350 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_29797350.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_29797350;
-        } 
+        } //End block
         char[] contents = new char[src.remaining()];
         src.get(contents);
         put(contents);
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1283654747 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1283654747.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1283654747;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (src == this) {
+            //throw new IllegalArgumentException();
+        //}
+        //if (src.remaining() > remaining()) {
+            //throw new BufferOverflowException();
+        //}
+        //char[] contents = new char[src.remaining()];
+        //src.get(contents);
+        //put(contents);
+        //return this;
     }
 
     
@@ -392,8 +392,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1283654747 =         this;
 CharBuffer var80E016D18018A9A6110F6C1B5F9ADE1F_42397603 =         put(str, 0, str.length());
         var80E016D18018A9A6110F6C1B5F9ADE1F_42397603.addTaint(taint);
         return var80E016D18018A9A6110F6C1B5F9ADE1F_42397603;
-        
-        
+        // ---------- Original Method ----------
+        //return put(str, 0, str.length());
     }
 
     
@@ -408,32 +408,32 @@ CharBuffer var80E016D18018A9A6110F6C1B5F9ADE1F_42397603 =         put(str, 0, st
                     ", start=" + start + ", end=" + end);
             var85E786FB40E8A812D6BA58B12716CB8A_83156081.addTaint(taint);
             throw var85E786FB40E8A812D6BA58B12716CB8A_83156081;
-        } 
+        } //End block
     if(end - start > remaining())        
         {
             BufferOverflowException var773478A23217201B18B531915D367F31_298062260 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_298062260.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_298062260;
-        } 
+        } //End block
 for(int i = start;i < end;i++)
         {
             put(str.charAt(i));
-        } 
+        } //End block
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1824936176 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1824936176.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1824936176;
-        
-        
-            
-                    
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (start < 0 || end < start || end > str.length()) {
+            //throw new IndexOutOfBoundsException("str.length()=" + str.length() +
+                    //", start=" + start + ", end=" + end);
+        //}
+        //if (end - start > remaining()) {
+            //throw new BufferOverflowException();
+        //}
+        //for (int i = start; i < end; i++) {
+            //put(str.charAt(i));
+        //}
+        //return this;
     }
 
     
@@ -450,16 +450,16 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1824936176 =         this;
 for(int i = position;i < limit;i++)
         {
             result.append(get(i));
-        } 
+        } //End block
 String varE65B3A02759122992CB82C0E651AD408_487963075 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_487963075.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_487963075;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder result = new StringBuilder(limit - position);
+        //for (int i = position; i < limit; i++) {
+            //result.append(get(i));
+        //}
+        //return result.toString();
     }
 
     
@@ -469,8 +469,8 @@ String varE65B3A02759122992CB82C0E651AD408_487963075 =         result.toString()
 CharBuffer var2B6273DE4DE54F57140B73EE93BBE5BC_866986772 =         put(c);
         var2B6273DE4DE54F57140B73EE93BBE5BC_866986772.addTaint(taint);
         return var2B6273DE4DE54F57140B73EE93BBE5BC_866986772;
-        
-        
+        // ---------- Original Method ----------
+        //return put(c);
     }
 
     
@@ -482,15 +482,15 @@ CharBuffer var2B6273DE4DE54F57140B73EE93BBE5BC_866986772 =         put(c);
 CharBuffer var201AE26096F56A0C3091616FFDB02190_314568755 =             put(csq.toString());
             var201AE26096F56A0C3091616FFDB02190_314568755.addTaint(taint);
             return var201AE26096F56A0C3091616FFDB02190_314568755;
-        } 
+        } //End block
 CharBuffer var377E45898C2B390206A4ADB7EC4B7A33_915357448 =         put("null");
         var377E45898C2B390206A4ADB7EC4B7A33_915357448.addTaint(taint);
         return var377E45898C2B390206A4ADB7EC4B7A33_915357448;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (csq != null) {
+            //return put(csq.toString());
+        //}
+        //return put("null");
     }
 
     
@@ -502,26 +502,26 @@ CharBuffer var377E45898C2B390206A4ADB7EC4B7A33_915357448 =         put("null");
     if(csq == null)        
         {
             csq = "null";
-        } 
+        } //End block
         CharSequence cs = csq.subSequence(start, end);
     if(cs.length() > 0)        
         {
 CharBuffer var67C6B63C38225F64455A2BCE48BC6CA7_45659774 =             put(cs.toString());
             var67C6B63C38225F64455A2BCE48BC6CA7_45659774.addTaint(taint);
             return var67C6B63C38225F64455A2BCE48BC6CA7_45659774;
-        } 
+        } //End block
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1813076640 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1813076640.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1813076640;
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (csq == null) {
+            //csq = "null";
+        //}
+        //CharSequence cs = csq.subSequence(start, end);
+        //if (cs.length() > 0) {
+            //return put(cs.toString());
+        //}
+        //return this;
     }
 
     
@@ -536,45 +536,45 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1813076640 =         this;
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_273421039 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1159668330 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1159668330;
-            } 
+            } //End block
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_397528353 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_397528353.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_397528353;
-        } 
+        } //End block
     if(remaining == 0)        
         {
             int varEDED0BA610ADD42446DF1159D678D6EF_358812224 = (limit > 0 && target.remaining() == 0 ? 0 : -1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546839393 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546839393;
-        } 
+        } //End block
         remaining = Math.min(target.remaining(), remaining);
     if(remaining > 0)        
         {
             char[] chars = new char[remaining];
             get(chars);
             target.put(chars);
-        } 
+        } //End block
         int var2626772C17D90CF46BE4FE981FF30AC8_1827344057 = (remaining);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697553905 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_697553905;
-        
-        
-        
-            
-                
-            
-            
-        
-        
-            
-        
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int remaining = remaining();
+        //if (target == this) {
+            //if (remaining == 0) {
+                //return -1;
+            //}
+            //throw new IllegalArgumentException();
+        //}
+        //if (remaining == 0) {
+            //return limit > 0 && target.remaining() == 0 ? 0 : -1;
+        //}
+        //remaining = Math.min(target.remaining(), remaining);
+        //if (remaining > 0) {
+            //char[] chars = new char[remaining];
+            //get(chars);
+            //target.put(chars);
+        //}
+        //return remaining;
     }
 
     

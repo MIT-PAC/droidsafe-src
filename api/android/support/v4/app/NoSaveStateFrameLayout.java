@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,12 +17,11 @@ class NoSaveStateFrameLayout extends FrameLayout {
     public  NoSaveStateFrameLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static ViewGroup wrap(View child) {
+        static ViewGroup wrap(View child) {
         NoSaveStateFrameLayout wrapper = new NoSaveStateFrameLayout(child.getContext());
         ViewGroup.LayoutParams childParams = child.getLayoutParams();
         if (childParams != null) {
@@ -41,8 +40,8 @@ class NoSaveStateFrameLayout extends FrameLayout {
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
         addTaint(container.getTaint());
         dispatchFreezeSelfOnly(container);
-        
-        
+        // ---------- Original Method ----------
+        //dispatchFreezeSelfOnly(container);
     }
 
     
@@ -51,8 +50,8 @@ class NoSaveStateFrameLayout extends FrameLayout {
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
         addTaint(container.getTaint());
         dispatchThawSelfOnly(container);
-        
-        
+        // ---------- Original Method ----------
+        //dispatchThawSelfOnly(container);
     }
 
     

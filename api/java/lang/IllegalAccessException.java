@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class IllegalAccessException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.877 -0400", hash_original_method = "0B7C013169E666B387C14287F3C47F99", hash_generated_method = "F02D2F9CCE5BB8803E0299C53F9F5E10")
     public  IllegalAccessException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class IllegalAccessException extends Exception {
     public  IllegalAccessException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

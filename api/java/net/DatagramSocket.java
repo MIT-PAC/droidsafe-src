@@ -1,6 +1,6 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public class DatagramSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.562 -0400", hash_original_method = "600D2DC769AA1337C3E52515B77C9BA6", hash_generated_method = "834126E5D9F38C7E6D68D7A94139CCD5")
     public  DatagramSocket() throws SocketException {
         this(0);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -49,9 +49,9 @@ public class DatagramSocket {
         addTaint(aPort);
         checkPort(aPort);
         createSocket(aPort, Inet4Address.ANY);
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPort(aPort);
+        //createSocket(aPort, Inet4Address.ANY);
     }
 
     
@@ -61,9 +61,9 @@ public class DatagramSocket {
         addTaint(aPort);
         checkPort(aPort);
         createSocket(aPort, (addr == null) ? Inet4Address.ANY : addr);
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkPort(aPort);
+        //createSocket(aPort, (addr == null) ? Inet4Address.ANY : addr);
     }
 
     
@@ -74,13 +74,13 @@ public class DatagramSocket {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_953690480 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_953690480.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_953690480;
-        } 
+        } //End block
         impl = socketImpl;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (socketImpl == null) {
+            //throw new NullPointerException();
+        //}
+        //impl = socketImpl;
     }
 
     
@@ -95,9 +95,9 @@ public class DatagramSocket {
                         localAddr.getClass());
                 varC26B139CE5269510432F181AB5FE9596_1635095137.addTaint(taint);
                 throw varC26B139CE5269510432F181AB5FE9596_1635095137;
-            } 
+            } //End block
             checkPort(((InetSocketAddress) localAddr).getPort());
-        } 
+        } //End block
         impl = factory != null ? factory.createDatagramSocketImpl()
                 : new PlainDatagramSocketImpl();
         impl.create();
@@ -106,35 +106,35 @@ public class DatagramSocket {
             try 
             {
                 bind(localAddr);
-            } 
+            } //End block
             catch (SocketException e)
             {
                 close();
                 e.addTaint(taint);
                 throw e;
-            } 
-        } 
+            } //End block
+        } //End block
         setBroadcast(true);
-        
-        
-            
-                
-                        
-            
-            
-        
-        
-                
-        
-        
-            
-                
-            
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (localAddr != null) {
+            //if (!(localAddr instanceof InetSocketAddress)) {
+                //throw new IllegalArgumentException("Local address not an InetSocketAddress: " +
+                        //localAddr.getClass());
+            //}
+            //checkPort(((InetSocketAddress) localAddr).getPort());
+        //}
+        //impl = factory != null ? factory.createDatagramSocketImpl()
+                //: new PlainDatagramSocketImpl();
+        //impl.create();
+        //if (localAddr != null) {
+            //try {
+                //bind(localAddr);
+            //} catch (SocketException e) {
+                //close();
+                //throw e;
+            //}
+        //}
+        //setBroadcast(true);
     }
 
     
@@ -146,11 +146,11 @@ public class DatagramSocket {
             IllegalArgumentException varBD3B2D468FFD082696C46A032ABFAA1F_1032058830 = new IllegalArgumentException("Port out of range: " + aPort);
             varBD3B2D468FFD082696C46A032ABFAA1F_1032058830.addTaint(taint);
             throw varBD3B2D468FFD082696C46A032ABFAA1F_1032058830;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (aPort < 0 || aPort > 65535) {
+            //throw new IllegalArgumentException("Port out of range: " + aPort);
+        //}
     }
 
     
@@ -158,9 +158,9 @@ public class DatagramSocket {
     public void close() {
         isClosed = true;
         impl.close();
-        
-        
-        
+        // ---------- Original Method ----------
+        //isClosed = true;
+        //impl.close();
     }
 
     
@@ -169,19 +169,19 @@ public class DatagramSocket {
     if(isClosed() || !isConnected())        
         {
             return;
-        } 
+        } //End block
         impl.disconnect();
         address = null;
         port = -1;
         isConnected = false;
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (isClosed() || !isConnected()) {
+            //return;
+        //}
+        //impl.disconnect();
+        //address = null;
+        //port = -1;
+        //isConnected = false;
     }
 
     
@@ -196,35 +196,34 @@ public class DatagramSocket {
         {
             impl.bind(aPort, addr);
             isBound = true;
-        } 
+        } //End block
         catch (SocketException e)
         {
             close();
             e.addTaint(taint);
             throw e;
-        } 
-        
-        
-                
-        
-        
-            
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //impl = factory != null ? factory.createDatagramSocketImpl()
+                //: new PlainDatagramSocketImpl();
+        //impl.create();
+        //try {
+            //impl.bind(aPort, addr);
+            //isBound = true;
+        //} catch (SocketException e) {
+            //close();
+            //throw e;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.567 -0400", hash_original_method = "9059089CB1C35AC3C53D636B58746A1E", hash_generated_method = "5DA1E73348B3C83DD7287C4CF5BC0BA9")
     public InetAddress getInetAddress() {
 InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1175862985 =         address;
         var814577DDD37BAFB17E08CBEFDB411BAE_1175862985.addTaint(taint);
         return var814577DDD37BAFB17E08CBEFDB411BAE_1175862985;
-        
-        
+        // ---------- Original Method ----------
+        //return address;
     }
 
     
@@ -235,24 +234,24 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_1175862985 =         address;
 InetAddress var540C13E9E156B687226421B24F2DF178_43652282 =             null;
             var540C13E9E156B687226421B24F2DF178_43652282.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_43652282;
-        } 
+        } //End block
     if(!isBound())        
         {
 InetAddress var160D7036E6F25C22E9DA4C92DCFE57EF_852147959 =             Inet4Address.ANY;
             var160D7036E6F25C22E9DA4C92DCFE57EF_852147959.addTaint(taint);
             return var160D7036E6F25C22E9DA4C92DCFE57EF_852147959;
-        } 
+        } //End block
 InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLocalAddress();
         var55E28B9EA17D108D0EBB47134171DC93_1994043261.addTaint(taint);
         return var55E28B9EA17D108D0EBB47134171DC93_1994043261;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isClosed()) {
+            //return null;
+        //}
+        //if (!isBound()) {
+            //return Inet4Address.ANY;
+        //}
+        //return impl.getLocalAddress();
     }
 
     
@@ -263,46 +262,44 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             int var6BB61E3B7BCE0931DA574D19D1D82C88_431475315 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2035339569 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2035339569;
-        } 
+        } //End block
     if(!isBound())        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_378147498 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1692282462 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1692282462;
-        } 
+        } //End block
         int var141B5401A04AE23DB4012052769AA414_938738651 = (impl.getLocalPort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1505169734 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1505169734;
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (isClosed()) {
+            //return -1;
+        //}
+        //if (!isBound()) {
+            //return 0;
+        //}
+        //return impl.getLocalPort();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.569 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "1AF5001FF23DD9E7E2DF993FF7187953")
     public int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_714980951 = (port);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_465441020 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_465441020;
-        
-        
+        // ---------- Original Method ----------
+        //return port;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.569 -0400", hash_original_method = "4991C56903C24C085B034589D2617CA7", hash_generated_method = "4A28F51EE6F38727CB9C5BD8056DC4BE")
      boolean isMulticastSocket() {
         boolean var68934A3E9455FA72420237EB05902327_64654220 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1392168389 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1392168389;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -312,9 +309,9 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
         int varE81451D5C828E046B43EDC22DB07479E_2041216634 = (((Integer) impl.getOption(SocketOptions.SO_RCVBUF)).intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_126719935 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_126719935;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return ((Integer) impl.getOption(SocketOptions.SO_RCVBUF)).intValue();
     }
 
     
@@ -324,9 +321,9 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
         int var30D2E319E9C2929AD28B20E6E58446D9_1443311346 = (((Integer) impl.getOption(SocketOptions.SO_SNDBUF)).intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108165855 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_108165855;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return ((Integer) impl.getOption(SocketOptions.SO_SNDBUF)).intValue();
     }
 
     
@@ -336,9 +333,9 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
         int varD9ED706581E59D8A02AABC09446C91B3_1521406705 = (((Integer) impl.getOption(SocketOptions.SO_TIMEOUT)).intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_543211817 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_543211817;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return ((Integer) impl.getOption(SocketOptions.SO_TIMEOUT)).intValue();
     }
 
     
@@ -352,26 +349,26 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_92491056 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_92491056.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_92491056;
-        } 
+        } //End block
     if(pendingConnectException != null)        
         {
             SocketException varB1BB7E004655EB0C0C04A842A6C33F35_1684312459 = new SocketException("Pending connect failure", pendingConnectException);
             varB1BB7E004655EB0C0C04A842A6C33F35_1684312459.addTaint(taint);
             throw varB1BB7E004655EB0C0C04A842A6C33F35_1684312459;
-        } 
+        } //End block
         pack.setLength(pack.getCapacity());
         impl.receive(pack);
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //ensureBound();
+        //if (pack == null) {
+            //throw new NullPointerException();
+        //}
+        //if (pendingConnectException != null) {
+            //throw new SocketException("Pending connect failure", pendingConnectException);
+        //}
+        //pack.setLength(pack.getCapacity());
+        //impl.receive(pack);
     }
 
     
@@ -390,14 +387,14 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
                     IllegalArgumentException var7EB419C25158EBE15F047183830C1EFC_870359358 = new IllegalArgumentException("Packet address mismatch with connected address");
                     var7EB419C25158EBE15F047183830C1EFC_870359358.addTaint(taint);
                     throw var7EB419C25158EBE15F047183830C1EFC_870359358;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 pack.setAddress(address);
                 pack.setPort(port);
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
     if(packAddr == null)            
@@ -405,28 +402,28 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
                 NullPointerException var45653EF25EE326504CB0A60A0E4D78D6_593062647 = new NullPointerException("Destination address is null");
                 var45653EF25EE326504CB0A60A0E4D78D6_593062647.addTaint(taint);
                 throw var45653EF25EE326504CB0A60A0E4D78D6_593062647;
-            } 
-        } 
+            } //End block
+        } //End block
         impl.send(pack);
-        
-        
-        
-        
-        
-            
-                
-                    
-                
-            
-                
-                
-            
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //ensureBound();
+        //InetAddress packAddr = pack.getAddress();
+        //if (address != null) { 
+            //if (packAddr != null) {
+                //if (!address.equals(packAddr) || port != pack.getPort()) {
+                    //throw new IllegalArgumentException("Packet address mismatch with connected address");
+                //}
+            //} else {
+                //pack.setAddress(address);
+                //pack.setPort(port);
+            //}
+        //} else {
+            //if (packAddr == null) {
+                //throw new NullPointerException("Destination address is null");
+            //}
+        //}
+        //impl.send(pack);
     }
 
     
@@ -438,26 +435,26 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             NullPointerException varAF2C3524B834479E4E22F237838485DE_2087176911 = new NullPointerException("networkInterface == null");
             varAF2C3524B834479E4E22F237838485DE_2087176911.addTaint(taint);
             throw varAF2C3524B834479E4E22F237838485DE_2087176911;
-        } 
+        } //End block
         try 
         {
             Libcore.os.setsockoptIfreq(impl.fd, SOL_SOCKET, SO_BINDTODEVICE, netInterface.getName());
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             java.net.SocketException var01308AFBB38F93C29B87C84FA2A5ED65_732030613 = errnoException.rethrowAsSocketException();
             var01308AFBB38F93C29B87C84FA2A5ED65_732030613.addTaint(taint);
             throw var01308AFBB38F93C29B87C84FA2A5ED65_732030613;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (netInterface == null) {
+            //throw new NullPointerException("networkInterface == null");
+        //}
+        //try {
+            //Libcore.os.setsockoptIfreq(impl.fd, SOL_SOCKET, SO_BINDTODEVICE, netInterface.getName());
+        //} catch (ErrnoException errnoException) {
+            //throw errnoException.rethrowAsSocketException();
+        //}
     }
 
     
@@ -469,15 +466,15 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             IllegalArgumentException varE382BBE48942C4B3FA87CFD84F21DF8E_608769990 = new IllegalArgumentException("size < 1");
             varE382BBE48942C4B3FA87CFD84F21DF8E_608769990.addTaint(taint);
             throw varE382BBE48942C4B3FA87CFD84F21DF8E_608769990;
-        } 
+        } //End block
         checkOpen();
         impl.setOption(SocketOptions.SO_SNDBUF, Integer.valueOf(size));
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (size < 1) {
+            //throw new IllegalArgumentException("size < 1");
+        //}
+        //checkOpen();
+        //impl.setOption(SocketOptions.SO_SNDBUF, Integer.valueOf(size));
     }
 
     
@@ -489,15 +486,15 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             IllegalArgumentException varE382BBE48942C4B3FA87CFD84F21DF8E_1114639056 = new IllegalArgumentException("size < 1");
             varE382BBE48942C4B3FA87CFD84F21DF8E_1114639056.addTaint(taint);
             throw varE382BBE48942C4B3FA87CFD84F21DF8E_1114639056;
-        } 
+        } //End block
         checkOpen();
         impl.setOption(SocketOptions.SO_RCVBUF, Integer.valueOf(size));
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (size < 1) {
+            //throw new IllegalArgumentException("size < 1");
+        //}
+        //checkOpen();
+        //impl.setOption(SocketOptions.SO_RCVBUF, Integer.valueOf(size));
     }
 
     
@@ -509,15 +506,15 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             IllegalArgumentException varBA4E54C08633B7FB6474427FE4B69BA6_1121922819 = new IllegalArgumentException("timeout < 0");
             varBA4E54C08633B7FB6474427FE4B69BA6_1121922819.addTaint(taint);
             throw varBA4E54C08633B7FB6474427FE4B69BA6_1121922819;
-        } 
+        } //End block
         checkOpen();
         impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(timeout));
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (timeout < 0) {
+            //throw new IllegalArgumentException("timeout < 0");
+        //}
+        //checkOpen();
+        //impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(timeout));
     }
 
     
@@ -536,11 +533,11 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             SocketException var5AD72407DD9337ABED4666C49A30EC41_628853692 = new SocketException("Socket is closed");
             var5AD72407DD9337ABED4666C49A30EC41_628853692.addTaint(taint);
             throw var5AD72407DD9337ABED4666C49A30EC41_628853692;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (isClosed()) {
+            //throw new SocketException("Socket is closed");
+        //}
     }
 
     
@@ -550,12 +547,12 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
         {
             impl.bind(0, Inet4Address.ANY);
             isBound = true;
-        } 
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!isBound()) {
+            //impl.bind(0, Inet4Address.ANY);
+            //isBound = true;
+        //}
     }
 
     
@@ -573,7 +570,7 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
                         localAddr.getClass());
                 varC26B139CE5269510432F181AB5FE9596_1844564662.addTaint(taint);
                 throw varC26B139CE5269510432F181AB5FE9596_1844564662;
-            } 
+            } //End block
             InetSocketAddress inetAddr = (InetSocketAddress) localAddr;
             addr = inetAddr.getAddress();
     if(addr == null)            
@@ -581,31 +578,31 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
                 SocketException var815C915B1B299CF5E8808EFB2314BEE5_726761480 = new SocketException("Host is unresolved: " + inetAddr.getHostName());
                 var815C915B1B299CF5E8808EFB2314BEE5_726761480.addTaint(taint);
                 throw var815C915B1B299CF5E8808EFB2314BEE5_726761480;
-            } 
+            } //End block
             localPort = inetAddr.getPort();
             checkPort(localPort);
-        } 
+        } //End block
         impl.bind(localPort, addr);
         isBound = true;
-        
-        
-        
-        
-        
-            
-                
-                        
-            
-            
-            
-            
-                
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //int localPort = 0;
+        //InetAddress addr = Inet4Address.ANY;
+        //if (localAddr != null) {
+            //if (!(localAddr instanceof InetSocketAddress)) {
+                //throw new IllegalArgumentException("Local address not an InetSocketAddress: " +
+                        //localAddr.getClass());
+            //}
+            //InetSocketAddress inetAddr = (InetSocketAddress) localAddr;
+            //addr = inetAddr.getAddress();
+            //if (addr == null) {
+                //throw new SocketException("Host is unresolved: " + inetAddr.getHostName());
+            //}
+            //localPort = inetAddr.getPort();
+            //checkPort(localPort);
+        //}
+        //impl.bind(localPort, addr);
+        //isBound = true;
     }
 
     
@@ -617,20 +614,20 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             IllegalArgumentException var9F5934E24575FF787ECA296EFE437398_570805683 = new IllegalArgumentException("peer == null");
             var9F5934E24575FF787ECA296EFE437398_570805683.addTaint(taint);
             throw var9F5934E24575FF787ECA296EFE437398_570805683;
-        } 
+        } //End block
     if(!(peer instanceof InetSocketAddress))        
         {
             IllegalArgumentException varE9CCA80D8D91180719BA3618D4D9B763_482135677 = new IllegalArgumentException("peer not an InetSocketAddress: " + peer.getClass());
             varE9CCA80D8D91180719BA3618D4D9B763_482135677.addTaint(taint);
             throw varE9CCA80D8D91180719BA3618D4D9B763_482135677;
-        } 
+        } //End block
         InetSocketAddress isa = (InetSocketAddress) peer;
     if(isa.getAddress() == null)        
         {
             SocketException varE8A11D462907C6DEF5226026056C0870_748053912 = new SocketException("Host is unresolved: " + isa.getHostName());
             varE8A11D462907C6DEF5226026056C0870_748053912.addTaint(taint);
             throw varE8A11D462907C6DEF5226026056C0870_748053912;
-        } 
+        } //End block
         synchronized
 (lock)        {
             checkOpen();
@@ -639,26 +636,26 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             this.port = isa.getPort();
             this.isConnected = true;
             impl.connect(address, port);
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-            
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (peer == null) {
+            //throw new IllegalArgumentException("peer == null");
+        //}
+        //if (!(peer instanceof InetSocketAddress)) {
+            //throw new IllegalArgumentException("peer not an InetSocketAddress: " + peer.getClass());
+        //}
+        //InetSocketAddress isa = (InetSocketAddress) peer;
+        //if (isa.getAddress() == null) {
+            //throw new SocketException("Host is unresolved: " + isa.getHostName());
+        //}
+        //synchronized (lock) {
+            //checkOpen();
+            //ensureBound();
+            //this.address = isa.getAddress();
+            //this.port = isa.getPort();
+            //this.isConnected = true;
+            //impl.connect(address, port);
+        //}
     }
 
     
@@ -671,46 +668,44 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
             IllegalArgumentException var97E1753900078CCFFFE3026FDB988F71_1157722373 = new IllegalArgumentException("address == null");
             var97E1753900078CCFFFE3026FDB988F71_1157722373.addTaint(taint);
             throw var97E1753900078CCFFFE3026FDB988F71_1157722373;
-        } 
+        } //End block
         try 
         {
             connect(new InetSocketAddress(address, port));
-        } 
+        } //End block
         catch (SocketException connectException)
         {
             pendingConnectException = connectException;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (address == null) {
+            //throw new IllegalArgumentException("address == null");
+        //}
+        //try {
+            //connect(new InetSocketAddress(address, port));
+        //} catch (SocketException connectException) {
+            //pendingConnectException = connectException;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.585 -0400", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "6919F3B2559432522C20D0EBFB2E55BE")
     public boolean isBound() {
         boolean var8E4D35088206920061AAF7F347854388_85447776 = (isBound);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510939513 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_510939513;
-        
-        
+        // ---------- Original Method ----------
+        //return isBound;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.585 -0400", hash_original_method = "B1255CDE181FFAAB8CB434FB98B99FFF", hash_generated_method = "BFA889AD2940D1B1312E2F79A5E5DBC9")
     public boolean isConnected() {
         boolean var8CADFAB0F66545464EF713B1AEC0C7DD_821174764 = (isConnected);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780108770 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780108770;
-        
-        
+        // ---------- Original Method ----------
+        //return isConnected;
     }
 
     
@@ -721,15 +716,15 @@ InetAddress var55E28B9EA17D108D0EBB47134171DC93_1994043261 =         impl.getLoc
 SocketAddress var540C13E9E156B687226421B24F2DF178_1699109105 =             null;
             var540C13E9E156B687226421B24F2DF178_1699109105.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1699109105;
-        } 
+        } //End block
 SocketAddress var45C38FDA41326B49D763EA0783025015_1796559311 =         new InetSocketAddress(getInetAddress(), getPort());
         var45C38FDA41326B49D763EA0783025015_1796559311.addTaint(taint);
         return var45C38FDA41326B49D763EA0783025015_1796559311;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isConnected()) {
+            //return null;
+        //}
+        //return new InetSocketAddress(getInetAddress(), getPort());
     }
 
     
@@ -740,15 +735,15 @@ SocketAddress var45C38FDA41326B49D763EA0783025015_1796559311 =         new InetS
 SocketAddress var540C13E9E156B687226421B24F2DF178_464803866 =             null;
             var540C13E9E156B687226421B24F2DF178_464803866.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_464803866;
-        } 
+        } //End block
 SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSocketAddress(getLocalAddress(), getLocalPort());
         varEBCBCBDD65488C840B5324120D3690AE_145154485.addTaint(taint);
         return varEBCBCBDD65488C840B5324120D3690AE_145154485;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!isBound()) {
+            //return null;
+        //}
+        //return new InetSocketAddress(getLocalAddress(), getLocalPort());
     }
 
     
@@ -757,9 +752,9 @@ SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSo
         addTaint(reuse);
         checkOpen();
         impl.setOption(SocketOptions.SO_REUSEADDR, Boolean.valueOf(reuse));
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //impl.setOption(SocketOptions.SO_REUSEADDR, Boolean.valueOf(reuse));
     }
 
     
@@ -769,9 +764,9 @@ SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSo
         boolean var5F25B35A5AB65D3270A0F9B4238F8C8D_1267676959 = (((Boolean) impl.getOption(SocketOptions.SO_REUSEADDR)).booleanValue());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1209634337 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1209634337;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return ((Boolean) impl.getOption(SocketOptions.SO_REUSEADDR)).booleanValue();
     }
 
     
@@ -780,9 +775,9 @@ SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSo
         addTaint(broadcast);
         checkOpen();
         impl.setOption(SocketOptions.SO_BROADCAST, Boolean.valueOf(broadcast));
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //impl.setOption(SocketOptions.SO_BROADCAST, Boolean.valueOf(broadcast));
     }
 
     
@@ -792,9 +787,9 @@ SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSo
         boolean var97CED1D4C57C42B4E25AA2B3B70C1417_1519584677 = (((Boolean) impl.getOption(SocketOptions.SO_BROADCAST)).booleanValue());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1354362797 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1354362797;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return ((Boolean) impl.getOption(SocketOptions.SO_BROADCAST)).booleanValue();
     }
 
     
@@ -807,14 +802,14 @@ SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSo
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1133213738 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1133213738.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1133213738;
-        } 
+        } //End block
         impl.setOption(SocketOptions.IP_TOS, Integer.valueOf(value));
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //if (value < 0 || value > 255) {
+            //throw new IllegalArgumentException();
+        //}
+        //impl.setOption(SocketOptions.IP_TOS, Integer.valueOf(value));
     }
 
     
@@ -824,31 +819,29 @@ SocketAddress varEBCBCBDD65488C840B5324120D3690AE_145154485 =         new InetSo
         int varB7446D545DBE11135A3678EF4F7ECC87_839397197 = ((Integer) impl.getOption(SocketOptions.IP_TOS));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593942633 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593942633;
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkOpen();
+        //return (Integer) impl.getOption(SocketOptions.IP_TOS);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.589 -0400", hash_original_method = "2EEDDDEB8BA1CD500E3647BC397BF54F", hash_generated_method = "1B9C9F1AA270D160155609ADC5184792")
     public boolean isClosed() {
         boolean var7587750400D3C39AEAD7C1489F6FE7F3_2081291251 = (isClosed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1070960176 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1070960176;
-        
-        
+        // ---------- Original Method ----------
+        //return isClosed;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.589 -0400", hash_original_method = "4DA7A00C8A23C7197F09A02190FE9E45", hash_generated_method = "18CC6F07A664A02C82E545463377EB11")
     public DatagramChannel getChannel() {
 DatagramChannel var540C13E9E156B687226421B24F2DF178_1190018184 =         null;
         var540C13E9E156B687226421B24F2DF178_1190018184.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1190018184;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
@@ -857,8 +850,8 @@ DatagramChannel var540C13E9E156B687226421B24F2DF178_1190018184 =         null;
 FileDescriptor var90D0CD7641DADE7AC7C643EE2F281FD7_1920942475 =         impl.fd;
         var90D0CD7641DADE7AC7C643EE2F281FD7_1920942475.addTaint(taint);
         return var90D0CD7641DADE7AC7C643EE2F281FD7_1920942475;
-        
-        
+        // ---------- Original Method ----------
+        //return impl.fd;
     }
 
     

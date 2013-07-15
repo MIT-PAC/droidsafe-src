@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,9 +20,9 @@ final class FixedLengthOutputStream extends AbstractHttpOutputStream {
     public  FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
         this.socketOut = socketOut;
         this.bytesRemaining = bytesRemaining;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.socketOut = socketOut;
+        //this.bytesRemaining = bytesRemaining;
     }
 
     
@@ -38,17 +38,17 @@ final class FixedLengthOutputStream extends AbstractHttpOutputStream {
             IOException var2DACCE4C8DC02104E58E6118E7861F55_462106071 = new IOException("expected " + bytesRemaining + " bytes but received " + count);
             var2DACCE4C8DC02104E58E6118E7861F55_462106071.addTaint(taint);
             throw var2DACCE4C8DC02104E58E6118E7861F55_462106071;
-        } 
+        } //End block
         socketOut.write(buffer, offset, count);
         bytesRemaining -= count;
-        
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //checkNotClosed();
+        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
+        //if (count > bytesRemaining) {
+            //throw new IOException("expected " + bytesRemaining + " bytes but received " + count);
+        //}
+        //socketOut.write(buffer, offset, count);
+        //bytesRemaining -= count;
     }
 
     
@@ -58,13 +58,13 @@ final class FixedLengthOutputStream extends AbstractHttpOutputStream {
     if(closed)        
         {
             return;
-        } 
+        } //End block
         socketOut.flush();
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (closed) {
+            //return; 
+        //}
+        //socketOut.flush();
     }
 
     
@@ -74,22 +74,22 @@ final class FixedLengthOutputStream extends AbstractHttpOutputStream {
     if(closed)        
         {
             return;
-        } 
+        } //End block
         closed = true;
     if(bytesRemaining > 0)        
         {
             IOException var9FCEBBA092763F5F75BC70A376D097E6_1402201323 = new IOException("unexpected end of stream");
             var9FCEBBA092763F5F75BC70A376D097E6_1402201323.addTaint(taint);
             throw var9FCEBBA092763F5F75BC70A376D097E6_1402201323;
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (closed) {
+            //return;
+        //}
+        //closed = true;
+        //if (bytesRemaining > 0) {
+            //throw new IOException("unexpected end of stream");
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.core;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,10 +17,10 @@ public class HostNameParser extends ParserCore {
         this.lexer = new LexerCore("charLexer", hname);
         stripAddressScopeZones
             = Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //this.lexer = new LexerCore("charLexer", hname);
+        //stripAddressScopeZones
+            //= Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
     }
 
     
@@ -31,11 +31,11 @@ public class HostNameParser extends ParserCore {
         lexer.selectLexer("charLexer");
         stripAddressScopeZones
             = Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
-        
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //this.lexer = lexer;
+        //lexer.selectLexer("charLexer");
+        //stripAddressScopeZones
+            //= Boolean.getBoolean("gov.nist.core.STRIP_ADDR_SCOPES");
     }
 
     
@@ -46,21 +46,21 @@ public class HostNameParser extends ParserCore {
         try 
         {
             lexer.consumeValidChars(VALID_DOMAIN_LABEL_CHAR);
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("domainLabel");
-        } 
-        
-        
-            
-        
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("domainLabel");
+        //try {
+            //lexer.consumeValidChars(VALID_DOMAIN_LABEL_CHAR);
+        //} finally {
+            //if (debug)
+                //dbg_leave("domainLabel");
+        //}
     }
 
     
@@ -82,7 +82,7 @@ public class HostNameParser extends ParserCore {
                     {
                         lexer.consume(1);
                         retval.append(la);
-                    } 
+                    } //End block
                     else
     if(la == ']')                    
                     {
@@ -91,7 +91,7 @@ public class HostNameParser extends ParserCore {
 String var1B324365A764C077A55854483509F4AB_2021404684 =                         retval.toString();
                         var1B324365A764C077A55854483509F4AB_2021404684.addTaint(taint);
                         return var1B324365A764C077A55854483509F4AB_2021404684;
-                    } 
+                    } //End block
                     else
     if(la == '%')                    
                     {
@@ -100,22 +100,22 @@ String var1B324365A764C077A55854483509F4AB_2021404684 =                         
     if(rest == null || rest.length() == 0)                        
                         {
                             break;
-                        } 
+                        } //End block
                         int stripLen = rest.indexOf(']');
     if(stripLen == -1)                        
                         {
                             break;
-                        } 
+                        } //End block
                         lexer.consume(stripLen+1);
                         retval.append("]");
 String var1B324365A764C077A55854483509F4AB_78171056 =                         retval.toString();
                         var1B324365A764C077A55854483509F4AB_78171056.addTaint(taint);
                         return var1B324365A764C077A55854483509F4AB_78171056;
-                    } 
+                    } //End block
                     else
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 while
@@ -127,7 +127,7 @@ String var1B324365A764C077A55854483509F4AB_78171056 =                         re
                     {
                         lexer.consume(1);
                         retval.append(la);
-                    } 
+                    } //End block
                     else
     if(la == ']')                    
                     {
@@ -136,24 +136,24 @@ String var1B324365A764C077A55854483509F4AB_78171056 =                         re
 String var1B324365A764C077A55854483509F4AB_20135514 =                         retval.toString();
                         var1B324365A764C077A55854483509F4AB_20135514.addTaint(taint);
                         return var1B324365A764C077A55854483509F4AB_20135514;
-                    } 
+                    } //End block
                     else
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
             ParseException var11981E79D9C4D841C3C725ECD1A8474C_2131576433 = new ParseException(
                 lexer.getBuffer() + ": Illegal Host name ",
                 lexer.getPtr());
             var11981E79D9C4D841C3C725ECD1A8474C_2131576433.addTaint(taint);
             throw var11981E79D9C4D841C3C725ECD1A8474C_2131576433;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("ipv6Reference");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -167,7 +167,7 @@ String var1B324365A764C077A55854483509F4AB_20135514 =                         re
     if(lexer.lookAhead(0) == '[')            
             {
                 hostname = ipv6Reference();
-            } 
+            } //End block
             else
     if(isIPv6Address(lexer.getRest()))            
             {
@@ -178,13 +178,13 @@ String var1B324365A764C077A55854483509F4AB_20135514 =                         re
                     = new StringBuffer("[").append(
                         lexer.getBuffer().substring(startPtr, lexer.getPtr()))
                         .append("]").toString();
-            } 
+            } //End block
             else
             {
                 int startPtr = lexer.getPtr();
                 consumeDomainLabel();
                 hostname = lexer.getBuffer().substring(startPtr, lexer.getPtr());
-            } 
+            } //End block
     if(hostname.length() == 0)            
             {
             ParseException var3A0984BE1714E3EA18F6143A3F3738D7_579997536 = new ParseException(
@@ -199,14 +199,14 @@ Host varF0B534F137321120478D6E10D568F47B_772642229 =             new Host(hostna
             varF0B534F137321120478D6E10D568F47B_772642229.addTaint(taint);
             return varF0B534F137321120478D6E10D568F47B_772642229;
             }
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("host");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -238,22 +238,22 @@ Host varF0B534F137321120478D6E10D568F47B_772642229 =             new Host(hostna
         boolean varB326B5062B2F0E69046810717534CB09_1541354537 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1264324718 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1264324718;
-        
-        
-        
-        
-            
-            
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //int hostEnd = uriHeader.indexOf(Lexer.QUESTION);
+        //int semiColonIndex = uriHeader.indexOf(Lexer.SEMICOLON);
+        //if ( hostEnd == -1
+            //|| (semiColonIndex!= -1 && hostEnd > semiColonIndex) )
+            //hostEnd = semiColonIndex;
+        //if ( hostEnd == -1 )
+            //hostEnd = uriHeader.length();
+        //String host = uriHeader.substring(0, hostEnd);
+        //int firstColonIndex = host.indexOf(Lexer.COLON);
+        //if(firstColonIndex == -1)
+            //return false;
+        //int secondColonIndex = host.indexOf(Lexer.COLON, firstColonIndex + 1);
+        //if(secondColonIndex == -1)
+            //return false;
+        //return true;
     }
 
     
@@ -281,7 +281,7 @@ switch(la){
                 {
                     String port = lexer.number();
                     hp.setPort(Integer.parseInt(port));
-                } 
+                } //End block
                 catch (NumberFormatException nfe)
                 {
                     ParseException varDA00022791EC73E5638854EA9316EE2B_939238970 = new ParseException(
@@ -289,7 +289,7 @@ switch(la){
                             lexer.getPtr());
                     varDA00022791EC73E5638854EA9316EE2B_939238970.addTaint(taint);
                     throw varDA00022791EC73E5638854EA9316EE2B_939238970;
-                } 
+                } //End block
                 break;
                 case ',':
                 case ';':
@@ -305,7 +305,7 @@ switch(la){
     if(stripAddressScopeZones)                
                 {
                     break;
-                } 
+                } //End block
                 default:
     if(!allowWS)                
                 {
@@ -314,20 +314,20 @@ switch(la){
                                 lexer.getPtr() );
                     var34A0E2FAB5FDEDAFA01A0EB0BC99C064_1484109805.addTaint(taint);
                     throw var34A0E2FAB5FDEDAFA01A0EB0BC99C064_1484109805;
-                } 
+                } //End block
 }
-            } 
+            } //End block
 HostPort var33B70901B4FF652A00D06638A0ABE5C1_1202994521 =             hp;
             var33B70901B4FF652A00D06638A0ABE5C1_1202994521.addTaint(taint);
             return var33B70901B4FF652A00D06638A0ABE5C1_1202994521;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("hostPort");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

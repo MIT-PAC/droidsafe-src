@@ -1,6 +1,6 @@
 package android.opengl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,12 +13,11 @@ public class GLDebugHelper {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.188 -0400", hash_original_method = "E7190AE5B0A4A36A0341193EE8AF97D9", hash_generated_method = "E7190AE5B0A4A36A0341193EE8AF97D9")
     public GLDebugHelper ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static GL wrap(GL gl, int configFlags, Writer log) {
+        public static GL wrap(GL gl, int configFlags, Writer log) {
         if ( configFlags != 0 ) {
             gl = new GLErrorWrapper(gl, configFlags);
         }

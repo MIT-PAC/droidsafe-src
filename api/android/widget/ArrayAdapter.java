@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,8 +53,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(textViewResourceId);
         addTaint(context.getTaint());
         init(context, textViewResourceId, 0, new ArrayList<T>());
-        
-        
+        // ---------- Original Method ----------
+        //init(context, textViewResourceId, 0, new ArrayList<T>());
     }
 
     
@@ -64,8 +64,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(resource);
         addTaint(context.getTaint());
         init(context, resource, textViewResourceId, new ArrayList<T>());
-        
-        
+        // ---------- Original Method ----------
+        //init(context, resource, textViewResourceId, new ArrayList<T>());
     }
 
     
@@ -75,8 +75,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(textViewResourceId);
         addTaint(context.getTaint());
         init(context, textViewResourceId, 0, Arrays.asList(objects));
-        
-        
+        // ---------- Original Method ----------
+        //init(context, textViewResourceId, 0, Arrays.asList(objects));
     }
 
     
@@ -87,8 +87,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(resource);
         addTaint(context.getTaint());
         init(context, resource, textViewResourceId, Arrays.asList(objects));
-        
-        
+        // ---------- Original Method ----------
+        //init(context, resource, textViewResourceId, Arrays.asList(objects));
     }
 
     
@@ -98,8 +98,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(textViewResourceId);
         addTaint(context.getTaint());
         init(context, textViewResourceId, 0, objects);
-        
-        
+        // ---------- Original Method ----------
+        //init(context, textViewResourceId, 0, objects);
     }
 
     
@@ -110,8 +110,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         addTaint(resource);
         addTaint(context.getTaint());
         init(context, resource, textViewResourceId, objects);
-        
-        
+        // ---------- Original Method ----------
+        //init(context, resource, textViewResourceId, objects);
     }
 
     
@@ -123,23 +123,23 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     if(mOriginalValues != null)            
             {
                 mOriginalValues.add(object);
-            } 
+            } //End block
             else
             {
                 mObjects.add(object);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mNotifyOnChange)        
         notifyDataSetChanged();
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (mOriginalValues != null) {
+                //mOriginalValues.add(object);
+            //} else {
+                //mObjects.add(object);
+            //}
+        //}
+        //if (mNotifyOnChange) notifyDataSetChanged();
     }
 
     
@@ -151,23 +151,23 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     if(mOriginalValues != null)            
             {
                 mOriginalValues.addAll(collection);
-            } 
+            } //End block
             else
             {
                 mObjects.addAll(collection);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mNotifyOnChange)        
         notifyDataSetChanged();
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (mOriginalValues != null) {
+                //mOriginalValues.addAll(collection);
+            //} else {
+                //mObjects.addAll(collection);
+            //}
+        //}
+        //if (mNotifyOnChange) notifyDataSetChanged();
     }
 
     
@@ -179,23 +179,23 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     if(mOriginalValues != null)            
             {
                 Collections.addAll(mOriginalValues, items);
-            } 
+            } //End block
             else
             {
                 Collections.addAll(mObjects, items);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mNotifyOnChange)        
         notifyDataSetChanged();
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (mOriginalValues != null) {
+                //Collections.addAll(mOriginalValues, items);
+            //} else {
+                //Collections.addAll(mObjects, items);
+            //}
+        //}
+        //if (mNotifyOnChange) notifyDataSetChanged();
     }
 
     
@@ -208,23 +208,23 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     if(mOriginalValues != null)            
             {
                 mOriginalValues.add(index, object);
-            } 
+            } //End block
             else
             {
                 mObjects.add(index, object);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mNotifyOnChange)        
         notifyDataSetChanged();
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (mOriginalValues != null) {
+                //mOriginalValues.add(index, object);
+            //} else {
+                //mObjects.add(index, object);
+            //}
+        //}
+        //if (mNotifyOnChange) notifyDataSetChanged();
     }
 
     
@@ -236,23 +236,23 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     if(mOriginalValues != null)            
             {
                 mOriginalValues.remove(object);
-            } 
+            } //End block
             else
             {
                 mObjects.remove(object);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mNotifyOnChange)        
         notifyDataSetChanged();
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (mOriginalValues != null) {
+                //mOriginalValues.remove(object);
+            //} else {
+                //mObjects.remove(object);
+            //}
+        //}
+        //if (mNotifyOnChange) notifyDataSetChanged();
     }
 
     
@@ -263,23 +263,23 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     if(mOriginalValues != null)            
             {
                 mOriginalValues.clear();
-            } 
+            } //End block
             else
             {
                 mObjects.clear();
-            } 
-        } 
+            } //End block
+        } //End block
     if(mNotifyOnChange)        
         notifyDataSetChanged();
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (mOriginalValues != null) {
+                //mOriginalValues.clear();
+            //} else {
+                //mObjects.clear();
+            //}
+        //}
+        //if (mNotifyOnChange) notifyDataSetChanged();
     }
 
     
@@ -291,23 +291,23 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     if(mOriginalValues != null)            
             {
                 Collections.sort(mOriginalValues, comparator);
-            } 
+            } //End block
             else
             {
                 Collections.sort(mObjects, comparator);
-            } 
-        } 
+            } //End block
+        } //End block
     if(mNotifyOnChange)        
         notifyDataSetChanged();
-        
-        
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //if (mOriginalValues != null) {
+                //Collections.sort(mOriginalValues, comparator);
+            //} else {
+                //Collections.sort(mObjects, comparator);
+            //}
+        //}
+        //if (mNotifyOnChange) notifyDataSetChanged();
     }
 
     
@@ -316,18 +316,17 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
         mNotifyOnChange = true;
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.notifyDataSetChanged();
+        //mNotifyOnChange = true;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.448 -0400", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "DF16B68FF23EAD56FA4255B3D48770B3")
     public void setNotifyOnChange(boolean notifyOnChange) {
         mNotifyOnChange = notifyOnChange;
-        
-        
+        // ---------- Original Method ----------
+        //mNotifyOnChange = notifyOnChange;
     }
 
     
@@ -338,23 +337,22 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         mResource = mDropDownResource = resource;
         mObjects = objects;
         mFieldId = textViewResourceId;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
+        //mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //mResource = mDropDownResource = resource;
+        //mObjects = objects;
+        //mFieldId = textViewResourceId;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.449 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "9CECD4A406E27DE4B90900C54A8A7CCB")
     public Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_102176101 =         mContext;
         var178E2AD52D6FBBB503F908168856B574_102176101.addTaint(taint);
         return var178E2AD52D6FBBB503F908168856B574_102176101;
-        
-        
+        // ---------- Original Method ----------
+        //return mContext;
     }
 
     
@@ -363,8 +361,8 @@ Context var178E2AD52D6FBBB503F908168856B574_102176101 =         mContext;
         int var44E774A130391DD13FA0C3E1F798FA8F_242329734 = (mObjects.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181074576 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181074576;
-        
-        
+        // ---------- Original Method ----------
+        //return mObjects.size();
     }
 
     
@@ -374,8 +372,8 @@ Context var178E2AD52D6FBBB503F908168856B574_102176101 =         mContext;
 T var764B6AF9DF92D219D9605835E00EC09F_160918835 =         mObjects.get(position);
         var764B6AF9DF92D219D9605835E00EC09F_160918835.addTaint(taint);
         return var764B6AF9DF92D219D9605835E00EC09F_160918835;
-        
-        
+        // ---------- Original Method ----------
+        //return mObjects.get(position);
     }
 
     
@@ -385,20 +383,19 @@ T var764B6AF9DF92D219D9605835E00EC09F_160918835 =         mObjects.get(position)
         int varDFBE5BD03266E32EAAAEB8FB3F55CCB4_679431139 = (mObjects.indexOf(item));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_626313566 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_626313566;
-        
-        
+        // ---------- Original Method ----------
+        //return mObjects.indexOf(item);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.451 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "8D1110A83D59CD0F6F81FBAF210DA5FC")
     public long getItemId(int position) {
         addTaint(position);
         long var4757FE07FD492A8BE0EA6A760D683D6E_2132326737 = (position);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1774496650 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1774496650;
-        
-        
+        // ---------- Original Method ----------
+        //return position;
     }
 
     
@@ -410,8 +407,8 @@ T var764B6AF9DF92D219D9605835E00EC09F_160918835 =         mObjects.get(position)
 View varC7C74D1A1F888482D2EEA96BBD632B6B_308821408 =         createViewFromResource(position, convertView, parent, mResource);
         varC7C74D1A1F888482D2EEA96BBD632B6B_308821408.addTaint(taint);
         return varC7C74D1A1F888482D2EEA96BBD632B6B_308821408;
-        
-        
+        // ---------- Original Method ----------
+        //return createViewFromResource(position, convertView, parent, mResource);
     }
 
     
@@ -427,52 +424,51 @@ View varC7C74D1A1F888482D2EEA96BBD632B6B_308821408 =         createViewFromResou
     if(convertView == null)        
         {
             view = mInflater.inflate(resource, parent, false);
-        } 
+        } //End block
         else
         {
             view = convertView;
-        } 
+        } //End block
         try 
         {
     if(mFieldId == 0)            
             {
                 text = (TextView) view;
-            } 
+            } //End block
             else
             {
                 text = (TextView) view.findViewById(mFieldId);
-            } 
-        } 
+            } //End block
+        } //End block
         catch (ClassCastException e)
         {
             IllegalStateException var462FBD2CDEE1AF0647B8C952849FC1E5_1747396043 = new IllegalStateException(
                     "ArrayAdapter requires the resource ID to be a TextView", e);
             var462FBD2CDEE1AF0647B8C952849FC1E5_1747396043.addTaint(taint);
             throw var462FBD2CDEE1AF0647B8C952849FC1E5_1747396043;
-        } 
+        } //End block
         T item = getItem(position);
     if(item instanceof CharSequence)        
         {
             text.setText((CharSequence)item);
-        } 
+        } //End block
         else
         {
             text.setText(item.toString());
-        } 
+        } //End block
 View var057D265746AE9672AFE5F9FF6338071D_723460512 =         view;
         var057D265746AE9672AFE5F9FF6338071D_723460512.addTaint(taint);
         return var057D265746AE9672AFE5F9FF6338071D_723460512;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.454 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
     public void setDropDownViewResource(int resource) {
         this.mDropDownResource = resource;
-        
-        
+        // ---------- Original Method ----------
+        //this.mDropDownResource = resource;
     }
 
     
@@ -485,8 +481,8 @@ View var057D265746AE9672AFE5F9FF6338071D_723460512 =         view;
 View var73BABEDDC942C821B8059F08E1C361F2_1938515674 =         createViewFromResource(position, convertView, parent, mDropDownResource);
         var73BABEDDC942C821B8059F08E1C361F2_1938515674.addTaint(taint);
         return var73BABEDDC942C821B8059F08E1C361F2_1938515674;
-        
-        
+        // ---------- Original Method ----------
+        //return createViewFromResource(position, convertView, parent, mDropDownResource);
     }
 
     
@@ -502,15 +498,15 @@ View var73BABEDDC942C821B8059F08E1C361F2_1938515674 =         createViewFromReso
     if(mFilter == null)        
         {
             mFilter = new ArrayFilter();
-        } 
+        } //End block
 Filter var6104E4BD549FCD2640641D136DD683A6_1488121355 =         mFilter;
         var6104E4BD549FCD2640641D136DD683A6_1488121355.addTaint(taint);
         return var6104E4BD549FCD2640641D136DD683A6_1488121355;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mFilter == null) {
+            //mFilter = new ArrayFilter();
+        //}
+        //return mFilter;
     }
 
     
@@ -519,7 +515,7 @@ Filter var6104E4BD549FCD2640641D136DD683A6_1488121355 =         mFilter;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.455 -0400", hash_original_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E", hash_generated_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E")
         public ArrayFilter ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -533,18 +529,18 @@ Filter var6104E4BD549FCD2640641D136DD683A6_1488121355 =         mFilter;
                 synchronized
 (mLock)                {
                     mOriginalValues = new ArrayList<T>(mObjects);
-                } 
-            } 
+                } //End block
+            } //End block
     if(prefix == null || prefix.length() == 0)            
             {
                 ArrayList<T> list;
                 synchronized
 (mLock)                {
                     list = new ArrayList<T>(mOriginalValues);
-                } 
+                } //End block
                 results.values = list;
                 results.count = list.size();
-            } 
+            } //End block
             else
             {
                 String prefixString = prefix.toString().toLowerCase();
@@ -552,7 +548,7 @@ Filter var6104E4BD549FCD2640641D136DD683A6_1488121355 =         mFilter;
                 synchronized
 (mLock)                {
                     values = new ArrayList<T>(mOriginalValues);
-                } 
+                } //End block
                 final int count = values.size();
                 final ArrayList<T> newValues = new ArrayList<T>();
 for(int i = 0;i < count;i++)
@@ -562,7 +558,7 @@ for(int i = 0;i < count;i++)
     if(valueText.startsWith(prefixString))                    
                     {
                         newValues.add(value);
-                    } 
+                    } //End block
                     else
                     {
                         final String[] words = valueText.split(" ");
@@ -573,18 +569,18 @@ for(int k = 0;k < wordCount;k++)
                             {
                                 newValues.add(value);
                                 break;
-                            } 
-                        } 
-                    } 
-                } 
+                            } //End block
+                        } //End block
+                    } //End block
+                } //End block
                 results.values = newValues;
                 results.count = newValues.size();
-            } 
+            } //End block
 FilterResults var238ECCC9872FFCA0B3C3DB83598FF044_93833358 =             results;
             var238ECCC9872FFCA0B3C3DB83598FF044_93833358.addTaint(taint);
             return var238ECCC9872FFCA0B3C3DB83598FF044_93833358;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -597,18 +593,18 @@ FilterResults var238ECCC9872FFCA0B3C3DB83598FF044_93833358 =             results
     if(results.count > 0)            
             {
                 notifyDataSetChanged();
-            } 
+            } //End block
             else
             {
                 notifyDataSetInvalidated();
-            } 
-            
-            
-            
-                
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //mObjects = (List<T>) results.values;
+            //if (results.count > 0) {
+                //notifyDataSetChanged();
+            //} else {
+                //notifyDataSetInvalidated();
+            //}
         }
 
         

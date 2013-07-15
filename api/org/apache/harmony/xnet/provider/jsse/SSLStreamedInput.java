@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ public class SSLStreamedInput extends SSLInputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.436 -0400", hash_original_method = "2603FDEDA68AA1C899FD148F0716545A", hash_generated_method = "85D6DFF45943A1150F3CC11B41730323")
     public  SSLStreamedInput(InputStream in) {
         this.in = in;
-        
-        
+        // ---------- Original Method ----------
+        //this.in = in;
     }
 
     
@@ -26,8 +26,8 @@ public class SSLStreamedInput extends SSLInputStream {
         int var443A4CD22A314221356D4EA83AFE1E61_1107825139 = (in.available());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_477596140 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_477596140;
-        
-        
+        // ---------- Original Method ----------
+        //return in.available();
     }
 
     
@@ -40,16 +40,16 @@ public class SSLStreamedInput extends SSLInputStream {
             EndOfSourceException var6ABBC3A72E0A5669B60B0ADF303EF8C9_1607515992 = new EndOfSourceException();
             var6ABBC3A72E0A5669B60B0ADF303EF8C9_1607515992.addTaint(taint);
             throw var6ABBC3A72E0A5669B60B0ADF303EF8C9_1607515992;
-        } 
+        } //End block
         int var9B207167E5381C47682C6B4F58A623FB_130346555 = (res);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080308602 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080308602;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int res = in.read();
+        //if (res < 0) {
+            //throw new EndOfSourceException();
+        //}
+        //return res;
     }
 
     

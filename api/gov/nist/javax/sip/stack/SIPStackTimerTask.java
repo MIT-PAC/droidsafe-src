@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public abstract class SIPStackTimerTask extends TimerTask {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:45.477 -0400", hash_original_method = "CF93C0792FF2A4713A916D013DB0C142", hash_generated_method = "CF93C0792FF2A4713A916D013DB0C142")
     public SIPStackTimerTask ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -23,19 +23,19 @@ public abstract class SIPStackTimerTask extends TimerTask {
         try 
         {
             runTask();
-        } 
+        } //End block
         catch (Throwable e)
         {
             System.out.println("SIP stack timer task failed due to exception:");
             e.printStackTrace();
-        } 
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //runTask();
+        //} catch (Throwable e) {
+            //System.out.println("SIP stack timer task failed due to exception:");
+            //e.printStackTrace();
+        //}
     }
 
     

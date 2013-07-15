@@ -1,6 +1,6 @@
 package android.app;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,8 +20,8 @@ public class KeyguardManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.675 -0400", hash_original_method = "5B69E23112A7A32F8407EC1FFE36B34D", hash_generated_method = "3C92E03D678C4B924547CF2813CCA769")
       KeyguardManager() {
         mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
-        
-        
+        // ---------- Original Method ----------
+        //mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
     }
 
     
@@ -32,8 +32,8 @@ public class KeyguardManager {
 KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310 =         new KeyguardLock(tag);
         varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310.addTaint(taint);
         return varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310;
-        
-        
+        // ---------- Original Method ----------
+        //return new KeyguardLock(tag);
     }
 
     
@@ -44,19 +44,19 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310 =         new Keygua
             boolean var3C36CA7330DB079E34B974089829DB13_449243492 = (mWM.isKeyguardLocked());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1207493116 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1207493116;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_1808600976 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_371672938 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_371672938;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mWM.isKeyguardLocked();
+        //} catch (RemoteException ex) {
+            //return false;
+        //}
     }
 
     
@@ -67,19 +67,19 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310 =         new Keygua
             boolean varE5A33C01CE2969B848F2F3442C462F84_1088459290 = (mWM.isKeyguardSecure());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_136252191 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_136252191;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_455461565 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_30117087 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_30117087;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mWM.isKeyguardSecure();
+        //} catch (RemoteException ex) {
+            //return false;
+        //}
     }
 
     
@@ -90,19 +90,19 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310 =         new Keygua
             boolean var264F95E421F60912B701F635207F7053_1252498810 = (mWM.inKeyguardRestrictedInputMode());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1068066492 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1068066492;
-        } 
+        } //End block
         catch (RemoteException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_351444881 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_577028629 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_577028629;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return mWM.inKeyguardRestrictedInputMode();
+        //} catch (RemoteException ex) {
+            //return false;
+        //}
     }
 
     
@@ -115,26 +115,26 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310 =         new Keygua
             mWM.exitKeyguardSecurely(new IOnKeyguardExitResult.Stub() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.678 -0400", hash_original_method = "3EC2E5FCC08061EF9551EB1CD521B8A8", hash_generated_method = "D3CE17FC8F30A272A316DE9D2D6CBA05")
         public void onKeyguardExitResult(boolean success) throws RemoteException {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(success);
             callback.onKeyguardExitResult(success);
-            
-            
+            // ---------- Original Method ----------
+            //callback.onKeyguardExitResult(success);
         }
 });
-        } 
+        } //End block
         catch (RemoteException e)
         {
-        } 
-        
-        
-            
-                
-                    
-                
-            
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //mWM.exitKeyguardSecurely(new IOnKeyguardExitResult.Stub() {
+                //public void onKeyguardExitResult(boolean success) throws RemoteException {
+                    //callback.onKeyguardExitResult(success);
+                //}
+            //});
+        //} catch (RemoteException e) {
+        //}
     }
 
     
@@ -149,8 +149,8 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310 =         new Keygua
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.680 -0400", hash_original_method = "4D032B51654914D2B6BB0DA8DB46B141", hash_generated_method = "C4956F8D2CA9FF0EA9184C6E2220865C")
           KeyguardLock(String tag) {
             mTag = tag;
-            
-            
+            // ---------- Original Method ----------
+            //mTag = tag;
         }
 
         
@@ -159,15 +159,15 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310 =         new Keygua
             try 
             {
                 mWM.disableKeyguard(mToken, mTag);
-            } 
+            } //End block
             catch (RemoteException ex)
             {
-            } 
-            
-            
-                
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //mWM.disableKeyguard(mToken, mTag);
+            //} catch (RemoteException ex) {
+            //}
         }
 
         
@@ -176,15 +176,15 @@ KeyguardLock varF94DC7E8A9793C7121D37FAB19D77E2D_2116941310 =         new Keygua
             try 
             {
                 mWM.reenableKeyguard(mToken);
-            } 
+            } //End block
             catch (RemoteException ex)
             {
-            } 
-            
-            
-                
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try {
+                //mWM.reenableKeyguard(mToken);
+            //} catch (RemoteException ex) {
+            //}
         }
 
         

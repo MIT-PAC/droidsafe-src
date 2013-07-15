@@ -1,6 +1,6 @@
 package android.support.v4.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class KeyEventCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.711 -0400", hash_original_method = "532007D9C650EDCB29F8F1C752472985", hash_generated_method = "532007D9C650EDCB29F8F1C752472985")
     public KeyEventCompat ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -45,7 +45,7 @@ public class KeyEventCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.713 -0400", hash_original_method = "6346EE5F678CD82673E4481506E12189", hash_generated_method = "6346EE5F678CD82673E4481506E12189")
         public BaseKeyEventVersionImpl ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -67,7 +67,6 @@ public class KeyEventCompat {
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.714 -0400", hash_original_method = "30C53A116B74264C0199431DE5B4E778", hash_generated_method = "ED222066BE33E4DC155BA09F99B1A46C")
         @Override
         public int normalizeMetaState(int metaState) {
@@ -75,22 +74,22 @@ public class KeyEventCompat {
     if((metaState & (KeyEvent.META_SHIFT_LEFT_ON | KeyEvent.META_SHIFT_RIGHT_ON)) != 0)            
             {
                 metaState |= KeyEvent.META_SHIFT_ON;
-            } 
+            } //End block
     if((metaState & (KeyEvent.META_ALT_LEFT_ON | KeyEvent.META_ALT_RIGHT_ON)) != 0)            
             {
                 metaState |= KeyEvent.META_ALT_ON;
-            } 
+            } //End block
             int varF131E554CCF28EF881A6EA23A415DF20_502741844 = (metaState & META_ALL_MASK);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468195360 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468195360;
-            
-            
-                
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if ((metaState & (KeyEvent.META_SHIFT_LEFT_ON | KeyEvent.META_SHIFT_RIGHT_ON)) != 0) {
+                //metaState |= KeyEvent.META_SHIFT_ON;
+            //}
+            //if ((metaState & (KeyEvent.META_ALT_LEFT_ON | KeyEvent.META_ALT_RIGHT_ON)) != 0) {
+                //metaState |= KeyEvent.META_ALT_ON;
+            //}
+            //return metaState & META_ALL_MASK;
         }
 
         
@@ -107,13 +106,13 @@ public class KeyEventCompat {
             boolean varCD773534CA1F36F227DA1CEA986BE996_955020460 = (metaState == modifiers);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1392991993 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1392991993;
-            
-            
-            
-                    
-            
-                    
-            
+            // ---------- Original Method ----------
+            //metaState = normalizeMetaState(metaState) & META_MODIFIER_MASK;
+            //metaState = metaStateFilterDirectionalModifiers(metaState, modifiers,
+                    //KeyEvent.META_SHIFT_ON, KeyEvent.META_SHIFT_LEFT_ON, KeyEvent.META_SHIFT_RIGHT_ON);
+            //metaState = metaStateFilterDirectionalModifiers(metaState, modifiers,
+                    //KeyEvent.META_ALT_ON, KeyEvent.META_ALT_LEFT_ON, KeyEvent.META_ALT_RIGHT_ON);
+            //return metaState == modifiers;
         }
 
         
@@ -124,8 +123,8 @@ public class KeyEventCompat {
             boolean var600430DD8972DEA8208090E063259253_845136931 = ((normalizeMetaState(metaState) & META_MODIFIER_MASK) == 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_534980544 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_534980544;
-            
-            
+            // ---------- Original Method ----------
+            //return (normalizeMetaState(metaState) & META_MODIFIER_MASK) == 0;
         }
 
         
@@ -146,7 +145,7 @@ public class KeyEventCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.717 -0400", hash_original_method = "C9F0128F3261973D5584669E422DE07F", hash_generated_method = "C9F0128F3261973D5584669E422DE07F")
         public HoneycombKeyEventVersionImpl ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -157,8 +156,8 @@ public class KeyEventCompat {
             int var99D2B3D9E8AC7FD8B0600C8F657F3E74_1442565451 = (KeyEventCompatHoneycomb.normalizeMetaState(metaState));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_930900202 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_930900202;
-            
-            
+            // ---------- Original Method ----------
+            //return KeyEventCompatHoneycomb.normalizeMetaState(metaState);
         }
 
         
@@ -170,8 +169,8 @@ public class KeyEventCompat {
             boolean varC060CA608D194BFD7BCEA744C6EB1BF3_567571696 = (KeyEventCompatHoneycomb.metaStateHasModifiers(metaState, modifiers));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_314476447 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_314476447;
-            
-            
+            // ---------- Original Method ----------
+            //return KeyEventCompatHoneycomb.metaStateHasModifiers(metaState, modifiers);
         }
 
         
@@ -182,8 +181,8 @@ public class KeyEventCompat {
             boolean varC84BF0FD6DAF8F4BBB4B3AE6A5E3787F_188002345 = (KeyEventCompatHoneycomb.metaStateHasNoModifiers(metaState));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_984503323 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_984503323;
-            
-            
+            // ---------- Original Method ----------
+            //return KeyEventCompatHoneycomb.metaStateHasNoModifiers(metaState);
         }
 
         

@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.digests;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,8 +28,8 @@ public class MD5Digest extends GeneralDigest {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.092 -0400", hash_original_method = "CA98629A68DF074D716C2EED7E360A30", hash_generated_method = "31A92487FDF635D7C47FB6419F68D10C")
     public  MD5Digest() {
         reset();
-        
-        
+        // ---------- Original Method ----------
+        //reset();
     }
 
     
@@ -42,35 +42,33 @@ public class MD5Digest extends GeneralDigest {
         H4 = t.H4;
         System.arraycopy(t.X, 0, X, 0, t.X.length);
         xOff = t.xOff;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //H1 = t.H1;
+        //H2 = t.H2;
+        //H3 = t.H3;
+        //H4 = t.H4;
+        //System.arraycopy(t.X, 0, X, 0, t.X.length);
+        //xOff = t.xOff;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.092 -0400", hash_original_method = "D54FFA3F0B368E98533F0D87F68E98DA", hash_generated_method = "67211388691239B2683620F8FD66EBFE")
     public String getAlgorithmName() {
 String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
         var01833783E5A5FEFADF736A2D18E3349A_2087115787.addTaint(taint);
         return var01833783E5A5FEFADF736A2D18E3349A_2087115787;
-        
-        
+        // ---------- Original Method ----------
+        //return "MD5";
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.092 -0400", hash_original_method = "3039C1E557EE9A1557E064C50078D361", hash_generated_method = "C2A8D8D6403E5CBA81A6153D9F642DD2")
     public int getDigestSize() {
         int var4582481E693E9037762BFFA6D99AC172_639903042 = (DIGEST_LENGTH);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_909915476 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_909915476;
-        
-        
+        // ---------- Original Method ----------
+        //return DIGEST_LENGTH;
     }
 
     
@@ -83,14 +81,14 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
     if(xOff == 16)        
         {
             processBlock();
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //X[xOff++] = (in[inOff] & 0xff) | ((in[inOff + 1] & 0xff) << 8)
+            //| ((in[inOff + 2] & 0xff) << 16) | ((in[inOff + 3] & 0xff) << 24);
+        //if (xOff == 16)
+        //{
+            //processBlock();
+        //}
     }
 
     
@@ -100,20 +98,19 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
     if(xOff > 14)        
         {
             processBlock();
-        } 
+        } //End block
         X[14] = (int)(bitLength & 0xffffffff);
         X[15] = (int)(bitLength >>> 32);
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (xOff > 14)
+        //{
+            //processBlock();
+        //}
+        //X[14] = (int)(bitLength & 0xffffffff);
+        //X[15] = (int)(bitLength >>> 32);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.093 -0400", hash_original_method = "C095FEC528E22D3933584D069B5AEBEC", hash_generated_method = "32D201254469F34E37C8CDB6F6210FF9")
     private void unpackWord(
         int     word,
@@ -126,11 +123,11 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
         out[outOff + 1] = (byte)(word >>> 8);
         out[outOff + 2] = (byte)(word >>> 16);
         out[outOff + 3] = (byte)(word >>> 24);
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //out[outOff]     = (byte)word;
+        //out[outOff + 1] = (byte)(word >>> 8);
+        //out[outOff + 2] = (byte)(word >>> 16);
+        //out[outOff + 3] = (byte)(word >>> 24);
     }
 
     
@@ -149,14 +146,14 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
         int var4582481E693E9037762BFFA6D99AC172_2012722691 = (DIGEST_LENGTH);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1037252865 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1037252865;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //finish();
+        //unpackWord(H1, out, outOff);
+        //unpackWord(H2, out, outOff + 4);
+        //unpackWord(H3, out, outOff + 8);
+        //unpackWord(H4, out, outOff + 12);
+        //reset();
+        //return DIGEST_LENGTH;
     }
 
     
@@ -171,22 +168,21 @@ String var01833783E5A5FEFADF736A2D18E3349A_2087115787 =         "MD5";
 for(int i = 0;i != X.length;i++)
         {
             X[i] = 0;
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //super.reset();
+        //H1 = 0x67452301;
+        //H2 = 0xefcdab89;
+        //H3 = 0x98badcfe;
+        //H4 = 0x10325476;
+        //xOff = 0;
+        //for (int i = 0; i != X.length; i++)
+        //{
+            //X[i] = 0;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "A078642CC72A2F738FA96A2966371333", hash_generated_method = "625D7D1C5A0D5BC4E3E76C55D66E3923")
     private int rotateLeft(
         int x,
@@ -196,12 +192,11 @@ for(int i = 0;i != X.length;i++)
         int var6FA5A2142C0B48AC269A6CD715ACE791_2127064599 = ((x << n) | (x >>> (32 - n)));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1312646465 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1312646465;
-        
-        
+        // ---------- Original Method ----------
+        //return (x << n) | (x >>> (32 - n));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "38D2A24ABE645695148EECE5A1633407", hash_generated_method = "DC29E61ACD8CAAA15150634E9D100E13")
     private int F(
         int u,
@@ -213,12 +208,11 @@ for(int i = 0;i != X.length;i++)
         int var23482B7C8A09ADE7AC52A36F52C9E0A8_1793271103 = ((u & v) | (~u & w));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263548947 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263548947;
-        
-        
+        // ---------- Original Method ----------
+        //return (u & v) | (~u & w);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "F823417414ECF2428B5CBDD347B9FAAC", hash_generated_method = "2955155B583D6377D428D1F666501B16")
     private int G(
         int u,
@@ -230,12 +224,11 @@ for(int i = 0;i != X.length;i++)
         int varFDAFA12B724129B81B1366BAA0B17F28_1410022788 = ((u & w) | (v & ~w));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1980876293 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1980876293;
-        
-        
+        // ---------- Original Method ----------
+        //return (u & w) | (v & ~w);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.094 -0400", hash_original_method = "83C9F03736BB5BDF54EC87B24EC05890", hash_generated_method = "55989375281E432204AA7E8BEB6EB7B7")
     private int H(
         int u,
@@ -247,12 +240,11 @@ for(int i = 0;i != X.length;i++)
         int varA428E8AE54A74D88A00737DF2EDE78B8_937950944 = (u ^ v ^ w);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790729576 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790729576;
-        
-        
+        // ---------- Original Method ----------
+        //return u ^ v ^ w;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.095 -0400", hash_original_method = "23BAA908E549D3D7165335B8EBDAA412", hash_generated_method = "6BEB23B5DDCC5E182ACE9E82CA319556")
     private int K(
         int u,
@@ -264,8 +256,8 @@ for(int i = 0;i != X.length;i++)
         int var606D2B30FE1C5342B0D7A9DFFFDF1F70_1123454390 = (v ^ (u | ~w));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1477893671 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1477893671;
-        
-        
+        // ---------- Original Method ----------
+        //return v ^ (u | ~w);
     }
 
     
@@ -347,9 +339,9 @@ for(int i = 0;i != X.length;i++)
 for(int i = 0;i != X.length;i++)
         {
             X[i] = 0;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

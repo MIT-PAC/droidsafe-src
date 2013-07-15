@@ -1,6 +1,6 @@
 package java.sql;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class Date extends java.util.Date {
         addTaint(theDay);
         addTaint(theMonth);
         addTaint(theYear);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,7 +22,7 @@ public class Date extends java.util.Date {
     public  Date(long theDate) {
         super(normalizeTime(theDate));
         addTaint(theDate);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -33,8 +33,8 @@ public class Date extends java.util.Date {
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1940358661 = new IllegalArgumentException();
         var5783EF97022AA508B74A1E3EA38534AF_1940358661.addTaint(taint);
         throw var5783EF97022AA508B74A1E3EA38534AF_1940358661;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IllegalArgumentException();
     }
 
     
@@ -45,8 +45,8 @@ public class Date extends java.util.Date {
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1955801287 = new IllegalArgumentException();
         var5783EF97022AA508B74A1E3EA38534AF_1955801287.addTaint(taint);
         throw var5783EF97022AA508B74A1E3EA38534AF_1955801287;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IllegalArgumentException();
     }
 
     
@@ -57,8 +57,8 @@ public class Date extends java.util.Date {
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_251229508 = new IllegalArgumentException();
         var5783EF97022AA508B74A1E3EA38534AF_251229508.addTaint(taint);
         throw var5783EF97022AA508B74A1E3EA38534AF_251229508;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IllegalArgumentException();
     }
 
     
@@ -70,8 +70,8 @@ public class Date extends java.util.Date {
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1777057770 = new IllegalArgumentException();
         var5783EF97022AA508B74A1E3EA38534AF_1777057770.addTaint(taint);
         throw var5783EF97022AA508B74A1E3EA38534AF_1777057770;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IllegalArgumentException();
     }
 
     
@@ -83,8 +83,8 @@ public class Date extends java.util.Date {
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1346051331 = new IllegalArgumentException();
         var5783EF97022AA508B74A1E3EA38534AF_1346051331.addTaint(taint);
         throw var5783EF97022AA508B74A1E3EA38534AF_1346051331;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IllegalArgumentException();
     }
 
     
@@ -96,8 +96,8 @@ public class Date extends java.util.Date {
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_868864342 = new IllegalArgumentException();
         var5783EF97022AA508B74A1E3EA38534AF_868864342.addTaint(taint);
         throw var5783EF97022AA508B74A1E3EA38534AF_868864342;
-        
-        
+        // ---------- Original Method ----------
+        //throw new IllegalArgumentException();
     }
 
     
@@ -106,8 +106,8 @@ public class Date extends java.util.Date {
     public void setTime(long theTime) {
         addTaint(theTime);
         super.setTime(normalizeTime(theTime));
-        
-        
+        // ---------- Original Method ----------
+        //super.setTime(normalizeTime(theTime));
     }
 
     
@@ -123,14 +123,14 @@ public class Date extends java.util.Date {
 String var2460B846747F8B22185AD8BE722266A5_2072412108 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_2072412108.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_2072412108;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder sb = new StringBuilder(10);
+        //format((getYear() + 1900), 4, sb);
+        //sb.append('-');
+        //format((getMonth() + 1), 2, sb);
+        //sb.append('-');
+        //format(getDate(), 2, sb);
+        //return sb.toString();
     }
 
     
@@ -143,14 +143,14 @@ String var2460B846747F8B22185AD8BE722266A5_2072412108 =         sb.toString();
     if(digits - str.length() > 0)        
         {
             sb.append(PADDING.substring(0, digits - str.length()));
-        } 
+        } //End block
         sb.append(str);
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //String str = String.valueOf(date);
+        //if (digits - str.length() > 0) {
+            //sb.append(PADDING.substring(0, digits - str.length()));
+        //}
+        //sb.append(str);
     }
 
     
@@ -173,8 +173,7 @@ String var2460B846747F8B22185AD8BE722266A5_2072412108 =         sb.toString();
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static long normalizeTime(long theTime) {
+        private static long normalizeTime(long theTime) {
         return theTime;
     }
 

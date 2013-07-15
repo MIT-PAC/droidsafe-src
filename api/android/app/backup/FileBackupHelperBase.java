@@ -1,6 +1,6 @@
 package android.app.backup;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,9 +25,9 @@ class FileBackupHelperBase {
       FileBackupHelperBase(Context context) {
         mPtr = ctor();
         mContext = context;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPtr = ctor();
+        //mContext = context;
     }
 
     
@@ -36,17 +36,17 @@ class FileBackupHelperBase {
         try 
         {
             dtor(mPtr);
-        } 
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //dtor(mPtr);
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
@@ -76,7 +76,6 @@ class FileBackupHelperBase {
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.147 -0400", hash_original_method = "A480CB5B709E68610E22FE65F3C016D5", hash_generated_method = "0270C271809268AE5BE00650BF16D52D")
      boolean writeFile(File f, BackupDataInputStream in) {
         addTaint(in.getTaint());
@@ -90,35 +89,34 @@ class FileBackupHelperBase {
     if(!mExceptionLogged)            
             {
                 mExceptionLogged = true;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var5B974C024B7AC2ED9560620242496414_385644667 = ((result == 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_988349990 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_988349990;
-        
-        
-        
-        
-        
-        
-            
-                
-                        
-                        
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int result = -1;
+        //File parent = f.getParentFile();
+        //parent.mkdirs();
+        //result = writeFile_native(mPtr, f.getAbsolutePath(), in.mData.mBackupReader);
+        //if (result != 0) {
+            //if (!mExceptionLogged) {
+                //Log.e(TAG, "Failed restoring file '" + f + "' for app '"
+                        //+ mContext.getPackageName() + "\' result=0x"
+                        //+ Integer.toHexString(result));
+                //mExceptionLogged = true;
+            //}
+        //}
+        //return (result == 0);
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.148 -0400", hash_original_method = "2A62291A9AE3A671BAC15E3191D32511", hash_generated_method = "1724FA7548594C7A79F88CD13CBDDDD8")
     public void writeNewStateDescription(ParcelFileDescriptor fd) {
         addTaint(fd.getTaint());
         int result = writeSnapshot_native(mPtr, fd.getFileDescriptor());
-        
-        
+        // ---------- Original Method ----------
+        //int result = writeSnapshot_native(mPtr, fd.getFileDescriptor());
     }
 
     
@@ -133,18 +131,18 @@ for(String s : list)
                 boolean varB326B5062B2F0E69046810717534CB09_1566285368 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_90525958 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_90525958;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1036465056 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1298037448 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1298037448;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (String s: list) {
+            //if (s.equals(key)) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     

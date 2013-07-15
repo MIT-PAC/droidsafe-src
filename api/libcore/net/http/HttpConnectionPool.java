@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,21 +27,21 @@ final class HttpConnectionPool {
         {
             maxConnections = 0;
             return;
-        } 
+        } //End block
         String maxConnectionsString = System.getProperty("http.maxConnections");
         this.maxConnections = maxConnectionsString != null
                 ? Integer.parseInt(maxConnectionsString)
                 : 5;
-        
-        
-        
-            
-            
-        
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //String keepAlive = System.getProperty("http.keepAlive");
+        //if (keepAlive != null && !Boolean.parseBoolean(keepAlive)) {
+            //maxConnections = 0;
+            //return;
+        //}
+        //String maxConnectionsString = System.getProperty("http.maxConnections");
+        //this.maxConnections = maxConnectionsString != null
+                //? Integer.parseInt(maxConnectionsString)
+                //: 5;
     }
 
     
@@ -65,30 +65,30 @@ final class HttpConnectionPool {
 HttpConnection var9911BB1C5F1522C1630847C40E8BC67E_303309818 =                         connection;
                         var9911BB1C5F1522C1630847C40E8BC67E_303309818.addTaint(taint);
                         return var9911BB1C5F1522C1630847C40E8BC67E_303309818;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 connectionPool.remove(address);
-            } 
-        } 
+            } //End block
+        } //End block
 HttpConnection varA3969E918D3E68DBEDAE3D4F56B1CEE1_2126001397 =         address.connect(connectTimeout);
         varA3969E918D3E68DBEDAE3D4F56B1CEE1_2126001397.addTaint(taint);
         return varA3969E918D3E68DBEDAE3D4F56B1CEE1_2126001397;
-        
-        
-            
-            
-                
-                    
-                    
-                        
-                        
-                        
-                    
-                
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //synchronized (connectionPool) {
+            //List<HttpConnection> connections = connectionPool.get(address);
+            //if (connections != null) {
+                //while (!connections.isEmpty()) {
+                    //HttpConnection connection = connections.remove(connections.size() - 1);
+                    //if (!connection.isStale()) { 
+                        //final Socket socket = connection.getSocket();
+                        //SocketTagger.get().tag(socket);
+                        //return connection;
+                    //}
+                //}
+                //connectionPool.remove(address);
+            //}
+        //}
+        //return address.connect(connectTimeout);
     }
 
     
@@ -99,13 +99,13 @@ HttpConnection varA3969E918D3E68DBEDAE3D4F56B1CEE1_2126001397 =         address.
         try 
         {
             SocketTagger.get().untag(socket);
-        } 
+        } //End block
         catch (SocketException e)
         {
             System.logW("Unable to untagSocket(): " + e);
             connection.closeSocketAndStreams();
             return;
-        } 
+        } //End block
     if(maxConnections > 0 && connection.isEligibleForRecycling())        
         {
             HttpConnection.Address address = connection.getAddress();
@@ -116,17 +116,17 @@ HttpConnection varA3969E918D3E68DBEDAE3D4F56B1CEE1_2126001397 =         address.
                 {
                     connections = new ArrayList<HttpConnection>();
                     connectionPool.put(address, connections);
-                } 
+                } //End block
     if(connections.size() < maxConnections)                
                 {
                     connections.add(connection);
                     return;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
         connection.closeSocketAndStreams();
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

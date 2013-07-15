@@ -1,6 +1,6 @@
 package libcore.net.url;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,9 +21,9 @@ class FtpURLInputStream extends InputStream {
     public  FtpURLInputStream(InputStream is, Socket controlSocket) {
         this.is = is;
         this.controlSocket = controlSocket;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.is = is;
+        //this.controlSocket = controlSocket;
     }
 
     
@@ -33,8 +33,8 @@ class FtpURLInputStream extends InputStream {
         int var938BFE1E2B1B866EF0C17C516F788BB6_1705935129 = (is.read());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123655000 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123655000;
-        
-        
+        // ---------- Original Method ----------
+        //return is.read();
     }
 
     
@@ -47,8 +47,8 @@ class FtpURLInputStream extends InputStream {
         int var7D2DE23E9BAED244DAE0532C0F58B292_1804164385 = (is.read(buf, off, nbytes));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_832112941 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_832112941;
-        
-        
+        // ---------- Original Method ----------
+        //return is.read(buf, off, nbytes);
     }
 
     
@@ -56,8 +56,8 @@ class FtpURLInputStream extends InputStream {
     @Override
     public synchronized void reset() throws IOException {
         is.reset();
-        
-        
+        // ---------- Original Method ----------
+        //is.reset();
     }
 
     
@@ -66,8 +66,8 @@ class FtpURLInputStream extends InputStream {
     public synchronized void mark(int limit) {
         addTaint(limit);
         is.mark(limit);
-        
-        
+        // ---------- Original Method ----------
+        //is.mark(limit);
     }
 
     
@@ -77,8 +77,8 @@ class FtpURLInputStream extends InputStream {
         boolean varA77FF1CF6434B3BF94A3328A38BB7FB5_726272266 = (is.markSupported());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_850055419 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_850055419;
-        
-        
+        // ---------- Original Method ----------
+        //return is.markSupported();
     }
 
     
@@ -87,9 +87,9 @@ class FtpURLInputStream extends InputStream {
     public void close() {
         IoUtils.closeQuietly(is);
         IoUtils.closeQuietly(controlSocket);
-        
-        
-        
+        // ---------- Original Method ----------
+        //IoUtils.closeQuietly(is);
+        //IoUtils.closeQuietly(controlSocket);
     }
 
     
@@ -99,8 +99,8 @@ class FtpURLInputStream extends InputStream {
         int var29D049C0576020876FCD2C7E94605AB2_1818558133 = (is.available());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128554851 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128554851;
-        
-        
+        // ---------- Original Method ----------
+        //return is.available();
     }
 
     
@@ -111,8 +111,8 @@ class FtpURLInputStream extends InputStream {
         long var1BE0B9E2AD48673F22F04E6C493BA356_1246198849 = (is.skip(byteCount));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1078292118 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1078292118;
-        
-        
+        // ---------- Original Method ----------
+        //return is.skip(byteCount);
     }
 
     

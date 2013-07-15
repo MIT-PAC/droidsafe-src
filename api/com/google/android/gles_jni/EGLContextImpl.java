@@ -1,6 +1,6 @@
 package com.google.android.gles_jni;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,21 +19,20 @@ public class EGLContextImpl extends EGLContext {
     public  EGLContextImpl(int ctx) {
         mEGLContext = ctx;
         mGLContext = new GLImpl();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mEGLContext = ctx;
+        //mGLContext = new GLImpl();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.370 -0400", hash_original_method = "128F5F8CB79090E8F4914FDDEA205182", hash_generated_method = "4BD651F6757A2E259D3186ACF7EDFAF5")
     @Override
     public GL getGL() {
 GL var70A52609CF58EAE7203DCD79F70642FE_1200444793 =         mGLContext;
         var70A52609CF58EAE7203DCD79F70642FE_1200444793.addTaint(taint);
         return var70A52609CF58EAE7203DCD79F70642FE_1200444793;
-        
-        
+        // ---------- Original Method ----------
+        //return mGLContext;
     }
 
     
@@ -57,23 +56,22 @@ GL var70A52609CF58EAE7203DCD79F70642FE_1200444793 =         mGLContext;
         boolean varC748B22ABBEB419443EA05B169460A2E_1463580059 = (mEGLContext == that.mEGLContext);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526186042 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1526186042;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (this == o) return true;
+        //if (o == null || getClass() != o.getClass()) return false;
+        //EGLContextImpl that = (EGLContextImpl) o;
+        //return mEGLContext == that.mEGLContext;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.370 -0400", hash_original_method = "64133BD5554848E690D4A8A4234F010E", hash_generated_method = "DE6BE67016368C764247AD72704B3F24")
     @Override
     public int hashCode() {
         int var52E1B276FFEE4F71607C40EFA3B550E4_352971111 = (mEGLContext);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_967147837 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_967147837;
-        
-        
+        // ---------- Original Method ----------
+        //return mEGLContext;
     }
 
     

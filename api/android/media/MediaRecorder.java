@@ -1,6 +1,6 @@
 package android.media;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,46 +44,43 @@ public class MediaRecorder {
     if((looper = Looper.myLooper()) != null)        
         {
             mEventHandler = new EventHandler(this, looper);
-        } 
+        } //End block
         else
     if((looper = Looper.getMainLooper()) != null)        
         {
             mEventHandler = new EventHandler(this, looper);
-        } 
+        } //End block
         else
         {
             mEventHandler = null;
-        } 
+        } //End block
         native_setup(new WeakReference<MediaRecorder>(this));
-        
-        
-        
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Looper looper;
+        //if ((looper = Looper.myLooper()) != null) {
+            //mEventHandler = new EventHandler(this, looper);
+        //} else if ((looper = Looper.getMainLooper()) != null) {
+            //mEventHandler = new EventHandler(this, looper);
+        //} else {
+            //mEventHandler = null;
+        //}
+        //native_setup(new WeakReference<MediaRecorder>(this));
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.375 -0400", hash_original_method = "ABDAB49B7FE2D6558157D548CA69CDD8", hash_generated_method = "C62F29ED3BE34C79C8935033785D9F08")
     public void setCamera(Camera c) {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.376 -0400", hash_original_method = "9D12D44BFB2D2426E5261AD40C8A6399", hash_generated_method = "5F5616EC15839F62209B7DDD41139649")
     public void setPreviewDisplay(Surface sv) {
         mSurface = sv;
-        
-        
+        // ---------- Original Method ----------
+        //mSurface = sv;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.376 -0400", hash_original_method = "A371021B9F589CE697BF3A2D834DE3D5", hash_generated_method = "D99CDB6B4B5CFD54011DEE450366ABC1")
     public void setAudioSource(int audio_source) throws IllegalStateException {
     }
@@ -94,7 +91,6 @@ public class MediaRecorder {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.376 -0400", hash_original_method = "95828B107E82D883B2C1CA5CFF39AF89", hash_generated_method = "7DC66B4101958A7F8DCA9F71E12D62F0")
     public void setVideoSource(int video_source) throws IllegalStateException {
     }
@@ -112,29 +108,29 @@ public class MediaRecorder {
              profile.quality <= CamcorderProfile.QUALITY_TIME_LAPSE_QVGA)        
         {
             setParameter(String.format("time-lapse-enable=1"));
-        } 
+        } //End block
         else
         {
             setAudioEncodingBitRate(profile.audioBitRate);
             setAudioChannels(profile.audioChannels);
             setAudioSamplingRate(profile.audioSampleRate);
             setAudioEncoder(profile.audioCodec);
-        } 
-        
-        
-        
-        
-        
-        
-        
-             
-            
-        
-            
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //setOutputFormat(profile.fileFormat);
+        //setVideoFrameRate(profile.videoFrameRate);
+        //setVideoSize(profile.videoFrameWidth, profile.videoFrameHeight);
+        //setVideoEncodingBitRate(profile.videoBitRate);
+        //setVideoEncoder(profile.videoCodec);
+        //if (profile.quality >= CamcorderProfile.QUALITY_TIME_LAPSE_LOW &&
+             //profile.quality <= CamcorderProfile.QUALITY_TIME_LAPSE_QVGA) {
+            //setParameter(String.format("time-lapse-enable=1"));
+        //} else {
+            //setAudioEncodingBitRate(profile.audioBitRate);
+            //setAudioChannels(profile.audioChannels);
+            //setAudioSamplingRate(profile.audioSampleRate);
+            //setAudioEncoder(profile.audioCodec);
+        //}
     }
 
     
@@ -145,11 +141,11 @@ public class MediaRecorder {
         int timeBetweenFrameCaptureMs = (int) (1000 * timeBetweenFrameCapture);
         setParameter(String.format("time-between-time-lapse-frame-capture=%d",
                     timeBetweenFrameCaptureMs));
-        
-        
-        
-        
-                    
+        // ---------- Original Method ----------
+        //double timeBetweenFrameCapture = 1 / fps;
+        //int timeBetweenFrameCaptureMs = (int) (1000 * timeBetweenFrameCapture);
+        //setParameter(String.format("time-between-time-lapse-frame-capture=%d",
+                    //timeBetweenFrameCaptureMs));
     }
 
     
@@ -164,16 +160,16 @@ public class MediaRecorder {
             IllegalArgumentException var44080591B8B13B6C21BFD98883B08501_1024956902 = new IllegalArgumentException("Unsupported angle: " + degrees);
             var44080591B8B13B6C21BFD98883B08501_1024956902.addTaint(taint);
             throw var44080591B8B13B6C21BFD98883B08501_1024956902;
-        } 
+        } //End block
         setParameter("video-param-rotation-angle-degrees=" + degrees);
-        
-        
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (degrees != 0   &&
+            //degrees != 90  &&
+            //degrees != 180 &&
+            //degrees != 270) {
+            //throw new IllegalArgumentException("Unsupported angle: " + degrees);
+        //}
+        //setParameter("video-param-rotation-angle-degrees=" + degrees);
     }
 
     
@@ -189,69 +185,62 @@ public class MediaRecorder {
             IllegalArgumentException varBF1DE0EBB10945813AF140C2533CC7FB_49090134 = new IllegalArgumentException(msg);
             varBF1DE0EBB10945813AF140C2533CC7FB_49090134.addTaint(taint);
             throw varBF1DE0EBB10945813AF140C2533CC7FB_49090134;
-        } 
+        } //End block
     if(longitudex10000 > 1800000 || longitudex10000 < -1800000)        
         {
             String msg = "Longitude: " + longitude + " out of range";
             IllegalArgumentException varBF1DE0EBB10945813AF140C2533CC7FB_1325144122 = new IllegalArgumentException(msg);
             varBF1DE0EBB10945813AF140C2533CC7FB_1325144122.addTaint(taint);
             throw varBF1DE0EBB10945813AF140C2533CC7FB_1325144122;
-        } 
+        } //End block
         setParameter("param-geotag-latitude=" + latitudex10000);
         setParameter("param-geotag-longitude=" + longitudex10000);
-        
-        
-        
-        
-            
-            
-        
-        
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //int latitudex10000  = (int) (latitude * 10000 + 0.5);
+        //int longitudex10000 = (int) (longitude * 10000 + 0.5);
+        //if (latitudex10000 > 900000 || latitudex10000 < -900000) {
+            //String msg = "Latitude: " + latitude + " out of range.";
+            //throw new IllegalArgumentException(msg);
+        //}
+        //if (longitudex10000 > 1800000 || longitudex10000 < -1800000) {
+            //String msg = "Longitude: " + longitude + " out of range";
+            //throw new IllegalArgumentException(msg);
+        //}
+        //setParameter("param-geotag-latitude=" + latitudex10000);
+        //setParameter("param-geotag-longitude=" + longitudex10000);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.379 -0400", hash_original_method = "16B1291E62A33A134EF60F37C7D2CCB8", hash_generated_method = "F0DB7B5B0530417259C232AB1266B1EB")
     public void setOutputFormat(int output_format) throws IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.379 -0400", hash_original_method = "71A5DAEC76B8523A4C4E858FBAE085E2", hash_generated_method = "714F37A0A7FD7CD477077D9AEBBFA0E2")
     public void setVideoSize(int width, int height) throws IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.380 -0400", hash_original_method = "4711F19464352F93232DA12822C7FDFE", hash_generated_method = "CA3360721243781B824AEC6DEE401679")
     public void setVideoFrameRate(int rate) throws IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.380 -0400", hash_original_method = "B668CBA366084C55F47F6ED4964FF898", hash_generated_method = "F8C6E88E05EC572B64D25C575D25FEA1")
     public void setMaxDuration(int max_duration_ms) throws IllegalArgumentException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.380 -0400", hash_original_method = "A50E13690D0D35FC40A0268A3FC87BD5", hash_generated_method = "86641D9D4B0514DCC04D76FDE8B2AD78")
     public void setMaxFileSize(long max_filesize_bytes) throws IllegalArgumentException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.381 -0400", hash_original_method = "1CF1181ABC96941035EF958A99727050", hash_generated_method = "6A3A5B178BE37A3212BEDC346A89B044")
     public void setAudioEncoder(int audio_encoder) throws IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.381 -0400", hash_original_method = "ABD82A110412540080E22D800F212AD9", hash_generated_method = "6A0EA86A8C6F8FAEBF01009084CE3D79")
     public void setVideoEncoder(int video_encoder) throws IllegalStateException {
     }
@@ -265,13 +254,13 @@ public class MediaRecorder {
             IllegalArgumentException var175D308EEF77C8867F2D05EC7B31AA50_2078868022 = new IllegalArgumentException("Audio sampling rate is not positive");
             var175D308EEF77C8867F2D05EC7B31AA50_2078868022.addTaint(taint);
             throw var175D308EEF77C8867F2D05EC7B31AA50_2078868022;
-        } 
+        } //End block
         setParameter("audio-param-sampling-rate=" + samplingRate);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (samplingRate <= 0) {
+            //throw new IllegalArgumentException("Audio sampling rate is not positive");
+        //}
+        //setParameter("audio-param-sampling-rate=" + samplingRate);
     }
 
     
@@ -283,13 +272,13 @@ public class MediaRecorder {
             IllegalArgumentException var1CFCCB3DC08E264BD9B205524F8EEAB0_1660196004 = new IllegalArgumentException("Number of channels is not positive");
             var1CFCCB3DC08E264BD9B205524F8EEAB0_1660196004.addTaint(taint);
             throw var1CFCCB3DC08E264BD9B205524F8EEAB0_1660196004;
-        } 
+        } //End block
         setParameter("audio-param-number-of-channels=" + numChannels);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (numChannels <= 0) {
+            //throw new IllegalArgumentException("Number of channels is not positive");
+        //}
+        //setParameter("audio-param-number-of-channels=" + numChannels);
     }
 
     
@@ -301,13 +290,13 @@ public class MediaRecorder {
             IllegalArgumentException var2C3D07B8F1364484018D091477343E17_1482802705 = new IllegalArgumentException("Audio encoding bit rate is not positive");
             var2C3D07B8F1364484018D091477343E17_1482802705.addTaint(taint);
             throw var2C3D07B8F1364484018D091477343E17_1482802705;
-        } 
+        } //End block
         setParameter("audio-param-encoding-bitrate=" + bitRate);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (bitRate <= 0) {
+            //throw new IllegalArgumentException("Audio encoding bit rate is not positive");
+        //}
+        //setParameter("audio-param-encoding-bitrate=" + bitRate);
     }
 
     
@@ -319,61 +308,57 @@ public class MediaRecorder {
             IllegalArgumentException var1E05488F04493BF106383CD7797CD8DC_190223228 = new IllegalArgumentException("Video encoding bit rate is not positive");
             var1E05488F04493BF106383CD7797CD8DC_190223228.addTaint(taint);
             throw var1E05488F04493BF106383CD7797CD8DC_190223228;
-        } 
+        } //End block
         setParameter("video-param-encoding-bitrate=" + bitRate);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (bitRate <= 0) {
+            //throw new IllegalArgumentException("Video encoding bit rate is not positive");
+        //}
+        //setParameter("video-param-encoding-bitrate=" + bitRate);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.384 -0400", hash_original_method = "A0B41C1DE963DD2616BE7FC07860DC3A", hash_generated_method = "F9ED9DF6F92CC32C9A66BD87F2715733")
     public void setAuxiliaryOutputFile(FileDescriptor fd) {
         addTaint(fd.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        //Log.w(TAG, "setAuxiliaryOutputFile(FileDescriptor) is no longer supported.");
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.384 -0400", hash_original_method = "8F81BCAE7FDFB44AAC23771364E7255A", hash_generated_method = "AAD3CF3C79CF1F5A00C1B6681DB3A216")
     public void setAuxiliaryOutputFile(String path) {
         addTaint(path.getTaint());
-        
-        
+        // ---------- Original Method ----------
+        //Log.w(TAG, "setAuxiliaryOutputFile(String) is no longer supported.");
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.385 -0400", hash_original_method = "FA1E1C8AC397C2513A8C4BBA9653310E", hash_generated_method = "58002DD5C7357E5293C6369D49CE59B9")
     public void setOutputFile(FileDescriptor fd) throws IllegalStateException {
         mPath = null;
         mFd = fd;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mPath = null;
+        //mFd = fd;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.385 -0400", hash_original_method = "6471C594BC35F434C75030DABF9E1236", hash_generated_method = "E4F79276AA1501CD7F5EECB78A818C10")
     public void setOutputFile(String path) throws IllegalStateException {
         mFd = null;
         mPath = path;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mFd = null;
+        //mPath = path;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.385 -0400", hash_original_method = "2C3645C01F64B8B930F730173F6904DB", hash_generated_method = "F84ACA8CCCE4058BD15A45193910AC38")
     private void _setOutputFile(FileDescriptor fd, long offset, long length) throws IllegalStateException, IOException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.386 -0400", hash_original_method = "E491231BBA55EF515861E8AF21F37CD9", hash_generated_method = "F0AF919CE47AB66A413EAFFF98A697CA")
     private void _prepare() throws IllegalStateException, IOException {
     }
@@ -387,48 +372,46 @@ public class MediaRecorder {
             try 
             {
                 _setOutputFile(fos.getFD(), 0, 0);
-            } 
+            } //End block
             finally 
             {
                 fos.close();
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(mFd != null)        
         {
             _setOutputFile(mFd, 0, 0);
-        } 
+        } //End block
         else
         {
             IOException var00C2BD90EB572444AC32E0AED22E6D5F_663115286 = new IOException("No valid output file");
             var00C2BD90EB572444AC32E0AED22E6D5F_663115286.addTaint(taint);
             throw var00C2BD90EB572444AC32E0AED22E6D5F_663115286;
-        } 
+        } //End block
         _prepare();
-        
-        
-            
-            
-                
-            
-                
-            
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mPath != null) {
+            //FileOutputStream fos = new FileOutputStream(mPath);
+            //try {
+                //_setOutputFile(fos.getFD(), 0, 0);
+            //} finally {
+                //fos.close();
+            //}
+        //} else if (mFd != null) {
+            //_setOutputFile(mFd, 0, 0);
+        //} else {
+            //throw new IOException("No valid output file");
+        //}
+        //_prepare();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.387 -0400", hash_original_method = "90417EDC9CEDC2FF729AF34E20BAF720", hash_generated_method = "09CCB07F360AB024F02D74DF25B2B096")
     public void start() throws IllegalStateException {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.387 -0400", hash_original_method = "1A5D84AB4E95B4764520ADCE25158630", hash_generated_method = "C37260719D5C7AD3799BFDB704DE9E51")
     public void stop() throws IllegalStateException {
     }
@@ -438,19 +421,17 @@ public class MediaRecorder {
     public void reset() {
         native_reset();
         mEventHandler.removeCallbacksAndMessages(null);
-        
-        
-        
+        // ---------- Original Method ----------
+        //native_reset();
+        //mEventHandler.removeCallbacksAndMessages(null);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.387 -0400", hash_original_method = "AD3447507B75200ED00AEACF3A5CF9B9", hash_generated_method = "EE98BA7D4CA1DF8A6E8C27E6B5C21C55")
     private void native_reset() {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.388 -0400", hash_original_method = "F99C2454D7AEDF4869DBA0C6020BA633", hash_generated_method = "9BCE54AEF44E385813D0D1E80027EAD2")
     public int getMaxAmplitude() throws IllegalStateException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568675123 = getTaintInt();
@@ -458,21 +439,19 @@ public class MediaRecorder {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.388 -0400", hash_original_method = "1D9D4DF006E463AA131E1079BD21BB23", hash_generated_method = "F76228A81F30849808D6699A5C1AC6AA")
     public void setOnErrorListener(OnErrorListener l) {
         mOnErrorListener = l;
-        
-        
+        // ---------- Original Method ----------
+        //mOnErrorListener = l;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.388 -0400", hash_original_method = "4D9753A45AFF6F50F6DD9F2BE501A438", hash_generated_method = "CC22DF79C368D299CC0E0400ABB99A07")
     public void setOnInfoListener(OnInfoListener listener) {
         mOnInfoListener = listener;
-        
-        
+        // ---------- Original Method ----------
+        //mOnInfoListener = listener;
     }
 
     
@@ -489,7 +468,6 @@ public class MediaRecorder {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.389 -0400", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "41B8B73906B263B02861ABB4EEE712F2")
     public void release() {
     }
@@ -509,7 +487,6 @@ public class MediaRecorder {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.390 -0400", hash_original_method = "53992B87F33D5F26EA62BF7D01DBCD08", hash_generated_method = "A37318CD0353B217F398410D61395DC1")
     private void setParameter(String nameValuePair) {
     }
@@ -519,8 +496,8 @@ public class MediaRecorder {
     @Override
     protected void finalize() {
         native_finalize();
-        
-        
+        // ---------- Original Method ----------
+        //native_finalize();
     }
 
     
@@ -528,7 +505,7 @@ public class MediaRecorder {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.391 -0400", hash_original_method = "1914278202FF0C4E3ADF5F5B470D9B6D", hash_generated_method = "F20A029D5D262C5111647D9E6D0AA478")
         private  AudioSource() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -564,7 +541,7 @@ public class MediaRecorder {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.391 -0400", hash_original_method = "E9434F68306FDA3E7486EA51EADD9FCF", hash_generated_method = "69815C0E42EBCBCEB6A0DE4A890DB903")
         private  VideoSource() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -585,7 +562,7 @@ public class MediaRecorder {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.392 -0400", hash_original_method = "9E0C1C4960BAFFDB241CC667DA1146ED", hash_generated_method = "553275D8A28B3F06BA2AAF766D2B6DD6")
         private  OutputFormat() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -627,7 +604,7 @@ public class MediaRecorder {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.393 -0400", hash_original_method = "E3F3678601E82E2E28134E86FEA86320", hash_generated_method = "9B57A224E45CD93012FC1AF25BD670F0")
         private  AudioEncoder() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -657,7 +634,7 @@ public class MediaRecorder {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.393 -0400", hash_original_method = "EADA6CD287D24DC0909ED37DE6E606B1", hash_generated_method = "23BF99383FCE5E43D5D78B8BE02688CD")
         private  VideoEncoder() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -687,8 +664,8 @@ public class MediaRecorder {
             super(looper);
             addTaint(looper.getTaint());
             mMediaRecorder = mr;
-            
-            
+            // ---------- Original Method ----------
+            //mMediaRecorder = mr;
         }
 
         
@@ -699,7 +676,7 @@ public class MediaRecorder {
     if(mMediaRecorder.mNativeContext == 0)            
             {
                 return;
-            } 
+            } //End block
 switch(msg.what){
             case MEDIA_RECORDER_EVENT_ERROR:
             case MEDIA_RECORDER_TRACK_EVENT_ERROR:
@@ -714,8 +691,8 @@ switch(msg.what){
             default:
             return;
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

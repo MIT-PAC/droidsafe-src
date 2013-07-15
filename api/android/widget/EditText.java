@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class EditText extends TextView {
     public  EditText(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -28,7 +28,7 @@ public class EditText extends TextView {
         this(context, attrs, com.android.internal.R.attr.editTextStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -38,19 +38,18 @@ public class EditText extends TextView {
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.183 -0400", hash_original_method = "78689D8CF0BA47FA74C236553C6AEDBF", hash_generated_method = "FF305A4EFE6F6CAFC82FF5FE7F50DAC9")
     @Override
     protected boolean getDefaultEditable() {
         boolean varB326B5062B2F0E69046810717534CB09_822857563 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1647674324 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1647674324;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
@@ -60,8 +59,8 @@ public class EditText extends TextView {
 MovementMethod varB9DD7E3298263497125F004EAD4CC7BD_1633209761 =         ArrowKeyMovementMethod.getInstance();
         varB9DD7E3298263497125F004EAD4CC7BD_1633209761.addTaint(taint);
         return varB9DD7E3298263497125F004EAD4CC7BD_1633209761;
-        
-        
+        // ---------- Original Method ----------
+        //return ArrowKeyMovementMethod.getInstance();
     }
 
     
@@ -71,8 +70,8 @@ MovementMethod varB9DD7E3298263497125F004EAD4CC7BD_1633209761 =         ArrowKey
 Editable varCE395BFEABB3FF1A9551A05D26DCF380_1193940722 =         (Editable) super.getText();
         varCE395BFEABB3FF1A9551A05D26DCF380_1193940722.addTaint(taint);
         return varCE395BFEABB3FF1A9551A05D26DCF380_1193940722;
-        
-        
+        // ---------- Original Method ----------
+        //return (Editable) super.getText();
     }
 
     
@@ -82,8 +81,8 @@ Editable varCE395BFEABB3FF1A9551A05D26DCF380_1193940722 =         (Editable) sup
         addTaint(type.getTaint());
         addTaint(text.getTaint());
         super.setText(text, BufferType.EDITABLE);
-        
-        
+        // ---------- Original Method ----------
+        //super.setText(text, BufferType.EDITABLE);
     }
 
     
@@ -92,8 +91,8 @@ Editable varCE395BFEABB3FF1A9551A05D26DCF380_1193940722 =         (Editable) sup
         addTaint(stop);
         addTaint(start);
         Selection.setSelection(getText(), start, stop);
-        
-        
+        // ---------- Original Method ----------
+        //Selection.setSelection(getText(), start, stop);
     }
 
     
@@ -101,16 +100,16 @@ Editable varCE395BFEABB3FF1A9551A05D26DCF380_1193940722 =         (Editable) sup
     public void setSelection(int index) {
         addTaint(index);
         Selection.setSelection(getText(), index);
-        
-        
+        // ---------- Original Method ----------
+        //Selection.setSelection(getText(), index);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.184 -0400", hash_original_method = "49D3F8B7E29E8DF6F83DD071F1ED7D81", hash_generated_method = "9187CC6366D6115D68A15990FFCCDB01")
     public void selectAll() {
         Selection.selectAll(getText());
-        
-        
+        // ---------- Original Method ----------
+        //Selection.selectAll(getText());
     }
 
     
@@ -118,8 +117,8 @@ Editable varCE395BFEABB3FF1A9551A05D26DCF380_1193940722 =         (Editable) sup
     public void extendSelection(int index) {
         addTaint(index);
         Selection.extendSelection(getText(), index);
-        
-        
+        // ---------- Original Method ----------
+        //Selection.extendSelection(getText(), index);
     }
 
     
@@ -133,14 +132,14 @@ Editable varCE395BFEABB3FF1A9551A05D26DCF380_1193940722 =         (Editable) sup
                     + "TextUtils.TruncateAt.MARQUEE");
             varC2DC157A2F69A245A537D9DBE7256FCB_448726113.addTaint(taint);
             throw varC2DC157A2F69A245A537D9DBE7256FCB_448726113;
-        } 
+        } //End block
         super.setEllipsize(ellipsis);
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //if (ellipsis == TextUtils.TruncateAt.MARQUEE) {
+            //throw new IllegalArgumentException("EditText cannot use the ellipsize mode "
+                    //+ "TextUtils.TruncateAt.MARQUEE");
+        //}
+        //super.setEllipsize(ellipsis);
     }
 
     

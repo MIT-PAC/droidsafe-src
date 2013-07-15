@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
     public  PMediaAuthorizationParser(String mediaAuthorization) {
         super(mediaAuthorization);
         addTaint(mediaAuthorization.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,7 +29,7 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
     public  PMediaAuthorizationParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -51,33 +51,33 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
                 try 
                 {
                     mediaAuthorization.setMediaAuthorizationToken(token.getTokenValue());
-                } 
+                } //End block
                 catch (InvalidArgumentException e)
                 {
                     java.text.ParseException var1B38A553A6CA651B5F935142A3D93863_671153523 = createParseException(e.getMessage());
                     var1B38A553A6CA651B5F935142A3D93863_671153523.addTaint(taint);
                     throw var1B38A553A6CA651B5F935142A3D93863_671153523;
-                } 
+                } //End block
                 mediaAuthorizationList.add(mediaAuthorization);
                 this.lexer.SPorHT();
     if(lexer.lookAhead(0) == ',')                
                 {
                     this.lexer.match(',');
                     mediaAuthorization = new PMediaAuthorization();
-                } 
+                } //End block
                 this.lexer.SPorHT();
-            } 
+            } //End block
 SIPHeader var3BA054D97AF854A274CBD64A3C9397B9_1485065125 =             mediaAuthorizationList;
             var3BA054D97AF854A274CBD64A3C9397B9_1485065125.addTaint(taint);
             return var3BA054D97AF854A274CBD64A3C9397B9_1485065125;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("MediaAuthorizationParser.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,32 +16,32 @@ public class Semaphore implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:16.819 -0400", hash_original_method = "1D09FBBC41D290488B50FAB01D9EE120", hash_generated_method = "13962118142FDEFB392405E8F00D1980")
     public  Semaphore(int permits) {
         sync = new NonfairSync(permits);
-        
-        
+        // ---------- Original Method ----------
+        //sync = new NonfairSync(permits);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:16.820 -0400", hash_original_method = "EDA1419EB058A316E989F6F201EF4313", hash_generated_method = "13367ADAF65E44BD9192860D4A3B7131")
     public  Semaphore(int permits, boolean fair) {
         sync = fair ? new FairSync(permits) : new NonfairSync(permits);
-        
-        
+        // ---------- Original Method ----------
+        //sync = fair ? new FairSync(permits) : new NonfairSync(permits);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:16.820 -0400", hash_original_method = "36195816327B5FFC3BDF4AB88B23D805", hash_generated_method = "3DBDFDABAA7FC274F5D5F4A20CA8CA86")
     public void acquire() throws InterruptedException {
         sync.acquireSharedInterruptibly(1);
-        
-        
+        // ---------- Original Method ----------
+        //sync.acquireSharedInterruptibly(1);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:16.821 -0400", hash_original_method = "EECA708F1A8CDD46B9FED024EA3B107E", hash_generated_method = "65DDEE07CA9D1A9C8DF2A7F368E92FF2")
     public void acquireUninterruptibly() {
         sync.acquireShared(1);
-        
-        
+        // ---------- Original Method ----------
+        //sync.acquireShared(1);
     }
 
     
@@ -50,8 +50,8 @@ public class Semaphore implements java.io.Serializable {
         boolean varDB3B551E4ED40518B68430636E27BC5F_678493255 = (sync.nonfairTryAcquireShared(1) >= 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1688057733 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1688057733;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.nonfairTryAcquireShared(1) >= 0;
     }
 
     
@@ -62,16 +62,16 @@ public class Semaphore implements java.io.Serializable {
         boolean varF9FFBA7272EE05E2720644344A388E0D_1063630202 = (sync.tryAcquireSharedNanos(1, unit.toNanos(timeout)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1203579573 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1203579573;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.tryAcquireSharedNanos(1, unit.toNanos(timeout));
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:16.822 -0400", hash_original_method = "A31CF20052BB7332FF63483E272EE6FB", hash_generated_method = "3FED394AF8AC081B7B78D6F30457AAA9")
     public void release() {
         sync.releaseShared(1);
-        
-        
+        // ---------- Original Method ----------
+        //sync.releaseShared(1);
     }
 
     
@@ -85,9 +85,9 @@ public class Semaphore implements java.io.Serializable {
         throw var5783EF97022AA508B74A1E3EA38534AF_724914838;
         }
         sync.acquireSharedInterruptibly(permits);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (permits < 0) throw new IllegalArgumentException();
+        //sync.acquireSharedInterruptibly(permits);
     }
 
     
@@ -101,9 +101,9 @@ public class Semaphore implements java.io.Serializable {
         throw var5783EF97022AA508B74A1E3EA38534AF_2043810755;
         }
         sync.acquireShared(permits);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (permits < 0) throw new IllegalArgumentException();
+        //sync.acquireShared(permits);
     }
 
     
@@ -119,9 +119,9 @@ public class Semaphore implements java.io.Serializable {
         boolean varFA3D3DF75BD9DB211ACE5F563AB90B4D_751755737 = (sync.nonfairTryAcquireShared(permits) >= 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1395627633 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1395627633;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (permits < 0) throw new IllegalArgumentException();
+        //return sync.nonfairTryAcquireShared(permits) >= 0;
     }
 
     
@@ -139,9 +139,9 @@ public class Semaphore implements java.io.Serializable {
         boolean varC54D85A4A86BE4A350F90778D69AB4A1_877810249 = (sync.tryAcquireSharedNanos(permits, unit.toNanos(timeout)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_639589787 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_639589787;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (permits < 0) throw new IllegalArgumentException();
+        //return sync.tryAcquireSharedNanos(permits, unit.toNanos(timeout));
     }
 
     
@@ -155,9 +155,9 @@ public class Semaphore implements java.io.Serializable {
         throw var5783EF97022AA508B74A1E3EA38534AF_216468733;
         }
         sync.releaseShared(permits);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (permits < 0) throw new IllegalArgumentException();
+        //sync.releaseShared(permits);
     }
 
     
@@ -166,8 +166,8 @@ public class Semaphore implements java.io.Serializable {
         int var8A1DEA8ABE61D61F28E149265FFC27EB_1609911131 = (sync.getPermits());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439059930 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439059930;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.getPermits();
     }
 
     
@@ -176,8 +176,8 @@ public class Semaphore implements java.io.Serializable {
         int varDBB90EE9A7C72CB0D11B224FC373A197_395920503 = (sync.drainPermits());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1721849148 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1721849148;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.drainPermits();
     }
 
     
@@ -191,20 +191,19 @@ public class Semaphore implements java.io.Serializable {
         throw var5783EF97022AA508B74A1E3EA38534AF_1142740310;
         }
         sync.reducePermits(reduction);
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (reduction < 0) throw new IllegalArgumentException();
+        //sync.reducePermits(reduction);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:16.828 -0400", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "D2B040116DB6924B50D3F573FAD2AD1A")
     public boolean isFair() {
         boolean var025994C1DF49233538C6DF8BADB9C6C8_1272966308 = (sync instanceof FairSync);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1688979795 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1688979795;
-        
-        
+        // ---------- Original Method ----------
+        //return sync instanceof FairSync;
     }
 
     
@@ -213,8 +212,8 @@ public class Semaphore implements java.io.Serializable {
         boolean var2967874652C8008E25540A916154E044_877573860 = (sync.hasQueuedThreads());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2144816441 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2144816441;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.hasQueuedThreads();
     }
 
     
@@ -223,8 +222,8 @@ public class Semaphore implements java.io.Serializable {
         int var5D329306F1180332B8FF4C47065D325F_1034580146 = (sync.getQueueLength());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_316984477 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_316984477;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.getQueueLength();
     }
 
     
@@ -233,8 +232,8 @@ public class Semaphore implements java.io.Serializable {
 Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_2050596092 =         sync.getQueuedThreads();
         var0FD62A6A977BE381AD6B1EE70126B5BB_2050596092.addTaint(taint);
         return var0FD62A6A977BE381AD6B1EE70126B5BB_2050596092;
-        
-        
+        // ---------- Original Method ----------
+        //return sync.getQueuedThreads();
     }
 
     
@@ -243,8 +242,8 @@ Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_2050596092 =         sync
 String varEE78BE575C00AEA578F480ECEE9C4FB4_1895785245 =         super.toString() + "[Permits = " + sync.getPermits() + "]";
         varEE78BE575C00AEA578F480ECEE9C4FB4_1895785245.addTaint(taint);
         return varEE78BE575C00AEA578F480ECEE9C4FB4_1895785245;
-        
-        
+        // ---------- Original Method ----------
+        //return super.toString() + "[Permits = " + sync.getPermits() + "]";
     }
 
     
@@ -254,8 +253,8 @@ String varEE78BE575C00AEA578F480ECEE9C4FB4_1895785245 =         super.toString()
           Sync(int permits) {
             addTaint(permits);
             setState(permits);
-            
-            
+            // ---------- Original Method ----------
+            //setState(permits);
         }
 
         
@@ -264,8 +263,8 @@ String varEE78BE575C00AEA578F480ECEE9C4FB4_1895785245 =         super.toString()
             int var118C4F58F1303398C344B8AAB7CE6EE1_1155251397 = (getState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1165272218 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1165272218;
-            
-            
+            // ---------- Original Method ----------
+            //return getState();
         }
 
         
@@ -283,15 +282,15 @@ for(;;)
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_717695035 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_717695035;
                 }
-            } 
-            
-            
-                
-                
-                
-                    
-                    
-            
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int available = getState();
+                //int remaining = available - acquires;
+                //if (remaining < 0 ||
+                    //compareAndSetState(available, remaining))
+                    //return remaining;
+            //}
         }
 
         
@@ -314,16 +313,16 @@ for(;;)
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1165346493 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1165346493;
                 }
-            } 
-            
-            
-                
-                
-                
-                    
-                
-                    
-            
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int current = getState();
+                //int next = current + releases;
+                //if (next < current) 
+                    //throw new Error("Maximum permit count exceeded");
+                //if (compareAndSetState(current, next))
+                    //return true;
+            //}
         }
 
         
@@ -342,16 +341,16 @@ for(;;)
                 }
     if(compareAndSetState(current, next))                
                 return;
-            } 
-            
-            
-                
-                
-                
-                    
-                
-                    
-            
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int current = getState();
+                //int next = current - reductions;
+                //if (next > current) 
+                    //throw new Error("Permit count underflow");
+                //if (compareAndSetState(current, next))
+                    //return;
+            //}
         }
 
         
@@ -366,13 +365,13 @@ for(;;)
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_825648771 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_825648771;
                 }
-            } 
-            
-            
-                
-                
-                    
-            
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //int current = getState();
+                //if (current == 0 || compareAndSetState(current, 0))
+                    //return current;
+            //}
         }
 
         
@@ -389,7 +388,7 @@ for(;;)
           NonfairSync(int permits) {
             super(permits);
             addTaint(permits);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -399,8 +398,8 @@ for(;;)
             int var88AE15AC05ADF47D4173EA3A19BC4346_1577037830 = (nonfairTryAcquireShared(acquires));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709838055 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709838055;
-            
-            
+            // ---------- Original Method ----------
+            //return nonfairTryAcquireShared(acquires);
         }
 
         
@@ -417,7 +416,7 @@ for(;;)
           FairSync(int permits) {
             super(permits);
             addTaint(permits);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -441,17 +440,17 @@ for(;;)
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_657760584 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_657760584;
                 }
-            } 
-            
-            
-                
-                    
-                
-                
-                
-                    
-                    
-            
+            } //End block
+            // ---------- Original Method ----------
+            //for (;;) {
+                //if (hasQueuedPredecessors())
+                    //return -1;
+                //int available = getState();
+                //int remaining = available - acquires;
+                //if (remaining < 0 ||
+                    //compareAndSetState(available, remaining))
+                    //return remaining;
+            //}
         }
 
         

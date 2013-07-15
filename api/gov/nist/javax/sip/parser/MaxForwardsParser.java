@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class MaxForwardsParser extends HeaderParser {
     public  MaxForwardsParser(String contentLength) {
         super(contentLength);
         addTaint(contentLength.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -22,11 +22,10 @@ public class MaxForwardsParser extends HeaderParser {
     protected  MaxForwardsParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.808 -0400", hash_original_method = "1EF61729E616CF3DAFF49967F4EF386E", hash_generated_method = "D96B001F3172572FC1C44669601E62F5")
     public SIPHeader parse() throws ParseException {
     if(debug)        
@@ -42,43 +41,43 @@ public class MaxForwardsParser extends HeaderParser {
 SIPHeader var9ADA374ACA6AF88A2E93F2C3C80FE244_1999217019 =             contentLength;
             var9ADA374ACA6AF88A2E93F2C3C80FE244_1999217019.addTaint(taint);
             return var9ADA374ACA6AF88A2E93F2C3C80FE244_1999217019;
-        } 
+        } //End block
         catch (InvalidArgumentException ex)
         {
             java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_654566620 = createParseException(ex.getMessage());
             varB8C80F72F95BF6A850D07F4EC5726C09_654566620.addTaint(taint);
             throw varB8C80F72F95BF6A850D07F4EC5726C09_654566620;
-        } 
+        } //End block
         catch (NumberFormatException ex)
         {
             java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_293524291 = createParseException(ex.getMessage());
             varB8C80F72F95BF6A850D07F4EC5726C09_293524291.addTaint(taint);
             throw varB8C80F72F95BF6A850D07F4EC5726C09_293524291;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("MaxForwardsParser.leave");
-        } 
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-        
-            
-        
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("MaxForwardsParser.enter");
+        //try {
+            //MaxForwards contentLength = new MaxForwards();
+            //headerName(TokenTypes.MAX_FORWARDS);
+            //String number = this.lexer.number();
+            //contentLength.setMaxForwards(Integer.parseInt(number));
+            //this.lexer.SPorHT();
+            //this.lexer.match('\n');
+            //return contentLength;
+        //} catch (InvalidArgumentException ex) {
+            //throw createParseException(ex.getMessage());
+        //} catch (NumberFormatException ex) {
+            //throw createParseException(ex.getMessage());
+        //} finally {
+            //if (debug)
+                //dbg_leave("MaxForwardsParser.leave");
+        //}
     }
 
     

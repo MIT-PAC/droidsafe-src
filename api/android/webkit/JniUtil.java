@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ class JniUtil {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.486 -0400", hash_original_method = "7797423382E6C41F3BC6877796CBF278", hash_generated_method = "7AE97D3B4E9D45C2A019FC4E29ED6E30")
     private  JniUtil() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -35,8 +35,7 @@ class JniUtil {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    protected static synchronized Context getContext() {
+        protected static synchronized Context getContext() {
         return sContext;
     }
 
@@ -121,8 +120,7 @@ class JniUtil {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static synchronized String getAutofillQueryUrl() {
+        private static synchronized String getAutofillQueryUrl() {
         checkInitialized();
         return Settings.Secure.getString(sContext.getContentResolver(),
                 Settings.Secure.WEB_AUTOFILL_QUERY_URL);

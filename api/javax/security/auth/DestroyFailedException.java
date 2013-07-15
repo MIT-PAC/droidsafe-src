@@ -1,6 +1,6 @@
 package javax.security.auth;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class DestroyFailedException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.997 -0400", hash_original_method = "22F1E573FCB9B888944769B0D578ECFF", hash_generated_method = "625155947AD09CAB3856E8CDF9BE43F0")
     public  DestroyFailedException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class DestroyFailedException extends Exception {
     public  DestroyFailedException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

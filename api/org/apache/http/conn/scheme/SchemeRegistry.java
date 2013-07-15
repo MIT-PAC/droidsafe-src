@@ -1,6 +1,6 @@
 package org.apache.http.conn.scheme;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ public final class SchemeRegistry {
     public  SchemeRegistry() {
         super();
         registeredSchemes = new LinkedHashMap<String,Scheme>();
-        
-        
+        // ---------- Original Method ----------
+        //registeredSchemes = new LinkedHashMap<String,Scheme>();
     }
 
     
@@ -34,17 +34,17 @@ public final class SchemeRegistry {
                 ("Scheme '"+name+"' not registered.");
             var6884E92B52C3BE0FDC62B88FB30CBF3F_1508319987.addTaint(taint);
             throw var6884E92B52C3BE0FDC62B88FB30CBF3F_1508319987;
-        } 
+        } //End block
 Scheme varF632CA15DF7F0948C110F1E316CEC23E_28508320 =         found;
         varF632CA15DF7F0948C110F1E316CEC23E_28508320.addTaint(taint);
         return varF632CA15DF7F0948C110F1E316CEC23E_28508320;
-        
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //Scheme found = get(name);
+        //if (found == null) {
+            //throw new IllegalStateException
+                //("Scheme '"+name+"' not registered.");
+        //}
+        //return found;
     }
 
     
@@ -56,15 +56,15 @@ Scheme varF632CA15DF7F0948C110F1E316CEC23E_28508320 =         found;
             IllegalArgumentException var56A347237082B1EF739CF618A747705D_1588762819 = new IllegalArgumentException("Host must not be null.");
             var56A347237082B1EF739CF618A747705D_1588762819.addTaint(taint);
             throw var56A347237082B1EF739CF618A747705D_1588762819;
-        } 
+        } //End block
 Scheme var55C1532E08A9503EBC39F2B3BF2C8B26_345795983 =         getScheme(host.getSchemeName());
         var55C1532E08A9503EBC39F2B3BF2C8B26_345795983.addTaint(taint);
         return var55C1532E08A9503EBC39F2B3BF2C8B26_345795983;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (host == null) {
+            //throw new IllegalArgumentException("Host must not be null.");
+        //}
+        //return getScheme(host.getSchemeName());
     }
 
     
@@ -81,11 +81,11 @@ Scheme var55C1532E08A9503EBC39F2B3BF2C8B26_345795983 =         getScheme(host.ge
 Scheme varF632CA15DF7F0948C110F1E316CEC23E_1388658982 =         found;
         varF632CA15DF7F0948C110F1E316CEC23E_1388658982.addTaint(taint);
         return varF632CA15DF7F0948C110F1E316CEC23E_1388658982;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null)
+            //throw new IllegalArgumentException("Name must not be null.");
+        //Scheme found = registeredSchemes.get(name);
+        //return found;
     }
 
     
@@ -102,11 +102,11 @@ Scheme varF632CA15DF7F0948C110F1E316CEC23E_1388658982 =         found;
 Scheme varC9682C20C4B1FD7FBB3E018F7AF09BF2_135225325 =         old;
         varC9682C20C4B1FD7FBB3E018F7AF09BF2_135225325.addTaint(taint);
         return varC9682C20C4B1FD7FBB3E018F7AF09BF2_135225325;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (sch == null)
+            //throw new IllegalArgumentException("Scheme must not be null.");
+        //Scheme old = registeredSchemes.put(sch.getName(), sch);
+        //return old;
     }
 
     
@@ -123,11 +123,11 @@ Scheme varC9682C20C4B1FD7FBB3E018F7AF09BF2_135225325 =         old;
 Scheme var9CA2A4D09CDE28FB110DF0CCFBCA11B5_1983636612 =         gone;
         var9CA2A4D09CDE28FB110DF0CCFBCA11B5_1983636612.addTaint(taint);
         return var9CA2A4D09CDE28FB110DF0CCFBCA11B5_1983636612;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (name == null)
+            //throw new IllegalArgumentException("Name must not be null.");
+        //Scheme gone = registeredSchemes.remove(name);
+        //return gone;
     }
 
     
@@ -136,8 +136,8 @@ Scheme var9CA2A4D09CDE28FB110DF0CCFBCA11B5_1983636612 =         gone;
 List<String> varAAEC45CC0E27E189B466FC7E198A1AD8_382848093 =         new ArrayList<String>(registeredSchemes.keySet());
         varAAEC45CC0E27E189B466FC7E198A1AD8_382848093.addTaint(taint);
         return varAAEC45CC0E27E189B466FC7E198A1AD8_382848093;
-        
-        
+        // ---------- Original Method ----------
+        //return new ArrayList<String>(registeredSchemes.keySet());
     }
 
     
@@ -147,15 +147,15 @@ List<String> varAAEC45CC0E27E189B466FC7E198A1AD8_382848093 =         new ArrayLi
     if(map == null)        
         {
             return;
-        } 
+        } //End block
         registeredSchemes.clear();
         registeredSchemes.putAll(map);
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (map == null) {
+            //return;
+        //}
+        //registeredSchemes.clear();
+        //registeredSchemes.putAll(map);
     }
 
     

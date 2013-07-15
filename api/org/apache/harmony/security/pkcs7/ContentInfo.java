@@ -1,6 +1,6 @@
 package org.apache.harmony.security.pkcs7;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,14 +30,13 @@ public final class ContentInfo {
         this.oid = oid;
         this.content = content;
         this.encoding = encoding;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.oid = oid;
+        //this.content = content;
+        //this.encoding = encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.114 -0400", hash_original_method = "FEA779456A4B7718EE7D788C42FE9ED3", hash_generated_method = "B7BE3780752A185E021A089D5CB01DD5")
     public SignedData getSignedData() {
     if(Arrays.equals(oid, SIGNED_DATA))        
@@ -45,37 +44,35 @@ public final class ContentInfo {
 SignedData var9F686B727A14C0136304DFC61BC31CD8_539999801 =             (SignedData)content;
             var9F686B727A14C0136304DFC61BC31CD8_539999801.addTaint(taint);
             return var9F686B727A14C0136304DFC61BC31CD8_539999801;
-        } 
+        } //End block
 SignedData var540C13E9E156B687226421B24F2DF178_205883696 =         null;
         var540C13E9E156B687226421B24F2DF178_205883696.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_205883696;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (Arrays.equals(oid, SIGNED_DATA)) {
+            //return (SignedData)content;
+        //}
+        //return null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.114 -0400", hash_original_method = "7EF6AE96CD0AADFF5C056ACE9B248CB2", hash_generated_method = "645637D2F97BCF9A3BA4A9D6E5AD34D1")
     public Object getContent() {
 Object varD442C91479410F76C84B872DA6AAE139_135263699 =         content;
         varD442C91479410F76C84B872DA6AAE139_135263699.addTaint(taint);
         return varD442C91479410F76C84B872DA6AAE139_135263699;
-        
-        
+        // ---------- Original Method ----------
+        //return content;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.114 -0400", hash_original_method = "47E7DB6049BFBF7F7143C81AA2952707", hash_generated_method = "459BDB150277D122EEBCCC3EED86837D")
     public int[] getContentType() {
         int[] var130F43112BB8A7A7790EBFC08EE9D6AF_751747705 = (oid);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_71420966 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_71420966;
-        
-        
+        // ---------- Original Method ----------
+        //return oid;
     }
 
     
@@ -84,19 +81,18 @@ Object varD442C91479410F76C84B872DA6AAE139_135263699 =         content;
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } 
+        } //End block
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1219937746 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_540177603 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_540177603;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (encoding == null) {
+            //encoding = ASN1.encode(this);
+        //}
+        //return encoding;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.115 -0400", hash_original_method = "E27EF60D80B9BCE694BEF49083131D32", hash_generated_method = "6E5505CFFE475C491F7CEA0CE38ABD21")
     @Override
     public String toString() {
@@ -107,34 +103,34 @@ for(int i : oid)
         {
             res.append(i);
             res.append(' ');
-        } 
+        } //End block
         res.append("\n== Content: ");
     if(content != null)        
         {
             res.append("\n");
             res.append(content.toString());
-        } 
+        } //End block
         res.append("\n== Content End");
         res.append("\n==== ContentInfo End\n");
 String varEC7EB75EF3C7FA633C54FC66A0358174_615872487 =         res.toString();
         varEC7EB75EF3C7FA633C54FC66A0358174_615872487.addTaint(taint);
         return varEC7EB75EF3C7FA633C54FC66A0358174_615872487;
-        
-        
-        
-        
-        
-            
-            
-        
-        
-        
-            
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder res = new StringBuilder();
+        //res.append("==== ContentInfo:");
+        //res.append("\n== ContentType (OID): ");
+        //for (int i : oid) {
+            //res.append(i);
+            //res.append(' ');
+        //}
+        //res.append("\n== Content: ");
+        //if (content != null) {
+            //res.append("\n");
+            //res.append(content.toString());
+        //}
+        //res.append("\n== Content End");
+        //res.append("\n==== ContentInfo End\n");
+        //return res.toString();
     }
 
     

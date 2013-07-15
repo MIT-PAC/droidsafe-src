@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ abstract class LoggingPrintStream extends PrintStream {
                 throw new AssertionError();
             }
         });
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -51,8 +51,8 @@ abstract class LoggingPrintStream extends PrintStream {
     @Override
     public synchronized void flush() {
         flush(true);
-        
-        
+        // ---------- Original Method ----------
+        //flush(true);
     }
 
     
@@ -68,36 +68,36 @@ abstract class LoggingPrintStream extends PrintStream {
         {
             log(builder.substring(start, nextBreak));
             start = nextBreak + 1;
-        } 
+        } //End block
     if(completely)        
         {
     if(start < length)            
             {
                 log(builder.substring(start));
-            } 
+            } //End block
             builder.setLength(0);
-        } 
+        } //End block
         else
         {
             builder.delete(0, start);
-        } 
-        
-        
-        
-        
-        
-                
-            
-            
-        
-        
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int length = builder.length();
+        //int start = 0;
+        //int nextBreak;
+        //while (start < length
+                //&& (nextBreak = builder.indexOf("\n", start)) != -1) {
+            //log(builder.substring(start, nextBreak));
+            //start = nextBreak + 1;
+        //}
+        //if (completely) {
+            //if (start < length) {
+                //log(builder.substring(start));
+            //}
+            //builder.setLength(0);
+        //} else {
+            //builder.delete(0, start);
+        //}
     }
 
     
@@ -105,8 +105,8 @@ abstract class LoggingPrintStream extends PrintStream {
     public void write(int oneByte) {
         addTaint(oneByte);
         write(new byte[] { (byte) oneByte }, 0, 1);
-        
-        
+        // ---------- Original Method ----------
+        //write(new byte[] { (byte) oneByte }, 0, 1);
     }
 
     
@@ -115,8 +115,8 @@ abstract class LoggingPrintStream extends PrintStream {
     public void write(byte[] buffer) {
         addTaint(buffer[0]);
         write(buffer, 0, buffer.length);
-        
-        
+        // ---------- Original Method ----------
+        //write(buffer, 0, buffer.length);
     }
 
     
@@ -133,7 +133,7 @@ abstract class LoggingPrintStream extends PrintStream {
             decoder = Charset.defaultCharset().newDecoder()
                     .onMalformedInput(CodingErrorAction.REPLACE)
                     .onUnmappableCharacter(CodingErrorAction.REPLACE);
-        } 
+        } //End block
         int end = start + count;
         while
 (start < end)        
@@ -149,41 +149,38 @@ abstract class LoggingPrintStream extends PrintStream {
                     decodedChars.flip();
                     builder.append(decodedChars);
                     decodedChars.clear();
-                } 
+                } //End block
 } while (coderResult.isOverflow());
             encodedBytes.compact();
-        } 
+        } //End block
         flush(false);
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.038 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "6DB619BA8793A2E670C42848AF3C7D14")
     @Override
     public boolean checkError() {
         boolean var68934A3E9455FA72420237EB05902327_1049171764 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_470261548 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_470261548;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.038 -0400", hash_original_method = "51169B2EF8C8211EB75CA27439BAE4AB", hash_generated_method = "2A0A3827C6A0447713ECA04520FF48CE")
     @Override
     protected void setError() {
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.039 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -195,8 +192,8 @@ abstract class LoggingPrintStream extends PrintStream {
 PrintStream varAC550D889141827F9746A4BB1DA8EE48_723870313 =         format(Locale.getDefault(), format, args);
         varAC550D889141827F9746A4BB1DA8EE48_723870313.addTaint(taint);
         return varAC550D889141827F9746A4BB1DA8EE48_723870313;
-        
-        
+        // ---------- Original Method ----------
+        //return format(Locale.getDefault(), format, args);
     }
 
     
@@ -208,8 +205,8 @@ PrintStream varAC550D889141827F9746A4BB1DA8EE48_723870313 =         format(Local
 PrintStream var1C1A7E0ECC814A41656D8DF055D1B8DD_1247863671 =         format(format, args);
         var1C1A7E0ECC814A41656D8DF055D1B8DD_1247863671.addTaint(taint);
         return var1C1A7E0ECC814A41656D8DF055D1B8DD_1247863671;
-        
-        
+        // ---------- Original Method ----------
+        //return format(format, args);
     }
 
     
@@ -222,8 +219,8 @@ PrintStream var1C1A7E0ECC814A41656D8DF055D1B8DD_1247863671 =         format(form
 PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1101397490 =         format(l, format, args);
         varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1101397490.addTaint(taint);
         return varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1101397490;
-        
-        
+        // ---------- Original Method ----------
+        //return format(l, format, args);
     }
 
     
@@ -239,19 +236,19 @@ PrintStream varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1101397490 =         format(l, f
             NullPointerException varD3D016020AEA632D4CDB44DA9D1C05B2_1516434101 = new NullPointerException("format");
             varD3D016020AEA632D4CDB44DA9D1C05B2_1516434101.addTaint(taint);
             throw varD3D016020AEA632D4CDB44DA9D1C05B2_1516434101;
-        } 
+        } //End block
         formatter.format(l, format, args);
         flush(false);
 PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_116653258.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_116653258;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (format == null) {
+            //throw new NullPointerException("format");
+        //}
+        //formatter.format(l, format, args);
+        //flush(false);
+        //return this;
     }
 
     
@@ -261,9 +258,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(charArray[0]);
         builder.append(charArray);
         flush(false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(charArray);
+        //flush(false);
     }
 
     
@@ -275,12 +272,12 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
     if(ch == '\n')        
         {
             flush(false);
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //builder.append(ch);
+        //if (ch == '\n') {
+            //flush(false);
+        //}
     }
 
     
@@ -289,8 +286,8 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
     public synchronized void print(double dnum) {
         addTaint(dnum);
         builder.append(dnum);
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(dnum);
     }
 
     
@@ -299,8 +296,8 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
     public synchronized void print(float fnum) {
         addTaint(fnum);
         builder.append(fnum);
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(fnum);
     }
 
     
@@ -309,8 +306,8 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
     public synchronized void print(int inum) {
         addTaint(inum);
         builder.append(inum);
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(inum);
     }
 
     
@@ -319,8 +316,8 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
     public synchronized void print(long lnum) {
         addTaint(lnum);
         builder.append(lnum);
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(lnum);
     }
 
     
@@ -330,9 +327,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(obj.getTaint());
         builder.append(obj);
         flush(false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(obj);
+        //flush(false);
     }
 
     
@@ -342,9 +339,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(str.getTaint());
         builder.append(str);
         flush(false);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(str);
+        //flush(false);
     }
 
     
@@ -353,8 +350,8 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
     public synchronized void print(boolean bool) {
         addTaint(bool);
         builder.append(bool);
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(bool);
     }
 
     
@@ -362,8 +359,8 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
     @Override
     public synchronized void println() {
         flush(true);
-        
-        
+        // ---------- Original Method ----------
+        //flush(true);
     }
 
     
@@ -373,9 +370,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(charArray[0]);
         builder.append(charArray);
         flush(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(charArray);
+        //flush(true);
     }
 
     
@@ -385,9 +382,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(ch);
         builder.append(ch);
         flush(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(ch);
+        //flush(true);
     }
 
     
@@ -397,9 +394,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(dnum);
         builder.append(dnum);
         flush(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(dnum);
+        //flush(true);
     }
 
     
@@ -409,9 +406,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(fnum);
         builder.append(fnum);
         flush(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(fnum);
+        //flush(true);
     }
 
     
@@ -421,9 +418,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(inum);
         builder.append(inum);
         flush(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(inum);
+        //flush(true);
     }
 
     
@@ -433,9 +430,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(lnum);
         builder.append(lnum);
         flush(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(lnum);
+        //flush(true);
     }
 
     
@@ -445,9 +442,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(obj.getTaint());
         builder.append(obj);
         flush(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(obj);
+        //flush(true);
     }
 
     
@@ -466,34 +463,34 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
             {
                 log(s.substring(start, nextBreak));
                 start = nextBreak + 1;
-            } 
+            } //End block
     if(start < length)            
             {
                 log(s.substring(start));
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             builder.append(s);
             flush(true);
-        } 
-        
-        
-            
-            
-            
-            
-                    
-                
-                
-            
-            
-                
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (builder.length() == 0) {
+            //int length = s.length();
+            //int start = 0;
+            //int nextBreak;
+            //while (start < length
+                    //&& (nextBreak = s.indexOf('\n', start)) != -1) {
+                //log(s.substring(start, nextBreak));
+                //start = nextBreak + 1;
+            //}
+            //if (start < length) {
+                //log(s.substring(start));
+            //}
+        //} else {
+            //builder.append(s);
+            //flush(true);
+        //}
     }
 
     
@@ -503,9 +500,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
         addTaint(bool);
         builder.append(bool);
         flush(true);
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(bool);
+        //flush(true);
     }
 
     
@@ -517,9 +514,9 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_116653258 =         this;
 PrintStream var72A74007B2BE62B849F475C7BDA4658B_1232926541 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1232926541.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1232926541;
-        
-        
-        
+        // ---------- Original Method ----------
+        //print(c);
+        //return this;
     }
 
     
@@ -532,10 +529,10 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_1232926541 =         this;
 PrintStream var72A74007B2BE62B849F475C7BDA4658B_352956800 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_352956800.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_352956800;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(csq);
+        //flush(false);
+        //return this;
     }
 
     
@@ -551,10 +548,10 @@ PrintStream var72A74007B2BE62B849F475C7BDA4658B_352956800 =         this;
 PrintStream var72A74007B2BE62B849F475C7BDA4658B_456738153 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_456738153.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_456738153;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //builder.append(csq, start, end);
+        //flush(false);
+        //return this;
     }
 
     

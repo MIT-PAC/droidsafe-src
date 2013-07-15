@@ -1,6 +1,6 @@
 package org.bouncycastle.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,7 +41,7 @@ class X509Util {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.773 -0400", hash_original_method = "19DD25388D9EA3D8C5EFD26CD223A84A", hash_generated_method = "19DD25388D9EA3D8C5EFD26CD223A84A")
     public X509Util ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -268,31 +268,29 @@ class X509Util {
             Provider    provider) {
             this.engine = engine;
             this.provider = provider;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.engine = engine;
+            //this.provider = provider;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.778 -0400", hash_original_method = "BE45F36A26940534B07006714A378835", hash_generated_method = "0D71BC0870413A82486413D584D93D88")
          Object getEngine() {
 Object var7972BCEBDA271965A23F8B80E328E98F_752461097 =             engine;
             var7972BCEBDA271965A23F8B80E328E98F_752461097.addTaint(taint);
             return var7972BCEBDA271965A23F8B80E328E98F_752461097;
-            
-            
+            // ---------- Original Method ----------
+            //return engine;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.778 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "D2ED0247410632852D18709B33F21F92")
          Provider getProvider() {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_952715614 =             provider;
             varC1EB7B12CCABB27D431E5B91E5FF9ECB_952715614.addTaint(taint);
             return varC1EB7B12CCABB27D431E5B91E5FF9ECB_952715614;
-            
-            
+            // ---------- Original Method ----------
+            //return provider;
         }
 
         

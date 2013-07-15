@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,16 +36,16 @@ public abstract class Buffer {
             IllegalArgumentException varA12B62205B960623EBBA8A01150F526D_2098226338 = new IllegalArgumentException("capacity < 0: " + capacity);
             varA12B62205B960623EBBA8A01150F526D_2098226338.addTaint(taint);
             throw varA12B62205B960623EBBA8A01150F526D_2098226338;
-        } 
+        } //End block
         this.capacity = this.limit = capacity;
         this.block = block;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //this._elementSizeShift = elementSizeShift;
+        //if (capacity < 0) {
+            //throw new IllegalArgumentException("capacity < 0: " + capacity);
+        //}
+        //this.capacity = this.limit = capacity;
+        //this.block = block;
     }
 
     
@@ -60,8 +60,8 @@ public abstract class Buffer {
         int var7BD14A231864E618E1840C7E117E59C1_1771715487 = (capacity);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198596944 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198596944;
-        
-        
+        // ---------- Original Method ----------
+        //return capacity;
     }
 
     
@@ -73,11 +73,11 @@ public abstract class Buffer {
             IndexOutOfBoundsException var2AE91013EDA9724F76B2720BFFF37786_5798349 = new IndexOutOfBoundsException("index=" + index + ", limit=" + limit);
             var2AE91013EDA9724F76B2720BFFF37786_5798349.addTaint(taint);
             throw var2AE91013EDA9724F76B2720BFFF37786_5798349;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (index < 0 || index >= limit) {
+            //throw new IndexOutOfBoundsException("index=" + index + ", limit=" + limit);
+        //}
     }
 
     
@@ -91,16 +91,15 @@ public abstract class Buffer {
                     ", size of type=" + sizeOfType);
             var485B03E5FC6C5A45B069E745C3202EE8_1040959439.addTaint(taint);
             throw var485B03E5FC6C5A45B069E745C3202EE8_1040959439;
-        } 
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (index < 0 || index > limit - sizeOfType) {
+            //throw new IndexOutOfBoundsException("index=" + index + ", limit=" + limit +
+                    //", size of type=" + sizeOfType);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.910 -0400", hash_original_method = "BA880ED8E3C58CA5885B3C340E7A6A66", hash_generated_method = "DAFA0E19E47E74F10ADC36F7175073B4")
      int checkGetBounds(int bytesPerElement, int length, int offset, int count) {
         addTaint(count);
@@ -114,30 +113,29 @@ public abstract class Buffer {
                     ", count=" + count + ", length=" + length);
             var237C2E3911559A7B9C5446946C75A3B3_1220663142.addTaint(taint);
             throw var237C2E3911559A7B9C5446946C75A3B3_1220663142;
-        } 
+        } //End block
     if(byteCount > remaining())        
         {
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_248498997 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_248498997.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_248498997;
-        } 
+        } //End block
         int varA43EF6D60A83013EA1A61A23BDB16029_1912024274 = (byteCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200604337 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200604337;
-        
-        
-        
-            
-                    
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int byteCount = bytesPerElement * count;
+        //if ((offset | count) < 0 || offset > length || length - offset < count) {
+            //throw new IndexOutOfBoundsException("offset=" + offset +
+                    //", count=" + count + ", length=" + length);
+        //}
+        //if (byteCount > remaining()) {
+            //throw new BufferUnderflowException();
+        //}
+        //return byteCount;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.910 -0400", hash_original_method = "A9251187BC2FC71988179BCFBD0F334A", hash_generated_method = "B11A120B89E487961CADD3FF0798AB14")
      int checkPutBounds(int bytesPerElement, int length, int offset, int count) {
         addTaint(count);
@@ -151,39 +149,38 @@ public abstract class Buffer {
                     ", count=" + count + ", length=" + length);
             var237C2E3911559A7B9C5446946C75A3B3_1253439009.addTaint(taint);
             throw var237C2E3911559A7B9C5446946C75A3B3_1253439009;
-        } 
+        } //End block
     if(byteCount > remaining())        
         {
             BufferOverflowException var773478A23217201B18B531915D367F31_1956322073 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_1956322073.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_1956322073;
-        } 
+        } //End block
     if(isReadOnly())        
         {
             ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1082859061 = new ReadOnlyBufferException();
             varA14F16C43B102D90B34008C8FF8087F8_1082859061.addTaint(taint);
             throw varA14F16C43B102D90B34008C8FF8087F8_1082859061;
-        } 
+        } //End block
         int varA43EF6D60A83013EA1A61A23BDB16029_905379740 = (byteCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234238251 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234238251;
-        
-        
-        
-            
-                    
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int byteCount = bytesPerElement * count;
+        //if ((offset | count) < 0 || offset > length || length - offset < count) {
+            //throw new IndexOutOfBoundsException("offset=" + offset +
+                    //", count=" + count + ", length=" + length);
+        //}
+        //if (byteCount > remaining()) {
+            //throw new BufferOverflowException();
+        //}
+        //if (isReadOnly()) {
+            //throw new ReadOnlyBufferException();
+        //}
+        //return byteCount;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.911 -0400", hash_original_method = "37F8609F5279E5BC0D8BC318C47B5ADC", hash_generated_method = "1691C4166EEB896F8D603005A38033DA")
      void checkStartEndRemaining(int start, int end) {
         addTaint(end);
@@ -194,12 +191,12 @@ public abstract class Buffer {
                     ", remaining()=" + remaining());
             var2952B7EF9E478CBDEDD85E1CD117B0D4_1268299281.addTaint(taint);
             throw var2952B7EF9E478CBDEDD85E1CD117B0D4_1268299281;
-        } 
-        
-        
-            
-                    
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (end < start || start < 0 || end > remaining()) {
+            //throw new IndexOutOfBoundsException("start=" + start + ", end=" + end +
+                    //", remaining()=" + remaining());
+        //}
     }
 
     
@@ -211,11 +208,11 @@ public abstract class Buffer {
 Buffer var72A74007B2BE62B849F475C7BDA4658B_1747391336 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1747391336.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1747391336;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //position = 0;
+        //mark = UNSET_MARK;
+        //limit = capacity;
+        //return this;
     }
 
     
@@ -227,11 +224,11 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1747391336 =         this;
 Buffer var72A74007B2BE62B849F475C7BDA4658B_1845156139 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1845156139.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1845156139;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //limit = position;
+        //position = 0;
+        //mark = UNSET_MARK;
+        //return this;
     }
 
     
@@ -243,8 +240,8 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1845156139 =         this;
         boolean varA311A48D68DFAB1F8655269A7132150E_1826682193 = (position < limit);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1096295708 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1096295708;
-        
-        
+        // ---------- Original Method ----------
+        //return position < limit;
     }
 
     
@@ -261,11 +258,11 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1845156139 =         this;
             IllegalArgumentException var7D6FDD050D09806E382B195E32E4AE58_1431355408 = new IllegalArgumentException("read-only buffer");
             var7D6FDD050D09806E382B195E32E4AE58_1431355408.addTaint(taint);
             throw var7D6FDD050D09806E382B195E32E4AE58_1431355408;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (isReadOnly()) {
+            //throw new IllegalArgumentException("read-only buffer");
+        //}
     }
 
     
@@ -274,8 +271,8 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1845156139 =         this;
         int varAA9F73EEA60A006820D0F8768BC8A3FC_856865572 = (limit);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722065922 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_722065922;
-        
-        
+        // ---------- Original Method ----------
+        //return limit;
     }
 
     
@@ -286,9 +283,9 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1845156139 =         this;
 Buffer var72A74007B2BE62B849F475C7BDA4658B_1744665609 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1744665609.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1744665609;
-        
-        
-        
+        // ---------- Original Method ----------
+        //limitImpl(newLimit);
+        //return this;
     }
 
     
@@ -299,27 +296,27 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1744665609 =         this;
             IllegalArgumentException varD3FA4DEA64B9805FF2C288BBDE7E9B4C_1368696376 = new IllegalArgumentException("Bad limit (capacity " + capacity + "): " + newLimit);
             varD3FA4DEA64B9805FF2C288BBDE7E9B4C_1368696376.addTaint(taint);
             throw varD3FA4DEA64B9805FF2C288BBDE7E9B4C_1368696376;
-        } 
+        } //End block
         limit = newLimit;
     if(position > newLimit)        
         {
             position = newLimit;
-        } 
+        } //End block
     if((mark != UNSET_MARK) && (mark > newLimit))        
         {
             mark = UNSET_MARK;
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (newLimit < 0 || newLimit > capacity) {
+            //throw new IllegalArgumentException("Bad limit (capacity " + capacity + "): " + newLimit);
+        //}
+        //limit = newLimit;
+        //if (position > newLimit) {
+            //position = newLimit;
+        //}
+        //if ((mark != UNSET_MARK) && (mark > newLimit)) {
+            //mark = UNSET_MARK;
+        //}
     }
 
     
@@ -329,9 +326,9 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_1744665609 =         this;
 Buffer var72A74007B2BE62B849F475C7BDA4658B_650346877 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_650346877.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_650346877;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mark = position;
+        //return this;
     }
 
     
@@ -340,8 +337,8 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_650346877 =         this;
         int var4757FE07FD492A8BE0EA6A760D683D6E_1773080333 = (position);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_830604415 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_830604415;
-        
-        
+        // ---------- Original Method ----------
+        //return position;
     }
 
     
@@ -352,13 +349,12 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_650346877 =         this;
 Buffer var72A74007B2BE62B849F475C7BDA4658B_149826459 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_149826459.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_149826459;
-        
-        
-        
+        // ---------- Original Method ----------
+        //positionImpl(newPosition);
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.918 -0400", hash_original_method = "291AA3CEE66D23BDF7C966DCE30CC485", hash_generated_method = "D43158302179FB9AAA124DB49AE5DE97")
      void positionImpl(int newPosition) {
     if(newPosition < 0 || newPosition > limit)        
@@ -366,20 +362,20 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_149826459 =         this;
             IllegalArgumentException var6A7339BB80AF6B4E498E98C57B9CBD80_569412501 = new IllegalArgumentException("Bad position (limit " + limit + "): " + newPosition);
             var6A7339BB80AF6B4E498E98C57B9CBD80_569412501.addTaint(taint);
             throw var6A7339BB80AF6B4E498E98C57B9CBD80_569412501;
-        } 
+        } //End block
         position = newPosition;
     if((mark != UNSET_MARK) && (mark > position))        
         {
             mark = UNSET_MARK;
-        } 
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (newPosition < 0 || newPosition > limit) {
+            //throw new IllegalArgumentException("Bad position (limit " + limit + "): " + newPosition);
+        //}
+        //position = newPosition;
+        //if ((mark != UNSET_MARK) && (mark > position)) {
+            //mark = UNSET_MARK;
+        //}
     }
 
     
@@ -388,8 +384,8 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_149826459 =         this;
         int var09EF638EAE66D4F89E996C4321DBBCF9_823197784 = (limit - position);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1327812903 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1327812903;
-        
-        
+        // ---------- Original Method ----------
+        //return limit - position;
     }
 
     
@@ -400,17 +396,17 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_149826459 =         this;
             InvalidMarkException varBC1D4459167B8D7C6C46A334BE610185_806315328 = new InvalidMarkException("Mark not set");
             varBC1D4459167B8D7C6C46A334BE610185_806315328.addTaint(taint);
             throw varBC1D4459167B8D7C6C46A334BE610185_806315328;
-        } 
+        } //End block
         position = mark;
 Buffer var72A74007B2BE62B849F475C7BDA4658B_594263460 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_594263460.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_594263460;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mark == UNSET_MARK) {
+            //throw new InvalidMarkException("Mark not set");
+        //}
+        //position = mark;
+        //return this;
     }
 
     
@@ -421,14 +417,13 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_594263460 =         this;
 Buffer var72A74007B2BE62B849F475C7BDA4658B_763283914 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_763283914.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_763283914;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //position = 0;
+        //mark = UNSET_MARK;
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.920 -0400", hash_original_method = "E469E128CB7197E7BD730454D1CDC172", hash_generated_method = "980C63FDD7E09380B0E467022332EE23")
     @Override
     public String toString() {
@@ -443,16 +438,16 @@ Buffer var72A74007B2BE62B849F475C7BDA4658B_763283914 =         this;
 String var4FC680801218E6372BC708D6FA44AE60_1885059017 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_1885059017.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_1885059017;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //StringBuilder buf = new StringBuilder();
+        //buf.append(getClass().getName());
+        //buf.append(", status: capacity=");
+        //buf.append(capacity);
+        //buf.append(" position=");
+        //buf.append(position);
+        //buf.append(" limit=");
+        //buf.append(limit);
+        //return buf.toString();
     }
 
     

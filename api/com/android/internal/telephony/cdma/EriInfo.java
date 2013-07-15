@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,13 +34,13 @@ public final class EriInfo {
         this.mEriText = eriText;
         this.mCallPromptId = callPromptId;
         this.mAlertId = alertId;
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.mRoamingIndicator = roamingIndicator;
+        //this.mIconIndex = iconIndex;
+        //this.mIconMode = iconMode;
+        //this.mEriText = eriText;
+        //this.mCallPromptId = callPromptId;
+        //this.mAlertId = alertId;
     }
 
     

@@ -1,6 +1,6 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,18 +12,16 @@ public abstract class ProxySelector {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.129 -0400", hash_original_method = "58B949A565A2A9912CEB4CE07BFCA43A", hash_generated_method = "58B949A565A2A9912CEB4CE07BFCA43A")
     public ProxySelector ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static ProxySelector getDefault() {
+        public static ProxySelector getDefault() {
         return defaultSelector;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setDefault(ProxySelector selector) {
+        public static void setDefault(ProxySelector selector) {
         defaultSelector = selector;
     }
 

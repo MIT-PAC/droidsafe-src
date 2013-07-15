@@ -1,6 +1,6 @@
 package android.support.v4.view;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,19 +18,18 @@ public class AccessibilityDelegateCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.666 -0400", hash_original_method = "97DB5C1E35BD81C1D800183C23794857", hash_generated_method = "F78BE570E201B647D3E12D3E6CF191F8")
     public  AccessibilityDelegateCompat() {
         mBridge = IMPL.newAccessiblityDelegateBridge(this);
-        
-        
+        // ---------- Original Method ----------
+        //mBridge = IMPL.newAccessiblityDelegateBridge(this);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.667 -0400", hash_original_method = "29194344028099349300BA7E9C8229CD", hash_generated_method = "D72F389A0E76722ABA00A6316B7F4A51")
      Object getBridge() {
 Object var24F833124FC4728CF66CDDC6D3B2FC56_1434307934 =         mBridge;
         var24F833124FC4728CF66CDDC6D3B2FC56_1434307934.addTaint(taint);
         return var24F833124FC4728CF66CDDC6D3B2FC56_1434307934;
-        
-        
+        // ---------- Original Method ----------
+        //return mBridge;
     }
 
     
@@ -39,8 +38,8 @@ Object var24F833124FC4728CF66CDDC6D3B2FC56_1434307934 =         mBridge;
         addTaint(eventType);
         addTaint(host.getTaint());
         IMPL.sendAccessibilityEvent(DEFAULT_DELEGATE, host, eventType);
-        
-        
+        // ---------- Original Method ----------
+        //IMPL.sendAccessibilityEvent(DEFAULT_DELEGATE, host, eventType);
     }
 
     
@@ -49,8 +48,8 @@ Object var24F833124FC4728CF66CDDC6D3B2FC56_1434307934 =         mBridge;
         addTaint(event.getTaint());
         addTaint(host.getTaint());
         IMPL.sendAccessibilityEventUnchecked(DEFAULT_DELEGATE, host, event);
-        
-        
+        // ---------- Original Method ----------
+        //IMPL.sendAccessibilityEventUnchecked(DEFAULT_DELEGATE, host, event);
     }
 
     
@@ -61,56 +60,56 @@ Object var24F833124FC4728CF66CDDC6D3B2FC56_1434307934 =         mBridge;
         boolean var8D5B6D12D8864DC11DF32FC9991C2F77_65873737 = (IMPL.dispatchPopulateAccessibilityEvent(DEFAULT_DELEGATE, host, event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2143942776 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2143942776;
-        
-        
+        // ---------- Original Method ----------
+        //return IMPL.dispatchPopulateAccessibilityEvent(DEFAULT_DELEGATE, host, event);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.668 -0400", hash_original_method = "DE3AA9FE26B29E02F70EE9289C022DB2", hash_generated_method = "401EF6D8A63497649D223EC5B0678EA7")
     public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(host.getTaint());
         IMPL.onPopulateAccessibilityEvent(DEFAULT_DELEGATE, host, event);
-        
-        
+        // ---------- Original Method ----------
+        //IMPL.onPopulateAccessibilityEvent(DEFAULT_DELEGATE, host, event);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.668 -0400", hash_original_method = "6FCF19A166005C43B6A9E9FED7E7775A", hash_generated_method = "185061DB0E5895ADF477BEB8B6F68228")
     public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(host.getTaint());
         IMPL.onInitializeAccessibilityEvent(DEFAULT_DELEGATE, host, event);
-        
-        
+        // ---------- Original Method ----------
+        //IMPL.onInitializeAccessibilityEvent(DEFAULT_DELEGATE, host, event);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.669 -0400", hash_original_method = "702CF486436EF7CB7E261126510CB2C4", hash_generated_method = "5D28842E8EF867A3FAB62A8A56E448C4")
     public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(info.getTaint());
         addTaint(host.getTaint());
         IMPL.onInitializeAccessibilityNodeInfo(DEFAULT_DELEGATE, host, info);
-        
-        
+        // ---------- Original Method ----------
+        //IMPL.onInitializeAccessibilityNodeInfo(DEFAULT_DELEGATE, host, info);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.669 -0400", hash_original_method = "73CE2F858DC24998E108FD42EF6CF922", hash_generated_method = "DD1478F40D425A902A3B9572B670D475")
     public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
             AccessibilityEvent event) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(event.getTaint());
         addTaint(child.getTaint());
         addTaint(host.getTaint());
         boolean varDAA804C29817B347637B18F7C3BE3AC7_959153268 = (IMPL.onRequestSendAccessibilityEvent(DEFAULT_DELEGATE, host, child, event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_352579580 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_352579580;
-        
-        
+        // ---------- Original Method ----------
+        //return IMPL.onRequestSendAccessibilityEvent(DEFAULT_DELEGATE, host, child, event);
     }
 
     
@@ -119,34 +118,31 @@ Object var24F833124FC4728CF66CDDC6D3B2FC56_1434307934 =         mBridge;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.670 -0400", hash_original_method = "DD5FA6B7DB30F302274C6D21593F2A63", hash_generated_method = "DD5FA6B7DB30F302274C6D21593F2A63")
         public AccessibilityDelegateStubImpl ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.670 -0400", hash_original_method = "5A07CEDF6000B635EBB3282D6BCEC4C0", hash_generated_method = "5AC968A873711E9C7239BD904EACEBCA")
         public Object newAccessiblityDelegateDefaultImpl() {
 Object var540C13E9E156B687226421B24F2DF178_914655101 =             null;
             var540C13E9E156B687226421B24F2DF178_914655101.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_914655101;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.670 -0400", hash_original_method = "CA4708336A662876B1C4E973563DF8C7", hash_generated_method = "D039B6AD21810E51E56FC9AE885FEE1B")
         public Object newAccessiblityDelegateBridge(AccessibilityDelegateCompat listener) {
             addTaint(listener.getTaint());
 Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
             var540C13E9E156B687226421B24F2DF178_1186000244.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1186000244;
-            
-            
+            // ---------- Original Method ----------
+            //return null;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.671 -0400", hash_original_method = "9EE5CAEDF307AFCEB241BA171EF39C83", hash_generated_method = "78ED03075C916433E20BCAEA1E456379")
         public boolean dispatchPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
@@ -156,52 +152,48 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
             boolean var68934A3E9455FA72420237EB05902327_733819956 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_912656491 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_912656491;
-            
-            
+            // ---------- Original Method ----------
+            //return false;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.671 -0400", hash_original_method = "1447397CED667B971B04D5F82ACD0B6D", hash_generated_method = "225086B214F75BDCA170C89E0ADB2C57")
         public void onInitializeAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.671 -0400", hash_original_method = "99C4DEE76C5B6F4A70F08ECD66D4CBFF", hash_generated_method = "3D77FE40A1AADA4203C92B860EDAFFFF")
         public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
                 AccessibilityNodeInfoCompat info) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(info.getTaint());
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.672 -0400", hash_original_method = "01D49E3547E9C548CD307570029DA5C4", hash_generated_method = "868C8882B6E6BD958654FB038CB0DAC1")
         public void onPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.672 -0400", hash_original_method = "389DE28FC8C0CFCD072BB38D30CE111B", hash_generated_method = "B828B8E6792981D545FB824AE2C260E7")
         public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
                 AccessibilityEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             addTaint(child.getTaint());
             addTaint(host.getTaint());
@@ -209,29 +201,27 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
             boolean varB326B5062B2F0E69046810717534CB09_926501110 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_636567257 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_636567257;
-            
-            
+            // ---------- Original Method ----------
+            //return true;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.673 -0400", hash_original_method = "62BC6D1148E35F68F64E7D17E3EF0845", hash_generated_method = "593BBEE4952D85452CC23527030EF887")
         public void sendAccessibilityEvent(Object delegate, View host, int eventType) {
             addTaint(eventType);
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.673 -0400", hash_original_method = "B229E2592A12C5FBAB6E11834FD34BE2", hash_generated_method = "955305F28D84EC1BFDC9E23FE39048F8")
         public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event) {
             addTaint(event.getTaint());
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -244,7 +234,7 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.673 -0400", hash_original_method = "001B0205D9FC59E8AC4A7BF341AF74E0", hash_generated_method = "001B0205D9FC59E8AC4A7BF341AF74E0")
         public AccessibilityDelegateIcsImpl ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -254,8 +244,8 @@ Object var540C13E9E156B687226421B24F2DF178_1186000244 =             null;
 Object var1F18FF75956054871BF6E0AF38CEB1F5_2122514914 =             AccessibilityDelegateCompatIcs.newAccessibilityDelegateDefaultImpl();
             var1F18FF75956054871BF6E0AF38CEB1F5_2122514914.addTaint(taint);
             return var1F18FF75956054871BF6E0AF38CEB1F5_2122514914;
-            
-            
+            // ---------- Original Method ----------
+            //return AccessibilityDelegateCompatIcs.newAccessibilityDelegateDefaultImpl();
         }
 
         
@@ -274,54 +264,54 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
                 boolean var894E37CCC59D9400C53F46D4295AEBE5_1117408411 = (compat.dispatchPopulateAccessibilityEvent(host, event));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_852319398 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_852319398;
-                
-                
+                // ---------- Original Method ----------
+                //return compat.dispatchPopulateAccessibilityEvent(host, event);
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.674 -0400", hash_original_method = "D7ED4F87557CED496737993AB37F4B3F", hash_generated_method = "1061728B2696EC05AB2BA831B9B9FE7B")
             @Override
             public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(event.getTaint());
                 addTaint(host.getTaint());
                 compat.onInitializeAccessibilityEvent(host, event);
-                
-                
+                // ---------- Original Method ----------
+                //compat.onInitializeAccessibilityEvent(host, event);
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.675 -0400", hash_original_method = "BCC479229D07763EE1ADFC3B5966A67E", hash_generated_method = "90C86DABAB725079DBFEF3C6192749D9")
             @Override
             public void onInitializeAccessibilityNodeInfo(View host, Object info) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(info.getTaint());
                 addTaint(host.getTaint());
                 compat.onInitializeAccessibilityNodeInfo(host,
                             new AccessibilityNodeInfoCompat(info));
-                
-                
-                            
+                // ---------- Original Method ----------
+                //compat.onInitializeAccessibilityNodeInfo(host,
+                            //new AccessibilityNodeInfoCompat(info));
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.675 -0400", hash_original_method = "CCB1C95876DA6951777EF2568060C667", hash_generated_method = "58A67F5F584279E682CF492C950112D9")
             @Override
             public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(event.getTaint());
                 addTaint(host.getTaint());
                 compat.onPopulateAccessibilityEvent(host, event);
-                
-                
+                // ---------- Original Method ----------
+                //compat.onPopulateAccessibilityEvent(host, event);
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.675 -0400", hash_original_method = "8B3EFAFCC5F82FF08E5816A5D75668A2", hash_generated_method = "50F193662575B94B4E81EF5AC1087653")
             @Override
             public boolean onRequestSendAccessibilityEvent(ViewGroup host, View child,
                         AccessibilityEvent event) {
-                
+                //DSFIXME:  CODE0009: Possible callback target function detected
                 addTaint(event.getTaint());
                 addTaint(child.getTaint());
                 addTaint(host.getTaint());
                 boolean varA6058C66519A0E1935166E7EA3942A8C_1401253800 = (compat.onRequestSendAccessibilityEvent(host, child, event));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_867798202 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_867798202;
-                
-                
+                // ---------- Original Method ----------
+                //return compat.onRequestSendAccessibilityEvent(host, child, event);
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.675 -0400", hash_original_method = "70D63C2BFF8EC6B97AB4FDD168BE56A7", hash_generated_method = "988FD5385B23802462076B7C7DFE173C")
             @Override
@@ -329,8 +319,8 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
                 addTaint(eventType);
                 addTaint(host.getTaint());
                 compat.sendAccessibilityEvent(host, eventType);
-                
-                
+                // ---------- Original Method ----------
+                //compat.sendAccessibilityEvent(host, eventType);
             }
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.676 -0400", hash_original_method = "DD5EF61DAD976C4E444C1B00AA4D994D", hash_generated_method = "CB4F2E97997279FA3E639DDD474F0204")
             @Override
@@ -338,14 +328,14 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
                 addTaint(event.getTaint());
                 addTaint(host.getTaint());
                 compat.sendAccessibilityEventUnchecked(host, event);
-                
-                
+                // ---------- Original Method ----------
+                //compat.sendAccessibilityEventUnchecked(host, event);
             }
 });
             varA7267C588A08581F1A4C65938C8DD2C2_1355491921.addTaint(taint);
             return varA7267C588A08581F1A4C65938C8DD2C2_1355491921;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -360,9 +350,9 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
                     host, event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_640355220 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_640355220;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return AccessibilityDelegateCompatIcs.dispatchPopulateAccessibilityEvent(delegate,
+                    //host, event);
         }
 
         
@@ -370,13 +360,13 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
         @Override
         public void onInitializeAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
             AccessibilityDelegateCompatIcs.onInitializeAccessibilityEvent(delegate, host, event);
-            
-            
+            // ---------- Original Method ----------
+            //AccessibilityDelegateCompatIcs.onInitializeAccessibilityEvent(delegate, host, event);
         }
 
         
@@ -384,15 +374,15 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
         @Override
         public void onInitializeAccessibilityNodeInfo(Object delegate, View host,
                 AccessibilityNodeInfoCompat info) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(info.getTaint());
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
             AccessibilityDelegateCompatIcs.onInitializeAccessibilityNodeInfo(delegate, host,
                     info.getImpl());
-            
-            
-                    
+            // ---------- Original Method ----------
+            //AccessibilityDelegateCompatIcs.onInitializeAccessibilityNodeInfo(delegate, host,
+                    //info.getImpl());
         }
 
         
@@ -400,13 +390,13 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
         @Override
         public void onPopulateAccessibilityEvent(Object delegate, View host,
                 AccessibilityEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
             AccessibilityDelegateCompatIcs.onPopulateAccessibilityEvent(delegate, host, event);
-            
-            
+            // ---------- Original Method ----------
+            //AccessibilityDelegateCompatIcs.onPopulateAccessibilityEvent(delegate, host, event);
         }
 
         
@@ -414,7 +404,7 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
         @Override
         public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, View child,
                 AccessibilityEvent event) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(event.getTaint());
             addTaint(child.getTaint());
             addTaint(host.getTaint());
@@ -423,9 +413,9 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
                     child, event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1171108958 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1171108958;
-            
-            
-                    
+            // ---------- Original Method ----------
+            //return AccessibilityDelegateCompatIcs.onRequestSendAccessibilityEvent(delegate, host,
+                    //child, event);
         }
 
         
@@ -436,8 +426,8 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
             AccessibilityDelegateCompatIcs.sendAccessibilityEvent(delegate, host, eventType);
-            
-            
+            // ---------- Original Method ----------
+            //AccessibilityDelegateCompatIcs.sendAccessibilityEvent(delegate, host, eventType);
         }
 
         
@@ -449,8 +439,8 @@ Object varA7267C588A08581F1A4C65938C8DD2C2_1355491921 =             Accessibilit
             addTaint(host.getTaint());
             addTaint(delegate.getTaint());
             AccessibilityDelegateCompatIcs.sendAccessibilityEventUnchecked(delegate, host, event);
-            
-            
+            // ---------- Original Method ----------
+            //AccessibilityDelegateCompatIcs.sendAccessibilityEventUnchecked(delegate, host, event);
         }
 
         

@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class EncodeException extends Exception {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.717 -0400", hash_original_method = "F9AE7F85F23C7FEE107F4543E0942608", hash_generated_method = "E3D169A62DC6D3221C9019B8C374B014")
     public  EncodeException() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -18,7 +18,7 @@ public class EncodeException extends Exception {
     public  EncodeException(String s) {
         super(s);
         addTaint(s.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -26,7 +26,7 @@ public class EncodeException extends Exception {
     public  EncodeException(char c) {
         super("Unencodable char: '" + c + "'");
         addTaint(c);
-        
+        // ---------- Original Method ----------
     }
 
     

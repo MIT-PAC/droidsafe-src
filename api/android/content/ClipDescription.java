@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,15 +24,15 @@ public class ClipDescription implements Parcelable {
             NullPointerException var3E63AEEB8B2852F256E112217BABEFB3_9783900 = new NullPointerException("mimeTypes is null");
             var3E63AEEB8B2852F256E112217BABEFB3_9783900.addTaint(taint);
             throw var3E63AEEB8B2852F256E112217BABEFB3_9783900;
-        } 
+        } //End block
         mLabel = label;
         mMimeTypes = mimeTypes;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mimeTypes == null) {
+            //throw new NullPointerException("mimeTypes is null");
+        //}
+        //mLabel = label;
+        //mMimeTypes = mimeTypes;
     }
 
     
@@ -40,9 +40,9 @@ public class ClipDescription implements Parcelable {
     public  ClipDescription(ClipDescription o) {
         mLabel = o.mLabel;
         mMimeTypes = o.mMimeTypes;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLabel = o.mLabel;
+        //mMimeTypes = o.mMimeTypes;
     }
 
     
@@ -50,9 +50,9 @@ public class ClipDescription implements Parcelable {
       ClipDescription(Parcel in) {
         mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
         mMimeTypes = in.createStringArray();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
+        //mMimeTypes = in.createStringArray();
     }
 
     
@@ -75,14 +75,13 @@ public class ClipDescription implements Parcelable {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.287 -0400", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "C2615C0D6700B8A7F8A789B306DA444D")
     public CharSequence getLabel() {
 CharSequence var21E4126FD2EB7A90E0B7B540C066F29D_958331491 =         mLabel;
         var21E4126FD2EB7A90E0B7B540C066F29D_958331491.addTaint(taint);
         return var21E4126FD2EB7A90E0B7B540C066F29D_958331491;
-        
-        
+        // ---------- Original Method ----------
+        //return mLabel;
     }
 
     
@@ -96,18 +95,18 @@ for(int i=0;i<mMimeTypes.length;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1175280063 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1695620225 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1695620225;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1773382362 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1588218934 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1588218934;
-        
-        
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (int i=0; i<mMimeTypes.length; i++) {
+            //if (compareMimeTypes(mMimeTypes[i], mimeType)) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
@@ -122,60 +121,58 @@ for(int i=0;i<mMimeTypes.length;i++)
     if(array == null)                
                 {
                     array = new ArrayList<String>();
-                } 
+                } //End block
                 array.add(mMimeTypes[i]);
-            } 
-        } 
+            } //End block
+        } //End block
     if(array == null)        
         {
 String[] var540C13E9E156B687226421B24F2DF178_1733560042 =             null;
             var540C13E9E156B687226421B24F2DF178_1733560042.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1733560042;
-        } 
+        } //End block
         String[] rawArray = new String[array.size()];
         array.toArray(rawArray);
 String[] var822851022E4BEBC62394ECB824CEDA57_2077592612 =         rawArray;
         var822851022E4BEBC62394ECB824CEDA57_2077592612.addTaint(taint);
         return var822851022E4BEBC62394ECB824CEDA57_2077592612;
-        
-        
-        
-            
-                
-                    
-                
-                
-            
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<String> array = null;
+        //for (int i=0; i<mMimeTypes.length; i++) {
+            //if (compareMimeTypes(mMimeTypes[i], mimeType)) {
+                //if (array == null) {
+                    //array = new ArrayList<String>();
+                //}
+                //array.add(mMimeTypes[i]);
+            //}
+        //}
+        //if (array == null) {
+            //return null;
+        //}
+        //String[] rawArray = new String[array.size()];
+        //array.toArray(rawArray);
+        //return rawArray;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.290 -0400", hash_original_method = "B31C73D49DA2B2DFF06E53A9680B864B", hash_generated_method = "24B9499EF4C4EA1C9C42E72CDC475E33")
     public int getMimeTypeCount() {
         int var1751EF599B3E214FB392CD8756CBCEF4_154219439 = (mMimeTypes.length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431560593 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431560593;
-        
-        
+        // ---------- Original Method ----------
+        //return mMimeTypes.length;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.290 -0400", hash_original_method = "764DD8C2717756748E8339CB8965B38B", hash_generated_method = "9FFA45AB976FB29B7D2E4EA931E7D545")
     public String getMimeType(int index) {
         addTaint(index);
 String varFB11B145E24DE026EB623F066F0127B7_1741281838 =         mMimeTypes[index];
         varFB11B145E24DE026EB623F066F0127B7_1741281838.addTaint(taint);
         return varFB11B145E24DE026EB623F066F0127B7_1741281838;
-        
-        
+        // ---------- Original Method ----------
+        //return mMimeTypes[index];
     }
 
     
@@ -186,13 +183,13 @@ String varFB11B145E24DE026EB623F066F0127B7_1741281838 =         mMimeTypes[index
             NullPointerException varFFEE9D2045E4C087D805A1C3ABC5C7A3_91925958 = new NullPointerException("null mime types");
             varFFEE9D2045E4C087D805A1C3ABC5C7A3_91925958.addTaint(taint);
             throw varFFEE9D2045E4C087D805A1C3ABC5C7A3_91925958;
-        } 
+        } //End block
     if(mMimeTypes.length <= 0)        
         {
             IllegalArgumentException var834DD9EAF8F0B3B569DED76945B2C691_2082762497 = new IllegalArgumentException("must have at least 1 mime type");
             var834DD9EAF8F0B3B569DED76945B2C691_2082762497.addTaint(taint);
             throw var834DD9EAF8F0B3B569DED76945B2C691_2082762497;
-        } 
+        } //End block
 for(int i=0;i<mMimeTypes.length;i++)
         {
     if(mMimeTypes[i] == null)            
@@ -200,32 +197,31 @@ for(int i=0;i<mMimeTypes.length;i++)
                 NullPointerException var4C47452AC5A46B749059FE333899C0FF_1090609910 = new NullPointerException("mime type at " + i + " is null");
                 var4C47452AC5A46B749059FE333899C0FF_1090609910.addTaint(taint);
                 throw var4C47452AC5A46B749059FE333899C0FF_1090609910;
-            } 
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (mMimeTypes == null) {
+            //throw new NullPointerException("null mime types");
+        //}
+        //if (mMimeTypes.length <= 0) {
+            //throw new IllegalArgumentException("must have at least 1 mime type");
+        //}
+        //for (int i=0; i<mMimeTypes.length; i++) {
+            //if (mMimeTypes[i] == null) {
+                //throw new NullPointerException("mime type at " + i + " is null");
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.291 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A0F39CB097A3FE62F9C1D583C1E3CEB4")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1189327534 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_442006950 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_442006950;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -236,9 +232,9 @@ for(int i=0;i<mMimeTypes.length;i++)
         addTaint(dest.getTaint());
         TextUtils.writeToParcel(mLabel, dest, flags);
         dest.writeStringArray(mMimeTypes);
-        
-        
-        
+        // ---------- Original Method ----------
+        //TextUtils.writeToParcel(mLabel, dest, flags);
+        //dest.writeStringArray(mMimeTypes);
     }
 
     
@@ -264,12 +260,12 @@ for(int i=0;i<mMimeTypes.length;i++)
                 return new ClipDescription[size];
             }
         };
-    
+    // orphaned legacy method
     public ClipDescription createFromParcel(Parcel source) {
                 return new ClipDescription(source);
             }
     
-    
+    // orphaned legacy method
     public ClipDescription[] newArray(int size) {
                 return new ClipDescription[size];
             }

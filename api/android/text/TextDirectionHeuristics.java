@@ -1,6 +1,6 @@
 package android.text;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,12 +12,11 @@ public class TextDirectionHeuristics {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.976 -0400", hash_original_method = "58EF974DE9597127C18BC29D51581A83", hash_generated_method = "58EF974DE9597127C18BC29D51581A83")
     public TextDirectionHeuristics ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    private static TriState isRtlText(int directionality) {
+        private static TriState isRtlText(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
                 return TriState.FALSE;
@@ -30,8 +29,7 @@ public class TextDirectionHeuristics {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static TriState isRtlTextOrFormat(int directionality) {
+        private static TriState isRtlTextOrFormat(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING:
@@ -61,8 +59,8 @@ public class TextDirectionHeuristics {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.977 -0400", hash_original_method = "78BC1D5C61B057EE1329E0F2DC6F9F5C", hash_generated_method = "05B6DD8753C7F8E313E2DF2F8649E7E1")
         public  TextDirectionHeuristicImpl(TextDirectionAlgorithm algorithm) {
             mAlgorithm = algorithm;
-            
-            
+            // ---------- Original Method ----------
+            //mAlgorithm = algorithm;
         }
 
         
@@ -80,24 +78,24 @@ public class TextDirectionHeuristics {
                 IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_654940527 = new IllegalArgumentException();
                 var5783EF97022AA508B74A1E3EA38534AF_654940527.addTaint(taint);
                 throw var5783EF97022AA508B74A1E3EA38534AF_654940527;
-            } 
+            } //End block
     if(mAlgorithm == null)            
             {
                 boolean varBB32C4C1D36B053EEEB61EF2C9BEE2EA_1692387017 = (defaultIsRtl());
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_87377116 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_87377116;
-            } 
+            } //End block
             boolean var531FF2B696A577BD7DBE83F7CFAD64F3_1664504507 = (doCheck(chars, start, count));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_253075872 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_253075872;
-            
-            
-                
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (chars == null || start < 0 || count < 0 || chars.length - count < start) {
+                //throw new IllegalArgumentException();
+            //}
+            //if (mAlgorithm == null) {
+                //return defaultIsRtl();
+            //}
+            //return doCheck(chars, start, count);
         }
 
         
@@ -120,15 +118,15 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1668942094 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1668942094;
 }
-            
-            
-                
-                    
-                
-                    
-                
-                    
-            
+            // ---------- Original Method ----------
+            //switch(mAlgorithm.checkRtl(chars, start, count)) {
+                //case TRUE:
+                    //return true;
+                //case FALSE:
+                    //return false;
+                //default:
+                    //return defaultIsRtl();
+            //}
         }
 
         
@@ -147,20 +145,19 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
             super(algorithm);
             addTaint(algorithm.getTaint());
             mDefaultIsRtl = defaultIsRtl;
-            
-            
+            // ---------- Original Method ----------
+            //mDefaultIsRtl = defaultIsRtl;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.979 -0400", hash_original_method = "F33559B09616EA1059BD515D9BD28DCA", hash_generated_method = "A4D175FDB5770CED5042A49F17B86302")
         @Override
         protected boolean defaultIsRtl() {
             boolean var9BDDA11E4292E9F50844540E81ABF998_214047573 = (mDefaultIsRtl);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253550316 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1253550316;
-            
-            
+            // ---------- Original Method ----------
+            //return mDefaultIsRtl;
         }
 
         
@@ -172,7 +169,7 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.980 -0400", hash_original_method = "77800305F201A2CE86A750D63435A8FC", hash_generated_method = "BD69D77294A463FBAD983B34950F9BCE")
         private  FirstStrong() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -186,16 +183,16 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
 for(int i = start, e = start + count;i < e && result == TriState.UNKNOWN;++i)
             {
                 result = isRtlTextOrFormat(Character.getDirectionality(text[i]));
-            } 
+            } //End block
 TriState varDC838461EE2FA0CA4C9BBB70A15456B0_1592231245 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1592231245.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1592231245;
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //TriState result = TriState.UNKNOWN;
+            //for (int i = start, e = start + count; i < e && result == TriState.UNKNOWN; ++i) {
+                //result = isRtlTextOrFormat(Character.getDirectionality(text[i]));
+            //}
+            //return result;
         }
 
         
@@ -214,8 +211,8 @@ TriState varDC838461EE2FA0CA4C9BBB70A15456B0_1592231245 =             result;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.982 -0400", hash_original_method = "CE1C7FC082B7BD7DCEB5DEACBA006400", hash_generated_method = "FBA640D39B46307F538717C3F8D5574E")
         private  AnyStrong(boolean lookForRtl) {
             this.mLookForRtl = lookForRtl;
-            
-            
+            // ---------- Original Method ----------
+            //this.mLookForRtl = lookForRtl;
         }
 
         
@@ -235,7 +232,7 @@ switch(isRtlText(Character.getDirectionality(text[i]))){
 TriState varD972E7D14CF2543E1174427420693D1A_1567402759 =                     TriState.TRUE;
                     varD972E7D14CF2543E1174427420693D1A_1567402759.addTaint(taint);
                     return varD972E7D14CF2543E1174427420693D1A_1567402759;
-                } 
+                } //End block
                 haveUnlookedFor = true;
                 break;
                 case FALSE:
@@ -244,24 +241,24 @@ TriState varD972E7D14CF2543E1174427420693D1A_1567402759 =                     Tr
 TriState varCD0CFCF9CEBCBA1E3C29E021CD05E467_485496051 =                     TriState.FALSE;
                     varCD0CFCF9CEBCBA1E3C29E021CD05E467_485496051.addTaint(taint);
                     return varCD0CFCF9CEBCBA1E3C29E021CD05E467_485496051;
-                } 
+                } //End block
                 haveUnlookedFor = true;
                 break;
                 default:
                 break;
 }
-            } 
+            } //End block
     if(haveUnlookedFor)            
             {
 TriState var23A9CE6815D15B54439EE059A44514CB_1314163906 =                 mLookForRtl ? TriState.FALSE : TriState.TRUE;
                 var23A9CE6815D15B54439EE059A44514CB_1314163906.addTaint(taint);
                 return var23A9CE6815D15B54439EE059A44514CB_1314163906;
-            } 
+            } //End block
 TriState var485D0EAC5426E5CF6B2DFC2FF63C06FB_2134636751 =             TriState.UNKNOWN;
             var485D0EAC5426E5CF6B2DFC2FF63C06FB_2134636751.addTaint(taint);
             return var485D0EAC5426E5CF6B2DFC2FF63C06FB_2134636751;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -280,7 +277,7 @@ TriState var485D0EAC5426E5CF6B2DFC2FF63C06FB_2134636751 =             TriState.U
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.985 -0400", hash_original_method = "CBB334D6CA70EC7E7043C3529CC3BCF6", hash_generated_method = "58F00443FB0688075F58A0CB5CD3BD72")
         public  TextDirectionHeuristicLocale() {
             super(null);
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -291,9 +288,9 @@ TriState var485D0EAC5426E5CF6B2DFC2FF63C06FB_2134636751 =             TriState.U
             boolean varE79FF023BBA8C12CAF58E0246B1CDA30_591909818 = ((dir == LocaleUtil.TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_386203663 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_386203663;
-            
-            
-            
+            // ---------- Original Method ----------
+            //final int dir = LocaleUtil.getLayoutDirectionFromLocale(java.util.Locale.getDefault());
+            //return (dir == LocaleUtil.TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE);
         }
 
         

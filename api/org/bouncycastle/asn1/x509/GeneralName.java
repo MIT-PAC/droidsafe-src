@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,9 +34,9 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
         X509Name  dirName) {
         this.obj = dirName;
         this.tag = 4;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.obj = dirName;
+        //this.tag = 4;
     }
 
     
@@ -45,9 +45,9 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
         X500Name dirName) {
         this.obj = dirName;
         this.tag = 4;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.obj = dirName;
+        //this.tag = 4;
     }
 
     
@@ -56,9 +56,9 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
         DERObject name, int tag) {
         this.obj = name;
         this.tag = tag;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.obj = name;
+        //this.tag = tag;
     }
 
     
@@ -68,9 +68,9 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
         ASN1Encodable name) {
         this.obj = name;
         this.tag = tag;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.obj = name;
+        //this.tag = tag;
     }
 
     
@@ -82,17 +82,17 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     if(tag == rfc822Name || tag == dNSName || tag == uniformResourceIdentifier)        
         {
             this.obj = new DERIA5String(name);
-        } 
+        } //End block
         else
     if(tag == registeredID)        
         {
             this.obj = new DERObjectIdentifier(name);
-        } 
+        } //End block
         else
     if(tag == directoryName)        
         {
             this.obj = new X509Name(name);
-        } 
+        } //End block
         else
     if(tag == iPAddress)        
         {
@@ -100,22 +100,22 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     if(enc != null)            
             {
                 this.obj = new DEROctetString(enc);
-            } 
+            } //End block
             else
             {
                 IllegalArgumentException varA45D23F663C3D7D4B9E0CE18FD179036_1721283142 = new IllegalArgumentException("IP Address is invalid");
                 varA45D23F663C3D7D4B9E0CE18FD179036_1721283142.addTaint(taint);
                 throw varA45D23F663C3D7D4B9E0CE18FD179036_1721283142;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             IllegalArgumentException var334DA4DD96B542180B6378A70311997E_732707548 = new IllegalArgumentException("can't process String for tag: " + tag);
             var334DA4DD96B542180B6378A70311997E_732707548.addTaint(taint);
             throw var334DA4DD96B542180B6378A70311997E_732707548;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -173,25 +173,23 @@ public class GeneralName extends ASN1Encodable implements ASN1Choice {
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.057 -0400", hash_original_method = "50B74CB2E4EBFF1B331EE5025ECA03E2", hash_generated_method = "1190A26208AE75F313FBF59839F16394")
     public int getTagNo() {
         int varE4D23E841D8E8804190027BCE3180FA5_1803624165 = (tag);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508457812 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508457812;
-        
-        
+        // ---------- Original Method ----------
+        //return tag;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.057 -0400", hash_original_method = "2A79ACAAF65B843006F5215944D07A13", hash_generated_method = "DB6DBD1D493BDF46F1BD597B98431908")
     public DEREncodable getName() {
 DEREncodable var2FDE1120F80AA4E8798ECDBDB1C0E85C_160745817 =         obj;
         var2FDE1120F80AA4E8798ECDBDB1C0E85C_160745817.addTaint(taint);
         return var2FDE1120F80AA4E8798ECDBDB1C0E85C_160745817;
-        
-        
+        // ---------- Original Method ----------
+        //return obj;
     }
 
     
@@ -214,24 +212,24 @@ switch(tag){
 }String var4FC680801218E6372BC708D6FA44AE60_648103737 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_648103737.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_648103737;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-            
-        
-            
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //StringBuffer buf = new StringBuffer();
+        //buf.append(tag);
+        //buf.append(": ");
+        //switch (tag)
+        //{
+        //case rfc822Name:
+        //case dNSName:
+        //case uniformResourceIdentifier:
+            //buf.append(DERIA5String.getInstance(obj).getString());
+            //break;
+        //case directoryName:
+            //buf.append(X509Name.getInstance(obj).toString());
+            //break;
+        //default:
+            //buf.append(obj.toString());
+        //}
+        //return buf.toString();
     }
 
     
@@ -249,7 +247,7 @@ switch(tag){
                 byte[] var3EF9A0D7FAB5D2BCABF0978C0A35244E_1351766080 = (addr);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1675743104 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_1675743104;
-            } 
+            } //End block
             else
             {
                 byte[] addr = new byte[32];
@@ -259,17 +257,17 @@ switch(tag){
     if(mask.indexOf(':') > 0)                
                 {
                     parsedIp = parseIPv6(mask);
-                } 
+                } //End block
                 else
                 {
                     parsedIp = parseMask(mask);
-                } 
+                } //End block
                 copyInts(parsedIp, addr, 16);
                 byte[] var3EF9A0D7FAB5D2BCABF0978C0A35244E_1054721023 = (addr);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1425371977 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_1425371977;
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(IPAddress.isValidIPv4WithNetmask(ip) || IPAddress.isValidIPv4(ip))        
         {
@@ -281,7 +279,7 @@ switch(tag){
                 byte[] var3EF9A0D7FAB5D2BCABF0978C0A35244E_1079465469 = (addr);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1777057897 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_1777057897;
-            } 
+            } //End block
             else
             {
                 byte[] addr = new byte[8];
@@ -290,21 +288,21 @@ switch(tag){
     if(mask.indexOf('.') > 0)                
                 {
                     parseIPv4(mask, addr, 4);
-                } 
+                } //End block
                 else
                 {
                     parseIPv4Mask(mask, addr, 4);
-                } 
+                } //End block
                 byte[] var3EF9A0D7FAB5D2BCABF0978C0A35244E_1708482149 = (addr);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1007182047 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_1007182047;
-            } 
-        } 
+            } //End block
+        } //End block
         byte[] var37A6259CC0C1DAE299A7866489DFF0BD_174999095 = (null);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2001338949 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2001338949;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -317,13 +315,13 @@ switch(tag){
 for(int i = 0;i != maskVal;i++)
         {
             addr[(i / 8) + offset] |= 1 << (i % 8);
-        } 
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int   maskVal = Integer.parseInt(mask);
+        //for (int i = 0; i != maskVal; i++)
+        //{
+            //addr[(i / 8) + offset] |= 1 << (i % 8);
+        //}
     }
 
     
@@ -338,14 +336,14 @@ for(int i = 0;i != maskVal;i++)
 (sTok.hasMoreTokens())        
         {
             addr[offset + index++] = (byte)Integer.parseInt(sTok.nextToken());
-        } 
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //StringTokenizer sTok = new StringTokenizer(ip, "./");
+        //int    index = 0;
+        //while (sTok.hasMoreTokens())
+        //{
+            //addr[offset + index++] = (byte)Integer.parseInt(sTok.nextToken());
+        //}
     }
 
     
@@ -357,22 +355,21 @@ for(int i = 0;i != maskVal;i++)
 for(int i = 0;i != maskVal;i++)
         {
             res[i / 16] |= 1 << (i % 16);
-        } 
+        } //End block
         int[] var9B207167E5381C47682C6B4F58A623FB_879612994 = (res);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1140462769 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1140462769;
-        
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int[] res = new int[8];
+        //int   maskVal = Integer.parseInt(mask);
+        //for (int i = 0; i != maskVal; i++)
+        //{
+            //res[i / 16] |= 1 << (i % 16);
+        //}
+        //return res;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.064 -0400", hash_original_method = "C5093ABFF769462F7C38A897D6D20C09", hash_generated_method = "1B8046E623BFD2322A87EA4A941EA3A9")
     private void copyInts(int[] parsedIp, byte[] addr, int offSet) {
         addTaint(offSet);
@@ -382,13 +379,13 @@ for(int i = 0;i != parsedIp.length;i++)
         {
             addr[(i * 2) + offSet] = (byte)(parsedIp[i] >> 8);
             addr[(i * 2 + 1) + offSet] = (byte)parsedIp[i];
-        } 
-        
-        
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (int i = 0; i != parsedIp.length; i++)
+        //{
+            //addr[(i * 2) + offSet] = (byte)(parsedIp[i] >> 8);
+            //addr[(i * 2 + 1) + offSet] = (byte)parsedIp[i];
+        //}
     }
 
     
@@ -401,7 +398,7 @@ for(int i = 0;i != parsedIp.length;i++)
     if(ip.charAt(0) == ':' && ip.charAt(1) == ':')        
         {
             sTok.nextToken();
-        } 
+        } //End block
         int doubleColon = -1;
         while
 (sTok.hasMoreTokens())        
@@ -411,7 +408,7 @@ for(int i = 0;i != parsedIp.length;i++)
             {
                 doubleColon = index;
                 val[index++] = 0;
-            } 
+            } //End block
             else
             {
     if(e.indexOf('.') < 0)                
@@ -420,29 +417,29 @@ for(int i = 0;i != parsedIp.length;i++)
     if(sTok.hasMoreTokens())                    
                     {
                         sTok.nextToken();
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
                 {
                     StringTokenizer eTok = new StringTokenizer(e, ".");
                     val[index++] = (Integer.parseInt(eTok.nextToken()) << 8) | Integer.parseInt(eTok.nextToken());
                     val[index++] = (Integer.parseInt(eTok.nextToken()) << 8) | Integer.parseInt(eTok.nextToken());
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(index != val.length)        
         {
             System.arraycopy(val, doubleColon, val, val.length - (index - doubleColon), index - doubleColon);
 for(int i = doubleColon;i != val.length - (index - doubleColon);i++)
             {
                 val[i] = 0;
-            } 
-        } 
+            } //End block
+        } //End block
         int[] var3A6D0284E743DC4A9B86F97D6DD1A3BF_398458551 = (val);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_75021490 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_75021490;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -453,22 +450,22 @@ for(int i = doubleColon;i != val.length - (index - doubleColon);i++)
 DERObject varC7D22BA08906A6FB4FA5FD3A5B70696A_551962037 =             new DERTaggedObject(true, tag, obj);
             varC7D22BA08906A6FB4FA5FD3A5B70696A_551962037.addTaint(taint);
             return varC7D22BA08906A6FB4FA5FD3A5B70696A_551962037;
-        } 
+        } //End block
         else
         {
 DERObject var4177AE842156D9924A23BE6FE4BD83AD_1433889525 =             new DERTaggedObject(false, tag, obj);
             var4177AE842156D9924A23BE6FE4BD83AD_1433889525.addTaint(taint);
             return var4177AE842156D9924A23BE6FE4BD83AD_1433889525;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (tag == directoryName)       
+        //{
+            //return new DERTaggedObject(true, tag, obj);
+        //}
+        //else
+        //{
+            //return new DERTaggedObject(false, tag, obj);
+        //}
     }
 
     

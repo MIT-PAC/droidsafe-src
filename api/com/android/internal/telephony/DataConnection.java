@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -116,22 +116,22 @@ public abstract class DataConnection extends StateMachine {
         mApnList = new ArrayList<ApnContext>();
     if(DBG)        
         log("DataConnection constructor X");
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("DataConnection constructor E");
+        //this.phone = phone;
+        //mId = id;
+        //mRetryMgr = rm;
+        //this.cid = -1;
+        //setDbg(false);
+        //addState(mDefaultState);
+        //addState(mInactiveState, mDefaultState);
+        //addState(mActivatingState, mDefaultState);
+        //addState(mActiveState, mDefaultState);
+        //addState(mDisconnectingState, mDefaultState);
+        //addState(mDisconnectingErrorCreatingConnection, mDefaultState);
+        //setInitialState(mInactiveState);
+        //mApnList = new ArrayList<ApnContext>();
+        //if (DBG) log("DataConnection constructor X");
     }
 
     
@@ -159,28 +159,28 @@ public abstract String toString();
     if(TextUtils.equals(dp.reason, Phone.REASON_RADIO_TURNED_OFF))            
             {
                 discReason = RILConstants.DEACTIVATE_REASON_RADIO_OFF;
-            } 
+            } //End block
             else
     if(TextUtils.equals(dp.reason, Phone.REASON_PDP_RESET))            
             {
                 discReason = RILConstants.DEACTIVATE_REASON_PDP_RESET;
-            } 
-        } 
+            } //End block
+        } //End block
     if(phone.mCM.getRadioState().isOn())        
         {
     if(DBG)            
             log("tearDownData radio is on, call deactivateDataCall");
             phone.mCM.deactivateDataCall(cid, discReason, obtainMessage(EVENT_DEACTIVATE_DONE, o));
-        } 
+        } //End block
         else
         {
     if(DBG)            
             log("tearDownData radio is off sendMessage EVENT_DEACTIVATE_DONE immediately");
             AsyncResult ar = new AsyncResult(o, null, null);
             sendMessage(obtainMessage(EVENT_DEACTIVATE_DONE, ar));
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -191,42 +191,42 @@ public abstract String toString();
     if(connectionCompletedMsg == null)        
         {
             return;
-        } 
+        } //End block
         long timeStamp = System.currentTimeMillis();
         connectionCompletedMsg.arg1 = cid;
     if(cause == FailCause.NONE)        
         {
             createTime = timeStamp;
             AsyncResult.forMessage(connectionCompletedMsg);
-        } 
+        } //End block
         else
         {
             lastFailCause = cause;
             lastFailTime = timeStamp;
             AsyncResult.forMessage(connectionCompletedMsg, cause,
                                    new CallSetupException(mRetryOverride));
-        } 
+        } //End block
     if(DBG)        
         log("notifyConnectionCompleted at " + timeStamp + " cause=" + cause);
         connectionCompletedMsg.sendToTarget();
-        
-        
-        
-            
-        
-        
-        
-        
-            
-            
-        
-            
-            
-            
-                                   
-        
-        
-        
+        // ---------- Original Method ----------
+        //Message connectionCompletedMsg = cp.onCompletedMsg;
+        //if (connectionCompletedMsg == null) {
+            //return;
+        //}
+        //long timeStamp = System.currentTimeMillis();
+        //connectionCompletedMsg.arg1 = cid;
+        //if (cause == FailCause.NONE) {
+            //createTime = timeStamp;
+            //AsyncResult.forMessage(connectionCompletedMsg);
+        //} else {
+            //lastFailCause = cause;
+            //lastFailTime = timeStamp;
+            //AsyncResult.forMessage(connectionCompletedMsg, cause,
+                                   //new CallSetupException(mRetryOverride));
+        //}
+        //if (DBG) log("notifyConnectionCompleted at " + timeStamp + " cause=" + cause);
+        //connectionCompletedMsg.sendToTarget();
     }
 
     
@@ -242,24 +242,24 @@ public abstract String toString();
             {
                 log(String.format("msg=%s msg.obj=%s", msg.toString(),
                     ((msg.obj instanceof String) ? (String) msg.obj : "<no-reason>")));
-            } 
+            } //End block
             AsyncResult.forMessage(msg);
             msg.sendToTarget();
-        } 
+        } //End block
     if(DBG)        
         log("NotifyDisconnectCompleted DisconnectParams=" + dp);
-        
-        
-        
-            
-            
-                
-                    
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (VDBG) log("NotifyDisconnectCompleted");
+        //if (dp.onCompletedMsg != null) {
+            //Message msg = dp.onCompletedMsg;
+            //if (VDBG) {
+                //log(String.format("msg=%s msg.obj=%s", msg.toString(),
+                    //((msg.obj instanceof String) ? (String) msg.obj : "<no-reason>")));
+            //}
+            //AsyncResult.forMessage(msg);
+            //msg.sendToTarget();
+        //}
+        //if (DBG) log("NotifyDisconnectCompleted DisconnectParams=" + dp);
     }
 
     
@@ -270,33 +270,32 @@ public abstract String toString();
     if(mRilVersion < 6)        
         {
             radioTechnology = defaultRadioTechnology;
-        } 
+        } //End block
         else
         {
             radioTechnology = phone.getServiceState().getRadioTechnology() + 2;
-        } 
+        } //End block
         int varA66BB72250253C04C03E47D14B7D979C_1167579720 = (radioTechnology);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719005499 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719005499;
-        
-        
-        
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int radioTechnology;
+        //if (mRilVersion < 6) {
+            //radioTechnology = defaultRadioTechnology;
+        //} else {
+            //radioTechnology = phone.getServiceState().getRadioTechnology() + 2;
+        //}
+        //return radioTechnology;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.356 -0400", hash_original_method = "AAF5779D145C421CCE90F0916803977D", hash_generated_method = "915AA18DB5CD48B696A0E28BC14609A0")
     public int getDataConnectionId() {
         int var6AC7F06B6413A1BE9C136DC7DF0D2B60_1076472681 = (mId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1579104237 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1579104237;
-        
-        
+        // ---------- Original Method ----------
+        //return mId;
     }
 
     
@@ -305,8 +304,8 @@ public abstract String toString();
         int var856722A58FF7F8FC2D44F69E6603CDE1_2070222052 = (mRetryMgr.getRetryCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1922383395 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1922383395;
-        
-        
+        // ---------- Original Method ----------
+        //return mRetryMgr.getRetryCount();
     }
 
     
@@ -315,16 +314,16 @@ public abstract String toString();
         int var40230F6DAFFC9B4870524C7581051C68_1345054259 = (mRetryMgr.getRetryTimer());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_624312924 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_624312924;
-        
-        
+        // ---------- Original Method ----------
+        //return mRetryMgr.getRetryTimer();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.356 -0400", hash_original_method = "2EFBBED22C4BDBBAA07E00436CC70BDF", hash_generated_method = "0E371755B2F0C7630C7641033AED74E0")
     public void increaseRetryCount() {
         mRetryMgr.increaseRetryCount();
-        
-        
+        // ---------- Original Method ----------
+        //mRetryMgr.increaseRetryCount();
     }
 
     
@@ -333,24 +332,24 @@ public abstract String toString();
         boolean var8CFC4B429BB22FAC1C66AB2505A18020_922155572 = (mRetryMgr.isRetryNeeded());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_313889186 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_313889186;
-        
-        
+        // ---------- Original Method ----------
+        //return mRetryMgr.isRetryNeeded();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.357 -0400", hash_original_method = "6E600B114543C0C51BDDB686B0EEF1BE", hash_generated_method = "32DE04BB7113D9D458E9B8A4B5F7798C")
     public void resetRetryCount() {
         mRetryMgr.resetRetryCount();
-        
-        
+        // ---------- Original Method ----------
+        //mRetryMgr.resetRetryCount();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.357 -0400", hash_original_method = "FE4AFC35148D7FCE7B6DEB885B8B31DF", hash_generated_method = "8D1E6E9AC70CC605B5E9E3DFBC8CC440")
     public void retryForeverUsingLastTimeout() {
         mRetryMgr.retryForeverUsingLastTimeout();
-        
-        
+        // ---------- Original Method ----------
+        //mRetryMgr.retryForeverUsingLastTimeout();
     }
 
     
@@ -359,8 +358,8 @@ public abstract String toString();
         boolean var83983FC62F4738DD7E28A321F54D1CF6_1877345929 = (mRetryMgr.isRetryForever());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_907955138 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_907955138;
-        
-        
+        // ---------- Original Method ----------
+        //return mRetryMgr.isRetryForever();
     }
 
     
@@ -372,8 +371,8 @@ public abstract String toString();
         boolean varA2719F40E8789F490E21F83232E29078_945121068 = (mRetryMgr.configure(maxRetryCount, retryTime, randomizationTime));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_558330839 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_558330839;
-        
-        
+        // ---------- Original Method ----------
+        //return mRetryMgr.configure(maxRetryCount, retryTime, randomizationTime);
     }
 
     
@@ -383,8 +382,8 @@ public abstract String toString();
         boolean varEA1F984E883E77F7BBDC5CAD765E84EF_1847843896 = (mRetryMgr.configure(configStr));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2035330280 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2035330280;
-        
-        
+        // ---------- Original Method ----------
+        //return mRetryMgr.configure(configStr);
     }
 
     
@@ -400,16 +399,16 @@ public abstract String toString();
         cid = -1;
         mLinkProperties = new LinkProperties();
         mApn = null;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (DBG) log("clearSettings");
+        //createTime = -1;
+        //lastFailTime = -1;
+        //lastFailCause = FailCause.NONE;
+        //mRetryOverride = -1;
+        //mRefCount = 0;
+        //cid = -1;
+        //mLinkProperties = new LinkProperties();
+        //mApn = null;
     }
 
     
@@ -425,56 +424,55 @@ public abstract String toString();
             {
                 log("onSetupConnectionCompleted failed, ar.exception=" + ar.exception +
                     " response=" + response);
-            } 
+            } //End block
     if(ar.exception instanceof CommandException
                     && ((CommandException) (ar.exception)).getCommandError()
                     == CommandException.Error.RADIO_NOT_AVAILABLE)            
             {
                 result = DataCallState.SetupResult.ERR_BadCommand;
                 result.mFailCause = FailCause.RADIO_NOT_AVAILABLE;
-            } 
+            } //End block
             else
     if((response == null) || (response.version < 4))            
             {
                 result = DataCallState.SetupResult.ERR_GetLastErrorFromRil;
-            } 
+            } //End block
             else
             {
                 result = DataCallState.SetupResult.ERR_RilError;
                 result.mFailCause = FailCause.fromInt(response.status);
-            } 
-        } 
+            } //End block
+        } //End block
         else
     if(cp.tag != mTag)        
         {
     if(DBG)            
             {
                 log("BUG: onSetupConnectionCompleted is stale cp.tag=" + cp.tag + ", mtag=" + mTag);
-            } 
+            } //End block
             result = DataCallState.SetupResult.ERR_Stale;
-        } 
+        } //End block
         else
     if(response.status != 0)        
         {
             result = DataCallState.SetupResult.ERR_RilError;
             result.mFailCause = FailCause.fromInt(response.status);
-        } 
+        } //End block
         else
         {
     if(DBG)            
             log("onSetupConnectionCompleted received DataCallState: " + response);
             cid = response.cid;
             result = updateLinkProperty(response).setupResult;
-        } 
+        } //End block
 DataCallState.SetupResult varDC838461EE2FA0CA4C9BBB70A15456B0_1368385229 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1368385229.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1368385229;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.362 -0400", hash_original_method = "F1DF17AEAB523CA725A1A0E7587A5B33", hash_generated_method = "E19B510AD5B3B5E0E4621C6871053C41")
     private int getSuggestedRetryTime(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -483,17 +481,17 @@ DataCallState.SetupResult varDC838461EE2FA0CA4C9BBB70A15456B0_1368385229 =      
         {
             DataCallState response = (DataCallState) ar.result;
             retry =  response.suggestedRetryTime;
-        } 
+        } //End block
         int var165E6D21E0A2CC9EBB32CA05F90E0FA7_1665492591 = (retry);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_131066651 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_131066651;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int retry = -1;
+        //if (ar.exception == null) {
+            //DataCallState response = (DataCallState) ar.result;
+            //retry =  response.suggestedRetryTime;
+        //}
+        //return retry;
     }
 
     
@@ -511,14 +509,14 @@ DataCallState.SetupResult varDC838461EE2FA0CA4C9BBB70A15456B0_1368385229 =      
 DataCallState.SetupResult varB3E099EEEE237B1B0921398F20EF7758_263524942 =         response.setLinkProperties(lp, okToUseSystemPropertyDns);
         varB3E099EEEE237B1B0921398F20EF7758_263524942.addTaint(taint);
         return varB3E099EEEE237B1B0921398F20EF7758_263524942;
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //boolean okToUseSystemPropertyDns = false;
+        //String propertyPrefix = "net." + response.ifname + ".";
+        //String dnsServers[] = new String[2];
+        //dnsServers[0] = SystemProperties.get(propertyPrefix + "dns1");
+        //dnsServers[1] = SystemProperties.get(propertyPrefix + "dns2");
+        //okToUseSystemPropertyDns = isDnsOk(dnsServers);
+        //return response.setLinkProperties(lp, okToUseSystemPropertyDns);
     }
 
     
@@ -542,7 +540,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_1742250145 =       
 UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_1528118230 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1528118230.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1528118230;
-        } 
+        } //End block
         result.newLp.setHttpProxy(mLinkProperties.getHttpProxy());
     if(DBG && (! result.oldLp.equals(result.newLp)))        
         {
@@ -552,13 +550,13 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_1528118230 =       
             log("updateLinkProperty old LP=" + result.oldLp);
     if(VDBG)            
             log("updateLinkProperty new LP=" + result.newLp);
-        } 
+        } //End block
         mLinkProperties = result.newLp;
 UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_133212974.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_133212974;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -567,8 +565,8 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         addTaint(apn.getTaint());
         addTaint(onCompletedMsg.getTaint());
         sendMessage(obtainMessage(EVENT_CONNECT, new ConnectionParams(apn, onCompletedMsg)));
-        
-        
+        // ---------- Original Method ----------
+        //sendMessage(obtainMessage(EVENT_CONNECT, new ConnectionParams(apn, onCompletedMsg)));
     }
 
     
@@ -577,8 +575,8 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         addTaint(onCompletedMsg.getTaint());
         addTaint(reason.getTaint());
         sendMessage(obtainMessage(EVENT_DISCONNECT, new DisconnectParams(reason, onCompletedMsg)));
-        
-        
+        // ---------- Original Method ----------
+        //sendMessage(obtainMessage(EVENT_DISCONNECT, new DisconnectParams(reason, onCompletedMsg)));
     }
 
     
@@ -597,9 +595,9 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         public  ConnectionParams(ApnSetting apn, Message onCompletedMsg) {
             this.apn = apn;
             this.onCompletedMsg = onCompletedMsg;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.apn = apn;
+            //this.onCompletedMsg = onCompletedMsg;
         }
 
         
@@ -622,9 +620,9 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         public  DisconnectParams(String reason, Message onCompletedMsg) {
             this.reason = reason;
             this.onCompletedMsg = onCompletedMsg;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.reason = reason;
+            //this.onCompletedMsg = onCompletedMsg;
         }
 
         
@@ -670,11 +668,9 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         FailCause(int errorCode) {
             mErrorCode = errorCode;
         }
-        @DSModeled(DSC.SAFE)
         int getErrorCode() {
             return mErrorCode;
         }
-        @DSModeled(DSC.SAFE)
         public boolean isPermanentFail() {
             return (this == OPERATOR_BARRED) || (this == MISSING_UNKNOWN_APN) ||
                    (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||
@@ -682,7 +678,6 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
                    (this == SERVICE_OPTION_NOT_SUBSCRIBED) || (this == NSAPI_IN_USE) ||
                    (this == PROTOCOL_ERRORS);
         }
-        @DSModeled(DSC.SAFE)
         public boolean isEventLoggable() {
             return (this == OPERATOR_BARRED) || (this == INSUFFICIENT_RESOURCES) ||
                     (this == UNKNOWN_PDP_ADDRESS_TYPE) || (this == USER_AUTHENTICATION) ||
@@ -711,19 +706,18 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.366 -0400", hash_original_method = "A504ADA2782D67F9E42B2FFAADC374C6", hash_generated_method = "D56974FF4E6B6EE04E4624DA72A498E3")
           CallSetupException(int retryOverride) {
             mRetryOverride = retryOverride;
-            
-            
+            // ---------- Original Method ----------
+            //mRetryOverride = retryOverride;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.366 -0400", hash_original_method = "474AEB2E917376DACCA3A8D3E49DB29C", hash_generated_method = "3FE1205E55C512372065A85350C4558A")
         public int getRetryOverride() {
             int var847246398D99EC2E1B8C5A876FE0F1E9_23502929 = (mRetryOverride);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1657672136 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1657672136;
-            
-            
+            // ---------- Original Method ----------
+            //return mRetryOverride;
         }
 
         
@@ -746,9 +740,9 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         public  UpdateLinkPropertyResult(LinkProperties curLp) {
             oldLp = curLp;
             newLp = curLp;
-            
-            
-            
+            // ---------- Original Method ----------
+            //oldLp = curLp;
+            //newLp = curLp;
         }
 
         
@@ -761,7 +755,7 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.367 -0400", hash_original_method = "65DC675B486478379964AECC5A2EA868", hash_generated_method = "65DC675B486478379964AECC5A2EA868")
         public DcDefaultState ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -769,8 +763,8 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         @Override
         public void enter() {
             phone.mCM.registerForRilConnected(getHandler(), EVENT_RIL_CONNECTED, null);
-            
-            
+            // ---------- Original Method ----------
+            //phone.mCM.registerForRilConnected(getHandler(), EVENT_RIL_CONNECTED, null);
         }
 
         
@@ -778,8 +772,8 @@ UpdateLinkPropertyResult varDC838461EE2FA0CA4C9BBB70A15456B0_133212974 =        
         @Override
         public void exit() {
             phone.mCM.unregisterForRilConnected(getHandler());
-            
-            
+            // ---------- Original Method ----------
+            //phone.mCM.unregisterForRilConnected(getHandler());
         }
 
         
@@ -797,7 +791,7 @@ switch(msg.what){
                     log("Disconnecting to previous connection mAc=" + mAc);
                     mAc.replyToMessage(msg, AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED,
                                 AsyncChannel.STATUS_FULL_CONNECTION_REFUSED_ALREADY_CONNECTED);
-                } 
+                } //End block
                 else
                 {
                     mAc = new AsyncChannel();
@@ -806,23 +800,23 @@ switch(msg.what){
                     log("DcDefaultState: FULL_CONNECTION reply connected");
                     mAc.replyToMessage(msg, AsyncChannel.CMD_CHANNEL_FULLY_CONNECTED,
                                 AsyncChannel.STATUS_SUCCESSFUL, mId, "hi");
-                } 
+                } //End block
                 break;
-            } 
+            } //End block
             case AsyncChannel.CMD_CHANNEL_DISCONNECT:
             {
     if(VDBG)                
                 log("CMD_CHANNEL_DISCONNECT");
                 mAc.disconnect();
                 break;
-            } 
+            } //End block
             case AsyncChannel.CMD_CHANNEL_DISCONNECTED:
             {
     if(VDBG)                
                 log("CMD_CHANNEL_DISCONNECTED");
                 mAc = null;
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_IS_INACTIVE:
             {
                 boolean val = getCurrentState() == mInactiveState;
@@ -830,21 +824,21 @@ switch(msg.what){
                 log("REQ_IS_INACTIVE  isInactive=" + val);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_IS_INACTIVE, val ? 1 : 0);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_GET_CID:
             {
     if(VDBG)                
                 log("REQ_GET_CID  cid=" + cid);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_CID, cid);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_GET_APNSETTING:
             {
     if(VDBG)                
                 log("REQ_GET_APNSETTING  apnSetting=" + mApn);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_APNSETTING, mApn);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_GET_LINK_PROPERTIES:
             {
                 LinkProperties lp = new LinkProperties(mLinkProperties);
@@ -852,7 +846,7 @@ switch(msg.what){
                 log("REQ_GET_LINK_PROPERTIES linkProperties" + lp);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_LINK_PROPERTIES, lp);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_SET_LINK_PROPERTIES_HTTP_PROXY:
             {
                 ProxyProperties proxy = (ProxyProperties) msg.obj;
@@ -861,7 +855,7 @@ switch(msg.what){
                 mLinkProperties.setHttpProxy(proxy);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_SET_LINK_PROPERTIES_HTTP_PROXY);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE:
             {
                 DataCallState newState = (DataCallState) msg.obj;
@@ -870,12 +864,12 @@ switch(msg.what){
                 {
                     log("REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE result="
                             + result + " newState=" + newState);
-                } 
+                } //End block
                 mAc.replyToMessage(msg,
                                    DataConnectionAc.RSP_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE,
                                    result);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_GET_LINK_CAPABILITIES:
             {
                 LinkCapabilities lc = new LinkCapabilities(mCapabilities);
@@ -883,7 +877,7 @@ switch(msg.what){
                 log("REQ_GET_LINK_CAPABILITIES linkCapabilities" + lc);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_LINK_CAPABILITIES, lc);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_RESET:
     if(VDBG)            
             log("DcDefaultState: msg.what=REQ_RESET");
@@ -896,7 +890,7 @@ switch(msg.what){
                 log("REQ_GET_REFCOUNT  refCount=" + mRefCount);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_REFCOUNT, mRefCount);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_ADD_APNCONTEXT:
             {
                 ApnContext apnContext = (ApnContext) msg.obj;
@@ -905,10 +899,10 @@ switch(msg.what){
     if(!mApnList.contains(apnContext))                
                 {
                     mApnList.add(apnContext);
-                } 
+                } //End block
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_ADD_APNCONTEXT);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_REMOVE_APNCONTEXT:
             {
                 ApnContext apnContext = (ApnContext) msg.obj;
@@ -917,7 +911,7 @@ switch(msg.what){
                 mApnList.remove(apnContext);
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_REMOVE_APNCONTEXT);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_GET_APNCONTEXT_LIST:
             {
     if(VDBG)                
@@ -925,7 +919,7 @@ switch(msg.what){
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_APNCONTEXT_LIST,
                                        new ArrayList<ApnContext>(mApnList));
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_SET_RECONNECT_INTENT:
             {
                 PendingIntent intent = (PendingIntent) msg.obj;
@@ -934,7 +928,7 @@ switch(msg.what){
                 mReconnectIntent = intent;
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_SET_RECONNECT_INTENT);
                 break;
-            } 
+            } //End block
             case DataConnectionAc.REQ_GET_RECONNECT_INTENT:
             {
     if(VDBG)                
@@ -942,7 +936,7 @@ switch(msg.what){
                 mAc.replyToMessage(msg, DataConnectionAc.RSP_GET_RECONNECT_INTENT,
                                        mReconnectIntent);
                 break;
-            } 
+            } //End block
             case EVENT_CONNECT:
     if(DBG)            
             log("DcDefaultState: msg.what=EVENT_CONNECT, fail not expected");
@@ -953,7 +947,7 @@ switch(msg.what){
     if(DBG)            
             {
                 log("DcDefaultState deferring msg.what=EVENT_DISCONNECT" + mRefCount);
-            } 
+            } //End block
             deferMessage(msg);
             break;
             case EVENT_RIL_CONNECTED:
@@ -965,26 +959,26 @@ switch(msg.what){
                 {
                     log("DcDefaultState: msg.what=EVENT_RIL_CONNECTED mRilVersion=" +
                                 mRilVersion);
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 log("Unexpected exception on EVENT_RIL_CONNECTED");
                 mRilVersion = -1;
-            } 
+            } //End block
             break;
             default:
     if(DBG)            
             {
                 log("DcDefaultState: shouldn't happen but ignore msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } 
+            } //End block
             break;
 }            boolean var9A5C682455CE10CEF6DFEE3AEF3730A5_1111624610 = (HANDLED);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1019619762 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1019619762;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1006,11 +1000,10 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.388 -0400", hash_original_method = "BBB65F37D8F6078358DD0061CFCF8B87", hash_generated_method = "BBB65F37D8F6078358DD0061CFCF8B87")
         public DcInactiveState ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.388 -0400", hash_original_method = "CBB71B6A4AE30457112F09AD25305330", hash_generated_method = "CDF958F2AA876817F9330E37B1E1D834")
         public void setEnterNotificationParams(ConnectionParams cp, FailCause cause,
                                                int retryOverride) {
@@ -1020,23 +1013,22 @@ switch(msg.what){
             mConnectionParams = cp;
             mFailCause = cause;
             mRetryOverride = retryOverride;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (VDBG) log("DcInactiveState: setEnterNoticationParams cp,cause");
+            //mConnectionParams = cp;
+            //mFailCause = cause;
+            //mRetryOverride = retryOverride;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.388 -0400", hash_original_method = "58F7FEE7FE1847BE132197954CFB7983", hash_generated_method = "22EAB28409D32344C2A22692C17E5698")
         public void setEnterNotificationParams(DisconnectParams dp) {
     if(VDBG)            
             log("DcInactiveState: setEnterNoticationParams dp");
             mDisconnectParams = dp;
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (VDBG) log("DcInactiveState: setEnterNoticationParams dp");
+            //mDisconnectParams = dp;
         }
 
         
@@ -1049,39 +1041,38 @@ switch(msg.what){
     if(VDBG)                
                 log("DcInactiveState: enter notifyConnectCompleted");
                 notifyConnectCompleted(mConnectionParams, mFailCause);
-            } 
+            } //End block
     if(mDisconnectParams != null)            
             {
     if(VDBG)                
                 log("DcInactiveState: enter notifyDisconnectCompleted");
                 notifyDisconnectCompleted(mDisconnectParams);
-            } 
+            } //End block
             clearSettings();
-            
-            
-            
-                
-                
-            
-            
-                
-                
-            
-            
+            // ---------- Original Method ----------
+            //mTag += 1;
+            //if ((mConnectionParams != null) && (mFailCause != null)) {
+                //if (VDBG) log("DcInactiveState: enter notifyConnectCompleted");
+                //notifyConnectCompleted(mConnectionParams, mFailCause);
+            //}
+            //if (mDisconnectParams != null) {
+                //if (VDBG) log("DcInactiveState: enter notifyDisconnectCompleted");
+                //notifyDisconnectCompleted(mDisconnectParams);
+            //}
+            //clearSettings();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.388 -0400", hash_original_method = "0122D4B6A897CA907F15060B70B58C0B", hash_generated_method = "2FF782B07AED250A63958B87AD09AB7B")
         @Override
         public void exit() {
             mConnectionParams = null;
             mFailCause = null;
             mDisconnectParams = null;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //mConnectionParams = null;
+            //mFailCause = null;
+            //mDisconnectParams = null;
         }
 
         
@@ -1095,7 +1086,7 @@ switch(msg.what){
     if(DBG)            
             {
                 log("DcInactiveState: msg.what=RSP_RESET, ignore we're already reset");
-            } 
+            } //End block
             mAc.replyToMessage(msg, DataConnectionAc.RSP_RESET);
             retVal = HANDLED;
             break;
@@ -1106,7 +1097,7 @@ switch(msg.what){
             {
                 log("DcInactiveState msg.what=EVENT_CONNECT." + "RefCount = "
                                 + mRefCount);
-            } 
+            } //End block
             mRefCount = 1;
             onConnect(cp);
             transitionTo(mActivatingState);
@@ -1123,14 +1114,14 @@ switch(msg.what){
             {
                 log("DcInactiveState nothandled msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } 
+            } //End block
             retVal = NOT_HANDLED;
             break;
 }            boolean var1E6151782509B2C92750CFF962B742CD_1325836021 = (retVal);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1567213837 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1567213837;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1143,7 +1134,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.389 -0400", hash_original_method = "3C5900F00C80F9987C90695FBB53350C", hash_generated_method = "3C5900F00C80F9987C90695FBB53350C")
         public DcActivatingState ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1212,18 +1203,18 @@ switch(result){
                 {
                     int rilFailCause = ((int[]) (ar.result))[0];
                     cause = FailCause.fromInt(rilFailCause);
-                } 
+                } //End block
                 mInactiveState.setEnterNotificationParams(cp, cause, -1);
                 transitionTo(mInactiveState);
-            } 
+            } //End block
             else
             {
     if(DBG)                
                 {
                     log("DcActivatingState EVENT_GET_LAST_FAIL_DONE is stale cp.tag="
                                 + cp.tag + ", mTag=" + mTag);
-                } 
-            } 
+                } //End block
+            } //End block
             retVal = HANDLED;
             break;
             default:
@@ -1231,14 +1222,14 @@ switch(result){
             {
                 log("DcActivatingState not handled msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } 
+            } //End block
             retVal = NOT_HANDLED;
             break;
 }            boolean var1E6151782509B2C92750CFF962B742CD_324752636 = (retVal);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_842509790 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_842509790;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1257,21 +1248,20 @@ switch(result){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.390 -0400", hash_original_method = "5052F6BB3696B9FBB5C9B1F89FD73944", hash_generated_method = "5052F6BB3696B9FBB5C9B1F89FD73944")
         public DcActiveState ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.390 -0400", hash_original_method = "65AC06854CC9D1F4537757F901F06476", hash_generated_method = "01BFD2E6F6C2A381AB36D1A73A10E96B")
         public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
     if(VDBG)            
             log("DcInactiveState: setEnterNoticationParams cp,cause");
             mConnectionParams = cp;
             mFailCause = cause;
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //if (VDBG) log("DcInactiveState: setEnterNoticationParams cp,cause");
+            //mConnectionParams = cp;
+            //mFailCause = cause;
         }
 
         
@@ -1283,24 +1273,23 @@ switch(result){
     if(VDBG)                
                 log("DcActiveState: enter notifyConnectCompleted");
                 notifyConnectCompleted(mConnectionParams, mFailCause);
-            } 
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if ((mConnectionParams != null) && (mFailCause != null)) {
+                //if (VDBG) log("DcActiveState: enter notifyConnectCompleted");
+                //notifyConnectCompleted(mConnectionParams, mFailCause);
+            //}
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.390 -0400", hash_original_method = "6361033575190DC86852AD59967B3D8E", hash_generated_method = "41F12992C45BA1B13C3E1498872DF26C")
         @Override
         public void exit() {
             mConnectionParams = null;
             mFailCause = null;
-            
-            
-            
+            // ---------- Original Method ----------
+            //mConnectionParams = null;
+            //mFailCause = null;
         }
 
         
@@ -1317,7 +1306,7 @@ switch(msg.what){
     if(msg.obj != null)            
             {
                 notifyConnectCompleted((ConnectionParams) msg.obj, FailCause.NONE);
-            } 
+            } //End block
             retVal = HANDLED;
             break;
             case EVENT_DISCONNECT:
@@ -1330,14 +1319,14 @@ switch(msg.what){
                 dp.tag = mTag;
                 tearDownData(dp);
                 transitionTo(mDisconnectingState);
-            } 
+            } //End block
             else
             {
     if(msg.obj != null)                
                 {
                     notifyDisconnectCompleted((DisconnectParams) msg.obj);
-                } 
-            } 
+                } //End block
+            } //End block
             retVal = HANDLED;
             break;
             default:
@@ -1345,14 +1334,14 @@ switch(msg.what){
             {
                 log("DcActiveState not handled msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } 
+            } //End block
             retVal = NOT_HANDLED;
             break;
 }            boolean var1E6151782509B2C92750CFF962B742CD_488001587 = (retVal);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_612548574 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_612548574;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1365,7 +1354,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.391 -0400", hash_original_method = "29C0CB68E08F466587ED5BC2F5C6C796", hash_generated_method = "29C0CB68E08F466587ED5BC2F5C6C796")
         public DcDisconnectingState ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1391,13 +1380,13 @@ switch(msg.what){
             {
                 mInactiveState.setEnterNotificationParams((DisconnectParams) ar.userObj);
                 transitionTo(mInactiveState);
-            } 
+            } //End block
             else
             {
     if(DBG)                
                 log("DcDisconnectState EVENT_DEACTIVATE_DONE stale dp.tag="
                                 + dp.tag + " mTag=" + mTag);
-            } 
+            } //End block
             retVal = HANDLED;
             break;
             default:
@@ -1405,14 +1394,14 @@ switch(msg.what){
             {
                 log("DcDisconnectingState not handled msg.what=0x" +
                                 Integer.toHexString(msg.what));
-            } 
+            } //End block
             retVal = NOT_HANDLED;
             break;
 }            boolean var1E6151782509B2C92750CFF962B742CD_995268688 = (retVal);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1441195953 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1441195953;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1425,7 +1414,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.391 -0400", hash_original_method = "9EEE01BC14CD1B0E43AEFA5AA17972F9", hash_generated_method = "9EEE01BC14CD1B0E43AEFA5AA17972F9")
         public DcDisconnectionErrorCreatingConnection ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -1444,19 +1433,19 @@ switch(msg.what){
                 {
                     log("DcDisconnectionErrorCreatingConnection" +
                                 " msg.what=EVENT_DEACTIVATE_DONE");
-                } 
+                } //End block
                 mInactiveState.setEnterNotificationParams(cp,
                                 FailCause.UNACCEPTABLE_NETWORK_PARAMETER, -1);
                 transitionTo(mInactiveState);
-            } 
+            } //End block
             else
             {
     if(DBG)                
                 {
                     log("DcDisconnectionErrorCreatingConnection EVENT_DEACTIVATE_DONE" +
                                     " stale dp.tag=" + cp.tag + ", mTag=" + mTag);
-                } 
-            } 
+                } //End block
+            } //End block
             retVal = HANDLED;
             break;
             default:
@@ -1464,14 +1453,14 @@ switch(msg.what){
             {
                 log("DcDisconnectionErrorCreatingConnection not handled msg.what=0x"
                                 + Integer.toHexString(msg.what));
-            } 
+            } //End block
             retVal = NOT_HANDLED;
             break;
 }            boolean var1E6151782509B2C92750CFF962B742CD_1110038165 = (retVal);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_177597269 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_177597269;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

@@ -1,6 +1,6 @@
 package android.hardware;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,8 +23,8 @@ public class SensorEvent {
 	public
       SensorEvent(int size) {
         values = new float[size];
-        
-        
+        // ---------- Original Method ----------
+        //values = new float[size];
     }
 
     

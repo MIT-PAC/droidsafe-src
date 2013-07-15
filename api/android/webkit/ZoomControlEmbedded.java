@@ -1,6 +1,6 @@
 package android.webkit;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,9 +26,9 @@ class ZoomControlEmbedded implements ZoomControlBase {
     public  ZoomControlEmbedded(ZoomManager zoomManager, WebView webView) {
         mZoomManager = zoomManager;
         mWebView = webView;
-        
-        
-        
+        // ---------- Original Method ----------
+        //mZoomManager = zoomManager;
+        //mWebView = webView;
     }
 
     
@@ -47,23 +47,23 @@ class ZoomControlEmbedded implements ZoomControlBase {
                     Toast.makeText(mWebView.getContext(),
                             com.android.internal.R.string.double_tap_toast,
                             Toast.LENGTH_LONG).show();
-                } 
-            } 
-        } 
-        
-        
-            
-            
-                
-                
-                
-                    
-                    
-                            
-                            
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (!getControls().isVisible() && !mZoomManager.isZoomScaleFixed()) {
+            //mZoomButtonsController.setVisible(true);
+            //if (mZoomManager.isDoubleTapEnabled()) {
+                //WebSettings settings = mWebView.getSettings();
+                //int count = settings.getDoubleTapToastCount();
+                //if (mZoomManager.isInZoomOverview() && count > 0) {
+                    //settings.setDoubleTapToastCount(--count);
+                    //Toast.makeText(mWebView.getContext(),
+                            //com.android.internal.R.string.double_tap_toast,
+                            //Toast.LENGTH_LONG).show();
+                //}
+            //}
+        //}
     }
 
     
@@ -72,11 +72,11 @@ class ZoomControlEmbedded implements ZoomControlBase {
     if(mZoomButtonsController != null)        
         {
             mZoomButtonsController.setVisible(false);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mZoomButtonsController != null) {
+            //mZoomButtonsController.setVisible(false);
+        //}
     }
 
     
@@ -85,41 +85,40 @@ class ZoomControlEmbedded implements ZoomControlBase {
         boolean var8C5CB663405B3296CE37A0A59A033D65_1950275769 = (mZoomButtonsController != null && mZoomButtonsController.isVisible());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_46748371 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_46748371;
-        
-        
+        // ---------- Original Method ----------
+        //return mZoomButtonsController != null && mZoomButtonsController.isVisible();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.431 -0400", hash_original_method = "3EEB1B7639B141DBF4A839E2ACE958E1", hash_generated_method = "94A1E6D0BA86E472CCB24703F0D38AC5")
     public void update() {
     if(mZoomButtonsController == null)        
         {
             return;
-        } 
+        } //End block
         boolean canZoomIn = mZoomManager.canZoomIn();
         boolean canZoomOut = mZoomManager.canZoomOut() && !mZoomManager.isInZoomOverview();
     if(!canZoomIn && !canZoomOut)        
         {
             mZoomButtonsController.getZoomControls().setVisibility(View.GONE);
-        } 
+        } //End block
         else
         {
             mZoomButtonsController.setZoomInEnabled(canZoomIn);
             mZoomButtonsController.setZoomOutEnabled(canZoomOut);
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-        
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mZoomButtonsController == null) {
+            //return;
+        //}
+        //boolean canZoomIn = mZoomManager.canZoomIn();
+        //boolean canZoomOut = mZoomManager.canZoomOut() && !mZoomManager.isInZoomOverview();
+        //if (!canZoomIn && !canZoomOut) {
+            //mZoomButtonsController.getZoomControls().setVisibility(View.GONE);
+        //} else {
+            //mZoomButtonsController.setZoomInEnabled(canZoomIn);
+            //mZoomButtonsController.setZoomOutEnabled(canZoomOut);
+        //}
     }
 
     
@@ -134,22 +133,22 @@ class ZoomControlEmbedded implements ZoomControlBase {
     if(params instanceof FrameLayout.LayoutParams)            
             {
                 ((FrameLayout.LayoutParams) params).gravity = Gravity.RIGHT;
-            } 
-        } 
+            } //End block
+        } //End block
 ZoomButtonsController var63565BB54144B4ECD496B8D8A0409C92_44395884 =         mZoomButtonsController;
         var63565BB54144B4ECD496B8D8A0409C92_44395884.addTaint(taint);
         return var63565BB54144B4ECD496B8D8A0409C92_44395884;
-        
-        
-            
-            
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mZoomButtonsController == null) {
+            //mZoomButtonsController = new ZoomButtonsController(mWebView);
+            //mZoomButtonsController.setOnZoomListener(new ZoomListener());
+            //View controls = mZoomButtonsController.getZoomControls();
+            //ViewGroup.LayoutParams params = controls.getLayoutParams();
+            //if (params instanceof FrameLayout.LayoutParams) {
+                //((FrameLayout.LayoutParams) params).gravity = Gravity.RIGHT;
+            //}
+        //}
+        //return mZoomButtonsController;
     }
 
     
@@ -158,50 +157,49 @@ ZoomButtonsController var63565BB54144B4ECD496B8D8A0409C92_44395884 =         mZo
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.433 -0400", hash_original_method = "97A31822F6766CF42618FF6D567EE294", hash_generated_method = "97A31822F6766CF42618FF6D567EE294")
         public ZoomListener ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.433 -0400", hash_original_method = "CAB57885F430D7392888CFD12B17B225", hash_generated_method = "D1B2D1C2CFDE0020D266B7E083F173E5")
         public void onVisibilityChanged(boolean visible) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(visible);
     if(visible)            
             {
                 mWebView.switchOutDrawHistory();
                 mZoomButtonsController.getZoomControls().setVisibility(View.VISIBLE);
                 update();
-            } 
-            
-            
-                
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //if (visible) {
+                //mWebView.switchOutDrawHistory();
+                //mZoomButtonsController.getZoomControls().setVisibility(View.VISIBLE);
+                //update();
+            //}
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.433 -0400", hash_original_method = "A16881C1E119771D4FCCD4DE4DCAF173", hash_generated_method = "2831C0F143F93F97D96A757365DD63F5")
         public void onZoom(boolean zoomIn) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(zoomIn);
     if(zoomIn)            
             {
                 mWebView.zoomIn();
-            } 
+            } //End block
             else
             {
                 mWebView.zoomOut();
-            } 
+            } //End block
             update();
-            
-            
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (zoomIn) {
+                //mWebView.zoomIn();
+            //} else {
+                //mWebView.zoomOut();
+            //}
+            //update();
         }
 
         

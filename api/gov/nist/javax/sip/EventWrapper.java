@@ -1,6 +1,6 @@
 package gov.nist.javax.sip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ class EventWrapper {
       EventWrapper(EventObject sipEvent, SIPTransaction transaction) {
         this.sipEvent = sipEvent;
         this.transaction = transaction;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.sipEvent = sipEvent;
+        //this.transaction = transaction;
     }
 
     

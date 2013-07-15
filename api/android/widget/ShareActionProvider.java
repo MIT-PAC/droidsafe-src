@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,8 +43,8 @@ public class ShareActionProvider extends ActionProvider {
     public  ShareActionProvider(Context context) {
         super(context);
         mContext = context;
-        
-        
+        // ---------- Original Method ----------
+        //mContext = context;
     }
 
     
@@ -52,16 +52,16 @@ public class ShareActionProvider extends ActionProvider {
     public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener listener) {
         mOnShareTargetSelectedListener = listener;
         setActivityChooserPolicyIfNeeded();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mOnShareTargetSelectedListener = listener;
+        //setActivityChooserPolicyIfNeeded();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.491 -0400", hash_original_method = "457E9B3A86A4C9D09DD81D115C288523", hash_generated_method = "49C3237A29F3DC21FCADB9D75E7EF62B")
     @Override
     public View onCreateActionView() {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
         ActivityChooserView activityChooserView = new ActivityChooserView(mContext);
         activityChooserView.setActivityChooserModel(dataModel);
@@ -77,27 +77,26 @@ public class ShareActionProvider extends ActionProvider {
 View varF556D8F63673A371CE9EF1B174A0164C_505366429 =         activityChooserView;
         varF556D8F63673A371CE9EF1B174A0164C_505366429.addTaint(taint);
         return varF556D8F63673A371CE9EF1B174A0164C_505366429;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.491 -0400", hash_original_method = "35CF29CD4DCA84D0FC63AC1A69E282B0", hash_generated_method = "15EFACB60B97C39230109EEC0A71947C")
     @Override
     public boolean hasSubMenu() {
         boolean varB326B5062B2F0E69046810717534CB09_1987450259 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1653882905 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1653882905;
-        
-        
+        // ---------- Original Method ----------
+        //return true;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.492 -0400", hash_original_method = "780159D1510500332D77DB35C815CAE0", hash_generated_method = "555B8A7B22D1F7FBCE113D989B218C8F")
     @Override
     public void onPrepareSubMenu(SubMenu subMenu) {
-        
+        //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(subMenu.getTaint());
         subMenu.clear();
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
@@ -110,7 +109,7 @@ for(int i = 0;i < collapsedActivityCount;i++)
             subMenu.add(0, i, i, activity.loadLabel(packageManager))
                 .setIcon(activity.loadIcon(packageManager))
                 .setOnMenuItemClickListener(mOnMenuItemClickListener);
-        } 
+        } //End block
     if(collapsedActivityCount < expandedActivityCount)        
         {
             SubMenu expandedSubMenu = subMenu.addSubMenu(Menu.NONE, collapsedActivityCount,
@@ -122,10 +121,10 @@ for(int i = 0;i < expandedActivityCount;i++)
                 expandedSubMenu.add(0, i, i, activity.loadLabel(packageManager))
                     .setIcon(activity.loadIcon(packageManager))
                     .setOnMenuItemClickListener(mOnMenuItemClickListener);
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -133,23 +132,22 @@ for(int i = 0;i < expandedActivityCount;i++)
     public void setShareHistoryFileName(String shareHistoryFile) {
         mShareHistoryFileName = shareHistoryFile;
         setActivityChooserPolicyIfNeeded();
-        
-        
-        
+        // ---------- Original Method ----------
+        //mShareHistoryFileName = shareHistoryFile;
+        //setActivityChooserPolicyIfNeeded();
     }
 
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.492 -0400", hash_original_method = "0DAF31F3B630D54C36D98C14F5BC8D8F", hash_generated_method = "DE3C33B3D27BB7832A9685A249945989")
     public void setShareIntent(Intent shareIntent) {
         addTaint(shareIntent.getTaint());
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
             mShareHistoryFileName);
         dataModel.setIntent(shareIntent);
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
+            //mShareHistoryFileName);
+        //dataModel.setIntent(shareIntent);
     }
 
     
@@ -158,22 +156,22 @@ for(int i = 0;i < expandedActivityCount;i++)
     if(mOnShareTargetSelectedListener == null)        
         {
             return;
-        } 
+        } //End block
     if(mOnChooseActivityListener == null)        
         {
             mOnChooseActivityListener = new ShareAcitivityChooserModelPolicy();
-        } 
+        } //End block
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
         dataModel.setOnChooseActivityListener(mOnChooseActivityListener);
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mOnShareTargetSelectedListener == null) {
+            //return;
+        //}
+        //if (mOnChooseActivityListener == null) {
+            //mOnChooseActivityListener = new ShareAcitivityChooserModelPolicy();
+        //}
+        //ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
+        //dataModel.setOnChooseActivityListener(mOnChooseActivityListener);
     }
 
     
@@ -182,14 +180,14 @@ for(int i = 0;i < expandedActivityCount;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.492 -0400", hash_original_method = "C6BD26BFC91AD355EDD4802746345224", hash_generated_method = "C6BD26BFC91AD355EDD4802746345224")
         public ShareMenuItemOnMenuItemClickListener ()
         {
-            
+            //Synthesized constructor
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.492 -0400", hash_original_method = "9C4E8B2E808FE0B52E60FC78C14CA469", hash_generated_method = "98480C81B15CF2598504D28E1EC61CFA")
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(item.getTaint());
             ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
                     mShareHistoryFileName);
@@ -198,19 +196,19 @@ for(int i = 0;i < expandedActivityCount;i++)
     if(launchIntent != null)            
             {
                 mContext.startActivity(launchIntent);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1471151784 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1627546765 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1627546765;
-            
-            
-                    
-            
-            
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //ActivityChooserModel dataModel = ActivityChooserModel.get(mContext,
+                    //mShareHistoryFileName);
+            //final int itemId = item.getItemId();
+            //Intent launchIntent = dataModel.chooseActivity(itemId);
+            //if (launchIntent != null) {
+                //mContext.startActivity(launchIntent);
+            //}
+            //return true;
         }
 
         
@@ -223,15 +221,14 @@ for(int i = 0;i < expandedActivityCount;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.493 -0400", hash_original_method = "89F1CDD786658ECF01B61D572BA79B4B", hash_generated_method = "89F1CDD786658ECF01B61D572BA79B4B")
         public ShareAcitivityChooserModelPolicy ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.493 -0400", hash_original_method = "5A8A50866214BBC9FA1FE4AEB29A128B", hash_generated_method = "4E9B355457F6EB7205C141605294D1B2")
         @Override
         public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {
-            
+            //DSFIXME:  CODE0009: Possible callback target function detected
             addTaint(intent.getTaint());
             addTaint(host.getTaint());
     if(mOnShareTargetSelectedListener != null)            
@@ -240,16 +237,16 @@ for(int i = 0;i < expandedActivityCount;i++)
                         ShareActionProvider.this, intent));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_842356166 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_842356166;
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_765668482 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_723236218 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_723236218;
-            
-            
-                
-                        
-            
-            
+            // ---------- Original Method ----------
+            //if (mOnShareTargetSelectedListener != null) {
+                //return mOnShareTargetSelectedListener.onShareTargetSelected(
+                        //ShareActionProvider.this, intent);
+            //}
+            //return false;
         }
 
         

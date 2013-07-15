@@ -1,6 +1,6 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class UnknownServiceException extends IOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.873 -0400", hash_original_method = "ADBD30E20976E5F84799D2EDCA6E8AB1", hash_generated_method = "9EE874687BEB0AAD14D021865ADF7D88")
     public  UnknownServiceException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -18,7 +18,7 @@ public class UnknownServiceException extends IOException {
     public  UnknownServiceException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,7 +27,7 @@ public class UnknownServiceException extends IOException {
         super(detailMessage, cause);
         addTaint(cause.getTaint());
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

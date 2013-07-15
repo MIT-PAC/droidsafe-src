@@ -1,6 +1,6 @@
 package java.nio;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
       DoubleBuffer(int capacity) {
         super(3, capacity, null);
         addTaint(capacity);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -43,8 +43,8 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
         double[] var68B89E48382A0AA51B25AC59599E2EB0_502152860 = (protectedArray());
                 double[] var74D44D7D9EE6FE6C3433D694F869E521_1972100729 = {getTaintDouble()};
         return var74D44D7D9EE6FE6C3433D694F869E521_1972100729;
-        
-        
+        // ---------- Original Method ----------
+        //return protectedArray();
     }
 
     
@@ -53,8 +53,8 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
         int var0B794CE56A38A9F3BFDD2D53E83BB109_1855547855 = (protectedArrayOffset());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_302752669 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_302752669;
-        
-        
+        // ---------- Original Method ----------
+        //return protectedArrayOffset();
     }
 
     
@@ -84,32 +84,32 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
                 int var13069EACA3657A7A151A440E0B39B59A_830680532 = (thisDouble < otherDouble ? -1 : 1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908663466 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908663466;
-            } 
+            } //End block
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } 
+        } //End block
         int var1DC167191FBC7DAD3BADAE830552C692_160213988 = (remaining() - otherBuffer.remaining());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1576237715 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1576237715;
-        
-        
-                
-        
-        
-        
-        
-            
-            
-            
-                    
-                
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
+                //: otherBuffer.remaining();
+        //int thisPos = position;
+        //int otherPos = otherBuffer.position;
+        //double thisDouble, otherDouble;
+        //while (compareRemaining > 0) {
+            //thisDouble = get(thisPos);
+            //otherDouble = otherBuffer.get(otherPos);
+            //if ((thisDouble != otherDouble)
+                    //&& ((thisDouble == thisDouble) || (otherDouble == otherDouble))) {
+                //return thisDouble < otherDouble ? -1 : 1;
+            //}
+            //thisPos++;
+            //otherPos++;
+            //compareRemaining--;
+        //}
+        //return remaining() - otherBuffer.remaining();
     }
 
     
@@ -125,14 +125,14 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
             boolean var68934A3E9455FA72420237EB05902327_1202914569 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_451326620 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_451326620;
-        } 
+        } //End block
         DoubleBuffer otherBuffer = (DoubleBuffer) other;
     if(remaining() != otherBuffer.remaining())        
         {
             boolean var68934A3E9455FA72420237EB05902327_2026117237 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1214321038 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1214321038;
-        } 
+        } //End block
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
@@ -142,27 +142,27 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
             double a = get(myPosition++);
             double b = otherBuffer.get(otherPosition++);
             equalSoFar = a == b || (a != a && b != b);
-        } 
+        } //End block
         boolean var4A97EF18B93B276118DD50585250A586_1666753382 = (equalSoFar);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1895774275 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1895774275;
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-        
-        
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (!(other instanceof DoubleBuffer)) {
+            //return false;
+        //}
+        //DoubleBuffer otherBuffer = (DoubleBuffer) other;
+        //if (remaining() != otherBuffer.remaining()) {
+            //return false;
+        //}
+        //int myPosition = position;
+        //int otherPosition = otherBuffer.position;
+        //boolean equalSoFar = true;
+        //while (equalSoFar && (myPosition < limit)) {
+            //double a = get(myPosition++);
+            //double b = otherBuffer.get(otherPosition++);
+            //equalSoFar = a == b || (a != a && b != b);
+        //}
+        //return equalSoFar;
     }
 
     
@@ -175,8 +175,8 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
 DoubleBuffer varAF8F268F60258FE30F192DE78F11CD4A_379716201 =         get(dst, 0, dst.length);
         varAF8F268F60258FE30F192DE78F11CD4A_379716201.addTaint(taint);
         return varAF8F268F60258FE30F192DE78F11CD4A_379716201;
-        
-        
+        // ---------- Original Method ----------
+        //return get(dst, 0, dst.length);
     }
 
     
@@ -191,23 +191,23 @@ DoubleBuffer varAF8F268F60258FE30F192DE78F11CD4A_379716201 =         get(dst, 0,
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1181494006 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_1181494006.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1181494006;
-        } 
+        } //End block
 for(int i = dstOffset;i < dstOffset + doubleCount;++i)
         {
             dst[i] = get();
-        } 
+        } //End block
 DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1808681806 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1808681806.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1808681806;
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(dst.length, dstOffset, doubleCount);
+        //if (doubleCount > remaining()) {
+            //throw new BufferUnderflowException();
+        //}
+        //for (int i = dstOffset; i < dstOffset + doubleCount; ++i) {
+            //dst[i] = get();
+        //}
+        //return this;
     }
 
     
@@ -219,8 +219,8 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1808681806 =         this;
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_2878915 = (protectedHasArray());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1907137938 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1907137938;
-        
-        
+        // ---------- Original Method ----------
+        //return protectedHasArray();
     }
 
     
@@ -235,19 +235,19 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1808681806 =         this;
         {
             l = Double.doubleToLongBits(get(myPosition++));
             hash = hash + ((int) l) ^ ((int) (l >> 32));
-        } 
+        } //End block
         int var0800FC577294C34E0B28AD2839435945_1193857530 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925541982 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925541982;
-        
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int myPosition = position;
+        //int hash = 0;
+        //long l;
+        //while (myPosition < limit) {
+            //l = Double.doubleToLongBits(get(myPosition++));
+            //hash = hash + ((int) l) ^ ((int) (l >> 32));
+        //}
+        //return hash;
     }
 
     
@@ -275,8 +275,8 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_1808681806 =         this;
 DoubleBuffer var7D505613BED257805463C43ADCB4DBAD_220014231 =         put(src, 0, src.length);
         var7D505613BED257805463C43ADCB4DBAD_220014231.addTaint(taint);
         return var7D505613BED257805463C43ADCB4DBAD_220014231;
-        
-        
+        // ---------- Original Method ----------
+        //return put(src, 0, src.length);
     }
 
     
@@ -291,23 +291,23 @@ DoubleBuffer var7D505613BED257805463C43ADCB4DBAD_220014231 =         put(src, 0,
             BufferOverflowException var773478A23217201B18B531915D367F31_1711027450 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_1711027450.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_1711027450;
-        } 
+        } //End block
 for(int i = srcOffset;i < srcOffset + doubleCount;++i)
         {
             put(src[i]);
-        } 
+        } //End block
 DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_951080505 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_951080505.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_951080505;
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(src.length, srcOffset, doubleCount);
+        //if (doubleCount > remaining()) {
+            //throw new BufferOverflowException();
+        //}
+        //for (int i = srcOffset; i < srcOffset + doubleCount; ++i) {
+            //put(src[i]);
+        //}
+        //return this;
     }
 
     
@@ -319,30 +319,30 @@ DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_951080505 =         this;
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_493445454 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_493445454.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_493445454;
-        } 
+        } //End block
     if(src.remaining() > remaining())        
         {
             BufferOverflowException var773478A23217201B18B531915D367F31_871847052 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_871847052.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_871847052;
-        } 
+        } //End block
         double[] doubles = new double[src.remaining()];
         src.get(doubles);
         put(doubles);
 DoubleBuffer var72A74007B2BE62B849F475C7BDA4658B_848638464 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_848638464.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_848638464;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (src == this) {
+            //throw new IllegalArgumentException();
+        //}
+        //if (src.remaining() > remaining()) {
+            //throw new BufferOverflowException();
+        //}
+        //double[] doubles = new double[src.remaining()];
+        //src.get(doubles);
+        //put(doubles);
+        //return this;
     }
 
     

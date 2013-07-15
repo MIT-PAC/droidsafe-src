@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,8 +13,8 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.092 -0400", hash_original_method = "673B7AADE5290DAEA83488F65491132B", hash_generated_method = "A151A94197A0C9FE391BFFF503DB9D13")
     protected  Writer() {
         lock = this;
-        
-        
+        // ---------- Original Method ----------
+        //lock = this;
     }
 
     
@@ -25,13 +25,13 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1158691947 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1158691947.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1158691947;
-        } 
+        } //End block
         this.lock = lock;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (lock == null) {
+            //throw new NullPointerException();
+        //}
+        //this.lock = lock;
     }
 
     
@@ -45,8 +45,8 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     public void write(char[] buf) throws IOException {
         addTaint(buf[0]);
         write(buf, 0, buf.length);
-        
-        
+        // ---------- Original Method ----------
+        //write(buf, 0, buf.length);
     }
 
     
@@ -61,13 +61,13 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
             char[] oneCharArray = new char[1];
             oneCharArray[0] = (char) oneChar;
             write(oneCharArray);
-        } 
-        
-        
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (lock) {
+            //char[] oneCharArray = new char[1];
+            //oneCharArray[0] = (char) oneChar;
+            //write(oneCharArray);
+        //}
     }
 
     
@@ -75,8 +75,8 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     public void write(String str) throws IOException {
         addTaint(str.getTaint());
         write(str, 0, str.length());
-        
-        
+        // ---------- Original Method ----------
+        //write(str, 0, str.length());
     }
 
     
@@ -90,22 +90,22 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
             StringIndexOutOfBoundsException varDD6466A465572C8C2EC4C6C733FC9AF8_184846063 = new StringIndexOutOfBoundsException(str, offset, count);
             varDD6466A465572C8C2EC4C6C733FC9AF8_184846063.addTaint(taint);
             throw varDD6466A465572C8C2EC4C6C733FC9AF8_184846063;
-        } 
+        } //End block
         char[] buf = new char[count];
         str.getChars(offset, offset + count, buf, 0);
         synchronized
 (lock)        {
             write(buf, 0, buf.length);
-        } 
-        
-        
-            
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if ((offset | count) < 0 || offset > str.length() - count) {
+            //throw new StringIndexOutOfBoundsException(str, offset, count);
+        //}
+        //char[] buf = new char[count];
+        //str.getChars(offset, offset + count, buf, 0);
+        //synchronized (lock) {
+            //write(buf, 0, buf.length);
+        //}
     }
 
     
@@ -116,9 +116,9 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
 Writer var72A74007B2BE62B849F475C7BDA4658B_1168950461 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1168950461.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1168950461;
-        
-        
-        
+        // ---------- Original Method ----------
+        //write(c);
+        //return this;
     }
 
     
@@ -128,17 +128,17 @@ Writer var72A74007B2BE62B849F475C7BDA4658B_1168950461 =         this;
     if(csq == null)        
         {
             csq = "null";
-        } 
+        } //End block
         write(csq.toString());
 Writer var72A74007B2BE62B849F475C7BDA4658B_627038352 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_627038352.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_627038352;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (csq == null) {
+            //csq = "null";
+        //}
+        //write(csq.toString());
+        //return this;
     }
 
     
@@ -150,28 +150,27 @@ Writer var72A74007B2BE62B849F475C7BDA4658B_627038352 =         this;
     if(csq == null)        
         {
             csq = "null";
-        } 
+        } //End block
         write(csq.subSequence(start, end).toString());
 Writer var72A74007B2BE62B849F475C7BDA4658B_1928818764 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1928818764.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1928818764;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (csq == null) {
+            //csq = "null";
+        //}
+        //write(csq.subSequence(start, end).toString());
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.100 -0400", hash_original_method = "0FEA708DB7A5B3B6D16FEC9623D0EEF8", hash_generated_method = "B1FDE7C63DEB2588834DDAE6E775F979")
      boolean checkError() {
         boolean var68934A3E9455FA72420237EB05902327_757902764 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1448969809 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1448969809;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     

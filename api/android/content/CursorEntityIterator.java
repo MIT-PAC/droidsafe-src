@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,10 +20,10 @@ public abstract class CursorEntityIterator implements EntityIterator {
         mIsClosed = false;
         mCursor = cursor;
         mCursor.moveToFirst();
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mIsClosed = false;
+        //mCursor = cursor;
+        //mCursor.moveToFirst();
     }
 
     
@@ -37,15 +37,15 @@ public abstract class CursorEntityIterator implements EntityIterator {
             IllegalStateException var994C5FDCB689CD476D720223C1A2E97C_1392251958 = new IllegalStateException("calling hasNext() when the iterator is closed");
             var994C5FDCB689CD476D720223C1A2E97C_1392251958.addTaint(taint);
             throw var994C5FDCB689CD476D720223C1A2E97C_1392251958;
-        } 
+        } //End block
         boolean varA900E63D2652380A0AE5EC5450C680D1_907053977 = (!mCursor.isAfterLast());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1743442562 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1743442562;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mIsClosed) {
+            //throw new IllegalStateException("calling hasNext() when the iterator is closed");
+        //}
+        //return !mCursor.isAfterLast();
     }
 
     
@@ -56,37 +56,37 @@ public abstract class CursorEntityIterator implements EntityIterator {
             IllegalStateException var12E76C3A9A7CEE219DB8C76087FF564B_656516136 = new IllegalStateException("calling next() when the iterator is closed");
             var12E76C3A9A7CEE219DB8C76087FF564B_656516136.addTaint(taint);
             throw var12E76C3A9A7CEE219DB8C76087FF564B_656516136;
-        } 
+        } //End block
     if(!hasNext())        
         {
             IllegalStateException varE20C7FA15E48B005588D91906DC67B5F_1350683974 = new IllegalStateException("you may only call next() if hasNext() is true");
             varE20C7FA15E48B005588D91906DC67B5F_1350683974.addTaint(taint);
             throw varE20C7FA15E48B005588D91906DC67B5F_1350683974;
-        } 
+        } //End block
         try 
         {
 Entity var89A776ACF604CF5B8BF8FB402D39F0BE_476195013 =             getEntityAndIncrementCursor(mCursor);
             var89A776ACF604CF5B8BF8FB402D39F0BE_476195013.addTaint(taint);
             return var89A776ACF604CF5B8BF8FB402D39F0BE_476195013;
-        } 
+        } //End block
         catch (RemoteException e)
         {
             RuntimeException varA9C8EAB58C0973C3C3455840A2CBB98C_744357115 = new RuntimeException("caught a remote exception, this process will die soon", e);
             varA9C8EAB58C0973C3C3455840A2CBB98C_744357115.addTaint(taint);
             throw varA9C8EAB58C0973C3C3455840A2CBB98C_744357115;
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mIsClosed) {
+            //throw new IllegalStateException("calling next() when the iterator is closed");
+        //}
+        //if (!hasNext()) {
+            //throw new IllegalStateException("you may only call next() if hasNext() is true");
+        //}
+        //try {
+            //return getEntityAndIncrementCursor(mCursor);
+        //} catch (RemoteException e) {
+            //throw new RuntimeException("caught a remote exception, this process will die soon", e);
+        //}
     }
 
     
@@ -95,8 +95,8 @@ Entity var89A776ACF604CF5B8BF8FB402D39F0BE_476195013 =             getEntityAndI
         UnsupportedOperationException var3507AD2E5185A524A543CF22C0250BAC_113463133 = new UnsupportedOperationException("remove not supported by EntityIterators");
         var3507AD2E5185A524A543CF22C0250BAC_113463133.addTaint(taint);
         throw var3507AD2E5185A524A543CF22C0250BAC_113463133;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException("remove not supported by EntityIterators");
     }
 
     
@@ -107,13 +107,13 @@ Entity var89A776ACF604CF5B8BF8FB402D39F0BE_476195013 =             getEntityAndI
             IllegalStateException var47A5740EFD7F765F130EF9990EDEC229_1405883229 = new IllegalStateException("calling reset() when the iterator is closed");
             var47A5740EFD7F765F130EF9990EDEC229_1405883229.addTaint(taint);
             throw var47A5740EFD7F765F130EF9990EDEC229_1405883229;
-        } 
+        } //End block
         mCursor.moveToFirst();
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (mIsClosed) {
+            //throw new IllegalStateException("calling reset() when the iterator is closed");
+        //}
+        //mCursor.moveToFirst();
     }
 
     
@@ -124,15 +124,15 @@ Entity var89A776ACF604CF5B8BF8FB402D39F0BE_476195013 =             getEntityAndI
             IllegalStateException varC011F9740FCC2D0357D3F5533DD6D908_1771050521 = new IllegalStateException("closing when already closed");
             varC011F9740FCC2D0357D3F5533DD6D908_1771050521.addTaint(taint);
             throw varC011F9740FCC2D0357D3F5533DD6D908_1771050521;
-        } 
+        } //End block
         mIsClosed = true;
         mCursor.close();
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (mIsClosed) {
+            //throw new IllegalStateException("closing when already closed");
+        //}
+        //mIsClosed = true;
+        //mCursor.close();
     }
 
     

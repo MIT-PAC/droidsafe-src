@@ -1,6 +1,6 @@
 package java.util.zip;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class DataFormatException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.400 -0400", hash_original_method = "64C52722D8298AB468E7E3E8999CA51F", hash_generated_method = "3EAAEB4127F03FA62C0948D7293BDD0B")
     public  DataFormatException() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class DataFormatException extends Exception {
     public  DataFormatException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

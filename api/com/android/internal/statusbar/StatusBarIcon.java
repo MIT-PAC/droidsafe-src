@@ -1,6 +1,6 @@
 package com.android.internal.statusbar;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,12 +35,12 @@ public class StatusBarIcon implements Parcelable {
         this.iconLevel = iconLevel;
         this.number = number;
         this.contentDescription = contentDescription;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.iconPackage = iconPackage;
+        //this.iconId = iconId;
+        //this.iconLevel = iconLevel;
+        //this.number = number;
+        //this.contentDescription = contentDescription;
     }
 
     
@@ -48,8 +48,8 @@ public class StatusBarIcon implements Parcelable {
     public  StatusBarIcon(Parcel in) {
         addTaint(in.getTaint());
         readFromParcel(in);
-        
-        
+        // ---------- Original Method ----------
+        //readFromParcel(in);
     }
 
     
@@ -61,10 +61,10 @@ String varB386A426A810794AFD31502A9A981A90_459044460 =         "StatusBarIcon(pk
                 + " num=" + this.number + " )";
         varB386A426A810794AFD31502A9A981A90_459044460.addTaint(taint);
         return varB386A426A810794AFD31502A9A981A90_459044460;
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //return "StatusBarIcon(pkg=" + this.iconPackage + " id=0x" + Integer.toHexString(this.iconId)
+                //+ " level=" + this.iconLevel + " visible=" + visible
+                //+ " num=" + this.number + " )";
     }
 
     
@@ -77,11 +77,11 @@ String varB386A426A810794AFD31502A9A981A90_459044460 =         "StatusBarIcon(pk
 StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_1581672980 =         that;
         varF9965B73D80F3C31BC4764828F08696D_1581672980.addTaint(taint);
         return varF9965B73D80F3C31BC4764828F08696D_1581672980;
-        
-        
-                
-        
-        
+        // ---------- Original Method ----------
+        //StatusBarIcon that = new StatusBarIcon(this.iconPackage, this.iconId, this.iconLevel,
+                //this.number, this.contentDescription);
+        //that.visible = this.visible;
+        //return that;
     }
 
     
@@ -93,13 +93,13 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_1581672980 =         that;
         this.visible = in.readInt() != 0;
         this.number = in.readInt();
         this.contentDescription = in.readCharSequence();
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.iconPackage = in.readString();
+        //this.iconId = in.readInt();
+        //this.iconLevel = in.readInt();
+        //this.visible = in.readInt() != 0;
+        //this.number = in.readInt();
+        //this.contentDescription = in.readCharSequence();
     }
 
     
@@ -113,24 +113,23 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_1581672980 =         that;
         out.writeInt(this.visible ? 1 : 0);
         out.writeInt(this.number);
         out.writeCharSequence(this.contentDescription);
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //out.writeString(this.iconPackage);
+        //out.writeInt(this.iconId);
+        //out.writeInt(this.iconLevel);
+        //out.writeInt(this.visible ? 1 : 0);
+        //out.writeInt(this.number);
+        //out.writeCharSequence(this.contentDescription);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.503 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "742E0376BFCDC66D1C396B7F23BA4ADD")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_67552012 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135183022 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1135183022;
-        
-        
+        // ---------- Original Method ----------
+        //return 0;
     }
 
     
@@ -149,13 +148,13 @@ StatusBarIcon varF9965B73D80F3C31BC4764828F08696D_1581672980 =         that;
             return new StatusBarIcon[size];
         }
     };
-    
+    // orphaned legacy method
     public StatusBarIcon createFromParcel(Parcel parcel)
         {
             return new StatusBarIcon(parcel);
         }
     
-    
+    // orphaned legacy method
     public StatusBarIcon[] newArray(int size)
         {
             return new StatusBarIcon[size];

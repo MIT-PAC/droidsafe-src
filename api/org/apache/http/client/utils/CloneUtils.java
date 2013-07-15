@@ -1,6 +1,6 @@
 package org.apache.http.client.utils;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class CloneUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.319 -0400", hash_original_method = "1F76692A2F48F09687AD7B289259D6AA", hash_generated_method = "52ECA5301B917B4222381801D4F13452")
     private  CloneUtils() {
-        
+        // ---------- Original Method ----------
     }
 
     

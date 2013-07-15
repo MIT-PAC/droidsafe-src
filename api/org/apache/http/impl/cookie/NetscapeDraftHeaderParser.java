@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,8 +23,8 @@ public class NetscapeDraftHeaderParser {
     public  NetscapeDraftHeaderParser() {
         super();
         this.nvpParser = BasicHeaderValueParser.DEFAULT;
-        
-        
+        // ---------- Original Method ----------
+        //this.nvpParser = BasicHeaderValueParser.DEFAULT;
     }
 
     
@@ -39,13 +39,13 @@ public class NetscapeDraftHeaderParser {
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_87191461 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_87191461.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_87191461;
-        } 
+        } //End block
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2037369596 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2037369596.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2037369596;
-        } 
+        } //End block
         NameValuePair nvp = this.nvpParser.parseNameValuePair(buffer, cursor, DELIMITERS);
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         while
@@ -53,28 +53,28 @@ public class NetscapeDraftHeaderParser {
         {
             NameValuePair param = this.nvpParser.parseNameValuePair(buffer, cursor, DELIMITERS);
             params.add(param);
-        } 
+        } //End block
 HeaderElement var058FF4A669E46BFA920AF48787C82687_590046220 =         new BasicHeaderElement(
                 nvp.getName(), 
                 nvp.getValue(), params.toArray(new NameValuePair[params.size()]));
         var058FF4A669E46BFA920AF48787C82687_590046220.addTaint(taint);
         return var058FF4A669E46BFA920AF48787C82687_590046220;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-            
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //if (buffer == null) {
+            //throw new IllegalArgumentException("Char array buffer may not be null");
+        //}
+        //if (cursor == null) {
+            //throw new IllegalArgumentException("Parser cursor may not be null");
+        //}
+        //NameValuePair nvp = this.nvpParser.parseNameValuePair(buffer, cursor, DELIMITERS);
+        //List<NameValuePair> params = new ArrayList<NameValuePair>();
+        //while (!cursor.atEnd()) {
+            //NameValuePair param = this.nvpParser.parseNameValuePair(buffer, cursor, DELIMITERS);
+            //params.add(param);
+        //}
+        //return new BasicHeaderElement(
+                //nvp.getName(), 
+                //nvp.getValue(), params.toArray(new NameValuePair[params.size()]));
     }
 
     

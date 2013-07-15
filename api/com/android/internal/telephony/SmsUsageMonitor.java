@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,21 +31,21 @@ public class SmsUsageMonitor {
         mCheckPeriod = Settings.Secure.getInt(resolver,
                 Settings.Secure.SMS_OUTGOING_CHECK_INTERVAL_MS,
                 DEFAULT_SMS_CHECK_PERIOD);
-        
-        
-                
-                
-        
-                
-                
+        // ---------- Original Method ----------
+        //mMaxAllowed = Settings.Secure.getInt(resolver,
+                //Settings.Secure.SMS_OUTGOING_CHECK_MAX_COUNT,
+                //DEFAULT_SMS_MAX_COUNT);
+        //mCheckPeriod = Settings.Secure.getInt(resolver,
+                //Settings.Secure.SMS_OUTGOING_CHECK_INTERVAL_MS,
+                //DEFAULT_SMS_CHECK_PERIOD);
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.537 -0400", hash_original_method = "7B2C29F4698952FF45E2699BBB5DEB62", hash_generated_method = "F5020B67D30B77B9A0B8E7C878C54BF3")
      void dispose() {
         mSmsStamp.clear();
-        
-        
+        // ---------- Original Method ----------
+        //mSmsStamp.clear();
     }
 
     
@@ -61,21 +61,21 @@ public class SmsUsageMonitor {
             {
                 sentList = new ArrayList<Long>();
                 mSmsStamp.put(appName, sentList);
-            } 
+            } //End block
             boolean varB953ECC0AAC1AB2A01BD129D0D595F46_1544824929 = (isUnderLimit(sentList, smsWaiting));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_856846276 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_856846276;
-        } 
-        
-        
-            
-            
-            
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mSmsStamp) {
+            //removeExpiredTimestamps();
+            //ArrayList<Long> sentList = mSmsStamp.get(appName);
+            //if (sentList == null) {
+                //sentList = new ArrayList<Long>();
+                //mSmsStamp.put(appName, sentList);
+            //}
+            //return isUnderLimit(sentList, smsWaiting);
+        //}
     }
 
     
@@ -93,21 +93,21 @@ public class SmsUsageMonitor {
     if(oldList.isEmpty() || oldList.get(oldList.size() - 1) < beginCheckPeriod)                
                 {
                     iter.remove();
-                } 
-            } 
-        } 
-        
-        
-        
-            
-            
-                
-                
-                
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //long beginCheckPeriod = System.currentTimeMillis() - mCheckPeriod;
+        //synchronized (mSmsStamp) {
+            //Iterator<Map.Entry<String, ArrayList<Long>>> iter = mSmsStamp.entrySet().iterator();
+            //while (iter.hasNext()) {
+                //Map.Entry<String, ArrayList<Long>> entry = iter.next();
+                //ArrayList<Long> oldList = entry.getValue();
+                //if (oldList.isEmpty() || oldList.get(oldList.size() - 1) < beginCheckPeriod) {
+                    //iter.remove();
+                //}
+            //}
+        //}
     }
 
     
@@ -122,34 +122,34 @@ public class SmsUsageMonitor {
 (!sent.isEmpty() && sent.get(0) < beginCheckPeriod)        
         {
             sent.remove(0);
-        } 
+        } //End block
     if((sent.size() + smsWaiting) <= mMaxAllowed)        
         {
 for(int i = 0;i < smsWaiting;i++)
             {
                 sent.add(ct);
-            } 
+            } //End block
             boolean varB326B5062B2F0E69046810717534CB09_1214178195 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1351469195 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1351469195;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1815841235 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1105038834 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1105038834;
-        
-        
-        
-        
-        
-            
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //Long ct = System.currentTimeMillis();
+        //long beginCheckPeriod = ct - mCheckPeriod;
+        //Log.d(TAG, "SMS send size=" + sent.size() + " time=" + ct);
+        //while (!sent.isEmpty() && sent.get(0) < beginCheckPeriod) {
+            //sent.remove(0);
+        //}
+        //if ((sent.size() + smsWaiting) <= mMaxAllowed) {
+            //for (int i = 0; i < smsWaiting; i++ ) {
+                //sent.add(ct);
+            //}
+            //return true;
+        //}
+        //return false;
     }
 
     

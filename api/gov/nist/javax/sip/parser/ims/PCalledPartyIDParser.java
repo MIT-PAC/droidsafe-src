@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class PCalledPartyIDParser extends AddressParametersParser {
     public  PCalledPartyIDParser(String calledPartyID) {
         super(calledPartyID);
         addTaint(calledPartyID.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,7 +25,7 @@ public class PCalledPartyIDParser extends AddressParametersParser {
     protected  PCalledPartyIDParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -44,27 +44,27 @@ public class PCalledPartyIDParser extends AddressParametersParser {
 SIPHeader var7CED634B91969C8974B3C449C1A23580_247360569 =             calledPartyID;
             var7CED634B91969C8974B3C449C1A23580_247360569.addTaint(taint);
             return var7CED634B91969C8974B3C449C1A23580_247360569;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("PCalledPartyIDParser.parse");
-        } 
-        
-        
-            
-        
-            
-            
-            
-            
-            
-            
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (debug)
+            //dbg_enter("PCalledPartyIDParser.parse");
+        //try {
+            //this.lexer.match(TokenTypes.P_CALLED_PARTY_ID);
+            //this.lexer.SPorHT();
+            //this.lexer.match(':');
+            //this.lexer.SPorHT();
+            //PCalledPartyID calledPartyID = new PCalledPartyID();
+            //super.parse(calledPartyID);
+            //return calledPartyID;
+        //} finally {
+            //if (debug)
+                //dbg_leave("PCalledPartyIDParser.parse");
+        //}
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.openssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -73,7 +73,7 @@ public class PEMReader extends PemReader {
         Reader reader) {
         this(reader, null, "BC");
         addTaint(reader.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -84,7 +84,7 @@ public class PEMReader extends PemReader {
         this(reader, pFinder, "BC");
         addTaint(pFinder.getTaint());
         addTaint(reader.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -97,7 +97,7 @@ public class PEMReader extends PemReader {
         addTaint(provider.getTaint());
         addTaint(pFinder.getTaint());
         addTaint(reader.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -127,8 +127,8 @@ public class PEMReader extends PemReader {
         parsers.put("EC PRIVATE KEY", new ECDSAKeyPairParser(asymProvider));
         parsers.put("ENCRYPTED PRIVATE KEY", new EncryptedPrivateKeyParser(symProvider, asymProvider));
         parsers.put("PRIVATE KEY", new PrivateKeyParser(asymProvider));
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -143,32 +143,32 @@ public class PEMReader extends PemReader {
 Object var3A81707C91CA6721ECEB781CDBC013C2_1828462483 =                 ((PemObjectParser)parsers.get(type)).parseObject(obj);
                 var3A81707C91CA6721ECEB781CDBC013C2_1828462483.addTaint(taint);
                 return var3A81707C91CA6721ECEB781CDBC013C2_1828462483;
-            } 
+            } //End block
             else
             {
                 IOException var70A619DCC02CED381329A437D633B59D_1147989594 = new IOException("unrecognised object: " + type);
                 var70A619DCC02CED381329A437D633B59D_1147989594.addTaint(taint);
                 throw var70A619DCC02CED381329A437D633B59D_1147989594;
-            } 
-        } 
+            } //End block
+        } //End block
 Object var540C13E9E156B687226421B24F2DF178_1989460065 =         null;
         var540C13E9E156B687226421B24F2DF178_1989460065.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1989460065;
-        
-        
-        
-        
-            
-            
-            
-                
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //PemObject obj = readPemObject();
+        //if (obj != null)
+        //{
+            //String type = obj.getType();
+            //if (parsers.containsKey(type))
+            //{
+                //return ((PemObjectParser)parsers.get(type)).parseObject(obj);
+            //}
+            //else
+            //{
+                //throw new IOException("unrecognised object: " + type);
+            //}
+        //}
+        //return null;
     }
 
     
@@ -180,8 +180,8 @@ Object var540C13E9E156B687226421B24F2DF178_1989460065 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.297 -0400", hash_original_method = "D97A7462FC5E95C470F1E84C9A4F9D7B", hash_generated_method = "AEB043DD3F85D4A6336E5753ECB334C0")
         public  KeyPairParser(String provider) {
             this.provider = provider;
-            
-            
+            // ---------- Original Method ----------
+            //this.provider = provider;
         }
 
         
@@ -198,13 +198,13 @@ for(Iterator it = headers.iterator();it.hasNext();)
     if(hdr.getName().equals("Proc-Type") && hdr.getValue().equals("4,ENCRYPTED"))                
                 {
                     isEncrypted = true;
-                } 
+                } //End block
                 else
     if(hdr.getName().equals("DEK-Info"))                
                 {
                     dekInfo = hdr.getValue();
-                } 
-            } 
+                } //End block
+            } //End block
             byte[] keyBytes = obj.getContent();
     if(isEncrypted)            
             {
@@ -213,25 +213,25 @@ for(Iterator it = headers.iterator();it.hasNext();)
                     PasswordException var91FF4DCF86A2042EE65FD11154EAEAB6_471851284 = new PasswordException("No password finder specified, but a password is required");
                     var91FF4DCF86A2042EE65FD11154EAEAB6_471851284.addTaint(taint);
                     throw var91FF4DCF86A2042EE65FD11154EAEAB6_471851284;
-                } 
+                } //End block
                 char[] password = pFinder.getPassword();
     if(password == null)                
                 {
                     PasswordException var72B5E4C3645EE62C98877BEE4FA7A205_64741146 = new PasswordException("Password is null, but a password is required");
                     var72B5E4C3645EE62C98877BEE4FA7A205_64741146.addTaint(taint);
                     throw var72B5E4C3645EE62C98877BEE4FA7A205_64741146;
-                } 
+                } //End block
                 StringTokenizer tknz = new StringTokenizer(dekInfo, ",");
                 String dekAlgName = tknz.nextToken();
                 byte[] iv = Hex.decode(tknz.nextToken());
                 keyBytes = PEMUtilities.crypt(false, provider, keyBytes, password, dekAlgName, iv);
-            } 
+            } //End block
             try 
             {
 ASN1Sequence var2E579F18C8B32DEE34ED2B653450B91E_2128542017 =                 (ASN1Sequence)ASN1Object.fromByteArray(keyBytes);
                 var2E579F18C8B32DEE34ED2B653450B91E_2128542017.addTaint(taint);
                 return var2E579F18C8B32DEE34ED2B653450B91E_2128542017;
-            } 
+            } //End block
             catch (IOException e)
             {
     if(isEncrypted)                
@@ -239,14 +239,14 @@ ASN1Sequence var2E579F18C8B32DEE34ED2B653450B91E_2128542017 =                 (A
                     PEMException var23ADDE189C9D3294BE4E23AAC9C6C524_1820672839 = new PEMException("exception decoding - please check password and data.", e);
                     var23ADDE189C9D3294BE4E23AAC9C6C524_1820672839.addTaint(taint);
                     throw var23ADDE189C9D3294BE4E23AAC9C6C524_1820672839;
-                } 
+                } //End block
                 else
                 {
                     PEMException var0E2F75B091E2B3678FDBDFC9DA487A03_572072636 = new PEMException(e.getMessage(), e);
                     var0E2F75B091E2B3678FDBDFC9DA487A03_572072636.addTaint(taint);
                     throw var0E2F75B091E2B3678FDBDFC9DA487A03_572072636;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (ClassCastException e)
             {
     if(isEncrypted)                
@@ -254,16 +254,16 @@ ASN1Sequence var2E579F18C8B32DEE34ED2B653450B91E_2128542017 =                 (A
                     PEMException var23ADDE189C9D3294BE4E23AAC9C6C524_1352331956 = new PEMException("exception decoding - please check password and data.", e);
                     var23ADDE189C9D3294BE4E23AAC9C6C524_1352331956.addTaint(taint);
                     throw var23ADDE189C9D3294BE4E23AAC9C6C524_1352331956;
-                } 
+                } //End block
                 else
                 {
                     PEMException var0E2F75B091E2B3678FDBDFC9DA487A03_1094039239 = new PEMException(e.getMessage(), e);
                     var0E2F75B091E2B3678FDBDFC9DA487A03_1094039239.addTaint(taint);
                     throw var0E2F75B091E2B3678FDBDFC9DA487A03_1094039239;
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -277,7 +277,7 @@ ASN1Sequence var2E579F18C8B32DEE34ED2B653450B91E_2128542017 =                 (A
         public  DSAKeyPairParser(String provider) {
             super(provider);
             addTaint(provider.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -292,7 +292,7 @@ ASN1Sequence var2E579F18C8B32DEE34ED2B653450B91E_2128542017 =                 (A
                     PEMException varEE7D65505957B3E6B6E02FD39B74044F_1952104416 = new PEMException("malformed sequence in DSA private key");
                     varEE7D65505957B3E6B6E02FD39B74044F_1952104416.addTaint(taint);
                     throw varEE7D65505957B3E6B6E02FD39B74044F_1952104416;
-                } 
+                } //End block
                 DERInteger p = (DERInteger)seq.getObjectAt(1);
                 DERInteger q = (DERInteger)seq.getObjectAt(2);
                 DERInteger g = (DERInteger)seq.getObjectAt(3);
@@ -310,21 +310,21 @@ Object varEAE0B1873A9922293A96783FD42EB56C_34275040 =                 new KeyPai
                     fact.generatePrivate(privSpec));
                 varEAE0B1873A9922293A96783FD42EB56C_34275040.addTaint(taint);
                 return varEAE0B1873A9922293A96783FD42EB56C_34275040;
-            } 
+            } //End block
             catch (IOException e)
             {
                 e.addTaint(taint);
                 throw e;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException var73A90879EB20D8885E68D8211442ED4B_867632547 = new PEMException(
                     "problem creating DSA private key: " + e.toString(), e);
                 var73A90879EB20D8885E68D8211442ED4B_867632547.addTaint(taint);
                 throw var73A90879EB20D8885E68D8211442ED4B_867632547;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -338,7 +338,7 @@ Object varEAE0B1873A9922293A96783FD42EB56C_34275040 =                 new KeyPai
         public  ECDSAKeyPairParser(String provider) {
             super(provider);
             addTaint(provider.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -360,21 +360,21 @@ Object varEAE0B1873A9922293A96783FD42EB56C_912895490 =                 new KeyPa
                     fact.generatePrivate(privSpec));
                 varEAE0B1873A9922293A96783FD42EB56C_912895490.addTaint(taint);
                 return varEAE0B1873A9922293A96783FD42EB56C_912895490;
-            } 
+            } //End block
             catch (IOException e)
             {
                 e.addTaint(taint);
                 throw e;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException var7818C22FBFAD5DBAD24C042C426D3FD8_1500088694 = new PEMException(
                     "problem creating EC private key: " + e.toString(), e);
                 var7818C22FBFAD5DBAD24C042C426D3FD8_1500088694.addTaint(taint);
                 throw var7818C22FBFAD5DBAD24C042C426D3FD8_1500088694;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -388,7 +388,7 @@ Object varEAE0B1873A9922293A96783FD42EB56C_912895490 =                 new KeyPa
         public  RSAKeyPairParser(String provider) {
             super(provider);
             addTaint(provider.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -403,7 +403,7 @@ Object varEAE0B1873A9922293A96783FD42EB56C_912895490 =                 new KeyPa
                     PEMException varD35B5544DCEC0F2768B5D4A85981A218_166108113 = new PEMException("malformed sequence in RSA private key");
                     varD35B5544DCEC0F2768B5D4A85981A218_166108113.addTaint(taint);
                     throw varD35B5544DCEC0F2768B5D4A85981A218_166108113;
-                } 
+                } //End block
                 DERInteger mod = (DERInteger)seq.getObjectAt(1);
                 DERInteger pubExp = (DERInteger)seq.getObjectAt(2);
                 DERInteger privExp = (DERInteger)seq.getObjectAt(3);
@@ -425,21 +425,21 @@ Object varEAE0B1873A9922293A96783FD42EB56C_900264537 =                 new KeyPa
                     fact.generatePrivate(privSpec));
                 varEAE0B1873A9922293A96783FD42EB56C_900264537.addTaint(taint);
                 return varEAE0B1873A9922293A96783FD42EB56C_900264537;
-            } 
+            } //End block
             catch (IOException e)
             {
                 e.addTaint(taint);
                 throw e;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException varFA2BBA67F244E3218E96D4A808E1DD95_381395824 = new PEMException(
                     "problem creating RSA private key: " + e.toString(), e);
                 varFA2BBA67F244E3218E96D4A808E1DD95_381395824.addTaint(taint);
                 throw varFA2BBA67F244E3218E96D4A808E1DD95_381395824;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -455,8 +455,8 @@ Object varEAE0B1873A9922293A96783FD42EB56C_900264537 =                 new KeyPa
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.303 -0400", hash_original_method = "0B170982AEB3AA2304D2A6B36AB698F1", hash_generated_method = "6FEA18513C00881A82B8B19C6587D7C1")
         public  PublicKeyParser(String provider) {
             this.provider = provider;
-            
-            
+            // ---------- Original Method ----------
+            //this.provider = provider;
         }
 
         
@@ -474,25 +474,25 @@ for(int i = 0;i < algorithms.length;i++)
 Object var1AFC1D83658F9274302DC97B89F2B6FD_1211844875 =                     pubKey;
                     var1AFC1D83658F9274302DC97B89F2B6FD_1211844875.addTaint(taint);
                     return var1AFC1D83658F9274302DC97B89F2B6FD_1211844875;
-                } 
+                } //End block
                 catch (NoSuchAlgorithmException e)
                 {
-                } 
+                } //End block
                 catch (InvalidKeySpecException e)
                 {
-                } 
+                } //End block
                 catch (NoSuchProviderException e)
                 {
                     RuntimeException var06E4C1177140C070A53A854F6BF67B9E_1904466492 = new RuntimeException("can't find provider " + provider);
                     var06E4C1177140C070A53A854F6BF67B9E_1904466492.addTaint(taint);
                     throw var06E4C1177140C070A53A854F6BF67B9E_1904466492;
-                } 
-            } 
+                } //End block
+            } //End block
 Object var540C13E9E156B687226421B24F2DF178_1094951894 =             null;
             var540C13E9E156B687226421B24F2DF178_1094951894.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1094951894;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -508,8 +508,8 @@ Object var540C13E9E156B687226421B24F2DF178_1094951894 =             null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.304 -0400", hash_original_method = "43B57D7EBB5BEFFE4B105714BFD44A53", hash_generated_method = "84CF85625A64D3F5A7330BBE15B0C603")
         public  RSAPublicKeyParser(String provider) {
             this.provider = provider;
-            
-            
+            // ---------- Original Method ----------
+            //this.provider = provider;
         }
 
         
@@ -529,26 +529,26 @@ Object var540C13E9E156B687226421B24F2DF178_1094951894 =             null;
 Object var94012F6C458E41964D9D2A9EDC7EEEAB_187644138 =                 keyFact.generatePublic(keySpec);
                 var94012F6C458E41964D9D2A9EDC7EEEAB_187644138.addTaint(taint);
                 return var94012F6C458E41964D9D2A9EDC7EEEAB_187644138;
-            } 
+            } //End block
             catch (IOException e)
             {
                 e.addTaint(taint);
                 throw e;
-            } 
+            } //End block
             catch (NoSuchProviderException e)
             {
                 IOException var06C07CB5CCA95B2BB388BD250A1D1C79_1687204729 = new IOException("can't find provider " + provider);
                 var06C07CB5CCA95B2BB388BD250A1D1C79_1687204729.addTaint(taint);
                 throw var06C07CB5CCA95B2BB388BD250A1D1C79_1687204729;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException var3A65DA81297E461EF32141452EA84422_1684038732 = new PEMException("problem extracting key: " + e.toString(), e);
                 var3A65DA81297E461EF32141452EA84422_1684038732.addTaint(taint);
                 throw var3A65DA81297E461EF32141452EA84422_1684038732;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -564,8 +564,8 @@ Object var94012F6C458E41964D9D2A9EDC7EEEAB_187644138 =                 keyFact.g
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.305 -0400", hash_original_method = "A94C5E4D766266E16A102DAB21BC091D", hash_generated_method = "568E9262F1819DF68669D1C2DA0166D3")
         public  X509CertificateParser(String provider) {
             this.provider = provider;
-            
-            
+            // ---------- Original Method ----------
+            //this.provider = provider;
         }
 
         
@@ -579,25 +579,25 @@ Object var94012F6C458E41964D9D2A9EDC7EEEAB_187644138 =                 keyFact.g
 Object var3EC6CBB1AD67E157BDCC0ED4E890A225_1577076581 =                 certFact.generateCertificate(bIn);
                 var3EC6CBB1AD67E157BDCC0ED4E890A225_1577076581.addTaint(taint);
                 return var3EC6CBB1AD67E157BDCC0ED4E890A225_1577076581;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException varA7138674E94C4196DD2BFC018DCB434A_663591727 = new PEMException("problem parsing cert: " + e.toString(), e);
                 varA7138674E94C4196DD2BFC018DCB434A_663591727.addTaint(taint);
                 throw varA7138674E94C4196DD2BFC018DCB434A_663591727;
-            } 
-            
-            
-            
-            
-                
-                    
-                
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //ByteArrayInputStream bIn = new ByteArrayInputStream(obj.getContent());
+            //try
+            //{
+                //CertificateFactory certFact
+                    //= CertificateFactory.getInstance("X.509", provider);
+                //return certFact.generateCertificate(bIn);
+            //}
+            //catch (Exception e)
+            //{
+                //throw new PEMException("problem parsing cert: " + e.toString(), e);
+            //}
         }
 
         
@@ -613,8 +613,8 @@ Object var3EC6CBB1AD67E157BDCC0ED4E890A225_1577076581 =                 certFact
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.306 -0400", hash_original_method = "E353A700BDAAD44A8DB485E4FB446A3F", hash_generated_method = "0CF046E0608AEC29C4EF1AD8599D11E1")
         public  X509CRLParser(String provider) {
             this.provider = provider;
-            
-            
+            // ---------- Original Method ----------
+            //this.provider = provider;
         }
 
         
@@ -628,25 +628,25 @@ Object var3EC6CBB1AD67E157BDCC0ED4E890A225_1577076581 =                 certFact
 Object var13675BEC202B29D0EFD6471DB06EE52F_349137679 =                 certFact.generateCRL(bIn);
                 var13675BEC202B29D0EFD6471DB06EE52F_349137679.addTaint(taint);
                 return var13675BEC202B29D0EFD6471DB06EE52F_349137679;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException varA7138674E94C4196DD2BFC018DCB434A_1635980894 = new PEMException("problem parsing cert: " + e.toString(), e);
                 varA7138674E94C4196DD2BFC018DCB434A_1635980894.addTaint(taint);
                 throw varA7138674E94C4196DD2BFC018DCB434A_1635980894;
-            } 
-            
-            
-            
-            
-                
-                    
-                
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //ByteArrayInputStream bIn = new ByteArrayInputStream(obj.getContent());
+            //try
+            //{
+                //CertificateFactory certFact
+                    //= CertificateFactory.getInstance("X.509", provider);
+                //return certFact.generateCRL(bIn);
+            //}
+            //catch (Exception e)
+            //{
+                //throw new PEMException("problem parsing cert: " + e.toString(), e);
+            //}
         }
 
         
@@ -659,7 +659,7 @@ Object var13675BEC202B29D0EFD6471DB06EE52F_349137679 =                 certFact.
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.307 -0400", hash_original_method = "33AF8B880E8127EFE5F17F2D4C65D4F3", hash_generated_method = "33AF8B880E8127EFE5F17F2D4C65D4F3")
         public PKCS10CertificationRequestParser ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -671,22 +671,22 @@ Object var13675BEC202B29D0EFD6471DB06EE52F_349137679 =                 certFact.
 Object varB794FF0D3385F65F500FAC6419C1B46C_1789133599 =                 new PKCS10CertificationRequest(obj.getContent());
                 varB794FF0D3385F65F500FAC6419C1B46C_1789133599.addTaint(taint);
                 return varB794FF0D3385F65F500FAC6419C1B46C_1789133599;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException varA65D34D20F4675BAB153354016AA3ED6_607452215 = new PEMException("problem parsing certrequest: " + e.toString(), e);
                 varA65D34D20F4675BAB153354016AA3ED6_607452215.addTaint(taint);
                 throw varA65D34D20F4675BAB153354016AA3ED6_607452215;
-            } 
-            
-            
-            
-                
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try
+            //{
+                //return new PKCS10CertificationRequest(obj.getContent());
+            //}
+            //catch (Exception e)
+            //{
+                //throw new PEMException("problem parsing certrequest: " + e.toString(), e);
+            //}
         }
 
         
@@ -699,7 +699,7 @@ Object varB794FF0D3385F65F500FAC6419C1B46C_1789133599 =                 new PKCS
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.308 -0400", hash_original_method = "7BCD24730CEC01AC7ECF6E6CD774D6E0", hash_generated_method = "7BCD24730CEC01AC7ECF6E6CD774D6E0")
         public PKCS7Parser ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -712,23 +712,23 @@ Object varB794FF0D3385F65F500FAC6419C1B46C_1789133599 =                 new PKCS
 Object varF87DDC234F8DB0B9A0944ABF7DB1E9CC_2144555350 =                 ContentInfo.getInstance(aIn.readObject());
                 varF87DDC234F8DB0B9A0944ABF7DB1E9CC_2144555350.addTaint(taint);
                 return varF87DDC234F8DB0B9A0944ABF7DB1E9CC_2144555350;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException varF608CD1D605CAD111A2F2B5702096743_1378251513 = new PEMException("problem parsing PKCS7 object: " + e.toString(), e);
                 varF608CD1D605CAD111A2F2B5702096743_1378251513.addTaint(taint);
                 throw varF608CD1D605CAD111A2F2B5702096743_1378251513;
-            } 
-            
-            
-            
-                
-                
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try
+            //{
+                //ASN1InputStream aIn = new ASN1InputStream(obj.getContent());
+                //return ContentInfo.getInstance(aIn.readObject());
+            //}
+            //catch (Exception e)
+            //{
+                //throw new PEMException("problem parsing PKCS7 object: " + e.toString(), e);
+            //}
         }
 
         
@@ -741,7 +741,7 @@ Object varF87DDC234F8DB0B9A0944ABF7DB1E9CC_2144555350 =                 ContentI
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.308 -0400", hash_original_method = "45D9D0D62A34F27B8FC81044406762B2", hash_generated_method = "45D9D0D62A34F27B8FC81044406762B2")
         public X509AttributeCertificateParser ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -751,8 +751,8 @@ Object varF87DDC234F8DB0B9A0944ABF7DB1E9CC_2144555350 =                 ContentI
 Object var3F85B151310A14F674B5DCDA5ED75C7E_676932055 =             new X509V2AttributeCertificate(obj.getContent());
             var3F85B151310A14F674B5DCDA5ED75C7E_676932055.addTaint(taint);
             return var3F85B151310A14F674B5DCDA5ED75C7E_676932055;
-            
-            
+            // ---------- Original Method ----------
+            //return new X509V2AttributeCertificate(obj.getContent());
         }
 
         
@@ -765,7 +765,7 @@ Object var3F85B151310A14F674B5DCDA5ED75C7E_676932055 =             new X509V2Att
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.309 -0400", hash_original_method = "6EE69FC59FA5D4825234247899DC0928", hash_generated_method = "6EE69FC59FA5D4825234247899DC0928")
         public ECNamedCurveSpecParser ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -781,41 +781,41 @@ Object var3F85B151310A14F674B5DCDA5ED75C7E_676932055 =             new X509V2Att
                     IOException var87F20EEB43CF33054FED1AD546747571_14345686 = new IOException("object ID not found in EC curve table");
                     var87F20EEB43CF33054FED1AD546747571_14345686.addTaint(taint);
                     throw var87F20EEB43CF33054FED1AD546747571_14345686;
-                } 
+                } //End block
 Object varD15CEB6F45B18F7EB233792D020C6115_1468747024 =                 params;
                 varD15CEB6F45B18F7EB233792D020C6115_1468747024.addTaint(taint);
                 return varD15CEB6F45B18F7EB233792D020C6115_1468747024;
-            } 
+            } //End block
             catch (IOException e)
             {
                 e.addTaint(taint);
                 throw e;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException var803B5A55ABF2064F29EB5D223301A05E_2123412100 = new PEMException("exception extracting EC named curve: " + e.toString());
                 var803B5A55ABF2064F29EB5D223301A05E_2123412100.addTaint(taint);
                 throw var803B5A55ABF2064F29EB5D223301A05E_2123412100;
-            } 
-            
-            
-            
-                
-                
-                
-                
-                    
-                
-                
-            
-            
-            
-                
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try
+            //{
+                //DERObjectIdentifier oid = (DERObjectIdentifier)ASN1Object.fromByteArray(obj.getContent());
+                //Object params = ECNamedCurveTable.getParameterSpec(oid.getId());
+                //if (params == null)
+                //{
+                    //throw new IOException("object ID not found in EC curve table");
+                //}
+                //return params;
+            //}
+            //catch (IOException e)
+            //{
+                //throw e;
+            //}
+            //catch (Exception e)
+            //{
+                //throw new PEMException("exception extracting EC named curve: " + e.toString());
+            //}
         }
 
         
@@ -835,9 +835,9 @@ Object varD15CEB6F45B18F7EB233792D020C6115_1468747024 =                 params;
         public  EncryptedPrivateKeyParser(String symProvider, String asymProvider) {
             this.symProvider = symProvider;
             this.asymProvider = asymProvider;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.symProvider = symProvider;
+            //this.asymProvider = asymProvider;
         }
 
         
@@ -853,7 +853,7 @@ Object varD15CEB6F45B18F7EB233792D020C6115_1468747024 =                 params;
                     PEMException var7032D0EE8B06618A4D668D31B1ADCE99_1424619845 = new PEMException("no PasswordFinder specified");
                     var7032D0EE8B06618A4D668D31B1ADCE99_1424619845.addTaint(taint);
                     throw var7032D0EE8B06618A4D668D31B1ADCE99_1424619845;
-                } 
+                } //End block
     if(PEMUtilities.isPKCS5Scheme2(algId.getAlgorithm()))                
                 {
                     PBES2Parameters params = PBES2Parameters.getInstance(algId.getParameters());
@@ -874,7 +874,7 @@ Object varD15CEB6F45B18F7EB233792D020C6115_1468747024 =                 params;
 Object varE1F9B715DB83CAAF9524B7CFB020968C_881175909 =                     keyFact.generatePrivate(keySpec);
                     varE1F9B715DB83CAAF9524B7CFB020968C_881175909.addTaint(taint);
                     return varE1F9B715DB83CAAF9524B7CFB020968C_881175909;
-                } 
+                } //End block
                 else
     if(PEMUtilities.isPKCS12(algId.getAlgorithm()))                
                 {
@@ -891,7 +891,7 @@ Object varE1F9B715DB83CAAF9524B7CFB020968C_881175909 =                     keyFa
 Object varE1F9B715DB83CAAF9524B7CFB020968C_1566622641 =                     keyFact.generatePrivate(keySpec);
                     varE1F9B715DB83CAAF9524B7CFB020968C_1566622641.addTaint(taint);
                     return varE1F9B715DB83CAAF9524B7CFB020968C_1566622641;
-                } 
+                } //End block
                 else
     if(PEMUtilities.isPKCS5Scheme1(algId.getAlgorithm()))                
                 {
@@ -908,27 +908,27 @@ Object varE1F9B715DB83CAAF9524B7CFB020968C_1566622641 =                     keyF
 Object varE1F9B715DB83CAAF9524B7CFB020968C_156440620 =                     keyFact.generatePrivate(keySpec);
                     varE1F9B715DB83CAAF9524B7CFB020968C_156440620.addTaint(taint);
                     return varE1F9B715DB83CAAF9524B7CFB020968C_156440620;
-                } 
+                } //End block
                 else
                 {
                     PEMException var4685040ECFE3A1A694DDE8DF71645E3D_1126049577 = new PEMException("Unknown algorithm: " + algId.getAlgorithm());
                     var4685040ECFE3A1A694DDE8DF71645E3D_1126049577.addTaint(taint);
                     throw var4685040ECFE3A1A694DDE8DF71645E3D_1126049577;
-                } 
-            } 
+                } //End block
+            } //End block
             catch (IOException e)
             {
                 e.addTaint(taint);
                 throw e;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException var7994463B2C9D40477BDBCFCE7AC1BFB9_2012372225 = new PEMException("problem parsing ENCRYPTED PRIVATE KEY: " + e.toString(), e);
                 var7994463B2C9D40477BDBCFCE7AC1BFB9_2012372225.addTaint(taint);
                 throw var7994463B2C9D40477BDBCFCE7AC1BFB9_2012372225;
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -944,8 +944,8 @@ Object varE1F9B715DB83CAAF9524B7CFB020968C_156440620 =                     keyFa
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.312 -0400", hash_original_method = "0877761703B26434F32E47C53A29AE74", hash_generated_method = "15BF9532DC3933BF57B695673E62B835")
         public  PrivateKeyParser(String provider) {
             this.provider = provider;
-            
-            
+            // ---------- Original Method ----------
+            //this.provider = provider;
         }
 
         
@@ -960,25 +960,25 @@ Object varE1F9B715DB83CAAF9524B7CFB020968C_156440620 =                     keyFa
 Object varE1F9B715DB83CAAF9524B7CFB020968C_698369501 =                 keyFact.generatePrivate(keySpec);
                 varE1F9B715DB83CAAF9524B7CFB020968C_698369501.addTaint(taint);
                 return varE1F9B715DB83CAAF9524B7CFB020968C_698369501;
-            } 
+            } //End block
             catch (Exception e)
             {
                 PEMException var4A1EFFF69C98A3BD87AA816E3B244482_458422107 = new PEMException("problem parsing PRIVATE KEY: " + e.toString(), e);
                 var4A1EFFF69C98A3BD87AA816E3B244482_458422107.addTaint(taint);
                 throw var4A1EFFF69C98A3BD87AA816E3B244482_458422107;
-            } 
-            
-            
-            
-                
-                
-                
-                
-            
-            
-            
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //try
+            //{
+                //PrivateKeyInfo info = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(obj.getContent()));
+                //PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(obj.getContent());
+                //KeyFactory keyFact = KeyFactory.getInstance(info.getAlgorithmId().getAlgorithm().getId(), provider);
+                //return keyFact.generatePrivate(keySpec);
+            //}
+            //catch (Exception e)
+            //{
+                //throw new PEMException("problem parsing PRIVATE KEY: " + e.toString(), e);
+            //}
         }
 
         

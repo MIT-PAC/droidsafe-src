@@ -1,6 +1,6 @@
 package java.security;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class AccessControlException extends SecurityException {
     public  AccessControlException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,19 +23,18 @@ public class AccessControlException extends SecurityException {
         super(message);
         addTaint(message.getTaint());
         this.perm = perm;
-        
-        
+        // ---------- Original Method ----------
+        //this.perm = perm;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.911 -0400", hash_original_method = "DFDCEBDA71EECDB1948D7EAD61470F05", hash_generated_method = "9BA52178BF24925767E2E8628D9CFB5A")
     public Permission getPermission() {
 Permission var768916ECB5B80042EF41FFF6B22D9A06_452286295 =         perm;
         var768916ECB5B80042EF41FFF6B22D9A06_452286295.addTaint(taint);
         return var768916ECB5B80042EF41FFF6B22D9A06_452286295;
-        
-        
+        // ---------- Original Method ----------
+        //return perm;
     }
 
     

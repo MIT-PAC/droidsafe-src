@@ -1,6 +1,6 @@
 package org.apache.http.impl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,21 +28,21 @@ public class DefaultHttpResponseFactory implements HttpResponseFactory {
                 ("Reason phrase catalog must not be null.");
             var30D628BDDBCC9D67552851BD3A6628FB_1980474511.addTaint(taint);
             throw var30D628BDDBCC9D67552851BD3A6628FB_1980474511;
-        } 
+        } //End block
         this.reasonCatalog = catalog;
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (catalog == null) {
+            //throw new IllegalArgumentException
+                //("Reason phrase catalog must not be null.");
+        //}
+        //this.reasonCatalog = catalog;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.020 -0400", hash_original_method = "FFDB5398ED0A2C8E2758E409B21A6993", hash_generated_method = "579123A7FC42A066F2025CAC961F86CC")
     public  DefaultHttpResponseFactory() {
         this(EnglishReasonPhraseCatalog.INSTANCE);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -58,21 +58,21 @@ public class DefaultHttpResponseFactory implements HttpResponseFactory {
             IllegalArgumentException var40180DD05D9C1D6C3834A04D0FF2FC4E_1360343572 = new IllegalArgumentException("HTTP version may not be null");
             var40180DD05D9C1D6C3834A04D0FF2FC4E_1360343572.addTaint(taint);
             throw var40180DD05D9C1D6C3834A04D0FF2FC4E_1360343572;
-        } 
+        } //End block
         final Locale loc = determineLocale(context);
         final String reason = reasonCatalog.getReason(status, loc);
         StatusLine statusline = new BasicStatusLine(ver, status, reason);
 HttpResponse var5B7331AF545CF47BB674EB8B8981185E_1158834344 =         new BasicHttpResponse(statusline, reasonCatalog, loc);
         var5B7331AF545CF47BB674EB8B8981185E_1158834344.addTaint(taint);
         return var5B7331AF545CF47BB674EB8B8981185E_1158834344;
-        
-        
-            
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (ver == null) {
+            //throw new IllegalArgumentException("HTTP version may not be null");
+        //}
+        //final Locale loc      = determineLocale(context);
+        //final String reason   = reasonCatalog.getReason(status, loc);
+        //StatusLine statusline = new BasicStatusLine(ver, status, reason);
+        //return new BasicHttpResponse(statusline, reasonCatalog, loc);
     }
 
     
@@ -86,17 +86,17 @@ HttpResponse var5B7331AF545CF47BB674EB8B8981185E_1158834344 =         new BasicH
             IllegalArgumentException var1636A5AFF6F53BF0101E09315281948D_652164520 = new IllegalArgumentException("Status line may not be null");
             var1636A5AFF6F53BF0101E09315281948D_652164520.addTaint(taint);
             throw var1636A5AFF6F53BF0101E09315281948D_652164520;
-        } 
+        } //End block
         final Locale loc = determineLocale(context);
 HttpResponse var5B7331AF545CF47BB674EB8B8981185E_69550449 =         new BasicHttpResponse(statusline, reasonCatalog, loc);
         var5B7331AF545CF47BB674EB8B8981185E_69550449.addTaint(taint);
         return var5B7331AF545CF47BB674EB8B8981185E_69550449;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (statusline == null) {
+            //throw new IllegalArgumentException("Status line may not be null");
+        //}
+        //final Locale loc = determineLocale(context);
+        //return new BasicHttpResponse(statusline, reasonCatalog, loc);
     }
 
     
@@ -106,8 +106,8 @@ HttpResponse var5B7331AF545CF47BB674EB8B8981185E_69550449 =         new BasicHtt
 Locale var144C4164A13FF099CE3146F1062DBE38_674828017 =         Locale.getDefault();
         var144C4164A13FF099CE3146F1062DBE38_674828017.addTaint(taint);
         return var144C4164A13FF099CE3146F1062DBE38_674828017;
-        
-        
+        // ---------- Original Method ----------
+        //return Locale.getDefault();
     }
 
     

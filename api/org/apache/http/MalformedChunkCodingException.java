@@ -1,6 +1,6 @@
 package org.apache.http;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class MalformedChunkCodingException extends IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.926 -0400", hash_original_method = "FCD38A0808C3727AA87EA7F46AEF4310", hash_generated_method = "D8DAA721D0F103887C1D4E860770EBE7")
     public  MalformedChunkCodingException() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -19,7 +19,7 @@ public class MalformedChunkCodingException extends IOException {
     public  MalformedChunkCodingException(final String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

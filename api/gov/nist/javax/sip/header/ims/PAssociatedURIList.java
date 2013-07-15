@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class PAssociatedURIList extends SIPHeaderList<PAssociatedURI> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.919 -0400", hash_original_method = "4F3C386FF0DD7CB0697F371A75488EC2", hash_generated_method = "35867964AE38FD2D92EA7E427B86E224")
     public  PAssociatedURIList() {
         super(PAssociatedURI.class, PAssociatedURI.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -21,9 +21,9 @@ public class PAssociatedURIList extends SIPHeaderList<PAssociatedURI> {
 Object varF627329B9209466293A1BF71D9AF7B2B_673372361 =         retval.clonehlist(this.hlist);
         varF627329B9209466293A1BF71D9AF7B2B_673372361.addTaint(taint);
         return varF627329B9209466293A1BF71D9AF7B2B_673372361;
-        
-        
-        
+        // ---------- Original Method ----------
+        //PAssociatedURIList retval = new PAssociatedURIList();
+        //return retval.clonehlist(this.hlist);
     }
 
     

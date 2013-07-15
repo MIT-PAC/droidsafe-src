@@ -1,6 +1,6 @@
 package javax.xml.transform.stream;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ class FilePathToURI {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.116 -0400", hash_original_method = "B4CB27912F49612C4343E9F9CCDC4431", hash_generated_method = "B4CB27912F49612C4343E9F9CCDC4431")
     public FilePathToURI ()
     {
-        
+        //Synthesized constructor
     }
 
 

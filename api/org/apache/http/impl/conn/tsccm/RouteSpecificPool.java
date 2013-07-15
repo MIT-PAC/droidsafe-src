@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,12 +41,12 @@ public class RouteSpecificPool {
         this.freeEntries = new LinkedList<BasicPoolEntry>();
         this.waitingThreads = new LinkedList<WaitingThread>();
         this.numEntries = 0;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.route = route;
+        //this.maxEntries = maxEntries;
+        //this.freeEntries = new LinkedList<BasicPoolEntry>();
+        //this.waitingThreads = new LinkedList<WaitingThread>();
+        //this.numEntries = 0;
     }
 
     
@@ -55,8 +55,8 @@ public class RouteSpecificPool {
 HttpRoute var6679678B82FF79D06F753D1737D68FA6_955473407 =         route;
         var6679678B82FF79D06F753D1737D68FA6_955473407.addTaint(taint);
         return var6679678B82FF79D06F753D1737D68FA6_955473407;
-        
-        
+        // ---------- Original Method ----------
+        //return route;
     }
 
     
@@ -65,8 +65,8 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_955473407 =         route;
         int var022A4C15823CE7278C9858329BFF2442_1190166276 = (maxEntries);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177056957 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1177056957;
-        
-        
+        // ---------- Original Method ----------
+        //return maxEntries;
     }
 
     
@@ -75,19 +75,18 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_955473407 =         route;
         boolean varE4D00959D5CE7056280ED4FBD9A29A09_457004068 = ((numEntries < 1) && waitingThreads.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1196741276 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1196741276;
-        
-        
+        // ---------- Original Method ----------
+        //return (numEntries < 1) && waitingThreads.isEmpty();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.150 -0400", hash_original_method = "177416E45C86DBFDF7EC5AE9EA15CB02", hash_generated_method = "CCE2EDAD615404468DAD47D799B6F726")
     public int getCapacity() {
         int varF0DF104E5FB14BBB04D0FF91029B1428_1533721888 = (maxEntries - numEntries);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2010277496 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2010277496;
-        
-        
+        // ---------- Original Method ----------
+        //return maxEntries - numEntries;
     }
 
     
@@ -96,8 +95,8 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_955473407 =         route;
         int varFEC1FCC4A89DEF29A9B7C6D06198C501_809982832 = (numEntries);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_899157961 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_899157961;
-        
-        
+        // ---------- Original Method ----------
+        //return numEntries;
     }
 
     
@@ -117,9 +116,9 @@ HttpRoute var6679678B82FF79D06F753D1737D68FA6_955473407 =         route;
 BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_427526505 =                     entry;
                     varF26DBE38545460D6F6AE1D948FF53869_427526505.addTaint(taint);
                     return varF26DBE38545460D6F6AE1D948FF53869_427526505;
-                } 
-            } 
-        } 
+                } //End block
+            } //End block
+        } //End block
     if(!freeEntries.isEmpty())        
         {
             BasicPoolEntry entry = freeEntries.remove();
@@ -128,20 +127,20 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_427526505 =                  
             try 
             {
                 conn.close();
-            } 
+            } //End block
             catch (IOException ex)
             {
                 log.debug("I/O error closing connection", ex);
-            } 
+            } //End block
 BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_1291616885 =             entry;
             varF26DBE38545460D6F6AE1D948FF53869_1291616885.addTaint(taint);
             return varF26DBE38545460D6F6AE1D948FF53869_1291616885;
-        } 
+        } //End block
 BasicPoolEntry var540C13E9E156B687226421B24F2DF178_112265363 =         null;
         var540C13E9E156B687226421B24F2DF178_112265363.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_112265363;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -154,25 +153,25 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_112265363 =         null;
                 ("No entry created for this pool. " + route);
             var97052892074BFE397EB54388A01A3DD8_2008844125.addTaint(taint);
             throw var97052892074BFE397EB54388A01A3DD8_2008844125;
-        } 
+        } //End block
     if(numEntries <= freeEntries.size())        
         {
             IllegalStateException var63D4C75F2E14BE8C0D7F691D0982841F_1545760725 = new IllegalStateException
                 ("No entry allocated from this pool. " + route);
             var63D4C75F2E14BE8C0D7F691D0982841F_1545760725.addTaint(taint);
             throw var63D4C75F2E14BE8C0D7F691D0982841F_1545760725;
-        } 
+        } //End block
         freeEntries.add(entry);
-        
-        
-            
-                
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (numEntries < 1) {
+            //throw new IllegalStateException
+                //("No entry created for this pool. " + route);
+        //}
+        //if (numEntries <= freeEntries.size()) {
+            //throw new IllegalStateException
+                //("No entry allocated from this pool. " + route);
+        //}
+        //freeEntries.add(entry);
     }
 
     
@@ -187,16 +186,16 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_112265363 =         null;
                  "\nplan: " + entry.getPlannedRoute());
             varE7CEF37D948BA0AE0E9A252BF1BBE192_783259913.addTaint(taint);
             throw varE7CEF37D948BA0AE0E9A252BF1BBE192_783259913;
-        } 
+        } //End block
         numEntries++;
-        
-        
-            
-                
-                 
-                 
-        
-        
+        // ---------- Original Method ----------
+        //if (!route.equals(entry.getPlannedRoute())) {
+            //throw new IllegalArgumentException
+                //("Entry not planned for this pool." +
+                 //"\npool: " + route +
+                 //"\nplan: " + entry.getPlannedRoute());
+        //}
+        //numEntries++;
     }
 
     
@@ -209,11 +208,11 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_112265363 =         null;
         boolean var6CFE61694EE1BB13AE719D47C2F80B7A_1529983707 = (found);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1215182221 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1215182221;
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //final boolean found = freeEntries.remove(entry);
+        //if (found)
+            //numEntries--;
+        //return found;
     }
 
     
@@ -225,14 +224,14 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_112265363 =         null;
                 ("There is no entry that could be dropped.");
             var7618D01496C56614C09D99F360D75B84_1501348756.addTaint(taint);
             throw var7618D01496C56614C09D99F360D75B84_1501348756;
-        } 
+        } //End block
         numEntries--;
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (numEntries < 1) {
+            //throw new IllegalStateException
+                //("There is no entry that could be dropped.");
+        //}
+        //numEntries--;
     }
 
     
@@ -245,14 +244,14 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_112265363 =         null;
                 ("Waiting thread must not be null.");
             varE7A397C11EE73262E0E7D1D782F386E2_718199496.addTaint(taint);
             throw varE7A397C11EE73262E0E7D1D782F386E2_718199496;
-        } 
+        } //End block
         this.waitingThreads.add(wt);
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (wt == null) {
+            //throw new IllegalArgumentException
+                //("Waiting thread must not be null.");
+        //}
+        //this.waitingThreads.add(wt);
     }
 
     
@@ -261,8 +260,8 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_112265363 =         null;
         boolean var1320EBDABB6286E60BD44B1DF87EF187_1743901251 = (!this.waitingThreads.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1769894459 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1769894459;
-        
-        
+        // ---------- Original Method ----------
+        //return !this.waitingThreads.isEmpty();
     }
 
     
@@ -271,8 +270,8 @@ BasicPoolEntry var540C13E9E156B687226421B24F2DF178_112265363 =         null;
 WaitingThread varBA6E3F9522C05D3B4902E46DC13137EB_1664517790 =         this.waitingThreads.peek();
         varBA6E3F9522C05D3B4902E46DC13137EB_1664517790.addTaint(taint);
         return varBA6E3F9522C05D3B4902E46DC13137EB_1664517790;
-        
-        
+        // ---------- Original Method ----------
+        //return this.waitingThreads.peek();
     }
 
     
@@ -282,10 +281,10 @@ WaitingThread varBA6E3F9522C05D3B4902E46DC13137EB_1664517790 =         this.wait
     if(wt == null)        
         return;
         this.waitingThreads.remove(wt);
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (wt == null)
+            //return;
+        //this.waitingThreads.remove(wt);
     }
 
     

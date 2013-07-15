@@ -1,6 +1,6 @@
 package android.database;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class CursorWindowAllocationException extends RuntimeException {
     public  CursorWindowAllocationException(String description) {
         super(description);
         addTaint(description.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

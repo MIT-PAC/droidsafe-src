@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class RuntimeInit {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.095 -0400", hash_original_method = "82505B17DF4892252BD2E987919E8FA9", hash_generated_method = "82505B17DF4892252BD2E987919E8FA9")
     public RuntimeInit ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -213,11 +213,10 @@ public class RuntimeInit {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.117 -0400", hash_original_method = "DEBC568C3CCF1424A96EDBFCCD0328BF", hash_generated_method = "DEBC568C3CCF1424A96EDBFCCD0328BF")
         public UncaughtHandler ()
         {
-            
+            //Synthesized constructor
         }
 
 
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.118 -0400", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "85B8A7EC12546E6F392AE1E64811A623")
         public void uncaughtException(Thread t, Throwable e) {
             addTaint(e.getTaint());
@@ -229,23 +228,23 @@ public class RuntimeInit {
                 mCrashing = true;
     if(mApplicationObject == null)                
                 {
-                } 
+                } //End block
                 else
                 {
-                } 
+                } //End block
                 ActivityManagerNative.getDefault().handleApplicationCrash(
                         mApplicationObject, new ApplicationErrorReport.CrashInfo(e));
-            } 
+            } //End block
             catch (Throwable t2)
             {
-            } 
+            } //End block
             finally 
             {
                 Process.killProcess(Process.myPid());
                 System.exit(10);
-            } 
-            
-            
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -265,8 +264,8 @@ public class RuntimeInit {
           Arguments(String args[]) throws IllegalArgumentException {
             addTaint(args[0].getTaint());
             parseArgs(args);
-            
-            
+            // ---------- Original Method ----------
+            //parseArgs(args);
         }
 
         
@@ -280,39 +279,39 @@ for(;curArg < args.length;curArg++)
                 {
                     curArg++;
                     break;
-                } 
+                } //End block
                 else
     if(!arg.startsWith("--"))                
                 {
                     break;
-                } 
-            } 
+                } //End block
+            } //End block
     if(curArg == args.length)            
             {
                 IllegalArgumentException var23D9B7584B769CEEAB97D714A6F1F019_1750033767 = new IllegalArgumentException("Missing classname argument to RuntimeInit!");
                 var23D9B7584B769CEEAB97D714A6F1F019_1750033767.addTaint(taint);
                 throw var23D9B7584B769CEEAB97D714A6F1F019_1750033767;
-            } 
+            } //End block
             startClass = args[curArg++];
             startArgs = new String[args.length - curArg];
             System.arraycopy(args, curArg, startArgs, 0, startArgs.length);
-            
-            
-            
-                
-                
-                    
-                    
-                
-                    
-                
-            
-            
-                
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //int curArg = 0;
+            //for (; curArg < args.length; curArg++) {
+                //String arg = args[curArg];
+                //if (arg.equals("--")) {
+                    //curArg++;
+                    //break;
+                //} else if (!arg.startsWith("--")) {
+                    //break;
+                //}
+            //}
+            //if (curArg == args.length) {
+                //throw new IllegalArgumentException("Missing classname argument to RuntimeInit!");
+            //}
+            //startClass = args[curArg++];
+            //startArgs = new String[args.length - curArg];
+            //System.arraycopy(args, curArg, startArgs, 0, startArgs.length);
         }
 
         

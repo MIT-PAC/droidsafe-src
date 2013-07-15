@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -46,30 +46,30 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_532627118 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_532627118.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_532627118;
-        } 
+        } //End block
     if(maxTries < 0)        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_397142679 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_397142679.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_397142679;
-        } 
+        } //End block
         this.phoneUtil = util;
         this.text = (text != null) ? text : "";
         this.preferredRegion = country;
         this.leniency = leniency;
         this.maxTries = maxTries;
-        
-        
-      
-    
-        
-      
-    
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if ((util == null) || (leniency == null)) {
+      //throw new NullPointerException();
+    //}
+        //if (maxTries < 0) {
+      //throw new IllegalArgumentException();
+    //}
+        //this.phoneUtil = util;
+        //this.text = (text != null) ? text : "";
+        //this.preferredRegion = country;
+        //this.leniency = leniency;
+        //this.maxTries = maxTries;
     }
 
     
@@ -89,27 +89,27 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
     if(lastMatch == null)            
             {
                 state = State.DONE;
-            } 
+            } //End block
             else
             {
                 searchIndex = lastMatch.end();
                 state = State.READY;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var38881D6FDDCA3C1D66798834FF18C49F_619536668 = (state == State.READY);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736342247 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_736342247;
-        
-        
-      
-      
-        
-      
-        
-        
-      
-    
-        
+        // ---------- Original Method ----------
+        //if (state == State.NOT_READY) {
+      //lastMatch = find(searchIndex);
+      //if (lastMatch == null) {
+        //state = State.DONE;
+      //} else {
+        //searchIndex = lastMatch.end();
+        //state = State.READY;
+      //}
+    //}
+        //return state == State.READY;
     }
 
     
@@ -120,21 +120,21 @@ final class PhoneNumberMatcher implements Iterator<PhoneNumberMatch> {
             NoSuchElementException var28D00AB599969908D71F102AF992D49A_1317598435 = new NoSuchElementException();
             var28D00AB599969908D71F102AF992D49A_1317598435.addTaint(taint);
             throw var28D00AB599969908D71F102AF992D49A_1317598435;
-        } 
+        } //End block
         PhoneNumberMatch result = lastMatch;
         lastMatch = null;
         state = State.NOT_READY;
 PhoneNumberMatch varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987;
-        
-        
-      
-    
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!hasNext()) {
+      //throw new NoSuchElementException();
+    //}
+        //PhoneNumberMatch result = lastMatch;
+        //lastMatch = null;
+        //state = State.NOT_READY;
+        //return result;
     }
 
     
@@ -154,27 +154,27 @@ PhoneNumberMatch varDC838461EE2FA0CA4C9BBB70A15456B0_1144279987 =         result
 PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_109110983 =                 match;
                 varED81284B0460DBAE2301CCD33AC92E85_109110983.addTaint(taint);
                 return varED81284B0460DBAE2301CCD33AC92E85_109110983;
-            } 
+            } //End block
             index = start + candidate.length();
             maxTries--;
-        } 
+        } //End block
 PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_2056865701 =         null;
         var540C13E9E156B687226421B24F2DF178_2056865701.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2056865701;
-        
-        
-        
-      
-      
-      
-      
-      
-        
-      
-      
-      
-    
-        
+        // ---------- Original Method ----------
+        //Matcher matcher = PATTERN.matcher(text);
+        //while ((maxTries > 0) && matcher.find(index)) {
+      //int start = matcher.start();
+      //CharSequence candidate = text.subSequence(start, matcher.end());
+      //candidate = trimAfterFirstMatch(PhoneNumberUtil.SECOND_NUMBER_START_PATTERN, candidate);
+      //PhoneNumberMatch match = extractMatch(candidate, start);
+      //if (match != null) {
+        //return match;
+      //}
+      //index = start + candidate.length();
+      //maxTries--;
+    //}
+        //return null;
     }
 
     
@@ -215,7 +215,7 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_2056865701 =         null;
 PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_238998892 =             null;
             var540C13E9E156B687226421B24F2DF178_238998892.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_238998892;
-        } 
+        } //End block
         String rawString = candidate.toString();
         PhoneNumberMatch match = parseAndVerify(rawString, offset);
     if(match != null)        
@@ -223,20 +223,20 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_238998892 =             nul
 PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_591899162 =             match;
             varED81284B0460DBAE2301CCD33AC92E85_591899162.addTaint(taint);
             return varED81284B0460DBAE2301CCD33AC92E85_591899162;
-        } 
+        } //End block
 PhoneNumberMatch var0A837D42E9B84724F42B85C9D42F107F_1071894051 =         extractInnerMatch(rawString, offset);
         var0A837D42E9B84724F42B85C9D42F107F_1071894051.addTaint(taint);
         return var0A837D42E9B84724F42B85C9D42F107F_1071894051;
-        
-        
-      
-    
-        
-        
-        
-      
-    
-        
+        // ---------- Original Method ----------
+        //if (PUB_PAGES.matcher(candidate).find() || SLASH_SEPARATED_DATES.matcher(candidate).find()) {
+      //return null;
+    //}
+        //String rawString = candidate.toString();
+        //PhoneNumberMatch match = parseAndVerify(rawString, offset);
+        //if (match != null) {
+      //return match;
+    //}
+        //return extractInnerMatch(rawString, offset);
     }
 
     
@@ -256,7 +256,7 @@ PhoneNumberMatch var0A837D42E9B84724F42B85C9D42F107F_1071894051 =         extrac
 PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_1573045270 =                 match;
                 varED81284B0460DBAE2301CCD33AC92E85_1573045270.addTaint(taint);
                 return varED81284B0460DBAE2301CCD33AC92E85_1573045270;
-            } 
+            } //End block
             maxTries--;
             int withoutFirstGroupStart = groupMatcher.end();
             CharSequence withoutFirstGroup = candidate.substring(withoutFirstGroupStart);
@@ -268,7 +268,7 @@ PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_1573045270 =               
 PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_413115021 =                 match;
                 varED81284B0460DBAE2301CCD33AC92E85_413115021.addTaint(taint);
                 return varED81284B0460DBAE2301CCD33AC92E85_413115021;
-            } 
+            } //End block
             maxTries--;
     if(maxTries > 0)            
             {
@@ -277,7 +277,7 @@ PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_413115021 =                
 (groupMatcher.find())                
                 {
                     lastGroupStart = groupMatcher.start();
-                } 
+                } //End block
                 CharSequence withoutLastGroup = candidate.substring(0, lastGroupStart);
                 withoutLastGroup = trimAfterFirstMatch(PhoneNumberUtil.UNWANTED_END_CHAR_PATTERN,
                                                withoutLastGroup);
@@ -286,22 +286,22 @@ PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_413115021 =                
 PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1792397468 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1792397468.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1792397468;
-                } 
+                } //End block
                 match = parseAndVerify(withoutLastGroup.toString(), offset);
     if(match != null)                
                 {
 PhoneNumberMatch varED81284B0460DBAE2301CCD33AC92E85_1297489192 =                     match;
                     varED81284B0460DBAE2301CCD33AC92E85_1297489192.addTaint(taint);
                     return varED81284B0460DBAE2301CCD33AC92E85_1297489192;
-                } 
+                } //End block
                 maxTries--;
-            } 
-        } 
+            } //End block
+        } //End block
 PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1036636710 =         null;
         var540C13E9E156B687226421B24F2DF178_1036636710.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1036636710;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -316,7 +316,7 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1036636710 =         null;
 PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_842961663 =                 null;
                 var540C13E9E156B687226421B24F2DF178_842961663.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_842961663;
-            } 
+            } //End block
     if(leniency.compareTo(Leniency.VALID) >= 0)            
             {
     if(offset > 0 && !LEAD_CLASS.matcher(candidate).lookingAt())                
@@ -327,8 +327,8 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_842961663 =                
 PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1507245678 =                         null;
                         var540C13E9E156B687226421B24F2DF178_1507245678.addTaint(taint);
                         return var540C13E9E156B687226421B24F2DF178_1507245678;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 int lastCharIndex = offset + candidate.length();
     if(lastCharIndex < text.length())                
                 {
@@ -338,25 +338,25 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1507245678 =               
 PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_400175726 =                         null;
                         var540C13E9E156B687226421B24F2DF178_400175726.addTaint(taint);
                         return var540C13E9E156B687226421B24F2DF178_400175726;
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             PhoneNumber number = phoneUtil.parse(candidate, preferredRegion);
     if(leniency.verify(number, candidate, phoneUtil))            
             {
 PhoneNumberMatch varCED9B25A3AB1D8962524DF252B5BEC1B_489898508 =                 new PhoneNumberMatch(offset, candidate, number);
                 varCED9B25A3AB1D8962524DF252B5BEC1B_489898508.addTaint(taint);
                 return varCED9B25A3AB1D8962524DF252B5BEC1B_489898508;
-            } 
-        } 
+            } //End block
+        } //End block
         catch (NumberParseException e)
         {
-        } 
+        } //End block
 PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1426072402 =         null;
         var540C13E9E156B687226421B24F2DF178_1426072402.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1426072402;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -365,8 +365,8 @@ PhoneNumberMatch var540C13E9E156B687226421B24F2DF178_1426072402 =         null;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_633839006 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_633839006.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_633839006;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     

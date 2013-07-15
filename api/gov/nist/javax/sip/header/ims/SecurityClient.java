@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class SecurityClient extends SecurityAgree implements SecurityClientHeade
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.194 -0400", hash_original_method = "2DC95595D33B318EDF43269B772F4B7E", hash_generated_method = "9FEC82225A678A3ED2A2EA564F83724D")
     public  SecurityClient() {
         super(SecurityClientHeader.NAME);
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -23,8 +23,8 @@ public class SecurityClient extends SecurityAgree implements SecurityClientHeade
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1539629631 = new ParseException(value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_1539629631.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_1539629631;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ParseException(value,0);
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,22 +27,21 @@ public abstract class Filter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.624 -0400", hash_original_method = "3A43B55E5FFADA496A080A897709E281", hash_generated_method = "224B7DC54A49D487A6B70021B3EAC24D")
     public  Filter() {
         mResultHandler = new ResultsHandler();
-        
-        
+        // ---------- Original Method ----------
+        //mResultHandler = new ResultsHandler();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.624 -0400", hash_original_method = "945149F2F16183884CBDA739B056A27B", hash_generated_method = "AD9BA4186451CF4377A8B2EB59E35A7A")
     public void setDelayer(Delayer delayer) {
         synchronized
 (mLock)        {
             mDelayer = delayer;
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //synchronized (mLock) {
+            //mDelayer = delayer;
+        //}
     }
 
     
@@ -50,8 +49,8 @@ public abstract class Filter {
     public final void filter(CharSequence constraint) {
         addTaint(constraint.getTaint());
         filter(constraint, null);
-        
-        
+        // ---------- Original Method ----------
+        //filter(constraint, null);
     }
 
     
@@ -67,7 +66,7 @@ public abstract class Filter {
                         THREAD_NAME, android.os.Process.THREAD_PRIORITY_BACKGROUND);
                 thread.start();
                 mThreadHandler = new RequestHandler(thread.getLooper());
-            } 
+            } //End block
             final long delay = (mDelayer == null) ? 0 : mDelayer.getPostingDelay(constraint);
             Message message = mThreadHandler.obtainMessage(FILTER_TOKEN);
             RequestArguments args = new RequestArguments();
@@ -77,9 +76,9 @@ public abstract class Filter {
             mThreadHandler.removeMessages(FILTER_TOKEN);
             mThreadHandler.removeMessages(FINISH_TOKEN);
             mThreadHandler.sendMessageDelayed(message, delay);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -96,8 +95,8 @@ public abstract class Filter {
 CharSequence varF975844E7CDE0666B4DB73A987145C3E_1734728034 =         resultValue == null ? "" : resultValue.toString();
         varF975844E7CDE0666B4DB73A987145C3E_1734728034.addTaint(taint);
         return varF975844E7CDE0666B4DB73A987145C3E_1734728034;
-        
-        
+        // ---------- Original Method ----------
+        //return resultValue == null ? "" : resultValue.toString();
     }
 
     
@@ -111,7 +110,7 @@ CharSequence varF975844E7CDE0666B4DB73A987145C3E_1734728034 =         resultValu
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.627 -0400", hash_original_method = "4DBCD611B55919CEC0E695E7409A22D3", hash_generated_method = "2A33A130733322CE05C88516643CF5BD")
         public  FilterResults() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -125,7 +124,7 @@ CharSequence varF975844E7CDE0666B4DB73A987145C3E_1734728034 =         resultValu
         public  RequestHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -140,25 +139,25 @@ switch(what){
             try 
             {
                 args.results = performFiltering(args.constraint);
-            } 
+            } //End block
             catch (Exception e)
             {
                 args.results = new FilterResults();
-            } 
+            } //End block
             finally 
             {
                 message = mResultHandler.obtainMessage(what);
                 message.obj = args;
                 message.sendToTarget();
-            } 
+            } //End block
             synchronized
 (mLock)            {
     if(mThreadHandler != null)                
                 {
                     Message finishMessage = mThreadHandler.obtainMessage(FINISH_TOKEN);
                     mThreadHandler.sendMessageDelayed(finishMessage, 3000);
-                } 
-            } 
+                } //End block
+            } //End block
             break;
             case FINISH_TOKEN:
             synchronized
@@ -167,12 +166,12 @@ switch(what){
                 {
                     mThreadHandler.getLooper().quit();
                     mThreadHandler = null;
-                } 
-            } 
+                } //End block
+            } //End block
             break;
 }
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -185,7 +184,7 @@ switch(what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.629 -0400", hash_original_method = "1E08EF8EFA185C4653CFFF0D7408C61C", hash_generated_method = "1E08EF8EFA185C4653CFFF0D7408C61C")
         public ResultsHandler ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -199,14 +198,14 @@ switch(what){
             {
                 int count = args.results != null ? args.results.count : -1;
                 args.listener.onFilterComplete(count);
-            } 
-            
-            
-            
-            
-                
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //RequestArguments args = (RequestArguments) msg.obj;
+            //publishResults(args.constraint, args.results);
+            //if (args.listener != null) {
+                //int count = args.results != null ? args.results.count : -1;
+                //args.listener.onFilterComplete(count);
+            //}
         }
 
         
@@ -228,7 +227,7 @@ switch(what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:05.631 -0400", hash_original_method = "6E50E95F99D18D81DCBEFDBA0A1A41EC", hash_generated_method = "6E50E95F99D18D81DCBEFDBA0A1A41EC")
         public RequestArguments ()
         {
-            
+            //Synthesized constructor
         }
 
 

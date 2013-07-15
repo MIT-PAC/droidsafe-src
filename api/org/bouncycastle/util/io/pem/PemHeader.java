@@ -1,6 +1,6 @@
 package org.bouncycastle.util.io.pem;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,31 +17,29 @@ public class PemHeader {
     public  PemHeader(String name, String value) {
         this.name = name;
         this.value = value;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
+        //this.value = value;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.588 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "19C6BE330E10438D6873BD738CB66F11")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1419674450 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_1419674450.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_1419674450;
-        
-        
+        // ---------- Original Method ----------
+        //return name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.588 -0400", hash_original_method = "CFCF943D36987E569CAB72593E604904", hash_generated_method = "B64A3F4D1A246F8DFB40911EDC73B4DC")
     public String getValue() {
 String varAF280DA2BC37D8BE783D8499160168DE_72393627 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_72393627.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_72393627;
-        
-        
+        // ---------- Original Method ----------
+        //return value;
     }
 
     
@@ -50,8 +48,8 @@ String varAF280DA2BC37D8BE783D8499160168DE_72393627 =         value;
         int varB55AA251EA7EFA452366B12918988F86_1014793658 = (getHashCode(this.name) + 31 * getHashCode(this.value));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1719925341 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1719925341;
-        
-        
+        // ---------- Original Method ----------
+        //return getHashCode(this.name) + 31 * getHashCode(this.value);
     }
 
     
@@ -63,18 +61,18 @@ String varAF280DA2BC37D8BE783D8499160168DE_72393627 =         value;
             boolean var68934A3E9455FA72420237EB05902327_1212327293 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1472834675 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1472834675;
-        } 
+        } //End block
         PemHeader other = (PemHeader)o;
         boolean varE30BD5D45ADC9EC6D45B3A1491931CDD_1764260292 = (other == this || (isEqual(this.name, other.name) && isEqual(this.value, other.value)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_546545287 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_546545287;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!(o instanceof PemHeader))
+        //{
+            //return false;
+        //}
+        //PemHeader other = (PemHeader)o;
+        //return other == this || (isEqual(this.name, other.name) && isEqual(this.value, other.value));
     }
 
     
@@ -86,16 +84,16 @@ String varAF280DA2BC37D8BE783D8499160168DE_72393627 =         value;
             int varC4CA4238A0B923820DCC509A6F75849B_1306374642 = (1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_252395419 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_252395419;
-        } 
+        } //End block
         int var4C8AC03F4D998D80C4FDFCF9D8EE7706_494201083 = (s.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681540135 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681540135;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (s == null)
+        //{
+            //return 1;
+        //}
+        //return s.hashCode();
     }
 
     
@@ -108,26 +106,26 @@ String varAF280DA2BC37D8BE783D8499160168DE_72393627 =         value;
             boolean varB326B5062B2F0E69046810717534CB09_161992750 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_712503316 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_712503316;
-        } 
+        } //End block
     if(s1 == null || s2 == null)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1988133871 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_84458552 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_84458552;
-        } 
+        } //End block
         boolean var1C7B33A408F214F5B9F1DA421AC799BC_720684522 = (s1.equals(s2));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1744583380 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1744583380;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (s1 == s2)
+        //{
+            //return true;
+        //}
+        //if (s1 == null || s2 == null)
+        //{
+            //return false;
+        //}
+        //return s1.equals(s2);
     }
 
     

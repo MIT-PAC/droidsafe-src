@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,13 +50,12 @@ switch(id){
         var0A4404A9A803DCC7E773970F78CDD850_384692700.addTaint(taint);
         throw var0A4404A9A803DCC7E773970F78CDD850_384692700;
 }
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static String idToString(int id) {
+        public static String idToString(int id) {
         switch(id) {
         case RIL_CDMA_DISPLAY_INFO_REC: return "RIL_CDMA_DISPLAY_INFO_REC";
         case RIL_CDMA_CALLED_PARTY_NUMBER_INFO_REC: return "RIL_CDMA_CALLED_PARTY_NUMBER_INFO_REC";
@@ -90,7 +89,7 @@ switch(id){
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.400 -0400", hash_original_method = "65C1B1FAB01F8320C332C9AE75D3022E", hash_generated_method = "46E0D37F3F57B4E83750C7DDAE4663DA")
         public  CdmaSignalInfoRec() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -100,11 +99,11 @@ switch(id){
             this.signalType = signalType;
             this.alertPitch = alertPitch;
             this.signal = signal;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.isPresent = isPresent != 0;
+            //this.signalType = signalType;
+            //this.alertPitch = alertPitch;
+            //this.signal = signal;
         }
 
         
@@ -119,13 +118,13 @@ String varF6116CCA8A1591B4E776780FC5B28B16_987798664 =             "CdmaSignalIn
                     " }";
             varF6116CCA8A1591B4E776780FC5B28B16_987798664.addTaint(taint);
             return varF6116CCA8A1591B4E776780FC5B28B16_987798664;
-            
-            
-                    
-                    
-                    
-                    
-                    
+            // ---------- Original Method ----------
+            //return "CdmaSignalInfo: {" +
+                    //" isPresent: " + isPresent +
+                    //", signalType: " + signalType +
+                    //", alertPitch: " + alertPitch +
+                    //", signal: " + signal +
+                    //" }";
         }
 
         
@@ -145,9 +144,9 @@ String varF6116CCA8A1591B4E776780FC5B28B16_987798664 =             "CdmaSignalIn
         public  CdmaDisplayInfoRec(int id, String alpha) {
             this.id = id;
             this.alpha = alpha;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.id = id;
+            //this.alpha = alpha;
         }
 
         
@@ -160,11 +159,11 @@ String var66540B1AE234D793CAEEAF96CB8FC5D5_751695577 =             "CdmaDisplayI
                     " }";
             var66540B1AE234D793CAEEAF96CB8FC5D5_751695577.addTaint(taint);
             return var66540B1AE234D793CAEEAF96CB8FC5D5_751695577;
-            
-            
-                    
-                    
-                    
+            // ---------- Original Method ----------
+            //return "CdmaDisplayInfoRec: {" +
+                    //" id: " + CdmaInformationRecords.idToString(id) +
+                    //", alpha: " + alpha +
+                    //" }";
         }
 
         
@@ -201,12 +200,12 @@ String var66540B1AE234D793CAEEAF96CB8FC5D5_751695577 =             "CdmaDisplayI
             this.numberPlan = (byte)numberPlan;
             this.pi = (byte)pi;
             this.si = (byte)si;
-            
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.number = number;
+            //this.numberType = (byte)numberType;
+            //this.numberPlan = (byte)numberPlan;
+            //this.pi = (byte)pi;
+            //this.si = (byte)si;
         }
 
         
@@ -223,15 +222,15 @@ String var17B573EFFC9D62D8F334884A496125D8_1263643245 =             "CdmaNumberI
                     " }";
             var17B573EFFC9D62D8F334884A496125D8_1263643245.addTaint(taint);
             return var17B573EFFC9D62D8F334884A496125D8_1263643245;
-            
-            
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+            // ---------- Original Method ----------
+            //return "CdmaNumberInfoRec: {" +
+                    //" id: " + CdmaInformationRecords.idToString(id) +
+                    //", number: " + number +
+                    //", numberType: " + numberType +
+                    //", numberPlan: " + numberPlan +
+                    //", pi: " + pi +
+                    //", si: " + si +
+                    //" }";
         }
 
         
@@ -253,10 +252,10 @@ String var17B573EFFC9D62D8F334884A496125D8_1263643245 =             "CdmaNumberI
             numberInfoRec = new CdmaNumberInfoRec(RIL_CDMA_REDIRECTING_NUMBER_INFO_REC,
                                                   number, numberType, numberPlan, pi, si);
             redirectingReason = reason;
-            
-            
-                                                  
-            
+            // ---------- Original Method ----------
+            //numberInfoRec = new CdmaNumberInfoRec(RIL_CDMA_REDIRECTING_NUMBER_INFO_REC,
+                                                  //number, numberType, numberPlan, pi, si);
+            //redirectingReason = reason;
         }
 
         
@@ -269,11 +268,11 @@ String varDB93CB209FBF5516784CF592BF288EC8_1086812883 =             "CdmaNumberI
                     " }";
             varDB93CB209FBF5516784CF592BF288EC8_1086812883.addTaint(taint);
             return varDB93CB209FBF5516784CF592BF288EC8_1086812883;
-            
-            
-                    
-                    
-                    
+            // ---------- Original Method ----------
+            //return "CdmaNumberInfoRec: {" +
+                    //" numberInfoRec: " + numberInfoRec +
+                    //", redirectingReason: " + redirectingReason +
+                    //" }";
         }
 
         
@@ -320,11 +319,11 @@ String varDB93CB209FBF5516784CF592BF288EC8_1086812883 =             "CdmaNumberI
             this.lineCtrlToggle = (byte)lineCtrlToggle;
             this.lineCtrlReverse = (byte)lineCtrlReverse;
             this.lineCtrlPowerDenial = (byte)lineCtrlPowerDenial;
-            
-            
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.lineCtrlPolarityIncluded = (byte)lineCtrlPolarityIncluded;
+            //this.lineCtrlToggle = (byte)lineCtrlToggle;
+            //this.lineCtrlReverse = (byte)lineCtrlReverse;
+            //this.lineCtrlPowerDenial = (byte)lineCtrlPowerDenial;
         }
 
         
@@ -339,13 +338,13 @@ String var77B1AD702290CF500DD6732098282B5C_1101780071 =             "CdmaLineCon
                     " }";
             var77B1AD702290CF500DD6732098282B5C_1101780071.addTaint(taint);
             return var77B1AD702290CF500DD6732098282B5C_1101780071;
-            
-            
-                    
-                    
-                    
-                    
-                    
+            // ---------- Original Method ----------
+            //return "CdmaLineControlInfoRec: {" +
+                    //" lineCtrlPolarityIncluded: " + lineCtrlPolarityIncluded +
+                    //" lineCtrlToggle: " + lineCtrlToggle +
+                    //" lineCtrlReverse: " + lineCtrlReverse +
+                    //" lineCtrlPowerDenial: " + lineCtrlPowerDenial +
+                    //" }";
         }
 
         
@@ -361,8 +360,8 @@ String var77B1AD702290CF500DD6732098282B5C_1101780071 =             "CdmaLineCon
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.409 -0400", hash_original_method = "7027858F3A41904E7AAC3077331910E1", hash_generated_method = "253A7471455B9175589BC749538D99AF")
         public  CdmaT53ClirInfoRec(int cause) {
             this.cause = (byte)cause;
-            
-            
+            // ---------- Original Method ----------
+            //this.cause = (byte)cause;
         }
 
         
@@ -374,10 +373,10 @@ String var97773021324657564F331D4E382DBD0B_1598772424 =             "CdmaT53Clir
                     " }";
             var97773021324657564F331D4E382DBD0B_1598772424.addTaint(taint);
             return var97773021324657564F331D4E382DBD0B_1598772424;
-            
-            
-                    
-                    
+            // ---------- Original Method ----------
+            //return "CdmaT53ClirInfoRec: {" +
+                    //" cause: " + cause +
+                    //" }";
         }
 
         
@@ -397,9 +396,9 @@ String var97773021324657564F331D4E382DBD0B_1598772424 =             "CdmaT53Clir
         public  CdmaT53AudioControlInfoRec(int uplink, int downlink) {
             this.uplink = (byte) uplink;
             this.downlink = (byte) downlink;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.uplink = (byte) uplink;
+            //this.downlink = (byte) downlink;
         }
 
         
@@ -412,11 +411,11 @@ String varD6C878C7151F84AFF9846608E098DD88_1469935866 =             "CdmaT53Audi
                     " }";
             varD6C878C7151F84AFF9846608E098DD88_1469935866.addTaint(taint);
             return varD6C878C7151F84AFF9846608E098DD88_1469935866;
-            
-            
-                    
-                    
-                    
+            // ---------- Original Method ----------
+            //return "CdmaT53AudioControlInfoRec: {" +
+                    //" uplink: " + uplink +
+                    //" downlink: " + downlink +
+                    //" }";
         }
 
         

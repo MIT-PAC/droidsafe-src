@@ -1,6 +1,6 @@
 package dalvik.system;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class SocketTagger {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:19.883 -0400", hash_original_method = "3FCBFB017A056A47E7F458C1C015DE98", hash_generated_method = "3FCBFB017A056A47E7F458C1C015DE98")
     public SocketTagger ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -29,11 +29,11 @@ public abstract class SocketTagger {
     if(!socket.isClosed())        
         {
             tag(socket.getFileDescriptor$());
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!socket.isClosed()) {
+            //tag(socket.getFileDescriptor$());
+        //}
     }
 
     
@@ -43,16 +43,15 @@ public abstract class SocketTagger {
     if(!socket.isClosed())        
         {
             untag(socket.getFileDescriptor$());
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (!socket.isClosed()) {
+            //untag(socket.getFileDescriptor$());
+        //}
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static synchronized void set(SocketTagger tagger) {
+        public static synchronized void set(SocketTagger tagger) {
         if (tagger == null) {
             throw new NullPointerException("tagger == null");
         }
@@ -60,8 +59,7 @@ public abstract class SocketTagger {
     }
 
     
-        @DSModeled(DSC.BAN)
-    public static synchronized SocketTagger get() {
+        public static synchronized SocketTagger get() {
         return tagger;
     }
 

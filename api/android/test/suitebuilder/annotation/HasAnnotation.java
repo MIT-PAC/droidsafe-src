@@ -1,6 +1,6 @@
 package android.test.suitebuilder.annotation;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,10 +19,10 @@ public class HasAnnotation implements Predicate<TestMethod> {
         this.hasMethodOrClassAnnotation = or(
                 new HasMethodAnnotation(annotationClass),
                 new HasClassAnnotation(annotationClass));
-        
-        
-                
-                
+        // ---------- Original Method ----------
+        //this.hasMethodOrClassAnnotation = or(
+                //new HasMethodAnnotation(annotationClass),
+                //new HasClassAnnotation(annotationClass));
     }
 
     
@@ -32,8 +32,8 @@ public class HasAnnotation implements Predicate<TestMethod> {
         boolean var0B7108EC2BE4CB9286150E7AAF78B3BD_2115664963 = (hasMethodOrClassAnnotation.apply(testMethod));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573434155 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573434155;
-        
-        
+        // ---------- Original Method ----------
+        //return hasMethodOrClassAnnotation.apply(testMethod);
     }
 
     

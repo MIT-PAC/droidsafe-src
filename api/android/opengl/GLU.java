@@ -1,6 +1,6 @@
 package android.opengl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,12 +11,11 @@ public class GLU {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.596 -0400", hash_original_method = "81777980E1C12E67D555E59C0A8957E0", hash_generated_method = "81777980E1C12E67D555E59C0A8957E0")
     public GLU ()
     {
-        
+        //Synthesized constructor
     }
 
 
-        @DSModeled(DSC.SAFE)
-    public static String gluErrorString(int error) {
+        public static String gluErrorString(int error) {
         switch (error) {
         case GL10.GL_NO_ERROR:
             return "no error";

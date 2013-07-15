@@ -1,6 +1,6 @@
 package org.bouncycastle.math.ec;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ class WTauNafMultiplier implements ECMultiplier {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.685 -0400", hash_original_method = "25BA0794289AAEB8CCD4FF1151858B35", hash_generated_method = "25BA0794289AAEB8CCD4FF1151858B35")
     public WTauNafMultiplier ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -26,7 +26,7 @@ class WTauNafMultiplier implements ECMultiplier {
                     "used in WTauNafMultiplier");
             varE5E1326E4D326E8513AE291F8CFFC7B4_1621432997.addTaint(taint);
             throw varE5E1326E4D326E8513AE291F8CFFC7B4_1621432997;
-        } 
+        } //End block
         ECPoint.F2m p = (ECPoint.F2m)point;
         ECCurve.F2m curve = (ECCurve.F2m) p.getCurve();
         int m = curve.getM();
@@ -37,20 +37,20 @@ class WTauNafMultiplier implements ECMultiplier {
 ECPoint var7D4C483E3AE81B6FBDD328B64E587BCD_155315681 =         multiplyWTnaf(p, rho, preCompInfo, a, mu);
         var7D4C483E3AE81B6FBDD328B64E587BCD_155315681.addTaint(taint);
         return var7D4C483E3AE81B6FBDD328B64E587BCD_155315681;
-        
-        
-        
-            
-                    
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!(point instanceof ECPoint.F2m))
+        //{
+            //throw new IllegalArgumentException("Only ECPoint.F2m can be " +
+                    //"used in WTauNafMultiplier");
+        //}
+        //ECPoint.F2m p = (ECPoint.F2m)point;
+        //ECCurve.F2m curve = (ECCurve.F2m) p.getCurve();
+        //int m = curve.getM();
+        //byte a = curve.getA().toBigInteger().byteValue();
+        //byte mu = curve.getMu();
+        //BigInteger[] s = curve.getSi();
+        //ZTauElement rho = Tnaf.partModReduction(k, m, a, s, mu, (byte)10);
+        //return multiplyWTnaf(p, rho, preCompInfo, a, mu);
     }
 
     
@@ -66,31 +66,31 @@ ECPoint var7D4C483E3AE81B6FBDD328B64E587BCD_155315681 =         multiplyWTnaf(p,
     if(a == 0)        
         {
             alpha = Tnaf.alpha0;
-        } 
+        } //End block
         else
         {
             alpha = Tnaf.alpha1;
-        } 
+        } //End block
         BigInteger tw = Tnaf.getTw(mu, Tnaf.WIDTH);
         byte[] u = Tnaf.tauAdicWNaf(mu, lambda, Tnaf.WIDTH,
                 BigInteger.valueOf(Tnaf.POW_2_WIDTH), tw, alpha);
 ECPoint.F2m var8FB674322EEF53AD831EA5BF0B5AB0AB_1788803347 =         multiplyFromWTnaf(p, u, preCompInfo);
         var8FB674322EEF53AD831EA5BF0B5AB0AB_1788803347.addTaint(taint);
         return var8FB674322EEF53AD831EA5BF0B5AB0AB_1788803347;
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-                
-        
+        // ---------- Original Method ----------
+        //ZTauElement[] alpha;
+        //if (a == 0)
+        //{
+            //alpha = Tnaf.alpha0;
+        //}
+        //else
+        //{
+            //alpha = Tnaf.alpha1;
+        //}
+        //BigInteger tw = Tnaf.getTw(mu, Tnaf.WIDTH);
+        //byte[]u = Tnaf.tauAdicWNaf(mu, lambda, Tnaf.WIDTH,
+                //BigInteger.valueOf(Tnaf.POW_2_WIDTH), tw, alpha);
+        //return multiplyFromWTnaf(p, u, preCompInfo);
     }
 
     

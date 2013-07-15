@@ -1,6 +1,6 @@
 package java.util.concurrent.locks;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.803 -0400", hash_original_method = "C7F1FA27B1E7517E25F1C7951B5E8CA8", hash_generated_method = "D0F5CBC29675A9CABCA264BF6F7A7644")
     protected  AbstractQueuedSynchronizer() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -31,16 +31,16 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         int var9ED39E2EA931586B6A985A6942EF573E_1337950723 = (state);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1361817206 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1361817206;
-        
-        
+        // ---------- Original Method ----------
+        //return state;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.804 -0400", hash_original_method = "57BE013BA515294E586014B30A336C04", hash_generated_method = "B9B29E2146A9DFA0E89C5BBC08072583")
     protected final void setState(int newState) {
         state = newState;
-        
-        
+        // ---------- Original Method ----------
+        //state = newState;
     }
 
     
@@ -51,8 +51,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         boolean varE169225C89A949AD38419A0BE7572030_1157309355 = (unsafe.compareAndSwapInt(this, stateOffset, expect, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1883241495 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1883241495;
-        
-        
+        // ---------- Original Method ----------
+        //return unsafe.compareAndSwapInt(this, stateOffset, expect, update);
     }
 
     
@@ -66,7 +66,7 @@ for(;;)
             {
     if(compareAndSetHead(new Node()))                
                 tail = head;
-            } 
+            } //End block
             else
             {
                 node.prev = t;
@@ -76,27 +76,26 @@ for(;;)
 Node varE0D714D758F1540A8DF364A965AF9150_1585764816 =                     t;
                     varE0D714D758F1540A8DF364A965AF9150_1585764816.addTaint(taint);
                     return varE0D714D758F1540A8DF364A965AF9150_1585764816;
-                } 
-            } 
-        } 
-        
-        
-            
-            
-                
-                    
-            
-                
-                
-                    
-                    
-                
-            
-        
+                } //End block
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //for (;;) {
+            //Node t = tail;
+            //if (t == null) { 
+                //if (compareAndSetHead(new Node()))
+                    //tail = head;
+            //} else {
+                //node.prev = t;
+                //if (compareAndSetTail(t, node)) {
+                    //t.next = node;
+                    //return t;
+                //}
+            //}
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.806 -0400", hash_original_method = "7269E5EC16B8883F661BF745CCC5E6A6", hash_generated_method = "DF5D35EDD80839B17D0ED55AA310494E")
     private Node addWaiter(Node mode) {
         addTaint(mode.getTaint());
@@ -111,41 +110,39 @@ Node varE0D714D758F1540A8DF364A965AF9150_1585764816 =                     t;
 Node var1924C94B76524D1C3D7310EA17B0EF94_935975464 =                 node;
                 var1924C94B76524D1C3D7310EA17B0EF94_935975464.addTaint(taint);
                 return var1924C94B76524D1C3D7310EA17B0EF94_935975464;
-            } 
-        } 
+            } //End block
+        } //End block
         enq(node);
 Node var1924C94B76524D1C3D7310EA17B0EF94_493017457 =         node;
         var1924C94B76524D1C3D7310EA17B0EF94_493017457.addTaint(taint);
         return var1924C94B76524D1C3D7310EA17B0EF94_493017457;
-        
-        
-        
-        
-            
-            
-                
-                
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //Node node = new Node(Thread.currentThread(), mode);
+        //Node pred = tail;
+        //if (pred != null) {
+            //node.prev = pred;
+            //if (compareAndSetTail(pred, node)) {
+                //pred.next = node;
+                //return node;
+            //}
+        //}
+        //enq(node);
+        //return node;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.806 -0400", hash_original_method = "51AEDFDDD323C78EE2EC4A6DE568B8D1", hash_generated_method = "E532E4CBBEBFF44C610D0F95E73E8319")
     private void setHead(Node node) {
         head = node;
         node.thread = null;
         node.prev = null;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //head = node;
+        //node.thread = null;
+        //node.prev = null;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.807 -0400", hash_original_method = "F262A3A18BABECF7EC492736953EAF6E", hash_generated_method = "A93A115F239F2D3D3F010BE781B1A7F1")
     private void unparkSuccessor(Node node) {
         addTaint(node.getTaint());
@@ -159,26 +156,25 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_493017457 =         node;
 for(Node t = tail;t != null && t != node;t = t.prev)
     if(t.waitStatus <= 0)            
             s = t;
-        } 
+        } //End block
     if(s != null)        
         LockSupport.unpark(s.thread);
-        
-        
-        
-            
-        
-        
-            
-            
-                
-                    
-        
-        
-            
+        // ---------- Original Method ----------
+        //int ws = node.waitStatus;
+        //if (ws < 0)
+            //compareAndSetWaitStatus(node, ws, 0);
+        //Node s = node.next;
+        //if (s == null || s.waitStatus > 0) {
+            //s = null;
+            //for (Node t = tail; t != null && t != node; t = t.prev)
+                //if (t.waitStatus <= 0)
+                    //s = t;
+        //}
+        //if (s != null)
+            //LockSupport.unpark(s.thread);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.808 -0400", hash_original_method = "D8D55646997B45206CD2F0528B603753", hash_generated_method = "70DCCB5937F13D53C20996F49C5243FC")
     private void doReleaseShared() {
 for(;;)
@@ -192,36 +188,35 @@ for(;;)
     if(!compareAndSetWaitStatus(h, Node.SIGNAL, 0))                    
                     continue;
                     unparkSuccessor(h);
-                } 
+                } //End block
                 else
     if(ws == 0 &&
                          !compareAndSetWaitStatus(h, 0, Node.PROPAGATE))                
                 continue;
-            } 
+            } //End block
     if(h == head)            
             break;
-        } 
-        
-        
-            
-            
-                
-                
-                    
-                        
-                    
-                
-                
-                         
-                    
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //for (;;) {
+            //Node h = head;
+            //if (h != null && h != tail) {
+                //int ws = h.waitStatus;
+                //if (ws == Node.SIGNAL) {
+                    //if (!compareAndSetWaitStatus(h, Node.SIGNAL, 0))
+                        //continue;            
+                    //unparkSuccessor(h);
+                //}
+                //else if (ws == 0 &&
+                         //!compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
+                    //continue;                
+            //}
+            //if (h == head)                   
+                //break;
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.808 -0400", hash_original_method = "A2FB30DAE399AEFA487E20396027BD36", hash_generated_method = "40E839A4C9B6A476B26404E2C51E7F79")
     private void setHeadAndPropagate(Node node, int propagate) {
         addTaint(propagate);
@@ -233,19 +228,18 @@ for(;;)
             Node s = node.next;
     if(s == null || s.isShared())            
             doReleaseShared();
-        } 
-        
-        
-        
-        
-            
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Node h = head;
+        //setHead(node);
+        //if (propagate > 0 || h == null || h.waitStatus < 0) {
+            //Node s = node.next;
+            //if (s == null || s.isShared())
+                //doReleaseShared();
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.815 -0400", hash_original_method = "1CA41B58715410C4216B9DE6C43BB9D4", hash_generated_method = "C5F79ACF849694CECD07366B161DDD11")
     private void cancelAcquire(Node node) {
         addTaint(node.getTaint());
@@ -261,7 +255,7 @@ for(;;)
     if(node == tail && compareAndSetTail(node, pred))        
         {
             compareAndSetNext(pred, predNext, null);
-        } 
+        } //End block
         else
         {
             int ws;
@@ -273,20 +267,19 @@ for(;;)
                 Node next = node.next;
     if(next != null && next.waitStatus <= 0)                
                 compareAndSetNext(pred, predNext, next);
-            } 
+            } //End block
             else
             {
                 unparkSuccessor(node);
-            } 
+            } //End block
             node.next = node;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
+        private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
         int ws = pred.waitStatus;
         if (ws == Node.SIGNAL)
             return true;
@@ -302,8 +295,7 @@ for(;;)
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static void selfInterrupt() {
+        private static void selfInterrupt() {
         Thread.currentThread().interrupt();
     }
 
@@ -314,9 +306,9 @@ for(;;)
         boolean var3B1A033197311EAFDE26E62437B6A8BF_897401458 = (Thread.interrupted());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_405042266 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_405042266;
-        
-        
-        
+        // ---------- Original Method ----------
+        //LockSupport.park(this);
+        //return Thread.interrupted();
     }
 
     
@@ -339,41 +331,40 @@ for(;;)
                     boolean varFADB76763385627E57EC386C9B6038F0_1828735099 = (interrupted);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064144311 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1064144311;
-                } 
+                } //End block
     if(shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt())                
                 interrupted = true;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(failed)            
             cancelAcquire(node);
-        } 
-        
-        
-        
-            
-            
-                
-                
-                    
-                    
-                    
-                    
-                
-                
-                    
-                    
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //boolean failed = true;
+        //try {
+            //boolean interrupted = false;
+            //for (;;) {
+                //final Node p = node.predecessor();
+                //if (p == head && tryAcquire(arg)) {
+                    //setHead(node);
+                    //p.next = null; 
+                    //failed = false;
+                    //return interrupted;
+                //}
+                //if (shouldParkAfterFailedAcquire(p, node) &&
+                    //parkAndCheckInterrupt())
+                    //interrupted = true;
+            //}
+        //} finally {
+            //if (failed)
+                //cancelAcquire(node);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.818 -0400", hash_original_method = "E74C4677EAF9B6C97A4A9A93D88FC71E", hash_generated_method = "7FECF21AFB77F939B61FEE09CFCDA5B3")
     private void doAcquireInterruptibly(int arg) throws InterruptedException {
         addTaint(arg);
@@ -390,7 +381,7 @@ for(;;)
                     p.next = null;
                     failed = false;
                     return;
-                } 
+                } //End block
     if(shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt())                
                 {
@@ -398,37 +389,36 @@ for(;;)
                 var1358A8E226367F12BB278428C2BEEE00_1329493626.addTaint(taint);
                 throw var1358A8E226367F12BB278428C2BEEE00_1329493626;
                 }
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(failed)            
             cancelAcquire(node);
-        } 
-        
-        
-        
-        
-            
-                
-                
-                    
-                    
-                    
-                    
-                
-                
-                    
-                    
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final Node node = addWaiter(Node.EXCLUSIVE);
+        //boolean failed = true;
+        //try {
+            //for (;;) {
+                //final Node p = node.predecessor();
+                //if (p == head && tryAcquire(arg)) {
+                    //setHead(node);
+                    //p.next = null; 
+                    //failed = false;
+                    //return;
+                //}
+                //if (shouldParkAfterFailedAcquire(p, node) &&
+                    //parkAndCheckInterrupt())
+                    //throw new InterruptedException();
+            //}
+        //} finally {
+            //if (failed)
+                //cancelAcquire(node);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.819 -0400", hash_original_method = "AF980EBAC4BC6C4AB1174BED3B10073B", hash_generated_method = "7B71C0BA9771A46E26B7E803CAADCD1E")
     private boolean doAcquireNanos(int arg, long nanosTimeout) throws InterruptedException {
         addTaint(nanosTimeout);
@@ -449,7 +439,7 @@ for(;;)
                     boolean varB326B5062B2F0E69046810717534CB09_86701898 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355491688 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355491688;
-                } 
+                } //End block
     if(nanosTimeout <= 0)                
                 {
                 boolean var68934A3E9455FA72420237EB05902327_351079048 = (false);
@@ -468,19 +458,18 @@ for(;;)
                 var1358A8E226367F12BB278428C2BEEE00_141695293.addTaint(taint);
                 throw var1358A8E226367F12BB278428C2BEEE00_141695293;
                 }
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(failed)            
             cancelAcquire(node);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.820 -0400", hash_original_method = "D66678B4038334D8E14600B3A8FC8FD7", hash_generated_method = "706DE7BF41217D97C1B1C0111FA50E7F")
     private void doAcquireShared(int arg) {
         addTaint(arg);
@@ -503,24 +492,23 @@ for(;;)
                         selfInterrupt();
                         failed = false;
                         return;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt())                
                 interrupted = true;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(failed)            
             cancelAcquire(node);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.821 -0400", hash_original_method = "4E093FA1B6FCF5593272CE0DEA00D69B", hash_generated_method = "01E0C09DE38458EE6780774EB82E7E04")
     private void doAcquireSharedInterruptibly(int arg) throws InterruptedException {
         addTaint(arg);
@@ -540,8 +528,8 @@ for(;;)
                         p.next = null;
                         failed = false;
                         return;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt())                
                 {
@@ -549,40 +537,39 @@ for(;;)
                 var1358A8E226367F12BB278428C2BEEE00_1763294413.addTaint(taint);
                 throw var1358A8E226367F12BB278428C2BEEE00_1763294413;
                 }
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(failed)            
             cancelAcquire(node);
-        } 
-        
-        
-        
-        
-            
-                
-                
-                    
-                    
-                        
-                        
-                        
-                        
-                    
-                
-                
-                    
-                    
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final Node node = addWaiter(Node.SHARED);
+        //boolean failed = true;
+        //try {
+            //for (;;) {
+                //final Node p = node.predecessor();
+                //if (p == head) {
+                    //int r = tryAcquireShared(arg);
+                    //if (r >= 0) {
+                        //setHeadAndPropagate(node, r);
+                        //p.next = null; 
+                        //failed = false;
+                        //return;
+                    //}
+                //}
+                //if (shouldParkAfterFailedAcquire(p, node) &&
+                    //parkAndCheckInterrupt())
+                    //throw new InterruptedException();
+            //}
+        //} finally {
+            //if (failed)
+                //cancelAcquire(node);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.823 -0400", hash_original_method = "873D99639E9E59C87CD3A574B36E4573", hash_generated_method = "68FC54D3018689B52D284C311E49E324")
     private boolean doAcquireSharedNanos(int arg, long nanosTimeout) throws InterruptedException {
         addTaint(nanosTimeout);
@@ -606,8 +593,8 @@ for(;;)
                         boolean varB326B5062B2F0E69046810717534CB09_1875788367 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_138148464 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_138148464;
-                    } 
-                } 
+                    } //End block
+                } //End block
     if(nanosTimeout <= 0)                
                 {
                 boolean var68934A3E9455FA72420237EB05902327_1811954903 = (false);
@@ -626,74 +613,69 @@ for(;;)
                 var1358A8E226367F12BB278428C2BEEE00_423269730.addTaint(taint);
                 throw var1358A8E226367F12BB278428C2BEEE00_423269730;
                 }
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(failed)            
             cancelAcquire(node);
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.823 -0400", hash_original_method = "FADA99D99649E8B049B596B89A86AFE3", hash_generated_method = "9FF64669226D86D9146C77CC68042C06")
     protected boolean tryAcquire(int arg) {
         addTaint(arg);
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1884960285 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1884960285.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1884960285;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.824 -0400", hash_original_method = "0AA9B3926B88397CF769442818D9CA16", hash_generated_method = "01BDDE76E9B5F58D18CF4D4D82966AF8")
     protected boolean tryRelease(int arg) {
         addTaint(arg);
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2080555205 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2080555205.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2080555205;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.824 -0400", hash_original_method = "143AB2DE4C7A8CA8F45FD3C862AFB93B", hash_generated_method = "81ED5743C4946D4168015CAAF4E76BD6")
     protected int tryAcquireShared(int arg) {
         addTaint(arg);
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1063014982 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1063014982.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1063014982;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.824 -0400", hash_original_method = "57760B0E19163CFD26451EB4C702B2B7", hash_generated_method = "ED6CCB57E2F3318037DF6CF80AE3DE43")
     protected boolean tryReleaseShared(int arg) {
         addTaint(arg);
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_45210775 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_45210775.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_45210775;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.825 -0400", hash_original_method = "B1A3EF7BA2A74EEB6B3236F0A99ED9FE", hash_generated_method = "B3FD0C3D0CB92153BFAE4DCE8C4C9C3F")
     protected boolean isHeldExclusively() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1670870256 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1670870256.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1670870256;
-        
-        
+        // ---------- Original Method ----------
+        //throw new UnsupportedOperationException();
     }
 
     
@@ -703,10 +685,10 @@ for(;;)
     if(!tryAcquire(arg) &&
             acquireQueued(addWaiter(Node.EXCLUSIVE), arg))        
         selfInterrupt();
-        
-        
-            
-            
+        // ---------- Original Method ----------
+        //if (!tryAcquire(arg) &&
+            //acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
+            //selfInterrupt();
     }
 
     
@@ -721,11 +703,11 @@ for(;;)
         }
     if(!tryAcquire(arg))        
         doAcquireInterruptibly(arg);
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (Thread.interrupted())
+            //throw new InterruptedException();
+        //if (!tryAcquire(arg))
+            //doAcquireInterruptibly(arg);
     }
 
     
@@ -743,11 +725,11 @@ for(;;)
             doAcquireNanos(arg, nanosTimeout));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736792669 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_736792669;
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (Thread.interrupted())
+            //throw new InterruptedException();
+        //return tryAcquire(arg) ||
+            //doAcquireNanos(arg, nanosTimeout);
     }
 
     
@@ -762,18 +744,18 @@ for(;;)
             boolean varB326B5062B2F0E69046810717534CB09_999243433 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_386243426 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_386243426;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_434424298 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1608197132 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1608197132;
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (tryRelease(arg)) {
+            //Node h = head;
+            //if (h != null && h.waitStatus != 0)
+                //unparkSuccessor(h);
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -782,9 +764,9 @@ for(;;)
         addTaint(arg);
     if(tryAcquireShared(arg) < 0)        
         doAcquireShared(arg);
-        
-        
-            
+        // ---------- Original Method ----------
+        //if (tryAcquireShared(arg) < 0)
+            //doAcquireShared(arg);
     }
 
     
@@ -799,11 +781,11 @@ for(;;)
         }
     if(tryAcquireShared(arg) < 0)        
         doAcquireSharedInterruptibly(arg);
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (Thread.interrupted())
+            //throw new InterruptedException();
+        //if (tryAcquireShared(arg) < 0)
+            //doAcquireSharedInterruptibly(arg);
     }
 
     
@@ -821,11 +803,11 @@ for(;;)
             doAcquireSharedNanos(arg, nanosTimeout));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_830460913 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_830460913;
-        
-        
-            
-        
-            
+        // ---------- Original Method ----------
+        //if (Thread.interrupted())
+            //throw new InterruptedException();
+        //return tryAcquireShared(arg) >= 0 ||
+            //doAcquireSharedNanos(arg, nanosTimeout);
     }
 
     
@@ -838,16 +820,16 @@ for(;;)
             boolean varB326B5062B2F0E69046810717534CB09_551602420 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1183280639 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1183280639;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_249428744 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_600282826 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_600282826;
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (tryReleaseShared(arg)) {
+            //doReleaseShared();
+            //return true;
+        //}
+        //return false;
     }
 
     
@@ -856,8 +838,8 @@ for(;;)
         boolean varA082AC3EB8E95F4F31577910CF1352A9_1765402283 = (head != tail);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2107223758 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2107223758;
-        
-        
+        // ---------- Original Method ----------
+        //return head != tail;
     }
 
     
@@ -866,8 +848,8 @@ for(;;)
         boolean varF99FF234A7427ED48BEA6CF28AE0958C_1198065263 = (head != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_677486328 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_677486328;
-        
-        
+        // ---------- Original Method ----------
+        //return head != null;
     }
 
     
@@ -876,12 +858,11 @@ for(;;)
 Thread var870C75E9F1DE61C9DB12235564677748_1030701080 =         (head == tail) ? null : fullGetFirstQueuedThread();
         var870C75E9F1DE61C9DB12235564677748_1030701080.addTaint(taint);
         return var870C75E9F1DE61C9DB12235564677748_1030701080;
-        
-        
+        // ---------- Original Method ----------
+        //return (head == tail) ? null : fullGetFirstQueuedThread();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.830 -0400", hash_original_method = "18818CB637EBC5CF82DC4C50B37FB17C", hash_generated_method = "FC4878F382CE34BEDF715327065866F3")
     private Thread fullGetFirstQueuedThread() {
         Node h;
@@ -905,27 +886,27 @@ Thread varAA0158446C9008DEF446ADFDF1B056A8_1728058768 =         st;
     if(tt != null)            
             firstThread = tt;
             t = t.prev;
-        } 
+        } //End block
 Thread varDBE1B135F3AB7C062EA0CD8FCD339ACB_1763601558 =         firstThread;
         varDBE1B135F3AB7C062EA0CD8FCD339ACB_1763601558.addTaint(taint);
         return varDBE1B135F3AB7C062EA0CD8FCD339ACB_1763601558;
-        
-        
-        
-        
-             
-            
-             
-            
-        
-        
-        
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //Node h, s;
+        //Thread st;
+        //if (((h = head) != null && (s = h.next) != null &&
+             //s.prev == head && (st = s.thread) != null) ||
+            //((h = head) != null && (s = h.next) != null &&
+             //s.prev == head && (st = s.thread) != null))
+            //return st;
+        //Node t = tail;
+        //Thread firstThread = null;
+        //while (t != null && t != head) {
+            //Thread tt = t.thread;
+            //if (tt != null)
+                //firstThread = tt;
+            //t = t.prev;
+        //}
+        //return firstThread;
     }
 
     
@@ -948,13 +929,13 @@ for(Node p = tail;p != null;p = p.prev)
         boolean var68934A3E9455FA72420237EB05902327_1324145138 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1947642828 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1947642828;
-        
-        
-            
-        
-            
-                
-        
+        // ---------- Original Method ----------
+        //if (thread == null)
+            //throw new NullPointerException();
+        //for (Node p = tail; p != null; p = p.prev)
+            //if (p.thread == thread)
+                //return true;
+        //return false;
     }
 
     
@@ -968,12 +949,12 @@ for(Node p = tail;p != null;p = p.prev)
             s.thread != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676204064 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_676204064;
-        
-        
-        
-            
-            
-            
+        // ---------- Original Method ----------
+        //Node h, s;
+        //return (h = head) != null &&
+            //(s = h.next)  != null &&
+            //!s.isShared()         &&
+            //s.thread != null;
     }
 
     
@@ -986,12 +967,12 @@ for(Node p = tail;p != null;p = p.prev)
             ((s = h.next) == null || s.thread != Thread.currentThread()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_545110885 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_545110885;
-        
-        
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //Node t = tail;
+        //Node h = head;
+        //Node s;
+        //return h != t &&
+            //((s = h.next) == null || s.thread != Thread.currentThread());
     }
 
     
@@ -1002,17 +983,17 @@ for(Node p = tail;p != null;p = p.prev)
         {
     if(p.thread != null)            
             ++n;
-        } 
+        } //End block
         int var7B8B965AD4BCA0E41AB51DE7B31363A1_1110884869 = (n);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1941392182 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1941392182;
-        
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //int n = 0;
+        //for (Node p = tail; p != null; p = p.prev) {
+            //if (p.thread != null)
+                //++n;
+        //}
+        //return n;
     }
 
     
@@ -1024,18 +1005,18 @@ for(Node p = tail;p != null;p = p.prev)
             Thread t = p.thread;
     if(t != null)            
             list.add(t);
-        } 
+        } //End block
 Collection<Thread> varED12C351C2E8CA4F85F097DDC7E77B4D_353681611 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_353681611.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_353681611;
-        
-        
-        
-            
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<Thread> list = new ArrayList<Thread>();
+        //for (Node p = tail; p != null; p = p.prev) {
+            //Thread t = p.thread;
+            //if (t != null)
+                //list.add(t);
+        //}
+        //return list;
     }
 
     
@@ -1049,21 +1030,21 @@ for(Node p = tail;p != null;p = p.prev)
                 Thread t = p.thread;
     if(t != null)                
                 list.add(t);
-            } 
-        } 
+            } //End block
+        } //End block
 Collection<Thread> varED12C351C2E8CA4F85F097DDC7E77B4D_1654874804 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_1654874804.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_1654874804;
-        
-        
-        
-            
-                
-                
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<Thread> list = new ArrayList<Thread>();
+        //for (Node p = tail; p != null; p = p.prev) {
+            //if (!p.isShared()) {
+                //Thread t = p.thread;
+                //if (t != null)
+                    //list.add(t);
+            //}
+        //}
+        //return list;
     }
 
     
@@ -1077,25 +1058,24 @@ for(Node p = tail;p != null;p = p.prev)
                 Thread t = p.thread;
     if(t != null)                
                 list.add(t);
-            } 
-        } 
+            } //End block
+        } //End block
 Collection<Thread> varED12C351C2E8CA4F85F097DDC7E77B4D_11689867 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_11689867.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_11689867;
-        
-        
-        
-            
-                
-                
-                    
-            
-        
-        
+        // ---------- Original Method ----------
+        //ArrayList<Thread> list = new ArrayList<Thread>();
+        //for (Node p = tail; p != null; p = p.prev) {
+            //if (p.isShared()) {
+                //Thread t = p.thread;
+                //if (t != null)
+                    //list.add(t);
+            //}
+        //}
+        //return list;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.835 -0400", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "388DA8BF10A5A3517ED076AED01E355A")
     public String toString() {
         int s = getState();
@@ -1104,11 +1084,11 @@ String var4EB727B8FD98B5F7ED6D14E18A4FCCA4_448468103 =         super.toString() 
             "[State = " + s + ", " + q + "empty queue]";
         var4EB727B8FD98B5F7ED6D14E18A4FCCA4_448468103.addTaint(taint);
         return var4EB727B8FD98B5F7ED6D14E18A4FCCA4_448468103;
-        
-        
-        
-        
-            
+        // ---------- Original Method ----------
+        //int s = getState();
+        //String q  = hasQueuedThreads() ? "non" : "";
+        //return super.toString() +
+            //"[State = " + s + ", " + q + "empty queue]";
     }
 
     
@@ -1130,16 +1110,15 @@ String var4EB727B8FD98B5F7ED6D14E18A4FCCA4_448468103 =         super.toString() 
         boolean var1334757DEAE6F9A44E12EB6C1BF18A1A_7745939 = (findNodeFromTail(node));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1860154299 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1860154299;
-        
-        
-            
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (node.waitStatus == Node.CONDITION || node.prev == null)
+            //return false;
+        //if (node.next != null) 
+            //return true;
+        //return findNodeFromTail(node);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.836 -0400", hash_original_method = "E84A510853D9F9659F34649D5E631E14", hash_generated_method = "BFF81108CB8C6D408924E6ABC96AE8F9")
     private boolean findNodeFromTail(Node node) {
         addTaint(node.getTaint());
@@ -1159,16 +1138,16 @@ for(;;)
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_69010399;
             }
             t = t.prev;
-        } 
-        
-        
-        
-            
-                
-            
-                
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Node t = tail;
+        //for (;;) {
+            //if (t == node)
+                //return true;
+            //if (t == null)
+                //return false;
+            //t = t.prev;
+        //}
     }
 
     
@@ -1188,14 +1167,14 @@ for(;;)
         boolean varB326B5062B2F0E69046810717534CB09_1245667674 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_368212321 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_368212321;
-        
-        
-            
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (!compareAndSetWaitStatus(node, Node.CONDITION, 0))
+            //return false;
+        //Node p = enq(node);
+        //int ws = p.waitStatus;
+        //if (ws > 0 || !compareAndSetWaitStatus(p, ws, Node.SIGNAL))
+            //LockSupport.unpark(node.thread);
+        //return true;
     }
 
     
@@ -1208,21 +1187,21 @@ for(;;)
             boolean varB326B5062B2F0E69046810717534CB09_1650032120 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1658478227 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1658478227;
-        } 
+        } //End block
         while
 (!isOnSyncQueue(node))        
         Thread.yield();
         boolean var68934A3E9455FA72420237EB05902327_1973866457 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_989888266 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_989888266;
-        
-        
-            
-            
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (compareAndSetWaitStatus(node, Node.CONDITION, 0)) {
+            //enq(node);
+            //return true;
+        //}
+        //while (!isOnSyncQueue(node))
+            //Thread.yield();
+        //return false;
     }
 
     
@@ -1239,33 +1218,33 @@ for(;;)
                 int var4C0428E38EB47B04E0869E39E7C0D6A1_549135689 = (savedState);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1738565408 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1738565408;
-            } 
+            } //End block
             else
             {
                 IllegalMonitorStateException var9D4F198B973DC32951341758A9D245B5_1654160097 = new IllegalMonitorStateException();
                 var9D4F198B973DC32951341758A9D245B5_1654160097.addTaint(taint);
                 throw var9D4F198B973DC32951341758A9D245B5_1654160097;
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
     if(failed)            
             node.waitStatus = Node.CANCELLED;
-        } 
-        
-        
-        
-            
-            
-                
-                
-            
-                
-            
-        
-            
-                
-        
+        } //End block
+        // ---------- Original Method ----------
+        //boolean failed = true;
+        //try {
+            //int savedState = getState();
+            //if (release(savedState)) {
+                //failed = false;
+                //return savedState;
+            //} else {
+                //throw new IllegalMonitorStateException();
+            //}
+        //} finally {
+            //if (failed)
+                //node.waitStatus = Node.CANCELLED;
+        //}
     }
 
     
@@ -1281,10 +1260,10 @@ for(;;)
         boolean varD1428399BF953DC879A6F44FC54099DD_17440828 = (condition.isOwnedBy(this));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2063261470 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2063261470;
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (condition == null)
+            //throw new NullPointerException();
+        //return condition.isOwnedBy(this);
     }
 
     
@@ -1300,10 +1279,10 @@ for(;;)
         boolean varD110D0E8476BE1ED9552C2B17F2EABE3_1552665484 = (condition.hasWaiters());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1550922045 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1550922045;
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (!owns(condition))
+            //throw new IllegalArgumentException("Not owner");
+        //return condition.hasWaiters();
     }
 
     
@@ -1319,10 +1298,10 @@ for(;;)
         int var74EB0FD17BFFF2510CAC56C3F4C7D72C_1315230498 = (condition.getWaitQueueLength());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_878218762 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_878218762;
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (!owns(condition))
+            //throw new IllegalArgumentException("Not owner");
+        //return condition.getWaitQueueLength();
     }
 
     
@@ -1338,10 +1317,10 @@ for(;;)
 Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         condition.getWaitingThreads();
         var8981A24903B26F18C4110654EEEEEF5C_2116542914.addTaint(taint);
         return var8981A24903B26F18C4110654EEEEEF5C_2116542914;
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (!owns(condition))
+            //throw new IllegalArgumentException("Not owner");
+        //return condition.getWaitingThreads();
     }
 
     
@@ -1351,8 +1330,8 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         cond
         boolean var0A2860D9316D8AD7309534503883A416_1785414865 = (unsafe.compareAndSwapObject(this, headOffset, null, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_673912307 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_673912307;
-        
-        
+        // ---------- Original Method ----------
+        //return unsafe.compareAndSwapObject(this, headOffset, null, update);
     }
 
     
@@ -1363,8 +1342,8 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         cond
         boolean var1B8F67C774023CA8EF7CAAF2DAEE008A_1771089443 = (unsafe.compareAndSwapObject(this, tailOffset, expect, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2114746610 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2114746610;
-        
-        
+        // ---------- Original Method ----------
+        //return unsafe.compareAndSwapObject(this, tailOffset, expect, update);
     }
 
     
@@ -1402,7 +1381,7 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         cond
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.842 -0400", hash_original_method = "2DD8BF5485F2495811D83404AF44A29C", hash_generated_method = "AAE5751DE21B256CB4EDD0DDB605F24E")
           Node() {
-            
+            // ---------- Original Method ----------
         }
 
         
@@ -1410,9 +1389,9 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         cond
           Node(Thread thread, Node mode) {
             this.nextWaiter = mode;
             this.thread = thread;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.nextWaiter = mode;
+            //this.thread = thread;
         }
 
         
@@ -1420,9 +1399,9 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         cond
           Node(Thread thread, int waitStatus) {
             this.waitStatus = waitStatus;
             this.thread = thread;
-            
-            
-            
+            // ---------- Original Method ----------
+            //this.waitStatus = waitStatus;
+            //this.thread = thread;
         }
 
         
@@ -1431,8 +1410,8 @@ Collection<Thread> var8981A24903B26F18C4110654EEEEEF5C_2116542914 =         cond
             boolean varDC3CBE439A4F6F1CF2883A72D8EC2038_2101323717 = (nextWaiter == SHARED);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_360593376 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_360593376;
-            
-            
+            // ---------- Original Method ----------
+            //return nextWaiter == SHARED;
         }
 
         
@@ -1451,12 +1430,12 @@ Node var74E4690D9F2A026504928C017944E149_1619547431 =             p;
             var74E4690D9F2A026504928C017944E149_1619547431.addTaint(taint);
             return var74E4690D9F2A026504928C017944E149_1619547431;
             }
-            
-            
-            
-                
-            
-                
+            // ---------- Original Method ----------
+            //Node p = prev;
+            //if (p == null)
+                //throw new NullPointerException();
+            //else
+                //return p;
         }
 
         
@@ -1492,11 +1471,10 @@ Node var74E4690D9F2A026504928C017944E149_1619547431 =             p;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.845 -0400", hash_original_method = "0A3E2C1E27BAEA738FDF96AD17500BEE", hash_generated_method = "6AF9B0E3D406E6C56AA07F09E795B0E2")
         public  ConditionObject() {
-            
+            // ---------- Original Method ----------
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.867 -0400", hash_original_method = "43F5E066353E431B2C9AD7CD0397BCCF", hash_generated_method = "13D8345615024EA5EEED7C1F7E6725BF")
         private Node addConditionWaiter() {
             Node t = lastWaiter;
@@ -1504,7 +1482,7 @@ Node var74E4690D9F2A026504928C017944E149_1619547431 =             p;
             {
                 unlinkCancelledWaiters();
                 t = lastWaiter;
-            } 
+            } //End block
             Node node = new Node(Thread.currentThread(), Node.CONDITION);
     if(t == null)            
             firstWaiter = node;
@@ -1514,23 +1492,22 @@ Node var74E4690D9F2A026504928C017944E149_1619547431 =             p;
 Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
             var1924C94B76524D1C3D7310EA17B0EF94_733827469.addTaint(taint);
             return var1924C94B76524D1C3D7310EA17B0EF94_733827469;
-            
-            
-            
-                
-                
-            
-            
-            
-                
-            
-                
-            
-            
+            // ---------- Original Method ----------
+            //Node t = lastWaiter;
+            //if (t != null && t.waitStatus != Node.CONDITION) {
+                //unlinkCancelledWaiters();
+                //t = lastWaiter;
+            //}
+            //Node node = new Node(Thread.currentThread(), Node.CONDITION);
+            //if (t == null)
+                //firstWaiter = node;
+            //else
+                //t.nextWaiter = node;
+            //lastWaiter = node;
+            //return node;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.868 -0400", hash_original_method = "74B8316ED8B5F40365D8BD9CF002AB2D", hash_generated_method = "5A26EDA37C913BD6A78C85A0B826BA92")
         private void doSignal(Node first) {
             addTaint(first.getTaint());
@@ -1539,20 +1516,19 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
     if((firstWaiter = first.nextWaiter) == null)                    
                     lastWaiter = null;
                     first.nextWaiter = null;
-                } 
+                } //End block
 } while (!transferForSignal(first) &&
                      (first = firstWaiter) != null);
-            
-            
-                
-                    
-                
-            
-                     
+            // ---------- Original Method ----------
+            //do {
+                //if ( (firstWaiter = first.nextWaiter) == null)
+                    //lastWaiter = null;
+                //first.nextWaiter = null;
+            //} while (!transferForSignal(first) &&
+                     //(first = firstWaiter) != null);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.869 -0400", hash_original_method = "DE4F68C515AD9FDEF86DCFCC83AF390E", hash_generated_method = "538AA885639A6DAD8B8C761ACEA5BCCC")
         private void doSignalAll(Node first) {
             addTaint(first.getTaint());
@@ -1563,20 +1539,19 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                     first.nextWaiter = null;
                     transferForSignal(first);
                     first = next;
-                } 
+                } //End block
 } while (first != null);
-            
-            
-            
-                
-                
-                
-                
-            
+            // ---------- Original Method ----------
+            //lastWaiter = firstWaiter = null;
+            //do {
+                //Node next = first.nextWaiter;
+                //first.nextWaiter = null;
+                //transferForSignal(first);
+                //first = next;
+            //} while (first != null);
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.870 -0400", hash_original_method = "2AF991EC026F340CB09E7C74A01E5A9A", hash_generated_method = "80733A3444837168288E85B20119B428")
         private void unlinkCancelledWaiters() {
             Node t = firstWaiter;
@@ -1594,29 +1569,29 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                     trail.nextWaiter = next;
     if(next == null)                    
                     lastWaiter = trail;
-                } 
+                } //End block
                 else
                 trail = t;
                 t = next;
-            } 
-            
-            
-            
-            
-                
-                
-                    
-                    
-                        
-                    
-                        
-                    
-                        
-                
-                
-                    
-                
-            
+            } //End block
+            // ---------- Original Method ----------
+            //Node t = firstWaiter;
+            //Node trail = null;
+            //while (t != null) {
+                //Node next = t.nextWaiter;
+                //if (t.waitStatus != Node.CONDITION) {
+                    //t.nextWaiter = null;
+                    //if (trail == null)
+                        //firstWaiter = next;
+                    //else
+                        //trail.nextWaiter = next;
+                    //if (next == null)
+                        //lastWaiter = trail;
+                //}
+                //else
+                    //trail = t;
+                //t = next;
+            //}
         }
 
         
@@ -1631,12 +1606,12 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
             Node first = firstWaiter;
     if(first != null)            
             doSignal(first);
-            
-            
-                
-            
-            
-                
+            // ---------- Original Method ----------
+            //if (!isHeldExclusively())
+                //throw new IllegalMonitorStateException();
+            //Node first = firstWaiter;
+            //if (first != null)
+                //doSignal(first);
         }
 
         
@@ -1651,12 +1626,12 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
             Node first = firstWaiter;
     if(first != null)            
             doSignalAll(first);
-            
-            
-                
-            
-            
-                
+            // ---------- Original Method ----------
+            //if (!isHeldExclusively())
+                //throw new IllegalMonitorStateException();
+            //Node first = firstWaiter;
+            //if (first != null)
+                //doSignalAll(first);
         }
 
         
@@ -1671,24 +1646,23 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                 LockSupport.park(this);
     if(Thread.interrupted())                
                 interrupted = true;
-            } 
+            } //End block
     if(acquireQueued(node, savedState) || interrupted)            
             selfInterrupt();
-            
-            
-            
-            
-            
-                
-                
-                    
-            
-            
-                
+            // ---------- Original Method ----------
+            //Node node = addConditionWaiter();
+            //int savedState = fullyRelease(node);
+            //boolean interrupted = false;
+            //while (!isOnSyncQueue(node)) {
+                //LockSupport.park(this);
+                //if (Thread.interrupted())
+                    //interrupted = true;
+            //}
+            //if (acquireQueued(node, savedState) || interrupted)
+                //selfInterrupt();
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.872 -0400", hash_original_method = "5CA3F4E55230C1BE0E77A65DF87A61F3", hash_generated_method = "674DDAFF2F9C5E0E556D1B4F96D6FB3A")
         private int checkInterruptWhileWaiting(Node node) {
             addTaint(node.getTaint());
@@ -1697,14 +1671,13 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                 0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855712787 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855712787;
-            
-            
-                
-                
+            // ---------- Original Method ----------
+            //return Thread.interrupted() ?
+                //(transferAfterCancelledWait(node) ? THROW_IE : REINTERRUPT) :
+                //0;
         }
 
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.872 -0400", hash_original_method = "5304D5C5F98F936C59A15960318DA98F", hash_generated_method = "60B5C79AA85F58765815D8F341BAD1B7")
         private void reportInterruptAfterWait(int interruptMode) throws InterruptedException {
             addTaint(interruptMode);
@@ -1717,11 +1690,11 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
             else
     if(interruptMode == REINTERRUPT)            
             selfInterrupt();
-            
-            
-                
-            
-                
+            // ---------- Original Method ----------
+            //if (interruptMode == THROW_IE)
+                //throw new InterruptedException();
+            //else if (interruptMode == REINTERRUPT)
+                //selfInterrupt();
         }
 
         
@@ -1742,30 +1715,30 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                 LockSupport.park(this);
     if((interruptMode = checkInterruptWhileWaiting(node)) != 0)                
                 break;
-            } 
+            } //End block
     if(acquireQueued(node, savedState) && interruptMode != THROW_IE)            
             interruptMode = REINTERRUPT;
     if(node.nextWaiter != null)            
             unlinkCancelledWaiters();
     if(interruptMode != 0)            
             reportInterruptAfterWait(interruptMode);
-            
-            
-                
-            
-            
-            
-            
-                
-                
-                    
-            
-            
-                
-            
-                
-            
-                
+            // ---------- Original Method ----------
+            //if (Thread.interrupted())
+                //throw new InterruptedException();
+            //Node node = addConditionWaiter();
+            //int savedState = fullyRelease(node);
+            //int interruptMode = 0;
+            //while (!isOnSyncQueue(node)) {
+                //LockSupport.park(this);
+                //if ((interruptMode = checkInterruptWhileWaiting(node)) != 0)
+                    //break;
+            //}
+            //if (acquireQueued(node, savedState) && interruptMode != THROW_IE)
+                //interruptMode = REINTERRUPT;
+            //if (node.nextWaiter != null) 
+                //unlinkCancelledWaiters();
+            //if (interruptMode != 0)
+                //reportInterruptAfterWait(interruptMode);
         }
 
         
@@ -1789,14 +1762,14 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                 {
                     transferAfterCancelledWait(node);
                     break;
-                } 
+                } //End block
                 LockSupport.parkNanos(this, nanosTimeout);
     if((interruptMode = checkInterruptWhileWaiting(node)) != 0)                
                 break;
                 long now = System.nanoTime();
                 nanosTimeout -= now - lastTime;
                 lastTime = now;
-            } 
+            } //End block
     if(acquireQueued(node, savedState) && interruptMode != THROW_IE)            
             interruptMode = REINTERRUPT;
     if(node.nextWaiter != null)            
@@ -1806,8 +1779,8 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
             long var57645198E102F4FE227A39824B6A9A42_1013732747 = (nanosTimeout - (System.nanoTime() - lastTime));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1648667712 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1648667712;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1838,11 +1811,11 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                 {
                     timedout = transferAfterCancelledWait(node);
                     break;
-                } 
+                } //End block
                 LockSupport.parkUntil(this, abstime);
     if((interruptMode = checkInterruptWhileWaiting(node)) != 0)                
                 break;
-            } 
+            } //End block
     if(acquireQueued(node, savedState) && interruptMode != THROW_IE)            
             interruptMode = REINTERRUPT;
     if(node.nextWaiter != null)            
@@ -1852,8 +1825,8 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
             boolean var3B93B8D4C8D03AB14C23D3E4B12FA84A_538299872 = (!timedout);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_439623400 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_439623400;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1886,7 +1859,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                 {
                     timedout = transferAfterCancelledWait(node);
                     break;
-                } 
+                } //End block
     if(nanosTimeout >= spinForTimeoutThreshold)                
                 LockSupport.parkNanos(this, nanosTimeout);
     if((interruptMode = checkInterruptWhileWaiting(node)) != 0)                
@@ -1894,7 +1867,7 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
                 long now = System.nanoTime();
                 nanosTimeout -= now - lastTime;
                 lastTime = now;
-            } 
+            } //End block
     if(acquireQueued(node, savedState) && interruptMode != THROW_IE)            
             interruptMode = REINTERRUPT;
     if(node.nextWaiter != null)            
@@ -1904,8 +1877,8 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
             boolean var3B93B8D4C8D03AB14C23D3E4B12FA84A_1412367021 = (!timedout);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1672618716 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1672618716;
-            
-            
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         
@@ -1915,8 +1888,8 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_733827469 =             node;
             boolean var96786A6FAD3E7934374DCD0D0EDF1460_1350381296 = (sync == AbstractQueuedSynchronizer.this);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1913665615 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1913665615;
-            
-            
+            // ---------- Original Method ----------
+            //return sync == AbstractQueuedSynchronizer.this;
         }
 
         
@@ -1936,18 +1909,18 @@ for(Node w = firstWaiter;w != null;w = w.nextWaiter)
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_987233869 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_987233869;
                 }
-            } 
+            } //End block
             boolean var68934A3E9455FA72420237EB05902327_1648768803 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_162476049 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_162476049;
-            
-            
-                
-            
-                
-                    
-            
-            
+            // ---------- Original Method ----------
+            //if (!isHeldExclusively())
+                //throw new IllegalMonitorStateException();
+            //for (Node w = firstWaiter; w != null; w = w.nextWaiter) {
+                //if (w.waitStatus == Node.CONDITION)
+                    //return true;
+            //}
+            //return false;
         }
 
         
@@ -1964,19 +1937,19 @@ for(Node w = firstWaiter;w != null;w = w.nextWaiter)
             {
     if(w.waitStatus == Node.CONDITION)                
                 ++n;
-            } 
+            } //End block
             int var7B8B965AD4BCA0E41AB51DE7B31363A1_1022345429 = (n);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859920146 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1859920146;
-            
-            
-                
-            
-            
-                
-                    
-            
-            
+            // ---------- Original Method ----------
+            //if (!isHeldExclusively())
+                //throw new IllegalMonitorStateException();
+            //int n = 0;
+            //for (Node w = firstWaiter; w != null; w = w.nextWaiter) {
+                //if (w.waitStatus == Node.CONDITION)
+                    //++n;
+            //}
+            //return n;
         }
 
         
@@ -1996,23 +1969,23 @@ for(Node w = firstWaiter;w != null;w = w.nextWaiter)
                     Thread t = w.thread;
     if(t != null)                    
                     list.add(t);
-                } 
-            } 
+                } //End block
+            } //End block
 Collection<Thread> varED12C351C2E8CA4F85F097DDC7E77B4D_1477798630 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_1477798630.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_1477798630;
-            
-            
-                
-            
-            
-                
-                    
-                    
-                        
-                
-            
-            
+            // ---------- Original Method ----------
+            //if (!isHeldExclusively())
+                //throw new IllegalMonitorStateException();
+            //ArrayList<Thread> list = new ArrayList<Thread>();
+            //for (Node w = firstWaiter; w != null; w = w.nextWaiter) {
+                //if (w.waitStatus == Node.CONDITION) {
+                    //Thread t = w.thread;
+                    //if (t != null)
+                        //list.add(t);
+                //}
+            //}
+            //return list;
         }
 
         

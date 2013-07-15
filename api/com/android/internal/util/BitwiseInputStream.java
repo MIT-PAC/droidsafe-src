@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,21 +21,20 @@ public class BitwiseInputStream {
         mBuf = buf;
         mEnd = buf.length << 3;
         mPos = 0;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //mBuf = buf;
+        //mEnd = buf.length << 3;
+        //mPos = 0;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.634 -0400", hash_original_method = "66AE1F5CE6A7D22DCB733CBBD166C2BB", hash_generated_method = "7E7A07A0DF92F098FD4DE0543FBECE2C")
     public int available() {
         int var25F27EDFF759489C17F7B43F667E4B74_488341496 = (mEnd - mPos);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027636717 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027636717;
-        
-        
+        // ---------- Original Method ----------
+        //return mEnd - mPos;
     }
 
     
@@ -49,7 +48,7 @@ public class BitwiseInputStream {
                 "(pos " + mPos + ", end " + mEnd + ", bits " + bits + ")");
             var635B25830267C6E0D47AE07693F68C3D_1134798261.addTaint(taint);
             throw var635B25830267C6E0D47AE07693F68C3D_1134798261;
-        } 
+        } //End block
         int data = (mBuf[index] & 0xFF) << 8;
     if(offset < 8)        
         data |= mBuf[index + 1] & 0xFF;
@@ -59,19 +58,19 @@ public class BitwiseInputStream {
         int var8D777F385D3DFEC8815D20F7496026DC_1915790573 = (data);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1307113445 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1307113445;
-        
-        
-        
-        
-            
-                
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int index = mPos >>> 3;
+        //int offset = 16 - (mPos & 0x07) - bits;
+        //if ((bits < 0) || (bits > 8) || ((mPos + bits) > mEnd)) {
+            //throw new AccessException("illegal read " +
+                //"(pos " + mPos + ", end " + mEnd + ", bits " + bits + ")");
+        //}
+        //int data = (mBuf[index] & 0xFF) << 8;
+        //if (offset < 8) data |= mBuf[index + 1] & 0xFF;
+        //data >>>= offset;
+        //data &= (-1 >>> (32 - bits));
+        //mPos += bits;
+        //return data;
     }
 
     
@@ -84,18 +83,18 @@ for(int i = 0;i < bytes;i++)
         {
             int increment = Math.min(8, bits - (i << 3));
             arr[i] = (byte)(read(increment) << (8 - increment));
-        } 
+        } //End block
         byte[] var47C80780AB608CC046F2A6E6F071FEB6_1805594390 = (arr);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1407028046 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1407028046;
-        
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int bytes = (bits >>> 3) + ((bits & 0x07) > 0 ? 1 : 0);
+        //byte[] arr = new byte[bytes];
+        //for (int i = 0; i < bytes; i++) {
+            //int increment = Math.min(8, bits - (i << 3));
+            //arr[i] = (byte)(read(increment) << (8 - increment));
+        //}
+        //return arr;
     }
 
     
@@ -107,14 +106,14 @@ for(int i = 0;i < bytes;i++)
                 "(pos " + mPos + ", end " + mEnd + ", bits " + bits + ")");
             var42D2745CCAC04127197A5AC7D4F10A02_616394665.addTaint(taint);
             throw var42D2745CCAC04127197A5AC7D4F10A02_616394665;
-        } 
+        } //End block
         mPos += bits;
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if ((mPos + bits) > mEnd) {
+            //throw new AccessException("illegal skip " +
+                //"(pos " + mPos + ", end " + mEnd + ", bits " + bits + ")");
+        //}
+        //mPos += bits;
     }
 
     
@@ -124,7 +123,7 @@ for(int i = 0;i < bytes;i++)
         public  AccessException(String s) {
             super("BitwiseInputStream access failed: " + s);
             addTaint(s.getTaint());
-            
+            // ---------- Original Method ----------
         }
 
         

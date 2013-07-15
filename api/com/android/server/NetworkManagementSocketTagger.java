@@ -1,6 +1,6 @@
 package com.android.server;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.336 -0400", hash_original_method = "00C0D10B5E2369FA378DABF797EE6BED", hash_generated_method = "00C0D10B5E2369FA378DABF797EE6BED")
     public NetworkManagementSocketTagger ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -55,15 +55,15 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         {
             Log.d(TAG, "tagSocket(" + fd.getInt$() + ") with statsTag=0x"
                     + Integer.toHexString(options.statsTag) + ", statsUid=" + options.statsUid);
-        } 
+        } //End block
         tagSocketFd(fd, options.statsTag, options.statsUid);
-        
-        
-        
-            
-                    
-        
-        
+        // ---------- Original Method ----------
+        //final SocketTags options = threadSocketTags.get();
+        //if (LOGD) {
+            //Log.d(TAG, "tagSocket(" + fd.getInt$() + ") with statsTag=0x"
+                    //+ Integer.toHexString(options.statsTag) + ", statsUid=" + options.statsUid);
+        //}
+        //tagSocketFd(fd, options.statsTag, options.statsUid);
     }
 
     
@@ -78,16 +78,16 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         errno = native_tagSocketFd(fd, tag, uid);
     if(errno < 0)        
         {
-        } 
-        
-        
-        
-        
-        
-            
-                  
-                  
-        
+        } //End block
+        // ---------- Original Method ----------
+        //int errno;
+        //if (tag == -1 && uid == -1) return;
+        //errno = native_tagSocketFd(fd, tag, uid);
+        //if (errno < 0) {
+            //Log.i(TAG, "tagSocketFd(" + fd.getInt$() + ", "
+                  //+ tag + ", " +
+                  //+ uid + ") failed with errno" + errno);
+        //}
     }
 
     
@@ -97,13 +97,13 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         addTaint(fd.getTaint());
     if(LOGD)        
         {
-        } 
+        } //End block
         unTagSocketFd(fd);
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (LOGD) {
+            //Log.i(TAG, "untagSocket(" + fd.getInt$() + ")");
+        //}
+        //unTagSocketFd(fd);
     }
 
     
@@ -117,15 +117,15 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         errno = native_untagSocketFd(fd);
     if(errno < 0)        
         {
-        } 
-        
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //final SocketTags options = threadSocketTags.get();
+        //int errno;
+        //if (options.statsTag == -1 && options.statsUid == -1) return;
+        //errno = native_untagSocketFd(fd);
+        //if (errno < 0) {
+            //Log.w(TAG, "untagSocket(" + fd.getInt$() + ") failed with errno " + errno);
+        //}
     }
 
     
@@ -185,7 +185,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.344 -0400", hash_original_method = "9733D1794190B487674895963987601C", hash_generated_method = "9733D1794190B487674895963987601C")
         public SocketTags ()
         {
-            
+            //Synthesized constructor
         }
 
 

@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -81,24 +81,24 @@ public class ApnSetting {
         this.roamingProtocol = roamingProtocol;
         this.carrierEnabled = carrierEnabled;
         this.bearer = bearer;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.id = id;
+        //this.numeric = numeric;
+        //this.carrier = carrier;
+        //this.apn = apn;
+        //this.proxy = proxy;
+        //this.port = port;
+        //this.mmsc = mmsc;
+        //this.mmsProxy = mmsProxy;
+        //this.mmsPort = mmsPort;
+        //this.user = user;
+        //this.password = password;
+        //this.authType = authType;
+        //this.types = types;
+        //this.protocol = protocol;
+        //this.roamingProtocol = roamingProtocol;
+        //this.carrierEnabled = carrierEnabled;
+        //this.bearer = bearer;
     }
 
     
@@ -171,8 +171,8 @@ for(int i = 0;i < types.length;i++)
     if(i < types.length - 1)            
             {
                 sb.append(" | ");
-            } 
-        } 
+            } //End block
+        } //End block
         sb.append(", ").append(protocol);
         sb.append(", ").append(roamingProtocol);
         sb.append(", ").append(carrierEnabled);
@@ -180,8 +180,8 @@ for(int i = 0;i < types.length;i++)
 String var2460B846747F8B22185AD8BE722266A5_44165301 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_44165301.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_44165301;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -197,20 +197,20 @@ for(String t : types)
                 boolean varB326B5062B2F0E69046810717534CB09_1305608587 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_274884061 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_274884061;
-            } 
-        } 
+            } //End block
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1554464180 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1159665420 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1159665420;
-        
-        
-            
-                    
-                    
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //for (String t : types) {
+            //if (t.equals(type) || t.equals(Phone.APN_TYPE_ALL) ||
+                    //(t.equals(Phone.APN_TYPE_DEFAULT) &&
+                    //type.equals(Phone.APN_TYPE_HIPRI))) {
+                //return true;
+            //}
+        //}
+        //return false;
     }
 
     
@@ -226,9 +226,9 @@ for(String t : types)
         boolean var16EE280E18A7FF37820D23FDCEA22EBD_97381100 = ((this.toString().equals(o.toString())));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_780389478 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_780389478;
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (o instanceof ApnSetting == false) return false;
+        //return (this.toString().equals(o.toString()));
     }
 
     

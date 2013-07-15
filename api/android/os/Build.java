@@ -1,6 +1,6 @@
 package android.os;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class Build {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.899 -0400", hash_original_method = "F7D4D478B3FB8EE28A8245D7D32DBDD3", hash_generated_method = "F7D4D478B3FB8EE28A8245D7D32DBDD3")
     public Build ()
     {
-        
+        //Synthesized constructor
     }
 
 
@@ -20,14 +20,12 @@ public class Build {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static String getString(String property) {
+        private static String getString(String property) {
         return SystemProperties.get(property, UNKNOWN);
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static long getLong(String property) {
+        private static long getLong(String property) {
         try {
             return Long.parseLong(SystemProperties.get(property));
         } catch (NumberFormatException e) {
@@ -41,7 +39,7 @@ public class Build {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.901 -0400", hash_original_method = "36407A5836A03DF2FB40C80D8028F841", hash_generated_method = "36407A5836A03DF2FB40C80D8028F841")
         public VERSION ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -75,7 +73,7 @@ public class Build {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.902 -0400", hash_original_method = "0B6BCBBF45E050C1684E109EABF935A3", hash_generated_method = "0B6BCBBF45E050C1684E109EABF935A3")
         public VERSION_CODES ()
         {
-            
+            //Synthesized constructor
         }
 
 

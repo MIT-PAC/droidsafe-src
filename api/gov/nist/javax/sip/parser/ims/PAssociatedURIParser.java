@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class PAssociatedURIParser extends AddressParametersParser {
     public  PAssociatedURIParser(String associatedURI) {
         super(associatedURI);
         addTaint(associatedURI.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -35,7 +35,7 @@ public class PAssociatedURIParser extends AddressParametersParser {
     protected  PAssociatedURIParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -61,20 +61,20 @@ public class PAssociatedURIParser extends AddressParametersParser {
                 super.parse(associatedURI);
                 associatedURIList.add(associatedURI);
                 this.lexer.SPorHT();
-            } 
+            } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
 SIPHeader varDDC6C1063316592341175724BFC64CC4_543877935 =             associatedURIList;
             varDDC6C1063316592341175724BFC64CC4_543877935.addTaint(taint);
             return varDDC6C1063316592341175724BFC64CC4_543877935;
-        } 
+        } //End block
         finally 
         {
     if(debug)            
             dbg_leave("PAssociatedURIParser.parse");
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     

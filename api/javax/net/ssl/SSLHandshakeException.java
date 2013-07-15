@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class SSLHandshakeException extends SSLException {
     public  SSLHandshakeException(String reason) {
         super(reason);
         addTaint(reason.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -19,7 +19,7 @@ public class SSLHandshakeException extends SSLException {
     public  SSLHandshakeException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -28,7 +28,7 @@ public class SSLHandshakeException extends SSLException {
         super(reason, cause);
         addTaint(cause.getTaint());
         addTaint(reason.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

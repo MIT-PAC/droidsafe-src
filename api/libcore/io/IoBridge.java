@@ -1,6 +1,6 @@
 package libcore.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,7 +30,7 @@ public final class IoBridge {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.676 -0400", hash_original_method = "4BE9929C9EF4F07FA420F9178CCE2A9A", hash_generated_method = "1249D99A029C3582A74310C04E7ECC4A")
     private  IoBridge() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -198,8 +198,7 @@ public final class IoBridge {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws ErrnoException, SocketException {
+        private static Object getSocketOptionErrno(FileDescriptor fd, int option) throws ErrnoException, SocketException {
         switch (option) {
         case SocketOptions.IP_MULTICAST_IF:
             return Libcore.os.getsockoptInAddr(fd, IPPROTO_IP, IP_MULTICAST_IF);
@@ -239,14 +238,12 @@ public final class IoBridge {
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static boolean booleanFromInt(int i) {
+        private static boolean booleanFromInt(int i) {
         return (i != 0);
     }
 
     
-        @DSModeled(DSC.SAFE)
-    private static int booleanToInt(boolean b) {
+        private static int booleanToInt(boolean b) {
         return b ? 1 : 0;
     }
 

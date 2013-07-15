@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,14 +23,14 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
             NullPointerException var583B156DFC6C0D3E5E7C194136874CD3_1358198358 = new NullPointerException("string cannot be null");
             var583B156DFC6C0D3E5E7C194136874CD3_1358198358.addTaint(taint);
             throw var583B156DFC6C0D3E5E7C194136874CD3_1358198358;
-        } 
+        } //End block
         this.string = string;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (string == null)
+        //{
+            //throw new NullPointerException("string cannot be null");
+        //}
+        //this.string = string;
     }
 
     
@@ -40,22 +40,22 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
         try 
         {
             this.string = obj.getDERObject().getEncoded(ASN1Encodable.DER);
-        } 
+        } //End block
         catch (IOException e)
         {
             IllegalArgumentException var9B1477DE179542DA2A6D027531904C24_429036538 = new IllegalArgumentException("Error processing object : " + e.toString());
             var9B1477DE179542DA2A6D027531904C24_429036538.addTaint(taint);
             throw var9B1477DE179542DA2A6D027531904C24_429036538;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try
+        //{
+            //this.string = obj.getDERObject().getEncoded(ASN1Encodable.DER);
+        //}
+        //catch (IOException e)
+        //{
+            //throw new IllegalArgumentException("Error processing object : " + e.toString());
+        //}
     }
 
     
@@ -93,30 +93,28 @@ public abstract class ASN1OctetString extends ASN1Object implements ASN1OctetStr
 InputStream varFDCDB5E8FC538F264AC02353EB3C9F5D_283676052 =         new ByteArrayInputStream(string);
         varFDCDB5E8FC538F264AC02353EB3C9F5D_283676052.addTaint(taint);
         return varFDCDB5E8FC538F264AC02353EB3C9F5D_283676052;
-        
-        
+        // ---------- Original Method ----------
+        //return new ByteArrayInputStream(string);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.622 -0400", hash_original_method = "9D3ECD11646B7B9703C16B797DA8DA2E", hash_generated_method = "0C90AF6A4C84AF3BC3DA517C52D0335D")
     public ASN1OctetStringParser parser() {
 ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_510237722.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_510237722;
-        
-        
+        // ---------- Original Method ----------
+        //return this;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.622 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "0D1AB98C512BAE0C5485130A618C25ED")
     public byte[] getOctets() {
         byte[] varB45CFFE084DD3D20D928BEE85E7B0F21_236564180 = (string);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_642403043 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_642403043;
-        
-        
+        // ---------- Original Method ----------
+        //return string;
     }
 
     
@@ -125,8 +123,8 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         th
         int var8CC5DCD7A6E75AED57809811CBC104BF_1531730215 = (Arrays.hashCode(this.getOctets()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501475418 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501475418;
-        
-        
+        // ---------- Original Method ----------
+        //return Arrays.hashCode(this.getOctets());
     }
 
     
@@ -139,18 +137,18 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         th
             boolean var68934A3E9455FA72420237EB05902327_1857791416 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1001841550 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1001841550;
-        } 
+        } //End block
         ASN1OctetString other = (ASN1OctetString)o;
         boolean var38610FAC509F575427AAB91B42854553_1543013442 = (Arrays.areEqual(string, other.string));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1041442338 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1041442338;
-        
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (!(o instanceof ASN1OctetString))
+        //{
+            //return false;
+        //}
+        //ASN1OctetString  other = (ASN1OctetString)o;
+        //return Arrays.areEqual(string, other.string);
     }
 
     
@@ -159,8 +157,8 @@ ASN1OctetStringParser var72A74007B2BE62B849F475C7BDA4658B_510237722 =         th
 DERObject var637323B1C4EE7CAF17B2CD40E14254B5_383424228 =         this.getDERObject();
         var637323B1C4EE7CAF17B2CD40E14254B5_383424228.addTaint(taint);
         return var637323B1C4EE7CAF17B2CD40E14254B5_383424228;
-        
-        
+        // ---------- Original Method ----------
+        //return this.getDERObject();
     }
 
     
@@ -173,8 +171,8 @@ DERObject var637323B1C4EE7CAF17B2CD40E14254B5_383424228 =         this.getDERObj
 String var9E18392C58EAD0B1BFCF106787A98CB2_1487910992 =         "#"+new String(Hex.encode(string));
         var9E18392C58EAD0B1BFCF106787A98CB2_1487910992.addTaint(taint);
         return var9E18392C58EAD0B1BFCF106787A98CB2_1487910992;
-        
-        
+        // ---------- Original Method ----------
+        //return "#"+new String(Hex.encode(string));
     }
 
     

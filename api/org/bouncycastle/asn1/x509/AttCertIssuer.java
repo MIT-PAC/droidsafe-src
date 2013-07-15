@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,9 +24,9 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
         GeneralNames  names) {
         obj = names;
         choiceObj = obj.getDERObject();
-        
-        
-        
+        // ---------- Original Method ----------
+        //obj = names;
+        //choiceObj = obj.getDERObject();
     }
 
     
@@ -35,9 +35,9 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
         V2Form  v2Form) {
         obj = v2Form;
         choiceObj = new DERTaggedObject(false, 0, obj);
-        
-        
-        
+        // ---------- Original Method ----------
+        //obj = v2Form;
+        //choiceObj = new DERTaggedObject(false, 0, obj);
     }
 
     
@@ -67,33 +67,30 @@ public class AttCertIssuer extends ASN1Encodable implements ASN1Choice {
     }
 
     
-        @DSModeled(DSC.SPEC)
-    public static AttCertIssuer getInstance(
+        public static AttCertIssuer getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(obj.getObject());
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.906 -0400", hash_original_method = "B549CE271C623D3D9A432BB134D69900", hash_generated_method = "5EC8E899FEA889DE12C87545F3968D87")
     public ASN1Encodable getIssuer() {
 ASN1Encodable var2FDE1120F80AA4E8798ECDBDB1C0E85C_2112963885 =         obj;
         var2FDE1120F80AA4E8798ECDBDB1C0E85C_2112963885.addTaint(taint);
         return var2FDE1120F80AA4E8798ECDBDB1C0E85C_2112963885;
-        
-        
+        // ---------- Original Method ----------
+        //return obj;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.906 -0400", hash_original_method = "6A55D157378C948D2010903EFE111848", hash_generated_method = "031DAE15B62771B38D02616E545057BE")
     public DERObject toASN1Object() {
 DERObject var571917243FE92790CF9D7FC105A4CF06_2109226731 =         choiceObj;
         var571917243FE92790CF9D7FC105A4CF06_2109226731.addTaint(taint);
         return var571917243FE92790CF9D7FC105A4CF06_2109226731;
-        
-        
+        // ---------- Original Method ----------
+        //return choiceObj;
     }
 
     

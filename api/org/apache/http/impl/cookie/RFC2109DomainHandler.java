@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.674 -0400", hash_original_method = "BA3C0693A4254304D076B6F4F238BB9F", hash_generated_method = "792C59D9D2B3A1BF306F01640B547EEC")
     public  RFC2109DomainHandler() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -29,31 +29,31 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_898470496 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_898470496.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_898470496;
-        } 
+        } //End block
     if(value == null)        
         {
             MalformedCookieException var0F112B9FC8E3827692FDE0884407A29E_1155738371 = new MalformedCookieException("Missing value for domain attribute");
             var0F112B9FC8E3827692FDE0884407A29E_1155738371.addTaint(taint);
             throw var0F112B9FC8E3827692FDE0884407A29E_1155738371;
-        } 
+        } //End block
     if(value.trim().length() == 0)        
         {
             MalformedCookieException var07BAB46695E7C8E84A0A4107E34A960E_693297498 = new MalformedCookieException("Blank value for domain attribute");
             var07BAB46695E7C8E84A0A4107E34A960E_693297498.addTaint(taint);
             throw var07BAB46695E7C8E84A0A4107E34A960E_693297498;
-        } 
+        } //End block
         cookie.setDomain(value);
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (value == null) {
+            //throw new MalformedCookieException("Missing value for domain attribute");
+        //}
+        //if (value.trim().length() == 0) {
+            //throw new MalformedCookieException("Blank value for domain attribute");
+        //}
+        //cookie.setDomain(value);
     }
 
     
@@ -66,13 +66,13 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1313586556 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_1313586556.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_1313586556;
-        } 
+        } //End block
     if(origin == null)        
         {
             IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1868421910 = new IllegalArgumentException("Cookie origin may not be null");
             var4264914F0057BA70A0B3E6621821A095_1868421910.addTaint(taint);
             throw var4264914F0057BA70A0B3E6621821A095_1868421910;
-        } 
+        } //End block
         String host = origin.getHost();
         String domain = cookie.getDomain();
     if(domain == null)        
@@ -80,7 +80,7 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
             MalformedCookieException varB79BAE8CA7273A58873D2185EA314BFC_1143123475 = new MalformedCookieException("Cookie domain may not be null");
             varB79BAE8CA7273A58873D2185EA314BFC_1143123475.addTaint(taint);
             throw varB79BAE8CA7273A58873D2185EA314BFC_1143123475;
-        } 
+        } //End block
     if(!domain.equals(host))        
         {
             int dotIndex = domain.indexOf('.');
@@ -92,7 +92,7 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
                         + host + "\"");
                 var5487B9380B0162AA1731440DD7D7F72B_849767486.addTaint(taint);
                 throw var5487B9380B0162AA1731440DD7D7F72B_849767486;
-            } 
+            } //End block
     if(!domain.startsWith("."))            
             {
                 MalformedCookieException varD428D8CA28CF5E845B8B1F2D64794B22_1741013666 = new MalformedCookieException("Domain attribute \"" 
@@ -100,7 +100,7 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
                     + "\" violates RFC 2109: domain must start with a dot");
                 varD428D8CA28CF5E845B8B1F2D64794B22_1741013666.addTaint(taint);
                 throw varD428D8CA28CF5E845B8B1F2D64794B22_1741013666;
-            } 
+            } //End block
             dotIndex = domain.indexOf('.', 1);
     if(dotIndex < 0 || dotIndex == domain.length() - 1)            
             {
@@ -109,7 +109,7 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
                     + "\" violates RFC 2109: domain must contain an embedded dot");
                 var9E36F9F251E2C732FCF402CB91D56DF0_1276667888.addTaint(taint);
                 throw var9E36F9F251E2C732FCF402CB91D56DF0_1276667888;
-            } 
+            } //End block
             host = host.toLowerCase(Locale.ENGLISH);
     if(!host.endsWith(domain))            
             {
@@ -118,7 +118,7 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
                     + "\". Domain of origin: \"" + host + "\"");
                 var1FAEB6A838498A08609AB07AF40CFFB3_216325164.addTaint(taint);
                 throw var1FAEB6A838498A08609AB07AF40CFFB3_216325164;
-            } 
+            } //End block
             String hostWithoutDomain = host.substring(0, host.length() - domain.length());
     if(hostWithoutDomain.indexOf('.') != -1)            
             {
@@ -127,10 +127,10 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
                     + "\" violates RFC 2109: host minus domain may not contain any dots");
                 var36C877C5664221807621883D47CF8378_1424547470.addTaint(taint);
                 throw var36C877C5664221807621883D47CF8378_1424547470;
-            } 
-        } 
-        
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -143,13 +143,13 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1008002227 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_1008002227.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_1008002227;
-        } 
+        } //End block
     if(origin == null)        
         {
             IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1698418837 = new IllegalArgumentException("Cookie origin may not be null");
             var4264914F0057BA70A0B3E6621821A095_1698418837.addTaint(taint);
             throw var4264914F0057BA70A0B3E6621821A095_1698418837;
-        } 
+        } //End block
         String host = origin.getHost();
         String domain = cookie.getDomain();
     if(domain == null)        
@@ -157,23 +157,23 @@ public class RFC2109DomainHandler implements CookieAttributeHandler {
             boolean var68934A3E9455FA72420237EB05902327_81307792 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_721715947 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_721715947;
-        } 
+        } //End block
         boolean var6FCDBCB2A83BA8F68B4434B5341CE458_1296282902 = (host.equals(domain) || (domain.startsWith(".") && host.endsWith(domain)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1183108892 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1183108892;
-        
-        
-            
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (cookie == null) {
+            //throw new IllegalArgumentException("Cookie may not be null");
+        //}
+        //if (origin == null) {
+            //throw new IllegalArgumentException("Cookie origin may not be null");
+        //}
+        //String host = origin.getHost();
+        //String domain = cookie.getDomain();
+        //if (domain == null) {
+            //return false;
+        //}
+        //return host.equals(domain) || (domain.startsWith(".") && host.endsWith(domain));
     }
 
     

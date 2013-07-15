@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,21 +30,20 @@ public final class DistributionPoint {
             IllegalArgumentException var141D50D58609ADD06333C2F3C72AB4B1_371429520 = new IllegalArgumentException("DistributionPoint MUST NOT consist of only the reasons field");
             var141D50D58609ADD06333C2F3C72AB4B1_371429520.addTaint(taint);
             throw var141D50D58609ADD06333C2F3C72AB4B1_371429520;
-        } 
+        } //End block
         this.distributionPoint = distributionPoint;
         this.reasons = reasons;
         this.cRLIssuer = cRLIssuer;
-        
-        
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if ((reasons != null) && (distributionPoint == null) && (cRLIssuer == null)) {
+            //throw new IllegalArgumentException("DistributionPoint MUST NOT consist of only the reasons field");
+        //}
+        //this.distributionPoint = distributionPoint;
+        //this.reasons = reasons;
+        //this.cRLIssuer = cRLIssuer;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.850 -0400", hash_original_method = "190306EE5A9877A74E1ACB7BA25B44A2", hash_generated_method = "54A92BC0FCF911B832C85EF5A82E2F11")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());
@@ -54,11 +53,11 @@ public final class DistributionPoint {
     if(distributionPoint != null)        
         {
             distributionPoint.dumpValue(sb, prefix + "  ");
-        } 
+        } //End block
     if(reasons != null)        
         {
             reasons.dumpValue(sb, prefix + "  ");
-        } 
+        } //End block
     if(cRLIssuer != null)        
         {
             sb.append(prefix);
@@ -66,27 +65,27 @@ public final class DistributionPoint {
             cRLIssuer.dumpValue(sb, prefix + "    ");
             sb.append(prefix);
             sb.append("  ]\n");
-        } 
+        } //End block
         sb.append(prefix);
         sb.append("]\n");
-        
-        
-        
-        
-            
-        
-        
-            
-        
-        
-            
-            
-            
-            
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //sb.append(prefix);
+        //sb.append("Distribution Point: [\n");
+        //if (distributionPoint != null) {
+            //distributionPoint.dumpValue(sb, prefix + "  ");
+        //}
+        //if (reasons != null) {
+            //reasons.dumpValue(sb, prefix + "  ");
+        //}
+        //if (cRLIssuer != null) {
+            //sb.append(prefix);
+            //sb.append("  CRL Issuer: [\n");
+            //cRLIssuer.dumpValue(sb, prefix + "    ");
+            //sb.append(prefix);
+            //sb.append("  ]\n");
+        //}
+        //sb.append(prefix);
+        //sb.append("]\n");
     }
 
     

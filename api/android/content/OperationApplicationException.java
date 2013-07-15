@@ -1,6 +1,6 @@
 package android.content;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public class OperationApplicationException extends Exception {
     public  OperationApplicationException() {
         super();
         mNumSuccessfulYieldPoints = 0;
-        
-        
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = 0;
     }
 
     
@@ -24,8 +24,8 @@ public class OperationApplicationException extends Exception {
         super(message);
         addTaint(message.getTaint());
         mNumSuccessfulYieldPoints = 0;
-        
-        
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = 0;
     }
 
     
@@ -35,8 +35,8 @@ public class OperationApplicationException extends Exception {
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
         mNumSuccessfulYieldPoints = 0;
-        
-        
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = 0;
     }
 
     
@@ -45,8 +45,8 @@ public class OperationApplicationException extends Exception {
         super(cause);
         addTaint(cause.getTaint());
         mNumSuccessfulYieldPoints = 0;
-        
-        
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = 0;
     }
 
     
@@ -54,8 +54,8 @@ public class OperationApplicationException extends Exception {
     public  OperationApplicationException(int numSuccessfulYieldPoints) {
         super();
         mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
-        
-        
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }
 
     
@@ -64,19 +64,18 @@ public class OperationApplicationException extends Exception {
         super(message);
         addTaint(message.getTaint());
         mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
-        
-        
+        // ---------- Original Method ----------
+        //mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.216 -0400", hash_original_method = "0D03973B4F1A76863E3DF446BDE01596", hash_generated_method = "3133049EFC196CBF1EAEA3562AA75E92")
     public int getNumSuccessfulYieldPoints() {
         int var11FC6C9D498EE8CC3E52A83CA9847515_905803450 = (mNumSuccessfulYieldPoints);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744210428 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744210428;
-        
-        
+        // ---------- Original Method ----------
+        //return mNumSuccessfulYieldPoints;
     }
 
     

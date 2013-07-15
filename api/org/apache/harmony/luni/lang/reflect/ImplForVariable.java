@@ -1,6 +1,6 @@
 package org.apache.harmony.luni.lang.reflect;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,12 +34,12 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
         this.bounds = bounds;
         this.formalVar = this;
         this.declOfVarUser = null;
-        
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.genericDeclaration = genericDecl;
+        //this.name = name;
+        //this.bounds = bounds;
+        //this.formalVar = this;
+        //this.declOfVarUser = null;
     }
 
     
@@ -47,9 +47,9 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
       ImplForVariable(D genericDecl, String name) {
         this.name = name;
         this.declOfVarUser = genericDecl;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.name = name;
+        //this.declOfVarUser = genericDecl;
     }
 
     
@@ -62,19 +62,19 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
             boolean var68934A3E9455FA72420237EB05902327_1712218605 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687013908 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_687013908;
-        } 
+        } //End block
         TypeVariable<?> that = (TypeVariable<?>) o;
         boolean var28F60F048D2660E5E234209FE6F3558A_1348335388 = (getName().equals(that.getName()) &&
                 getGenericDeclaration().equals(that.getGenericDeclaration()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831506882 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831506882;
-        
-        
-            
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //if(!(o instanceof TypeVariable)) {
+            //return false;
+        //}
+        //TypeVariable<?> that = (TypeVariable<?>) o;
+        //return getName().equals(that.getName()) &&
+                //getGenericDeclaration().equals(that.getGenericDeclaration());
     }
 
     
@@ -84,13 +84,12 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
         int var612E142C52816878DF7B2206464ECBB2_1104503757 = (31 * getName().hashCode() + getGenericDeclaration().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_193374506 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_193374506;
-        
-        
+        // ---------- Original Method ----------
+        //return 31 * getName().hashCode() + getGenericDeclaration().hashCode();
     }
 
     
-        @DSModeled(DSC.SPEC)
-    static TypeVariable findFormalVar(GenericDeclaration layer, String name) {
+        static TypeVariable findFormalVar(GenericDeclaration layer, String name) {
         TypeVariable[] formalVars = layer.getTypeParameters();
         for (TypeVariable var : formalVars) {
             if (name.equals(var.getName())) {
@@ -128,7 +127,7 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
     if(formalVar != null)        
         {
             return;
-        } 
+        } //End block
         GenericDeclaration curLayer = declOfVarUser;
         TypeVariable var;
         while
@@ -140,26 +139,26 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
                 AssertionError var1927BC3C0E63186AB163EB47890FC60D_316725171 = new AssertionError("illegal type variable reference");
                 var1927BC3C0E63186AB163EB47890FC60D_316725171.addTaint(taint);
                 throw var1927BC3C0E63186AB163EB47890FC60D_316725171;
-            } 
-        } 
+            } //End block
+        } //End block
         formalVar = (ImplForVariable<D>) var;
         this.genericDeclaration = formalVar.genericDeclaration;
         this.bounds = formalVar.bounds;
-        
-        
-            
-        
-        
-        
-        
-            
-            
-                
-            
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (formalVar != null) {
+            //return;
+        //}
+        //GenericDeclaration curLayer = declOfVarUser;
+        //TypeVariable var;
+        //while ((var = findFormalVar(curLayer, name)) == null) {
+            //curLayer = nextLayer(curLayer);
+            //if (curLayer == null) {
+                //throw new AssertionError("illegal type variable reference");
+            //}
+        //}
+        //formalVar = (ImplForVariable<D>) var;
+        //this.genericDeclaration = formalVar.genericDeclaration;
+        //this.bounds = formalVar.bounds;
     }
 
     
@@ -169,9 +168,9 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
 Type[] varD218C9A70ACBE6735DB6C2DBDABF35B2_1213641096 =         bounds.getResolvedTypes().clone();
         varD218C9A70ACBE6735DB6C2DBDABF35B2_1213641096.addTaint(taint);
         return varD218C9A70ACBE6735DB6C2DBDABF35B2_1213641096;
-        
-        
-        
+        // ---------- Original Method ----------
+        //resolve();
+        //return bounds.getResolvedTypes().clone();
     }
 
     
@@ -181,32 +180,30 @@ Type[] varD218C9A70ACBE6735DB6C2DBDABF35B2_1213641096 =         bounds.getResolv
 D var409EE86EA9754D59CEC235E861B25783_1397923642 =         genericDeclaration;
         var409EE86EA9754D59CEC235E861B25783_1397923642.addTaint(taint);
         return var409EE86EA9754D59CEC235E861B25783_1397923642;
-        
-        
-        
+        // ---------- Original Method ----------
+        //resolve();
+        //return genericDeclaration;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.321 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "4E26347D1D250FA223E9ADDD26124BC7")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_825248104 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_825248104.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_825248104;
-        
-        
+        // ---------- Original Method ----------
+        //return name;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.322 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "F08E286C412EBCDF60E9DD262AC5C359")
     @Override
     public String toString() {
 String varB017984728AC60AD1F0BF8734F33F15C_1646415731 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_1646415731.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_1646415731;
-        
-        
+        // ---------- Original Method ----------
+        //return name;
     }
 
     

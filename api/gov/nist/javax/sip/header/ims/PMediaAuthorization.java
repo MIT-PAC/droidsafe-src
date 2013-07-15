@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,18 +19,17 @@ public class PMediaAuthorization extends SIPHeader implements PMediaAuthorizatio
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.990 -0400", hash_original_method = "33816D631C77F21B21E54BBEFDA2795C", hash_generated_method = "1DDFAEE2CC3B34FAA95C12E411F347A6")
     public  PMediaAuthorization() {
         super(P_MEDIA_AUTHORIZATION);
-        
+        // ---------- Original Method ----------
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.991 -0400", hash_original_method = "F23C2C2B4085CBC596D4F9DFFD38C718", hash_generated_method = "E8ACE36B966CA029FF70F4BA456265FE")
     public String getToken() {
 String var84AE1F94A3CF2A5D8DE4571F3693A75E_1268260021 =         token;
         var84AE1F94A3CF2A5D8DE4571F3693A75E_1268260021.addTaint(taint);
         return var84AE1F94A3CF2A5D8DE4571F3693A75E_1268260021;
-        
-        
+        // ---------- Original Method ----------
+        //return token;
     }
 
     
@@ -43,21 +42,20 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_1268260021 =         token;
         throw var56D3082022A16E24CCCE1D9BFE8B50A6_571985690;
         }
         this.token = token;
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //if (token == null || token.length() == 0)
+            //throw new InvalidArgumentException(" the Media-Authorization-Token parameter is null or empty");
+        //this.token = token;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.992 -0400", hash_original_method = "724D317C37CE304AAB82EB39D5595B30", hash_generated_method = "43349C24805A9938842D705C98DE7EA0")
     protected String encodeBody() {
 String var84AE1F94A3CF2A5D8DE4571F3693A75E_1206867403 =         token;
         var84AE1F94A3CF2A5D8DE4571F3693A75E_1206867403.addTaint(taint);
         return var84AE1F94A3CF2A5D8DE4571F3693A75E_1206867403;
-        
-        
+        // ---------- Original Method ----------
+        //return token;
     }
 
     
@@ -67,8 +65,8 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_1206867403 =         token;
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1849182476 = new ParseException (value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_1849182476.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_1849182476;
-        
-        
+        // ---------- Original Method ----------
+        //throw new ParseException (value,0);
     }
 
     
@@ -81,17 +79,17 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_1206867403 =         token;
             boolean var8D046F12F8218E7BB85C50C05C4768EC_1759589134 = (this.getToken().equals(o.getToken()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_85833492 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_85833492;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_1362647855 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1897387252 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1897387252;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (other instanceof PMediaAuthorizationHeader)
+        //{
+            //final PMediaAuthorizationHeader o = (PMediaAuthorizationHeader) other;
+            //return this.getToken().equals(o.getToken());
+        //}
+        //return false;
     }
 
     
@@ -103,11 +101,11 @@ String var84AE1F94A3CF2A5D8DE4571F3693A75E_1206867403 =         token;
 Object varF9E19AD6135C970F387F77C6F3DE4477_892304567 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_892304567.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_892304567;
-        
-        
-        
-            
-        
+        // ---------- Original Method ----------
+        //PMediaAuthorization retval = (PMediaAuthorization) super.clone();
+        //if (this.token != null)
+            //retval.token = this.token;
+        //return retval;
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.entity;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,19 +23,18 @@ public class BasicHttpEntity extends AbstractHttpEntity {
     public  BasicHttpEntity() {
         super();
         this.length = -1;
-        
-        
+        // ---------- Original Method ----------
+        //this.length = -1;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.909 -0400", hash_original_method = "120309BFFDD6935F8B30886147626A04", hash_generated_method = "33FC07BEA39541E8F3B08BB5B7D0C19E")
     public long getContentLength() {
         long varB9E8DC303FCECCA10418D2C0EA295E0F_1223747027 = (this.length);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1903109830 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1903109830;
-        
-        
+        // ---------- Original Method ----------
+        //return this.length;
     }
 
     
@@ -46,46 +45,44 @@ public class BasicHttpEntity extends AbstractHttpEntity {
             IllegalStateException varEB19220DAA75124884B5A5F0A5B1358C_1651246723 = new IllegalStateException("Content has not been provided");
             varEB19220DAA75124884B5A5F0A5B1358C_1651246723.addTaint(taint);
             throw varEB19220DAA75124884B5A5F0A5B1358C_1651246723;
-        } 
+        } //End block
     if(this.contentObtained)        
         {
             IllegalStateException var55F452EC1C6805B1D6D5FE9B207E920E_1726669234 = new IllegalStateException("Content has been consumed");
             var55F452EC1C6805B1D6D5FE9B207E920E_1726669234.addTaint(taint);
             throw var55F452EC1C6805B1D6D5FE9B207E920E_1726669234;
-        } 
+        } //End block
         this.contentObtained = true;
 InputStream var5B4E22E160A1A738CCEDC8C85B064397_740156502 =         this.content;
         var5B4E22E160A1A738CCEDC8C85B064397_740156502.addTaint(taint);
         return var5B4E22E160A1A738CCEDC8C85B064397_740156502;
-        
-        
-            
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (this.content == null) {
+            //throw new IllegalStateException("Content has not been provided");
+        //}
+        //if (this.contentObtained) {
+            //throw new IllegalStateException("Content has been consumed");
+        //}
+        //this.contentObtained = true;
+        //return this.content;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.909 -0400", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "BC3D1E3030BCD68EEEDCA682D5BD4D9D")
     public boolean isRepeatable() {
         boolean var68934A3E9455FA72420237EB05902327_1240155539 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_145594873 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_145594873;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.910 -0400", hash_original_method = "7EB1D34B8B79AC60227ACAB040078324", hash_generated_method = "727B385E1B6CC2143FAFA858B4B3D854")
     public void setContentLength(long len) {
         this.length = len;
-        
-        
+        // ---------- Original Method ----------
+        //this.length = len;
     }
 
     
@@ -93,9 +90,9 @@ InputStream var5B4E22E160A1A738CCEDC8C85B064397_740156502 =         this.content
     public void setContent(final InputStream instream) {
         this.content = instream;
         this.contentObtained = false;
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.content = instream;
+        //this.contentObtained = false;
     }
 
     
@@ -107,7 +104,7 @@ InputStream var5B4E22E160A1A738CCEDC8C85B064397_740156502 =         this.content
             IllegalArgumentException var8C9256F172D6E7DD26CC6F974ABC4716_1988826951 = new IllegalArgumentException("Output stream may not be null");
             var8C9256F172D6E7DD26CC6F974ABC4716_1988826951.addTaint(taint);
             throw var8C9256F172D6E7DD26CC6F974ABC4716_1988826951;
-        } 
+        } //End block
         InputStream instream = getContent();
         int l;
         byte[] tmp = new byte[2048];
@@ -115,28 +112,27 @@ InputStream var5B4E22E160A1A738CCEDC8C85B064397_740156502 =         this.content
 ((l = instream.read(tmp)) != -1)        
         {
             outstream.write(tmp, 0, l);
-        } 
-        
-        
-            
-        
-        
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (outstream == null) {
+            //throw new IllegalArgumentException("Output stream may not be null");
+        //}
+        //InputStream instream = getContent();
+        //int l;
+        //byte[] tmp = new byte[2048];
+        //while ((l = instream.read(tmp)) != -1) {
+            //outstream.write(tmp, 0, l);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.911 -0400", hash_original_method = "12B60AB15F5876110075CCE154554A33", hash_generated_method = "925641C1552B4ED7EEB8FBD08CC0D396")
     public boolean isStreaming() {
         boolean varB5BC9C92D105767A96B2D82FEBEBBB3B_803163231 = (!this.contentObtained && this.content != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1158499183 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1158499183;
-        
-        
+        // ---------- Original Method ----------
+        //return !this.contentObtained && this.content != null;
     }
 
     
@@ -145,11 +141,11 @@ InputStream var5B4E22E160A1A738CCEDC8C85B064397_740156502 =         this.content
     if(content != null)        
         {
             content.close();
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (content != null) {
+            //content.close(); 
+        //}
     }
 
     

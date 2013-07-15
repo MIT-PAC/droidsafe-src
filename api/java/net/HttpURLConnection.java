@@ -1,6 +1,6 @@
 package java.net;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,26 +33,24 @@ public abstract class HttpURLConnection extends URLConnection {
     protected  HttpURLConnection(URL url) {
         super(url);
         addTaint(url.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
     public abstract void disconnect();
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.633 -0400", hash_original_method = "6640096D2D877ED3E740627246DA5AF9", hash_generated_method = "D2341046568443B0BEF7940FF8554A9B")
     public InputStream getErrorStream() {
 InputStream var540C13E9E156B687226421B24F2DF178_884940104 =         null;
         var540C13E9E156B687226421B24F2DF178_884940104.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_884940104;
-        
-        
+        // ---------- Original Method ----------
+        //return null;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static boolean getFollowRedirects() {
+        public static boolean getFollowRedirects() {
         return followRedirects;
     }
 
@@ -64,29 +62,28 @@ InputStream var540C13E9E156B687226421B24F2DF178_884940104 =         null;
     if(port < 0)        
         {
             port = 80;
-        } 
+        } //End block
 java.security.Permission varB773738882167D3068FEA8E0693C1D1A_1450251912 =         new SocketPermission(url.getHost() + ":" + port,
                 "connect, resolve");
         varB773738882167D3068FEA8E0693C1D1A_1450251912.addTaint(taint);
         return varB773738882167D3068FEA8E0693C1D1A_1450251912;
-        
-        
-        
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //int port = url.getPort();
+        //if (port < 0) {
+            //port = 80;
+        //}
+        //return new SocketPermission(url.getHost() + ":" + port,
+                //"connect, resolve");
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.634 -0400", hash_original_method = "0D9C6E3C645DAD49E763E30DD315D3EF", hash_generated_method = "0BAD1A268720A17222B7799538EF8150")
     public String getRequestMethod() {
 String var27E3C5B2D4A798771E5F53D6527EECD0_913008365 =         method;
         var27E3C5B2D4A798771E5F53D6527EECD0_913008365.addTaint(taint);
         return var27E3C5B2D4A798771E5F53D6527EECD0_913008365;
-        
-        
+        // ---------- Original Method ----------
+        //return method;
     }
 
     
@@ -99,7 +96,7 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_913008365 =         method;
             int var6BB61E3B7BCE0931DA574D19D1D82C88_649872524 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_761599530 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_761599530;
-        } 
+        } //End block
         response = response.trim();
         int mark = response.indexOf(" ") + 1;
     if(mark == 0)        
@@ -107,40 +104,40 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_913008365 =         method;
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1910983376 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418097484 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418097484;
-        } 
+        } //End block
         int last = mark + 3;
     if(last > response.length())        
         {
             last = response.length();
-        } 
+        } //End block
         responseCode = Integer.parseInt(response.substring(mark, last));
     if(last + 1 <= response.length())        
         {
             responseMessage = response.substring(last + 1);
-        } 
+        } //End block
         int var30F8CC0A3AD81545F79B55CD4A8D8C8E_203361257 = (responseCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730516491 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730516491;
-        
-        
-        
-        
-            
-        
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //getInputStream();
+        //String response = getHeaderField(0);
+        //if (response == null) {
+            //return -1;
+        //}
+        //response = response.trim();
+        //int mark = response.indexOf(" ") + 1;
+        //if (mark == 0) {
+            //return -1;
+        //}
+        //int last = mark + 3;
+        //if (last > response.length()) {
+            //last = response.length();
+        //}
+        //responseCode = Integer.parseInt(response.substring(mark, last));
+        //if (last + 1 <= response.length()) {
+            //responseMessage = response.substring(last + 1);
+        //}
+        //return responseCode;
     }
 
     
@@ -151,22 +148,21 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_913008365 =         method;
 String var0EA3F56E6B543F51FDF09BD18CE60D5C_788126377 =             responseMessage;
             var0EA3F56E6B543F51FDF09BD18CE60D5C_788126377.addTaint(taint);
             return var0EA3F56E6B543F51FDF09BD18CE60D5C_788126377;
-        } 
+        } //End block
         getResponseCode();
 String var0EA3F56E6B543F51FDF09BD18CE60D5C_1248841742 =         responseMessage;
         var0EA3F56E6B543F51FDF09BD18CE60D5C_1248841742.addTaint(taint);
         return var0EA3F56E6B543F51FDF09BD18CE60D5C_1248841742;
-        
-        
-            
-        
-        
-        
+        // ---------- Original Method ----------
+        //if (responseMessage != null) {
+            //return responseMessage;
+        //}
+        //getResponseCode();
+        //return responseMessage;
     }
 
     
-        @DSModeled(DSC.SAFE)
-    public static void setFollowRedirects(boolean auto) {
+        public static void setFollowRedirects(boolean auto) {
         followRedirects = auto;
     }
 
@@ -178,31 +174,31 @@ String var0EA3F56E6B543F51FDF09BD18CE60D5C_1248841742 =         responseMessage;
             ProtocolException varB6423A717568BBA89D85070594A5973A_138892394 = new ProtocolException("Connection already established");
             varB6423A717568BBA89D85070594A5973A_138892394.addTaint(taint);
             throw varB6423A717568BBA89D85070594A5973A_138892394;
-        } 
+        } //End block
 for(String permittedUserMethod : PERMITTED_USER_METHODS)
         {
     if(permittedUserMethod.equals(method))            
             {
                 this.method = permittedUserMethod;
                 return;
-            } 
-        } 
+            } //End block
+        } //End block
         ProtocolException var745FCF10B233548D766C61B42140A77C_1663373782 = new ProtocolException("Unknown method '" + method + "'; must be one of " +
                 Arrays.toString(PERMITTED_USER_METHODS));
         var745FCF10B233548D766C61B42140A77C_1663373782.addTaint(taint);
         throw var745FCF10B233548D766C61B42140A77C_1663373782;
-        
-        
-            
-        
-        
-            
-                
-                
-            
-        
-        
-                
+        // ---------- Original Method ----------
+        //if (connected) {
+            //throw new ProtocolException("Connection already established");
+        //}
+        //for (String permittedUserMethod : PERMITTED_USER_METHODS) {
+            //if (permittedUserMethod.equals(method)) {
+                //this.method = permittedUserMethod;
+                //return;
+            //}
+        //}
+        //throw new ProtocolException("Unknown method '" + method + "'; must be one of " +
+                //Arrays.toString(PERMITTED_USER_METHODS));
     }
 
     
@@ -215,28 +211,26 @@ for(String permittedUserMethod : PERMITTED_USER_METHODS)
 String var636F640217A2586C23C7303E786B88FE_795364853 =         super.getContentEncoding();
         var636F640217A2586C23C7303E786B88FE_795364853.addTaint(taint);
         return var636F640217A2586C23C7303E786B88FE_795364853;
-        
-        
+        // ---------- Original Method ----------
+        //return super.getContentEncoding();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.638 -0400", hash_original_method = "881D26516B84F6D6EEADB518A168ADE5", hash_generated_method = "6F35DD17A72A4B76F88BBD1C0329B8C4")
     public boolean getInstanceFollowRedirects() {
         boolean var2023E717DDE450AF2AE0C63A1BCD60DA_925016842 = (instanceFollowRedirects);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_668101721 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_668101721;
-        
-        
+        // ---------- Original Method ----------
+        //return instanceFollowRedirects;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.638 -0400", hash_original_method = "BB71B8E9C2D3F0EF20C7720F9E44016D", hash_generated_method = "A4E72D6C11951C7D0B323DF1D1093EEE")
     public void setInstanceFollowRedirects(boolean followRedirects) {
         instanceFollowRedirects = followRedirects;
-        
-        
+        // ---------- Original Method ----------
+        //instanceFollowRedirects = followRedirects;
     }
 
     
@@ -248,8 +242,8 @@ String var636F640217A2586C23C7303E786B88FE_795364853 =         super.getContentE
         long var76493ED3C4DE1E696F995CF6A64B9FC1_541063002 = (super.getHeaderFieldDate(field, defaultValue));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1593425977 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1593425977;
-        
-        
+        // ---------- Original Method ----------
+        //return super.getHeaderFieldDate(field, defaultValue);
     }
 
     
@@ -260,31 +254,31 @@ String var636F640217A2586C23C7303E786B88FE_795364853 =         super.getContentE
             IllegalStateException varA63B9CEF256810621025D7CDF0DCD664_1399617082 = new IllegalStateException("Already connected");
             varA63B9CEF256810621025D7CDF0DCD664_1399617082.addTaint(taint);
             throw varA63B9CEF256810621025D7CDF0DCD664_1399617082;
-        } 
+        } //End block
     if(chunkLength > 0)        
         {
             IllegalStateException varADDC73322BFBFE9BB5C51AE89B398106_490227938 = new IllegalStateException("Already in chunked mode");
             varADDC73322BFBFE9BB5C51AE89B398106_490227938.addTaint(taint);
             throw varADDC73322BFBFE9BB5C51AE89B398106_490227938;
-        } 
+        } //End block
     if(contentLength < 0)        
         {
             IllegalArgumentException var93585202CEC78E81C5BF1DA1E2D2B2AE_1894811352 = new IllegalArgumentException("contentLength < 0");
             var93585202CEC78E81C5BF1DA1E2D2B2AE_1894811352.addTaint(taint);
             throw var93585202CEC78E81C5BF1DA1E2D2B2AE_1894811352;
-        } 
+        } //End block
         this.fixedContentLength = contentLength;
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (super.connected) {
+            //throw new IllegalStateException("Already connected");
+        //}
+        //if (chunkLength > 0) {
+            //throw new IllegalStateException("Already in chunked mode");
+        //}
+        //if (contentLength < 0) {
+            //throw new IllegalArgumentException("contentLength < 0");
+        //}
+        //this.fixedContentLength = contentLength;
     }
 
     
@@ -295,33 +289,33 @@ String var636F640217A2586C23C7303E786B88FE_795364853 =         super.getContentE
             IllegalStateException varA63B9CEF256810621025D7CDF0DCD664_782859344 = new IllegalStateException("Already connected");
             varA63B9CEF256810621025D7CDF0DCD664_782859344.addTaint(taint);
             throw varA63B9CEF256810621025D7CDF0DCD664_782859344;
-        } 
+        } //End block
     if(fixedContentLength >= 0)        
         {
             IllegalStateException varE4FBACB36A7737DB40BE38159E39D020_519841597 = new IllegalStateException("Already in fixed-length mode");
             varE4FBACB36A7737DB40BE38159E39D020_519841597.addTaint(taint);
             throw varE4FBACB36A7737DB40BE38159E39D020_519841597;
-        } 
+        } //End block
     if(chunkLength <= 0)        
         {
             this.chunkLength = HttpEngine.DEFAULT_CHUNK_LENGTH;
-        } 
+        } //End block
         else
         {
             this.chunkLength = chunkLength;
-        } 
-        
-        
-            
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (super.connected) {
+            //throw new IllegalStateException("Already connected");
+        //}
+        //if (fixedContentLength >= 0) {
+            //throw new IllegalStateException("Already in fixed-length mode");
+        //}
+        //if (chunkLength <= 0) {
+            //this.chunkLength = HttpEngine.DEFAULT_CHUNK_LENGTH;
+        //} else {
+            //this.chunkLength = chunkLength;
+        //}
     }
 
     

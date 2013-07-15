@@ -1,6 +1,6 @@
 package java.io;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,7 +44,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     if(mode.equals("r"))        
         {
             flags = O_RDONLY;
-        } 
+        } //End block
         else
     if(mode.equals("rw") || mode.equals("rws") || mode.equals("rwd"))        
         {
@@ -52,19 +52,19 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     if(mode.equals("rws"))            
             {
                 syncMetadata = true;
-            } 
+            } //End block
             else
     if(mode.equals("rwd"))            
             {
                 flags |= O_SYNC;
-            } 
-        } 
+            } //End block
+        } //End block
         else
         {
             IllegalArgumentException varAC008075F2AF1E344EBFEE8ADEC436B5_1734787769 = new IllegalArgumentException("Invalid mode: " + mode);
             varAC008075F2AF1E344EBFEE8ADEC436B5_1734787769.addTaint(taint);
             throw varAC008075F2AF1E344EBFEE8ADEC436B5_1734787769;
-        } 
+        } //End block
         this.mode = flags;
         this.fd = IoBridge.open(file.getAbsolutePath(), flags);
     if(syncMetadata)        
@@ -72,35 +72,35 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
             try 
             {
                 fd.sync();
-            } 
+            } //End block
             catch (IOException e)
             {
-            } 
-        } 
+            } //End block
+        } //End block
         guard.open("close");
-        
-        
-        
-            
-        
-            
-            
-                
-            
-                
-            
-        
-            
-        
-        
-        
-        
-            
-                
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //int flags;
+        //if (mode.equals("r")) {
+            //flags = O_RDONLY;
+        //} else if (mode.equals("rw") || mode.equals("rws") || mode.equals("rwd")) {
+            //flags = O_RDWR | O_CREAT;
+            //if (mode.equals("rws")) {
+                //syncMetadata = true;
+            //} else if (mode.equals("rwd")) {
+                //flags |= O_SYNC;
+            //}
+        //} else {
+            //throw new IllegalArgumentException("Invalid mode: " + mode);
+        //}
+        //this.mode = flags;
+        //this.fd = IoBridge.open(file.getAbsolutePath(), flags);
+        //if (syncMetadata) {
+            //try {
+                //fd.sync();
+            //} catch (IOException e) {
+            //}
+        //}
+        //guard.open("close");
     }
 
     
@@ -109,7 +109,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         this(new File(fileName), mode);
         addTaint(mode.getTaint());
         addTaint(fileName.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -122,18 +122,18 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
             {
                 channel.close();
                 channel = null;
-            } 
+            } //End block
             IoUtils.close(fd);
-        } 
-        
-        
-        
-            
-                
-                
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //guard.close();
+        //synchronized (this) {
+            //if (channel != null && channel.isOpen()) {
+                //channel.close();
+                //channel = null;
+            //}
+            //IoUtils.close(fd);
+        //}
     }
 
     
@@ -145,22 +145,22 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     if(guard != null)            
             {
                 guard.warnIfOpen();
-            } 
+            } //End block
             close();
-        } 
+        } //End block
         finally 
         {
             super.finalize();
-        } 
-        
-        
-            
-                
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //if (guard != null) {
+                //guard.warnIfOpen();
+            //}
+            //close();
+        //} finally {
+            //super.finalize();
+        //}
     }
 
     
@@ -169,15 +169,15 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
     if(channel == null)        
         {
             channel = NioUtils.newFileChannel(this, fd, mode);
-        } 
+        } //End block
 FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1216040288 =         channel;
         var99BA3483FD74E36EACD435CEE6BD5D6F_1216040288.addTaint(taint);
         return var99BA3483FD74E36EACD435CEE6BD5D6F_1216040288;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if(channel == null) {
+            //channel = NioUtils.newFileChannel(this, fd, mode);
+        //}
+        //return channel;
     }
 
     
@@ -186,8 +186,8 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1216040288 =         channel;
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
         var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187.addTaint(taint);
         return var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187;
-        
-        
+        // ---------- Original Method ----------
+        //return fd;
     }
 
     
@@ -198,19 +198,19 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
             long var7BC510F6F7CB14449C552BCB6CAF281B_1675437134 = (Libcore.os.lseek(fd, 0L, SEEK_CUR));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1757369001 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1757369001;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_21078584 = errnoException.rethrowAsIOException();
             var533DBF3F7D78874DC97ED285C3BC3B22_21078584.addTaint(taint);
             throw var533DBF3F7D78874DC97ED285C3BC3B22_21078584;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return Libcore.os.lseek(fd, 0L, SEEK_CUR);
+        //} catch (ErrnoException errnoException) {
+            //throw errnoException.rethrowAsIOException();
+        //}
     }
 
     
@@ -221,19 +221,19 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
             long varE497182731DBBCFBFD01D5C3B5A54B92_1493576082 = (Libcore.os.fstat(fd).st_size);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_971202716 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_971202716;
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_967258220 = errnoException.rethrowAsIOException();
             var533DBF3F7D78874DC97ED285C3BC3B22_967258220.addTaint(taint);
             throw var533DBF3F7D78874DC97ED285C3BC3B22_967258220;
-        } 
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return Libcore.os.fstat(fd).st_size;
+        //} catch (ErrnoException errnoException) {
+            //throw errnoException.rethrowAsIOException();
+        //}
     }
 
     
@@ -242,8 +242,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
         int varB322769BC0F2A0323E6473E85B782F19_934956864 = ((read(scratch, 0, 1) != -1) ? scratch[0] & 0xff : -1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638974126 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638974126;
-        
-        
+        // ---------- Original Method ----------
+        //return (read(scratch, 0, 1) != -1) ? scratch[0] & 0xff : -1;
     }
 
     
@@ -253,8 +253,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
         int varB17F7FC0C34BA0A2828AFE480EE84868_639492169 = (read(buffer, 0, buffer.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_293965074 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_293965074;
-        
-        
+        // ---------- Original Method ----------
+        //return read(buffer, 0, buffer.length);
     }
 
     
@@ -266,8 +266,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
         int var515005EC72FBFD1EBFD0E3FF9751DEEE_408511532 = (IoBridge.read(fd, buffer, byteOffset, byteCount));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1842106047 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1842106047;
-        
-        
+        // ---------- Original Method ----------
+        //return IoBridge.read(fd, buffer, byteOffset, byteCount);
     }
 
     
@@ -279,16 +279,16 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
             EOFException var0239D63DB748BB20D119EB36D6D1C384_122755231 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_122755231.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_122755231;
-        } 
+        } //End block
         boolean var581071D2E1ACA721FA204A220D24D3E5_2131929973 = (temp != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_624844937 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_624844937;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int temp = this.read();
+        //if (temp < 0) {
+            //throw new EOFException();
+        //}
+        //return temp != 0;
     }
 
     
@@ -300,16 +300,16 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
             EOFException var0239D63DB748BB20D119EB36D6D1C384_577806609 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_577806609.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_577806609;
-        } 
+        } //End block
         byte varEB0C37FB3D2A4D56EFEF536C0C588373_1957688604 = ((byte) temp);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_1926176685 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1926176685;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int temp = this.read();
+        //if (temp < 0) {
+            //throw new EOFException();
+        //}
+        //return (byte) temp;
     }
 
     
@@ -318,8 +318,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
         char varD2B9D0AC7E6CAD4B64D448E3DC4EE790_148182483 = ((char) readShort());
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1499237144 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1499237144;
-        
-        
+        // ---------- Original Method ----------
+        //return (char) readShort();
     }
 
     
@@ -328,8 +328,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
         double varB44FB75D2A60D6225B161B58EE8BE0EE_2007893689 = (Double.longBitsToDouble(readLong()));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_194834894 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_194834894;
-        
-        
+        // ---------- Original Method ----------
+        //return Double.longBitsToDouble(readLong());
     }
 
     
@@ -338,8 +338,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
         float var61F55322990BB97833DB081A7753B25B_1094637360 = (Float.intBitsToFloat(readInt()));
                 float var546ADE640B6EDFBC8A086EF31347E768_647686400 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_647686400;
-        
-        
+        // ---------- Original Method ----------
+        //return Float.intBitsToFloat(readInt());
     }
 
     
@@ -347,8 +347,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
     public final void readFully(byte[] dst) throws IOException {
         addTaint(dst[0]);
         readFully(dst, 0, dst.length);
-        
-        
+        // ---------- Original Method ----------
+        //readFully(dst, 0, dst.length);
     }
 
     
@@ -367,20 +367,20 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
                 EOFException var0239D63DB748BB20D119EB36D6D1C384_2080121758 = new EOFException();
                 var0239D63DB748BB20D119EB36D6D1C384_2080121758.addTaint(taint);
                 throw var0239D63DB748BB20D119EB36D6D1C384_2080121758;
-            } 
+            } //End block
             offset += result;
             byteCount -= result;
-        } 
-        
-        
-        
-            
-            
-                
-            
-            
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //Arrays.checkOffsetAndCount(dst.length, offset, byteCount);
+        //while (byteCount > 0) {
+            //int result = read(dst, offset, byteCount);
+            //if (result < 0) {
+                //throw new EOFException();
+            //}
+            //offset += result;
+            //byteCount -= result;
+        //}
     }
 
     
@@ -390,9 +390,9 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1911614187 =         fd;
         int var7C922A9B161AE4D77245C27862C5A0B3_558293404 = (Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1892787226 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1892787226;
-        
-        
-        
+        // ---------- Original Method ----------
+        //readFully(scratch, 0, SizeOf.INT);
+        //return Memory.peekInt(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
     
@@ -417,7 +417,7 @@ String var8CDD6AC64A89AABB1EE2F22C095CB3B3_1121366275 =             line.length(
 String var212D8FC412CCB2BE0F33E17280622756_1717474907 =                 line.toString();
                 var212D8FC412CCB2BE0F33E17280622756_1717474907.addTaint(taint);
                 return var212D8FC412CCB2BE0F33E17280622756_1717474907;
-            } 
+            } //End block
             foundTerminator = true;
             unreadPosition = getFilePointer();
             break;
@@ -432,12 +432,12 @@ String var212D8FC412CCB2BE0F33E17280622756_1699115588 =             line.toStrin
 String var212D8FC412CCB2BE0F33E17280622756_431972387 =                 line.toString();
                 var212D8FC412CCB2BE0F33E17280622756_431972387.addTaint(taint);
                 return var212D8FC412CCB2BE0F33E17280622756_431972387;
-            } 
+            } //End block
             line.append((char) nextByte);
 }
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -447,9 +447,9 @@ String var212D8FC412CCB2BE0F33E17280622756_431972387 =                 line.toSt
         long var2D893E0C4B322812F3FC68288B698EF2_267296529 = (Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1836575305 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1836575305;
-        
-        
-        
+        // ---------- Original Method ----------
+        //readFully(scratch, 0, SizeOf.LONG);
+        //return Memory.peekLong(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
     
@@ -459,9 +459,9 @@ String var212D8FC412CCB2BE0F33E17280622756_431972387 =                 line.toSt
         short var5EF02BCDD6FDC20E2BA6E56CB7B1512F_1133672179 = (Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_920609541 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_920609541;
-        
-        
-        
+        // ---------- Original Method ----------
+        //readFully(scratch, 0, SizeOf.SHORT);
+        //return Memory.peekShort(scratch, 0, ByteOrder.BIG_ENDIAN);
     }
 
     
@@ -473,16 +473,16 @@ String var212D8FC412CCB2BE0F33E17280622756_431972387 =                 line.toSt
             EOFException var0239D63DB748BB20D119EB36D6D1C384_887946962 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_887946962.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_887946962;
-        } 
+        } //End block
         int var3D801AA532C1CEC3EE82D87A99FDF63F_856863583 = (temp);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1460720999 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1460720999;
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int temp = this.read();
+        //if (temp < 0) {
+            //throw new EOFException();
+        //}
+        //return temp;
     }
 
     
@@ -491,8 +491,8 @@ String var212D8FC412CCB2BE0F33E17280622756_431972387 =                 line.toSt
         int var4535605AA0CDF96DAC5C016A8613FBB9_1931216429 = (((int) readShort()) & 0xffff);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2126423594 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2126423594;
-        
-        
+        // ---------- Original Method ----------
+        //return ((int) readShort()) & 0xffff;
     }
 
     
@@ -504,27 +504,27 @@ String var212D8FC412CCB2BE0F33E17280622756_431972387 =                 line.toSt
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1925518106 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1925518106.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1925518106;
-        } 
+        } //End block
         byte[] buf = new byte[utfSize];
     if(read(buf, 0, buf.length) != buf.length)        
         {
             EOFException var0239D63DB748BB20D119EB36D6D1C384_415334383 = new EOFException();
             var0239D63DB748BB20D119EB36D6D1C384_415334383.addTaint(taint);
             throw var0239D63DB748BB20D119EB36D6D1C384_415334383;
-        } 
+        } //End block
 String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.decode(buf, new char[utfSize], 0, utfSize);
         var53043956345A52F3FC57178FAAB3FC3C_2029270091.addTaint(taint);
         return var53043956345A52F3FC57178FAAB3FC3C_2029270091;
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int utfSize = readUnsignedShort();
+        //if (utfSize == 0) {
+            //return "";
+        //}
+        //byte[] buf = new byte[utfSize];
+        //if (read(buf, 0, buf.length) != buf.length) {
+            //throw new EOFException();
+        //}
+        //return ModifiedUtf8.decode(buf, new char[utfSize], 0, utfSize);
     }
 
     
@@ -536,26 +536,26 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
             IOException var407EF712642876D92F7D5DA11E26AD4E_2099812332 = new IOException("offset < 0: " + offset);
             var407EF712642876D92F7D5DA11E26AD4E_2099812332.addTaint(taint);
             throw var407EF712642876D92F7D5DA11E26AD4E_2099812332;
-        } 
+        } //End block
         try 
         {
             Libcore.os.lseek(fd, offset, SEEK_SET);
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1147416108 = errnoException.rethrowAsIOException();
             var533DBF3F7D78874DC97ED285C3BC3B22_1147416108.addTaint(taint);
             throw var533DBF3F7D78874DC97ED285C3BC3B22_1147416108;
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (offset < 0) {
+            //throw new IOException("offset < 0: " + offset);
+        //}
+        //try {
+            //Libcore.os.lseek(fd, offset, SEEK_SET);
+        //} catch (ErrnoException errnoException) {
+            //throw errnoException.rethrowAsIOException();
+        //}
     }
 
     
@@ -567,42 +567,42 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
             IllegalArgumentException var3467204E3D409283EC814D3A00236787_662236603 = new IllegalArgumentException("newLength < 0");
             var3467204E3D409283EC814D3A00236787_662236603.addTaint(taint);
             throw var3467204E3D409283EC814D3A00236787_662236603;
-        } 
+        } //End block
         try 
         {
             Libcore.os.ftruncate(fd, newLength);
-        } 
+        } //End block
         catch (ErrnoException errnoException)
         {
             java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1381224271 = errnoException.rethrowAsIOException();
             var533DBF3F7D78874DC97ED285C3BC3B22_1381224271.addTaint(taint);
             throw var533DBF3F7D78874DC97ED285C3BC3B22_1381224271;
-        } 
+        } //End block
         long filePointer = getFilePointer();
     if(filePointer > newLength)        
         {
             seek(newLength);
-        } 
+        } //End block
     if(syncMetadata)        
         {
             fd.sync();
-        } 
-        
-        
-            
-        
-        
-            
-        
-            
-        
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (newLength < 0) {
+            //throw new IllegalArgumentException("newLength < 0");
+        //}
+        //try {
+            //Libcore.os.ftruncate(fd, newLength);
+        //} catch (ErrnoException errnoException) {
+            //throw errnoException.rethrowAsIOException();
+        //}
+        //long filePointer = getFilePointer();
+        //if (filePointer > newLength) {
+            //seek(newLength);
+        //}
+        //if (syncMetadata) {
+            //fd.sync();
+        //}
     }
 
     
@@ -618,18 +618,18 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
             int varD6F9071E53BC7EFF4BFE39EBFCDDF1B1_1066024442 = (newCount);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1228218555 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1228218555;
-        } 
+        } //End block
         int varCFCD208495D565EF66E7DFF9F98764DA_1777124526 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1821402844 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1821402844;
-        
-        
-            
-            
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (count > 0) {
+            //long currentPos = getFilePointer(), eof = length();
+            //int newCount = (int) ((currentPos + count > eof) ? eof - currentPos : count);
+            //seek(currentPos + newCount);
+            //return newCount;
+        //}
+        //return 0;
     }
 
     
@@ -637,8 +637,8 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
     public void write(byte[] buffer) throws IOException {
         addTaint(buffer[0]);
         write(buffer, 0, buffer.length);
-        
-        
+        // ---------- Original Method ----------
+        //write(buffer, 0, buffer.length);
     }
 
     
@@ -651,12 +651,12 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
     if(syncMetadata)        
         {
             fd.sync();
-        } 
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //IoBridge.write(fd, buffer, byteOffset, byteCount);
+        //if (syncMetadata) {
+            //fd.sync();
+        //}
     }
 
     
@@ -664,9 +664,9 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
     public void write(int oneByte) throws IOException {
         scratch[0] = (byte) (oneByte & 0xff);
         write(scratch, 0, 1);
-        
-        
-        
+        // ---------- Original Method ----------
+        //scratch[0] = (byte) (oneByte & 0xff);
+        //write(scratch, 0, 1);
     }
 
     
@@ -674,8 +674,8 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
     public final void writeBoolean(boolean val) throws IOException {
         addTaint(val);
         write(val ? 1 : 0);
-        
-        
+        // ---------- Original Method ----------
+        //write(val ? 1 : 0);
     }
 
     
@@ -683,8 +683,8 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
     public final void writeByte(int val) throws IOException {
         addTaint(val);
         write(val & 0xFF);
-        
-        
+        // ---------- Original Method ----------
+        //write(val & 0xFF);
     }
 
     
@@ -695,14 +695,14 @@ String var53043956345A52F3FC57178FAAB3FC3C_2029270091 =         ModifiedUtf8.dec
 for(int index = 0;index < str.length();index++)
         {
             bytes[index] = (byte) (str.charAt(index) & 0xFF);
-        } 
+        } //End block
         write(bytes);
-        
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //byte[] bytes = new byte[str.length()];
+        //for (int index = 0; index < str.length(); index++) {
+            //bytes[index] = (byte) (str.charAt(index) & 0xFF);
+        //}
+        //write(bytes);
     }
 
     
@@ -710,8 +710,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeChar(int val) throws IOException {
         addTaint(val);
         writeShort(val);
-        
-        
+        // ---------- Original Method ----------
+        //writeShort(val);
     }
 
     
@@ -719,8 +719,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeChars(String str) throws IOException {
         addTaint(str.getTaint());
         write(str.getBytes("UTF-16BE"));
-        
-        
+        // ---------- Original Method ----------
+        //write(str.getBytes("UTF-16BE"));
     }
 
     
@@ -728,8 +728,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeDouble(double val) throws IOException {
         addTaint(val);
         writeLong(Double.doubleToLongBits(val));
-        
-        
+        // ---------- Original Method ----------
+        //writeLong(Double.doubleToLongBits(val));
     }
 
     
@@ -737,8 +737,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeFloat(float val) throws IOException {
         addTaint(val);
         writeInt(Float.floatToIntBits(val));
-        
-        
+        // ---------- Original Method ----------
+        //writeInt(Float.floatToIntBits(val));
     }
 
     
@@ -747,9 +747,9 @@ for(int index = 0;index < str.length();index++)
         addTaint(val);
         Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.INT);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
+        //write(scratch, 0, SizeOf.INT);
     }
 
     
@@ -758,9 +758,9 @@ for(int index = 0;index < str.length();index++)
         addTaint(val);
         Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.LONG);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
+        //write(scratch, 0, SizeOf.LONG);
     }
 
     
@@ -769,9 +769,9 @@ for(int index = 0;index < str.length();index++)
         addTaint(val);
         Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
         write(scratch, 0, SizeOf.SHORT);
-        
-        
-        
+        // ---------- Original Method ----------
+        //Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
+        //write(scratch, 0, SizeOf.SHORT);
     }
 
     
@@ -779,8 +779,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeUTF(String str) throws IOException {
         addTaint(str.getTaint());
         write(ModifiedUtf8.encode(str));
-        
-        
+        // ---------- Original Method ----------
+        //write(ModifiedUtf8.encode(str));
     }
 
     

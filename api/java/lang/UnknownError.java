@@ -1,6 +1,6 @@
 package java.lang;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class UnknownError extends VirtualMachineError {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:52.013 -0400", hash_original_method = "DEBB86C8E485BA79C07551D87066B1FF", hash_generated_method = "8B2FBCDE5A416A32BD94734123C8D214")
     public  UnknownError() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -17,7 +17,7 @@ public class UnknownError extends VirtualMachineError {
     public  UnknownError(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     

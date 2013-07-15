@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.address;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.058 -0400", hash_original_method = "523B0443B4AA531D1FAD6DE404409AD6", hash_generated_method = "6DA1D92CCB90E95FA80352986AB46076")
     protected  GenericURI() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -28,77 +28,72 @@ public class GenericURI extends NetObject implements javax.sip.address.URI {
             this.uriString = uriString;
             int i = uriString.indexOf(":");
             scheme = uriString.substring(0, i);
-        } 
+        } //End block
         catch (Exception e)
         {
             ParseException var3ABBBA86BF87822CF0B972769AEFB7C7_1569629180 = new ParseException("GenericURI, Bad URI format", 0);
             var3ABBBA86BF87822CF0B972769AEFB7C7_1569629180.addTaint(taint);
             throw var3ABBBA86BF87822CF0B972769AEFB7C7_1569629180;
-        } 
-        
-        
-            
-            
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //this.uriString = uriString;
+            //int i = uriString.indexOf(":");
+            //scheme = uriString.substring(0, i);
+        //} catch (Exception e) {
+            //throw new ParseException("GenericURI, Bad URI format", 0);
+        //}
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.060 -0400", hash_original_method = "82D33A5986E24A5B49AA621812B7822B", hash_generated_method = "C7E1D7B677E06243F273B36460FF1DE2")
     public String encode() {
 String varA4F4B44693A1936015581C1F7D6F4DAF_460354654 =         uriString;
         varA4F4B44693A1936015581C1F7D6F4DAF_460354654.addTaint(taint);
         return varA4F4B44693A1936015581C1F7D6F4DAF_460354654;
-        
-        
+        // ---------- Original Method ----------
+        //return uriString;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.060 -0400", hash_original_method = "054F173715F55BDEA2A1E3378F0F2AB7", hash_generated_method = "AA554ADE28F37AA61953AD48868F1652")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
 StringBuffer varF6413B9B0E7E2F46B03F689845D050B5_631095691 =         buffer.append(uriString);
         varF6413B9B0E7E2F46B03F689845D050B5_631095691.addTaint(taint);
         return varF6413B9B0E7E2F46B03F689845D050B5_631095691;
-        
-        
+        // ---------- Original Method ----------
+        //return buffer.append(uriString);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.060 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "DB98E7ABCA5E20A74CBD52536A531335")
     public String toString() {
 String varB17575D7C845B2C662583710539AAEBB_361875861 =         this.encode();
         varB17575D7C845B2C662583710539AAEBB_361875861.addTaint(taint);
         return varB17575D7C845B2C662583710539AAEBB_361875861;
-        
-        
+        // ---------- Original Method ----------
+        //return this.encode();
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.061 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "F288A0CCE7A39F2295AFE9C86EAC0BF0")
     public String getScheme() {
 String varFD3305CF8340E40F0AC0AB554909AEBC_143294473 =         scheme;
         varFD3305CF8340E40F0AC0AB554909AEBC_143294473.addTaint(taint);
         return varFD3305CF8340E40F0AC0AB554909AEBC_143294473;
-        
-        
+        // ---------- Original Method ----------
+        //return scheme;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.061 -0400", hash_original_method = "B3806A07425B89767F09A244B77901C0", hash_generated_method = "84ED8AD2228A8DD3B90DD63BDF66C8AC")
     public boolean isSipURI() {
         boolean var223EE2316B20EDC6AC0AB79DDD935082_1482563668 = (this instanceof SipUri);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1069156359 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1069156359;
-        
-        
+        // ---------- Original Method ----------
+        //return this instanceof SipUri;
     }
 
     
@@ -118,28 +113,27 @@ String varFD3305CF8340E40F0AC0AB554909AEBC_143294473 =         scheme;
             boolean varB771248EBC1F05C3AE5A13A6E23B9B28_422741576 = (this.toString().equalsIgnoreCase( o.toString() ));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_313553987 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_313553987;
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_640001797 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_265616614 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_265616614;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (this==that) return true;
+        //else if (that instanceof URI) {
+            //final URI o = (URI) that;
+            //return this.toString().equalsIgnoreCase( o.toString() );
+        //}
+        //return false;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.062 -0400", hash_original_method = "52D4A3951B7E10EC34FBEDB345A7DD44", hash_generated_method = "A370CC3872FA71D308DA8875ED23DAD4")
     public int hashCode() {
         int varF69BA08EDCBBC4B1AB26B0553043CBEF_685597719 = (this.toString().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077554349 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1077554349;
-        
-        
+        // ---------- Original Method ----------
+        //return this.toString().hashCode();
     }
 
     

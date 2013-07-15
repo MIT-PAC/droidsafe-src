@@ -1,6 +1,6 @@
 package gov.nist.core;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public class StringTokenizer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.773 -0400", hash_original_method = "54BA219EC49F828609CB54EE2A82793E", hash_generated_method = "829CC47E9AA7BAE84979A930F35B1839")
     protected  StringTokenizer() {
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -32,10 +32,10 @@ public class StringTokenizer {
         this.buffer = buffer;
         bufferLen = buffer.length();
         ptr = 0;
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //this.buffer = buffer;
+        //bufferLen = buffer.length();
+        //ptr = 0;
     }
 
     
@@ -50,32 +50,31 @@ public class StringTokenizer {
     if(c == '\n')            
             {
                 break;
-            } 
-        } 
+            } //End block
+        } //End block
 String var6AFF5978BAB12C2506D33445AED98631_1389258036 =         buffer.substring(startIdx, ptr);
         var6AFF5978BAB12C2506D33445AED98631_1389258036.addTaint(taint);
         return var6AFF5978BAB12C2506D33445AED98631_1389258036;
-        
-        
-        
-            
-            
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int startIdx = ptr;
+        //while (ptr < bufferLen) {
+            //char c = buffer.charAt(ptr);
+            //ptr++;
+            //if (c == '\n') {
+                //break;
+            //}
+        //}
+        //return buffer.substring(startIdx, ptr);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.774 -0400", hash_original_method = "CE3ED718DBD97A207FB6B56A3D84C961", hash_generated_method = "33FF441061FB087B2A8C97301CD3A35E")
     public boolean hasMoreChars() {
         boolean var39BF37FF4313B82D5AEAB5612B20E2EB_919733325 = (ptr < bufferLen);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1773577781 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1773577781;
-        
-        
+        // ---------- Original Method ----------
+        //return ptr < bufferLen;
     }
 
     
@@ -127,23 +126,23 @@ String var6AFF5978BAB12C2506D33445AED98631_1389258036 =         buffer.substring
 (ptr < bufferLen && buffer.charAt(ptr) != '\n')        
         {
             ptr++;
-        } 
+        } //End block
     if(ptr < bufferLen && buffer.charAt(ptr) == '\n')        
         {
             ptr++;
-        } 
+        } //End block
 String var6AFF5978BAB12C2506D33445AED98631_999730499 =         buffer.substring(startIdx, ptr);
         var6AFF5978BAB12C2506D33445AED98631_999730499.addTaint(taint);
         return var6AFF5978BAB12C2506D33445AED98631_999730499;
-        
-        
-        
-            
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //int startIdx = ptr;
+        //while (ptr < bufferLen && buffer.charAt(ptr) != '\n') {
+            //ptr++;
+        //}
+        //if (ptr < bufferLen && buffer.charAt(ptr) == '\n') {
+            //ptr++;
+        //}
+        //return buffer.substring(startIdx, ptr);
     }
 
     
@@ -155,11 +154,11 @@ String var6AFF5978BAB12C2506D33445AED98631_999730499 =         buffer.substring(
 String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1394373865.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1394373865;
-        
-        
-        
-        
-        
+        // ---------- Original Method ----------
+        //int curPos = ptr;
+        //String retval = this.getLine();
+        //ptr = curPos;
+        //return retval;
     }
 
     
@@ -168,8 +167,8 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
         char varA40DDAE514814BC55844536D2DD1C8F6_1617705763 = (lookAhead(0));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1391958916 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1391958916;
-        
-        
+        // ---------- Original Method ----------
+        //return lookAhead(0);
     }
 
     
@@ -181,20 +180,20 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
             char var3A2AA1EDB2247E6E1E464C51164D8296_2141086171 = (buffer.charAt(ptr + k));
                         char varA87DEB01C5F539E6BDA34829C8EF2368_1344295643 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_1344295643;
-        } 
+        } //End block
         catch (IndexOutOfBoundsException e)
         {
             char var2FD040853066E22941CBCC768B6AFCE6_2146319462 = ('\0');
                         char varA87DEB01C5F539E6BDA34829C8EF2368_946927107 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_946927107;
-        } 
-        
-        
-            
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //try {
+            //return buffer.charAt(ptr + k);
+        //}
+        //catch (IndexOutOfBoundsException e) {
+            //return '\0';
+        //}
     }
 
     
@@ -214,35 +213,32 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1743476676 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1743476676;
         }
-        
-        
-            
-                
-                
-        
-            
+        // ---------- Original Method ----------
+        //if (ptr >= bufferLen)
+            //throw new ParseException(
+                //buffer + " getNextChar: End of buffer",
+                //ptr);
+        //else
+            //return buffer.charAt(ptr++);
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.777 -0400", hash_original_method = "5C7E03ECFF7AB12146D632F9E4D67AA3", hash_generated_method = "2A55CB0583276391A21A96648042B85C")
     public void consume() {
         ptr = savedPtr;
-        
-        
+        // ---------- Original Method ----------
+        //ptr = savedPtr;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.778 -0400", hash_original_method = "4CE3B95DEACD36E71CE4EC6691FB056B", hash_generated_method = "3D8CF103538B45433DCFDACE276082D3")
     public void consume(int k) {
         ptr += k;
-        
-        
+        // ---------- Original Method ----------
+        //ptr += k;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.778 -0400", hash_original_method = "790B12C2E8304128473A5E51B3B58D54", hash_generated_method = "3D32C4319B0B29C496BB5A8D87FFA33C")
     public Vector<String> getLines() {
         Vector<String> result = new Vector<String>();
@@ -251,17 +247,17 @@ String varF9E19AD6135C970F387F77C6F3DE4477_1394373865 =         retval;
         {
             String line = getLine();
             result.addElement(line);
-        } 
+        } //End block
 Vector<String> varDC838461EE2FA0CA4C9BBB70A15456B0_697400642 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_697400642.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_697400642;
-        
-        
-        
-            
-            
-        
-        
+        // ---------- Original Method ----------
+        //Vector<String> result = new Vector<String>();
+        //while (hasMoreChars()) {
+            //String line = getLine();
+            //result.addElement(line);
+        //}
+        //return result;
     }
 
     
@@ -283,21 +279,21 @@ Vector<String> varDC838461EE2FA0CA4C9BBB70A15456B0_697400642 =         result;
             throw varDC410FCF0824EF4154B2896FE55A85EA_1240686688;
             }
             consume(1);
-        } 
+        } //End block
 String var6AFF5978BAB12C2506D33445AED98631_52399566 =         buffer.substring(startIdx, ptr);
         var6AFF5978BAB12C2506D33445AED98631_52399566.addTaint(taint);
         return var6AFF5978BAB12C2506D33445AED98631_52399566;
-        
-        
-        
-            
-            
-                
-            
-                
-            
-        
-        
+        // ---------- Original Method ----------
+        //int startIdx = ptr;
+        //while (true) {
+            //char la = lookAhead(0);
+            //if (la == delim)
+                //break;
+            //else if (la == '\0')
+                //throw new ParseException("EOL reached", 0);
+            //consume(1);
+        //}
+        //return buffer.substring(startIdx, ptr);
     }
 
     

@@ -1,6 +1,6 @@
 package android.content.res;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,12 +39,12 @@ final class StringBlock {
         mUseSparse = useSparse;
         mOwnsNative = true;
     if(localLOGV){ }
-        
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //mNative = nativeCreate(data, 0, data.length);
+        //mUseSparse = useSparse;
+        //mOwnsNative = true;
+        //if (localLOGV) Log.v(TAG, "Created string block " + this
+                //+ ": " + nativeGetSize(mNative));
     }
 
     
@@ -54,12 +54,12 @@ final class StringBlock {
         mUseSparse = useSparse;
         mOwnsNative = true;
     if(localLOGV){ }
-        
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //mNative = nativeCreate(data, offset, size);
+        //mUseSparse = useSparse;
+        //mOwnsNative = true;
+        //if (localLOGV) Log.v(TAG, "Created string block " + this
+                //+ ": " + nativeGetSize(mNative));
     }
 
     
@@ -69,12 +69,12 @@ final class StringBlock {
         mUseSparse = useSparse;
         mOwnsNative = false;
     if(localLOGV){ }
-        
-        
-        
-        
-        
-                
+        // ---------- Original Method ----------
+        //mNative = obj;
+        //mUseSparse = useSparse;
+        //mOwnsNative = false;
+        //if (localLOGV) Log.v(TAG, "Created string block " + this
+                //+ ": " + nativeGetSize(mNative));
     }
 
     
@@ -90,8 +90,8 @@ final class StringBlock {
 CharSequence varB5053E025797B3BF768F5C37934C244D_99379312 =                     res;
                     varB5053E025797B3BF768F5C37934C244D_99379312.addTaint(taint);
                     return varB5053E025797B3BF768F5C37934C244D_99379312;
-                } 
-            } 
+                } //End block
+            } //End block
             else
     if(mSparseStrings != null)            
             {
@@ -101,20 +101,20 @@ CharSequence varB5053E025797B3BF768F5C37934C244D_99379312 =                     
 CharSequence varB5053E025797B3BF768F5C37934C244D_772556489 =                     res;
                     varB5053E025797B3BF768F5C37934C244D_772556489.addTaint(taint);
                     return varB5053E025797B3BF768F5C37934C244D_772556489;
-                } 
-            } 
+                } //End block
+            } //End block
             else
             {
                 final int num = nativeGetSize(mNative);
     if(mUseSparse && num > 250)                
                 {
                     mSparseStrings = new SparseArray<CharSequence>();
-                } 
+                } //End block
                 else
                 {
                     mStrings = new CharSequence[num];
-                } 
-            } 
+                } //End block
+            } //End block
             String str = nativeGetString(mNative, idx);
             CharSequence res = str;
             int[] style = nativeGetStyle(mNative, idx);
@@ -123,7 +123,7 @@ CharSequence varB5053E025797B3BF768F5C37934C244D_772556489 =                    
     if(mStyleIDs == null)                
                 {
                     mStyleIDs = new StyleIDs();
-                } 
+                } //End block
 for(int styleIndex = 0;styleIndex < style.length;styleIndex += 3)
                 {
                     int styleId = style[styleIndex];
@@ -135,65 +135,65 @@ for(int styleIndex = 0;styleIndex < style.length;styleIndex += 3)
                             || styleId == mStyleIDs.marqueeId)                    
                     {
                         continue;
-                    } 
+                    } //End block
                     String styleTag = nativeGetString(mNative, styleId);
     if(styleTag.equals("b"))                    
                     {
                         mStyleIDs.boldId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("i"))                    
                     {
                         mStyleIDs.italicId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("u"))                    
                     {
                         mStyleIDs.underlineId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("tt"))                    
                     {
                         mStyleIDs.ttId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("big"))                    
                     {
                         mStyleIDs.bigId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("small"))                    
                     {
                         mStyleIDs.smallId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("sup"))                    
                     {
                         mStyleIDs.supId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("sub"))                    
                     {
                         mStyleIDs.subId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("strike"))                    
                     {
                         mStyleIDs.strikeId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("li"))                    
                     {
                         mStyleIDs.listItemId = styleId;
-                    } 
+                    } //End block
                     else
     if(styleTag.equals("marquee"))                    
                     {
                         mStyleIDs.marqueeId = styleId;
-                    } 
-                } 
+                    } //End block
+                } //End block
                 res = applyStyles(str, style, mStyleIDs);
-            } 
+            } //End block
     if(mStrings != null)            
             mStrings[idx] = res;
             else
@@ -201,9 +201,9 @@ for(int styleIndex = 0;styleIndex < style.length;styleIndex += 3)
 CharSequence varB5053E025797B3BF768F5C37934C244D_1899010486 =             res;
             varB5053E025797B3BF768F5C37934C244D_1899010486.addTaint(taint);
             return varB5053E025797B3BF768F5C37934C244D_1899010486;
-        } 
-        
-        
+        } //End block
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -212,11 +212,11 @@ CharSequence varB5053E025797B3BF768F5C37934C244D_1899010486 =             res;
     if(mOwnsNative)        
         {
             nativeDestroy(mNative);
-        } 
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (mOwnsNative) {
+            //nativeDestroy(mNative);
+        //}
     }
 
     
@@ -242,76 +242,76 @@ CharSequence var061B89662D09DE43FE2A2D88636258A2_1858025078 =         str;
                 buffer.setSpan(new StyleSpan(Typeface.BOLD),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.italicId)            
             {
                 buffer.setSpan(new StyleSpan(Typeface.ITALIC),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.underlineId)            
             {
                 buffer.setSpan(new UnderlineSpan(),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.ttId)            
             {
                 buffer.setSpan(new TypefaceSpan("monospace"),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.bigId)            
             {
                 buffer.setSpan(new RelativeSizeSpan(1.25f),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.smallId)            
             {
                 buffer.setSpan(new RelativeSizeSpan(0.8f),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.subId)            
             {
                 buffer.setSpan(new SubscriptSpan(),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.supId)            
             {
                 buffer.setSpan(new SuperscriptSpan(),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.strikeId)            
             {
                 buffer.setSpan(new StrikethroughSpan(),
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } 
+            } //End block
             else
     if(type == ids.listItemId)            
             {
                 addParagraphSpan(buffer, new BulletSpan(10),
                                 style[i+1], style[i+2]+1);
-            } 
+            } //End block
             else
     if(type == ids.marqueeId)            
             {
                 buffer.setSpan(TextUtils.TruncateAt.MARQUEE,
                                style[i+1], style[i+2]+1,
                                Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-            } 
+            } //End block
             else
             {
                 String tag = nativeGetString(mNative, type);
@@ -324,7 +324,7 @@ CharSequence var061B89662D09DE43FE2A2D88636258A2_1858025078 =         str;
                         int size = Integer.parseInt(sub);
                         addParagraphSpan(buffer, new Height(size),
                                        style[i+1], style[i+2]+1);
-                    } 
+                    } //End block
                     sub = subtag(tag, ";size=");
     if(sub != null)                    
                     {
@@ -332,7 +332,7 @@ CharSequence var061B89662D09DE43FE2A2D88636258A2_1858025078 =         str;
                         buffer.setSpan(new AbsoluteSizeSpan(size, true),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    } 
+                    } //End block
                     sub = subtag(tag, ";fgcolor=");
     if(sub != null)                    
                     {
@@ -340,7 +340,7 @@ CharSequence var061B89662D09DE43FE2A2D88636258A2_1858025078 =         str;
                         buffer.setSpan(new ForegroundColorSpan(color),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    } 
+                    } //End block
                     sub = subtag(tag, ";bgcolor=");
     if(sub != null)                    
                     {
@@ -348,8 +348,8 @@ CharSequence var061B89662D09DE43FE2A2D88636258A2_1858025078 =         str;
                         buffer.setSpan(new BackgroundColorSpan(color),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
     if(tag.startsWith("a;"))                
                 {
@@ -360,8 +360,8 @@ CharSequence var061B89662D09DE43FE2A2D88636258A2_1858025078 =         str;
                         buffer.setSpan(new URLSpan(sub),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    } 
-                } 
+                    } //End block
+                } //End block
                 else
     if(tag.startsWith("annotation;"))                
                 {
@@ -373,27 +373,27 @@ for(int t = tag.indexOf(';');t < len;t = next)
     if(eq < 0)                        
                         {
                             break;
-                        } 
+                        } //End block
                         next = tag.indexOf(';', eq);
     if(next < 0)                        
                         {
                             next = len;
-                        } 
+                        } //End block
                         String key = tag.substring(t + 1, eq);
                         String value = tag.substring(eq + 1, next);
                         buffer.setSpan(new Annotation(key, value),
                                        style[i+1], style[i+2]+1,
                                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    } 
-                } 
-            } 
+                    } //End block
+                } //End block
+            } //End block
             i += 3;
-        } 
+        } //End block
 CharSequence varAB46AC10AF20400ACC82DD97491C87AF_223871313 =         new SpannedString(buffer);
         varAB46AC10AF20400ACC82DD97491C87AF_223871313.addTaint(taint);
         return varAB46AC10AF20400ACC82DD97491C87AF_223871313;
-        
-        
+        // ---------- Original Method ----------
+        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -501,7 +501,7 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_223871313 =         new Spanned
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.603 -0400", hash_original_method = "4D3750C386AF43C67E7BA6A1E0512626", hash_generated_method = "4D3750C386AF43C67E7BA6A1E0512626")
         public StyleIDs ()
         {
-            
+            //Synthesized constructor
         }
 
 
@@ -517,8 +517,8 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_223871313 =         new Spanned
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.603 -0400", hash_original_method = "822F731BB1BA127213FF49F8E178606F", hash_generated_method = "8B0CB46E6A2F126B20C4298DCDA8FF8F")
         public  Height(int size) {
             mSize = size;
-            
-            
+            // ---------- Original Method ----------
+            //mSize = size;
         }
 
         
@@ -533,8 +533,8 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_223871313 =         new Spanned
             addTaint(start);
             addTaint(text.getTaint());
             chooseHeight(text, start, end, spanstartv, v, fm, null);
-            
-            
+            // ---------- Original Method ----------
+            //chooseHeight(text, start, end, spanstartv, v, fm, null);
         }
 
         
@@ -553,12 +553,12 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_223871313 =         new Spanned
     if(paint != null)            
             {
                 size *= paint.density;
-            } 
+            } //End block
     if(fm.bottom - fm.top < size)            
             {
                 fm.top = fm.bottom - size;
                 fm.ascent = fm.ascent - size;
-            } 
+            } //End block
             else
             {
     if(sProportion == 0)                
@@ -568,27 +568,27 @@ CharSequence varAB46AC10AF20400ACC82DD97491C87AF_223871313 =         new Spanned
                     Rect r = new Rect();
                     p.getTextBounds("ABCDEFG", 0, 7, r);
                     sProportion = (r.top) / p.ascent();
-                } 
+                } //End block
                 int need = (int) Math.ceil(-fm.top * sProportion);
     if(size - fm.descent >= need)                
                 {
                     fm.top = fm.bottom - size;
                     fm.ascent = fm.descent - size;
-                } 
+                } //End block
                 else
     if(size >= need)                
                 {
                     fm.top = fm.ascent = -need;
                     fm.bottom = fm.descent = fm.top + size;
-                } 
+                } //End block
                 else
                 {
                     fm.top = fm.ascent = -size;
                     fm.bottom = fm.descent = 0;
-                } 
-            } 
-            
-            
+                } //End block
+            } //End block
+            // ---------- Original Method ----------
+            // Original Method Too Long, Refer to Original Implementation
         }
 
         

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class BEROutputStream extends DEROutputStream {
         OutputStream    os) {
         super(os);
         addTaint(os.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -25,40 +25,40 @@ public class BEROutputStream extends DEROutputStream {
     if(obj == null)        
         {
             writeNull();
-        } 
+        } //End block
         else
     if(obj instanceof DERObject)        
         {
             ((DERObject)obj).encode(this);
-        } 
+        } //End block
         else
     if(obj instanceof DEREncodable)        
         {
             ((DEREncodable)obj).getDERObject().encode(this);
-        } 
+        } //End block
         else
         {
             IOException varEECF85CB178F2D875DD0D1D0D76A67FF_642829034 = new IOException("object not BEREncodable");
             varEECF85CB178F2D875DD0D1D0D76A67FF_642829034.addTaint(taint);
             throw varEECF85CB178F2D875DD0D1D0D76A67FF_642829034;
-        } 
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
-        
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (obj == null)
+        //{
+            //writeNull();
+        //}
+        //else if (obj instanceof DERObject)
+        //{
+            //((DERObject)obj).encode(this);
+        //}
+        //else if (obj instanceof DEREncodable)
+        //{
+            //((DEREncodable)obj).getDERObject().encode(this);
+        //}
+        //else
+        //{
+            //throw new IOException("object not BEREncodable");
+        //}
     }
 
     

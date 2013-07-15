@@ -1,6 +1,6 @@
 package org.apache.http.conn;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,24 +33,23 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
         }
         this.managedConn = conn;
         this.attemptReuse = reuse;
-        
-        
-            
-                
-        
-        
+        // ---------- Original Method ----------
+        //if (conn == null)
+            //throw new IllegalArgumentException
+                //("Connection may not be null.");
+        //this.managedConn = conn;
+        //this.attemptReuse = reuse;
     }
 
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.345 -0400", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "51900B30D0BFA891BECF226941EBA2C6")
     @Override
     public boolean isRepeatable() {
         boolean var68934A3E9455FA72420237EB05902327_191510632 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1016760894 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1016760894;
-        
-        
+        // ---------- Original Method ----------
+        //return false;
     }
 
     
@@ -60,8 +59,8 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
 InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1814976837 =         new EofSensorInputStream(wrappedEntity.getContent(), this);
         var3413A152FFF46FA6CE18671D68F2D3B0_1814976837.addTaint(taint);
         return var3413A152FFF46FA6CE18671D68F2D3B0_1814976837;
-        
-        
+        // ---------- Original Method ----------
+        //return new EofSensorInputStream(wrappedEntity.getContent(), this);
     }
 
     
@@ -76,23 +75,23 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1814976837 =         new EofSens
             {
                 wrappedEntity.consumeContent();
                 managedConn.markReusable();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             releaseManagedConnection();
-        } 
-        
-        
-            
-        
-            
-                
-                
-            
-        
-            
-        
+        } //End block
+        // ---------- Original Method ----------
+        //if (managedConn == null)
+            //return;
+        //try {
+            //if (attemptReuse) {
+                //wrappedEntity.consumeContent();
+                //managedConn.markReusable();
+            //}
+        //} finally {
+            //releaseManagedConnection();
+        //}
     }
 
     
@@ -102,17 +101,17 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1814976837 =         new EofSens
         addTaint(outstream.getTaint());
         super.writeTo(outstream);
         consumeContent();
-        
-        
-        
+        // ---------- Original Method ----------
+        //super.writeTo(outstream);
+        //consumeContent();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.346 -0400", hash_original_method = "4116E5CDB1EF6E698D2E6ADBA9E28033", hash_generated_method = "CCEB45ABA7930FB8F4049A36679817EB")
     public void releaseConnection() throws IOException {
         this.consumeContent();
-        
-        
+        // ---------- Original Method ----------
+        //this.consumeContent();
     }
 
     
@@ -123,20 +122,20 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1814976837 =         new EofSens
             try 
             {
                 managedConn.abortConnection();
-            } 
+            } //End block
             finally 
             {
                 managedConn = null;
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (managedConn != null) {
+            //try {
+                //managedConn.abortConnection();
+            //} finally {
+                //managedConn = null;
+            //}
+        //}
     }
 
     
@@ -149,25 +148,25 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1814976837 =         new EofSens
             {
                 wrapped.close();
                 managedConn.markReusable();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             releaseManagedConnection();
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_273662054 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_276156149 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_276156149;
-        
-        
-            
-                
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //if (attemptReuse && (managedConn != null)) {
+                //wrapped.close();
+                //managedConn.markReusable();
+            //}
+        //} finally {
+            //releaseManagedConnection();
+        //}
+        //return false;
     }
 
     
@@ -180,25 +179,25 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1814976837 =         new EofSens
             {
                 wrapped.close();
                 managedConn.markReusable();
-            } 
-        } 
+            } //End block
+        } //End block
         finally 
         {
             releaseManagedConnection();
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_367484118 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2114119067 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2114119067;
-        
-        
-            
-                
-                
-            
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //try {
+            //if (attemptReuse && (managedConn != null)) {
+                //wrapped.close();
+                //managedConn.markReusable();
+            //}
+        //} finally {
+            //releaseManagedConnection();
+        //}
+        //return false;
     }
 
     
@@ -208,15 +207,15 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1814976837 =         new EofSens
     if(managedConn != null)        
         {
             managedConn.abortConnection();
-        } 
+        } //End block
         boolean var68934A3E9455FA72420237EB05902327_235363661 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1242485212 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1242485212;
-        
-        
-            
-        
-        
+        // ---------- Original Method ----------
+        //if (managedConn != null) {
+            //managedConn.abortConnection();
+        //}
+        //return false;
     }
 
     
@@ -227,20 +226,20 @@ InputStream var3413A152FFF46FA6CE18671D68F2D3B0_1814976837 =         new EofSens
             try 
             {
                 managedConn.releaseConnection();
-            } 
+            } //End block
             finally 
             {
                 managedConn = null;
-            } 
-        } 
-        
-        
-            
-                
-            
-                
-            
-        
+            } //End block
+        } //End block
+        // ---------- Original Method ----------
+        //if (managedConn != null) {
+            //try {
+                //managedConn.releaseConnection();
+            //} finally {
+                //managedConn = null;
+            //}
+        //}
     }
 
     

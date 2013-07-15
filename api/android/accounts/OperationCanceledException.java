@@ -1,6 +1,6 @@
 package android.accounts;
 
-
+// Droidsafe Imports
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class OperationCanceledException extends AccountsException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.434 -0400", hash_original_method = "6A2CA580ECAC1CA80E08E40CC1DE7A0D", hash_generated_method = "5FBC7ED054974008E3508D207C4F8A0E")
     public  OperationCanceledException() {
         super();
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -18,7 +18,7 @@ public class OperationCanceledException extends AccountsException {
     public  OperationCanceledException(String message) {
         super(message);
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -27,7 +27,7 @@ public class OperationCanceledException extends AccountsException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
@@ -35,7 +35,7 @@ public class OperationCanceledException extends AccountsException {
     public  OperationCanceledException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        
+        // ---------- Original Method ----------
     }
 
     
